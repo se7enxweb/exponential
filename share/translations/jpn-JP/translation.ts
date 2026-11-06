@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>アドレスの転送先です。このサイトのパス、またはリダイレクトの場合は完全なアドレスを指定します。{1\} は最初の * に一致したテキストです。例: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>このアドレスへ一時的にリダイレクトされます(HTTP 302)。</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>訪問者は一時的にリダイレクトされます(HTTP 302)。</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>一時的なリダイレクト(302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85521,6 +85533,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>1 ページに %count 件のアイテムを表示します。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URLマップのエクスポート</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>このサイトのグローバル URLエイリアス、ワイルドカード、リダイレクトを1つのファイルとしてダウンロードします。保管用、表計算ソフトで編集して再インポートする用、またはWebサーバーにリライトルールとして渡す用に使えます。</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>エントリーの種類を少なくとも1つ選択してください。</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>ファイルを書き込めませんでした。</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>エクスポートする内容</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>エントリー</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>グローバル URLエイリアス(URLトランスレーター)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>コンテンツのカスタムURLエイリアスも含める</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>ノードを宛先として書き出します(例: node:42)。</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>URLワイルドカード</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>リダイレクト</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>サイトアクセス</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>すべてのサイトアクセス</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>サイトアクセスに属するのはリダイレクトだけです。URLエイリアスとワイルドカードはすべてのサイトアクセス向けにエクスポートされます。</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>言語</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>すべての言語</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>エクスポート</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URLマップのインポート</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>旧サイトのアドレスを一度に移行します。ファイルには旧アドレスごとに、現在それが対応するこのサイトのページを記載します。完全一致のアドレスはリダイレクトまたはURLエイリアスに、* を含むアドレスはワイルドカードになります。何かが書き込まれる前に各行の処理内容を確認でき、どのインポートも丸ごと元に戻せます。</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URLマップのインポート用テーブルがまだ存在しません。インポートする前にアップグレード手順 6.0.15-url-map(./console exp:upgrade --apply)を実行してください。</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>このインポートはもう利用できません。1日経って期限切れになったか、別のユーザーのものです。ファイルをもう一度アップロードしてください。</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>ファイルを選択するか、行を貼り付けてください。</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>ファイルが %size を超えています。</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>ファイルを読み込めません: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>このインストールのサイトアクセスを選択してください。</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>インポートをサーバーに保持できません: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>ファイル</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ファイル名</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV、JSON、Excel(.xlsx)、OpenDocument(.ods)、Apache または nginx のリライトルール。最大 %size。</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>または行を貼り付け</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>1行に1件、例: /old-page,/new-page。1行目で列名を指定できます: old_url, new_url, kind, siteaccess, language, note, status。</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>ファイルから判別</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>ファイル名からも内容からも判別できない場合にのみ必要です。</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>既定値</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>パスのみの行のサイトアクセス</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>既定</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>完全なアドレスを持つ行は、代わりにそのホストのサイトアクセスを使います。</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>サイトアクセスの言語</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>旧アドレスにすでにエントリーがある場合</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>エントリーを維持(行をスキップ)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>エントリーを置き換え</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>旧ホスト</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>このインストールが認識しないホストの完全なアドレスはインポートされません。旧ホストごとに対応するサイトアクセスを1行に1つずつ指定してください: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>プレビュー</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>まだ何も書き込まれていません。次のページで各行の処理内容を確認できます。</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>インポート %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>インポートを元に戻しました。</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>インポートを元に戻しました。ただし、その後に変更されたエントリーは維持されています。</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>インポートを元に戻せませんでした: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>日付</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>実行者</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>行数</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>作成 %created、置換 %updated、スキップ %skipped、失敗 %failed。</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>元に戻し済み</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>このインポートを元に戻す</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>インポートで作成されたエントリーはすべて削除され、置き換えられたエントリーはすべて元の状態に戻ります(最後のものから順に)。最初に本人確認を行います。</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>インポート後に変更されたエントリー %count 件</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>インポート後に変更されたエントリーも元に戻す</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>選択しない場合、それらは維持され、インポートは一部だけ元に戻されます(コンソールの --force)。</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>このインポートを元に戻しますか?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>インポートを元に戻す</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>書き込まれたエントリー</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count 件中 %from~%to 件</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>インポートで書き込まれたエントリーはありません。</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>インポートで書き込まれたエントリー一覧</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>行</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>旧アドレス</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>エントリー</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>移動先</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>変更</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>状態</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URLエイリアス</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>ワイルドカード</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>リダイレクト</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>作成済み</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>置換済み</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>適用済み</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>維持</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>一部元に戻し済み</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>インポート履歴(%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URLマップのすべてのインポート(新しい順)。インポートは丸ごと元に戻せます。書き込まれた各エントリーは以前の状態に戻ります。</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>URLマップはまだインポートされていません。</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URLマップのインポート一覧</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>番号</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>スキップ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>失敗</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file、%format、%rows 行</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>インポート %id としてインポートしました。</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>インポートを表示、または元に戻す</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>別のファイルをインポート</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>まだ何も書き込まれていません。各行にインポート時の処理内容が表示されます。チェックした行がインポートされます。除外する行はチェックを外してください。新規でない行は、その旧アドレスの置き換えが許可されている場合にのみインポートできます。</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>インポートは実行されませんでした: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>インポート対象としてチェックされた行がありません。</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>ドライラン: 何も書き込まれませんでした。</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>インポートすると %created 件を作成、%updated 件を置換、%skipped 件をスキップします。%failed 件は失敗します。</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>概要</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>作成予定</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>置換予定</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>スキップ予定</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>問題あり</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>保持期限</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>再計画</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>行を決める条件を変更して、ファイルを再計画します。手動で変更したチェックはリセットされます。</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>このインストールはこれらのホストに応答しないため、これらのホストの行はインポートされません。旧ホストごとに対応するサイトアクセスを選択してください。</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>インポート対象外</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>表示</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>すべて</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>この状態の行はありません。</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>すべて表示</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>ファイルの各行と、それぞれに対するインポートの処理内容</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>インポート</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>新しいアドレス</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>種類</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>メモ</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>%line 行目をインポート</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>いいえ</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>はい</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ドライラン</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>チェックを維持</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>計画をCSVで</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>計画をJSONで</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>破棄</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>インポートは、全ページのチェックされた行を1つのインポートとして書き込みます。これはインポート履歴から元に戻せます。最初に本人確認を行います。ドライランは各行をサイトと再照合し、書き込まずにインポートの処理内容を集計します。</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>リダイレクト(%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>ワイルドカードリダイレクト(%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>ワイルドカード(直接)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>新規</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>変更あり</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>変更なし</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>重複</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>競合</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>無効な移動先</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>不明なホスト</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>インポート不可</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>グローバル URLエイリアス</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>インポート履歴</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URLマップ</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>リダイレクト(%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>これらのリダイレクトはURLマップのインポートによるものです: クエリ付きの旧アドレス(/index.php?id=12)、一時的なリダイレクト、他サイトへのリダイレクト。これらはURLエイリアスとワイルドカードより先に、完全なアドレスで照合されます。このサイトのページへの恒久的なリダイレクトは、代わりにグローバル URLエイリアスとなり、そちらに一覧表示されます。</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count 件のリダイレクトを削除しました。</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>リダイレクトはありません。URLマップをインポートすると作成されます。</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>完全なアドレスで照合されるリダイレクト</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>選択</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ステータス</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>インポート元</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>削除</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address を選択</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address を削除</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>このリダイレクトを削除しますか?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>選択したリダイレクトを削除しますか?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>選択項目の削除</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>削除したリダイレクトはすぐに機能しなくなります。</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>貼り付けたテキスト</translation>
     </message>
 </context>
 </TS>

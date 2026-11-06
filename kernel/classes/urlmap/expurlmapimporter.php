@@ -233,6 +233,34 @@ class expUrlMapImporter
     }
 
     /**
+     * The entries of a batch that changed after the import: an undo keeps them unless it is forced. Only items an
+     * undo would still restore count (applied ones; with $kept also those a first undo kept). Reads, writes nothing.
+     *
+     * @param int $batchId
+     * @param bool $kept also the items a first undo kept
+     * @return array[] target_table, target_key, old_url of each
+     * @since 6.0.15
+     */
+    public function changedSince( $batchId, $kept = false )
+    {
+        $batch = expUrlMapBatch::tablesExist( $this->db() ) ? expUrlMapBatch::fetch( $batchId ) : null;
+        if ( !$batch )
+            return array();
+        $out = array();
+        foreach ( $batch->items() as $item )
+        {
+            $state = (string)$item->attribute( 'state' );
+            if ( $state !== expUrlMapBatchItem::STATE_APPLIED && !( $kept && $state === expUrlMapBatchItem::STATE_KEPT ) )
+                continue;
+            $table = (string)$item->attribute( 'target_table' );
+            $key = (string)$item->attribute( 'target_key' );
+            if ( !self::sameRow( $this->readRow( $table, $key ), $item->after() ) )
+                $out[] = array( 'target_table' => $table, 'target_key' => $key, 'old_url' => (string)$item->attribute( 'old_url' ) );
+        }
+        return $out;
+    }
+
+    /**
      * The entry at an item's old address now, as the planner compares it.
      *
      * @param array $item

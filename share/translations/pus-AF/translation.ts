@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>پتې چېرې ځي: د دغه سایټ یو مسیر، یا د مسیر بدلون پر مهال یوه بشپړه پته. {1\} هغه متن دی چې لومړي * ورسره سمون خوړلی. بېلګه: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>دغې پتې ته په لنډمهاله توګه مسیر بدلېږي (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>لیدونکي په لنډمهاله توګه بل مسیر ته لېږل کېږي (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>لنډمهاله مسیر بدلون (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85489,6 +85501,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>په هره پاڼه کې %count توکي ښودل.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>د URL نقشه صادرول</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>د دې سایټ د URL نړیوال بل نومونه، وایلډکارډونه او مسیر بدلونونه د یوې دوتنې په توګه ښکته کړئ: د ساتلو لپاره، په سپریډشیټ کې د سمولو او بیا واردولو لپاره، یا ویب سرور ته د بیا لیکلو قواعدو په توګه ورکولو لپاره.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>لږ تر لږه د ننوتو یو ډول وټاکئ.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>دوتنه ونه لیکل شوه.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>څه صادر شي</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>بڼه</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>ننوتې</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>د URL نړیوال بل نومونه (د URL ژباړونکی)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>د منځپانګې ځانګړي URL بل نومونه هم</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>د غوټې د موخې په توګه لیکل کېږي، د بېلګې په توګه node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>وایلډکارډونه</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>مسیر بدلونونه</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>د سایټ لاسرسی</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>د سایټ هر لاسرسی</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>یوازې مسیر بدلونونه د سایټ یو لاسرسي پورې اړه لري؛ URL بل نومونه او وایلډکارډونه د سایټ هر لاسرسي لپاره صادرېږي.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ژبه</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>هره ژبه</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>صادرول</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>د URL نقشه واردول</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>د یوه زاړه سایټ پتې په یو ځل راوړئ: یوه دوتنه هره زړه پته او د دې سایټ هغه پاڼه لیستوي چې اوس ورپورې اړه لري. دقیقې پتې په مسیر بدلون یا URL بل نوم اوړي، د * لرونکې پتې په وایلډکارډ اوړي. مخکې له دې چې څه ولیکل شي، تاسې ګورئ چې هر کرښه به څه وکړي، او هر وارد بشپړ بېرته اخیستل کېدای شي.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>د URL نقشې د واردولو جدولونه لا نشته. د واردولو مخکې د لوړولو ګام 6.0.15-url-map (./console exp:upgrade --apply) وچلوئ.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>دا وارد نور شتون نه لري: له یوې ورځې وروسته پای ته ورسېد یا د بل کاروونکي دی. دوتنه بیا پورته کړئ.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>یوه دوتنه وټاکئ یا کرښې ولګوئ.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>دوتنه له %size څخه لویه ده.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>دوتنه نه لوستل کېږي: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>د دې نصب د سایټ یو لاسرسی وټاکئ.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>وارد په سرور کې نه ساتل کېږي: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>دوتنه</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>دوتنه</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV، JSON، Excel (.xlsx)، OpenDocument (.ods)، د Apache یا nginx د بیا لیکلو قواعد، تر ټولو ډېر %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>یا کرښې ولګوئ</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>په هره لیکه کې یوه کرښه، د بېلګې په توګه /old-page,/new-page. لومړۍ لیکه کولای شي د ستنو نومونه وښيي: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>له دوتنې یې معلوم کړئ</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>یوازې هغه وخت اړین دی چې نه د دوتنې نوم او نه یې منځپانګه دا ووايي.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>تلواله</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>د کوربه پرته لارو د سایټ لاسرسی</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>تلواله</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>د بشپړې پتې لرونکې کرښې پر ځای یې د خپل کوربه د سایټ لاسرسی اخلي.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>د سایټ د لاسرسي ژبه</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>کله چې یوه زړه پته دمخه ننوته ولري</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>ننوته وساتئ (کرښه پرېږدئ)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>ننوته بدله کړئ</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>زاړه کوربه</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>د هغه کوربه بشپړې پتې چې دا نصب یې نه پېژني نه واردېږي. هر زوړ کوربه د سایټ کوم لاسرسي ته ولاړ دی، هغه ونوموئ، په هره لیکه کې یو: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>مخکتنه</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>تر اوسه هېڅ نه لیکل کېږي: بله پاڼه ښيي چې هره کرښه به څه وکړي.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>وارد %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>وارد بېرته واخیستل شو.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>وارد بېرته واخیستل شو، پرته له هغو ننوتو چې وروسته بدلې شوې وې، چې وساتل شوې.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>وارد بېرته نه شو اخیستل کېدای: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>نېټه</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>له خوا</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>کرښې</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created جوړې شوې، %updated بدلې شوې، %skipped پرېښودل شوې، %failed ناکامې شوې.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>بېرته اخیستل شوی</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>دا وارد بېرته واخلئ</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>هره ننوته چې وارد جوړه کړې لرې کېږي او هره ننوته چې بدله کړې یې لکه څنګه چې وه بېرته ایښودل کېږي، وروستۍ لومړی. لومړی تاسې تایید کوئ چې څوک یاست.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>له وارد وروسته %count ننوتې بدلې شوې</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>له وارد وروسته بدلې شوې ننوتې هم بېرته واخلئ</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>له دې پرته هغه ساتل کېږي او وارد په برخه‌یي توګه بېرته اخیستل کېږي (د کنسول --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>دا وارد بېرته اخلئ؟</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>وارد بېرته اخیستل</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>لیکل شوې ننوتې</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>له %count څخه %from تر %to</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>وارد هېڅ ننوته ونه لیکله.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>هغه ننوتې چې وارد لیکلې</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>لیکه</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>زړه پته</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>ننوته</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>دې ته بیايي</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>بدلون</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>حالت</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL بل نوم</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>وایلډکارډ</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>مسیر بدلون</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>جوړه شوه</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>بدله شوه</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>پلي شوه</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>وساتل شوه</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>په برخه‌یي توګه بېرته اخیستل شوی</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>د واردولو تاریخچه (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>د URL نقشې هر وارد، تر ټولو نوی لومړی. یو وارد بشپړ بېرته اخیستل کېدای شي: هره ننوته چې لیکلې یې هغه حالت ته ورګرځي چې مخکې و.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>تر اوسه هېڅ URL نقشه نه ده وارد شوې.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>د URL نقشو واردونه</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>شمېره</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>پرېښودل شوې</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناکامې</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file، %format، %rows کرښې</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>د وارد %id په توګه وارد شو.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>وارد وګورئ، یا یې بېرته واخلئ</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>بله دوتنه واردول</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>تر اوسه هېڅ نه دي لیکل شوي. هره کرښه ښيي چې وارد به ورسره څه وکړي. نښه شوې کرښې واردېږي؛ د یوې کرښې د پرېښودو لپاره یې نښه لرې کړئ. هغه کرښې چې نوې نه دي یوازې هغه وخت واردېدای شي چې زړه پته یې بدلېدای شي.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>وارد ونه شو: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>د واردولو لپاره هېڅ کرښه نښه شوې نه ده.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>ازمېښتي چلول: هېڅ ونه لیکل شول.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>وارد به %created جوړې کړي، %updated بدلې کړي او %skipped پرېږدي؛ %failed به ناکامې شي.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>لنډه کتنه</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>د جوړولو لپاره</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>د بدلولو لپاره</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>د پرېښودو لپاره</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>له ستونزې سره</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>تر دې پورې ساتل کېږي</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>بیا پلان کړئ</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>هغه څه بدل کړئ چې کرښې ټاکي او دوتنه بیا پلان کړئ. هغه نښې چې په لاس مو بدلې کړې بیا پر ځای کېږي.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>د دې کوربه ګانو کرښې نه واردېږي، ځکه چې دا نصب د دوی لپاره ځواب نه ورکوي. هر زوړ کوربه د سایټ کوم لاسرسي ته ولاړ دی، هغه وټاکئ.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>وارد نه شوې</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ښودل</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ټول</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>هېڅ کرښه دا حالت نه لري.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ټول وښایاست</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>د دوتنې کرښې او دا چې وارد به له هرې یوې سره څه وکړي</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>واردول</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>نوې پته</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ډول</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>یادښتونه</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>لیکه %line واردول</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>نه</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>هو</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ازمېښتي چلول</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>نښې وساتئ</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>پلان د CSV په توګه</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>پلان د JSON په توګه</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>لرې یې کړئ</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>واردول د ټولو پاڼو نښه شوې کرښې د یو وارد په توګه لیکي، چې د واردولو له تاریخچې بېرته اخیستل کېدای شي؛ لومړی تاسې تایید کوئ چې څوک یاست. ازمېښتي چلول هره کرښه بیا له سایټ سره ګوري او شمېري چې وارد به څه وکړي، پرته له لیکلو.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>مسیر بدلون (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>د وایلډکارډ مسیر بدلون (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>وایلډکارډ (مستقیم)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>نوی</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>بدل شوی</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>نه بدل شوی</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>تکراري</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>ټکر</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>مات شوی هدف</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>ناپېژندل شوی کوربه</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>د واردولو وړ نه دی</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>د URL نړیوال بل نومونه</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>د واردولو تاریخچه</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>د URL نقشې</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>مسیر بدلونونه (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>دا مسیر بدلونونه د URL نقشې له واردونو راځي: د پوښتنې لرونکې زړې پتې (/index.php?id=12)، لنډمهاله مسیر بدلونونه او نورو سایټونو ته مسیر بدلونونه. دا په بشپړه پته کې، د URL بل نومونو او وایلډکارډونو مخکې ازمویل کېږي. د دې سایټ یوې پاڼې ته دایمي مسیر بدلون پر ځای یې د URL نړیوال بل نوم دی او هلته لیست شوی.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count مسیر بدلونونه لرې شول.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>هېڅ مسیر بدلون نشته. هغه د URL نقشې په واردولو جوړېږي.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>په بشپړه پته کې ازمویل شوي مسیر بدلونونه</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ټاکل</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>حالت کوډ</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>له وارد څخه</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>لرې کول</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address ټاکل</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address لرې کول</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>دا مسیر بدلون لرې کوئ؟</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>ټاکل شوي مسیر بدلونونه لرې کوئ؟</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>ټاکل شوي لرې کول</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>لرې شوی مسیر بدلون سمدستي کار پرېږدي.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>لګول شوی متن</translation>
     </message>
 </context>
 </TS>

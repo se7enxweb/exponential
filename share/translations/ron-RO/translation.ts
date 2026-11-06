@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Unde ajung adresele: o cale a acestui site sau o adresă completă în cazul redirecționării. {1\} este textul cu care a corespuns primul *. Exemplu: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>sunt redirecționați temporar către această adresă (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Vizitatorii sunt redirecționați temporar (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Redirecționare temporară (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85521,6 +85533,625 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>Show %count items per page.</source>
         <translation>Afișare %count elemente pe pagină.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Exportă harta URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Descărcați aliasurile URL globale, metacaracterele și redirecționările acestui site într-un singur fișier: pentru a-l păstra, a-l edita într-o foaie de calcul și a-l importa din nou sau pentru a-l da unui server web ca reguli de rescriere.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Alegeți cel puțin un tip de intrări.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Fișierul nu a putut fi scris.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Ce se exportă</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Format</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Intrări</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Aliasuri URL globale (traducătorul de URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Și aliasurile URL personalizate ale conținutului</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Scrise cu nodul ca țintă, de exemplu node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Metacaractere</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Redirecționări</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Acces la site</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Toate accesele la site</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Doar redirecționările aparțin unui acces la site; aliasurile URL și metacaracterele sunt exportate pentru toate accesele la site.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Limbă</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Toate limbile</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Exportă</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Importă o hartă URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Aduceți dintr-odată adresele unui site vechi: un fișier enumeră fiecare adresă veche și pagina acestui site căreia îi aparține acum. Adresele exacte devin redirecționări sau aliasuri URL, adresele cu * devin metacaractere. Vedeți ce ar face fiecare rând înainte ca ceva să fie scris, iar fiecare import poate fi anulat în întregime.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Tabelele importurilor de hărți URL nu există încă. Rulați pasul de actualizare 6.0.15-url-map (./console exp:upgrade --apply) înainte de import.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Acest import nu mai este disponibil: a expirat după o zi sau aparține altui utilizator. Încărcați din nou fișierul.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Alegeți un fișier sau lipiți rândurile.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Fișierul este mai mare de %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Fișierul nu poate fi citit: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Alegeți un acces la site al acestei instalări.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Importul nu poate fi păstrat pe server: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Fișierul</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fișier</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), reguli de rescriere Apache sau nginx, cel mult %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Sau lipiți rândurile</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>O intrare pe linie, de exemplu /pagina-veche,/pagina-noua. Prima linie poate numi coloanele: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Detectează din fișier</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Necesar doar când nici numele, nici conținutul fișierului nu o indică.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Valori implicite</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Accesul la site pentru căile simple</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>implicit</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Rândurile cu o adresă completă preiau în schimb accesul la site al gazdei lor.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Limba accesului la site</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Când o adresă veche are deja o intrare</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Păstrează intrarea (omite rândul)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Înlocuiește intrarea</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Gazde vechi</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Adresele complete ale unei gazde pe care această instalare nu o cunoaște nu sunt importate. Indicați accesul la site corespunzător fiecărei gazde vechi, câte unul pe linie: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Previzualizare</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Încă nu se scrie nimic: pagina următoare arată ce ar face fiecare rând.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Importul %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Importul a fost anulat.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Importul a fost anulat, cu excepția intrărilor modificate după el, care au fost păstrate.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Importul nu a putut fi anulat: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dată</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>De</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Rânduri</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created create, %updated înlocuite, %skipped omise, %failed eșuate.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Anulat</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Anulează acest import</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Fiecare intrare creată de import este eliminată și fiecare intrare înlocuită este readusă cum era, de la ultima la prima. Mai întâi vă confirmați identitatea.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count intrări modificate după import</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Anulează și intrările modificate după import</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Fără aceasta, ele sunt păstrate și importul devine parțial anulat (--force din consolă).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Anulați acest import?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Anulează importul</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Intrări scrise</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from - %to din %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Importul nu a scris nicio intrare.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Intrările scrise de import</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Linie</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Adresă veche</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Intrare</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Duce la</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Modificare</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stare</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Alias URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Metacaracter</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Redirecționare</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Creată</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Înlocuită</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Aplicată</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Păstrată</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Parțial anulat</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Istoricul importurilor (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Toate importurile de hărți URL, cele mai noi primele. Un import poate fi anulat în întregime: fiecare intrare scrisă de el revine la ce era înainte.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Nu a fost importată încă nicio hartă URL.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Importuri de hărți URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Număr</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Omise</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Eșuate</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows rânduri</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Importat ca importul %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Vedeți importul sau anulați-l</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Importă alt fișier</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Încă nu s-a scris nimic. Fiecare rând arată ce ar face importul cu el. Rândurile bifate sunt importate; debifați un rând pentru a-l exclude. Rândurile care nu sunt noi pot fi importate doar când adresa lor veche poate fi înlocuită.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Importul nu a fost efectuat: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Niciun rând nu este bifat pentru import.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Rulare de probă: nu s-a scris nimic.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Importul ar crea %created, ar înlocui %updated și ar omite %skipped; %failed ar eșua.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Prezentare generală</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>De creat</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>De înlocuit</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>De omis</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Cu o problemă</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Păstrat până la</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Planifică din nou</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Modificați ce decide rândurile și planificați din nou fișierul. Bifele schimbate manual sunt resetate.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Rândurile acestor gazde nu sunt importate, deoarece această instalare nu răspunde pentru ele. Alegeți accesul la site corespunzător fiecărei gazde vechi.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Neimportate</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Arată</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Toate</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Niciun rând nu are această stare.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Arată tot</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Rândurile fișierului și ce ar face importul cu fiecare</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importă</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Adresă nouă</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Tip</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Note</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Importă linia %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nu</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Rulare de probă</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Păstrează bifele</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Plan ca CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Plan ca JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Renunță</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Importul scrie rândurile bifate de pe toate paginile ca un singur import, care poate fi anulat din istoricul importurilor; mai întâi vă confirmați identitatea. Rularea de probă verifică din nou fiecare rând față de site și numără ce ar face importul, fără a scrie nimic.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Redirecționare (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Redirecționare cu metacaracter (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Metacaracter (direct)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nou</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Modificat</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Nemodificat</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplicat</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Conflict</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Țintă invalidă</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Gazdă necunoscută</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Nu poate fi importat</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Aliasuri URL globale</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Istoricul importurilor</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Hărți URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Redirecționări (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Aceste redirecționări provin din importuri de hărți URL: adrese vechi cu interogare (/index.php?id=12), redirecționări temporare și redirecționări către alte site-uri. Ele sunt verificate pe adresa completă, înaintea aliasurilor URL și a metacaracterelor. O redirecționare permanentă către o pagină a acestui site este în schimb un alias URL global și este listată acolo.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count redirecționări eliminate.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Nu există redirecționări. Ele sunt create prin importul unei hărți URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Redirecționări verificate pe adresa completă</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Selectează</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Stare HTTP</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Din importul</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Elimină</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Selectează %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Elimină %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Eliminați această redirecționare?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Eliminați redirecționările selectate?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Eliminare selecție</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>O redirecționare eliminată încetează imediat să funcționeze.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Text lipit</translation>
     </message>
 </context>
 </TS>

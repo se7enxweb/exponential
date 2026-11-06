@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Хаягууд хаашаа очих вэ: энэ сайтын зам, эсвэл дахин чиглүүлэх үед бүрэн хаяг. {1\} нь эхний *-д тохирсон текст юм. Жишээ: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>энэ хаяг руу түр хугацаагаар дахин чиглүүлэгдэнэ (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Зочдыг түр хугацаагаар дахин чиглүүлнэ (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Түр дахин чиглүүлэлт (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>Нэг хуудсанд %count зүйл харуулах.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL зураглалыг экспортлох</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Энэ сайтын глобал URL өөр нэрс, орлуулах тэмдэгтүүд болон дахин чиглүүлэлтүүдийг нэг файл болгон татаж авна: хадгалах, хүснэгтэд засаад дахин импортлох, эсвэл вэб серверт дахин бичих дүрэм болгон өгөх зорилгоор.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Дор хаяж нэг төрлийн бичлэг сонгоно уу.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Файлыг бичиж чадсангүй.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Юуг экспортлох</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Формат</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Бичлэгүүд</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Глобал URL өөр нэрс (URL орчуулагч)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Мөн контентын тусгай URL өөр нэрс</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Зангилааг зорилт болгон бичнэ, жишээ нь node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Орлуулах тэмдэгтүүд</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Дахин чиглүүлэлтүүд</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Сайтын хандалт</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Бүх сайтын хандалт</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Зөвхөн дахин чиглүүлэлтүүд сайтын хандалтад хамаарна; URL өөр нэрс болон орлуулах тэмдэгтүүд бүх сайтын хандалтад экспортлогдоно.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Хэл</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Бүх хэл</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Экспортлох</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL зураглал импортлох</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Хуучин сайтын хаягуудыг нэг дор шилжүүлнэ: файлд хуучин хаяг бүр болон түүний одоо харьяалагдах энэ сайтын хуудас жагсаагдсан байна. Яг тодорхой хаягууд дахин чиглүүлэлт эсвэл URL өөр нэр болж, * агуулсан хаягууд орлуулах тэмдэгт болно. Юу ч бичигдэхээс өмнө мөр бүр юу хийхийг харах бөгөөд импорт бүрийг бүхэлд нь буцаах боломжтой.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL зураглалын импортын хүснэгтүүд хараахан байхгүй байна. Импортлохоос өмнө 6.0.15-url-map шинэчлэлийн алхмыг (./console exp:upgrade --apply) ажиллуулна уу.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Энэ импорт цаашид боломжгүй: нэг өдрийн дараа хугацаа нь дууссан эсвэл өөр хэрэглэгчийнх. Файлыг дахин байршуулна уу.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Файл сонгох эсвэл мөрүүдийг буулгана уу.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Файл %size-аас том байна.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Файлыг уншиж чадахгүй байна: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Энэ суулгацын сайтын хандалтыг сонгоно уу.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Импортыг серверт хадгалж чадахгүй: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache эсвэл nginx-ийн дахин бичих дүрэм, хамгийн ихдээ %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Эсвэл мөрүүдийг буулгах</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Нэг мөрөнд нэг бичлэг, жишээ нь /old-page,/new-page. Эхний мөрөнд баганын нэрсийг бичиж болно: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Файлаас тодорхойлох</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Файлын нэр ч, агуулга ч үүнийг заагаагүй үед л шаардлагатай.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Өгөгдмөл утгууд</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Зөвхөн замтай мөрүүдийн сайтын хандалт</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>өгөгдмөл</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Бүтэн хаягтай мөрүүд оронд нь өөрийн хостын сайтын хандалтыг авна.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Сайтын хандалтын хэл</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Хуучин хаяг аль хэдийн бичлэгтэй бол</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Бичлэгийг үлдээх (мөрийг алгасах)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Бичлэгийг солих</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Хуучин хостууд</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Энэ суулгацын мэдэхгүй хостын бүтэн хаягуудыг импортлохгүй. Хуучин хост бүр аль сайтын хандалтыг төлөөлөхийг мөр тус бүрт нэгээр бичнэ үү: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Урьдчилан харах</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Одоогоор юу ч бичигдэхгүй: дараагийн хуудсанд мөр бүр юу хийхийг харуулна.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Импорт %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Импортыг буцаалаа.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Импортыг буцаалаа, гэхдээ түүний дараа өөрчлөгдсөн бичлэгүүдийг үлдээсэн.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Импортыг буцааж чадсангүй: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Огноо</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Гүйцэтгэгч</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Мөрүүд</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created үүсгэсэн, %updated сольсон, %skipped алгассан, %failed амжилтгүй.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Буцаасан</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Энэ импортыг буцаах</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Импортын үүсгэсэн бүх бичлэгийг устгаж, сольсон бүх бичлэгийг сүүлийнхээс нь эхлэн өмнөх байдалд нь сэргээнэ. Эхлээд та өөрийгөө баталгаажуулна.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>Импортын дараа өөрчлөгдсөн %count бичлэг</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Импортын дараа өөрчлөгдсөн бичлэгүүдийг мөн буцаах</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Үүнгүйгээр тэдгээрийг үлдээж, импорт хэсэгчлэн буцаагдана (консолын --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Энэ импортыг буцаах уу?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Импортыг буцаах</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Бичигдсэн бичлэгүүд</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count-аас %from–%to</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Импорт ямар ч бичлэг бичээгүй.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Импортын бичсэн бичлэгүүд</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Мөр</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Хуучин хаяг</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Бичлэг</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Хүргэх газар</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Өөрчлөлт</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Төлөв</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL өөр нэр</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Орлуулах тэмдэгт</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Дахин чиглүүлэлт</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Үүсгэсэн</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Сольсон</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Хэрэгжүүлсэн</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Үлдээсэн</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Хэсэгчлэн буцаасан</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Импортын түүх (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL зураглалын бүх импорт, хамгийн шинэ нь эхэндээ. Импортыг бүхэлд нь буцааж болно: түүний бичсэн бичлэг бүр өмнөх байдалдаа буцна.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Одоогоор URL зураглал импортлогдоогүй байна.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL зураглалын импортууд</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Дугаар</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Алгассан</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Амжилтгүй</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows мөр</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Импорт %id болгон импортлосон.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Импортыг харах эсвэл буцаах</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Өөр файл импортлох</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Одоогоор юу ч бичигдээгүй. Мөр бүрт импорт түүнийг юу хийхийг харуулна. Тэмдэглэсэн мөрүүд импортлогдоно; мөрийг хасахын тулд тэмдэглэгээг арилгана уу. Шинэ биш мөрүүдийг зөвхөн хуучин хаягийг нь солихыг зөвшөөрсөн тохиолдолд импортлож болно.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Импорт хийгдсэнгүй: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Импортлох мөр тэмдэглээгүй байна.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Туршилтын ажиллуулалт: юу ч бичигдээгүй.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Импорт %created үүсгэж, %updated сольж, %skipped алгасна; %failed амжилтгүй болно.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Тойм</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Үүсгэх</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Солих</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Алгасах</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Асуудалтай</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Хадгалах хугацаа</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Дахин төлөвлөх</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Мөрүүдийг тодорхойлох тохиргоог өөрчилж, файлыг дахин төлөвлөнө. Гараар өөрчилсөн тэмдэглэгээнүүд шинэчлэгдэнэ.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Энэ суулгац эдгээр хостод хариу өгдөггүй тул тэдгээрийн мөрүүдийг импортлохгүй. Хуучин хост бүр аль сайтын хандалтыг төлөөлөхийг сонгоно уу.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Импортлогдоогүй</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Харуулах</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Бүгд</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Энэ төлөвтэй мөр алга.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Бүгдийг харуулах</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Файлын мөрүүд болон импорт тус бүрийг юу хийх нь</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Импортлох</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Шинэ хаяг</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Төрөл</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Тэмдэглэл</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>%line-р мөрийг импортлох</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Үгүй</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Тийм</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Туршилтын ажиллуулалт</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Тэмдэглэгээг хадгалах</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Төлөвлөгөө CSV-ээр</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Төлөвлөгөө JSON-оор</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Хаях</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Импортлох нь бүх хуудасны тэмдэглэсэн мөрүүдийг нэг импорт болгон бичих бөгөөд үүнийг импортын түүхээс буцааж болно; эхлээд та өөрийгөө баталгаажуулна. Туршилтын ажиллуулалт нь мөр бүрийг сайттай дахин тулган шалгаж, юу ч бичилгүйгээр импорт юу хийхийг тоолно.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Дахин чиглүүлэлт (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Орлуулах тэмдэгттэй дахин чиглүүлэлт (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Орлуулах тэмдэгт (шууд)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Шинэ</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Өөрчлөгдсөн</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Өөрчлөгдөөгүй</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Давхардсан</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Зөрчил</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Эвдэрсэн зорилт</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Үл мэдэгдэх хост</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Импортлох боломжгүй</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Глобал URL өөр нэрс</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Импортын түүх</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL зураглалууд</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Дахин чиглүүлэлтүүд (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Эдгээр дахин чиглүүлэлт нь URL зураглалын импортоос ирсэн: асуулгатай хуучин хаягууд (/index.php?id=12), түр дахин чиглүүлэлтүүд болон бусад сайт руу чиглэсэн дахин чиглүүлэлтүүд. Тэдгээрийг URL өөр нэрс болон орлуулах тэмдэгтүүдээс өмнө бүтэн хаягаар шалгана. Энэ сайтын хуудас руу чиглэсэн байнгын дахин чиглүүлэлт нь оронд нь глобал URL өөр нэр байх бөгөөд тэнд жагсаагдана.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count дахин чиглүүлэлтийг хаслаа.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Дахин чиглүүлэлт алга. Тэдгээрийг URL зураглал импортлох замаар үүсгэнэ.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Бүтэн хаягаар шалгагддаг дахин чиглүүлэлтүүд</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Сонгох</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Статус</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Импортоос</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Хасах</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address-г сонгох</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address-г хасах</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Энэ дахин чиглүүлэлтийг хасах уу?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Сонгосон дахин чиглүүлэлтүүдийг хасах уу?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Сонгосныг хасах</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Хассан дахин чиглүүлэлт тэр даруй ажиллахаа больно.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Буулгасан текст</translation>
     </message>
 </context>
 </TS>

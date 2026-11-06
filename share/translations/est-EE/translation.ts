@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Kuhu aadressid viivad: selle saidi tee või ümbersuunamisel täielik aadress. {1\} on tekst, millele esimene * vastas. Näide: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>suunatakse sellele aadressile ajutiselt ümber (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Külastajad suunatakse ajutiselt ümber (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Ajutine ümbersuunamine (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85521,6 +85533,625 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Kuva lehel %count üksust.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Ekspordi URL-i kaart</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Laadige selle saidi globaalsed URL-i aliased, metamärgid ja ümbersuunamised alla ühe failina: hoidmiseks, arvutustabelis muutmiseks ja uuesti importimiseks või veebiserverile ümberkirjutusreegliteks andmiseks.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Valige vähemalt üks kirjete liik.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Faili ei saanud kirjutada.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Mida eksportida</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Vorming</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Kirjed</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Globaalsed URL-i aliased (URL-i tõlkija)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Ka sisu enda URL-i aliased</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Kirjutatud sõlmega sihtmärgina, näiteks node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Metamärgid</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Ümbersuunamised</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Saidi juurdepääs</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Iga saidi juurdepääs</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Saidi juurdepääsule kuuluvad ainult ümbersuunamised; URL-i aliased ja metamärgid eksporditakse iga saidi juurdepääsu jaoks.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Keel</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Iga keel</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Ekspordi</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Impordi URL-i kaart</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Tooge vana saidi aadressid üle ühe korraga: fail loetleb iga vana aadressi ja selle saidi lehe, kuhu see nüüd kuulub. Täpsetest aadressidest saavad ümbersuunamised või URL-i aliased, *-ga aadressidest metamärgid. Näete enne kirjutamist, mida iga rida teeks, ja iga importimise saab tervikuna tagasi võtta.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL-i kaartide importimise tabeleid veel pole. Enne importimist käivitage uuendussamm 6.0.15-url-map (./console exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>See import pole enam saadaval: see aegus päeva pärast või kuulub teisele kasutajale. Laadige fail uuesti üles.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Valige fail või kleepige read.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Fail on suurem kui %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Faili ei saa lugeda: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Valige selle paigalduse saidi juurdepääs.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Importi ei saa serveris hoida: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Fail</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fail</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache'i või nginx'i ümberkirjutusreeglid, kuni %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Või kleepige read</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Üks rida reale, näiteks /vana-leht,/uus-leht. Esimene rida võib veerud nimetada: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Tuvasta failist</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Vajalik ainult siis, kui ei faili nimi ega sisu seda ütle.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Vaikeväärtused</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Paljaste teede saidi juurdepääs</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>vaikimisi</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Täisaadressiga read saavad selle asemel oma hosti saidi juurdepääsu.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Saidi juurdepääsu keel</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Kui vanal aadressil on juba kirje</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Säilita kirje (jäta rida vahele)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Asenda kirje</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Vanad hostid</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Hosti täisaadresse, mida see paigaldus ei tunne, ei impordita. Nimetage saidi juurdepääs, mida iga vana host esindab, üks reale: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Eelvaade</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Veel ei kirjutata midagi: järgmine leht näitab, mida iga rida teeks.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Import %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Import võeti tagasi.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Import võeti tagasi, välja arvatud pärast seda muudetud kirjed, mis säilitati.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Importi ei saanud tagasi võtta: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Kuupäev</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Kes</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Read</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created loodud, %updated asendatud, %skipped vahele jäetud, %failed ebaõnnestunud.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Tagasi võetud</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Võta see import tagasi</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Iga importimise loodud kirje eemaldatakse ja iga asendatud kirje taastatakse endiseks, viimane esimesena. Kõigepealt kinnitate, kes te olete.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count kirjet muudetud pärast importi</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Võta tagasi ka pärast importi muudetud kirjed</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Ilma selleta need säilitatakse ja import võetakse tagasi osaliselt (konsooli --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Kas võtta see import tagasi?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Võta import tagasi</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Kirjutatud kirjed</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from kuni %to / %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Import ei kirjutanud ühtegi kirjet.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Importimise kirjutatud kirjed</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Rida</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Vana aadress</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Kirje</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Viib</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Muudatus</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Olek</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL-i alias</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Metamärk</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Ümbersuunamine</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Loodud</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Asendatud</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Rakendatud</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Säilitatud</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Osaliselt tagasi võetud</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Importimise ajalugu (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Iga URL-i kaardi import, uusim esimesena. Importi saab tervikuna tagasi võtta: iga selle kirjutatud kirje naaseb sellele, mis seal varem oli.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Ühtegi URL-i kaarti pole veel imporditud.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL-i kaartide impordid</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Number</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Vahele jäetud</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ebaõnnestunud</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows rida</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Imporditud kui import %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Vaata importi või võta see tagasi</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Impordi teine fail</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Veel pole midagi kirjutatud. Iga rida näitab, mida import sellega teeks. Märgitud read imporditakse; rea väljajätmiseks eemaldage märge. Read, mis pole uued, saab importida ainult siis, kui nende vana aadressi tohib asendada.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Importi ei tehtud: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Ühtegi rida pole importimiseks märgitud.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Proovikäivitus: midagi ei kirjutatud.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Import looks %created, asendaks %updated ja jätaks vahele %skipped; %failed ebaõnnestuks.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Ülevaade</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Luua</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Asendada</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Vahele jätta</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Probleemiga</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Hoitakse kuni</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Planeeri uuesti</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Muutke seda, mis ridade üle otsustab, ja planeerige fail uuesti. Käsitsi muudetud märked lähtestatakse.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Nende hostide ridu ei impordita, sest see paigaldus nende eest ei vasta. Valige saidi juurdepääs, mida iga vana host esindab.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Importimata</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Näita</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kõik</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Ühelgi real pole seda olekut.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Näita kõiki</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Faili read ja mida import igaühega teeks</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Impordi</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Uus aadress</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Liik</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Märkused</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Impordi rida %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ei</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Jah</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Proovikäivitus</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Säilita märked</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Plaan CSV-na</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Plaan JSON-ina</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Viska ära</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Impordi kirjutab kõigi lehtede märgitud read ühe importimisena, mille saab importimise ajaloost tagasi võtta; kõigepealt kinnitate, kes te olete. Proovikäivitus kontrollib iga rida uuesti saidi vastu ja loendab, mida import teeks, ilma kirjutamata.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Ümbersuunamine (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Metamärgiga ümbersuunamine (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Metamärk (otse)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Uus</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Muudetud</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Muutmata</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplikaat</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Konflikt</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Katkine sihtmärk</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Tundmatu host</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Pole imporditav</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Globaalsed URL-i aliased</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Importimise ajalugu</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL-i kaardid</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Ümbersuunamised (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Need ümbersuunamised pärinevad URL-i kaartide importimisest: päringuga vanad aadressid (/index.php?id=12), ajutised ümbersuunamised ja ümbersuunamised teistele saitidele. Neid kontrollitakse täisaadressi järgi, enne URL-i aliaseid ja metamärke. Püsiv ümbersuunamine selle saidi lehele on selle asemel globaalne URL-i alias ja on loetletud seal.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count ümbersuunamist eemaldatud.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Ümbersuunamisi pole. Need tekivad URL-i kaardi importimisel.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Täisaadressi järgi kontrollitavad ümbersuunamised</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Vali</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Olek</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Importist</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Eemalda</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Vali %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Eemalda %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Kas eemaldada see ümbersuunamine?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Kas eemaldada valitud ümbersuunamised?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Eemalda valitud</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Eemaldatud ümbersuunamine lakkab kohe töötamast.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Kleebitud tekst</translation>
     </message>
 </context>
 </TS>

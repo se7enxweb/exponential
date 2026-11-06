@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Feituʻu ʻoku ʻalu ki ai ʻa e ngaahi tuʻasila: ha hala ʻo e uepisaiti ni, pe ha tuʻasila kakato ʻi he taimi ʻo e tafoki hala. Ko e {1\} ko e tohi naʻe fakahoa ʻe he * ʻuluaki. Sīpinga: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ʻoku tafoki hala fakataimi ki he tuʻasila ko ʻeni (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>ʻOku tafoki hala fakataimi ʻa e kau ʻaʻahí (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Tafoki hala fakataimi (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>Fakahā ʻa e ngaahi meʻa ʻe %count ʻi he peesi taki taha.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>ʻAve atu ʻa e mape URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Hiki mai ʻa e ngaahi hingoa kehe URL fakalūkufua, ngaahi fakaʻilonga fakalūkufua mo e ngaahi tafoki hala ʻo e uepisaiti ko ʻeni ko ha faile ʻe taha: ke tauhi, ke fakatonutonu ʻi ha laupepa fika pea toe fakahū mai, pe ke ʻoatu ki ha sēvea uepi ko ha ngaahi lao toe tohi.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Fili ha faʻahinga hū ʻe taha ʻi he siʻisiʻi taha.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Naʻe ʻikai lava ke tohi ʻa e faile.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Ko e hā ke ʻave atu</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Fōmeti</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Ngaahi hū</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Ngaahi hingoa kehe URL fakalūkufua (ko e fakatonulea URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Kau ai foki mo e ngaahi hingoa kehe URL makehe ʻo e ngaahi meʻa ʻi loto</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Tohi mo e node ko e taumuʻa, hangē ko e node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Ngaahi fakaʻilonga fakalūkufua</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Ngaahi tafoki hala</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Hūʻanga uepisaiti</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Hūʻanga uepisaiti kotoa pē</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Ko e ngaahi tafoki hala pē ʻoku kau ki ha hūʻanga uepisaiti; ʻoku ʻave atu ʻa e ngaahi hingoa kehe URL mo e ngaahi fakaʻilonga fakalūkufua ki he hūʻanga uepisaiti kotoa pē.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Lea</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Lea kotoa pē</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>ʻAve atu</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Fakahū mai ha mape URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>ʻOmi ʻa e ngaahi tuʻasila ʻo ha uepisaiti motuʻa ʻi he taimi pē taha: ʻoku lisi ʻe ha faile ʻa e tuʻasila motuʻa taki taha mo e peesi ʻo e uepisaiti ko ʻeni ʻoku ʻaʻana he taimí ni. Ko e ngaahi tuʻasila tonu ʻoku hoko ko e tafoki hala pe hingoa kehe URL, ko e ngaahi tuʻasila mo e * ʻoku hoko ko e fakaʻilonga fakalūkufua. ʻOku ke sio ki he meʻa ʻe fai ʻe he laine taki taha ki muʻa pea tohi ha meʻa, pea ʻe lava ke taʻofi kakato ʻa e fakahū mai kotoa pē.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>ʻOku teʻeki ai ke ʻi ai ʻa e ngaahi tēpile ki hono fakahū mai ʻo e ngaahi mape URL. Fakalele ʻa e sitepu fakaleleiʻi 6.0.15-url-map (./console exp:upgrade --apply) ki muʻa pea fakahū mai.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>ʻOku ʻikai ke toe maʻu ʻa e fakahū mai ko ʻeni: naʻe ngata hili ha ʻaho ʻe taha pe ʻoku ʻa ha toe tokotaha ngāue. Toe hiki hake ʻa e faile.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Fili ha faile pe pēsiti ʻa e ngaahi laine.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>ʻOku lahi ange ʻa e faile ʻi he %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>ʻOku ʻikai lava ke lau ʻa e faile: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Fili ha hūʻanga uepisaiti ʻo e fokotuʻu ko ʻeni.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>ʻOku ʻikai lava ke tauhi ʻa e fakahū mai ʻi he sēvea: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Ko e faile</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faile</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), ngaahi lao toe tohi ʻa Apache pe nginx, ʻo aʻu ki he %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Pe pēsiti ʻa e ngaahi laine</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Laine ʻe taha ki he laine tohi taki taha, hangē ko e /peesi-motuʻa,/peesi-foʻou. ʻE lava ke fakahingoa ʻe he laine ʻuluaki ʻa e ngaahi kōlomu: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>ʻIlo mei he faile</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>ʻOku fiemaʻu pē ʻo kapau ʻoku ʻikai fakahā ia ʻe he hingoa pe ko e meʻa ʻi loto ʻo e faile.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Ngaahi meʻa tuʻumaʻu</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Hūʻanga uepisaiti ʻo e ngaahi hala telefua</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>tuʻumaʻu</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Ko e ngaahi laine mo ha tuʻasila kakato ʻoku nau toʻo ʻa e hūʻanga uepisaiti ʻo honau host ʻi hono fetongi.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Ko e lea ʻo e hūʻanga uepisaiti</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>ʻO kapau ʻoku ʻi ai kiate ha tuʻasila motuʻa ha hū</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Tauhi ʻa e hū (lele hake ʻi he laine)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Fetongi ʻa e hū</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Ngaahi host motuʻa</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Ko e ngaahi tuʻasila kakato ʻo ha host ʻoku ʻikai ʻilo ʻe he fokotuʻu ko ʻeni ʻoku ʻikai fakahū mai. Fakahingoa ʻa e hūʻanga uepisaiti ʻoku fakafofongaʻi ʻe he host motuʻa taki taha, ʻe taha ʻi he laine taki taha: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Vakai muʻa</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>ʻOku teʻeki ai tohi ha meʻa: ʻoku fakahā ʻe he peesi hoko mai ʻa e meʻa ʻe fai ʻe he laine taki taha.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Fakahū mai %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Kuo taʻofi ʻa e fakahū mai.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Kuo taʻofi ʻa e fakahū mai, tukukehe ʻa e ngaahi hū naʻe liliu hili iá, ʻa ia naʻe tauhi.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Naʻe ʻikai lava ke taʻofi ʻa e fakahū mai: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>ʻAho</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ʻE</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Ngaahi laine</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created kuo faʻu, %updated kuo fetongi, %skipped kuo lele hake, %failed kuo ʻikai lavameʻa.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Kuo taʻofi</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Taʻofi ʻa e fakahū mai ko ʻeni</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>ʻOku toʻo ʻa e hū kotoa pē naʻe faʻu ʻe he fakahū mai pea ʻoku fakafoki ʻa e hū kotoa pē naʻa ne fetongi ki he anga naʻe ʻi ai, ʻo kamata mei he fakamuimui taha. ʻOku ke ʻuluaki fakapapauʻi ko hai koe.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>Ngaahi hū ʻe %count naʻe liliu hili ʻa e fakahū mai</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Taʻofi foki ʻa e ngaahi hū naʻe liliu hili ʻa e fakahū mai</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Kapau ʻe ʻikai, ʻoku tauhi kinautolu pea ʻoku taʻofi konga pē ʻa e fakahū mai (ko e --force ʻo e console).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Taʻofi ʻa e fakahū mai ko ʻeni?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Taʻofi ʻa e fakahū mai</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Ngaahi hū kuo tohi</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ki he %to ʻi he %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Naʻe ʻikai tohi ʻe he fakahū mai ha hū.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Ko e ngaahi hū naʻe tohi ʻe he fakahū mai</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Laine</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Tuʻasila motuʻa</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Hū</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>ʻOku taki ki</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Liliu</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tuʻunga</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Hingoa kehe URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Fakaʻilonga fakalūkufua</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Tafoki hala</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Kuo faʻu</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Kuo fetongi</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Kuo ngāueʻaki</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Kuo tauhi</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Taʻofi konga</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Hisitōlia fakahū mai (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Ko e fakahū mai kotoa pē ʻo ha mape URL, ko e foʻou taha ʻi muʻa. ʻE lava ke taʻofi kakato ha fakahū mai: ʻoku foki ʻa e hū kotoa pē naʻa ne tohi ki he meʻa naʻe ʻi ai ki muʻa.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>ʻOku teʻeki ai fakahū mai ha mape URL.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Ngaahi fakahū mai ʻo e ngaahi mape URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Fika</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Kuo lele hake</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Kuo ʻikai lavameʻa</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, laine ʻe %rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Kuo fakahū mai ko e fakahū mai %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Vakai ki he fakahū mai, pe taʻofi ia</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Fakahū mai ha faile kehe</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>ʻOku teʻeki ai tohi ha meʻa. ʻOku fakahā ʻe he laine taki taha ʻa e meʻa ʻe fai ʻe he fakahū mai kiate ia. ʻOku fakahū mai ʻa e ngaahi laine kuo fakaʻilongaʻi; toʻo ʻa e fakaʻilonga ke tuku ki tuʻa ha laine. Ko e ngaahi laine ʻoku ʻikai foʻou ʻe lava pē ke fakahū mai ʻo kapau ʻoku ngofua ke fetongi honau tuʻasila motuʻa.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Naʻe ʻikai fai ʻa e fakahū mai: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>ʻOku ʻikai ha laine kuo fakaʻilongaʻi ke fakahū mai.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Fakalele sivi: naʻe ʻikai tohi ha meʻa.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Naʻe mei faʻu ʻe he fakahū mai ʻa e %created, fetongi ʻa e %updated pea lele hake ʻi he %skipped; naʻe mei ʻikai lavameʻa ʻa e %failed.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Fakanounou</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Ke faʻu</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Ke fetongi</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Ke lele hake</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Mo ha palopalema</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Tauhi ʻo aʻu ki he</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Toe palani</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Liliu ʻa e meʻa ʻoku ne fili ʻa e ngaahi laine pea toe palani ʻa e faile. ʻOku toe fokotuʻu ʻa e ngaahi fakaʻilonga naʻa ke liliu ʻaki ho nima.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>ʻOku ʻikai fakahū mai ʻa e ngaahi laine ʻo e ngaahi host ko ʻeni, koeʻuhí ʻoku ʻikai tali ʻe he fokotuʻu ko ʻeni maʻanautolu. Fili ʻa e hūʻanga uepisaiti ʻoku fakafofongaʻi ʻe he host motuʻa taki taha.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>ʻIkai fakahū mai</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Fakahā</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kotoa</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>ʻOku ʻikai ha laine ʻi he tuʻunga ko ʻeni.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Fakahā kotoa</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Ko e ngaahi laine ʻo e faile mo e meʻa ʻe fai ʻe he fakahū mai ki he taki taha</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Fakahū mai</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Tuʻasila foʻou</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Faʻahinga</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Ngaahi fakamatala</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Fakahū mai ʻa e laine %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ʻIkai</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ʻIo</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Fakalele sivi</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Tauhi ʻa e ngaahi fakaʻilonga</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Palani ko e CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Palani ko e JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Liʻaki</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>ʻOku tohi ʻe he Fakahū mai ʻa e ngaahi laine kuo fakaʻilongaʻi ʻi he peesi kotoa pē ko ha fakahū mai ʻe taha, ʻa ia ʻe lava ke taʻofi mei he hisitōlia fakahū mai; ʻoku ke ʻuluaki fakapapauʻi ko hai koe. ʻOku toe siviʻi ʻe he Fakalele sivi ʻa e laine taki taha mo e uepisaiti pea lau ʻa e meʻa ʻe fai ʻe he fakahū mai, ʻo ʻikai tohi ha meʻa.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Tafoki hala (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Tafoki hala fakaʻilonga fakalūkufua (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Fakaʻilonga fakalūkufua (fakahangatonu)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Foʻou</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Kuo liliu</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>ʻIkai liliu</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Tatau</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Fepaki</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Taumuʻa maumau</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Host ʻoku ʻikai ʻilo</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>ʻIkai lava ke fakahū mai</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Ngaahi hingoa kehe URL fakalūkufua</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Hisitōlia fakahū mai</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Ngaahi mape URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Ngaahi tafoki hala (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>ʻOku haʻu ʻa e ngaahi tafoki hala ko ʻeni mei he fakahū mai ʻo e ngaahi mape URL: ngaahi tuʻasila motuʻa mo ha fehuʻi (/index.php?id=12), ngaahi tafoki hala fakataimi mo e ngaahi tafoki hala ki ha ngaahi uepisaiti kehe. ʻOku siviʻi kinautolu ʻi he tuʻasila kakato, ki muʻa ʻi he ngaahi hingoa kehe URL mo e ngaahi fakaʻilonga fakalūkufua. Ko ha tafoki hala tuʻuloa ki ha peesi ʻo e uepisaiti ko ʻeni ko ha hingoa kehe URL fakalūkufua ia pea ʻoku lisi ʻi ai.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Kuo toʻo ʻa e ngaahi tafoki hala ʻe %count.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>ʻOku ʻikai ha ngaahi tafoki hala. ʻOku faʻu kinautolu ʻaki hono fakahū mai ha mape URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Ngaahi tafoki hala ʻoku siviʻi ʻi he tuʻasila kakato</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Fili</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Tuʻunga</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Mei he fakahū mai</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Toʻo</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Fili ʻa e %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Toʻo ʻa e %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Toʻo ʻa e tafoki hala ko ʻeni?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Toʻo ʻa e ngaahi tafoki hala kuo fili?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Toʻo ʻa e ngaahi meʻa kuo fili</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>ʻOku tuʻu leva ʻa e ngāue ʻa ha tafoki hala kuo toʻo.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Tohi kuo pēsiti</translation>
     </message>
 </context>
 </TS>

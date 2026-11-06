@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Hdźe adresy wjedu: šćežka tutoho sydła abo při přesměrowanju dospołna adresa. {1\} je tekst, kotryž je prěnje * wotpowědowało. Přikład: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>so na tutu adresu nachwilu přesměruja (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Wopytowarjo so nachwilu přesměruja (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Nachwilne přesměrowanje (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Zapiski na stronu: %count.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL-kartu eksportować</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Globalne URL-aliasy, zastupowace znamješka a přesměrowanja tutoho sydła jako jednu dataju sćahnyć: za wobchowanje, za wobdźěłanje w tabelowym kalkulaciskim programje a nowy import abo za webserwer jako prawidła přepisowanja.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Wubjerće znajmjeńša jednu družinu zapiskow.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Dataja njeda so pisać.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Što eksportować</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Format</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Zapiski</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Globalne URL-aliasy (URL-přełožowak)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Tež swójske URL-aliasy wobsaha</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Ze sukom jako cil zapisane, na přikład node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Zastupowace znamješka</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Přesměrowanja</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Přistup k sydłu</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Kóždy přistup k sydłu</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Jenož přesměrowanja słušeja k přistupej k sydłu; URL-aliasy a zastupowace znamješka so za kóždy přistup k sydłu eksportuja.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Rěč</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Kóžda rěč</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Eksportować</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL-kartu importować</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Adresy stareho sydła z jednym razom přewzać: dataja nalistuje kóždu staru adresu a stronu tutoho sydła, ke kotrejž nětko słuša. Eksaktne adresy budu přesměrowanja abo URL-aliasy, adresy z * budu zastupowace znamješka. Widźiće, što by kóžda linka činiła, prjedy hač so něšto zapisa, a kóždy import da so jako cyłk cofnyć.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Tabele importow URL-kartow hišće njeeksistuja. Wuwjedźće krok aktualizacije 6.0.15-url-map (./console exp:upgrade --apply) před importom.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Tutón import hižo k dispoziciji njeje: je po jednym dnju spadnył abo słuša druhemu wužiwarjej. Nahrajće dataju znowa.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Wubjerće dataju abo zasadźće linki.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Dataja je wjetša hač %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Dataja njeda so čitać: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Wubjerće přistup k sydłu tuteje instalacije.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Import njeda so na serwerje wobchować: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Dataja</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Dataja</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), prawidła přepisowanja Apache abo nginx, maksimalnje %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Abo zasadźće linki</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Jedna linka na rjadk, na přikład /old-page,/new-page. Prěni rjadk móže mjena stołpikow podać: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Z dataje zwěsćić</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Jenož trěbne, hdyž ani mjeno ani wobsah dataje to njepraji.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Standardne hódnoty</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Přistup k sydłu za pućiki bjez hosta</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>standard</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Linki z dospołnej adresu město toho přewozmu přistup k sydłu swojeho hosta.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Rěč přistupa k sydłu</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Hdyž stara adresa hižo zapisk ma</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Zapisk wobchować (linku přeskočić)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Zapisk narunać</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Stare hosty</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Dospołne adresy hosta, kotryž tuta instalacija njeznaje, so njeimportuja. Podajće přistup k sydłu, za kotryž kóždy stary host steji, jedyn na rjadk: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Předhlad</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Hišće ničo zapisane njeje: přichodna strona pokazuje, što by kóžda linka činiła.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Import čo. %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Import je so cofnył.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Import je so cofnył, z wuwzaćom zapiskow změnjenych po nim, kotrež su so wobchowali.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Import njeda so cofnyć: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Wot</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Linki</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created wutworjene, %updated narunane, %skipped přeskočene, %failed njeporadźene.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Cofnjeny</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Tutón import cofnyć</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Kóždy zapisk, kotryž je import wutworił, so wotstroni a kóždy zapisk, kotryž je narunał, so wróći, kaž bě, posledni najprjedy. Najprjedy wobkrućiće, štó sće.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count zapiskow po importje změnjenych</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Tež zapiski změnjene po importje cofnyć</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Bjez toho so wobchowaja a import so dźělnje cofnje (--force konsole).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Tutón import cofnyć?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Import cofnyć</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Zapisane zapiski</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from do %to z %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Import njeje žadyn zapisk zapisał.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Zapiski, kotrež je import zapisał</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Linka</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Stara adresa</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Zapisk</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Wjedźe k</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Změna</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Staw</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL-alias</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Zastupowace znamješko</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Přesměrowanje</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Wutworjeny</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Narunany</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Nałožony</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Wobchowany</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Dźělnje cofnjeny</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Stawizny importow (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Kóždy import URL-karty, najnowši najprjedy. Import da so jako cyłk cofnyć: kóždy zapisk, kotryž je zapisał, so wróći k tomu, štož bě tam prjedy.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Hišće njeje so žana URL-karta importowała.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Importy URL-kartow</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Čisło</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Přeskočene</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Njeporadźene</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows linkow</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Jako import %id importowane.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Import pokazać abo jón cofnyć</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Druhu dataju importować</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Hišće ničo zapisane njeje. Kóžda linka pokazuje, što by import z njej činił. Markěrowane linki so importuja; wotstrońće markěrowanje, zo byšće linku wuwostajił. Linki, kotrež nowe njejsu, dadźa so jenož importować, hdyž smě so jich stara adresa narunać.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Import njeje so přewjedł: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Žana linka njeje za import markěrowana.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Pruwowy běh: ničo njeje so zapisało.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Import by %created wutworił, %updated narunał a %skipped přeskočił; %failed by so njeporadźiło.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Přehlad</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>K wutworjenju</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>K narunanju</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>K přeskočenju</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Z problemom</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Wobchowany hač do</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Znowa planować</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Změńće, štož wo linkach rozsudźa, a planujće dataju znowa. Markěrowanja, kotrež sće ručnje změnił, so wróćo stajeja.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Linki tutych hostow so njeimportuja, dokelž tuta instalacija za nje njewotmołwja. Wubjerće přistup k sydłu, za kotryž kóždy stary host steji.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Njeimportowane</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Pokazać</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Wšě</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Žana linka nima tutón staw.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Wšě pokazać</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Linki dataje a što by import z kóždej činił</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importować</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Nowa adresa</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Družina</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Přispomnjenki</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Linku %line importować</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ně</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Haj</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Pruwowy běh</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Markěrowanja wobchować</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Plan jako CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Plan jako JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Zaćisnyć</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Import zapisa markěrowane linki wšěch stronow jako jedyn import, kotryž da so ze stawiznow importow cofnyć; najprjedy wobkrućiće, štó sće. Pruwowy běh kóždu linku znowa přećiwo sydłu pruwuje a liči, što by import činił, bjez pisanja.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Přesměrowanje (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Přesměrowanje ze zastupowacymi znamješkami (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Zastupowace znamješko (direktnje)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nowy</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Změnjeny</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Njezměnjeny</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplikat</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Konflikt</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Wobškodźeny cil</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Njeznaty host</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Njeimportujomny</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Globalne URL-aliasy</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Stawizny importow</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL-karty</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Přesměrowanja (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Tute přesměrowanja pochadźeja z importow URL-kartow: stare adresy z prašenjom (/index.php?id=12), nachwilne přesměrowanja a přesměrowanja na druhe sydła. Pruwuja so na dospołnej adresy, před URL-aliasami a zastupowacymi znamješkami. Trajne přesměrowanje na stronu tutoho sydła je město toho globalny URL-alias a je tam nalistowane.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count přesměrowanjow wotstronjenych.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Přesměrowanja njejsu. Wutworja so z importom URL-karty.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Přesměrowanja pruwowane na dospołnej adresy</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Wubrać</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Z importa</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Wotstronić</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address wubrać</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address wotstronić</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Tute přesměrowanje wotstronić?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Wubrane přesměrowanja wotstronić?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Wubrane wotstronić</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Wotstronjene přesměrowanje hnydom přestanje fungować.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Zasadźeny tekst</translation>
     </message>
 </context>
 </TS>

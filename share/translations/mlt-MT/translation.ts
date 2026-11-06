@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Fejn imorru l-indirizzi: mogħdija ta&apos; dan is-sit, jew indirizz sħiħ meta ssir ridirezzjoni. {1\} huwa t-test li qabel mal-ewwel *. Eżempju: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>jiġu ridirezzjonati lejn dan l-indirizz b'mod temporanju (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Il-viżitaturi jiġu ridirezzjonati b'mod temporanju (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Ridirezzjoni temporanja (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85521,6 +85533,625 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Uri elementi f'kull paġna: %count.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Esporta l-mappa tal-URLs</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Niżżel l-aliases globali tal-URL, il-wildcards u r-ridirezzjonijiet ta' dan is-sit f'fajl wieħed: biex iżżommu, biex teditjah fi spreadsheet u timportah mill-ġdid, jew biex tagħtih lil server tal-web bħala regoli ta' kitba mill-ġdid.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Agħżel mill-inqas tip wieħed ta' daħla.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Il-fajl ma setax jinkiteb.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>X'għandu jiġi esportat</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Formatt</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Daħliet</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Aliases globali tal-URL (it-traduttur tal-URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Ukoll l-aliases tal-URL personalizzati tal-kontenut</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Miktuba bin-nodu bħala destinazzjoni, pereżempju node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Wildcards</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Ridirezzjonijiet</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Aċċess għas-sit</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Kull aċċess għas-sit</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Ir-ridirezzjonijiet biss jappartjenu għal aċċess għas-sit; l-aliases tal-URL u l-wildcards jiġu esportati għal kull aċċess għas-sit.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Lingwa</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Kull lingwa</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Esporta</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Importa mappa tal-URLs</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Ġib l-indirizzi ta' sit qadim f'daqqa: fajl jelenka kull indirizz qadim u l-paġna ta' dan is-sit li issa jappartjeni għaliha. Indirizzi eżatti jsiru ridirezzjonijiet jew aliases tal-URL, indirizzi b'* isiru wildcards. Tara x'tagħmel kull ringiela qabel ma jinkiteb xejn, u kull importazzjoni tista' titreġġa' lura kollha f'daqqa.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>It-tabelli tal-importazzjonijiet tal-mappi tal-URLs għadhom ma jeżistux. Ħaddem il-pass tal-aġġornament 6.0.15-url-map (./console exp:upgrade --apply) qabel ma timporta.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Din l-importazzjoni m'għadhiex disponibbli: skadiet wara ġurnata jew tappartjeni lil utent ieħor. Erġa' tella' l-fajl.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Agħżel fajl jew waħħal ir-ringieli.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Il-fajl huwa akbar minn %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Il-fajl ma jistax jinqara: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Agħżel aċċess għas-sit ta' din l-installazzjoni.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>L-importazzjoni ma tistax tinżamm fuq is-server: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Il-fajl</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fajl</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), regoli ta' kitba mill-ġdid ta' Apache jew nginx, l-aktar %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Jew waħħal ir-ringieli</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Ringiela waħda għal kull linja, pereżempju /paġna-qadima,/paġna-ġdida. L-ewwel linja tista' ssemmi l-kolonni: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Sib mill-fajl</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Meħtieġ biss meta la l-isem u lanqas il-kontenut tal-fajl ma jgħidu.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Valuri awtomatiċi</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Aċċess għas-sit tal-mogħdijiet waħedhom</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>awtomatiku</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Ir-ringieli b'indirizz sħiħ jieħdu minflok l-aċċess għas-sit tal-host tagħhom.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Il-lingwa tal-aċċess għas-sit</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Meta indirizz qadim diġà għandu daħla</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Żomm id-daħla (aqbeż ir-ringiela)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Ibdel id-daħla</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Hosts qodma</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Indirizzi sħaħ ta' host li din l-installazzjoni ma tafx ma jiġux importati. Semmi l-aċċess għas-sit li jirrappreżenta kull host qadim, wieħed għal kull linja: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Dehra minn qabel</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Għadu ma jinkiteb xejn: il-paġna li jmiss turi x'tagħmel kull ringiela.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Importazzjoni %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>L-importazzjoni ġiet imreġġa' lura.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>L-importazzjoni ġiet imreġġa' lura, ħlief għad-daħliet mibdula wara, li nżammu.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>L-importazzjoni ma setgħetx titreġġa' lura: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Minn</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Ringieli</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created maħluqa, %updated mibdula, %skipped maqbuża, %failed fallew.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Imreġġa' lura</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Reġġa' lura din l-importazzjoni</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Kull daħla li ħolqot l-importazzjoni titneħħa u kull daħla li bidlet titpoġġa lura kif kienet, l-aħħar l-ewwel. L-ewwel tikkonferma min int.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count daħliet mibdula wara l-importazzjoni</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Reġġa' lura wkoll id-daħliet mibdula wara l-importazzjoni</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Mingħajrha jinżammu u l-importazzjoni titreġġa' lura parzjalment (l-għażla --force tal-console).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Treġġa' lura din l-importazzjoni?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Reġġa' lura l-importazzjoni</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Daħliet miktuba</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from sa %to minn %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>L-importazzjoni ma kitbet l-ebda daħla.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Id-daħliet li kitbet l-importazzjoni</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Linja</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Indirizz qadim</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Daħla</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Iwassal għal</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Bidla</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stat</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Alias tal-URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Wildcard</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Ridirezzjoni</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Maħluqa</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Mibdula</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Applikata</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Miżmuma</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Parzjalment imreġġa' lura</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Storja tal-importazzjonijiet (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Kull importazzjoni ta' mappa tal-URLs, l-iktar riċenti l-ewwel. Importazzjoni tista' titreġġa' lura kollha f'daqqa: kull daħla li kitbet tmur lura għal dak li kien hemm qabel.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Għadha ma ġiet importata l-ebda mappa tal-URLs.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Importazzjonijiet ta' mappi tal-URLs</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Numru</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Maqbuża</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fallew</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows ringieli</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Importata bħala l-importazzjoni %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Ara l-importazzjoni, jew reġġagħha lura</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Importa fajl ieħor</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Għadu ma nkiteb xejn. Kull ringiela turi x'tagħmel biha l-importazzjoni. Ir-ringieli mmarkati jiġu importati; neħħi l-marka minn ringiela biex tħalliha barra. Ringieli li mhumiex ġodda jistgħu jiġu importati biss meta l-indirizz qadim tagħhom jista' jinbidel.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>L-importazzjoni ma saritx: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>L-ebda ringiela mhi mmarkata għall-importazzjoni.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Tħaddim ta' prova: ma nkiteb xejn.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>L-importazzjoni toħloq %created, tibdel %updated u taqbeż %skipped; %failed jfallu.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Ħarsa ġenerali</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Biex jinħolqu</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Biex jinbidlu</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Biex jinqabżu</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>B'problema</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Miżmuma sa</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Erġa' ppjana</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Ibdel dak li jiddeċiedi r-ringieli u erġa' ppjana l-fajl. Il-marki li bdilt bl-idejn jerġgħu lura għall-bidu.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Ir-ringieli ta' dawn il-hosts ma jiġux importati, għax din l-installazzjoni ma twieġibx għalihom. Agħżel l-aċċess għas-sit li jirrappreżenta kull host qadim.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Mhux importati</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Uri</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kollha</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>L-ebda ringiela m'għandha dan l-istat.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Uri kollox</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Ir-ringieli tal-fajl u x'tagħmel l-importazzjoni b'kull waħda</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importa</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Indirizz ġdid</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Tip</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Noti</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Importa l-linja %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Le</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Iva</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Tħaddim ta' prova</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Żomm il-marki</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Pjan bħala CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Pjan bħala JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Armi</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Importa jikteb ir-ringieli mmarkati tal-paġni kollha bħala importazzjoni waħda, li tista' titreġġa' lura mill-istorja tal-importazzjonijiet; l-ewwel tikkonferma min int. It-tħaddim ta' prova jerġa' jiċċekkja kull ringiela mas-sit u jgħodd x'tagħmel l-importazzjoni, mingħajr ma jikteb.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Ridirezzjoni (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Ridirezzjoni b'wildcard (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Wildcard (dirett)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Ġdida</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Mibdula</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Mhux mibdula</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplikat</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Kunflitt</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Destinazzjoni miksura</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Host mhux magħruf</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Ma tistax tiġi importata</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Aliases globali tal-URL</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Storja tal-importazzjonijiet</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Mappi tal-URLs</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Ridirezzjonijiet (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Dawn ir-ridirezzjonijiet ġejjin minn importazzjonijiet ta' mappi tal-URLs: indirizzi qodma b'query (/index.php?id=12), ridirezzjonijiet temporanji u ridirezzjonijiet lejn siti oħra. Jiġu ċċekkjati fuq l-indirizz sħiħ, qabel l-aliases tal-URL u l-wildcards. Ridirezzjoni permanenti lejn paġna ta' dan is-sit hija minflok alias globali tal-URL u hija elenkata hemm.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count ridirezzjonijiet tneħħew.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>M'hemmx ridirezzjonijiet. Isiru billi timporta mappa tal-URLs.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Ridirezzjonijiet iċċekkjati fuq l-indirizz sħiħ</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Agħżel</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Mill-importazzjoni</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Neħħi</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Agħżel %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Neħħi %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Tneħħi din ir-ridirezzjoni?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Tneħħi r-ridirezzjonijiet magħżula?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Neħħi l-magħżula</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Ridirezzjoni mneħħija tieqaf taħdem minnufih.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Test imwaħħal</translation>
     </message>
 </context>
 </TS>

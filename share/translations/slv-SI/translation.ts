@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Kam vodijo naslovi: pot tega spletnega mesta ali poln naslov pri preusmerjanju. {1\} je besedilo, s katerim se je ujemala prva *. Primer: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>so začasno preusmerjeni na ta naslov (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Obiskovalci so začasno preusmerjeni (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Začasna preusmeritev (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85521,6 +85533,625 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Število elementov na stran: %count.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Izvoz zemljevida URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Prenesite globalne vzdevke URL, nadomestne znake in preusmeritve tega spletnega mesta kot eno datoteko: da jo shranite, uredite v preglednici in znova uvozite ali jo predate spletnemu strežniku kot pravila prepisovanja.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Izberite vsaj eno vrsto vnosov.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Datoteke ni bilo mogoče zapisati.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Kaj izvoziti</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Vnosi</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Globalni vzdevki URL (prevajalnik URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Tudi vzdevki URL po meri za vsebino</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Zapisani z vozliščem kot ciljem, na primer node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Nadomestni znaki</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Preusmeritve</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Dostop do spletnega mesta</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Vsak dostop do spletnega mesta</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Dostopu do spletnega mesta pripadajo samo preusmeritve; vzdevki URL in nadomestni znaki se izvozijo za vse dostope do spletnega mesta.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Jezik</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Vsak jezik</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Izvozi</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Uvoz zemljevida URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Prenesite naslove starega spletnega mesta naenkrat: datoteka navaja vsak stari naslov in stran tega spletnega mesta, ki ji zdaj pripada. Natančni naslovi postanejo preusmeritve ali vzdevki URL, naslovi z * postanejo nadomestni znaki. Preden se karkoli zapiše, vidite, kaj bi naredila vsaka vrstica, in vsak uvoz je mogoče razveljaviti v celoti.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Tabele uvozov zemljevidov URL še ne obstajajo. Pred uvozom zaženite korak nadgradnje 6.0.15-url-map (./console exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Ta uvoz ni več na voljo: potekel je po enem dnevu ali pripada drugemu uporabniku. Znova naložite datoteko.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Izberite datoteko ali prilepite vrstice.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Datoteka je večja od %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Datoteke ni mogoče prebrati: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Izberite dostop do spletnega mesta te namestitve.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Uvoza ni mogoče shraniti na strežniku: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Datoteka</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datoteka</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), pravila prepisovanja Apache ali nginx, največ %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Ali prilepite vrstice</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>En vnos na vrstico, na primer /stara-stran,/nova-stran. Prva vrstica lahko poimenuje stolpce: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Ugotovi iz datoteke</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Potrebno samo, če tega ne pove niti ime niti vsebina datoteke.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Privzete vrednosti</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Dostop do spletnega mesta za poti brez gostitelja</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>privzeto</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Vrstice s polnim naslovom namesto tega dobijo dostop do spletnega mesta svojega gostitelja.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Jezik dostopa do spletnega mesta</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Ko ima stari naslov že vnos</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Obdrži vnos (preskoči vrstico)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Zamenjaj vnos</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Stari gostitelji</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Polni naslovi gostitelja, ki ga ta namestitev ne pozna, se ne uvozijo. Navedite dostop do spletnega mesta, ki ustreza vsakemu staremu gostitelju, enega na vrstico: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Predogled</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Zaenkrat se nič ne zapiše: naslednja stran pokaže, kaj bi naredila vsaka vrstica.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Uvoz %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Uvoz je bil razveljavljen.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Uvoz je bil razveljavljen, razen vnosov, spremenjenih po njem, ki so bili obdržani.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Uvoza ni bilo mogoče razveljaviti: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Izvedel</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Vrstice</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created ustvarjenih, %updated zamenjanih, %skipped preskočenih, %failed neuspešnih.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Razveljavljeno</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Razveljavi ta uvoz</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Vsak vnos, ki ga je uvoz ustvaril, se odstrani, vsak vnos, ki ga je zamenjal, pa se vrne v prejšnje stanje, od zadnjega naprej. Najprej potrdite, kdo ste.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>Vnosi, spremenjeni po uvozu: %count</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Razveljavi tudi vnose, spremenjene po uvozu</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Brez tega se obdržijo in uvoz je le delno razveljavljen (--force v konzoli).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Želite razveljaviti ta uvoz?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Razveljavi uvoz</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Zapisani vnosi</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from do %to od %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Uvoz ni zapisal nobenega vnosa.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Vnosi, ki jih je zapisal uvoz</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Vrstica</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Stari naslov</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Vnos</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Vodi na</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Sprememba</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stanje</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Vzdevek URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Nadomestni znak</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Preusmeritev</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Ustvarjeno</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Zamenjano</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Uveljavljeno</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Obdržano</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Delno razveljavljeno</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Zgodovina uvozov (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Vsi uvozi zemljevidov URL, najnovejši najprej. Uvoz je mogoče razveljaviti v celoti: vsak vnos, ki ga je zapisal, se vrne v prejšnje stanje.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Uvožen ni bil še noben zemljevid URL.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Uvozi zemljevidov URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Številka</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Preskočeno</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Neuspešno</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, vrstic: %rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Uvoženo kot uvoz %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Oglejte si uvoz ali ga razveljavite</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Uvozi drugo datoteko</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Zaenkrat ni zapisano nič. Vsaka vrstica pokaže, kaj bi uvoz naredil z njo. Označene vrstice se uvozijo; odznačite vrstico, da jo izpustite. Vrstice, ki niso nove, je mogoče uvoziti samo, če se njihov stari naslov sme zamenjati.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Uvoz ni bil izveden: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Za uvoz ni označena nobena vrstica.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Preizkusni zagon: nič ni bilo zapisano.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Uvoz bi ustvaril %created, zamenjal %updated in preskočil %skipped; %failed bi bilo neuspešnih.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Pregled</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Za ustvarjanje</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Za zamenjavo</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Za preskok</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>S težavo</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Shranjeno do</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Načrtuj znova</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Spremenite, kar določa vrstice, in znova načrtujte datoteko. Ročno spremenjene oznake se ponastavijo.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Vrstice teh gostiteljev se ne uvozijo, ker ta namestitev zanje ne odgovarja. Izberite dostop do spletnega mesta, ki ustreza vsakemu staremu gostitelju.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Ni uvoženo</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Prikaži</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Vse</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Nobena vrstica nima tega stanja.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Prikaži vse</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Vrstice datoteke in kaj bi uvoz naredil z vsako</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Uvozi</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Novi naslov</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Vrsta</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Opombe</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Uvozi vrstico %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ne</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Preizkusni zagon</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Obdrži oznake</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Načrt kot CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Načrt kot JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Zavrzi</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Uvoz zapiše označene vrstice vseh strani kot en uvoz, ki ga je mogoče razveljaviti v zgodovini uvozov; najprej potrdite, kdo ste. Preizkusni zagon znova preveri vsako vrstico glede na spletno mesto in prešteje, kaj bi uvoz naredil, ne da bi kaj zapisal.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Preusmeritev (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Preusmeritev z nadomestnim znakom (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Nadomestni znak (neposredno)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Novo</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Spremenjeno</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Nespremenjeno</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Dvojnik</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Spor</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Neveljaven cilj</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Neznan gostitelj</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Ni mogoče uvoziti</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Globalni vzdevki URL</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Zgodovina uvozov</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Zemljevidi URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Preusmeritve (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Te preusmeritve izvirajo iz uvozov zemljevidov URL: stari naslovi s poizvedbo (/index.php?id=12), začasne preusmeritve in preusmeritve na druga spletna mesta. Preverjajo se po polnem naslovu, pred vzdevki URL in nadomestnimi znaki. Trajna preusmeritev na stran tega spletnega mesta je namesto tega globalni vzdevek URL in je navedena tam.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Odstranjenih preusmeritev: %count.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Ni preusmeritev. Nastanejo z uvozom zemljevida URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Preusmeritve, preverjene po polnem naslovu</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Izberi</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Iz uvoza</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Odstrani</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Izberi %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Odstrani %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Želite odstraniti to preusmeritev?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Želite odstraniti izbrane preusmeritve?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Odstrani izbrano</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Odstranjena preusmeritev takoj preneha delovati.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Prilepljeno besedilo</translation>
     </message>
 </context>
 </TS>

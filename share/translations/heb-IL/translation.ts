@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>לאן הכתובות מובילות: נתיב באתר זה, או כתובת מלאה בעת הפניה. {1\} הוא הטקסט שה־* הראשון תאם. לדוגמה: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>מופנים לכתובת זו באופן זמני (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>המבקרים מופנים באופן זמני (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>הפניה זמנית (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85523,6 +85535,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>הצגת %count פריטים בעמוד.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>ייצוא מפת ה-URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>הורדת כינויי ה-URL הגלובליים, התווים הכלליים וההפניות של אתר זה כקובץ אחד: לשמירה, לעריכה בגיליון אלקטרוני ולייבוא מחדש, או למסירה לשרת אינטרנט ככללי שכתוב.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>יש לבחור לפחות סוג רשומה אחד.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>לא ניתן היה לכתוב את הקובץ.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>מה לייצא</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>תבנית</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>רשומות</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>כינויי URL גלובליים (מתרגם ה-URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>גם כינויי ה-URL המותאמים אישית של תוכן</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>נכתב עם הצומת כיעד, לדוגמה node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>תווים כלליים</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>הפניות</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>גישת אתר</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>כל גישות האתר</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>רק הפניות שייכות לגישת אתר; כינויי URL ותווים כלליים מיוצאים לכל גישות האתר.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>שפה</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>כל השפות</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>ייצוא</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>ייבוא מפת URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>העברת הכתובות של אתר ישן במכה אחת: קובץ מפרט כל כתובת ישנה ואת הדף באתר זה שאליו היא שייכת כעת. כתובות מדויקות הופכות להפניות או לכינויי URL, כתובות עם * הופכות לתווים כלליים. ניתן לראות מה כל שורה תעשה לפני שנכתב דבר, וכל ייבוא ניתן לביטול כמקשה אחת.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>טבלאות ייבוא מפות ה-URL אינן קיימות עדיין. יש להריץ את שלב השדרוג 6.0.15-url-map (./console exp:upgrade --apply) לפני הייבוא.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>ייבוא זה אינו זמין עוד: תוקפו פג לאחר יום או שהוא שייך למשתמש אחר. יש להעלות את הקובץ שוב.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>יש לבחור קובץ או להדביק את השורות.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>הקובץ גדול מ-%size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>לא ניתן לקרוא את הקובץ: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>יש לבחור גישת אתר של התקנה זו.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>לא ניתן לשמור את הייבוא בשרת: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>הקובץ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>קובץ</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), כללי שכתוב של Apache או nginx, לכל היותר %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>או הדבקת השורות</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>רשומה אחת בכל שורה, לדוגמה /old-page,/new-page. השורה הראשונה יכולה לציין את שמות העמודות: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>זיהוי לפי הקובץ</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>נדרש רק כאשר לא שם הקובץ ולא תוכנו מציינים זאת.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>ברירות מחדל</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>גישת אתר לנתיבים ללא מארח</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>ברירת מחדל</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>שורות עם כתובת מלאה מקבלות במקום זאת את גישת האתר של המארח שלהן.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>השפה של גישת האתר</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>כאשר לכתובת ישנה כבר יש רשומה</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>שמירת הרשומה (דילוג על השורה)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>החלפת הרשומה</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>מארחים ישנים</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>כתובות מלאות של מארח שהתקנה זו אינה מכירה אינן מיובאות. יש לציין את גישת האתר שכל מארח ישן מייצג, אחת בכל שורה: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>תצוגה מקדימה</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>דבר עדיין לא נכתב: הדף הבא מציג מה כל שורה תעשה.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>ייבוא %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>הייבוא בוטל.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>הייבוא בוטל, למעט הרשומות ששונו אחריו, שנשמרו.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>לא ניתן היה לבטל את הייבוא: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>תאריך</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>על ידי</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>שורות</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created נוצרו, %updated הוחלפו, %skipped דולגו, %failed נכשלו.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>בוטל</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>ביטול ייבוא זה</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>כל רשומה שהייבוא יצר מוסרת וכל רשומה שהוא החליף מוחזרת למצבה הקודם, מהאחרונה לראשונה. תחילה יש לאשר את זהותך.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count רשומות שונו לאחר הייבוא</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>ביטול גם של הרשומות ששונו לאחר הייבוא</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>ללא אפשרות זו הן נשמרות והייבוא מבוטל באופן חלקי (--force במסוף).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>לבטל ייבוא זה?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>ביטול ייבוא</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>רשומות שנכתבו</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from עד %to מתוך %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>הייבוא לא כתב אף רשומה.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>הרשומות שהייבוא כתב</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>שורה</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>כתובת ישנה</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>רשומה</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>מוביל אל</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>שינוי</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>מצב</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>כינוי URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>תו כללי</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>הפניה</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>נוצר</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>הוחלף</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>הוחל</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>נשמר</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>בוטל חלקית</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>היסטוריית ייבוא (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>כל ייבוא של מפת URL, החדש ביותר תחילה. ניתן לבטל ייבוא כמקשה אחת: כל רשומה שהוא כתב חוזרת למה שהיה שם לפני כן.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>עדיין לא יובאה אף מפת URL.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>ייבואים של מפות URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>מספר</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>דולגו</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>נכשלו</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows שורות</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>יובא כייבוא %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>הצגת הייבוא או ביטולו</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>ייבוא קובץ נוסף</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>דבר עדיין לא נכתב. כל שורה מציגה מה הייבוא יעשה בה. שורות מסומנות ייובאו; יש להסיר את הסימון משורה כדי להשמיט אותה. שורות שאינן חדשות ניתנות לייבוא רק כאשר מותר להחליף את הכתובת הישנה שלהן.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>הייבוא לא בוצע: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>אף שורה לא סומנה לייבוא.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>ריצת ניסיון: דבר לא נכתב.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>הייבוא ייצור %created, יחליף %updated וידלג על %skipped; %failed ייכשלו.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>סקירה</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>ליצירה</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>להחלפה</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>לדילוג</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>עם בעיה</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>נשמר עד</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>תכנון מחדש</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>שינוי מה שקובע את השורות ותכנון הקובץ מחדש. סימונים ששינית ידנית יאופסו.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>שורות של מארחים אלה אינן מיובאות, כי התקנה זו אינה עונה עבורם. יש לבחור את גישת האתר שכל מארח ישן מייצג.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>לא מיובא</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>הצגה</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>הכול</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>אין שורה במצב זה.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>הצגת הכול</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>שורות הקובץ ומה הייבוא יעשה בכל אחת</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>ייבוא</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>כתובת חדשה</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>סוג</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>הערות</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>ייבוא שורה %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>לא</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>כן</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ריצת ניסיון</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>שמירת הסימונים</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>תוכנית כ-CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>תוכנית כ-JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>השלכה</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>ייבוא כותב את השורות המסומנות מכל הדפים כייבוא אחד, שניתן לבטלו מהיסטוריית הייבוא; תחילה יש לאשר את זהותך. ריצת ניסיון בודקת שוב כל שורה מול האתר וסופרת מה הייבוא יעשה, ללא כתיבה.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>הפניה (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>הפניה עם תווים כלליים (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>תו כללי (ישיר)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>חדש</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>שונה</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>ללא שינוי</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>כפילות</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>התנגשות</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>יעד שבור</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>מארח לא ידוע</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>לא ניתן לייבוא</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>כינויי URL גלובליים</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>היסטוריית ייבוא</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>מפות URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>הפניות (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>הפניות אלה מגיעות מייבוא מפות URL: כתובות ישנות עם שאילתה (/index.php?id=12), הפניות זמניות והפניות לאתרים אחרים. הן נבדקות מול הכתובת המלאה, לפני כינויי ה-URL והתווים הכלליים. הפניה קבועה לדף באתר זה היא במקום זאת כינוי URL גלובלי ומופיעה שם.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count הפניות הוסרו.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>אין הפניות. הן נוצרות על ידי ייבוא מפת URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>הפניות הנבדקות מול הכתובת המלאה</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>בחירה</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>מצב</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>מייבוא</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>הסרה</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>בחירת %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>הסרת %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>להסיר הפניה זו?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>להסיר את ההפניות שנבחרו?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>הסרת הנבחרים</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>הפניה שהוסרה מפסיקה לפעול מיד.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>טקסט מודבק</translation>
     </message>
 </context>
 </TS>

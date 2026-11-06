@@ -11,6 +11,7 @@
  *  RG-04 UserGroups[]: a group with user groups asks only their members; the member list is fetched once and only for
  *        a group that names user groups
  *  RG-06 the settings page: the scope (every siteaccess or a known one), the file it writes, the user groups of a form
+ *  RG-07 URL maps: importing and undoing an import ask (system); the upload, preview, dry run, history and export do not
  *  RG-05 trigger handlers: a handler names a group; only an existing, switched-on group that applies to the user counts;
  *        a class that is not a handler is ignored
  *
@@ -84,6 +85,19 @@ class expReauthGroupsTest extends PHPUnit\Framework\TestCase
                            'removal without the confirmation page (HideRemoveConfirmation) is a GET' );
         $this->assertNull( expReauth::matchGroup( $s, 'content', 'removeobject', 'POST', array( 'ConfirmButton' => 1 ), null, null, $one ) );
         $this->assertNull( expReauth::matchGroup( $s, 'content', 'trash', 'GET', array() ), 'looking into the trash' );
+    }
+
+    /** RG-07 */
+    public function testUrlMapImportAndUndoAsk()
+    {
+        $s = self::shipped();
+        $this->assertSame( 'system', expReauth::matchGroup( $s, 'content', 'urlimport', 'POST', array( 'ImportButton' => 1, 'RowIndexList' => array( 0 ) ) )['group'] );
+        $this->assertSame( 'system', expReauth::matchGroup( $s, 'content', 'urlimporthistory', 'POST', array( 'UndoButton' => 1 ) )['group'] );
+        foreach ( array( 'PreviewButton', 'DryRunButton', 'ReplanButton', 'SaveDecisionsButton' ) as $button )
+            $this->assertNull( expReauth::matchGroup( $s, 'content', 'urlimport', 'POST', array( $button => 1 ) ), $button );
+        $this->assertNull( expReauth::matchGroup( $s, 'content', 'urlimport', 'GET', array() ), 'the upload form and the preview' );
+        $this->assertNull( expReauth::matchGroup( $s, 'content', 'urlimporthistory', 'GET', array() ), 'the history' );
+        $this->assertNull( expReauth::matchGroup( $s, 'content', 'urlexport', 'POST', array( 'ExportButton' => 1 ) ), 'the export' );
     }
 
     /** RG-03 */

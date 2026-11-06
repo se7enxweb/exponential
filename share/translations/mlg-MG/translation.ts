@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Ny alehan'ny adiresy: lalan'ity tranonkala ity, na adiresy feno raha mandefa. Ny {1\} dia ny lahatsoratra nifanaraka tamin'ny * voalohany. Ohatra: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>dia alefa vonjimaika any amin'ity adiresy ity (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Alefa vonjimaika any an-kafa ny mpitsidika (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Fandefasana vonjimaika (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     <message>
         <source>Show %count items per page.</source>
         <translation>Asehoy ny singa %count isaky ny pejy.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Avoahy ny sarintanin'ny URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Ampidino ho rakitra iray ny solon-anarana URL maneran-tany, ny mpitovo ary ny fandefasana amin'ity tranonkala ity: hotehirizina, hovaina ao anaty tabilao ary hampidirina indray, na homena mpizara tranonkala ho fitsipika fanoratana indray.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Mifidiana karazana singa iray farafahakeliny.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Tsy afaka nosoratana ny rakitra.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Inona no havoaka</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Endrika</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Singa</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Solon-anarana URL maneran-tany (ny mpandika URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Ary koa ny solon-anarana URL manokan'ny votoaty</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Voasoratra miaraka amin'ny fehy ho tanjona, ohatra node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Mpitovo</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Fandefasana</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Fidirana amin'ny tranonkala</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Ny fidirana amin'ny tranonkala rehetra</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Ny fandefasana ihany no an'ny fidirana amin'ny tranonkala; ny solon-anarana URL sy ny mpitovo dia avoaka ho an'ny fidirana amin'ny tranonkala rehetra.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Fiteny</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Ny fiteny rehetra</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Avoahy</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Ampidiro sarintanin'ny URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Ento indray mandeha ny adiresin'ny tranonkala taloha: misy rakitra mitanisa ny adiresy taloha tsirairay sy ny pejin'ity tranonkala ity izay tompony ankehitriny. Ny adiresy marina dia lasa fandefasana na solon-anarana URL, ny adiresy misy * dia lasa mpitovo. Hitanao izay hataon'ny andalana tsirairay alohan'ny hanoratana na inona na inona, ary ny fampidirana rehetra dia azo foanana manontolo.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Mbola tsy misy ny tabilaon'ny fampidirana sarintanin'ny URL. Alefaso ny dingana fanavaozana 6.0.15-url-map (./console exp:upgrade --apply) alohan'ny hampidirana.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Tsy misy intsony ity fampidirana ity: lany daty taorian'ny iray andro izy na an'ny mpampiasa hafa. Alefaso indray ny rakitra.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Mifidiana rakitra na apetaho ireo andalana.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Lehibe noho ny %size ny rakitra.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Tsy azo vakiana ny rakitra: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Mifidiana fidirana amin'ny tranonkala amin'ity fametrahana ity.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Tsy azo tehirizina ao amin'ny mpizara ny fampidirana: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Ny rakitra</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Rakitra</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), fitsipika fanoratana indray Apache na nginx, %size farafahabetsany.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Na apetaho ireo andalana</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Andalana iray isaky ny tsipika, ohatra /pejy-taloha,/pejy-vaovao. Ny tsipika voalohany dia afaka manome ny anaran'ny tsanganana: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Fantaro avy amin'ny rakitra</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Ilaina ihany raha tsy milaza izany na ny anarana na ny votoatin'ny rakitra.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Sanda mahazatra</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Fidirana amin'ny tranonkala ho an'ny lalana tsotra</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>mahazatra</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Ny andalana manana adiresy feno kosa dia maka ny fidirana amin'ny tranonkalan'ny mpampiantrano azy.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Ny fitenin'ny fidirana amin'ny tranonkala</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Rehefa efa manana singa ny adiresy taloha</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Tehirizo ny singa (dingano ny andalana)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Soloy ny singa</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Mpampiantrano taloha</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Tsy ampidirina ny adiresy feno an'ny mpampiantrano izay tsy fantatr'ity fametrahana ity. Lazao ny fidirana amin'ny tranonkala soloin'ny mpampiantrano taloha tsirairay, iray isaky ny tsipika: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Topi-maso</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Mbola tsy misy voasoratra: asehon'ny pejy manaraka izay hataon'ny andalana tsirairay.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Fampidirana %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Nofoanana ny fampidirana.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Nofoanana ny fampidirana, afa-tsy ireo singa novaina taorian'izany, izay notehirizina.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Tsy azo nofoanana ny fampidirana: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Daty</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Nataon'i</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Andalana</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created noforonina, %updated nosoloina, %skipped nodinganina, %failed tsy nahomby.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Nofoanana</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Foano ity fampidirana ity</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Esorina ny singa rehetra noforonin'ny fampidirana ary averina toy ny teo aloha ny singa rehetra nosoloiny, ny farany aloha. Hamafisinao aloha hoe iza ianao.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>Singa %count novaina taorian'ny fampidirana</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Foano koa ireo singa novaina taorian'ny fampidirana</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Raha tsy izany dia tehirizina izy ireo ary lasa voafoana ampahany ny fampidirana (--force an'ny console).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Hofoanana ve ity fampidirana ity?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Foano ny fampidirana</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Singa voasoratra</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from hatramin'ny %to amin'ny %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Tsy nanoratra singa na iray aza ny fampidirana.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Ireo singa nosoratan'ny fampidirana</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Tsipika</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Adiresy taloha</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Singa</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Mitondra any amin'ny</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Fiovana</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Toetra</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Solon-anarana URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Mpitovo</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Fandefasana</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Noforonina</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Nosoloina</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Nampiharina</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Notehirizina</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Voafoana ampahany</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Tantaran'ny fampidirana (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Ny fampidirana sarintanin'ny URL rehetra, ny vaovao indrindra aloha. Azo foanana manontolo ny fampidirana: miverina amin'izay nisy teo aloha ny singa tsirairay nosoratany.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Mbola tsy nisy sarintanin'ny URL nampidirina.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Fampidirana sarintanin'ny URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Laharana</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Nodinganina</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Tsy nahomby</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, andalana %rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Nampidirina ho fampidirana %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Jereo ny fampidirana, na foano izany</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Ampidiro rakitra hafa</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Mbola tsy misy voasoratra. Asehon'ny andalana tsirairay izay hataon'ny fampidirana aminy. Ampidirina ny andalana voamarika; esory ny marika hamelana andalana iray. Ny andalana tsy vaovao dia tsy azo ampidirina raha tsy azo soloina ny adiresiny taloha.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Tsy natao ny fampidirana: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Tsy misy andalana voamarika hampidirina.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Fanatanterahana andrana: tsy nisy voasoratra.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Hamorona %created, hanolo %updated ary handingana %skipped ny fampidirana; %failed no tsy hahomby.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Topy maso ankapobeny</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Hoforonina</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Hosoloina</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Hodinganina</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Misy olana</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Tehirizina hatramin'ny</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Ataovy drafitra indray</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Ovay izay manapaka ny andalana ary ataovy drafitra indray ny rakitra. Averina amin'ny voalohany ny marika novainao tamin'ny tanana.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Tsy ampidirina ny andalan'ireo mpampiantrano ireo, satria tsy mamaly ho azy ireo ity fametrahana ity. Mifidiana ny fidirana amin'ny tranonkala soloin'ny mpampiantrano taloha tsirairay.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Tsy nampidirina</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Asehoy</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Rehetra</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Tsy misy andalana manana io toetra io.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Asehoy daholo</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Ny andalan'ny rakitra sy izay hataon'ny fampidirana amin'ny tsirairay</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Ampidiro</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Adiresy vaovao</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Karazana</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Fanamarihana</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Ampidiro ny tsipika %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Tsia</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Eny</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Fanatanterahana andrana</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Tehirizo ny marika</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Drafitra ho CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Drafitra ho JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Ariana</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Ny Ampidiro dia manoratra ny andalana voamarika amin'ny pejy rehetra ho fampidirana iray, izay azo foanana avy amin'ny tantaran'ny fampidirana; hamafisinao aloha hoe iza ianao. Ny fanatanterahana andrana dia manamarina indray ny andalana tsirairay mifanandrify amin'ny tranonkala ary manisa izay hataon'ny fampidirana, tsy manoratra na inona na inona.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Fandefasana (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Fandefasana mpitovo (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Mpitovo (mivantana)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Vaovao</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Niova</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Tsy niova</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Mitovy roa</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Fifanoherana</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Tanjona simba</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Mpampiantrano tsy fantatra</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Tsy azo ampidirina</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Solon-anarana URL maneran-tany</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Tantaran'ny fampidirana</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Sarintanin'ny URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Fandefasana (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Avy amin'ny fampidirana sarintanin'ny URL ireo fandefasana ireo: adiresy taloha misy fanontaniana (/index.php?id=12), fandefasana vonjimaika ary fandefasana mankany amin'ny tranonkala hafa. Hamarinina amin'ny adiresy feno izy ireo, alohan'ny solon-anarana URL sy ny mpitovo. Ny fandefasana maharitra mankany amin'ny pejin'ity tranonkala ity dia solon-anarana URL maneran-tany kosa ary voatanisa any.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Fandefasana %count no nesorina.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Tsy misy fandefasana. Atao amin'ny fampidirana sarintanin'ny URL izy ireo.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Fandefasana hamarinina amin'ny adiresy feno</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Fidio</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Sata</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Avy amin'ny fampidirana</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Esory</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Fidio %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Esory %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Hesorina ve ity fandefasana ity?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Hesorina ve ireo fandefasana voafidy?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Esory ny voafidy</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Mijanona tsy miasa avy hatrany ny fandefasana nesorina.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Lahatsoratra napetaka</translation>
     </message>
 </context>
 </TS>

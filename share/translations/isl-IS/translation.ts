@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Hvert vistföngin fara: slóð á þessu vefsvæði eða fullt vistfang við endurbeiningu. {1\} er textinn sem fyrsta * passaði við. Dæmi: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>eru tímabundið endurbeint á þetta vistfang (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Gestum er endurbeint tímabundið (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Tímabundin endurbeining (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85521,6 +85533,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>Sýna %count atriði á síðu.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Flytja út vefslóðakortið</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Sæktu almenn vefslóðarsamnefni, algildisvefslóðir og endurbeiningar þessa vefs sem eina skrá: til að geyma, til að breyta í töflureikni og flytja inn aftur, eða til að láta vefþjón fá sem endurritunarreglur.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Veldu að minnsta kosti eina tegund færslna.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Ekki tókst að skrifa skrána.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Hvað á að flytja út</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Snið</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Færslur</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Almenn vefslóðarsamnefni (vefslóðaþýðandinn)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Einnig sérsniðin vefslóðarsamnefni efnis</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Skrifað með hnútinn sem áfangastað, til dæmis node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Algildisvefslóðir</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Endurbeiningar</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Vefaðgangur</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Allir vefaðgangar</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Aðeins endurbeiningar tilheyra vefaðgangi; vefslóðarsamnefni og algildisvefslóðir eru fluttar út fyrir alla vefaðganga.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Tungumál</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Öll tungumál</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Flytja út</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Flytja inn vefslóðakort</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Færðu vistföng gamals vefs yfir í einu lagi: skrá telur upp hvert gamalt vistfang og síðu þessa vefs sem það tilheyrir nú. Nákvæm vistföng verða að endurbeiningum eða vefslóðarsamnefnum, vistföng með * verða að algildisvefslóðum. Þú sérð hvað hver lína myndi gera áður en nokkuð er skrifað, og hægt er að afturkalla hvern innflutning í heild.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Töflur innflutnings vefslóðakorta eru ekki enn til. Keyrðu uppfærsluskrefið 6.0.15-url-map (./console exp:upgrade --apply) áður en þú flytur inn.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Þessi innflutningur er ekki lengur tiltækur: hann rann út eftir sólarhring eða tilheyrir öðrum notanda. Hladdu skránni upp aftur.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Veldu skrá eða límdu línurnar inn.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Skráin er stærri en %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Ekki er hægt að lesa skrána: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Veldu vefaðgang í þessari uppsetningu.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Ekki er hægt að geyma innflutninginn á þjóninum: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Skráin</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Skrá</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), endurritunarreglur Apache eða nginx, í mesta lagi %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Eða límdu línurnar inn</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Ein færsla í hverja línu, til dæmis /gomul-sida,/ny-sida. Fyrsta línan má nefna dálkana: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Finna út úr skránni</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Aðeins þörf þegar hvorki heiti né innihald skrárinnar segir til um það.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Sjálfgildi</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Vefaðgangur fyrir berar slóðir</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>sjálfgefið</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Línur með fullu vistfangi fá í staðinn vefaðgang hýsils síns.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Tungumál vefaðgangsins</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Þegar gamalt vistfang á þegar færslu</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Halda færslunni (sleppa línunni)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Skipta færslunni út</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Gamlir hýslar</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Full vistföng hýsils sem þessi uppsetning þekkir ekki eru ekki flutt inn. Nefndu vefaðganginn sem hver gamall hýsill samsvarar, einn í hverja línu: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Forskoðun</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Ekkert hefur enn verið skrifað: næsta síða sýnir hvað hver lína myndi gera.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Innflutningur %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Innflutningurinn var afturkallaður.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Innflutningurinn var afturkallaður, nema færslurnar sem breyttust eftir hann, þeim var haldið.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Ekki tókst að afturkalla innflutninginn: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dagsetning</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Af</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Línur</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created búnar til, %updated skipt út, %skipped sleppt, %failed mistókust.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Afturkallað</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Afturkalla þennan innflutning</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Hver færsla sem innflutningurinn bjó til er fjarlægð og hverri færslu sem hann skipti út er skilað eins og hún var, síðustu fyrst. Þú staðfestir fyrst hver þú ert.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count færslum breytt eftir innflutninginn</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Afturkalla einnig færslurnar sem breyttust eftir innflutninginn</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Án þessa er þeim haldið og innflutningurinn verður afturkallaður að hluta (--force í skipanalínunni).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Afturkalla þennan innflutning?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Afturkalla innflutning</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Skrifaðar færslur</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from til %to af %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Innflutningurinn skrifaði enga færslu.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Færslurnar sem innflutningurinn skrifaði</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Lína</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Gamalt vistfang</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Færsla</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Leiðir til</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Breyting</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Staða</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Vefslóðarsamnefni</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Algildisvefslóð</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Endurbeining</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Búin til</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Skipt út</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Beitt</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Haldið</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Afturkallað að hluta</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Innflutningsferill (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Hver innflutningur vefslóðakorts, nýjasti fyrst. Hægt er að afturkalla innflutning í heild: hver færsla sem hann skrifaði fer aftur í það sem var áður.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Ekkert vefslóðakort hefur enn verið flutt inn.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Innflutningar vefslóðakorta</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Númer</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Sleppt</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mistókst</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows línur</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Flutt inn sem innflutningur %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Skoða innflutninginn, eða afturkalla hann</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Flytja inn aðra skrá</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Ekkert hefur enn verið skrifað. Hver lína sýnir hvað innflutningurinn myndi gera við hana. Línur með hak eru fluttar inn; taktu hakið af línu til að sleppa henni. Línur sem eru ekki nýjar er aðeins hægt að flytja inn þegar má skipta út gamla vistfanginu þeirra.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Innflutningurinn var ekki framkvæmdur: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Engin lína er hökuð fyrir innflutning.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Prufukeyrsla: ekkert var skrifað.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Innflutningurinn myndi búa til %created, skipta út %updated og sleppa %skipped; %failed myndu mistakast.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Yfirlit</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Til að búa til</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Til að skipta út</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Til að sleppa</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Með vandamál</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Geymt til</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Skipuleggja aftur</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Breyttu því sem ræður línunum og skipuleggðu skrána aftur. Hök sem þú breyttir handvirkt eru endurstillt.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Línur þessara hýsla eru ekki fluttar inn, því þessi uppsetning svarar ekki fyrir þá. Veldu vefaðganginn sem hver gamall hýsill samsvarar.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Ekki flutt inn</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Sýna</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Allt</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Engin lína hefur þessa stöðu.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Sýna allt</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Línur skrárinnar og hvað innflutningurinn myndi gera við hverja</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Flytja inn</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Nýtt vistfang</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Tegund</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Athugasemdir</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Flytja inn línu %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nei</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Já</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Prufukeyrsla</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Halda hökunum</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Áætlun sem CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Áætlun sem JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Henda</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Flytja inn skrifar hökuðu línurnar af öllum síðum sem einn innflutning, sem hægt er að afturkalla úr innflutningsferlinum; þú staðfestir fyrst hver þú ert. Prufukeyrsla ber hverja línu aftur saman við vefinn og telur hvað innflutningurinn myndi gera, án þess að skrifa.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Endurbeining (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Algildisendurbeining (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Algildisvefslóð (bein)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Ný</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Breytt</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Óbreytt</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Tvítekin</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Árekstur</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Ógildur áfangastaður</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Óþekktur hýsill</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Ekki hægt að flytja inn</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Almenn vefslóðarsamnefni</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Innflutningsferill</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Vefslóðakort</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Endurbeiningar (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Þessar endurbeiningar koma úr innflutningi vefslóðakorta: gömul vistföng með fyrirspurn (/index.php?id=12), tímabundnar endurbeiningar og endurbeiningar á aðra vefi. Þær eru athugaðar á fullu vistfangi, á undan vefslóðarsamnefnum og algildisvefslóðum. Varanleg endurbeining á síðu þessa vefs er í staðinn almennt vefslóðarsamnefni og er talin upp þar.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count endurbeiningar fjarlægðar.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Það eru engar endurbeiningar. Þær verða til við innflutning vefslóðakorts.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Endurbeiningar athugaðar á fullu vistfangi</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Velja</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Staða</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Úr innflutningi</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Fjarlægja</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Velja %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Fjarlægja %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Fjarlægja þessa endurbeiningu?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Fjarlægja valdar endurbeiningar?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Fjarlægja valið</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Fjarlægð endurbeining hættir strax að virka.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Límdur texti</translation>
     </message>
 </context>
 </TS>

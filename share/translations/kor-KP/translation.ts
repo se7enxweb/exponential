@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>주소가 이동할 곳입니다. 이 싸이트의 경로이거나, 리디렉션하는 경우 전체 주소입니다. {1\}은 첫 번째 *와 일치한 텍스트입니다. 례: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>이 주소로 임시 리디렉션됩니다(HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>방문자는 임시로 리디렉션됩니다(HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>임시 리디렉션(302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>페지당 %count개 항목을 표시합니다.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL 맵 내보내기</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>이 싸이트의 전역 URL 별칭, 와일드카드, 리디렉션을 하나의 화일로 다운로드합니다. 보관하거나, 스프레드시트에서 편집해 다시 가져오거나, 웹 서버에 재작성 규칙으로 제공할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>항목 종류를 하나 이상 선택하십시오.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>화일을 쓸 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>내보낼 항목</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>형식</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>항목</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>전역 URL 별칭(URL 변환기)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>콘텐츠의 사용자 지정 URL 별칭도 포함</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>노드를 대상으로 기록됩니다. 예: node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>와일드카드</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>리디렉션</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>싸이트접근</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>모든 싸이트접근</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>리디렉션만 싸이트접근에 속합니다. URL 별칭과 와일드카드는 모든 싸이트접근에 대해 내보내집니다.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>언어</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>모든 언어</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>내보내기</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL 맵 가져오기</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>이전 싸이트의 주소를 한 번에 옮겨 옵니다. 화일에는 각 이전 주소와 그 주소가 이제 속하는 이 싸이트의 페이지가 나열됩니다. 정확한 주소는 리디렉션 또는 URL 별칭이 되고, *가 있는 주소는 와일드카드가 됩니다. 무엇이든 기록되기 전에 각 행이 어떻게 처리될지 확인할 수 있으며, 모든 가져오기는 전체를 한꺼번에 실행 취소할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL 맵 가져오기용 테이블이 아직 없습니다. 가져오기 전에 업그레이드 단계 6.0.15-url-map(./console exp:upgrade --apply)을 실행하십시오.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>이 가져오기는 더 이상 사용할 수 없습니다. 하루가 지나 만료되었거나 다른 사용자의 것입니다. 화일을 다시 업로드하십시오.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>화일을 선택하거나 행을 붙여넣으십시오.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>화일이 %size보다 큽니다.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>화일을 읽을 수 없습니다: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>이 설치의 싸이트접근를 선택하십시오.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>가져오기를 서버에 보관할 수 없습니다: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>화일</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>화일</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel(.xlsx), OpenDocument(.ods), Apache 또는 nginx 재작성 규칙, 최대 %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>또는 행 붙여넣기</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>한 줄에 한 행씩 입력합니다. 예: /old-page,/new-page. 첫 줄에 열 이름을 지정할 수 있습니다: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>화일에서 알아내기</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>화일 이름이나 내용으로 알 수 없을 때만 필요합니다.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>기본값</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>경로만 있는 행의 싸이트접근</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>기본</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>전체 주소가 있는 행은 대신 해당 호스트의 싸이트접근를 사용합니다.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>싸이트접근의 언어</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>이전 주소에 이미 항목이 있는 경우</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>항목 유지(행 건너뛰기)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>항목 바꾸기</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>이전 호스트</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>이 설치가 알지 못하는 호스트의 전체 주소는 가져오지 않습니다. 각 이전 호스트에 해당하는 싸이트접근를 한 줄에 하나씩 지정하십시오: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>미리보기</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>아직 아무것도 기록되지 않습니다. 다음 페이지에서 각 행이 어떻게 처리될지 보여 줍니다.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>가져오기 %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>가져오기가 실행 취소되었습니다.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>가져오기가 실행 취소되었습니다. 단, 그 이후에 변경된 항목은 유지되었습니다.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>가져오기를 실행 취소할 수 없습니다: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>날짜</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>실행자</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>행</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created개 생성, %updated개 교체, %skipped개 건너뜀, %failed개 실패.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>실행 취소됨</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>이 가져오기 실행 취소</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>가져오기로 생성된 모든 항목은 제거되고, 교체된 모든 항목은 마지막 것부터 원래대로 복원됩니다. 먼저 본인 확인을 합니다.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>가져오기 이후 변경된 항목 %count개</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>가져오기 이후 변경된 항목도 실행 취소</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>선택하지 않으면 해당 항목은 유지되고 가져오기는 부분적으로 실행 취소됩니다(콘솔의 --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>이 가져오기를 실행 취소하시겠습니까?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>가져오기 실행 취소</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>기록된 항목</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count개 중 %from–%to</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>가져오기로 기록된 항목이 없습니다.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>가져오기가 기록한 항목</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>줄</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>이전 주소</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>항목</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>연결 대상</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>변경</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>상태</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL 별칭</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>와일드카드</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>리디렉션</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>생성됨</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>교체됨</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>적용됨</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>유지됨</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>부분 실행 취소됨</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>가져오기 기록(%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL 맵의 모든 가져오기를 최신순으로 표시합니다. 가져오기는 전체를 한꺼번에 실행 취소할 수 있으며, 기록한 각 항목은 이전 상태로 돌아갑니다.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>아직 가져온 URL 맵이 없습니다.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL 맵 가져오기 목록</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>번호</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>건너뜀</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>실패</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows행</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>가져오기 %id(으)로 가져왔습니다.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>가져오기 보기 또는 실행 취소</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>다른 화일 가져오기</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>아직 아무것도 기록되지 않았습니다. 각 행에 가져오기가 그 행을 어떻게 처리할지 표시됩니다. 체크된 행이 가져와집니다. 제외하려면 체크를 해제하십시오. 새 항목이 아닌 행은 이전 주소를 교체할 수 있을 때만 가져올 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>가져오기가 수행되지 않았습니다: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>가져오기용으로 체크된 행이 없습니다.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>모의 실행: 아무것도 기록되지 않았습니다.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>가져오기는 %created개를 생성하고, %updated개를 교체하고, %skipped개를 건너뛰며, %failed개는 실패합니다.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>개요</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>생성 예정</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>교체 예정</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>건너뛸 예정</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>문제 있음</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>보관 기한</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>다시 계획</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>행을 결정하는 설정을 변경하고 화일을 다시 계획합니다. 직접 변경한 체크는 초기화됩니다.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>이 설치가 이 호스트에 응답하지 않으므로 해당 행은 가져오지 않습니다. 각 이전 호스트에 해당하는 싸이트접근를 선택하십시오.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>가져오지 않음</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>표시</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>전체</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>이 상태의 행이 없습니다.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>모두 표시</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>화일의 행과 가져오기가 각 행을 처리하는 방식</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>가져오기</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>새 주소</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>종류</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>메모</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>가져오기 줄 %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>아니요</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>예</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>모의 실행</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>체크 유지</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>계획을 CSV로</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>계획을 JSON으로</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>버리기</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>가져오기는 모든 페이지의 체크된 행을 하나의 가져오기로 기록하며, 가져오기 기록에서 실행 취소할 수 있습니다. 먼저 본인 확인을 합니다. 모의 실행은 모든 행을 싸이트와 다시 대조하여 가져오기가 수행할 작업을 기록하지 않고 집계합니다.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>리디렉션(%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>와일드카드 리디렉션(%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>와일드카드(직접)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>새 항목</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>변경됨</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>변경 없음</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>중복</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>충돌</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>잘못된 대상</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>알 수 없는 호스트</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>가져올 수 없음</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>전역 URL 별칭</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>가져오기 기록</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL 맵</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>리디렉션(%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>이 리디렉션은 URL 맵 가져오기에서 생성된 것입니다: 쿼리가 있는 이전 주소(/index.php?id=12), 임시 리디렉션, 다른 싸이트로의 리디렉션. URL 별칭과 와일드카드보다 먼저 전체 주소를 기준으로 확인됩니다. 이 싸이트의 페이지로 가는 영구 리디렉션은 대신 전역 URL 별칭이 되며 그곳에 나열됩니다.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>리디렉션 %count개를 제거했습니다.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>리디렉션이 없습니다. 리디렉션은 URL 맵을 가져와서 만듭니다.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>전체 주소를 기준으로 확인되는 리디렉션</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>선택</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>상태</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>가져오기 출처</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>제거</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address 선택</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address 제거</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>이 리디렉션을 제거하시겠습니까?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>선택한 리디렉션을 제거하시겠습니까?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>선택 항목 제거</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>제거된 리디렉션은 즉시 작동을 멈춥니다.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>붙여넣은 텍스트</translation>
     </message>
 </context>
 </TS>

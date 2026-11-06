@@ -7349,6 +7349,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Vart adresserna går: en sökväg på den här webbplatsen, eller en fullständig adress vid omdirigering. {1\} är texten som den första * matchade. Exempel: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>omdirigeras tillfälligt till denna adress (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Besökare omdirigeras tillfälligt (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Tillfällig omdirigering (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -86794,6 +86806,625 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Visa %count objekt per sida.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Exportera url-kartan</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Ladda ner webbplatsens globala url-alias, jokertecken och omdirigeringar som en fil: för att spara, redigera i ett kalkylblad och importera igen, eller ge till en webbserver som omskrivningsregler.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Välj minst en typ av poster.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Filen kunde inte skrivas.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Vad som ska exporteras</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Filformat</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Poster</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Globala url-alias (url-översättaren)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Även innehållets egna url-alias</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Skrivs med noden som mål, till exempel node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Jokertecken</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Omdirigeringar</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Webbplatsingång</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Alla webbplatsingångar</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Endast omdirigeringar hör till en webbplatsingång; url-alias och jokertecken exporteras för alla webbplatsingångar.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Språk</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Alla språk</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Exportera</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Importera en url-karta</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Flytta över adresserna från en gammal webbplats på en gång: en fil listar varje gammal adress och den sida på denna webbplats som den nu hör till. Exakta adresser blir omdirigeringar eller url-alias, adresser med * blir jokertecken. Du ser vad varje rad skulle göra innan något skrivs, och varje import kan ångras i sin helhet.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Tabellerna för import av url-kartor finns inte ännu. Kör uppgraderingssteget 6.0.15-url-map (./console exp:upgrade --apply) innan du importerar.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Denna import är inte längre tillgänglig: den gick ut efter en dag eller tillhör en annan användare. Ladda upp filen igen.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Välj en fil eller klistra in raderna.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Filen är större än %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Filen kan inte läsas: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Välj en webbplatsingång i denna installation.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Importen kan inte sparas på servern: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Filen</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fil</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), omskrivningsregler för Apache eller nginx, högst %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Eller klistra in raderna</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>En post per rad, till exempel /gammal-sida,/ny-sida. En första rad kan namnge kolumnerna: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Avgör utifrån filen</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Behövs bara när varken filens namn eller innehåll anger det.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Standardvärden</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Webbplatsingång för sökvägar utan värd</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>standard</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Rader med en fullständig adress får i stället sin värds webbplatsingång.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Webbplatsingångens språk</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>När en gammal adress redan har en post</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Behåll posten (hoppa över raden)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Ersätt posten</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Gamla värdar</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Fullständiga adresser till en värd som denna installation inte känner till importeras inte. Ange vilken webbplatsingång varje gammal värd motsvarar, en per rad: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Förhandsgranska</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Inget skrivs ännu: nästa sida visar vad varje rad skulle göra.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Import %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Importen ångrades.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Importen ångrades, utom posterna som ändrats efter den, vilka behölls.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Importen kunde inte ångras: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Av</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Rader</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created skapade, %updated ersatta, %skipped överhoppade, %failed misslyckade.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Ångrad</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Ångra denna import</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Varje post som importen skapade tas bort och varje post som den ersatte återställs som den var, den senaste först. Du bekräftar först vem du är.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count poster ändrade efter importen</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Ångra även posterna som ändrats efter importen</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Annars behålls de och importen blir delvis ångrad (konsolens --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Ångra denna import?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Ångra import</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Skrivna poster</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from till %to av %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Importen skrev ingen post.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Posterna som importen skrev</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Rad</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Gammal adress</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Post</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Leder till</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ändring</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tillstånd</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Url-alias</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Jokertecken</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Omdirigering</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Skapad</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Ersatt</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Tillämpad</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Behållen</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Delvis ångrad</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Importhistorik (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Varje import av en url-karta, nyaste först. En import kan ångras i sin helhet: varje post den skrev återgår till det som fanns innan.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Ingen url-karta har importerats ännu.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Importer av url-kartor</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Nummer</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Överhoppade</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Misslyckade</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows rader</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Importerad som import %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Visa importen eller ångra den</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Importera en annan fil</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Inget har skrivits ännu. Varje rad visar vad importen skulle göra med den. Markerade rader importeras; avmarkera en rad för att utelämna den. Rader som inte är nya kan bara importeras när deras gamla adress får ersättas.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Importen genomfördes inte: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Ingen rad är markerad för import.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Testkörning: inget skrevs.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Importen skulle skapa %created, ersätta %updated och hoppa över %skipped; %failed skulle misslyckas.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Översikt</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Att skapa</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Att ersätta</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Att hoppa över</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Med ett problem</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Sparas till</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Planera igen</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Ändra det som avgör raderna och planera filen igen. Markeringar som du ändrat för hand återställs.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Rader för dessa värdar importeras inte, eftersom denna installation inte svarar för dem. Välj vilken webbplatsingång varje gammal värd motsvarar.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Inte importerade</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Visa</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alla</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Ingen rad har detta tillstånd.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Visa alla</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Filens rader och vad importen skulle göra med var och en</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importera</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Ny adress</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Anteckningar</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Importera rad %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nej</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Testkörning</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Behåll markeringarna</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Plan som CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Plan som JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Kasta</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Importera skriver de markerade raderna från alla sidor som en import, som kan ångras från importhistoriken; du bekräftar först vem du är. Testkörning kontrollerar varje rad mot webbplatsen igen och räknar vad importen skulle göra, utan att skriva.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Omdirigering (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Omdirigering med jokertecken (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Jokertecken (direkt)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Ny</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Ändrad</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Oförändrad</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Dubblett</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Konflikt</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Trasigt mål</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Okänd värd</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Kan inte importeras</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Globala url-alias</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Importhistorik</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Url-kartor</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Omdirigeringar (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Dessa omdirigeringar kommer från import av url-kartor: gamla adresser med en fråga (/index.php?id=12), tillfälliga omdirigeringar och omdirigeringar till andra webbplatser. De kontrolleras mot den fullständiga adressen, före url-alias och jokertecken. En permanent omdirigering till en sida på denna webbplats är i stället ett globalt url-alias och listas där.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count omdirigeringar borttagna.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Det finns inga omdirigeringar. De skapas genom att importera en url-karta.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Omdirigeringar som kontrolleras mot den fullständiga adressen</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Välj</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Från import</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Ta bort</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Välj %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Ta bort %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Ta bort denna omdirigering?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Ta bort de markerade omdirigeringarna?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Ta bort markerade</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>En borttagen omdirigering slutar fungera direkt.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Inklistrad text</translation>
     </message>
 </context>
 </TS>

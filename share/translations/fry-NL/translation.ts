@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Wêr't de adressen hinne gean: in paad fan dizze website, of in folslein adres by trochstjoeren. {1\} is de tekst dêr't de earste * mei oerienkaam. Foarbyld: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>wurde tydlik nei dit adres trochstjoerd (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Besikers wurde tydlik trochstjoerd (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Tydlike trochstjoering (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>%count eleminten per side toane.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>De URL-kaart eksportearje</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Download de globale URL-aliassen, de jokertekens en de trochstjoeringen fan dizze side as ien bestân: om te bewarjen, om yn in rekkenblêd te bewurkjen en wer te ymportearjen, of om oan in webserver te jaan as rewrite-regels.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Kies op syn minst ien soarte yngong.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>It bestân koe net skreaun wurde.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Wat eksportearje</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Opmaak</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Yngongen</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Globale URL-aliassen (de URL-oersetter)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Ek de eigen URL-aliassen fan ynhâld</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Skreaun mei de knooppunt as doel, bygelyks node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Jokertekens</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Trochstjoeringen</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Websidetagong</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Elke websidetagong</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Allinnich trochstjoeringen hearre by in websidetagong; URL-aliassen en jokertekens wurde foar elke websidetagong eksportearre.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Taal</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Elke taal</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Eksportearje</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>In URL-kaart ymportearje</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Bring de adressen fan in âlde side yn ien kear oer: in bestân jout elk âld adres en de side fan dizze webside dêr't it no by heart. Krekte adressen wurde trochstjoeringen of URL-aliassen, adressen mei * wurde jokertekens. Jo sjogge wat elke rige dwaan soe foardat der wat skreaun wurdt, en elke ymport kin yn syn gehiel ûngedien makke wurde.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>De tabellen fan URL-kaartymporten besteane noch net. Fier de fernijingsstap 6.0.15-url-map (./console exp:upgrade --apply) út foardat jo ymportearje.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Dizze ymport is net mear beskikber: hy is nei in dei ferrûn of heart by in oare brûker. Laad it bestân opnij op.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Kies in bestân of plak de rigen.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>It bestân is grutter as %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>It bestân kin net lêzen wurde: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Kies in websidetagong fan dizze ynstallaasje.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>De ymport kin net op de server bewarre wurde: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>It bestân</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Bestân</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), rewrite-regels fan Apache of nginx, op syn heechst %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Of plak de rigen</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Ien rige per line, bygelyks /alde-side,/nije-side. In earste line kin de kolommen neame: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Ut it bestân ôfliede</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Allinnich nedich as de namme noch de ynhâld fan it bestân it seit.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Standertwearden</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Websidetagong fan bleate paden</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>standert</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Rigen mei in folslein adres krije ynstee de websidetagong fan harren host.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>De taal fan de websidetagong</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>As in âld adres al in yngong hat</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>De yngong hâlde (rige oerslaan)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>De yngong ferfange</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Alde hosts</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Folsleine adressen fan in host dy't dizze ynstallaasje net ken, wurde net ymportearre. Neam de websidetagong dêr't elke âlde host foar stiet, ien per line: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Foarbyld</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Der is noch neat skreaun: de folgjende side lit sjen wat elke rige dwaan soe.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Ymport %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>De ymport is ûngedien makke.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>De ymport is ûngedien makke, útsein de yngongen dy't dêrnei feroare binne; dy binne bewarre.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>De ymport koe net ûngedien makke wurde: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Troch</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Rigen</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created oanmakke, %updated ferfongen, %skipped oerslein, %failed mislearre.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Ungedien makke</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Dizze ymport ûngedien meitsje</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Elke yngong dy't de ymport oanmakke hat wurdt fuorthelle en elke yngong dy't er ferfongen hat wurdt weromset sa't er wie, de lêste earst. Jo befêstigje earst wa't jo binne.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count yngongen feroare nei de ymport</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Ek de yngongen dy't nei de ymport feroare binne ûngedien meitsje</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Sûnder dit wurde se bewarre en wurdt de ymport foar in part ûngedien makke (de --force fan de konsole).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Dizze ymport ûngedien meitsje?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Ymport ûngedien meitsje</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Skreaune yngongen</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from oant %to fan %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>De ymport hat gjin yngong skreaun.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>De yngongen dy't de ymport skreaun hat</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Rigel</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Ald adres</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Yngong</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Liedt nei</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Wiziging</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Steat</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL-alias</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Jokerteken</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Trochstjoering</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Oanmakke</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Ferfongen</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Tapast</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Bewarre</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Foar in part ûngedien makke</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Ymportskiednis (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Elke ymport fan in URL-kaart, de nijste earst. In ymport kin yn syn gehiel ûngedien makke wurde: elke yngong dy't er skreaun hat giet werom nei wat der earder stie.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Der is noch gjin URL-kaart ymportearre.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Ymporten fan URL-kaarten</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Nûmer</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Oerslein</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mislearre</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows rigen</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Ymportearre as ymport %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>De ymport besjen of ûngedien meitsje</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>In oar bestân ymportearje</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Der is noch neat skreaun. Elke rige lit sjen wat de ymport dermei dwaan soe. Oanfinkte rigen wurde ymportearre; helje it finkje fuort om in rige oer te slaan. Rigen dy't net nij binne, kinne allinnich ymportearre wurde as harren âlde adres ferfongen wurde mei.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>De ymport is net dien: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Der is gjin rige oanfinkt foar ymport.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Proefrun: der is neat skreaun.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>De ymport soe %created oanmeitsje, %updated ferfange en %skipped oerslaan; %failed soene mislearje.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Oersjoch</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Oan te meitsjen</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Te ferfangen</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Oer te slaan</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Mei in probleem</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Bewarre oant</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Opnij planne</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Feroarje wat de rigen bepaalt en plan it bestân opnij. Finkjes dy't jo mei de hân feroare hawwe, wurde weromset.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Rigen fan dizze hosts wurde net ymportearre, om't dizze ynstallaasje net foar harren antwurdet. Kies de websidetagong dêr't elke âlde host foar stiet.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Net ymportearre</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Sjen litte</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alles</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Gjin inkelde rige hat dizze steat.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Alles sjen litte</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>De rigen fan it bestân en wat de ymport mei elk dwaan soe</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Ymportearje</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Nij adres</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Soarte</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Opmerkingen</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Line %line ymportearje</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nee</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Proefrun</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>De finkjes hâlde</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Plan yn CSV-opmaak</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Plan yn JSON-opmaak</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Fuortsmite</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Ymportearje skriuwt de oanfinkte rigen fan elke side as ien ymport, dy't út de ymportskiednis ûngedien makke wurde kin; jo befêstigje earst wa't jo binne. Proefrun kontrolearret elke rige opnij tsjin de side en telt wat de ymport dwaan soe, sûnder te skriuwen.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Trochstjoering (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Jokertekentrochstjoering (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Jokerteken (direkt)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nij</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Feroare</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Net feroare</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Dûbel</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Konflikt</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Brutsen doel</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Unbekende host</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Net te ymportearjen</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Globale URL-aliassen</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Ymportskiednis</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL-kaarten</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Trochstjoeringen (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Dizze trochstjoeringen komme út URL-kaartymporten: âlde adressen mei in query (/index.php?id=12), tydlike trochstjoeringen en trochstjoeringen nei oare siden. Se wurde kontrolearre op it folsleine adres, foar de URL-aliassen en jokertekens. In bliuwende trochstjoering nei in side fan dizze webside is ynstee in globale URL-alias en stiet dêr yn de list.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count trochstjoeringen fuorthelle.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Der binne gjin trochstjoeringen. Se ûntsteane troch in URL-kaart te ymportearjen.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Trochstjoeringen kontrolearre op it folsleine adres</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Selektearje</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Ut ymport</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Fuorthelje</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address selektearje</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address fuorthelje</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Dizze trochstjoering fuorthelje?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>De selektearre trochstjoeringen fuorthelje?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Selektearre fuorthelje</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>In fuorthelle trochstjoering hâldt daliks op mei wurkjen.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Plakte tekst</translation>
     </message>
 </context>
 </TS>

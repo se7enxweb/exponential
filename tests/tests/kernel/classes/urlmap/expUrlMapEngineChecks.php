@@ -280,8 +280,17 @@ trait expUrlMapEngineChecks
         }
 
         // UE-6: an entry changed after the import is kept, force undoes it
+        $this->assertSame( array(), $this->urlMapImporter( $db )->changedSince( $batchId ), 'nothing changed after the import yet' );
+        $batch = expUrlMapBatch::fetch( $batchId );
+        $this->assertSame( $batch->itemCount(), count( $batch->items() ) );
+        $this->assertSame( array_slice( array_map( function ( $i ) { return (int)$i->attribute( 'seq' ); }, $batch->items() ), 1, 2 ),
+                           array_map( function ( $i ) { return (int)$i->attribute( 'seq' ); }, $batch->itemsPage( 1, 2 ) ), 'a page of the items, in order' );
         $db->query( "UPDATE ezurlwildcard SET destination_url = 'changed/{1}' WHERE source_url = 'print/*'" );
+        $changed = $this->urlMapImporter( $db )->changedSince( $batchId );
+        $this->assertSame( array( 'ezurlwildcard' ), array_column( $changed, 'target_table' ), 'the administration lists the entry an undo would keep' );
         $undo1 = $this->urlMapImporter( $db )->undo( $batchId );
+        $this->assertSame( array(), $this->urlMapImporter( $db )->changedSince( $batchId ), 'kept: an undo without force no longer touches it' );
+        $this->assertSame( array( 'ezurlwildcard' ), array_column( $this->urlMapImporter( $db )->changedSince( $batchId, true ), 'target_table' ), 'what force would undo' );
         $this->assertSame( 'partly-undone', $undo1['state'] );
         $this->assertSame( 1, $undo1['counts']['kept'] );
         $this->assertSame( 1, self::urlMapCount( $db, 'ezurlwildcard', "source_url = 'print/*'" ) );

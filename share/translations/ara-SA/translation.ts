@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>إلى أين تذهب العناوين: مسار في هذا الموقع، أو عنوان كامل عند إعادة التوجيه. {1\} هو النص الذي طابقه أول *. مثال: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>يُعاد توجيههم إلى هذا العنوان مؤقتًا (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>يُعاد توجيه الزوار مؤقتًا (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>إعادة توجيه مؤقتة (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85521,6 +85533,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>عرض %count عنصر لكل صفحة.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>تصدير خريطة URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>نزّل أسماء URL المستعارة العامة وأحرف البدل وعمليات إعادة التوجيه لهذا الموقع في ملف واحد: للاحتفاظ به، أو لتحريره في جدول بيانات واستيراده مرة أخرى، أو لتسليمه إلى خادم ويب كقواعد إعادة كتابة.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>اختر نوعًا واحدًا على الأقل من الإدخالات.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>تعذّرت كتابة الملف.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>ما الذي سيُصدَّر</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>التنسيق</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>الإدخالات</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>أسماء URL المستعارة العامة (مترجم URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>وكذلك أسماء URL المستعارة المخصصة للمحتوى</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>تُكتب مع العقدة كهدف، مثلًا node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>أحرف البدل</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>عمليات إعادة التوجيه</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>siteaccess</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>كل siteaccess</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>عمليات إعادة التوجيه وحدها تنتمي إلى siteaccess؛ أما أسماء URL المستعارة وأحرف البدل فتُصدَّر لكل siteaccess.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>اللغة</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>كل اللغات</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>تصدير</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>استيراد خريطة URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>انقل عناوين موقع قديم دفعة واحدة: يسرد ملفٌ كل عنوان قديم وصفحة هذا الموقع التي ينتمي إليها الآن. تصبح العناوين الدقيقة عمليات إعادة توجيه أو أسماء URL مستعارة، وتصبح العناوين التي تحتوي على * أحرف بدل. ترى ما سيفعله كل صف قبل كتابة أي شيء، ويمكن التراجع عن كل استيراد بالكامل.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>جداول استيراد خرائط URL غير موجودة بعد. شغّل خطوة الترقية 6.0.15-url-map (./console exp:upgrade --apply) قبل الاستيراد.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>هذا الاستيراد لم يعد متاحًا: انتهت صلاحيته بعد يوم أو أنه يخص مستخدمًا آخر. ارفع الملف مرة أخرى.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>اختر ملفًا أو الصق الصفوف.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>الملف أكبر من %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>تتعذّر قراءة الملف: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>اختر siteaccess من هذا التثبيت.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>لا يمكن الاحتفاظ بالاستيراد على الخادم: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>الملف</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ملف</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV أو JSON أو Excel (.xlsx) أو OpenDocument (.ods) أو قواعد إعادة كتابة Apache أو nginx، بحد أقصى %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>أو الصق الصفوف</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>صف واحد في كل سطر، مثلًا /old-page,/new-page. يمكن أن يسمّي السطر الأول الأعمدة: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>تحديد من الملف</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>مطلوب فقط عندما لا يدل عليه اسم الملف ولا محتواه.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>القيم الافتراضية</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>siteaccess للمسارات المجردة</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>افتراضي</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>الصفوف ذات العنوان الكامل تأخذ siteaccess الخاص بمضيفها بدلًا من ذلك.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>لغة siteaccess</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>عندما يكون للعنوان القديم إدخال بالفعل</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>الاحتفاظ بالإدخال (تخطي الصف)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>استبدال الإدخال</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>المضيفون القدامى</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>لا تُستورد العناوين الكاملة لمضيف لا يعرفه هذا التثبيت. سمِّ الـ siteaccess الذي يمثله كل مضيف قديم، واحدًا في كل سطر: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>معاينة</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>لم يُكتب شيء بعد: تعرض الصفحة التالية ما سيفعله كل صف.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>الاستيراد %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>تم التراجع عن الاستيراد.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>تم التراجع عن الاستيراد، باستثناء الإدخالات التي تغيّرت بعده، فقد تم الاحتفاظ بها.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>تعذّر التراجع عن الاستيراد: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>التاريخ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>بواسطة</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>الصفوف</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created أُنشئت، %updated استُبدلت، %skipped تُخطّيت، %failed فشلت.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>تم التراجع</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>التراجع عن هذا الاستيراد</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>يُزال كل إدخال أنشأه الاستيراد ويُعاد كل إدخال استبدله كما كان، بدءًا بالأخير. تؤكد هويتك أولًا.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count إدخالات تغيّرت بعد الاستيراد</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>التراجع أيضًا عن الإدخالات التي تغيّرت بعد الاستيراد</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>من دونه يُحتفظ بها ويصبح الاستيراد متراجعًا عنه جزئيًا (‎--force في وحدة التحكم).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>التراجع عن هذا الاستيراد؟</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>التراجع عن الاستيراد</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>الإدخالات المكتوبة</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from إلى %to من %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>لم يكتب الاستيراد أي إدخال.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>الإدخالات التي كتبها الاستيراد</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>السطر</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>العنوان القديم</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>الإدخال</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>يؤدي إلى</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>التغيير</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>الحالة</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>اسم URL المستعار</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>حرف البدل</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>إعادة توجيه</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>أُنشئ</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>استُبدل</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>طُبّق</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>محتفظ به</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>متراجع عنه جزئيًا</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>سجل الاستيراد (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>كل استيراد لخريطة URL، الأحدث أولًا. يمكن التراجع عن الاستيراد بالكامل: يعود كل إدخال كتبه إلى ما كان عليه من قبل.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>لم تُستورد أي خريطة URL بعد.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>عمليات استيراد خرائط URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>الرقم</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>تم التخطي</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>فشل</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file، %format، %rows صفوف</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>تم الاستيراد بوصفه الاستيراد %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>اعرض الاستيراد أو تراجع عنه</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>استيراد ملف آخر</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>لم يُكتب شيء بعد. يعرض كل صف ما سيفعله الاستيراد به. تُستورد الصفوف المحددة؛ ألغِ تحديد صف لاستبعاده. لا يمكن استيراد الصفوف غير الجديدة إلا عندما يُسمح باستبدال عنوانها القديم.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>لم يتم الاستيراد: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>لا يوجد صف محدد للاستيراد.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>تشغيل تجريبي: لم يُكتب شيء.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>سيُنشئ الاستيراد %created ويستبدل %updated ويتخطى %skipped؛ وسيفشل %failed.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>نظرة عامة</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>للإنشاء</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>للاستبدال</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>للتخطي</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>بها مشكلة</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>محتفظ به حتى</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>التخطيط من جديد</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>غيّر ما يحدد الصفوف وخطّط الملف من جديد. تُعاد العلامات التي غيّرتها يدويًا إلى وضعها.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>لا تُستورد صفوف هؤلاء المضيفين، لأن هذا التثبيت لا يستجيب لهم. اختر الـ siteaccess الذي يمثله كل مضيف قديم.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>غير مستورد</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>عرض</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>الكل</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>لا يوجد صف بهذه الحالة.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>عرض الكل</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>صفوف الملف وما سيفعله الاستيراد بكل منها</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>استيراد</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>العنوان الجديد</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>النوع</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>ملاحظات</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>استيراد السطر %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>لا</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>نعم</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>تشغيل تجريبي</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>الاحتفاظ بالعلامات</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>الخطة بصيغة CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>الخطة بصيغة JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>تجاهل</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>يكتب «استيراد» الصفوف المحددة في كل الصفحات كاستيراد واحد يمكن التراجع عنه من سجل الاستيراد؛ تؤكد هويتك أولًا. يتحقق «تشغيل تجريبي» من كل صف مقابل الموقع مرة أخرى ويحصي ما سيفعله الاستيراد، دون كتابة.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>إعادة توجيه (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>إعادة توجيه بحرف بدل (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>حرف بدل (مباشر)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>جديد</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>متغيّر</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>دون تغيير</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>مكرر</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>تعارض</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>هدف معطوب</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>مضيف غير معروف</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>غير قابل للاستيراد</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>أسماء URL المستعارة العامة</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>سجل الاستيراد</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>خرائط URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>عمليات إعادة التوجيه (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>تأتي عمليات إعادة التوجيه هذه من استيراد خرائط URL: عناوين قديمة تحتوي على استعلام (/index.php?id=12)، وعمليات إعادة توجيه مؤقتة، وعمليات إعادة توجيه إلى مواقع أخرى. يُتحقق منها على العنوان الكامل، قبل أسماء URL المستعارة وأحرف البدل. أما إعادة التوجيه الدائمة إلى صفحة من هذا الموقع فهي اسم URL مستعار عام بدلًا من ذلك وتُدرج هناك.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>أُزيلت %count من عمليات إعادة التوجيه.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>لا توجد عمليات إعادة توجيه. تُنشأ باستيراد خريطة URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>عمليات إعادة التوجيه المتحقق منها على العنوان الكامل</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>تحديد</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>الحالة</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>من الاستيراد</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>إزالة</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>تحديد %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>إزالة %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>إزالة إعادة التوجيه هذه؟</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>إزالة عمليات إعادة التوجيه المحددة؟</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>إزالة المحدد</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>تتوقف إعادة التوجيه المُزالة عن العمل فورًا.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>نص ملصوق</translation>
     </message>
 </context>
 </TS>

@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Куда воде адресе: путања овог сајта или пуна адреса при преусмеравању. {1\} је текст који је подударила прва *. Пример: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>привремено се преусмеравају на ову адресу (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Посетиоци се привремено преусмеравају (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Привремено преусмеравање (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85521,6 +85533,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>Прикажи %count ставки по страници.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Извоз URL мапе</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Преузмите глобалне URL алијасе, џокере и преусмеравања овог сајта као једну датотеку: да је сачувате, уредите у табели и поново увезете, или да је предате веб-серверу као правила преписивања.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Изаберите бар једну врсту уноса.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Датотека није могла да се упише.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Шта извести</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Формат</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Уноси</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Глобални URL алијаси (URL преводилац)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Такође прилагођени URL алијаси садржаја</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Уписују се с чвором као циљем, на пример node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Џокери</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Преусмеравања</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Приступ сајту</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Сви приступи сајту</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Само преусмеравања припадају приступу сајту; URL алијаси и џокери се извозе за све приступе сајту.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Језик</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Сви језици</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Извези</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Увоз URL мапе</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Пренесите адресе старог сајта одједном: датотека наводи сваку стару адресу и страницу овог сајта којој сада припада. Тачне адресе постају преусмеравања или URL алијаси, адресе са * постају џокери. Пре него што се ишта упише, видите шта би сваки ред урадио, а сваки увоз се може поништити у целини.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Табеле за увоз URL мапа још не постоје. Пре увоза покрените корак надоградње 6.0.15-url-map (./console exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Овај увоз више није доступан: истекао је после једног дана или припада другом кориснику. Поново отпремите датотеку.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Изаберите датотеку или налепите редове.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Датотека је већа од %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Датотека не може да се прочита: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Изаберите приступ сајту ове инсталације.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Увоз не може да се сачува на серверу: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Датотека</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Датотека</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache или nginx правила преписивања, највише %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Или налепите редове</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Један ред по линији, на пример /стара-страница,/нова-страница. Прва линија може да именује колоне: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Утврди из датотеке</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Потребно само када то не говори ни име ни садржај датотеке.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Подразумевано</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Приступ сајту за путање без хоста</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>подразумевано</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Редови са пуном адресом уместо тога добијају приступ сајту свог хоста.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Језик приступа сајту</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Када стара адреса већ има унос</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Задржи унос (прескочи ред)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Замени унос</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Стари хостови</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Пуне адресе хоста који ова инсталација не познаје не увозе се. Наведите приступ сајту коме одговара сваки стари хост, један по линији: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Преглед</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Још ништа није уписано: следећа страница показује шта би сваки ред урадио.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Увоз %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Увоз је поништен.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Увоз је поништен, осим уноса измењених после њега, који су задржани.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Увоз није могао да се поништи: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Датум</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Извршио</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Редови</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created направљено, %updated замењено, %skipped прескочено, %failed неуспешно.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Поништено</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Поништи овај увоз</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Сваки унос који је увоз направио се уклања, а сваки унос који је заменио враћа се какав је био, од последњег ка првом. Најпре потврђујете ко сте.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>Уноса измењених после увоза: %count</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Поништи и уносе измењене после увоза</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Без тога они се задржавају и увоз постаје делимично поништен (--force у конзоли).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Поништити овај увоз?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Поништи увоз</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Уписани уноси</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from до %to од %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Увоз није уписао ниједан унос.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Уноси које је увоз уписао</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Линија</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Стара адреса</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Унос</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Води на</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Промена</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Стање</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL алијас</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Џокер</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Преусмеравање</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Направљено</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Замењено</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Примењено</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Задржано</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Делимично поништено</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Историја увоза (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Сваки увоз URL мапе, најновији први. Увоз се може поништити у целини: сваки унос који је уписао враћа се на оно што је било пре.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Још ниједна URL мапа није увезена.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Увози URL мапа</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Број</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Прескочено</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Неуспешно</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, редова: %rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Увезено као увоз %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Погледајте увоз или га поништите</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Увези другу датотеку</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Још ништа није уписано. Сваки ред показује шта би увоз урадио с њим. Означени редови се увозе; уклоните ознаку да бисте ред изоставили. Редови који нису нови могу се увести само ако њихова стара адреса сме да се замени.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Увоз није извршен: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Ниједан ред није означен за увоз.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Пробно покретање: ништа није уписано.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Увоз би направио %created, заменио %updated и прескочио %skipped; %failed не би успело.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Преглед стања</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>За прављење</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>За замену</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>За прескакање</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Са проблемом</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Чува се до</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Планирај поново</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Промените оно што одређује редове и поново испланирајте датотеку. Ознаке које сте ручно променили се поништавају.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Редови ових хостова се не увозе јер ова инсталација не одговара за њих. Изаберите приступ сајту коме одговара сваки стари хост.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Није увезено</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Прикажи</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Све</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Ниједан ред нема ово стање.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Прикажи све</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Редови датотеке и шта би увоз урадио са сваким</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Увези</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Нова адреса</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Врста</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Напомене</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Увези линију %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Не</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Да</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Пробно покретање</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Задржи ознаке</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>План као CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>План као JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Одбаци</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Увоз уписује означене редове са свих страница као један увоз, који се може поништити из историје увоза; најпре потврђујете ко сте. Пробно покретање поново проверава сваки ред према сајту и броји шта би увоз урадио, без уписивања.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Преусмеравање (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Џокер преусмеравање (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Џокер (директно)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Ново</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Измењено</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Непромењено</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Дупликат</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Сукоб</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Неисправан циљ</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Непознат хост</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Не може се увести</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Глобални URL алијаси</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Историја увоза</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL мапе</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Преусмеравања (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Ова преусмеравања потичу из увоза URL мапа: старе адресе са упитом (/index.php?id=12), привремена преусмеравања и преусмеравања на друге сајтове. Проверавају се према пуној адреси, пре URL алијаса и џокера. Трајно преусмеравање на страницу овог сајта је уместо тога глобални URL алијас и наведено је тамо.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Уклоњено преусмеравања: %count.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Нема преусмеравања. Настају увозом URL мапе.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Преусмеравања која се проверавају према пуној адреси</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Изабери</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Статус</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Из увоза</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Уклони</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Изабери %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Уклони %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Уклонити ово преусмеравање?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Уклонити изабрана преусмеравања?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Уклони изабрано</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Уклоњено преусмеравање одмах престаје да ради.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Налепљени текст</translation>
     </message>
 </context>
 </TS>

@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Helbideak nora doazen: gune honetako bide bat, edo helbide oso bat birbideratzean. {1\} lehenengo * horrek bat egin duen testua da. Adibidea: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>helbide honetara birbideratzen dira aldi baterako (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Bisitariak aldi baterako birbideratzen dira (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Aldi baterako birbideratzea (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Erakutsi %count elementu orriko.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Esportatu URL mapa</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Deskargatu gune honen URL ezizen globalak, komodinak eta birbideratzeak fitxategi bakar gisa: gordetzeko, kalkulu-orri batean editatu eta berriro inportatzeko, edo web zerbitzari bati berridazketa-arau gisa emateko.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Aukeratu gutxienez sarrera mota bat.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Ezin izan da fitxategia idatzi.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Zer esportatu</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Formatua</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Sarrerak</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>URL ezizen globalak (URL itzultzailea)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Edukiaren URL ezizen pertsonalizatuak ere bai</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Nodoa helburu gisa idatzita, adibidez node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Komodinak</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Birbideratzeak</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Gune-sarbidea</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Gune-sarbide guztiak</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Birbideratzeak soilik dagozkio gune-sarbide bati; URL ezizenak eta komodinak gune-sarbide guztietarako esportatzen dira.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Hizkuntza</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Hizkuntza guztiak</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Esportatu</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Inportatu URL mapa bat</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Ekarri gune zahar baten helbideak behin batean: fitxategi batek helbide zahar bakoitza eta orain dagokion gune honetako orria zerrendatzen ditu. Helbide zehatzak birbideratze edo URL ezizen bihurtzen dira, * duten helbideak komodin. Ezer idatzi aurretik ikusten duzu errenkada bakoitzak zer egingo lukeen, eta inportazio bakoitza osorik desegin daiteke.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL mapen inportazioen taulak ez daude oraindik. Exekutatu 6.0.15-url-map bertsio-berritze urratsa (./console exp:upgrade --apply) inportatu aurretik.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Inportazio hau ez dago erabilgarri: egun bat igarotakoan iraungi zen edo beste erabiltzaile batena da. Igo fitxategia berriro.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Aukeratu fitxategi bat edo itsatsi errenkadak.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Fitxategia %size baino handiagoa da.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Ezin da fitxategia irakurri: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Aukeratu instalazio honetako gune-sarbide bat.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Ezin da inportazioa zerbitzarian gorde: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Fitxategia</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fitxategia</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache edo nginx berridazketa-arauak, gehienez %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Edo itsatsi errenkadak</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Errenkada bat lerro bakoitzeko, adibidez /orri-zaharra,/orri-berria. Lehen lerroak zutabeak izenda ditzake: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Atera fitxategitik</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Fitxategiaren izenak ez edukiak adierazten ez dutenean soilik behar da.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Lehenetsiak</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Bide soilen gune-sarbidea</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>lehenetsia</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Helbide osoa duten errenkadek beren ostalariaren gune-sarbidea hartzen dute horren ordez.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Gune-sarbidearen hizkuntza</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Helbide zahar batek dagoeneko sarrera bat duenean</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Mantendu sarrera (saltatu errenkada)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Ordeztu sarrera</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Ostalari zaharrak</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Instalazio honek ezagutzen ez duen ostalari baten helbide osoak ez dira inportatzen. Idatzi ostalari zahar bakoitzak ordezkatzen duen gune-sarbidea, bat lerro bakoitzeko: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Aurrebista</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Oraindik ez da ezer idazten: hurrengo orriak errenkada bakoitzak zer egingo lukeen erakusten du.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>%id inportazioa</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Inportazioa desegin da.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Inportazioa desegin da, haren ondoren aldatutako sarrerak izan ezik, mantendu egin baitira.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Ezin izan da inportazioa desegin: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Nork</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Errenkadak</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created sortuta, %updated ordeztuta, %skipped saltatuta, %failed huts eginda.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Desegina</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Desegin inportazio hau</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Inportazioak sortutako sarrera bakoitza kendu egiten da eta ordeztutako sarrera bakoitza zegoen bezala jartzen da berriro, azkena lehenengo. Lehenik nor zaren berresten duzu.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count sarrera aldatu dira inportazioaren ondoren</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Desegin inportazioaren ondoren aldatutako sarrerak ere</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Hau gabe mantendu egiten dira eta inportazioa partzialki desegiten da (kontsolaren --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Inportazio hau desegin?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Desegin inportazioa</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Idatzitako sarrerak</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from-%to, guztira %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Inportazioak ez du sarrerarik idatzi.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Inportazioak idatzitako sarrerak</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Lerroa</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Helbide zaharra</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Sarrera</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Hona darama</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Aldaketa</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Egoera</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL ezizena</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Komodina</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Birbideratzea</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Sortua</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Ordeztua</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Aplikatua</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Mantendua</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Partzialki desegina</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Inportazioen historia (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL mapa baten inportazio guztiak, berriena lehenengo. Inportazio bat osorik desegin daiteke: idatzi zuen sarrera bakoitza lehen zegoenera itzultzen da.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Oraindik ez da URL maparik inportatu.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL mapen inportazioak</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Zenbakia</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Saltatuak</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Huts eginak</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows errenkada</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>%id inportazio gisa inportatua.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Ikusi inportazioa edo desegin</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Inportatu beste fitxategi bat</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Oraindik ez da ezer idatzi. Errenkada bakoitzak inportazioak harekin zer egingo lukeen erakusten du. Markatutako errenkadak inportatzen dira; kendu marka errenkada bat kanpoan uzteko. Berriak ez diren errenkadak beren helbide zaharra ordeztu daitekeenean soilik inporta daitezke.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Ez da inportazioa egin: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Ez dago errenkadarik markatuta inportatzeko.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Simulazioa: ez da ezer idatzi.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Inportazioak %created sortuko lituzke, %updated ordeztu eta %skipped saltatu; %failed huts egingo lukete.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Ikuspegi orokorra</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Sortzeko</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Ordezteko</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Saltatzeko</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Arazo batekin</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Noiz arte gordeta</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Planifikatu berriro</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Aldatu errenkadak erabakitzen dituena eta planifikatu fitxategia berriro. Eskuz aldatutako markak berrezarri egiten dira.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Ostalari hauen errenkadak ez dira inportatzen, instalazio honek ez baitu haien ardura. Aukeratu ostalari zahar bakoitzak ordezkatzen duen gune-sarbidea.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Inportatu gabea</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Erakutsi</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Guztiak</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Ez dago egoera hau duen errenkadarik.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Erakutsi guztiak</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Fitxategiaren errenkadak eta inportazioak bakoitzarekin zer egingo lukeen</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Inportatu</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Helbide berria</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Mota</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Oharrak</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Inportatu %line lerroa</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ez</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Bai</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Simulazioa</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Mantendu markak</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Plana CSV gisa</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Plana JSON gisa</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Baztertu</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Inportatu aukerak orri guztietako errenkada markatuak inportazio bakar gisa idazten ditu, inportazioen historiatik desegin daitekeena; lehenik nor zaren berresten duzu. Simulazioak errenkada bakoitza gunearekin berriro egiaztatzen du eta inportazioak zer egingo lukeen zenbatzen du, idatzi gabe.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Birbideratzea (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Komodin bidezko birbideratzea (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Komodina (zuzena)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Berria</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Aldatua</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Aldatu gabea</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Bikoiztua</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Gatazka</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Helburu hautsia</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Ostalari ezezaguna</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Ezin da inportatu</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>URL ezizen globalak</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Inportazioen historia</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL mapak</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Birbideratzeak (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Birbideratze hauek URL mapen inportazioetatik datoz: kontsulta duten helbide zaharrak (/index.php?id=12), aldi baterako birbideratzeak eta beste guneetarako birbideratzeak. Helbide osoaren arabera egiaztatzen dira, URL ezizenen eta komodinen aurretik. Gune honetako orri baterako birbideratze iraunkorra URL ezizen globala da horren ordez, eta han zerrendatzen da.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count birbideratze kendu dira.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Ez dago birbideratzerik. URL mapa bat inportatuz sortzen dira.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Helbide osoaren arabera egiaztatutako birbideratzeak</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Hautatu</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Egoera</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Inportaziotik</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Kendu</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Hautatu %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Kendu %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Birbideratze hau kendu?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Hautatutako birbideratzeak kendu?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Kendu hautatuak</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Kendutako birbideratzea berehala gelditzen da funtzionatzeari.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Itsatsitako testua</translation>
     </message>
 </context>
 </TS>

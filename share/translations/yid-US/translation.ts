@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>וווּהין די אַדרעסן גייען: אַ וועג אויף דעם וועבזייַטל, אָדער אַ פֿולער אַדרעס בייַם ווייַטערפֿירן. {1\} איז דער טעקסט וואָס דער ערשטער * האָט געפּאַסט. בייַשפּיל: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ווערן צייטווייליק ווייַטערגעפֿירט צו דעם אַדרעס (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>באַזוכער ווערן צייטווייליק ווייַטערגעפֿירט (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>צייטווייליקע ווייַטערפֿירונג (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>ווייַזן %count עלעמענטן אויף אַ בלאַט.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>עקספּאָרטירן די URL־מאַפּע</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>אַראָפּלאָדן די גלאָבאַלע URL־אַליאַסן, די וויילדקאַרדס און די ווייַטערפֿירונגען פֿון דעם וועבזייַטל ווי איין טעקע: כּדי צו האַלטן, צו רעדאַגירן אין אַ טאַבעלע און ווידער אימפּאָרטירן, אָדער צו געבן אַ וועבסערווער ווי איבערשרייַב־כּללים.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>קלייַבט אויס כאָטש איין סאָרט אייַנטראָגן.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>מען האָט ניט געקענט שרייַבן די טעקע.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>וואָס צו עקספּאָרטירן</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>פֿאָרמאַט</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>אייַנטראָגן</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>גלאָבאַלע URL־אַליאַסן (דער URL־איבערזעצער)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>אויך די אייגענע URL־אַליאַסן פֿון אינהאַלט</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>געשריבן מיטן קנופּ ווי ציל, למשל node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>וויילדקאַרדס</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>ווייַטערפֿירונגען</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>וועבזייַטל־צוטריט</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>יעדער וועבזייַטל־צוטריט</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>נאָר ווייַטערפֿירונגען געהערן צו אַ וועבזייַטל־צוטריט; URL־אַליאַסן און וויילדקאַרדס ווערן עקספּאָרטירט פֿאַר יעדן וועבזייַטל־צוטריט.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>שפּראַך</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>יעדע שפּראַך</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>עקספּאָרטירן</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>אימפּאָרטירן אַ URL־מאַפּע</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>ברענגט איבער די אַדרעסן פֿון אַן אַלטן וועבזייַטל מיט איין מאָל: אַ טעקע רעכנט אויס יעדן אַלטן אַדרעס און דעם בלאַט פֿון דעם וועבזייַטל צו וועלכן ער געהערט איצט. גענויע אַדרעסן ווערן ווייַטערפֿירונגען אָדער URL־אַליאַסן, אַדרעסן מיט * ווערן וויילדקאַרדס. איר זעט וואָס יעדע שורה וועט טאָן איידער עפּעס ווערט געשריבן, און יעדער אימפּאָרט קען ווערן צוריקגעמאַכט אינגאַנצן.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>די טאַבעלעס פֿאַר URL־מאַפּע־אימפּאָרטן עקזיסטירן נאָך ניט. לאָזט לויפֿן דעם אַפּגרייד־שריט 6.0.15-url-map (./console exp:upgrade --apply) איידער איר אימפּאָרטירט.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>דער אימפּאָרט איז מער ניט פֿאַראַן: ער איז אויסגעגאַנגען נאָך אַ טאָג אָדער געהערט צו אַן אַנדער באַניצער. לאָדט אַרויף די טעקע נאָך אַ מאָל.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>קלייַבט אויס אַ טעקע אָדער לייגט אַרייַן די שורות.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>די טעקע איז גרעסער ווי %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>מען קען ניט לייענען די טעקע: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>קלייַבט אויס אַ וועבזייַטל־צוטריט פֿון דער אינסטאַלאַציע.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>מען קען ניט האַלטן דעם אימפּאָרט אויפֿן סערווער: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>די טעקע</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>טעקע</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache אָדער nginx איבערשרייַב־כּללים, מאַקסימום %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>אָדער לייגט אַרייַן די שורות</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>איין שורה אויף יעדער ליניע, למשל /old-page,/new-page. די ערשטע ליניע מעג אָנרופֿן די זיַילן: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>געפֿינען פֿון דער טעקע</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>נאָר נייטיק ווען ניט דער נאָמען און ניט דער אינהאַלט פֿון דער טעקע זאָגן עס.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>פֿאָרויסשטעלונגען</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>וועבזייַטל־צוטריט פֿון נאַקעטע וועגן</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>פֿאָרויסגעשטעלט</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>שורות מיט אַ פֿולן אַדרעס נעמען אַנשטאָט דעם וועבזייַטל־צוטריט פֿון זייער האָסט.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>די שפּראַך פֿון דעם וועבזייַטל־צוטריט</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>ווען אַן אַלטער אַדרעס האָט שוין אַן אייַנטראָג</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>האַלטן דעם אייַנטראָג (איבערהיפּערן די שורה)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>פֿאַרבייַטן דעם אייַנטראָג</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>אַלטע האָסטן</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>פֿולע אַדרעסן פֿון אַ האָסט וואָס די אינסטאַלאַציע קען ניט ווערן ניט אימפּאָרטירט. שרייַבט דעם וועבזייַטל־צוטריט וואָס יעדער אַלטער האָסט שטייט פֿאַר, איינס אויף יעדער ליניע: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>פֿאָרויסבליק</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>נאָך גאָרנישט איז געשריבן: דער ווייַטערדיקער בלאַט ווייַזט וואָס יעדע שורה וועט טאָן.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>אימפּאָרט %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>דער אימפּאָרט איז צוריקגעמאַכט געוואָרן.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>דער אימפּאָרט איז צוריקגעמאַכט געוואָרן, אַחוץ די אייַנטראָגן וואָס זענען געביטן געוואָרן נאָך אים; זיי זענען געבליבן.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>מען האָט ניט געקענט צוריקמאַכן דעם אימפּאָרט: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>דאַטע</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>פֿון</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>שורות</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created געשאַפֿן, %updated פֿאַרביטן, %skipped איבערגעהיפּערט, %failed דורכגעפֿאַלן.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>צוריקגעמאַכט</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>צוריקמאַכן דעם אימפּאָרט</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>יעדער אייַנטראָג וואָס דער אימפּאָרט האָט געשאַפֿן ווערט אַוועקגענומען און יעדער אייַנטראָג וואָס ער האָט פֿאַרביטן ווערט אומגעקערט ווי ער איז געווען, דער לעצטער צו ערשט. פֿריִער באַשטעטיקט איר ווער איר זענט.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count אייַנטראָגן געביטן נאָך דעם אימפּאָרט</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>אויך צוריקמאַכן די אייַנטראָגן געביטן נאָך דעם אימפּאָרט</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>אָן דעם ווערן זיי געהאַלטן און דער אימפּאָרט ווערט טיילווייַז צוריקגעמאַכט (דער קאָנסאָל ס --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>צוריקמאַכן דעם אימפּאָרט?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>צוריקמאַכן אימפּאָרט</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>געשריבענע אייַנטראָגן</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ביז %to פֿון %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>דער אימפּאָרט האָט ניט געשריבן קיין אייַנטראָג.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>די אייַנטראָגן וואָס דער אימפּאָרט האָט געשריבן</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>ליניע</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>אַלטער אַדרעס</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>אייַנטראָג</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>פֿירט צו</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ענדערונג</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>צושטאַנד</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL־אַליאַס</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>וויילדקאַרד</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>ווייַטערפֿירונג</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>געשאַפֿן</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>פֿאַרביטן</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>אָנגעווענדט</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>געהאַלטן</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>טיילווייַז צוריקגעמאַכט</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>אימפּאָרט־געשיכטע (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>יעדער אימפּאָרט פֿון אַ URL־מאַפּע, די נייַסטע צו ערשט. אַן אימפּאָרט קען ווערן צוריקגעמאַכט אינגאַנצן: יעדער אייַנטראָג וואָס ער האָט געשריבן קערט זיך אום צו דעם וואָס איז געווען פֿריִער.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>נאָך קיין URL־מאַפּע איז ניט אימפּאָרטירט געוואָרן.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>אימפּאָרטן פֿון URL־מאַפּעס</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>נומער</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>איבערגעהיפּערט</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>דורכגעפֿאַלן</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows שורות</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>אימפּאָרטירט ווי אימפּאָרט %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>זעט דעם אימפּאָרט, אָדער מאַכט אים צוריק</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>אימפּאָרטירן אַן אַנדער טעקע</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>נאָך גאָרנישט איז געשריבן געוואָרן. יעדע שורה ווייַזט וואָס דער אימפּאָרט וועט טאָן מיט איר. אָנגעצייכנטע שורות ווערן אימפּאָרטירט; נעמט אַראָפּ דעם צייכן כּדי אויסצולאָזן אַ שורה. שורות וואָס זענען ניט נייַ קענען ווערן אימפּאָרטירט נאָר ווען זייער אַלטער אַדרעס מעג ווערן פֿאַרביטן.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>דער אימפּאָרט איז ניט דורכגעפֿירט געוואָרן: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>קיין שורה איז ניט אָנגעצייכנט פֿאַר אימפּאָרט.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>פּרוּוו־לויף: גאָרנישט איז געשריבן געוואָרן.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>דער אימפּאָרט וואָלט געשאַפֿן %created, פֿאַרביטן %updated און איבערגעהיפּערט %skipped; %failed וואָלטן דורכגעפֿאַלן.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>איבערבליק</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>צו שאַפֿן</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>צו פֿאַרבייַטן</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>איבערצוהיפּערן</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>מיט אַ פּראָבלעם</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>געהאַלטן ביז</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>פּלאַנירן נאָך אַ מאָל</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>ענדערט וואָס באַשליסט די שורות און פּלאַנירט די טעקע נאָך אַ מאָל. צייכנס וואָס איר האָט געביטן מיט דער האַנט ווערן צוריקגעשטעלט.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>שורות פֿון די האָסטן ווערן ניט אימפּאָרטירט, ווייַל די אינסטאַלאַציע ענטפֿערט ניט פֿאַר זיי. קלייַבט אויס דעם וועבזייַטל־צוטריט וואָס יעדער אַלטער האָסט שטייט פֿאַר.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>ניט אימפּאָרטירט</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ווייַזן</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>אַלע</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>קיין שורה האָט ניט דעם צושטאַנד.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ווייַזן אַלע</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>די שורות פֿון דער טעקע און וואָס דער אימפּאָרט וואָלט געטאָן מיט יעדער</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>אימפּאָרטירן</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>נייַער אַדרעס</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>סאָרט</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>באַמערקונגען</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>אימפּאָרטירן ליניע %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ניין</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>יאָ</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>פּרוּוו־לויף</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>האַלטן די צייכנס</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>פּלאַן ווי CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>פּלאַן ווי JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>אַוועקוואַרפֿן</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>אימפּאָרטירן שרייַבט די אָנגעצייכנטע שורות פֿון אַלע בלעטער ווי איין אימפּאָרט, וואָס קען ווערן צוריקגעמאַכט פֿון דער אימפּאָרט־געשיכטע; פֿריִער באַשטעטיקט איר ווער איר זענט. פּרוּוו־לויף קאָנטראָלירט יעדע שורה ווידער קעגן דעם וועבזייַטל און ציילט וואָס דער אימפּאָרט וואָלט געטאָן, אָן שרייַבן.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>ווייַטערפֿירונג (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>וויילדקאַרד־ווייַטערפֿירונג (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>וויילדקאַרד (דירעקט)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>נייַ</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>געביטן</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>ניט געביטן</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>דופּליקאַט</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>קאָנפֿליקט</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>צעבראָכענער ציל</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>אומבאַקאַנטער האָסט</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>ניט אימפּאָרטירבאַר</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>גלאָבאַלע URL־אַליאַסן</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>אימפּאָרט־געשיכטע</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL־מאַפּעס</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>ווייַטערפֿירונגען (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>די ווייַטערפֿירונגען קומען פֿון URL־מאַפּע־אימפּאָרטן: אַלטע אַדרעסן מיט אַ פֿראַגע (/index.php?id=12), צייטווייליקע ווייַטערפֿירונגען און ווייַטערפֿירונגען צו אַנדערע וועבזייַטלעך. זיי ווערן קאָנטראָלירט אויפֿן פֿולן אַדרעס, פֿאַר די URL־אַליאַסן און וויילדקאַרדס. אַ שטענדיקע ווייַטערפֿירונג צו אַ בלאַט פֿון דעם וועבזייַטל איז אַנשטאָט דעם אַ גלאָבאַלער URL־אַליאַס און ווערט דאָרט אויסגערעכנט.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count ווייַטערפֿירונגען אַוועקגענומען.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>עס זענען ניטאָ קיין ווייַטערפֿירונגען. זיי ווערן געמאַכט דורך אימפּאָרטירן אַ URL־מאַפּע.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>ווייַטערפֿירונגען קאָנטראָלירט אויפֿן פֿולן אַדרעס</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>אויסקלייַבן</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>סטאַטוס</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>פֿון אימפּאָרט</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>אַוועקנעמען</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>אויסקלייַבן %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>אַוועקנעמען %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>אַוועקנעמען די ווייַטערפֿירונג?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>אַוועקנעמען די אויסגעקליבענע ווייַטערפֿירונגען?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>אַוועקנעמען די אויסגעקליבענע</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>אַן אַוועקגענומענע ווייַטערפֿירונג הערט תּיכּף אויף צו אַרבעטן.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>אַרייַנגעלייגטער טעקסט</translation>
     </message>
 </context>
 </TS>

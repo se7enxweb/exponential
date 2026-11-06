@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Esika adresi ekendaka: nzela ya site oyo, to adresi mobimba ntango otindi. {1\} ezali makomi oyo * ya liboso ekokani na yango. Ndakisa: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>batindami na adresi oyo mpo na ntango moke (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Bapaya batindami na esika mosusu mpo na ntango moke (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Botindi ya ntango moke (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Lakisá biloko %count na lokasa moko.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Bimisá karte ya ba-URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Kitisá ba-URL alias ya mokili mobimba, ba-wildcard mpe ba-botindi ya site oyo lokola fisyé moko: mpo na kobomba yango, mpo na kobongola yango na tablo mpe kokɔtisa yango lisusu, to mpo na kopesa yango na serveur ya web lokola mibeko ya kokoma lisusu.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Pona ata lolenge moko ya biloko.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Fisyé ekokaki kokomama te.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Nini ya kobimisa</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Lolenge ya fisyé</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Biloko</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Ba-URL alias ya mokili mobimba (mobongoli ya URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Mpe ba-URL alias ya sikisiki ya makambo</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Ekomami na nœud lokola esika ya kokende, ndakisa node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Ba-wildcard</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Ba-botindi</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Siteaccess nyonso</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Kaka ba-botindi nde ezali ya siteaccess; ba-URL alias mpe ba-wildcard ebimisamaka mpo na siteaccess nyonso.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Lokóta</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Lokóta nyonso</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Bimisá</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Kɔtisá karte ya ba-URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Memá ba-adresi ya site ya kala mbala moko: fisyé ezali na adresi moko na moko ya kala mpe lokasa ya site oyo oyo ezali sikoyo ya yango. Ba-adresi ya sikisiki ekómaka ba-botindi to ba-URL alias, ba-adresi na * ekómaka ba-wildcard. Omonaka oyo molɔngɔ moko na moko ekosala liboso ete eloko moko ekomama, mpe bokɔtisi nyonso ekoki kozongisama mobimba.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Ba-tablo ya bokɔtisi ya ba-karte ya URL ezali naino te. Salá etape ya bobongisi 6.0.15-url-map (./console exp:upgrade --apply) liboso ya kokɔtisa.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Bokɔtisi oyo ezali lisusu te: esilaki nsima ya mokolo moko to ezali ya mosaleli mosusu. Tindá fisyé lisusu.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Pona fisyé to tyá milɔngɔ.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Fisyé eleki %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Fisyé ekoki kotángama te: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Pona siteaccess ya bobandisi oyo.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Bokɔtisi ekoki kobombama na serveur te: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Fisyé yango</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fisyé</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), mibeko ya kokoma lisusu ya Apache to nginx, koleka te %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>To tyá milɔngɔ</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Molɔngɔ moko na linye moko, ndakisa /lokasa-ya-kala,/lokasa-ya-sika. Linye ya liboso ekoki kopesa nkombo ya ba-colonne: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Yeba yango na fisyé</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Esengeli kaka soki nkombo to makambo ya fisyé elobi yango te.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Oyo ya ebandeli</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Siteaccess ya banzela ya bongo</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>ya ebandeli</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Milɔngɔ oyo ezali na adresi mobimba ezwaka nde siteaccess ya host na yango.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Lokóta ya siteaccess</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Soki adresi ya kala ezali kala na eloko</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Kobatela eloko (koleka molɔngɔ)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Kobongola eloko</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Ba-host ya kala</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Ba-adresi mobimba ya host oyo bobandisi oyo eyebi te ekɔtisamaka te. Pesá nkombo ya siteaccess oyo host moko na moko ya kala ezali mpo na yango, moko na linye moko: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Kotala liboso</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Eloko moko ekomami naino te: lokasa oyo elandi ekolakisa oyo molɔngɔ moko na moko ekosala.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Bokɔtisi %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Bokɔtisi ezongisami.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Bokɔtisi ezongisami, longola biloko oyo ebongolamaki nsima na yango, oyo ebatelami.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Bokɔtisi ekokaki kozongisama te: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Mokolo</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Na</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Milɔngɔ</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created esalemi, %updated ebongolami, %skipped eleki, %failed elongi te.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Ezongisami</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Zongisá bokɔtisi oyo</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Eloko nyonso oyo bokɔtisi esalaki elongolami mpe eloko nyonso oyo ebongolaki ezongisami ndenge ezalaki, oyo ya nsuka liboso. Liboso olakisaka soki ozali nani.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>Biloko %count ebongolami nsima ya bokɔtisi</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Zongisá mpe biloko oyo ebongolamaki nsima ya bokɔtisi</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Soki te, ebatelamaka mpe bokɔtisi ezongisamaka ndambo (--force ya console).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Kozongisa bokɔtisi oyo?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Zongisá bokɔtisi</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Biloko ekomami</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from tii %to na %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Bokɔtisi ekomaki eloko moko te.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Biloko oyo bokɔtisi ekomaki</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Linye</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Adresi ya kala</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Eloko</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Ememaka na</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Bobongoli</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ezalela</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL alias</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Wildcard</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Botindi</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Esalemi</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Ebongolami</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Esalelami</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Ebatelami</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Ezongisami ndambo</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Lisolo ya ba-bokɔtisi (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Bokɔtisi nyonso ya karte ya URL, ya sika liboso. Bokɔtisi ekoki kozongisama mobimba: eloko moko na moko oyo ekomaki ezongaka na oyo ezalaki liboso.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Karte ya URL moko te ekɔtisami naino.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Ba-bokɔtisi ya ba-karte ya URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Motángo</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Eleki</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Elongi te</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, milɔngɔ %rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Ekɔtisami lokola bokɔtisi %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Talá bokɔtisi, to zongisá yango</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Kɔtisá fisyé mosusu</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Eloko moko ekomami naino te. Molɔngɔ moko na moko elakisi oyo bokɔtisi ekosala na yango. Milɔngɔ oyo ezali na elembo ekɔtisamaka; longolá elembo mpo na kotika molɔngɔ. Milɔngɔ oyo ezali ya sika te ekoki kokɔtisama kaka soki adresi na yango ya kala ekoki kobongolama.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Bokɔtisi esalemaki te: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Molɔngɔ moko te ezali na elembo mpo na bokɔtisi.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Komeka: eloko moko te ekomamaki.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Bokɔtisi ekosala %created, ekobongola %updated mpe ekoleka %skipped; %failed ekolonga te.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Botali ya mobimba</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Ya kosala</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Ya kobongola</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Ya koleka</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Na mokakatano</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Ebatelami tii</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Bongisá lisusu</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Bongolá oyo ezwaka mikano mpo na milɔngɔ mpe bongisá fisyé lisusu. Bilembo oyo obongolaki na lobɔkɔ ezongaka ndenge ya ebandeli.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Milɔngɔ ya ba-host oyo ekɔtisamaka te, mpo bobandisi oyo eyanolaka mpo na yango te. Pona siteaccess oyo host moko na moko ya kala ezali mpo na yango.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Ekɔtisami te</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Lakisá</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Nyonso</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Molɔngɔ moko te ezali na ezalela oyo.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Lakisá nyonso</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Milɔngɔ ya fisyé mpe oyo bokɔtisi ekosala na moko na moko</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Kɔtisá</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Adresi ya sika</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Lolenge</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Makomi</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Kɔtisá linye %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Te</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Iyo</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Komeka</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Batelá bilembo</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Mwango lokola CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Mwango lokola JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Bwaká</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Kɔtisá ekomaka milɔngɔ oyo ezali na elembo ya nkasa nyonso lokola bokɔtisi moko, oyo ekoki kozongisama na lisolo ya ba-bokɔtisi; liboso olakisaka soki ozali nani. Komeka etalaka lisusu molɔngɔ moko na moko na site mpe etángaka oyo bokɔtisi ekosala, kozanga kokoma.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Botindi (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Botindi ya wildcard (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Wildcard (mbala moko)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Ya sika</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Ebongolami</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Ebongolami te</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Mbala mibale</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Matata</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Esika ya kokende ebebi</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Host eyebani te</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Ekoki kokɔtisama te</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Ba-URL alias ya mokili mobimba</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Lisolo ya ba-bokɔtisi</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Ba-karte ya URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Ba-botindi (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Ba-botindi oyo euti na ba-bokɔtisi ya ba-karte ya URL: ba-adresi ya kala na motuna (/index.php?id=12), ba-botindi ya ntango moke mpe ba-botindi epai ya ba-site mosusu. Etalamaka na adresi mobimba, liboso ya ba-URL alias mpe ba-wildcard. Botindi ya libela epai ya lokasa ya site oyo ezali nde URL alias ya mokili mobimba mpe ekomami kuna.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Ba-botindi %count elongolami.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Botindi ezali te. Esalemaka na kokɔtisa karte ya URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Ba-botindi oyo etalamaka na adresi mobimba</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Pona</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Statut</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Na bokɔtisi</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Longolá</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Pona %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Longolá %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Kolongola botindi oyo?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Kolongola ba-botindi oyo eponami?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Longolá oyo eponami</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Botindi oyo elongolami etikaka kosala mbala moko.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Makomi oyo etyami</translation>
     </message>
 </context>
 </TS>

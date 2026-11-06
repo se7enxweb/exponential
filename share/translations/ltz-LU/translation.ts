@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Wou d'Adressen hinféieren: e Pad vun dësem Site oder bei enger Ëmleedung eng komplett Adress. {1\} ass den Text, op deen deen éischte * gepasst huet. Beispill: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ginn temporär op dës Adress ëmgeleet (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Visiteure ginn temporär ëmgeleet (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Temporär Ëmleedung (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>%count Elementer pro Säit weisen.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL-Kaart exportéieren</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Déi global URL-Aliasen, d'Joker an d'Ëmleedunge vun dësem Site als eng Datei eroflueden: fir se ze halen, an enger Tabellerechnung ze änneren an nees z'importéieren, oder engem Webserver als Rewrite-Reegelen ze ginn.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Wielt mindestens eng Aart vun Entréeën.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>D'Datei konnt net geschriwwe ginn.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Wat exportéiert gëtt</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Format</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Entréeën</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Global URL-Aliasen (den URL-Iwwersetzer)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Och déi eegen URL-Aliase vum Inhalt</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Mam Knuet als Zil geschriwwen, zum Beispill node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Joker</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Ëmleedungen</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Site-Zougang</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>All Site-Zougang</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Nëmmen Ëmleedunge gehéieren zu engem Site-Zougang; URL-Aliasen a Joker ginn fir all Site-Zougang exportéiert.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Sprooch</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>All Sprooch</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Exportéieren</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL-Kaart importéieren</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>D'Adresse vun engem ale Site op eemol iwwerhuelen: eng Datei lëscht all al Adress an d'Säit vun dësem Site, zu där se elo gehéiert. Exakt Adresse ginn Ëmleedungen oder URL-Aliasen, Adresse mat * ginn Joker. Dir gesitt, wat all Zeil géif maachen, ier eppes geschriwwe gëtt, an all Import kann als Ganzt réckgängeg gemaach ginn.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>D'Tabelle fir URL-Kaart-Importer existéieren nach net. Féiert den Update-Schrëtt 6.0.15-url-map (./console exp:upgrade --apply) aus, ier Dir importéiert.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Dësen Import ass net méi disponibel: e leeft no engem Dag of oder gehéiert engem anere Benotzer. Luet d'Datei nees erop.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Wielt eng Datei oder fügt d'Zeilen an.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>D'Datei ass méi grouss wéi %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>D'Datei kann net gelies ginn: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Wielt e Site-Zougang vun dëser Installatioun.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Den Import kann net um Server gehale ginn: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>D'Datei</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datei</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache- oder nginx-Rewrite-Reegelen, héchstens %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Oder d'Zeilen afügen</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Eng Zeil pro Linn, zum Beispill /al-Säit,/nei-Säit. Déi éischt Linn kann d'Kolonnen nennen: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Aus der Datei erkennen</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Nëmme néideg, wann weder den Numm nach den Inhalt vun der Datei et seet.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Standardwäerter</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Site-Zougang fir reng Pfaden</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>Standard</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Zeile mat enger voller Adress huelen amplaz de Site-Zougang vun hirem Host.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>D'Sprooch vum Site-Zougang</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Wann eng al Adress schonn eng Entrée huet</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>D'Entrée halen (Zeil iwwersprangen)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>D'Entrée ersetzen</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Al Hosten</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Voll Adresse vun engem Host, deen dës Installatioun net kennt, ginn net importéiert. Gitt fir all ale Host de Site-Zougang un, fir deen e steet, een pro Linn: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Virschau</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Nach gëtt näischt geschriwwen: déi nächst Säit weist, wat all Zeil géif maachen.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Import %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Den Import gouf réckgängeg gemaach.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Den Import gouf réckgängeg gemaach, ausser d'Entréeën, déi duerno geännert goufen; déi goufe behalen.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Den Import konnt net réckgängeg gemaach ginn: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Vun</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Zeilen</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created erstallt, %updated ersat, %skipped iwwersprongen, %failed feelgeschloen.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Réckgängeg gemaach</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Dësen Import réckgängeg maachen</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>All Entrée, déi den Import erstallt huet, gëtt ewechgeholl, an all Entrée, déi en ersat huet, gëtt erëm esou hiergestallt, wéi se war, déi lescht als éischt. Dir bestätegt als éischt, wien Dir sidd.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count Entréeën no dem Import geännert</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Och d'Entréeën réckgängeg maachen, déi no dem Import geännert goufen</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Ouni dat gi se behalen an den Import gëtt deelweis réckgängeg gemaach (--force vun der Konsol).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Dësen Import réckgängeg maachen?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Import réckgängeg maachen</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Geschriwwen Entréeën</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to vun %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Den Import huet keng Entrée geschriwwen.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>D'Entréeën, déi den Import geschriwwen huet</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Linn</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Al Adress</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Entrée</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Féiert op</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ännerung</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Zoustand</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL-Alias</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Joker</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Ëmleedung</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Erstallt</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Ersat</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Ugewannt</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Behalen</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Deelweis réckgängeg gemaach</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Import-Verlaf (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>All Import vun enger URL-Kaart, déi neiste fir d'éischt. En Import kann als Ganzt réckgängeg gemaach ginn: all Entrée, déi e geschriwwen huet, kritt erëm dat, wat virdru do war.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Nach keng URL-Kaart importéiert.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Importer vun URL-Kaarten</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Nummer</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Iwwersprongen</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Feelgeschloen</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows Zeilen</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Als Import %id importéiert.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Den Import kucken oder réckgängeg maachen</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Eng aner Datei importéieren</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Nach ass näischt geschriwwen. All Zeil weist, wat den Import domat géif maachen. Ugekräizt Zeile ginn importéiert; maacht d'Kräiz ewech, fir eng Zeil auszeloossen. Zeilen, déi net nei sinn, kënnen nëmmen importéiert ginn, wann hir al Adress ersat däerf ginn.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Den Import gouf net gemaach: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Keng Zeil ass fir den Import ugekräizt.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Testlaf: näischt gouf geschriwwen.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Den Import géif %created erstellen, %updated ersetzen an %skipped iwwersprangen; %failed géifen feelschloen.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Iwwersiicht</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Ze erstellen</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Ze ersetzen</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Ze iwwersprangen</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Mat engem Problem</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Gehal bis</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Nei plangen</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Ännert dat, wat iwwer d'Zeilen entscheet, a plangt d'Datei nei. Kräizer, déi Dir mat der Hand geännert hutt, ginn zréckgesat.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Zeile vun dësen Hosten ginn net importéiert, well dës Installatioun net fir si zoustänneg ass. Wielt de Site-Zougang, fir deen all ale Host steet.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Net importéiert</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Weisen</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alleguer</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Keng Zeil huet dësen Zoustand.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Alles weisen</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>D'Zeile vun der Datei a wat den Import mat all eenzelner géif maachen</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importéieren</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Nei Adress</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Aart</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Notizen</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Linn %line importéieren</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nee</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Jo</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Testlaf</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>D'Kräizer halen</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Plang als CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Plang als JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Verwerfen</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Importéieren schreift déi ugekräizt Zeile vun alle Säiten als een Import, deen aus dem Import-Verlaf réckgängeg gemaach ka ginn; Dir bestätegt als éischt, wien Dir sidd. Den Testlaf kontrolléiert all Zeil nees géint de Site a zielt, wat den Import géif maachen, ouni ze schreiwen.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Ëmleedung (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Joker-Ëmleedung (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Joker (direkt)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nei</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Geännert</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Onverännert</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplikat</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Konflikt</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Futtist Zil</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Onbekannten Host</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Net importéierbar</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Global URL-Aliasen</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Import-Verlaf</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL-Kaarten</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Ëmleedungen (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Dës Ëmleedunge kommen aus URL-Kaart-Importer: al Adresse mat enger Ufro (/index.php?id=12), temporär Ëmleedungen an Ëmleedungen op aner Siten. Si gi géint déi voll Adress gepréift, virun den URL-Aliasen an de Joker. Eng permanent Ëmleedung op eng Säit vun dësem Site ass amplaz e globalen URL-Alias a gëtt do opgelëscht.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count Ëmleedunge goufen ewechgeholl.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Et gëtt keng Ëmleedungen. Si entstinn duerch den Import vun enger URL-Kaart.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Ëmleedungen, déi géint déi voll Adress gepréift ginn</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Auswielen</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Vum Import</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Ewechhuelen</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address auswielen</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address ewechhuelen</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Dës Ëmleedung ewechhuelen?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Déi ausgewielten Ëmleedungen ewechhuelen?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Ausgewielt ewechhuelen</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Eng ewechgeholl Ëmleedung funktionéiert direkt net méi.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Agefügten Text</translation>
     </message>
 </context>
 </TS>

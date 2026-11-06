@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Afi si adrɛswo yia: nyatakakaɖoƒe sia ƒe mɔ aɖe, alo adrɛs blibo ne wole mɔ trɔm. {1\} nye nya si * gbãtɔ sɔ kplii. Kpɔɖeŋu: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>wotrɔa mɔ na wo yia adrɛs sia dzi hena ɣeyiɣi kpui aɖe (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Wotrɔa mɔ na amedzrowo hena ɣeyiɣi kpui aɖe (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Mɔtrɔtrɔ hena ɣeyiɣi kpui (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     <message>
         <source>Show %count items per page.</source>
         <translation>Ɖe nuŋɔŋlɔ %count fia le axa ɖe sia ɖe dzi.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Tsɔ URL ƒe mapa yi go</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Xɔ URL ŋkɔ bubu siwo katã ŋu wo, dzesi-ɖesiaɖewo kple mɔtrɔtrɔwo le nyatakakaɖoƒe sia dzi abe faɛl ɖeka ene: be nàdzra ɖo, be nàtrɔ asi le eŋu le akɔntabubu-ŋlɔgbalẽ me eye nàgatsɔe va eme, alo be nàtsɔe na web-sɛva abe gbugbɔŋlɔ ƒe sewo ene.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Tia nuŋɔŋlɔ ƒomevi ɖeka ya teti.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Womete ŋu ŋlɔ faɛl la o.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Nu si woatsɔ ayi go</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Ɖoɖo</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Nuŋɔŋlɔwo</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>URL ŋkɔ bubu siwo katã ŋu wo (URL gɔmeɖela)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Kpe ɖe URL ŋkɔ bubu siwo wotrɔ asi le ŋu na emenyawo hã ŋu</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Woŋlɔe kple kɔnu la abe afi si wòyina ene, le kpɔɖeŋu me node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Dzesi-ɖesiaɖewo</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Mɔtrɔtrɔwo</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Nyatakakaɖoƒe ƒe mɔnu</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Nyatakakaɖoƒe ƒe mɔnu ɖe sia ɖe</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Mɔtrɔtrɔwo koe nye nyatakakaɖoƒe ƒe mɔnu aɖe tɔ; wotsɔa URL ŋkɔ bubuwo kple dzesi-ɖesiaɖewo yia go na nyatakakaɖoƒe ƒe mɔnu ɖe sia ɖe.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Gbe</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Gbe ɖe sia ɖe</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Tsɔ yi go</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Tsɔ URL ƒe mapa va eme</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Tsɔ nyatakakaɖoƒe xoxo aɖe ƒe adrɛswo va zi ɖeka: faɛl aɖe ŋlɔ adrɛs xoxo ɖe sia ɖe kple axa si wòku ɖo fifia le nyatakakaɖoƒe sia dzi. Adrɛs siwo de pɛpɛpɛ zua mɔtrɔtrɔwo alo URL ŋkɔ bubuwo, eye adrɛs siwo me * le zua dzesi-ɖesiaɖewo. Èkpɔa nu si fli ɖe sia ɖe awɔ hafi woaŋlɔ naneke, eye woate ŋu atutu tsɔtsɔ va eme ɖe sia ɖe ɖa bliboe.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL ƒe mapa ƒe tsɔtsɔ va eme ƒe kplɔ̃wo meli haɖe o. Wɔ ŋgɔyiyi ƒe afɔɖeɖe 6.0.15-url-map (./console exp:upgrade --apply) hafi nàtsɔ nuwo va eme.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Tsɔtsɔ va eme sia megali o: eƒe ɣeyiɣi va yi le ŋkeke ɖeka megbe alo ezãla bubu tɔe wònye. Ɖo faɛl la ɖe dzi ake.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Tia faɛl aɖe alo tɔ fliawo ɖe eme.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Faɛl la lolo wu %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Womate ŋu axlẽ faɛl la o: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Tia nyatakakaɖoƒe ƒe mɔnu aɖe le ɖoɖo sia me.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Womate ŋu adzra tsɔtsɔ va eme la ɖo ɖe sɛva dzi o: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Faɛl la</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faɛl</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache alo nginx ƒe gbugbɔŋlɔ ƒe sewo, megbɔ %size o.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Alo tɔ fliawo ɖe eme</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Fli ɖeka le ŋɔŋlɔ-fli ɖe sia ɖe dzi, le kpɔɖeŋu me /axa-xoxo,/axa-yeye. Ŋɔŋlɔ-fli gbãtɔ ate ŋu aŋlɔ kɔlɔmwo ƒe ŋkɔwo: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Kpɔe le faɛl la me</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Ehiã ko ne faɛl la ƒe ŋkɔ alo eƒe emenyawo megblɔe o.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Nusiwo woɖo ɖi</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Nyatakakaɖoƒe ƒe mɔnu na mɔ siwo me host mele o</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>si woɖo ɖi</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Fli siwo me adrɛs blibo le xɔa woƒe host ƒe nyatakakaɖoƒe ƒe mɔnu boŋ.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Nyatakakaɖoƒe ƒe mɔnu la ƒe gbe</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Ne nuŋɔŋlɔ aɖe li xoxo na adrɛs xoxo aɖe</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Dzra nuŋɔŋlɔ la ɖo (ka fli la ta)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Ɖɔ li nuŋɔŋlɔ la</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Host xoxowo</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Womatsɔ host siwo ŋu ɖoɖo sia menya o ƒe adrɛs bliboawo va eme o. Ŋlɔ nyatakakaɖoƒe ƒe mɔnu si host xoxo ɖe sia ɖe tsi tre ɖi na, ɖeka le ŋɔŋlɔ-fli ɖe sia ɖe dzi: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Kpɔ do ŋgɔ</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Womeŋlɔ naneke haɖe o: axa si kplɔe ɖo afia nu si fli ɖe sia ɖe awɔ.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Tsɔtsɔ va eme %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Wotutu tsɔtsɔ va eme la ɖa.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Wotutu tsɔtsɔ va eme la ɖa, negbe nuŋɔŋlɔ siwo wotrɔ le eƒe megbe ko, siwo wodzra ɖo.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Womete ŋu tutu tsɔtsɔ va eme la ɖa o: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Ŋkekeŋɔli</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ame si wɔe</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Fliwo</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>Wowɔ %created, woɖɔ li %updated, woka %skipped ta, %failed do kpo.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Wotutui ɖa</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Tutu tsɔtsɔ va eme sia ɖa</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Woaɖe nuŋɔŋlɔ ɖe sia ɖe si tsɔtsɔ va eme la wɔ ɖa, eye woagbugbɔ nuŋɔŋlɔ ɖe sia ɖe si wòɖɔ li aɖo eƒe nɔnɔme gbãtɔ me, mamlɛtɔ gbã. Àɖo kpe ame si nènye dzi gbã.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>Wotrɔ nuŋɔŋlɔ %count le tsɔtsɔ va eme la megbe</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Tutu nuŋɔŋlɔ siwo wotrɔ le tsɔtsɔ va eme la megbe hã ɖa</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Ne mewɔe o la, wodzraa wo ɖo eye tsɔtsɔ va eme la ƒe akpa aɖe ko wotutuna ɖa (console ƒe --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Natutu tsɔtsɔ va eme sia ɖa?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Tutu tsɔtsɔ va eme ɖa</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Nuŋɔŋlɔ siwo woŋlɔ</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from va ɖo %to le %count me</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Tsɔtsɔ va eme la meŋlɔ nuŋɔŋlɔ aɖeke o.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Nuŋɔŋlɔ siwo tsɔtsɔ va eme la ŋlɔ</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Ŋɔŋlɔ-fli</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Adrɛs xoxo</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Nuŋɔŋlɔ</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Ekplɔa ame yia</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Tɔtrɔ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Nɔnɔme</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL ŋkɔ bubu</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Dzesi-ɖesiaɖe</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Mɔtrɔtrɔ</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Wowɔe</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Woɖɔe li</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Wowɔe ŋudɔ</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Wodzrae ɖo</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Wotutui ɖa ƒe akpa aɖe</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Tsɔtsɔ va eme ƒe ŋutinya (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL ƒe mapa ƒe tsɔtsɔ va eme ɖe sia ɖe, yeyetɔ gbã. Woate ŋu atutu tsɔtsɔ va eme aɖe ɖa bliboe: nuŋɔŋlɔ ɖe sia ɖe si wòŋlɔ gbugbɔna zua nu si nɔ afi ma do ŋgɔ.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Wometsɔ URL ƒe mapa aɖeke va eme haɖe o.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL ƒe mapawo ƒe tsɔtsɔ va eme</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Xexlẽdzesi</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Woka ta</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Edo kpo</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, fli %rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Wotsɔe va eme abe tsɔtsɔ va eme %id ene.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Kpɔ tsɔtsɔ va eme la, alo tutui ɖa</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Tsɔ faɛl bubu va eme</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Womeŋlɔ naneke haɖe o. Fli ɖe sia ɖe fia nu si tsɔtsɔ va eme la awɔ kplii. Wotsɔa fli siwo dzi wode dzesi va eme; ɖe dzesi la ɖa le fli aɖe dzi be nàgblẽe ɖi. Fli siwo menye yeyewo o la, woate ŋu atsɔ wo va eme ko ne woate ŋu aɖɔ woƒe adrɛs xoxo li.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Wometsɔ nuwo va eme o: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Wometsɔ dzesi de fli aɖeke dzi na tsɔtsɔ va eme o.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Dɔwɔwɔ ƒe kpɔɖeŋu: womeŋlɔ naneke o.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Tsɔtsɔ va eme la awɔ %created, aɖɔ li %updated, aka %skipped ta; %failed ado kpo.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Kpɔkpɔ bliboa</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Be woawɔ</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Be woaɖɔ li</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Be woaka ta</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Kple kuxi</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Wodzrae ɖo va se ɖe</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Gaɖo ɖoɖo</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Trɔ nusiwo tia fliawo eye nàgaɖo ɖoɖo na faɛl la. Dzesi siwo nètrɔ kple asi la, woagbugbɔ wo aɖo.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Wometsɔa host siawo ƒe fliwo va eme o, elabena ɖoɖo sia meɖoa eŋu na wo o. Tia nyatakakaɖoƒe ƒe mɔnu si host xoxo ɖe sia ɖe tsi tre ɖi na.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Wometsɔe va eme o</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Fia</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Katã</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Fli aɖeke mele nɔnɔme sia me o.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Fia wo katã</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Faɛl la ƒe fliwo kple nu si tsɔtsɔ va eme la awɔ kple ɖe sia ɖe</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Tsɔ va eme</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Adrɛs yeye</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Ƒomevi</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Nyatakakawo</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Tsɔ ŋɔŋlɔ-fli %line va eme</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ao</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ɛ̃</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Dɔwɔwɔ ƒe kpɔɖeŋu</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Dzra dzesiawo ɖo</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Ɖoɖo abe CSV ene</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Ɖoɖo abe JSON ene</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Tsɔe ƒu gbe</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Tsɔ va eme ŋlɔa fli siwo dzi wode dzesi le axa ɖe sia ɖe dzi abe tsɔtsɔ va eme ɖeka ene, si woate ŋu atutu ɖa le tsɔtsɔ va eme ƒe ŋutinya me; àɖo kpe ame si nènye dzi gbã. Dɔwɔwɔ ƒe kpɔɖeŋu gakpɔa fli ɖe sia ɖe ɖe nyatakakaɖoƒe la ŋu eye wòxlẽa nu si tsɔtsɔ va eme la awɔ, evɔ maŋlɔ naneke o.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Mɔtrɔtrɔ (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Dzesi-ɖesiaɖe ƒe mɔtrɔtrɔ (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Dzesi-ɖesiaɖe (tẽ)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Yeye</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Wotrɔe</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Metrɔ o</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Evelia</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Masɔmasɔ</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Afi si wòyina gblẽ</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Host si womenya o</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Womate ŋu atsɔe va eme o</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>URL ŋkɔ bubu siwo katã ŋu wo</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Tsɔtsɔ va eme ƒe ŋutinya</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL ƒe mapawo</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Mɔtrɔtrɔwo (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Mɔtrɔtrɔ siawo tso URL ƒe mapawo ƒe tsɔtsɔ va eme me: adrɛs xoxo siwo me biabia le (/index.php?id=12), mɔtrɔtrɔ hena ɣeyiɣi kpui kple mɔtrɔtrɔ yi nyatakakaɖoƒe bubuwo. Wodzroa wo me le adrɛs blibo la dzi, do ŋgɔ na URL ŋkɔ bubuwo kple dzesi-ɖesiaɖewo. Mɔtrɔtrɔ ɖaa yi axa aɖe le nyatakakaɖoƒe sia dzi nye URL ŋkɔ bubu si katã ŋu wo boŋ eye woŋlɔe ɖe afi ma.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Woɖe mɔtrɔtrɔ %count ɖa.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Mɔtrɔtrɔ aɖeke meli o. URL ƒe mapa tsɔtsɔ va eme wɔa wo.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Mɔtrɔtrɔ siwo wodzro le adrɛs blibo la dzi</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Tia</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Nɔnɔme</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Tso tsɔtsɔ va eme me</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Ɖee ɖa</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Tia %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Ɖe %address ɖa</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Naɖe mɔtrɔtrɔ sia ɖa?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Naɖe mɔtrɔtrɔ siwo wotia ɖa?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Ɖe esiwo wotia ɖa</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Mɔtrɔtrɔ si woɖe ɖa dzudzɔa dɔwɔwɔ enumake.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Nuŋɔŋlɔ si wotɔ ɖe eme</translation>
     </message>
 </context>
 </TS>

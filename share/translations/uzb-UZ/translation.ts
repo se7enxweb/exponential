@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Manzillar qayerga boradi: shu saytning yoʻli yoki yoʻnaltirishda toʻliq manzil. {1\} birinchi * ga mos kelgan matn. Misol: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ushbu manzilga vaqtincha yoʻnaltiriladi (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Tashrif buyuruvchilar vaqtincha yoʻnaltiriladi (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Vaqtincha yoʻnaltirish (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
     <message>
         <source>Show %count items per page.</source>
         <translation>Har sahifada %count ta elementni koʻrsatish.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL xaritasini eksport qilish</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Ushbu saytning global URL taxalluslari, joker belgilar va yoʻnaltirishlarini bitta fayl sifatida yuklab oling: saqlab qoʻyish, elektron jadvalda tahrirlab qayta import qilish yoki veb-serverga qayta yozish qoidalari sifatida berish uchun.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Kamida bitta yozuv turini tanlang.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Faylni yozib boʻlmadi.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Nimani eksport qilish</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Format</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Yozuvlar</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Global URL taxalluslari (URL tarjimoni)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Kontentning maxsus URL taxalluslari ham</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Maqsad sifatida tugun bilan yoziladi, masalan node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Joker belgilar</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Yoʻnaltirishlar</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Sayt kirish nuqtasi</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Barcha sayt kirish nuqtalari</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Faqat yoʻnaltirishlar sayt kirish nuqtasiga tegishli; URL taxalluslari va joker belgilar har bir sayt kirish nuqtasi uchun eksport qilinadi.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Til</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Barcha tillar</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Eksport qilish</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL xaritasini import qilish</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Eski sayt manzillarini bir yoʻla koʻchiring: fayl har bir eski manzilni va u endi ushbu saytning qaysi sahifasiga tegishli ekanini sanab beradi. Aniq manzillar yoʻnaltirish yoki URL taxallusiga, * belgili manzillar joker belgilarga aylanadi. Biror narsa yozilishidan oldin har bir qator nima qilishini koʻrasiz va har bir importni butunlay bekor qilish mumkin.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL xaritasi importi jadvallari hali mavjud emas. Import qilishdan oldin 6.0.15-url-map yangilash bosqichini (./console exp:upgrade --apply) ishga tushiring.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Bu import endi mavjud emas: uning muddati bir kundan keyin tugagan yoki u boshqa foydalanuvchiga tegishli. Faylni qayta yuklang.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Fayl tanlang yoki qatorlarni joylashtiring.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Fayl hajmi %size dan katta.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Faylni oʻqib boʻlmaydi: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Ushbu oʻrnatmaning sayt kirish nuqtasini tanlang.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Importni serverda saqlab boʻlmaydi: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Fayl</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fayl</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache yoki nginx qayta yozish qoidalari, koʻpi bilan %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Yoki qatorlarni joylashtiring</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Har bir satrda bitta qator, masalan /eski-sahifa,/yangi-sahifa. Birinchi satr ustunlarni nomlashi mumkin: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Fayldan aniqlash</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Faqat faylning nomi ham, mazmuni ham buni koʻrsatmaganda kerak.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Standart qiymatlar</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Oddiy yoʻllar uchun sayt kirish nuqtasi</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>standart</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Toʻliq manzilli qatorlar buning oʻrniga oʻz xostining sayt kirish nuqtasini oladi.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Sayt kirish nuqtasining tili</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Eski manzilda allaqachon yozuv boʻlsa</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Yozuvni saqlash (qatorni oʻtkazib yuborish)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Yozuvni almashtirish</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Eski xostlar</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Ushbu oʻrnatma bilmaydigan xostning toʻliq manzillari import qilinmaydi. Har bir eski xost qaysi sayt kirish nuqtasiga mos kelishini har satrda bittadan yozing: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Oldindan koʻrish</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Hali hech narsa yozilmadi: keyingi sahifa har bir qator nima qilishini koʻrsatadi.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Import %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Import bekor qilindi.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Import bekor qilindi, undan keyin oʻzgartirilgan yozuvlar bundan mustasno, ular saqlab qolindi.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Importni bekor qilib boʻlmadi: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Sana</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Muallif</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Qatorlar</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>Yaratildi: %created, almashtirildi: %updated, oʻtkazib yuborildi: %skipped, muvaffaqiyatsiz: %failed.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Bekor qilingan</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Ushbu importni bekor qilish</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Import yaratgan har bir yozuv olib tashlanadi va u almashtirgan har bir yozuv oxirgisidan boshlab avvalgi holiga qaytariladi. Avval shaxsingizni tasdiqlaysiz.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>Importdan keyin oʻzgartirilgan yozuvlar: %count</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Importdan keyin oʻzgartirilgan yozuvlarni ham bekor qilish</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Busiz ular saqlanadi va import qisman bekor qilingan boʻladi (konsoldagi --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Ushbu import bekor qilinsinmi?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Importni bekor qilish</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Yozilgan yozuvlar</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from – %to / %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Import hech qanday yozuv yozmadi.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Import yozgan yozuvlar</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Satr</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Eski manzil</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Yozuv</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Olib boradi</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Oʻzgarish</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Holat</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL taxallusi</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Joker belgi</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Yoʻnaltirish</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Yaratildi</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Almashtirildi</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Qoʻllandi</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Saqlandi</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Qisman bekor qilingan</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Import tarixi (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL xaritalarining barcha importlari, eng yangisi birinchi. Importni butunlay bekor qilish mumkin: u yozgan har bir yozuv avvalgi holiga qaytadi.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Hali birorta URL xaritasi import qilinmagan.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL xaritalari importlari</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Raqam</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Oʻtkazib yuborildi</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Muvaffaqiyatsiz</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, qatorlar: %rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>%id raqamli import sifatida import qilindi.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Importni koʻrish yoki uni bekor qilish</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Boshqa faylni import qilish</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Hali hech narsa yozilmadi. Har bir qator import u bilan nima qilishini koʻrsatadi. Belgilangan qatorlar import qilinadi; qatorni chiqarib tashlash uchun belgini olib tashlang. Yangi boʻlmagan qatorlar faqat eski manzilini almashtirishga ruxsat berilganda import qilinadi.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Import bajarilmadi: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Import uchun hech bir qator belgilanmagan.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Sinov ishga tushirish: hech narsa yozilmadi.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Import %created ta yaratadi, %updated ta almashtiradi va %skipped ta oʻtkazib yuboradi; %failed ta muvaffaqiyatsiz boʻladi.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Umumiy koʻrinish</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Yaratiladi</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Almashtiriladi</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Oʻtkazib yuboriladi</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Muammoli</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Saqlash muddati</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Qayta rejalashtirish</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Qatorlarni belgilaydigan sozlamalarni oʻzgartiring va faylni qayta rejalashtiring. Qoʻlda oʻzgartirilgan belgilar tiklanadi.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Bu xostlarning qatorlari import qilinmaydi, chunki ushbu oʻrnatma ularga javob bermaydi. Har bir eski xost qaysi sayt kirish nuqtasiga mos kelishini tanlang.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Import qilinmadi</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Koʻrsatish</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hammasi</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Bu holatda qator yoʻq.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hammasini koʻrsatish</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Fayl qatorlari va import ularning har biri bilan nima qilishi</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Import qilish</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Yangi manzil</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Tur</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Izohlar</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>%line-satrni import qilish</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Yoʻq</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ha</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Sinov ishga tushirish</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Belgilarni saqlash</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Reja CSV koʻrinishida</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Reja JSON koʻrinishida</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Bekor qilib tashlash</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Import qilish har bir sahifaning belgilangan qatorlarini bitta import sifatida yozadi, uni import tarixidan bekor qilish mumkin; avval shaxsingizni tasdiqlaysiz. Sinov ishga tushirish har bir qatorni saytga nisbatan qayta tekshiradi va hech narsa yozmasdan import nima qilishini sanaydi.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Yoʻnaltirish (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Joker belgili yoʻnaltirish (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Joker belgi (bevosita)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Yangi</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Oʻzgargan</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Oʻzgarmagan</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Takroriy</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Nizo</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Buzilgan maqsad</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Nomaʼlum xost</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Import qilib boʻlmaydi</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Global URL taxalluslari</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Import tarixi</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL xaritalari</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Yoʻnaltirishlar (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Bu yoʻnaltirishlar URL xaritasi importlaridan keladi: soʻrovli eski manzillar (/index.php?id=12), vaqtincha yoʻnaltirishlar va boshqa saytlarga yoʻnaltirishlar. Ular URL taxalluslari va joker belgilardan oldin, toʻliq manzil boʻyicha tekshiriladi. Ushbu saytning sahifasiga doimiy yoʻnaltirish esa global URL taxallusi boʻlib, oʻsha yerda koʻrsatiladi.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Olib tashlangan yoʻnaltirishlar: %count.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Yoʻnaltirishlar yoʻq. Ular URL xaritasini import qilish orqali yaratiladi.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Toʻliq manzil boʻyicha tekshiriladigan yoʻnaltirishlar</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Tanlash</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Holat</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Importdan</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Olib tashlash</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address ni tanlash</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address ni olib tashlash</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Ushbu yoʻnaltirish olib tashlansinmi?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Tanlangan yoʻnaltirishlar olib tashlansinmi?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Tanlanganlarni olib tashlash</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Olib tashlangan yoʻnaltirish darhol ishlashdan toʻxtaydi.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Joylashtirilgan matn</translation>
     </message>
 </context>
 </TS>

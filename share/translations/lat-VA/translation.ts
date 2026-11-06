@@ -7321,6 +7321,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Quo inscriptiones eunt: via huius situs, aut inscriptio plena cum redirigitur. {1\} est textus quem primum * cepit. Exemplum: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ad hanc inscriptionem ad tempus rediriguntur (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Visitatores ad tempus rediriguntur (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Redirectio temporaria (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85524,6 +85536,625 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Res in singulis paginis ostendere: %count.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Mappam URL exportare</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Cognomina URL generalia, formas generales et redirectiones huius situs uno fasciculo depromite: ut servetis, ut in tabula computatoria emendetis et iterum importetis, aut ut servitori interretiali pro regulis rescribendi detis.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Saltem unum genus elementorum eligite.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Fasciculus scribi non potuit.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Quid exportandum sit</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Elementa</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Cognomina URL generalia (interpres URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Etiam cognomina URL propria contentorum</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Cum nodo pro meta scripta, exempli gratia node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Formae generales</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Redirectiones</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Aditus situs</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Omnis aditus situs</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Solae redirectiones ad aditum situs pertinent; cognomina URL et formae generales pro omni aditu situs exportantur.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Lingua</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Omnis lingua</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Exportare</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Mappam URL importare</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Inscriptiones situs veteris semel transferte: fasciculus quamque inscriptionem veterem et paginam huius situs ad quam nunc pertinet enumerat. Inscriptiones exactae redirectiones aut cognomina URL fiunt, inscriptiones cum * formae generales fiunt. Videtis quid quisque ordo faciat antequam quicquam scribatur, et omnis importatio tota rescindi potest.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Tabulae importationum mapparum URL nondum exstant. Gradum renovationis 6.0.15-url-map (./console exp:upgrade --apply) exsequimini antequam importetis.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Haec importatio iam non praesto est: post diem exspiravit aut ad alium usorem pertinet. Fasciculum iterum imponite.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Fasciculum eligite aut ordines inserite.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Fasciculus maior est quam %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Fasciculus legi non potest: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Aditum situs huius installationis eligite.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Importatio in servitore servari non potest: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Fasciculus ipse</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fasciculus</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), regulae rescribendi Apache vel nginx, ad summum %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Vel ordines inserite</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Unus ordo in quaque linea, exempli gratia /pagina-vetus,/pagina-nova. Prima linea columnas nominare potest: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>E fasciculo cognoscere</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Necessarium tantum cum neque nomen neque contentum fasciculi id dicit.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Praedefinita</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Aditus situs viarum nudarum</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>praedefinitum</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Ordines cum inscriptione plena aditum situs hospitis sui potius sumunt.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Lingua aditus situs</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Cum inscriptio vetus iam elementum habet</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Elementum servare (ordinem praeterire)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Elementum substituere</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Hospites veteres</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Inscriptiones plenae hospitis quem haec installatio non novit non importantur. Aditum situs pro quo quisque hospes vetus stat nominate, unum in quaque linea: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Praevisio</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Nihil adhuc scribitur: pagina proxima ostendit quid quisque ordo faceret.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Importatio %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Importatio rescissa est.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Importatio rescissa est, praeter elementa post eam mutata, quae servata sunt.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Importatio rescindi non potuit: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dies</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ab</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Ordines</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created creata, %updated substituta, %skipped praeterita, %failed defecerunt.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Rescissa</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Hanc importationem rescindere</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Omne elementum quod importatio creavit removetur et omne quod substituit restituitur ut erat, ultimum primum. Primum confirmatis quis sitis.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count elementa post importationem mutata</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Etiam elementa post importationem mutata rescindere</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Sine hoc servantur et importatio ex parte rescissa fit (--force consolae).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Hanc importationem rescindere?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Importationem rescindere</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Elementa scripta</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ad %to ex %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Importatio nullum elementum scripsit.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Elementa quae importatio scripsit</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Linea</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Inscriptio vetus</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Elementum</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Ducit ad</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Mutatio</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Condicio</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Cognomen URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Forma generalis</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Redirectio</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Creatum</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Substitutum</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Adhibitum</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Servatum</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Ex parte rescissa</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Historia importationum (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Omnis importatio mappae URL, novissima prima. Importatio tota rescindi potest: quodque elementum quod scripsit ad id quod antea erat redit.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Nulla mappa URL adhuc importata est.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Importationes mapparum URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Numerus</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Praeterita</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Defecerunt</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows ordines</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Importatum ut importatio %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Importationem videre, aut eam rescindere</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Alium fasciculum importare</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Nihil adhuc scriptum est. Quisque ordo ostendit quid importatio cum eo faceret. Ordines notati importantur; notam ordinis tollite ut eum omittatis. Ordines qui novi non sunt importari possunt tantum cum inscriptionem eorum veterem substitui licet.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Importatio facta non est: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Nullus ordo ad importandum notatus est.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Cursus siccus: nihil scriptum est.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Importatio crearet %created, substitueret %updated et praeteriret %skipped; %failed deficerent.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Conspectus</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Creanda</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Substituenda</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Praetereunda</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Cum difficultate</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Servatum usque ad</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Iterum disponere</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Mutate quae ordines decernunt et fasciculum iterum disponite. Notae quas manu mutavistis restituuntur.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Ordines horum hospitum non importantur, quia haec installatio pro eis non respondet. Aditum situs pro quo quisque hospes vetus stat eligite.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Non importatum</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ostendere</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Omnia</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Nullus ordo hanc condicionem habet.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Omnia ostendere</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Ordines fasciculi et quid importatio cum quoque faceret</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importare</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Inscriptio nova</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Genus</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Notae</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Lineam %line importare</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Non</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ita</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Cursus siccus</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Notas servare</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Consilium ut CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Consilium ut JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Abicere</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Importare ordines notatos omnium paginarum ut unam importationem scribit, quae ex historia importationum rescindi potest; primum confirmatis quis sitis. Cursus siccus quemque ordinem iterum cum situ comparat et numerat quid importatio faceret, nihil scribens.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Redirectio (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Redirectio formae generalis (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Forma generalis (directa)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Novum</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Mutatum</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Immutatum</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplicatum</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Conflictus</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Meta fracta</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Hospes ignotus</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Importari non potest</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Cognomina URL generalia</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Historia importationum</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Mappae URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Redirectiones (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Hae redirectiones ex importationibus mapparum URL veniunt: inscriptiones veteres cum quaestione (/index.php?id=12), redirectiones temporariae et redirectiones ad alios situs. In inscriptione plena examinantur, ante cognomina URL et formas generales. Redirectio perpetua ad paginam huius situs potius cognomen URL generale est et illic enumeratur.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count redirectiones remotae.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Nullae redirectiones sunt. Importatione mappae URL fiunt.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Redirectiones in inscriptione plena examinatae</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Eligere</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Ex importatione</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Removere</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address eligere</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address removere</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Hanc redirectionem removere?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Redirectiones selectas removere?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Selecta removere</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Redirectio remota statim operari desinit.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Textus insertus</translation>
     </message>
 </context>
 </TS>

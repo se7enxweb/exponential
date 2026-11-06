@@ -27,7 +27,8 @@ class AdminViewParametersOnlyTest extends PHPUnit\Framework\TestCase
     /** The converted views, under kernel/private/classes/views/ (and one module script) */
     const VIEWS = array(
         'content/job.php', 'content/jobs.php', 'content/subitemsexport.php', 'content/bookmark.php', 'content/draft.php',
-        'content/urlalias_global.php', 'content/urlalias_wildcard.php',
+        'content/urlalias_global.php', 'content/urlalias_wildcard.php', 'content/urlimport.php', 'content/urlimporthistory.php',
+        'content/urlexport.php', 'content/urlredirects.php',
         'contentcheck/storage.php', 'contentcheck/storageaction.php', 'contentcheck/brokenrelations.php',
         'contentcheck/unreferenced.php', 'contentcheck/fixfiles.php',
         'contentfinder/search.php', 'settings/view.php',
@@ -45,7 +46,9 @@ class AdminViewParametersOnlyTest extends PHPUnit\Framework\TestCase
                             'jobs' => array( 'state', 'type', 'user', 'sort', 'order', 'offset' ),
                             'subitemsexport' => array( 'columns', 'sort', 'order' ),
                             'bookmark' => array( 'q' ), 'draft' => array( 'q' ),
-                            'urltranslator' => array( 'q' ), 'urlwildcards' => array( 'q' ) ),
+                            'urltranslator' => array( 'q' ), 'urlwildcards' => array( 'q' ),
+                            'urlimport' => array( 'plan', 'state', 'offset', 'report' ), 'urlimporthistory' => array( 'offset', 'done' ),
+                            'urlredirects' => array( 'offset', 'removed' ) ),
         'contentfinder' => array( 'search' => array( 'text', 'type' ) ),
         'settings' => array( 'view' => array( 'q', 'scope', 'changed', 'compare' ) ),
         'role' => array( 'list' => array( 'q' ) ),
@@ -62,7 +65,9 @@ class AdminViewParametersOnlyTest extends PHPUnit\Framework\TestCase
     /** The templates (relative to design/<design>/templates/) of the converted views */
     const TEMPLATES = array(
         'content/job.tpl', 'content/jobs.tpl', 'content/bookmark.tpl', 'content/draft.tpl',
-        'content/urlalias_global.tpl', 'content/urlalias_wildcard.tpl',
+        'content/urlalias_global.tpl', 'content/urlalias_wildcard.tpl', 'content/urlimport.tpl', 'content/urlimport_preview.tpl',
+        'content/urlimport_history.tpl', 'content/urlimport_batch.tpl', 'content/urlexport.tpl', 'content/urlredirects.tpl',
+        'content/urlmap_toolbar.tpl',
         'contentcheck/*.tpl', 'contentfinder/*.tpl', 'settings/view.tpl',
         'role/list.tpl', 'user/unactivated.tpl', 'url/list.tpl', 'search/stats.tpl', 'oauthadmin/keys.tpl',
         'pdf/list.tpl', 'mailpreferences/*.tpl', 'shop/orderreceipt.tpl',

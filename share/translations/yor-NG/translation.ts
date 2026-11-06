@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Ibi tí àwọn àdírẹ́sì máa lọ: ọ̀nà kan lórí sáìtì yìí, tàbí àdírẹ́sì kíkún nígbà tí a bá ń darí. {1\} ni ọ̀rọ̀ tí * àkọ́kọ́ bá mu. Àpẹẹrẹ: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ni a darí sí àdírẹ́sì yìí fún ìgbà díẹ̀ (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>A ń darí àwọn olùbẹ̀wò lọ síbòmíràn fún ìgbà díẹ̀ (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Àtúnṣètò ọ̀nà fún ìgbà díẹ̀ (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85489,6 +85501,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>Fi ohun %count hàn ní ojú ìwé kọ̀ọ̀kan.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Gbé máàpù URL jáde</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Ṣe ìgbàsílẹ̀ àwọn orúkọ àfidípò URL àgbáyé, àwọn àmì àfidípò àti àwọn àtúnṣètò ọ̀nà ti sáìtì yìí gẹ́gẹ́ bí fáìlì kan: láti tọ́jú rẹ̀, láti ṣàtúnṣe rẹ̀ nínú ìwé àtẹ kí o sì tún gbé e wọlé, tàbí láti fún olùpèsè ayélujára gẹ́gẹ́ bí àwọn òfin àtúnkọ.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Yan ó kéré tán irú àkọsílẹ̀ kan.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>A kò lè kọ fáìlì náà.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Ohun tí a ó gbé jáde</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Ọ̀nà kíkọ</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Àwọn àkọsílẹ̀</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Àwọn orúkọ àfidípò URL àgbáyé (olùtúmọ̀ URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Àwọn orúkọ àfidípò URL àdáni ti àkóónú pẹ̀lú</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>A kọ ọ́ pẹ̀lú nóòdù gẹ́gẹ́ bí ibi tí a ń lọ, fún àpẹẹrẹ node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Àwọn àmì àfidípò</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Àwọn àtúnṣètò ọ̀nà</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Ìwọlé sáìtì</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Gbogbo ìwọlé sáìtì</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Àwọn àtúnṣètò ọ̀nà nìkan ló jẹ́ ti ìwọlé sáìtì kan; a ń gbé àwọn orúkọ àfidípò URL àti àwọn àmì àfidípò jáde fún gbogbo ìwọlé sáìtì.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Èdè</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Gbogbo èdè</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Gbé jáde</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Gbé máàpù URL wọlé</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Mú àwọn àdírẹ́sì sáìtì àtijọ́ wá lẹ́ẹ̀kan ṣoṣo: fáìlì kan ṣe àkójọ àdírẹ́sì àtijọ́ kọ̀ọ̀kan àti ojú-ìwé sáìtì yìí tí ó jẹ́ tirẹ̀ báyìí. Àwọn àdírẹ́sì gangan di àtúnṣètò ọ̀nà tàbí orúkọ àfidípò URL, àwọn àdírẹ́sì tí ó ní * di àmì àfidípò. O máa rí ohun tí ìlà kọ̀ọ̀kan yóò ṣe kí a tó kọ ohunkóhun, a sì lè dá ìgbéwọlé kọ̀ọ̀kan padà pátápátá.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Àwọn tábìlì ìgbéwọlé máàpù URL kò tíì sí. Ṣiṣẹ́ ìgbésẹ̀ àtúnṣe 6.0.15-url-map (./console exp:upgrade --apply) kí o tó gbé wọlé.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Ìgbéwọlé yìí kò sí mọ́: ó parí lẹ́yìn ọjọ́ kan tàbí ó jẹ́ ti olùmúlò mìíràn. Tún fáìlì náà gbé sókè.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Yan fáìlì kan tàbí lẹ àwọn ìlà.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Fáìlì náà tóbi ju %size lọ.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>A kò lè ka fáìlì náà: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Yan ìwọlé sáìtì kan ti ìfisílẹ̀ yìí.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>A kò lè tọ́jú ìgbéwọlé náà sórí olùpèsè: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Fáìlì náà</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fáìlì</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), àwọn òfin àtúnkọ Apache tàbí nginx, tí kò ju %size lọ.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Tàbí lẹ àwọn ìlà</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Ìlà kan fún laini kọ̀ọ̀kan, fún àpẹẹrẹ /old-page,/new-page. Laini àkọ́kọ́ lè dárúkọ àwọn òpó: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Ṣàwárí láti inú fáìlì</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Ó wúlò nìkan nígbà tí orúkọ tàbí àkóónú fáìlì náà kò sọ ọ́.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Àwọn ààtò àkọ́kọ́</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Ìwọlé sáìtì fún àwọn ipa ọ̀nà lásán</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>àkọ́kọ́</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Àwọn ìlà tí ó ní àdírẹ́sì kíkún máa mú ìwọlé sáìtì ti agbàlejò wọn dípò.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Èdè ìwọlé sáìtì náà</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Nígbà tí àdírẹ́sì àtijọ́ kan ti ní àkọsílẹ̀ tẹ́lẹ̀</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Pa àkọsílẹ̀ mọ́ (fò ìlà náà)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Rọ́pò àkọsílẹ̀ náà</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Àwọn agbàlejò àtijọ́</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>A kò ní gbé àwọn àdírẹ́sì kíkún ti agbàlejò tí ìfisílẹ̀ yìí kò mọ̀ wọlé. Dárúkọ ìwọlé sáìtì tí agbàlejò àtijọ́ kọ̀ọ̀kan dúró fún, ọ̀kan lórí laini kọ̀ọ̀kan: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Awotẹ́lẹ̀</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>A kò tíì kọ nǹkan kan: ojú-ìwé tó kàn yóò fi ohun tí ìlà kọ̀ọ̀kan yóò ṣe hàn.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Ìgbéwọlé %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>A ti dá ìgbéwọlé náà padà.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>A ti dá ìgbéwọlé náà padà, àyàfi àwọn àkọsílẹ̀ tí a yí padà lẹ́yìn rẹ̀, tí a pa mọ́.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>A kò lè dá ìgbéwọlé náà padà: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Déètì</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Láti ọwọ́</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Àwọn ìlà</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created ni a dá, %updated ni a rọ́pò, %skipped ni a fò, %failed kùnà.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>A ti dá a padà</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Dá ìgbéwọlé yìí padà</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>A ó yọ gbogbo àkọsílẹ̀ tí ìgbéwọlé náà dá kúrò, a ó sì dá gbogbo àkọsílẹ̀ tí ó rọ́pò padà sí bí ó ti wà, bẹ̀rẹ̀ láti èyí tó kẹ́yìn. O kọ́kọ́ fìdí ẹni tí o jẹ́ múlẹ̀.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count àkọsílẹ̀ tí a yí padà lẹ́yìn ìgbéwọlé náà</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Dá àwọn àkọsílẹ̀ tí a yí padà lẹ́yìn ìgbéwọlé náà padà pẹ̀lú</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Láìsí èyí, a ó pa wọ́n mọ́, ìgbéwọlé náà yóò sì di èyí tí a dá padà ní apá kan (--force ti console).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Dá ìgbéwọlé yìí padà?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Dá ìgbéwọlé padà</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Àwọn àkọsílẹ̀ tí a kọ</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from sí %to nínú %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Ìgbéwọlé náà kò kọ àkọsílẹ̀ kankan.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Àwọn àkọsílẹ̀ tí ìgbéwọlé náà kọ</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Laini</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Àdírẹ́sì àtijọ́</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Àkọsílẹ̀</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Ó ń darí sí</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ìyípadà</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ipò</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Orúkọ àfidípò URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Àmì àfidípò</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Àtúnṣètò ọ̀nà</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>A ti dá a</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>A ti rọ́pò rẹ̀</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>A ti lò ó</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>A ti pa á mọ́</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>A dá a padà ní apá kan</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Ìtàn ìgbéwọlé (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Gbogbo ìgbéwọlé máàpù URL, èyí tó jẹ́ tuntun jù lọ ní àkọ́kọ́. A lè dá ìgbéwọlé kan padà pátápátá: àkọsílẹ̀ kọ̀ọ̀kan tí ó kọ yóò padà sí ohun tí ó wà níbẹ̀ tẹ́lẹ̀.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>A kò tíì gbé máàpù URL kankan wọlé.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Àwọn ìgbéwọlé máàpù URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Nọ́ńbà</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>A fò ó kọjá</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ó kùnà</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows ìlà</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>A ti gbé e wọlé gẹ́gẹ́ bí ìgbéwọlé %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Wo ìgbéwọlé náà, tàbí dá a padà</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Gbé fáìlì mìíràn wọlé</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>A kò tíì kọ nǹkan kan. Ìlà kọ̀ọ̀kan fi ohun tí ìgbéwọlé náà yóò ṣe pẹ̀lú rẹ̀ hàn. A ó gbé àwọn ìlà tí a sàmì sí wọlé; yọ àmì kúrò lára ìlà kan láti fi í sílẹ̀. Àwọn ìlà tí kì í ṣe tuntun lè wọlé nìkan nígbà tí a gbà kí a rọ́pò àdírẹ́sì àtijọ́ wọn.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>A kò ṣe ìgbéwọlé náà: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>A kò sàmì sí ìlà kankan fún ìgbéwọlé.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Ìdánwò láìṣe é nítòótọ́: a kò kọ nǹkan kan.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Ìgbéwọlé náà ìbá dá %created, ìbá rọ́pò %updated, ìbá sì fò %skipped; %failed ìbá kùnà.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Àkópọ̀</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Láti dá</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Láti rọ́pò</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Láti fò</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Pẹ̀lú ìṣòro</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>A ó pa á mọ́ títí di</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Tún ètò ṣe</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Yí ohun tí ó ń pinnu àwọn ìlà padà kí o sì tún ètò fáìlì náà ṣe. A ó tún àwọn àmì tí o yí padà fúnra rẹ ṣe.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>A kò ní gbé àwọn ìlà ti àwọn agbàlejò wọ̀nyí wọlé, nítorí ìfisílẹ̀ yìí kò dáhùn fún wọn. Yan ìwọlé sáìtì tí agbàlejò àtijọ́ kọ̀ọ̀kan dúró fún.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>A kò gbé e wọlé</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Fi hàn</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Gbogbo</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Kò sí ìlà kankan ní ipò yìí.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Fi gbogbo rẹ̀ hàn</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Àwọn ìlà fáìlì náà àti ohun tí ìgbéwọlé yóò ṣe pẹ̀lú ọ̀kọ̀ọ̀kan</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Gbé wọlé</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Àdírẹ́sì tuntun</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Irú</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Àkíyèsí</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Gbé laini %line wọlé</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Rárá</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Bẹ́ẹ̀ni</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Ìdánwò láìṣe é nítòótọ́</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Pa àwọn àmì mọ́</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Ètò gẹ́gẹ́ bí CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Ètò gẹ́gẹ́ bí JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Jù ú nù</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Gbé wọlé máa kọ àwọn ìlà tí a sàmì sí lórí gbogbo ojú-ìwé gẹ́gẹ́ bí ìgbéwọlé kan, èyí tí a lè dá padà láti inú ìtàn ìgbéwọlé; o kọ́kọ́ fìdí ẹni tí o jẹ́ múlẹ̀. Ìdánwò máa tún ṣàyẹ̀wò ìlà kọ̀ọ̀kan lòdì sí sáìtì náà, á sì ka ohun tí ìgbéwọlé yóò ṣe, láìkọ nǹkan kan.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Àtúnṣètò ọ̀nà (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Àtúnṣètò ọ̀nà àmì àfidípò (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Àmì àfidípò (taara)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Tuntun</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>A ti yí i padà</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Kò yí padà</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Àtúnwí</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Ìtakora</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Ibi tí a ń lọ tí ó bàjẹ́</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Agbàlejò àìmọ̀</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Kò ṣeé gbé wọlé</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Àwọn orúkọ àfidípò URL àgbáyé</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Ìtàn ìgbéwọlé</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Àwọn máàpù URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Àwọn àtúnṣètò ọ̀nà (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Àwọn àtúnṣètò ọ̀nà wọ̀nyí wá láti inú ìgbéwọlé máàpù URL: àwọn àdírẹ́sì àtijọ́ tí ó ní ìbéèrè (/index.php?id=12), àwọn àtúnṣètò ọ̀nà fún ìgbà díẹ̀ àti àwọn àtúnṣètò ọ̀nà sí àwọn sáìtì mìíràn. A ń ṣàyẹ̀wò wọn lórí àdírẹ́sì kíkún, ṣáájú àwọn orúkọ àfidípò URL àti àwọn àmì àfidípò. Àtúnṣètò ọ̀nà títí láé sí ojú-ìwé kan ti sáìtì yìí jẹ́ orúkọ àfidípò URL àgbáyé dípò, a sì ṣe àkójọ rẹ̀ níbẹ̀.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>A ti yọ %count àtúnṣètò ọ̀nà kúrò.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Kò sí àtúnṣètò ọ̀nà kankan. A ń dá wọn nípa gbígbé máàpù URL wọlé.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Àwọn àtúnṣètò ọ̀nà tí a ṣàyẹ̀wò lórí àdírẹ́sì kíkún</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Yan</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Ipò</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Láti inú ìgbéwọlé</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Yọ kúrò</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Yan %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Yọ %address kúrò</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Yọ àtúnṣètò ọ̀nà yìí kúrò?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Yọ àwọn àtúnṣètò ọ̀nà tí a yàn kúrò?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Yọ àwọn tí a yàn kúrò</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Àtúnṣètò ọ̀nà tí a yọ kúrò máa dáwọ́ iṣẹ́ dúró lẹ́sẹ̀kẹsẹ̀.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Ọ̀rọ̀ tí a lẹ̀</translation>
     </message>
 </context>
 </TS>

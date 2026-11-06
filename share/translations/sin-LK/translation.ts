@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>ලිපින යන තැන: මෙම අඩවියේ මාර්ගයක්, නැතහොත් යළි යොමු කිරීමේදී සම්පූර්ණ ලිපිනයක්. {1\} යනු පළමු * ගැළපුණු පෙළයි. උදාහරණය: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>මෙම ලිපිනයට තාවකාලිකව යළි යොමු කෙරේ (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>අමුත්තන් තාවකාලිකව යළි යොමු කෙරේ (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>තාවකාලික යළි යොමුව (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>පිටුවකට අයිතම %count ක් පෙන්වන්න.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL සිතියම අපනයනය කරන්න</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>මෙම අඩවියේ ගෝලීය URL අන්වර්ථ, වයිල්ඩ්කාඩ් සහ යළි යොමු එක් ගොනුවක් ලෙස බාගන්න: තබා ගැනීමට, පැතුරුම්පතක සංස්කරණය කර නැවත ආයාත කිරීමට, හෝ වෙබ් සේවාදායකයකට නැවත ලිවීමේ නීති ලෙස දීමට.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>අවම වශයෙන් එක් ඇතුළත් කිරීම් වර්ගයක් තෝරන්න.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>ගොනුව ලිවීමට නොහැකි විය.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>අපනයනය කළ යුතු දේ</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>ආකෘතිය</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>ඇතුළත් කිරීම්</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>ගෝලීය URL අන්වර්ථ (URL පරිවර්තකය)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>අන්තර්ගතයේ අභිරුචි URL අන්වර්ථ ද</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>නෝඩය ඉලක්කය ලෙස ලියනු ලැබේ, උදාහරණයක් ලෙස node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>වයිල්ඩ්කාඩ්</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>යළි යොමු</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>අඩවි ප්‍රවේශය</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>සෑම අඩවි ප්‍රවේශයක්ම</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>අඩවි ප්‍රවේශයකට අයත් වන්නේ යළි යොමු පමණි; URL අන්වර්ථ සහ වයිල්ඩ්කාඩ් සෑම අඩවි ප්‍රවේශයක් සඳහාම අපනයනය කෙරේ.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>භාෂාව</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>සෑම භාෂාවක්ම</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>අපනයනය</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL සිතියමක් ආයාත කරන්න</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>පැරණි අඩවියක ලිපින එකවර ගෙන එන්න: ගොනුවක් සෑම පැරණි ලිපිනයක්ම සහ එය දැන් අයත් මෙම අඩවියේ පිටුව ලැයිස්තුගත කරයි. නිවැරදි ලිපින යළි යොමු හෝ URL අන්වර්ථ බවට පත්වේ, * සහිත ලිපින වයිල්ඩ්කාඩ් බවට පත්වේ. කිසිවක් ලිවීමට පෙර සෑම පේළියක්ම කරන්නේ කුමක්දැයි ඔබට පෙනේ, සෑම ආයාතයක්ම සම්පූර්ණයෙන් අහෝසි කළ හැක.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL සිතියම් ආයාත සඳහා වගු තවම නොපවතී. ආයාත කිරීමට පෙර 6.0.15-url-map උත්ශ්‍රේණි පියවර (./console exp:upgrade --apply) ධාවනය කරන්න.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>මෙම ආයාතය තවදුරටත් ලබා ගත නොහැක: එය දිනකට පසු කල් ඉකුත් විය හෝ වෙනත් පරිශීලකයෙකුට අයත් වේ. ගොනුව නැවත උඩුගත කරන්න.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>ගොනුවක් තෝරන්න හෝ පේළි අලවන්න.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>ගොනුව %size ට වඩා විශාලය.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>ගොනුව කියවිය නොහැක: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>මෙම ස්ථාපනයේ අඩවි ප්‍රවේශයක් තෝරන්න.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>ආයාතය සේවාදායකයේ තබා ගත නොහැක: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>ගොනුව</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ගොනුව</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache හෝ nginx නැවත ලිවීමේ නීති, උපරිම %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>නැතහොත් පේළි අලවන්න</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>පේළියකට එක් ඇතුළත් කිරීමක්, උදාහරණයක් ලෙස /old-page,/new-page. පළමු පේළියට තීරු නම් කළ හැක: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>ගොනුවෙන් සොයා ගන්න</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>ගොනුවේ නම හෝ අන්තර්ගතය එය නොකියන විට පමණක් අවශ්‍ය වේ.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>පෙරනිමි</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>සත්කාරකයක් නැති මාර්ග සඳහා අඩවි ප්‍රවේශය</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>පෙරනිමි</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>සම්පූර්ණ ලිපිනයක් ඇති පේළි ඒ වෙනුවට තම සත්කාරකයේ අඩවි ප්‍රවේශය ගනී.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>අඩවි ප්‍රවේශයේ භාෂාව</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>පැරණි ලිපිනයකට දැනටමත් ඇතුළත් කිරීමක් ඇති විට</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>ඇතුළත් කිරීම තබා ගන්න (පේළිය මඟ හරින්න)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>ඇතුළත් කිරීම ප්‍රතිස්ථාපනය කරන්න</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>පැරණි සත්කාරක</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>මෙම ස්ථාපනය නොදන්නා සත්කාරකයක සම්පූර්ණ ලිපින ආයාත නොකෙරේ. සෑම පැරණි සත්කාරකයක්ම නියෝජනය කරන අඩවි ප්‍රවේශය, පේළියකට එකක් බැගින් සඳහන් කරන්න: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>පෙරදසුන</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>තවම කිසිවක් ලියා නැත: ඊළඟ පිටුව සෑම පේළියක්ම කරන්නේ කුමක්දැයි පෙන්වයි.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>ආයාතය %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>ආයාතය අහෝසි කරන ලදී.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>ආයාතය අහෝසි කරන ලදී, එයට පසු වෙනස් කළ ඇතුළත් කිරීම් හැර, ඒවා තබා ගන්නා ලදී.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>ආයාතය අහෝසි කළ නොහැකි විය: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>දිනය</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>කළේ</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>පේළි</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created සාදන ලදී, %updated ප්‍රතිස්ථාපනය කෙරිණි, %skipped මඟ හරින ලදී, %failed අසාර්ථක විය.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>අහෝසි කළා</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>මෙම ආයාතය අහෝසි කරන්න</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>ආයාතය සෑදූ සෑම ඇතුළත් කිරීමක්ම ඉවත් කෙරේ, එය ප්‍රතිස්ථාපනය කළ සෑම ඇතුළත් කිරීමක්ම තිබූ පරිදි නැවත තබනු ලැබේ, අවසානය පළමුව. පළමුව ඔබ කවුදැයි තහවුරු කරයි.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>ආයාතයට පසු වෙනස් කළ ඇතුළත් කිරීම් %count</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>ආයාතයට පසු වෙනස් කළ ඇතුළත් කිරීම් ද අහෝසි කරන්න</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>මෙය නොමැතිව ඒවා තබා ගනු ලබන අතර ආයාතය අර්ධ වශයෙන් අහෝසි වේ (කොන්සෝලයේ --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>මෙම ආයාතය අහෝසි කරන්නද?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>ආයාතය අහෝසි කරන්න</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>ලියූ ඇතුළත් කිරීම්</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count න් %from සිට %to දක්වා</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>ආයාතය කිසිදු ඇතුළත් කිරීමක් ලිව්වේ නැත.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>ආයාතය ලියූ ඇතුළත් කිරීම්</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>පේළිය</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>පැරණි ලිපිනය</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>ඇතුළත් කිරීම</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>යොමු වන්නේ</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>වෙනස</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>තත්වය</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL අන්වර්ථය</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>වයිල්ඩ්කාඩ්</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>යළි යොමුව</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>සාදන ලදී</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>ප්‍රතිස්ථාපනය කෙරිණි</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>යොදන ලදී</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>තබා ගන්නා ලදී</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>අර්ධ වශයෙන් අහෝසි කළා</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>ආයාත ඉතිහාසය (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL සිතියමක සෑම ආයාතයක්ම, නවතම පළමුව. ආයාතයක් සම්පූර්ණයෙන් අහෝසි කළ හැක: එය ලියූ සෑම ඇතුළත් කිරීමක්ම පෙර තිබූ තත්වයට නැවත යයි.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>තවම කිසිදු URL සිතියමක් ආයාත කර නැත.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL සිතියම් ආයාත</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>අංකය</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>මඟ හැරුණු</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>අසාර්ථක</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, පේළි %rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>ආයාතය %id ලෙස ආයාත කරන ලදී.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>ආයාතය බලන්න, නැතහොත් අහෝසි කරන්න</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>වෙනත් ගොනුවක් ආයාත කරන්න</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>තවම කිසිවක් ලියා නැත. සෑම පේළියක්ම ආයාතය එය සමඟ කරන්නේ කුමක්දැයි පෙන්වයි. සලකුණු කළ පේළි ආයාත කෙරේ; පේළියක් අත්හැරීමට එහි සලකුණ ඉවත් කරන්න. නව නොවන පේළි ආයාත කළ හැක්කේ ඒවායේ පැරණි ලිපිනය ප්‍රතිස්ථාපනය කිරීමට අවසර ඇති විට පමණි.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>ආයාතය සිදු නොකෙරිණි: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>ආයාතය සඳහා කිසිදු පේළියක් සලකුණු කර නැත.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>පරීක්ෂණ ධාවනය: කිසිවක් ලියා නැත.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>ආයාතය %created සාදනු ඇත, %updated ප්‍රතිස්ථාපනය කරනු ඇත, %skipped මඟ හරිනු ඇත; %failed අසාර්ථක වනු ඇත.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>දළ විශ්ලේෂණය</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>සෑදිය යුතු</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>ප්‍රතිස්ථාපනය කළ යුතු</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>මඟ හැරිය යුතු</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>ගැටලුවක් සහිත</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>තබා ගන්නා තෙක්</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>නැවත සැලසුම් කරන්න</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>පේළි තීරණය කරන දේ වෙනස් කර ගොනුව නැවත සැලසුම් කරන්න. ඔබ අතින් වෙනස් කළ සලකුණු යළි සකසනු ලැබේ.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>මෙම ස්ථාපනය මෙම සත්කාරක සඳහා පිළිතුරු නොදෙන නිසා, ඒවායේ පේළි ආයාත නොකෙරේ. සෑම පැරණි සත්කාරකයක්ම නියෝජනය කරන අඩවි ප්‍රවේශය තෝරන්න.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>ආයාත නොකළ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>පෙන්වන්න</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>සියල්ල</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>මෙම තත්වය ඇති පේළියක් නැත.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>සියල්ල පෙන්වන්න</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>ගොනුවේ පේළි සහ ආයාතය එක් එක් පේළිය සමඟ කරන්නේ කුමක්ද</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>ආයාත කරන්න</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>නව ලිපිනය</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>වර්ගය</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>සටහන්</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>පේළිය %line ආයාත කරන්න</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>නැත</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ඔව්</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>පරීක්ෂණ ධාවනය</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>සලකුණු තබා ගන්න</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>සැලැස්ම CSV ලෙස</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>සැලැස්ම JSON ලෙස</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>ඉවත ලන්න</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>ආයාත කිරීම සෑම පිටුවකම සලකුණු කළ පේළි එක් ආයාතයක් ලෙස ලියයි, එය ආයාත ඉතිහාසයෙන් අහෝසි කළ හැක; පළමුව ඔබ කවුදැයි තහවුරු කරයි. පරීක්ෂණ ධාවනය සෑම පේළියක්ම අඩවියට එරෙහිව නැවත පරීක්ෂා කර, කිසිවක් නොලියා ආයාතය කරන්නේ කුමක්දැයි ගණන් කරයි.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>යළි යොමුව (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>වයිල්ඩ්කාඩ් යළි යොමුව (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>වයිල්ඩ්කාඩ් (සෘජු)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>නව</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>වෙනස් වූ</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>නොවෙනස් වූ</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>අනුපිටපත</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>ගැටුම</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>බිඳුණු ඉලක්කය</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>නොදන්නා සත්කාරකය</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>ආයාත කළ නොහැක</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>ගෝලීය URL අන්වර්ථ</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>ආයාත ඉතිහාසය</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL සිතියම්</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>යළි යොමු (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>මෙම යළි යොමු URL සිතියම් ආයාතවලින් පැමිණේ: විමසුමක් සහිත පැරණි ලිපින (/index.php?id=12), තාවකාලික යළි යොමු සහ වෙනත් අඩවිවලට යළි යොමු. ඒවා URL අන්වර්ථ සහ වයිල්ඩ්කාඩ් වලට පෙර, සම්පූර්ණ ලිපිනය මත පරීක්ෂා කෙරේ. මෙම අඩවියේ පිටුවකට ස්ථිර යළි යොමුවක් ඒ වෙනුවට ගෝලීය URL අන්වර්ථයක් වන අතර එය එහි ලැයිස්තුගත කර ඇත.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>යළි යොමු %count ක් ඉවත් කරන ලදී.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>යළි යොමු නැත. ඒවා සෑදෙන්නේ URL සිතියමක් ආයාත කිරීමෙනි.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>සම්පූර්ණ ලිපිනය මත පරීක්ෂා කරන යළි යොමු</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>තෝරන්න</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>තත්ත්වය</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>ආයාතයෙන්</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ඉවත් කරන්න</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address තෝරන්න</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address ඉවත් කරන්න</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>මෙම යළි යොමුව ඉවත් කරන්නද?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>තෝරාගත් යළි යොමු ඉවත් කරන්නද?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>තෝරාගත් ඒවා ඉවත් කරන්න</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>ඉවත් කළ යළි යොමුවක් වහාම ක්‍රියා කිරීම නවතී.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>අලවන ලද පෙළ</translation>
     </message>
 </context>
 </TS>

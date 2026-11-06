@@ -257,6 +257,40 @@ $ViewList['urlwildcards'] = array(
     'params' => array( ),
     'unordered_params' => array( 'offset' => 'Offset', 'q' => 'Query' ) );
 
+// URL maps (since 6.0.15): importing a file of old addresses into the URL translator, the wildcards and the redirects
+// (preview, dry run, import as one batch), the imports with their undo, the export, and the redirects checked on the
+// full request. Importing and undoing need content/urltranslator_import and ask "Verify it's you".
+$ViewList['urlimport'] = array(
+    'functions' => array( 'urltranslator_import' ),
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'urlimport.php',
+    'ui_context' => 'administration',
+    'params' => array( ),
+    'unordered_params' => array( 'plan' => 'Plan', 'state' => 'State', 'offset' => 'Offset', 'report' => 'Report' ) );
+
+$ViewList['urlimporthistory'] = array(
+    'functions' => array( 'urltranslator_import' ),
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'urlimporthistory.php',
+    'ui_context' => 'administration',
+    'params' => array( 'BatchID' ),
+    'unordered_params' => array( 'offset' => 'Offset', 'done' => 'Done' ) );
+
+$ViewList['urlexport'] = array(
+    'functions' => array( 'urltranslator' ),
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'urlexport.php',
+    'ui_context' => 'administration',
+    'params' => array( ) );
+
+$ViewList['urlredirects'] = array(
+    'functions' => array( 'urltranslator' ),
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'urlredirects.php',
+    'ui_context' => 'administration',
+    'params' => array( ),
+    'unordered_params' => array( 'offset' => 'Offset', 'removed' => 'Removed' ) );
+
 $ViewList['advancedsearch'] = array(
     'functions' => array( 'read' ),
     'default_navigation_part' => 'ezcontentnavigationpart',
@@ -795,6 +829,9 @@ $FunctionList['pdf'] = array( 'Class' => $ClassID,
 
 $FunctionList['translations'] = array();
 $FunctionList['urltranslator'] = array();
+// Importing URL maps into the URL translator, the wildcards and the redirects, and undoing an import (content/urlimport,
+// content/urlimporthistory; since 6.0.15). Exporting stays under urltranslator. No limitations of its own.
+$FunctionList['urltranslator_import'] = array();
 $FunctionList['pendinglist'] = array();
 $FunctionList['restore'] = array();
 $FunctionList['cleantrash'] = array();

@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>ปลายทางของที่อยู่: พาธของไซต์นี้ หรือที่อยู่แบบเต็มเมื่อเปลี่ยนเส้นทาง. {1\} คือข้อความที่ * ตัวแรกตรงกัน. ตัวอย่าง: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>จะถูกเปลี่ยนเส้นทางไปยังที่อยู่นี้ชั่วคราว (HTTP 302)</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>ผู้เยี่ยมชมจะถูกเปลี่ยนเส้นทางชั่วคราว (HTTP 302)</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>เปลี่ยนเส้นทางชั่วคราว (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>แสดง %count รายการต่อหน้า.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>ส่งออกแผนที่ URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>ดาวน์โหลดนามแฝง URL ส่วนกลาง ไวลด์การ์ด และการเปลี่ยนเส้นทางของไซต์นี้เป็นไฟล์เดียว เพื่อเก็บไว้ เพื่อแก้ไขในสเปรดชีตแล้วนำเข้าอีกครั้ง หรือเพื่อให้เว็บเซิร์ฟเวอร์ใช้เป็นกฎการเขียนใหม่</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>เลือกรายการอย่างน้อยหนึ่งชนิด</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>ไม่สามารถเขียนไฟล์ได้</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>สิ่งที่จะส่งออก</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>รูปแบบ</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>รายการ</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>นามแฝง URL ส่วนกลาง (ตัวแปล URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>รวมนามแฝง URL ที่กำหนดเองของเนื้อหาด้วย</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>เขียนโดยใช้โหนดเป็นเป้าหมาย เช่น node:42</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>ไวลด์การ์ด</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>การเปลี่ยนเส้นทาง</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>การเข้าถึงไซต์</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ทุกการเข้าถึงไซต์</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>มีเพียงการเปลี่ยนเส้นทางที่เป็นของการเข้าถึงไซต์ นามแฝง URL และไวลด์การ์ดจะถูกส่งออกสำหรับทุกการเข้าถึงไซต์</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ภาษา</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>ทุกภาษา</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>ส่งออก</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>นำเข้าแผนที่ URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>ย้ายที่อยู่ของไซต์เก่ามาในครั้งเดียว: ไฟล์จะระบุที่อยู่เก่าแต่ละรายการและหน้าของไซต์นี้ที่ที่อยู่นั้นเป็นของในตอนนี้ ที่อยู่ที่ตรงทุกตัวจะกลายเป็นการเปลี่ยนเส้นทางหรือนามแฝง URL ที่อยู่ที่มี * จะกลายเป็นไวลด์การ์ด คุณจะเห็นว่าแต่ละแถวจะทำอะไรก่อนที่จะมีการเขียนสิ่งใด และการนำเข้าทุกครั้งสามารถเลิกทำได้ทั้งหมด</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>ยังไม่มีตารางสำหรับการนำเข้าแผนที่ URL ให้เรียกใช้ขั้นตอนอัปเกรด 6.0.15-url-map (./console exp:upgrade --apply) ก่อนนำเข้า</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>การนำเข้านี้ใช้ไม่ได้แล้ว: หมดอายุหลังจากหนึ่งวันหรือเป็นของผู้ใช้อื่น อัปโหลดไฟล์อีกครั้ง</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>เลือกไฟล์หรือวางแถว</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>ไฟล์มีขนาดใหญ่กว่า %size</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>ไม่สามารถอ่านไฟล์ได้: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>เลือกการเข้าถึงไซต์ของการติดตั้งนี้</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>ไม่สามารถเก็บการนำเข้าไว้บนเซิร์ฟเวอร์ได้: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>ไฟล์</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ไฟล์</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), กฎการเขียนใหม่ของ Apache หรือ nginx ไม่เกิน %size</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>หรือวางแถว</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>หนึ่งแถวต่อหนึ่งบรรทัด เช่น /old-page,/new-page บรรทัดแรกอาจระบุชื่อคอลัมน์: old_url, new_url, kind, siteaccess, language, note, status</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>ตรวจหาจากไฟล์</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>จำเป็นเฉพาะเมื่อทั้งชื่อและเนื้อหาของไฟล์ไม่ได้ระบุไว้</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>ค่าเริ่มต้น</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>การเข้าถึงไซต์ของพาธเปล่า</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>ค่าเริ่มต้น</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>แถวที่มีที่อยู่เต็มจะใช้การเข้าถึงไซต์ของโฮสต์ของแถวนั้นแทน</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>ภาษาของการเข้าถึงไซต์</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>เมื่อที่อยู่เก่ามีรายการอยู่แล้ว</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>เก็บรายการไว้ (ข้ามแถว)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>แทนที่รายการ</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>โฮสต์เก่า</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>ที่อยู่เต็มของโฮสต์ที่การติดตั้งนี้ไม่รู้จักจะไม่ถูกนำเข้า ระบุการเข้าถึงไซต์ที่โฮสต์เก่าแต่ละรายการแทน บรรทัดละหนึ่งรายการ: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>แสดงตัวอย่าง</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>ยังไม่มีการเขียนสิ่งใด: หน้าถัดไปจะแสดงว่าแต่ละแถวจะทำอะไร</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>การนำเข้า %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>เลิกทำการนำเข้าแล้ว</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>เลิกทำการนำเข้าแล้ว ยกเว้นรายการที่เปลี่ยนแปลงหลังจากนั้น ซึ่งถูกเก็บไว้</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>ไม่สามารถเลิกทำการนำเข้าได้: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>วันที่</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>โดย</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>แถว</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>สร้าง %created แทนที่ %updated ข้าม %skipped ล้มเหลว %failed</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>เลิกทำแล้ว</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>เลิกทำการนำเข้านี้</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>ทุกรายการที่การนำเข้าสร้างจะถูกนำออก และทุกรายการที่ถูกแทนที่จะถูกคืนกลับเป็นเหมือนเดิม โดยเริ่มจากรายการสุดท้าย คุณต้องยืนยันตัวตนก่อน</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count รายการที่เปลี่ยนแปลงหลังการนำเข้า</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>เลิกทำรายการที่เปลี่ยนแปลงหลังการนำเข้าด้วย</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>หากไม่เลือก รายการเหล่านั้นจะถูกเก็บไว้และการนำเข้าจะถูกเลิกทำเพียงบางส่วน (--force ของคอนโซล)</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>เลิกทำการนำเข้านี้หรือไม่?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>เลิกทำการนำเข้า</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>รายการที่เขียนแล้ว</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ถึง %to จาก %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>การนำเข้าไม่ได้เขียนรายการใดเลย</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>รายการที่การนำเข้าเขียน</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>บรรทัด</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>ที่อยู่เก่า</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>รายการ</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>นำไปยัง</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>การเปลี่ยนแปลง</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>สถานะ</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>นามแฝง URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>ไวลด์การ์ด</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>การเปลี่ยนเส้นทาง</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>สร้างแล้ว</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>แทนที่แล้ว</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>ใช้แล้ว</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>เก็บไว้</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>เลิกทำบางส่วน</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>ประวัติการนำเข้า (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>การนำเข้าแผนที่ URL ทุกครั้ง เรียงจากใหม่สุด การนำเข้าสามารถเลิกทำได้ทั้งหมด: ทุกรายการที่เขียนจะกลับไปเป็นสิ่งที่มีอยู่ก่อนหน้า</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>ยังไม่มีการนำเข้าแผนที่ URL</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>การนำเข้าแผนที่ URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>หมายเลข</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>ข้ามแล้ว</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ล้มเหลว</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows แถว</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>นำเข้าเป็นการนำเข้า %id แล้ว</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>ดูการนำเข้า หรือเลิกทำ</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>นำเข้าไฟล์อื่น</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>ยังไม่มีการเขียนสิ่งใด แต่ละแถวแสดงว่าการนำเข้าจะทำอะไรกับแถวนั้น แถวที่ทำเครื่องหมายจะถูกนำเข้า ยกเลิกเครื่องหมายเพื่อไม่รวมแถวนั้น แถวที่ไม่ใช่รายการใหม่จะนำเข้าได้เฉพาะเมื่ออนุญาตให้แทนที่ที่อยู่เก่าได้</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>การนำเข้าไม่ได้ดำเนินการ: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>ไม่มีแถวที่ทำเครื่องหมายสำหรับการนำเข้า</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>ทดลองเรียกใช้: ไม่มีการเขียนสิ่งใด</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>การนำเข้าจะสร้าง %created แทนที่ %updated และข้าม %skipped ส่วน %failed จะล้มเหลว</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ภาพรวม</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>จะสร้าง</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>จะแทนที่</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>จะข้าม</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>มีปัญหา</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>เก็บไว้จนถึง</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>วางแผนใหม่</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>เปลี่ยนสิ่งที่ใช้ตัดสินแถวและวางแผนไฟล์ใหม่ เครื่องหมายที่คุณเปลี่ยนด้วยตนเองจะถูกรีเซ็ต</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>แถวของโฮสต์เหล่านี้จะไม่ถูกนำเข้า เพราะการติดตั้งนี้ไม่ได้ให้บริการโฮสต์เหล่านั้น เลือกการเข้าถึงไซต์ที่โฮสต์เก่าแต่ละรายการแทน</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>ไม่ได้นำเข้า</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>แสดง</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ทั้งหมด</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>ไม่มีแถวในสถานะนี้</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>แสดงทั้งหมด</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>แถวของไฟล์และสิ่งที่การนำเข้าจะทำกับแต่ละแถว</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>นำเข้า</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>ที่อยู่ใหม่</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ชนิด</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>หมายเหตุ</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>นำเข้าบรรทัด %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ไม่</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ใช่</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ทดลองเรียกใช้</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>เก็บเครื่องหมายไว้</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>แผนเป็น CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>แผนเป็น JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>ทิ้ง</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>นำเข้า จะเขียนแถวที่ทำเครื่องหมายของทุกหน้าเป็นการนำเข้าครั้งเดียว ซึ่งเลิกทำได้จากประวัติการนำเข้า คุณต้องยืนยันตัวตนก่อน ทดลองเรียกใช้ จะตรวจสอบทุกแถวกับไซต์อีกครั้งและนับสิ่งที่การนำเข้าจะทำ โดยไม่เขียนสิ่งใด</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>การเปลี่ยนเส้นทาง (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>การเปลี่ยนเส้นทางแบบไวลด์การ์ด (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>ไวลด์การ์ด (โดยตรง)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>ใหม่</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>เปลี่ยนแปลงแล้ว</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>ไม่เปลี่ยนแปลง</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>ซ้ำ</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>ความขัดแย้ง</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>เป้าหมายเสีย</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>โฮสต์ที่ไม่รู้จัก</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>นำเข้าไม่ได้</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>นามแฝง URL ส่วนกลาง</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>ประวัติการนำเข้า</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>แผนที่ URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>การเปลี่ยนเส้นทาง (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>การเปลี่ยนเส้นทางเหล่านี้มาจากการนำเข้าแผนที่ URL: ที่อยู่เก่าที่มีคิวรี (/index.php?id=12) การเปลี่ยนเส้นทางชั่วคราว และการเปลี่ยนเส้นทางไปยังไซต์อื่น ระบบจะตรวจสอบจากที่อยู่เต็ม ก่อนนามแฝง URL และไวลด์การ์ด การเปลี่ยนเส้นทางถาวรไปยังหน้าของไซต์นี้จะเป็นนามแฝง URL ส่วนกลางแทนและแสดงอยู่ที่นั่น</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>นำการเปลี่ยนเส้นทางออก %count รายการแล้ว</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>ไม่มีการเปลี่ยนเส้นทาง การเปลี่ยนเส้นทางสร้างขึ้นโดยการนำเข้าแผนที่ URL</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>การเปลี่ยนเส้นทางที่ตรวจสอบจากที่อยู่เต็ม</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>เลือก</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>สถานะ</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>จากการนำเข้า</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>นำออก</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>เลือก %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>นำ %address ออก</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>นำการเปลี่ยนเส้นทางนี้ออกหรือไม่?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>นำการเปลี่ยนเส้นทางที่เลือกออกหรือไม่?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>นำรายการที่เลือกออก</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>การเปลี่ยนเส้นทางที่ถูกนำออกจะหยุดทำงานทันที</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>ข้อความที่วาง</translation>
     </message>
 </context>
 </TS>

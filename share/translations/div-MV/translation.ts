@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>އެޑްރެސްތައް ދާނެ ތަން: މި ސައިޓްގެ ޕާތެއް، ނުވަތަ ރީޑައިރެކްޓްކުރާއިރު ފުރިހަމަ އެޑްރެހެއް. {1\} އަކީ ފުރަތަމަ * އާ ގުޅުނު ޓެކްސްޓް. މިސާލު: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ވަގުތީގޮތުން މި އެޑްރެހަށް ރީޑައިރެކްޓްކުރެވޭ (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>ޒިޔާރަތްކުރާ މީހުން ވަގުތީގޮތުން ރީޑައިރެކްޓްކުރެވޭ (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>ވަގުތީ ރީޑައިރެކްޓް (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>ކޮންމެ ޞަފްޙާއެއްގައި %count އައިޓަމް ދައްކާ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL މެޕް އެކްސްޕޯޓްކުރޭ</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>މި ސައިޓުގެ ގްލޮބަލް URL އެލިއަސްތައް، ވައިލްޑްކާޑްތައް އަދި ރީޑައިރެކްޓްތައް އެއް ފައިލެއްގެ ގޮތުގައި ޑައުންލޯޑްކުރޭ: ރައްކާކުރުމަށް، ސްޕްރެޑްޝީޓެއްގައި އެޑިޓްކޮށް އަލުން އިމްޕޯޓްކުރުމަށް، ނުވަތަ ވެބް ސާވަރަކަށް ރީރައިޓް ގަވާއިދުތަކެއްގެ ގޮތުގައި ދިނުމަށް.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>މަދުވެގެން އެންޓްރީގެ އެއް ބާވަތެއް ހިޔާރުކުރޭ.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>ފައިލް ލިޔެވޭކަށް ނެތް.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>އެކްސްޕޯޓްކުރާނެ އެއްޗެހި</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>ފައިލުގެ ފޯމެޓް</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>އެންޓްރީތައް</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>ގްލޮބަލް URL އެލިއަސްތައް (URL ތަރުޖަމާކުރާ އެއްޗެހި)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>ކޮންޓެންޓުގެ ޚާއްޞަ URL އެލިއަސްތައްވެސް</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>ނޯޑް ޓާގެޓްގެ ގޮތުގައި ލިޔެފައި، މިސާލަކަށް node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>ވައިލްޑްކާޑްތައް</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>ރީޑައިރެކްޓްތައް</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ސައިޓްއެކްސެސް</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ހުރިހާ ސައިޓްއެކްސެސްއެއް</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>ސައިޓްއެކްސެސްއަކާ ގުޅެނީ ހަމައެކަނި ރީޑައިރެކްޓްތައް؛ URL އެލިއަސްތަކާއި ވައިލްޑްކާޑްތައް އެކްސްޕޯޓްކުރެވެނީ ހުރިހާ ސައިޓްއެކްސެސްއަކަށް.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ބަސް</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>ހުރިހާ ބަހެއް</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>އެކްސްޕޯޓްކުރޭ</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL މެޕެއް އިމްޕޯޓްކުރޭ</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>ބާ ސައިޓެއްގެ އެޑްރެސްތައް އެއްފަހަރާ ގެނެސްދޭ: ފައިލެއްގައި ކޮންމެ ބާ އެޑްރެހަކާއި، މިހާރު އެއީ މި ސައިޓުގެ ކޮން ޞަފްޙާއެއްކަން ލިޔެފައި ހުންނާނެ. ސީދާ އެޑްރެސްތައް ރީޑައިރެކްޓް ނުވަތަ URL އެލިއަސް ވެގެންދާނެ، * ހުރި އެޑްރެސްތައް ވައިލްޑްކާޑް ވެގެންދާނެ. އެއްވެސް އެއްޗެއް ލިޔުމުގެ ކުރިން ކޮންމެ ރޯއެއް ކުރާނެ ކަމެއް ތިބާއަށް ފެންނާނެ، އަދި ކޮންމެ އިމްޕޯޓެއް މުޅިން އަންޑޫކުރެވޭނެ.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL މެޕް އިމްޕޯޓްގެ ޓޭބަލްތައް އަދި ނެތް. އިމްޕޯޓްކުރުމުގެ ކުރިން އަޕްގްރޭޑް ފިޔަވަޅު 6.0.15-url-map (./console exp:upgrade --apply) ރަންކުރޭ.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>މި އިމްޕޯޓް މިހާރު ލިބެން ނެތް: އެއް ދުވަސް ފަހުން މުއްދަތު ހަމަވެއްޖެ ނުވަތަ އެހެން ޔޫޒަރެއްގެ އެއްޗެއް. ފައިލް އަލުން އަޕްލޯޑްކުރޭ.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>ފައިލެއް ހިޔާރުކުރޭ ނުވަތަ ރޯތައް ޕޭސްޓްކުރޭ.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>ފައިލް %size އަށްވުރެ ބޮޑު.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>ފައިލް ކިޔޭކަށް ނެތް: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>މި އިންސްޓޮލޭޝަނުގެ ސައިޓްއެކްސެސްއެއް ހިޔާރުކުރޭ.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>އިމްޕޯޓް ސާވަރުގައި ބަހައްޓާކަށް ނެތް: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>ފައިލް</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ފައިލް</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV، JSON، Excel (.xlsx)، OpenDocument (.ods)، Apache ނުވަތަ nginx ރީރައިޓް ގަވާއިދުތައް، ގިނަވެގެން %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>ނުވަތަ ރޯތައް ޕޭސްޓްކުރޭ</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>ކޮންމެ ލައިނަކަށް އެއް ރޯ، މިސާލަކަށް /old-page,/new-page. ފުރަތަމަ ލައިނުގައި ކޮލަމްތަކުގެ ނަން ލިޔެވިދާނެ: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>ފައިލުން ހޯދާ</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>ބޭނުންވަނީ ފައިލުގެ ނަމާއި ކޮންޓެންޓުން އެކަން ނޭނގޭ ހިނދު އެކަނި.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>ޑިފޯލްޓްތައް</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>ހުސް ޕާތްތަކުގެ ސައިޓްއެކްސެސް</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>ޑިފޯލްޓް</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>ފުރިހަމަ އެޑްރެހެއް ހުރި ރޯތަކަށް އޭގެ ބަދަލުގައި ލިބެނީ އެމީހުންގެ ހޯސްޓްގެ ސައިޓްއެކްސެސް.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>ސައިޓްއެކްސެސްގެ ބަސް</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>ބާ އެޑްރެހަކަށް ކުރިން އެންޓްރީއެއް އޮތްނަމަ</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>އެންޓްރީ ބަހައްޓާ (ރޯ ދޫކޮށްލާ)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>އެންޓްރީ ބަދަލުކުރޭ</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>ބާ ހޯސްޓްތައް</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>މި އިންސްޓޮލޭޝަނަށް ނޭނގޭ ހޯސްޓެއްގެ ފުރިހަމަ އެޑްރެސްތައް އިމްޕޯޓް ނުކުރެވޭނެ. ކޮންމެ ބާ ހޯސްޓަކާ ގުޅޭ ސައިޓްއެކްސެސް ލިޔޭ، ކޮންމެ ލައިނަކަށް އެއްޗެއް: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>ޕްރިވިއު</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>އަދި އެއްވެސް އެއްޗެއް ނުލިޔެވޭ: ކޮންމެ ރޯއެއް ކުރާނެ ކަމެއް ދެން އަންނަ ޞަފްޙާގައި ދައްކާނެ.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>އިމްޕޯޓް %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>އިމްޕޯޓް އަންޑޫކުރެވިއްޖެ.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>އިމްޕޯޓް އަންޑޫކުރެވިއްޖެ، އޭގެ ފަހުން ބަދަލުކުރެވުނު އެންޓްރީތައް ފިޔަވައި، އެތައް ބަހައްޓާފައިވޭ.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>އިމްޕޯޓް އަންޑޫ ނުކުރެވުނު: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>ތާރީޚް</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ކުރި މީހާ</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>ރޯތައް</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created ހެދިއްޖެ، %updated ބަދަލުކުރެވިއްޖެ، %skipped ދޫކޮށްލެވިއްޖެ، %failed ނާކާމިޔާބު.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>އަންޑޫކުރެވިފައި</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>މި އިމްޕޯޓް އަންޑޫކުރޭ</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>އިމްޕޯޓް ހެދި ކޮންމެ އެންޓްރީއެއް ނަގައި، އޭގެ ބަދަލުކުރި ކޮންމެ އެންޓްރީއެއް ކުރީގެ ގޮތަށް އަނބުރާ ބަހައްޓާނެ، އެންމެ ފަހުގެ އެއްޗެއް ފުރަތަމަ. ފުރަތަމަ ތިބާ ކާކުކަން ކަށަވަރުކުރަން ޖެހޭނެ.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>އިމްޕޯޓްގެ ފަހުން ބަދަލުކުރެވުނު %count އެންޓްރީ</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>އިމްޕޯޓްގެ ފަހުން ބަދަލުކުރެވުނު އެންޓްރީތައްވެސް އަންޑޫކުރޭ</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>މިއާ ނުލައި އެތައް ބަހައްޓާނެ އަދި އިމްޕޯޓް ބައެއް ވަރަކަށް އަންޑޫވާނެ (ކޮންސޯލްގެ --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>މި އިމްޕޯޓް އަންޑޫކުރަންތޯ؟</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>އިމްޕޯޓް އަންޑޫކުރޭ</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>ލިޔެވުނު އެންޓްރީތައް</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count ގެ ތެރެއިން %from އިން %to އަށް</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>އިމްޕޯޓުން އެއްވެސް އެންޓްރީއެއް ނުލިޔުނު.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>އިމްޕޯޓުން ލިޔުނު އެންޓްރީތައް</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>ލައިން</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>ބާ އެޑްރެސް</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>އެންޓްރީ</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>ގެންދަނީ</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ބަދަލު</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ޙާލަތު</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL އެލިއަސް</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>ވައިލްޑްކާޑް</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>ރީޑައިރެކްޓް</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>ހެދިފައި</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>ބަދަލުކުރެވިފައި</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>ލާގޫކުރެވިފައި</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>ބަހައްޓާފައި</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>ބައެއް ވަރަކަށް އަންޑޫކުރެވިފައި</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>އިމްޕޯޓް ތާރީޚު (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL މެޕެއްގެ ކޮންމެ އިމްޕޯޓެއް، އެންމެ އާ އެއްޗެއް ފުރަތަމަ. އިމްޕޯޓެއް މުޅިން އަންޑޫކުރެވޭނެ: އޭގެ ލިޔުނު ކޮންމެ އެންޓްރީއެއް ކުރިން ހުރި ގޮތަށް އެނބުރި ދާނެ.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>އަދި އެއްވެސް URL މެޕެއް އިމްޕޯޓް ނުކުރެވޭ.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL މެޕްތަކުގެ އިމްޕޯޓްތައް</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>ނަންބަރު</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>ދޫކޮށްލެވިފައި</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ނާކާމިޔާބު</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file، %format، %rows ރޯ</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>އިމްޕޯޓް %id ގެ ގޮތުގައި އިމްޕޯޓްކުރެވިއްޖެ.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>އިމްޕޯޓް ބަލާ، ނުވަތަ އެ އަންޑޫކުރޭ</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>އެހެން ފައިލެއް އިމްޕޯޓްކުރޭ</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>އަދި އެއްވެސް އެއްޗެއް ނުލިޔެވޭ. ކޮންމެ ރޯއަކުން ދައްކަނީ އިމްޕޯޓުން އޭގެ ކުރާނެ ކަމެއް. ޓިކްކޮށްފައިވާ ރޯތައް އިމްޕޯޓްކުރެވޭނެ؛ ރޯއެއް ދޫކޮށްލުމަށް ޓިކް ނަގާ. އާ ނޫން ރޯތައް އިމްޕޯޓްކުރެވޭނީ އެތަކުގެ ބާ އެޑްރެސް ބަދަލުކުރުމުގެ ހުއްދަ ހުރިނަމަ އެކަނި.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>އިމްޕޯޓް ނުކުރެވުނު: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>އިމްޕޯޓްކުރުމަށް އެއްވެސް ރޯއެއް ޓިކް ނުކުރެވޭ.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>ޑްރައި ރަން: އެއްވެސް އެއްޗެއް ނުލިޔެވުނު.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>އިމްޕޯޓުން %created ހަދާނެ، %updated ބަދަލުކުރާނެ އަދި %skipped ދޫކޮށްލާނެ؛ %failed ނާކާމިޔާބުވާނެ.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ޚުލާސާ</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>ހަދަންޖެހޭ</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>ބަދަލުކުރަންޖެހޭ</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>ދޫކޮށްލަންޖެހޭ</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>މައްސަލައަކާއެކު</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>ބަހައްޓާނީ މިހާތަނަށް</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>އަލުން ރާވާ</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>ރޯތައް ކަނޑައަޅާ އެއްޗެއް ބަދަލުކޮށް ފައިލް އަލުން ރާވާ. އަތުން ބަދަލުކުރި ޓިކްތައް ރީސެޓްވާނެ.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>މި ހޯސްޓްތަކުގެ ރޯތައް އިމްޕޯޓް ނުކުރެވޭނެ، ސަބަބަކީ މި އިންސްޓޮލޭޝަން އެތަކަށް ޖަވާބު ނުދޭތީ. ކޮންމެ ބާ ހޯސްޓަކާ ގުޅޭ ސައިޓްއެކްސެސް ހިޔާރުކުރޭ.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>އިމްޕޯޓް ނުކުރެވި</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ދައްކާ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ހުރިހާ</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>އެއްވެސް ރޯއެއްގެ މި ޙާލަތު ނެތް.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ހުރިހާ އެއްޗެއް ދައްކާ</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>ފައިލުގެ ރޯތަކާއި، އިމްޕޯޓުން ކޮންމެ ރޯއަކާ ކުރާނެ ކަމެއް</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>އިމްޕޯޓްކުރޭ</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>އާ އެޑްރެސް</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ބާވަތް</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>ނޯޓްތައް</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>ލައިން %line އިމްޕޯޓްކުރޭ</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ނޫން</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>އާނ</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ޑްރައި ރަން</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>ޓިކްތައް ބަހައްޓާ</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>CSV ގެ ގޮތުގައި ރޭވުން</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>JSON ގެ ގޮތުގައި ރޭވުން</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>އުކާލާ</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>އިމްޕޯޓްކުރޭ އިން ހުރިހާ ޞަފްޙާއެއްގެ ޓިކްކޮށްފައިވާ ރޯތައް އެއް އިމްޕޯޓެއްގެ ގޮތުގައި ލިޔާނެ، އެއީ އިމްޕޯޓް ތާރީޚުން އަންޑޫކުރެވޭނެ އެއްޗެއް؛ ފުރަތަމަ ތިބާ ކާކުކަން ކަށަވަރުކުރަން ޖެހޭނެ. ޑްރައި ރަން އިން ކޮންމެ ރޯއެއް ސައިޓާ އަލުން ޗެކްކޮށް، އިމްޕޯޓުން ކުރާނެ ކަންތައް ގުނާނެ، ނުލިޔެ.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>ރީޑައިރެކްޓް (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>ވައިލްޑްކާޑް ރީޑައިރެކްޓް (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>ވައިލްޑްކާޑް (ސީދާ)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>އާ</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>ބަދަލުވެފައި</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>ބަދަލުނުވެ</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>ޑުޕްލިކޭޓް</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>ޚިލާފު</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>ހަލާކުވެފައިވާ ޓާގެޓް</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>ނޭނގޭ ހޯސްޓް</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>އިމްޕޯޓް ނުކުރެވޭ</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>ގްލޮބަލް URL އެލިއަސްތައް</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>އިމްޕޯޓް ތާރީޚު</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL މެޕްތައް</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>ރީޑައިރެކްޓްތައް (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>މި ރީޑައިރެކްޓްތައް އައީ URL މެޕް އިމްޕޯޓްތަކުން: ކުއެރީއެއް ހުރި ބާ އެޑްރެސްތައް (/index.php?id=12)، ވަގުތީ ރީޑައިރެކްޓްތައް އަދި އެހެން ސައިޓްތަކަށް ރީޑައިރެކްޓްތައް. މިތައް ޗެކްކުރެވެނީ ފުރިހަމަ އެޑްރެހުގެ މައްޗަށް، URL އެލިއަސްތަކާއި ވައިލްޑްކާޑްތަކުގެ ކުރިން. މި ސައިޓުގެ ޞަފްޙާއަކަށް ދާއިމީ ރީޑައިރެކްޓެއް އޭގެ ބަދަލުގައި ވަނީ ގްލޮބަލް URL އެލިއަހެއް، އަދި އެ ލިސްޓްކުރެވިފައިވަނީ އެތަނުގައި.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count ރީޑައިރެކްޓް ނަގައިފި.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>އެއްވެސް ރީޑައިރެކްޓެއް ނެތް. މިތައް ހެދެނީ URL މެޕެއް އިމްޕޯޓްކުރުމުން.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>ފުރިހަމަ އެޑްރެހުގެ މައްޗަށް ޗެކްކުރެވޭ ރީޑައިރެކްޓްތައް</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ހިޔާރުކުރޭ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ޙާލަތު</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>އިމްޕޯޓުން</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ނަގާ</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address ހިޔާރުކުރޭ</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address ނަގާ</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>މި ރީޑައިރެކްޓް ނަގަންތޯ؟</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>ހިޔާރުކުރެވިފައިވާ ރީޑައިރެކްޓްތައް ނަގަންތޯ؟</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>ހިޔާރުކުރެވިފައިވާ ނަގާ</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>ނަގާލެވޭ ރީޑައިރެކްޓެއް އެވަގުތުން މަސައްކަތް ނުކުރާ ވެއްޖެ.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>ޕޭސްޓްކުރެވުނު ޓެކްސްޓް</translation>
     </message>
 </context>
 </TS>

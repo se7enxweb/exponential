@@ -18,7 +18,7 @@ Every module's policy functions and the limitations each can carry, from `$Funct
 | [audit](audit.md) | `manage`, `read` |
 | [class](class.md) | (none: `class/*`) |
 | [collaboration](collaboration.md) | (none: `collaboration/*`) |
-| [content](content.md) | `bookmark`, `cleantrash`, `create`, `dashboard`, `diff`, `edit`, `hide`, `jobs`, `manage_locations`, `move`, `pdf`, `pendinglist`, `publish`, `publish_without_notification`, `read`, `remove`, `restore`, `reverserelatedlist`, `tipafriend`, `translate`, `translations`, `urltranslator`, `versionread`, `versionremove`, `view_embed`, `view_system_url` |
+| [content](content.md) | `bookmark`, `cleantrash`, `create`, `dashboard`, `diff`, `edit`, `hide`, `jobs`, `manage_locations`, `move`, `pdf`, `pendinglist`, `publish`, `publish_without_notification`, `read`, `remove`, `restore`, `reverserelatedlist`, `tipafriend`, `translate`, `translations`, `urltranslator`, `urltranslator_import`, `versionread`, `versionremove`, `view_embed`, `view_system_url` |
 | [contentcheck](contentcheck.md) | `brokenrelations`, `fixfiles`, `permissions`, `quarantine`, `storage`, `trash`, `unreferenced` |
 | [contentfinder](contentfinder.md) | `delete`, `search` |
 | [csp](csp.md) | (none: `csp/*`) |

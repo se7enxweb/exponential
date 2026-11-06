@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Суроғаҳо ба куҷо мераванд: роҳи ин сомона ё ҳангоми такрорҳидоят суроғаи пурра. {1\} матнест, ки аввалин * бо он мувофиқат кард. Мисол: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ба таври муваққатӣ ба ин нишонӣ такрорҳидоят карда мешаванд (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Боздидкунандагон ба таври муваққатӣ такрорҳидоят карда мешаванд (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Такрорҳидояти муваққатӣ (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>Нишон додани %count унсур дар як саҳифа.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Содир кардани харитаи URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Тахаллусҳои умумии URL, ифодаҳои умумӣ ва такрорҳидоятҳои ин сомонаро ҳамчун як файл боргирӣ кунед: барои нигоҳ доштан, барои таҳрир дар ҷадвали электронӣ ва аз нав ворид кардан ё барои додан ба сервери веб ҳамчун қоидаҳои азнавнависӣ.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Ақаллан як навъи сабтҳоро интихоб кунед.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Файлро навиштан ғайриимкон шуд.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Чиро содир кардан</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Формат</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Сабтҳо</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Тахаллусҳои умумии URL (тарҷумони URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Инчунин тахаллусҳои фардии URL-и мундариҷа</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Бо гиреҳ ҳамчун ҳадаф навишта мешавад, масалан node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Ифодаҳои умумӣ</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Такрорҳидоятҳо</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Дастрасии сомона</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Ҳамаи дастрасиҳои сомона</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Танҳо такрорҳидоятҳо ба дастрасии сомона тааллуқ доранд; тахаллусҳои URL ва ифодаҳои умумӣ барои ҳар дастрасии сомона содир карда мешаванд.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Забон</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Ҳамаи забонҳо</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Содир кардан</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Ворид кардани харитаи URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Нишониҳои сомонаи кӯҳнаро якбора интиқол диҳед: файл ҳар нишонии кӯҳна ва саҳифаи ин сомонаеро, ки он акнун ба он тааллуқ дорад, номбар мекунад. Нишониҳои дақиқ такрорҳидоят ё тахаллуси URL мешаванд, нишониҳо бо * ифодаи умумӣ мешаванд. Пеш аз он ки чизе навишта шавад, шумо мебинед, ки ҳар сатр чӣ мекунад ва ҳар воридотро пурра бекор кардан мумкин аст.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Ҷадвалҳои воридоти харитаи URL ҳанӯз вуҷуд надоранд. Пеш аз ворид кардан қадами навсозии 6.0.15-url-map (./console exp:upgrade --apply)-ро иҷро кунед.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Ин воридот дигар дастрас нест: мӯҳлаташ пас аз як рӯз гузашт ё ба корбари дигар тааллуқ дорад. Файлро аз нав бор кунед.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Файлеро интихоб кунед ё сатрҳоро гузоред.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Файл аз %size калонтар аст.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Файлро хондан ғайриимкон аст: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Дастрасии сомонаи ин насбро интихоб кунед.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Воридотро дар сервер нигоҳ доштан ғайриимкон аст: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), қоидаҳои азнавнависии Apache ё nginx, на зиёда аз %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Ё сатрҳоро гузоред</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Дар ҳар сатр як сабт, масалан /саҳифаи-кӯҳна,/саҳифаи-нав. Сатри аввал метавонад сутунҳоро номбар кунад: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Аз файл муайян кардан</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Танҳо вақте лозим аст, ки на номи файл ва на мундариҷаи он инро нишон медиҳад.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Пешфарзҳо</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Дастрасии сомона барои роҳҳои оддӣ</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>пешфарз</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Сатрҳо бо нишонии пурра ба ҷояш дастрасии сомонаи хости худро мегиранд.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Забони дастрасии сомона</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Вақте ки нишонии кӯҳна аллакай сабт дорад</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Сабтро нигоҳ доштан (сатрро гузаронидан)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Иваз кардани сабт</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Хостҳои кӯҳна</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Нишониҳои пурраи хосте, ки ин насб намешиносад, ворид карда намешаванд. Дастрасии сомонаеро, ки ҳар хости кӯҳна ифода мекунад, дар ҳар сатр яктоӣ нависед: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Пешнамоиш</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Ҳанӯз чизе навишта нашудааст: саҳифаи навбатӣ нишон медиҳад, ки ҳар сатр чӣ мекунад.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Воридоти %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Воридот бекор карда шуд.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Воридот бекор карда шуд, ба истиснои сабтҳое, ки пас аз он тағйир ёфтаанд ва нигоҳ дошта шуданд.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Воридотро бекор кардан ғайриимкон шуд: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Сана</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Аз ҷониби</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Сатрҳо</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>Сохта шуд: %created, иваз шуд: %updated, гузаронида шуд: %skipped, ноком: %failed.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Бекоршуда</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Бекор кардани ин воридот</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Ҳар сабте, ки воридот сохтааст, хориҷ карда мешавад ва ҳар сабте, ки иваз кардааст, аз охирин сар карда, ба ҳолати пештара баргардонида мешавад. Аввал шумо шахсияти худро тасдиқ мекунед.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>Сабтҳои пас аз воридот тағйирёфта: %count</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Инчунин бекор кардани сабтҳои пас аз воридот тағйирёфта</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Бе он онҳо нигоҳ дошта мешаванд ва воридот қисман бекор карда мешавад (--force-и консол).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Ин воридот бекор карда шавад?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Бекор кардани воридот</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Сабтҳои навишташуда</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from то %to аз %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Воридот ягон сабт нанавишт.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Сабтҳое, ки воридот навиштааст</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Сатр</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Нишонии кӯҳна</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Сабт</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Мебарад ба</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Тағйирот</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ҳолат</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Тахаллуси URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Ифодаи умумӣ</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Такрорҳидоят</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Сохта шуд</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Иваз шуд</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Татбиқ шуд</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Нигоҳ дошта шуд</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Қисман бекоршуда</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Таърихи воридот (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Ҳамаи воридоти харитаҳои URL, аз навтарин. Воридотро пурра бекор кардан мумкин аст: ҳар сабте, ки навиштааст, ба ҳолати пештара бармегардад.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Ҳанӯз ягон харитаи URL ворид нашудааст.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Воридоти харитаҳои URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Рақам</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Гузаронида шуд</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ноком</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, сатрҳо: %rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Ҳамчун воридоти %id ворид карда шуд.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Дидани воридот ё бекор кардани он</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Ворид кардани файли дигар</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Ҳанӯз чизе навишта нашудааст. Ҳар сатр нишон медиҳад, ки воридот бо он чӣ мекунад. Сатрҳои қайдшуда ворид карда мешаванд; барои истисно кардани сатр қайди онро бардоред. Сатрҳое, ки нав нестанд, танҳо вақте ворид карда мешаванд, ки нишонии кӯҳнаи онҳоро иваз кардан мумкин бошад.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Воридот иҷро нашуд: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Барои воридот ягон сатр қайд нашудааст.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Иҷрои озмоишӣ: чизе навишта нашуд.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Воридот %created сабт месохт, %updated сабтро иваз мекард ва %skipped сабтро мегузаронид; %failed сабт ноком мешуд.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Тасвири умумӣ</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Барои сохтан</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Барои иваз кардан</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Барои гузаронидан</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Бо мушкил</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Нигоҳ дошта мешавад то</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Аз нав банақшагирӣ</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Он чиро, ки сатрҳоро муайян мекунад, тағйир диҳед ва файлро аз нав ба нақша гиред. Қайдҳое, ки дастӣ тағйир додаед, бозсозӣ мешаванд.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Сатрҳои ин хостҳо ворид карда намешаванд, зеро ин насб ба онҳо ҷавоб намедиҳад. Дастрасии сомонаеро, ки ҳар хости кӯҳна ифода мекунад, интихоб кунед.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Ворид нашуд</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Нишон додан</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ҳама</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Дар ин ҳолат сатр нест.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Ҳамаро нишон додан</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Сатрҳои файл ва он чи воридот бо ҳар яки онҳо мекунад</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Ворид кардан</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Нишонии нав</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Навъ</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Қайдҳо</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Ворид кардани сатри %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Не</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ҳа</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Иҷрои озмоишӣ</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Нигоҳ доштани қайдҳо</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Нақша ҳамчун CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Нақша ҳамчун JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Партофтан</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>«Ворид кардан» сатрҳои қайдшудаи ҳамаи саҳифаҳоро ҳамчун як воридот менависад, ки онро аз таърихи воридот бекор кардан мумкин аст; аввал шумо шахсияти худро тасдиқ мекунед. «Иҷрои озмоишӣ» ҳар сатрро бо сомона аз нав месанҷад ва бе навиштан ҳисоб мекунад, ки воридот чӣ мекард.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Такрорҳидоят (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Такрорҳидоят бо ифодаи умумӣ (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Ифодаи умумӣ (мустақим)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Нав</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Тағйирёфта</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Бетағйир</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Такрорӣ</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Ихтилоф</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Ҳадафи вайрон</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Хости номаълум</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Ворид кардан ғайриимкон</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Тахаллусҳои умумии URL</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Таърихи воридот</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Харитаҳои URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Такрорҳидоятҳо (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Ин такрорҳидоятҳо аз воридоти харитаҳои URL меоянд: нишониҳои кӯҳна бо дархост (/index.php?id=12), такрорҳидоятҳои муваққатӣ ва такрорҳидоятҳо ба сомонаҳои дигар. Онҳо аз рӯи нишонии пурра, пеш аз тахаллусҳои URL ва ифодаҳои умумӣ, санҷида мешаванд. Такрорҳидояти доимӣ ба саҳифаи ин сомона ба ҷояш тахаллуси умумии URL аст ва дар он ҷо номбар шудааст.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Такрорҳидоятҳои хориҷшуда: %count.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Такрорҳидоят нест. Онҳо бо ворид кардани харитаи URL сохта мешаванд.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Такрорҳидоятҳое, ки аз рӯи нишонии пурра санҷида мешаванд</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Интихоб кардан</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Вазъ</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Аз воридот</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Хориҷ кардан</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Интихоб кардани %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Хориҷ кардани %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Ин такрорҳидоят хориҷ карда шавад?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Такрорҳидоятҳои интихобшуда хориҷ карда шаванд?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Хориҷ кардани интихобшудаҳо</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Такрорҳидояти хориҷшуда фавран аз кор мемонад.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Матни гузошташуда</translation>
     </message>
 </context>
 </TS>

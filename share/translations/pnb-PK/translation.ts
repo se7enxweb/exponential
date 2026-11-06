@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>پتے کتھے جاندے نیں: ایس سائٹ دی کوئی راہ، یا ری ڈائریکٹ کرݨ ویلے پورا پتہ۔ {1\} اوہ ٹیکسٹ اے جس نال پہلا * میل کھایا۔ مثال: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>نوں ایس پتے تے عارضی طور تے ری ڈائریکٹ کیتا جاندا اے (HTTP 302)۔</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>آؤݨ والیاں نوں عارضی طور تے ری ڈائریکٹ کیتا جاندا اے (HTTP 302)۔</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>عارضی ری ڈائریکٹ (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>ہر صفحے اتے %count آئٹم وکھاؤ۔</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL نقشہ برآمد کرو</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>ایس سائٹ دے عالمی URL عرف، وائلڈ کارڈ تے ری ڈائریکٹ اکو فائل وچ ڈاؤن لوڈ کرو: سانبھݨ لئی، سپریڈ شیٹ وچ بدل کے فیر درآمد کرن لئی، یا ویب سرور نوں ری رائٹ اصولاں دے طور تے دین لئی۔</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>گھٹو گھٹ اک قسم دیاں اندراجاں چݨو۔</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>فائل لکھی نہیں جا سکی۔</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>کیہ برآمد کرنا اے</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>فارمیٹ</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>اندراجاں</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>عالمی URL عرف (URL ترجمان)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>مواد دے اپݨے URL عرف وی</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>نوڈ نوں نشانہ بنا کے لکھے جاندے نیں، جیویں node:42۔</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>وائلڈ کارڈ</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>ری ڈائریکٹ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>سائٹ رسائی</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ہر سائٹ رسائی</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>صرف ری ڈائریکٹ کسے سائٹ رسائی نال جڑے ہوندے نیں؛ URL عرف تے وائلڈ کارڈ ہر سائٹ رسائی لئی برآمد ہوندے نیں۔</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>بولی</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>ہر بولی</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>برآمد کرو</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL نقشہ درآمد کرو</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>پرانی سائٹ دے پتے اکو واری لے آؤ: اک فائل ہر پرانے پتے تے ایس سائٹ دے اوس صفحے دی لسٹ دیندی اے جیہدے نال اوہ ہݨ جڑیا اے۔ پکے پتے ری ڈائریکٹ یا URL عرف بݨ جاندے نیں، * والے پتے وائلڈ کارڈ بݨ جاندے نیں۔ کجھ لکھے جاݨ توں پہلاں تسیں ویکھدے او کہ ہر قطار کیہ کرے گی، تے ہر درآمد نوں پورا واپس کیتا جا سکدا اے۔</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL نقشہ درآمداں دیاں ٹیبلاں حالے موجود نہیں۔ درآمد توں پہلاں اپ گریڈ قدم 6.0.15-url-map (./console exp:upgrade --apply) چلاؤ۔</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>ایہ درآمد ہݨ موجود نہیں: ایہ اک دن مگروں مُک گئی یا کسے ہور ورتݨ والے دی اے۔ فائل فیر اپ لوڈ کرو۔</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>اک فائل چݨو یا قطاراں پیسٹ کرو۔</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>فائل %size توں وڈی اے۔</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>فائل پڑھی نہیں جا سکدی: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>ایس انسٹالیشن دی اک سائٹ رسائی چݨو۔</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>درآمد نوں سرور تے نہیں رکھیا جا سکدا: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>فائل</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>فائل</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV، JSON، Excel (.xlsx)، OpenDocument (.ods)، Apache یا nginx ری رائٹ اصول، زیادہ توں زیادہ %size۔</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>یا قطاراں پیسٹ کرو</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>ہر لائن وچ اک قطار، جیویں /old-page,/new-page۔ پہلی لائن کالماں دے ناں دس سکدی اے: old_url, new_url, kind, siteaccess, language, note, status۔</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>فائل توں پتہ لاؤ</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>صرف اودوں لوڑ اے جدوں نہ فائل دا ناں تے نہ ای مواد ایہ دسے۔</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>ڈیفالٹ</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>ہوسٹ توں بغیر راہواں دی سائٹ رسائی</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>ڈیفالٹ</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>پورے پتے والیاں قطاراں ایہدی تھاں اپݨے ہوسٹ دی سائٹ رسائی لیندیاں نیں۔</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>سائٹ رسائی دی بولی</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>جدوں کسے پرانے پتے دی اندراج پہلاں ای ہووے</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>اندراج رکھو (قطار چھڈو)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>اندراج بدلو</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>پرانے ہوسٹ</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>جیہڑا ہوسٹ ایہ انسٹالیشن نہیں جاݨدی، اوہدے پورے پتے درآمد نہیں ہوندے۔ ہر پرانا ہوسٹ جیہڑی سائٹ رسائی لئی اے اوہدا ناں دسو، ہر لائن وچ اک: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>پیش منظر</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>حالے کجھ نہیں لکھیا جاندا: اگلا صفحہ وکھاندا اے کہ ہر قطار کیہ کرے گی۔</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>درآمد %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>درآمد واپس کر دتی گئی۔</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>درآمد واپس کر دتی گئی، اوہدے مگروں بدلیاں اندراجاں توں سوا، جیہڑیاں رکھیاں گئیاں۔</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>درآمد واپس نہیں ہو سکی: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>تاریخ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ولوں</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>قطاراں</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created بݨیاں، %updated بدلیاں، %skipped چھڈیاں، %failed ناکام۔</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>واپس کیتی</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>ایہ درآمد واپس کرو</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>درآمد دی بݨائی ہر اندراج ہٹا دتی جاندی اے تے بدلی ہوئی ہر اندراج پہلاں ورگی کر دتی جاندی اے، آخری پہلاں۔ پہلاں تسیں تصدیق کردے او کہ تسیں کون او۔</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>درآمد مگروں بدلیاں %count اندراجاں</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>درآمد مگروں بدلیاں اندراجاں وی واپس کرو</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>ایہدے بغیر اوہ رکھیاں جاندیاں نیں تے درآمد ادھی واپس ہوندی اے (کنسول دا --force)۔</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>کیہ ایہ درآمد واپس کرنی اے؟</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>درآمد واپس کرو</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>لکھیاں اندراجاں</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count وچوں %from توں %to</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>درآمد نے کوئی اندراج نہیں لکھی۔</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>درآمد دیاں لکھیاں اندراجاں</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>لائن</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>پرانا پتہ</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>اندراج</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>ایتھے لے جاندا اے</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>تبدیلی</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>حالت</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL عرف</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>وائلڈ کارڈ</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>ری ڈائریکٹ</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>بݨائی گئی</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>بدلی گئی</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>لاگو کیتی</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>رکھی گئی</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>ادھی واپس</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>درآمد دی تاریخ (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL نقشے دی ہر درآمد، سب توں نویں پہلاں۔ اک درآمد نوں پورا واپس کیتا جا سکدا اے: اوہدی لکھی ہر اندراج پہلاں والی حالت وچ واپس جاندی اے۔</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>حالے کوئی URL نقشہ درآمد نہیں کیتا گیا۔</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL نقشیاں دیاں درآمداں</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>نمبر</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>چھڈیاں</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file، %format، %rows قطاراں</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>درآمد %id دے طور تے درآمد کیتا گیا۔</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>درآمد ویکھو، یا اوہنوں واپس کرو</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>ہور فائل درآمد کرو</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>حالے کجھ نہیں لکھیا گیا۔ ہر قطار وکھاندی اے کہ درآمد اوہدے نال کیہ کرے گی۔ نشان لگیاں قطاراں درآمد ہوندیاں نیں؛ کسے قطار نوں باہر رکھن لئی نشان ہٹاؤ۔ جیہڑیاں قطاراں نویاں نہیں، اوہ صرف اودوں درآمد ہو سکدیاں نیں جدوں اوہناں دا پرانا پتہ بدلیا جا سکے۔</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>درآمد نہیں ہوئی: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>درآمد لئی کسے قطار تے نشان نہیں۔</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>آزمائشی چلت: کجھ نہیں لکھیا گیا۔</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>درآمد %created بݨائے گی، %updated بدلے گی تے %skipped چھڈے گی؛ %failed ناکام ہوݨ گیاں۔</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>جائزہ</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>بݨاؤݨ لئی</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>بدلن لئی</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>چھڈن لئی</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>مسئلے والیاں</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>ایس ویلے تک رکھی</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>فیر منصوبہ بݨاؤ</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>قطاراں دا فیصلہ کرن والیاں چیزاں بدلو تے فائل دا فیر منصوبہ بݨاؤ۔ ہتھ نال بدلے نشان ری سیٹ ہو جاندے نیں۔</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>ایہناں ہوسٹاں دیاں قطاراں درآمد نہیں ہوندیاں، کیوں جے ایہ انسٹالیشن اوہناں لئی جواب نہیں دیندی۔ ہر پرانا ہوسٹ جیہڑی سائٹ رسائی لئی اے اوہ چݨو۔</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>درآمد نہیں ہوئیاں</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>وکھاؤ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ساریاں</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>کسے قطار دی ایہ حالت نہیں۔</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>سب وکھاؤ</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>فائل دیاں قطاراں تے درآمد ہر اک نال کیہ کرے گی</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>درآمد کرو</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>نواں پتہ</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>قسم</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>نوٹ</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>لائن %line درآمد کرو</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>نہیں</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ہاں</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>آزمائشی چلت</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>نشان رکھو</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>CSV دے طور تے منصوبہ</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>JSON دے طور تے منصوبہ</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>سٹ دیو</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>درآمد ہر صفحے دیاں نشان لگیاں قطاراں نوں اک درآمد دے طور تے لکھدی اے، جیہنوں درآمد دی تاریخ توں واپس کیتا جا سکدا اے؛ پہلاں تسیں تصدیق کردے او کہ تسیں کون او۔ آزمائشی چلت ہر قطار نوں سائٹ نال فیر جانچدی اے تے گندی اے کہ درآمد کیہ کرے گی، کجھ لکھے بغیر۔</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>ری ڈائریکٹ (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>وائلڈ کارڈ ری ڈائریکٹ (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>وائلڈ کارڈ (سدھا)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>نویں</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>بدلی ہوئی</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>بغیر تبدیلی</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>دوہری</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>ٹکراؤ</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>ٹٹیا نشانہ</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>انجان ہوسٹ</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>درآمد نہیں ہو سکدی</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>عالمی URL عرف</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>درآمد دی تاریخ</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL نقشے</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>ری ڈائریکٹ (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>ایہ ری ڈائریکٹ URL نقشہ درآمداں توں آؤندے نیں: سوال والے پرانے پتے (/index.php?id=12)، عارضی ری ڈائریکٹ تے دوجیاں سائٹاں ول ری ڈائریکٹ۔ ایہناں نوں URL عرف تے وائلڈ کارڈاں توں پہلاں پورے پتے تے جانچیا جاندا اے۔ ایس سائٹ دے کسے صفحے ول پکا ری ڈائریکٹ ایہدی تھاں عالمی URL عرف ہوندا اے تے اوتھے لسٹ وچ اے۔</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count ری ڈائریکٹ ہٹائے گئے۔</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>کوئی ری ڈائریکٹ نہیں۔ ایہ URL نقشہ درآمد کر کے بݨدے نیں۔</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>پورے پتے تے جانچے جاݨ والے ری ڈائریکٹ</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>چݨو</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>حیثیت</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>درآمد توں</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ہٹاؤ</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address چݨو</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address ہٹاؤ</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>کیہ ایہ ری ڈائریکٹ ہٹاؤݨا اے؟</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>کیہ چݨے ہوئے ری ڈائریکٹ ہٹاؤݨے نیں؟</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>چݨے ہوئے ہٹاؤ</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>ہٹایا گیا ری ڈائریکٹ فوراً کم کرنا چھڈ دیندا اے۔</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>پیسٹ کیتی لکھت</translation>
     </message>
 </context>
 </TS>

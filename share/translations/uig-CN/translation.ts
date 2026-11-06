@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>ئادرېسلار بارىدىغان يەر: بۇ بېكەتنىڭ بىر يولى، ياكى يوللىغاندا تولۇق ئادرېس. {1\} بىرىنچى * ماس كەلگەن تېكىست. مىسال: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>بۇ ئادرېسقا ۋاقىتلىق يوللىنىدۇ (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>زىيارەتچىلەر ۋاقىتلىق يوللىنىدۇ (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>ۋاقىتلىق يوللاش (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>ھەر بەتتە %count تۈر كۆرسەت.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL خەرىتىسىنى چىقار</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>بۇ تور بېكەتنىڭ ئومۇمىي URL تەخەللۇسلىرى، ئومۇمىي ماسلاشتۇرغۇچلىرى ۋە يوللاشلىرىنى بىر ھۆججەت قىلىپ چۈشۈرۈڭ: ساقلاش، جەدۋەلدە تەھرىرلەپ قايتا ئەكىرىش ياكى تور مۇلازىمېتىرىغا قايتا يېزىش قائىدىسى قىلىپ بېرىش ئۈچۈن.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>ئاز دېگەندە بىر خىل خاتىرە تاللاڭ.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>ھۆججەتنى يازغىلى بولمىدى.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>نېمىنى چىقىرىش</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>فورمات</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>خاتىرىلەر</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>ئومۇمىي URL تەخەللۇسلىرى (URL تەرجىمانى)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>مەزمۇنلارنىڭ ئىختىيارىي URL تەخەللۇسلىرىمۇ</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>تۈگۈن نىشان قىلىپ يېزىلىدۇ، مەسىلەن node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>ئومۇمىي ماسلاشتۇرغۇچلار</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>يوللاشلار</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>تور بېكەت زىيارىتى</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>بارلىق تور بېكەت زىيارىتى</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>پەقەت يوللاشلارلا بىر تور بېكەت زىيارىتىگە تەۋە؛ URL تەخەللۇسلىرى ۋە ئومۇمىي ماسلاشتۇرغۇچلار ھەر بىر تور بېكەت زىيارىتى ئۈچۈن چىقىرىلىدۇ.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>تىل</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>بارلىق تىللار</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>چىقار</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL خەرىتىسى ئەكىر</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>كونا تور بېكەتنىڭ ئادرېسلىرىنى بىراقلا يۆتكەڭ: ھۆججەتتە ھەر بىر كونا ئادرېس ۋە ئۇنىڭ ھازىر بۇ تور بېكەتنىڭ قايسى بېتىگە تەۋە ئىكەنلىكى كۆرسىتىلىدۇ. ئېنىق ئادرېسلار يوللاش ياكى URL تەخەللۇسىغا، * بار ئادرېسلار ئومۇمىي ماسلاشتۇرغۇچقا ئايلىنىدۇ. ھېچنېمە يېزىلىشتىن بۇرۇن ھەر بىر قۇرنىڭ نېمە قىلىدىغانلىقىنى كۆرىسىز، ھەر بىر ئەكىرىشنى پۈتۈنلەي بىكار قىلغىلى بولىدۇ.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL خەرىتىسى ئەكىرىش جەدۋەللىرى تېخى يوق. ئەكىرىشتىن بۇرۇن 6.0.15-url-map يېڭىلاش باسقۇچىنى (./console exp:upgrade --apply) ئىجرا قىلىڭ.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>بۇ ئەكىرىش ئەمدى ئىشلەتكىلى بولمايدۇ: ئۇ بىر كۈندىن كېيىن ۋاقتى ئۆتكەن ياكى باشقا ئىشلەتكۈچىگە تەۋە. ھۆججەتنى قايتا يۈكلەڭ.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>ھۆججەت تاللاڭ ياكى قۇرلارنى چاپلاڭ.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>ھۆججەت %size دىن چوڭ.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>ھۆججەتنى ئوقۇغىلى بولمايدۇ: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>بۇ ئورنىتىشنىڭ بىر تور بېكەت زىيارىتىنى تاللاڭ.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>ئەكىرىشنى مۇلازىمېتىردا ساقلىغىلى بولمايدۇ: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>ھۆججەت</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ھۆججەت</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV، JSON، Excel (.xlsx)، OpenDocument (.ods)، Apache ياكى nginx قايتا يېزىش قائىدىلىرى، ئەڭ كۆپ %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>ياكى قۇرلارنى چاپلاڭ</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>ھەر بىر قۇردا بىر خاتىرە، مەسىلەن /old-page,/new-page. بىرىنچى قۇر ستونلارنىڭ نامىنى بېرەلەيدۇ: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>ھۆججەتتىن بايقا</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>پەقەت ھۆججەتنىڭ نامى ۋە مەزمۇنى بۇنى كۆرسەتمىگەندىلا كېرەك.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>كۆڭۈلدىكى قىممەتلەر</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>ئاددىي يوللارنىڭ تور بېكەت زىيارىتى</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>كۆڭۈلدىكى</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>تولۇق ئادرېسلىق قۇرلار ئۇنىڭ ئورنىغا ئۆز ساھىبجامالىنىڭ تور بېكەت زىيارىتىنى ئالىدۇ.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>تور بېكەت زىيارىتىنىڭ تىلى</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>كونا ئادرېسنىڭ خاتىرىسى ئاللىبۇرۇن بولسا</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>خاتىرىنى ساقلا (قۇردىن ئاتلا)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>خاتىرىنى ئالماشتۇر</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>كونا ساھىبجامالار</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>بۇ ئورنىتىش تونۇمايدىغان ساھىبجامالنىڭ تولۇق ئادرېسلىرى ئەكىرىلمەيدۇ. ھەر بىر كونا ساھىبجامال ۋەكىللىك قىلىدىغان تور بېكەت زىيارىتىنى ھەر قۇرغا بىردىن يېزىڭ: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>ئالدىن كۆرۈش</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>تېخى ھېچنېمە يېزىلمىدى: كېيىنكى بەت ھەر بىر قۇرنىڭ نېمە قىلىدىغانلىقىنى كۆرسىتىدۇ.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>ئەكىرىش %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>ئەكىرىش بىكار قىلىندى.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>ئەكىرىش بىكار قىلىندى، ئۇنىڭدىن كېيىن ئۆزگەرتىلگەن خاتىرىلەر بۇنىڭ سىرتىدا، ئۇلار ساقلاپ قېلىندى.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>ئەكىرىشنى بىكار قىلغىلى بولمىدى: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>چېسلا</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>قىلغۇچى</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>قۇرلار</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>قۇرۇلدى: %created، ئالماشتۇرۇلدى: %updated، ئاتلاندى: %skipped، مەغلۇپ: %failed.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>بىكار قىلىنغان</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>بۇ ئەكىرىشنى بىكار قىل</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>ئەكىرىش قۇرغان ھەر بىر خاتىرە ئۆچۈرۈلىدۇ، ئۇ ئالماشتۇرغان ھەر بىر خاتىرە ئەڭ ئاخىرقىسىدىن باشلاپ ئەسلىگە قايتۇرۇلىدۇ. ئالدى بىلەن سالاھىيىتىڭىزنى جەزملەيسىز.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>ئەكىرىشتىن كېيىن ئۆزگەرتىلگەن خاتىرىلەر: %count</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>ئەكىرىشتىن كېيىن ئۆزگەرتىلگەن خاتىرىلەرنىمۇ بىكار قىل</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>بۇنى تاللىمىسىڭىز ئۇلار ساقلىنىدۇ ۋە ئەكىرىش قىسمەن بىكار قىلىنغان بولىدۇ (كونترول سۇپىسىدىكى --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>بۇ ئەكىرىشنى بىكار قىلامسىز؟</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>ئەكىرىشنى بىكار قىل</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>يېزىلغان خاتىرىلەر</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count ئىچىدىن %from - %to</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>ئەكىرىش ھېچقانداق خاتىرە يازمىدى.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>ئەكىرىش يازغان خاتىرىلەر</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>قۇر</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>كونا ئادرېس</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>خاتىرە</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>ئېلىپ بارىدۇ</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ئۆزگىرىش</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ھالەت</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL تەخەللۇسى</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>ئومۇمىي ماسلاشتۇرغۇچ</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>يوللاش</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>قۇرۇلدى</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>ئالماشتۇرۇلدى</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>قوللىنىلدى</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>ساقلاندى</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>قىسمەن بىكار قىلىنغان</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>ئەكىرىش تارىخى (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL خەرىتىلىرىنىڭ بارلىق ئەكىرىشلىرى، ئەڭ يېڭىسى ئالدىدا. بىر ئەكىرىشنى پۈتۈنلەي بىكار قىلغىلى بولىدۇ: ئۇ يازغان ھەر بىر خاتىرە ئىلگىرىكى ھالىتىگە قايتىدۇ.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>تېخى ھېچقانداق URL خەرىتىسى ئەكىرىلمىدى.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL خەرىتىلىرىنىڭ ئەكىرىشلىرى</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>نومۇر</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>ئاتلاندى</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>مەغلۇپ بولدى</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file، %format، قۇرلار: %rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>%id نومۇرلۇق ئەكىرىش سۈپىتىدە ئەكىرىلدى.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>ئەكىرىشنى كۆرۈڭ ياكى بىكار قىلىڭ</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>باشقا ھۆججەت ئەكىر</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>تېخى ھېچنېمە يېزىلمىدى. ھەر بىر قۇر ئەكىرىشنىڭ ئۇنىڭغا نېمە قىلىدىغانلىقىنى كۆرسىتىدۇ. بەلگە قويۇلغان قۇرلار ئەكىرىلىدۇ؛ بىر قۇرنى چىقىرىۋېتىش ئۈچۈن بەلگىسىنى ئېلىڭ. يېڭى بولمىغان قۇرلار پەقەت كونا ئادرېسىنى ئالماشتۇرۇشقا رۇخسەت قىلىنغاندىلا ئەكىرىلەلەيدۇ.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>ئەكىرىش ئېلىپ بېرىلمىدى: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>ئەكىرىش ئۈچۈن ھېچقانداق قۇرغا بەلگە قويۇلمىغان.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>سىناق ئىجرا: ھېچنېمە يېزىلمىدى.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>ئەكىرىش %created نى قۇرىدۇ، %updated نى ئالماشتۇرىدۇ ۋە %skipped دىن ئاتلايدۇ؛ %failed مەغلۇپ بولىدۇ.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ئومۇمىي كۆرۈنۈش</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>قۇرۇلىدىغان</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>ئالماشتۇرۇلىدىغان</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>ئاتلىنىدىغان</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>مەسىلىلىك</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>ساقلىنىش ۋاقتى</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>قايتا پىلانلا</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>قۇرلارنى بەلگىلەيدىغان تەڭشەكلەرنى ئۆزگەرتىپ، ھۆججەتنى قايتا پىلانلاڭ. قولدا ئۆزگەرتكەن بەلگىلەر ئەسلىگە قايتىدۇ.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>بۇ ساھىبجامالارنىڭ قۇرلىرى ئەكىرىلمەيدۇ، چۈنكى بۇ ئورنىتىش ئۇلارغا جاۋاب بەرمەيدۇ. ھەر بىر كونا ساھىبجامال ۋەكىللىك قىلىدىغان تور بېكەت زىيارىتىنى تاللاڭ.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>ئەكىرىلمىدى</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>كۆرسەت</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ھەممىسى</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>بۇ ھالەتتە قۇر يوق.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ھەممىنى كۆرسەت</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>ھۆججەتنىڭ قۇرلىرى ۋە ئەكىرىشنىڭ ھەر بىرىگە نېمە قىلىدىغانلىقى</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>ئەكىر</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>يېڭى ئادرېس</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>تۈر</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>ئىزاھلار</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>%line قۇرنى ئەكىر</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ياق</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ھەئە</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>سىناق ئىجرا</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>بەلگىلەرنى ساقلا</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>پىلان CSV شەكلىدە</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>پىلان JSON شەكلىدە</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>تاشلىۋەت</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>ئەكىر ھەر بىر بەتنىڭ بەلگە قويۇلغان قۇرلىرىنى بىر ئەكىرىش قىلىپ يازىدۇ، ئۇنى ئەكىرىش تارىخىدىن بىكار قىلغىلى بولىدۇ؛ ئالدى بىلەن سالاھىيىتىڭىزنى جەزملەيسىز. سىناق ئىجرا ھەر بىر قۇرنى تور بېكەتكە قارىتا قايتا تەكشۈرۈپ، ھېچنېمە يازماي ئەكىرىشنىڭ نېمە قىلىدىغانلىقىنى سانايدۇ.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>يوللاش (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>ئومۇمىي ماسلاشتۇرغۇچلۇق يوللاش (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>ئومۇمىي ماسلاشتۇرغۇچ (بىۋاسىتە)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>يېڭى</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>ئۆزگەرتىلگەن</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>ئۆزگەرمىگەن</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>تەكرار</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>توقۇنۇش</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>بۇزۇق نىشان</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>نامەلۇم ساھىبجامال</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>ئەكىرگىلى بولمايدۇ</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>ئومۇمىي URL تەخەللۇسلىرى</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>ئەكىرىش تارىخى</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL خەرىتىلىرى</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>يوللاشلار (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>بۇ يوللاشلار URL خەرىتىسى ئەكىرىشلىرىدىن كېلىدۇ: سۈرۈشتۈرۈشلۈك كونا ئادرېسلار (/index.php?id=12)، ۋاقىتلىق يوللاشلار ۋە باشقا تور بېكەتلەرگە يوللاشلار. ئۇلار URL تەخەللۇسلىرى ۋە ئومۇمىي ماسلاشتۇرغۇچلاردىن بۇرۇن، تولۇق ئادرېس بويىچە تەكشۈرۈلىدۇ. بۇ تور بېكەتنىڭ بىر بېتىگە مەڭگۈلۈك يوللاش بولسا ئومۇمىي URL تەخەللۇسى بولۇپ، شۇ يەردە كۆرسىتىلىدۇ.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>ئۆچۈرۈلگەن يوللاشلار: %count.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>يوللاش يوق. ئۇلار URL خەرىتىسى ئەكىرىش ئارقىلىق قۇرۇلىدۇ.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>تولۇق ئادرېس بويىچە تەكشۈرۈلىدىغان يوللاشلار</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>تاللا</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ھالەت</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>ئەكىرىشتىن</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>چىقىرىۋەت</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address نى تاللا</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address نى چىقىرىۋەت</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>بۇ يوللاشنى چىقىرىۋېتەمسىز؟</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>تاللانغان يوللاشلارنى چىقىرىۋېتەمسىز؟</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>تاللانغانلارنى چىقىرىۋەت</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>چىقىرىۋېتىلگەن يوللاش دەرھال ئىشلىمەيدۇ.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>چاپلانغان تېكىست</translation>
     </message>
 </context>
 </TS>

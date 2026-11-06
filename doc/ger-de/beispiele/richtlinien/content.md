@@ -2,7 +2,7 @@
 title: Richtlinien des Moduls content
 audience: developer, admin
 category: examples
-summary: Die Richtlinienfunktionen des Moduls content (26) und ihre Einschränkungen.
+summary: Die Richtlinienfunktionen des Moduls content (27) und ihre Einschränkungen.
 keywords: Richtlinie, Richtlinien, Rolle, Einschränkung, Berechtigung, content, policy, policies, role, limitation, permission
 type: generated
 generated: exp:help:examples
@@ -464,7 +464,7 @@ $role->appendPolicy( 'content', 'translations' );
 
 ## urltranslator
 
-Geprüft von den Ansichten: [urltranslator](../modulansichten/content/urltranslator.md), [urlwildcards](../modulansichten/content/urlwildcards.md).
+Geprüft von den Ansichten: [urlexport](../modulansichten/content/urlexport.md), [urlredirects](../modulansichten/content/urlredirects.md), [urltranslator](../modulansichten/content/urltranslator.md), [urlwildcards](../modulansichten/content/urlwildcards.md).
 
 Keine Einschränkungen: Die Richtlinie gilt ganz oder gar nicht.
 
@@ -476,6 +476,24 @@ $role->appendPolicy( 'content', 'urltranslator' );
 
 ```tpl
 {if fetch( 'user', 'has_access_to', hash( 'module', 'content', 'function', 'urltranslator' ) )}
+    ...
+{/if}
+```
+
+## urltranslator_import
+
+Geprüft von den Ansichten: [urlimport](../modulansichten/content/urlimport.md), [urlimporthistory](../modulansichten/content/urlimporthistory.md).
+
+Keine Einschränkungen: Die Richtlinie gilt ganz oder gar nicht.
+
+```php
+// Einer Rolle die Richtlinie geben (eZRole::appendPolicy( $module, $function, $limitations ))
+$role = eZRole::fetchByName( 'Editor' );
+$role->appendPolicy( 'content', 'urltranslator_import' );
+```
+
+```tpl
+{if fetch( 'user', 'has_access_to', hash( 'module', 'content', 'function', 'urltranslator_import' ) )}
     ...
 {/if}
 ```

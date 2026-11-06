@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Far an tèid na seòlaidhean: slighe dhen làrach seo, no seòladh slàn nuair a thathar ag ath-stiùireadh. Is e {1\} an teacsa ris an do fhreagair a' chiad *. Eisimpleir: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>thèid an ath-stiùireadh dhan t-seòladh seo gu sealach (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Thèid aoighean ath-stiùireadh gu sealach (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Ath-stiùireadh sealach (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Seall %count nithean air gach duilleag.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Às-phortaich mapa nan URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Luchdaich a-nuas na h-aliasan URL cruinneil, na saoragain agus na h-ath-stiùiridhean aig an làrach seo mar aon fhaidhle: airson a chumail, airson a dheasachadh ann an cliath-dhuilleag agus ion-phortadh a-rithist, no airson a thoirt do fhrithealaiche-lìn mar riaghailtean ath-sgrìobhaidh.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Tagh co-dhiù aon seòrsa innteirt.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Cha b' urrainn dhuinn am faidhle a sgrìobhadh.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Dè thèid às-phortadh</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Fòrmat</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Innteartan</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Aliasan URL cruinneil (eadar-theangaiche nan URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Cuideachd aliasan URL gnàthaichte na susbaint</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Air a sgrìobhadh leis an nòd mar thargaid, mar eisimpleir node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Saoragain</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Ath-stiùiridhean</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Inntrigeadh làraich</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Gach inntrigeadh làraich</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Chan eil ach ath-stiùiridhean a' buntainn ri inntrigeadh làraich; thèid aliasan URL agus saoragain às-phortadh airson gach inntrigeadh làraich.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Cànan</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Gach cànan</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Às-phortaich</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Ion-phortaich mapa URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Thoir seòlaidhean seann làraich a-nall ann an aon turas: tha faidhle a' liostadh gach seann seòladh agus an duilleag dhen làrach seo dham buin e a-nis. Thèid seòlaidhean pongail nan ath-stiùiridhean no nan aliasan URL, agus thèid seòlaidhean le * nan saoragain. Chì thu dè dhèanadh gach ràgh mus tèid càil a sgrìobhadh, agus gabhaidh gach ion-phortadh a neo-dhèanamh gu h-iomlan.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Chan eil clàran ion-phortaidhean mhapaichean URL ann fhathast. Ruith an ceum àrdachaidh 6.0.15-url-map (./console exp:upgrade --apply) mus dèan thu ion-phortadh.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Chan eil an t-ion-phortadh seo ri fhaighinn tuilleadh: dh'fhalbh an ùine air às dèidh latha no buinidh e do chleachdaiche eile. Luchdaich suas am faidhle a-rithist.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Tagh faidhle no cuir a-steach na ràghan.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Tha am faidhle nas motha na %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Cha ghabh am faidhle a leughadh: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Tagh inntrigeadh làraich dhen stàladh seo.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Cha ghabh an t-ion-phortadh a chumail air an fhrithealaiche: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Am faidhle</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faidhle</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), riaghailtean ath-sgrìobhaidh Apache no nginx, %size air a' char as motha.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>No cuir a-steach na ràghan</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Aon ràgh air gach loidhne, mar eisimpleir /seann-duilleag,/duilleag-ur. Faodaidh a' chiad loidhne ainmean nan colbhan a thoirt: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Faigh a-mach on fhaidhle</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Chan fheum thu seo ach mur innis ainm no susbaint an fhaidhle e.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Bun-roghainnean</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Inntrigeadh làraich nan slighean lom</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>bunaiteach</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Gabhaidh ràghan le seòladh slàn inntrigeadh làraich an òstair aca na àite.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Cànan an inntrigidh làraich</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Nuair a tha innteart aig seann seòladh mu thràth</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Cùm an t-innteart (leum thar an ràgh)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Ionadaich an t-innteart</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Seann òstairean</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Cha tèid seòlaidhean slàna o òstair air nach eil an stàladh seo eòlach ion-phortadh. Ainmich an t-inntrigeadh làraich a tha a' riochdachadh gach seann òstair, aon air gach loidhne: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Ro-shealladh</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Cha tèid càil a sgrìobhadh fhathast: seallaidh an ath dhuilleag dè dhèanadh gach ràgh.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Ion-phortadh %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Chaidh an t-ion-phortadh a neo-dhèanamh.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Chaidh an t-ion-phortadh a neo-dhèanamh, ach na h-innteartan a chaidh atharrachadh às a dhèidh, a chaidh a chumail.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Cha b' urrainn dhuinn an t-ion-phortadh a neo-dhèanamh: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Ceann-latha</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Le</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Ràghan</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created air an cruthachadh, %updated air an ionadachadh, %skipped air an leum, %failed air fàiligeadh.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Air a neo-dhèanamh</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Neo-dhèan an t-ion-phortadh seo</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Thèid gach innteart a chruthaich an t-ion-phortadh a thoirt air falbh agus thèid gach innteart a dh'ionadaich e a chur air ais mar a bha e, am fear mu dheireadh an toiseach. Dearbhaidh tu cò thu an toiseach.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count innteartan air an atharrachadh às dèidh an ion-phortaidh</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Neo-dhèan cuideachd na h-innteartan a chaidh atharrachadh às dèidh an ion-phortaidh</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Às aonais seo, thèid an cumail agus bidh an t-ion-phortadh air a neo-dhèanamh gu ìre (--force a' chonsoil).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>A bheil thu airson an t-ion-phortadh seo a neo-dhèanamh?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Neo-dhèan an t-ion-phortadh</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Innteartan sgrìobhte</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from gu %to à %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Cha do sgrìobh an t-ion-phortadh innteart sam bith.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Na h-innteartan a sgrìobh an t-ion-phortadh</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Loidhne</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Seann seòladh</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Innteart</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>A' treòrachadh gu</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Atharrachadh</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Staid</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Alias URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Saoragan</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Ath-stiùireadh</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Air a chruthachadh</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Air ionadachadh</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Air a chur an sàs</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Air a chumail</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Air a neo-dhèanamh gu ìre</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Eachdraidh nan ion-phortaidhean (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Gach ion-phortadh de mhapa URL, an fheadhainn as ùire an toiseach. Gabhaidh ion-phortadh a neo-dhèanamh gu h-iomlan: tillidh gach innteart a sgrìobh e gu na bha ann roimhe.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Cha deach mapa URL sam bith ion-phortadh fhathast.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Ion-phortaidhean mhapaichean URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Àireamh</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Air an leum</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Air fàiligeadh</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows ràghan</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Air ion-phortadh mar ion-phortadh %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Seall an t-ion-phortadh, no neo-dhèan e</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Ion-phortaich faidhle eile</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Cha deach càil a sgrìobhadh fhathast. Seallaidh gach ràgh dè dhèanadh an t-ion-phortadh leis. Thèid na ràghan le cromag ion-phortadh; thoir a' chromag far ràgh gus fhàgail a-mach. Cha ghabh ràghan nach eil ùr ion-phortadh ach nuair a dh'fhaodar an seann seòladh aca ionadachadh.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Cha deach an t-ion-phortadh a dhèanamh: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Chan eil cromag ri ràgh sam bith airson ion-phortadh.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Ruith-deuchainn: cha deach càil a sgrìobhadh.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Chruthaicheadh an t-ion-phortadh %created, dh'ionadaicheadh e %updated agus leumadh e thar %skipped; dh'fhàilligeadh %failed.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Foir-shealladh</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Ri chruthachadh</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Ri ionadachadh</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Ri leum</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Le duilgheadas</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Air a chumail gu</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Dealbhaich a-rithist</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Atharraich na tha a' co-dhùnadh nan ràghan agus dealbhaich am faidhle a-rithist. Thèid na cromagan a dh'atharraich thu le làimh ath-shuidheachadh.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Cha tèid ràghan nan òstairean seo ion-phortadh, a chionn 's nach eil an stàladh seo a' freagairt air an son. Tagh an t-inntrigeadh làraich a tha a' riochdachadh gach seann òstair.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Gun ion-phortadh</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Seall</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Na h-uile</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Chan eil an staid seo aig ràgh sam bith.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Seall na h-uile</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Ràghan an fhaidhle agus dè dhèanadh an t-ion-phortadh le gach fear</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Ion-phortaich</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Seòladh ùr</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Seòrsa</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Nòtaichean</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Ion-phortaich loidhne %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Chan eil</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Tha</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Ruith-deuchainn</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Cùm na cromagan</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Plana mar CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Plana mar JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Tilg air falbh</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Sgrìobhaidh Ion-phortaich na ràghan le cromag air gach duilleag mar aon ion-phortadh, a ghabhas neo-dhèanamh o eachdraidh nan ion-phortaidhean; dearbhaidh tu cò thu an toiseach. Nì Ruith-deuchainn sgrùdadh air gach ràgh mu choinneamh na làraich a-rithist agus cunntaidh e dè dhèanadh an t-ion-phortadh, gun sgrìobhadh.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Ath-stiùireadh (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Ath-stiùireadh le saoragan (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Saoragan (dìreach)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Ùr</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Air atharrachadh</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Gun atharrachadh</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Dùblachadh</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Còmhstri</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Targaid bhriste</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Òstair neo-aithnichte</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Cha ghabh ion-phortadh</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Aliasan URL cruinneil</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Eachdraidh nan ion-phortaidhean</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Mapaichean URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Ath-stiùiridhean (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Tha na h-ath-stiùiridhean seo a' tighinn o ion-phortaidhean mhapaichean URL: seann seòlaidhean le ceist (/index.php?id=12), ath-stiùiridhean sealach agus ath-stiùiridhean gu làraichean eile. Thèid an sgrùdadh air an t-seòladh shlàn, ro na h-aliasan URL agus na saoragain. 'S e alias URL cruinneil a th' ann an ath-stiùireadh buan gu duilleag dhen làrach seo na àite, agus tha e air a liostadh an sin.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Chaidh %count ath-stiùiridhean a thoirt air falbh.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Chan eil ath-stiùireadh sam bith ann. Thèid an dèanamh le bhith ag ion-phortadh mapa URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Ath-stiùiridhean air an sgrùdadh air an t-seòladh shlàn</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Tagh</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Inbhe</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>On ion-phortadh</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Thoir air falbh</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Tagh %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Thoir air falbh %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>A bheil thu airson an t-ath-stiùireadh seo a thoirt air falbh?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>A bheil thu airson na h-ath-stiùiridhean a thagh thu a thoirt air falbh?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Thoir air falbh na chaidh a thaghadh</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Sguiridh ath-stiùireadh a chaidh a thoirt air falbh a dh'obair sa bhad.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Teacsa air a chur a-steach</translation>
     </message>
 </context>
 </TS>

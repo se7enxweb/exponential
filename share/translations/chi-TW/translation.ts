@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>網址的目的地：此網站的路徑，或重新導向時使用完整網址。{1\} 是第一個 * 所符合的文字。範例：dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>會被暫時重新導向至此位址（HTTP 302）。</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>訪客會被暫時重新導向（HTTP 302）。</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>暫時重新導向（302）</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85489,6 +85501,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>每頁顯示 %count 個項目。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>匯出 URL 對應表</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>將本網站的全域 URL 別名、萬用字元和重新導向下載為一個檔案：用於保存、在試算表中編輯後再次匯入，或作為重寫規則交給 Web 伺服器。</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>請至少選擇一種項目。</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>無法寫入檔案。</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>要匯出的內容</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>檔案格式</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>項目</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>全域 URL 別名（URL 轉譯器）</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>同時包含內容的自訂 URL 別名</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>以節點為目標寫入，例如 node:42。</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>萬用字元</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>重新導向</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>網站存取</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>所有網站存取</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>只有重新導向屬於某個網站存取；URL 別名和萬用字元會針對所有網站存取匯出。</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>語言</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>所有語言</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>匯出</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>匯入 URL 對應表</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>一次搬移舊網站的位址：檔案列出每個舊位址，以及它現在所屬的本網站頁面。精確位址會成為重新導向或 URL 別名，含 * 的位址會成為萬用字元。在寫入任何內容之前，您可以看到每一列將執行的動作，而且每次匯入都可以整體復原。</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL 對應表匯入所需的資料表尚不存在。匯入前請執行升級步驟 6.0.15-url-map（./console exp:upgrade --apply）。</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>此匯入已無法使用：它已在一天後過期，或屬於其他使用者。請重新上傳檔案。</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>請選擇檔案或貼上各列。</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>檔案大於 %size。</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>無法讀取檔案：%error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>請選擇此安裝中的一個網站存取。</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>無法在伺服器上保留此匯入：%error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>檔案</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>檔案</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV、JSON、Excel（.xlsx）、OpenDocument（.ods）、Apache 或 nginx 重寫規則，最多 %size。</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>或貼上各列</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>每行一列，例如 /old-page,/new-page。第一行可以列出欄位名稱：old_url, new_url, kind, siteaccess, language, note, status。</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>從檔案判斷</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>僅在檔名和檔案內容都無法說明時才需要。</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>預設值</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>純路徑的網站存取</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>預設</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>含完整位址的列會改用其主機的網站存取。</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>網站存取的語言</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>當舊位址已有項目時</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>保留該項目（略過該列）</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>取代該項目</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>舊主機</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>本安裝不認得的主機的完整位址不會被匯入。請為每個舊主機指定其對應的網站存取，每行一個：www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>預覽</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>尚未寫入任何內容：下一頁會顯示每一列將執行的動作。</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>匯入 %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>匯入已復原。</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>匯入已復原，但匯入後被變更的項目除外，這些項目已保留。</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>無法復原匯入：%error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>日期</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>執行者</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>列數</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>已建立 %created，已取代 %updated，已略過 %skipped，失敗 %failed。</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>已復原</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>復原此匯入</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>匯入建立的每個項目都會被移除，匯入取代的每個項目都會恢復原狀，從最後一個開始。您需要先確認身分。</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>匯入後有 %count 個項目被變更</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>同時復原匯入後被變更的項目</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>不勾選時這些項目會被保留，匯入將被部分復原（相當於主控台的 --force）。</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>復原此匯入？</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>復原匯入</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>已寫入的項目</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>第 %from 至 %to 項，共 %count 項</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>此匯入未寫入任何項目。</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>此匯入寫入的項目</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>行</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>舊位址</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>項目</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>導向</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>變更</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>狀態</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL 別名</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>萬用字元</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>重新導向</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>已建立</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>已取代</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>已套用</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>已保留</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>部分復原</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>匯入記錄（%count）</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>每次 URL 對應表匯入，最新的在前。匯入可以整體復原：它寫入的每個項目都會回到先前的狀態。</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>尚未匯入任何 URL 對應表。</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL 對應表匯入</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>編號</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>已略過</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>失敗</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file，%format，%rows 列</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>已匯入為匯入 %id。</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>檢視此匯入，或將其復原</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>匯入其他檔案</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>尚未寫入任何內容。每一列都顯示匯入將如何處理它。已勾選的列會被匯入；取消勾選即可排除該列。不是新的列只有在允許取代其舊位址時才能匯入。</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>匯入未執行：%error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>沒有勾選任何要匯入的列。</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>試執行：未寫入任何內容。</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>此匯入將建立 %created、取代 %updated、略過 %skipped；%failed 將失敗。</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>概覽</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>待建立</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>待取代</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>待略過</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>有問題</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>保留至</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>重新規劃</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>變更決定各列處理方式的設定並重新規劃檔案。您手動變更的勾選將被重設。</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>這些主機的列不會被匯入，因為本安裝不負責回應它們。請為每個舊主機選擇其對應的網站存取。</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>未匯入</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>顯示</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>全部</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>沒有處於此狀態的列。</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>全部顯示</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>檔案中的各列以及匯入將如何處理每一列</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>匯入</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>新位址</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>類型</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>附註</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>匯入第 %line 行</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>否</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>是</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>試執行</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>保留勾選</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>規劃匯出為 CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>規劃匯出為 JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>捨棄</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>「匯入」會將所有頁面中已勾選的列作為一次匯入寫入，可從匯入記錄中復原；您需要先確認身分。「試執行」會再次對照網站檢查每一列，並統計匯入將執行的動作，但不寫入任何內容。</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>重新導向（%status）</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>萬用字元重新導向（%status）</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>萬用字元（直接）</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>新增</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>已變更</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>未變更</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>重複</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>衝突</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>目標無效</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>未知主機</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>無法匯入</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>全域 URL 別名</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>匯入記錄</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL 對應表</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>重新導向（%count）</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>這些重新導向來自 URL 對應表匯入：含查詢的舊位址（/index.php?id=12）、暫時重新導向以及指向其他網站的重新導向。它們依完整位址檢查，先於 URL 別名和萬用字元。指向本網站頁面的永久重新導向則是全域 URL 別名，列在該處。</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>已移除 %count 個重新導向。</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>沒有重新導向。重新導向是透過匯入 URL 對應表產生的。</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>依完整位址檢查的重新導向</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>選取</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>狀態</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>來自匯入</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>移除</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>選取 %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>移除 %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>移除此重新導向？</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>移除選取的重新導向？</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>移除選取的項目</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>被移除的重新導向會立即失效。</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>貼上的文字</translation>
     </message>
 </context>
 </TS>

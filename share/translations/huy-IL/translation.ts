@@ -7321,6 +7321,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>לאיכא אזלין מונעא: שבילא דהנא אתרא, או מונעא גמירא במפנינותא. {1\} הי כתיבתא ד * קדמיא אשתוי עמה. מתלא: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>מתפניין לזבנא לכתובתא הדא (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>אורחא מתפניין לזבנא (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>מפניא דזבנא (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85500,6 +85512,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>חויא ד %count מנותא בפאתא.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>מפקא לפורסא ד URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>נחת שמהא חלופא גלובליא ד URL, אתותא כלניתא ומפניא דאתרא הנא בפנקיתא חדא: למנטר, למשחלפא בגליון חושבנא ולמעלא תוב, או למיהב למשמשנא דוובא כנמוסי כתיבתא תניתא.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>גבי לפחות גנסא חד דרשומא.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>פנקיתא לא אתכתבת.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>מא למפקא</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>פורמאט</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>רשומא</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>שמהא חלופא גלובליא ד URL (מתרגמנא ד URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>אף שמהא חלופא ד URL דילהון דתוכנא</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>כתיבין עם קטרא כנישא, למשל node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>אתותא כלניתא ד URL</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>מפניא</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>מעלנא דאתרא</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>כל מעלנא דאתרא</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>בלחוד מפניא דילהון דמעלנא דאתרא; שמהא חלופא ד URL ואתותא כלניתא מתפקין לכל מעלנא דאתרא.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>לשנא</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>כל לשנא</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>מפקא</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>מעלא לפורסא ד URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>אייתי כתובתא דאתרא עתיקא בזבנא חד: פנקיתא כתבא כל כתובתא עתיקתא ודפא דאתרא הנא דדילה השתא. כתובתא דייקתא הוין מפניא או שמהא חלופא ד URL, כתובתא עם * הוין אתותא כלניתא. חזית מא עבדא כל שורתא קדם דמדעם מתכתב, וכל מעלא מתהפך כוליה.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>פתורא דמעלא דפורסא ד URL לא איתיהון עדכיל. הריט שבילא דחדתותא 6.0.15-url-map (./console exp:upgrade --apply) קדם מעלא.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>מעלא הנא לא איתוהי תוב: עבר בתר יומא חד או דיליה דמשמשנא אחרנא. מסקא פנקיתא תוב.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>גבי פנקיתא או דבק שורתא.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>פנקיתא רבא מן %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>פנקיתא לא מתקריא: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>גבי מעלנא דאתרא דתקנתא הדא.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>מעלא לא מתנטר במשמשנא: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>פנקיתא הדא</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>פנקיתא</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), נמוסי כתיבתא תניתא דApache או nginx, לכל היותר %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>או דבק שורתא</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>רשומא חד בכל שורתא, למשל /dpa-atiqa,/dpa-hadta. שורתא קדמיתא יכלא למקרא שמהת עמודא: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>אשכח מן פנקיתא</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>צריך בלחוד כד לא שמא ולא תוכנא דפנקיתא אמרין.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>קבועא</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>מעלנא דאתרא לשבילא ערטילאה</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>קבועא</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>שורתא עם כתובתא שלמתא נסבין חלף הדא מעלנא דאתרא דמתחמא דילהון.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>לשנא דמעלנא דאתרא</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>כד לכתובתא עתיקתא איכא רשומא כבר</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>נטר רשומא (שבוק שורתא)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>חלף רשומא</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>מתחמא עתיקא</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>כתובתא שלמתא דמתחמא דתקנתא הדא לא ידעא לא עאלין. אמר איזה מעלנא דאתרא קאים חלף כל מתחמא עתיקא, חד בכל שורתא: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>חזיא קדמיא</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>מדעם לא אתכתב עדכיל: דפא דבתריה מחויא מא עבדא כל שורתא.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>מעלא %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>מעלא אתהפך.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>מעלא אתהפך, לבר מן רשומא דאשתחלפו בתריה, דאתנטרו.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>מעלא לא אתהפך: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>תאריכא</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>על ידי</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>שורתא</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created בריא, %updated מחלפא, %skipped אשתמטי, %failed לא אצלחו.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>מתהפכא</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>הפוך מעלא הנא</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>כל רשומא דמעלא ברא מתשקל וכל רשומא דחלף מתהדר כדהוא, מן בתראה. קדם מקיים את מן אנת.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count רשומא אשתחלפו בתר מעלא</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>הפוך אף רשומא דאשתחלפו בתר מעלא</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>בלא הדא מתנטרין ומעלא מתהפך פלגותא (--force דקונסולא).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>להפכא מעלא הנא?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>מהפכא מעלא</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>רשומא דאתכתבו</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from עד %to מן %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>מעלא לא כתב רשומא.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>רשומא דכתב מעלא</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>שורתא</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>כתובתא עתיקתא</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>רשומא</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>מוביל ל</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>שחלופא</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>מקמא</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>שמא חלופא ד URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>אתא כלניתא</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>מפניא</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>בריא</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>מחלפא</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>מתעבדא</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>מתנטרא</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>מתהפכא פלגותא</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>תשעיתא דמעלא (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>כל מעלא דפורסא ד URL, חדתא קדמאה. מעלא מתהפך כוליה: כל רשומא דכתב הדר למא דהוה קדם.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>לא אתעל פורסא ד URL עדכיל.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>מעלא דפורסא ד URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>מנינא</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>אשתמטי</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>לא אצלח</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows שורתא</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>אתעל כמעלא %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>חזי מעלא, או הפוך יתיה</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>מעלא פנקיתא אחריתא</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>מדעם לא אתכתב עדכיל. כל שורתא מחויא מא עבד מעלא בה. שורתא דמסמנן עאלין; שקול סימנא משורתא לשבקה. שורתא דלא חדתן עאלין בלחוד כד כתובתא עתיקתא דילהון שריא לאחלפא.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>מעלא לא אתעבד: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>לית שורתא מסמנא למעלא.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>רהטא דבוחרנא: מדעם לא אתכתב.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>מעלא הוה ברא %created, מחלף %updated ושביק %skipped; %failed הוו לא מצלחין.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>חזיא כלניא</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>למבריא</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>לאחלפא</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>לשבקא</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>עם קשיא</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>מתנטר עד</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>תקן תוב</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>שני מא דפסק שורתא ותקן פנקיתא תוב. סימני דשנית באידא מתהדרין.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>שורתא דמתחמא הלין לא עאלין, דתקנתא הדא לא עניא להון. גבי איזה מעלנא דאתרא קאים חלף כל מתחמא עתיקא.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>לא אתעל</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>מחויא</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>כל</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>לית שורתא במקמא הנא.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>מחויא דכל</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>שורתא דפנקיתא ומא עבד מעלא בכל חדא</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>מעלא</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>כתובתא חדתא</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>גנסא</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>הורא</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>מעלא שורתא %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>לא</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>אין</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>רהטא דבוחרנא</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>נטר סימני</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>תקנתא כ CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>תקנתא כ JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>שדיא</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>מעלא כתב שורתא מסמנן דכל דפא כמעלא חד, דמתהפך מן תשעיתא דמעלא; קדם מקיים את מן אנת. רהטא דבוחרנא בחר כל שורתא תוב לקבל אתרא ומני מא עבד מעלא, בלא כתיבה.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>מפניא (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>מפניא דאתא כלניתא (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>אתא כלניתא (תריצא)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>חדתא</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>משחלפא</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>לא משחלפא</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>כפילא</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>תגרא</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>נישא תבירא</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>מתחמא לא ידיעא</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>לא מתעל</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>שמהא חלופא גלובליא ד URL</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>תשעיתא דמעלא</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>פורסא ד URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>מפניא (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>מפניא הלין אתיין מן מעלא דפורסא ד URL: כתובתא עתיקתא עם שאלתא (/index.php?id=12), מפניא דזבנא ומפניא לאתרא אחרנא. מתבחרין על כתובתא שלמתא, קדם שמהא חלופא ד URL ואתותא כלניתא. מפניא קיימא לדפא דאתרא הנא הוא חלף הדא שמא חלופא גלובליא ד URL ומתכתב תמן.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count מפניא אשתקלו.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>לית מפניא. מתעבדין במעלא דפורסא ד URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>מפניא דמתבחרין על כתובתא שלמתא</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>גביא</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>מקמא</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>מן מעלא</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>שקלא</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>גביא %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>שקלא %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>לשקלא מפניא הנא?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>לשקלא מפניא דגביא?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>שקלא דגביא</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>מפניא דאשתקל פסק לעבדא מיד.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>כתבא דדביק</translation>
     </message>
 </context>
 </TS>

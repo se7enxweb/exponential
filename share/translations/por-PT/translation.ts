@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Destino dos endereços: um caminho deste site ou um endereço completo em caso de redirecionamento. {1\} é o texto correspondente ao primeiro *. Exemplo: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>são redirecionados temporariamente para este endereço (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Os visitantes são redirecionados temporariamente (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Redirecionamento temporário (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85521,6 +85533,625 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
     <message>
         <source>Show %count items per page.</source>
         <translation>Mostrar %count itens por página.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Exportar o mapa de URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Transfira os alias de URL globais, os carateres universais e os redirecionamentos deste site num único ficheiro: para guardar, editar numa folha de cálculo e voltar a importar, ou para entregar a um servidor web como regras de reescrita.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Escolha pelo menos um tipo de entrada.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Não foi possível escrever o ficheiro.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>O que exportar</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Formato</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Entradas</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Alias de URL globais (o tradutor de URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Também os alias de URL personalizados dos conteúdos</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Escritos com o nó como destino, por exemplo node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Carateres universais</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Redirecionamentos</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Acesso ao site</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Todos os acessos ao site</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Só os redirecionamentos pertencem a um acesso ao site; os alias de URL e os carateres universais são exportados para todos os acessos ao site.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Idioma</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Todos os idiomas</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Exportar</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Importar um mapa de URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Traga de uma só vez os endereços de um site antigo: um ficheiro indica cada endereço antigo e a página deste site a que agora corresponde. Os endereços exatos passam a redirecionamentos ou alias de URL, os endereços com * passam a carateres universais. Vê o que cada linha faria antes de algo ser escrito, e cada importação pode ser anulada por inteiro.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>As tabelas das importações de mapas de URL ainda não existem. Execute o passo de atualização 6.0.15-url-map (./console exp:upgrade --apply) antes de importar.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Esta importação já não está disponível: expirou ao fim de um dia ou pertence a outro utilizador. Carregue o ficheiro novamente.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Escolha um ficheiro ou cole as linhas.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>O ficheiro é maior do que %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Não é possível ler o ficheiro: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Escolha um acesso ao site desta instalação.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Não é possível guardar a importação no servidor: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>O ficheiro</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Ficheiro</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), regras de reescrita do Apache ou do nginx, no máximo %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Ou cole as linhas</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Uma entrada por linha, por exemplo /pagina-antiga,/pagina-nova. A primeira linha pode indicar as colunas: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Detetar a partir do ficheiro</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Só é necessário quando nem o nome nem o conteúdo do ficheiro o indicam.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Predefinições</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Acesso ao site dos caminhos sem anfitrião</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>predefinido</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>As linhas com um endereço completo usam antes o acesso ao site do respetivo anfitrião.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>O idioma do acesso ao site</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Quando um endereço antigo já tem uma entrada</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Manter a entrada (ignorar a linha)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Substituir a entrada</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Anfitriões antigos</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Os endereços completos de um anfitrião que esta instalação não conhece não são importados. Indique o acesso ao site que cada anfitrião antigo representa, um por linha: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Pré-visualização</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Ainda nada é escrito: a página seguinte mostra o que cada linha faria.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Importação %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>A importação foi anulada.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>A importação foi anulada, exceto as entradas alteradas depois dela, que foram mantidas.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Não foi possível anular a importação: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Por</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Linhas</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created criadas, %updated substituídas, %skipped ignoradas, %failed falhadas.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Anulada</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Anular esta importação</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Cada entrada criada pela importação é removida e cada entrada substituída é reposta como estava, da última para a primeira. Primeiro confirma a sua identidade.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count entradas alteradas depois da importação</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Anular também as entradas alteradas depois da importação</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Sem isto, são mantidas e a importação fica parcialmente anulada (o --force da consola).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Anular esta importação?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Anular importação</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Entradas escritas</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from a %to de %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>A importação não escreveu nenhuma entrada.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>As entradas escritas pela importação</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Linha</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Endereço antigo</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Entrada</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Leva a</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Alteração</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Estado</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Alias de URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Caráter universal</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Redirecionamento</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Criada</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Substituída</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Aplicada</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Mantida</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Parcialmente anulada</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Histórico de importações (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Todas as importações de mapas de URL, da mais recente para a mais antiga. Uma importação pode ser anulada por inteiro: cada entrada que escreveu volta ao que existia antes.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Ainda não foi importado nenhum mapa de URL.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Importações de mapas de URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Número</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Ignoradas</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Falhadas</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows linhas</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Importado como importação %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Ver a importação ou anulá-la</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Importar outro ficheiro</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Ainda nada foi escrito. Cada linha mostra o que a importação faria com ela. As linhas assinaladas são importadas; desmarque uma linha para a deixar de fora. As linhas que não são novas só podem ser importadas quando o seu endereço antigo pode ser substituído.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>A importação não foi feita: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Nenhuma linha está assinalada para importação.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Simulação: nada foi escrito.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>A importação criaria %created, substituiria %updated e ignoraria %skipped; %failed falhariam.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Resumo</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>A criar</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>A substituir</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>A ignorar</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Com problema</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Guardada até</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Planear de novo</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Altere o que decide as linhas e planeie o ficheiro de novo. As marcas alteradas manualmente são repostas.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>As linhas destes anfitriões não são importadas, porque esta instalação não responde por eles. Escolha o acesso ao site que cada anfitrião antigo representa.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Não importadas</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Mostrar</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Todas</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Nenhuma linha tem este estado.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Mostrar todas</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>As linhas do ficheiro e o que a importação faria com cada uma</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importar</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Endereço novo</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Tipo</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Notas</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Importar a linha %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Não</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Sim</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Simulação</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Manter as marcas</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Plano em CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Plano em JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Descartar</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Importar escreve as linhas assinaladas de todas as páginas como uma única importação, que pode ser anulada no histórico de importações; primeiro confirma a sua identidade. A simulação volta a verificar cada linha face ao site e conta o que a importação faria, sem escrever nada.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Redirecionamento (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Redirecionamento com caráter universal (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Caráter universal (direto)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nova</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Alterada</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Inalterada</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplicada</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Conflito</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Destino inválido</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Anfitrião desconhecido</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Não importável</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Alias de URL globais</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Histórico de importações</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Mapas de URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Redirecionamentos (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Estes redirecionamentos vêm de importações de mapas de URL: endereços antigos com uma consulta (/index.php?id=12), redirecionamentos temporários e redirecionamentos para outros sites. São verificados no endereço completo, antes dos alias de URL e dos carateres universais. Um redirecionamento permanente para uma página deste site é, em vez disso, um alias de URL global e aparece nessa lista.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count redirecionamentos removidos.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Não existem redirecionamentos. São criados ao importar um mapa de URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Redirecionamentos verificados no endereço completo</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Selecionar</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Estado HTTP</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Da importação</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Remover</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Selecionar %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Remover %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Remover este redirecionamento?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Remover os redirecionamentos selecionados?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Remover selecionados</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Um redirecionamento removido deixa de funcionar de imediato.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Texto colado</translation>
     </message>
 </context>
 </TS>

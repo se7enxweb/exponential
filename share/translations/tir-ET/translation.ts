@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>እቶም ኣድራሻታት ዝኸዱሉ፦ መንገዲ ናይዚ መርበብ፣ ወይ ምሉእ ኣድራሻ ክስገር ከሎ። {1\} እቲ ቀዳማይ * ዝሰማማዓሉ ጽሑፍ እዩ። ኣብነት፦ dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ንግዚኡ ናብዚ ኣድራሻ እዚ ይሰገሩ (HTTP 302)።</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>በጻሕቲ ንግዚኡ ይሰገሩ (HTTP 302)።</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>ግዝያዊ ሰግር (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>%count ኣቕሑ ኣብ ነፍሲ ወከፍ ገጽ ኣርኢ።</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>ካርታ URL ስደድ ናብ ወጻኢ</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>ሓፈሻዊ ስማት ተለዋጢ URL፣ ዋይልድካርዳትን ሰግራትን ናይዚ መርበብ እዚ ከም ሓደ ፋይል ኣውርድ፦ ንምዕቃብ፣ ኣብ ሰንጠረዥ ኣርቂቕካ ደጊምካ ንምእታው፣ ወይ ንመርበብ ሰርቨር ከም ሕግታት ዳግመ ጽሑፍ ንምሃብ።</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>እንተወሓደ ሓደ ዓይነት ግብዓታት ምረጽ።</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>እቲ ፋይል ክጽሓፍ ኣይከኣለን።</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>እንታይ ይሰደድ</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>ቅርጺ</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>ግብዓታት</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>ሓፈሻዊ ስማት ተለዋጢ URL (ተርጓሚ URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>ከምኡ’ውን ብሕታዊ ስማት ተለዋጢ URL ናይ ትሕዝቶ</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>ምስ መስቀላ ከም መዕረፊ ይጽሓፍ፣ ንኣብነት node:42።</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>ዋይልድካርዳት</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>ሰግራት</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ምእታው መርበብ</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ኩሉ ምእታው መርበብ</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>ሰግራት ጥራይ እዮም ናይ ሓደ ምእታው መርበብ፤ ስማት ተለዋጢ URLን ዋይልድካርዳትን ንኩሉ ምእታው መርበብ ይስደዱ።</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ቋንቋ</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>ኩሉ ቋንቋ</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>ስደድ ናብ ወጻኢ</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>ካርታ URL ኣእቱ</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>ኣድራሻታት ናይ ኣረጊት መርበብ ብሓደ ግዜ ኣምጽእ፦ ፋይል ነፍሲ ወከፍ ኣረጊት ኣድራሻን ሕጂ ዝምልከቶ ገጽ ናይዚ መርበብን ይዝርዝር። ልክዕ ኣድራሻታት ሰግራት ወይ ስማት ተለዋጢ URL ይኾኑ፣ * ዘለዎም ኣድራሻታት ዋይልድካርዳት ይኾኑ። ገለ ነገር ቅድሚ ምጽሓፉ ነፍሲ ወከፍ መስመር እንታይ ከም ዝገብር ትርኢ፣ ነፍሲ ወከፍ ምእታው ድማ ብምሉኡ ክስረዝ ይኽእል።</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>ሰንጠረዣት ምእታው ካርታ URL ገና የለዉን። ቅድሚ ምእታው ስጉምቲ ምሕዳስ 6.0.15-url-map (./console exp:upgrade --apply) ኣካይድ።</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>እዚ ምእታው ደጊም ኣይርከብን፦ ድሕሪ ሓደ መዓልቲ ግዜኡ ሓሊፉ ወይ ናይ ካልእ ተጠቃሚ እዩ። ነቲ ፋይል ደጊምካ ጸዓን።</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>ፋይል ምረጽ ወይ መስመራት ለጥፍ።</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>እቲ ፋይል ካብ %size ይዓቢ።</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>እቲ ፋይል ክንበብ ኣይከኣልን፦ %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>ናይዚ ምትካል እዚ ሓደ ምእታው መርበብ ምረጽ።</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>እቲ ምእታው ኣብ ሰርቨር ክዕቀብ ኣይከኣልን፦ %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>እቲ ፋይል</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ፋይል</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV፣ JSON፣ Excel (.xlsx)፣ OpenDocument (.ods)፣ ሕግታት ዳግመ ጽሑፍ ናይ Apache ወይ nginx፣ ብዝበዝሐ %size።</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>ወይ መስመራት ለጥፍ</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>ኣብ ነፍሲ ወከፍ መስመር ሓደ ረድፊ፣ ንኣብነት /old-page,/new-page። ቀዳማይ መስመር ኣማዕድታት ክሰምይ ይኽእል፦ old_url, new_url, kind, siteaccess, language, note, status።</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>ካብቲ ፋይል ፍለጥ</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>ስም ፋይል ይኹን ትሕዝቶኡ ዘይገልጾ እንተኾይኑ ጥራይ የድሊ።</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>ነባሪታት</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>ምእታው መርበብ ናይ ጥራይ መገድታት</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>ነባሪ</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>ምሉእ ኣድራሻ ዘለዎም መስመራት ኣብ ክንዳኡ ምእታው መርበብ ናይ ተቐባሊኦም ይወስዱ።</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>ቋንቋ ናይቲ ምእታው መርበብ</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>ሓደ ኣረጊት ኣድራሻ ድሮ ግብዓት እንተሃልይዎ</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>ነቲ ግብዓት ዓቅብ (ነቲ መስመር ሰግሮ)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>ነቲ ግብዓት ተኪእ</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>ኣረገውቲ ተቐበልቲ</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>ምሉእ ኣድራሻታት ናይ እዚ ምትካል ዘይፈልጦ ተቐባሊ ኣይኣትዉን። ነፍሲ ወከፍ ኣረጊት ተቐባሊ ዝውክሎ ምእታው መርበብ ኣብ ነፍሲ ወከፍ መስመር ሓደ ጽሓፍ፦ www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>ቅድመ ርእይቶ</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>ገና ዝተጻሕፈ የለን፦ ዝቕጽል ገጽ ነፍሲ ወከፍ መስመር እንታይ ከም ዝገብር የርኢ።</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>ምእታው %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>እቲ ምእታው ተሰሪዙ።</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>እቲ ምእታው ተሰሪዙ፣ ብዘይካ ድሕሪኡ ዝተቐየሩ ግብዓታት፣ ንሳቶም ተዓቂቦም።</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>እቲ ምእታው ክስረዝ ኣይከኣለን፦ %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>ዕለት</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ብ</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>መስመራት</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created ተፈጢሮም፣ %updated ተተኪኦም፣ %skipped ተሰጊሮም፣ %failed ኣይተዓወቱን።</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>ተሰሪዙ</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>ነዚ ምእታው ሰርዝ</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>እቲ ምእታው ዝፈጠሮ ነፍሲ ወከፍ ግብዓት ይእለ፣ ዝተክኦ ነፍሲ ወከፍ ግብዓት ድማ ከም ዝነበሮ ይምለስ፣ ካብቲ ናይ መወዳእታ ጀሚሩ። ቅድም መንነትካ ተረጋግጽ።</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>ድሕሪ እቲ ምእታው ዝተቐየሩ %count ግብዓታት</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>ድሕሪ እቲ ምእታው ዝተቐየሩ ግብዓታት እውን ሰርዝ</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>ብዘይዚ ይዕቀቡ፣ እቲ ምእታው ድማ ብኸፊል ይስረዝ (--force ናይ ኮንሶል)።</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>እዚ ምእታው ይሰረዝ ዶ?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>ምእታው ሰርዝ</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>ዝተጻሕፉ ግብዓታት</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ክሳብ %to ካብ %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>እቲ ምእታው ዝኾነ ግብዓት ኣይጸሓፈን።</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>እቲ ምእታው ዝጸሓፎም ግብዓታት</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>መስመር</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>ኣረጊት ኣድራሻ</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>ግብዓት</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>ናብ ይመርሕ</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ለውጢ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ኩነታት</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL ኣስማ</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>ዋይልድካርድ</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>ሰግር</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>ተፈጢሩ</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>ተተኪኡ</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>ተተግቢሩ</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>ተዓቂቡ</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>ብኸፊል ተሰሪዙ</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>ታሪኽ ምእታው (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>ኩሉ ምእታው ካርታታት URL፣ እቲ ሓድሽ ቅድም። ሓደ ምእታው ብምሉኡ ክስረዝ ይኽእል፦ ዝጸሓፎ ነፍሲ ወከፍ ግብዓት ናብቲ ቅድሚኡ ዝነበረ ይምለስ።</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>ገና ዝኾነ ካርታ URL ኣይኣተወን።</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>ምእታዋት ካርታታት URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>ቁጽሪ</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>ተሰጊሩ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ኣይተዓወተን</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file፣ %format፣ %rows መስመራት</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>ከም ምእታው %id ኣትዩ።</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>ነቲ ምእታው ርአ፣ ወይ ሰርዞ</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>ካልእ ፋይል ኣእቱ</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>ገና ዝተጻሕፈ የለን። ነፍሲ ወከፍ መስመር እቲ ምእታው ምስኡ እንታይ ከም ዝገብር የርኢ። ዝተመልከቱ መስመራት ይኣትዉ፤ ሓደ መስመር ንምግዳፍ ምልክቱ ኣልግስ። ሓደሽቲ ዘይኮኑ መስመራት ኣረጊት ኣድራሻኦም ክትካእ እንተተፈቒዱ ጥራይ ክኣትዉ ይኽእሉ።</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>እቲ ምእታው ኣይተፈጸመን፦ %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>ንምእታው ዝተመልከተ መስመር የለን።</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>ፈተናዊ ኣካይዳ፦ ዝተጻሕፈ የለን።</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>እቲ ምእታው %created ምፈጠረ፣ %updated ምተክአ፣ %skipped ምሰገረ፤ %failed ኣይምተዓወቱን።</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ጠቕላላ ርእይቶ</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>ዝፍጠሩ</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>ዝትክኡ</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>ዝስገሩ</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>ጸገም ዘለዎም</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>ክሳብ ይዕቀብ</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>ደጊምካ ውጠን</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>ንመስመራት ዝውስን ቀይር እሞ ነቲ ፋይል ደጊምካ ውጠን። ብኢድካ ዝቐየርካዮም ምልክታት ዳግማይ ይጅመሩ።</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>መስመራት ናይዞም ተቐበልቲ እዚኦም ኣይኣትዉን፣ ምኽንያቱ እዚ ምትካል ኣይምልሰሎምን። ነፍሲ ወከፍ ኣረጊት ተቐባሊ ዝውክሎ ምእታው መርበብ ምረጽ።</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>ኣይኣተወን</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ኣርኢ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ኩሉ</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>በዚ ኩነታት ዘሎ መስመር የለን።</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ኩሉ ኣርኢ</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>መስመራት ናይቲ ፋይልን እቲ ምእታው ምስ ነፍሲ ወከፍ እንታይ ከም ዝገብርን</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>ኣእቱ</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>ሓድሽ ኣድራሻ</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ዓይነት</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>ሕዝብታት</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>መስመር %line ኣእቱ</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ኣይፋል</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>እወ</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ፈተናዊ ኣካይዳ</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>ምልክታት ዓቅብ</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>መደብ ከም CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>መደብ ከም JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>ደርብዮ</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>ኣእቱ ዝተመልከቱ መስመራት ናይ ኩሉ ገጻት ከም ሓደ ምእታው ይጽሕፍ፣ ካብ ታሪኽ ምእታው ክስረዝ ይኽእል፤ ቅድም መንነትካ ተረጋግጽ። ፈተናዊ ኣካይዳ ነፍሲ ወከፍ መስመር ምስቲ መርበብ ደጊሙ ይፍትሽ፣ ከይጸሓፈ ድማ እቲ ምእታው እንታይ ከም ዝገብር ይቖጽር።</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>ሰግር (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>ሰግር ዋይልድካርድ (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>ዋይልድካርድ (ቀጥታ)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>ሓድሽ</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>ተቐይሩ</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>ዘይተቐየረ</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>ድግግም</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>ግጭት</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>ዝተሰብረ መዕረፊ</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>ዘይፍለጥ ተቐባሊ</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>ክኣቱ ዘይክእል</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>ሓፈሻዊ ስማት ተለዋጢ URL</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>ታሪኽ ምእታው</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>ካርታታት URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>ሰግራት (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>እዞም ሰግራት ካብ ምእታው ካርታታት URL ይመጹ፦ ሕቶ ዘለዎም ኣረገውቲ ኣድራሻታት (/index.php?id=12)፣ ግዝያዊ ሰግራትን ናብ ካልኦት መርበባት ዝኸዱ ሰግራትን። ቅድሚ ስማት ተለዋጢ URLን ዋይልድካርዳትን፣ ኣብ ምሉእ ኣድራሻ ይፍተሹ። ናብ ገጽ ናይዚ መርበብ ዝኸይድ ቀዋሚ ሰግር ግን ሓፈሻዊ ስም ተለዋጢ URL እዩ፣ ኣብኡ ድማ ተዘርዚሩ ኣሎ።</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count ሰግራት ተኣልዮም።</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>ሰግራት የለዉን። ካርታ URL ብምእታው ይፍጠሩ።</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>ኣብ ምሉእ ኣድራሻ ዝፍተሹ ሰግራት</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ምረጽ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ኩነታት</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>ካብ ምእታው</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ኣውጽእ</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address ምረጽ</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address ኣውጽእ</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>እዚ ሰግር ይውጻእ ዶ?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>ዝተመርጹ ሰግራት ይውጽኡ ዶ?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>ዝተመርጹ ኣውጽእ</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>ዝወጸ ሰግር ብኡንብኡ ምስራሕ የቋርጽ።</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>ዝተለጠፈ ጽሑፍ</translation>
     </message>
 </context>
 </TS>

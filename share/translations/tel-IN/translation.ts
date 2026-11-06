@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>చిరునామాలు ఎక్కడికి వెళ్తాయి: ఈ సైట్ యొక్క పాత్, లేదా రీడైరెక్ట్ చేసేటప్పుడు పూర్తి చిరునామా. {1\} అనేది మొదటి * సరిపోలిన టెక్స్ట్. ఉదాహరణ: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ఈ చిరునామాకు తాత్కాలికంగా దారి మళ్లించబడతాయి (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>సందర్శకులు తాత్కాలికంగా దారి మళ్లించబడతారు (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>తాత్కాలిక దారిమార్పు (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85489,6 +85501,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>ప్రతి పేజీకి %count అంశాలను చూపండి.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL మ్యాప్‌ను ఎగుమతి చేయండి</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>ఈ సైట్ యొక్క గ్లోబల్ URL మారుపేర్లు, వైల్డ్‌కార్డ్‌లు మరియు దారిమార్పులను ఒకే ఫైల్‌గా డౌన్‌లోడ్ చేయండి: భద్రపరచడానికి, స్ప్రెడ్‌షీట్‌లో సవరించి మళ్లీ దిగుమతి చేయడానికి, లేదా వెబ్ సర్వర్‌కు రీరైట్ నియమాలుగా ఇవ్వడానికి.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>కనీసం ఒక రకమైన ఎంట్రీలను ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>ఫైల్‌ను వ్రాయడం సాధ్యం కాలేదు.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>ఏమి ఎగుమతి చేయాలి</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>ఫార్మాట్</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>ఎంట్రీలు</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>గ్లోబల్ URL మారుపేర్లు (URL అనువాదకం)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>కంటెంట్ యొక్క అనుకూల URL మారుపేర్లు కూడా</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>నోడ్‌ను గమ్యంగా వ్రాయబడుతుంది, ఉదాహరణకు node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>వైల్డ్‌కార్డ్‌లు</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>దారిమార్పులు</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>సైట్‌యాక్సెస్</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ప్రతి సైట్‌యాక్సెస్</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>దారిమార్పులు మాత్రమే ఒక సైట్‌యాక్సెస్‌కు చెందుతాయి; URL మారుపేర్లు మరియు వైల్డ్‌కార్డ్‌లు ప్రతి సైట్‌యాక్సెస్ కోసం ఎగుమతి చేయబడతాయి.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>భాష</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>ప్రతి భాష</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>ఎగుమతి చేయండి</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL మ్యాప్‌ను దిగుమతి చేయండి</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>పాత సైట్ చిరునామాలను ఒకేసారి తీసుకురండి: ఒక ఫైల్ ప్రతి పాత చిరునామాను మరియు అది ఇప్పుడు ఈ సైట్‌లోని ఏ పేజీకి చెందుతుందో జాబితా చేస్తుంది. ఖచ్చితమైన చిరునామాలు దారిమార్పులు లేదా URL మారుపేర్లు అవుతాయి, * ఉన్న చిరునామాలు వైల్డ్‌కార్డ్‌లు అవుతాయి. ఏదైనా వ్రాయబడే ముందే ప్రతి వరుస ఏమి చేస్తుందో మీరు చూస్తారు, మరియు ప్రతి దిగుమతిని పూర్తిగా రద్దు చేయవచ్చు.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL మ్యాప్ దిగుమతుల పట్టికలు ఇంకా లేవు. దిగుమతి చేసే ముందు అప్‌గ్రేడ్ దశ 6.0.15-url-map (./console exp:upgrade --apply) ను అమలు చేయండి.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>ఈ దిగుమతి ఇక అందుబాటులో లేదు: ఒక రోజు తర్వాత దాని గడువు ముగిసింది లేదా అది మరొక వినియోగదారుకు చెందినది. ఫైల్‌ను మళ్లీ అప్‌లోడ్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>ఒక ఫైల్‌ను ఎంచుకోండి లేదా వరుసలను అతికించండి.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>ఫైల్ %size కంటే పెద్దది.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>ఫైల్‌ను చదవడం సాధ్యం కాదు: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>ఈ ఇన్‌స్టాలేషన్ యొక్క ఒక సైట్‌యాక్సెస్‌ను ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>దిగుమతిని సర్వర్‌లో ఉంచడం సాధ్యం కాదు: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>ఫైల్</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ఫైల్</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache లేదా nginx రీరైట్ నియమాలు, గరిష్టంగా %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>లేదా వరుసలను అతికించండి</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>ప్రతి లైన్‌కు ఒక వరుస, ఉదాహరణకు /old-page,/new-page. మొదటి లైన్ నిలువు వరుసల పేర్లను ఇవ్వవచ్చు: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>ఫైల్ నుండి కనుగొనండి</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>ఫైల్ పేరు లేదా కంటెంట్ రెండూ దీనిని తెలుపనప్పుడు మాత్రమే అవసరం.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>డిఫాల్ట్‌లు</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>సాధారణ పాత్‌ల సైట్‌యాక్సెస్</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>డిఫాల్ట్</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>పూర్తి చిరునామా ఉన్న వరుసలు బదులుగా వాటి హోస్ట్ యొక్క సైట్‌యాక్సెస్‌ను తీసుకుంటాయి.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>సైట్‌యాక్సెస్ యొక్క భాష</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>పాత చిరునామాకు ఇప్పటికే ఎంట్రీ ఉన్నప్పుడు</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>ఎంట్రీని ఉంచండి (వరుసను దాటవేయండి)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>ఎంట్రీని భర్తీ చేయండి</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>పాత హోస్ట్‌లు</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>ఈ ఇన్‌స్టాలేషన్‌కు తెలియని హోస్ట్ యొక్క పూర్తి చిరునామాలు దిగుమతి చేయబడవు. ప్రతి పాత హోస్ట్ సూచించే సైట్‌యాక్సెస్‌ను, ఒక్కో లైన్‌కు ఒకటి చొప్పున, పేర్కొనండి: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>ప్రివ్యూ</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>ఇంకా ఏదీ వ్రాయబడలేదు: తదుపరి పేజీ ప్రతి వరుస ఏమి చేస్తుందో చూపిస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>దిగుమతి %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>దిగుమతి రద్దు చేయబడింది.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>దిగుమతి రద్దు చేయబడింది, దాని తర్వాత మార్చబడిన ఎంట్రీలు తప్ప, అవి ఉంచబడ్డాయి.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>దిగుమతిని రద్దు చేయడం సాధ్యం కాలేదు: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>తేదీ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>చేసినవారు</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>వరుసలు</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created సృష్టించబడ్డాయి, %updated భర్తీ చేయబడ్డాయి, %skipped దాటవేయబడ్డాయి, %failed విఫలమయ్యాయి.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>రద్దు చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>ఈ దిగుమతిని రద్దు చేయండి</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>దిగుమతి సృష్టించిన ప్రతి ఎంట్రీ తీసివేయబడుతుంది మరియు అది భర్తీ చేసిన ప్రతి ఎంట్రీ చివరిది మొదటగా, మునుపటిలా తిరిగి ఉంచబడుతుంది. ముందుగా మీరు మీ గుర్తింపును ధృవీకరిస్తారు.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>దిగుమతి తర్వాత మార్చబడిన %count ఎంట్రీలు</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>దిగుమతి తర్వాత మార్చబడిన ఎంట్రీలను కూడా రద్దు చేయండి</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>ఇది లేకుండా అవి ఉంచబడతాయి మరియు దిగుమతి పాక్షికంగా రద్దు చేయబడుతుంది (కన్సోల్ యొక్క --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>ఈ దిగుమతిని రద్దు చేయాలా?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>దిగుమతిని రద్దు చేయండి</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>వ్రాయబడిన ఎంట్రీలు</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count లో %from నుండి %to</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>దిగుమతి ఏ ఎంట్రీనీ వ్రాయలేదు.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>దిగుమతి వ్రాసిన ఎంట్రీలు</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>లైన్</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>పాత చిరునామా</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>ఎంట్రీ</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>దారి తీస్తుంది</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>మార్పు</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>స్థితి</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL మారుపేరు</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>వైల్డ్‌కార్డ్</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>దారిమార్పు</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>సృష్టించబడింది</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>భర్తీ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>వర్తింపజేయబడింది</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>ఉంచబడింది</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>పాక్షికంగా రద్దు చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>దిగుమతి చరిత్ర (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL మ్యాప్‌ల ప్రతి దిగుమతి, కొత్తది మొదట. ఒక దిగుమతిని పూర్తిగా రద్దు చేయవచ్చు: అది వ్రాసిన ప్రతి ఎంట్రీ మునుపు ఉన్న స్థితికి తిరిగి వెళ్తుంది.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>ఇంకా ఏ URL మ్యాప్ దిగుమతి చేయబడలేదు.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL మ్యాప్‌ల దిగుమతులు</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>సంఖ్య</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>దాటవేయబడింది</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>విఫలమైంది</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows వరుసలు</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>దిగుమతి %id గా దిగుమతి చేయబడింది.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>దిగుమతిని చూడండి, లేదా దానిని రద్దు చేయండి</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>మరొక ఫైల్‌ను దిగుమతి చేయండి</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>ఇంకా ఏదీ వ్రాయబడలేదు. ప్రతి వరుస దిగుమతి దానితో ఏమి చేస్తుందో చూపిస్తుంది. టిక్ చేసిన వరుసలు దిగుమతి అవుతాయి; ఒక వరుసను వదిలివేయడానికి టిక్ తీసివేయండి. కొత్తవి కాని వరుసలు వాటి పాత చిరునామాను భర్తీ చేయడానికి అనుమతి ఉన్నప్పుడు మాత్రమే దిగుమతి చేయబడతాయి.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>దిగుమతి జరగలేదు: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>దిగుమతి కోసం ఏ వరుసా టిక్ చేయబడలేదు.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>డ్రై రన్: ఏదీ వ్రాయబడలేదు.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>దిగుమతి %created సృష్టిస్తుంది, %updated భర్తీ చేస్తుంది మరియు %skipped దాటవేస్తుంది; %failed విఫలమవుతాయి.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>అవలోకనం</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>సృష్టించవలసినవి</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>భర్తీ చేయవలసినవి</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>దాటవేయవలసినవి</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>సమస్యతో</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>ఇంతవరకు ఉంచబడుతుంది</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>మళ్లీ ప్లాన్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>వరుసలను నిర్ణయించే వాటిని మార్చి ఫైల్‌ను మళ్లీ ప్లాన్ చేయండి. మీరు చేతితో మార్చిన టిక్‌లు రీసెట్ చేయబడతాయి.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>ఈ హోస్ట్‌ల వరుసలు దిగుమతి చేయబడవు, ఎందుకంటే ఈ ఇన్‌స్టాలేషన్ వాటికి సమాధానం ఇవ్వదు. ప్రతి పాత హోస్ట్ సూచించే సైట్‌యాక్సెస్‌ను ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>దిగుమతి చేయబడలేదు</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>చూపించు</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>అన్నీ</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>ఈ స్థితిలో ఏ వరుసా లేదు.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>అన్నీ చూపించు</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>ఫైల్ యొక్క వరుసలు మరియు దిగుమతి ప్రతి దానితో ఏమి చేస్తుంది</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>దిగుమతి చేయండి</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>కొత్త చిరునామా</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>రకం</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>గమనికలు</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>లైన్ %line ను దిగుమతి చేయండి</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>కాదు</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>అవును</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>డ్రై రన్</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>టిక్‌లను ఉంచండి</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>ప్లాన్ CSV గా</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>ప్లాన్ JSON గా</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>విస్మరించండి</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>దిగుమతి ప్రతి పేజీలోని టిక్ చేసిన వరుసలను ఒకే దిగుమతిగా వ్రాస్తుంది, దానిని దిగుమతి చరిత్ర నుండి రద్దు చేయవచ్చు; ముందుగా మీరు మీ గుర్తింపును ధృవీకరిస్తారు. డ్రై రన్ ప్రతి వరుసను సైట్‌తో మళ్లీ తనిఖీ చేసి, ఏమీ వ్రాయకుండా దిగుమతి ఏమి చేస్తుందో లెక్కిస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>దారిమార్పు (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>వైల్డ్‌కార్డ్ దారిమార్పు (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>వైల్డ్‌కార్డ్ (ప్రత్యక్షం)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>కొత్తది</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>మార్చబడింది</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>మార్పు లేదు</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>నకిలీ</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>వైరుధ్యం</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>విరిగిన గమ్యం</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>తెలియని హోస్ట్</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>దిగుమతి చేయలేనిది</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>గ్లోబల్ URL మారుపేర్లు</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>దిగుమతి చరిత్ర</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL మ్యాప్‌లు</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>దారిమార్పులు (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>ఈ దారిమార్పులు URL మ్యాప్ దిగుమతుల నుండి వస్తాయి: క్వెరీ ఉన్న పాత చిరునామాలు (/index.php?id=12), తాత్కాలిక దారిమార్పులు మరియు ఇతర సైట్‌లకు దారిమార్పులు. ఇవి URL మారుపేర్లు మరియు వైల్డ్‌కార్డ్‌ల కంటే ముందు, పూర్తి చిరునామాపై తనిఖీ చేయబడతాయి. ఈ సైట్‌లోని ఒక పేజీకి శాశ్వత దారిమార్పు బదులుగా గ్లోబల్ URL మారుపేరు అవుతుంది మరియు అక్కడ జాబితా చేయబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count దారిమార్పులు తీసివేయబడ్డాయి.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>దారిమార్పులు లేవు. అవి URL మ్యాప్‌ను దిగుమతి చేయడం ద్వారా సృష్టించబడతాయి.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>పూర్తి చిరునామాపై తనిఖీ చేయబడే దారిమార్పులు</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ఎంచుకోండి</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>స్థితి</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>దిగుమతి నుండి</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>తీసివేయండి</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address ను ఎంచుకోండి</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address ను తీసివేయండి</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>ఈ దారిమార్పును తీసివేయాలా?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>ఎంచుకున్న దారిమార్పులను తీసివేయాలా?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>ఎంచుకున్నవాటిని తీసివేయండి</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>తీసివేయబడిన దారిమార్పు వెంటనే పనిచేయడం ఆగిపోతుంది.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>అతికించిన వచనం</translation>
     </message>
 </context>
 </TS>

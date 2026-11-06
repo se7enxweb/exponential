@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>ບ່ອນທີ່ທີ່ຢູ່ຈະໄປຫາ: ເສັ້ນທາງຂອງໄຊນີ້ ຫຼືທີ່ຢູ່ເຕັມເມື່ອປ່ຽນເສັ້ນທາງ. {1\} ແມ່ນຂໍ້ຄວາມທີ່ * ທຳອິດກົງກັນ. ຕົວຢ່າງ: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ຖືກປ່ຽນເສັ້ນທາງໄປທີ່ທີ່ຢູ່ນີ້ຊົ່ວຄາວ (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>ຜູ້ເຂົ້າຊົມຖືກປ່ຽນເສັ້ນທາງຊົ່ວຄາວ (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>ການປ່ຽນເສັ້ນທາງຊົ່ວຄາວ (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>ສະແດງ %count ລາຍການຕໍ່ໜ້າ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>ສົ່ງອອກແຜນທີ່ URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>ດາວໂຫຼດນາມແຝງ URL ສ່ວນກາງ, ໄວລດ໌ຄາດ ແລະ ການປ່ຽນເສັ້ນທາງຂອງໄຊນີ້ເປັນໄຟລ໌ດຽວ: ເພື່ອເກັບໄວ້, ເພື່ອແກ້ໄຂໃນສະເປຣດຊີດແລ້ວນຳເຂົ້າອີກຄັ້ງ, ຫຼື ເພື່ອມອບໃຫ້ເວັບເຊີບເວີເປັນກົດການຂຽນຄືນ.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>ເລືອກປະເພດລາຍການຢ່າງໜ້ອຍໜຶ່ງປະເພດ.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>ບໍ່ສາມາດຂຽນໄຟລ໌ໄດ້.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>ສິ່ງທີ່ຈະສົ່ງອອກ</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>ຮູບແບບ</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>ລາຍການ</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>ນາມແຝງ URL ສ່ວນກາງ (ຕົວແປ URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>ລວມທັງນາມແຝງ URL ກຳນົດເອງຂອງເນື້ອຫາ</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>ຂຽນໂດຍໃຊ້ໂນດເປັນເປົ້າໝາຍ, ຕົວຢ່າງ node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>ໄວລດ໌ຄາດ</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>ການປ່ຽນເສັ້ນທາງ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ການເຂົ້າເຖິງໄຊ</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ທຸກການເຂົ້າເຖິງໄຊ</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>ມີແຕ່ການປ່ຽນເສັ້ນທາງທີ່ເປັນຂອງການເຂົ້າເຖິງໄຊ; ນາມແຝງ URL ແລະ ໄວລດ໌ຄາດຖືກສົ່ງອອກສຳລັບທຸກການເຂົ້າເຖິງໄຊ.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ພາສາ</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>ທຸກພາສາ</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>ສົ່ງອອກ</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>ນຳເຂົ້າແຜນທີ່ URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>ນຳທີ່ຢູ່ຂອງໄຊເກົ່າມາໃນຄັ້ງດຽວ: ໄຟລ໌ໜຶ່ງລະບຸທີ່ຢູ່ເກົ່າແຕ່ລະອັນ ແລະ ໜ້າຂອງໄຊນີ້ທີ່ມັນເປັນຂອງຕອນນີ້. ທີ່ຢູ່ທີ່ແນ່ນອນຈະກາຍເປັນການປ່ຽນເສັ້ນທາງ ຫຼື ນາມແຝງ URL, ທີ່ຢູ່ທີ່ມີ * ຈະກາຍເປັນໄວລດ໌ຄາດ. ທ່ານຈະເຫັນວ່າແຕ່ລະແຖວຈະເຮັດຫຍັງກ່ອນທີ່ຈະມີການຂຽນສິ່ງໃດ, ແລະ ທຸກການນຳເຂົ້າສາມາດຍົກເລີກໄດ້ທັງໝົດ.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>ຕາຕະລາງການນຳເຂົ້າແຜນທີ່ URL ຍັງບໍ່ມີ. ໃຫ້ດຳເນີນຂັ້ນຕອນການອັບເກຣດ 6.0.15-url-map (./console exp:upgrade --apply) ກ່ອນນຳເຂົ້າ.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>ການນຳເຂົ້ານີ້ບໍ່ມີໃຫ້ໃຊ້ອີກແລ້ວ: ມັນໝົດອາຍຸຫຼັງຈາກໜຶ່ງມື້ ຫຼື ເປັນຂອງຜູ້ໃຊ້ຄົນອື່ນ. ອັບໂຫຼດໄຟລ໌ອີກຄັ້ງ.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>ເລືອກໄຟລ໌ ຫຼື ວາງແຖວ.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>ໄຟລ໌ໃຫຍ່ກວ່າ %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>ບໍ່ສາມາດອ່ານໄຟລ໌ໄດ້: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>ເລືອກການເຂົ້າເຖິງໄຊຂອງການຕິດຕັ້ງນີ້.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>ບໍ່ສາມາດເກັບການນຳເຂົ້າໄວ້ໃນເຊີບເວີໄດ້: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>ໄຟລ໌</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ໄຟລ໌</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), ກົດການຂຽນຄືນຂອງ Apache ຫຼື nginx, ສູງສຸດ %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>ຫຼື ວາງແຖວ</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>ໜຶ່ງແຖວຕໍ່ໜຶ່ງເສັ້ນ, ຕົວຢ່າງ /old-page,/new-page. ເສັ້ນທຳອິດອາດລະບຸຊື່ຖັນ: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>ກວດຫາຈາກໄຟລ໌</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>ຕ້ອງການກໍຕໍ່ເມື່ອທັງຊື່ ແລະ ເນື້ອຫາຂອງໄຟລ໌ບໍ່ໄດ້ບອກ.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>ຄ່າເລີ່ມຕົ້ນ</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>ການເຂົ້າເຖິງໄຊຂອງເສັ້ນທາງເປົ່າ</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>ຄ່າເລີ່ມຕົ້ນ</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>ແຖວທີ່ມີທີ່ຢູ່ເຕັມຈະໃຊ້ການເຂົ້າເຖິງໄຊຂອງໂຮສຂອງມັນແທນ.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>ພາສາຂອງການເຂົ້າເຖິງໄຊ</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>ເມື່ອທີ່ຢູ່ເກົ່າມີລາຍການຢູ່ແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>ເກັບລາຍການໄວ້ (ຂ້າມແຖວ)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>ແທນທີ່ລາຍການ</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>ໂຮສເກົ່າ</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>ທີ່ຢູ່ເຕັມຂອງໂຮສທີ່ການຕິດຕັ້ງນີ້ບໍ່ຮູ້ຈັກຈະບໍ່ຖືກນຳເຂົ້າ. ລະບຸການເຂົ້າເຖິງໄຊທີ່ໂຮສເກົ່າແຕ່ລະອັນແທນ, ໜຶ່ງອັນຕໍ່ເສັ້ນ: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>ສະແດງຕົວຢ່າງ</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>ຍັງບໍ່ມີຫຍັງຖືກຂຽນ: ໜ້າຖັດໄປຈະສະແດງວ່າແຕ່ລະແຖວຈະເຮັດຫຍັງ.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>ການນຳເຂົ້າ %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>ການນຳເຂົ້າຖືກຍົກເລີກແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>ການນຳເຂົ້າຖືກຍົກເລີກແລ້ວ, ຍົກເວັ້ນລາຍການທີ່ຖືກປ່ຽນຫຼັງຈາກນັ້ນ, ເຊິ່ງຖືກເກັບໄວ້.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>ບໍ່ສາມາດຍົກເລີກການນຳເຂົ້າໄດ້: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>ວັນທີ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ໂດຍ</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>ແຖວ</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>ສ້າງ %created, ແທນທີ່ %updated, ຂ້າມ %skipped, ລົ້ມເຫຼວ %failed.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>ຍົກເລີກແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>ຍົກເລີກການນຳເຂົ້ານີ້</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>ທຸກລາຍການທີ່ການນຳເຂົ້າສ້າງຈະຖືກລຶບອອກ ແລະ ທຸກລາຍການທີ່ມັນແທນທີ່ຈະຖືກໃສ່ຄືນຕາມເດີມ, ອັນສຸດທ້າຍກ່ອນ. ທ່ານຢືນຢັນຕົວຕົນກ່ອນ.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count ລາຍການຖືກປ່ຽນຫຼັງຈາກການນຳເຂົ້າ</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>ຍົກເລີກລາຍການທີ່ຖືກປ່ຽນຫຼັງຈາກການນຳເຂົ້ານຳ</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>ຖ້າບໍ່ເລືອກ ພວກມັນຈະຖືກເກັບໄວ້ ແລະ ການນຳເຂົ້າຈະຖືກຍົກເລີກບາງສ່ວນ (--force ຂອງຄອນໂຊນ).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>ຍົກເລີກການນຳເຂົ້ານີ້ບໍ?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>ຍົກເລີກການນຳເຂົ້າ</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>ລາຍການທີ່ຂຽນແລ້ວ</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ຫາ %to ຈາກ %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>ການນຳເຂົ້າບໍ່ໄດ້ຂຽນລາຍການໃດ.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>ລາຍການທີ່ການນຳເຂົ້າໄດ້ຂຽນ</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>ເສັ້ນ</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>ທີ່ຢູ່ເກົ່າ</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>ລາຍການ</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>ນຳໄປສູ່</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ການປ່ຽນແປງ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ສະພາບ</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>ນາມແຝງ URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>ໄວລດ໌ຄາດ</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>ການປ່ຽນເສັ້ນທາງ</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>ສ້າງແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>ແທນທີ່ແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>ນຳໃຊ້ແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>ເກັບໄວ້</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>ຍົກເລີກບາງສ່ວນ</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>ປະຫວັດການນຳເຂົ້າ (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>ທຸກການນຳເຂົ້າແຜນທີ່ URL, ໃໝ່ສຸດກ່ອນ. ການນຳເຂົ້າສາມາດຍົກເລີກໄດ້ທັງໝົດ: ແຕ່ລະລາຍການທີ່ມັນຂຽນຈະກັບຄືນເປັນຄືເກົ່າ.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>ຍັງບໍ່ມີແຜນທີ່ URL ໃດຖືກນຳເຂົ້າ.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>ການນຳເຂົ້າແຜນທີ່ URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>ໝາຍເລກ</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>ຂ້າມແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ລົ້ມເຫຼວ</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows ແຖວ</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>ນຳເຂົ້າເປັນການນຳເຂົ້າ %id ແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>ເບິ່ງການນຳເຂົ້າ ຫຼື ຍົກເລີກມັນ</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>ນຳເຂົ້າໄຟລ໌ອື່ນ</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>ຍັງບໍ່ມີຫຍັງຖືກຂຽນ. ແຕ່ລະແຖວສະແດງວ່າການນຳເຂົ້າຈະເຮັດຫຍັງກັບມັນ. ແຖວທີ່ຖືກໝາຍຈະຖືກນຳເຂົ້າ; ເອົາເຄື່ອງໝາຍອອກເພື່ອຍົກເວັ້ນແຖວ. ແຖວທີ່ບໍ່ແມ່ນໃໝ່ສາມາດນຳເຂົ້າໄດ້ກໍຕໍ່ເມື່ອທີ່ຢູ່ເກົ່າຂອງມັນອະນຸຍາດໃຫ້ແທນທີ່.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>ການນຳເຂົ້າບໍ່ໄດ້ດຳເນີນ: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>ບໍ່ມີແຖວໃດຖືກໝາຍເພື່ອນຳເຂົ້າ.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>ທົດລອງດຳເນີນການ: ບໍ່ມີຫຍັງຖືກຂຽນ.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>ການນຳເຂົ້າຈະສ້າງ %created, ແທນທີ່ %updated ແລະ ຂ້າມ %skipped; %failed ຈະລົ້ມເຫຼວ.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ພາບລວມ</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>ທີ່ຈະສ້າງ</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>ທີ່ຈະແທນທີ່</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>ທີ່ຈະຂ້າມ</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>ມີບັນຫາ</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>ເກັບໄວ້ຈົນຮອດ</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>ວາງແຜນໃໝ່</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>ປ່ຽນສິ່ງທີ່ກຳນົດແຖວ ແລະ ວາງແຜນໄຟລ໌ໃໝ່. ເຄື່ອງໝາຍທີ່ທ່ານປ່ຽນດ້ວຍມືຈະຖືກຕັ້ງຄືນ.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>ແຖວຂອງໂຮສເຫຼົ່ານີ້ບໍ່ຖືກນຳເຂົ້າ ເພາະການຕິດຕັ້ງນີ້ບໍ່ໄດ້ຕອບສະໜອງໃຫ້ພວກມັນ. ເລືອກການເຂົ້າເຖິງໄຊທີ່ໂຮສເກົ່າແຕ່ລະອັນແທນ.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>ບໍ່ໄດ້ນຳເຂົ້າ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ສະແດງ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ທັງໝົດ</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>ບໍ່ມີແຖວໃດມີສະພາບນີ້.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ສະແດງທັງໝົດ</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>ແຖວຂອງໄຟລ໌ ແລະ ສິ່ງທີ່ການນຳເຂົ້າຈະເຮັດກັບແຕ່ລະແຖວ</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>ນຳເຂົ້າ</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>ທີ່ຢູ່ໃໝ່</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ປະເພດ</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>ໝາຍເຫດ</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>ນຳເຂົ້າເສັ້ນ %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ບໍ່</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ແມ່ນ</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ທົດລອງດຳເນີນການ</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>ເກັບເຄື່ອງໝາຍໄວ້</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>ແຜນເປັນ CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>ແຜນເປັນ JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>ຖິ້ມ</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>ນຳເຂົ້າ ຈະຂຽນແຖວທີ່ຖືກໝາຍຂອງທຸກໜ້າເປັນການນຳເຂົ້າດຽວ, ເຊິ່ງສາມາດຍົກເລີກໄດ້ຈາກປະຫວັດການນຳເຂົ້າ; ທ່ານຢືນຢັນຕົວຕົນກ່ອນ. ທົດລອງດຳເນີນການ ຈະກວດແຕ່ລະແຖວກັບໄຊອີກຄັ້ງ ແລະ ນັບວ່າການນຳເຂົ້າຈະເຮັດຫຍັງ ໂດຍບໍ່ຂຽນ.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>ການປ່ຽນເສັ້ນທາງ (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>ການປ່ຽນເສັ້ນທາງແບບໄວລດ໌ຄາດ (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>ໄວລດ໌ຄາດ (ໂດຍກົງ)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>ໃໝ່</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>ປ່ຽນແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>ບໍ່ປ່ຽນ</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>ຊ້ຳກັນ</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>ຂັດແຍ່ງ</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>ເປົ້າໝາຍເສຍ</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>ໂຮສທີ່ບໍ່ຮູ້ຈັກ</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>ນຳເຂົ້າບໍ່ໄດ້</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>ນາມແຝງ URL ສ່ວນກາງ</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>ປະຫວັດການນຳເຂົ້າ</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>ແຜນທີ່ URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>ການປ່ຽນເສັ້ນທາງ (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>ການປ່ຽນເສັ້ນທາງເຫຼົ່ານີ້ມາຈາກການນຳເຂົ້າແຜນທີ່ URL: ທີ່ຢູ່ເກົ່າທີ່ມີຄິວຣີ (/index.php?id=12), ການປ່ຽນເສັ້ນທາງຊົ່ວຄາວ ແລະ ການປ່ຽນເສັ້ນທາງໄປໄຊອື່ນ. ພວກມັນຖືກກວດກັບທີ່ຢູ່ເຕັມ, ກ່ອນນາມແຝງ URL ແລະ ໄວລດ໌ຄາດ. ການປ່ຽນເສັ້ນທາງຖາວອນໄປໜ້າຂອງໄຊນີ້ແມ່ນນາມແຝງ URL ສ່ວນກາງແທນ ແລະ ຖືກລະບຸໄວ້ຢູ່ບ່ອນນັ້ນ.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>ລຶບການປ່ຽນເສັ້ນທາງ %count ລາຍການແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>ບໍ່ມີການປ່ຽນເສັ້ນທາງ. ພວກມັນຖືກສ້າງໂດຍການນຳເຂົ້າແຜນທີ່ URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>ການປ່ຽນເສັ້ນທາງທີ່ກວດກັບທີ່ຢູ່ເຕັມ</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ເລືອກ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ສະຖານະ</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>ຈາກການນຳເຂົ້າ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ເອົາອອກ</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>ເລືອກ %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>ເອົາອອກ %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>ເອົາການປ່ຽນເສັ້ນທາງນີ້ອອກບໍ?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>ເອົາການປ່ຽນເສັ້ນທາງທີ່ເລືອກອອກບໍ?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>ເອົາລາຍການທີ່ເລືອກອອກ</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>ການປ່ຽນເສັ້ນທາງທີ່ຖືກເອົາອອກຈະຢຸດເຮັດວຽກທັນທີ.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>ຂໍ້ຄວາມທີ່ວາງ</translation>
     </message>
 </context>
 </TS>

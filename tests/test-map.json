@@ -3099,6 +3099,33 @@
     "kernel/classes/spreadsheet/*": [
       "tests/tests/kernel/classes/urlmap/expUrlMapSpreadsheetTest.php",
       "tests/tests/kernel/classes/urlmap/expUrlMapRoundTripTest.php"
+    ],
+    "kernel/classes/urlmap/expurlmapimportsession.php": [
+      "tests/tests/kernel/classes/urlmap/expUrlMapAdminViewsTest.php"
+    ],
+    "kernel/private/classes/views/content/urlimport.php": [
+      "tests/tests/kernel/classes/urlmap/expUrlMapAdminViewsTest.php",
+      "tests/tests/design/AdminViewParametersOnlyTest.php"
+    ],
+    "kernel/private/classes/views/content/urlimporthistory.php": [
+      "tests/tests/kernel/classes/urlmap/expUrlMapAdminViewsTest.php",
+      "tests/tests/design/AdminViewParametersOnlyTest.php"
+    ],
+    "kernel/private/classes/views/content/urlexport.php": [
+      "tests/tests/kernel/classes/urlmap/expUrlMapAdminViewsTest.php",
+      "tests/tests/design/AdminViewParametersOnlyTest.php"
+    ],
+    "kernel/private/classes/views/content/urlredirects.php": [
+      "tests/tests/kernel/classes/urlmap/expUrlMapAdminViewsTest.php",
+      "tests/tests/design/AdminViewParametersOnlyTest.php"
+    ],
+    "kernel/content/url*.php": [
+      "tests/tests/kernel/classes/urlmap/expUrlMapAdminViewsTest.php"
+    ],
+    "design/admin*/templates/content/url*.tpl": [
+      "tests/tests/design/AdminStylingRulesTest.php",
+      "tests/tests/design/AdminViewParametersOnlyTest.php",
+      "tests/tests/design/TranslationFilesValidTest.php"
     ]
   },
   "generated": {

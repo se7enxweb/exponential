@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>सङ्केताः कुत्र गच्छन्ति: अस्य जालस्थलस्य मार्गः, पुनर्निर्देशकाले पूर्णः सङ्केतः वा। {1\} प्रथमः * यं पाठं मिलितवान् सः। उदाहरणम्: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>अस्मिन् सङ्केते तात्कालिकरूपेण पुनर्निर्दिश्यन्ते (HTTP 302)।</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>आगन्तुकाः तात्कालिकरूपेण पुनर्निर्दिश्यन्ते (HTTP 302)।</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>तात्कालिकः पुनर्निर्देशः (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>प्रतिपृष्ठं %count अङ्कनानि दर्शयतु।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL मानचित्रस्य निर्यातः</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>अस्य जालस्थलस्य वैश्विकानि URL उपनामानि, वन्यकार्डान् पुनर्निर्देशांश्च एकां सञ्चिकां रूपेण अवारोपयतु: रक्षणाय, सारणीपत्रे सम्पाद्य पुनः आयाताय, अथवा जालसेवकाय पुनर्लेखननियमरूपेण दानाय।</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>न्यूनातिन्यूनम् एकं प्रविष्टिप्रकारं चिनोतु।</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>सञ्चिका लेखितुं न शक्ता।</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>किं निर्यातव्यम्</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>प्रारूपम्</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>प्रविष्टयः</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>वैश्विकानि URL उपनामानि (URL अनुवादकः)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>विषयवस्तुनः स्वनिर्मितानि URL उपनामानि अपि</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>ग्रन्थिं लक्ष्यत्वेन कृत्वा लिख्यन्ते, यथा node:42।</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>वन्यकार्डाः</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>पुनर्निर्देशाः</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>जालस्थलप्रवेशः</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>प्रत्येकः जालस्थलप्रवेशः</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>केवलं पुनर्निर्देशाः जालस्थलप्रवेशस्य सन्ति; URL उपनामानि वन्यकार्डाश्च प्रत्येकस्मै जालस्थलप्रवेशाय निर्यात्यन्ते।</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>भाषा</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>प्रत्येका भाषा</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>निर्यातः</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL मानचित्रस्य आयातः</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>पुरातनजालस्थलस्य सङ्केतान् एकवारम् आनयतु: एका सञ्चिका प्रत्येकं पुरातनसङ्केतं, अस्य जालस्थलस्य यस्मै पृष्ठाय सः इदानीं सम्बद्धः तच्च सूचयति। यथार्थसङ्केताः पुनर्निर्देशाः URL उपनामानि वा भवन्ति, * युक्ताः सङ्केताः वन्यकार्डाः भवन्ति। किमपि लेखनात् पूर्वं प्रत्येका पङ्क्तिः किं करिष्यति इति भवान् पश्यति, प्रत्येकः आयातः सम्पूर्णतया निवर्तयितुं शक्यते।</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL मानचित्रायातानां सारण्यः अद्यापि न सन्ति। आयातात् पूर्वम् उन्नयनपदं 6.0.15-url-map (./console exp:upgrade --apply) चालयतु।</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>अयम् आयातः इदानीं न उपलभ्यते: एकदिनानन्तरं समाप्तः अथवा अन्यस्य उपयोक्तुः अस्ति। सञ्चिकां पुनः उद्भारयतु।</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>सञ्चिकां चिनोतु अथवा पङ्क्तीः संलग्नयतु।</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>सञ्चिका %size इत्यस्मात् बृहत्तरा अस्ति।</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>सञ्चिका पठितुं न शक्यते: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>अस्य संस्थापनस्य जालस्थलप्रवेशं चिनोतु।</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>आयातः सेवके रक्षितुं न शक्यते: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>सञ्चिका</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>सञ्चिका</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache अथवा nginx पुनर्लेखननियमाः, अधिकतमं %size।</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>अथवा पङ्क्तीः संलग्नयतु</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>प्रतिपङ्क्ति एका प्रविष्टिः, यथा /old-page,/new-page। प्रथमा पङ्क्तिः स्तम्भानां नामानि वक्तुं शक्नोति: old_url, new_url, kind, siteaccess, language, note, status।</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>सञ्चिकातः निर्धारयतु</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>केवलं तदा आवश्यकं यदा सञ्चिकायाः नाम विषयवस्तु च न वदतः।</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>पूर्वनिर्धारिताः</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>आतिथेयरहितमार्गाणां जालस्थलप्रवेशः</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>पूर्वनिर्धारितम्</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>पूर्णसङ्केतयुक्ताः पङ्क्तयः तस्य स्थाने स्वातिथेयस्य जालस्थलप्रवेशं गृह्णन्ति।</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>जालस्थलप्रवेशस्य भाषा</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>यदा पुरातनसङ्केतस्य पूर्वमेव प्रविष्टिः अस्ति</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>प्रविष्टिं रक्षतु (पङ्क्तिं त्यजतु)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>प्रविष्टिं प्रतिस्थापयतु</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>पुरातनातिथेयाः</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>यम् आतिथेयम् इदं संस्थापनं न जानाति तस्य पूर्णसङ्केताः न आयात्यन्ते। प्रत्येकः पुरातनातिथेयः यं जालस्थलप्रवेशं प्रतिनिधत्ते तं प्रतिपङ्क्ति एकं वदतु: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>पूर्वावलोकनम्</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>अद्यापि किमपि न लिख्यते: अग्रिमं पृष्ठं प्रत्येका पङ्क्तिः किं करिष्यति इति दर्शयति।</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>आयातः %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>आयातः निवर्तितः।</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>आयातः निवर्तितः, तदनन्तरं परिवर्तिताः प्रविष्टयः विहाय, ताः रक्षिताः।</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>आयातः निवर्तयितुं न शक्तः: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>दिनाङ्कः</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>कर्ता</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>पङ्क्तयः</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created निर्मिताः, %updated प्रतिस्थापिताः, %skipped त्यक्ताः, %failed विफलाः।</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>निवर्तितः</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>इमम् आयातं निवर्तयतु</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>आयातेन निर्मिता प्रत्येका प्रविष्टिः अपसार्यते, तेन प्रतिस्थापिता प्रत्येका प्रविष्टिः यथापूर्वं पुनः स्थाप्यते, अन्तिमा प्रथमम्। प्रथमं भवान् कः इति पुष्टिं करोति।</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>आयातानन्तरं परिवर्तिताः प्रविष्टयः: %count</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>आयातानन्तरं परिवर्तिताः प्रविष्टीः अपि निवर्तयतु</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>अनेन विना ताः रक्ष्यन्ते, आयातः च आंशिकरूपेण निवर्तितः भवति (कन्सोलस्य --force)।</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>इमम् आयातं निवर्तयेत् किम्?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>आयातं निवर्तयतु</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>लिखिताः प्रविष्टयः</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count मध्ये %from तः %to पर्यन्तम्</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>आयातेन काचिदपि प्रविष्टिः न लिखिता।</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>आयातेन लिखिताः प्रविष्टयः</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>पङ्क्तिः</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>पुरातनसङ्केतः</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>प्रविष्टिः</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>नयति</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>परिवर्तनम्</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>अवस्था</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL उपनाम</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>वन्यकार्डः</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>पुनर्निर्देशः</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>निर्मितम्</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>प्रतिस्थापितम्</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>प्रयुक्तम्</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>रक्षितम्</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>आंशिकरूपेण निवर्तितः</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>आयातेतिहासः (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL मानचित्रस्य प्रत्येकः आयातः, नवीनतमः प्रथमम्। आयातः सम्पूर्णतया निवर्तयितुं शक्यते: तेन लिखिता प्रत्येका प्रविष्टिः पूर्वस्थितिं प्रत्यागच्छति।</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>अद्यापि किमपि URL मानचित्रं न आयातितम्।</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL मानचित्राणाम् आयाताः</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>सङ्ख्या</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>त्यक्ताः</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>विफलाः</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows पङ्क्तयः</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>आयातः %id इति रूपेण आयातितम्।</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>आयातं पश्यतु, अथवा निवर्तयतु</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>अन्यां सञ्चिकाम् आयातयतु</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>अद्यापि किमपि न लिखितम्। प्रत्येका पङ्क्तिः आयातः तया किं करिष्यति इति दर्शयति। चिह्निताः पङ्क्तयः आयात्यन्ते; पङ्क्तिं त्यक्तुं तस्याः चिह्नं निष्कासयतु। याः पङ्क्तयः नूतनाः न सन्ति, ताः केवलं तदा आयातयितुं शक्यन्ते यदा तासां पुरातनसङ्केतः प्रतिस्थापयितुम् अनुमतः।</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>आयातः न कृतः: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>आयाताय काचिदपि पङ्क्तिः न चिह्निता।</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>परीक्षणचालनम्: किमपि न लिखितम्।</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>आयातः %created निर्मास्यति, %updated प्रतिस्थापयिष्यति, %skipped त्यक्ष्यति; %failed विफलाः भविष्यन्ति।</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>अवलोकनम्</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>निर्मातव्याः</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>प्रतिस्थापनीयाः</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>त्यक्तव्याः</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>समस्यायुक्ताः</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>पर्यन्तं रक्षितम्</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>पुनः योजयतु</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>पङ्क्तीः निर्धारयत् परिवर्त्य सञ्चिकां पुनः योजयतु। हस्तेन परिवर्तितानि चिह्नानि पुनःस्थाप्यन्ते।</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>एषाम् आतिथेयानां पङ्क्तयः न आयात्यन्ते, यतः इदं संस्थापनं तेषां कृते न उत्तरति। प्रत्येकः पुरातनातिथेयः यं जालस्थलप्रवेशं प्रतिनिधत्ते तं चिनोतु।</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>न आयातितम्</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>दर्शयतु</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>सर्वाणि</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>कस्याश्चिदपि पङ्क्तेः इयम् अवस्था नास्ति।</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>सर्वाणि दर्शयतु</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>सञ्चिकायाः पङ्क्तयः आयातः प्रत्येकया किं करिष्यति इति च</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>आयातयतु</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>नूतनसङ्केतः</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>प्रकारः</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>टिप्पण्यः</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>पङ्क्तिं %line आयातयतु</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>न</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>आम्</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>परीक्षणचालनम्</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>चिह्नानि रक्षतु</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>योजना CSV रूपेण</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>योजना JSON रूपेण</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>त्यजतु</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>आयातः प्रत्येकस्य पृष्ठस्य चिह्निताः पङ्क्तीः एकः आयातः इति लिखति, यः आयातेतिहासात् निवर्तयितुं शक्यते; प्रथमं भवान् कः इति पुष्टिं करोति। परीक्षणचालनं प्रत्येकां पङ्क्तिं जालस्थलेन सह पुनः परीक्षते, लेखनं विना आयातः किं करिष्यति इति गणयति च।</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>पुनर्निर्देशः (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>वन्यकार्डपुनर्निर्देशः (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>वन्यकार्डः (प्रत्यक्षः)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>नूतनम्</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>परिवर्तितम्</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>अपरिवर्तितम्</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>प्रतिलिपिः</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>विरोधः</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>भग्नं लक्ष्यम्</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>अज्ञातः आतिथेयः</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>आयातयितुम् अशक्यम्</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>वैश्विकानि URL उपनामानि</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>आयातेतिहासः</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL मानचित्राणि</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>पुनर्निर्देशाः (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>एते पुनर्निर्देशाः URL मानचित्रायातेभ्यः आगताः: पृच्छायुक्ताः पुरातनसङ्केताः (/index.php?id=12), तात्कालिकाः पुनर्निर्देशाः, अन्यजालस्थलेभ्यः पुनर्निर्देशाः च। एते URL उपनामेभ्यः वन्यकार्डेभ्यश्च पूर्वं पूर्णसङ्केतेन परीक्ष्यन्ते। अस्य जालस्थलस्य पृष्ठाय स्थायी पुनर्निर्देशः तस्य स्थाने वैश्विकम् URL उपनाम अस्ति, तत्रैव सूचितः च।</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count पुनर्निर्देशाः अपसारिताः।</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>पुनर्निर्देशाः न सन्ति। ते URL मानचित्रस्य आयातेन निर्मीयन्ते।</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>पूर्णसङ्केतेन परीक्षिताः पुनर्निर्देशाः</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>चिनोतु</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>स्थितिः</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>आयातात्</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>अपसारयतु</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address चिनोतु</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address अपसारयतु</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>इमं पुनर्निर्देशम् अपसारयेत् किम्?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>चयनितान् पुनर्निर्देशान् अपसारयेत् किम्?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>चयनितापसारणम्</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>अपसारितः पुनर्निर्देशः तत्क्षणं कार्यं स्थगयति।</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>संलग्नः पाठः</translation>
     </message>
 </context>
 </TS>

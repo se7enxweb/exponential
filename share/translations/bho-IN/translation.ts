@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>पता कहाँ जाला: एह साइट के कवनो पथ, भा रीडायरेक्ट करत घरी एगो पूरा पता। {1\} ऊ टेक्स्ट ह जवना से पहिला * मेल खइलस। उदाहरण: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>कुछ समय खातिर एह पता पर रीडायरेक्ट होला (HTTP 302)।</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>आवे वाला लोग कुछ समय खातिर रीडायरेक्ट होलें (HTTP 302)।</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>अस्थायी रीडायरेक्ट (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85499,6 +85511,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>हर पन्ना पर %count आइटम देखाईं।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL नक्शा निर्यात करीं</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>एह साइट के वैश्विक URL उपनाम, वाइल्डकार्ड आ रीडायरेक्ट एक फाइल के रूप में डाउनलोड करीं: रखे खातिर, स्प्रेडशीट में बदल के फेर से आयात करे खातिर, भा वेब सर्वर के रीराइट नियम के रूप में देवे खातिर।</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>कम से कम एक तरह के प्रविष्टि चुनीं।</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>फाइल ना लिखाइल।</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>का निर्यात करे के बा</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>फॉर्मेट</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>प्रविष्टि</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>वैश्विक URL उपनाम (URL अनुवादक)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>सामग्री के आपन URL उपनाम भी</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>नोड के लक्ष्य बना के लिखल जाला, जइसे node:42।</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>वाइल्डकार्ड</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>रीडायरेक्ट</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>साइट एक्सेस</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>हर साइट एक्सेस</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>खाली रीडायरेक्ट कवनो साइट एक्सेस के होला; URL उपनाम आ वाइल्डकार्ड हर साइट एक्सेस खातिर निर्यात होला।</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>भाषा</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>हर भाषा</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>निर्यात करीं</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>एगो URL नक्शा आयात करीं</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>पुरान साइट के पता एके बेर में ले आईं: एगो फाइल में हर पुरान पता आ एह साइट के ऊ पन्ना लिखल रहेला जवना से ऊ अब जुड़ल बा। ठीक-ठीक पता रीडायरेक्ट भा URL उपनाम बन जाला, * वाला पता वाइल्डकार्ड बन जाला। कुछुओ लिखाए से पहिले रउआ देख सकीले कि हर पंक्ति का करी, आ हर आयात पूरा के पूरा पहिले जइसन कइल जा सकेला।</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL नक्शा आयात के टेबल अबहीं नइखे। आयात से पहिले अपग्रेड चरण 6.0.15-url-map (./console exp:upgrade --apply) चलाईं।</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>ई आयात अब उपलब्ध नइखे: एक दिन बाद एकर समय खतम हो गइल भा ई कवनो दोसर उपयोगकर्ता के बा। फाइल फेर से अपलोड करीं।</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>एगो फाइल चुनीं भा पंक्ति पेस्ट करीं।</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>फाइल %size से बड़ बा।</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>फाइल पढ़ल ना जा सकेला: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>एह इंस्टॉलेशन के एगो साइट एक्सेस चुनीं।</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>आयात सर्वर पर ना रखल जा सकेला: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>फाइल</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>फाइल</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache भा nginx रीराइट नियम, जादे से जादे %size।</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>भा पंक्ति पेस्ट करीं</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>हर लाइन में एगो पंक्ति, जइसे /old-page,/new-page। पहिला लाइन में कॉलम के नाम हो सकेला: old_url, new_url, kind, siteaccess, language, note, status।</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>फाइल से पता करीं</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>तबे जरूरी बा जब फाइल के नाम भा सामग्री दुनो में से कवनो ना बतावे।</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>डिफ़ॉल्ट</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>खाली पथ के साइट एक्सेस</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>डिफ़ॉल्ट</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>पूरा पता वाला पंक्ति ओकरा बदले आपन होस्ट के साइट एक्सेस लेला।</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>साइट एक्सेस के भाषा</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>जब कवनो पुरान पता के पहिले से प्रविष्टि होखे</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>प्रविष्टि रखीं (पंक्ति छोड़ दीं)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>प्रविष्टि बदल दीं</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>पुरान होस्ट</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>जवना होस्ट के ई इंस्टॉलेशन ना जाने, ओकर पूरा पता आयात ना होला। हर पुरान होस्ट कवना साइट एक्सेस के बदले बा, ओकर नाम लिखीं, हर लाइन में एगो: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>पूर्वावलोकन</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>अबहीं कुछुओ नइखे लिखाइल: अगिला पन्ना देखाई कि हर पंक्ति का करी।</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>आयात %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>आयात पहिले जइसन कर दिहल गइल।</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>आयात पहिले जइसन कर दिहल गइल, ओकरा बाद बदलल प्रविष्टि के छोड़ के, ऊ रख लिहल गइल।</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>आयात पहिले जइसन ना हो पावल: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>तारीख</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>के द्वारा</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>पंक्ति</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created बनल, %updated बदलल, %skipped छोड़ल, %failed फेल।</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>पहिले जइसन भइल</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>एह आयात के पहिले जइसन करीं</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>आयात जवन प्रविष्टि बनवलस ऊ हटा दिहल जाला आ जवन बदललस ऊ पहिले जइसन वापस रख दिहल जाला, आखिरी वाला पहिले। पहिले रउआ पुष्टि करीं कि रउआ के हईं।</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>आयात के बाद %count प्रविष्टि बदलल</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>आयात के बाद बदलल प्रविष्टि के भी पहिले जइसन करीं</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>एकरा बिना ऊ रखल जाला आ आयात आधा-अधूरा पहिले जइसन होला (कंसोल के --force)।</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>एह आयात के पहिले जइसन करीं?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>आयात पहिले जइसन करीं</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>लिखल प्रविष्टि</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count में से %from से %to</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>आयात कवनो प्रविष्टि ना लिखलस।</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>आयात के लिखल प्रविष्टि</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>लाइन</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>पुरान पता</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>प्रविष्टि</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>एने ले जाला</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>बदलाव</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>स्थिति</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL उपनाम</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>वाइल्डकार्ड</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>रीडायरेक्ट</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>बनल</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>बदलल</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>लागू भइल</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>रखल गइल</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>आधा पहिले जइसन</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>आयात के इतिहास (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL नक्शा के हर आयात, सबसे नया पहिले। एगो आयात पूरा के पूरा पहिले जइसन कइल जा सकेला: ओकर लिखल हर प्रविष्टि ओह पर लवट जाला जवन पहिले रहे।</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>अबहीं ले कवनो URL नक्शा आयात नइखे भइल।</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL नक्शा के आयात</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>संख्या</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>छोड़ल</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>फेल</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows पंक्ति</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>आयात %id के रूप में आयात भइल।</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>आयात देखीं, भा ओकरा के पहिले जइसन करीं</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>दोसर फाइल आयात करीं</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>अबहीं कुछुओ नइखे लिखाइल। हर पंक्ति देखावेले कि आयात ओकरा साथे का करी। टिक लगल पंक्ति आयात होला; कवनो पंक्ति छोड़े खातिर टिक हटाईं। जवन पंक्ति नया नइखे ऊ तबे आयात हो सकेला जब ओकर पुरान पता बदले के इजाजत होखे।</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>आयात ना भइल: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>आयात खातिर कवनो पंक्ति पर टिक नइखे।</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>जाँच रन: कुछुओ ना लिखाइल।</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>आयात %created बनाई, %updated बदली आ %skipped छोड़ी; %failed फेल होई।</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>सारांश</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>बनावे के</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>बदले के</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>छोड़े के</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>समस्या वाला</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>तक रखल</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>फेर से योजना बनाईं</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>जवन पंक्ति तय करेला ओकरा के बदलीं आ फाइल के फेर से योजना बनाईं। रउआ हाथ से बदलल टिक रीसेट हो जाला।</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>एह होस्ट सब के पंक्ति आयात ना होला, काहें कि ई इंस्टॉलेशन ओकनी खातिर जवाब ना देला। हर पुरान होस्ट कवना साइट एक्सेस के बदले बा, ऊ चुनीं।</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>आयात ना भइल</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>देखाईं</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>सब</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>कवनो पंक्ति के ई स्थिति नइखे।</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>सब देखाईं</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>फाइल के पंक्ति आ आयात हर एक के साथे का करी</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>आयात करीं</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>नया पता</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>प्रकार</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>टिप्पणी</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>लाइन %line आयात करीं</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ना</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>हँ</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>जाँच रन</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>टिक रखीं</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>CSV के रूप में योजना</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>JSON के रूप में योजना</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>फेंक दीं</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>आयात हर पन्ना के टिक लगल पंक्ति के एगो आयात के रूप में लिखेला, जवना के आयात के इतिहास से पहिले जइसन कइल जा सकेला; पहिले रउआ पुष्टि करीं कि रउआ के हईं। जाँच रन हर पंक्ति के साइट से फेर से जाँचेला आ गिनेला कि आयात का करी, बिना लिखले।</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>रीडायरेक्ट (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>वाइल्डकार्ड रीडायरेक्ट (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>वाइल्डकार्ड (सीधा)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>नया</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>बदलल</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>बिना बदलाव</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>दोहरा</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>टकराव</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>टूटल लक्ष्य</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>अनजान होस्ट</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>आयात लायक नइखे</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>वैश्विक URL उपनाम</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>आयात के इतिहास</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL नक्शा</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>रीडायरेक्ट (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>ई रीडायरेक्ट URL नक्शा आयात से आवेला: क्वेरी वाला पुरान पता (/index.php?id=12), अस्थायी रीडायरेक्ट आ दोसर साइट पर रीडायरेक्ट। एकनी के पूरा पता पर जाँचल जाला, URL उपनाम आ वाइल्डकार्ड से पहिले। एह साइट के कवनो पन्ना पर स्थायी रीडायरेक्ट ओकरा बदले एगो वैश्विक URL उपनाम होला आ उहँवे सूची में बा।</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count रीडायरेक्ट हटावल गइल।</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>कवनो रीडायरेक्ट नइखे। ई URL नक्शा आयात कइला से बनेला।</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>पूरा पता पर जाँचल रीडायरेक्ट</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>चुनीं</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>स्थिति</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>आयात से</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>हटाईं</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address चुनीं</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address हटाईं</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>ई रीडायरेक्ट हटाईं?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>चुनल रीडायरेक्ट हटाईं?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>चुनल हटाईं</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>हटावल रीडायरेक्ट तुरंत काम कइल बंद कर देला।</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>पेस्ट कइल टेक्स्ट</translation>
     </message>
 </context>
 </TS>

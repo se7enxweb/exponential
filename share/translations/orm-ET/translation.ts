@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Teessoowwan gara eessa deeman: karaa marsariitii kanaa, yookiin yeroo deebisu teessoo guutuu. {1\} barreeffama * jalqabaan walsiise dha. Fakkeenya: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>yeroodhaaf gara teessoo kanaatti ni deebifamu (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Daawwattoonni yeroodhaaf gara biraatti ni geeffamu (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Gara biraatti geessuu yeroo gabaabaa (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Fuula tokkoon wantoota %count agarsiisi.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Kaartaa URL baasi</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Maqaawwan URL addunyaa, mallattoowwan bakka bu'aa fi qajeelchiiwwan marsariitii kanaa akka faayilii tokkootti buusi: kuusuuf, gabatee herregaa keessatti gulaaluun irra deebiin galchuuf, yookiin tajaajilaa weebii tokkoof akka seerota irra deebiin barreessuutti kennuuf.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Yoo xiqqaate gosa galmee tokko filadhu.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Faayiliin barreeffamuu hin dandeenye.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Maal baasuu</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Bifa</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Galmeewwan</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Maqaawwan URL addunyaa (hiikaa URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Akkasumas maqaawwan URL dhuunfaa qabiyyee</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Noodiin akka galmaatti barreeffama, fakkeenyaaf node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Mallattoowwan bakka bu'aa</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Qajeelchiiwwan</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Seensa marsariitii</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Seensa marsariitii hunda</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Qajeelchiiwwan qofatu seensa marsariitii tokkoof ta'a; maqaawwan URL fi mallattoowwan bakka bu'aa seensa marsariitii hundaaf ni baafamu.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Afaan</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Afaan hunda</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Baasi</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Kaartaa URL galchi</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Teessoowwan marsariitii moofaa tokkoo al tokkoon fidi: faayiliin tokko teessoo moofaa hundaa fi fuula marsariitii kanaa amma itti dhimma qabu tarreessa. Teessoowwan sirrii qajeelchii yookiin maqaa URL ta'u, teessoowwan * qaban mallattoo bakka bu'aa ta'u. Wanti tokkollee osoo hin barreeffamin dura toorri tokkoon tokkoon isaa maal akka godhu ni argita, galchiin hundi guutummaatti haquu ni danda'ama.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Gabateewwan galchii kaartaa URL ammallee hin jiran. Osoo hin galchin dura tarkaanfii fooyya'iinsaa 6.0.15-url-map (./console exp:upgrade --apply) hojjechiisi.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Galchiin kun kana booda hin argamu: guyyaa tokko booda yeroon isaa darbe yookiin kan fayyadamaa biraati. Faayilii irra deebi'ii olkaa'i.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Faayilii tokko filadhu yookiin tooraalee maxxansi.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Faayiliin %size caala guddaadha.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Faayiliin dubbifamuu hin danda'u: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Seensa marsariitii dhaabbata kanaa tokko filadhu.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Galchiin tajaajilaa irratti kuufamuu hin danda'u: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Faayilicha</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faayilii</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), seerota irra deebiin barreessuu Apache yookiin nginx, yoo baay'ate %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Yookiin tooraalee maxxansi</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Sararri tokko toora tokko, fakkeenyaaf /old-page,/new-page. Sararri jalqabaa maqaa utubaalee kennuu danda'a: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Faayilii irraa baradhu</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Kan barbaachisu yoo maqaanis qabiyyeen faayilichaas kana hin himne qofa.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Durtiiwwan</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Seensa marsariitii karaalee keessummeessaa hin qabnee</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>durtii</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Tooraaleen teessoo guutuu qaban qooda kanaa seensa marsariitii keessummeessaa isaanii fudhatu.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Afaan seensa marsariitii</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Yeroo teessoon moofaan galmee duraan qabu</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Galmee eegi (toora irra darbi)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Galmee bakka buusi</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Keessummeessitoota moofaa</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Teessoowwan guutuu keessummeessaa dhaabbanni kun hin beekne hin galfaman. Seensa marsariitii keessummeessaan moofaan tokkoon tokkoon isaa bakka bu'u maqaa dhahi, sararri tokko tokko: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Duraan ilaaluu</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Ammallee wanti tokkollee hin barreeffamu: fuulli itti aanu toorri tokkoon tokkoon isaa maal akka godhu agarsiisa.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Galchii %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Galchiin haqameera.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Galchiin haqameera, galmeewwan isa booda jijjiiraman malee, kanneen eegaman.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Galchiin haqamuu hin dandeenye: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Guyyaa</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Kan godhe</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Tooraalee</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created uumaman, %updated bakka bu'an, %skipped irra darbaman, %failed kufan.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Haqame</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Galchii kana haqi</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Galmeen galchiin uume hundi ni haqama, galmeen inni bakka buuse hundis akkuma duraa ni deebi'a, kan dhumaa jalqaba. Jalqaba eenyu akka taate ni mirkaneessita.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>Galmeewwan %count galchii booda jijjiiraman</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Galmeewwan galchii booda jijjiiramanis haqi</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Kana malee ni eegamu, galchiinis gartokkeen haqama (--force konsolii).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Galchii kana haquu?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Galchii haqi</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Galmeewwan barreeffaman</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count keessaa %from hanga %to</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Galchiin galmee tokkollee hin barreessine.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Galmeewwan galchiin barreesse</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Sarara</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Teessoo moofaa</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Galmee</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Gara kanaatti geessa</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Jijjiirama</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Haala</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Maqaa URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Mallattoo bakka bu'aa</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Qajeelchii</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Uumame</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Bakka bu'e</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Hojiirra oole</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Eegame</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Gartokkeen haqame</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Seenaa galchii (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Galchii kaartaa URL hunda, kan haaraan jalqaba. Galchiin tokko guutummaatti haqamuu danda'a: galmeen inni barreesse hundi waan duraan ture sanatti deebi'a.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Hanga ammaatti kaartaan URL tokkollee hin galfamne.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Galchiiwwan kaartaalee URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Lakkoofsa</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Irra darbame</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Kufe</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, tooraalee %rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Akka galchii %id tti galfameera.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Galchii ilaali, yookiin haqi</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Faayilii biraa galchi</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Hanga ammaatti wanti tokkollee hin barreeffamne. Toorri tokkoon tokkoon isaa galchiin isa irratti maal akka godhu agarsiisa. Tooraaleen mallattaa'an ni galfamu; toora tokko dhiisuuf mallattoo irraa kaasi. Tooraaleen haaraa hin taane kan galfamuu danda'an yoo teessoon moofaan isaanii bakka buufamuu danda'e qofa.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Galchiin hin raawwatamne: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Toorri tokkollee galchiif hin mallattoofne.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Raawwii yaalii: wanti tokkollee hin barreeffamne.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Galchiin %created ni uuma, %updated bakka buusa, %skipped irra darba; %failed ni kufu.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Ilaalcha waliigalaa</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Uumamuuf</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Bakka buufamuuf</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Irra darbamuuf</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Rakkoo qaban</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Hanga yeroo kanaatti eegama</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Irra deebi'ii karoorsi</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Waan tooraalee murteessu jijjiiri, faayilichas irra deebi'ii karoorsi. Mallattoowwan harkaan jijjiirte ni haaromfamu.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Tooraaleen keessummeessitoota kanaa hin galfaman, sababni isaas dhaabbanni kun isaaniif deebii hin kennu. Seensa marsariitii keessummeessaan moofaan tokkoon tokkoon isaa bakka bu'u filadhu.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Hin galfamne</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Agarsiisi</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hunda</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Toorri tokkollee haala kana hin qabu.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hunda agarsiisi</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Tooraalee faayilichaa fi galchiin tokkoon tokkoon isaanii irratti maal akka godhu</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Galchi</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Teessoo haaraa</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Gosa</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Yaadannoowwan</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Sarara %line galchi</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Lakki</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Eeyyee</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Raawwii yaalii</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Mallattoowwan eegi</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Karoora akka CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Karoora akka JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Gatii</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Galchiin tooraalee mallattaa'an fuula hundaa akka galchii tokkootti barreessa, kunis seenaa galchii irraa haqamuu danda'a; jalqaba eenyu akka taate ni mirkaneessita. Raawwiin yaalii toora hunda marsariitii waliin irra deebiin qorata, galchiin maal akka godhu ni lakkaa'a, osoo hin barreessin.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Qajeelchii (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Qajeelchii mallattoo bakka bu'aa (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Mallattoo bakka bu'aa (kallattiin)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Haaraa</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Jijjiirame</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Hin jijjiiramne</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Kan irra deddeebi'e</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Walitti bu'iinsa</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Galma cabe</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Keessummeessaa hin beekamne</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Galfamuu hin danda'u</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Maqaawwan URL addunyaa</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Seenaa galchii</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Kaartaalee URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Qajeelchiiwwan (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Qajeelchiiwwan kun galchii kaartaa URL irraa dhufu: teessoowwan moofaa gaaffii qaban (/index.php?id=12), qajeelchiiwwan yeroo gabaabaa fi qajeelchiiwwan gara marsariitiiwwan biraa. Isaan teessoo guutuu irratti, maqaawwan URL fi mallattoowwan bakka bu'aa dura, ni qoratamu. Qajeelchiin dhaabbataan gara fuula marsariitii kanaa tokkoo qooda kanaa maqaa URL addunyaa ti, achittis tarreeffameera.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Qajeelchiiwwan %count haqamaniiru.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Qajeelchiin hin jiru. Isaan kaartaa URL galchuun uumamu.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Qajeelchiiwwan teessoo guutuu irratti qoratamani</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Filadhu</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Haala HTTP</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Galchii irraa</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Baasi</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address filadhu</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address baasi</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Qajeelchii kana baasuu?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Qajeelchiiwwan filataman baasuu?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Kanneen filataman baasi</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Qajeelchiin baafame battalumatti hojii dhaaba.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Barruu maxxanfame</translation>
     </message>
 </context>
 </TS>

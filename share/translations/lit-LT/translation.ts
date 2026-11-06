@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Kur nukreipiami adresai: šios svetainės kelias arba pilnas adresas, kai nukreipiama į kitą vietą. {1\} yra tekstas, kurį atitiko pirmoji *. Pavyzdys: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>laikinai peradresuojami šiuo adresu (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Lankytojai laikinai peradresuojami (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Laikinas peradresavimas (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85521,6 +85533,625 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Rodyti %count elementų puslapyje.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Eksportuoti URL žemėlapį</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Atsisiųskite šios svetainės globalius URL pseudonimus, pakaitos simbolius ir peradresavimus viename faile: kad išsaugotumėte, redaguotumėte skaičiuoklėje ir vėl importuotumėte arba perduotumėte žiniatinklio serveriui kaip perrašymo taisykles.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Pasirinkite bent vieną įrašų rūšį.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Failo nepavyko įrašyti.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Ką eksportuoti</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Formatas</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Įrašai</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Globalūs URL pseudonimai (URL vertėjas)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Taip pat turinio pasirinktiniai URL pseudonimai</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Įrašoma su mazgu kaip tikslu, pavyzdžiui, node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Pakaitos simboliai</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Peradresavimai</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Prieiga prie svetainės</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Visos prieigos prie svetainės</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Prieigai prie svetainės priklauso tik peradresavimai; URL pseudonimai ir pakaitos simboliai eksportuojami visoms prieigoms prie svetainės.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Kalba</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Visos kalbos</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Eksportuoti</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Importuoti URL žemėlapį</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Perkelkite senos svetainės adresus vienu kartu: faile nurodytas kiekvienas senas adresas ir šios svetainės puslapis, kuriam jis dabar priklauso. Tikslūs adresai tampa peradresavimais arba URL pseudonimais, adresai su * tampa pakaitos simboliais. Prieš ką nors įrašant matote, ką darytų kiekviena eilutė, ir kiekvieną importą galima atšaukti visą iš karto.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL žemėlapių importo lentelių dar nėra. Prieš importuodami paleiskite atnaujinimo žingsnį 6.0.15-url-map (./console exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Šis importas nebepasiekiamas: jo galiojimas baigėsi po paros arba jis priklauso kitam naudotojui. Įkelkite failą dar kartą.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Pasirinkite failą arba įklijuokite eilutes.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Failas didesnis nei %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Failo nepavyksta perskaityti: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Pasirinkite šios įdiegties prieigą prie svetainės.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Importo nepavyksta išsaugoti serveryje: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Failas</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Failas</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache arba nginx perrašymo taisyklės, ne daugiau kaip %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Arba įklijuokite eilutes</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Po vieną įrašo eilutę kiekvienoje teksto eilutėje, pavyzdžiui, /senas-puslapis,/naujas-puslapis. Pirmoje eilutėje galima nurodyti stulpelių pavadinimus: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Nustatyti iš failo</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Reikia tik tada, kai to nenurodo nei failo pavadinimas, nei turinys.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Numatytosios reikšmės</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Prieiga prie svetainės paprastiems keliams</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>numatytoji</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Eilutės su visu adresu vietoj to naudoja savo pagrindinio kompiuterio prieigą prie svetainės.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Prieigos prie svetainės kalba</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Kai senas adresas jau turi įrašą</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Palikti įrašą (praleisti eilutę)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Pakeisti įrašą</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Seni pagrindiniai kompiuteriai</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Visi adresai su pagrindiniu kompiuteriu, kurio ši įdiegtis nežino, neimportuojami. Nurodykite, kokią prieigą prie svetainės atitinka kiekvienas senas pagrindinis kompiuteris, po vieną eilutėje: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Peržiūra</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Kol kas niekas neįrašoma: kitame puslapyje matysite, ką darytų kiekviena eilutė.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Importas %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Importas atšauktas.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Importas atšauktas, išskyrus po jo pakeistus įrašus, kurie buvo palikti.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Importo nepavyko atšaukti: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Atliko</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Eilutės</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>Sukurta: %created, pakeista: %updated, praleista: %skipped, nepavyko: %failed.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Atšauktas</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Atšaukti šį importą</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Kiekvienas importo sukurtas įrašas pašalinamas, o kiekvienas pakeistas įrašas grąžinamas toks, koks buvo, pradedant nuo paskutinio. Pirmiausia patvirtinate savo tapatybę.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>Po importo pakeistų įrašų: %count</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Atšaukti ir po importo pakeistus įrašus</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Be šios parinkties jie paliekami, o importas atšaukiamas iš dalies (konsolės --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Atšaukti šį importą?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Atšaukti importą</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Įrašyti įrašai</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to iš %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Importas neįrašė nė vieno įrašo.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Importo įrašyti įrašai</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Eilutė</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Senas adresas</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Įrašas</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Veda į</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Pakeitimas</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Būsena</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL pseudonimas</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Pakaitos simbolis</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Peradresavimas</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Sukurta</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Pakeista</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Pritaikyta</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Palikta</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Iš dalies atšaukta</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Importų istorija (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Visi URL žemėlapių importai, naujausi pirmiausia. Importą galima atšaukti visą iš karto: kiekvienas jo įrašytas įrašas grąžinamas į ankstesnę būseną.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Dar neimportuotas nė vienas URL žemėlapis.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL žemėlapių importai</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Numeris</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Praleista</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Nepavyko</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, eilučių: %rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Importuota kaip importas %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Peržiūrėti importą arba jį atšaukti</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Importuoti kitą failą</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Kol kas niekas neįrašyta. Kiekvienoje eilutėje rodoma, ką su ja darytų importas. Pažymėtos eilutės importuojamos; nuimkite žymėjimą, kad eilutę praleistumėte. Ne naujas eilutes galima importuoti tik tada, kai jų seną adresą leidžiama pakeisti.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Importas neatliktas: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Importui nepažymėta nė viena eilutė.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Bandomasis vykdymas: niekas neįrašyta.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Importas sukurtų %created, pakeistų %updated ir praleistų %skipped; nepavyktų %failed.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Apžvalga</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Bus sukurta</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Bus pakeista</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Bus praleista</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Su problema</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Saugoma iki</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Planuoti iš naujo</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Pakeiskite tai, kas lemia eilutes, ir suplanuokite failą iš naujo. Rankiniu būdu pakeisti žymėjimai atstatomi.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Šių pagrindinių kompiuterių eilutės neimportuojamos, nes ši įdiegtis jų neaptarnauja. Pasirinkite, kokią prieigą prie svetainės atitinka kiekvienas senas pagrindinis kompiuteris.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Neimportuojama</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rodyti</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Visi</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Nė viena eilutė neturi šios būsenos.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Rodyti visus</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Failo eilutės ir ką importas darytų su kiekviena</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importuoti</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Naujas adresas</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Rūšis</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Pastabos</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Importuoti eilutę %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ne</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Taip</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Bandomasis vykdymas</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Palikti žymėjimus</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Planas kaip CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Planas kaip JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Atmesti</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Importuoti įrašo visų puslapių pažymėtas eilutes kaip vieną importą, kurį galima atšaukti iš importų istorijos; pirmiausia patvirtinate savo tapatybę. Bandomasis vykdymas dar kartą patikrina kiekvieną eilutę pagal svetainę ir suskaičiuoja, ką darytų importas, nieko neįrašydamas.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Peradresavimas (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Peradresavimas su pakaitos simboliais (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Pakaitos simbolis (tiesioginis)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nauja</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Pakeista</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Nepakeista</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Dublikatas</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Konfliktas</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Neteisingas tikslas</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Nežinomas pagrindinis kompiuteris</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Negalima importuoti</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Globalūs URL pseudonimai</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Importų istorija</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL žemėlapiai</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Peradresavimai (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Šie peradresavimai gauti iš URL žemėlapių importų: seni adresai su užklausa (/index.php?id=12), laikini peradresavimai ir peradresavimai į kitas svetaines. Jie tikrinami pagal visą adresą prieš URL pseudonimus ir pakaitos simbolius. Nuolatinis peradresavimas į šios svetainės puslapį vietoj to yra globalus URL pseudonimas ir pateikiamas ten.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Pašalinta peradresavimų: %count.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Peradresavimų nėra. Jie sukuriami importuojant URL žemėlapį.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Pagal visą adresą tikrinami peradresavimai</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Pažymėti</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Būsena</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Iš importo</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Šalinti</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Pažymėti %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Šalinti %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Šalinti šį peradresavimą?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Šalinti pažymėtus peradresavimus?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Šalinti pasirinktus</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Pašalintas peradresavimas iš karto nustoja veikti.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Įklijuotas tekstas</translation>
     </message>
 </context>
 </TS>

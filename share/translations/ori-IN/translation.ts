@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>ଠିକଣାଗୁଡ଼ିକ କେଉଁଠାକୁ ଯାଏ: ଏହି ସାଇଟ୍‌ର ଏକ ପାଥ୍, ଅଥବା ରିଡାଇରେକ୍ଟ କରିବା ସମୟରେ ଏକ ପୂର୍ଣ୍ଣ ଠିକଣା। {1\} ହେଉଛି ପ୍ରଥମ * ଯେଉଁ ପାଠ୍ୟ ସହ ମେଳ ହୋଇଥିଲା। ଉଦାହରଣ: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ଏହି ଠିକଣାକୁ ଅସ୍ଥାୟୀ ଭାବେ ରିଡାଇରେକ୍ଟ ହୁଅନ୍ତି (HTTP 302)।</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>ପରିଦର୍ଶକମାନେ ଅସ୍ଥାୟୀ ଭାବେ ରିଡାଇରେକ୍ଟ ହୁଅନ୍ତି (HTTP 302)।</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>ଅସ୍ଥାୟୀ ରିଡାଇରେକ୍ଟ (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85489,6 +85501,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>ପ୍ରତି ପୃଷ୍ଠାରେ %count ଆଇଟମ୍ ଦେଖାନ୍ତୁ।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL ମାନଚିତ୍ର ରପ୍ତାନି କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>ଏହି ସାଇଟର ଗ୍ଲୋବାଲ୍ URL ଏଲିଆସ୍, ୱାଇଲ୍ଡକାର୍ଡ ଓ ରିଡାଇରେକ୍ଟଗୁଡ଼ିକୁ ଗୋଟିଏ ଫାଇଲ୍ ଭାବେ ଡାଉନଲୋଡ୍ କରନ୍ତୁ: ରଖିବା ପାଇଁ, ସ୍ପ୍ରେଡସିଟରେ ସମ୍ପାଦନ କରି ପୁଣି ଆମଦାନି କରିବା ପାଇଁ, କିମ୍ବା ୱେବ୍ ସର୍ଭରକୁ ରିରାଇଟ୍ ନିୟମ ଭାବେ ଦେବା ପାଇଁ।</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>ଅତି କମରେ ଗୋଟିଏ ପ୍ରକାରର ଏଣ୍ଟ୍ରି ବାଛନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>ଫାଇଲ୍ ଲେଖାଯାଇପାରିଲା ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>କଣ ରପ୍ତାନି କରିବେ</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>ଫର୍ମାଟ୍</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>ଏଣ୍ଟ୍ରିଗୁଡ଼ିକ</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>ଗ୍ଲୋବାଲ୍ URL ଏଲିଆସ୍ (URL ଅନୁବାଦକ)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>ବିଷୟବସ୍ତୁର କଷ୍ଟମ୍ URL ଏଲିଆସ୍ ମଧ୍ୟ</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>ନୋଡ୍‌କୁ ଲକ୍ଷ୍ୟ ଭାବେ ନେଇ ଲେଖାଯାଏ, ଯେପରି node:42।</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>ୱାଇଲ୍ଡକାର୍ଡ</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>ରିଡାଇରେକ୍ଟ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ସାଇଟ୍ ଆକ୍ସେସ୍</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ପ୍ରତ୍ୟେକ ସାଇଟ୍ ଆକ୍ସେସ୍</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>କେବଳ ରିଡାଇରେକ୍ଟ କୌଣସି ସାଇଟ୍ ଆକ୍ସେସ୍‌ର ଅଂଶ; URL ଏଲିଆସ୍ ଓ ୱାଇଲ୍ଡକାର୍ଡ ପ୍ରତ୍ୟେକ ସାଇଟ୍ ଆକ୍ସେସ୍ ପାଇଁ ରପ୍ତାନି ହୁଏ।</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ଭାଷା</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>ପ୍ରତ୍ୟେକ ଭାଷା</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>ରପ୍ତାନି କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL ମାନଚିତ୍ର ଆମଦାନି କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>ପୁରୁଣା ସାଇଟର ଠିକଣାଗୁଡ଼ିକୁ ଥରେରେ ଆଣନ୍ତୁ: ଗୋଟିଏ ଫାଇଲ୍ ପ୍ରତ୍ୟେକ ପୁରୁଣା ଠିକଣା ଓ ଏବେ ତାହା ଏହି ସାଇଟର କେଉଁ ପୃଷ୍ଠାର ଅଂଶ ତାହା ତାଲିକାଭୁକ୍ତ କରେ। ସଠିକ୍ ଠିକଣା ରିଡାଇରେକ୍ଟ ବା URL ଏଲିଆସ୍ ହୁଏ, * ଥିବା ଠିକଣା ୱାଇଲ୍ଡକାର୍ଡ ହୁଏ। କିଛି ଲେଖାହେବା ପୂର୍ବରୁ ପ୍ରତ୍ୟେକ ଧାଡ଼ି କଣ କରିବ ଆପଣ ଦେଖନ୍ତି, ଏବଂ ପ୍ରତ୍ୟେକ ଆମଦାନିକୁ ସମ୍ପୂର୍ଣ୍ଣ ପୂର୍ବାବସ୍ଥାକୁ ଫେରାଇହେବ।</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL ମାନଚିତ୍ର ଆମଦାନିର ଟେବୁଲ୍ ଏପର୍ଯ୍ୟନ୍ତ ନାହିଁ। ଆମଦାନି ପୂର୍ବରୁ ଅପଗ୍ରେଡ୍ ପଦକ୍ଷେପ 6.0.15-url-map (./console exp:upgrade --apply) ଚଲାନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>ଏହି ଆମଦାନି ଆଉ ଉପଲବ୍ଧ ନାହିଁ: ଏହା ଗୋଟିଏ ଦିନ ପରେ ସମାପ୍ତ ହୋଇଗଲା କିମ୍ବା ଅନ୍ୟ ଜଣେ ଉପଯୋଗକର୍ତ୍ତାଙ୍କର। ଫାଇଲ୍ ପୁଣି ଅପଲୋଡ୍ କରନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>ଗୋଟିଏ ଫାଇଲ୍ ବାଛନ୍ତୁ କିମ୍ବା ଧାଡ଼ିଗୁଡ଼ିକ ପେଷ୍ଟ କରନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>ଫାଇଲ୍ %size ଠାରୁ ବଡ଼।</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>ଫାଇଲ୍ ପଢ଼ାଯାଇପାରିବ ନାହିଁ: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>ଏହି ସଂସ୍ଥାପନର ଗୋଟିଏ ସାଇଟ୍ ଆକ୍ସେସ୍ ବାଛନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>ଆମଦାନିକୁ ସର୍ଭରରେ ରଖାଯାଇପାରିବ ନାହିଁ: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>ଫାଇଲ୍‌ଟି</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ଫାଇଲ୍</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache କିମ୍ବା nginx ରିରାଇଟ୍ ନିୟମ, ସର୍ବାଧିକ %size।</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>କିମ୍ବା ଧାଡ଼ିଗୁଡ଼ିକ ପେଷ୍ଟ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>ପ୍ରତି ଲାଇନରେ ଗୋଟିଏ ଧାଡ଼ି, ଯେପରି /old-page,/new-page। ପ୍ରଥମ ଲାଇନ ସ୍ତମ୍ଭଗୁଡ଼ିକର ନାମ ଦେଇପାରେ: old_url, new_url, kind, siteaccess, language, note, status।</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>ଫାଇଲ୍‌ରୁ ଜାଣନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>କେବଳ ସେତେବେଳେ ଆବଶ୍ୟକ ଯେତେବେଳେ ଫାଇଲର ନାମ କିମ୍ବା ବିଷୟବସ୍ତୁ ଏହା କହେ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>ଡିଫଲ୍ଟ</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>ହୋଷ୍ଟ ବିନା ପାଥର ସାଇଟ୍ ଆକ୍ସେସ୍</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>ଡିଫଲ୍ଟ</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>ପୂର୍ଣ୍ଣ ଠିକଣା ଥିବା ଧାଡ଼ିଗୁଡ଼ିକ ବଦଳରେ ସେମାନଙ୍କ ହୋଷ୍ଟର ସାଇଟ୍ ଆକ୍ସେସ୍ ନିଅନ୍ତି।</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>ସାଇଟ୍ ଆକ୍ସେସ୍‌ର ଭାଷା</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>ଯେତେବେଳେ ଗୋଟିଏ ପୁରୁଣା ଠିକଣାର ଏଣ୍ଟ୍ରି ପୂର୍ବରୁ ଅଛି</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>ଏଣ୍ଟ୍ରି ରଖନ୍ତୁ (ଧାଡ଼ି ଛାଡ଼ନ୍ତୁ)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>ଏଣ୍ଟ୍ରି ବଦଳାନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>ପୁରୁଣା ହୋଷ୍ଟ</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>ଏହି ସଂସ୍ଥାପନ ଜାଣିନଥିବା ହୋଷ୍ଟର ପୂର୍ଣ୍ଣ ଠିକଣା ଆମଦାନି ହୁଏ ନାହିଁ। ପ୍ରତ୍ୟେକ ପୁରୁଣା ହୋଷ୍ଟ ଯେଉଁ ସାଇଟ୍ ଆକ୍ସେସ୍ ପାଇଁ ସେହି ନାମ ଦିଅନ୍ତୁ, ପ୍ରତି ଲାଇନରେ ଗୋଟିଏ: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>ପୂର୍ବାବଲୋକନ</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>ଏପର୍ଯ୍ୟନ୍ତ କିଛି ଲେଖାଯାଏ ନାହିଁ: ପରବର୍ତ୍ତୀ ପୃଷ୍ଠା ଦେଖାଏ ପ୍ରତ୍ୟେକ ଧାଡ଼ି କଣ କରିବ।</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>ଆମଦାନି %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>ଆମଦାନି ପୂର୍ବାବସ୍ଥାକୁ ଫେରାଗଲା।</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>ଆମଦାନି ପୂର୍ବାବସ୍ଥାକୁ ଫେରାଗଲା, ଏହା ପରେ ବଦଳିଥିବା ଏଣ୍ଟ୍ରି ବ୍ୟତୀତ, ଯାହା ରଖାଗଲା।</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>ଆମଦାନି ପୂର୍ବାବସ୍ଥାକୁ ଫେରାଯାଇପାରିଲା ନାହିଁ: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>ତାରିଖ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ଦ୍ୱାରା</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>ଧାଡ଼ି</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created ସୃଷ୍ଟି, %updated ବଦଳାଗଲା, %skipped ଛଡ଼ାଗଲା, %failed ବିଫଳ।</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>ପୂର୍ବାବସ୍ଥାକୁ ଫେରାଗଲା</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>ଏହି ଆମଦାନି ପୂର୍ବାବସ୍ଥାକୁ ଫେରାନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>ଆମଦାନି ସୃଷ୍ଟି କରିଥିବା ପ୍ରତ୍ୟେକ ଏଣ୍ଟ୍ରି ହଟାଯାଏ ଏବଂ ବଦଳାଇଥିବା ପ୍ରତ୍ୟେକ ଏଣ୍ଟ୍ରି ପୂର୍ବ ପରି ଫେରାଯାଏ, ଶେଷଟି ପ୍ରଥମେ। ପ୍ରଥମେ ଆପଣ କିଏ ତାହା ନିଶ୍ଚିତ କରନ୍ତି।</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>ଆମଦାନି ପରେ ବଦଳିଥିବା %count ଏଣ୍ଟ୍ରି</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>ଆମଦାନି ପରେ ବଦଳିଥିବା ଏଣ୍ଟ୍ରିଗୁଡ଼ିକୁ ମଧ୍ୟ ପୂର୍ବାବସ୍ଥାକୁ ଫେରାନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>ଏହା ବିନା ସେଗୁଡ଼ିକ ରଖାଯାଏ ଏବଂ ଆମଦାନି ଆଂଶିକ ଭାବେ ଫେରାଯାଏ (କନସୋଲର --force)।</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>ଏହି ଆମଦାନି ପୂର୍ବାବସ୍ଥାକୁ ଫେରାଇବେ କି?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>ଆମଦାନି ପୂର୍ବାବସ୍ଥାକୁ ଫେରାନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>ଲେଖାଯାଇଥିବା ଏଣ୍ଟ୍ରି</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count ମଧ୍ୟରୁ %from ରୁ %to</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>ଆମଦାନି କୌଣସି ଏଣ୍ଟ୍ରି ଲେଖିଲା ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>ଆମଦାନି ଲେଖିଥିବା ଏଣ୍ଟ୍ରିଗୁଡ଼ିକ</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>ଲାଇନ</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>ପୁରୁଣା ଠିକଣା</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>ଏଣ୍ଟ୍ରି</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>ଏଠାକୁ ନେଇଯାଏ</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ପରିବର୍ତ୍ତନ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ଅବସ୍ଥା</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL ଏଲିଆସ୍</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>ୱାଇଲ୍ଡକାର୍ଡ</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>ରିଡାଇରେକ୍ଟ</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>ସୃଷ୍ଟି ହେଲା</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>ବଦଳାଗଲା</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>ପ୍ରୟୋଗ ହେଲା</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>ରଖାଗଲା</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>ଆଂଶିକ ଫେରାଗଲା</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>ଆମଦାନି ଇତିହାସ (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL ମାନଚିତ୍ରର ପ୍ରତ୍ୟେକ ଆମଦାନି, ନୂଆଟି ପ୍ରଥମେ। ଗୋଟିଏ ଆମଦାନିକୁ ସମ୍ପୂର୍ଣ୍ଣ ଫେରାଇହେବ: ଏହା ଲେଖିଥିବା ପ୍ରତ୍ୟେକ ଏଣ୍ଟ୍ରି ପୂର୍ବରୁ ଯାହା ଥିଲା ସେଥିକୁ ଫେରେ।</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି URL ମାନଚିତ୍ର ଆମଦାନି ହୋଇନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL ମାନଚିତ୍ରର ଆମଦାନି</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>ସଂଖ୍ୟା</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>ଛଡ଼ାଗଲା</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ବିଫଳ</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows ଧାଡ଼ି</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>ଆମଦାନି %id ଭାବେ ଆମଦାନି ହେଲା।</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>ଆମଦାନି ଦେଖନ୍ତୁ, କିମ୍ବା ଏହାକୁ ଫେରାନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>ଅନ୍ୟ ଏକ ଫାଇଲ୍ ଆମଦାନି କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>ଏପର୍ଯ୍ୟନ୍ତ କିଛି ଲେଖାଯାଇନାହିଁ। ପ୍ରତ୍ୟେକ ଧାଡ଼ି ଦେଖାଏ ଆମଦାନି ତା ସହ କଣ କରିବ। ଚିହ୍ନିତ ଧାଡ଼ି ଆମଦାନି ହୁଏ; ଗୋଟିଏ ଧାଡ଼ି ବାଦ ଦେବାକୁ ଚିହ୍ନ ହଟାନ୍ତୁ। ନୂଆ ନଥିବା ଧାଡ଼ି କେବଳ ସେତେବେଳେ ଆମଦାନି ହୋଇପାରେ ଯେତେବେଳେ ସେମାନଙ୍କ ପୁରୁଣା ଠିକଣା ବଦଳାଯାଇପାରେ।</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>ଆମଦାନି ହେଲା ନାହିଁ: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>ଆମଦାନି ପାଇଁ କୌଣସି ଧାଡ଼ି ଚିହ୍ନିତ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>ପରୀକ୍ଷାମୂଳକ ଚାଲନା: କିଛି ଲେଖାଗଲା ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>ଆମଦାନି %created ସୃଷ୍ଟି କରିବ, %updated ବଦଳାଇବ ଏବଂ %skipped ଛାଡ଼ିବ; %failed ବିଫଳ ହେବ।</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ସାରାଂଶ</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>ସୃଷ୍ଟି କରିବାକୁ</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>ବଦଳାଇବାକୁ</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>ଛାଡ଼ିବାକୁ</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>ସମସ୍ୟା ସହ</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>ଏପର୍ଯ୍ୟନ୍ତ ରଖାଯିବ</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>ପୁଣି ଯୋଜନା କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>ଧାଡ଼ିଗୁଡ଼ିକୁ ସ୍ଥିର କରୁଥିବା ବିଷୟ ବଦଳାନ୍ତୁ ଏବଂ ଫାଇଲ୍‌ର ପୁଣି ଯୋଜନା କରନ୍ତୁ। ହାତରେ ବଦଳାଇଥିବା ଚିହ୍ନ ରିସେଟ୍ ହୁଏ।</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>ଏହି ହୋଷ୍ଟଗୁଡ଼ିକର ଧାଡ଼ି ଆମଦାନି ହୁଏ ନାହିଁ, କାରଣ ଏହି ସଂସ୍ଥାପନ ସେମାନଙ୍କ ପାଇଁ ଉତ୍ତର ଦିଏ ନାହିଁ। ପ୍ରତ୍ୟେକ ପୁରୁଣା ହୋଷ୍ଟ ଯେଉଁ ସାଇଟ୍ ଆକ୍ସେସ୍ ପାଇଁ ତାହା ବାଛନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>ଆମଦାନି ହୋଇନାହିଁ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ଦେଖାନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ସମସ୍ତ</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>କୌଣସି ଧାଡ଼ିର ଏହି ଅବସ୍ଥା ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ସବୁ ଦେଖାନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>ଫାଇଲର ଧାଡ଼ି ଏବଂ ଆମଦାନି ପ୍ରତ୍ୟେକ ସହ କଣ କରିବ</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>ଆମଦାନି କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>ନୂଆ ଠିକଣା</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ପ୍ରକାର</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>ଟିପ୍ପଣୀ</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>ଲାଇନ %line ଆମଦାନି କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ନା</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ହଁ</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ପରୀକ୍ଷାମୂଳକ ଚାଲନା</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>ଚିହ୍ନ ରଖନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>CSV ଭାବେ ଯୋଜନା</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>JSON ଭାବେ ଯୋଜନା</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>ଫିଙ୍ଗିଦିଅନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>ଆମଦାନି ପ୍ରତ୍ୟେକ ପୃଷ୍ଠାର ଚିହ୍ନିତ ଧାଡ଼ିକୁ ଗୋଟିଏ ଆମଦାନି ଭାବେ ଲେଖେ, ଯାହାକୁ ଆମଦାନି ଇତିହାସରୁ ଫେରାଇହେବ; ପ୍ରଥମେ ଆପଣ କିଏ ତାହା ନିଶ୍ଚିତ କରନ୍ତି। ପରୀକ୍ଷାମୂଳକ ଚାଲନା ପ୍ରତ୍ୟେକ ଧାଡ଼ିକୁ ସାଇଟ୍ ସହ ପୁଣି ଯାଞ୍ଚ କରେ ଏବଂ ଆମଦାନି କଣ କରିବ ଗଣେ, କିଛି ନଲେଖି।</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>ରିଡାଇରେକ୍ଟ (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>ୱାଇଲ୍ଡକାର୍ଡ ରିଡାଇରେକ୍ଟ (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>ୱାଇଲ୍ଡକାର୍ଡ (ସିଧାସଳଖ)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>ନୂଆ</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>ବଦଳିଛି</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>ଅପରିବର୍ତ୍ତିତ</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>ନକଲ</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>ବିବାଦ</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>ଭଙ୍ଗା ଲକ୍ଷ୍ୟ</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>ଅଜଣା ହୋଷ୍ଟ</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>ଆମଦାନି ଯୋଗ୍ୟ ନୁହେଁ</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>ଗ୍ଲୋବାଲ୍ URL ଏଲିଆସ୍</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>ଆମଦାନି ଇତିହାସ</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL ମାନଚିତ୍ର</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>ରିଡାଇରେକ୍ଟ (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>ଏହି ରିଡାଇରେକ୍ଟଗୁଡ଼ିକ URL ମାନଚିତ୍ର ଆମଦାନିରୁ ଆସେ: କ୍ୱେରୀ ଥିବା ପୁରୁଣା ଠିକଣା (/index.php?id=12), ଅସ୍ଥାୟୀ ରିଡାଇରେକ୍ଟ ଏବଂ ଅନ୍ୟ ସାଇଟକୁ ରିଡାଇରେକ୍ଟ। ସେଗୁଡ଼ିକ URL ଏଲିଆସ୍ ଓ ୱାଇଲ୍ଡକାର୍ଡ ପୂର୍ବରୁ ପୂର୍ଣ୍ଣ ଠିକଣାରେ ଯାଞ୍ଚ ହୁଏ। ଏହି ସାଇଟର ଗୋଟିଏ ପୃଷ୍ଠାକୁ ସ୍ଥାୟୀ ରିଡାଇରେକ୍ଟ ବଦଳରେ ଗୋଟିଏ ଗ୍ଲୋବାଲ୍ URL ଏଲିଆସ୍ ଏବଂ ସେଠାରେ ତାଲିକାଭୁକ୍ତ।</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count ରିଡାଇରେକ୍ଟ ହଟାଗଲା।</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>କୌଣସି ରିଡାଇରେକ୍ଟ ନାହିଁ। ସେଗୁଡ଼ିକ URL ମାନଚିତ୍ର ଆମଦାନି କରି ତିଆରି ହୁଏ।</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>ପୂର୍ଣ୍ଣ ଠିକଣାରେ ଯାଞ୍ଚ ହେଉଥିବା ରିଡାଇରେକ୍ଟ</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ଚୟନ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ସ୍ଥିତି</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>ଆମଦାନିରୁ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ହଟାନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address ଚୟନ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address ହଟାନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>ଏହି ରିଡାଇରେକ୍ଟ ହଟାଇବେ କି?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>ଚୟନିତ ରିଡାଇରେକ୍ଟଗୁଡ଼ିକ ହଟାଇବେ କି?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>ଚୟନିତ ହଟାନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>ହଟାଯାଇଥିବା ରିଡାଇରେକ୍ଟ ତୁରନ୍ତ କାମ କରିବା ବନ୍ଦ କରେ।</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>ପେଷ୍ଟ କରାଯାଇଥିବା ପାଠ୍ୟ</translation>
     </message>
 </context>
 </TS>

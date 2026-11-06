@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Salgylaryň barýan ýeri: bu saýtyň ýoly ýa-da gönükdirilende doly salgy. {1\} birinji * gabat gelen tekst. Mysal: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>wagtlaýyn bu salga gönükdirilýär (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Myhmanlar wagtlaýyn gönükdirilýär (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Wagtlaýyn gönükdirme (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
     <message>
         <source>Show %count items per page.</source>
         <translation>Her sahypada %count element görkez.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL kartasyny eksport et</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Bu saýtyň global URL lakamlaryny, çalşyryjy belgilerini we gönükdirmelerini bir faýl hökmünde göçürip al: saklamak, elektron tablisada redaktirläp täzeden import etmek ýa-da web serwere täzeden ýazmak düzgünleri hökmünde bermek üçin.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Iň bolmanda bir ýazgy görnüşini saýlaň.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Faýly ýazyp bolmady.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Näme eksport etmeli</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Formaty</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Ýazgylar</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Global URL lakamlary (URL terjimeçisi)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Mazmunyň ýörite URL lakamlary hem</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Maksat hökmünde düwün bilen ýazylýar, meselem node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Çalşyryjy belgiler</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Gönükdirmeler</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Saýta giriş nokady</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Ähli saýta giriş nokatlary</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Diňe gönükdirmeler saýta giriş nokadyna degişlidir; URL lakamlary we çalşyryjy belgiler her saýta giriş nokady üçin eksport edilýär.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Dil</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Ähli diller</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Eksport et</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL kartasyny import et</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Köne saýtyň salgylaryny bir gezekde geçiriň: faýl her köne salgyny we onuň indi bu saýtyň haýsy sahypasyna degişlidigini sanaýar. Takyk salgylar gönükdirme ýa-da URL lakamy bolýar, * belgili salgylar çalşyryjy belgi bolýar. Bir zat ýazylmazdan öň her hataryň näme etjekdigini görýärsiňiz we her importy doly yza alyp bolýar.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL kartasynyň import tablisalary entek ýok. Import etmezden öň 6.0.15-url-map täzeleme ädimini (./console exp:upgrade --apply) işlediň.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Bu import indi elýeterli däl: onuň möhleti bir günden soň gutardy ýa-da ol başga ulanyja degişli. Faýly täzeden ýükläň.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Faýl saýlaň ýa-da hatarlary goýuň.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Faýl %size möçberinden uly.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Faýly okap bolmaýar: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Bu gurnamanyň saýta giriş nokadyny saýlaň.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Importy serwerde saklap bolmaýar: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Faýl</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faýl</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache ýa-da nginx täzeden ýazmak düzgünleri, iň köp %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Ýa-da hatarlary goýuň</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Her setirde bir hatar, meselem /köne-sahypa,/täze-sahypa. Birinji setir sütünleriň atlaryny berip biler: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Faýldan kesgitle</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Diňe faýlyň ady-da, mazmuny-da muny görkezmeýän ýagdaýynda gerek.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Deslapky bahalar</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Ýönekeý ýollaryň saýta giriş nokady</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>deslapky</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Doly salgyly hatarlar munuň ýerine öz hostunyň saýta giriş nokadyny alýar.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Saýta giriş nokadynyň dili</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Köne salgynyň eýýäm ýazgysy bar bolsa</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Ýazgyny sakla (hatary geç)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Ýazgyny çalyş</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Köne hostlar</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Bu gurnamanyň tanamaýan hostunyň doly salgylary import edilmeýär. Her köne hostuň haýsy saýta giriş nokadyna degişlidigini her setirde birden ýazyň: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Öňünden görmek</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Entek hiç zat ýazylmady: indiki sahypa her hataryň näme etjekdigini görkezýär.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Import № %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Import yza alyndy.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Import yza alyndy, ondan soň üýtgedilen ýazgylardan başga, olar saklanyldy.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Importy yza alyp bolmady: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Sene</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ýerine ýetiren</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Hatarlar</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>Döredildi: %created, çalşyryldy: %updated, geçildi: %skipped, şowsuz: %failed.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Yza alnan</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Bu importy yza al</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Importyň döreden her ýazgysy aýrylýar we onuň çalşyran her ýazgysy iň soňkusyndan başlap öňki ýagdaýyna gaýtarylýar. Ilki bilen şahsyýetiňizi tassyklaýarsyňyz.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>Importdan soň üýtgedilen ýazgylar: %count</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Importdan soň üýtgedilen ýazgylary hem yza al</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Munsuz olar saklanýar we import bölekleýin yza alnan bolýar (konsolyň --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Bu import yza alynsynmy?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Importy yza al</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Ýazylan ýazgylar</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from – %to / %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Import hiç hili ýazgy ýazmady.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Importyň ýazan ýazgylary</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Setir</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Köne salgy</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Ýazgy</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Alyp barýar</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Üýtgeşme</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ýagdaý</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL lakamy</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Çalşyryjy belgi</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Gönükdirme</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Döredildi</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Çalşyryldy</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Ulanyldy</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Saklanyldy</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Bölekleýin yza alnan</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Import taryhy (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL kartalarynyň ähli importlary, iň täzesi birinji. Importy doly yza alyp bolýar: onuň ýazan her ýazgysy öňki ýagdaýyna gaýdýar.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Entek hiç bir URL kartasy import edilmedi.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL kartalarynyň importlary</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Belgi</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Geçildi</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Şowsuz</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, hatarlar: %rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>%id belgili import hökmünde import edildi.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Importy gör ýa-da ony yza al</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Başga faýly import et</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Entek hiç zat ýazylmady. Her hatar importyň onuň bilen näme etjekdigini görkezýär. Bellenen hatarlar import edilýär; hatary aýyrmak üçin belgisini aýyryň. Täze bolmadyk hatarlar diňe köne salgysyny çalyşmaga rugsat berlen ýagdaýynda import edilip bilner.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Import ýerine ýetirilmedi: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Import üçin hiç bir hatar bellenmedi.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Synag işledilişi: hiç zat ýazylmady.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Import %created sanysyny döreder, %updated sanysyny çalyşar we %skipped sanysyny geçer; %failed sanysy şowsuz bolar.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Syn</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Dörediljek</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Çalşyryljak</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Geçiljek</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Meseleli</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Şu wagta çenli saklanýar</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Täzeden meýilleşdir</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Hatarlary kesgitleýän sazlamalary üýtgediň we faýly täzeden meýilleşdiriň. El bilen üýtgedilen bellikler täzeden düzülýär.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Bu hostlaryň hatarlary import edilmeýär, sebäbi bu gurnama olara jogap bermeýär. Her köne hostuň haýsy saýta giriş nokadyna degişlidigini saýlaň.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Import edilmedi</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Görkez</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ählisi</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Bu ýagdaýda hatar ýok.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Ählisini görkez</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Faýlyň hatarlary we importyň olaryň her biri bilen näme etjekdigi</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Import et</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Täze salgy</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Görnüş</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Bellikler</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>%line setiri import et</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ýok</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Hawa</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Synag işledilişi</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Bellikleri sakla</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Meýilnama CSV görnüşinde</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Meýilnama JSON görnüşinde</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Taşla</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Import et her sahypanyň bellenen hatarlaryny bir import hökmünde ýazýar, ony import taryhyndan yza alyp bolýar; ilki bilen şahsyýetiňizi tassyklaýarsyňyz. Synag işledilişi her hatary saýt bilen täzeden barlaýar we hiç zat ýazmazdan importyň näme etjekdigini sanaýar.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Gönükdirme (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Çalşyryjy belgili gönükdirme (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Çalşyryjy belgi (göni)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Täze</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Üýtgedilen</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Üýtgedilmedik</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Gaýtalanma</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Gapma-garşylyk</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Bozuk maksat</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Näbelli host</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Import edip bolmaýar</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Global URL lakamlary</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Import taryhy</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL kartalary</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Gönükdirmeler (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Bu gönükdirmeler URL kartasynyň importlaryndan gelýär: soragly köne salgylar (/index.php?id=12), wagtlaýyn gönükdirmeler we başga saýtlara gönükdirmeler. Olar URL lakamlaryndan we çalşyryjy belgilerden öň, doly salgy boýunça barlanýar. Bu saýtyň sahypasyna hemişelik gönükdirme bolsa global URL lakamydyr we şol ýerde görkezilýär.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Aýrylan gönükdirmeler: %count.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Gönükdirme ýok. Olar URL kartasyny import etmek arkaly döredilýär.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Doly salgy boýunça barlanýan gönükdirmeler</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Saýla</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Ýagdaýy</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Importdan</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Aýyr</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address saýla</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address aýyr</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Bu gönükdirme aýrylsynmy?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Saýlanan gönükdirmeler aýrylsynmy?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Saýlananlary aýyr</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Aýrylan gönükdirme derrew işlemesini bes edýär.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Goýlan tekst</translation>
     </message>
 </context>
 </TS>

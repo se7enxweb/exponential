@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Πού οδηγούν οι διευθύνσεις: μια διαδρομή αυτού του ιστότοπου ή, σε ανακατεύθυνση, μια πλήρης διεύθυνση. Το {1\} είναι το κείμενο που αντιστοιχίστηκε στο πρώτο *. Παράδειγμα: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ανακατευθύνονται προσωρινά σε αυτή τη διεύθυνση (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Οι επισκέπτες ανακατευθύνονται προσωρινά (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Προσωρινή ανακατεύθυνση (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85521,6 +85533,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>Εμφάνιση %count στοιχείων ανά σελίδα.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Εξαγωγή του χάρτη URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Κατεβάστε τα καθολικά ψευδώνυμα URL, τους μπαλαντέρ και τις ανακατευθύνσεις αυτού του ιστότοπου ως ένα αρχείο: για φύλαξη, για επεξεργασία σε υπολογιστικό φύλλο και νέα εισαγωγή ή για να δοθεί σε έναν διακομιστή ιστού ως κανόνες επανεγγραφής.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Επιλέξτε τουλάχιστον ένα είδος καταχωρίσεων.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Δεν ήταν δυνατή η εγγραφή του αρχείου.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Τι θα εξαχθεί</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Καταχωρίσεις</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Καθολικά ψευδώνυμα URL (ο μεταφραστής URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Επίσης τα προσαρμοσμένα ψευδώνυμα URL του περιεχομένου</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Γράφεται με τον κόμβο ως προορισμό, για παράδειγμα node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Μπαλαντέρ</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Ανακατευθύνσεις</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Πρόσβαση ιστότοπου</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Κάθε πρόσβαση ιστότοπου</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Μόνο οι ανακατευθύνσεις ανήκουν σε μια πρόσβαση ιστότοπου· τα ψευδώνυμα URL και οι μπαλαντέρ εξάγονται για κάθε πρόσβαση ιστότοπου.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Γλώσσα</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Κάθε γλώσσα</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Εξαγωγή</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Εισαγωγή χάρτη URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Μεταφέρετε τις διευθύνσεις ενός παλιού ιστότοπου με μία κίνηση: ένα αρχείο απαριθμεί κάθε παλιά διεύθυνση και τη σελίδα αυτού του ιστότοπου στην οποία ανήκει τώρα. Οι ακριβείς διευθύνσεις γίνονται ανακατευθύνσεις ή ψευδώνυμα URL, οι διευθύνσεις με * γίνονται μπαλαντέρ. Βλέπετε τι θα έκανε κάθε γραμμή πριν γραφτεί οτιδήποτε, και κάθε εισαγωγή μπορεί να αναιρεθεί ολόκληρη.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Οι πίνακες των εισαγωγών χαρτών URL δεν υπάρχουν ακόμη. Εκτελέστε το βήμα αναβάθμισης 6.0.15-url-map (./console exp:upgrade --apply) πριν από την εισαγωγή.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Αυτή η εισαγωγή δεν είναι πλέον διαθέσιμη: έληξε μετά από μία ημέρα ή ανήκει σε άλλον χρήστη. Ανεβάστε ξανά το αρχείο.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Επιλέξτε ένα αρχείο ή επικολλήστε τις γραμμές.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Το αρχείο είναι μεγαλύτερο από %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Δεν είναι δυνατή η ανάγνωση του αρχείου: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Επιλέξτε μια πρόσβαση ιστότοπου αυτής της εγκατάστασης.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Η εισαγωγή δεν μπορεί να διατηρηθεί στον διακομιστή: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Το αρχείο</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Αρχείο</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), κανόνες επανεγγραφής Apache ή nginx, έως %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Ή επικολλήστε τις γραμμές</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Μία γραμμή ανά σειρά κειμένου, για παράδειγμα /palia-selida,/nea-selida. Η πρώτη σειρά μπορεί να ονομάζει τις στήλες: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Εντοπισμός από το αρχείο</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Χρειάζεται μόνο όταν ούτε το όνομα ούτε το περιεχόμενο του αρχείου το δηλώνουν.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Προεπιλογές</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Πρόσβαση ιστότοπου για σκέτες διαδρομές</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>προεπιλογή</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Οι γραμμές με πλήρη διεύθυνση παίρνουν αντί γι' αυτό την πρόσβαση ιστότοπου του κεντρικού τους υπολογιστή.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Η γλώσσα της πρόσβασης ιστότοπου</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Όταν μια παλιά διεύθυνση έχει ήδη καταχώριση</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Διατήρηση της καταχώρισης (παράλειψη της γραμμής)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Αντικατάσταση της καταχώρισης</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Παλιοί κεντρικοί υπολογιστές</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Οι πλήρεις διευθύνσεις ενός κεντρικού υπολογιστή που αυτή η εγκατάσταση δεν γνωρίζει δεν εισάγονται. Ορίστε την πρόσβαση ιστότοπου που αντιστοιχεί σε κάθε παλιό κεντρικό υπολογιστή, μία ανά σειρά: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Προεπισκόπηση</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Τίποτα δεν γράφεται ακόμη: η επόμενη σελίδα δείχνει τι θα έκανε κάθε γραμμή.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Εισαγωγή %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Η εισαγωγή αναιρέθηκε.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Η εισαγωγή αναιρέθηκε, εκτός από τις καταχωρίσεις που άλλαξαν μετά από αυτήν, οι οποίες διατηρήθηκαν.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Δεν ήταν δυνατή η αναίρεση της εισαγωγής: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Ημερομηνία</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Από</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Γραμμές</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created δημιουργήθηκαν, %updated αντικαταστάθηκαν, %skipped παραλείφθηκαν, %failed απέτυχαν.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Αναιρέθηκε</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Αναίρεση αυτής της εισαγωγής</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Κάθε καταχώριση που δημιούργησε η εισαγωγή αφαιρείται και κάθε καταχώριση που αντικατέστησε επαναφέρεται όπως ήταν, η τελευταία πρώτη. Πρώτα επιβεβαιώνετε ποιος είστε.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count καταχωρίσεις άλλαξαν μετά την εισαγωγή</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Αναίρεση και των καταχωρίσεων που άλλαξαν μετά την εισαγωγή</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Χωρίς αυτό διατηρούνται και η εισαγωγή αναιρείται εν μέρει (το --force της κονσόλας).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Αναίρεση αυτής της εισαγωγής;</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Αναίρεση εισαγωγής</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Καταχωρίσεις που γράφτηκαν</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from έως %to από %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Η εισαγωγή δεν έγραψε καμία καταχώριση.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Οι καταχωρίσεις που έγραψε η εισαγωγή</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Σειρά</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Παλιά διεύθυνση</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Καταχώριση</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Οδηγεί σε</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Αλλαγή</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Κατάσταση</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Ψευδώνυμο URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Μπαλαντέρ URL</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Ανακατεύθυνση</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Δημιουργήθηκε</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Αντικαταστάθηκε</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Εφαρμόστηκε</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Διατηρήθηκε</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Αναιρέθηκε εν μέρει</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Ιστορικό εισαγωγών (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Κάθε εισαγωγή χάρτη URL, η νεότερη πρώτη. Μια εισαγωγή μπορεί να αναιρεθεί ολόκληρη: κάθε καταχώριση που έγραψε επιστρέφει σε ό,τι υπήρχε πριν.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Δεν έχει εισαχθεί ακόμη κανένας χάρτης URL.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Εισαγωγές χαρτών URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Αριθμός</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Παραλείφθηκαν</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Απέτυχαν</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows γραμμές</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Εισήχθη ως εισαγωγή %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Προβολή της εισαγωγής ή αναίρεσή της</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Εισαγωγή άλλου αρχείου</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Τίποτα δεν έχει γραφτεί ακόμη. Κάθε γραμμή δείχνει τι θα έκανε η εισαγωγή με αυτήν. Οι επιλεγμένες γραμμές εισάγονται· αποεπιλέξτε μια γραμμή για να την παραλείψετε. Οι γραμμές που δεν είναι νέες μπορούν να εισαχθούν μόνο όταν επιτρέπεται η αντικατάσταση της παλιάς τους διεύθυνσης.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Η εισαγωγή δεν έγινε: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Καμία γραμμή δεν είναι επιλεγμένη για εισαγωγή.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Δοκιμαστική εκτέλεση: δεν γράφτηκε τίποτα.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Η εισαγωγή θα δημιουργούσε %created, θα αντικαθιστούσε %updated και θα παρέλειπε %skipped· %failed θα αποτύγχαναν.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Επισκόπηση</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Προς δημιουργία</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Προς αντικατάσταση</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Προς παράλειψη</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Με πρόβλημα</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Διατηρείται έως</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Νέος σχεδιασμός</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Αλλάξτε ό,τι καθορίζει τις γραμμές και σχεδιάστε ξανά το αρχείο. Οι επιλογές που αλλάξατε με το χέρι επαναφέρονται.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Οι γραμμές αυτών των κεντρικών υπολογιστών δεν εισάγονται, επειδή αυτή η εγκατάσταση δεν απαντά για αυτούς. Επιλέξτε την πρόσβαση ιστότοπου που αντιστοιχεί σε κάθε παλιό κεντρικό υπολογιστή.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Δεν εισήχθη</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Εμφάνιση</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Όλα</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Καμία γραμμή δεν έχει αυτή την κατάσταση.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Εμφάνιση όλων</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Οι γραμμές του αρχείου και τι θα έκανε η εισαγωγή με την καθεμία</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Εισαγωγή</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Νέα διεύθυνση</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Είδος</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Σημειώσεις</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Εισαγωγή της σειράς %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Όχι</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ναι</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Δοκιμαστική εκτέλεση</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Διατήρηση των επιλογών</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Σχέδιο ως CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Σχέδιο ως JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Απόρριψη</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Η Εισαγωγή γράφει τις επιλεγμένες γραμμές όλων των σελίδων ως μία εισαγωγή, που μπορεί να αναιρεθεί από το ιστορικό εισαγωγών· πρώτα επιβεβαιώνετε ποιος είστε. Η Δοκιμαστική εκτέλεση ελέγχει ξανά κάθε γραμμή με τον ιστότοπο και μετρά τι θα έκανε η εισαγωγή, χωρίς να γράψει.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Ανακατεύθυνση (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Ανακατεύθυνση μπαλαντέρ (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Μπαλαντέρ (άμεσος)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Νέα</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Αλλαγμένη</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Αμετάβλητη</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Διπλότυπη</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Σύγκρουση</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Χαλασμένος προορισμός</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Άγνωστος κεντρικός υπολογιστής</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Μη εισαγώγιμη</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Καθολικά ψευδώνυμα URL</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Ιστορικό εισαγωγών</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Χάρτες URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Ανακατευθύνσεις (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Αυτές οι ανακατευθύνσεις προέρχονται από εισαγωγές χαρτών URL: παλιές διευθύνσεις με ερώτημα (/index.php?id=12), προσωρινές ανακατευθύνσεις και ανακατευθύνσεις σε άλλους ιστότοπους. Ελέγχονται με βάση την πλήρη διεύθυνση, πριν από τα ψευδώνυμα URL και τους μπαλαντέρ. Μια μόνιμη ανακατεύθυνση σε σελίδα αυτού του ιστότοπου είναι αντίθετα ένα καθολικό ψευδώνυμο URL και αναφέρεται εκεί.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Αφαιρέθηκαν %count ανακατευθύνσεις.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Δεν υπάρχουν ανακατευθύνσεις. Δημιουργούνται με την εισαγωγή ενός χάρτη URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Ανακατευθύνσεις που ελέγχονται με βάση την πλήρη διεύθυνση</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Επιλογή</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Κατάσταση</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Από εισαγωγή</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Αφαίρεση</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Επιλογή %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Αφαίρεση %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Αφαίρεση αυτής της ανακατεύθυνσης;</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Αφαίρεση των επιλεγμένων ανακατευθύνσεων;</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Αφαίρεση επιλεγμένων</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Μια ανακατεύθυνση που αφαιρέθηκε σταματά να λειτουργεί αμέσως.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Επικολλημένο κείμενο</translation>
     </message>
 </context>
 </TS>

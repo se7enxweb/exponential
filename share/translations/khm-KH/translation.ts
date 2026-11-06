@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>កន្លែងដែលអាសយដ្ឋានទៅ: ផ្លូវនៃគេហទំព័រនេះ ឬអាសយដ្ឋានពេញលេញពេលបញ្ជូនបន្ត។ {1\} គឺជាអត្ថបទដែល * ទីមួយត្រូវនឹង។ ឧទាហរណ៍: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ត្រូវបានបញ្ជូនបន្តជាបណ្ដោះអាសន្នទៅអាសយដ្ឋាននេះ (HTTP 302)។</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>អ្នកទស្សនាត្រូវបានបញ្ជូនបន្តជាបណ្ដោះអាសន្ន (HTTP 302)។</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>ការបញ្ជូនបន្តបណ្ដោះអាសន្ន (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>បង្ហាញ %count ធាតុក្នុងមួយទំព័រ។</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>នាំចេញផែនទី URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>ទាញយកឈ្មោះក្លែង URL សកល ម៉ាស្ក URL និងការបញ្ជូនបន្តរបស់គេហទំព័រនេះជាឯកសារតែមួយ៖ ដើម្បីរក្សាទុក ដើម្បីកែក្នុងសៀវភៅបញ្ជី ហើយនាំចូលម្ដងទៀត ឬដើម្បីផ្ដល់ឱ្យម៉ាស៊ីនមេវេបជាច្បាប់សរសេរឡើងវិញ។</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>សូមជ្រើសរើសប្រភេទធាតុយ៉ាងហោចណាស់មួយ។</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>មិនអាចសរសេរឯកសារបានទេ។</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>អ្វីដែលត្រូវនាំចេញ</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>ទម្រង់</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>ធាតុ</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>ឈ្មោះក្លែង URL សកល (កម្មវិធីបកប្រែ URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>ព្រមទាំងឈ្មោះក្លែង URL ផ្ទាល់ខ្លួនរបស់មាតិកា</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>សរសេរដោយយកថ្នាំងជាគោលដៅ ឧទាហរណ៍ node:42។</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>ម៉ាស្ក URL</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>ការបញ្ជូនបន្ត</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ការចូលគេហទំព័រ</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ការចូលគេហទំព័រទាំងអស់</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>មានតែការបញ្ជូនបន្តប៉ុណ្ណោះដែលជាកម្មសិទ្ធិរបស់ការចូលគេហទំព័រ ឈ្មោះក្លែង URL និងម៉ាស្ក URL ត្រូវបាននាំចេញសម្រាប់ការចូលគេហទំព័រទាំងអស់។</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ភាសា</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>ភាសាទាំងអស់</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>នាំចេញ</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>នាំចូលផែនទី URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>នាំអាសយដ្ឋានរបស់គេហទំព័រចាស់មកក្នុងពេលតែមួយ៖ ឯកសារមួយរាយអាសយដ្ឋានចាស់នីមួយៗ និងទំព័រនៃគេហទំព័រនេះដែលវាជាកម្មសិទ្ធិនៅពេលនេះ។ អាសយដ្ឋានពិតប្រាកដក្លាយជាការបញ្ជូនបន្ត ឬឈ្មោះក្លែង URL អាសយដ្ឋានដែលមាន * ក្លាយជាម៉ាស្ក URL។ អ្នកឃើញថាជួរនីមួយៗនឹងធ្វើអ្វីមុនពេលសរសេរអ្វីមួយ ហើយការនាំចូលនីមួយៗអាចត្រូវបានមិនធ្វើវិញទាំងស្រុង។</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>តារាងនៃការនាំចូលផែនទី URL មិនទាន់មាននៅឡើយទេ។ សូមដំណើរការជំហានធ្វើបច្ចុប្បន្នភាព 6.0.15-url-map (./console exp:upgrade --apply) មុនពេលនាំចូល។</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>ការនាំចូលនេះលែងមានទៀតហើយ៖ វាបានផុតកំណត់បន្ទាប់ពីមួយថ្ងៃ ឬជាកម្មសិទ្ធិរបស់អ្នកប្រើម្នាក់ទៀត។ សូមផ្ទុកឯកសារឡើងម្ដងទៀត។</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>សូមជ្រើសរើសឯកសារ ឬបិទភ្ជាប់ជួរ។</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>ឯកសារធំជាង %size។</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>មិនអាចអានឯកសារបានទេ៖ %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>សូមជ្រើសរើសការចូលគេហទំព័រមួយនៃការដំឡើងនេះ។</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>មិនអាចរក្សាការនាំចូលនៅលើម៉ាស៊ីនមេបានទេ៖ %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>ឯកសារនេះ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ឯកសារ</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), ច្បាប់សរសេរឡើងវិញរបស់ Apache ឬ nginx អតិបរមា %size។</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>ឬបិទភ្ជាប់ជួរ</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>មួយធាតុក្នុងមួយជួរ ឧទាហរណ៍ /old-page,/new-page។ ជួរទីមួយអាចដាក់ឈ្មោះជួរឈរ៖ old_url, new_url, kind, siteaccess, language, note, status។</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>រកមើលពីឯកសារ</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>ត្រូវការតែនៅពេលដែលទាំងឈ្មោះ និងមាតិកានៃឯកសារមិនបានប្រាប់។</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>តម្លៃលំនាំដើម</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>ការចូលគេហទំព័រសម្រាប់ផ្លូវទទេ</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>លំនាំដើម</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>ជួរដែលមានអាសយដ្ឋានពេញយកការចូលគេហទំព័ររបស់ម៉ាស៊ីនរបស់វាជំនួសវិញ។</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>ភាសានៃការចូលគេហទំព័រ</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>នៅពេលអាសយដ្ឋានចាស់មានធាតុរួចហើយ</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>រក្សាធាតុ (រំលងជួរ)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>ជំនួសធាតុ</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>ម៉ាស៊ីនចាស់</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>អាសយដ្ឋានពេញនៃម៉ាស៊ីនដែលការដំឡើងនេះមិនស្គាល់ មិនត្រូវបាននាំចូលទេ។ សូមដាក់ឈ្មោះការចូលគេហទំព័រដែលម៉ាស៊ីនចាស់នីមួយៗតំណាង មួយក្នុងមួយជួរ៖ www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>មើលជាមុន</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>មិនទាន់មានអ្វីត្រូវបានសរសេរទេ៖ ទំព័របន្ទាប់បង្ហាញថាជួរនីមួយៗនឹងធ្វើអ្វី។</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>ការនាំចូល %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>ការនាំចូលត្រូវបានមិនធ្វើវិញ។</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>ការនាំចូលត្រូវបានមិនធ្វើវិញ លើកលែងតែធាតុដែលបានផ្លាស់ប្ដូរបន្ទាប់ពីវា ដែលត្រូវបានរក្សាទុក។</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>មិនអាចមិនធ្វើការនាំចូលវិញបានទេ៖ %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>កាលបរិច្ឆេទ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ដោយ</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>ជួរ</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>បានបង្កើត %created បានជំនួស %updated បានរំលង %skipped បរាជ័យ %failed។</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>បានមិនធ្វើវិញ</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>មិនធ្វើការនាំចូលនេះវិញ</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>ធាតុនីមួយៗដែលការនាំចូលបានបង្កើតត្រូវបានដកចេញ ហើយធាតុនីមួយៗដែលវាបានជំនួសត្រូវបានដាក់ត្រឡប់ដូចដើមវិញ ចាប់ពីចុងក្រោយ។ ដំបូងអ្នកបញ្ជាក់អត្តសញ្ញាណរបស់អ្នក។</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>ធាតុ %count បានផ្លាស់ប្ដូរបន្ទាប់ពីការនាំចូល</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>មិនធ្វើវិញផងដែរនូវធាតុដែលបានផ្លាស់ប្ដូរបន្ទាប់ពីការនាំចូល</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>បើគ្មានវា ពួកវាត្រូវបានរក្សាទុក ហើយការនាំចូលត្រូវបានមិនធ្វើវិញតែមួយផ្នែក (--force របស់កុងសូល)។</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>មិនធ្វើការនាំចូលនេះវិញឬ?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>មិនធ្វើការនាំចូលវិញ</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>ធាតុដែលបានសរសេរ</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ដល់ %to នៃ %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>ការនាំចូលមិនបានសរសេរធាតុណាមួយទេ។</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>ធាតុដែលការនាំចូលបានសរសេរ</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>ជួរ</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>អាសយដ្ឋានចាស់</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>ធាតុ</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>នាំទៅ</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ការផ្លាស់ប្ដូរ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ស្ថានភាព</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>ឈ្មោះក្លែង URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>ម៉ាស្ក URL</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>ការបញ្ជូនបន្ត</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>បានបង្កើត</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>បានជំនួស</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>បានអនុវត្ត</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>បានរក្សាទុក</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>បានមិនធ្វើវិញមួយផ្នែក</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>ប្រវត្តិនាំចូល (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>ការនាំចូលផែនទី URL ទាំងអស់ ថ្មីបំផុតមុនគេ។ ការនាំចូលមួយអាចត្រូវបានមិនធ្វើវិញទាំងស្រុង៖ ធាតុនីមួយៗដែលវាបានសរសេរត្រឡប់ទៅដូចមុនវិញ។</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>មិនទាន់មានផែនទី URL ណាត្រូវបាននាំចូលនៅឡើយទេ។</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>ការនាំចូលផែនទី URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>លេខ</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>បានរំលង</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>បរាជ័យ</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows ជួរ</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>បាននាំចូលជាការនាំចូល %id។</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>មើលការនាំចូល ឬមិនធ្វើវាវិញ</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>នាំចូលឯកសារផ្សេងទៀត</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>មិនទាន់មានអ្វីត្រូវបានសរសេរទេ។ ជួរនីមួយៗបង្ហាញថាការនាំចូលនឹងធ្វើអ្វីជាមួយវា។ ជួរដែលបានធីកត្រូវបាននាំចូល ដោះធីកជួរមួយដើម្បីទុកវាចោល។ ជួរដែលមិនមែនថ្មីអាចនាំចូលបានតែនៅពេលដែលអាសយដ្ឋានចាស់របស់វាអាចត្រូវបានជំនួស។</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>ការនាំចូលមិនត្រូវបានធ្វើទេ៖ %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>គ្មានជួរណាត្រូវបានធីកសម្រាប់នាំចូលទេ។</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>ដំណើរការសាកល្បង៖ គ្មានអ្វីត្រូវបានសរសេរទេ។</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>ការនាំចូលនឹងបង្កើត %created ជំនួស %updated និងរំលង %skipped ហើយ %failed នឹងបរាជ័យ។</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ទិដ្ឋភាពទូទៅ</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>ត្រូវបង្កើត</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>ត្រូវជំនួស</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>ត្រូវរំលង</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>មានបញ្ហា</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>រក្សាទុករហូតដល់</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>រៀបចំផែនការម្ដងទៀត</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>ផ្លាស់ប្ដូរអ្វីដែលកំណត់ជួរ ហើយរៀបចំផែនការឯកសារម្ដងទៀត។ ការធីកដែលអ្នកបានផ្លាស់ប្ដូរដោយដៃត្រូវបានកំណត់ឡើងវិញ។</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>ជួររបស់ម៉ាស៊ីនទាំងនេះមិនត្រូវបាននាំចូលទេ ពីព្រោះការដំឡើងនេះមិនឆ្លើយតបសម្រាប់ពួកវា។ សូមជ្រើសរើសការចូលគេហទំព័រដែលម៉ាស៊ីនចាស់នីមួយៗតំណាង។</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>មិនបាននាំចូល</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>បង្ហាញ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ទាំងអស់</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>គ្មានជួរណាមានស្ថានភាពនេះទេ។</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>បង្ហាញទាំងអស់</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>ជួរនៃឯកសារ និងអ្វីដែលការនាំចូលនឹងធ្វើជាមួយជួរនីមួយៗ</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>នាំចូល</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>អាសយដ្ឋានថ្មី</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ប្រភេទ</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>កំណត់ចំណាំ</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>នាំចូលជួរ %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ទេ</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>បាទ/ចាស</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ដំណើរការសាកល្បង</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>រក្សាការធីក</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>ផែនការជា CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>ផែនការជា JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>បោះបង់</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>នាំចូល សរសេរជួរដែលបានធីកនៃទំព័រទាំងអស់ជាការនាំចូលតែមួយ ដែលអាចត្រូវបានមិនធ្វើវិញពីប្រវត្តិនាំចូល ដំបូងអ្នកបញ្ជាក់អត្តសញ្ញាណរបស់អ្នក។ ដំណើរការសាកល្បងពិនិត្យជួរនីមួយៗជាមួយគេហទំព័រម្ដងទៀត ហើយរាប់ថាការនាំចូលនឹងធ្វើអ្វី ដោយមិនសរសេរ។</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>ការបញ្ជូនបន្ត (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>ការបញ្ជូនបន្តតាមម៉ាស្ក (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>ម៉ាស្ក URL (ផ្ទាល់)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>ថ្មី</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>បានផ្លាស់ប្ដូរ</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>មិនផ្លាស់ប្ដូរ</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>ស្ទួន</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>ជម្លោះ</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>គោលដៅខូច</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>ម៉ាស៊ីនមិនស្គាល់</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>មិនអាចនាំចូលបាន</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>ឈ្មោះក្លែង URL សកល</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>ប្រវត្តិនាំចូល</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>ផែនទី URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>ការបញ្ជូនបន្ត (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>ការបញ្ជូនបន្តទាំងនេះមកពីការនាំចូលផែនទី URL៖ អាសយដ្ឋានចាស់ដែលមានសំណួរ (/index.php?id=12) ការបញ្ជូនបន្តបណ្ដោះអាសន្ន និងការបញ្ជូនបន្តទៅគេហទំព័រផ្សេង។ ពួកវាត្រូវបានពិនិត្យលើអាសយដ្ឋានពេញ មុនឈ្មោះក្លែង URL និងម៉ាស្ក URL។ ការបញ្ជូនបន្តអចិន្ត្រៃយ៍ទៅទំព័រនៃគេហទំព័រនេះ គឺជាឈ្មោះក្លែង URL សកលជំនួសវិញ ហើយត្រូវបានរាយនៅទីនោះ។</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>បានដកការបញ្ជូនបន្ត %count ចេញ។</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>គ្មានការបញ្ជូនបន្តទេ។ ពួកវាត្រូវបានបង្កើតដោយការនាំចូលផែនទី URL។</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>ការបញ្ជូនបន្តដែលបានពិនិត្យលើអាសយដ្ឋានពេញ</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ជ្រើសរើស</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ស្ថានភាព</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>ពីការនាំចូល</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ដកចេញ</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>ជ្រើសរើស %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>ដកចេញ %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>ដកការបញ្ជូនបន្តនេះចេញឬ?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>ដកការបញ្ជូនបន្តដែលបានជ្រើសរើសចេញឬ?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>ដកចេញធាតុដែលបានជ្រើសរើស</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>ការបញ្ជូនបន្តដែលបានដកចេញឈប់ដំណើរការភ្លាមៗ។</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>អត្ថបទដែលបានបិទភ្ជាប់</translation>
     </message>
 </context>
 </TS>

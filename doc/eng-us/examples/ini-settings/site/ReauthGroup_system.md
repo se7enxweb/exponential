@@ -40,8 +40,10 @@ Enabled=true
 > a site-wide recording window (every user's changes); a user's own recording is not asked  
 > Static publishing: a publish, a rollback, saving a target, the deploy key and the switch; seeing, building and the  
 > preview are never asked  
+> URL maps: importing a file into the URL translator, the wildcards and the redirects, and undoing an import; the  
+> upload, the preview, the dry run and the history are never asked  
 
-Default: a list of 34: `setup/*`, `!setup/info`, `!setup/logs`, `!setup/logshealth`, `!setup/logsdigest`, `!setup/logsfeed`, `!setup/templatelist`, `!setup/templateview`, `!setup/menu`, `!setup/preloadstream`, `!setup/cronjobsstream`, `!setup/staticcachestream` ....
+Default: a list of 36: `setup/*`, `!setup/info`, `!setup/logs`, `!setup/logshealth`, `!setup/logsdigest`, `!setup/logsfeed`, `!setup/templatelist`, `!setup/templateview`, `!setup/menu`, `!setup/preloadstream`, `!setup/cronjobsstream`, `!setup/staticcachestream` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -69,7 +71,7 @@ Rules[]=migration/run
 Rules[]=migration/rollback
 Rules[]=migration/edit
 Rules[]=migration/dryrun SimulateButton
-# ... 14 more in the shipped file
+# ... 16 more in the shipped file
 */ ?>
 ```
 

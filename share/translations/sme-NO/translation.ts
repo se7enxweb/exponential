@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Gosa čujuhusat mannet: dán neahttabáikki bálggis, dahje ollislaš čujuhus ovddasdahkamis. {1\} lea teaksta maid vuosttaš * heivii. Ovdamearka: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ođđasitstivrejuvvojit gaskaboddosaččat dán čujuhussii (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Galledeaddjit ođđasitstivrejuvvojit gaskaboddosaččat (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Gaskaboddosaš ođđasitstivren (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Čájet %count elemeantta siiddus.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Olggosfievrrit URL-kártta</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Viečča dán neahttabáikki globála URL-aliasaid, buotmearkkaid ja ođđasitstivremiid ovtta fiilan: vurket, rievdadit rehkenastinárkkas ja sisafievrridit fas, dahje addit neahttabálvái ođđasitčállinnjuolggadussan.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Vállje unnimusat ovtta merkenšlája.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Fiilla ii sáhttán čállit.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Maid olggosfievrridit</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Hápmi</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Merkemat</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Globála URL-aliasat (URL-jorgaleaddji)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Maiddái sisdoalu iešráhkaduvvon URL-aliasat</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Čállojuvvojit nu ahte máddagis lea ulbmil, ovdamearkka dihte node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Buotmearkkat</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Ođđasitstivremat</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Neahttabáikebeassan</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Juohke neahttabáikebeassan</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Dušše ođđasitstivremat gullet neahttabáikebeassamii; URL-aliasat ja buotmearkkat olggosfievrriduvvojit juohke neahttabáikebeassamii.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Giella</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Juohke giella</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Olggosfievrrit</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Sisafievrrit URL-kártta</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Buvtte boares neahttabáikki čujuhusaid oktanaga: fiilu listtu juohke boares čujuhusa ja dán neahttabáikki siiddu masa dat dál gullá. Eksakta čujuhusat šaddet ođđasitstivremin dahje URL-aliasin, čujuhusat mas lea * šaddet buotmearkan. Oainnát maid juohke ráidu dagašii ovdal go mihkkege čállojuvvo, ja juohke sisafievrrideami sáhttá máhcahit ollásit.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL-kártaid sisafievrridantabeallat eai leat vel. Vuoje ođasmahttinlávkki 6.0.15-url-map (./console exp:upgrade --apply) ovdal go sisafievrridat.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Dát sisafievrrideapmi ii leat šat olámuttus: dat nogai beaivvi maŋŋá dahje gullá eará geavaheaddjái. Bija fiilla fas bajás.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Vállje fiilla dahje lasit ráidduid.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Fiila lea stuorát go %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Fiilla ii sáhte lohkat: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Vállje dán sajáiduhttima neahttabáikebeassama.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Sisafievrrideami ii sáhte vurket bálvás: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Fiila</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fiila</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache dahje nginx ođđasitčállinnjuolggadusat, eanemusat %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Dahje lasit ráidduid</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Okta merken juohke linjái, ovdamearkka dihte /boares-siidu,/ođđa-siidu. Vuosttaš linjá sáhttá namuhit čuolddaid: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Gávnnat fiillas</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Dárbbašuvvo dušše go ii fiilla namma iige sisdoallu dan dadjo.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Standárdat</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Neahttabáikebeassan bálgáide almmá hosttaid haga</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>standárda</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Ráiddut main lea ollis čujuhus ožžot baicca iežaset hostta neahttabáikebeassama.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Neahttabáikebeassama giella</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Go boares čujuhusas juo lea merken</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Doala merkema (njuike ráiddu badjel)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Buhtte merkema</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Boares hosttat</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Ollis čujuhusat hosttas maid dát sajáiduhttin ii dovdda eai sisafievrriduvvo. Namut makkár neahttabáikebeassama juohke boares hosta ovddasta, okta juohke linjái: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Ovdačájeheapmi</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Mihkkege ii čállojuvvo vel: boahtte siidu čájeha maid juohke ráidu dagašii.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Sisafievrrideapmi %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Sisafievrrideapmi máhcahuvvui.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Sisafievrrideapmi máhcahuvvui, earret merkemat mat rievdaduvvo dan maŋŋá, ja dat dollojuvvojedje.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Sisafievrrideami ii sáhttán máhcahit: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Beaivemearri</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Geas</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Ráiddut</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created ráhkaduvvon, %updated buhttejuvvon, %skipped hilgojuvvon, %failed eai lihkostuvvan.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Máhcahuvvon</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Máhcat dán sisafievrrideami</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Juohke merken maid sisafievrrideapmi ráhkadii váldojuvvo eret ja juohke merken maid dat buhttii bidjojuvvo ruovttoluotta dego lei, maŋimuš vuosttažin. Vuos duođaštat gii don leat.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count merkema rievdaduvvon sisafievrrideami maŋŋá</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Máhcat maiddái merkemiid mat rievdaduvvo sisafievrrideami maŋŋá</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Dan haga dat dollojuvvojit ja sisafievrrideapmi šaddá oasil máhcahuvvon (konsolla --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Máhcatgo dán sisafievrrideami?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Máhcat sisafievrrideami</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Čállojuvvon merkemat</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to %count gaskkas</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Sisafievrrideapmi ii čállán ovttage merkema.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Merkemat maid sisafievrrideapmi čálii</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Linjá</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Boares čujuhus</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Merken</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Doalvu</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Rievdadus</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Dilli</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL-alias</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Buotmearka</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Ođđasitstivren</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Ráhkaduvvon</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Buhttejuvvon</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Geavahuvvon</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Dollojuvvon</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Oasil máhcahuvvon</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Sisafievrridanhistorjá (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Juohke URL-kártta sisafievrrideapmi, ođđaseamos vuosttažin. Sisafievrrideami sáhttá máhcahit ollásit: juohke merken maid dat čálii máhccá dasa mii lei ovdal.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Ii oktage URL-kárta leat vel sisafievrriduvvon.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL-kártaid sisafievrrideamit</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Lohku</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Hilgojuvvon</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Eai lihkostuvvan</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows ráiddu</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Sisafievrriduvvon sisafievrrideapmin %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Geahča sisafievrrideami, dahje máhcat dan</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Sisafievrrit eará fiilla</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Mihkkege ii leat vel čállojuvvon. Juohke ráidu čájeha maid sisafievrrideapmi dagašii dainna. Merkejuvvon ráiddut sisafievrriduvvojit; sihko merkema jus háliidat guođđit ráiddu olggobeallái. Ráiddut mat eai leat ođđasat sáhttet sisafievrriduvvot dušše go sin boares čujuhusa oažžu buhttet.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Sisafievrrideapmi ii dahkkojuvvon: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Ii oktage ráidu leat merkejuvvon sisafievrrideapmái.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Geahččalanvuodjin: mihkkege ii čállojuvvon.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Sisafievrrideapmi ráhkadivččii %created, buhttešii %updated ja njuikešii %skipped badjel; %failed eai lihkostuvašii.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Čoahkkáigeassu</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Ráhkaduvvot</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Buhttejuvvot</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Njuikejuvvot badjel</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Váttisvuođain</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Vurkejuvvo gitta</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Pláne ođđasit</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Rievdat dan mii mearrida ráidduid ja pláne fiilla ođđasit. Merkemat maid rievdadit gieđain máhcahuvvojit.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Dáid hosttaid ráiddut eai sisafievrriduvvo, danin go dát sajáiduhttin ii vástit sin ovddas. Vállje makkár neahttabáikebeassama juohke boares hosta ovddasta.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Ii sisafievrriduvvon</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Čájet</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Buot</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Ii oktage ráidu leat dán dilis.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Čájet buot</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Fiilla ráiddut ja maid sisafievrrideapmi dagašii juohkehaččain</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Sisafievrrit</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Ođđa čujuhus</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Šládja</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Mearkkašumit</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Sisafievrrit linjá %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ii</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Juo</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Geahččalanvuodjin</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Doala merkemiid</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Plána CSV-hápmin</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Plána JSON-hápmin</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Bálkes</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Sisafievrrit čállá juohke siiddu merkejuvvon ráidduid ovtta sisafievrrideapmin, man sáhttá máhcahit sisafievrridanhistorjás; vuos duođaštat gii don leat. Geahččalanvuodjin dárkkista juohke ráiddu neahttabáikki vuostá ođđasit ja lohká maid sisafievrrideapmi dagašii, čálekeahttá.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Ođđasitstivren (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Buotmearka-ođđasitstivren (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Buotmearka (njuolga)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Ođđa</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Rievdaduvvon</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Rievdatkeahttá</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplikáhtta</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Riidu</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Boatkanan ulbmil</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Amas hosta</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Ii sáhte sisafievrridit</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Globála URL-aliasat</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Sisafievrridanhistorjá</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL-kártat</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Ođđasitstivremat (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Dát ođđasitstivremat bohtet URL-kártaid sisafievrrideamis: boares čujuhusat main lea jearaldat (/index.php?id=12), gaskaboddosaš ođđasitstivremat ja ođđasitstivremat eará neahttabáikkiide. Dat dárkkistuvvojit ollis čujuhusa mielde, ovdal URL-aliasaid ja buotmearkkaid. Bissovaš ođđasitstivren dán neahttabáikki siidui lea baicca globála URL-alias ja lea listtus doppe.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count ođđasitstivrema váldojuvvon eret.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Ođđasitstivremat eai leat. Dat ráhkaduvvojit go sisafievrrida URL-kártta.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Ođđasitstivremat mat dárkkistuvvojit ollis čujuhusa mielde</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Válljet</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Stáhtus</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Sisafievrrideamis</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Váldit eret</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Vállje %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Váldde eret %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Váldetgo eret dán ođđasitstivrema?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Váldetgo eret válljejuvvon ođđasitstivremiid?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Váldit eret válljejuvvon</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Eretváldon ođđasitstivren heaitá doaibmamis dakkaviđe.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Lasihuvvon teaksta</translation>
     </message>
 </context>
 </TS>

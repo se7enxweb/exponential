@@ -2,7 +2,7 @@
 title: Policies of the content module
 audience: developer, admin
 category: examples
-summary: The policy functions of the content module (26) and their limitations.
+summary: The policy functions of the content module (27) and their limitations.
 keywords: content, policy, policies, role, limitation, permission
 type: generated
 generated: exp:help:examples
@@ -464,7 +464,7 @@ $role->appendPolicy( 'content', 'translations' );
 
 ## urltranslator
 
-Checked by the views: [urltranslator](../module-views/content/urltranslator.md), [urlwildcards](../module-views/content/urlwildcards.md).
+Checked by the views: [urlexport](../module-views/content/urlexport.md), [urlredirects](../module-views/content/urlredirects.md), [urltranslator](../module-views/content/urltranslator.md), [urlwildcards](../module-views/content/urlwildcards.md).
 
 No limitations: the policy is all or nothing.
 
@@ -476,6 +476,24 @@ $role->appendPolicy( 'content', 'urltranslator' );
 
 ```tpl
 {if fetch( 'user', 'has_access_to', hash( 'module', 'content', 'function', 'urltranslator' ) )}
+    ...
+{/if}
+```
+
+## urltranslator_import
+
+Checked by the views: [urlimport](../module-views/content/urlimport.md), [urlimporthistory](../module-views/content/urlimporthistory.md).
+
+No limitations: the policy is all or nothing.
+
+```php
+// Give a role the policy (eZRole::appendPolicy( $module, $function, $limitations ))
+$role = eZRole::fetchByName( 'Editor' );
+$role->appendPolicy( 'content', 'urltranslator_import' );
+```
+
+```tpl
+{if fetch( 'user', 'has_access_to', hash( 'module', 'content', 'function', 'urltranslator_import' ) )}
     ...
 {/if}
 ```

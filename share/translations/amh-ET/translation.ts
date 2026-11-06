@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>አድራሻዎቹ የሚሄዱበት፦ የዚህ ጣቢያ ዱካ፣ ወይም አቅጣጫ ሲቀየር ሙሉ አድራሻ። {1\} የመጀመሪያው * የገጠመው ጽሑፍ ነው። ምሳሌ፦ dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ለጊዜው ወደዚህ አድራሻ ይዛወራሉ (HTTP 302)።</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>ጎብኚዎች ለጊዜው አቅጣጫቸው ይቀየራል (HTTP 302)።</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>ጊዜያዊ አቅጣጫ ማስቀየር (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85489,6 +85501,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>በአንድ ገጽ %count ንጥሎችን አሳይ።</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>የዩአርኤል ካርታውን ላክ</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>የዚህን ጣቢያ ሁለንተናዊ የዩአርኤል ተለዋጭ ስሞች፣ ምትክ ምልክቶች እና አቅጣጫ ማስቀየሪያዎች እንደ አንድ ፋይል አውርድ፦ ለማስቀመጥ፣ በተመን ሉህ ውስጥ አርትዕ አድርጎ እንደገና ለማስመጣት፣ ወይም ለድር አገልጋይ እንደ የመልሶ መጻፊያ ደንቦች ለመስጠት።</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>ቢያንስ አንድ የግቤት ዓይነት ይምረጡ።</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>ፋይሉ ሊጻፍ አልቻለም።</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>ምን እንደሚላክ</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>ቅርጸት</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>ግቤቶች</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>ሁለንተናዊ የዩአርኤል ተለዋጭ ስሞች (የዩአርኤል ተርጓሚ)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>የይዘት ብጁ የዩአርኤል ተለዋጭ ስሞችም</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>መስቀለኛ መንገዱ እንደ ዒላማ ተደርጎ ይጻፋል፣ ለምሳሌ node:42።</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>ምትክ ምልክቶች</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>አቅጣጫ ማስቀየሪያዎች</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>የጣቢያ መዳረሻ</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>እያንዳንዱ የጣቢያ መዳረሻ</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>የጣቢያ መዳረሻ ያላቸው አቅጣጫ ማስቀየሪያዎች ብቻ ናቸው፤ የዩአርኤል ተለዋጭ ስሞች እና ምትክ ምልክቶች ለእያንዳንዱ የጣቢያ መዳረሻ ይላካሉ።</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ቋንቋ</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>እያንዳንዱ ቋንቋ</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>ላክ</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>የዩአርኤል ካርታ አስመጣ</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>የአሮጌ ጣቢያን አድራሻዎች በአንድ ጊዜ አምጣ፦ ፋይሉ እያንዳንዱን አሮጌ አድራሻ እና አሁን የሚገናኝበትን የዚህን ጣቢያ ገጽ ይዘረዝራል። ትክክለኛ አድራሻዎች አቅጣጫ ማስቀየሪያዎች ወይም የዩአርኤል ተለዋጭ ስሞች ይሆናሉ፣ * ያላቸው አድራሻዎች ምትክ ምልክቶች ይሆናሉ። ምንም ነገር ከመጻፉ በፊት እያንዳንዱ ረድፍ ምን እንደሚያደርግ ታያለህ፣ እና እያንዳንዱ ማስመጣት በአጠቃላይ ሊቀለበስ ይችላል።</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>የዩአርኤል ካርታ ማስመጫ ሰንጠረዦች ገና የሉም። ከማስመጣትዎ በፊት የማሻሻያ ደረጃውን 6.0.15-url-map (./console exp:upgrade --apply) ያሂዱ።</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>ይህ ማስመጣት ከአሁን በኋላ አይገኝም፦ ከአንድ ቀን በኋላ ጊዜው አልፎበታል ወይም የሌላ ተጠቃሚ ነው። ፋይሉን እንደገና ይስቀሉ።</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>ፋይል ይምረጡ ወይም ረድፎቹን ይለጥፉ።</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>ፋይሉ ከ %size ይበልጣል።</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>ፋይሉ ሊነበብ አይችልም፦ %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>የዚህን ጭነት የጣቢያ መዳረሻ ይምረጡ።</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>ማስመጣቱ በአገልጋዩ ላይ ሊቀመጥ አይችልም፦ %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>ፋይሉ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ፋይል</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV፣ JSON፣ Excel (.xlsx)፣ OpenDocument (.ods)፣ Apache ወይም nginx የመልሶ መጻፊያ ደንቦች፣ ቢበዛ %size።</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>ወይም ረድፎቹን ይለጥፉ</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>በአንድ መስመር አንድ ረድፍ፣ ለምሳሌ /old-page,/new-page። የመጀመሪያው መስመር ዓምዶቹን ሊሰይም ይችላል፦ old_url, new_url, kind, siteaccess, language, note, status።</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>ከፋይሉ ለይ</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>የሚያስፈልገው የፋይሉ ስምም ሆነ ይዘቱ ካልገለጹ ብቻ ነው።</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>ነባሪዎች</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>የባዶ ዱካዎች የጣቢያ መዳረሻ</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>ነባሪ</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>ሙሉ አድራሻ ያላቸው ረድፎች በምትኩ የአስተናጋጃቸውን የጣቢያ መዳረሻ ይወስዳሉ።</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>የጣቢያ መዳረሻው ቋንቋ</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>አሮጌ አድራሻ አስቀድሞ ግቤት ሲኖረው</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>ግቤቱን አቆይ (ረድፉን ዝለል)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>ግቤቱን ተካ</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>አሮጌ አስተናጋጆች</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>ይህ ጭነት የማያውቀው አስተናጋጅ ሙሉ አድራሻዎች አይመጡም። እያንዳንዱ አሮጌ አስተናጋጅ የሚወክለውን የጣቢያ መዳረሻ በአንድ መስመር አንድ ይሰይሙ፦ www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>ቅድመ እይታ</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>ገና ምንም አልተጻፈም፦ ቀጣዩ ገጽ እያንዳንዱ ረድፍ ምን እንደሚያደርግ ያሳያል።</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>ማስመጣት %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>ማስመጣቱ ተቀልብሷል።</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>ማስመጣቱ ተቀልብሷል፣ ከእሱ በኋላ ከተቀየሩት ግቤቶች በስተቀር፤ እነሱ ተቀምጠዋል።</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>ማስመጣቱ ሊቀለበስ አልቻለም፦ %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>ቀን</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>በ</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>ረድፎች</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created ተፈጥረዋል፣ %updated ተተክተዋል፣ %skipped ተዘለዋል፣ %failed አልተሳኩም።</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>ተቀልብሷል</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>ይህን ማስመጣት ቀልብስ</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>ማስመጣቱ የፈጠረው እያንዳንዱ ግቤት ይወገዳል እና የተካው እያንዳንዱ ግቤት እንደነበረ ይመለሳል፣ የመጨረሻው መጀመሪያ። በመጀመሪያ ማንነትዎን ያረጋግጣሉ።</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>ከማስመጣቱ በኋላ የተቀየሩ %count ግቤቶች</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>ከማስመጣቱ በኋላ የተቀየሩትን ግቤቶችም ቀልብስ</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>ያለዚህ እነሱ ይቀመጣሉ እና ማስመጣቱ በከፊል ይቀለበሳል (የኮንሶሉ --force)።</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>ይህን ማስመጣት ልቀልብስ?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>ማስመጣትን ቀልብስ</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>የተጻፉ ግቤቶች</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>ከ %count ውስጥ %from እስከ %to</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>ማስመጣቱ ምንም ግቤት አልጻፈም።</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>ማስመጣቱ የጻፋቸው ግቤቶች</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>መስመር</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>አሮጌ አድራሻ</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>ግቤት</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>ወደ ይመራል</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ለውጥ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ሁኔታ</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>የዩአርኤል ተለዋጭ ስም</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>ምትክ ምልክት</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>አቅጣጫ ማስቀየሪያ</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>ተፈጥሯል</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>ተተክቷል</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>ተተግብሯል</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>ተቀምጧል</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>በከፊል ተቀልብሷል</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>የማስመጣት ታሪክ (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>እያንዳንዱ የዩአርኤል ካርታ ማስመጣት፣ አዲሱ መጀመሪያ። ማስመጣት በአጠቃላይ ሊቀለበስ ይችላል፦ የጻፈው እያንዳንዱ ግቤት ከዚህ በፊት ወደነበረው ይመለሳል።</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>እስካሁን ምንም የዩአርኤል ካርታ አልመጣም።</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>የዩአርኤል ካርታዎች ማስመጣቶች</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>ቁጥር</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>ተዘሏል</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>አልተሳካም</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file፣ %format፣ %rows ረድፎች</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>እንደ ማስመጣት %id መጥቷል።</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>ማስመጣቱን ይመልከቱ ወይም ይቀልብሱት</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>ሌላ ፋይል አስመጣ</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>ገና ምንም አልተጻፈም። እያንዳንዱ ረድፍ ማስመጣቱ በእሱ ምን እንደሚያደርግ ያሳያል። ምልክት የተደረገባቸው ረድፎች ይመጣሉ፤ ረድፍን ለመተው ምልክቱን ያንሱ። አዲስ ያልሆኑ ረድፎች ሊመጡ የሚችሉት አሮጌ አድራሻቸው ሊተካ ሲፈቀድ ብቻ ነው።</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>ማስመጣቱ አልተደረገም፦ %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>ለማስመጣት ምልክት የተደረገበት ረድፍ የለም።</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>የሙከራ ሩጫ፦ ምንም አልተጻፈም።</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>ማስመጣቱ %created ይፈጥራል፣ %updated ይተካል እና %skipped ይዘላል፤ %failed ይወድቃሉ።</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>አጠቃላይ እይታ</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>የሚፈጠሩ</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>የሚተኩ</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>የሚዘለሉ</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>ችግር ያለባቸው</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>እስከ ድረስ ይቀመጣል</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>እንደገና አቅድ</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>ረድፎቹን የሚወስነውን ቀይረው ፋይሉን እንደገና ያቅዱ። በእጅ የቀየሯቸው ምልክቶች ዳግም ይጀመራሉ።</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>የእነዚህ አስተናጋጆች ረድፎች አይመጡም፣ ምክንያቱም ይህ ጭነት ለእነሱ ምላሽ አይሰጥም። እያንዳንዱ አሮጌ አስተናጋጅ የሚወክለውን የጣቢያ መዳረሻ ይምረጡ።</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>አልመጣም</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>አሳይ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ሁሉም</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>ይህ ሁኔታ ያለው ረድፍ የለም።</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ሁሉንም አሳይ</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>የፋይሉ ረድፎች እና ማስመጣቱ በእያንዳንዳቸው ምን እንደሚያደርግ</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>አስመጣ</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>አዲስ አድራሻ</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ዓይነት</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>ማስታወሻዎች</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>መስመር %line አስመጣ</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>አይ</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>አዎ</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>የሙከራ ሩጫ</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>ምልክቶቹን አቆይ</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>ዕቅድ እንደ CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>ዕቅድ እንደ JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>ጣል</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>አስመጣ የእያንዳንዱን ገጽ ምልክት የተደረገባቸውን ረድፎች እንደ አንድ ማስመጣት ይጽፋል፣ ይህም ከማስመጣት ታሪክ ሊቀለበስ ይችላል፤ በመጀመሪያ ማንነትዎን ያረጋግጣሉ። የሙከራ ሩጫ እያንዳንዱን ረድፍ ከጣቢያው ጋር እንደገና ያረጋግጣል እና ማስመጣቱ የሚያደርገውን ይቆጥራል፣ ሳይጽፍ።</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>አቅጣጫ ማስቀየሪያ (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>የምትክ ምልክት አቅጣጫ ማስቀየሪያ (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>ምትክ ምልክት (ቀጥታ)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>አዲስ</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>ተቀይሯል</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>ያልተቀየረ</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>ተደጋጋሚ</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>ግጭት</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>የተሰበረ ዒላማ</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>ያልታወቀ አስተናጋጅ</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>ሊመጣ የማይችል</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>ሁለንተናዊ የዩአርኤል ተለዋጭ ስሞች</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>የማስመጣት ታሪክ</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>የዩአርኤል ካርታዎች</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>አቅጣጫ ማስቀየሪያዎች (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>እነዚህ አቅጣጫ ማስቀየሪያዎች ከዩአርኤል ካርታ ማስመጣቶች የመጡ ናቸው፦ መጠይቅ ያላቸው አሮጌ አድራሻዎች (/index.php?id=12)፣ ጊዜያዊ አቅጣጫ ማስቀየሪያዎች እና ወደ ሌሎች ጣቢያዎች የሚወስዱ አቅጣጫ ማስቀየሪያዎች። ከዩአርኤል ተለዋጭ ስሞች እና ከምትክ ምልክቶች በፊት በሙሉ አድራሻው ላይ ይፈተሻሉ። ወደዚህ ጣቢያ ገጽ የሚወስድ ቋሚ አቅጣጫ ማስቀየሪያ በምትኩ ሁለንተናዊ የዩአርኤል ተለዋጭ ስም ሲሆን እዚያ ይዘረዘራል።</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count አቅጣጫ ማስቀየሪያዎች ተወግደዋል።</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>ምንም አቅጣጫ ማስቀየሪያዎች የሉም። የሚፈጠሩት የዩአርኤል ካርታ በማስመጣት ነው።</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>በሙሉ አድራሻው ላይ የሚፈተሹ አቅጣጫ ማስቀየሪያዎች</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ምረጥ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ሁኔታ</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>ከማስመጣት</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>አስወግድ</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address ምረጥ</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address አስወግድ</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>ይህን አቅጣጫ ማስቀየሪያ ላስወግድ?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>የተመረጡትን አቅጣጫ ማስቀየሪያዎች ላስወግድ?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>የተመረጡትን አስወግድ</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>የተወገደ አቅጣጫ ማስቀየሪያ ወዲያውኑ መሥራት ያቆማል።</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>የተለጠፈ ጽሑፍ</translation>
     </message>
 </context>
 </TS>

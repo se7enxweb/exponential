@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Ahová a címek vezetnek: a webhely egy elérési útja, átirányításkor pedig teljes cím. A {1\} az a szöveg, amelynek az első * megfelelt. Példa: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ideiglenesen erre a címre lesznek átirányítva (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>A látogatók ideiglenes átirányítást kapnak (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Ideiglenes átirányítás (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85521,6 +85533,625 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>%count elem megjelenítése oldalanként.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL-térkép exportálása</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Töltse le a webhely globális URL-álneveit, URL-helyettesítő mintáit és átirányításait egyetlen fájlban: megőrzéshez, táblázatkezelőben való szerkesztéshez és újbóli importáláshoz, vagy egy webszervernek átírási szabályokként.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Válasszon legalább egy bejegyzéstípust.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>A fájlt nem sikerült írni.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Mit exportáljon</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Formátum</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Bejegyzések</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Globális URL-álnevek (az URL-fordító)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>A tartalmak egyéni URL-álnevei is</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>A csomóponttal mint céllal írva, például node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>URL-helyettesítő minták</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Átirányítások</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Webhely-hozzáférés</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Minden webhely-hozzáférés</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Csak az átirányítások tartoznak webhely-hozzáféréshez; az URL-álnevek és az URL-helyettesítő minták minden webhely-hozzáféréshez exportálódnak.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Nyelv</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Minden nyelv</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Exportálás</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL-térkép importálása</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Hozza át egy régi webhely címeit egy lépésben: egy fájl felsorolja az egyes régi címeket és azt az oldalt, amelyhez most tartoznak ezen a webhelyen. A pontos címekből átirányítások vagy URL-álnevek, a *-ot tartalmazó címekből URL-helyettesítő minták lesznek. Mielőtt bármi íródna, láthatja, mit tenne az egyes sorokkal, és minden importálás egészében visszavonható.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Az URL-térkép-importálások táblái még nem léteznek. Importálás előtt futtassa a 6.0.15-url-map frissítési lépést (./console exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Ez az importálás már nem érhető el: egy nap után lejárt, vagy egy másik felhasználóhoz tartozik. Töltse fel újra a fájlt.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Válasszon fájlt, vagy illessze be a sorokat.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>A fájl nagyobb, mint %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>A fájl nem olvasható: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Válasszon egy webhely-hozzáférést ebből a telepítésből.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Az importálás nem tárolható a szerveren: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>A fájl</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fájl</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache vagy nginx átírási szabályok, legfeljebb %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Vagy illessze be a sorokat</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Soronként egy sor, például /regi-oldal,/uj-oldal. Az első sor megnevezheti az oszlopokat: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Megállapítás a fájlból</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Csak akkor szükséges, ha sem a fájl neve, sem a tartalma nem árulja el.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Alapértékek</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Puszta útvonalak webhely-hozzáférése</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>alapértelmezett</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>A teljes címet tartalmazó sorok ehelyett a gazdagépük webhely-hozzáférését kapják.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>A webhely-hozzáférés nyelve</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Ha egy régi címhez már van bejegyzés</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>A bejegyzés megtartása (a sor kihagyása)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>A bejegyzés cseréje</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Régi gazdagépek</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Az olyan gazdagépek teljes címei, amelyeket ez a telepítés nem ismer, nem kerülnek importálásra. Adja meg, melyik webhely-hozzáférésnek felel meg az egyes régi gazdagépek, soronként egyet: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Előnézet</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Még semmi sincs írva: a következő oldal megmutatja, mit tenne az egyes sorokkal.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Importálás: %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Az importálás visszavonva.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Az importálás visszavonva, kivéve az utána módosított bejegyzéseket, amelyek megmaradtak.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Az importálást nem sikerült visszavonni: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dátum</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Végrehajtó</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Sorok</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created létrehozva, %updated cserélve, %skipped kihagyva, %failed sikertelen.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Visszavonva</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Az importálás visszavonása</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Az importálás által létrehozott minden bejegyzés törlődik, és minden lecserélt bejegyzés visszaáll korábbi állapotába, a legutóbbitól kezdve. Előbb igazolja, hogy Ön az.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count bejegyzés módosult az importálás után</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Az importálás után módosított bejegyzések visszavonása is</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Enélkül ezek megmaradnak, és az importálás csak részben lesz visszavonva (a konzol --force kapcsolója).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Visszavonja ezt az importálást?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Importálás visszavonása</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Írt bejegyzések</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from – %to, összesen %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Az importálás nem írt bejegyzést.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Az importálás által írt bejegyzések</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Sor</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Régi cím</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Bejegyzés</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Cél</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Változás</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Állapot</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL-álnév</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>URL-helyettesítő minta</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Átirányítás</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Létrehozva</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Cserélve</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Alkalmazva</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Megtartva</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Részben visszavonva</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Importálási előzmények (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Az URL-térképek összes importálása, a legújabb elöl. Egy importálás egészében visszavonható: minden általa írt bejegyzés visszaáll a korábbi állapotára.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Még nem lett URL-térkép importálva.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL-térképek importálásai</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Szám</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Kihagyva</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Sikertelen</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows sor</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Importálva, azonosító: %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Az importálás megtekintése vagy visszavonása</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Másik fájl importálása</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Még semmi sincs írva. Minden sor mutatja, mit tenne vele az importálás. A bejelölt sorok importálódnak; a jelölés törlésével kihagyhat egy sort. A nem új sorok csak akkor importálhatók, ha a régi címük lecserélhető.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Az importálás nem történt meg: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Egyetlen sor sincs bejelölve importálásra.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Próbafuttatás: semmi sem íródott.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Az importálás %created bejegyzést hozna létre, %updated bejegyzést cserélne és %skipped bejegyzést hagyna ki; %failed sikertelen lenne.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Áttekintés</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Létrehozandó</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Cserélendő</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Kihagyandó</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Hibás</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Megőrizve eddig</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Újratervezés</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Módosítsa, mi határozza meg a sorokat, és tervezze újra a fájlt. A kézzel módosított jelölések visszaállnak.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Ezeknek a gazdagépeknek a sorai nem importálódnak, mert ez a telepítés nem szolgálja ki őket. Válassza ki, melyik webhely-hozzáférésnek felel meg az egyes régi gazdagépek.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Nem importálva</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Megjelenítés</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Mind</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Egyik sor sincs ebben az állapotban.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Összes megjelenítése</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>A fájl sorai és az, hogy az importálás mit tenne az egyes sorokkal</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importálás</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Új cím</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Fajta</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Megjegyzések</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>%line. sor importálása</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nem</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Igen</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Próbafuttatás</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Jelölések megtartása</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Terv CSV-ként</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Terv JSON-ként</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Elvetés</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Az importálás minden oldal bejelölt sorait egyetlen importálásként írja, amely az importálási előzményekből visszavonható; előbb igazolja, hogy Ön az. A próbafuttatás minden sort újra összevet a webhellyel, és írás nélkül megszámolja, mit tenne az importálás.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Átirányítás (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Helyettesítő mintás átirányítás (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>URL-helyettesítő minta (közvetlen)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Új</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Módosult</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Változatlan</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Ismétlődő</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Ütközés</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Hibás cél</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Ismeretlen gazdagép</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Nem importálható</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Globális URL-álnevek</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Importálási előzmények</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL-térképek</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Átirányítások (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Ezek az átirányítások URL-térkép-importálásokból származnak: lekérdezést tartalmazó régi címek (/index.php?id=12), ideiglenes átirányítások és más webhelyekre mutató átirányítások. A teljes cím alapján kerülnek ellenőrzésre, az URL-álnevek és az URL-helyettesítő minták előtt. Az e webhely egy oldalára mutató állandó átirányítás helyette globális URL-álnév, és ott szerepel.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count átirányítás eltávolítva.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Nincsenek átirányítások. URL-térkép importálásával jönnek létre.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>A teljes cím alapján ellenőrzött átirányítások</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Kijelölés</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Állapot</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Importálásból</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Eltávolítás</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address kijelölése</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address eltávolítása</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Eltávolítja ezt az átirányítást?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Eltávolítja a kijelölt átirányításokat?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Kijelöltek eltávolítása</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Az eltávolított átirányítás azonnal megszűnik működni.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Beillesztett szöveg</translation>
     </message>
 </context>
 </TS>

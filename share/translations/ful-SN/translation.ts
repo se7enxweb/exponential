@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Ɗo ñiiɓirde ɗe yaaroto: laawol lowre ndee, walla ñiiɓirde timmuɗo so ina ruttinee. {1\} ko binndol ngol * adannde jaɓi. Ko wayi no: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ɗum jahnaama e ñiiɓirde ndee e sahaa seeɗa (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Jillotooɓe ɓe jahnaama e sahaa seeɗa (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Jahngol sahaa seeɗa (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Hollu %count huunde ka hello kala.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Yaltin kaartal URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Telchin URL alias lowre ndee fof, wildcardji e jahnɗe ɗe e nder fichier gooto: ngam mooftude ɗum, waylude ɗum e tabelooji refti naattinde ɗum kadi, walla hokkude ɗum serveur web no doosɗe binndugol URL.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Suɓo hay sifaa winndannde gooto.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Fichier oo waawaa winndeede.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Ko yaltinte</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Mbaydi</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Winndanɗe</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>URL alias lowre ndee fof (firoowo URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Kadi URL alias jeyaaɗi e loowdi</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Winndaama e nokkuure no fannu, misal node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Wildcardji</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Jahnɗe</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Siteaccess fof</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Ko jahnɗe tan njeyaa e siteaccess; URL alias e wildcardji ina yaltinee ngam siteaccess fof.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Ɗemngal</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Ɗemɗe fof</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Yaltin</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Naattin kaartal URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Naatnu ñiiɓirɗe lowre ɓooynde e laawol gootol: fichier ina limta ñiiɓirde ɓooynde kala e hello lowre ndee mo o jeyaa jooni. Ñiiɓirɗe pellitiiɗe ina ngonta jahnɗe walla URL alias, ñiiɓirɗe jogiiɗe * ina ngonta wildcardji. A yiyay ko diidol kala waɗata hade huunde fof winndeede, naattingol kala ina waawi firteede fof.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Tabelooji naattinɗe kaartale URL ngalaa tawo. Huutoro daawal hesɗitingol 6.0.15-url-map (./console exp:upgrade --apply) hade naattinde.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Naattingol ngol heptaaka kadi: sahaa mum gasii caggal ñalnde walla ngol jeyaa ko kuutoro goɗɗo. Loow fichier oo kadi.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Suɓo fichier walla ɗakku diidi ɗi.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Fichier oo ɓurii %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Fichier oo waawaa janngeede: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Suɓo siteaccess e ngal aafgol.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Naattingol ngol waawaa mooftaade e serveur: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Fichier oo</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fichier</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), doosɗe binndugol Apache walla nginx, ko ɓuri fof %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Walla ɗakku diidi ɗi</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Diidol gooto e kala laylaytol, misal /hello-ɓooyngo,/hello-kesungo. Laylaytol arandol ina waawi inndude kolonnuuji ɗi: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Heɓ ɗum e fichier oo</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Ina soklaa tan so innde walla loowdi fichier oo wiyaani ɗum.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Ko woowaa</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Siteaccess laabi ɗi ngalaa serveur</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>woowaa</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Diidi jogiiɗi ñiiɓirde timmunde ina ŋoofta siteaccess serveur mum'en.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Ɗemngal siteaccess oo</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>So ñiiɓirde ɓooynde ina jogii winndannde gila</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Mooftu winndannde ndee (acc diidol ngol)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Lomtin winndannde ndee</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Serveur ɓooyɗi</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Ñiiɓirɗe timmuɗe serveur mo aafgol ngol anndaa naattinteeke. Innde siteaccess mo serveur ɓooyɗo kala lomtii, gooto e kala laylaytol: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Yiyde adan</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Hay huunde winndaaka tawo: hello garoowo ngo ina hollita ko diidol kala waɗata.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Naattingol %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Naattingol ngol firtaama.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Naattingol ngol firtaama, si wonaa winndanɗe waylaaɗe caggal mum, ɗe mooftaa.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Naattingol ngol waawaa firteede: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Ñalnde</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Baɗɗo</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Diidi</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created tagaama, %updated lomtaama, %skipped acciaama, %failed ronkii.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Firtaama</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Firtu naattingol ngol</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Winndannde kala nde naattingol ngol tagi ina ittee, winndannde kala nde ngol lomti ina artira no woorunoo, sakkitiinde nde adan. Ada teeŋtina ko an woni adan.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count winndanɗe waylaama caggal naattingol ngol</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Firtu kadi winndanɗe waylaaɗe caggal naattingol ngol</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>So alaa ɗum ɗe mooftete, naattingol ngol firtete seeɗa tan (--force console oo).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>A yiɗii no feewi firtude naattingol ngol?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Firtu naattingol</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Winndanɗe winndaaɗe</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from haa %to e %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Naattingol ngol winndaani hay winndannde.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Winndanɗe ɗe naattingol ngol winndi</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Laylaytol</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Ñiiɓirde ɓooynde</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Winndannde</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Ina yaara haa</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Waylo</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ngonka</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL alias</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>URL wildcard</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Jahngol</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Tagaama</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Lomtaama</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Huutoraama</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Mooftaama</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Firtaama seeɗa</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Daartol naattinɗe (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Naattingol kaartal URL kala, ɗi ɓuri kesude adan. Naattingol ina waawi firteede fof: winndannde kala nde ngol winndi ina artoo e ko woodnoo ado mum.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Hay kaartal URL naattinaaka tawo.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Naattinɗe kaartale URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Limoore</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Acciaama</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ronkii</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows diidi</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Naattinaama no naattingol %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Yiy naattingol ngol, walla firtu ngol</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Naattin fichier goɗɗo</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Hay huunde winndaaka tawo. Diidol kala ina hollita ko naattingol ngol waɗata e mum. Diidi maantinaaɗi ina naattinee; itt maande diidol ngam acceede ngol. Diidi ɗi kesaani ina naattinee tan so ñiiɓirde mum ɓooynde ina waawi lomteede.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Naattingol ngol waɗaaka: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Hay diidol maantinaaka ngam naattingol.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Dogga ndaarugol: hay huunde winndaaka.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Naattingol ngol tagatno %created, lomtatno %updated, accatno %skipped; %failed ronkatno.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Ndaarngal kuuɓal</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Ko tagetee</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Ko lomtetee</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Ko accetee</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Ko jogii caɗeele</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Mooftaama haa</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Feewnu kadi</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Waylu ko ñaawata diidi ɗi refti feewnu fichier oo kadi. Maanɗe ɗe waylu-ɗaa e juuɗe maa ina artiree.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Diidi serveur ɗii naattinteeke, ngam aafgol ngol jaabtaaki ɗum'en. Suɓo siteaccess mo serveur ɓooyɗo kala lomtii.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Naattinaaka</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Hollu</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Fof</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Hay diidol jogaaki ngonka ngoo.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hollu fof</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Diidi fichier oo e ko naattingol ngol waɗata e kala gooto</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Naattin</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Ñiiɓirde kesre</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Sifaa</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Tintinali</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Naattin laylaytol %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Alaa</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Eey</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Dogga ndaarugol</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Mooftu maanɗe ɗe</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Feewnde no CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Feewnde no JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Werlu</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Naattin ina winnda diidi maantinaaɗi hello kala no naattingol gootol, ngol waawi firteede e daartol naattinɗe; ada teeŋtina ko an woni adan. Dogga ndaarugol ina ƴeewta diidol kala e lowre ndee kadi, ina limta ko naattingol ngol waɗatno, tawa winndaaka.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Jahngol (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Jahngol wildcard (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>URL wildcard (no fewndiri)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Kesum</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Waylaama</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Waylaaka</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Ɗiɗɗinaama</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Luural</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Fannu bonɗo</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Serveur anndaaka</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Waawaa naattineede</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>URL alias lowre ndee fof</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Daartol naattinɗe</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Kaartale URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Jahnɗe (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Jahnɗe ɗee iwi ko e naattinɗe kaartale URL: ñiiɓirɗe ɓooyɗe jogiiɗe ƴamal (/index.php?id=12), jahnɗe sahaa seeɗa e jahnɗe faade e lowe goɗɗe. Ɗe ƴeewtetee e ñiiɓirde timmunde, hade URL alias e wildcardji. Jahngol duumiingol faade e hello lowre ndee ko URL alias lowre ndee fof, ina winndaa toon.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Jahnɗe %count ittaama.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Jahnɗe ngalaa. Ɗe tagetee ko naattingol kaartal URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Jahnɗe ƴeewtiraaɗe e ñiiɓirde timmunde</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Suɓo</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Statut</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Iwde e naattingol</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Itt</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Suɓo %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Itt %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>A yiɗii no feewi ittude jahngol ngol?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>A yiɗii no feewi ittude jahnɗe suɓaaɗe ɗe?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Itt suɓaaɗi</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Jahngol ittaangol ina dartoo golle ɗoon e ɗoon.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Binndi ɗakkaaɗi</translation>
     </message>
 </context>
 </TS>

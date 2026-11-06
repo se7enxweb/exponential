@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Kam adresy vedú: cesta tejto lokality alebo pri presmerovaní úplná adresa. {1\} je text, ktorému zodpovedala prvá *. Príklad: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>sú dočasne presmerovaní na túto adresu (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Návštevníci sú dočasne presmerovaní (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Dočasné presmerovanie (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85521,6 +85533,625 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Zobraziť na stránke tento počet položiek: %count.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Export mapy URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Stiahnite si globálne aliasy URL, zástupné znaky a presmerovania tejto lokality ako jeden súbor: na uchovanie, na úpravu v tabuľkovom procesore a opätovný import alebo na odovzdanie webovému serveru ako pravidlá prepisovania.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Vyberte aspoň jeden druh záznamov.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Súbor sa nepodarilo zapísať.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Čo exportovať</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Formát</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Záznamy</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Globálne aliasy URL (prekladač URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Aj vlastné aliasy URL obsahu</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Zapisujú sa s uzlom ako cieľom, napríklad node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Zástupné znaky</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Presmerovania</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Prístup k lokalite</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Každý prístup k lokalite</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>K prístupu k lokalite patria len presmerovania; aliasy URL a zástupné znaky sa exportujú pre všetky prístupy k lokalite.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Jazyk</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Každý jazyk</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Exportovať</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Import mapy URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Preneste adresy starej lokality naraz: súbor uvádza každú starú adresu a stránku tejto lokality, ku ktorej teraz patrí. Presné adresy sa stanú presmerovaniami alebo aliasmi URL, adresy s * sa stanú zástupnými znakmi. Skôr ako sa čokoľvek zapíše, uvidíte, čo by urobil každý riadok, a každý import sa dá vrátiť ako celok.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Tabuľky importov máp URL ešte neexistujú. Pred importom spustite krok aktualizácie 6.0.15-url-map (./console exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Tento import už nie je k dispozícii: po jednom dni vypršal alebo patrí inému používateľovi. Nahrajte súbor znova.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Vyberte súbor alebo vložte riadky.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Súbor je väčší ako %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Súbor sa nedá prečítať: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Vyberte prístup k lokalite tejto inštalácie.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Import sa nedá uchovať na serveri: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Súbor</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Súbor</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), pravidlá prepisovania Apache alebo nginx, najviac %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Alebo vložte riadky</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Jeden záznam na riadok, napríklad /stara-stranka,/nova-stranka. Prvý riadok môže pomenovať stĺpce: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Zistiť zo súboru</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Potrebné len vtedy, keď to neuvádza ani názov, ani obsah súboru.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Predvolené hodnoty</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Prístup k lokalite pre cesty bez hostiteľa</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>predvolený</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Riadky s úplnou adresou namiesto toho dostanú prístup k lokalite svojho hostiteľa.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Jazyk prístupu k lokalite</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Keď stará adresa už má záznam</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Ponechať záznam (preskočiť riadok)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Nahradiť záznam</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Starí hostitelia</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Úplné adresy hostiteľa, ktorého táto inštalácia nepozná, sa neimportujú. Uveďte prístup k lokalite, ktorý zodpovedá každému starému hostiteľovi, jeden na riadok: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Ukážka</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Zatiaľ sa nič nezapisuje: na ďalšej stránke uvidíte, čo by urobil každý riadok.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Import %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Import bol vrátený.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Import bol vrátený, okrem záznamov zmenených po ňom, ktoré sa ponechali.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Import sa nepodarilo vrátiť: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dátum</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Vykonal</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Riadky</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created vytvorených, %updated nahradených, %skipped preskočených, %failed neúspešných.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Vrátený</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Vrátiť tento import</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Každý záznam, ktorý import vytvoril, sa odstráni, a každý záznam, ktorý nahradil, sa obnoví do pôvodného stavu, od posledného. Najprv potvrdíte, kto ste.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>Záznamy zmenené po importe: %count</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Vrátiť aj záznamy zmenené po importe</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Bez toho sa ponechajú a import bude čiastočne vrátený (--force v konzole).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Vrátiť tento import?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Vrátiť import</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Zapísané záznamy</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from až %to z %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Import nezapísal žiadny záznam.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Záznamy, ktoré import zapísal</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Riadok</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Stará adresa</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Záznam</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Vedie na</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Zmena</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stav</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Alias URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Zástupný znak</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Presmerovanie</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Vytvorené</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Nahradené</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Použité</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Ponechané</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Čiastočne vrátený</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>História importov (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Všetky importy máp URL, najnovšie ako prvé. Import sa dá vrátiť ako celok: každý záznam, ktorý zapísal, sa vráti do predchádzajúceho stavu.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Zatiaľ nebola importovaná žiadna mapa URL.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Importy máp URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Číslo</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Preskočené</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Neúspešné</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, riadkov: %rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Importované ako import %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Zobraziť import alebo ho vrátiť</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Importovať ďalší súbor</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Zatiaľ sa nič nezapísalo. Každý riadok ukazuje, čo by s ním import urobil. Označené riadky sa importujú; zrušením označenia riadok vynecháte. Riadky, ktoré nie sú nové, sa dajú importovať len vtedy, keď sa ich stará adresa smie nahradiť.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Import sa nevykonal: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Na import nie je označený žiadny riadok.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Skúšobné spustenie: nič sa nezapísalo.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Import by vytvoril %created, nahradil %updated a preskočil %skipped; %failed by zlyhalo.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Prehľad</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Na vytvorenie</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Na nahradenie</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Na preskočenie</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>S problémom</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Uchované do</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Naplánovať znova</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Zmeňte to, čo rozhoduje o riadkoch, a naplánujte súbor znova. Ručne zmenené označenia sa obnovia.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Riadky týchto hostiteľov sa neimportujú, pretože táto inštalácia za ne nezodpovedá. Vyberte prístup k lokalite, ktorý zodpovedá každému starému hostiteľovi.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Neimportované</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Zobraziť</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Všetko</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Žiadny riadok nemá tento stav.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Zobraziť všetko</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Riadky súboru a čo by import urobil s každým z nich</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importovať</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Nová adresa</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Druh</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Poznámky</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Importovať riadok %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nie</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Áno</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Skúšobné spustenie</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Ponechať označenia</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Plán ako CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Plán ako JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Zahodiť</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Import zapíše označené riadky zo všetkých stránok ako jeden import, ktorý sa dá vrátiť z histórie importov; najprv potvrdíte, kto ste. Skúšobné spustenie znova porovná každý riadok s lokalitou a spočíta, čo by import urobil, bez zapisovania.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Presmerovanie (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Presmerovanie so zástupným znakom (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Zástupný znak (priamy)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nový</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Zmenený</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Nezmenený</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplikát</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Konflikt</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Neplatný cieľ</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Neznámy hostiteľ</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Nedá sa importovať</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Globálne aliasy URL</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>História importov</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Mapy URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Presmerovania (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Tieto presmerovania pochádzajú z importov máp URL: staré adresy s dopytom (/index.php?id=12), dočasné presmerovania a presmerovania na iné lokality. Kontrolujú sa podľa úplnej adresy, pred aliasmi URL a zástupnými znakmi. Trvalé presmerovanie na stránku tejto lokality je namiesto toho globálny alias URL a je uvedené tam.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Odstránené presmerovania: %count.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Nie sú žiadne presmerovania. Vytvárajú sa importom mapy URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Presmerovania kontrolované podľa úplnej adresy</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Vybrať</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Stav</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Z importu</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Odstrániť</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Vybrať %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Odstrániť %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Odstrániť toto presmerovanie?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Odstrániť vybrané presmerovania?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Odstrániť vybrané</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Odstránené presmerovanie okamžite prestane fungovať.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Vložený text</translation>
     </message>
 </context>
 </TS>

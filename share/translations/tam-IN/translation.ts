@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>முகவரிகள் செல்லும் இடம்: இந்தத் தளத்தின் ஒரு பாதை, அல்லது திருப்பிவிடும்போது முழு முகவரி. {1\} என்பது முதல் * பொருந்திய உரையாகும். எடுத்துக்காட்டு: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>இந்த முகவரிக்குத் தற்காலிகமாக வழிமாற்றப்படுகிறார்கள் (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>பார்வையாளர்கள் தற்காலிகமாக வழிமாற்றப்படுகிறார்கள் (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>தற்காலிக வழிமாற்று (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85489,6 +85501,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>ஒரு பக்கத்திற்கு %count உருப்படிகளைக் காட்டு.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL வரைபடத்தை ஏற்றுமதிசெய்</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>இந்தத் தளத்தின் பொது URL மாற்றுப்பெயர்கள், வைல்டுகார்டுகள் மற்றும் வழிமாற்றுகளை ஒரே கோப்பாகப் பதிவிறக்குங்கள்: வைத்துக்கொள்ள, விரிதாளில் திருத்தி மீண்டும் இறக்குமதிசெய்ய, அல்லது இணைய சேவையகத்துக்கு மறுஎழுத்து விதிகளாக வழங்க.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>குறைந்தது ஒரு வகை உள்ளீடுகளைத் தேர்ந்தெடுக்கவும்.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>கோப்பை எழுத முடியவில்லை.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>எதை ஏற்றுமதிசெய்வது</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>வடிவம்</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>உள்ளீடுகள்</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>பொது URL மாற்றுப்பெயர்கள் (URL மொழிபெயர்ப்பி)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>உள்ளடக்கத்தின் தனிப்பயன் URL மாற்றுப்பெயர்களும்</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>கணுவை இலக்காகக் கொண்டு எழுதப்படும், எடுத்துக்காட்டாக node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>வைல்டுகார்டுகள்</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>வழிமாற்றுகள்</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>தள அணுகல்</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ஒவ்வொரு தள அணுகலும்</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>வழிமாற்றுகள் மட்டுமே ஒரு தள அணுகலுக்குச் சொந்தமானவை; URL மாற்றுப்பெயர்களும் வைல்டுகார்டுகளும் ஒவ்வொரு தள அணுகலுக்கும் ஏற்றுமதிசெய்யப்படும்.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>மொழி</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>ஒவ்வொரு மொழியும்</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>ஏற்றுமதிசெய்</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL வரைபடத்தை இறக்குமதிசெய்</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>பழைய தளத்தின் முகவரிகளை ஒரே முறையில் கொண்டுவாருங்கள்: ஒரு கோப்பு ஒவ்வொரு பழைய முகவரியையும், அது இப்போது சேரும் இந்தத் தளத்தின் பக்கத்தையும் பட்டியலிடுகிறது. சரியான முகவரிகள் வழிமாற்றுகளாக அல்லது URL மாற்றுப்பெயர்களாக மாறும், * உள்ள முகவரிகள் வைல்டுகார்டுகளாக மாறும். எதுவும் எழுதப்படும் முன் ஒவ்வொரு வரிசையும் என்ன செய்யும் என்று பார்க்கலாம், ஒவ்வொரு இறக்குமதியையும் முழுமையாகச் செயல்தவிர்க்கலாம்.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL வரைபட இறக்குமதிகளுக்கான அட்டவணைகள் இன்னும் இல்லை. இறக்குமதிசெய்யும் முன் மேம்படுத்தல் படி 6.0.15-url-map (./console exp:upgrade --apply) ஐ இயக்கவும்.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>இந்த இறக்குமதி இனி கிடைக்காது: ஒரு நாளுக்குப் பின் காலாவதியானது அல்லது வேறு பயனருக்குச் சொந்தமானது. கோப்பை மீண்டும் பதிவேற்றவும்.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>ஒரு கோப்பைத் தேர்ந்தெடுக்கவும் அல்லது வரிசைகளை ஒட்டவும்.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>கோப்பு %size ஐ விடப் பெரியது.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>கோப்பைப் படிக்க முடியவில்லை: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>இந்த நிறுவலின் ஒரு தள அணுகலைத் தேர்ந்தெடுக்கவும்.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>இறக்குமதியைச் சேவையகத்தில் வைத்திருக்க முடியவில்லை: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>கோப்பு</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>கோப்பு</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache அல்லது nginx மறுஎழுத்து விதிகள், அதிகபட்சம் %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>அல்லது வரிசைகளை ஒட்டவும்</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>ஒரு வரிக்கு ஒரு உள்ளீடு, எடுத்துக்காட்டாக /old-page,/new-page. முதல் வரி நெடுவரிசைகளின் பெயர்களைக் கொடுக்கலாம்: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>கோப்பிலிருந்து கண்டறி</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>கோப்பின் பெயரும் உள்ளடக்கமும் சொல்லாதபோது மட்டுமே தேவை.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>இயல்புநிலைகள்</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>ஹோஸ்ட் இல்லாத பாதைகளின் தள அணுகல்</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>இயல்புநிலை</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>முழு முகவரி கொண்ட வரிசைகள் அதற்குப் பதிலாகத் தங்கள் ஹோஸ்டின் தள அணுகலைப் பெறும்.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>தள அணுகலின் மொழி</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>ஒரு பழைய முகவரிக்கு ஏற்கெனவே உள்ளீடு இருக்கும்போது</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>உள்ளீட்டை வைத்திரு (வரிசையைத் தவிர்)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>உள்ளீட்டை மாற்று</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>பழைய ஹோஸ்ட்கள்</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>இந்த நிறுவலுக்குத் தெரியாத ஹோஸ்டின் முழு முகவரிகள் இறக்குமதிசெய்யப்படாது. ஒவ்வொரு பழைய ஹோஸ்டும் குறிக்கும் தள அணுகலை, ஒரு வரிக்கு ஒன்றாகக் குறிப்பிடவும்: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>முன்னோட்டம்</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>இன்னும் எதுவும் எழுதப்படவில்லை: அடுத்த பக்கம் ஒவ்வொரு வரிசையும் என்ன செய்யும் என்று காட்டும்.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>இறக்குமதி %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>இறக்குமதி செயல்தவிர்க்கப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>இறக்குமதி செயல்தவிர்க்கப்பட்டது, அதற்குப் பின் மாற்றப்பட்ட உள்ளீடுகள் தவிர; அவை வைத்திருக்கப்பட்டன.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>இறக்குமதியைச் செயல்தவிர்க்க முடியவில்லை: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>தேதி</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>செய்தவர்</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>வரிசைகள்</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created உருவாக்கப்பட்டன, %updated மாற்றப்பட்டன, %skipped தவிர்க்கப்பட்டன, %failed தோல்வியடைந்தன.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>செயல்தவிர்க்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>இந்த இறக்குமதியைச் செயல்தவிர்</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>இறக்குமதி உருவாக்கிய ஒவ்வொரு உள்ளீடும் அகற்றப்படும், அது மாற்றிய ஒவ்வொரு உள்ளீடும் முன்பிருந்தபடி மீட்டமைக்கப்படும், கடைசியானது முதலில். முதலில் நீங்கள் யார் என்பதை உறுதிசெய்கிறீர்கள்.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>இறக்குமதிக்குப் பின் மாற்றப்பட்ட உள்ளீடுகள்: %count</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>இறக்குமதிக்குப் பின் மாற்றப்பட்ட உள்ளீடுகளையும் செயல்தவிர்</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>இது இல்லாமல் அவை வைத்திருக்கப்படும், இறக்குமதி பகுதியளவு செயல்தவிர்க்கப்படும் (கன்சோலின் --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>இந்த இறக்குமதியைச் செயல்தவிர்க்கவா?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>இறக்குமதியைச் செயல்தவிர்</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>எழுதப்பட்ட உள்ளீடுகள்</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count இல் %from முதல் %to வரை</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>இறக்குமதி எந்த உள்ளீட்டையும் எழுதவில்லை.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>இறக்குமதி எழுதிய உள்ளீடுகள்</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>வரி</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>பழைய முகவரி</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>உள்ளீடு</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>இட்டுச்செல்வது</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>மாற்றம்</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>நிலைமை</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL மாற்றுப்பெயர்</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>வைல்டுகார்டு</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>வழிமாற்று</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>உருவாக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>மாற்றப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>பயன்படுத்தப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>வைத்திருக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>பகுதியளவு செயல்தவிர்க்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>இறக்குமதி வரலாறு (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL வரைபடத்தின் ஒவ்வொரு இறக்குமதியும், புதியது முதலில். ஒரு இறக்குமதியை முழுமையாகச் செயல்தவிர்க்கலாம்: அது எழுதிய ஒவ்வொரு உள்ளீடும் முன்பு இருந்த நிலைக்குத் திரும்பும்.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>இன்னும் எந்த URL வரைபடமும் இறக்குமதிசெய்யப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL வரைபட இறக்குமதிகள்</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>எண்</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>தவிர்க்கப்பட்டவை</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>தோல்வியடைந்தவை</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows வரிசைகள்</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>இறக்குமதி %id ஆக இறக்குமதிசெய்யப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>இறக்குமதியைப் பாருங்கள், அல்லது செயல்தவிர்க்கவும்</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>வேறொரு கோப்பை இறக்குமதிசெய்</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>இன்னும் எதுவும் எழுதப்படவில்லை. ஒவ்வொரு வரிசையும் இறக்குமதி அதை என்ன செய்யும் என்று காட்டுகிறது. குறியிட்ட வரிசைகள் இறக்குமதிசெய்யப்படும்; ஒரு வரிசையை விலக்க அதன் குறியை நீக்கவும். புதியவை அல்லாத வரிசைகளை, அவற்றின் பழைய முகவரியை மாற்ற அனுமதி இருந்தால் மட்டுமே இறக்குமதிசெய்ய முடியும்.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>இறக்குமதி செய்யப்படவில்லை: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>இறக்குமதிக்கு எந்த வரிசையும் குறியிடப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>சோதனை ஓட்டம்: எதுவும் எழுதப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>இறக்குமதி %created உருவாக்கும், %updated மாற்றும், %skipped தவிர்க்கும்; %failed தோல்வியடையும்.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>மேலோட்டம்</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>உருவாக்க வேண்டியவை</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>மாற்ற வேண்டியவை</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>தவிர்க்க வேண்டியவை</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>சிக்கல் உள்ளவை</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>வைத்திருக்கப்படும் வரை</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>மீண்டும் திட்டமிடு</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>வரிசைகளைத் தீர்மானிப்பதை மாற்றி, கோப்பை மீண்டும் திட்டமிடுங்கள். கையால் மாற்றிய குறிகள் மீட்டமைக்கப்படும்.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>இந்த ஹோஸ்ட்களின் வரிசைகள் இறக்குமதிசெய்யப்படாது, ஏனெனில் இந்த நிறுவல் அவற்றுக்குப் பதிலளிப்பதில்லை. ஒவ்வொரு பழைய ஹோஸ்டும் குறிக்கும் தள அணுகலைத் தேர்ந்தெடுக்கவும்.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>இறக்குமதிசெய்யப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>காட்டு</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>அனைத்தும்</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>இந்த நிலைமையில் எந்த வரிசையும் இல்லை.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>அனைத்தையும் காட்டு</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>கோப்பின் வரிசைகளும் ஒவ்வொன்றையும் இறக்குமதி என்ன செய்யும் என்பதும்</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>இறக்குமதிசெய்</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>புதிய முகவரி</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>வகை</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>குறிப்புகள்</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>வரி %line ஐ இறக்குமதிசெய்</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>இல்லை</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ஆம்</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>சோதனை ஓட்டம்</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>குறிகளை வைத்திரு</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>திட்டம் CSV ஆக</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>திட்டம் JSON ஆக</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>நிராகரி</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>இறக்குமதி ஒவ்வொரு பக்கத்தின் குறியிட்ட வரிசைகளையும் ஒரே இறக்குமதியாக எழுதும், அதை இறக்குமதி வரலாற்றிலிருந்து செயல்தவிர்க்கலாம்; முதலில் நீங்கள் யார் என்பதை உறுதிசெய்கிறீர்கள். சோதனை ஓட்டம் ஒவ்வொரு வரிசையையும் தளத்துடன் மீண்டும் சரிபார்த்து, எதையும் எழுதாமல் இறக்குமதி என்ன செய்யும் என்று எண்ணுகிறது.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>வழிமாற்று (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>வைல்டுகார்டு வழிமாற்று (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>வைல்டுகார்டு (நேரடி)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>புதியது</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>மாறியது</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>மாறாதது</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>நகல்</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>முரண்பாடு</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>உடைந்த இலக்கு</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>அறியப்படாத ஹோஸ்ட்</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>இறக்குமதிசெய்ய இயலாது</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>பொது URL மாற்றுப்பெயர்கள்</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>இறக்குமதி வரலாறு</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL வரைபடங்கள்</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>வழிமாற்றுகள் (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>இந்த வழிமாற்றுகள் URL வரைபட இறக்குமதிகளிலிருந்து வந்தவை: வினவல் கொண்ட பழைய முகவரிகள் (/index.php?id=12), தற்காலிக வழிமாற்றுகள் மற்றும் பிற தளங்களுக்கான வழிமாற்றுகள். இவை URL மாற்றுப்பெயர்கள் மற்றும் வைல்டுகார்டுகளுக்கு முன், முழு முகவரியின் அடிப்படையில் சரிபார்க்கப்படுகின்றன. இந்தத் தளத்தின் ஒரு பக்கத்துக்கான நிரந்தர வழிமாற்று அதற்குப் பதிலாக ஒரு பொது URL மாற்றுப்பெயர், அது அங்கே பட்டியலிடப்பட்டுள்ளது.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count வழிமாற்றுகள் அகற்றப்பட்டன.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>வழிமாற்றுகள் எதுவும் இல்லை. அவை URL வரைபடத்தை இறக்குமதிசெய்வதன் மூலம் உருவாகின்றன.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>முழு முகவரியின் அடிப்படையில் சரிபார்க்கப்படும் வழிமாற்றுகள்</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>தேர்ந்தெடு</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>நிலை</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>இறக்குமதியிலிருந்து</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>அகற்று</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address ஐத் தேர்ந்தெடு</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address ஐ அகற்று</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>இந்த வழிமாற்றை அகற்றவா?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>தேர்ந்தெடுத்த வழிமாற்றுகளை அகற்றவா?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>தேர்ந்தெடுத்தவற்றை அகற்று</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>அகற்றப்பட்ட வழிமாற்று உடனடியாக வேலை செய்வதை நிறுத்தும்.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>ஒட்டப்பட்ட உரை</translation>
     </message>
 </context>
 </TS>

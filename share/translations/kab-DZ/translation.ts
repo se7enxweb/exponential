@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Anda ddunt tansiwin: abrid n usmel-a, neɣ tansa tummidt ticki ttwawellhent. {1\} d aḍris i yemṣad yimezwaru *. Amedya: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ttwaweḥḥen-d i kra n wakud ɣer tansa-a (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Imerza ttwaweḥḥen i kra n wakud (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Awelleh askudan (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
     <message>
         <source>Show %count items per page.</source>
         <translation>Sken %count n yiferdisen i yal asebter.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Sifeḍ takarḍa n URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Sader isem-nniḍen n URL imaɣnuyen, ijukren d yiwellihen n usmel-a deg yiwen n ufaylu: akken ad t-teḥrezeḍ, ad t-tẓergeḍ deg tfelwit n umiḍan syen ad t-tkecmeḍ tikkelt-nniḍen, neɣ ad t-tefkeḍ i uqeddac web am ilugan n walus n tira.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Fren ma drus yiwen n wanaw n yisekkilen.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Ur yezmir ara ad yettwaru ufaylu.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Acu ara yettwasifḍen</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Amasal</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Isekkilen</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Isem-nniḍen n URL imaɣnuyen (amsuqel n URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Ula d isem-nniḍen n URL udmawanen n ugbur</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Yettwaru s tkerrist d iswi, amedya node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Ijukren n URL</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Iwellihen</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Anekcum ɣer usmel</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Yal anekcum ɣer usmel</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>D iwellihen kan i yeɛnan anekcum ɣer usmel; isem-nniḍen n URL d yijukren ttwasifḍen i yal anekcum ɣer usmel.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Tutlayt</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Yal tutlayt</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Sifeḍ</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Kter takarḍa n URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Awi-d tansiwin n usmel aqbur s yiwet n tikkelt: afaylu yettbeddil yal tansa taqburt d usebter n usmel-a i as-d-yewwin tura. Tansiwin tusdidin ad uɣalent d iwellihen neɣ d isem-nniḍen n URL, tansiwin s * ad uɣalent d ijukren. Ad twaliḍ acu ara yexdem yal izirig send ad yettwaru kra, yal aktar yezmer ad yettwasefsex s umata.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Tifelwin n wakteren n tkarḍiwin n URL ur llint ara yakan. Sekker taseddart n uleqqem 6.0.15-url-map (./console exp:upgrade --apply) send ad tkecmeḍ.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Aktar-a ulac-it tura: yemmut deffir yiwen n wass neɣ yeɛna aseqdac-nniḍen. Sali-d afaylu tikkelt-nniḍen.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Fren afaylu neɣ senteḍ izirigen.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Afaylu yugar %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Ur yezmir ara ad yettwaɣer ufaylu: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Fren anekcum ɣer usmel n usebded-a.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Aktar ur yezmir ara ad yettwaḥrez ɣef uqeddac: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Afaylu</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Isem n ufaylu</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), ilugan n walus n tira n Apache neɣ nginx, %size ma yugar.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Neɣ senteḍ izirigen</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Yiwen n usekkil deg yal izirig, amedya /asebter-aqbur,/asebter-amaynut. Izirig amezwaru yezmer ad isemmi tigejdit: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Af-it-id seg ufaylu</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Yettwasra kan ma yella isem neɣ agbur n ufaylu ur d-yenni ara.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Imezwer</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Anekcum ɣer usmel n yiberdan iḥerfiyen</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>amezwer</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Izirigen s tansa tummidt ad ṭṭfen deg wadeg-is anekcum ɣer usmel n usenneɣ-nsen.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Tutlayt n unekcum ɣer usmel</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Ma yella tansa taqburt tesεa yakan asekkil</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Eǧǧ asekkil (zgel izirig)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Semselsi asekkil</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Isenneɣen iqburen</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Tansiwin tummidin n usenneɣ ur yessin ara usebded-a ur ttwaktarent ara. Semmi anekcum ɣer usmel i d-yemmal yal asenneɣ aqbur, yiwen deg yal izirig: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Taskant</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Ulac acu i yettwarun yakan: asebter i d-iteddun ad d-yesken acu ara yexdem yal izirig.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Aktar %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Aktar yettwasefsex.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Aktar yettwasefsex, slid isekkilen yettwabeddlen deffir-s, i yettwaḥerzen.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Aktar ur yezmir ara ad yettwasefsex: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Azemz</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>S</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Izirigen</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created ttwarnan, %updated ttwasemselsen, %skipped ttwazeglen, %failed ur eddukklen ara.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Yettwasefsex</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Sefsex aktar-a</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Yal asekkil i d-yesnulfa uktar ad yettwakkes, yal asekkil i yesemselsa ad yuɣal akken yella, seg uneggaru. Di tazwara ad tsentmeḍ anwa i telliḍ.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count n yisekkilen ttwabeddlen deffir uktar</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Sefsex ula d isekkilen yettwabeddlen deffir uktar</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>War waya ad ttwaḥerzen, aktar ad yettwasefsex s wudem amaḍlan (--force n tdiwent).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Ad tesfesxeḍ aktar-a?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Sefsex aktar</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Isekkilen yettwarun</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>Seg %from ɣer %to deg %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Aktar ur yura ula d yiwen n usekkil.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Isekkilen i yura uktar</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Izirig</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Tansa taqburt</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Asekkil</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Yettawi ɣer</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Abeddel</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Addad</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Isem-nniḍen n URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Ajoker</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Awelleh</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Yettwarna</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Yettwasemselsi</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Yettwasnas</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Yettwaḥrez</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Yettwasefsex s wudem amaḍlan</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Amazray n wakteren (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Yal aktar n tkarḍa n URL, amaynut d amezwaru. Aktar yezmer ad yettwasefsex s umata: yal asekkil i yura ad yuɣal akken yella uqbel.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Ulac takarḍa n URL i yettwaktaren yakan.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Akteren n tkarḍiwin n URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Uṭṭun</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Yettwazgel</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ur yeddukkel ara</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows n yizirigen</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Yettwakter am uktar %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Wali aktar, neɣ sefsex-it</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Kter afaylu-nniḍen</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Ulac acu i yettwarun yakan. Yal izirig yeskan acu ara as-yexdem uktar. Izirigen yettwaferzen ad ttwaktaren; kkes tacreḍt i yizirig akken ad t-teǧǧeḍ beṛṛa. Izirigen ur nelli d imaynuten ttwaktaren kan ma yella tansa-nsen taqburt tezmer ad tettwasemselsi.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Aktar ur yettwaxdem ara: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Ulac izirig yettwacerḍen i uktar.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Asedday n tarrayt: ulac acu i yettwarun.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Aktar ad d-yernu %created, ad yesemselsi %updated, ad yezgel %skipped; %failed ur ttedduklen ara.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Tamuɣli s umata</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Ad ttwarnun</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Ad ttwasemselsen</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Ad ttwazeglen</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>S wugur</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Yettwaḥrez alamma</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Ɣer tikkelt-nniḍen</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Beddel ayen i yettḥeddiden izirigen syen ɣer afaylu tikkelt-nniḍen. Ticraḍ i tbeddleḍ s ufus ad ttwawennent.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Izirigen n yisenneɣen-a ur ttwaktaren ara, acku asebded-a ur d-yettarra ara fell-asen. Fren anekcum ɣer usmel i d-yemmal yal asenneɣ aqbur.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Ur yettwakter ara</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Sken</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Akk</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Ulac izirig s waddad-a.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Sken akk</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Izirigen n ufaylu d wayen ara yexdem uktar i yal yiwen</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Kter</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Tansa tamaynut</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Anaw</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Tizmilin</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Kter izirig %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ala</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ih</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Asedday n tarrayt</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Eǧǧ ticraḍ</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Aɣawas am CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Aɣawas am JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Ttu</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Kter yettaru izirigen yettwacerḍen n yal asebter am yiwen n uktar, i yezmren ad yettwasefsex seg umazray n wakteren; di tazwara ad tsentmeḍ anwa i telliḍ. Asedday n tarrayt yesenqad yal izirig tikkelt-nniḍen ɣef usmel, yettḥesbu acu ara yexdem uktar, war ma yura kra.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Awelleh (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Awelleh s ujoker (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Ajoker (usrid)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Amaynut</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Yettwabeddel</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Ur yettwabeddel ara</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Amsenṭel</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Amennuɣ</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Iswi yerreẓ</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Asenneɣ arussin</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Ur yettwakter ara</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Isem-nniḍen n URL imaɣnuyen</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Amazray n wakteren</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Tikarḍiwin n URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Iwellihen (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Iwellihen-a d-kkan-d seg wakteren n tkarḍiwin n URL: tansiwin tiqburin s usuter (/index.php?id=12), iwellihen iskudanen d yiwellihen ɣer yismal-nniḍen. Ttwasenqaden ɣef tansa tummidt, send isem-nniḍen n URL d yijukren. Awelleh imezgi ɣer usebter n usmel-a d isem-nniḍen n URL amaɣnu deg wadeg-is, yettwabder dinna.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count n yiwellihen ttwakksen.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Ulac iwellihen. Ttwaxdamen s uktar n tkarḍa n URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Iwellihen yettwasenqaden ɣef tansa tummidt</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Fren</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Liḥala</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Seg uktar</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Kkes</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Fren %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Kkes %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Ad tekkseḍ awelleh-a?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Ad tekkseḍ iwellihen yettwafernen?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Ssuffeɣ ayen yettwafernen</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Awelleh yettwakksen ad iḥbes ad iteddu imir-n.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Aḍris yettwasentḍen</translation>
     </message>
 </context>
 </TS>

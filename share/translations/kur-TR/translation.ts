@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Navnîşan diçin ku derê: rêyeke vê malperê, an di beralîkirinê de navnîşaneke tevahî. {1\} ew nivîs e ku * ya yekem pê re li hev hat. Mînak: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>bi awayekî demkî ber bi vê navnîşanê ve têne beralîkirin (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Mêvan bi awayekî demkî têne beralîkirin (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Beralîkirina demkî (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85489,6 +85501,625 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     <message>
         <source>Show %count items per page.</source>
         <translation>Li her rûpelê %count hêman nîşan bidin.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Nexşeya URL derxîne</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Nasnavên URL yên giştî, joker û beralîkirinên vê malperê wekî yek pel daxîne: ji bo parastinê, ji bo di tabloyekê de sererastkirin û dîsa anînê, an jî ji bo dayîna serverekî webê wekî qaîdeyên ji nû ve nivîsandinê.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Herî kêm cureyekî tomaran hilbijêre.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Pel nehat nivîsandin.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Çi were derxistin</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Teşe</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Tomar</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Nasnavên URL yên giştî (wergêrê URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Herwiha nasnavên URL yên taybet ên naverokê</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Bi girêkê wekî armanc tê nivîsandin, mînak node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Joker</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Beralîkirin</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Gihîştina malperê</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Hemû gihîştinên malperê</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Tenê beralîkirin aîdî gihîştina malperê ne; nasnavên URL û joker ji bo hemû gihîştinên malperê têne derxistin.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Ziman</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Hemû ziman</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Derxistin</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Nexşeyeke URL bîne</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Navnîşanên malpereke kevn bi carekê re bîne: pelek her navnîşana kevn û rûpela vê malperê ya ku niha aîdî wê ye rêz dike. Navnîşanên tam dibin beralîkirin an nasnavên URL, navnîşanên bi * dibin joker. Berî ku tiştek were nivîsandin tu dibînî ku her rêz dê çi bike, û her anîn dikare bi tevahî were vegerandin.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Tabloyên anîna nexşeyên URL hêj tune ne. Berî anînê gava nûkirinê 6.0.15-url-map (./console exp:upgrade --apply) bixebitîne.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Ev anîn êdî ne berdest e: piştî rojekê qediya an jî aîdî bikarhênerekî din e. Pelê dîsa bar bike.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Pelekî hilbijêre an rêzan bixe.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Pel ji %size mezintir e.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Pel nayê xwendin: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Gihîştineke malperê ya vê sazkirinê hilbijêre.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Anîn li ser serverê nayê parastin: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Pel</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Pel</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), qaîdeyên ji nû ve nivîsandinê yên Apache an nginx, herî zêde %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>An jî rêzan bixe</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Her xetê rêzek, mînak /rupela-kevn,/rupela-nu. Xeta yekem dikare navên stûnan bide: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Ji pelê fêr bibe</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Tenê dema ku ne nav ne jî naveroka pelê vê dibêje pêwîst e.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Pêşdanasîn</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Gihîştina malperê ya rêyên tazî</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>pêşdanasîn</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Rêzên bi navnîşana tevahî li şûna wê gihîştina malperê ya hosta xwe digirin.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Zimanê gihîştina malperê</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Dema ku navnîşaneke kevn jixwe tomarek heye</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Tomarê bihêle (rêzê derbas bike)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Tomarê biguherîne</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Hostên kevn</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Navnîşanên tevahî yên hostekî ku ev sazkirin nas nake nayên anîn. Ji bo her hosta kevn gihîştina malperê ya ku ew temsîl dike binivîse, her xetê yek: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Pêşdîtin</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Hêj tiştek nayê nivîsandin: rûpela din nîşan dide ku her rêz dê çi bike.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Anîn %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Anîn hat vegerandin.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Anîn hat vegerandin, ji bilî tomarên ku piştî wê hatin guhertin; ew hatin parastin.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Anîn nehat vegerandin: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dîrok</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ji aliyê</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Rêz</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created hatin afirandin, %updated hatin guhertin, %skipped hatin derbaskirin, %failed bi ser neketin.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Hat vegerandin</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Vê anînê vegerîne</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Her tomara ku anînê afirand tê rakirin û her tomara ku guhert wekî berê tê vegerandin, ya dawî pêşî. Pêşî tu piştrast dikî ku tu kî yî.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count tomar piştî anînê hatin guhertin</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Tomarên ku piştî anînê hatin guhertin jî vegerîne</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Bêyî vê ew têne parastin û anîn bi qismî tê vegerandin (--force ya konsolê).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Vê anînê vegerînî?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Anînê vegerîne</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Tomarên hatine nivîsandin</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from heta %to ji %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Anînê tu tomar nenivîsand.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Tomarên ku anînê nivîsandin</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Xet</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Navnîşana kevn</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Tomar</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Dibe ber</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Guhertin</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Rewş</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Nasnavê URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Joker</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Beralîkirin</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Hat afirandin</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Hat guhertin</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Hat sepandin</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Hat parastin</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Bi qismî hat vegerandin</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Dîroka anînan (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Her anîna nexşeyeke URL, ya herî nû pêşî. Anînek dikare bi tevahî were vegerandin: her tomara ku nivîsand vedigere rewşa berê.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Hêj tu nexşeya URL nehatiye anîn.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Anînên nexşeyên URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Hejmar</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Hatin derbaskirin</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Bi ser neketin</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows rêz</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Wekî anîna %id hat anîn.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Anînê bibîne, an vegerîne</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Pelekî din bîne</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Hêj tiştek nehatiye nivîsandin. Her rêz nîşan dide ku anîn dê bi wê re çi bike. Rêzên nîşankirî têne anîn; nîşana rêzekê rake da ku wê derxî. Rêzên ku ne nû ne tenê dema ku navnîşana wan a kevn dikare were guhertin dikarin werin anîn.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Anîn nehat kirin: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Tu rêz ji bo anînê nehatiye nîşankirin.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Ceribandina bê guhertin: tiştek nehat nivîsandin.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Anîn dê %created biafirîne, %updated biguherîne û %skipped derbas bike; %failed dê bi ser nekevin.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Nêrîna giştî</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Dê were afirandin</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Dê were guhertin</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Dê were derbaskirin</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Bi pirsgirêk</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Tê parastin heta</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Dîsa plan bike</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Tiştên ku rêzan diyar dikin biguherîne û pelê dîsa plan bike. Nîşanên ku te bi destan guhertin têne vesazkirin.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Rêzên van hostan nayên anîn, ji ber ku ev sazkirin ji bo wan bersiv nade. Ji bo her hosta kevn gihîştina malperê ya ku ew temsîl dike hilbijêre.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Nehat anîn</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Nîşan bide</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hemû</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Tu rêz di vê rewşê de nîne.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hemûyan nîşan bide</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Rêzên pelê û anîn dê bi her yekê re çi bike</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Bîne</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Navnîşana nû</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Cure</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Têbînî</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Xeta %line bîne</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Na</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Erê</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Ceribandina bê guhertin</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Nîşanan bihêle</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Plan wekî CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Plan wekî JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Bavêje</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Bîne rêzên nîşankirî yên hemû rûpelan wekî yek anîn dinivîse, ku ji dîroka anînan dikare were vegerandin; pêşî tu piştrast dikî ku tu kî yî. Ceribandina bê guhertin her rêzê dîsa li hember malperê kontrol dike û dihejmêre ku anîn dê çi bike, bêyî nivîsandinê.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Beralîkirin (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Beralîkirina jokerê (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Joker (rasterast)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nû</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Hat guhertin</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Nehat guhertin</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Dubare</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Nakokî</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Armanca şikestî</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Hosta nenas</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Nayê anîn</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Nasnavên URL yên giştî</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Dîroka anînan</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Nexşeyên URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Beralîkirin (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Ev beralîkirin ji anînên nexşeyên URL têne: navnîşanên kevn ên bi pirsê (/index.php?id=12), beralîkirinên demkî û beralîkirinên ber bi malperên din. Ew li ser navnîşana tevahî têne kontrolkirin, berî nasnavên URL û jokeran. Beralîkirineke daîmî ber bi rûpeleke vê malperê li şûna wê nasnaveke URL ya giştî ye û li wir tê rêzkirin.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count beralîkirin hatin rakirin.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Tu beralîkirin tune ne. Ew bi anîna nexşeyeke URL têne çêkirin.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Beralîkirinên li ser navnîşana tevahî têne kontrolkirin</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Hilbijêre</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Rewş</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Ji anînê</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Rake</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address hilbijêre</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address rake</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Vê beralîkirinê rakî?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Beralîkirinên hilbijartî rakî?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Hilbijartiyan rakirin</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Beralîkirineke rakirî yekser naxebite.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Nivîsa hatiye xistin</translation>
     </message>
 </context>
 </TS>

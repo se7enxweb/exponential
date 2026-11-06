@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Ke mana alamat diarahkan: jalur di situs ini, atau alamat lengkap saat mengalihkan. {1\} adalah teks yang dicocokkan oleh * pertama. Contoh: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>dialihkan sementara ke alamat ini (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Pengunjung dialihkan sementara (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Pengalihan sementara (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
     <message>
         <source>Show %count items per page.</source>
         <translation>Tampilkan %count item per halaman.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Ekspor peta URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Unduh alias URL global, karakter pengganti, dan pengalihan situs ini sebagai satu file: untuk disimpan, untuk diedit di spreadsheet lalu diimpor lagi, atau untuk diberikan ke server web sebagai aturan penulisan ulang.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Pilih setidaknya satu jenis entri.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>File tidak dapat ditulis.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Apa yang diekspor</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Format</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Entri</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Alias URL global (penerjemah URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Juga alias URL khusus dari konten</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Ditulis dengan node sebagai tujuan, misalnya node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Karakter pengganti URL</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Pengalihan</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Akses situs</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Semua akses situs</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Hanya pengalihan yang dimiliki oleh akses situs; alias URL dan karakter pengganti diekspor untuk semua akses situs.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Bahasa</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Semua bahasa</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Ekspor</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Impor peta URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Pindahkan alamat situs lama sekaligus: sebuah file mencantumkan setiap alamat lama dan halaman situs ini yang sekarang menjadi tujuannya. Alamat yang persis menjadi pengalihan atau alias URL, alamat dengan * menjadi karakter pengganti. Anda melihat apa yang akan dilakukan setiap baris sebelum apa pun ditulis, dan setiap impor dapat diurungkan secara keseluruhan.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Tabel impor peta URL belum ada. Jalankan langkah pemutakhiran 6.0.15-url-map (./console exp:upgrade --apply) sebelum mengimpor.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Impor ini tidak tersedia lagi: sudah kedaluwarsa setelah satu hari atau milik pengguna lain. Unggah file lagi.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Pilih file atau tempel baris-barisnya.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>File lebih besar dari %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>File tidak dapat dibaca: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Pilih akses situs dari instalasi ini.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Impor tidak dapat disimpan di server: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>File</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Berkas</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), aturan penulisan ulang Apache atau nginx, paling besar %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Atau tempel baris-barisnya</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Satu baris per entri, misalnya /halaman-lama,/halaman-baru. Baris pertama boleh menyebut nama kolom: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Tentukan dari file</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Hanya diperlukan jika nama maupun isi file tidak menyebutkannya.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Nilai bawaan</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Akses situs untuk jalur tanpa host</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>bawaan</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Baris dengan alamat lengkap mengambil akses situs dari host-nya.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Bahasa akses situs</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Jika alamat lama sudah memiliki entri</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Pertahankan entri (lewati baris)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Ganti entri</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Host lama</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Alamat lengkap dari host yang tidak dikenal instalasi ini tidak diimpor. Sebutkan akses situs yang diwakili setiap host lama, satu per baris: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Pratinjau</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Belum ada yang ditulis: halaman berikutnya menunjukkan apa yang akan dilakukan setiap baris.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Impor %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Impor telah diurungkan.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Impor telah diurungkan, kecuali entri yang diubah setelahnya, yang tetap dipertahankan.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Impor tidak dapat diurungkan: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Tanggal</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Oleh</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Baris</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created dibuat, %updated diganti, %skipped dilewati, %failed gagal.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Diurungkan</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Urungkan impor ini</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Setiap entri yang dibuat oleh impor dihapus dan setiap entri yang diganti dikembalikan seperti semula, dimulai dari yang terakhir. Anda mengonfirmasi identitas Anda terlebih dahulu.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count entri diubah setelah impor</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Urungkan juga entri yang diubah setelah impor</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Tanpa ini entri tersebut dipertahankan dan impor hanya diurungkan sebagian (--force pada konsol).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Urungkan impor ini?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Urungkan impor</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Entri yang ditulis</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from sampai %to dari %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Impor tidak menulis entri apa pun.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Entri yang ditulis oleh impor</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Baris</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Alamat lama</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Entri</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Menuju ke</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Perubahan</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Keadaan</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Alias URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Karakter pengganti</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Pengalihan</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Dibuat</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Diganti</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Diterapkan</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Dipertahankan</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Diurungkan sebagian</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Riwayat impor (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Setiap impor peta URL, yang terbaru di atas. Sebuah impor dapat diurungkan secara keseluruhan: setiap entri yang ditulisnya kembali seperti sebelumnya.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Belum ada peta URL yang diimpor.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Impor peta URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Nomor</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Dilewati</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Gagal</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows baris</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Diimpor sebagai impor %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Lihat impor, atau urungkan</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Impor file lain</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Belum ada yang ditulis. Setiap baris menunjukkan apa yang akan dilakukan impor terhadapnya. Baris yang dicentang akan diimpor; hapus centang untuk mengecualikan baris. Baris yang tidak baru hanya dapat diimpor jika alamat lamanya boleh diganti.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Impor tidak dilakukan: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Tidak ada baris yang dicentang untuk diimpor.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Uji coba: tidak ada yang ditulis.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Impor akan membuat %created, mengganti %updated, dan melewati %skipped; %failed akan gagal.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Ikhtisar</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Akan dibuat</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Akan diganti</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Akan dilewati</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Bermasalah</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Disimpan sampai</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Rencanakan lagi</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Ubah apa yang menentukan baris dan rencanakan file lagi. Centang yang Anda ubah secara manual akan diatur ulang.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Baris dari host ini tidak diimpor, karena instalasi ini tidak melayani host tersebut. Pilih akses situs yang diwakili setiap host lama.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Tidak diimpor</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Tampilkan</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Semua</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Tidak ada baris dengan keadaan ini.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Tampilkan semua</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Baris-baris file dan apa yang akan dilakukan impor terhadap masing-masing</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Impor</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Alamat baru</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Jenis</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Catatan</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Impor baris %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Tidak</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ya</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Uji coba</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Pertahankan centang</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Rencana sebagai CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Rencana sebagai JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Buang</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Impor menulis baris yang dicentang dari semua halaman sebagai satu impor, yang dapat diurungkan dari riwayat impor; Anda mengonfirmasi identitas Anda terlebih dahulu. Uji coba memeriksa ulang setiap baris terhadap situs dan menghitung apa yang akan dilakukan impor, tanpa menulis.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Pengalihan (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Pengalihan karakter pengganti (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Karakter pengganti (langsung)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Baru</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Berubah</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Tidak berubah</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplikat</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Konflik</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Tujuan rusak</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Host tidak dikenal</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Tidak dapat diimpor</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Alias URL global</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Riwayat impor</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Peta URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Pengalihan (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Pengalihan ini berasal dari impor peta URL: alamat lama dengan kueri (/index.php?id=12), pengalihan sementara, dan pengalihan ke situs lain. Pengalihan ini diperiksa berdasarkan alamat lengkap, sebelum alias URL dan karakter pengganti. Pengalihan permanen ke halaman situs ini justru merupakan alias URL global dan tercantum di sana.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count pengalihan dikeluarkan.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Tidak ada pengalihan. Pengalihan dibuat dengan mengimpor peta URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Pengalihan yang diperiksa berdasarkan alamat lengkap</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Pilih</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Dari impor</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Keluarkan</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Pilih %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Keluarkan %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Keluarkan pengalihan ini?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Keluarkan pengalihan yang dipilih?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Keluarkan yang dipilih</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Pengalihan yang dikeluarkan langsung berhenti berfungsi.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Teks yang ditempel</translation>
     </message>
 </context>
 </TS>

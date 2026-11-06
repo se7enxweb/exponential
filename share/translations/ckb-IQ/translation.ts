@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>ناونیشانەکان بۆ کوێ دەچن: ڕێڕەوێکی ئەم ماڵپەڕە، یان ناونیشانێکی تەواو لە کاتی ڕەوانەکردندا. {1\} ئەو دەقەیە کە * ی یەکەم لەگەڵی گونجا. نموونە: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>بە کاتی ڕەوانەی ئەم ناونیشانە دەکرێن (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>سەردانکەران بە کاتی ڕەوانە دەکرێن (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>ڕەوانەکردنی کاتی (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>%count بڕگە لە هەر پەڕەیەکدا پیشان بدە.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>هەناردەکردنی نەخشەی URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>ناوە جێگرەوە گشتییەکانی URL، وایلدکاردەکان و ڕەوانەکردنەکانی ئەم ماڵپەڕە وەک یەک فایل دابەزێنە: بۆ پاراستن، بۆ دەستکاریکردن لە خشتەیەکدا و هاوردنەوە، یان بۆ دانی بە ڕاژەکارێکی وێب وەک یاساکانی دووبارەنووسینەوە.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>لانیکەم یەک جۆری تۆمار هەڵبژێرە.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>نەتوانرا فایلەکە بنووسرێت.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>چی هەناردە بکرێت</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>فۆرماتی فایل</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>تۆمارەکان</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>ناوە جێگرەوە گشتییەکانی URL (وەرگێڕی URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>هەروەها ناوە جێگرەوە تایبەتەکانی URLی ناوەڕۆک</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>بە گرێ وەک ئامانج نووسراوە، بۆ نموونە node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>وایلدکاردەکان</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>ڕەوانەکردنەکان</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>دەستگەیشتنی ماڵپەڕ</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>هەموو دەستگەیشتنێکی ماڵپەڕ</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>تەنها ڕەوانەکردنەکان سەر بە دەستگەیشتنی ماڵپەڕن؛ ناوە جێگرەوەکانی URL و وایلدکاردەکان بۆ هەموو دەستگەیشتنێکی ماڵپەڕ هەناردە دەکرێن.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>زمان</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>هەموو زمانێک</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>هەناردەکردن</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>هاوردنی نەخشەیەکی URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>ناونیشانەکانی ماڵپەڕێکی کۆن بە یەکجار بهێنە: فایلێک هەر ناونیشانێکی کۆن و ئەو پەڕەیەی ئەم ماڵپەڕە کە ئێستا سەر بەوە ڕیز دەکات. ناونیشانە وردەکان دەبنە ڕەوانەکردن یان ناوی جێگرەوەی URL، ناونیشانەکانی خاوەن * دەبنە وایلدکارد. پێش ئەوەی هیچ بنووسرێت دەبینیت هەر ڕیزێک چی دەکات، و هەر هاوردنێک دەتوانرێت بە تەواوی پاشگەز بکرێتەوە.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>خشتەکانی هاوردنی نەخشەی URL هێشتا بوونیان نییە. پێش هاوردن هەنگاوی بەرزکردنەوەی 6.0.15-url-map (./console exp:upgrade --apply) جێبەجێ بکە.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>ئەم هاوردنە چیتر بەردەست نییە: دوای ڕۆژێک بەسەرچوو یان هی بەکارهێنەرێکی ترە. فایلەکە دووبارە باربکە.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>فایلێک هەڵبژێرە یان ڕیزەکان بلکێنە.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>فایلەکە لە %size گەورەترە.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>فایلەکە ناخوێندرێتەوە: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>دەستگەیشتنێکی ماڵپەڕی ئەم دامەزراندنە هەڵبژێرە.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>هاوردنەکە ناتوانرێت لەسەر ڕاژەکار بپارێزرێت: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>فایلەکە</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>فایل</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV، JSON، Excel (.xlsx)، OpenDocument (.ods)، یاساکانی دووبارەنووسینەوەی Apache یان nginx، زۆرترین %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>یان ڕیزەکان بلکێنە</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>یەک ڕیز بۆ هەر هێڵێک، بۆ نموونە /old-page,/new-page. یەکەم هێڵ دەتوانێت ناوی ستوونەکان بنووسێت: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>لە فایلەکەوە بیدۆزەرەوە</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>تەنها کاتێک پێویستە کە نە ناو و نە ناوەڕۆکی فایلەکە ئەمە نەڵێن.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>بنەڕەتییەکان</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>دەستگەیشتنی ماڵپەڕ بۆ ڕێڕەوە ڕووتەکان</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>بنەڕەت</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>ڕیزەکانی خاوەن ناونیشانی تەواو لە جیاتی ئەوە دەستگەیشتنی ماڵپەڕی میوانەکەیان وەردەگرن.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>زمانی دەستگەیشتنی ماڵپەڕ</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>کاتێک ناونیشانێکی کۆن پێشتر تۆمارێکی هەیە</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>تۆمارەکە بهێڵەوە (ڕیزەکە تێپەڕێنە)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>تۆمارەکە بگۆڕەوە</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>میوانە کۆنەکان</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>ناونیشانە تەواوەکانی میوانێک کە ئەم دامەزراندنە نایناسێت هاوردە ناکرێن. ئەو دەستگەیشتنی ماڵپەڕە بنووسە کە هەر میوانێکی کۆن نوێنەرایەتی دەکات، یەک بۆ هەر هێڵێک: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>پێشبینین</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>هێشتا هیچ نانووسرێت: پەڕەی داهاتوو پیشان دەدات هەر ڕیزێک چی دەکات.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>هاوردنی %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>هاوردنەکە پاشگەز کرایەوە.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>هاوردنەکە پاشگەز کرایەوە، جگە لەو تۆمارانەی دوای ئەو گۆڕدران، کە هێڵدرانەوە.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>نەتوانرا هاوردنەکە پاشگەز بکرێتەوە: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>بەروار</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>لەلایەن</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>ڕیزەکان</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created دروستکرا، %updated گۆڕدرا، %skipped تێپەڕێندرا، %failed سەرنەکەوت.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>پاشگەزکراوە</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>ئەم هاوردنە پاشگەز بکەرەوە</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>هەر تۆمارێک کە هاوردنەکە دروستی کردووە لادەبرێت و هەر تۆمارێک کە گۆڕیویەتی وەک خۆی دەگەڕێندرێتەوە، کۆتاییەکە یەکەم. سەرەتا دووپاتی دەکەیتەوە کە تۆ کێیت.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count تۆمار دوای هاوردنەکە گۆڕدراون</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>ئەو تۆمارانەش پاشگەز بکەرەوە کە دوای هاوردنەکە گۆڕدراون</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>بەبێ ئەمە دەهێڵدرێنەوە و هاوردنەکە بە بەشێکی پاشگەز دەبێتەوە (--forceی کۆنسۆڵ).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>ئەم هاوردنە پاشگەز بکرێتەوە؟</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>پاشگەزکردنەوەی هاوردن</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>تۆمارە نووسراوەکان</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from تا %to لە %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>هاوردنەکە هیچ تۆمارێکی نەنووسی.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>ئەو تۆمارانەی هاوردنەکە نووسیونی</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>هێڵ</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>ناونیشانی کۆن</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>تۆمار</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>دەبات بۆ</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>گۆڕانکاری</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>دۆخ</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>ناوی جێگرەوەی URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>وایلدکارد</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>ڕەوانەکردن</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>دروستکرا</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>گۆڕدرا</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>جێبەجێکرا</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>هێڵدرایەوە</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>بە بەشێکی پاشگەزکراوە</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>مێژووی هاوردن (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>هەموو هاوردنێکی نەخشەی URL، نوێترین یەکەم. هاوردنێک دەتوانرێت بە تەواوی پاشگەز بکرێتەوە: هەر تۆمارێک کە نووسیویەتی دەگەڕێتەوە بۆ ئەوەی پێشتر هەبوو.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>هێشتا هیچ نەخشەیەکی URL هاوردە نەکراوە.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>هاوردنەکانی نەخشەی URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>ژمارە</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>تێپەڕێندراو</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>سەرنەکەوتوو</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file، %format، %rows ڕیز</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>وەک هاوردنی %id هاوردە کرا.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>هاوردنەکە ببینە، یان پاشگەزی بکەرەوە</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>هاوردنی فایلێکی تر</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>هێشتا هیچ نەنووسراوە. هەر ڕیزێک پیشان دەدات هاوردنەکە چی پێ دەکات. ڕیزە نیشانکراوەکان هاوردە دەکرێن؛ نیشانەی ڕیزێک لابە بۆ دەرهێشتنی. ئەو ڕیزانەی نوێ نین تەنها کاتێک هاوردە دەکرێن کە ڕێگە بە گۆڕینی ناونیشانە کۆنەکەیان بدرێت.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>هاوردنەکە نەکرا: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>هیچ ڕیزێک بۆ هاوردن نیشان نەکراوە.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>جێبەجێکردنی تاقیکاری: هیچ نەنووسرا.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>هاوردنەکە %created دروست دەکات، %updated دەگۆڕێت و %skipped تێدەپەڕێنێت؛ %failed سەرناکەوێت.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>پوختە</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>بۆ دروستکردن</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>بۆ گۆڕین</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>بۆ تێپەڕاندن</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>لەگەڵ کێشەیەک</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>دەپارێزرێت تا</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>دووبارە پلاندانانەوە</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>ئەوەی بڕیار لەسەر ڕیزەکان دەدات بگۆڕە و فایلەکە دووبارە پلان بکەرەوە. ئەو نیشانانەی بە دەست گۆڕیوتن ڕێکدەخرێنەوە.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>ڕیزەکانی ئەم میوانانە هاوردە ناکرێن، چونکە ئەم دامەزراندنە وەڵامیان نادات. ئەو دەستگەیشتنی ماڵپەڕە هەڵبژێرە کە هەر میوانێکی کۆن نوێنەرایەتی دەکات.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>هاوردە نەکراو</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>پیشاندان</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>هەموو</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>هیچ ڕیزێک ئەم دۆخەی نییە.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>پیشاندانی هەموو</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>ڕیزەکانی فایلەکە و ئەوەی هاوردنەکە بە هەر یەکێکیان دەکات</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>هاوردن</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>ناونیشانی نوێ</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>جۆر</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>تێبینییەکان</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>هاوردنی هێڵی %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>نەخێر</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>بەڵێ</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>جێبەجێکردنی تاقیکاری</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>نیشانەکان بهێڵەوە</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>پلان وەک CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>پلان وەک JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>فڕێدان</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>هاوردن ڕیزە نیشانکراوەکانی هەموو پەڕەکان وەک یەک هاوردن دەنووسێت، کە دەتوانرێت لە مێژووی هاوردنەوە پاشگەز بکرێتەوە؛ سەرەتا دووپاتی دەکەیتەوە کە تۆ کێیت. جێبەجێکردنی تاقیکاری هەر ڕیزێک دووبارە بەرامبەر ماڵپەڕەکە دەپشکنێت و دەژمێرێت هاوردنەکە چی دەکات، بەبێ نووسین.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>ڕەوانەکردن (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>ڕەوانەکردنی وایلدکارد (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>وایلدکارد (ڕاستەوخۆ)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>نوێ</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>گۆڕدراو</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>نەگۆڕدراو</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>دووبارە</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>ناکۆکی</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>ئامانجی تێکچوو</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>میوانی نەناسراو</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>هاوردە ناکرێت</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>ناوە جێگرەوە گشتییەکانی URL</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>مێژووی هاوردن</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>نەخشەکانی URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>ڕەوانەکردنەکان (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>ئەم ڕەوانەکردنانە لە هاوردنی نەخشەکانی URL هاتوون: ناونیشانە کۆنەکانی خاوەن پرسیار (/index.php?id=12)، ڕەوانەکردنی کاتی و ڕەوانەکردن بۆ ماڵپەڕەکانی تر. لەسەر ناونیشانی تەواو دەپشکنرێن، پێش ناوە جێگرەوەکانی URL و وایلدکاردەکان. ڕەوانەکردنێکی هەمیشەیی بۆ پەڕەیەکی ئەم ماڵپەڕە لە جیاتی ئەوە ناوێکی جێگرەوەی گشتیی URLە و لەوێ ڕیزکراوە.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count ڕەوانەکردن لابران.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>هیچ ڕەوانەکردنێک نییە. بە هاوردنی نەخشەیەکی URL دروست دەبن.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>ڕەوانەکردنە پشکنراوەکان لەسەر ناونیشانی تەواو</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>هەڵبژاردن</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>بارودۆخ</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>لە هاوردنەوە</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>لابردن</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>هەڵبژاردنی %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>لابردنی %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>ئەم ڕەوانەکردنە لاببرێت؟</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>ڕەوانەکردنە هەڵبژێردراوەکان لاببرێن؟</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>لابردنی هەڵبژێردراوەکان</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>ڕەوانەکردنێکی لابراو دەستبەجێ لە کارکردن دەوەستێت.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>دەقی لکێندراو</translation>
     </message>
 </context>
 </TS>

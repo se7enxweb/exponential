@@ -7321,6 +7321,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Daqmey ghoch: yoSvam He, pagh He DachoHDI&apos; Daq naQ. {1\} &apos;oH wa&apos;DIch * rapbogh ghItlh&apos;e&apos;. ghu&apos;: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>Daq vam ru' lunuDmoHlu' (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>ru' He choHmoHlu' SuchwI'pu' (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>ru' He choHghach (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85524,6 +85536,625 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>wa' navDaq %count Doch yI'ang.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL pu'jIn yIlel</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Hoch URL pong latlhmey, Hoch mu'mey, He choHghachmey je De'wI' ghItlh wa'Daq yIlI': yIpol, mI' nagh beQDaq yIchoH 'ej yIqemqa', pagh Qa'Hom jabwI' yInob ghItlhqa'meH chutmey Daq.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>wa' Doch Segh yIwIv, pagh law'.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>ghItlh ghItlhlaHbe'lu'.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>nuq DalelnIS</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>ghItlh Segh</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Dochmey</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Hoch URL pong latlhmey (URL mughwI')</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>ghom Doch URL pong latlhmey DIch je</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>ghoch ngaSwI' Daq ghItlhlu', mu'qaD node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Hoch mu'mey</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>He choHghachmey</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>yoS lojmIt</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Hoch yoS lojmIt</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>He choHghachmey neH yoS lojmIt luHev; Hoch yoS lojmItvaD URL pong latlhmey Hoch mu'mey je lellu'.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Hol</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Hoch Hol</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>yIlel</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL pu'jIn yIqem</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Qa'Hom ngo' Daqmey wa'logh yIqem: ngo' Daq Hoch 'ej Qa'Hom vam nav'e' DaH Hevbogh tetlh ghItlh. Daq qar'a'mey He choHghachmey pagh URL pong latlhmey moj, * ghajbogh Daqmey Hoch mu'mey moj. pagh ghItlhlu'pa' tlhegh Hoch vang 'e' Dalegh, 'ej Hoch qemghach naQ DavangHa'laH.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL pu'jIn qemghach nagh beQmey tu'lu'be'. qempa' 6.0.15-url-map nIvmoHghach mIw (./console exp:upgrade --apply) yIQapmoH.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>qemghach vam DIlo'laHbe'qa': wa' jaj pIq rIn pagh latlh lo'wI' Hev. ghItlh yIngeHqa'.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>ghItlh yIwIv pagh tlheghmey yIlan.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>%size tIn law' ghItlh tIn puS.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>ghItlh laDlaHbe'lu': %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>jom vam yoS lojmIt yIwIv.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>jabwI'Daq qemghach polchu'laHbe'lu': %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>ghItlh'e'</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ghItlh</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache pagh nginx ghItlhqa'meH chutmey, %size tIn law' Hutlh.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>pagh tlheghmey yIlan</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>tlhegh wa' wa' tlheghDaq, mu'qaD /ngo'-nav,/chu'-nav. wa'DIch tlhegh tuqmey pongmey ghajlaH: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>ghItlh vo' yItu'</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>ghItlh pong ghItlh ngaS je net jatlhbe'chugh neH poQlu'.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>ghotlh mIwmey</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Daq SuDqang He yoS lojmIt</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>ghotlh</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>naQ Daq ghajbogh tlheghmey, ngaSwI'chaj yoS lojmIt lulaj.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>yoS lojmIt Hol</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>ngo' Daq Doch ghajtaHvIS</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Doch yIpol (tlhegh yIbuSHa')</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Doch yIchoH</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>ngo' ngaSwI'mey</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>jom vam Sovbe'bogh ngaSwI' naQ Daqmey qemlu'be'. ngo' ngaSwI' Hoch yoS lojmIt yIpong, wa' wa' tlheghDaq: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>nungbogh mIllogh</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>pagh ghItlhlu'pu'be': tlhegh Hoch vang 'e' 'ang nav veb.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>qemghach %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>qemghach vangHa'lu'ta'.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>qemghach vangHa'lu'ta', Dochmey qemghach ret choHlu'pu'bogh polta'lu' neH.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>qemghach vangHa'laHbe'lu': %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>jaj</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>vangwI'</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>tlheghmey</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created chenmoHlu'ta', %updated choHlu'ta', %skipped buSHa'lu'ta', %failed Qapbe'.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>vangHa'lu'ta'</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>qemghach vam yIvangHa'</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>qemghach chenmoHbogh Doch Hoch teqlu' 'ej choHbogh Doch Hoch ngo' Dotlh ngevqa'lu', Qav wa'DIch. wa'DIch nuq SoH 'e' DaHarmoH.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>qemghach ret %count Dochmey choHlu'</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>qemghach ret Dochmey choHlu'pu'bogh yIvangHa' je</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>vam Hutlhchugh polta'lu' 'ej qemghach bID vangHa'lu' (--force ra'wI' De'wI').</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>qemghach vam DavangHa' DaneH'a'?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>qemghach yIvangHa'</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Dochmey ghItlhlu'pu'bogh</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from vo' %to, %count DIch</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>pagh Doch ghItlhbe' qemghach.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>qemghach ghItlhbogh Dochmey</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>tlhegh</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>ngo' Daq</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Doch</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Daq luDev</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>choHghach</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Dotlh</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL pong latlh</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Hoch mu'</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>He choHghach</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>chenmoHlu'ta'</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>choHlu'ta'</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>lo'lu'ta'</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>polta'lu'</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>bID vangHa'lu'ta'</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>qemghach qun (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL pu'jIn qemghach Hoch, chu'qu' wa'DIch. qemghach naQ vangHa'laHlu': ghItlhbogh Doch Hoch Dotlh ngo' cheghqa'.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>pagh URL pu'jIn qemlu'pu'.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL pu'jIn qemghachmey</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>mI'</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>buSHa'lu'ta'</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Qapbe'</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows tlheghmey</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>qemghach %id Daq qemlu'ta'.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>qemghach yIlegh, pagh yIvangHa'</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>latlh ghItlh yIqem</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>pagh ghItlhlu'pu'be'. tlhegh Hoch nuq vang qemghach 'e' 'ang. tlheghmey ghItlhlu'pu'bogh qemlu'; tlhegh DaboSbe'meH ghItlh yIteq. ngo' Daqchaj choHlu'laHchugh neH tlheghmey chu'be'bogh qemlaHlu'.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>qemghach Qaplu'be': %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>qemmeH pagh tlhegh ghItlhlu'.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>chovmeH QapmoHghach: pagh ghItlhlu'pu'.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>%created chenmoHmo' qemghach, %updated choHmo', %skipped buSHa'mo'; %failed Qapbe'mo'.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>naQ leghghach</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>chenmoHnIS</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>choHnIS</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>buSHa'nIS</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>qay' ghaj</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>polta'lu' Hoch poH</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>nab yIchenmoHqa'</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>tlheghmey wIvbogh yIchoH 'ej ghItlh nab yIchenmoHqa'. ghop lo'taHvIS ghItlhmey DachoHbogh lutagh nIvqa'lu'.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>ngaSwI'meyvam tlheghmey qemlu'be', jom vam chaH jangbe'mo'. ngo' ngaSwI' Hoch yoS lojmIt yIwIv.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>qemlu'be'</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>yI'ang</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hoch</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Dotlh vam ghajbogh tlhegh tu'lu'be'.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hoch yI'ang</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>ghItlh tlheghmey 'ej Hoch vang qemghach</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>yIqem</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>chu' Daq</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Segh</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>QInHommey</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>tlhegh %line yIqem</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ghobe'</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>HIja'</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>chovmeH QapmoHghach</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>ghItlhmey yIpol</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>nab CSV Daq</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>nab JSON Daq</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>yIwoD</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>yIqem: Hoch nav tlheghmey ghItlhlu'pu'bogh qemghach wa'Daq ghItlh, qemghach qun vo' vangHa'laHlu'; wa'DIch nuq SoH 'e' DaHarmoH. chovmeH QapmoHghach: Qa'Hom Daq tlhegh Hoch nuDqa' 'ej nuq vang qemghach 'e' togh, pagh ghItlhbe'.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>He choHghach (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Hoch mu' He choHghach (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Hoch mu' (He choHlu'be')</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>chu'</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>choHlu'ta'</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>choHlu'be'</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>cha'logh</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>ghoHghach</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>ghoch QIH</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>ngaSwI' Sovlu'be'</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>qemlaHbe'lu'</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Hoch URL pong latlhmey</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>qemghach qun</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL pu'jInmey</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>He choHghachmey (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>URL pu'jIn qemghachmey vo' He choHghachmey vam lutaH: ngo' Daqmey ghel ghajbogh (/index.php?id=12), ru' He choHghachmey, latlh Qa'Hommey He choHghachmey je. naQ Daq Daq nuDlu', URL pong latlhmey Hoch mu'mey je nuDpa'. Qa'Hom vam navvaD reH He choHghach'e' Hoch URL pong latlh moj 'ej pa' tetlhDaq ghItlhlu'.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count He choHghachmey teqlu'ta'.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>He choHghachmey tu'lu'be'. URL pu'jIn qemlu'DI' chenmoHlu'.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>naQ Daq Daq He choHghachmey nuDlu'bogh</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>yIwIv</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Dotlh</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>qemghach vo'</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>yIteq</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address yIwIv</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address yIteq</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>He choHghach vam DateqneS'a'?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>He choHghachmey wIvlu'ta'bogh DateqneS'a'?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>wIvlu'ta'bogh tIteq</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>He choHghach teqlu'ta'bogh Qapqa'be' SIbI'.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>ghItlh lanlu'ta'bogh</translation>
     </message>
 </context>
 </TS>

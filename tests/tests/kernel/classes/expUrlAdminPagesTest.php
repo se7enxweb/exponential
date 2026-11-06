@@ -15,7 +15,8 @@
  *  UA-08 - An alias destination is read as module view, node or other
  *  UA-09 - Wildcard placeholders without a * are found
  *  UA-10 - A tried address is translated by the first wildcard it matches, as the wildcard cache does
- *  UA-11 - The alias and wildcard searches and kinds are query conditions, with %, _ and ! matched as themselves
+ *  UA-11 - The alias and wildcard searches and kinds are query conditions, with %, _ and ! matched as themselves; the
+ *          redirecting wildcards are both forward types (301 and the temporary 302)
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -200,7 +201,9 @@ class expUrlAdminPagesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( " WHERE ( LOWER( source_url ) LIKE LOWER( '%new!_s%' ) ESCAPE '!' OR LOWER( destination_url ) LIKE LOWER( '%new!_s%' ) ESCAPE '!' ) AND type = 1",
                            eZURLWildcard::filterWhereSQL( $db, 'new_s', eZURLWildcard::TYPE_FORWARD ) );
         $this->assertSame( array( 'type' => 2 ), eZURLWildcard::filterMongoMatch( '', eZURLWildcard::TYPE_DIRECT ) );
-        $this->assertSame( eZURLWildcard::TYPE_FORWARD, UrlaliasWildcard::typeOfKind( 'redirect' ) );
+        $this->assertSame( array( eZURLWildcard::TYPE_FORWARD, eZURLWildcard::TYPE_FORWARD_TEMPORARY ), UrlaliasWildcard::typeOfKind( 'redirect' ) );
+        $this->assertSame( ' WHERE type IN ( 1, 3 )', eZURLWildcard::filterWhereSQL( $db, '', UrlaliasWildcard::typeOfKind( 'redirect' ) ) );
+        $this->assertSame( array( 'type' => array( '$in' => array( 1, 3 ) ) ), eZURLWildcard::filterMongoMatch( '', UrlaliasWildcard::typeOfKind( 'redirect' ) ) );
         $this->assertSame( eZURLWildcard::TYPE_DIRECT, UrlaliasWildcard::typeOfKind( 'direct' ) );
         $this->assertNull( UrlaliasWildcard::typeOfKind( 'all' ) );
     }

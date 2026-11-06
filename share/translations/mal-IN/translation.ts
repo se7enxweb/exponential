@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>വിലാസങ്ങൾ പോകുന്ന ഇടം: ഈ സൈറ്റിന്റെ ഒരു പാത്ത്, അല്ലെങ്കിൽ റീഡയറക്ട് ചെയ്യുമ്പോൾ പൂർണ്ണ വിലാസം. {1\} എന്നത് ആദ്യത്തെ * പൊരുത്തപ്പെട്ട വാചകമാണ്. ഉദാഹരണം: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ഈ വിലാസത്തിലേക്ക് താൽക്കാലികമായി റീഡയറക്ട് ചെയ്യപ്പെടുന്നു (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>സന്ദർശകരെ താൽക്കാലികമായി റീഡയറക്ട് ചെയ്യുന്നു (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>താൽക്കാലിക റീഡയറക്ട് (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85489,6 +85501,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>ഒരു പേജിൽ %count ഇനങ്ങൾ കാണിക്കുക.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL മാപ്പ് കയറ്റുമതി ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>ഈ സൈറ്റിന്റെ ഗ്ലോബൽ URL അപരനാമങ്ങളും വൈൽഡ്കാർഡുകളും റീഡയറക്ടുകളും ഒരു ഫയലായി ഡൗൺലോഡ് ചെയ്യുക: സൂക്ഷിക്കാൻ, സ്പ്രെഡ്ഷീറ്റിൽ തിരുത്തി വീണ്ടും ഇറക്കുമതി ചെയ്യാൻ, അല്ലെങ്കിൽ ഒരു വെബ് സെർവറിന് റീറൈറ്റ് നിയമങ്ങളായി നൽകാൻ.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>കുറഞ്ഞത് ഒരു തരം എൻട്രികൾ തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>ഫയൽ എഴുതാൻ കഴിഞ്ഞില്ല.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>എന്ത് കയറ്റുമതി ചെയ്യണം</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>ഫോർമാറ്റ്</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>എൻട്രികൾ</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>ഗ്ലോബൽ URL അപരനാമങ്ങൾ (URL വിവർത്തകൻ)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>ഉള്ളടക്കത്തിന്റെ ഇഷ്ടാനുസൃത URL അപരനാമങ്ങളും</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>നോഡ് ലക്ഷ്യമായി എഴുതുന്നു, ഉദാഹരണത്തിന് node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>വൈൽഡ്കാർഡുകൾ</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>റീഡയറക്ടുകൾ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>സൈറ്റ്ആക്സസ്</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>എല്ലാ സൈറ്റ്ആക്സസും</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>റീഡയറക്ടുകൾ മാത്രമേ ഒരു സൈറ്റ്ആക്സസിന്റേതാകൂ; URL അപരനാമങ്ങളും വൈൽഡ്കാർഡുകളും എല്ലാ സൈറ്റ്ആക്സസിനും വേണ്ടി കയറ്റുമതി ചെയ്യുന്നു.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ഭാഷ</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>എല്ലാ ഭാഷയും</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>കയറ്റുമതി ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>ഒരു URL മാപ്പ് ഇറക്കുമതി ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>ഒരു പഴയ സൈറ്റിന്റെ വിലാസങ്ങൾ ഒറ്റയടിക്ക് കൊണ്ടുവരിക: ഓരോ പഴയ വിലാസവും അത് ഇപ്പോൾ ഉൾപ്പെടുന്ന ഈ സൈറ്റിലെ പേജും ഒരു ഫയൽ പട്ടികപ്പെടുത്തുന്നു. കൃത്യമായ വിലാസങ്ങൾ റീഡയറക്ടുകളോ URL അപരനാമങ്ങളോ ആകുന്നു, * ഉള്ള വിലാസങ്ങൾ വൈൽഡ്കാർഡുകളാകുന്നു. എന്തെങ്കിലും എഴുതുന്നതിന് മുമ്പ് ഓരോ വരിയും എന്ത് ചെയ്യുമെന്ന് നിങ്ങൾ കാണുന്നു, ഓരോ ഇറക്കുമതിയും മുഴുവനായി പഴയപടിയാക്കാം.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL മാപ്പ് ഇറക്കുമതികളുടെ പട്ടികകൾ ഇതുവരെ നിലവിലില്ല. ഇറക്കുമതി ചെയ്യുന്നതിന് മുമ്പ് അപ്ഗ്രേഡ് ഘട്ടം 6.0.15-url-map (./console exp:upgrade --apply) പ്രവർത്തിപ്പിക്കുക.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>ഈ ഇറക്കുമതി ഇനി ലഭ്യമല്ല: ഒരു ദിവസത്തിന് ശേഷം ഇതിന്റെ കാലാവധി കഴിഞ്ഞു, അല്ലെങ്കിൽ ഇത് മറ്റൊരു ഉപയോക്താവിന്റേതാണ്. ഫയൽ വീണ്ടും അപ്ലോഡ് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>ഒരു ഫയൽ തിരഞ്ഞെടുക്കുക അല്ലെങ്കിൽ വരികൾ ഒട്ടിക്കുക.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>ഫയൽ %size-നേക്കാൾ വലുതാണ്.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>ഫയൽ വായിക്കാൻ കഴിയില്ല: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>ഈ ഇൻസ്റ്റലേഷന്റെ ഒരു സൈറ്റ്ആക്സസ് തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>ഇറക്കുമതി സെർവറിൽ സൂക്ഷിക്കാൻ കഴിയില്ല: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>ഫയൽ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ഫയൽ</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache അല്ലെങ്കിൽ nginx റീറൈറ്റ് നിയമങ്ങൾ, പരമാവധി %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>അല്ലെങ്കിൽ വരികൾ ഒട്ടിക്കുക</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>ഓരോ ലൈനിലും ഒരു വരി, ഉദാഹരണത്തിന് /old-page,/new-page. ആദ്യ ലൈനിൽ കോളങ്ങളുടെ പേര് നൽകാം: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>ഫയലിൽ നിന്ന് കണ്ടെത്തുക</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>ഫയലിന്റെ പേരോ ഉള്ളടക്കമോ പറയാത്തപ്പോൾ മാത്രം ആവശ്യം.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>സ്ഥിരസ്ഥിതികൾ</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>പാത്ത് മാത്രമുള്ള വരികളുടെ സൈറ്റ്ആക്സസ്</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>സ്ഥിരസ്ഥിതി</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>പൂർണ്ണ വിലാസമുള്ള വരികൾ പകരം അവയുടെ ഹോസ്റ്റിന്റെ സൈറ്റ്ആക്സസ് എടുക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>സൈറ്റ്ആക്സസിന്റെ ഭാഷ</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>ഒരു പഴയ വിലാസത്തിന് ഇതിനകം ഒരു എൻട്രി ഉള്ളപ്പോൾ</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>എൻട്രി നിലനിർത്തുക (വരി ഒഴിവാക്കുക)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>എൻട്രി മാറ്റിസ്ഥാപിക്കുക</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>പഴയ ഹോസ്റ്റുകൾ</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>ഈ ഇൻസ്റ്റലേഷന് അറിയാത്ത ഒരു ഹോസ്റ്റിന്റെ പൂർണ്ണ വിലാസങ്ങൾ ഇറക്കുമതി ചെയ്യില്ല. ഓരോ പഴയ ഹോസ്റ്റും ഏത് സൈറ്റ്ആക്സസിനെ പ്രതിനിധീകരിക്കുന്നുവെന്ന് ഓരോ ലൈനിലും ഒന്നായി നൽകുക: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>പ്രിവ്യൂ</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>ഇതുവരെ ഒന്നും എഴുതുന്നില്ല: ഓരോ വരിയും എന്ത് ചെയ്യുമെന്ന് അടുത്ത പേജ് കാണിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>ഇറക്കുമതി %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>ഇറക്കുമതി പഴയപടിയാക്കി.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>ഇറക്കുമതി പഴയപടിയാക്കി, അതിനുശേഷം മാറ്റിയ എൻട്രികൾ ഒഴികെ; അവ നിലനിർത്തി.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>ഇറക്കുമതി പഴയപടിയാക്കാൻ കഴിഞ്ഞില്ല: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>തീയതി</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ചെയ്തത്</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>വരികൾ</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created സൃഷ്ടിച്ചു, %updated മാറ്റിസ്ഥാപിച്ചു, %skipped ഒഴിവാക്കി, %failed പരാജയപ്പെട്ടു.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>പഴയപടിയാക്കി</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>ഈ ഇറക്കുമതി പഴയപടിയാക്കുക</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>ഇറക്കുമതി സൃഷ്ടിച്ച എല്ലാ എൻട്രിയും നീക്കം ചെയ്യുകയും അത് മാറ്റിസ്ഥാപിച്ച എല്ലാ എൻട്രിയും മുമ്പത്തെപ്പോലെ തിരികെ വയ്ക്കുകയും ചെയ്യുന്നു, അവസാനത്തേത് ആദ്യം. ആദ്യം നിങ്ങൾ ആരാണെന്ന് സ്ഥിരീകരിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>ഇറക്കുമതിക്ക് ശേഷം %count എൻട്രികൾ മാറ്റി</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>ഇറക്കുമതിക്ക് ശേഷം മാറ്റിയ എൻട്രികളും പഴയപടിയാക്കുക</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>ഇതില്ലാതെ അവ നിലനിർത്തുകയും ഇറക്കുമതി ഭാഗികമായി പഴയപടിയാകുകയും ചെയ്യും (കൺസോളിന്റെ --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>ഈ ഇറക്കുമതി പഴയപടിയാക്കണോ?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>ഇറക്കുമതി പഴയപടിയാക്കുക</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>എഴുതിയ എൻട്രികൾ</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count-ൽ %from മുതൽ %to വരെ</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>ഇറക്കുമതി ഒരു എൻട്രിയും എഴുതിയില്ല.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>ഇറക്കുമതി എഴുതിയ എൻട്രികൾ</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>ലൈൻ</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>പഴയ വിലാസം</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>എൻട്രി</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>നയിക്കുന്നത്</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>മാറ്റം</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>അവസ്ഥ</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL അപരനാമം</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>വൈൽഡ്കാർഡ്</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>റീഡയറക്ട്</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>സൃഷ്ടിച്ചു</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>മാറ്റിസ്ഥാപിച്ചു</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>പ്രയോഗിച്ചു</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>നിലനിർത്തി</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>ഭാഗികമായി പഴയപടിയാക്കി</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>ഇറക്കുമതി ചരിത്രം (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>ഒരു URL മാപ്പിന്റെ എല്ലാ ഇറക്കുമതിയും, ഏറ്റവും പുതിയത് ആദ്യം. ഒരു ഇറക്കുമതി മുഴുവനായി പഴയപടിയാക്കാം: അത് എഴുതിയ ഓരോ എൻട്രിയും മുമ്പ് ഉണ്ടായിരുന്നതിലേക്ക് മടങ്ങുന്നു.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>ഇതുവരെ ഒരു URL മാപ്പും ഇറക്കുമതി ചെയ്തിട്ടില്ല.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL മാപ്പുകളുടെ ഇറക്കുമതികൾ</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>നമ്പർ</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>ഒഴിവാക്കിയവ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>പരാജയപ്പെട്ടവ</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows വരികൾ</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>ഇറക്കുമതി %id ആയി ഇറക്കുമതി ചെയ്തു.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>ഇറക്കുമതി കാണുക, അല്ലെങ്കിൽ പഴയപടിയാക്കുക</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>മറ്റൊരു ഫയൽ ഇറക്കുമതി ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>ഇതുവരെ ഒന്നും എഴുതിയിട്ടില്ല. ഓരോ വരിയും ഇറക്കുമതി അതിനോട് എന്ത് ചെയ്യുമെന്ന് കാണിക്കുന്നു. ടിക്ക് ചെയ്ത വരികൾ ഇറക്കുമതി ചെയ്യുന്നു; ഒരു വരി ഒഴിവാക്കാൻ അതിന്റെ ടിക്ക് മാറ്റുക. പുതിയതല്ലാത്ത വരികൾ അവയുടെ പഴയ വിലാസം മാറ്റിസ്ഥാപിക്കാൻ അനുവാദമുള്ളപ്പോൾ മാത്രമേ ഇറക്കുമതി ചെയ്യാനാകൂ.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>ഇറക്കുമതി നടന്നില്ല: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>ഇറക്കുമതിക്കായി ഒരു വരിയും ടിക്ക് ചെയ്തിട്ടില്ല.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>ഡ്രൈ റൺ: ഒന്നും എഴുതിയില്ല.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>ഇറക്കുമതി %created സൃഷ്ടിക്കും, %updated മാറ്റിസ്ഥാപിക്കും, %skipped ഒഴിവാക്കും; %failed പരാജയപ്പെടും.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>അവലോകനം</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>സൃഷ്ടിക്കാനുള്ളവ</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>മാറ്റിസ്ഥാപിക്കാനുള്ളവ</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>ഒഴിവാക്കാനുള്ളവ</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>പ്രശ്നമുള്ളവ</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>വരെ സൂക്ഷിക്കും</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>വീണ്ടും ആസൂത്രണം ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>വരികളെ നിർണ്ണയിക്കുന്നത് മാറ്റി ഫയൽ വീണ്ടും ആസൂത്രണം ചെയ്യുക. നിങ്ങൾ കൈകൊണ്ട് മാറ്റിയ ടിക്കുകൾ പുനഃസജ്ജമാക്കും.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>ഈ ഹോസ്റ്റുകളുടെ വരികൾ ഇറക്കുമതി ചെയ്യുന്നില്ല, കാരണം ഈ ഇൻസ്റ്റലേഷൻ അവയ്ക്ക് മറുപടി നൽകുന്നില്ല. ഓരോ പഴയ ഹോസ്റ്റും ഏത് സൈറ്റ്ആക്സസിനെ പ്രതിനിധീകരിക്കുന്നുവെന്ന് തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>ഇറക്കുമതി ചെയ്തിട്ടില്ല</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>കാണിക്കുക</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>എല്ലാം</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>ഈ അവസ്ഥയിലുള്ള ഒരു വരിയുമില്ല.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>എല്ലാം കാണിക്കുക</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>ഫയലിലെ വരികളും ഇറക്കുമതി ഓരോന്നിനോടും എന്ത് ചെയ്യുമെന്നും</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>ഇറക്കുമതി ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>പുതിയ വിലാസം</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>തരം</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>കുറിപ്പുകൾ</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>ലൈൻ %line ഇറക്കുമതി ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ഇല്ല</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>അതെ</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ഡ്രൈ റൺ</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>ടിക്കുകൾ നിലനിർത്തുക</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>പ്ലാൻ CSV ആയി</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>പ്ലാൻ JSON ആയി</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>ഉപേക്ഷിക്കുക</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>ഇറക്കുമതി എല്ലാ പേജുകളിലെയും ടിക്ക് ചെയ്ത വരികൾ ഒരൊറ്റ ഇറക്കുമതിയായി എഴുതുന്നു, അത് ഇറക്കുമതി ചരിത്രത്തിൽ നിന്ന് പഴയപടിയാക്കാം; ആദ്യം നിങ്ങൾ ആരാണെന്ന് സ്ഥിരീകരിക്കുന്നു. ഡ്രൈ റൺ ഓരോ വരിയും സൈറ്റുമായി വീണ്ടും പരിശോധിച്ച് ഇറക്കുമതി എന്ത് ചെയ്യുമെന്ന് എണ്ണുന്നു, ഒന്നും എഴുതാതെ.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>റീഡയറക്ട് (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>വൈൽഡ്കാർഡ് റീഡയറക്ട് (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>വൈൽഡ്കാർഡ് (നേരിട്ട്)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>പുതിയത്</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>മാറ്റിയത്</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>മാറ്റമില്ലാത്തത്</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>തനിപ്പകർപ്പ്</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>വൈരുദ്ധ്യം</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>തകർന്ന ലക്ഷ്യം</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>അജ്ഞാത ഹോസ്റ്റ്</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>ഇറക്കുമതി ചെയ്യാനാകില്ല</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>ഗ്ലോബൽ URL അപരനാമങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>ഇറക്കുമതി ചരിത്രം</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL മാപ്പുകൾ</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>റീഡയറക്ടുകൾ (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>ഈ റീഡയറക്ടുകൾ URL മാപ്പ് ഇറക്കുമതികളിൽ നിന്ന് വരുന്നു: ക്വറിയുള്ള പഴയ വിലാസങ്ങൾ (/index.php?id=12), താൽക്കാലിക റീഡയറക്ടുകൾ, മറ്റ് സൈറ്റുകളിലേക്കുള്ള റീഡയറക്ടുകൾ. URL അപരനാമങ്ങൾക്കും വൈൽഡ്കാർഡുകൾക്കും മുമ്പ് പൂർണ്ണ വിലാസത്തിൽ അവ പരിശോധിക്കുന്നു. ഈ സൈറ്റിലെ ഒരു പേജിലേക്കുള്ള സ്ഥിരമായ റീഡയറക്ട് പകരം ഒരു ഗ്ലോബൽ URL അപരനാമമാണ്, അത് അവിടെ പട്ടികപ്പെടുത്തിയിരിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count റീഡയറക്ടുകൾ നീക്കം ചെയ്തു.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>റീഡയറക്ടുകളൊന്നുമില്ല. ഒരു URL മാപ്പ് ഇറക്കുമതി ചെയ്താണ് അവ ഉണ്ടാക്കുന്നത്.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>പൂർണ്ണ വിലാസത്തിൽ പരിശോധിക്കുന്ന റീഡയറക്ടുകൾ</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>തിരഞ്ഞെടുക്കുക</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>നില</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>ഇറക്കുമതിയിൽ നിന്ന്</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>നീക്കം ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address തിരഞ്ഞെടുക്കുക</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address നീക്കം ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>ഈ റീഡയറക്ട് നീക്കം ചെയ്യണോ?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>തിരഞ്ഞെടുത്ത റീഡയറക്ടുകൾ നീക്കം ചെയ്യണോ?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>തിരഞ്ഞെടുത്തവ നീക്കം ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>നീക്കം ചെയ്ത റീഡയറക്ട് ഉടൻ പ്രവർത്തനം നിർത്തുന്നു.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>ഒട്ടിച്ച വാചകം</translation>
     </message>
 </context>
 </TS>

@@ -423,7 +423,8 @@
         "xmlUrl": "code, unit, key name or product name",
         "Tablet": "the Czech word for a tablet",
         "WebDAV": "protocol name",
-        "Webhook": "Czech uses the English term Webhook"
+        "Webhook": "Czech uses the English term Webhook",
+        "Import %id": "Czech word 'import' spelled the same"
     },
     "dan-DK": {
         "Cookie": "Danish standard term for an HTTP cookie is Cookie",
@@ -674,7 +675,8 @@
         "Job %id": "Danish uses the English loanword job (catalogue: Baggrundsjob)",
         "Build": "Danish developers use the English term build",
         "Webhook": "Danish uses the English term Webhook",
-        "Datatype %string": "Datatype is the Danish word too"
+        "Datatype %string": "Datatype is the Danish word too",
+        "Import %id": "Danish word 'import' spelled the same"
     },
     "dut-NL": {
         "Handler": "Dutch IT usage keeps handler for the PHP session save handler",
@@ -1049,7 +1051,10 @@
         "Webhook": "Dutch uses the English term Webhook",
         "extra": "extra is the Dutch word",
         "Datatype %string": "Datatype is the Dutch word too",
-        "Datatypes (%count)": "Datatypes is the Dutch plural too"
+        "Datatypes (%count)": "Datatypes is the Dutch plural too",
+        "Import %id": "Dutch word 'import' spelled the same",
+        "Wildcard": "Dutch loanword used in the Dutch catalogue",
+        "Wildcard (direct)": "Dutch loanword 'wildcard' and Dutch word 'direct' spelled the same"
     },
     "esl-ES": {
         "Cookie": "Spanish uses the loanword cookie for HTTP cookies",
@@ -1796,7 +1801,8 @@
         "Webhook": "French uses the English term Webhook",
         "page": "page is the French word too",
         "Public": "French adjective public is spelled the same as English",
-        "public": "French adjective public is spelled the same as English"
+        "public": "French adjective public is spelled the same as English",
+        "Import %id": "French word import spelled the same"
     },
     "ger-DE": {
         "Session": "German IT usage writes Session (the guide and the tab say Session)",
@@ -2076,7 +2082,8 @@
         "Build": "German uses the English term Build (prescribed terminology)",
         "Commits": "German uses the English git term Commits",
         "Webhook": "German uses the English term Webhook",
-        "Domain": "Domain is the German word as well"
+        "Domain": "Domain is the German word as well",
+        "Import %id": "German word spelled the same"
     },
     "heb-IL": {
         "#level1 - #level2": "only PDF placeholder tokens and a separator; no words to translate",
@@ -2704,7 +2711,8 @@
         "Ellipse": "spelled the same in Norwegian",
         "Zoom: %1 %": "zoom is the Norwegian word, spelled the same",
         "Webhook": "Norwegian uses the English term Webhook",
-        "Datatype %string": "Datatype is the Norwegian word too"
+        "Datatype %string": "Datatype is the Norwegian word too",
+        "Import %id": "Norwegian noun 'import' spelled the same"
     },
     "pol-PL": {
         "#level1 - #level2": "code, setting, file name, unit or placeholder text without words to translate",
@@ -2838,7 +2846,9 @@
         "Tablet": "the Polish word for a tablet",
         "WebDAV": "protocol name",
         "Sepia": "spelled the same in Polish (sepia, the brown photo tone)",
-        "Webhook": "Polish uses the English technical term webhook"
+        "Webhook": "Polish uses the English technical term webhook",
+        "Import %id": "Polish noun 'import' spelled the same",
+        "Status": "Polish word spelled the same"
     },
     "por-BR": {
         "Cookie": "Brazilian Portuguese uses the English loanword \"cookie\" as the standard web term",
@@ -3414,7 +3424,8 @@
         "Zoom: %1 %": "zoom is the Swedish noun, spelled the same",
         "Schema": "the same word in Swedish",
         "Webhooks": "the same word in Swedish (English loanword, plural -s)",
-        "Webhook": "Swedish uses the English term webhook"
+        "Webhook": "Swedish uses the English term webhook",
+        "Import %id": "Swedish word 'Import' spelled the same"
     },
     "tlh-QO": {
         "GitHub Actions workflow": "product name kept",
@@ -4098,7 +4109,8 @@
         "vertScrollState": "OPML attribute name (code identifier)",
         "xmlUrl": "OPML attribute name (code identifier)",
         "Tablet": "same word in Lower Sorbian (a tablet computer)",
-        "Webhook": "Lower Sorbian technical texts use the English term Webhook"
+        "Webhook": "Lower Sorbian technical texts use the English term Webhook",
+        "Import %id": "Lower Sorbian word 'import' spelled the same"
     },
     "est-EE": {
         "#levelIndex1:#levelIndex2": "format placeholders only",
@@ -4209,7 +4221,8 @@
         "top": "OPML attribute name, kept as code",
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
-        "xmlUrl": "OPML attribute name (code identifier)"
+        "xmlUrl": "OPML attribute name (code identifier)",
+        "Import %id": "Estonian word 'import' spelled the same"
     },
     "gle-IE": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -4838,7 +4851,8 @@
         "%max (default %default)": "placeholders and the loan word default the catalogue uses",
         "Webhooks": "the same loanword in Maltese",
         "+%added ~%changed -%removed": "Symbols and placeholders only; the brief requires it unchanged",
-        "Webhook": "Maltese uses the English technical term webhook"
+        "Webhook": "Maltese uses the English technical term webhook",
+        "Wildcard": "Maltese catalogue uses the loanword Wildcard"
     },
     "ron-RO": {
         "Cookie": "Romanian uses the loanword cookie (Numele cookie-ului)",
@@ -5240,7 +5254,8 @@
         "vertScrollState": "OPML attribute name (code identifier)",
         "xmlUrl": "OPML attribute name (code identifier)",
         "Tablet": "same word in Slovak (a tablet computer)",
-        "Webhook": "Slovak uses the English term Webhook"
+        "Webhook": "Slovak uses the English term Webhook",
+        "Import %id": "Slovak word 'Import' spelled the same"
     },
     "slv-SI": {
         "Minify": "technical term kept in English",
@@ -10252,7 +10267,8 @@
         "Literal": "same word in Malay",
         "Sepia": "spelled the same in Malay (DBP: sepia)",
         "Webhook": "Malay uses the English term Webhook",
-        "Domain": "Domain is the standard Malay word"
+        "Domain": "Domain is the standard Malay word",
+        "Import %id": "Malay noun 'import' spelled the same"
     },
     "jav-ID": {
         "OK": "kept as in the guide (allowlisted)",
@@ -10540,7 +10556,8 @@
         "Div": "HTML element name",
         "Literal": "technical term spelled the same in Sundanese",
         "Plugin": "word spelled the same in Sundanese",
-        "Webhook": "Sundanese uses the English technical term Webhook, as Indonesian does"
+        "Webhook": "Sundanese uses the English technical term Webhook, as Indonesian does",
+        "File": "loanword 'file' used throughout Sundanese UI text"
     },
     "nep-NP": {
         "ID %id": "acronym with placeholder",
@@ -15358,7 +15375,8 @@
         "Help page": "Nigerian Pidgin keeps the English term",
         "Class attributes (%count)": "Nigerian Pidgin keeps the English technical term",
         "From text": "the same words in Nigerian Pidgin",
-        "From file": "the same words in Nigerian Pidgin"
+        "From file": "the same words in Nigerian Pidgin",
+        "Wildcard": "Nigerian Pidgin uses the English term"
     },
     "syr-IQ": {
         "ID %id": "abbreviation and placeholder only",
@@ -16372,7 +16390,9 @@
         "Post-processing": "Filipino IT usage keeps the English term",
         "Webhook": "Filipino uses the English term Webhook",
         "git host": "Filipino IT usage keeps the English term host; git is a product name",
-        "Datatype %string": "the Filipino catalogue keeps Datatype as a technical term"
+        "Datatype %string": "the Filipino catalogue keeps Datatype as a technical term",
+        "Wildcard": "technical loanword used as is in Filipino UI",
+        "Redirect (%status)": "term kept as in the existing Filipino catalogue"
     },
     "che-RU": {
         "ID %id": "acronym and placeholder",
@@ -16820,7 +16840,8 @@
         "eznode": "code identifier",
         "ezobject": "code identifier",
         "Div": "HTML element name",
-        "%seconds s": "placeholder and the unit symbol s, the language has no other"
+        "%seconds s": "placeholder and the unit symbol s, the language has no other",
+        "Import %id": "Uzbek 'Import' (noun) is spelled the same"
     },
     "mya-MM": {
         "ID %id": "acronym ID with placeholder",
@@ -16984,7 +17005,8 @@
         "Http": "protocol name",
         "Https": "protocol name",
         "Div": "HTML element name",
-        "Webhook": "Burmese technical UI keeps the English term Webhook"
+        "Webhook": "Burmese technical UI keeps the English term Webhook",
+        "Wildcard": "loanword kept in Latin script, as the existing Burmese catalogue does (URL wildcard များ)"
     },
     "haw-US": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -17462,7 +17484,8 @@
         "Plugin": "loanword spelled the same",
         "Palette": "French word spelled the same",
         "Tel": "abbreviation spelled the same",
-        "Webhook": "Lingala IT usage keeps the English term Webhook"
+        "Webhook": "Lingala IT usage keeps the English term Webhook",
+        "Wildcard": "technical term kept as is, as in the Lingala catalogue (Ba-wildcard)"
     },
     "ful-SN": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -18189,7 +18212,8 @@
         "Webhooks": "technical term kept in English, as the catalogue keeps Mutations",
         "Subscriptions": "GraphQL term kept in English, as the catalogue keeps Mutations",
         "Webhook": "Twi has no native term; the English technical term Webhook is used",
-        "git host": "The Twi catalogue uses the English term host; git is a product name"
+        "git host": "The Twi catalogue uses the English term host; git is a product name",
+        "Wildcard": "catalogue keeps the technical term as is"
     },
     "asm-IN": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -18970,7 +18994,9 @@
         "Key": "the word the catalogue uses for this term, spelled as in English",
         "Webhook": "Cebuano uses the English term webhook",
         "Deploy key": "Cebuano IT usage keeps the English term deploy key, as GitHub shows it",
-        "Site": "Cebuano uses the English loanword site"
+        "Site": "Cebuano uses the English loanword site",
+        "Entry": "Cebuano loanword in common use",
+        "Wildcard": "catalogue keeps the technical term as is"
     },
     "ckb-IQ": {
         "ID %id": "acronym ID with placeholder",
@@ -20630,7 +20656,8 @@
         "Commit": "Luxembourgish uses the git term Commit (the migration strings say committed)",
         "Commits": "Plural of the git term Commit, used as is in Luxembourgish",
         "Push": "Luxembourgish uses the git term Push (the migration strings say Push: %state)",
-        "Webhook": "Webhook is the established technical term in Luxembourgish"
+        "Webhook": "Webhook is the established technical term in Luxembourgish",
+        "Import %id": "Luxembourgish noun Import spelled the same"
     },
     "run-BI": {
         "GitHub Actions workflow": "product name kept",
@@ -22994,7 +23021,8 @@
         "Webhooks": "the English loanword is used unchanged in Romansh technical UI",
         "Webhook": "Romansh uses the English technical term webhook",
         "Public": "Romansh adjective public (masculine, for the repository) is spelled the same as English",
-        "public": "Romansh adjective public (masculine, for the repository) is spelled the same as English"
+        "public": "Romansh adjective public (masculine, for the repository) is spelled the same as English",
+        "Import %id": "Romansh noun 'import' spelled the same"
     },
     "hsb-DE": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",

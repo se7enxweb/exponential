@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Kũrĩa anwani ithiaga: njĩra ya saiti ĩno, kana anwani yothe rĩrĩa ũkũrehe handũ hangĩ. {1\} nĩ ũhoro ũrĩa * ya mbere yaringanire nao. Kwa mwanzo: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>marehagwo handũ hangĩ gwa kahinda kanini nginya adirethi ĩno (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Ageni marehagwo handũ hangĩ gwa kahinda kanini (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Kũrehwo handũ hangĩ gwa kahinda (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     <message>
         <source>Show %count items per page.</source>
         <translation>Onania ikĩndũ %count ũrũa-inĩ o ũmwe.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Tũma nja mapu ya URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Rehe marĩĩtwa marĩa mangĩ ma URL ma kũmĩrĩria, ciambĩrĩria na marehe ma saiti ĩno ta faili ĩmwe: nĩguo ũmĩige, ũmĩcenjie thĩinĩ wa spreadsheet na ũmĩrehe thĩinĩ rĩngĩ, kana ũmĩhe sava ya web ta mawatho ma kwandĩka rĩngĩ.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Thuura mũthemba ũmwe wa maandĩko kũrĩ hanini.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Faili ndĩngĩandĩkwo.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Kĩrĩa gĩgũtũmwo nja</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Mũhaano</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Maandĩko</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Marĩĩtwa marĩa mangĩ ma URL ma kũmĩrĩria (mũtaũri wa URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>O na marĩĩtwa marĩa mangĩ ma URL mathondekeke ma ũhoro</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Yandĩkĩtwo na node ta kũrĩa ĩrathiĩ, ta node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Ciambĩrĩria cia URL</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Marehe</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Njĩra ya saiti</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Njĩra ciothe cia saiti</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>No marehe moiki marĩ ma njĩra ya saiti; marĩĩtwa marĩa mangĩ ma URL na ciambĩrĩria itũmagwo nja nĩ ũndũ wa njĩra ciothe cia saiti.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Rũthiomi</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Thiomi ciothe</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Tũma nja</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Rehe thĩinĩ mapu ya URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Rehe adirethi cia saiti ya tene hamwe: faili ĩandĩkaga o adirethi ya tene na ndaya ya saiti ĩno ĩrĩa ĩrĩ yayo rĩu. Adirethi njeru kũna itũĩkaga marehe kana marĩĩtwa marĩa mangĩ ma URL, adirethi irĩ na * itũĩkaga ciambĩrĩria. Nĩũkuona o mũhari ũgwĩka atĩa mbere ya kĩndũ o gĩothe kwandĩkwo, na o kũrehwo thĩinĩ guothe no gũcookio guothe.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Mesa cia kũrehe thĩinĩ mapu cia URL itirĩ ho o na rĩu. Hũthĩra kĩgeranio gĩa gũcenjia 6.0.15-url-map (./console exp:upgrade --apply) mbere ya kũrehe thĩinĩ.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Kũrehe thĩinĩ guku gũtirĩ ho rĩngĩ: gwathirire thutha wa mũthenya ũmwe kana nĩ gwa mũhũthĩri ũngĩ. Ambatĩria faili rĩngĩ.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Thuura faili kana ũhande mĩhari.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Faili nĩ nene gũkĩra %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Faili ndĩngĩthomeka: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Thuura njĩra ya saiti ya ũhandi ũyũ.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Kũrehe thĩinĩ gũtingĩigwo kũrĩ sava: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Faili ĩyo</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faili</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), mawatho ma kwandĩka rĩngĩ ma Apache kana nginx, mũigana %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Kana ũhande mĩhari</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Kĩandĩko kĩmwe o mũhari, ta /ndaya-ya-tene,/ndaya-njeru. Mũhari wa mbere no ũheane marĩĩtwa ma mĩhari ya igũrũ: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Menya kuuma faili-inĩ</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Nĩ kwagĩrĩire no rĩrĩa rĩĩtwa kana ũhoro wa faili itoigĩte.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Maũndũ ma kĩambĩrĩria</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Njĩra ya saiti ya njĩra itarĩ na host</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>kĩambĩrĩria</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Mĩhari ĩrĩ na adirethi ĩrĩa njiganu ĩĩoyaga njĩra ya saiti ya host yayo handũ ha ũguo.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Rũthiomi rwa njĩra ya saiti</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Rĩrĩa adirethi ya tene ĩrĩ na kĩandĩko o na mbere</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Iga kĩandĩko (hĩtũka mũhari)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Caria kĩandĩko kĩngĩ handũ hakĩo</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Host cia tene</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Adirethi njiganu cia host ĩrĩa ũhandi ũyũ ũtooĩ itirehagwo thĩinĩ. Heana rĩĩtwa rĩa njĩra ya saiti ĩrĩa o host ya tene ĩrũgamĩrĩire, ĩmwe o mũhari: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Rora mbere</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Gũtirĩ kĩndũ kĩandĩkĩtwo o na rĩu: ndaya ĩrĩa ĩrũmĩrĩire nĩĩkuonania o mũhari ũgwĩka atĩa.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Kũrehe thĩinĩ %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Kũrehe thĩinĩ nĩgwacookio.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Kũrehe thĩinĩ nĩgwacookio, tiga maandĩko marĩa maacenjirio thutha wakuo, marĩa maigirwo.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Kũrehe thĩinĩ gũtingĩacookirio: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Tarehe</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Nĩ</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Mĩhari</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created ciumbĩtwo, %updated ikacenjio, %skipped ikahĩtũkwo, %failed ikaaga.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Nĩgwacookio</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Cookia kũrehe thĩinĩ guku</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>O kĩandĩko kĩrĩa kũrehe thĩinĩ gwathondekire nĩkĩehererio na o kĩandĩko kĩrĩa gwacenjirie nĩgĩcookagio o ta ũrĩa kĩarĩ, kuuma kĩa thutha. Wambe ũtigĩrĩrie atĩ nĩwe.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>Maandĩko %count macenjirio thutha wa kũrehe thĩinĩ</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Cookia o na maandĩko marĩa macenjirio thutha wa kũrehe thĩinĩ</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Hatarĩ ũguo nĩmaigagwo na kũrehe thĩinĩ gũgacookio gĩcunjĩ (--force ya console).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Ũrenda gũcookia kũrehe thĩinĩ guku?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Cookia kũrehe thĩinĩ</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Maandĩko maandĩkĩtwo</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from nginya %to ya %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Kũrehe thĩinĩ gũtiandĩkire kĩandĩko o nakĩo.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Maandĩko marĩa kũrehe thĩinĩ gwandĩkire</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Mũhari</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Adirethi ya tene</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Kĩandĩko</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Gĩtwaraga</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Mũcenjio</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ũrĩa kĩrĩ</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Rĩĩtwa rĩngĩ rĩa URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Kĩambĩrĩria</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Rehe handũ hangĩ</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Nĩ kĩumbĩtwo</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Nĩ gĩacenjio</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Nĩ kĩhũthĩrĩtwo</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Nĩ kĩigĩtwo</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Nĩgwacookio gĩcunjĩ</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Rũgano rwa kũrehe thĩinĩ (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>O kũrehe thĩinĩ kwa mapu ya URL, kĩrĩa kĩerũ mbere. Kũrehe thĩinĩ no gũcookio guothe: o kĩandĩko kĩrĩa gwandĩkire gĩcookaga o ta ũrĩa kĩarĩ mbere.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Gũtirĩ mapu ya URL ĩrehetwo thĩinĩ o na rĩu.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Kũrehe thĩinĩ mapu cia URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Namba</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Nĩ ciricwo</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Nĩ ĩoire</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, mĩhari %rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Nĩ ĩrehetwo thĩinĩ ta kũrehe thĩinĩ %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Rora kũrehe thĩinĩ, kana ũgũcookie</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Rehe thĩinĩ faili ĩngĩ</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Gũtirĩ kĩndũ kĩandĩkĩtwo o na rĩu. O mũhari nĩũronania kũrehe thĩinĩ gũkũwĩka atĩa. Mĩhari ĩrĩ na kĩmenyithia nĩĩrehagwo thĩinĩ; ehereria kĩmenyithia nĩguo ũtige mũhari. Mĩhari ĩtarĩ mĩerũ no ĩrehwo thĩinĩ rĩrĩa adirethi yayo ya tene yĩtĩkĩrĩtio gũcenjio.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Kũrehe thĩinĩ gũtiekwo: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Gũtirĩ mũhari ũrĩ na kĩmenyithia nĩ ũndũ wa kũrehe thĩinĩ.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Ũtengerie wa kũgeria: gũtirĩ kĩndũ kĩandĩkirwo.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Kũrehe thĩinĩ kwahota gũthondeka %created, gũcenjia %updated na kũhĩtũka %skipped; %failed ingĩaga.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Mũcemanio</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Cia gũthondekwo</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Cia gũcenjio</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Cia kũhĩtũkwo</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Irĩ na thĩĩna</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Igĩtwo nginya</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Thondeka mũbango rĩngĩ</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Cenjia kĩrĩa gĩtuaga mĩhari na ũthondeke mũbango wa faili rĩngĩ. Imenyithia iria wacenjirie na guoko nĩicookagio o ta mbere.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Mĩhari ya host ici ndĩrehagwo thĩinĩ, tondũ ũhandi ũyũ ndũcookagia ũhoro nĩ ũndũ wacio. Thuura njĩra ya saiti ĩrĩa o host ya tene ĩrũgamĩrĩire.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Ndĩrehetwo thĩinĩ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rora</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ciothe</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Gũtirĩ mũhari ũrĩ na ũhoro ũyũ.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Rora ciothe</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Mĩhari ya faili na ũrĩa kũrehe thĩinĩ gũgwĩka o ũmwe</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Rehe thĩinĩ</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Adirethi njeru</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Mũthemba</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Ciũmbe</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Rehe thĩinĩ mũhari %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Aca</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ĩĩ</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Ũtengerie wa kũgeria</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Iga imenyithia</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Mũbango ta CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Mũbango ta JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Ikia</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Rehe thĩinĩ yandĩkaga mĩhari ĩrĩ na imenyithia ya ndaya ciothe ta kũrehe thĩinĩ kũmwe, kũrĩa no gũcookio kuuma rũgano-inĩ rwa kũrehe thĩinĩ; wambe ũtigĩrĩrie atĩ nĩwe. Ũtengerie wa kũgeria ũthuthuragia o mũhari rĩngĩ na saiti na ũgatara ũrĩa kũrehe thĩinĩ kwahota gwĩka, hatarĩ kwandĩka.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Rehe handũ hangĩ (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Rehe handũ hangĩ na kĩambĩrĩria (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Kĩambĩrĩria (gũthiĩ o rĩmwe)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Kĩerũ</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Nĩ gĩacenjio</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Gĩtiacenjio</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Gĩa kũiganĩra</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Ngarari</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Kũrĩa gũthiĩ kũtũkĩte</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Host ĩtooĩkaine</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Gĩtingĩrehwo thĩinĩ</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Marĩĩtwa marĩa mangĩ ma URL ma kũmĩrĩria</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Rũgano rwa kũrehe thĩinĩ</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Mapu cia URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Marehe (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Marehe maya moimĩte kũrehe thĩinĩ mapu cia URL: adirethi cia tene irĩ na ũria (/index.php?id=12), marehe ma kahinda na marehe ma gũthiĩ saiti ingĩ. Mathuthuragio na adirethi njiganu, mbere ya marĩĩtwa marĩa mangĩ ma URL na ciambĩrĩria. Rehe rĩa gũtũũra rĩa gũthiĩ ndaya ya saiti ĩno nĩ rĩĩtwa rĩngĩ rĩa URL rĩa kũmĩrĩria handũ ha ũguo na rĩandĩkĩtwo kũu.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Marehe %count nĩmeherio.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Gũtirĩ marehe. Mathondekagwo na kũrehe thĩinĩ mapu ya URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Marehe marĩa mathuthuragio na adirethi njiganu</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Thuura</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Ũrĩa kĩrĩ</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Kuuma kũrehe thĩinĩ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Ehereria</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Thuura %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Ehereria %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Ũrenda kweheria rehe rĩĩrĩ?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Ũrenda kweheria marehe marĩa mathuurĩtwo?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Ehereria iria ithuurĩtwo</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Rehe rĩrĩa rĩehereirio nĩrĩtigaga kũruta wĩra o rĩmwe.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Ndeto ĩhandĩtwo</translation>
     </message>
 </context>
 </TS>

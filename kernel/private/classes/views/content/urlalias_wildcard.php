@@ -336,15 +336,16 @@ class UrlaliasWildcard extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * The wildcard type of a kind: TYPE_FORWARD for redirect, TYPE_DIRECT for direct, null for all.
+     * The wildcard types of a kind: the forward types (301 and the temporary 302) for redirect, TYPE_DIRECT for
+     * direct, null for all.
      *
      * @param string $kind see UrlaliasGlobal::kindKey()
-     * @return int|null
+     * @return int|int[]|null
      */
     public static function typeOfKind( $kind )
     {
         if ( $kind === 'redirect' )
-            return \eZURLWildcard::TYPE_FORWARD;
+            return array( \eZURLWildcard::TYPE_FORWARD, \eZURLWildcard::TYPE_FORWARD_TEMPORARY );
         if ( $kind === 'direct' )
             return \eZURLWildcard::TYPE_DIRECT;
         return null;

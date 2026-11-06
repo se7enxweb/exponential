@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>جایی که آدرس‌ها به آن می‌روند: یک مسیر از این سایت، یا در حالت تغییر مسیر یک آدرس کامل. {1\} متنی است که نخستین * با آن مطابقت داشت. نمونه: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>به‌طور موقت به این نشانی تغییر مسیر داده می‌شوند (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>بازدیدکنندگان به‌طور موقت تغییر مسیر داده می‌شوند (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>تغییر مسیر موقت (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>نمایش %count مورد در هر صفحه.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>برون‌بری نقشهٔ URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>نام‌های مستعار سراسری URL، الگوهای عام و تغییر مسیرهای این سایت را در یک فایل دانلود کنید: برای نگهداری، برای ویرایش در صفحه‌گسترده و درون‌ریزی دوباره، یا برای دادن به وب‌سرور به‌عنوان قواعد بازنویسی.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>دست‌کم یک نوع مدخل را انتخاب کنید.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>فایل نوشته نشد.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>چه چیزی برون‌بری شود</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>قالب</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>مدخل‌ها</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>نام‌های مستعار سراسری URL (مترجم URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>همچنین نام‌های مستعار سفارشی URL محتوا</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>با گره به‌عنوان مقصد نوشته می‌شود، برای نمونه node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>الگوهای عام</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>تغییر مسیرها</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>دسترسی سایت</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>همهٔ دسترسی‌های سایت</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>فقط تغییر مسیرها به یک دسترسی سایت تعلق دارند؛ نام‌های مستعار URL و الگوهای عام برای همهٔ دسترسی‌های سایت برون‌بری می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>زبان</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>همهٔ زبان‌ها</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>برون‌بری</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>درون‌ریزی نقشهٔ URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>نشانی‌های یک سایت قدیمی را یک‌جا منتقل کنید: یک فایل هر نشانی قدیمی و صفحه‌ای از این سایت را که اکنون به آن تعلق دارد فهرست می‌کند. نشانی‌های دقیق به تغییر مسیر یا نام مستعار URL تبدیل می‌شوند و نشانی‌های دارای * به الگوی عام. پیش از نوشتن هر چیزی می‌بینید که هر ردیف چه می‌کند، و هر درون‌ریزی را می‌توان به‌طور کامل واگرد کرد.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>جدول‌های درون‌ریزی نقشهٔ URL هنوز وجود ندارند. پیش از درون‌ریزی، گام ارتقای 6.0.15-url-map را اجرا کنید (./console exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>این درون‌ریزی دیگر در دسترس نیست: پس از یک روز منقضی شده یا به کاربر دیگری تعلق دارد. فایل را دوباره آپلود کنید.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>یک فایل انتخاب کنید یا ردیف‌ها را جای‌گذاری کنید.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>فایل بزرگ‌تر از %size است.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>فایل خوانده نمی‌شود: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>یک دسترسی سایت از این نصب انتخاب کنید.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>درون‌ریزی را نمی‌توان روی سرور نگه داشت: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>فایل</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>فایل</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV، JSON، Excel (.xlsx)، OpenDocument (.ods)، قواعد بازنویسی Apache یا nginx، حداکثر %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>یا ردیف‌ها را جای‌گذاری کنید</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>در هر خط یک ردیف، برای نمونه /old-page,/new-page. خط نخست می‌تواند نام ستون‌ها را بیاورد: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>از روی فایل تشخیص داده شود</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>فقط وقتی لازم است که نه نام و نه محتوای فایل آن را نشان دهد.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>پیش‌فرض‌ها</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>دسترسی سایت برای مسیرهای بدون میزبان</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>پیش‌فرض</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>ردیف‌هایی که نشانی کامل دارند، به‌جای آن دسترسی سایت میزبان خود را می‌گیرند.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>زبان دسترسی سایت</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>وقتی برای یک نشانی قدیمی از قبل مدخلی وجود دارد</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>مدخل نگه داشته شود (ردیف رد شود)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>مدخل جایگزین شود</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>میزبان‌های قدیمی</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>نشانی‌های کامل میزبانی که این نصب آن را نمی‌شناسد درون‌ریزی نمی‌شوند. برای هر میزبان قدیمی دسترسی سایت متناظر را بنویسید، در هر خط یکی: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>پیش‌نمایش</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>هنوز چیزی نوشته نشده است: صفحهٔ بعد نشان می‌دهد هر ردیف چه می‌کند.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>درون‌ریزی %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>درون‌ریزی واگرد شد.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>درون‌ریزی واگرد شد، به‌جز مدخل‌هایی که پس از آن تغییر کرده بودند و نگه داشته شدند.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>درون‌ریزی واگرد نشد: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>تاریخ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>توسط</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>ردیف‌ها</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created ایجاد شد، %updated جایگزین شد، %skipped رد شد، %failed ناموفق بود.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>واگرد شده</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>واگرد این درون‌ریزی</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>هر مدخلی که درون‌ریزی ایجاد کرده حذف می‌شود و هر مدخلی که جایگزین کرده به حالت پیشین بازگردانده می‌شود، از آخر به اول. ابتدا هویت خود را تأیید می‌کنید.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count مدخل پس از درون‌ریزی تغییر کرده است</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>مدخل‌هایی که پس از درون‌ریزی تغییر کرده‌اند نیز واگرد شوند</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>بدون آن، این مدخل‌ها نگه داشته می‌شوند و درون‌ریزی تا حدی واگرد می‌شود (--force در کنسول).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>این درون‌ریزی واگرد شود؟</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>واگرد درون‌ریزی</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>مدخل‌های نوشته‌شده</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from تا %to از %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>درون‌ریزی هیچ مدخلی ننوشت.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>مدخل‌هایی که درون‌ریزی نوشت</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>خط</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>نشانی قدیمی</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>مدخل</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>مقصد</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>تغییر</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>وضعیت</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>نام مستعار URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>الگوی عام</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>تغییر مسیر</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>ایجاد شد</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>جایگزین شد</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>اعمال شد</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>نگه داشته شد</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>تا حدی واگرد شده</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>تاریخچهٔ درون‌ریزی (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>همهٔ درون‌ریزی‌های نقشهٔ URL، جدیدترین در ابتدا. هر درون‌ریزی را می‌توان به‌طور کامل واگرد کرد: هر مدخلی که نوشته به همان چیزی بازمی‌گردد که پیش‌تر بود.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>هنوز هیچ نقشهٔ URL درون‌ریزی نشده است.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>درون‌ریزی‌های نقشهٔ URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>شماره</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>ردشده</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناموفق</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file، %format، %rows ردیف</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>به‌عنوان درون‌ریزی %id درون‌ریزی شد.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>دیدن درون‌ریزی یا واگرد آن</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>درون‌ریزی فایلی دیگر</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>هنوز چیزی نوشته نشده است. هر ردیف نشان می‌دهد درون‌ریزی با آن چه می‌کند. ردیف‌های تیک‌خورده درون‌ریزی می‌شوند؛ تیک یک ردیف را بردارید تا کنار گذاشته شود. ردیف‌هایی که جدید نیستند فقط وقتی درون‌ریزی می‌شوند که نشانی قدیمی‌شان قابل جایگزینی باشد.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>درون‌ریزی انجام نشد: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>هیچ ردیفی برای درون‌ریزی تیک نخورده است.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>اجرای آزمایشی: چیزی نوشته نشد.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>درون‌ریزی %created مورد ایجاد، %updated مورد جایگزین و %skipped مورد رد می‌کرد؛ %failed مورد ناموفق می‌بود.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>نمای کلی</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>برای ایجاد</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>برای جایگزینی</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>برای رد کردن</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>دارای مشکل</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>نگهداری تا</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>برنامه‌ریزی دوباره</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>آنچه ردیف‌ها را تعیین می‌کند تغییر دهید و فایل را دوباره برنامه‌ریزی کنید. تیک‌هایی که دستی تغییر داده‌اید بازنشانی می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>ردیف‌های این میزبان‌ها درون‌ریزی نمی‌شوند، زیرا این نصب به آن‌ها پاسخ نمی‌دهد. برای هر میزبان قدیمی دسترسی سایت متناظر را انتخاب کنید.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>درون‌ریزی نشده</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>نمایش</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>همه</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>هیچ ردیفی این وضعیت را ندارد.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>نمایش همه</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>ردیف‌های فایل و آنچه درون‌ریزی با هر کدام می‌کند</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>درون‌ریزی</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>نشانی جدید</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>نوع</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>یادداشت‌ها</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>درون‌ریزی خط %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>نخیر</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>بلی</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>اجرای آزمایشی</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>حفظ تیک‌ها</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>برنامه به‌صورت CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>برنامه به‌صورت JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>دور انداختن</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>درون‌ریزی، ردیف‌های تیک‌خوردهٔ همهٔ صفحه‌ها را به‌عنوان یک درون‌ریزی می‌نویسد که از تاریخچهٔ درون‌ریزی قابل واگرد است؛ ابتدا هویت خود را تأیید می‌کنید. اجرای آزمایشی هر ردیف را دوباره با سایت بررسی می‌کند و بدون نوشتن، آنچه درون‌ریزی انجام می‌داد را می‌شمارد.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>تغییر مسیر (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>تغییر مسیر الگوی عام (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>الگوی عام (مستقیم)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>جدید</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>تغییرکرده</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>بدون تغییر</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>تکراری</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>تعارض</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>مقصد خراب</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>میزبان ناشناخته</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>غیرقابل درون‌ریزی</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>نام‌های مستعار سراسری URL</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>تاریخچهٔ درون‌ریزی</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>نقشه‌های URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>تغییر مسیرها (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>این تغییر مسیرها از درون‌ریزی‌های نقشهٔ URL می‌آیند: نشانی‌های قدیمی دارای پرس‌وجو (/index.php?id=12)، تغییر مسیرهای موقت و تغییر مسیر به سایت‌های دیگر. آن‌ها بر اساس نشانی کامل و پیش از نام‌های مستعار URL و الگوهای عام بررسی می‌شوند. تغییر مسیر دائمی به صفحه‌ای از این سایت در عوض یک نام مستعار سراسری URL است و در آنجا فهرست می‌شود.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count تغییر مسیر حذف شد.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>هیچ تغییر مسیری وجود ندارد. تغییر مسیرها با درون‌ریزی نقشهٔ URL ساخته می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>تغییر مسیرهایی که بر اساس نشانی کامل بررسی می‌شوند</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>انتخاب</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>وضعیت</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>از درون‌ریزی</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>حذف</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>انتخاب %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>حذف %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>این تغییر مسیر حذف شود؟</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>تغییر مسیرهای انتخاب‌شده حذف شوند؟</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>برداشتن موارد انتخاب‌شده</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>تغییر مسیر حذف‌شده بی‌درنگ از کار می‌افتد.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>متن جای‌گذاری‌شده</translation>
     </message>
 </context>
 </TS>

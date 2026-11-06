@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>ঠিকানাশিং চৎপগী মফম: সাইট অসিগী পথ অমা, নত্রগা রিদাইরেক্ট তৌরবদা অকোইবা ঠিকানা অমা. {1\} হায়বসি অহানবা * না ফংনবা লেখা. মসী: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>অসিগী এদ্রেস অসিদা মতম খরগীদমক রিদাইরেক্ট তৌই (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>লাক্লিবশিংবু মতম খরগীদমক রিদাইরেক্ট তৌই (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>মতম খরগী রিদাইরেক্ট (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>পেজ অমা অমাদা %count আইটেম ফংহনবিয়ু.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL মেপ এক্সপোর্ট তৌবা</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>সাইট অসিগী গ্লোবেল URL এলিয়াসশিং, ৱাইল্দকার্দশিং অমসুং রিদাইরেক্টশিং ফাইল অমা ওইনা দাউনলোড তৌবিয়ু: থম্নবা, স্প্রেদশীত অমদা শেমদোক্লগা অমুক হন্না ইম্পোর্ট তৌনবা, নত্তরগা ৱেব সর্ভর অমদা রিরাইত নিয়মশিং ওইনা পীনবা.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>অহেনবা মখল অমগী এন্ট্রিশিং খল্লু.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>ফাইল ইবা ঙম্লমদে.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>করি এক্সপোর্ট তৌগনি</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>ফোর্মেত</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>এন্ট্রিশিং</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>গ্লোবেল URL এলিয়াসশিং (URL ট্রান্সলেটর)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>কন্টেন্টকী কস্তম URL এলিয়াসশিংসু</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>নোদ অদু তার্গেত ওইনা ইরি, খুদম ওইনা node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>ৱাইল্দকার্দশিং</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>রিদাইরেক্টশিং</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>সাইট একসেস</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>সাইট একসেস খুদিংমক</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>রিদাইরেক্টশিং খক্তমক সাইট একসেস অমগী ওই; URL এলিয়াসশিং অমসুং ৱাইল্দকার্দশিং সাইট একসেস খুদিংমক্কীদমক এক্সপোর্ট তৌই.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>লোন্</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>লোন্ খুদিংমক</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>এক্সপোর্ট তৌবা</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL মেপ অমা ইম্পোর্ট তৌবা</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>অরিবা সাইট অমগী এদ্রেসশিং অমুক্তা পুরকউ: ফাইল অমদা অরিবা এদ্রেস খুদিংমক অমসুং মসিগী হৌজিক্কী সাইট অসিগী পেজ অদু ইরি. চুমবা এদ্রেসশিং রিদাইরেক্ট নত্তরগা URL এলিয়াস ওই, * লৈবা এদ্রেসশিং ৱাইল্দকার্দ ওই. করিগুম্বা অমত্তা ইদ্রিঙৈদা পরেং খুদিংমক্না করি তৌগনি হায়বা নহাক্না উই, অমসুং ইম্পোর্ট খুদিংমক অপুনবা ওইনা আনডু তৌবা ঙম্মি.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL মেপ ইম্পোর্টকী তেবলশিং হৌজিক ফাওবা লৈতি. ইম্পোর্ট তৌদ্রিঙৈদা অপগ্রেদ খোংথাং 6.0.15-url-map (./console exp:upgrade --apply) চলাউ.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>ইম্পোর্ট অসি হৌজিক ফংবা ঙমদ্রে: নুমিৎ অমগী মতুংদা মতম লোইরে নত্তরগা অতোপ্পা শিজিন্নরিবা অমগীনি. ফাইল অদু হন্না অপলোদ তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>ফাইল অমা খল্লু নত্তরগা পরেংশিং পেস্ত তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>ফাইল অসি %size তগী হেন্না চাউই.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>ফাইল পাবা ঙমদে: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>ইনস্তলেসন অসিগী সাইট একসেস অমা খল্লু.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>ইম্পোর্ট অসি সর্ভরদা থম্বা ঙমদে: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>ফাইল অদু</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ফাইল</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache নত্তরগা nginx রিরাইত নিয়মশিং, খ্বাইদগী হেন্না %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>নত্তরগা পরেংশিং পেস্ত তৌবিয়ু</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>লাইন অমদা পরেং অমা, খুদম ওইনা /old-page,/new-page. অহানবা লাইন অদুনা কলমশিংগী মমিং থোনবা ঙম্মি: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>ফাইলদগী খঙদোক্লু</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>ফাইলগী মমিং অমসুং মনুংগী ৱাফমনা হায়দবা মতমদা খক্তমক মথৌ তাই.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>দিফোল্তশিং</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>পাথ খক্তমক লৈবা পরেংশিংগী সাইট একসেস</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>দিফোল্ত</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>মপুং ফাবা এদ্রেস লৈবা পরেংশিংনা মখোয়গী হোস্তকী সাইট একসেস লৌই.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>সাইট একসেসকী লোন্</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>অরিবা এদ্রেস অমদা এন্ট্রি অমা হান্নদগী লৈরবদি</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>এন্ট্রি অদু থম্মু (পরেং অদু থাদোক্লু)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>এন্ট্রি অদু হোংদোক্লু</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>অরিবা হোস্তশিং</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>ইনস্তলেসন অসিনা খঙদবা হোস্ত অমগী মপুং ফাবা এদ্রেসশিং ইম্পোর্ট তৌদে. অরিবা হোস্ত খুদিংমক্না মায়োক নৈবা সাইট একসেস অদু ইবিয়ু, লাইন অমদা অমা: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>প্রিভিউ</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>হৌজিক করিসু ইদ্রি: মথংগী পেজনা পরেং খুদিংমক্না করি তৌগনি হায়বা উৎলগনি.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>ইম্পোর্ট %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>ইম্পোর্ট অদু আনডু তৌরে.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>ইম্পোর্ট অদু আনডু তৌরে, মতুংদা হোংদোকখিবা এন্ট্রিশিং থাদনা, মখোয় থম্লে.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>ইম্পোর্ট অদু আনডু তৌবা ঙম্লমদে: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>তারিখ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>তৌরিবা মী</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>পরেংশিং</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created শেম্লে, %updated হোংদোক্লে, %skipped থাদোক্লে, %failed মায় পাখিদে.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>আনডু তৌরে</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>ইম্পোর্ট অসি আনডু তৌবা</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>ইম্পোর্টনা শেমখিবা এন্ট্রি খুদিংমক লৌথোকই অমসুং মহাক্না হোংদোকখিবা এন্ট্রি খুদিংমক হান্নগী মওংদা হন্দোকই, অরোইবা অদু অহানবা. অহানবদা নহাক্না নহাক্কী মশক খুদোং চাংনবা তৌই.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>ইম্পোর্টকী মতুংদা এন্ট্রি %count হোংদোক্লে</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>ইম্পোর্টকী মতুংদা হোংদোকখিবা এন্ট্রিশিংসু আনডু তৌবা</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>মসি য়াওদ্রবদি মখোয় থম্লি অমসুং ইম্পোর্ট অদু শরুক খরা আনডু ওই (কন্সোলগী --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>ইম্পোর্ট অসি আনডু তৌগদ্রা?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>ইম্পোর্ট আনডু তৌবা</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>ইখিবা এন্ট্রিশিং</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count গী মনুংদা %from - %to</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>ইম্পোর্টনা এন্ট্রি অমত্তা ইখিদে.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>ইম্পোর্টনা ইখিবা এন্ট্রিশিং</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>লাইন</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>অরিবা এদ্রেস</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>এন্ট্রি</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>চংবা মফম</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>অহোংবা</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ফিভম</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL এলিয়াস</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>ৱাইল্দকার্দ</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>রিদাইরেক্ট</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>শেম্লে</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>হোংদোক্লে</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>শিজিন্নরে</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>থম্লে</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>শরুক খরা আনডু তৌরে</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>ইম্পোর্ট হিস্তরি (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL মেপকী ইম্পোর্ট খুদিংমক, অনৌবা অদু অহানবা. ইম্পোর্ট অমা অপুনবা ওইনা আনডু তৌবা ঙম্মি: মহাক্না ইখিবা এন্ট্রি খুদিংমক হান্না লৈরম্বা অদুদা হল্লকই.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>হৌজিক ফাওবা URL মেপ অমত্তা ইম্পোর্ট তৌদ্রি.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL মেপশিংগী ইম্পোর্টশিং</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>মশিং</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>থাদোক্লে</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>মায় পাখিদে</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, পরেং %rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>ইম্পোর্ট %id ওইনা ইম্পোর্ট তৌরে.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>ইম্পোর্ট অদু য়েংলু, নত্তরগা আনডু তৌবিয়ু</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>অতোপ্পা ফাইল অমা ইম্পোর্ট তৌবা</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>হৌজিক ফাওবা করিসু ইদ্রি. পরেং খুদিংমক্না ইম্পোর্টনা মখোয়গা লোয়নবা করি তৌগনি হায়বা উৎই. তিক তৌরবা পরেংশিং ইম্পোর্ট তৌই; পরেং অমা থাদোক্নবা মগী তিক লৌথোক্লু. অনৌবা নত্তবা পরেংশিং মখোয়গী অরিবা এদ্রেস হোংদোকপা য়াবা মতমদা খক্তমক ইম্পোর্ট তৌবা ঙম্মি.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>ইম্পোর্ট তৌখিদে: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>ইম্পোর্টকীদমক পরেং অমত্তা তিক তৌদ্রি.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>ড্রাই রন: করিসু ইখিদে.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>ইম্পোর্টনা %created শেমগনি, %updated হোংদোকনি অমসুং %skipped থাদোকনি; %failed মায় পারোই.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>অপুনবা য়েংবা</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>শেমগদবা</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>হোংদোকপা</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>থাদোকপা</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>শোয়দবা লৈবা</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>ফাওবা থম্মি</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>হন্না প্লান তৌবা</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>পরেংশিং লেপ্পা অদু হোংদোক্লগা ফাইল অদু হন্না প্লান তৌবিয়ু. নহাক্না খুৎনা হোংদোকখিবা তিকশিং রিসেত ওই.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>হোস্ত অসিশিংগী পরেংশিং ইম্পোর্ট তৌদে, মরমদি ইনস্তলেসন অসিনা মখোয়গীদমক পাউখুম পীদে. অরিবা হোস্ত খুদিংমক্না মায়োক নৈবা সাইট একসেস অদু খল্লু.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>ইম্পোর্ট তৌদবা</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>উৎলু</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>পুম্নমক</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>ফিভম অসি লৈবা পরেং অমত্তা লৈতে.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>পুম্নমক উৎলু</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>ফাইলগী পরেংশিং অমসুং ইম্পোর্টনা মখোয় খুদিংমক্কা করি তৌগনি</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>ইম্পোর্ট তৌবা</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>অনৌবা এদ্রেস</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>মখল</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>নোতশিং</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>লাইন %line ইম্পোর্ট তৌবা</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>নত্তে</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>হোয়</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ড্রাই রন</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>তিকশিং থম্মু</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>প্লান CSV ওইনা</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>প্লান JSON ওইনা</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>হুৎথোক্লু</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>ইম্পোর্টনা পেজ পুম্নমক্কী তিক তৌরবা পরেংশিং ইম্পোর্ট অমা ওইনা ইই, মসি ইম্পোর্ট হিস্তরিদগী আনডু তৌবা ঙম্মি; অহানবদা নহাক্না নহাক্কী মশক খুদোং চাংনবা তৌই. ড্রাই রন্না পরেং খুদিংমক সাইটকা হন্না চেক তৌই অমসুং ইম্পোর্টনা করি তৌগনি হায়বা মশিং থী, করিসু ইদনা.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>রিদাইরেক্ট (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>ৱাইল্দকার্দ রিদাইরেক্ট (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>ৱাইল্দকার্দ (চৎথোকপা)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>অনৌবা</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>হোংদোক্লবা</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>হোংদোক্তবা</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>অনী থোক্লবা</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>য়েন্নবা</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>কাইরবা তার্গেত</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>খঙদবা হোস্ত</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>ইম্পোর্ট তৌবা ঙমদবা</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>গ্লোবেল URL এলিয়াসশিং</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>ইম্পোর্ট হিস্তরি</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL মেপশিং</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>রিদাইরেক্টশিং (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>রিদাইরেক্ট অসিশিং URL মেপ ইম্পোর্টশিংদগী লাক্লি: ক্বেরি লৈবা অরিবা এদ্রেসশিং (/index.php?id=12), মতম খরগী রিদাইরেক্টশিং অমসুং অতোপ্পা সাইটশিংদা চৎপা রিদাইরেক্টশিং. মখোয়বু URL এলিয়াসশিং অমসুং ৱাইল্দকার্দশিংগী মমাংদা মপুং ফাবা এদ্রেসতা চেক তৌই. সাইট অসিগী পেজ অমদা চৎপা লেপ্লবা রিদাইরেক্ট অমা মগী মহুত্তা গ্লোবেল URL এলিয়াস অমনি অমসুং মফম অদুদা ইরি.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>রিদাইরেক্ট %count লৌথোক্লে.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>রিদাইরেক্ট অমত্তা লৈতে. মখোয় URL মেপ অমা ইম্পোর্ট তৌদুনা শেম্মি.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>মপুং ফাবা এদ্রেসতা চেক তৌবা রিদাইরেক্টশিং</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>খল্লু</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>স্থিতি</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>ইম্পোর্টদগী</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>লৌথোক্লু</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address খল্লু</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address লৌথোক্লু</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>রিদাইরেক্ট অসি লৌথোকক্দ্রা?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>খল্লবা রিদাইরেক্টশিং লৌথোকক্দ্রা?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>সিলেক্ট তৌরবা থোক্কনবা</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>লৌথোকখিবা রিদাইরেক্ট অমা থুনা থবক তৌবা লেপ্লি.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>পেস্ত তৌরবা তেক্স্ত</translation>
     </message>
 </context>
 </TS>

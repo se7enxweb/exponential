@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>ವಿಳಾಸಗಳು ಎಲ್ಲಿಗೆ ಹೋಗುತ್ತವೆ: ಈ ಸೈಟ್‌ನ ಪಾತ್, ಅಥವಾ ಮರುನಿರ್ದೇಶಿಸುವಾಗ ಪೂರ್ಣ ವಿಳಾಸ. {1\} ಎಂದರೆ ಮೊದಲ * ಹೊಂದಿಕೆಯಾದ ಪಠ್ಯ. ಉದಾಹರಣೆ: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ಈ ವಿಳಾಸಕ್ಕೆ ತಾತ್ಕಾಲಿಕವಾಗಿ ಮರುನಿರ್ದೇಶಿಸಲಾಗುತ್ತದೆ (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>ಸಂದರ್ಶಕರನ್ನು ತಾತ್ಕಾಲಿಕವಾಗಿ ಮರುನಿರ್ದೇಶಿಸಲಾಗುತ್ತದೆ (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>ತಾತ್ಕಾಲಿಕ ಮರುನಿರ್ದೇಶನ (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85489,6 +85501,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>ಪ್ರತಿ ಪುಟಕ್ಕೆ %count ಐಟಂಗಳನ್ನು ತೋರಿಸಿ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL ನಕ್ಷೆಯನ್ನು ರಫ್ತು ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>ಈ ಸೈಟ್‌ನ ಜಾಗತಿಕ URL ಅಲಿಯಾಸ್‌ಗಳು, ವೈಲ್ಡ್‌ಕಾರ್ಡ್‌ಗಳು ಮತ್ತು ಮರುನಿರ್ದೇಶನಗಳನ್ನು ಒಂದೇ ಫೈಲ್ ಆಗಿ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ: ಇಟ್ಟುಕೊಳ್ಳಲು, ಸ್ಪ್ರೆಡ್‌ಶೀಟ್‌ನಲ್ಲಿ ಸಂಪಾದಿಸಿ ಮತ್ತೆ ಆಮದು ಮಾಡಲು, ಅಥವಾ ವೆಬ್ ಸರ್ವರ್‌ಗೆ ಪುನರ್ಲೇಖನ ನಿಯಮಗಳಾಗಿ ನೀಡಲು.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>ಕನಿಷ್ಠ ಒಂದು ರೀತಿಯ ನಮೂದನ್ನು ಆಯ್ಕೆಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>ಫೈಲ್ ಬರೆಯಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>ಏನನ್ನು ರಫ್ತು ಮಾಡಬೇಕು</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>ಸ್ವರೂಪ</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>ನಮೂದುಗಳು</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>ಜಾಗತಿಕ URL ಅಲಿಯಾಸ್‌ಗಳು (URL ಅನುವಾದಕ)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>ವಿಷಯದ ಕಸ್ಟಮ್ URL ಅಲಿಯಾಸ್‌ಗಳನ್ನೂ ಸಹ</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>ನೋಡ್ ಅನ್ನು ಗುರಿಯಾಗಿ ಬರೆಯಲಾಗುತ್ತದೆ, ಉದಾಹರಣೆಗೆ node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>URL ವೈಲ್ಡ್‌ಕಾರ್ಡ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>ಮರುನಿರ್ದೇಶನಗಳು</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ಸೈಟ್‌ಆಕ್ಸೆಸ್</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ಪ್ರತಿಯೊಂದು ಸೈಟ್‌ಆಕ್ಸೆಸ್</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>ಮರುನಿರ್ದೇಶನಗಳು ಮಾತ್ರ ಸೈಟ್‌ಆಕ್ಸೆಸ್‌ಗೆ ಸೇರಿವೆ; URL ಅಲಿಯಾಸ್‌ಗಳು ಮತ್ತು ವೈಲ್ಡ್‌ಕಾರ್ಡ್‌ಗಳನ್ನು ಪ್ರತಿಯೊಂದು ಸೈಟ್‌ಆಕ್ಸೆಸ್‌ಗಾಗಿ ರಫ್ತು ಮಾಡಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ಭಾಷೆ</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>ಪ್ರತಿಯೊಂದು ಭಾಷೆ</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>ರಫ್ತು ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL ನಕ್ಷೆಯನ್ನು ಆಮದು ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>ಹಳೆಯ ಸೈಟ್‌ನ ವಿಳಾಸಗಳನ್ನು ಒಂದೇ ಬಾರಿಗೆ ತನ್ನಿ: ಒಂದು ಫೈಲ್ ಪ್ರತಿಯೊಂದು ಹಳೆಯ ವಿಳಾಸವನ್ನು ಮತ್ತು ಅದು ಈಗ ಸೇರಿರುವ ಈ ಸೈಟ್‌ನ ಪುಟವನ್ನು ಪಟ್ಟಿಮಾಡುತ್ತದೆ. ನಿಖರ ವಿಳಾಸಗಳು ಮರುನಿರ್ದೇಶನಗಳು ಅಥವಾ URL ಅಲಿಯಾಸ್‌ಗಳಾಗುತ್ತವೆ, * ಇರುವ ವಿಳಾಸಗಳು ವೈಲ್ಡ್‌ಕಾರ್ಡ್‌ಗಳಾಗುತ್ತವೆ. ಏನನ್ನಾದರೂ ಬರೆಯುವ ಮೊದಲು ಪ್ರತಿ ಸಾಲು ಏನು ಮಾಡುತ್ತದೆ ಎಂದು ನೀವು ನೋಡುತ್ತೀರಿ, ಮತ್ತು ಪ್ರತಿಯೊಂದು ಆಮದನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ರದ್ದುಗೊಳಿಸಬಹುದು.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL ನಕ್ಷೆ ಆಮದುಗಳ ಕೋಷ್ಟಕಗಳು ಇನ್ನೂ ಅಸ್ತಿತ್ವದಲ್ಲಿಲ್ಲ. ಆಮದು ಮಾಡುವ ಮೊದಲು 6.0.15-url-map ನವೀಕರಣ ಹಂತವನ್ನು (./console exp:upgrade --apply) ಚಲಾಯಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>ಈ ಆಮದು ಇನ್ನು ಲಭ್ಯವಿಲ್ಲ: ಅದು ಒಂದು ದಿನದ ನಂತರ ಅವಧಿ ಮುಗಿದಿದೆ ಅಥವಾ ಬೇರೆ ಬಳಕೆದಾರರಿಗೆ ಸೇರಿದೆ. ಫೈಲ್ ಅನ್ನು ಮತ್ತೆ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>ಫೈಲ್ ಆಯ್ಕೆಮಾಡಿ ಅಥವಾ ಸಾಲುಗಳನ್ನು ಅಂಟಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>ಫೈಲ್ %size ಗಿಂತ ದೊಡ್ಡದಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>ಫೈಲ್ ಓದಲು ಸಾಧ್ಯವಿಲ್ಲ: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>ಈ ಸ್ಥಾಪನೆಯ ಒಂದು ಸೈಟ್‌ಆಕ್ಸೆಸ್ ಆಯ್ಕೆಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>ಆಮದನ್ನು ಸರ್ವರ್‌ನಲ್ಲಿ ಇರಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>ಫೈಲ್</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ಫೈಲ್ ಹೆಸರು</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache ಅಥವಾ nginx ಪುನರ್ಲೇಖನ ನಿಯಮಗಳು, ಗರಿಷ್ಠ %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>ಅಥವಾ ಸಾಲುಗಳನ್ನು ಅಂಟಿಸಿ</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>ಪ್ರತಿ ಸಾಲಿಗೆ ಒಂದು ನಮೂದು, ಉದಾಹರಣೆಗೆ /old-page,/new-page. ಮೊದಲ ಸಾಲು ಕಾಲಮ್‌ಗಳನ್ನು ಹೆಸರಿಸಬಹುದು: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>ಫೈಲ್‌ನಿಂದ ಕಂಡುಹಿಡಿಯಿರಿ</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>ಫೈಲ್‌ನ ಹೆಸರಾಗಲಿ ವಿಷಯವಾಗಲಿ ಹೇಳದಿದ್ದಾಗ ಮಾತ್ರ ಅಗತ್ಯ.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>ಡೀಫಾಲ್ಟ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>ಕೇವಲ ಮಾರ್ಗಗಳ ಸೈಟ್‌ಆಕ್ಸೆಸ್</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>ಡೀಫಾಲ್ಟ್</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>ಪೂರ್ಣ ವಿಳಾಸವಿರುವ ಸಾಲುಗಳು ಬದಲಿಗೆ ತಮ್ಮ ಹೋಸ್ಟ್‌ನ ಸೈಟ್‌ಆಕ್ಸೆಸ್ ಅನ್ನು ಪಡೆಯುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>ಸೈಟ್‌ಆಕ್ಸೆಸ್‌ನ ಭಾಷೆ</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>ಹಳೆಯ ವಿಳಾಸಕ್ಕೆ ಈಗಾಗಲೇ ನಮೂದು ಇದ್ದಾಗ</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>ನಮೂದನ್ನು ಉಳಿಸಿ (ಸಾಲನ್ನು ಬಿಟ್ಟುಬಿಡಿ)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>ನಮೂದನ್ನು ಬದಲಾಯಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>ಹಳೆಯ ಹೋಸ್ಟ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>ಈ ಸ್ಥಾಪನೆಗೆ ತಿಳಿಯದ ಹೋಸ್ಟ್‌ನ ಪೂರ್ಣ ವಿಳಾಸಗಳನ್ನು ಆಮದು ಮಾಡಲಾಗುವುದಿಲ್ಲ. ಪ್ರತಿ ಹಳೆಯ ಹೋಸ್ಟ್ ಯಾವ ಸೈಟ್‌ಆಕ್ಸೆಸ್ ಅನ್ನು ಪ್ರತಿನಿಧಿಸುತ್ತದೆ ಎಂದು ಸಾಲಿಗೆ ಒಂದರಂತೆ ಹೆಸರಿಸಿ: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>ಮುನ್ನೋಟ</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>ಇನ್ನೂ ಏನನ್ನೂ ಬರೆದಿಲ್ಲ: ಮುಂದಿನ ಪುಟವು ಪ್ರತಿ ಸಾಲು ಏನು ಮಾಡುತ್ತದೆ ಎಂದು ತೋರಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>ಆಮದು %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>ಆಮದನ್ನು ರದ್ದುಗೊಳಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>ಆಮದನ್ನು ರದ್ದುಗೊಳಿಸಲಾಗಿದೆ, ಅದರ ನಂತರ ಬದಲಾದ ನಮೂದುಗಳನ್ನು ಹೊರತುಪಡಿಸಿ, ಅವುಗಳನ್ನು ಉಳಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>ಆಮದನ್ನು ರದ್ದುಗೊಳಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>ದಿನಾಂಕ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ಮಾಡಿದವರು</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>ಸಾಲುಗಳು</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created ರಚಿಸಲಾಗಿದೆ, %updated ಬದಲಾಯಿಸಲಾಗಿದೆ, %skipped ಬಿಟ್ಟುಬಿಡಲಾಗಿದೆ, %failed ವಿಫಲವಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>ರದ್ದುಗೊಳಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>ಈ ಆಮದನ್ನು ರದ್ದುಗೊಳಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>ಆಮದು ರಚಿಸಿದ ಪ್ರತಿಯೊಂದು ನಮೂದನ್ನು ತೆಗೆದುಹಾಕಲಾಗುತ್ತದೆ ಮತ್ತು ಅದು ಬದಲಾಯಿಸಿದ ಪ್ರತಿಯೊಂದು ನಮೂದನ್ನು ಹಿಂದಿನಂತೆ ಮರಳಿಸಲಾಗುತ್ತದೆ, ಕೊನೆಯದರಿಂದ ಆರಂಭಿಸಿ. ಮೊದಲು ನೀವು ನಿಮ್ಮ ಗುರುತನ್ನು ದೃಢೀಕರಿಸುತ್ತೀರಿ.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>ಆಮದಿನ ನಂತರ ಬದಲಾದ %count ನಮೂದುಗಳು</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>ಆಮದಿನ ನಂತರ ಬದಲಾದ ನಮೂದುಗಳನ್ನೂ ರದ್ದುಗೊಳಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>ಇದಿಲ್ಲದೆ ಅವುಗಳನ್ನು ಉಳಿಸಲಾಗುತ್ತದೆ ಮತ್ತು ಆಮದು ಭಾಗಶಃ ರದ್ದಾಗುತ್ತದೆ (ಕನ್ಸೋಲ್‌ನ --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>ಈ ಆಮದನ್ನು ರದ್ದುಗೊಳಿಸಬೇಕೆ?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>ಆಮದನ್ನು ರದ್ದುಗೊಳಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>ಬರೆದ ನಮೂದುಗಳು</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count ರಲ್ಲಿ %from ರಿಂದ %to</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>ಆಮದು ಯಾವುದೇ ನಮೂದನ್ನು ಬರೆಯಲಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>ಆಮದು ಬರೆದ ನಮೂದುಗಳು</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>ಸಾಲು</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>ಹಳೆಯ ವಿಳಾಸ</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>ನಮೂದು</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>ಕರೆದೊಯ್ಯುವುದು</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ಬದಲಾವಣೆ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ಸ್ಥಿತಿ</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL ಅಲಿಯಾಸ್</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>ವೈಲ್ಡ್‌ಕಾರ್ಡ್</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>ಮರುನಿರ್ದೇಶನ</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>ರಚಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>ಬದಲಾಯಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>ಅನ್ವಯಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>ಉಳಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>ಭಾಗಶಃ ರದ್ದುಗೊಳಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>ಆಮದು ಇತಿಹಾಸ (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL ನಕ್ಷೆಯ ಪ್ರತಿಯೊಂದು ಆಮದು, ಹೊಸದು ಮೊದಲು. ಒಂದು ಆಮದನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ರದ್ದುಗೊಳಿಸಬಹುದು: ಅದು ಬರೆದ ಪ್ರತಿಯೊಂದು ನಮೂದು ಹಿಂದೆ ಇದ್ದ ಸ್ಥಿತಿಗೆ ಮರಳುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>ಇನ್ನೂ ಯಾವುದೇ URL ನಕ್ಷೆಯನ್ನು ಆಮದು ಮಾಡಲಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL ನಕ್ಷೆಗಳ ಆಮದುಗಳು</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>ಸಂಖ್ಯೆ</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>ಬಿಟ್ಟುಬಿಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ವಿಫಲವಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows ಸಾಲುಗಳು</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>ಆಮದು %id ಆಗಿ ಆಮದು ಮಾಡಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>ಆಮದನ್ನು ನೋಡಿ, ಅಥವಾ ರದ್ದುಗೊಳಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>ಇನ್ನೊಂದು ಫೈಲ್ ಆಮದು ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>ಇನ್ನೂ ಏನನ್ನೂ ಬರೆದಿಲ್ಲ. ಪ್ರತಿ ಸಾಲು ಆಮದು ಅದರೊಂದಿಗೆ ಏನು ಮಾಡುತ್ತದೆ ಎಂದು ತೋರಿಸುತ್ತದೆ. ಗುರುತು ಹಾಕಿದ ಸಾಲುಗಳನ್ನು ಆಮದು ಮಾಡಲಾಗುತ್ತದೆ; ಸಾಲನ್ನು ಹೊರಗಿಡಲು ಗುರುತನ್ನು ತೆಗೆಯಿರಿ. ಹೊಸದಲ್ಲದ ಸಾಲುಗಳನ್ನು ಅವುಗಳ ಹಳೆಯ ವಿಳಾಸವನ್ನು ಬದಲಾಯಿಸಲು ಅನುಮತಿ ಇದ್ದಾಗ ಮಾತ್ರ ಆಮದು ಮಾಡಬಹುದು.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>ಆಮದು ನಡೆಯಲಿಲ್ಲ: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>ಆಮದಿಗಾಗಿ ಯಾವುದೇ ಸಾಲಿಗೆ ಗುರುತು ಹಾಕಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>ಪರೀಕ್ಷಾ ಚಾಲನೆ: ಏನನ್ನೂ ಬರೆದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>ಆಮದು %created ರಚಿಸುತ್ತದೆ, %updated ಬದಲಾಯಿಸುತ್ತದೆ ಮತ್ತು %skipped ಬಿಟ್ಟುಬಿಡುತ್ತದೆ; %failed ವಿಫಲವಾಗುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ಅವಲೋಕನ</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>ರಚಿಸಬೇಕಾದವು</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>ಬದಲಾಯಿಸಬೇಕಾದವು</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>ಬಿಟ್ಟುಬಿಡಬೇಕಾದವು</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>ಸಮಸ್ಯೆಯಿರುವವು</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>ಇಲ್ಲಿಯವರೆಗೆ ಇರಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>ಮತ್ತೆ ಯೋಜಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>ಸಾಲುಗಳನ್ನು ನಿರ್ಧರಿಸುವುದನ್ನು ಬದಲಾಯಿಸಿ ಮತ್ತು ಫೈಲ್ ಅನ್ನು ಮತ್ತೆ ಯೋಜಿಸಿ. ಕೈಯಾರೆ ಬದಲಾಯಿಸಿದ ಗುರುತುಗಳನ್ನು ಮರುಹೊಂದಿಸಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>ಈ ಹೋಸ್ಟ್‌ಗಳ ಸಾಲುಗಳನ್ನು ಆಮದು ಮಾಡಲಾಗುವುದಿಲ್ಲ, ಏಕೆಂದರೆ ಈ ಸ್ಥಾಪನೆ ಅವುಗಳಿಗೆ ಉತ್ತರಿಸುವುದಿಲ್ಲ. ಪ್ರತಿ ಹಳೆಯ ಹೋಸ್ಟ್ ಯಾವ ಸೈಟ್‌ಆಕ್ಸೆಸ್ ಅನ್ನು ಪ್ರತಿನಿಧಿಸುತ್ತದೆ ಎಂದು ಆಯ್ಕೆಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>ಆಮದು ಮಾಡಲಾಗಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ತೋರಿಸಿ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ಎಲ್ಲಾ</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>ಯಾವುದೇ ಸಾಲು ಈ ಸ್ಥಿತಿಯಲ್ಲಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ಎಲ್ಲವನ್ನೂ ತೋರಿಸಿ</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>ಫೈಲ್‌ನ ಸಾಲುಗಳು ಮತ್ತು ಆಮದು ಪ್ರತಿಯೊಂದರೊಂದಿಗೆ ಏನು ಮಾಡುತ್ತದೆ</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>ಆಮದು ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>ಹೊಸ ವಿಳಾಸ</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ಬಗೆ</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>ಟಿಪ್ಪಣಿಗಳು</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>ಸಾಲು %line ಆಮದು ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ಹೌದು</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ಪರೀಕ್ಷಾ ಚಾಲನೆ</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>ಗುರುತುಗಳನ್ನು ಉಳಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>ಯೋಜನೆ CSV ಆಗಿ</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>ಯೋಜನೆ JSON ಆಗಿ</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>ತ್ಯಜಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>ಆಮದು ಪ್ರತಿಯೊಂದು ಪುಟದ ಗುರುತು ಹಾಕಿದ ಸಾಲುಗಳನ್ನು ಒಂದೇ ಆಮದಾಗಿ ಬರೆಯುತ್ತದೆ, ಅದನ್ನು ಆಮದು ಇತಿಹಾಸದಿಂದ ರದ್ದುಗೊಳಿಸಬಹುದು; ಮೊದಲು ನೀವು ನಿಮ್ಮ ಗುರುತನ್ನು ದೃಢೀಕರಿಸುತ್ತೀರಿ. ಪರೀಕ್ಷಾ ಚಾಲನೆಯು ಪ್ರತಿ ಸಾಲನ್ನು ಸೈಟ್‌ನೊಂದಿಗೆ ಮತ್ತೆ ಪರಿಶೀಲಿಸಿ, ಬರೆಯದೆ ಆಮದು ಏನು ಮಾಡುತ್ತದೆ ಎಂದು ಎಣಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>ಮರುನಿರ್ದೇಶನ (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>ವೈಲ್ಡ್‌ಕಾರ್ಡ್ ಮರುನಿರ್ದೇಶನ (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>ವೈಲ್ಡ್‌ಕಾರ್ಡ್ (ನೇರ)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>ಹೊಸದು</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>ಬದಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>ಬದಲಾಗಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>ನಕಲು</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>ಸಂಘರ್ಷ</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>ಮುರಿದ ಗುರಿ</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>ಅಪರಿಚಿತ ಹೋಸ್ಟ್</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>ಆಮದು ಮಾಡಲಾಗದು</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>ಜಾಗತಿಕ URL ಅಲಿಯಾಸ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>ಆಮದು ಇತಿಹಾಸ</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL ನಕ್ಷೆಗಳು</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>ಮರುನಿರ್ದೇಶನಗಳು (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>ಈ ಮರುನಿರ್ದೇಶನಗಳು URL ನಕ್ಷೆ ಆಮದುಗಳಿಂದ ಬಂದಿವೆ: ಕ್ವೆರಿ ಇರುವ ಹಳೆಯ ವಿಳಾಸಗಳು (/index.php?id=12), ತಾತ್ಕಾಲಿಕ ಮರುನಿರ್ದೇಶನಗಳು ಮತ್ತು ಇತರ ಸೈಟ್‌ಗಳಿಗೆ ಮರುನಿರ್ದೇಶನಗಳು. ಇವುಗಳನ್ನು URL ಅಲಿಯಾಸ್‌ಗಳು ಮತ್ತು ವೈಲ್ಡ್‌ಕಾರ್ಡ್‌ಗಳಿಗಿಂತ ಮೊದಲು ಪೂರ್ಣ ವಿಳಾಸದ ಮೇಲೆ ಪರಿಶೀಲಿಸಲಾಗುತ್ತದೆ. ಈ ಸೈಟ್‌ನ ಪುಟಕ್ಕೆ ಶಾಶ್ವತ ಮರುನಿರ್ದೇಶನವು ಬದಲಿಗೆ ಜಾಗತಿಕ URL ಅಲಿಯಾಸ್ ಆಗಿದ್ದು ಅಲ್ಲಿ ಪಟ್ಟಿಮಾಡಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count ಮರುನಿರ್ದೇಶನಗಳನ್ನು ತೆಗೆದುಹಾಕಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>ಯಾವುದೇ ಮರುನಿರ್ದೇಶನಗಳಿಲ್ಲ. URL ನಕ್ಷೆಯನ್ನು ಆಮದು ಮಾಡುವ ಮೂಲಕ ಅವು ರಚನೆಯಾಗುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>ಪೂರ್ಣ ವಿಳಾಸದ ಮೇಲೆ ಪರಿಶೀಲಿಸುವ ಮರುನಿರ್ದೇಶನಗಳು</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ಆಯ್ಕೆಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ಸ್ಥಿತಿ</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>ಆಮದಿನಿಂದ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ತೆಗೆದುಹಾಕು</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address ಆಯ್ಕೆಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address ತೆಗೆದುಹಾಕು</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>ಈ ಮರುನಿರ್ದೇಶನವನ್ನು ತೆಗೆದುಹಾಕಬೇಕೆ?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>ಆಯ್ಕೆಮಾಡಿದ ಮರುನಿರ್ದೇಶನಗಳನ್ನು ತೆಗೆದುಹಾಕಬೇಕೆ?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>ಆಯ್ಕೆಮಾಡಿದವುಗಳನ್ನು ತೆಗೆದುಹಾಕು</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>ತೆಗೆದುಹಾಕಿದ ಮರುನಿರ್ದೇಶನವು ತಕ್ಷಣವೇ ಕೆಲಸ ಮಾಡುವುದನ್ನು ನಿಲ್ಲಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>ಅಂಟಿಸಿದ ಪಠ್ಯ</translation>
     </message>
 </context>
 </TS>

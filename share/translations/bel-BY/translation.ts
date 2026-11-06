@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Куды вядуць адрасы: шлях на гэтым сайце або поўны адрас пры перанакіраванні. {1\} - тэкст, якому адпавядала першая *. Прыклад: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>часова перанакіроўваюцца на гэты адрас (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Наведвальнікі часова перанакіроўваюцца (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Часовае перанакіраванне (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>Паказваць %count элементаў на старонцы.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Экспартаваць карту URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Спампуйце глабальныя псеўданімы URL, падстаноўкі і перанакіраванні гэтага сайта адным файлам: каб захаваць, адрэдагаваць у электроннай табліцы і зноў імпартаваць або перадаць вэб-серверу як правілы перапісвання.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Выберыце хаця б адзін від запісаў.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Не ўдалося запісаць файл.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Што экспартаваць</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Фармат</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Запісы</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Глабальныя псеўданімы URL (перакладчык URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Таксама ўласныя псеўданімы URL змесціва</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Запісваюцца з вузлом як мэтай, напрыклад node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Падстаноўкі</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Перанакіраванні</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Доступ да сайта</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Кожны доступ да сайта</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Толькі перанакіраванні належаць доступу да сайта; псеўданімы URL і падстаноўкі экспартуюцца для кожнага доступу да сайта.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Мова</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Кожная мова</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Экспарт</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Імпартаваць карту URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Перанясіце адрасы старога сайта за адзін раз: файл пералічвае кожны стары адрас і старонку гэтага сайта, да якой ён цяпер належыць. Дакладныя адрасы становяцца перанакіраваннямі або псеўданімамі URL, адрасы з * становяцца падстаноўкамі. Вы бачыце, што зробіць кожны радок, перш чым што-небудзь будзе запісана, і кожны імпарт можна адрабіць цалкам.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Табліцы імпарту карт URL яшчэ не існуюць. Перад імпартам выканайце крок абнаўлення 6.0.15-url-map (./console exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Гэты імпарт больш недаступны: ён скончыўся праз дзень або належыць іншаму карыстальніку. Загрузіце файл зноў.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Выберыце файл або ўстаўце радкі.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Файл большы за %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Немагчыма прачытаць файл: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Выберыце доступ да сайта гэтай усталёўкі.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Немагчыма захаваць імпарт на серверы: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), правілы перапісвання Apache або nginx, не больш за %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Або ўстаўце радкі</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Адзін радок на лінію, напрыклад /старая-старонка,/новая-старонка. Першы радок можа называць слупкі: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Вызначыць па файле</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Патрэбна толькі тады, калі ні назва, ні змесціва файла гэтага не паказваюць.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Прадвызначаныя значэнні</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Доступ да сайта для простых шляхоў</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>прадвызначаны</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Радкі з поўным адрасам замест гэтага бяруць доступ да сайта свайго хоста.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Мова доступу да сайта</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Калі для старога адраса ўжо ёсць запіс</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Пакінуць запіс (прапусціць радок)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Замяніць запіс</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Старыя хосты</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Поўныя адрасы хоста, які гэтая ўсталёўка не ведае, не імпартуюцца. Укажыце доступ да сайта, які адпавядае кожнаму старому хосту, па адным на радок: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Папярэдні прагляд</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Яшчэ нічога не запісана: на наступнай старонцы паказана, што зробіць кожны радок.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Імпарт %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Імпарт адроблены.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Імпарт адроблены, акрамя запісаў, змененых пасля яго, — яны захаваны.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Не ўдалося адрабіць імпарт: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Дата</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Аўтар</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Радкі</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>Створана: %created, заменена: %updated, прапушчана: %skipped, не ўдалося: %failed.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Адроблены</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Адрабіць гэты імпарт</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Кожны запіс, створаны імпартам, выдаляецца, а кожны запіс, які ён замяніў, аднаўляецца ў ранейшым выглядзе, пачынаючы з апошняга. Спачатку вы пацвярджаеце, хто вы.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>Запісаў, змененых пасля імпарту: %count</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Адрабіць таксама запісы, змененыя пасля імпарту</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Без гэтага яны захоўваюцца, і імпарт адрабляецца часткова (--force у кансолі).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Адрабіць гэты імпарт?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Адрабіць імпарт</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Запісаныя запісы</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to з %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Імпарт не запісаў ніводнага запісу.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Запісы, якія запісаў імпарт</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Радок</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Стары адрас</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Запіс</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Вядзе на</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Змена</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Стан</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Псеўданім URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Падстаноўка</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Перанакіраванне</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Створаны</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Заменены</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Ужыты</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Захаваны</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Часткова адроблены</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Гісторыя імпарту (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Кожны імпарт карты URL, спачатку найноўшыя. Імпарт можна адрабіць цалкам: кожны запісаны ім запіс вяртаецца да таго, што было раней.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Яшчэ не імпартавана ніводнай карты URL.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Імпарты карт URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Нумар</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Прапушчана</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Не ўдалося</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, радкоў: %rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Імпартавана як імпарт %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Праглядзець імпарт або адрабіць яго</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Імпартаваць іншы файл</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Яшчэ нічога не запісана. Кожны радок паказвае, што імпарт з ім зробіць. Адзначаныя радкі імпартуюцца; зніміце адзнаку, каб прапусціць радок. Радкі, якія не новыя, можна імпартаваць толькі тады, калі іх стары адрас дазволена замяніць.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Імпарт не выкананы: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Ніводзін радок не адзначаны для імпарту.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Прабны запуск: нічога не запісана.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Імпарт стварыў бы %created, замяніў бы %updated і прапусціў бы %skipped; %failed не ўдалося б.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Агляд</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Будзе створана</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Будзе заменена</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Будзе прапушчана</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>З праблемай</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Захоўваецца да</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Спланаваць зноў</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Змяніце тое, што вызначае радкі, і спланіруйце файл зноў. Адзнакі, змененыя ўручную, скідваюцца.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Радкі гэтых хостаў не імпартуюцца, бо гэтая ўсталёўка за іх не адказвае. Выберыце доступ да сайта, які адпавядае кожнаму старому хосту.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Не імпартавана</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Паказаць</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Усе</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Няма радкоў з гэтым станам.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Паказаць усе</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Радкі файла і тое, што імпарт зробіць з кожным</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Імпартаваць</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Новы адрас</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Від</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Заўвагі</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Імпартаваць радок %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Не</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Так</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Прабны запуск</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Захаваць адзнакі</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>План у CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>План у JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Адкінуць</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>«Імпартаваць» запісвае адзначаныя радкі ўсіх старонак як адзін імпарт, які можна адрабіць з гісторыі імпарту; спачатку вы пацвярджаеце, хто вы. «Прабны запуск» зноў правярае кожны радок па сайце і падлічвае, што зробіць імпарт, нічога не запісваючы.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Перанакіраванне (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Перанакіраванне з падстаноўкай (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Падстаноўка (непасрэдная)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Новы</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Зменены</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Без змен</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Дублікат</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Канфлікт</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Зламаная мэта</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Невядомы хост</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Нельга імпартаваць</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Глабальныя псеўданімы URL</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Гісторыя імпарту</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Карты URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Перанакіраванні (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Гэтыя перанакіраванні паходзяць з імпарту карт URL: старыя адрасы з запытам (/index.php?id=12), часовыя перанакіраванні і перанакіраванні на іншыя сайты. Яны правяраюцца па поўным адрасе, раней за псеўданімы URL і падстаноўкі. Пастаяннае перанакіраванне на старонку гэтага сайта замест гэтага з'яўляецца глабальным псеўданімам URL і паказана там.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Выдалена перанакіраванняў: %count.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Перанакіраванняў няма. Яны ствараюцца імпартам карты URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Перанакіраванні, якія правяраюцца па поўным адрасе</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Выбраць</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Статус</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>З імпарту</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Прыбраць</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Выбраць %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Прыбраць %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Прыбраць гэтае перанакіраванне?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Прыбраць выбраныя перанакіраванні?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Прыбраць выбраныя</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Прыбранае перанакіраванне адразу перастае працаваць.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Устаўлены тэкст</translation>
     </message>
 </context>
 </TS>

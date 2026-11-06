@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Nua che las adressas van: in percurs da questa website u ina adressa cumpletta en cas da renviaziun. {1\} è il text che l'emprim * ha cuntanschì. Exempel: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>vegnan renviads temporarmain a questa adressa (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Las visitadras ed ils visitaders vegnan renviads temporarmain (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Renviament temporar (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Mussar %count elements per pagina.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Exportar la charta d'URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Chargiai giu ils pseudonims URL globals, ils jokers ed ils renviaments da questa website sco ina datoteca: per la tegnair, per la modifitgar en in fegl da calculaziun e la puspè importar u per la dar ad in server web sco reglas da reformulaziun.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Tschernai almain in tip d'endataziuns.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>La datoteca n'ha betg pudì vegnir scritta.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Tge exportar</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Format</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Endataziuns</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Pseudonims URL globals (il translatur d'URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Era ils pseudonims URL persunalisads dal cuntegn</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Scrits cun il nodi sco destinaziun, per exempel node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Jokers</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Renviaments</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Access a la website</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Mintga access a la website</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Mo ils renviaments appartegnan ad in access a la website; ils pseudonims URL ed ils jokers vegnan exportads per mintga access a la website.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Lingua</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Mintga lingua</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Exportar</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Importar ina charta d'URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Transferi las adressas d'ina veglia website en ina giada: ina datoteca enumerescha mintga veglia adressa e la pagina da questa website a la quala ella appartegna ussa. Adressas exactas daventan renviaments u pseudonims URL, adressas cun * daventan jokers. Vus vesais tge che mintga lingia fiss avant che insatge vegn scrit, e mintga import po vegnir revocà cumplettamain.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Las tabellas dals imports da chartas d'URL n'existan anc betg. Exequi il pass d'actualisaziun 6.0.15-url-map (./console exp:upgrade --apply) avant l'import.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Quest import n'è betg pli disponibel: el è scadì suenter in di u appartegna ad in auter utilisader. Chargiai si la datoteca anc ina giada.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Tschernai ina datoteca u encollai las lingias.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>La datoteca è pli gronda che %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>La datoteca na po betg vegnir legida: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Tschernai in access a la website da questa installaziun.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>L'import na po betg vegnir memorisà sin il server: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>La datoteca</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datoteca</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), reglas da reformulaziun Apache u nginx, maximalmain %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>U encollai las lingias</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Ina endataziun per lingia, per exempel /veglia-pagina,/nova-pagina. L'emprima lingia po numnar las colonnas: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Eruir or da la datoteca</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Mo necessari sch'ni il num ni il cuntegn da la datoteca n'al indicheschan.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Valurs da standard</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Access a la website per percurs simpels</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>standard</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Lingias cun ina adressa cumpletta prendan empè l'access a la website da lur host.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>La lingua da l'access a la website</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Sch'ina veglia adressa ha gia ina endataziun</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Tegnair l'endataziun (sursiglir la lingia)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Remplazzar l'endataziun</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Vegls hosts</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Adressas cumplettas d'in host che questa installaziun na enconuscha betg na vegnan betg importadas. Indicai l'access a la website che mintga vegl host represchenta, in per lingia: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Prevista</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Anc vegn nagut scrit: la proxima pagina mussa tge che mintga lingia fiss.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Import %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>L'import è vegnì revocà.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>L'import è vegnì revocà, cun excepziun da las endataziuns midadas suenter el, ch'èn vegnidas tegnidas.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>L'import n'ha betg pudì vegnir revocà: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Lingias</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created creadas, %updated remplazzadas, %skipped sursiglidas, %failed fallidas.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Revocà</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Revocar quest import</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Mintga endataziun che l'import ha creà vegn allontanada e mintga endataziun ch'el ha remplazzà vegn restaurada sco ch'ella era, l'ultima l'emprima. Vus confermais l'emprim Vossa identitad.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count endataziuns midadas suenter l'import</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Revocar era las endataziuns midadas suenter l'import</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Senza quai vegnan ellas tegnidas e l'import vegn revocà mo per part (il --force da la consola).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Revocar quest import?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Revocar l'import</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Endataziuns scrittas</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from fin %to da %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>L'import n'ha scrit nagina endataziun.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Las endataziuns che l'import ha scrit</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Lingia</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Veglia adressa</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Endataziun</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Maina a</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Midada</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stadi</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Pseudonim URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Joker</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Renviament</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Creà</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Remplazzà</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Applitgà</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Tegnì</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Revocà per part</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Istorgia dals imports (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Mintga import d'ina charta d'URL, il pli nov l'emprim. In import po vegnir revocà cumplettamain: mintga endataziun ch'el ha scrit turna a quai ch'era là avant.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Anc nagina charta d'URL n'è vegnida importada.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Imports da chartas d'URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Numer</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Sursiglì</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fallì</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows lingias</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Importà sco import %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Mussar l'import u al revocar</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Importar in'autra datoteca</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Anc n'è nagut vegnì scrit. Mintga lingia mussa tge che l'import fiss cun ella. Lingias marcadas vegnan importadas; allontanai la marca per laschar ora ina lingia. Lingias che n'èn betg novas pon vegnir importadas mo sche lur veglia adressa dastga vegnir remplazzada.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>L'import n'è betg vegnì fatg: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Nagina lingia n'è marcada per l'import.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Execuziun da test: nagut n'è vegnì scrit.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>L'import creass %created, remplazzass %updated e sursigliss %skipped; %failed fallissan.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Survista</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Da crear</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Da remplazzar</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Da sursiglir</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Cun in problem</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Memorisà fin</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Planisar danovamain</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Midai quai che decida las lingias e planisai danovamain la datoteca. Marcas midadas a maun vegnan reinizialisadas.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Lingias da quests hosts na vegnan betg importadas, perquai che questa installaziun na respunda betg per els. Tschernai l'access a la website che mintga vegl host represchenta.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Betg importà</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Mussar</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tut</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Nagina lingia n'ha quest stadi.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Mussar tut</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Las lingias da la datoteca e tge che l'import fiss cun mintgina</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importar</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Nova adressa</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Tip</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Remartgas</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Importar la lingia %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Na</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Gea</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Execuziun da test</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Tegnair las marcas</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Plan sco CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Plan sco JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Rinunziar</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Importar scriva las lingias marcadas da tut las paginas sco in import, che po vegnir revocà en l'istorgia dals imports; Vus confermais l'emprim Vossa identitad. L'execuziun da test controllescha danovamain mintga lingia cun la website e dumbra tge che l'import fiss, senza scriver.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Renviament (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Renviament cun joker (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Joker (directamain)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nov</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Midà</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Betg midà</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplicat</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Conflict</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Destinaziun defectusa</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Host nunenconuschent</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Betg importabel</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Pseudonims URL globals</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Istorgia dals imports</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Chartas d'URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Renviaments (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Quests renviaments derivan dad imports da chartas d'URL: veglias adressas cun ina dumonda (/index.php?id=12), renviaments temporars e renviaments ad autras websites. Els vegnan controllads sin l'adressa cumpletta, avant ils pseudonims URL ed ils jokers. In renviament permanent ad ina pagina da questa website è empè in pseudonim URL global e vegn enumerà là.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count renviaments allontanads.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>I na dat nagins renviaments. Els vegnan fatgs cun importar ina charta d'URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Renviaments controllads sin l'adressa cumpletta</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Tscherner</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Da l'import</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Allontanar</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Tscherner %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Allontanar %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Allontanar quest renviament?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Allontanar ils renviaments tschernids?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Allontanar las tschernidas</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>In renviament allontanà chala immediatamain da funcziunar.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Text encollà</translation>
     </message>
 </context>
 </TS>

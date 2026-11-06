@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Maymanchus ñankuna rin: kay webpa ñan icha ñan t'ikraypiqa hunt'a ñan. {1\} nisqaqa ñawpaq * kikinchakuq qillqam. Ejemplo: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>kay ñanman pisi pachallapaq ñan t'ikrasqa kanku (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Watukuqkunaqa pisi pachallapaq ñan t'ikrasqa kanku (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Pisi pachapaq ñan t'ikray (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Sapa raphipi %count kaqkunata rikuchiy.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL mapata hawaman apay</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Kay web kitiq llapa URL huk sutinkunata, URL kumudinkunata, ñan t'ikraykunatapas huk willañiqillapi uraykachiy: waqaychanapaq, yupana raphipi allichaspa kaqmanta apamunapaq, utaq web sirwiqman musuqmanta qillqana kamachikuykuna hina qunapaq.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Huk laya qillqasqatapas akllay.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Willañiqita mana qillqayta atikurqanchu.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Imatataq hawaman apanqa</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Imayna kaynin</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Qillqasqakuna</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Llapa URL huk sutikuna (URL t'ikraq)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Chaymanta samiq kikin URL huk sutinkunapas</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Nodowan chayananpaq qillqasqa, kay hina node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>URL kumudinkuna</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Ñan t'ikraykuna</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Web yaykuna</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Llapa web yaykuna</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Ñan t'ikraykunallam huk web yaykunapa kanku; URL huk sutikunata, URL kumudinkunatapas llapa web yaykunapaq hawaman apakun.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Simi</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Llapa simi</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Hawaman apay</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL mapata apamuy</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Ñawpa web kitiq ñankunata huk kutillapi apamuy: huk willañiqim sapa ñawpa ñanta, kay web kitiq kunan kaqnin raphintapas sutinchan. Chiqan ñankunaqa ñan t'ikraykuna utaq URL huk sutikuna tukunku, * nisqayuq ñankunataq URL kumudinkuna tukunku. Mana imatapas qillqakuchkaptin sapa siq'i imata ruranantam rikunki, sapa apamuytataq tukuyninpi kutichiyta atikun.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL mapa apamuykunapa tablankuna manaraq kanchu. Manaraq apamuchkaspa 6.0.15-url-map musuqyachiy patata purichiy (./console exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Kay apamuyqa manañam kanchu: huk p'unchaw qhipanpi tukurqan utaq huk ruraqpam. Willañiqita kaqmanta churay.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Huk willañiqita akllay utaq siq'ikunata k'askachiy.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Willañiqiqa %size nisqamanta aswan hatunmi.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Willañiqita mana ñawiriyta atikunchu: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Kay churakuypa huk web yaykunanta akllay.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Apamuyta mana sirwiqpi waqaychayta atikunchu: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Willañiqi</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Willañiqi</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache utaq nginx musuqmanta qillqana kamachikuykuna, aswan %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Utaq siq'ikunata k'askachiy</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Sapa siq'ipi huk qillqasqa, kay hina /ñawpa-raphi,/musuq-raphi. Ñawpaq siq'iqa kulumnakunata sutinchanman: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Willañiqimanta yachay</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Willañiqipa sutinpas samiqninpas mana niptinlla necesitakun.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Ñawpaqmanta kaqkuna</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Mana hostniyuq ñankunapa web yaykunan</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>ñawpaqmanta kaq</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Hunt'a ñanniyuq siq'ikunaqa hostninpa web yaykunantam hap'inku.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Web yaykunapa siminta</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Huk ñawpa ñanpa qillqasqan kachkaptinña</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Qillqasqata waqaychay (siq'ita saltay)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Qillqasqata rantiy</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Ñawpa hostkuna</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Kay churakuy mana riqsisqan hostpa hunt'a ñankunanqa mana apamukunchu. Sapa ñawpa host ima web yaykunapaq kasqanta sutinchay, sapa siq'ipi huk: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Ñawpaqta qhaway</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Manaraqmi imapas qillqakunchu: qatiq raphim sapa siq'i imata ruranantam rikuchinqa.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Apamuy %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Apamuyqa kutichisqañam.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Apamuyqa kutichisqañam, qhipanpi t'ikrasqa qillqasqakunallam waqaychasqa karqan.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Apamuyta mana kutichiyta atikurqanchu: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>P'unchaw</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Pim</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Siq'ikuna</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created ruwasqa, %updated rantisqa, %skipped saltasqa, %failed pantasqa.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Kutichisqa</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Kay apamuyta kutichiy</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Apamuypa ruwasqan sapa qillqasqam hurqukun, rantisqan sapa qillqasqataq imayna karqan hinaman kutin, qhipa kaqmanta qallarispa. Ñawpaqta pi kasqaykita takyachinki.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>Apamuy qhipanpi %count qillqasqakuna t'ikrasqa</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Apamuy qhipanpi t'ikrasqa qillqasqakunatapas kutichiy</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Mana chayqa waqaychakunqa, apamuytaq kuskanllan kutichisqa kanqa (consolepa --force nisqan).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Kay apamuytachu kutichinki?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Apamuyta kutichiy</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Qillqasqa kaqkuna</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count nisqamanta %from kaqmanta %to kaqkama</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Apamuyqa mana ima qillqasqatapas qillqarqanchu.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Apamuypa qillqasqan kaqkuna</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Siq'i</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Ñawpa ñan</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Qillqasqa</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Kayman pusan</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>T'ikray</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Imayna kay</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL huk suti</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>URL kumudin</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Ñan t'ikray</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Ruwasqa</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Rantisqa</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Churasqa</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Waqaychasqa</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Kuskanllan kutichisqa</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Apamuykunapa willakuynin (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL mapapa llapa apamuyninkuna, aswan musuqmanta qallarispa. Huk apamuytaqa tukuyninpi kutichiyta atikun: sapa qillqasqanmi ñawpaq kasqanman kutin.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Manaraqmi ima URL mapapas apamusqachu.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL mapakunapa apamuyninkuna</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Yupay</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Saltasqa</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Pantasqa</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows siq'ikuna</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>%id apamuy hina apamusqa.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Apamuyta qhaway, utaq kutichiy</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Huk willañiqita apamuy</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Manaraqmi imapas qillqasqachu. Sapa siq'im apamuy paywan imata ruranantam rikuchin. Marcasqa siq'ikunam apamukun; huk siq'ita saqenaykipaq marcanta hurquy. Mana musuq siq'ikunaqa ñawpa ñanninkuna rantikuyta atiptinlla apamukunman.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Apamuyqa mana ruwakurqanchu: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Mana ima siq'ipas apamunapaq marcasqachu.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Pruwana purichiy: mana imapas qillqakurqanchu.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Apamuyqa %created ruwanman, %updated rantinman, %skipped saltanmantaq; %failed pantanman.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Llapanmanta qhaway</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Ruwanapaq</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Rantinapaq</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Saltanapaq</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Sasachakuyniyuq</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Kaykama waqaychasqa</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Kaqmanta yuyaychay</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Siq'ikunata akllaqta t'ikray, willañiqitataq kaqmanta yuyaychay. Makiwan t'ikrasqayki marcakunaqa kaqmanta qallarinqa.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Kay hostkunapa siq'inkunaqa mana apamukunchu, kay churakuy paykunapaq mana kutichisqanrayku. Sapa ñawpa host ima web yaykunapaq kasqanta akllay.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Mana apamusqa</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rikuchiy</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Llapan</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Mana ima siq'ipas kay imayna kayniyuqchu.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Llapanta rikuchiy</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Willañiqipa siq'inkuna, apamuy sapakamawan imata ruranmanpas</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Apamuy</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Musuq ñan</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Laya</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Willakuykuna</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>%line siq'ita apamuy</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Manam</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Arí</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Pruwana purichiy</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Marcakunata waqaychay</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>CSV hina yuyaychay</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>JSON hina yuyaychay</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Wikch'uy</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Apamuyqa llapa raphikunapa marcasqa siq'inkunatam huk apamuy hina qillqan, chaytaq apamuykunapa willakuyninmanta kutichiyta atikun; ñawpaqta pi kasqaykita takyachinki. Pruwana purichiyqa sapa siq'itam web kitiwan kaqmanta qhawan, apamuy imata ruranmantataq yupan, mana qillqaspa.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Ñan t'ikray (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>URL kumudinwan ñan t'ikray (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>URL kumudin (chiqan)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Musuq</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>T'ikrasqa</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Mana t'ikrasqa</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Iskaychasqa</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Ch'aqway</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>P'akisqa chayanan</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Mana riqsisqa host</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Mana apamuy atina</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Llapa URL huk sutikuna</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Apamuykunapa willakuynin</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL mapakuna</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Ñan t'ikraykuna (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Kay ñan t'ikraykunaqa URL mapa apamuykunamantam hamun: tapukuyniyuq ñawpa ñankuna (/index.php?id=12), pisi pachapaq ñan t'ikraykuna, huk web kitikunaman ñan t'ikraykunapas. Hunt'a ñanpim qhawakunku, URL huk sutikunamanta URL kumudinkunamantapas ñawpaqta. Kay web kitiq huk raphinman wiñaypaq ñan t'ikrayqa llapa URL huk sutim, chaypitaq sutinchasqa kachkan.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count ñan t'ikraykuna hurqusqa.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Mana ñan t'ikraykuna kanchu. URL mapata apamuspam ruwakun.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Hunt'a ñanpi qhawasqa ñan t'ikraykuna</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Akllay</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Imayna kaynin HTTP</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Apamuymanta</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Hurquy</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address akllay</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address hurquy</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Kay ñan t'ikraytachu hurqunki?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Akllasqa ñan t'ikraykunatachu hurqunki?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Akllasqakunata hurquy</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Hurqusqa ñan t'ikrayqa chaylla llamk'ayta saqen.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>K'askachisqa qillqa</translation>
     </message>
 </context>
 </TS>

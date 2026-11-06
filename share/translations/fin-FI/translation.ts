@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Minne osoitteet johtavat: tämän sivuston polku tai uudelleenohjauksessa täydellinen osoite. {1\} on teksti, jota ensimmäinen * vastasi. Esimerkki: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ohjataan tilapäisesti tähän osoitteeseen (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Kävijät ohjataan uudelleen tilapäisesti (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Tilapäinen uudelleenohjaus (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85521,6 +85533,625 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Näytä %count kohdetta sivulla.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Vie URL-kartta</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Lataa tämän sivuston yleiset URL-aliakset, yleismerkit ja uudelleenohjaukset yhtenä tiedostona: säilytettäväksi, taulukkolaskentaohjelmassa muokattavaksi ja uudelleen tuotavaksi tai verkkopalvelimelle uudelleenkirjoitussäännöiksi.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Valitse vähintään yksi merkintätyyppi.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Tiedostoa ei voitu kirjoittaa.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Mitä viedään</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Muoto</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Merkinnät</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Yleiset URL-aliakset (URL-kääntäjä)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Myös sisällön mukautetut URL-aliakset</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Kirjoitetaan solmu kohteena, esimerkiksi node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Yleismerkit</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Uudelleenohjaukset</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Sivustoyhteys</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Kaikki sivustoyhteydet</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Vain uudelleenohjaukset kuuluvat sivustoyhteyteen; URL-aliakset ja yleismerkit viedään kaikille sivustoyhteyksille.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Kieli</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Kaikki kielet</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Vie</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Tuo URL-kartta</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Siirrä vanhan sivuston osoitteet kerralla: tiedosto luettelee jokaisen vanhan osoitteen ja sen tämän sivuston sivun, johon se nyt kuuluu. Tarkoista osoitteista tulee uudelleenohjauksia tai URL-aliaksia, *-merkin sisältävistä osoitteista yleismerkkejä. Näet, mitä kukin rivi tekisi, ennen kuin mitään kirjoitetaan, ja jokaisen tuonnin voi perua kokonaan.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL-karttojen tuontien taulukoita ei ole vielä olemassa. Suorita päivitysvaihe 6.0.15-url-map (./console exp:upgrade --apply) ennen tuontia.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Tämä tuonti ei ole enää käytettävissä: se vanheni vuorokauden jälkeen tai kuuluu toiselle käyttäjälle. Lähetä tiedosto uudelleen.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Valitse tiedosto tai liitä rivit.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Tiedosto on suurempi kuin %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Tiedostoa ei voi lukea: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Valitse tämän asennuksen sivustoyhteys.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Tuontia ei voi säilyttää palvelimella: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Tiedosto</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Tiedosto</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache- tai nginx-uudelleenkirjoitussäännöt, enintään %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Tai liitä rivit</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Yksi rivi kullekin merkinnälle, esimerkiksi /vanha-sivu,/uusi-sivu. Ensimmäinen rivi voi nimetä sarakkeet: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Päättele tiedostosta</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Tarvitaan vain, jos tiedoston nimi tai sisältö ei kerro sitä.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Oletukset</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Pelkkien polkujen sivustoyhteys</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>oletus</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Täydellisen osoitteen sisältävät rivit saavat sen sijaan isäntänsä sivustoyhteyden.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Sivustoyhteyden kieli</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Kun vanhalla osoitteella on jo merkintä</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Säilytä merkintä (ohita rivi)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Korvaa merkintä</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Vanhat isännät</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Täydellisiä osoitteita isännältä, jota tämä asennus ei tunne, ei tuoda. Nimeä sivustoyhteys, jota kukin vanha isäntä vastaa, yksi riviä kohden: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Esikatselu</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Mitään ei ole vielä kirjoitettu: seuraava sivu näyttää, mitä kukin rivi tekisi.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Tuonti %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Tuonti peruttiin.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Tuonti peruttiin lukuun ottamatta sen jälkeen muutettuja merkintöjä, jotka säilytettiin.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Tuontia ei voitu perua: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Päivämäärä</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Tekijä</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Rivit</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created luotu, %updated korvattu, %skipped ohitettu, %failed epäonnistui.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Peruttu</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Peru tämä tuonti</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Jokainen tuonnin luoma merkintä poistetaan ja jokainen sen korvaama merkintä palautetaan ennalleen, viimeisin ensin. Vahvistat ensin henkilöllisyytesi.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count merkintää muutettu tuonnin jälkeen</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Peru myös tuonnin jälkeen muutetut merkinnät</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Muuten ne säilytetään ja tuonti perutaan osittain (konsolin --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Perutaanko tämä tuonti?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Peru tuonti</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Kirjoitetut merkinnät</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to / %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Tuonti ei kirjoittanut yhtään merkintää.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Tuonnin kirjoittamat merkinnät</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Rivi</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Vanha osoite</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Merkintä</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Johtaa kohteeseen</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Muutos</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tila</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL-alias</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Yleismerkki</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Uudelleenohjaus</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Luotu</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Korvattu</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Toteutettu</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Säilytetty</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Osittain peruttu</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Tuontihistoria (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Kaikki URL-karttojen tuonnit, uusin ensin. Tuonnin voi perua kokonaan: jokainen sen kirjoittama merkintä palautuu entiselleen.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>URL-karttaa ei ole vielä tuotu.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL-karttojen tuonnit</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Numero</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Ohitettu</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Epäonnistui</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows riviä</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Tuotu tuontina %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Näytä tuonti tai peru se</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Tuo toinen tiedosto</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Mitään ei ole vielä kirjoitettu. Jokainen rivi näyttää, mitä tuonti tekisi sille. Valitut rivit tuodaan; poista valinta jättääksesi rivin pois. Rivit, jotka eivät ole uusia, voidaan tuoda vain, jos niiden vanhan osoitteen saa korvata.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Tuontia ei tehty: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Yhtään riviä ei ole valittu tuotavaksi.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Koeajo: mitään ei kirjoitettu.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Tuonti loisi %created, korvaisi %updated ja ohittaisi %skipped; %failed epäonnistuisi.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Yleiskatsaus</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Luotavat</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Korvattavat</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Ohitettavat</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Ongelmalliset</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Säilytetään asti</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Suunnittele uudelleen</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Muuta rivit määrääviä asetuksia ja suunnittele tiedosto uudelleen. Käsin muutetut valinnat nollataan.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Näiden isäntien rivejä ei tuoda, koska tämä asennus ei vastaa niistä. Valitse sivustoyhteys, jota kukin vanha isäntä vastaa.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Ei tuotu</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Näytä</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kaikki</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Millään rivillä ei ole tätä tilaa.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Näytä kaikki</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Tiedoston rivit ja mitä tuonti tekisi kullekin</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Tuo</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Uusi osoite</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Tyyppi</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Huomautukset</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Tuo rivi %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ei</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Kyllä</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Koeajo</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Säilytä valinnat</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Suunnitelma CSV-muodossa</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Suunnitelma JSON-muodossa</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Hylkää</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Tuo kirjoittaa kaikkien sivujen valitut rivit yhtenä tuontina, jonka voi perua tuontihistoriasta; vahvistat ensin henkilöllisyytesi. Koeajo tarkistaa jokaisen rivin uudelleen sivustoa vasten ja laskee, mitä tuonti tekisi, kirjoittamatta mitään.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Uudelleenohjaus (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Yleismerkkiuudelleenohjaus (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Yleismerkki (suora)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Uusi</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Muuttunut</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Muuttumaton</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Kaksoiskappale</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Ristiriita</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Rikkinäinen kohde</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Tuntematon isäntä</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Ei tuotavissa</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Yleiset URL-aliakset</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Tuontihistoria</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL-kartat</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Uudelleenohjaukset (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Nämä uudelleenohjaukset ovat peräisin URL-karttojen tuonneista: vanhoja osoitteita, joissa on kysely (/index.php?id=12), tilapäisiä uudelleenohjauksia ja uudelleenohjauksia muille sivustoille. Ne tarkistetaan koko osoitteen perusteella ennen URL-aliaksia ja yleismerkkejä. Pysyvä uudelleenohjaus tämän sivuston sivulle on sen sijaan yleinen URL-alias, ja se näkyy siellä.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count uudelleenohjausta poistettu.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Uudelleenohjauksia ei ole. Ne syntyvät tuomalla URL-kartta.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Koko osoitteen perusteella tarkistettavat uudelleenohjaukset</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Valitse</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Tila</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Tuonnista</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Poista</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Valitse %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Poista %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Poistetaanko tämä uudelleenohjaus?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Poistetaanko valitut uudelleenohjaukset?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Poista valitut</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Poistettu uudelleenohjaus lakkaa toimimasta heti.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Liitetty teksti</translation>
     </message>
 </context>
 </TS>

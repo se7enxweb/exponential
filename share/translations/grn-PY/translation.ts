@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Moõpa oho kundaharape: ko tenda rape, térã kundaharape pukukue reñemondóramo. {1\} ha'e moñe'ẽrã * peteĩha ojojoguáva. Techapyrã: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>oñemondo jey ko kundaharápe sapy'arei (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Ovisitáva oñemondo jey sapy'arei (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Ñemondo jey sapy'arei (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85463,6 +85475,625 @@ Remoambuevaerã nódo klase swap tembiapo rupive.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Ehechauka %count mba'e kuatiarogue rupive.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Emondo okápe URL mapa</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Emboguejy URL téra mokõiha opavavéva, comodín ha ñemondo jey ko tendapegua peteĩ marandurendápe: eñongatu hag̃ua, embosako'i hag̃ua tabla kuatiápe ha egueru jey hag̃ua, térã eme'ẽ hag̃ua peteĩ servidor web-pe rewrite rembiapoukapy ramo.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Eiporavo sa'ive peteĩ jehaipy rehegua.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Marandurenda ndaikatúi ojehai.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Mba'épa emondóta okápe</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Formato</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Jehaipykuéra</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>URL téra mokõiha opavavéva (URL ñembohasaha)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Avei tetepy URL téra mokõiha ijeheguáva</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Ojehai nódo ndive ojehupytyséva ramo, techapyrã node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Comodín-kuéra</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Ñemondo jey</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Opaite siteaccess</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Ñemondo jey añoite oĩ peteĩ siteaccess-pe; URL téra mokõiha ha comodín oñemondo okápe opaite siteaccess-pe g̃uarã.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Ñe'ẽ</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Opaite ñe'ẽ</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Emondo okápe</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Egueru peteĩ URL mapa</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Egueru peteĩ jeýpe tenda tuja kundaharakuéra: peteĩ marandurenda ohai peteĩteĩ kundahára tuja ha ko tenda kuatiarogue oguerekóva ko'ág̃a. Kundahára hekopete oiko ñemondo jey térã URL téra mokõiha, kundahára * ndive oiko comodín. Rehecha mba'épa ojapóta peteĩteĩ tysỹi oñehai mboyve mba'eve, ha opaite jegueru ikatu oñemboguevi henyhẽmbaitépe.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL mapa jegueru tabla-kuéra ndaipóri gueteri. Emongu'e mbohapyha 6.0.15-url-map (./console exp:upgrade --apply) egueru mboyve.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Ko jegueru ndaipóri voi: opa peteĩ ára rire térã ambue puruhára mba'e. Ehupi jey marandurenda.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Eiporavo peteĩ marandurenda térã emboja tysỹikuéra.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Marandurenda tuichave %size-gui.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Marandurenda ndaikatúi ojelee: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Eiporavo peteĩ siteaccess ko ñemohendapegua.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Jegueru ndaikatúi opyta servidor-pe: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Marandurenda</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Marandurenda</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache térã nginx rewrite rembiapoukapy, %size peve.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Térã emboja tysỹikuéra</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Peteĩ tysỹi peteĩ línea-pe, techapyrã /kuatiarogue-tuja,/kuatiarogue-pyahu. Línea peteĩha ikatu ombohéra columna-kuéra: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Ojehechakuaa marandurendágui</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Tekotevẽ añoite marandurenda réra ha tetepy ndohechaukáiramo.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Ojeporúva ypy</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Tape rei siteaccess</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>ypyguáva</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Tysỹi kundahára henyhẽva ndive oipuru hendaguépe ihost siteaccess.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Siteaccess ñe'ẽ</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Kundahára tuja oguerekóma jehaipy ramo</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Eñongatu jehaipy (ehasa tysỹi)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Emyengovia jehaipy</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Host tuja</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Host ko ñemohenda ndoikuaáiva kundahára henyhẽva ndojegueruái. Ehai mba'e siteaccess-pa ohechauka peteĩteĩ host tuja, peteĩ línea-pe: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Jehecha ypy</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Ndojehaíri gueteri mba'eve: kuatiarogue oúva ohechauka mba'épa ojapóta peteĩteĩ tysỹi.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Jegueru %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Jegueru oñemboguevi.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Jegueru oñemboguevi, ndaha'éi jehaipy oñemoambuéva upe rire, oñeñongatúva.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Jegueru ndaikatúi oñemboguevi: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Arange</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ojapova'ekue</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Tysỹikuéra</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created oñemoheñói, %updated oñemyengovia, %skipped ojehasa, %failed ndoikói.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Oñemboguevi</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Emboguevi ko jegueru</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Opaite jehaipy jegueru omoheñóiva oñembogue ha opaite jehaipy omyengoviava'ekue ojeguerujey oĩhaguéicha, ipahaguáva ypy. Ehechauka ypy máva piko nde.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count jehaipy oñemoambuéva jegueru rire</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Emboguevi avei jehaipy oñemoambuéva jegueru rire</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Ko'ã'ỹre oñeñongatu ha jegueru oñemboguevi pehẽnguépe (consola --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Emboguevi ko jegueru?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Emboguevi jegueru</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Jehaipy ojehaíva</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from guive %to peve, %count apytépe</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Jegueru ndohaíri mba'eve jehaipy.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Jehaipy jegueru ohaiva'ekue</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Línea</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Kundahára tuja</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Jehaipy</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Ogueraha</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ñemoambue</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Oĩhaicha</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL téra mokõiha</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Comodín</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Ñemondo jey</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Oñemoheñóiva</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Oñemyengoviáva</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Ojepurúva</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Oñeñongatúva</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Oñemboguevi pehẽnguépe</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Jegueru rembiasakue (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Opaite URL mapa jegueru, ipyahuvéva ypy. Peteĩ jegueru ikatu oñemboguevi henyhẽmbaitépe: peteĩteĩ jehaipy ohaiva'ekue ojevy oĩhaguépe yma.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Ndojegueruíri gueteri mba'eve URL mapa.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL mapa jegueru</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Papapy</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Ojehasáva</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ndoikóiva</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows tysỹi</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Ojegueru jegueru %id ramo.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Ehecha jegueru, térã emboguevi</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Egueru ambue marandurenda</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Ndojehaíri gueteri mba'eve. Peteĩteĩ tysỹi ohechauka mba'épa jegueru ojapóta hese. Tysỹi oñemarcáva ojegueru; eipe'a marca peteĩ tysỹigui ani hag̃ua oike. Tysỹi ndaha'éiva pyahu ikatu ojegueru añoite ikundahára tuja ikatúramo oñemyengovia.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Jegueru ndojejapói: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Ndaipóri tysỹi oñemarcáva jegueru hag̃ua.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Ñeha'ã rei: ndojehaíri mba'eve.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Jegueru omoheñóita %created, omyengoviáta %updated ha ohasáta %skipped; %failed ndoikomo'ãi.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Jehecha pavẽ</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Oñemoheñóitava</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Oñemyengoviátava</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Ojehasátava</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Apañuãi ndive</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Oñeñongatu peve</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Eñembosako'i jey</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Emoambue mba'épa odesidi tysỹikuéra ha eñembosako'i jey marandurenda. Marca remoambueva'ekue nde po rupive oñemoñepyrũ jey.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Ko'ã host tysỹi ndojegueruíri, ko ñemohenda ndombohováigui hesekuéra. Eiporavo mba'e siteaccess-pa ohechauka peteĩteĩ host tuja.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Ndojegueruíva</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ehechauka</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Opavave</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Ndaipóri tysỹi oĩva péicha.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Ehechauka opavave</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Marandurenda tysỹikuéra ha mba'épa jegueru ojapóta peteĩteĩ ndive</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Egueru</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Kundahára pyahu</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Mba'eichagua</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Jehaipy mbykymi</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Egueru línea %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nahániri</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Héẽ</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Ñeha'ã rei</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Eñongatu marcakuéra</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Ñembosako'i CSV ramo</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Ñembosako'i JSON ramo</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Emombo</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Egueru ohai tysỹi oñemarcáva opaite kuatiaroguégui peteĩ jegueru ramo, ikatúva oñemboguevi jegueru rembiasakuégui; ehechauka ypy máva piko nde. Ñeha'ã rei ohesa'ỹijo jey peteĩteĩ tysỹi tenda ndive ha oipapa mba'épa jegueru ojapóta, ohai'ỹre.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Ñemondo jey (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Comodín ñemondo jey (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Comodín (tenondete)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Pyahu</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Oñemoambuéva</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Ndoñemoambuéiva</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Mokõiháva</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Joavy</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Ojehupytyséva oñembyai</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Host ojekuaa'ỹva</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Ndaikatúiva ojegueru</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>URL téra mokõiha opavavéva</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Jegueru rembiasakue</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL mapa-kuéra</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Ñemondo jey (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Ko'ã ñemondo jey ou URL mapa jeguerugui: kundahára tuja porandu ndive (/index.php?id=12), ñemondo jey sapy'arei ha ñemondo jey ambue tendápe. Ojehesa'ỹijo kundahára henyhẽvape, URL téra mokõiha ha comodín mboyve. Peteĩ ñemondo jey opave'ỹva ko tenda kuatiaroguépe ha'e hekovia URL téra mokõiha opavavéva ha oĩ upépe.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count ñemondo jey oñembogue.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Ndaipóri ñemondo jey. Ojejapo URL mapa jegueru rupive.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Ñemondo jey ojehesa'ỹijóva kundahára henyhẽvape</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Eiporavo</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Mba'éichapa oĩ</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Jeguerugui</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Embogue</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Eiporavo %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Embogue %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Embogue ko ñemondo jey?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Embogue ñemondo jey jeporavopyre?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Embogue jeporavopyre</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Ñemondo jey oñemboguéva opa ombá'apo pya'eterei.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Moñe'ẽrã ojembojáva</translation>
     </message>
 </context>
 </TS>

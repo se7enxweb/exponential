@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Adiresiw bɛ taa yɔrɔ min na: nin siti ka sira dɔ, walima adiresi dafalen ni sirayɛlɛma bɛ yen. {1\} ye sɛbɛn min * fɔlɔ bɛnna a ma. Misali: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>bɛ ci adirɛsi in ma waati dɔɔnin kɔnɔ (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Bisigilaw bɛ ci yɔrɔ wɛrɛ la waati dɔɔnin kɔnɔ (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Waati dɔɔnin sirayɛlɛma (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Fɛn %count jira ɲɛ kelen kɔnɔ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL kariti labɔ</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Nin siti in ka URL tɔgɔ wɛrɛw bɛɛ ka, jɔkɛriw ani sirayɛlɛmaw jigin dosiye kelen ye: k'a mara, k'a latilen jatebɔsɛbɛn kɔnɔ ka a ladon tugun, walima k'a di web sɛriwɛri ma i n'a fɔ segin-sɛbɛn sariyaw.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Sɛbɛnni suguya kelen tigɛ dɔɔnin.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Dosiye ma se ka sɛbɛn.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Min bɛ labɔ</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Cogoya</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Sɛbɛnniw</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>URL tɔgɔ wɛrɛw bɛɛ ka (URL bayɛlɛmabaga)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Kɔnɔkow ka URL tɔgɔ wɛrɛ dabɔlenw fana</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Sɛbɛnna ni nɔdi ye kuntilenna ye, misali la node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Jɔkɛriw</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Sirayɛlɛmaw</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siti donda</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Siti donda bɛɛ</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Sirayɛlɛmaw dɔrɔn de ye siti donda dɔ ta ye; URL tɔgɔ wɛrɛw ni jɔkɛriw bɛ labɔ siti donda bɛɛ ye.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Kan</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Kan bɛɛ</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Labɔ</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL kariti ladon</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Siti kɔrɔ dɔ ka adirɛsiw bɛɛ lase siɲɛ kelen: dosiye bɛ adirɛsi kɔrɔ kelen-kelen bɛɛ sɛbɛn ani nin siti in ka sɛbɛnfura min ta don a ye sisan. Adirɛsi tilennenw bɛ kɛ sirayɛlɛmaw walima URL tɔgɔ wɛrɛw ye, adirɛsi minnu na * bɛ, olu bɛ kɛ jɔkɛriw ye. I bɛ layini kelen-kelen bɛɛ ka baara ye sani foyi ka sɛbɛn, ani ladon o ladon bɛ se ka kɔsegin a bɛɛ la.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL kariti ladonw ka tabaliw tɛ yen fɔlɔ. Yɛlɛmali taabolo 6.0.15-url-map (./console exp:upgrade --apply) boli sani i ka ladon kɛ.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Nin ladon tɛ sɔrɔ tun: a waati banna tile kelen kɔfɛ walima baarakɛla wɛrɛ ta don. Dosiye lase tugun.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Dosiye dɔ tigɛ walima layiniw nɔrɔ.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Dosiye ka bon ni %size ye.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Dosiye tɛ se ka kalan: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Nin sigili in ka siti donda dɔ tigɛ.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Ladon tɛ se ka mara sɛriwɛri kan: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Dosiye</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Dosiye</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache walima nginx segin-sɛbɛn sariyaw, %size dɔrɔn caman na.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Walima layiniw nɔrɔ</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Layini kelen sira kelen o kelen na, misali la /sɛbɛnfura-kɔrɔ,/sɛbɛnfura-kura. Sira fɔlɔ bɛ se ka kolonw tɔgɔ fɔ: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>A dɔn ka bɔ dosiye la</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>A mago bɛ yen dɔrɔn ni dosiye tɔgɔ wala a kɔnɔko ma a fɔ.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Sigida ɲɛnamaw</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Sira lankolonw ka siti donda</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>sigida</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Layini minnu na adirɛsi dafalen bɛ, olu bɛ u ka host ka siti donda ta o nɔ na.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Siti donda ka kan</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Ni sɛbɛnni bɛ adirɛsi kɔrɔ dɔ la kaban</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Sɛbɛnni mara (layini tɛmɛ)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Sɛbɛnni falen</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Host kɔrɔw</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Host minnu tɛ dɔn nin sigili in fɛ, olu ka adirɛsi dafalenw tɛ ladon. Siti donda min nɔ na host kɔrɔ kelen-kelen bɛɛ bɛ, o tɔgɔ fɔ, kelen sira kelen o kelen na: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Ɲɛfɛlajɛ</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Foyi ma sɛbɛn fɔlɔ: sɛbɛnfura nata bɛ layini kelen-kelen bɛɛ ka baara jira.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Ladon %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Ladon kɔseginna.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Ladon kɔseginna, fo sɛbɛnni minnu yɛlɛmana a kɔfɛ; olu marala.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Ladon ma se ka kɔsegin: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Don</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Min ye</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Layiniw</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created dabɔra, %updated falenna, %skipped tɛmɛna, %failed ma ɲɛ.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Kɔseginna</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Nin ladon kɔsegin</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Ladon ye sɛbɛnni o sɛbɛnni dabɔ, o bɛ bɔsi, ani a ye min o min falen, o bɛ segin a cogo kɔrɔ la, laban fɔlɔ. I bɛ i yɛrɛ sinsin fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>Sɛbɛnni %count yɛlɛmana ladon kɔfɛ</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Sɛbɛnni minnu yɛlɛmana ladon kɔfɛ, olu fana kɔsegin</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Ni o tɛ, u bɛ mara ani ladon bɛ kɔsegin a dɔ la dɔrɔn (konsoli ka --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Nin ladon kɔsegin wa?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Ladon kɔsegin</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Sɛbɛnni sɛbɛnnenw</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ka se %to ma %count kɔnɔ</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Ladon ma sɛbɛnni si sɛbɛn.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Ladon ye sɛbɛnni minnu sɛbɛn</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Sira</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Adirɛsi kɔrɔ</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Sɛbɛnni</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>A bɛ taa</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Yɛlɛmali</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Cogoya</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL tɔgɔ wɛrɛ</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Jɔkɛri</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Sirayɛlɛma</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Dabɔra</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Falenna</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Kɛra</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Marala</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Kɔseginna a dɔ la</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Ladonw tariku (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL kariti ladon o ladon, kura fɔlɔ. Ladon bɛ se ka kɔsegin a bɛɛ la: a ye sɛbɛnni o sɛbɛnni sɛbɛn, o bɛ segin min tun bɛ yen fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>URL kariti si ma ladon fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL kartiw ladonw</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Nimɔrɔ</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Tɛmɛna</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, layini %rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Ladonna i n'a fɔ ladon %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Ladon lajɛ, walima a kɔsegin</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Dosiye wɛrɛ ladon</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Foyi ma sɛbɛn fɔlɔ. Layini kelen-kelen bɛɛ bɛ a jira ladon bɛna min kɛ a la. Layini tagamasiyɛnnenw bɛ ladon; tagamasiyɛn bɔ layini dɔ la walasa k'a to kɔfɛ. Layini minnu tɛ kura ye, olu bɛ se ka ladon dɔrɔn ni u ka adirɛsi kɔrɔ bɛ se ka falen.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Ladon ma kɛ: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Layini si ma tagamasiyɛn ladon kama.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Boli kɔrɔbɔ: foyi ma sɛbɛn.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Ladon tun bɛna %created dabɔ, %updated falen ani %skipped tɛmɛ; %failed tun tɛna ɲɛ.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Lajɛ bɛɛ</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Ka dabɔ</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Ka falen</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Ka tɛmɛ</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Gɛlɛya bɛ min na</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Marala fo</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Labɛn tugun</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Min bɛ layiniw latigɛ, o yɛlɛma ka dosiye labɛn tugun. I ye tagamasiyɛn minnu yɛlɛma ni bolo ye, olu bɛ segin u cogo fɔlɔ la.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Nin host ninnu ka layiniw tɛ ladon, katuguni nin sigili in tɛ jaabi di u ye. Siti donda min nɔ na host kɔrɔ kelen-kelen bɛɛ bɛ, o tigɛ.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Ma ladon</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Jira</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Bɛɛ</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Layini si tɛ nin cogoya in na.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Bɛɛ jira</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Dosiye ka layiniw ani ladon bɛna min kɛ u kelen-kelen bɛɛ la</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Ladon</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Adirɛsi kura</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Suguya</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Kunnafoniw</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Sira %line ladon</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ayi</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Awɔ</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Boli kɔrɔbɔ</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Tagamasiyɛnw mara</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Labɛn CSV ye</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Labɛn JSON ye</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Fili</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Ladon bɛ sɛbɛnfura bɛɛ ka layini tagamasiyɛnnenw sɛbɛn i n'a fɔ ladon kelen, min bɛ se ka kɔsegin ka bɔ ladonw tariku la; i bɛ i yɛrɛ sinsin fɔlɔ. Boli kɔrɔbɔ bɛ layini kelen-kelen bɛɛ sɛgɛsɛgɛ siti fɛ tugun ka ladon bɛna min kɛ o jate, k'a sɔrɔ a ma sɛbɛn.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Sirayɛlɛma (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Jɔkɛri sirayɛlɛma (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Jɔkɛri (tilennen)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Kura</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Yɛlɛmana</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Ma yɛlɛma</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Filanin</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Sɔsɔli</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Kuntilenna tiɲɛnen</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Host ma dɔn</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Tɛ se ka ladon</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>URL tɔgɔ wɛrɛw bɛɛ ka</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Ladonw tariku</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL kartiw</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Sirayɛlɛmaw (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Nin sirayɛlɛma ninnu bɛ bɔ URL kariti ladonw de la: adirɛsi kɔrɔ minnu na ɲininkali bɛ (/index.php?id=12), waati dɔɔnin sirayɛlɛmaw ani sirayɛlɛma minnu bɛ taa siti wɛrɛw la. U bɛ sɛgɛsɛgɛ adirɛsi dafalen kan, sani URL tɔgɔ wɛrɛw ni jɔkɛriw. Sirayɛlɛma banbali min bɛ taa nin siti in sɛbɛnfura dɔ la, o ye URL tɔgɔ wɛrɛ bɛɛ ka ye o nɔ na, ani a sɛbɛnnen bɛ yen.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Sirayɛlɛma %count bɔsira.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Sirayɛlɛma si tɛ yen. U bɛ dabɔ ni URL kariti ladon ye.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Sirayɛlɛma minnu bɛ sɛgɛsɛgɛ adirɛsi dafalen kan</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Tigɛ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Cogoya</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Ka bɔ ladon na</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Bɔsi</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address tigɛ</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address bɔsi</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Nin sirayɛlɛma bɔsi wa?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Sirayɛlɛma sugandilenw bɔsi wa?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Bɔsi sugandilenw</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Sirayɛlɛma bɔsilen bɛ baara dabila o yɔrɔnin bɛɛ.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Sɛbɛn nɔrɔlen</translation>
     </message>
 </context>
 </TS>

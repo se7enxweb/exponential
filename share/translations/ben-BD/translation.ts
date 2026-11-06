@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>ঠিকানাগুলো যেখানে যাবে: এই সাইটের একটি পাথ, অথবা রিডাইরেক্ট করার সময় একটি পূর্ণ ঠিকানা। {1\} হলো প্রথম * যে টেক্সটের সাথে মিলেছে। উদাহরণ: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>অস্থায়ীভাবে এই ঠিকানায় পুনঃনির্দেশিত হয় (HTTP 302)।</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>দর্শকদের অস্থায়ীভাবে পুনঃনির্দেশ করা হয় (HTTP 302)।</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>অস্থায়ী পুনঃনির্দেশ (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85489,6 +85501,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>প্রতি পৃষ্ঠায় %countটি আইটেম দেখান।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL ম্যাপ এক্সপোর্ট করুন</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>এই সাইটের গ্লোবাল URL অ্যালিয়াস, ওয়াইল্ডকার্ড ও পুনঃনির্দেশগুলো একটি ফাইল হিসেবে ডাউনলোড করুন: রেখে দিতে, স্প্রেডশিটে সম্পাদনা করে আবার ইমপোর্ট করতে, অথবা ওয়েব সার্ভারকে রিরাইট নিয়ম হিসেবে দিতে।</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>অন্তত এক ধরনের এন্ট্রি নির্বাচন করুন।</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>ফাইলটি লেখা যায়নি।</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>কী এক্সপোর্ট করবেন</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>ফরম্যাট</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>এন্ট্রি</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>গ্লোবাল URL অ্যালিয়াস (URL অনুবাদক)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>কনটেন্টের নিজস্ব URL অ্যালিয়াসও</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>নোডকে লক্ষ্য হিসেবে লেখা হয়, যেমন node:42।</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>ওয়াইল্ডকার্ড</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>পুনঃনির্দেশ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>সাইটঅ্যাক্সেস</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>প্রতিটি সাইটঅ্যাক্সেস</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>শুধু পুনঃনির্দেশগুলোই কোনো সাইটঅ্যাক্সেসের অন্তর্গত; URL অ্যালিয়াস ও ওয়াইল্ডকার্ড প্রতিটি সাইটঅ্যাক্সেসের জন্য এক্সপোর্ট হয়।</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ভাষা</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>প্রতিটি ভাষা</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>এক্সপোর্ট করুন</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>একটি URL ম্যাপ ইমপোর্ট করুন</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>একটি পুরোনো সাইটের ঠিকানাগুলো একবারে নিয়ে আসুন: একটি ফাইলে প্রতিটি পুরোনো ঠিকানা এবং এখন সেটি এই সাইটের যে পৃষ্ঠার অন্তর্গত তা তালিকাভুক্ত থাকে। হুবহু ঠিকানাগুলো পুনঃনির্দেশ বা URL অ্যালিয়াস হয়, * সহ ঠিকানাগুলো ওয়াইল্ডকার্ড হয়। কিছু লেখার আগে আপনি দেখতে পান প্রতিটি সারি কী করবে, এবং প্রতিটি ইমপোর্ট সম্পূর্ণভাবে পূর্বাবস্থায় ফেরানো যায়।</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL ম্যাপ ইমপোর্টের টেবিলগুলো এখনও নেই। ইমপোর্ট করার আগে আপগ্রেড ধাপ 6.0.15-url-map (./console exp:upgrade --apply) চালান।</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>এই ইমপোর্টটি আর পাওয়া যাচ্ছে না: এক দিন পরে এর মেয়াদ শেষ হয়েছে অথবা এটি অন্য ব্যবহারকারীর। ফাইলটি আবার আপলোড করুন।</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>একটি ফাইল নির্বাচন করুন অথবা সারিগুলো পেস্ট করুন।</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>ফাইলটি %size এর চেয়ে বড়।</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>ফাইলটি পড়া যাচ্ছে না: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>এই ইনস্টলেশনের একটি সাইটঅ্যাক্সেস নির্বাচন করুন।</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>ইমপোর্টটি সার্ভারে রাখা যাচ্ছে না: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>ফাইলটি</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ফাইল</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache বা nginx রিরাইট নিয়ম, সর্বোচ্চ %size।</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>অথবা সারিগুলো পেস্ট করুন</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>প্রতি লাইনে একটি সারি, যেমন /old-page,/new-page। প্রথম লাইনে কলামগুলোর নাম থাকতে পারে: old_url, new_url, kind, siteaccess, language, note, status।</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>ফাইল থেকে নির্ধারণ করুন</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>কেবল তখনই দরকার যখন ফাইলের নাম বা কনটেন্ট কোনোটিই তা বলে না।</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>ডিফল্ট</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>খালি পাথের সাইটঅ্যাক্সেস</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>ডিফল্ট</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>পূর্ণ ঠিকানাসহ সারিগুলো এর বদলে তাদের হোস্টের সাইটঅ্যাক্সেস নেয়।</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>সাইটঅ্যাক্সেসের ভাষা</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>যখন কোনো পুরোনো ঠিকানার ইতিমধ্যে একটি এন্ট্রি আছে</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>এন্ট্রিটি রাখুন (সারিটি বাদ দিন)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>এন্ট্রিটি প্রতিস্থাপন করুন</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>পুরোনো হোস্ট</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>এই ইনস্টলেশন যে হোস্ট চেনে না তার পূর্ণ ঠিকানাগুলো ইমপোর্ট হয় না। প্রতিটি পুরোনো হোস্ট কোন সাইটঅ্যাক্সেসকে বোঝায় তা লিখুন, প্রতি লাইনে একটি: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>পূর্বরূপ</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>এখনও কিছু লেখা হয়নি: পরের পৃষ্ঠায় দেখানো হবে প্রতিটি সারি কী করবে।</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>ইমপোর্ট %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>ইমপোর্টটি পূর্বাবস্থায় ফেরানো হয়েছে।</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>ইমপোর্টটি পূর্বাবস্থায় ফেরানো হয়েছে, এর পরে পরিবর্তিত এন্ট্রিগুলো ছাড়া, সেগুলো রাখা হয়েছে।</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>ইমপোর্টটি পূর্বাবস্থায় ফেরানো যায়নি: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>তারিখ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>দ্বারা</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>সারি</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created তৈরি, %updated প্রতিস্থাপিত, %skipped বাদ, %failed ব্যর্থ।</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>পূর্বাবস্থায় ফেরানো হয়েছে</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>এই ইমপোর্ট পূর্বাবস্থায় ফেরান</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>ইমপোর্ট যে এন্ট্রিগুলো তৈরি করেছে সেগুলো সরানো হয় এবং যেগুলো প্রতিস্থাপন করেছে সেগুলো আগের মতো ফিরিয়ে দেওয়া হয়, শেষেরটি প্রথমে। প্রথমে আপনি নিজের পরিচয় নিশ্চিত করেন।</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>ইমপোর্টের পরে %count টি এন্ট্রি পরিবর্তিত হয়েছে</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>ইমপোর্টের পরে পরিবর্তিত এন্ট্রিগুলোও পূর্বাবস্থায় ফেরান</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>এটি ছাড়া সেগুলো রাখা হয় এবং ইমপোর্টটি আংশিকভাবে পূর্বাবস্থায় ফেরে (কনসোলের --force)।</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>এই ইমপোর্ট পূর্বাবস্থায় ফেরাবেন?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>ইমপোর্ট পূর্বাবস্থায় ফেরান</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>লেখা এন্ট্রি</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count এর মধ্যে %from থেকে %to</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>ইমপোর্ট কোনো এন্ট্রি লেখেনি।</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>ইমপোর্ট যে এন্ট্রিগুলো লিখেছে</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>লাইন</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>পুরোনো ঠিকানা</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>এন্ট্রি</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>যেখানে নিয়ে যায়</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>পরিবর্তন</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>অবস্থা</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL অ্যালিয়াস</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>ওয়াইল্ডকার্ড</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>পুনঃনির্দেশ</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>তৈরি হয়েছে</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>প্রতিস্থাপিত</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>প্রয়োগ হয়েছে</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>রাখা হয়েছে</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>আংশিকভাবে পূর্বাবস্থায় ফেরানো</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>ইমপোর্টের ইতিহাস (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>একটি URL ম্যাপের প্রতিটি ইমপোর্ট, নতুনটি প্রথমে। একটি ইমপোর্ট সম্পূর্ণভাবে পূর্বাবস্থায় ফেরানো যায়: এটি যে এন্ট্রিগুলো লিখেছে সেগুলো আগে যা ছিল তাতে ফিরে যায়।</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>এখনও কোনো URL ম্যাপ ইমপোর্ট করা হয়নি।</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL ম্যাপের ইমপোর্ট</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>নম্বর</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>বাদ দেওয়া</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ব্যর্থ</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows টি সারি</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>ইমপোর্ট %id হিসেবে ইমপোর্ট করা হয়েছে।</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>ইমপোর্টটি দেখুন, অথবা পূর্বাবস্থায় ফেরান</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>আরেকটি ফাইল ইমপোর্ট করুন</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>এখনও কিছু লেখা হয়নি। প্রতিটি সারি দেখায় ইমপোর্ট এটি নিয়ে কী করবে। টিক দেওয়া সারিগুলো ইমপোর্ট হয়; কোনো সারি বাদ দিতে টিক সরান। যে সারিগুলো নতুন নয় সেগুলো কেবল তখনই ইমপোর্ট করা যায় যখন তাদের পুরোনো ঠিকানা প্রতিস্থাপন করা যেতে পারে।</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>ইমপোর্টটি করা হয়নি: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>ইমপোর্টের জন্য কোনো সারিতে টিক দেওয়া নেই।</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>ড্রাই রান: কিছু লেখা হয়নি।</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>ইমপোর্টটি %created তৈরি করবে, %updated প্রতিস্থাপন করবে এবং %skipped বাদ দেবে; %failed ব্যর্থ হবে।</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>সংক্ষিপ্ত বিবরণ</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>তৈরি করতে হবে</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>প্রতিস্থাপন করতে হবে</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>বাদ দিতে হবে</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>সমস্যাসহ</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>পর্যন্ত রাখা হবে</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>আবার পরিকল্পনা করুন</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>সারিগুলো কী নির্ধারণ করে তা পরিবর্তন করুন এবং ফাইলটি আবার পরিকল্পনা করুন। আপনি হাতে যে টিকগুলো বদলেছেন সেগুলো রিসেট হয়।</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>এই হোস্টগুলোর সারি ইমপোর্ট হয় না, কারণ এই ইনস্টলেশন তাদের জন্য সাড়া দেয় না। প্রতিটি পুরোনো হোস্ট কোন সাইটঅ্যাক্সেসকে বোঝায় তা নির্বাচন করুন।</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>ইমপোর্ট হয়নি</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>দেখান</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>সব</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>কোনো সারির এই অবস্থা নেই।</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>সব দেখান</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>ফাইলের সারিগুলো এবং ইমপোর্ট প্রতিটির সাথে কী করবে</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>ইমপোর্ট করুন</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>নতুন ঠিকানা</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ধরন</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>নোট</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>লাইন %line ইমপোর্ট করুন</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>না</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>হ্যাঁ</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ড্রাই রান</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>টিকগুলো রাখুন</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>CSV হিসেবে পরিকল্পনা</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>JSON হিসেবে পরিকল্পনা</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>বাতিল করুন</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>ইমপোর্ট প্রতিটি পৃষ্ঠার টিক দেওয়া সারিগুলো একটি ইমপোর্ট হিসেবে লেখে, যা ইমপোর্টের ইতিহাস থেকে পূর্বাবস্থায় ফেরানো যায়; প্রথমে আপনি নিজের পরিচয় নিশ্চিত করেন। ড্রাই রান প্রতিটি সারি সাইটের সাথে আবার যাচাই করে এবং ইমপোর্ট কী করবে তা গণনা করে, কিছু না লিখে।</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>পুনঃনির্দেশ (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>ওয়াইল্ডকার্ড পুনঃনির্দেশ (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>ওয়াইল্ডকার্ড (সরাসরি)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>নতুন</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>পরিবর্তিত</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>অপরিবর্তিত</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>ডুপ্লিকেট</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>দ্বন্দ্ব</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>ভাঙা লক্ষ্য</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>অজানা হোস্ট</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>ইমপোর্টযোগ্য নয়</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>গ্লোবাল URL অ্যালিয়াস</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>ইমপোর্টের ইতিহাস</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL ম্যাপ</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>পুনঃনির্দেশ (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>এই পুনঃনির্দেশগুলো URL ম্যাপ ইমপোর্ট থেকে আসে: কোয়েরিসহ পুরোনো ঠিকানা (/index.php?id=12), অস্থায়ী পুনঃনির্দেশ এবং অন্য সাইটে পুনঃনির্দেশ। এগুলো পূর্ণ ঠিকানায় যাচাই করা হয়, URL অ্যালিয়াস ও ওয়াইল্ডকার্ডের আগে। এই সাইটের কোনো পৃষ্ঠায় স্থায়ী পুনঃনির্দেশ তার বদলে একটি গ্লোবাল URL অ্যালিয়াস এবং সেখানেই তালিকাভুক্ত।</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count টি পুনঃনির্দেশ অপসারণ করা হয়েছে।</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>কোনো পুনঃনির্দেশ নেই। এগুলো একটি URL ম্যাপ ইমপোর্ট করে তৈরি হয়।</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>পূর্ণ ঠিকানায় যাচাই করা পুনঃনির্দেশ</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>নির্বাচন করুন</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>স্ট্যাটাস</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>ইমপোর্ট থেকে</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>অপসারণ করুন</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address নির্বাচন করুন</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address অপসারণ করুন</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>এই পুনঃনির্দেশটি অপসারণ করবেন?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>নির্বাচিত পুনঃনির্দেশগুলো অপসারণ করবেন?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>নির্বাচিতগুলো অপসারণ করুন</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>অপসারিত পুনঃনির্দেশ সঙ্গে সঙ্গে কাজ করা বন্ধ করে।</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>পেস্ট করা টেক্সট</translation>
     </message>
 </context>
 </TS>

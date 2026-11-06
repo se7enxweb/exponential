@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Ուր են գնում հասցեները՝ այս կայքի ուղի, կամ լրիվ հասցե վերահղելիս։ {1\}-ը այն տեքստն է, որին համապատասխանել է առաջին *-ը։ Օրինակ՝ dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ժամանակավորապես վերահղվում են այս հասցեին (HTTP 302)։</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Այցելուները ժամանակավորապես վերահղվում են (HTTP 302)։</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Ժամանակավոր վերահղում (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>Ցուցադրել %count տարր մեկ էջում։</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Արտահանել URL քարտեզը</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Ներբեռնեք այս կայքի ընդհանուր URL կեղծանունները, փոխարինող նշանները և վերահղումները մեկ ֆայլով՝ պահելու, աղյուսակային ծրագրում խմբագրելու և նորից ներմուծելու կամ վեբ սերվերին որպես վերագրման կանոններ տալու համար։</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Ընտրեք գրառումների առնվազն մեկ տեսակ։</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Ֆայլը հնարավոր չեղավ գրել։</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Ինչ արտահանել</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Ձևաչափ</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Գրառումներ</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Ընդհանուր URL կեղծանուններ (URL թարգմանիչը)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Նաև բովանդակության հատուկ URL կեղծանունները</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Գրվում է հանգույցով՝ որպես նպատակակետ, օրինակ՝ node:42։</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>URL փոխարինող նշաններ</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Վերահղումներ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Կայքի մուտքի կետ</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Կայքի բոլոր մուտքի կետերը</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Կայքի մուտքի կետին պատկանում են միայն վերահղումները. URL կեղծանուններն ու փոխարինող նշանները արտահանվում են կայքի բոլոր մուտքի կետերի համար։</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Լեզու</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Բոլոր լեզուները</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Արտահանել</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Ներմուծել URL քարտեզ</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Տեղափոխեք հին կայքի հասցեները մեկ քայլով. ֆայլում նշված է յուրաքանչյուր հին հասցե և այս կայքի այն էջը, որին այն այժմ համապատասխանում է։ Ճշգրիտ հասցեները դառնում են վերահղումներ կամ URL կեղծանուններ, * պարունակող հասցեները՝ փոխարինող նշաններ։ Մինչ որևէ բան կգրվի, տեսնում եք, թե ինչ կանի յուրաքանչյուր տող, և յուրաքանչյուր ներմուծում կարելի է ամբողջությամբ հետարկել։</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL քարտեզների ներմուծման աղյուսակները դեռ գոյություն չունեն։ Ներմուծելուց առաջ գործարկեք 6.0.15-url-map թարմացման քայլը (./console exp:upgrade --apply)։</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Այս ներմուծումն այլևս հասանելի չէ. այն ժամկետանց է դարձել մեկ օր անց կամ պատկանում է այլ օգտատիրոջ։ Վերբեռնեք ֆայլը նորից։</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Ընտրեք ֆայլ կամ տեղադրեք տողերը։</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Ֆայլը մեծ է %size-ից։</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Ֆայլը հնարավոր չէ կարդալ՝ %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Ընտրեք այս տեղակայման կայքի մուտքի կետ։</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Ներմուծումը հնարավոր չէ պահել սերվերում՝ %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Ֆայլը</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Ֆայլ</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache կամ nginx վերագրման կանոններ, առավելագույնը %size։</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Կամ տեղադրեք տողերը</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Մեկ գրառում յուրաքանչյուր տողում, օրինակ՝ /hin-ej,/nor-ej։ Առաջին տողը կարող է անվանել սյունակները՝ old_url, new_url, kind, siteaccess, language, note, status։</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Որոշել ֆայլից</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Անհրաժեշտ է միայն, երբ ոչ ֆայլի անունը, ոչ բովանդակությունը դա չեն նշում։</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Լռելյայն արժեքներ</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Միայն ուղի պարունակող տողերի կայքի մուտքի կետը</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>լռելյայն</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Ամբողջական հասցեով տողերը փոխարենը ստանում են իրենց հոսթի կայքի մուտքի կետը։</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Կայքի մուտքի կետի լեզուն</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Երբ հին հասցեն արդեն ունի գրառում</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Պահել գրառումը (բաց թողնել տողը)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Փոխարինել գրառումը</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Հին հոսթեր</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Այս տեղակայմանն անհայտ հոսթի ամբողջական հասցեները չեն ներմուծվում։ Նշեք, թե կայքի որ մուտքի կետին է համապատասխանում յուրաքանչյուր հին հոսթ, մեկական տողում՝ www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Նախադիտում</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Դեռ ոչինչ չի գրվել. հաջորդ էջը ցույց է տալիս, թե ինչ կանի յուրաքանչյուր տող։</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Ներմուծում %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Ներմուծումը հետարկվեց։</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Ներմուծումը հետարկվեց, բացառությամբ դրանից հետո փոփոխված գրառումների, որոնք պահպանվեցին։</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Ներմուծումը հնարավոր չեղավ հետարկել՝ %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Ամսաթիվ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Կատարող</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Տողեր</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created ստեղծված, %updated փոխարինված, %skipped բաց թողնված, %failed ձախողված։</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Հետարկված</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Հետարկել այս ներմուծումը</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Ներմուծման ստեղծած յուրաքանչյուր գրառում հեռացվում է, և յուրաքանչյուր փոխարինված գրառում վերադարձվում է իր նախկին վիճակին՝ սկսած վերջինից։ Նախ հաստատում եք Ձեր ինքնությունը։</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>Ներմուծումից հետո փոփոխված գրառումներ՝ %count</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Հետարկել նաև ներմուծումից հետո փոփոխված գրառումները</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Առանց դրա դրանք պահպանվում են, և ներմուծումը մասամբ է հետարկվում (վահանակի --force-ը)։</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Հետարկե՞լ այս ներմուծումը</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Հետարկել ներմուծումը</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Գրված գրառումներ</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from-ից %to՝ %count-ից</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Ներմուծումը ոչ մի գրառում չի գրել։</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Ներմուծման գրած գրառումները</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Տող</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Հին հասցե</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Գրառում</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Տանում է դեպի</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Փոփոխություն</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Վիճակ</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL կեղծանուն</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Փոխարինող նշան</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Վերահղում</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Ստեղծված</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Փոխարինված</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Կիրառված</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Պահպանված</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Մասամբ հետարկված</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Ներմուծումների պատմություն (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL քարտեզների բոլոր ներմուծումները՝ նորագույնը սկզբում։ Ներմուծումը կարելի է ամբողջությամբ հետարկել. նրա գրած յուրաքանչյուր գրառում վերադառնում է նախկին վիճակին։</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Դեռ ոչ մի URL քարտեզ չի ներմուծվել։</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL քարտեզների ներմուծումներ</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Համար</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Բաց թողնված</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ձախողված</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows տող</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Ներմուծվել է որպես ներմուծում %id։</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Դիտել ներմուծումը կամ հետարկել այն</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Ներմուծել այլ ֆայլ</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Դեռ ոչինչ չի գրվել։ Յուրաքանչյուր տող ցույց է տալիս, թե ինչ կանի ներմուծումը դրա հետ։ Նշված տողերը ներմուծվում են. հանեք նշումը՝ տողը բաց թողնելու համար։ Նոր չհանդիսացող տողերը կարող են ներմուծվել միայն այն դեպքում, երբ դրանց հին հասցեն թույլատրված է փոխարինել։</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Ներմուծումը չկատարվեց՝ %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Ներմուծման համար ոչ մի տող նշված չէ։</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Փորձնական գործարկում. ոչինչ չի գրվել։</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Ներմուծումը կստեղծեր %created, կփոխարիներ %updated և բաց կթողներ %skipped. %failed կձախողվեր։</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Ամփոփում</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Ստեղծվելիք</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Փոխարինվելիք</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Բաց թողնվելիք</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Խնդրով</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Պահվում է մինչև</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Նորից պլանավորել</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Փոխեք այն, ինչը որոշում է տողերը, և նորից պլանավորեք ֆայլը։ Ձեռքով փոխված նշումները վերակայվում են։</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Այս հոսթերի տողերը չեն ներմուծվում, քանի որ այս տեղակայումը դրանց չի սպասարկում։ Ընտրեք, թե կայքի որ մուտքի կետին է համապատասխանում յուրաքանչյուր հին հոսթ։</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Չներմուծված</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ցույց տալ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Բոլորը</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Ոչ մի տող այս վիճակում չէ։</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Ցույց տալ բոլորը</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Ֆայլի տողերը և այն, թե ինչ կանի ներմուծումը յուրաքանչյուրի հետ</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Ներմուծել</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Նոր հասցե</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Տեսակ</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Նշումներ</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Ներմուծել %line տողը</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ոչ</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Այո</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Փորձնական գործարկում</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Պահել նշումները</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Պլանը որպես CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Պլանը որպես JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Չեղարկել</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Ներմուծումը գրում է բոլոր էջերի նշված տողերը որպես մեկ ներմուծում, որը կարելի է հետարկել ներմուծումների պատմությունից. նախ հաստատում եք Ձեր ինքնությունը։ Փորձնական գործարկումը յուրաքանչյուր տող նորից ստուգում է կայքի նկատմամբ և հաշվում, թե ինչ կաներ ներմուծումը՝ առանց գրելու։</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Վերահղում (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Փոխարինող նշանով վերահղում (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Փոխարինող նշան (ուղիղ)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Նոր</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Փոփոխված</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Անփոփոխ</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Կրկնօրինակ</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Հակասություն</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Խափանված նպատակակետ</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Անհայտ հոսթ</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Հնարավոր չէ ներմուծել</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Ընդհանուր URL կեղծանուններ</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Ներմուծումների պատմություն</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL քարտեզներ</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Վերահղումներ (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Այս վերահղումները գալիս են URL քարտեզների ներմուծումներից՝ հարցում պարունակող հին հասցեներ (/index.php?id=12), ժամանակավոր վերահղումներ և այլ կայքեր տանող վերահղումներ։ Դրանք ստուգվում են ամբողջական հասցեով՝ URL կեղծանուններից և փոխարինող նշաններից առաջ։ Այս կայքի էջ տանող մշտական վերահղումը փոխարենը ընդհանուր URL կեղծանուն է և նշված է այնտեղ։</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Հեռացվեց %count վերահղում։</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Վերահղումներ չկան։ Դրանք ստեղծվում են URL քարտեզ ներմուծելով։</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Ամբողջական հասցեով ստուգվող վերահղումներ</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Ընտրել</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Կարգավիճակ</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Ներմուծումից</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Հեռացնել</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Ընտրել %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Հեռացնել %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Հեռացնե՞լ այս վերահղումը</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Հեռացնե՞լ ընտրված վերահղումները</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Հեռացնել ընտրվածները</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Հեռացված վերահղումն անմիջապես դադարում է աշխատել։</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Տեղադրված տեքստ</translation>
     </message>
 </context>
 </TS>

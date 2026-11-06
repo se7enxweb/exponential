@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Wia di addresses go: path of dis site, or full address wen dem dey redirect. {1\} na di text wey di first * match. Example: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>dem go redirect dem go dis address for small time (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Pipo wey visit dey redirect for small time (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Redirect for small time (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85499,6 +85511,625 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Show %count items for each page.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Export di URL map</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Download di global URL aliases, di wildcards and di redirects of dis site as one file: to keep am, to edit am for spreadsheet and import am again, or to give am to web server as rewrite rules.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Choose at least one kain entry.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Dem no fit write di file.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Wetin you wan export</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Di format</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Di entries</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Global URL aliases (di URL translator)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Plus di custom URL aliases of di content</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Dem dey write am with di node as target, like node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Di wildcards</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Di redirects</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Di siteaccess</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>All di siteaccess</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Na only redirects dey belong to one siteaccess; URL aliases and wildcards dey export for all di siteaccess.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Di language</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>All di language</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Export am</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Import one URL map</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Carry all di addresses of di old site come one time: one file go list each old address and di page for dis site wey e belong to now. Exact addresses go turn redirects or URL aliases, addresses wey get * go turn wildcards. You go see wetin each row go do before anything write, and you fit undo every import finish.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Di tables for URL map imports never dey yet. Run di upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before you import.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Dis import no dey again: e don expire after one day or e belong to another user. Upload di file again.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Choose one file or paste di rows.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Di file big pass %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Dem no fit read di file: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Choose one siteaccess for dis installation.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Dem no fit keep di import for di server: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Di file</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>File</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, no pass %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Or paste di rows</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>One row for each line, like /old-page,/new-page. Di first line fit name di columns: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Find am from di file</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>You need am only when di name or di content of di file no talk am.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Di defaults</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Siteaccess for paths wey no get host</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>di default</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Rows wey get full address go use di siteaccess of dia host instead.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Di language of di siteaccess</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>When old address don get entry before</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Keep di entry (skip di row)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Change di entry</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Di old hosts</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Full addresses of host wey dis installation no know no go import. Name di siteaccess wey each old host stand for, one for each line: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Look am first</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Nothing don write yet: di next page go show wetin each row go do.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Import number %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Di import don undo.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Di import don undo, but di entries wey change after am, dem keep dem.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Dem no fit undo di import: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Di date</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Who do am</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Di rows</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created create, %updated change, %skipped skip, %failed fail.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Don undo</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Undo dis import</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Every entry wey di import create go comot and every entry wey e change go go back as e be before, di last one first. You go confirm say na you first.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count entries wey change after di import</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Undo also di entries wey change after di import</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>If you no tick am, dem go keep dem and di import go undo small small (di console --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>You wan undo dis import?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Undo di import</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Entries wey write</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from reach %to for %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Di import no write any entry.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Di entries wey di import write</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Di line</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Di old address</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Di entry</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>E dey carry go</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Wetin change</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>How e be</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL alias</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Wildcard</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Redirect</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>E don create</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>E don change</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>E don apply</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Dem keep am</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>E undo small small</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Di import history (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Every import of URL map, di newest first. You fit undo one import finish: each entry wey e write go go back to wetin dey there before.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Nobody never import any URL map yet.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Di imports of URL maps</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Di number</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Dem skip am</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>E fail</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows rows dem</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>E don import as import %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>See di import, or undo am</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Import anoda file</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Nothing don write yet. Each row dey show wetin di import go do with am. Rows wey you tick go import; untick one row to leave am out. Rows wey no new fit import only when dia old address fit change.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Di import no happen: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>You no tick any row for import.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Dry run: nothing write.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Di import go create %created, change %updated and skip %skipped; %failed go fail.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>How e be overall</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Make we create</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>To change</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Make we skip</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>E get wahala</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Dem go keep am reach</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Plan am again</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Change wetin dey decide di rows and plan di file again. Di ticks wey you change with hand go reset.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Rows of dis hosts no go import, because dis installation no dey answer for dem. Choose di siteaccess wey each old host stand for.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>E no import</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Make e show</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>All of dem</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>No row get dis state.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Show all of dem</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Di rows of di file and wetin di import go do with each one</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Import am</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Di new address</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Di kain</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Notes wey dey</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Import di line %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>No o</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Yes o</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Do dry run</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Keep di ticks</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Plan as CSV file</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Plan as JSON file</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Throw am away</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Import dey write di rows wey you tick for every page as one import, wey you fit undo from di import history; you go confirm say na you first. Dry run dey check every row against di site again and count wetin di import go do, without writing anything.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Redirect (%status) o</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Wildcard redirect (%status) o</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Wildcard (direct one)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>E new</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>E don change</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>E no change</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>E repeat</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Dem dey clash</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Di target don spoil</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Host wey we no know</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>E no fit import</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Global URL aliases</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Di import history</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Di URL maps</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Di redirects (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Dis redirects come from URL map imports: old addresses wey get query (/index.php?id=12), redirects for small time and redirects go other sites. Dem dey check dem for di full address, before di URL aliases and di wildcards. Redirect wey no go change wey dey go one page for dis site na global URL alias instead, and e dey listed for there.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Dem don comot %count redirects.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>No redirect dey. Dem dey make dem when you import URL map.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Redirects wey dem check for di full address</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Choose am</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Di status</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>From di import</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Comot am</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Choose %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Comot %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>You wan comot dis redirect?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>You wan comot di redirects wey you choose?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Comot di ones wey you choose</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Redirect wey you comot go stop to work sharp sharp.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Text wey you paste</translation>
     </message>
 </context>
 </TS>

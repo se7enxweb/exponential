@@ -109,6 +109,26 @@ class expUrlMapBatch extends eZPersistentObject
         return is_array( $list ) ? $list : array();
     }
 
+    /**
+     * A page of the items, in the order they were applied (the administration's details).
+     *
+     * @param int $offset
+     * @param int $limit
+     * @return expUrlMapBatchItem[]
+     */
+    public function itemsPage( $offset, $limit )
+    {
+        $list = eZPersistentObject::fetchObjectList( expUrlMapBatchItem::definition(), null, array( 'batch_id' => (int)$this->attribute( 'id' ) ),
+                                                     array( 'seq' => 'asc' ), array( 'offset' => max( 0, (int)$offset ), 'length' => max( 1, (int)$limit ) ), true );
+        return is_array( $list ) ? $list : array();
+    }
+
+    /** @return int how many items the batch has */
+    public function itemCount()
+    {
+        return (int)eZPersistentObject::count( expUrlMapBatchItem::definition(), array( 'batch_id' => (int)$this->attribute( 'id' ) ) );
+    }
+
     /** @return eZUser|null */
     public function user()
     {

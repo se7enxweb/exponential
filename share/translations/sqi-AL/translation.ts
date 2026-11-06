@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Ku shkojnë adresat: një shteg i këtij sajti ose një adresë e plotë kur bëhet ridrejtim. {1\} është teksti me të cilin u përputh * e parë. Shembull: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ridrejtohen përkohësisht në këtë adresë (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Vizitorët ridrejtohen përkohësisht (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Ridrejtim i përkohshëm (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85521,6 +85533,625 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>Show %count items per page.</source>
         <translation>Shfaq %count elemente për faqe.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Eksporto hartën e URL-ve</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Shkarkoni pseudonimet URL globale, karakteret e përgjithshme dhe ridrejtimet e këtij sajti si një skedar: për ta ruajtur, për ta redaktuar në një fletëllogaritëse dhe për ta importuar përsëri, ose për t'ia dhënë një serveri uebi si rregulla rishkrimi.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Zgjidhni të paktën një lloj hyrjesh.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Skedari nuk mund të shkruhej.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Çfarë të eksportohet</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Formati</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Hyrjet</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Pseudonimet URL globale (përkthyesi i URL-ve)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Edhe pseudonimet URL të personalizuara të përmbajtjes</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Shkruhen me nyjen si objektiv, për shembull node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Karakteret e përgjithshme</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Ridrejtimet</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Qasja në sajt</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Çdo qasje në sajt</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Vetëm ridrejtimet i përkasin një qasjeje në sajt; pseudonimet URL dhe karakteret e përgjithshme eksportohen për çdo qasje në sajt.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Gjuha</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Çdo gjuhë</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Eksporto</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Importo një hartë URL-sh</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Sillni adresat e një sajti të vjetër njëherësh: një skedar rendit çdo adresë të vjetër dhe faqen e këtij sajti së cilës i përket tani. Adresat e sakta bëhen ridrejtime ose pseudonime URL, adresat me * bëhen karaktere të përgjithshme. Shihni çfarë do të bënte çdo rresht përpara se të shkruhet ndonjë gjë, dhe çdo import mund të zhbëhet si i tërë.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Tabelat e importeve të hartave të URL-ve nuk ekzistojnë ende. Ekzekutoni hapin e përditësimit 6.0.15-url-map (./console exp:upgrade --apply) përpara se të importoni.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Ky import nuk është më i disponueshëm: skadoi pas një dite ose i përket një përdoruesi tjetër. Ngarkoni skedarin përsëri.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Zgjidhni një skedar ose ngjitni rreshtat.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Skedari është më i madh se %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Skedari nuk mund të lexohet: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Zgjidhni një qasje në sajt të këtij instalimi.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Importi nuk mund të ruhet në server: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Skedari</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Skedar</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), rregulla rishkrimi Apache ose nginx, deri në %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Ose ngjitni rreshtat</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Një hyrje për rresht, për shembull /faqja-vjeter,/faqja-re. Rreshti i parë mund të emërtojë kolonat: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Përcakto nga skedari</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Nevojitet vetëm kur as emri, as përmbajtja e skedarit nuk e tregojnë.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Vlerat e paracaktuara</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Qasja në sajt për shtigjet pa host</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>e paracaktuar</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Rreshtat me adresë të plotë marrin në vend të saj qasjen në sajt të hostit të tyre.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Gjuha e qasjes në sajt</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Kur një adresë e vjetër ka tashmë një hyrje</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Mbaje hyrjen (kapërce rreshtin)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Zëvendëso hyrjen</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Hostet e vjetër</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Adresat e plota të një hosti që ky instalim nuk e njeh nuk importohen. Shënoni qasjen në sajt që përfaqëson çdo host i vjetër, një për rresht: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Pamje paraprake</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Asgjë nuk shkruhet ende: faqja tjetër tregon çfarë do të bënte çdo rresht.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Importi %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Importi u zhbë.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Importi u zhbë, përveç hyrjeve të ndryshuara pas tij, të cilat u mbajtën.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Importi nuk mund të zhbëhej: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Nga</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Rreshtat</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created të krijuara, %updated të zëvendësuara, %skipped të kapërcyera, %failed të dështuara.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>I zhbërë</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Zhbëje këtë import</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Çdo hyrje që krijoi importi hiqet dhe çdo hyrje që zëvendësoi rikthehet siç ishte, e fundit e para. Fillimisht konfirmoni se kush jeni.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count hyrje të ndryshuara pas importit</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Zhbëj edhe hyrjet e ndryshuara pas importit</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Pa këtë ato mbahen dhe importi zhbëhet pjesërisht (--force i konsolës).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Të zhbëhet ky import?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Zhbëj importin</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Hyrjet e shkruara</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from deri në %to nga %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Importi nuk shkroi asnjë hyrje.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Hyrjet që shkroi importi</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Rreshti</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Adresa e vjetër</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Hyrja</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Çon te</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ndryshimi</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Gjendja</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Pseudonim URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Karakter i përgjithshëm</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Ridrejtim</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>E krijuar</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>E zëvendësuar</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>E zbatuar</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>E mbajtur</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Pjesërisht i zhbërë</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Historiku i importeve (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Çdo import i një harte URL-sh, më i riu i pari. Një import mund të zhbëhet si i tërë: çdo hyrje që shkroi kthehet në atë që ishte më parë.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Ende nuk është importuar asnjë hartë URL-sh.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Importet e hartave të URL-ve</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Numri</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Të kapërcyera</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Të dështuara</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows rreshta</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>U importua si importi %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Shihni importin ose zhbëjeni</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Importo një skedar tjetër</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Ende nuk është shkruar asgjë. Çdo rresht tregon çfarë do të bënte importi me të. Rreshtat e shënuar importohen; hiqni shenjën që ta lini jashtë një rresht. Rreshtat që nuk janë të rinj mund të importohen vetëm kur adresa e tyre e vjetër lejohet të zëvendësohet.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Importi nuk u krye: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Asnjë rresht nuk është shënuar për import.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Provë: asgjë nuk u shkrua.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Importi do të krijonte %created, do të zëvendësonte %updated dhe do të kapërcente %skipped; %failed do të dështonin.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Përmbledhje</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Për t'u krijuar</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Për t'u zëvendësuar</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Për t'u kapërcyer</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Me problem</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Ruhet deri më</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Planifiko përsëri</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Ndryshoni atë që përcakton rreshtat dhe planifikoni skedarin përsëri. Shenjat që keni ndryshuar me dorë rivendosen.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Rreshtat e këtyre hosteve nuk importohen, sepse ky instalim nuk përgjigjet për ta. Zgjidhni qasjen në sajt që përfaqëson çdo host i vjetër.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Nuk importohet</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Shfaq</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Të gjitha</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Asnjë rresht nuk e ka këtë gjendje.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Shfaqi të gjitha</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Rreshtat e skedarit dhe çfarë do të bënte importi me secilin</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importo</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Adresa e re</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Lloji</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Shënime</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Importo rreshtin %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Jo</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Po</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Provë</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Mbaji shenjat</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Plani si CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Plani si JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Hidhe</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Importo i shkruan rreshtat e shënuar të të gjitha faqeve si një import, që mund të zhbëhet nga historiku i importeve; fillimisht konfirmoni se kush jeni. Prova kontrollon përsëri çdo rresht kundrejt sajtit dhe numëron çfarë do të bënte importi, pa shkruar.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Ridrejtim (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Ridrejtim me karakter të përgjithshëm (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Karakter i përgjithshëm (i drejtpërdrejtë)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>I ri</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>I ndryshuar</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>I pandryshuar</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Dublikatë</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Konflikt</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Objektiv i prishur</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Host i panjohur</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Nuk mund të importohet</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Pseudonimet URL globale</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Historiku i importeve</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Hartat e URL-ve</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Ridrejtimet (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Këto ridrejtime vijnë nga importet e hartave të URL-ve: adresa të vjetra me pyetje (/index.php?id=12), ridrejtime të përkohshme dhe ridrejtime drejt sajteve të tjerë. Ato kontrollohen sipas adresës së plotë, përpara pseudonimeve URL dhe karaktereve të përgjithshme. Një ridrejtim i përhershëm drejt një faqeje të këtij sajti është në vend të kësaj një pseudonim URL global dhe renditet atje.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>U hoqën %count ridrejtime.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Nuk ka ridrejtime. Ato krijohen duke importuar një hartë URL-sh.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Ridrejtimet e kontrolluara sipas adresës së plotë</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Zgjidh</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Statusi</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Nga importi</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Hiq</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Zgjidh %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Hiq %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Të hiqet ky ridrejtim?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Të hiqen ridrejtimet e zgjedhura?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Hiq të përzgjedhurat</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Një ridrejtim i hequr ndalon së punuari menjëherë.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Tekst i ngjitur</translation>
     </message>
 </context>
 </TS>

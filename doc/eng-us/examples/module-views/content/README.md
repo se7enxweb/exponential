@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # The content module
 
-Name `eZContentObject`, defined in `kernel/content/module.php`. 47 views.
+Name `eZContentObject`, defined in `kernel/content/module.php`. 51 views.
 
 | View | Address | Policy functions |
 |---|---|---|
@@ -57,6 +57,10 @@ Name `eZContentObject`, defined in `kernel/content/module.php`. 47 views.
 | [treemenu](treemenu.md) | `/content/treemenu/<NodeID>/<Modified>/<Expiry>/<Perm>` | read |
 | [upload](upload.md) | `/content/upload` | create |
 | [urlalias](urlalias.md) | `/content/urlalias/<NodeID>` | edit |
+| [urlexport](urlexport.md) | `/content/urlexport` | urltranslator |
+| [urlimport](urlimport.md) | `/content/urlimport` | urltranslator_import |
+| [urlimporthistory](urlimporthistory.md) | `/content/urlimporthistory/<BatchID>` | urltranslator_import |
+| [urlredirects](urlredirects.md) | `/content/urlredirects` | urltranslator |
 | [urltranslator](urltranslator.md) | `/content/urltranslator` | urltranslator |
 | [urlwildcards](urlwildcards.md) | `/content/urlwildcards` | urltranslator |
 | [versionview](versionview.md) | `/content/versionview/<ObjectID>/<EditVersion>/<LanguageCode>/<FromLanguage>` | versionread |

@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Inda adiresoshin za su je: hanyar wannan shafi, ko cikakken adireshi idan ana turawa. {1\} shi ne rubutun da * na farko ya dace da shi. Misali: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ana karkatar da su zuwa wannan adireshin na ɗan lokaci (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Ana karkatar da baƙi na ɗan lokaci (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Karkatarwa ta ɗan lokaci (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85489,6 +85501,625 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Nuna abubuwa %count a kowane shafi.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Fitar da taswirar URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Sauke laƙabobin URL na gaba ɗaya, alamomin kati da karkatarwar wannan shafi a matsayin fayil ɗaya: don ajiyewa, don gyarawa a cikin maƙunsar bayanai a sake shigo da shi, ko don ba sabar yanar gizo a matsayin dokokin sake rubutu.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Zaɓi aƙalla nau'in shigarwa ɗaya.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Ba a iya rubuta fayil ɗin ba.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Abin da za a fitar</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Tsari</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Shigarwa</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Laƙabobin URL na gaba ɗaya (mai fassara URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Har ila yau laƙabobin URL na musamman na abun ciki</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Ana rubuta su da kumburi a matsayin manufa, misali node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Alamomin kati</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Karkatarwa</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Hanyar shiga shafi</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Kowace hanyar shiga shafi</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Karkatarwa kaɗai ke cikin hanyar shiga shafi; ana fitar da laƙabobin URL da alamomin kati don kowace hanyar shiga shafi.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Harshe</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Kowane harshe</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Fitar</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Shigo da taswirar URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Kawo adiresoshin tsohon shafi gaba ɗaya a lokaci ɗaya: fayil yana lissafa kowane tsohon adireshi da shafin wannan rukunin yanar gizo da yake nasa yanzu. Adiresoshi daidai suna zama karkatarwa ko laƙabobin URL, adiresoshi masu * suna zama alamomin kati. Kana ganin abin da kowane layi zai yi kafin a rubuta komai, kuma ana iya soke kowane shigo da gaba ɗaya.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Teburan shigo da taswirar URL ba su wanzu ba tukuna. Gudanar da matakin haɓakawa 6.0.15-url-map (./console exp:upgrade --apply) kafin shigo da su.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Wannan shigo da ba ya samuwa yanzu: ya ƙare bayan kwana ɗaya ko na wani mai amfani ne. Sake loda fayil ɗin.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Zaɓi fayil ko liƙa layukan.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Fayil ɗin ya fi %size girma.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Ba za a iya karanta fayil ɗin ba: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Zaɓi hanyar shiga shafi ta wannan shigarwar.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Ba za a iya ajiye shigo da a kan sabar ba: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Fayil ɗin</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fayil</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), dokokin sake rubutu na Apache ko nginx, mafi yawa %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Ko liƙa layukan</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Layi ɗaya a kowane layin rubutu, misali /tsohon-shafi,/sabon-shafi. Layin farko zai iya sanya sunayen ginshiƙai: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Gano daga fayil ɗin</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Ana buƙata ne kawai idan sunan fayil ko abin da ke cikinsa ba su faɗa ba.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Tsoffin saituna</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Hanyar shiga shafi ta hanyoyi marasa mai masauki</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>tsoho</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Layuka masu cikakken adireshi suna ɗaukar hanyar shiga shafi ta mai masaukinsu a maimakon haka.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Harshen hanyar shiga shafi</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Idan tsohon adireshi yana da shigarwa tuni</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Ajiye shigarwar (tsallake layin)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Maye gurbin shigarwar</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Tsoffin masu masauki</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Ba a shigo da cikakkun adiresoshin mai masauki da wannan shigarwar ba ta sani ba. Rubuta hanyar shiga shafi da kowane tsohon mai masauki yake wakilta, ɗaya a kowane layi: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Samfoti</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Ba a rubuta komai ba tukuna: shafi na gaba yana nuna abin da kowane layi zai yi.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Shigo da %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>An soke shigo da.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>An soke shigo da, sai dai shigarwar da aka canza bayansa, waɗanda aka ajiye.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Ba a iya soke shigo da ba: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Kwanan wata</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Daga</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Layuka</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created an ƙirƙira, %updated an maye, %skipped an tsallake, %failed sun gaza.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>An soke</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Soke wannan shigo da</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Ana cire kowace shigarwa da shigo da ya ƙirƙira, kuma ana mayar da kowace shigarwa da ya maye gurbinta kamar yadda take, ta ƙarshe da farko. Za ka fara tabbatar da ko kai wanene.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count shigarwa da aka canza bayan shigo da</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Har ila yau soke shigarwar da aka canza bayan shigo da</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Idan babu shi ana ajiye su kuma shigo da ya zama an soke shi wani ɓangare (--force na layin umarni).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Soke wannan shigo da?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Soke shigo da</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Shigarwar da aka rubuta</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from zuwa %to daga %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Shigo da bai rubuta wata shigarwa ba.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Shigarwar da shigo da ya rubuta</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Layi</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Tsohon adireshi</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Shigarwa</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Yana kai zuwa</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Canji</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Yanayi</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Laƙabin URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Alamar kati</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Karkatarwa</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>An ƙirƙira</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>An maye</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>An aiwatar</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>An ajiye</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>An soke wani ɓangare</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Tarihin shigo da (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Kowane shigo da taswirar URL, sabo da farko. Ana iya soke shigo da gaba ɗaya: kowace shigarwa da ya rubuta tana komawa ga abin da yake can a da.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Ba a shigo da wata taswirar URL ba tukuna.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Shigo da taswirorin URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Lamba</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>An tsallake</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ya gaza</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, layuka %rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>An shigo da shi a matsayin shigo da %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Duba shigo da, ko soke shi</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Shigo da wani fayil</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Ba a rubuta komai ba tukuna. Kowane layi yana nuna abin da shigo da zai yi da shi. Ana shigo da layukan da aka yi wa alama; cire alamar layi don barin shi. Layukan da ba sababbi ba za a iya shigo da su ne kawai idan za a iya maye gurbin tsohon adireshinsu.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Ba a yi shigo da ba: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Babu layin da aka yi wa alama don shigo da.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Gwajin bushe: ba a rubuta komai ba.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Shigo da zai ƙirƙira %created, ya maye %updated kuma ya tsallake %skipped; %failed za su gaza.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Taƙaitawa</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Don ƙirƙira</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Don maye</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Don tsallakewa</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Da matsala</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>An ajiye har zuwa</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Sake tsarawa</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Canza abin da ke yanke shawarar layukan kuma sake tsara fayil ɗin. Alamomin da ka canza da hannu za a sake saita su.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Ba a shigo da layukan waɗannan masu masauki ba, saboda wannan shigarwar ba ta amsa musu. Zaɓi hanyar shiga shafi da kowane tsohon mai masauki yake wakilta.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Ba a shigo da su ba</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Nuna</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Duka</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Babu layi mai wannan yanayi.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Nuna duka</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Layukan fayil ɗin da abin da shigo da zai yi da kowanne</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Shigo da</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Sabon adireshi</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Nau'i</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Bayanai</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Shigo da layi %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>A'a</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ee</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Gwajin bushe</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Ajiye alamomin</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Tsari a matsayin CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Tsari a matsayin JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Jefar</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Shigo da yana rubuta layukan da aka yi wa alama na kowane shafi a matsayin shigo da ɗaya, wanda za a iya soke shi daga tarihin shigo da; za ka fara tabbatar da ko kai wanene. Gwajin bushe yana sake duba kowane layi da shafin kuma yana ƙidaya abin da shigo da zai yi, ba tare da rubutu ba.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Karkatarwa (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Karkatarwar alamar kati (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Alamar kati (kai tsaye)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Sabo</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>An canza</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Ba a canza ba</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Kwafi</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Rikici</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Manufa ta lalace</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Mai masauki da ba a sani ba</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Ba za a iya shigo da shi ba</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Laƙabobin URL na gaba ɗaya</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Tarihin shigo da</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Taswirorin URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Karkatarwa (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Waɗannan karkatarwar sun fito ne daga shigo da taswirorin URL: tsoffin adiresoshi masu tambaya (/index.php?id=12), karkatarwa ta ɗan lokaci da karkatarwa zuwa wasu shafuka. Ana duba su a kan cikakken adireshi, kafin laƙabobin URL da alamomin kati. Karkatarwa ta dindindin zuwa shafin wannan rukunin yanar gizo laƙabin URL na gaba ɗaya ne a maimakon haka kuma an lissafa ta a can.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>An cire karkatarwa %count.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Babu karkatarwa. Ana yin su ta hanyar shigo da taswirar URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Karkatarwar da ake dubawa a kan cikakken adireshi</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Zaɓa</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Matsayi</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Daga shigo da</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Cire</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Zaɓi %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Cire %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Cire wannan karkatarwa?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Cire karkatarwar da aka zaɓa?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Cire waɗanda aka zaɓa</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Karkatarwar da aka cire tana daina aiki nan take.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Rubutun da aka liƙa</translation>
     </message>
 </context>
 </TS>

@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Halka cinwaannadu aadayaan: waddo ka tirsan goobtan, ama cinwaan buuxa marka dib loo jeedinayo. {1\} waa qoraalka * -kii ugu horreeyay la mid noqday. Tusaale: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>si ku-meel-gaar ah ayaa loogu jeedinayaa ciwaankan (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Booqdayaasha si ku-meel-gaar ah ayaa dib loogu jeediyaa (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Dib u jeedin ku-meel-gaar ah (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85489,6 +85501,625 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
     <message>
         <source>Show %count items per page.</source>
         <translation>Muuji %count shay bog kasta.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Dhoofi khariidadda URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Soo deji magacyada kale ee URL ee guud, calaamadaha guud iyo dib u jeedinta goobtan hal fayl ahaan: si aad u kaydsato, ugu tafatirto xaashi xisaabeed oo aad dib u soo dhoofsato, ama aad u siiso server webka ahaan xeerar dib u qoris.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Dooro ugu yaraan hal nooc oo gelin ah.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Faylka lama qori karin.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Waxa la dhoofinayo</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Qaabka</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Gelinno</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Magacyo kale oo URL ah oo guud (turjumaha URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Sidoo kale magacyada kale ee URL ee gaarka ah ee waxyaabaha</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Waxaa lagu qoraa iyadoo noodku yahay bartilmaameedka, tusaale node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Calaamadaha guud</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Dib u jeedinno</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Gelitaanka goobta</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Gelitaan kasta oo goobta ah</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Dib u jeedinta oo keliya ayaa iska leh gelitaanka goobta; magacyada kale ee URL iyo calaamadaha guud waxaa loo dhoofiyaa gelitaan kasta oo goobta ah.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Luqad</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Luqad kasta</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Dhoofi</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Soo dhoofso khariidad URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Hal mar keen ciwaannada goob hore: fayl ayaa liis garaynaya ciwaan kasta oo hore iyo bogga goobtan ee uu hadda ka tirsan yahay. Ciwaannada saxda ah waxay noqdaan dib u jeedinno ama magacyo kale oo URL ah, ciwaannada leh * waxay noqdaan calaamado guud. Waxaad arkaysaa waxa saf kasta samayn lahaa ka hor inta aan wax la qorin, soo dhoofin kastana gebi ahaanteed ayaa laga noqon karaa.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Shaxaha soo dhoofinta khariidadaha URL weli ma jiraan. Ka hor soo dhoofinta, socodsii tallaabada cusboonaysiinta 6.0.15-url-map (./console exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Soo dhoofintan hadda lama heli karo: waxay dhacday maalin kadib ama waxay leedahay isticmaale kale. Mar kale soo geli faylka.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Dooro fayl ama dhaji safafka.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Faylku wuu ka weyn yahay %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Faylka lama akhrin karo: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Dooro gelitaanka goobta ee rakibaaddan.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Soo dhoofinta laguma hayn karo server-ka: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Faylka</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fayl</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), xeerarka dib u qoridda Apache ama nginx, ugu badnaan %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Ama dhaji safafka</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Hal gelin sadar kasta, tusaale /bogga-hore,/bogga-cusub. Sadarka koowaad wuxuu magacaabi karaa tiirarka: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Ka ogow faylka</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Waxaa loo baahan yahay oo keliya marka magaca iyo waxa ku jira faylka midkoodna uusan sheegin.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Caadiga</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Gelitaanka goobta ee jidadka aan martigeliyaha lahayn</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>caadi</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Safafka leh ciwaan buuxa waxay qaataan gelitaanka goobta ee martigeliyahooda.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Luqadda gelitaanka goobta</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Marka ciwaan hore uu horey u leeyahay gelin</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Hay gelinta (ka bood safka)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Beddel gelinta</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Martigeliyayaasha hore</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Ciwaannada buuxa ee martigeliye aysan rakibaaddani aqoon lama soo dhoofsado. Magacaw gelitaanka goobta uu martigeliye hore kasta u taagan yahay, mid sadar kasta: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Horu-eeg</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Weli waxba lama qorin: bogga xiga wuxuu muujinayaa waxa saf kasta samayn lahaa.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Soo dhoofinta %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Soo dhoofinta waa laga noqday.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Soo dhoofinta waa laga noqday, marka laga reebo gelinnada la beddelay kadib, kuwaas oo la hayay.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Soo dhoofinta lagama noqon karin: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Taariikh</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Waxaa sameeyay</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Safaf</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created la abuuray, %updated la beddelay, %skipped laga booday, %failed fashilmay.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Laga noqday</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Ka noqo soo dhoofintan</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Gelin kasta oo soo dhoofintu abuurtay waa la saarayaa, gelin kasta oo ay beddeshayna sidii uu ahaa ayaa dib loogu celinayaa, kan ugu dambeeyay marka hore. Marka hore waxaad xaqiijinaysaa cidda aad tahay.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count gelin ayaa la beddelay soo dhoofinta kadib</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Sidoo kale ka noqo gelinnada la beddelay soo dhoofinta kadib</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>La'aanteed waa la hayaa, soo dhoofintuna waxay noqonaysaa mid qayb ahaan laga noqday (--force ee konsolka).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Ka noqo soo dhoofintan?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Ka noqo soo dhoofinta</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Gelinnada la qoray</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ilaa %to oo ka mid ah %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Soo dhoofintu ma qorin wax gelin ah.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Gelinnada ay soo dhoofintu qortay</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Sadar</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Ciwaanka hore</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Gelin</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Waxay u horseeddaa</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Isbeddel</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Xaaladda</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Magac kale oo URL ah</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Calaamad guud</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Dib u jeedin</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>La abuuray</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>La beddelay</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>La dabaqay</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>La hayay</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Qayb ahaan laga noqday</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Taariikhda soo dhoofinta (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Soo dhoofin kasta oo khariidad URL ah, kan ugu cusub marka hore. Soo dhoofin gebi ahaanteed ayaa laga noqon karaa: gelin kasta oo ay qortay wuxuu ku noqonayaa wixii hore u jiray.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Weli lama soo dhoofsan wax khariidad URL ah.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Soo dhoofinta khariidadaha URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Lambar</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Laga booday</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fashilmay</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows saf</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Waxaa loo soo dhoofsaday sidii soo dhoofinta %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Eeg soo dhoofinta, ama ka noqo</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Soo dhoofso fayl kale</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Weli waxba lama qorin. Saf kasta wuxuu muujinayaa waxa soo dhoofintu ku samayn lahayd. Safafka la calaamadeeyay waa la soo dhoofsadaa; ka saar calaamadda si aad saf uga reebto. Safafka aan cusbayn waxaa la soo dhoofsan karaa oo keliya marka ciwaankooda hore la beddeli karo.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Soo dhoofinta lama samayn: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Ma jiro saf loo calaamadeeyay soo dhoofin.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Tijaabo: waxba lama qorin.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Soo dhoofintu waxay abuuri lahayd %created, beddeli lahayd %updated, kana boodi lahayd %skipped; %failed ayaa fashilmi lahaa.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Guudmar</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>In la abuuro</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>In la beddelo</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>In laga boodo</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Leh dhibaato</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>La hayo ilaa</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Dib u qorshee</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Beddel waxa go'aamiya safafka oo dib u qorshee faylka. Calaamadaha aad gacanta ku beddeshay dib ayaa loo dejiyaa.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Safafka martigeliyayaashan lama soo dhoofsado, sababtoo ah rakibaaddani uma jawaabto iyaga. Dooro gelitaanka goobta uu martigeliye hore kasta u taagan yahay.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Lama soo dhoofsan</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Muuji</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Dhammaan</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Ma jiro saf leh xaaladdan.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Muuji dhammaan</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Safafka faylka iyo waxa soo dhoofintu ku samayn lahayd mid kasta</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Soo dhoofso</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Ciwaanka cusub</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Nooca</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Qoraallo</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Soo dhoofso sadarka %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Maya</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Haa</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Tijaabo</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Hay calaamadaha</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Qorshe ahaan CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Qorshe ahaan JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Tuur</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Soo dhoofso waxay qortaa safafka la calaamadeeyay ee bog kasta hal soo dhoofin ahaan, taas oo laga noqon karo taariikhda soo dhoofinta; marka hore waxaad xaqiijinaysaa cidda aad tahay. Tijaabadu mar kale ayay saf kasta ka hubisaa goobta oo tirisaa waxa soo dhoofintu samayn lahayd, iyadoo aan waxba qorin.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Dib u jeedin (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Dib u jeedin calaamad guud (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Calaamad guud (toos)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Cusub</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>La beddelay</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Aan isbeddelin</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Nuqul</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Isku dhac</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Bartilmaameed jaban</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Martigeliye aan la aqoon</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Lama soo dhoofsan karo</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Magacyo kale oo URL ah oo guud</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Taariikhda soo dhoofinta</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Khariidadaha URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Dib u jeedinno (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Dib u jeedinnadan waxay ka yimaadeen soo dhoofinta khariidadaha URL: ciwaanno hore oo leh weydiin (/index.php?id=12), dib u jeedinno ku-meel-gaar ah iyo dib u jeedinno loo diro goobo kale. Waxaa lagu hubiyaa ciwaanka buuxa, ka hor magacyada kale ee URL iyo calaamadaha guud. Dib u jeedin joogto ah oo loo diro bog goobtan ka mid ah waa magac kale oo URL ah oo guud halkii, halkaas ayaana lagu taxay.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count dib u jeedin ayaa la saaray.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Ma jiraan dib u jeedinno. Waxaa lagu sameeyaa soo dhoofinta khariidad URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Dib u jeedinno lagu hubiyo ciwaanka buuxa</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Dooro</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Xaalad</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Ka yimid soo dhoofin</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Ka saar</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Dooro %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Ka saar %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Ka saar dib u jeedintan?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Ka saar dib u jeedinnada la doortay?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Ka saar kuwa la doortay</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Dib u jeedin la saaray isla markiiba way joogsataa.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Qoraal la dhejiyay</translation>
     </message>
 </context>
 </TS>

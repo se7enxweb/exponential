@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>پَتہٕ کُتھ گژھن: اَتھ سایِٹہٕ ہُنٛد اکھ راہ، یا ری ڈایرِکٹ کرنہٕ وقتہٕ مکمل پَتہٕ۔ {1\} چھُ سُہ متن یتھ گۄڈنچہ * میل کھایو۔ مِثال: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>چھِ عارضی طور یَتھ پَتَس پؠٹھ ری ڈایرِکٹ کرنہٕ یِوان (HTTP 302)۔</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>مُلاقٲتی چھِ عارضی طور ری ڈایرِکٹ کرنہٕ یِوان (HTTP 302)۔</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>عارضی ری ڈایرِکٹ (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>ہَر صَفحَس پیٹھ %count آیِٹَم ظاہِر کٔرِو۔</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL نَقشہٕ بَرآمَد کٔرِو</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>یتھ سایِٹُک عالَمی URL اَلیاس، وایِلڈ کارڈ تہٕ ری ڈایرِکٹ اَکھ فایِل بَنِتھ ڈاوُن لوڈ کٔرِو: تھاونہٕ خٲطرٕ، سپریڈ شیٖٹَس منٛز ایڈِٹ کٔرِتھ دوبارٕ دَرآمَد کرنہٕ خٲطرٕ، یا ویب سَروَرَس رِی رایِٹ قاعدٕ بَنِتھ دِنہٕ خٲطرٕ۔</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>کم از کم اَکھ قِسمُک اِندراج ژُنِو۔</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>فایِل ہیکہٕ نہٕ لیکھِتھ۔</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>کیاہ بَرآمَد کرُن</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>فارمیٹ</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>اِندراج</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>عالَمی URL اَلیاس (URL ترجمہٕ کار)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>مَوادٕکۍ کَسٹَم URL اَلیاس تہِ</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>نوڈ ہَدَف بَنِتھ لیکھنہٕ یِوان، مِثالے node:42۔</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>URL وایِلڈ کارڈ</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>ری ڈایرِکٹ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>سایِٹ ایکسیس</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>پرٛتھ کانٛہہ سایِٹ ایکسیس</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>صِرف ری ڈایرِکٹ چھِ سایِٹ ایکسیسَس سٕتۍ وابستہٕ؛ URL اَلیاس تہٕ وایِلڈ کارڈ چھِ پرٛتھ سایِٹ ایکسیس خٲطرٕ بَرآمَد کرنہٕ یِوان۔</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>زَبان</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>پرٛتھ کانٛہہ زَبان</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>بَرآمَد کٔرِو</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL نَقشہٕ دَرآمَد کٔرِو</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>پرٲنِس سایِٹُک پَتہٕ اَکِس لٹہِ اَنِو: اَکھ فایِل چھےٚ پرٛتھ پرٲنۍ پَتہٕ تہٕ یتھ سایِٹُک سُہ صفحہٕ ہاوان یَتھ سٕتۍ سُہ وۄنۍ وابستہٕ چھُ۔ صحیح پَتہٕ چھِ ری ڈایرِکٹ یا URL اَلیاس بَنان، * والۍ پَتہٕ چھِ وایِلڈ کارڈ بَنان۔ کینٛہہ لیکھنہٕ برٛونٛہہ چھِو توٚہۍ وُچھان زِ پرٛتھ قَطار کیاہ کَرِ، تہٕ پرٛتھ دَرآمَد ہیٚکہِ پوٗرٕ پاٹھۍ واپَس کرنہٕ یِتھ۔</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL نَقشن ہِنٛدِ دَرآمدُک ٹیبل چھِ نہٕ وۄنۍ تام مۆجوٗد۔ دَرآمَد کرنہٕ برٛونٛہہ چَلٲیِو اَپ گریڈ قدم 6.0.15-url-map (./console exp:upgrade --apply)۔</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>یہ دَرآمَد چھےٚ نہٕ وۄنۍ دَستیاب: یہ گَیہِ اَکِس دۄہہ پَتہٕ خَتَم یا چھےٚ بیٚیِس یوزرَس سٕتۍ وابستہٕ۔ فایِل کٔرِو دوبارٕ اَپ لوڈ۔</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>اَکھ فایِل ژُنِو یا قَطارٕ پیسٹ کٔرِو۔</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>فایِل چھےٚ %size کھۄتہٕ بٔڑ۔</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>فایِل ہیٚکہِ نہٕ پٔرِتھ: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>یتھ اِنسٹالیشنُک اَکھ سایِٹ ایکسیس ژُنِو۔</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>دَرآمَد ہیٚکہِ نہٕ سَروَرَس پؠٹھ تھٲوِتھ: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>فایِل</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>فایِل ناو</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache یا nginx رِی رایِٹ قاعدٕ، زیادٕ کھۄتہٕ زیادٕ %size۔</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>یا قَطارٕ پیسٹ کٔرِو</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>پرٛتھ لٲنِہ منٛز اَکھ اِندراج، مِثالے /old-page,/new-page۔ گۄڈنِچ لٲن ہیٚکہِ کالَمَن ناو دِتھ: old_url, new_url, kind, siteaccess, language, note, status۔</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>فایِلہٕ پؠٹھہٕ مَعلوٗم کٔرِو</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>صِرف تیٚلہِ ضروری یَلہِ نہٕ فایِلُک ناو تہٕ نہٕ مَواد یہ وَنان چھُ۔</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>ڈِفالٹ</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>سادٕ رَستَن ہُنٛد سایِٹ ایکسیس</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>ڈِفالٹ</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>پوٗرٕ پَتہٕ والۍ قَطارٕ چھِ اَمہِ بَدلہٕ پَنٕنہِ ہوسٹُک سایِٹ ایکسیس نِوان۔</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>سایِٹ ایکسیسٕچ زَبان</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>یَلہِ پرٲنِس پَتَس اِندراج گۄڈے مۆجوٗد آسہِ</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>اِندراج تھٲوِو (قَطار ٹَپٲوِو)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>اِندراج بَدلٲوِو</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>پرٲنۍ ہوسٹ</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>تَمہِ ہوسٹُک پوٗرٕ پَتہٕ یُس یہ اِنسٹالیشن زانان چھُنہٕ، چھُ نہٕ دَرآمَد کرنہٕ یِوان۔ پرٛتھ پرٲنِس ہوسٹَس خٲطرٕ وَنِو کُس سایِٹ ایکسیس، پرٛتھ لٲنِہ منٛز اَکھ: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>پریویو</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>وۄنۍ تام چھُ نہٕ کینٛہہ لیکھنہٕ آمُت: یِنہٕ وول صفحہٕ ہاوِ زِ پرٛتھ قَطار کیاہ کَرِ۔</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>دَرآمَد %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>دَرآمَد آیہِ واپَس کرنہٕ۔</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>دَرآمَد آیہِ واپَس کرنہٕ، سِوا تِمَن اِندراجَن یِم اَمہِ پَتہٕ بَدلَنہٕ آیہِ، تِم آیہِ تھاونہٕ۔</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>دَرآمَد ہیچ نہٕ واپَس کٔرِتھ: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>تٲریٖخ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>کَمہِ کوٚر</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>قَطارٕ</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created بناونہٕ آمٕتۍ، %updated بَدلاونہٕ آمٕتۍ، %skipped ٹَپنہٕ آمٕتۍ، %failed ناکام۔</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>واپَس کرنہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>یہ دَرآمَد واپَس کٔرِو</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>دَرآمدٕ کِنۍ بناونہٕ آمُت پرٛتھ اِندراج چھُ ہٹاونہٕ یِوان تہٕ پرٛتھ بَدلاونہٕ آمُت اِندراج چھُ ییٚتھۍ پاٹھۍ اوس تیٚتھۍ پاٹھۍ واپَس اَنَنہٕ یِوان، آخرٕ پؠٹھہٕ شُروٗع۔ گۄڈٕ کٔرِو پَنٕنۍ شِناخت تَصدیٖق۔</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>دَرآمدٕ پَتہٕ بَدلَنہٕ آمٕتۍ %count اِندراج</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>دَرآمدٕ پَتہٕ بَدلَنہٕ آمٕتۍ اِندراج تہِ واپَس کٔرِو</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>اَمہِ وَرٲے چھِ تِم تھاونہٕ یِوان تہٕ دَرآمَد چھےٚ جُزوی طور واپَس گَژھان (کنسولُک --force)۔</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>یہ دَرآمَد واپَس کرٕنۍ؟</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>دَرآمَد واپَس کٔرِو</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>لیکھنہٕ آمٕتۍ اِندراج</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count منٛزٕ %from پؠٹھہٕ %to تام</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>دَرآمدٕ لیوٗکھ نہٕ کانٛہہ اِندراج۔</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>دَرآمدٕ کِنۍ لیکھنہٕ آمٕتۍ اِندراج</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>لٲن</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>پرٲنۍ پَتہٕ</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>اِندراج</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>نیوان چھُ</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>تَبدیٖلی</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>حالَت</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL اَلیاس</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>وایِلڈ کارڈ</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>ری ڈایرِکٹ</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>بناونہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>بَدلاونہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>لاگوٗ کرنہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>تھاونہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>جُزوی طور واپَس کرنہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>دَرآمدٕچ تٲریٖخ (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL نَقشن ہِنٛز پرٛتھ دَرآمَد، نٔو گۄڈٕ۔ اَکھ دَرآمَد ہیٚکہِ پوٗرٕ پاٹھۍ واپَس کرنہٕ یِتھ: اَمہِ کِنۍ لیکھنہٕ آمُت پرٛتھ اِندراج چھُ برٛونٛہمہِ حالَتَس پؠٹھ واپَس گَژھان۔</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>وۄنۍ تام چھُ نہٕ کانٛہہ URL نَقشہٕ دَرآمَد کرنہٕ آمُت۔</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL نَقشن ہِنٛز دَرآمَد</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>عَدَد</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>ٹَپنہٕ آمٕتۍ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file، %format، %rows قَطارٕ</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>دَرآمَد %id بَنِتھ دَرآمَد کرنہٕ آمُت۔</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>دَرآمَد وُچھِو، یا واپَس کٔرِو</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>بیٚیہِ فایِل دَرآمَد کٔرِو</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>وۄنۍ تام چھُ نہٕ کینٛہہ لیکھنہٕ آمُت۔ پرٛتھ قَطار چھےٚ ہاوان زِ دَرآمَد کیاہ کَرِ تَتھ سٕتۍ۔ ٹِک کرنہٕ آمٕتۍ قَطارٕ چھِ دَرآمَد گَژھان؛ کانٛہہ قَطار ترٲوِنہٕ خٲطرٕ ہٹٲوِو ٹِک۔ یِم قَطارٕ نٔوۍ چھِنہٕ، تِم ہیٚکن صِرف تیٚلہِ دَرآمَد گٔژِھتھ یَلہِ تِہُنٛد پرٲنۍ پَتہٕ بَدلاونٕچ اِجازَت آسہِ۔</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>دَرآمَد آیہِ نہٕ کرنہٕ: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>دَرآمدٕ خٲطرٕ چھےٚ نہٕ کانٛہہ قَطار ٹِک کرنہٕ آمٕژ۔</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>ڈرایی رَن: کینٛہہ آو نہٕ لیکھنہٕ۔</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>دَرآمَد کَرِ %created تیار، %updated بَدَل تہٕ %skipped ٹَپٲوِ؛ %failed گَژھن ناکام۔</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>جایزہ</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>بناونہٕ خٲطرٕ</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>بَدلاونہٕ خٲطرٕ</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>ٹَپاونہٕ خٲطرٕ</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>مَسلہٕ سٕتۍ</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>تھاونہٕ آمُت تام</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>دوبارٕ پلان کٔرِو</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>یُس قَطارٕ طے کران چھُ تہِ بَدلٲوِو تہٕ فایِل کٔرِو دوبارٕ پلان۔ اَتھہٕ سٕتۍ بَدلاونہٕ آمٕتۍ ٹِک چھِ ری سیٹ گَژھان۔</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>یِمَن ہوسٹَن ہِنٛز قَطارٕ چھِ نہٕ دَرآمَد گَژھان، کیٛازِ یہ اِنسٹالیشن چھُ نہٕ تِمَن جَواب دِوان۔ پرٛتھ پرٲنِس ہوسٹَس خٲطرٕ ژُنِو کُس سایِٹ ایکسیس۔</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>دَرآمَد آمُت نہٕ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>وُچھِو</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>سٲرِنی</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>کانٛہہ قَطار چھےٚ نہٕ یَتھ حالَتَس منٛز۔</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>سٲرِنی وُچھِو</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>فایِلٕچ قَطارٕ تہٕ دَرآمَد کیاہ کَرِ پرٛتھ اَکِس سٕتۍ</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>دَرآمَد کٔرِو</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>نوٚو پَتہٕ</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>قِسِم</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>نوٹ</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>لٲن %line دَرآمَد کٔرِو</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>نہ</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>آ</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ڈرایی رَن</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>ٹِک تھٲوِو</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>پلان CSV بَنِتھ</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>پلان JSON بَنِتھ</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>رَد کٔرِو</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>دَرآمَد چھےٚ پرٛتھ صفحُک ٹِک کرنہٕ آمٕتۍ قَطارٕ اَکھ دَرآمَد بَنِتھ لیکھان، یۄسہٕ دَرآمدٕچہِ تٲریٖخہِ منٛزٕ واپَس ہیٚکہِ کرنہٕ یِتھ؛ گۄڈٕ کٔرِو پَنٕنۍ شِناخت تَصدیٖق۔ ڈرایی رَن چھُ پرٛتھ قَطار سایِٹَس سٕتۍ دوبارٕ ژیٚکان تہٕ گَنزران زِ دَرآمَد کیاہ کَرِ، لیکھنہٕ وَرٲے۔</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>ری ڈایرِکٹ (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>وایِلڈ کارڈ ری ڈایرِکٹ (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>وایِلڈ کارڈ (سیٚدھ)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>نوٚو</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>بَدلیومُت</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>بےٚ بَدَل</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>ڈُپلیکیٹ</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>ٹَکراو</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>خَراب ہَدَف</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>نامَعلوٗم ہوسٹ</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>دَرآمَد کرنہٕ لایق نہٕ</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>عالَمی URL اَلیاس</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>دَرآمدٕچ تٲریٖخ</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL نَقشہٕ</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>ری ڈایرِکٹ (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>یِم ری ڈایرِکٹ چھِ URL نَقشن ہِنٛزِ دَرآمدٕ پؠٹھہٕ آمٕتۍ: کُوئری والۍ پرٲنۍ پَتہٕ (/index.php?id=12)، عارضی ری ڈایرِکٹ تہٕ بیٚین سایِٹَن کُن ری ڈایرِکٹ۔ یِم چھِ URL اَلیاس تہٕ وایِلڈ کارڈ برٛونٛہہ پوٗرِس پَتَس پؠٹھ ژیٚکنہٕ یِوان۔ یتھ سایِٹٕکِس صفحَس کُن مُستَقِل ری ڈایرِکٹ چھُ اَمہِ بَدلہٕ عالَمی URL اَلیاس تہٕ چھُ تَتۍ درٛج۔</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count ری ڈایرِکٹ آیہِ ہٹاونہٕ۔</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>کانٛہہ ری ڈایرِکٹ چھُ نہٕ۔ یِم چھِ URL نَقشہٕ دَرآمَد کٔرِتھ بَنان۔</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>پوٗرِس پَتَس پؠٹھ ژیٚکنہٕ یِنہٕ وٲلۍ ری ڈایرِکٹ</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ژُنِو</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>صورتحال</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>دَرآمدٕ پؠٹھہٕ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ہٹٲوِو</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address ژُنِو</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address ہٹٲوِو</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>یہ ری ڈایرِکٹ ہٹاوُن؟</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>ژٲرِتھ ری ڈایرِکٹ ہٹاوِن؟</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>ژٲرِتھ ہٹٲوِو</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>ہٹاونہٕ آمُت ری ڈایرِکٹ چھُ فوراً کٲم کرُن تراوان۔</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>پیسٹ کرنہٕ آمُت مَتَن</translation>
     </message>
 </context>
 </TS>

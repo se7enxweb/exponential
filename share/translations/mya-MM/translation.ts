@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>လိပ်စာများ သွားရာနေရာ - ဤဆိုက်၏ လမ်းကြောင်းတစ်ခု၊ သို့မဟုတ် လမ်းကြောင်းလွှဲသည့်အခါ လိပ်စာအပြည့်အစုံ။ {1\} သည် ပထမ * နှင့် ကိုက်ညီသော စာသား ဖြစ်သည်။ ဥပမာ - dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ကို ဤလိပ်စာသို့ ယာယီ လမ်းကြောင်းလွှဲသည် (HTTP 302)။</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>ဝင်ရောက်သူများကို ယာယီ လမ်းကြောင်းလွှဲသည် (HTTP 302)။</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>ယာယီ လမ်းကြောင်းလွှဲခြင်း (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>စာမျက်နှာတစ်ခုလျှင် %count ခု ပြရန်။</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL မြေပုံကို ထုတ်ယူရန်</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>ဤဆိုက်၏ Global URL အမည်ကွဲများ၊ wildcard များနှင့် လမ်းကြောင်းလွှဲမှုများကို ဖိုင်တစ်ခုတည်းအဖြစ် ဒေါင်းလုဒ်လုပ်ပါ- သိမ်းထားရန်၊ spreadsheet တွင် ပြင်ဆင်ပြီး ပြန်လည်တင်သွင်းရန် သို့မဟုတ် ဝဘ်ဆာဗာသို့ rewrite စည်းမျဉ်းများအဖြစ် ပေးရန်။</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>ထည့်သွင်းချက် အမျိုးအစား အနည်းဆုံး တစ်ခု ရွေးပါ။</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>ဖိုင်ကို ရေး၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>ထုတ်ယူမည့်အရာ</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>ပုံစံ</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>ထည့်သွင်းချက်များ</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Global URL အမည်ကွဲများ (URL ဘာသာပြန်ကိရိယာ)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>အကြောင်းအရာ၏ စိတ်ကြိုက် URL အမည်ကွဲများလည်း</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>node ကို ပန်းတိုင်အဖြစ် ရေးသည်၊ ဥပမာ node:42။</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Wildcard များ</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>လမ်းကြောင်းလွှဲမှုများ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ဆိုက်ဝင်ရောက်မှု</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ဆိုက်ဝင်ရောက်မှု အားလုံး</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>လမ်းကြောင်းလွှဲမှုများသာ ဆိုက်ဝင်ရောက်မှုတစ်ခုနှင့် သက်ဆိုင်သည်; URL အမည်ကွဲများနှင့် wildcard များကို ဆိုက်ဝင်ရောက်မှု အားလုံးအတွက် ထုတ်ယူသည်။</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ဘာသာစကား</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>ဘာသာစကား အားလုံး</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>ထုတ်ယူရန်</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL မြေပုံ တင်သွင်းရန်</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>ဆိုက်ဟောင်း၏ လိပ်စာများကို တစ်ကြိမ်တည်းဖြင့် ယူဆောင်လာပါ- ဖိုင်တစ်ခုတွင် လိပ်စာဟောင်းတစ်ခုစီနှင့် ယခု ၎င်းနှင့် သက်ဆိုင်သော ဤဆိုက်၏ စာမျက်နှာကို စာရင်းပြုထားသည်။ တိကျသော လိပ်စာများသည် လမ်းကြောင်းလွှဲမှု သို့မဟုတ် URL အမည်ကွဲ ဖြစ်လာပြီး * ပါသော လိပ်စာများသည် wildcard ဖြစ်လာသည်။ မည်သည့်အရာမျှ မရေးမီ အတန်းတစ်ခုစီ ဘာလုပ်မည်ကို သင်မြင်ရပြီး တင်သွင်းမှုတိုင်းကို တစ်ခုလုံး ပြန်ဖျက်နိုင်သည်။</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL မြေပုံ တင်သွင်းမှု ဇယားများ မရှိသေးပါ။ တင်သွင်းခြင်းမပြုမီ အဆင့်မြှင့်တင်မှုအဆင့် 6.0.15-url-map (./console exp:upgrade --apply) ကို လုပ်ဆောင်ပါ။</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>ဤတင်သွင်းမှုကို မရနိုင်တော့ပါ- တစ်ရက်အကြာတွင် သက်တမ်းကုန်သွားသည် သို့မဟုတ် အခြားအသုံးပြုသူ၏ ဖြစ်သည်။ ဖိုင်ကို ထပ်မံ အပ်လုဒ်လုပ်ပါ။</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>ဖိုင်တစ်ခု ရွေးပါ သို့မဟုတ် အတန်းများကို ကူးထည့်ပါ။</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>ဖိုင်သည် %size ထက် ကြီးသည်။</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>ဖိုင်ကို ဖတ်၍ မရပါ- %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>ဤထည့်သွင်းတပ်ဆင်မှု၏ ဆိုက်ဝင်ရောက်မှုတစ်ခုကို ရွေးပါ။</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>တင်သွင်းမှုကို ဆာဗာပေါ်တွင် သိမ်းထား၍ မရပါ- %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>ဖိုင်</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ဖိုင်</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache သို့မဟုတ် nginx rewrite စည်းမျဉ်းများ၊ အများဆုံး %size။</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>သို့မဟုတ် အတန်းများကို ကူးထည့်ပါ</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>စာကြောင်းတစ်ကြောင်းလျှင် အတန်းတစ်ခု၊ ဥပမာ /old-page,/new-page။ ပထမစာကြောင်းတွင် ကော်လံအမည်များ ပါနိုင်သည်- old_url, new_url, kind, siteaccess, language, note, status။</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>ဖိုင်မှ သိရှိရန်</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>ဖိုင်၏ အမည်ရော အကြောင်းအရာပါ မဖော်ပြသည့်အခါမှသာ လိုအပ်သည်။</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>မူလတန်ဖိုးများ</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>host မပါသော လမ်းကြောင်းများ၏ ဆိုက်ဝင်ရောက်မှု</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>မူလ</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>လိပ်စာအပြည့်ပါသော အတန်းများသည် ၎င်းတို့၏ host ၏ ဆိုက်ဝင်ရောက်မှုကို ယူသည်။</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>ဆိုက်ဝင်ရောက်မှု၏ ဘာသာစကား</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>လိပ်စာဟောင်းတစ်ခုတွင် ထည့်သွင်းချက် ရှိပြီးသားဖြစ်သောအခါ</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>ထည့်သွင်းချက်ကို ထားရှိရန် (အတန်းကို ကျော်ရန်)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>ထည့်သွင်းချက်ကို အစားထိုးရန်</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>host ဟောင်းများ</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>ဤထည့်သွင်းတပ်ဆင်မှု မသိသော host ၏ လိပ်စာအပြည့်များကို မတင်သွင်းပါ။ host ဟောင်းတစ်ခုစီ ကိုယ်စားပြုသော ဆိုက်ဝင်ရောက်မှုကို တစ်ကြောင်းလျှင် တစ်ခု ဖော်ပြပါ- www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>အစမ်းကြည့်ရန်</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>မည်သည့်အရာမျှ မရေးရသေးပါ- နောက်စာမျက်နှာတွင် အတန်းတစ်ခုစီ ဘာလုပ်မည်ကို ပြသည်။</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>တင်သွင်းမှု %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>တင်သွင်းမှုကို ပြန်ဖျက်ပြီးပါပြီ။</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>တင်သွင်းမှုကို ပြန်ဖျက်ပြီးပါပြီ၊ ၎င်းနောက်တွင် ပြောင်းလဲခဲ့သော ထည့်သွင်းချက်များမှလွဲ၍၊ ၎င်းတို့ကို ထားရှိခဲ့သည်။</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>တင်သွင်းမှုကို ပြန်ဖျက်၍ မရပါ- %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>ရက်စွဲ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ပြုလုပ်သူ</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>အတန်းများ</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created ဖန်တီး၊ %updated အစားထိုး၊ %skipped ကျော်၊ %failed မအောင်မြင်။</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>ပြန်ဖျက်ပြီး</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>ဤတင်သွင်းမှုကို ပြန်ဖျက်ရန်</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>တင်သွင်းမှုက ဖန်တီးခဲ့သော ထည့်သွင်းချက်တိုင်းကို ဖယ်ရှားပြီး အစားထိုးခဲ့သော ထည့်သွင်းချက်တိုင်းကို မူလအတိုင်း ပြန်ထားသည်၊ နောက်ဆုံးမှ စတင်သည်။ သင် ဘယ်သူဖြစ်ကြောင်း ဦးစွာ အတည်ပြုရသည်။</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>တင်သွင်းပြီးနောက် ပြောင်းလဲခဲ့သော ထည့်သွင်းချက် %count ခု</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>တင်သွင်းပြီးနောက် ပြောင်းလဲခဲ့သော ထည့်သွင်းချက်များကိုလည်း ပြန်ဖျက်ရန်</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>၎င်းမပါလျှင် ၎င်းတို့ကို ထားရှိပြီး တင်သွင်းမှုကို တစ်စိတ်တစ်ပိုင်းသာ ပြန်ဖျက်သည် (console ၏ --force)။</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>ဤတင်သွင်းမှုကို ပြန်ဖျက်မလား?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>တင်သွင်းမှုကို ပြန်ဖျက်ရန်</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>ရေးထားသော ထည့်သွင်းချက်များ</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count အနက် %from မှ %to</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>တင်သွင်းမှုသည် ထည့်သွင်းချက် မရေးခဲ့ပါ။</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>တင်သွင်းမှုက ရေးခဲ့သော ထည့်သွင်းချက်များ</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>စာကြောင်း</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>လိပ်စာဟောင်း</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>ထည့်သွင်းချက်</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>ဦးတည်ရာ</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ပြောင်းလဲမှု</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>အခြေအနေ</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL အမည်ကွဲ</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Wildcard</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>လမ်းကြောင်းလွှဲမှု</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>ဖန်တီးပြီး</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>အစားထိုးပြီး</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>အသုံးချပြီး</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>ထားရှိပြီး</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>တစ်စိတ်တစ်ပိုင်း ပြန်ဖျက်ပြီး</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>တင်သွင်းမှု မှတ်တမ်း (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL မြေပုံ တင်သွင်းမှုတိုင်း၊ အသစ်ဆုံး ဦးစွာ။ တင်သွင်းမှုကို တစ်ခုလုံး ပြန်ဖျက်နိုင်သည်- ၎င်းရေးခဲ့သော ထည့်သွင်းချက်တိုင်း ယခင်ရှိခဲ့သည့်အတိုင်း ပြန်ဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>URL မြေပုံ တစ်ခုမျှ မတင်သွင်းရသေးပါ။</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL မြေပုံ တင်သွင်းမှုများ</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>နံပါတ်</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>ကျော်ခဲ့သည်</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>မအောင်မြင်</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, အတန်း %rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>တင်သွင်းမှု %id အဖြစ် တင်သွင်းပြီးပါပြီ။</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>တင်သွင်းမှုကို ကြည့်ရန် သို့မဟုတ် ပြန်ဖျက်ရန်</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>အခြားဖိုင် တင်သွင်းရန်</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>မည်သည့်အရာမျှ မရေးရသေးပါ။ အတန်းတစ်ခုစီသည် တင်သွင်းမှုက ၎င်းကို ဘာလုပ်မည်ကို ပြသည်။ အမှန်ခြစ်ထားသော အတန်းများကို တင်သွင်းသည်; အတန်းတစ်ခုကို ချန်ထားရန် အမှန်ခြစ်ကို ဖြုတ်ပါ။ အသစ်မဟုတ်သော အတန်းများကို ၎င်းတို့၏ လိပ်စာဟောင်းကို အစားထိုးခွင့်ရှိမှသာ တင်သွင်းနိုင်သည်။</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>တင်သွင်းမှု မပြုလုပ်ခဲ့ပါ- %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>တင်သွင်းရန် အမှန်ခြစ်ထားသော အတန်း မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>စမ်းသပ်လုပ်ဆောင်မှု- မည်သည့်အရာမျှ မရေးခဲ့ပါ။</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>တင်သွင်းမှုသည် %created ဖန်တီးမည်၊ %updated အစားထိုးမည်၊ %skipped ကျော်မည်; %failed မအောင်မြင်ပါ။</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ခြုံငုံသုံးသပ်ချက်</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>ဖန်တီးရန်</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>အစားထိုးရန်</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>ကျော်ရန်</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>ပြဿနာရှိသော</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>ထားရှိမည့်အချိန်</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>ထပ်မံ စီစဉ်ရန်</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>အတန်းများကို ဆုံးဖြတ်သည့်အရာကို ပြောင်းပြီး ဖိုင်ကို ထပ်မံ စီစဉ်ပါ။ လက်ဖြင့် ပြောင်းထားသော အမှန်ခြစ်များကို ပြန်လည်သတ်မှတ်မည်။</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>ဤ host များ၏ အတန်းများကို မတင်သွင်းပါ၊ ဤထည့်သွင်းတပ်ဆင်မှုသည် ၎င်းတို့အတွက် မတုံ့ပြန်သောကြောင့် ဖြစ်သည်။ host ဟောင်းတစ်ခုစီ ကိုယ်စားပြုသော ဆိုက်ဝင်ရောက်မှုကို ရွေးပါ။</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>မတင်သွင်းရသေး</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ပြရန်</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>အားလုံး</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>ဤအခြေအနေရှိသော အတန်း မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>အားလုံး ပြရန်</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>ဖိုင်၏ အတန်းများနှင့် တင်သွင်းမှုက တစ်ခုစီကို ဘာလုပ်မည်</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>တင်သွင်းရန်</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>လိပ်စာအသစ်</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>အမျိုးအစား</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>မှတ်ချက်များ</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>စာကြောင်း %line ကို တင်သွင်းရန်</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>မဟုတ်</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ဟုတ်</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>စမ်းသပ်လုပ်ဆောင်မှု</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>အမှန်ခြစ်များကို ထားရှိရန်</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>CSV အဖြစ် အစီအစဉ်</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>JSON အဖြစ် အစီအစဉ်</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>စွန့်ပစ်ရန်</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>တင်သွင်းခြင်းသည် စာမျက်နှာအားလုံး၏ အမှန်ခြစ်ထားသော အတန်းများကို တင်သွင်းမှုတစ်ခုအဖြစ် ရေးပြီး တင်သွင်းမှု မှတ်တမ်းမှ ပြန်ဖျက်နိုင်သည်; သင် ဘယ်သူဖြစ်ကြောင်း ဦးစွာ အတည်ပြုရသည်။ စမ်းသပ်လုပ်ဆောင်မှုသည် အတန်းတိုင်းကို ဆိုက်နှင့် ထပ်မံ စစ်ဆေးပြီး တင်သွင်းမှု ဘာလုပ်မည်ကို မရေးဘဲ ရေတွက်သည်။</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>လမ်းကြောင်းလွှဲမှု (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Wildcard လမ်းကြောင်းလွှဲမှု (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Wildcard (တိုက်ရိုက်)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>အသစ်</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>ပြောင်းလဲပြီး</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>မပြောင်းလဲ</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>ထပ်နေသည်</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>ပဋိပက္ခ</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>ပျက်နေသော ပန်းတိုင်</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>မသိသော host</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>တင်သွင်း၍ မရ</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Global URL အမည်ကွဲများ</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>တင်သွင်းမှု မှတ်တမ်း</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL မြေပုံများ</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>လမ်းကြောင်းလွှဲမှုများ (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>ဤလမ်းကြောင်းလွှဲမှုများသည် URL မြေပုံ တင်သွင်းမှုများမှ လာသည်- query ပါသော လိပ်စာဟောင်းများ (/index.php?id=12)၊ ယာယီ လမ်းကြောင်းလွှဲမှုများနှင့် အခြားဆိုက်များသို့ လမ်းကြောင်းလွှဲမှုများ။ ၎င်းတို့ကို URL အမည်ကွဲများနှင့် wildcard များမတိုင်မီ လိပ်စာအပြည့်ဖြင့် စစ်ဆေးသည်။ ဤဆိုက်၏ စာမျက်နှာတစ်ခုသို့ အမြဲတမ်း လမ်းကြောင်းလွှဲမှုသည် Global URL အမည်ကွဲ ဖြစ်ပြီး ထိုနေရာတွင် စာရင်းပြုထားသည်။</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>လမ်းကြောင်းလွှဲမှု %count ခု ဖယ်ရှားပြီး။</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>လမ်းကြောင်းလွှဲမှု မရှိပါ။ ၎င်းတို့ကို URL မြေပုံ တင်သွင်းခြင်းဖြင့် ပြုလုပ်သည်။</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>လိပ်စာအပြည့်ဖြင့် စစ်ဆေးသော လမ်းကြောင်းလွှဲမှုများ</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ရွေးရန်</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>အခြေအနေကုဒ်</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>တင်သွင်းမှုမှ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ဖယ်ရှားရန်</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address ကို ရွေးရန်</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address ကို ဖယ်ရှားရန်</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>ဤလမ်းကြောင်းလွှဲမှုကို ဖယ်ရှားမလား?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>ရွေးထားသော လမ်းကြောင်းလွှဲမှုများကို ဖယ်ရှားမလား?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>ရွေးထားသည်များကို ဖယ်ရှားရန်</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>ဖယ်ရှားထားသော လမ်းကြောင်းလွှဲမှုသည် ချက်ချင်း အလုပ်မလုပ်တော့ပါ။</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>ကူးထည့်ထားသော စာသား</translation>
     </message>
 </context>
 </TS>

@@ -100,6 +100,28 @@ is the row's, else `--language`, else the siteaccess's content language.
 aliases of nodes, target `node:<id>`), the wildcards and the redirects, in every format the import reads and as
 `.ods`. Importing the export into the same installation finds every row unchanged.
 
+## In the administration
+
+The URL translator and the wildcards pages have the buttons **Import**, **Export**, **Import history** and
+**Redirects** ([URL maps: import, export and undo](../../guides/url-maps.md)):
+
+| View | Policy | What it does |
+|---|---|---|
+| `content/urlimport` | `content/urltranslator_import` (new) | upload or paste a file, preview every row with its state, untick rows, map unknown hosts, dry run, import (asks "Verify it's you"), the plan as CSV or JSON |
+| `content/urlimporthistory[/<id>]` | `content/urltranslator_import` | the imports, one import's entries, undo (asks "Verify it's you"; the entries changed since are kept unless ticked, the console's `--force`) |
+| `content/urlexport` | `content/urltranslator` | the export as a download |
+| `content/urlredirects` | `content/urltranslator` | the redirects of `exp_url_redirect`, removing one or the ticked ones |
+
+- The function `content/urltranslator_import` is new and has no limitations. A role with `content/*` or `*/*`
+  (Administrator) has it; a role that had only `content/urltranslator` can open the export and the redirects, not the
+  import. No role is changed by the upgrade: give the function to the roles that should import.
+- `site.ini [ReauthGroup_system]` gains `content/urlimport ImportButton` and `content/urlimporthistory UndoButton`.
+- The uploaded file and its plan stay on the server until the import is done or thrown away, at most a day, in
+  `var/<site>/urlimport/<token>/`, for the user who uploaded it only; the forms post nothing but the decisions of the
+  rows shown.
+- The wildcard pages show a temporary forward wildcard (type 3) as **Temporary redirect (302)**, and the filter
+  **Redirecting** lists both forward types.
+
 ## For developers
 
 - The planner asks the installation through `expUrlMapEnvironment`; `expUrlMapKernelEnvironment` is the real one, a

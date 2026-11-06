@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Kien iras la adresoj: vojo de ĉi tiu retejo, aŭ plena adreso dum resendo. {1\} estas la teksto, kun kiu kongruis la unua *. Ekzemplo: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>estas portempe resenditaj al ĉi tiu adreso (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Vizitantoj estas portempe resenditaj (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Portempa resendo (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Montri %count erojn po paĝo.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Eksporti la URL-mapon</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Elŝutu la ĝeneralajn URL-aliasojn, la ĵokerojn kaj la resendojn de ĉi tiu retejo kiel unu dosieron: por konservi, por redakti en kalkultabelo kaj denove importi, aŭ por doni al retservilo kiel reskribajn regulojn.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Elektu almenaŭ unu specon de eroj.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>La dosiero ne povis esti skribita.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Kion eksporti</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Dosierformato</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Eroj</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Ĝeneralaj URL-aliasoj (la URL-tradukilo)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Ankaŭ la propraj URL-aliasoj de enhavo</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Skribita kun la nodo kiel celo, ekzemple node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Ĵokeroj</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Resendoj</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Retejaliro</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Ĉiu retejaliro</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Nur resendoj apartenas al retejaliro; URL-aliasoj kaj ĵokeroj estas eksportataj por ĉiu retejaliro.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Lingvo</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Ĉiu lingvo</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Eksporti</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Importi URL-mapon</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Transportu la adresojn de malnova retejo unufoje: dosiero listigas ĉiun malnovan adreson kaj la paĝon de ĉi tiu retejo, al kiu ĝi nun apartenas. Ĝustaj adresoj fariĝas resendoj aŭ URL-aliasoj, adresoj kun * fariĝas ĵokeroj. Vi vidas, kion ĉiu vico farus, antaŭ ol io ajn estas skribita, kaj ĉiu importo povas esti malfarita tute.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>La tabeloj por importoj de URL-mapoj ankoraŭ ne ekzistas. Rulu la ĝisdatigan paŝon 6.0.15-url-map (./console exp:upgrade --apply) antaŭ ol importi.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Ĉi tiu importo ne plu estas disponebla: ĝi eksvalidiĝis post unu tago aŭ apartenas al alia uzanto. Alŝutu la dosieron denove.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Elektu dosieron aŭ algluu la vicojn.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>La dosiero estas pli granda ol %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>La dosiero ne legeblas: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Elektu retejaliron de ĉi tiu instalaĵo.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>La importo ne povas esti konservita en la servilo: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>La dosiero</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Dosiero</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), reskribaj reguloj de Apache aŭ nginx, maksimume %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Aŭ algluu la vicojn</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Unu vico po linio, ekzemple /malnova-pagxo,/nova-pagxo. Unua linio povas nomi la kolumnojn: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Eltrovi el la dosiero</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Necesa nur kiam nek la nomo nek la enhavo de la dosiero diras ĝin.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Aprioraĵoj</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Retejaliro de nudaj vojoj</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>apriora</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Vicoj kun plena adreso prenas anstataŭe la retejaliron de sia gastiganto.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>La lingvo de la retejaliro</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Kiam malnova adreso jam havas eron</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Konservi la eron (preterlasi la vicon)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Anstataŭigi la eron</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Malnovaj gastigantoj</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Plenaj adresoj de gastiganto, kiun ĉi tiu instalaĵo ne konas, ne estas importataj. Nomu la retejaliron, kiun reprezentas ĉiu malnova gastiganto, po unu por linio: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Antaŭrigardo</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Nenio estas skribita ankoraŭ: la sekva paĝo montras, kion ĉiu vico farus.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Importo %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>La importo estis malfarita.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>La importo estis malfarita, krom la eroj ŝanĝitaj post ĝi, kiuj estis konservitaj.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>La importo ne povis esti malfarita: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dato</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>De</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Vicoj</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created kreitaj, %updated anstataŭigitaj, %skipped preterlasitaj, %failed malsukcesaj.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Malfarita</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Malfari ĉi tiun importon</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Ĉiu ero, kiun la importo kreis, estas forigita, kaj ĉiu ero, kiun ĝi anstataŭigis, estas remetita kiel ĝi estis, la lasta unue. Vi unue konfirmas, kiu vi estas.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count eroj ŝanĝitaj post la importo</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Malfari ankaŭ la erojn ŝanĝitajn post la importo</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Sen tio ili estas konservataj kaj la importo fariĝas parte malfarita (la --force de la konzolo).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Ĉu malfari ĉi tiun importon?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Malfari importon</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Skribitaj eroj</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ĝis %to el %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>La importo skribis neniun eron.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>La eroj, kiujn la importo skribis</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Linio</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Malnova adreso</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Ero</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Kondukas al</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ŝanĝo</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stato</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL-alias</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Ĵokero</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Resendo</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Kreita</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Anstataŭigita</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Aplikita</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Konservita</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Parte malfarita</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Importa historio (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Ĉiu importo de URL-mapo, la plej nova unue. Importo povas esti malfarita tute: ĉiu ero, kiun ĝi skribis, revenas al tio, kio estis tie antaŭe.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Neniu URL-mapo estas importita ankoraŭ.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Importoj de URL-mapoj</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Numero</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Preterlasitaj</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Malsukcesaj</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows vicoj</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Importita kiel importo %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Vidi la importon aŭ malfari ĝin</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Importi alian dosieron</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Nenio estas skribita ankoraŭ. Ĉiu vico montras, kion la importo farus kun ĝi. Markitaj vicoj estas importataj; malmarku vicon por ellasi ĝin. Vicoj, kiuj ne estas novaj, povas esti importataj nur kiam ilia malnova adreso rajtas esti anstataŭigita.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>La importo ne estis farita: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Neniu vico estas markita por importo.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Provruligo: nenio estis skribita.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>La importo kreus %created, anstataŭigus %updated kaj preterlasus %skipped; %failed malsukcesus.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Superrigardo</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Kreotaj</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Anstataŭigotaj</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Preterlasotaj</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Kun problemo</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Konservata ĝis</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Plani denove</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Ŝanĝu tion, kio decidas pri la vicoj, kaj planu la dosieron denove. Markoj, kiujn vi ŝanĝis permane, estas restarigitaj.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Vicoj de ĉi tiuj gastigantoj ne estas importataj, ĉar ĉi tiu instalaĵo ne respondas por ili. Elektu la retejaliron, kiun reprezentas ĉiu malnova gastiganto.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Ne importita</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Montri</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ĉiuj</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Neniu vico havas ĉi tiun staton.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Montri ĉiujn</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>La vicoj de la dosiero kaj kion la importo farus kun ĉiu</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importi</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Nova adreso</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Speco</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Notoj</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Importi linion %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ne</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Jes</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Provruligo</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Konservi la markojn</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Plano kiel CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Plano kiel JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Forĵeti</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Importi skribas la markitajn vicojn de ĉiuj paĝoj kiel unu importon, kiu povas esti malfarita el la importa historio; vi unue konfirmas, kiu vi estas. Provruligo denove kontrolas ĉiun vicon kontraŭ la retejo kaj kalkulas, kion la importo farus, sen skribi.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Resendo (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Ĵokera resendo (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Ĵokero (rekta)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nova</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Ŝanĝita</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Neŝanĝita</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duoblaĵo</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Konflikto</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Rompita celo</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Nekonata gastiganto</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Ne importebla</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Ĝeneralaj URL-aliasoj</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Importa historio</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL-mapoj</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Resendoj (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Ĉi tiuj resendoj venas el importoj de URL-mapoj: malnovaj adresoj kun demando (/index.php?id=12), portempaj resendoj kaj resendoj al aliaj retejoj. Ili estas kontrolataj laŭ la plena adreso, antaŭ la URL-aliasoj kaj ĵokeroj. Konstanta resendo al paĝo de ĉi tiu retejo estas anstataŭe ĝenerala URL-alias kaj estas listigita tie.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count resendoj forigitaj.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Ne estas resendoj. Ili estiĝas per importo de URL-mapo.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Resendoj kontrolataj laŭ la plena adreso</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Elekti</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Stato</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>El importo</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Forigi</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Elekti %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Forigi %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Ĉu forigi ĉi tiun resendon?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Ĉu forigi la elektitajn resendojn?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Forigi elektitajn</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Forigita resendo tuj ĉesas funkcii.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Algluita teksto</translation>
     </message>
 </context>
 </TS>

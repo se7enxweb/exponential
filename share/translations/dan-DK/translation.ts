@@ -7370,6 +7370,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Hvor adresserne skal hen: en sti på dette site eller en fuld adresse ved omdirigering. {1\} er den tekst, den første * matchede. Eksempel: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>omdirigeres midlertidigt til denne adresse (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Besøgende omdirigeres midlertidigt (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Midlertidig omdirigering (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -86171,6 +86183,625 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Vis %count elementer pr. side.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Eksportér URL-kortet</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Download de globale URL-aliasser, jokertegnene og omdirigeringerne for dette site som én fil: til at gemme, til at redigere i et regneark og importere igen eller til at give en webserver som omskrivningsregler.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Vælg mindst én slags post.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Filen kunne ikke skrives.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Hvad der skal eksporteres</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Filformat</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Poster</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Globale URL-aliasser (URL-oversætteren)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Også indholdets egne URL-aliasser</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Skrevet med noden som mål, for eksempel node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Jokertegn</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Omdirigeringer</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Alle siteaccesser</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Kun omdirigeringer hører til en siteaccess; URL-aliasser og jokertegn eksporteres for alle siteaccesser.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Sprog</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Alle sprog</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Eksportér</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Importér et URL-kort</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Flyt adresserne fra et gammelt site over i ét hug: en fil angiver hver gammel adresse og den side på dette site, den nu hører til. Præcise adresser bliver til omdirigeringer eller URL-aliasser, adresser med * bliver til jokertegn. Du ser, hvad hver række vil gøre, før noget skrives, og hver import kan fortrydes som helhed.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Tabellerne til import af URL-kort findes ikke endnu. Kør opgraderingstrinnet 6.0.15-url-map (./console exp:upgrade --apply), før du importerer.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Denne import er ikke længere tilgængelig: den udløb efter en dag eller tilhører en anden bruger. Upload filen igen.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Vælg en fil, eller indsæt rækkerne.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Filen er større end %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Filen kan ikke læses: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Vælg en siteaccess i denne installation.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Importen kan ikke gemmes på serveren: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Filen</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fil</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache- eller nginx-omskrivningsregler, højst %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Eller indsæt rækkerne</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Én række pr. linje, for eksempel /gammel-side,/ny-side. En første linje kan navngive kolonnerne: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Find ud af det fra filen</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Kun nødvendigt, når hverken filens navn eller indhold angiver det.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Standardværdier</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Siteaccess for rene stier</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>standard</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Rækker med en fuld adresse får i stedet deres værts siteaccess.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Siteaccessens sprog</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Når en gammel adresse allerede har en post</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Behold posten (spring rækken over)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Erstat posten</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Gamle værter</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Fulde adresser på en vært, som denne installation ikke kender, importeres ikke. Angiv den siteaccess, hver gammel vært står for, én pr. linje: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Forhåndsvisning</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Intet er skrevet endnu: næste side viser, hvad hver række vil gøre.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Import %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Importen blev fortrudt.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Importen blev fortrudt, undtagen de poster, der blev ændret efter den, som blev bevaret.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Importen kunne ikke fortrydes: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dato</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Af</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Rækker</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created oprettet, %updated erstattet, %skipped sprunget over, %failed mislykkedes.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Fortrudt</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Fortryd denne import</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Hver post, som importen oprettede, fjernes, og hver post, den erstattede, sættes tilbage, som den var, den seneste først. Du bekræfter først, hvem du er.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count poster ændret efter importen</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Fortryd også de poster, der blev ændret efter importen</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Uden dette bevares de, og importen bliver delvist fortrudt (konsollens --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Fortryd denne import?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Fortryd import</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Skrevne poster</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from til %to af %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Importen skrev ingen poster.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>De poster, importen skrev</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Linje</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Gammel adresse</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Post</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Fører til</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ændring</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tilstand</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL-alias</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Jokertegn</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Omdirigering</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Oprettet</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Erstattet</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Anvendt</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Bevaret</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Delvist fortrudt</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Importhistorik (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Hver import af et URL-kort, nyeste først. En import kan fortrydes som helhed: hver post, den skrev, vender tilbage til det, der var der før.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Der er ikke importeret noget URL-kort endnu.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Importer af URL-kort</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Nummer</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Sprunget over</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mislykkedes</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows rækker</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Importeret som import %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Se importen, eller fortryd den</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Importér en anden fil</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Intet er skrevet endnu. Hver række viser, hvad importen vil gøre med den. Afkrydsede rækker importeres; fjern krydset for at udelade en række. Rækker, der ikke er nye, kan kun importeres, når deres gamle adresse må erstattes.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Importen blev ikke udført: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Ingen række er afkrydset til import.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Prøvekørsel: intet blev skrevet.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Importen ville oprette %created, erstatte %updated og springe %skipped over; %failed ville mislykkes.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Oversigt</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Skal oprettes</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Skal erstattes</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Skal springes over</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Med et problem</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Gemt indtil</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Planlæg igen</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Ændr det, der bestemmer rækkerne, og planlæg filen igen. Kryds, du har ændret manuelt, nulstilles.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Rækker for disse værter importeres ikke, fordi denne installation ikke svarer for dem. Vælg den siteaccess, hver gammel vært står for.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Ikke importeret</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Vis</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Ingen række har denne tilstand.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Vis alle</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Filens rækker, og hvad importen ville gøre med hver af dem</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importér</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Ny adresse</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Slags</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Noter</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Importér linje %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nej</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Prøvekørsel</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Behold krydsene</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Plan som CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Plan som JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Kassér</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Importér skriver de afkrydsede rækker fra alle sider som én import, der kan fortrydes fra importhistorikken; du bekræfter først, hvem du er. Prøvekørsel kontrollerer hver række mod sitet igen og tæller, hvad importen ville gøre, uden at skrive.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Omdirigering (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Jokertegnsomdirigering (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Jokertegn (direkte)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Ny</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Ændret</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Uændret</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Dublet</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Konflikt</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Ugyldigt mål</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Ukendt vært</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Kan ikke importeres</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Globale URL-aliasser</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Importhistorik</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL-kort</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Omdirigeringer (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Disse omdirigeringer kommer fra import af URL-kort: gamle adresser med en forespørgsel (/index.php?id=12), midlertidige omdirigeringer og omdirigeringer til andre sites. De kontrolleres på den fulde adresse, før URL-aliasserne og jokertegnene. En permanent omdirigering til en side på dette site er i stedet et globalt URL-alias og står der.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count omdirigeringer fjernet.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Der er ingen omdirigeringer. De oprettes ved at importere et URL-kort.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Omdirigeringer kontrolleret på den fulde adresse</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Vælg</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Fra import</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Fjern</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Vælg %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Fjern %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Fjern denne omdirigering?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Fjern de valgte omdirigeringer?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Fjern valgte</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>En fjernet omdirigering holder op med at virke med det samme.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Indsat tekst</translation>
     </message>
 </context>
 </TS>

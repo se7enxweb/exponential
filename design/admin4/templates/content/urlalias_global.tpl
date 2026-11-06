@@ -40,6 +40,8 @@
 
 <p class="a4-intro">{'A global URL alias gives a module view, or another alias, an address of your choosing: for example login for user/login. Visitors who open the alias get the destination, either redirected to its address or shown under the alias. The aliases of content (the addresses of nodes) are made on the URL aliases tab of each node and are not listed here.'|i18n( 'design/admin/content/urlalias_global' )}</p>
 
+{include uri='design:content/urlmap_toolbar.tpl' current='translator'}
+
 {* Feedback and errors *}
 {switch match=$info_code}
 {case match='feedback-removed'}

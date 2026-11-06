@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Kwainoenda makero: nzira yesaiti ino, kana kero yakazara pakutumira kune imwe nzvimbo. {1\} ndizvo zvinyorwa zvakaenderana ne * yekutanga. Semuenzaniso: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>vanotumirwa kukero iyi kwechinguvana (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Vashanyi vanotumirwa kune imwe nzvimbo kwechinguvana (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Kutumira kune imwe nzvimbo kwechinguvana (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Ratidza zvinhu: %count papeji rimwe nerimwe.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Buritsa mepu yeURL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Dhaunirodha mamwe mazita eURL epasi rose, zvinoratidzo zvinotsiva uye kutumira kune dzimwe nzvimbo kwesaiti iyi sefaira rimwe: kuti urichengete, urigadzirise mupepa remaverengero worisa zvakare, kana kuripa sevha yewebhu semitemo yekunyora patsva.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Sarudza rudzi rumwe chete rwezvinyorwa zvishoma.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Faira harina kukwanisa kunyorwa.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Zvekuburitsa</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Fomati</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Zvinyorwa</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Mamwe mazita eURL epasi rose (muturikiri weURL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Uyewo mamwe mazita eURL akagadzirwa ezvirimo</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Anonyorwa nenodhi sechinangwa, semuenzaniso node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Zvinoratidzo zvinotsiva</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Kutumira kune dzimwe nzvimbo</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Nzira yekupinda pasaiti</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Nzira imwe neimwe yekupinda pasaiti</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Kutumira kune dzimwe nzvimbo chete ndiko kunoenderana nenzira yekupinda pasaiti; mamwe mazita eURL nezvinoratidzo zvinotsiva zvinoburitswa kunzira imwe neimwe yekupinda pasaiti.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Mutauro</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Mutauro mumwe nemumwe</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Buritsa kunze</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Pinza mepu yeURL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Unza makero esaiti yekare kamwe chete: faira rinonyora kero yega yega yekare nepeji yesaiti ino yairi kuenderana nayo zvino. Makero chaiwo anova kutumira kune dzimwe nzvimbo kana mamwe mazita eURL, makero ane * anova zvinoratidzo zvinotsiva. Unoona kuti mutsetse wega wega waizoitei chisati chanyorwa chero chii, uye kupinza kwega kwega kunogona kudzoserwa shure kwese.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Matafura ekupinza mepu dzeURL haasati avepo. Mhanyisa nhanho yekuvandudza 6.0.15-url-map (./console exp:upgrade --apply) usati wapinza.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Kupinza uku hakuchawanikwi: kwakapera mushure mezuva rimwe kana kuri kwemumwe mushandisi. Kwidza faira zvakare.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Sarudza faira kana kuti namatidza mitsetse.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Faira rakakura kupfuura %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Faira harigoni kuverengwa: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Sarudza nzira yekupinda pasaiti yekuisirwa uku.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Kupinza hakugoni kuchengetwa pasevha: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Faira racho</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faira</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), mitemo yekunyora patsva yeApache kana nginx, kusvika %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Kana kuti namatidza mitsetse</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Mutsetse mumwe pachinyorwa chimwe, semuenzaniso /peji-yekare,/peji-itsva. Mutsetse wekutanga unogona kupa mazita emakoramu: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Ziva kubva mufaira</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Zvinodiwa chete kana zita kana zvirimo mufaira zvisingazviratidze.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Zvakajairwa</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Nzira yekupinda pasaiti yenzira dzisina hosti</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>zvakajairwa</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Mitsetse ine kero yakazara inotora nzira yekupinda pasaiti yehosti yayo panzvimbo payo.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Mutauro wenzira yekupinda pasaiti</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Kana kero yekare yatova nechinyorwa</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Chengeta chinyorwa (siya mutsetse)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Tsiva chinyorwa</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Mahosti ekare</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Makero akazara ehosti isingazivikanwe nekuisirwa uku haapinzwi. Taura nzira yekupinda pasaiti inomiririrwa nehosti yega yega yekare, imwe pamutsetse: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Ongororo yekutanga</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Hapana chiri kunyorwa parizvino: peji rinotevera rinoratidza kuti mutsetse wega wega waizoitei.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Kupinza %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Kupinza kwakadzoserwa shure.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Kupinza kwakadzoserwa shure, kunze kwezvinyorwa zvakachinjwa mushure makwo, zvakachengetwa.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Kupinza hakuna kukwanisa kudzoserwa shure: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Zuva</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Na</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Mitsetse</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created zvakagadzirwa, %updated zvakatsiviwa, %skipped zvakasiiwa, %failed zvakundikana.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Zvakadzoserwa shure</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Dzosera shure kupinza uku</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Chinyorwa chega chega chakagadzirwa nekupinza chinobviswa uye chinyorwa chega chega chachakatsiva chinodzoserwa sezvachaive, chekupedzisira chichitanga. Unotanga wasimbisa kuti ndiwe ani.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>Zvinyorwa %count zvakachinjwa mushure mekupinza</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Dzosera shure zvakare zvinyorwa zvakachinjwa mushure mekupinza</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Pasina izvi zvinochengetwa uye kupinza kunodzoserwa shure zvishoma (--force yekoni).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Dzosera shure kupinza uku?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Dzosera shure kupinza</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Zvinyorwa zvakanyorwa</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from kusvika %to pa%count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Kupinza hakuna kunyora chinyorwa.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Zvinyorwa zvakanyorwa nekupinza</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Mutsetse</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Kero yekare</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Chinyorwa</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Inoenda ku</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Shanduko</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Mamiriro</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Rimwe zita re URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Chiratidzo chinotsiva</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Kutumira kune imwe nzvimbo</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Yakagadzirwa</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Yakatsiviwa</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Yakashandiswa</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Yakachengetwa</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Zvakadzoserwa shure zvishoma</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Nhoroondo yekupinza (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Kupinza kwega kwega kwemepu yeURL, kutsva kuchitanga. Kupinza kunogona kudzoserwa shure kwese: chinyorwa chega chega chachakanyora chinodzokera kune zvaive zviripo kare.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Hapana mepu yeURL yakapinzwa parizvino.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Kupinza kwemepu dzeURL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Nhamba</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Zvakasiiwa</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Zvakundikana</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, mitsetse %rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Yakapinzwa sekupinza %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Ona kupinza, kana kukudzosera shure</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Pinza rimwe faira</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Hapana chakanyorwa parizvino. Mutsetse wega wega unoratidza kuti kupinza kwaizoitei nawo. Mitsetse yakamakwa inopinzwa; bvisa chiratidzo pamutsetse kuti uusiye. Mitsetse isiri mitsva inogona kupinzwa chete kana kero yayo yekare ichibvumirwa kutsiviwa.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Kupinza hakuna kuitwa: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Hapana mutsetse wakamakwa kuti upinzwe.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Kumhanya kweyedzo: hapana chakanyorwa.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Kupinza kwaizogadzira %created, kutsiva %updated uye kusiya %skipped; %failed zvaizokundikana.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Muchidimbu</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Zvekugadzira</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Zvekutsiva</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Zvekusiya</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Zvine dambudziko</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Zvakachengetwa kusvika</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Ronga zvakare</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Chinja zvinosarudza mitsetse woronga faira zvakare. Zviratidzo zvawakachinja neruoko zvinodzoserwa.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Mitsetse yemahosti aya haipinzwi, nekuti kuisirwa uku hakuapinduri. Sarudza nzira yekupinda pasaiti inomiririrwa nehosti yega yega yekare.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Hazvina kupinzwa</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ratidza</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Zvose</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Hapana mutsetse une mamiriro aya.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Ratidza zvose</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Mitsetse yefaira uye kuti kupinza kwaizoitei nemumwe nemumwe</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Pinza</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Kero itsva</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Rudzi</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Zvinyorwa</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Pinza mutsetse %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Kwete</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Hongu</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Kumhanya kweyedzo</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Chengeta zviratidzo</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Hurongwa seCSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Hurongwa seJSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Rasa</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Pinza inonyora mitsetse yakamakwa yepeji imwe neimwe sekupinza kumwe, kunogona kudzoserwa shure kubva munhoroondo yekupinza; unotanga wasimbisa kuti ndiwe ani. Kumhanya kweyedzo kunoongorora mutsetse wega wega zvakare pasaiti uye kunoverenga kuti kupinza kwaizoitei, pasina kunyora.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Kutumira kune imwe nzvimbo (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Kutumira kune imwe nzvimbo nechiratidzo chinotsiva (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Chiratidzo chinotsiva (zvakananga)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Itsva</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Zvakachinjwa</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Hazvina kuchinjwa</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Kopi</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Kupokana</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Chinangwa chakatyoka</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Hosti isingazivikanwe</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Hazvigoni kupinzwa</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Mamwe mazita eURL epasi rose</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Nhoroondo yekupinza</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Mepu dzeURL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Kutumira kune dzimwe nzvimbo (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Kutumira uku kunobva mukupinza mepu dzeURL: makero ekare ane mubvunzo (/index.php?id=12), kutumira kwechinguvana uye kutumira kumamwe masaiti. Kunoongororwa pakero yakazara, mamwe mazita eURL nezvinoratidzo zvinotsiva zvisati zvaongororwa. Kutumira kwechigarire kupeji yesaiti ino iri rimwe zita reURL repasi rose panzvimbo payo uye kwakanyorwa ikoko.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Kutumira kune dzimwe nzvimbo %count kwakabviswa.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Hapana kutumira kune dzimwe nzvimbo. Kunogadzirwa nekupinza mepu yeURL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Kutumira kune dzimwe nzvimbo kunoongororwa pakero yakazara</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Sarudza</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Chimiro</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Kubva mukupinza</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Bvisa</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Sarudza %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Bvisa %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Bvisa kutumira uku?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Bvisa kutumira kwakasarudzwa?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Bvisa zvasarudzwa</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Kutumira kwabviswa kunobva kwamira kushanda.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Zvinyorwa zvakanamatidzwa</translation>
     </message>
 </context>
 </TS>

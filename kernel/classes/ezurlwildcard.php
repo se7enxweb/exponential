@@ -237,7 +237,7 @@ class eZURLWildcard extends eZPersistentObject
      * @param int $offset
      * @param int $limit 0 for all
      * @param string|null $search
-     * @param int|null $type self::TYPE_FORWARD or self::TYPE_DIRECT
+     * @param int|int[]|null $type self::TYPE_FORWARD, self::TYPE_DIRECT, self::TYPE_FORWARD_TEMPORARY or a list of them
      * @param bool $asObject
      * @return array
      */
@@ -288,7 +288,7 @@ class eZURLWildcard extends eZPersistentObject
      *
      * @param eZDBInterface $db
      * @param string|null $search
-     * @param int|null $type
+     * @param int|int[]|null $type one type or a list of them (since 6.0.15)
      * @return string
      */
     public static function filterWhereSQL( $db, $search, $type )
@@ -299,7 +299,9 @@ class eZURLWildcard extends eZPersistentObject
             $pattern = $db->escapeString( '%' . strtr( $search, array( '!' => '!!', '%' => '!%', '_' => '!_' ) ) . '%' );
             $conditions[] = "( LOWER( source_url ) LIKE LOWER( '$pattern' ) ESCAPE '!' OR LOWER( destination_url ) LIKE LOWER( '$pattern' ) ESCAPE '!' )";
         }
-        if ( $type !== null )
+        if ( is_array( $type ) )
+            $conditions[] = count( $type ) === 1 ? 'type = ' . (int)reset( $type ) : 'type IN ( ' . implode( ', ', array_map( 'intval', $type ) ) . ' )';
+        elseif ( $type !== null )
             $conditions[] = 'type = ' . (int)$type;
         return $conditions ? ' WHERE ' . implode( ' AND ', $conditions ) : '';
     }
@@ -319,7 +321,9 @@ class eZURLWildcard extends eZPersistentObject
             $regex = array( '$regex' => preg_quote( $search ), '$options' => 'i' );
             $match['$or'] = array( array( 'source_url' => $regex ), array( 'destination_url' => $regex ) );
         }
-        if ( $type !== null )
+        if ( is_array( $type ) )
+            $match['type'] = count( $type ) === 1 ? (int)reset( $type ) : array( '$in' => array_values( array_map( 'intval', $type ) ) );
+        elseif ( $type !== null )
             $match['type'] = (int)$type;
         return $match;
     }

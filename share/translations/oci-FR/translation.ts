@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Ont van las adreças : un camin d'aqueste site, o una adreça completa en cas de redireccion. {1\} es lo tèxte al qual la primièra * a correspondut. Exemple : dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>son redirigits temporàriament cap a aquesta adreça (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Los visitaires son redirigits temporàriament (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Redireccion temporària (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Mostrar %count elements per pagina.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Exportar la mapa d'URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Telecargatz los alias d'URL globals, los jokèrs e las redireccions d'aqueste site dins un sol fichièr: per lo gardar, l'editar dins un fuèlh de calcul e l'importar tornamai, o lo balhar a un servidor web coma règlas de reescritura.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Causissètz almens un tipe d'entradas.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Lo fichièr a pas pogut èsser escrich.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Qué exportar</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Format</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Entradas</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Alias d'URL globals (lo traductor d'URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Tanben los alias d'URL personalizats del contengut</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Escriches amb lo nos coma cibla, per exemple node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Jokèrs</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Redireccions</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Accès al site</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Totes los accèsses al site</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Sonque las redireccions apartenon a un accès al site; los alias d'URL e los jokèrs son exportats per totes los accèsses al site.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Lenga</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Totas las lengas</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Exportar</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Importar una mapa d'URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Portatz las adreças d'un ancian site d'un sol còp: un fichièr lista cada adreça anciana e la pagina d'aqueste site a la quala aparten ara. Las adreças exactas venon de redireccions o d'alias d'URL, las adreças amb * venon de jokèrs. Vesètz çò que cada linha fariá abans que quicòm siá escrich, e cada importacion pòt èsser anullada tota entièra.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Las taulas de las importacions de mapas d'URL existisson pas encara. Aviatz l'etapa de mesa a jorn 6.0.15-url-map (./console exp:upgrade --apply) abans d'importar.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Aquesta importacion es pas mai disponibla: expirèt aprèp un jorn o aparten a un autre utilizaire. Mandatz lo fichièr tornamai.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Causissètz un fichièr o pegatz las linhas.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Lo fichièr es mai grand que %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Lo fichièr se pòt pas legir: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Causissètz un accès al site d'aquesta installacion.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>L'importacion se pòt pas gardar sul servidor: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Lo fichièr</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fichièr</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), règlas de reescritura Apache o nginx, %size al maximum.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>O pegatz las linhas</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Una entrada per linha, per exemple /pagina-anciana,/pagina-novèla. La primièra linha pòt nomenar las colomnas: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Determinar a partir del fichièr</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Necessari sonque quand ni lo nom ni lo contengut del fichièr o indican.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Valors per defaut</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Accès al site dels camins sens òste</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>per defaut</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Las linhas amb una adreça completa prenon puslèu l'accès al site de lor òste.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>La lenga de l'accès al site</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Quand una adreça anciana a ja una entrada</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Gardar l'entrada (passar la linha)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Remplaçar l'entrada</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Ancians òstes</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Las adreças completas d'un òste qu'aquesta installacion coneis pas son pas importadas. Indicatz l'accès al site que representa cada ancian òste, un per linha: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Apercebut</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Res es pas encara escrich: la pagina seguenta mòstra çò que cada linha fariá.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Importacion %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>L'importacion es estada anullada.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>L'importacion es estada anullada, levat las entradas modificadas aprèp ela, que son estadas gardadas.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>L'importacion a pas pogut èsser anullada: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Per</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Linhas</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created creadas, %updated remplaçadas, %skipped passadas, %failed fracassadas.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Anullada</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Anullar aquesta importacion</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Cada entrada creada per l'importacion es suprimida e cada entrada remplaçada es tornada metre coma èra, la darrièra en primièr. D'en primièr confirmatz vòstra identitat.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count entradas modificadas aprèp l'importacion</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Anullar tanben las entradas modificadas aprèp l'importacion</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Sens aquò, son gardadas e l'importacion es anullada en partida (lo --force de la consòla).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Anullar aquesta importacion?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Anullar l'importacion</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Entradas escrichas</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from a %to sus %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>L'importacion a pas escrich cap d'entrada.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Las entradas escrichas per l'importacion</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Linha</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Adreça anciana</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Entrada</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Mena a</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Cambiament</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Estat</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Alias d'URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Jokèr</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Redireccion</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Creada</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Remplaçada</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Aplicada</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Gardada</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Anullada en partida</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Istoric de las importacions (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Totas las importacions de mapas d'URL, las mai recentas en primièr. Una importacion pòt èsser anullada tota entièra: cada entrada qu'escriguèt torna a çò qu'i aviá abans.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Cap de mapa d'URL es pas estada importada encara.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Importacions de mapas d'URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Numèro</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Passadas</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fracassadas</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows linhas</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Importat coma importacion %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Veire l'importacion o l'anullar</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Importar un autre fichièr</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Res es pas encara estat escrich. Cada linha mòstra çò que l'importacion ne fariá. Las linhas marcadas son importadas; desmarcatz una linha per la daissar de costat. Las linhas que son pas novèlas se pòdon importar sonque quand lor adreça anciana pòt èsser remplaçada.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>L'importacion es pas estada facha: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Cap de linha es pas marcada per l'importacion.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Ensag a blanc: res es pas estat escrich.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>L'importacion crearià %created, remplaçariá %updated e passariá %skipped; %failed fracassarián.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Vista d'ensemble</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>De crear</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>De remplaçar</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>De passar</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Amb un problèma</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Gardada fins a</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Planificar tornamai</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Modificatz çò que decidís las linhas e planificatz lo fichièr tornamai. Las marcas cambiadas a la man son reinicializadas.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Las linhas d'aquestes òstes son pas importadas, perque aquesta installacion respond pas per eles. Causissètz l'accès al site que representa cada ancian òste.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Pas importadas</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Mostrar</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Totas</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Cap de linha a pas aqueste estat.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Tot mostrar</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Las linhas del fichièr e çò que l'importacion fariá amb caduna</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importar</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Adreça novèla</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Tipe</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Nòtas</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Importar la linha %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Non</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Òc</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Ensag a blanc</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Gardar las marcas</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Plan en CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Plan en JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Abandonar</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Importar escriu las linhas marcadas de totas las paginas coma una sola importacion, que se pòt anullar dins l'istoric de las importacions; d'en primièr confirmatz vòstra identitat. L'ensag a blanc torna verificar cada linha amb lo site e compta çò que l'importacion fariá, sens res escriure.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Redireccion (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Redireccion amb jokèr (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Jokèr (dirècte)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Novèla</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Modificada</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Pas modificada</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Doblon</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Conflicte</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Cibla copada</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Òste desconegut</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Pas importable</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Alias d'URL globals</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Istoric de las importacions</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Mapas d'URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Redireccions (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Aquestas redireccions venon d'importacions de mapas d'URL: ancianas adreças amb una requèsta (/index.php?id=12), redireccions temporàrias e redireccions cap a d'autres sites. Son verificadas sus l'adreça completa, abans los alias d'URL e los jokèrs. Una redireccion permanenta cap a una pagina d'aqueste site es puslèu un alias d'URL global e es listada ailà.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count redireccions suprimidas.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>I a pas cap de redireccion. Se fan en important una mapa d'URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Redireccions verificadas sus l'adreça completa</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Seleccionar</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Estatut</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>De l'importacion</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Levar</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Seleccionar %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Levar %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Levar aquesta redireccion?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Levar las redireccions seleccionadas?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Levar la seleccion</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Una redireccion levada s'arrèsta de foncionar sul pic.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Tèxt pegat</translation>
     </message>
 </context>
 </TS>

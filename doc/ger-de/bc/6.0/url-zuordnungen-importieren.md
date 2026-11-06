@@ -105,6 +105,29 @@ Standard-Siteaccess; die Sprache ist die der Zeile, sonst `--language`, sonst di
 Aliase von Knoten, Ziel `node:<id>`), die Platzhalter und die Weiterleitungen, in jedem Format, das der Import liest,
 und als `.ods`. Der Import des Exports in dieselbe Installation findet jede Zeile unverändert.
 
+## In der Administration
+
+Die Seiten des URL-Übersetzers und der Platzhalter haben die Schaltflächen **Importieren**, **Exportieren**,
+**Importhistorie** und **Weiterleitungen** ([URL-Zuordnungen: Import, Export und Rückgängig](../../anleitungen/url-zuordnungen.md)):
+
+| Ansicht | Richtlinie | Was sie tut |
+|---|---|---|
+| `content/urlimport` | `content/urltranslator_import` (neu) | eine Datei hochladen oder einfügen, jede Zeile mit ihrem Zustand in der Vorschau, Zeilen abwählen, unbekannte Hosts zuordnen, Probelauf, Import (fragt nach der Identität), der Plan als CSV oder JSON |
+| `content/urlimporthistory[/<id>]` | `content/urltranslator_import` | die Importe, die Einträge eines Imports, Rückgängig (fragt nach der Identität; seither geänderte Einträge bleiben, außer sie sind angehakt, `--force` der Konsole) |
+| `content/urlexport` | `content/urltranslator` | der Export als Download |
+| `content/urlredirects` | `content/urltranslator` | die Weiterleitungen von `exp_url_redirect`, eine oder die angehakten entfernen |
+
+- Die Funktion `content/urltranslator_import` ist neu und hat keine Einschränkungen. Eine Rolle mit `content/*` oder
+  `*/*` (Administrator) hat sie; eine Rolle, die nur `content/urltranslator` hatte, kann den Export und die
+  Weiterleitungen öffnen, nicht den Import. Das Upgrade ändert keine Rolle: Geben Sie die Funktion den Rollen, die
+  importieren sollen.
+- `site.ini [ReauthGroup_system]` erhält `content/urlimport ImportButton` und `content/urlimporthistory UndoButton`.
+- Die hochgeladene Datei und ihr Plan bleiben auf dem Server, bis der Import erledigt oder verworfen ist, höchstens
+  einen Tag, in `var/<site>/urlimport/<token>/`, nur für den Benutzer, der sie hochgeladen hat; die Formulare senden
+  nur die Entscheidungen der angezeigten Zeilen.
+- Die Platzhalterseiten zeigen einen vorübergehend weiterleitenden Platzhalter (Typ 3) als **Vorübergehende
+  Weiterleitung (302)**, und der Filter **Weiterleitend** listet beide Weiterleitungstypen.
+
 ## Für Entwickler
 
 - Der Planer fragt die Installation über `expUrlMapEnvironment`; `expUrlMapKernelEnvironment` ist die echte, ein Test

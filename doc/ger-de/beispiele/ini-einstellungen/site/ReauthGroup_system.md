@@ -40,8 +40,10 @@ Enabled=true
 > ein websiteweites Aufzeichnungsfenster (die Änderungen aller Benutzer); die eigene Aufzeichnung eines Benutzers wird nicht abgefragt  
 > Statisches Veröffentlichen: eine Veröffentlichung, eine Rücknahme, das Speichern eines Ziels, der Deploy-Key und der  
 > Schalter; fürs Ansehen, Bauen und die Vorschau wird nie gefragt  
+> URL-Zuordnungen: das Importieren einer Datei in den URL-Übersetzer, die Platzhalter und die Weiterleitungen und das  
+> Rückgängigmachen eines Imports; für das Hochladen, die Vorschau, den Probelauf und die Historie wird nie gefragt  
 
-Standard: eine Liste mit 34: `setup/*`, `!setup/info`, `!setup/logs`, `!setup/logshealth`, `!setup/logsdigest`, `!setup/logsfeed`, `!setup/templatelist`, `!setup/templateview`, `!setup/menu`, `!setup/preloadstream`, `!setup/cronjobsstream`, `!setup/staticcachestream` ....
+Standard: eine Liste mit 36: `setup/*`, `!setup/info`, `!setup/logs`, `!setup/logshealth`, `!setup/logsdigest`, `!setup/logsfeed`, `!setup/templatelist`, `!setup/templateview`, `!setup/menu`, `!setup/preloadstream`, `!setup/cronjobsstream`, `!setup/staticcachestream` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -69,7 +71,7 @@ Rules[]=migration/run
 Rules[]=migration/rollback
 Rules[]=migration/edit
 Rules[]=migration/dryrun SimulateButton
-# ... 14 weitere in der ausgelieferten Datei
+# ... 16 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

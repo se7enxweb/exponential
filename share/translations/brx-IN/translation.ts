@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>ठिकानाफोर माव थांनो: बे साइटनि फथ, एबा रिडाइरेक्ट खालामनायाव जोबोद ठिकाना. {1\} आ आगान * मिलनाय बाथ्रा. बेखेबो: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>सम आनथोरनि थाखाय बे ठिकानाआव रिडाइरेक्ट जायो (HTTP 302)।</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>फैसंफोरखौ सम आनथोरनि थाखाय रिडाइरेक्ट खालामो (HTTP 302)।</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>सम आनथोरनि रिडाइरेक्ट (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>फोथा फोथाआव %count आइटेम नुजाफिन.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL नक्साखौ एक्सपोर्ट खालाम</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>बे साइटनि ग्लोबाल URL एलियासफोर, वाइल्डकार्डफोर आरो रिडाइरेक्टफोरखौ फाइल मोनसे महरै डाउनल'ड खालाम: दोनथिनो, स्प्रेडसिटआव सुजुनानै फिन इम्पोर्ट खालामनो, एबा वेब सार्भारखौ रिराइट नियम महरै होनो।</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>खमसेयाव एन्ट्रिनि रोखोम मोनसे सायख।</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>फाइलखौ लिरनो हायाखै।</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>मा एक्सपोर्ट खालामगोन</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>फरमेट</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>एन्ट्रिफोर</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>ग्लोबाल URL एलियासफोर (URL राव सोलायग्रा)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>बिबुंथिनि गावनि URL एलियासफोरबो</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>न'डखौ थांखि महरै लानानै लिरनाय, बिदिन्थि node:42।</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>वाइल्डकार्डफोर</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>रिडाइरेक्टफोर</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>साइट-प्रबेश</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>गासै साइट-प्रबेश</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>रिडाइरेक्टफोरसोल' साइट-प्रबेश मोनसेनि; URL एलियासफोर आरो वाइल्डकार्डफोरखौ गासै साइट-प्रबेशनि थाखाय एक्सपोर्ट खालामो।</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>राव</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>गासै राव</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>एक्सपोर्ट</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL नक्सा मोनसे इम्पोर्ट खालाम</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>गोजाम साइट मोनसेनि ठिकानाफोरखौ खेबसेआव लाबो: फाइल मोनसेआव गासै गोजाम ठिकाना आरो दिनैयाव बेखौ बे साइटनि माबे बिलाइनि सोमोन्दो दं बेखौ लिरनाय दं। थार ठिकानाफोर रिडाइरेक्ट एबा URL एलियास जायो, * थानाय ठिकानाफोर वाइल्डकार्ड जायो। जेबो लिरनायनि सिगाङाव नों गासै सारिया मा खालामगोन बेखौ नायनो हायो, आरो गासै इम्पोर्टखौ आबुं फिन थार खालामनो हायो।</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL नक्सा इम्पोर्टनि टेबुलफोरा दासिमबो गैया। इम्पोर्ट खालामनायनि सिगाङाव आपग्रेड खान्थि 6.0.15-url-map (./console exp:upgrade --apply) चलाय।</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>बे इम्पोर्टआ दा मोननो हाया: सान मोनसेनि उनाव बेनि सम जोबबाय एबा बेयो गुबुन बाहायग्रा मोनसेनि। फाइलखौ फिन आपल'ड खालाम।</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>फाइल मोनसे सायख एबा सारिफोरखौ पेस्ट खालाम।</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>फाइलआ %size निफ्राय गेदेर।</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>फाइलखौ फरायनो हाया: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>बे इनस्टलेसननि साइट-प्रबेश मोनसे सायख।</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>इम्पोर्टखौ सार्भारआव दोनथिनो हाया: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>फाइलआ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>फाइल</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache एबा nginx रिराइट नियम, बांसिन बांबाव %size।</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>एबा सारिफोरखौ पेस्ट खालाम</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>गासै लाइनआव सारि मोनसे, बिदिन्थि /old-page,/new-page। गिबि लाइनआ कलामफोरनि मुं होनो हायो: old_url, new_url, kind, siteaccess, language, note, status।</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>फाइलनिफ्राय सिनाय</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>जेब्ला फाइलनि मुं एबा बिबुंथि जेबोहाबो बुङा, अब्लासोल' नांगौ।</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>डिफल्टफोर</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>लांदां लामानि साइट-प्रबेश</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>डिफल्ट</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>आबुं ठिकाना थानाय सारिफोरा बेनि सोलायाव बिसोरनि ह'स्टनि साइट-प्रबेशखौ लायो।</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>साइट-प्रबेशनि राव</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>जेब्ला गोजाम ठिकाना मोनसेनि सिगाङावनो एन्ट्रि दं</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>एन्ट्रिखौ दोनथि (सारिखौ बारहो)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>एन्ट्रिखौ सोलाय</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>गोजाम ह'स्टफोर</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>बे इनस्टलेसनआ मिथिया ह'स्ट मोनसेनि आबुं ठिकानाफोरखौ इम्पोर्ट खालामा। गासै गोजाम ह'स्टआ माबे साइट-प्रबेशनि थाखाय दं बेनि मुं लिर, लाइन मोनसेआव मोनसे: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>सोलोंथाइ</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>दासिमबो जेबो लिरा: उननि बिलाइआ गासै सारिया मा खालामगोन बेखौ दिन्थियो।</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>इम्पोर्ट %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>इम्पोर्टखौ फिन थार खालामबाय।</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>इम्पोर्टखौ फिन थार खालामबाय, बेनि उनाव सोलायनाय एन्ट्रिफोरखौ बादि होनानै, बेफोरखौ दोनथिबाय।</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>इम्पोर्टखौ फिन थार खालामनो हायाखै: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>अक्ट'</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>जायनि</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>सारिफोर</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created सोरजिबाय, %updated सोलायबाय, %skipped बारहोबाय, %failed फेलें जाबाय।</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>फिन थार जाबाय</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>बे इम्पोर्टखौ फिन थार खालाम</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>इम्पोर्टआ सोरजिनाय गासै एन्ट्रिखौ आगाय होयो आरो सोलायनाय गासै एन्ट्रिखौ सिगांनि बादि फिन दोनो, जोबथा मोनसेखौ गिबियाव। गिबियाव नों सोर बेखौ थार खालाम।</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>इम्पोर्टनि उनाव सोलायनाय %count एन्ट्रि</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>इम्पोर्टनि उनाव सोलायनाय एन्ट्रिफोरखौबो फिन थार खालाम</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>बेनि गैयाब्ला बेफोरखौ दोनथियो आरो इम्पोर्टआ बाहागो फिन थार जायो (कनस'लनि --force)।</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>बे इम्पोर्टखौ फिन थार खालामनो?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>इम्पोर्ट फिन थार खालाम</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>लिरनाय एन्ट्रिफोर</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count नि गेजेरनिफ्राय %from निफ्राय %to सिम</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>इम्पोर्टआ जेबो एन्ट्रि लिराखै।</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>इम्पोर्टआ लिरनाय एन्ट्रिफोर</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>लाइन</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>गोजाम ठिकाना</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>एन्ट्रि</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>लाबोनो थांखि</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>सोलायनाय</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>थासारि</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL एलियास</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>वाइल्डकार्ड</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>रिडाइरेक्ट</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>सोरजिबाय</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>सोलायबाय</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>बाहायबाय</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>दोनथिबाय</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>बाहागो फिन थार जाबाय</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>इम्पोर्टनि जारिमिन (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL नक्सानि गासै इम्पोर्ट, गोदानसिन गिबियाव। इम्पोर्ट मोनसेखौ आबुं फिन थार खालामनो हायो: बेयो लिरनाय गासै एन्ट्रिआ सिगाङाव मा दंमोन बेआव फिन थांफिनो।</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>दासिमबो जेबो URL नक्सा इम्पोर्ट खालामाखै।</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL नक्सानि इम्पोर्टफोर</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>नम्बर</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>बारहोबाय</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>फेलें जाबाय</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows सारि</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>इम्पोर्ट %id महरै इम्पोर्ट खालामबाय।</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>इम्पोर्टखौ नाय, एबा फिन थार खालाम</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>गुबुन फाइल मोनसे इम्पोर्ट खालाम</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>दासिमबो जेबो लिरा। गासै सारिया इम्पोर्टआ बेजों मा खालामगोन बेखौ दिन्थियो। चिनाय होनाय सारिफोरखौ इम्पोर्ट खालामो; सारि मोनसेखौ बादि होनो चिनायखौ आगाय। गोदान नङै सारिफोरखौ बिसोरनि गोजाम ठिकानाखौ सोलायनो हायोब्लासोल' इम्पोर्ट खालामनो हायो।</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>इम्पोर्टआ जाखै: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>इम्पोर्टनि थाखाय जेबो सारिआव चिनाय होआखै।</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>सोलोंथाइ चलावनाय: जेबो लिराखै।</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>इम्पोर्टआ %created सोरजिगोन, %updated सोलायगोन आरो %skipped बारहोगोन; %failed फेलें जागोन।</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>गासैबो नायनाय</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>सोरजिनो</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>सोलायनो</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>बारहोनो</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>जेंना थानाय</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>सिम दोनथिनाय</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>फिन फारिलाय</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>सारिफोरखौ थिखानाय मुवाखौ सोलायनानै फाइलखौ फिन फारिलाय। नों आखाइजों सोलायनाय चिनायफोरखौ फिन सिगांनि बादि खालामो।</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>बे ह'स्टफोरनि सारिफोरखौ इम्पोर्ट खालामा, मानोना बे इनस्टलेसनआ बिसोरनि थाखाय फिननाय होआ। गासै गोजाम ह'स्टआ माबे साइट-प्रबेशनि थाखाय दं बेखौ सायख।</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>इम्पोर्ट खालामाखै</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>दिन्थि</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>गासै</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>जेबो सारिनि बे थासारि गैया।</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>गासैखौ दिन्थि</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>फाइलनि सारिफोर आरो इम्पोर्टआ मोनफ्रोमजों मा खालामगोन</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>इम्पोर्ट</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>गोदान ठिकाना</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>रोखोम</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>नोटफोर</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>लाइन %line इम्पोर्ट खालाम</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>नङा</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>हय</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>सोलोंथाइ चलावनाय</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>चिनायफोरखौ दोनथि</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>CSV महरै फारिलाय</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>JSON महरै फारिलाय</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>होखार</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>इम्पोर्टआ गासै बिलाइनि चिनाय होनाय सारिफोरखौ इम्पोर्ट मोनसे महरै लिरो, जायखौ इम्पोर्टनि जारिमिननिफ्राय फिन थार खालामनो हायो; गिबियाव नों सोर बेखौ थार खालाम। सोलोंथाइ चलावनायआ गासै सारिखौ साइटजों फिन नायसंनानै इम्पोर्टआ मा खालामगोन बेखौ सानो, लिरा।</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>रिडाइरेक्ट (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>वाइल्डकार्ड रिडाइरेक्ट (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>वाइल्डकार्ड (सोजा)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>गोदान</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>सोलायबाय</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>सोलायाखै</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>नकल</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>जुजिनाय</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>सिफायनाय थांखि</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>मिथिनाय गैयि ह'स्ट</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>इम्पोर्ट खालामनो हाया</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>ग्लोबाल URL एलियासफोर</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>इम्पोर्टनि जारिमिन</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL नक्साफोर</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>रिडाइरेक्टफोर (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>बे रिडाइरेक्टफोरा URL नक्सा इम्पोर्टनिफ्राय फैयो: सोंनाय थानाय गोजाम ठिकानाफोर (/index.php?id=12), सम आनथोरनि रिडाइरेक्टफोर आरो गुबुन साइटआव रिडाइरेक्टफोर। बेफोरखौ आबुं ठिकानाआव नायसंयो, URL एलियास आरो वाइल्डकार्डनि सिगाङाव। बे साइटनि बिलाइ मोनसेआव गोरा रिडाइरेक्टआ बेनि सोलायाव ग्लोबाल URL एलियास मोनसे आरो बेयावनो लिरनाय दं।</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count रिडाइरेक्टखौ आगाय होबाय।</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>जेबो रिडाइरेक्ट गैया। बेफोरखौ URL नक्सा मोनसे इम्पोर्ट खालामनानै सोरजियो।</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>आबुं ठिकानाआव नायसंनाय रिडाइरेक्टफोर</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>सायख</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>थासारि</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>इम्पोर्टनिफ्राय</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>आगाय</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address सायख</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address आगाय</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>बे रिडाइरेक्टखौ आगायनो?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>सायख्रानाय रिडाइरेक्टफोरखौ आगायनो?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>सायख्रानायखौ आगाय</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>आगाय होनाय रिडाइरेक्टआ गोख्रैनो खामानि मावनो थाद' होयो।</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>पेस्ट खालामनाय लिरथाय</translation>
     </message>
 </context>
 </TS>

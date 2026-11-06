@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Pelec'h e kont ar chomlec'hioù: un hent eus al lec'hienn-mañ, pe ur chomlec'h klok pa vez graet un adkas. {1\} eo ar skrid en deus an * kentañ glotet outañ. Skouer: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>a vez adkaset war-zu ar chomlec'h-mañ evit ur mare (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Adkaset e vez ar weladennerien evit ur mare (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Adkas berrbad (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Diskouez %count elfenn dre bajenn.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Ezporzhiañ ar gartenn URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Pellgargit an aliasoù URL hollek, ar jokerioù hag an adkasoù al lec'hienn-mañ en ur restr hepken: evit he mirout, evit he cheñch en ur follenn-jediñ hag he enporzhiañ en-dro, pe evit he reiñ d'ur servijer web evel reolennoù adskrivañ.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Dibabit da nebeutañ ur seurt enmont.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>N'eus ket bet gallet skrivañ ar restr.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Petra ezporzhiañ</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Mentrezh</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Enmontoù</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Aliasoù URL hollek (troer an URLoù)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Ivez aliasoù URL personelaet an endalc'had</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Skrivet gant ar skoulm da bal, da skouer node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Jokerioù</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Adkasoù</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Haeziñ al lec'hienn</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Pep haeziñ al lec'hienn</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>An adkasoù hepken a zo stag ouzh un haeziñ al lec'hienn; an aliasoù URL hag ar jokerioù a vez ezporzhiet evit pep haeziñ al lec'hienn.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Yezh</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Pep yezh</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Ezporzhiañ</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Enporzhiañ ur gartenn URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Degasit chomlec'hioù ul lec'hienn gozh en un taol: ur restr a ro pep chomlec'h kozh hag ar bajenn eus al lec'hienn-mañ a denn outañ bremañ. Ar chomlec'hioù resis a zeu da vezañ adkasoù pe aliasoù URL, ar chomlec'hioù gant * a zeu da vezañ jokerioù. Gwelout a rit petra a rafe pep renk a-raok ma vefe skrivet netra, ha pep enporzhiadenn a c'hall bezañ dizobert en he fezh.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>N'eus ket c'hoazh eus taolennoù enporzhiadennoù ar c'hartennoù URL. Lañsit ar pazenn hizivaat 6.0.15-url-map (./console exp:upgrade --apply) a-raok enporzhiañ.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>N'emañ ket mui an enporzhiadenn-mañ da gaout: aet eo da get goude un devezh pe emañ d'un implijer all. Pellgasit ar restr en-dro.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Dibabit ur restr pe pegit ar renkoù.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Brasoc'h eo ar restr eget %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Ne c'haller ket lenn ar restr: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Dibabit un haeziñ al lec'hienn eus ar staliadur-mañ.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Ne c'haller ket mirout an enporzhiadenn war ar servijer: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Ar restr</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Restr</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), reolennoù adskrivañ Apache pe nginx, %size d'ar muiañ.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Pe pegit ar renkoù</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Ur renk dre linenn, da skouer /pajenn-gozh,/pajenn-nevez. Al linenn gentañ a c'hall envel ar bannoù: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Diskoachañ diwar ar restr</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Ret hepken pa ne lavar na anv na danvez ar restr.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Talvoudoù dre ziouer</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Haeziñ al lec'hienn evit an hentoù noazh</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>dre ziouer</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Ar renkoù gant ur chomlec'h klok a gemer haeziñ al lec'hienn o ostiz e-lec'h se.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Yezh an haeziñ al lec'hienn</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Pa'z eus dija un enmont gant ur chomlec'h kozh</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Mirout an enmont (lammat ar renk)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Erlec'hiañ an enmont</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Ostizien gozh</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Chomlec'hioù klok un ostiz n'eo ket anavezet gant ar staliadur-mañ n'int ket enporzhiet. Envelit an haeziñ al lec'hienn a dalv pep ostiz kozh evitañ, unan dre linenn: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Alberz</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>N'eus bet skrivet netra c'hoazh: ar bajenn da-heul a ziskouez petra a rafe pep renk.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Enporzhiadenn %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Dizobert eo bet an enporzhiadenn.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Dizobert eo bet an enporzhiadenn, nemet an enmontoù cheñchet war he lerc'h, a zo bet miret.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>N'eus ket bet gallet dizober an enporzhiadenn: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Deiziad</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Gant</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Renkoù</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created krouet, %updated erlec'hiet, %skipped lammet, %failed c'hwitet.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Dizobert</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Dizober an enporzhiadenn-mañ</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Pep enmont krouet gant an enporzhiadenn a vez lamet ha pep enmont erlec'hiet ganti a vez lakaet en-dro evel ma oa, an hini diwezhañ da gentañ. Kadarnaat a rit piv oc'h da gentañ.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>Enmontoù cheñchet goude an enporzhiadenn: %count</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Dizober ivez an enmontoù cheñchet goude an enporzhiadenn</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Hep se e vezont miret hag an enporzhiadenn a vez dizobert en un doare darnel (--force ar c'honsol).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Dizober an enporzhiadenn-mañ?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Dizober an enporzhiadenn</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Enmontoù skrivet</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from betek %to diwar %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>N'eo bet skrivet enmont ebet gant an enporzhiadenn.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>An enmontoù skrivet gant an enporzhiadenn</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Linenn</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Chomlec'h kozh</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Enmont</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>A gas da</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Cheñchamant</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stad</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Lesanv URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Joker</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Adkas</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Krouet</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Erlec'hiet</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Arloet</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Miret</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Dizobert en un doare darnel</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Istor an enporzhiadennoù (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Pep enporzhiadenn eus ur gartenn URL, an hini nevesañ da gentañ. Un enporzhiadenn a c'hall bezañ dizobert en he fezh: pep enmont skrivet ganti a zistro d'ar pezh a oa a-raok.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>N'eus bet enporzhiet kartenn URL ebet c'hoazh.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Enporzhiadennoù kartennoù URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Niverenn</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Lammet</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>C'hwitet</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, renkoù: %rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Enporzhiet evel an enporzhiadenn %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Gwelout an enporzhiadenn, pe he dizober</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Enporzhiañ ur restr all</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>N'eus bet skrivet netra c'hoazh. Pep renk a ziskouez petra a rafe an enporzhiadenn gantañ. Ar renkoù merket a vez enporzhiet; dimerkit ur renk evit e lezel er-maez. Ar renkoù n'int ket nevez ne c'hallont bezañ enporzhiet nemet pa c'haller erlec'hiañ o chomlec'h kozh.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>N'eo ket bet graet an enporzhiadenn: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>N'eus renk ebet merket evit an enporzhiadenn.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Amprouadenn: n'eus bet skrivet netra.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>An enporzhiadenn a grouefe %created, a erlec'hiafe %updated hag a lammfe %skipped; %failed a c'hwitfe.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Alberz hollek</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Da grouiñ</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Da erlec'hiañ</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Da lammat</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Gant ur gudenn</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Miret betek</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Steuñviñ en-dro</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Cheñchit ar pezh a zivizh ar renkoù ha steuñvit ar restr en-dro. Ar merkoù cheñchet ganeoc'h gant an dorn a vez adlakaet.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Renkoù an ostizien-mañ n'int ket enporzhiet, rak ne respont ket ar staliadur-mañ evito. Dibabit an haeziñ al lec'hienn a dalv pep ostiz kozh evitañ.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>N'eo ket enporzhiet</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Diskouez</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Holl</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Renk ebet n'en deus ar stad-mañ.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Diskouez an holl</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Renkoù ar restr ha petra a rafe an enporzhiadenn gant pep hini</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Enporzhiañ</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Chomlec'h nevez</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Seurt</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Notennoù</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Enporzhiañ al linenn %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ket</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ya</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Amprouadenn</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Mirout ar merkoù</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Steuñv e CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Steuñv e JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Teurel kuit</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Enporzhiañ a skriv renkoù merket an holl bajennoù evel un enporzhiadenn hepken, a c'haller dizober diwar istor an enporzhiadennoù; kadarnaat a rit piv oc'h da gentañ. Amprouadenn a wiri pep renk ouzh al lec'hienn en-dro hag a gont petra a rafe an enporzhiadenn, hep skrivañ.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Adkas (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Adkas gant joker (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Joker (war-eeun)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nevez</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Cheñchet</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Digemm</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Doublenn</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Tabut</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Pal torret</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Ostiz dianav</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Dic'hallus da enporzhiañ</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Alias URL hollek</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Istor an enporzhiadennoù</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Kartennoù URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Adkasoù (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>An adkasoù-mañ a zeu eus enporzhiadennoù kartennoù URL: chomlec'hioù kozh gant ur reked (/index.php?id=12), adkasoù berrbad hag adkasoù war-zu lec'hiennoù all. Gwiriet e vezont war ar chomlec'h klok, a-raok an aliasoù URL hag ar jokerioù. Un adkas padus war-zu ur bajenn eus al lec'hienn-mañ a zo un alias URL hollek e-lec'h se hag eo listennet eno.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Adkasoù lamet: %count.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>N'eus adkas ebet. Graet e vezont en ur enporzhiañ ur gartenn URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Adkasoù gwiriet war ar chomlec'h klok</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Diuzañ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Statud</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Eus an enporzhiadenn</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Lemel kuit</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Diuzañ %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Lemel kuit %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Lemel kuit an adkas-mañ?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Lemel kuit an adkasoù diuzet?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Lemel kuit ar re diuzet</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Un adkas lamet a baouez da labourat diouzhtu.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Testenn peget</translation>
     </message>
 </context>
 </TS>

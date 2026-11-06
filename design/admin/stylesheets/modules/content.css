@@ -895,3 +895,11 @@ html.a4-js .a4-content-preview-stage .a4-content-preview-device iframe { width: 
 .a4-content-imagepick .a4-content-imagepick-class { font-size: var(--a4-text-s); }
 .a4-content-imagepick .a4-content-imagepick-result .button { margin-top: auto; }
 .a4-content-imagepick .a4-empty { margin-top: var(--a4-space-3); }
+
+/* URL maps (content/urlimport, content/urlimporthistory, content/urlexport, content/urlredirects; since 6.0.15):
+   long addresses wrap anywhere instead of widening the table, the notes of a row are a small list */
+.a4-content-urlmap .a4-content-urlmap-addr { min-width: 12ch; overflow-wrap: anywhere; }
+.a4-content-urlmap .a4-content-urlmap-addr code { overflow-wrap: anywhere; word-break: break-word; }
+.a4-content-urlmap .a4-content-urlmap-notes { margin: 0; padding-inline-start: var(--a4-space-3); color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-content-urlmap .a4-content-urlmap-notes li + li { margin-top: var(--a4-space-1); }
+.a4-content-urlmap .a4-content-urlmap-table td { overflow-wrap: anywhere; }

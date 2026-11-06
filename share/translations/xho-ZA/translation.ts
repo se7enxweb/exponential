@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Apho idilesi zisiya khona: indlela yesayithi le, okanye idilesi epheleleyo xa kuqondiswa kwenye indawo. {1\} lisiqendu esifunyenwe yi-* yokuqala. Umzekelo: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>bahanjiswa kwesi sidima okwexeshana (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Iindwendwe zihanjiswa kwenye indawo okwexeshana (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Ukuhambisa kwenye indawo okwexeshana (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85489,6 +85501,625 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     <message>
         <source>Show %count items per page.</source>
         <translation>Bonisa izinto ezingu-%count ngephepha ngalinye.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Thumela ngaphandle imaphu ye-URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Khuphela amagama amanye e-URL jikelele, iimpawu zokufanisa kunye nokuhambisa kwenye indawo kwale sayithi njengefayile enye: ukuze uyigcine, uyihlele kwispredishithi uze uyingenise kwakhona, okanye uyinike iseva yewebhu njengemithetho yokubhala kwakhona.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Khetha ubuncinane uhlobo olunye lwamangeniso.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Ifayile ayikwazanga ukubhalwa.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Into eza kuthunyelwa ngaphandle</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Ifomati</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Amangeniso</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Amagama amanye e-URL jikelele (umguquleli we-URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Kunye namagama amanye e-URL enziwe ngokwezifiso omxholo</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Abhalwe ne-node njengendawo ekuyiwa kuyo, umzekelo node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Iimpawu zokufanisa</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Ukuhambisa kwenye indawo</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Ukufikelela kwisayithi</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Konke ukufikelela kwisayithi</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Kuphela ukuhambisa kwenye indawo okungokokufikelela kwisayithi; amagama amanye e-URL neempawu zokufanisa zithunyelwa ngaphandle kuko konke ukufikelela kwisayithi.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Ulwimi</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Zonke iilwimi</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Thumela ngaphandle</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Ngenisa imaphu ye-URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Zisa iidilesi zesayithi endala ngaxeshanye: ifayile idwelisa idilesi nganye endala nephepha lale sayithi eliyelayo ngoku. Iidilesi ezichanekileyo ziba kukuhambisa kwenye indawo okanye amagama amanye e-URL, iidilesi ezine-* ziba ziimpawu zokufanisa. Ubona into eza kwenziwa ngumqolo ngamnye phambi kokuba kubhalwe nantoni na, kwaye konke ukungenisa kunokuhluthwa kuphela.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Iitheyibhile zokungenisa iimaphu ze-URL azikabikho. Qhuba inyathelo lokuphucula 6.0.15-url-map (./console exp:upgrade --apply) phambi kokungenisa.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Oku kungenisa akusafumaneki: kuphelelwe lixesha emva kosuku okanye kungokomnye umsebenzisi. Layisha ifayile kwakhona.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Khetha ifayile okanye uncamathisele imiqolo.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Ifayile inkulu kune-%size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Ifayile ayinakufundwa: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Khetha ukufikelela kwisayithi kolu fakelo.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Ukungenisa akunakugcinwa kwiseva: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Ifayile</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Ifayile</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), imithetho yokubhala kwakhona ye-Apache okanye ye-nginx, ukuya kuthi ga kwi-%size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Okanye uncamathisele imiqolo</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Umqolo omnye kumgca ngamnye, umzekelo /iphepha-elidala,/iphepha-elitsha. Umgca wokuqala unokuthiya iikholamu: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Fumanisa kwifayile</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Kufuneka kuphela xa igama okanye umxholo wefayile ungakuxeli oko.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Okungagqibekanga</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Ukufikelela kwisayithi kweendlela ezingenanto</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>okungagqibekanga</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Imiqolo enedilesi epheleleyo ithatha ukufikelela kwisayithi kwehosti yayo endaweni yoko.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Ulwimi lokufikelela kwisayithi</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Xa idilesi endala sele inengeniso</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Gcina ungeniso (tsiba umqolo)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Tshintsha ungeniso</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Iihosti ezindala</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Iidilesi ezipheleleyo zehosti engaziwayo kolu fakelo azingeniswa. Bhala ukufikelela kwisayithi okumelwa yihosti nganye endala, omnye kumgca ngamnye: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Jonga kuqala</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Akukabhalwa nto okwangoku: iphepha elilandelayo libonisa into eza kwenziwa ngumqolo ngamnye.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Ukungenisa %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Ukungenisa kuhluthiwe.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Ukungenisa kuhluthiwe, ngaphandle kwamangeniso atshintshwe emva kwako, agciniweyo.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Ukungenisa akukwazanga ukuhluthwa: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Umhla</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ngu</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Imiqolo</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created zenziwe, %updated zitshintshiwe, %skipped zitsitywe, %failed zisilele.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Kuhluthiwe</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Hlutha oku kungenisa</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Ungeniso ngalunye olwenziwe kukungenisa luyasuswa, kwaye ungeniso ngalunye olutshintshiweyo lubuyiselwa njengoko lwalunjalo, kuqala olokugqibela. Uqala ngokuqinisekisa ukuba ungubani.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>Amangeniso angama-%count atshintshwe emva kokungenisa</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Hlutha kwanamangeniso atshintshwe emva kokungenisa</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Ngaphandle koku ayagcinwa kwaye ukungenisa kuhluthwa ngokuyinxenye (--force yekhonsoli).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Hlutha oku kungenisa?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Hlutha ukungenisa</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Amangeniso abhaliweyo</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ukuya ku-%to kwe-%count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Ukungenisa akubhalanga ngeniso.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Amangeniso abhalwe kukungenisa</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Umgca</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Idilesi endala</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Ungeniso</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Ikhokelela ku</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Utshintsho</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Imeko</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Igama elinye le-URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Uphawu lokufanisa</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Ukuhambisa kwenye indawo</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Yenziwe</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Itshintshiwe</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Isetyenzisiwe</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Igciniwe</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Kuhluthwe ngokuyinxenye</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Imbali yokungenisa (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Konke ukungenisa kweemaphu ze-URL, okutsha kuqala. Ukungenisa kunokuhluthwa kuphela: ungeniso ngalunye olubhalileyo lubuyela koko kwakukho ngaphambili.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Akukangeniswa maphu ye-URL okwangoku.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Ukungenisa kweemaphu ze-URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Inombolo</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Kutshuthwe</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Kusilele</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, imiqolo eyi-%rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Ingeniswe njengokungenisa %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Jonga ukungenisa, okanye ukuhluthe</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Ngenisa enye ifayile</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Akukabhalwa nto okwangoku. Umqolo ngamnye ubonisa oko ukungenisa kuza kukwenza ngawo. Imiqolo ephawuliweyo iyangeniswa; susa uphawu kumqolo ukuze uwushiye ngaphandle. Imiqolo engeyontsha inokungeniswa kuphela xa idilesi yayo endala ivumelekile ukutshintshwa.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Ukungenisa akwenziwanga: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Akukho mqolo uphawulelwe ukungeniswa.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Uzamo olungenasiphumo: akukho nto ibhaliweyo.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Ukungenisa bekuya kwenza %created, kutshintshe %updated kwaye kutsibe %skipped; %failed bezinokusilela.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Isishwankathelo</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Eziza kwenziwa</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Eziza kutshintshwa</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Eziza kutsitywa</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Ezinengxaki</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Igcinwa kude kube</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Cwangcisa kwakhona</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Tshintsha oko kugqiba imiqolo uze ucwangcise ifayile kwakhona. Iimpawu ozitshintshe ngesandla ziyasetwa kwakhona.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Imiqolo yezi hosti ayingeniswa, kuba olu fakelo aluziphenduli. Khetha ukufikelela kwisayithi okumelwa yihosti nganye endala.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Akungeniswanga</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Bonisa</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Zonke</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Akukho mqolo unale meko.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Bonisa zonke</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Imiqolo yefayile noko ukungenisa kuya kukwenza ngamnye</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Ngenisa</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Idilesi entsha</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Uhlobo</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Amanqaku</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Ngenisa umgca %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Hayi</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ewe</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Uzamo olungenasiphumo</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Gcina iimpawu</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Isicwangciso njenge-CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Isicwangciso njenge-JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Lahla</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Ukungenisa kubhala imiqolo ephawuliweyo yawo onke amaphepha njengokungenisa okunye, okunokuhluthwa kwimbali yokungenisa; uqala ngokuqinisekisa ukuba ungubani. Uzamo luphinda luhlole umqolo ngamnye ngokuthelekisa nesayithi kwaye lubale oko ukungenisa bekuya kukwenza, ngaphandle kokubhala.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Ukuhambisa kwenye indawo (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Ukuhambisa ngophawu lokufanisa (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Uphawu lokufanisa (ngqo)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Entsha</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Itshintshiwe</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Ayitshintshwanga</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Iphindiwe</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Ungquzulwano</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Indawo ekuyiwa kuyo eyaphukileyo</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Ihosti engaziwayo</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Ayinakungeniswa</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Amagama amanye e-URL jikelele</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Imbali yokungenisa</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Iimaphu ze-URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Ukuhambisa kwenye indawo (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Oku kuhambisa kwenye indawo kuvela ekungeniseni iimaphu ze-URL: iidilesi ezindala ezinombuzo (/index.php?id=12), ukuhambisa okwexeshana nokuhambisa kwezinye iisayithi. Kuhlolwa kwidilesi epheleleyo, phambi kwamagama amanye e-URL neempawu zokufanisa. Ukuhambisa okusisigxina kwiphepha lale sayithi kona ligama elinye le-URL jikelele kwaye kudweliswe apho.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Ukuhambisa kwenye indawo okuyi-%count kususiwe.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Akukho kuhambisa kwenye indawo. Kwenziwa ngokungenisa imaphu ye-URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Ukuhambisa kwenye indawo okuhlolwa kwidilesi epheleleyo</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Khetha</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Imeko</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Ukusuka ekungeniseni</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Susa</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Khetha %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Susa %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Susa oku kuhambisa?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Susa ukuhambisa okukhethiweyo?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Susa ezikhethiweyo</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Ukuhambisa okususiweyo kuyayeka ukusebenza kwangoko.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Isicatshulwa esincanyathiselweyo</translation>
     </message>
 </context>
 </TS>

@@ -7318,6 +7318,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Uz kurieni ved adreses: šīs vietnes ceļš vai, novirzot, pilna adrese. {1\} ir teksts, kuram atbilda pirmā *. Piemērs: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>uz šo adresi tiek novirzīti īslaicīgi (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Apmeklētāji tiek novirzīti īslaicīgi (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Īslaicīga novirzīšana (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85521,6 +85533,625 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Rādīt %count vienumus lapā.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Eksportēt URL karti</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Lejupielādējiet šīs vietnes globālos URL aizstājvārdus, aizstājējzīmes un novirzīšanas vienā failā: lai to saglabātu, rediģētu izklājlapā un importētu vēlreiz vai nodotu tīmekļa serverim kā pārrakstīšanas noteikumus.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Izvēlieties vismaz vienu ierakstu veidu.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Failu nevarēja ierakstīt.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Ko eksportēt</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Formāts</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Ieraksti</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Globālie URL aizstājvārdi (URL tulkotājs)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Arī satura pielāgotie URL aizstājvārdi</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Ierakstīti ar mezglu kā mērķi, piemēram, node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Aizstājējzīmes</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Novirzīšanas</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Vietnes piekļuve</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Visas vietnes piekļuves</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Vietnes piekļuvei pieder tikai novirzīšanas; URL aizstājvārdi un aizstājējzīmes tiek eksportēti visām vietnes piekļuvēm.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Valoda</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Visas valodas</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Eksportēt</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Importēt URL karti</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Pārnesiet vecas vietnes adreses vienā reizē: failā ir uzskaitīta katra vecā adrese un šīs vietnes lapa, kurai tā tagad atbilst. Precīzas adreses kļūst par novirzīšanām vai URL aizstājvārdiem, adreses ar * kļūst par aizstājējzīmēm. Pirms kaut kas tiek ierakstīts, jūs redzat, ko darītu katra rinda, un katru importu var atsaukt kopumā.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL karšu importa tabulas vēl nepastāv. Pirms importēšanas izpildiet atjaunināšanas soli 6.0.15-url-map (./console exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Šis imports vairs nav pieejams: tā derīgums beidzās pēc vienas dienas, vai tas pieder citam lietotājam. Augšupielādējiet failu vēlreiz.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Izvēlieties failu vai ielīmējiet rindas.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Fails ir lielāks par %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Failu nevar nolasīt: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Izvēlieties šīs instalācijas vietnes piekļuvi.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Importu nevar saglabāt serverī: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Fails</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fails</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache vai nginx pārrakstīšanas noteikumi, ne vairāk kā %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Vai ielīmējiet rindas</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Viena rinda katrā līnijā, piemēram, /vecā-lapa,/jaunā-lapa. Pirmajā līnijā var norādīt kolonnu nosaukumus: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Noteikt no faila</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Nepieciešams tikai tad, ja to nenorāda ne faila nosaukums, ne saturs.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Noklusējumi</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Vietnes piekļuve vienkāršiem ceļiem</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>noklusējums</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Rindas ar pilnu adresi tā vietā izmanto sava resursdatora vietnes piekļuvi.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Vietnes piekļuves valoda</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Ja vecajai adresei jau ir ieraksts</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Saglabāt ierakstu (izlaist rindu)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Aizstāt ierakstu</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Vecie resursdatori</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Pilnas adreses ar resursdatoru, ko šī instalācija nepazīst, netiek importētas. Norādiet, kurai vietnes piekļuvei atbilst katrs vecais resursdators, pa vienam katrā līnijā: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Priekšskatījums</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Pagaidām nekas netiek ierakstīts: nākamajā lapā redzams, ko darītu katra rinda.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Imports %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Imports tika atsaukts.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Imports tika atsaukts, izņemot pēc tā mainītos ierakstus, kas tika saglabāti.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Importu nevarēja atsaukt: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datums</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Veica</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Rindas</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created izveidoti, %updated aizstāti, %skipped izlaisti, %failed neizdevās.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Atsaukts</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Atsaukt šo importu</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Katrs importa izveidotais ieraksts tiek noņemts, un katrs aizstātais ieraksts tiek atjaunots, kāds tas bija, sākot ar pēdējo. Vispirms jūs apstiprināt savu identitāti.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count ieraksti mainīti pēc importa</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Atsaukt arī pēc importa mainītos ierakstus</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Bez tā tie tiek saglabāti, un imports tiek atsaukts daļēji (konsoles --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Atsaukt šo importu?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Atsaukt importu</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Ierakstītie ieraksti</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to no %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Imports neierakstīja nevienu ierakstu.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Importa ierakstītie ieraksti</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Līnija</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Vecā adrese</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Ieraksts</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Ved uz</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Izmaiņa</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stāvoklis</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL aizstājvārds</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Aizstājējzīme</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Novirzīšana</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Izveidots</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Aizstāts</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Piemērots</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Saglabāts</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Daļēji atsaukts</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Importu vēsture (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Visi URL karšu importi, jaunākie vispirms. Importu var atsaukt kopumā: katrs tā ierakstītais ieraksts atgriežas iepriekšējā stāvoklī.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Neviena URL karte vēl nav importēta.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL karšu importi</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Numurs</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Izlaisti</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Neizdevās</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows rindas</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Importēts kā imports %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Skatīt importu vai atsaukt to</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Importēt citu failu</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Pagaidām nekas nav ierakstīts. Katrā rindā redzams, ko imports ar to darītu. Atzīmētās rindas tiek importētas; noņemiet atzīmi, lai rindu izlaistu. Rindas, kas nav jaunas, var importēt tikai tad, ja to veco adresi drīkst aizstāt.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Imports netika veikts: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Neviena rinda nav atzīmēta importam.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Izmēģinājuma izpilde: nekas netika ierakstīts.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Imports izveidotu %created, aizstātu %updated un izlaistu %skipped; %failed neizdotos.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Pārskats</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Jāizveido</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Jāaizstāj</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Jāizlaiž</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Ar problēmu</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Saglabāts līdz</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Plānot vēlreiz</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Mainiet to, kas nosaka rindas, un plānojiet failu vēlreiz. Ar roku mainītās atzīmes tiek atiestatītas.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Šo resursdatoru rindas netiek importētas, jo šī instalācija tos neapkalpo. Izvēlieties, kurai vietnes piekļuvei atbilst katrs vecais resursdators.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Netiek importēts</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rādīt</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Visi</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Nevienai rindai nav šī stāvokļa.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Rādīt visus</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Faila rindas un tas, ko imports darītu ar katru no tām</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importēt</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Jaunā adrese</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Veids</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Piezīmes</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Importēt līniju %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nē</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Jā</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Izmēģinājuma izpilde</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Saglabāt atzīmes</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Plāns kā CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Plāns kā JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Atmest</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Imports ieraksta visu lapu atzīmētās rindas kā vienu importu, ko var atsaukt no importu vēstures; vispirms jūs apstiprināt savu identitāti. Izmēģinājuma izpilde vēlreiz pārbauda katru rindu pret vietni un saskaita, ko imports darītu, neko neierakstot.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Novirzīšana (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Aizstājējzīmes novirzīšana (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Aizstājējzīme (tieša)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Jauns</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Mainīts</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Nemainīts</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Dublikāts</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Konflikts</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Bojāts mērķis</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Nezināms resursdators</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Nav importējams</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Globālie URL aizstājvārdi</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Importu vēsture</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL kartes</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Novirzīšanas (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Šīs novirzīšanas nāk no URL karšu importiem: vecas adreses ar vaicājumu (/index.php?id=12), īslaicīgas novirzīšanas un novirzīšanas uz citām vietnēm. Tās tiek pārbaudītas pēc pilnās adreses pirms URL aizstājvārdiem un aizstājējzīmēm. Pastāvīga novirzīšana uz šīs vietnes lapu tā vietā ir globāls URL aizstājvārds un ir uzskaitīta tur.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Noņemtas %count novirzīšanas.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Novirzīšanu nav. Tās tiek izveidotas, importējot URL karti.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Pēc pilnās adreses pārbaudītās novirzīšanas</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Atlasīt</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Statuss</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>No importa</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Noņemt</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Atlasīt %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Noņemt %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Noņemt šo novirzīšanu?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Noņemt atlasītās novirzīšanas?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Noņemt atlasītos</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Noņemta novirzīšana uzreiz pārstāj darboties.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Ielīmētais teksts</translation>
     </message>
 </context>
 </TS>

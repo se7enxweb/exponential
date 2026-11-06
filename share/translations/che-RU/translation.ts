@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Адресаш мичахьа дӀахьо: хӀокху сайтан некъ, я дӀахьажоран хенахь юьззина адрес. {1\} — хьалхара * юьхкучу текст. Масала: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>цхьана ханна хӀокху адресе дӀахьажийна (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>ТӀебаьхкинарш цхьана ханна дӀахьажийна (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Цхьана ханна дӀахьажор (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>ХӀора агӀонехь элементаш %count гайта.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL-карта экспорт ян</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>ХӀокху сайтан глобальни URL-псевдонимаш, URL-масканаш а, дӀахьажораш а цхьа файл санна чуяккха: латто, таблицехь нисдан а юха импорт ян а, я веб-серверна юхаяздаран бакъонаш санна дала.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Язъяран цхьа тайпа мукъна а харжа.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Файл яздан ца делира.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>ХӀун экспорт ян еза</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Файлан формат</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Язъярш</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Глобальни URL-псевдонимаш (URL-гочдархо)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Чулацаман шен URL-псевдонимаш а</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Ӏалашо санна шадех яздина, масала node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>URL-масканаш</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>ДӀахьажораш</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Сайте тӀекхачар</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Массо сайте тӀекхачар</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Сайте тӀекхачарна дӀахьажораш бен ца лаьцна; URL-псевдонимаш а, масканаш а массо сайте тӀекхачарна экспорт йо.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Мотт</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Массо мотт</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Экспорт ян</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL-карта импорт ян</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Шира сайтан адресаш цкъачунна схьаяхьа: файлехь хӀора шира адрес а, хӀинца иза лаьцна хӀокху сайтан агӀо а ю. Нийса адресаш дӀахьажораш я URL-псевдонимаш хуьлу, * йолу адресаш масканаш хуьлу. Цхьа а хӀума яздале хӀора могӀано хӀун дийр дара гур ду хьуна, хӀора импорт дерриге а юхадаккха мегар ду.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL-карташ импорт яран таблицаш хӀинца а яц. Импорт яле карлаяккхаран гӀулч 6.0.15-url-map (./console exp:upgrade --apply) дӀадоло.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>ХӀара импорт кхин ца тарло: цхьа де даьлча цуьнан хан чекхъяьлла я кхечу декъашхочун ю. Файл юха чуяккха.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Файл харжа я могӀанаш чуйилла.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Файл %size сов йоккха ю.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Файл еша ца тарло: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>ХӀокху дӀахӀоттаман сайте тӀекхачар харжа.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Импорт серверехь латто ца тарло: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache я nginx юхаяздаран бакъонаш, %size сов доцуш.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Я могӀанаш чуйилла</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>ХӀора могӀанехь цхьа язъяр, масала /шира-агӀо,/керла-агӀо. Хьалхарчу могӀано бӀогӀамийн цӀерш яха мега: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Файлера схьакаро</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Файлан цӀеро а, чулацамо а ца бахахь бен ца оьшу.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>ДӀахӀиттина маьӀнаш</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Йоьхна новкъийн сайте тӀекхачар</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>дӀахӀиттина</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Юьззина адрес йолчу могӀанаша шайн хостан сайте тӀекхачар оьцу.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Сайте тӀекхачаран мотт</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Шира адресехь язъяр хилча</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Язъяр дита (могӀа дӀасакхосса)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Язъяр хийца</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Шира хосташ</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>ХӀокху дӀахӀоттамна ца бевза хостан юьззина адресаш импорт ца йо. ХӀора шира хост хӀокху сайте тӀекхачарна дуьхьал лаьтта яздина, хӀора могӀанехь цхьаъ: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Хьалххе хьажар</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>ХӀинца а цхьа а хӀума ца яздо: тӀедогӀучу агӀоно гойту хӀора могӀано хӀун дийр дара.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Импорт %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Импорт юхаяьккхина.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Импорт юхаяьккхина, цул тӀаьхьа хийцина язъярш доцург, уьш дитина.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Импорт юхаяккха ца делира: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Терахь</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Мила</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>МогӀанаш</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created кхоьллина, %updated хийцина, %skipped дӀасакхоьссина, %failed ца нисделла.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Юхаяьккхина</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>ХӀара импорт юхаяккха</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Импорто кхоьллина хӀора язъяр дӀайоккху, цо хийцина хӀора язъяр хиллачу кепе юхаерзайо, тӀаьххьарниг хьалха. Хьалха хьо мила ву тӀечӀагӀдо ахь.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>Импорт йинчул тӀаьхьа хийцина %count язъяр</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Импорт йинчул тӀаьхьа хийцина язъярш а юхадаха</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Цуьнца доцуш уьш дуьтуш ду, импорт цхьа дакъа бен юхаяккхина ца хуьлу (консолан --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>ХӀара импорт юхаяккха?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Импорт юхаяккха</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Яздина язъярш</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from тӀера %to кхаччалц, %count чура</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Импорто цхьа а язъяр ца яздина.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Импорто яздина язъярш</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>МогӀа</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Шира адрес</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Язъяр</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>ДӀадуьгу</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Хийцам</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Хьал</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL-псевдоним</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>URL-маска</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>ДӀахьажор</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Кхоьллина</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Хийцина</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>ТӀедиллина</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Дитина</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Цхьа дакъа юхаяьккхина</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Импортийн истори (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL-картан хӀора импорт, уггаре керланиг хьалха. Импорт дерриге а юхаяккха мега: цо яздина хӀора язъяр хьалха хиллачуьнга юхаверза.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>ХӀинца а цхьа а URL-карта импорт йина яц.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL-карташ импорт яр</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Номер</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>ДӀасакхоьссина</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ца нисделла</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows могӀа</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Импорт %id санна импорт йина.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Импорт хьажа я юхаяккха</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Кхин файл импорт ян</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>ХӀинца а цхьа а хӀума яздина дац. ХӀора могӀано гойту импорто цуьнца хӀун дийр дара. Билгалдина могӀанаш импорт йо; могӀа юкъара даккха лаахь билгало дӀаяккха. Керла доцу могӀанаш импорт ян мега, церан шира адрес хийца бакъо елахь бен.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Импорт ца йина: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Импорт ян цхьа а могӀа билгалдина дац.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Хьажар йоцуш дӀадалар: цхьа а хӀума ца яздина.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Импорто %created кхуллур дара, %updated хийцар дара, %skipped дӀасакхоьссур дара; %failed ца нислур дара.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Терго</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Кхолла деза</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Хийца деза</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>ДӀасакхосса деза</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Халонца</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Латтор ду кхаччалц</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Юха план ян</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>МогӀанаш къастош дерг хийца, файлан план юха е. Ахь куьйга хийцина билгалонаш юхаерзайо.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>ХӀокху хостийн могӀанаш импорт ца йо, хӀокху дӀахӀоттамо царна жоп ца луш дела. ХӀора шира хост дуьхьал лаьтта сайте тӀекхачар харжа.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Импорт ца йина</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Гайта</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Массо</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Цхьана а могӀанан хӀара хьал дац.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Массо гайта</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Файлан могӀанаш а, импорто хӀоранца хӀун дийр дара а</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Импорт ян</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Керла адрес</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Тайпа</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Билгалдаккхарш</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>%line могӀа импорт ян</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ХӀан-хӀа</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ХӀаъ</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Хьажар йоцуш дӀадалар</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Билгалонаш дита</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>План CSV санна</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>План JSON санна</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>ДӀатасса</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Импорт яро массо агӀонан билгалдина могӀанаш цхьа импорт санна яздо, иза импортийн историгахь юхаяккха мега; хьалха хьо мила ву тӀечӀагӀдо ахь. Хьажар йоцуш дӀадаларо хӀора могӀа сайтаца юха таллий, импорто хӀун дийр дара дагардо, цхьа а хӀума ца яздеш.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>ДӀахьажор (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Маскица дӀахьажор (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Маска (нийса)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Керла</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Хийцина</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Хийца ца дина</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Шалха</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Дов</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Ӏалашо кхачам боцуш</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Евзаш йоцу хост</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Импорт ян ца тарло</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Глобальни URL-псевдонимаш</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Импортийн истори</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL-карташ</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>ДӀахьажораш (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Иза дӀахьажораш URL-карташ импорт ярах ду: дехарца шира адресаш (/index.php?id=12), цхьана ханна дӀахьажораш а, кхечу сайташка дӀахьажораш а. Уьш юьззинчу адресехула толлу, URL-псевдонимаш а, масканаш а хьалха. ХӀокху сайтан агӀоне даиман дӀахьажор глобальни URL-псевдоним ю, иза цигахь гойту.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count дӀахьажор дӀадаьккхина.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>ДӀахьажораш дац. Уьш URL-карта импорт ярца кхуллу.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Юьззинчу адресехула толлу дӀахьажораш</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Харжа</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Статус</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Импортера</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ДӀадаккха</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address харжа</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address дӀадаккха</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>ХӀара дӀахьажор дӀадаккха?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Харжина дӀахьажораш дӀадаха?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Харжинарг дӀадаккха</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>ДӀадаьккхина дӀахьажор цу сохьта болх бар сецадо.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Чуйиллина текст</translation>
     </message>
 </context>
 </TS>

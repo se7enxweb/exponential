@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Kung saan pupunta ang mga address: path ng site na ito, o buong address kapag nagre-redirect. Ang {1\} ay ang tekstong tinugunan ng unang *. Halimbawa: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>ay pansamantalang inire-redirect sa address na ito (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Pansamantalang inire-redirect ang mga bisita (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Pansamantalang redirect (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
     <message>
         <source>Show %count items per page.</source>
         <translation>Magpakita ng %count item bawat pahina.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>I-export ang URL map</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>I-download ang mga global na URL alias, ang mga wildcard at ang mga redirect ng site na ito bilang iisang file: para itago, i-edit sa isang spreadsheet at i-import muli, o ibigay sa isang web server bilang mga rewrite rule.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Pumili ng kahit isang uri ng entry.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Hindi maisulat ang file.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Ano ang ie-export</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Anyo</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Mga entry</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Mga global na URL alias (ang URL translator)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Pati ang mga custom na URL alias ng nilalaman</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Isinusulat na ang node ang target, halimbawa node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Mga wildcard</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Mga redirect</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Bawat siteaccess</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Ang mga redirect lamang ang kabilang sa isang siteaccess; ang mga URL alias at wildcard ay ine-export para sa bawat siteaccess.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Wika</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Bawat wika</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>I-export</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Mag-import ng URL map</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Ilipat nang minsanan ang mga address ng isang lumang site: nakalista sa isang file ang bawat lumang address at ang pahina ng site na ito na katapat nito ngayon. Ang mga eksaktong address ay nagiging mga redirect o URL alias, ang mga address na may * ay nagiging mga wildcard. Makikita mo ang gagawin ng bawat hilera bago may maisulat, at bawat import ay maaaring bawiin nang buo.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Wala pang mga table para sa mga import ng URL map. Patakbuhin ang upgrade step na 6.0.15-url-map (./console exp:upgrade --apply) bago mag-import.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Hindi na available ang import na ito: nag-expire ito pagkalipas ng isang araw o pag-aari ito ng ibang user. I-upload muli ang file.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Pumili ng file o i-paste ang mga hilera.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Mas malaki ang file kaysa %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Hindi mabasa ang file: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Pumili ng siteaccess ng installation na ito.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Hindi maitatago sa server ang import: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Ang file</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>File</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), mga rewrite rule ng Apache o nginx, hanggang %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>O i-paste ang mga hilera</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Isang hilera bawat linya, halimbawa /lumang-pahina,/bagong-pahina. Maaaring pangalanan ng unang linya ang mga column: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Alamin mula sa file</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Kailangan lamang kapag hindi ito sinasabi ng pangalan o ng nilalaman ng file.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Mga default</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Siteaccess ng mga payak na path</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>default</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Ang mga hilerang may buong address ay kumukuha sa halip ng siteaccess ng kanilang host.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Ang wika ng siteaccess</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Kapag may entry na ang isang lumang address</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Panatilihin ang entry (laktawan ang hilera)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Palitan ang entry</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Mga lumang host</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Hindi ini-import ang mga buong address ng host na hindi kilala ng installation na ito. Pangalanan ang siteaccess na kinakatawan ng bawat lumang host, isa bawat linya: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Silipin</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Wala pang naisusulat: ipapakita ng susunod na pahina ang gagawin ng bawat hilera.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Import blg. %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Binawi ang import.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Binawi ang import, maliban sa mga entry na binago pagkatapos nito, na pinanatili.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Hindi mabawi ang import: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Petsa</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ni</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Mga hilera</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created ginawa, %updated pinalitan, %skipped nilaktawan, %failed pumalya.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Binawi</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Bawiin ang import na ito</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Aalisin ang bawat entry na ginawa ng import at ibabalik sa dati ang bawat entry na pinalitan nito, ang huli ang una. Kumpirmahin mo muna kung sino ka.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count entry ang binago pagkatapos ng import</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Bawiin din ang mga entry na binago pagkatapos ng import</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Kung wala ito, pinapanatili ang mga iyon at bahagyang nababawi ang import (ang --force ng console).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Bawiin ang import na ito?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Bawiin ang import</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Mga naisulat na entry</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from hanggang %to sa %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Walang naisulat na entry ang import.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Ang mga entry na isinulat ng import</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Linya</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Lumang address</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Entry</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Patungo sa</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Pagbabago</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Kalagayan</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL alias</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Wildcard</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Redirect</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Ginawa</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Pinalitan</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Nailapat</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Pinanatili</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Bahagyang binawi</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Kasaysayan ng import (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Bawat import ng URL map, pinakabago muna. Maaaring bawiin nang buo ang isang import: babalik sa dati ang bawat entry na isinulat nito.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Wala pang na-import na URL map.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Mga import ng URL map</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Numero</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Nilaktawan</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Pumalya</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows hilera</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Na-import bilang import %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Tingnan ang import, o bawiin ito</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Mag-import ng ibang file</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Wala pang naisusulat. Ipinapakita ng bawat hilera ang gagawin dito ng import. Ini-import ang mga hilerang may tsek; alisin ang tsek para hindi isama ang hilera. Ang mga hilerang hindi bago ay maaari lamang i-import kapag maaaring palitan ang kanilang lumang address.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Hindi naisagawa ang import: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Walang hilerang may tsek para i-import.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Pagsubok na takbo: walang naisulat.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Ang import ay gagawa ng %created, papalit ng %updated at lalaktaw ng %skipped; %failed ang papalya.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Pangkalahatang-tanaw</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Gagawin</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Papalitan</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Lalaktawan</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>May problema</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Itatago hanggang</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Planuhin muli</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Baguhin ang nagpapasya sa mga hilera at planuhin muli ang file. Nire-reset ang mga tsek na binago mo nang mano-mano.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Hindi ini-import ang mga hilera ng mga host na ito, dahil hindi sumasagot para sa kanila ang installation na ito. Piliin ang siteaccess na kinakatawan ng bawat lumang host.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Hindi na-import</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ipakita</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Lahat</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Walang hilerang may ganitong kalagayan.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Ipakita lahat</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Ang mga hilera ng file at ang gagawin ng import sa bawat isa</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>I-import</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Bagong address</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Uri</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Mga tala</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>I-import ang linya %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Hindi</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Oo</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Pagsubok na takbo</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Panatilihin ang mga tsek</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Plano bilang CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Plano bilang JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Itapon</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Isinusulat ng I-import ang mga hilerang may tsek ng bawat pahina bilang iisang import, na maaaring bawiin mula sa kasaysayan ng import; kumpirmahin mo muna kung sino ka. Sinusuri muli ng Pagsubok na takbo ang bawat hilera laban sa site at binibilang ang gagawin ng import, nang walang isinusulat.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Redirect (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Wildcard na redirect (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Wildcard (direkta)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Bago</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Binago</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Hindi binago</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplikado</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Salungatan</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Sirang target</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Hindi kilalang host</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Hindi ma-import</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Mga global na URL alias</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Kasaysayan ng import</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Mga URL map</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Mga redirect (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Ang mga redirect na ito ay mula sa mga import ng URL map: mga lumang address na may query (/index.php?id=12), mga pansamantalang redirect at mga redirect patungo sa ibang site. Sinusuri ang mga ito sa buong address, bago ang mga URL alias at wildcard. Ang permanenteng redirect patungo sa isang pahina ng site na ito ay isang global na URL alias sa halip at doon nakalista.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count redirect ang inalis.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Walang mga redirect. Ginagawa ang mga ito sa pamamagitan ng pag-import ng URL map.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Mga redirect na sinusuri sa buong address</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Piliin</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Katayuan</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Mula sa import</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Alisin</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Piliin ang %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Alisin ang %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Alisin ang redirect na ito?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Alisin ang mga napiling redirect?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Alisin ang mga napili</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Agad na titigil sa paggana ang isang inalis na redirect.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Na-paste na teksto</translation>
     </message>
 </context>
 </TS>

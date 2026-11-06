@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Fu adrees yi jëm: benn yoon ci sit bii, walla benn adrees bu mat bu ñuy jubluwaat. {1\} mooy mbind mi * bu njëkk bi ànd ak moom. Royukaay: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>dañu leen jubluwaat ci adrees bii ab diir (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Ñi koy seetsi dañu leen jubluwaat ab diir (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Jubluwaat bu diir (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Wone %count elemaa ci benn xët.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Génne kaartu URL bi</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Yebbal turu URL yu wuute yu mbooloo mépp, màndarga wuutukat yi ak jubluwaat yi ci sit bii, ci benn dencukaay: ngir denc ko, soppi ko ci tablo te dugal ko waat, walla jox ko ab serwëru web ni ay sàrti bindaat.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Tànnal benn xeetu dugalkat lu néew-néew.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Mënuñu woon a bind dencukaay bi.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Lan lañuy génne</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Foorma</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Dugalkat yi</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Turu URL yu wuute yu mbooloo mépp (tekkikatu URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Ak turu URL yu wuute yu ñu defar ngir li ci biir</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Ñu ngi koy bind ak noeud bi ni fu mu jëm, misaal node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Màndarga wuutukat yi</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Jubluwaat yi</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Buntu sit</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Buntu sit yépp</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Jubluwaat yi rekk ñoo bokk ci ab buntu sit; turu URL yu wuute yi ak màndarga wuutukat yi dañu leen génne ngir buntu sit bu nekk.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Làkk</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Làkk yépp</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Génne</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Dugal ab kaartu URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Indil adrees yu sit bu yàgg bi benn yoon: ab dencukaay day lim adrees bu yàgg bu nekk ak xëtu sit bii mu bokk léegi. Adrees yu leer dañuy nekk jubluwaat walla turu URL yu wuute, adrees yu am * dañuy nekk màndarga wuutukat. Dinga gis li rëdd bu nekk di def balaa ñu bind dara, te dugal bu nekk mën nañu ko neenal yépp.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Tablo yi ngir dugal kaartu URL amaguñu. Doxalal tappu yeesal 6.0.15-url-map (./console exp:upgrade --apply) balaa ngay dugal.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Dugal bii amatul: diiram jeex na ginnaaw benn bés walla mu ngi bokk ci beneen jëfandikukat. Yebbaatal dencukaay bi.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Tànnal ab dencukaay walla taqal rëdd yi.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Dencukaay bi dafa ëpp %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Mënuñu jàng dencukaay bi: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Tànnal ab buntu sit ci sampu bii.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Mënuñu denc dugal bi ci serwër bi: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Dencukaay bi</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Dencukaay</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), sàrti bindaat yu Apache walla nginx, bu ëppul %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Walla taqal rëdd yi</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Benn rëdd ci benn bind, misaal /xët-bu-yàgg,/xët-bu-bees. Bind bu jëkk bi mën na tudd kolon yi: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Xamee ko ci dencukaay bi</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Soxla na rekk bu turu dencukaay bi ak li ci biir waxul dara.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Li ñu tànnal</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Buntu sit bu yoon yu rafle</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>li ñu tànnal</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Rëdd yu am adrees bu mat dañuy jël buntu sit bu seen host.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Làkku buntu sit bi</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Bu adrees bu yàgg amee ab dugalkat ba noppi</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Denc dugalkat bi (bàyyi rëdd bi)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Wuutal dugalkat bi</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Host yu yàgg yi</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Adrees yu mat yu ab host bu sampu bii xamul duñu leen dugal. Bindal buntu sit bi host bu yàgg bu nekk di teewal, benn ci bind bu nekk: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Xool lu jiitu</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Bindaguñu dara: xët wi ci topp dina wone li rëdd bu nekk di def.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Dugal %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Dugal bi neenal nañu ko.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Dugal bi neenal nañu ko, ba mu des dugalkat yi ñu soppi ginnaaw ga, ñu denc leen.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Mënuñu woon a neenal dugal bi: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Bés</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ci</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Rëdd yi</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created ñu sos, %updated ñu wuutal, %skipped ñu bàyyi, %failed fakkastalu.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Neenal nañu ko</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Neenal dugal bii</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Dugalkat bu nekk bu dugal bi sos dañu koy dindi, te dugalkat bu nekk bu mu wuutal dañu koy delloo ni mu nekkoon, bu mujj bi jëkk. Danga jëkk a wone ki nga doon.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count dugalkat yu ñu soppi ginnaaw dugal bi</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Neenal itam dugalkat yi ñu soppi ginnaaw dugal bi</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Bu dul loolu dañu leen di denc te dugal bi dina neenalu ci xaaj (--force bu console bi).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Neenal dugal bii?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Neenal dugal bi</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Dugalkat yi ñu bind</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ba %to ci %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Dugal bi bindul benn dugalkat.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Dugalkat yi dugal bi bind</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Bind</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Adrees bu yàgg</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Dugalkat</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Mu ngi jëm</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Coppite</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Nekkin</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Turu URL bu wuute</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Màndarga wuutukat</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Jubluwaat</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Ñu sos ko</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Ñu wuutal ko</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Ñu jëfandikoo ko</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Ñu denc ko</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Neenalu ci xaaj</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Taariixu dugal yi (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Dugal yépp yu kaartu URL, bu gën a bees bi jëkk. Dugal mën nañu ko neenal yépp: dugalkat bu nekk bu mu bind dina dellu ci li fa nekkoon.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Dugaluñu benn kaartu URL ba tey.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Dugal yu kaartu URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Nimero</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Ñu bàyyi ko</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fakkastalu na</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows rëdd</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Dugal nañu ko ni dugal %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Xoolal dugal bi, walla neenal ko</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Dugal beneen dencukaay</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Bindaguñu dara. Rëdd bu nekk day wone li dugal bi di def ak moom. Rëdd yu ñu màndargaal dañu leen di dugal; far màndarga ngir bàyyi ab rëdd. Rëdd yu dul bu bees mën nañu leen dugal rekk bu ñu mayee ñu wuutal seen adrees bu yàgg.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Defuñu dugal bi: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Benn rëdd ñu màndargaalu ko ngir dugal.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Doxal bu jéem: bindaguñu dara.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Dugal bi dina sos %created, wuutal %updated te bàyyi %skipped; %failed dina fakkastalu.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Gisaat gu mat</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Ngir sos</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Ngir wuutal</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Ngir bàyyi</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Ak jafe-jafe</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Denc ba</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Waajal ko waat</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Soppil li tànn rëdd yi te waajal dencukaay bi waat. Màndarga yi nga soppi ak sa loxo dañu leen di delloo.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Rëdd yu host yii duñu leen dugal, ndax sampu bii tontuwul ngir ñoom. Tànnal buntu sit bi host bu yàgg bu nekk di teewal.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Dugaluñu ko</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Wone</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Yépp</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Amul benn rëdd bu am nekkin bii.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Wone yépp</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Rëdd yi ci dencukaay bi ak li dugal bi di def ak bu nekk</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Dugal</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Adrees bu bees</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Xeet</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Mbind yi</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Dugal bind %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Déedéet</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Waaw</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Doxal bu jéem</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Denc màndarga yi</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Pexe ni CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Pexe ni JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Sànni</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Dugal day bind rëdd yu ñu màndargaal ci xët yépp ni benn dugal, bu ñu mën a neenal ci taariixu dugal yi; danga jëkk a wone ki nga doon. Doxal bu jéem day saytuwaat rëdd bu nekk ak sit bi te lim li dugal bi di def, te du bind dara.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Jubluwaat (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Jubluwaat bu màndarga wuutukat (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Màndarga wuutukat (ci saa si)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Bu bees</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Ñu soppi ko</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Soppiwuñu ko</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Ñaaral</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Jàppante</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Fu mu jëm bu yàqu</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Host bu ñu xamul</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Mënuñu koo dugal</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Turu URL yu wuute yu mbooloo mépp</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Taariixu dugal yi</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Kaartu URL yi</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Jubluwaat yi (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Jubluwaat yii dañu jóge ci dugalu kaartu URL: adrees yu yàgg yu am laaj (/index.php?id=12), jubluwaat yu diir ak jubluwaat yu jëm ci yeneen sit. Dañu leen di saytu ci adrees bu mat bi, balaa turu URL yu wuute yi ak màndarga wuutukat yi. Jubluwaat bu sax bu jëm ci xëtu sit bii, ab turu URL bu wuute bu mbooloo mépp la te fa lañu ko lim.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>%count jubluwaat lañu dindi.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Amul benn jubluwaat. Dañu leen di def ci dugal ab kaartu URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Jubluwaat yi ñuy saytu ci adrees bu mat bi</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Tànn</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Sitiwaasiyoŋ</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Ci dugal</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Dindi</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Tànn %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Dindi %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Dindi jubluwaat bii?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Dindi jubluwaat yi ñu tànn?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Dindi li ñu tànn</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Jubluwaat bu ñu dindi dafay taxaw ci saa si.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Mbind mu ñu taqal</translation>
     </message>
 </context>
 </TS>

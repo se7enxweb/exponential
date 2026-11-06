@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>I ble mae'r cyfeiriadau'n mynd: llwybr ar y wefan hon, neu gyfeiriad llawn wrth ailgyfeirio. {1\} yw'r testun a gyfatebodd y * cyntaf. Enghraifft: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>yn cael eu hailgyfeirio i'r cyfeiriad hwn dros dro (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Mae ymwelwyr yn cael eu hailgyfeirio dros dro (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Ailgyfeirio dros dro (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     <message>
         <source>Show %count items per page.</source>
         <translation>Dangos %count eitem fesul tudalen.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Allforio'r map URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Lawrlwythwch arallenwau URL cyffredinol, cardiau gwyllt ac ailgyfeiriadau'r wefan hon fel un ffeil: i'w chadw, i'w golygu mewn taenlen a'i mewnforio eto, neu i'w rhoi i weinydd gwe fel rheolau ailysgrifennu.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Dewiswch o leiaf un math o gofnod.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Nid oedd modd ysgrifennu'r ffeil.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Beth i'w allforio</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Fformat</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Cofnodion</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Arallenwau URL cyffredinol (y cyfieithydd URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Hefyd arallenwau URL personol y cynnwys</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Wedi'i ysgrifennu gyda'r nod fel targed, er enghraifft node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Cardiau gwyllt</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Ailgyfeiriadau</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Mynediad i'r wefan</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Pob mynediad i'r wefan</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Dim ond ailgyfeiriadau sy'n perthyn i fynediad i'r wefan; caiff arallenwau URL a chardiau gwyllt eu hallforio ar gyfer pob mynediad i'r wefan.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Iaith</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Pob iaith</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Allforio</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Mewnforio map URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Dewch â chyfeiriadau hen wefan drosodd ar unwaith: mae ffeil yn rhestru pob hen gyfeiriad a'r dudalen ar y wefan hon y mae'n perthyn iddi bellach. Mae cyfeiriadau union yn troi'n ailgyfeiriadau neu'n arallenwau URL, cyfeiriadau gyda * yn troi'n gardiau gwyllt. Rydych yn gweld beth fyddai pob rhes yn ei wneud cyn i ddim gael ei ysgrifennu, a gellir dadwneud pob mewnforio yn ei gyfanrwydd.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Nid yw tablau mewnforion mapiau URL yn bodoli eto. Rhedwch y cam uwchraddio 6.0.15-url-map (./console exp:upgrade --apply) cyn mewnforio.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Nid yw'r mewnforio hwn ar gael mwyach: daeth i ben ar ôl diwrnod neu mae'n perthyn i ddefnyddiwr arall. Llwythwch y ffeil i fyny eto.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Dewiswch ffeil neu gludwch y rhesi.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Mae'r ffeil yn fwy na %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Nid oes modd darllen y ffeil: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Dewiswch fynediad i'r wefan yn y gosodiad hwn.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Nid oes modd cadw'r mewnforio ar y gweinydd: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Y ffeil</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Ffeil</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), rheolau ailysgrifennu Apache neu nginx, %size ar y mwyaf.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Neu gludwch y rhesi</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Un rhes i bob llinell, er enghraifft /hen-dudalen,/tudalen-newydd. Gall llinell gyntaf enwi'r colofnau: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Canfod o'r ffeil</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Dim ond ei angen pan nad yw enw na chynnwys y ffeil yn dweud.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Rhagosodiadau</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Mynediad i'r wefan ar gyfer llwybrau moel</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>rhagosodedig</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Mae rhesi gyda chyfeiriad llawn yn cymryd mynediad i'r wefan eu gwesteiwr yn lle hynny.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Iaith y mynediad i'r wefan</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Pan fydd gan hen gyfeiriad gofnod eisoes</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Cadw'r cofnod (hepgor y rhes)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Disodli'r cofnod</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Hen westeiwyr</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Ni chaiff cyfeiriadau llawn gwesteiwr nad yw'r gosodiad hwn yn ei adnabod eu mewnforio. Enwch y mynediad i'r wefan y mae pob hen westeiwr yn ei gynrychioli, un i bob llinell: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Rhagolwg</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Nid oes dim yn cael ei ysgrifennu eto: mae'r dudalen nesaf yn dangos beth fyddai pob rhes yn ei wneud.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Mewnforio %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Cafodd y mewnforio ei ddadwneud.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Cafodd y mewnforio ei ddadwneud, ac eithrio'r cofnodion a newidiwyd ar ei ôl, a gadwyd.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Nid oedd modd dadwneud y mewnforio: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dyddiad</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Gan</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Rhesi</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created wedi'u creu, %updated wedi'u disodli, %skipped wedi'u hepgor, %failed wedi methu.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Wedi'i ddadwneud</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Dadwneud y mewnforio hwn</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Caiff pob cofnod a greodd y mewnforio ei dynnu a chaiff pob cofnod a ddisodlodd ei roi'n ôl fel yr oedd, yr olaf yn gyntaf. Rydych yn cadarnhau pwy ydych chi yn gyntaf.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count cofnod wedi'u newid ar ôl y mewnforio</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Dadwneud hefyd y cofnodion a newidiwyd ar ôl y mewnforio</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Hebddo cânt eu cadw a bydd y mewnforio wedi'i ddadwneud yn rhannol (--force y consol).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Dadwneud y mewnforio hwn?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Dadwneud mewnforio</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Cofnodion a ysgrifennwyd</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from i %to o %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Ni ysgrifennodd y mewnforio unrhyw gofnod.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Y cofnodion a ysgrifennodd y mewnforio</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Llinell</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Hen gyfeiriad</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Cofnod</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Yn arwain at</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Newid</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Cyflwr</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Arallenw URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Cerdyn gwyllt</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Ailgyfeiriad</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Wedi'i greu</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Wedi'i ddisodli</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Wedi'i gymhwyso</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Wedi'i gadw</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Wedi'i ddadwneud yn rhannol</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Hanes mewnforio (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Pob mewnforio map URL, y mwyaf newydd yn gyntaf. Gellir dadwneud mewnforio yn ei gyfanrwydd: mae pob cofnod a ysgrifennodd yn mynd yn ôl i'r hyn oedd yno o'r blaen.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Nid oes map URL wedi'i fewnforio eto.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Mewnforion mapiau URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Rhif</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Wedi'u hepgor</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Wedi methu</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows rhes</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Wedi'i fewnforio fel mewnforio %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Gweld y mewnforio, neu ei ddadwneud</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Mewnforio ffeil arall</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Nid oes dim wedi'i ysgrifennu eto. Mae pob rhes yn dangos beth fyddai'r mewnforio yn ei wneud â hi. Caiff rhesi wedi'u ticio eu mewnforio; dad-diciwch res i'w gadael allan. Dim ond pan ganiateir disodli eu hen gyfeiriad y gellir mewnforio rhesi nad ydynt yn newydd.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Ni chafodd y mewnforio ei wneud: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Nid oes rhes wedi'i thicio i'w mewnforio.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Rhediad prawf: ni ysgrifennwyd dim.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Byddai'r mewnforio yn creu %created, yn disodli %updated ac yn hepgor %skipped; byddai %failed yn methu.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Trosolwg</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>I'w creu</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>I'w disodli</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>I'w hepgor</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Gyda phroblem</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Yn cael ei gadw tan</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Cynllunio eto</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Newidiwch yr hyn sy'n penderfynu'r rhesi a chynlluniwch y ffeil eto. Caiff ticiau a newidiwyd â llaw eu hailosod.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Ni chaiff rhesi'r gwesteiwyr hyn eu mewnforio, gan nad yw'r gosodiad hwn yn ateb drostynt. Dewiswch y mynediad i'r wefan y mae pob hen westeiwr yn ei gynrychioli.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Heb ei fewnforio</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Dangos</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Pob un</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Nid oes gan unrhyw res y cyflwr hwn.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Dangos y cyfan</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Rhesi'r ffeil a beth fyddai'r mewnforio yn ei wneud â phob un</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Mewnforio</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Cyfeiriad newydd</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Math</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Nodiadau</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Mewnforio llinell %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Na</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ie</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Rhediad prawf</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Cadw'r ticiau</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Cynllun fel CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Cynllun fel JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Taflu</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Mae Mewnforio yn ysgrifennu rhesi wedi'u ticio pob tudalen fel un mewnforio, y gellir ei ddadwneud o'r hanes mewnforio; rydych yn cadarnhau pwy ydych chi yn gyntaf. Mae Rhediad prawf yn gwirio pob rhes yn erbyn y wefan eto ac yn cyfrif beth fyddai'r mewnforio yn ei wneud, heb ysgrifennu.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Ailgyfeiriad (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Ailgyfeiriad cerdyn gwyllt (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Cerdyn gwyllt (uniongyrchol)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Newydd</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Wedi newid</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Heb newid</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Dyblyg</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Gwrthdaro</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Targed toredig</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Gwesteiwr anhysbys</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Dim modd ei fewnforio</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Arallenwau URL cyffredinol</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Hanes mewnforio</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Mapiau URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Ailgyfeiriadau (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Daw'r ailgyfeiriadau hyn o fewnforion mapiau URL: hen gyfeiriadau gydag ymholiad (/index.php?id=12), ailgyfeiriadau dros dro ac ailgyfeiriadau i wefannau eraill. Cânt eu gwirio ar y cyfeiriad llawn, cyn yr arallenwau URL a'r cardiau gwyllt. Mae ailgyfeiriad parhaol i dudalen ar y wefan hon yn arallenw URL cyffredinol yn lle hynny ac wedi'i restru yno.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Tynnwyd %count ailgyfeiriad.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Nid oes ailgyfeiriadau. Cânt eu creu drwy fewnforio map URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Ailgyfeiriadau a wirir ar y cyfeiriad llawn</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Dewis</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Statws</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>O'r mewnforio</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Tynnu</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Dewis %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Tynnu %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Tynnu'r ailgyfeiriad hwn?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Tynnu'r ailgyfeiriadau a ddewiswyd?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Tynnu'r rhai a ddewiswyd</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Mae ailgyfeiriad a dynnwyd yn peidio â gweithio ar unwaith.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Testun wedi'i gludo</translation>
     </message>
 </context>
 </TS>

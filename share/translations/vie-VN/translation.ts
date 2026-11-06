@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Nơi các địa chỉ được dẫn đến: một đường dẫn của trang web này, hoặc một địa chỉ đầy đủ khi chuyển hướng. {1\} là văn bản mà * đầu tiên đã khớp. Ví dụ: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>được chuyển hướng tạm thời đến địa chỉ này (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Khách truy cập được chuyển hướng tạm thời (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Chuyển hướng tạm thời (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     <message>
         <source>Show %count items per page.</source>
         <translation>Hiển thị %count mục mỗi trang.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>Xuất bản đồ URL</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Tải xuống bí danh URL toàn cục, ký tự đại diện và chuyển hướng của trang này dưới dạng một tệp: để lưu giữ, để chỉnh sửa trong bảng tính rồi nhập lại, hoặc để đưa cho máy chủ web làm quy tắc viết lại.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Hãy chọn ít nhất một loại mục.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Không thể ghi tệp.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Nội dung cần xuất</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Định dạng</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Mục</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Bí danh URL toàn cục (bộ dịch URL)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Cả bí danh URL tùy chỉnh của nội dung</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Được ghi với nút làm đích, ví dụ node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Ký tự đại diện</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Chuyển hướng</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Điểm truy cập trang</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Mọi điểm truy cập trang</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Chỉ chuyển hướng thuộc về một điểm truy cập trang; bí danh URL và ký tự đại diện được xuất cho mọi điểm truy cập trang.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Ngôn ngữ</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Mọi ngôn ngữ</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Xuất</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>Nhập bản đồ URL</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Chuyển các địa chỉ của trang cũ sang trong một lần: một tệp liệt kê từng địa chỉ cũ và trang của trang web này mà địa chỉ đó hiện thuộc về. Địa chỉ chính xác trở thành chuyển hướng hoặc bí danh URL, địa chỉ có * trở thành ký tự đại diện. Bạn thấy mỗi dòng sẽ làm gì trước khi bất cứ thứ gì được ghi, và mỗi lần nhập đều có thể hoàn tác toàn bộ.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>Các bảng nhập bản đồ URL chưa tồn tại. Hãy chạy bước nâng cấp 6.0.15-url-map (./console exp:upgrade --apply) trước khi nhập.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Lần nhập này không còn khả dụng: nó đã hết hạn sau một ngày hoặc thuộc về người dùng khác. Hãy tải tệp lên lại.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Hãy chọn một tệp hoặc dán các dòng.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Tệp lớn hơn %size.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Không thể đọc tệp: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Hãy chọn một điểm truy cập trang của bản cài đặt này.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Không thể lưu lần nhập trên máy chủ: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Tệp</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Tệp</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), quy tắc viết lại Apache hoặc nginx, tối đa %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Hoặc dán các dòng</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Mỗi dòng một mục, ví dụ /trang-cu,/trang-moi. Dòng đầu tiên có thể đặt tên các cột: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Xác định từ tệp</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Chỉ cần khi cả tên lẫn nội dung của tệp đều không cho biết.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Mặc định</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Điểm truy cập trang cho đường dẫn trần</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>mặc định</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Các dòng có địa chỉ đầy đủ sẽ lấy điểm truy cập trang của máy chủ của chúng.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Ngôn ngữ của điểm truy cập trang</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Khi một địa chỉ cũ đã có mục</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Giữ mục (bỏ qua dòng)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Thay thế mục</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Máy chủ cũ</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Địa chỉ đầy đủ của máy chủ mà bản cài đặt này không biết sẽ không được nhập. Hãy ghi điểm truy cập trang mà mỗi máy chủ cũ tương ứng, mỗi dòng một máy chủ: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Xem trước</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Chưa có gì được ghi: trang tiếp theo cho thấy mỗi dòng sẽ làm gì.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Lần nhập %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Lần nhập đã được hoàn tác.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Lần nhập đã được hoàn tác, trừ các mục bị thay đổi sau đó, vốn được giữ lại.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Không thể hoàn tác lần nhập: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Ngày</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Người thực hiện</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Dòng</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>%created đã tạo, %updated đã thay thế, %skipped đã bỏ qua, %failed thất bại.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Đã hoàn tác</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Hoàn tác lần nhập này</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Mọi mục do lần nhập tạo ra sẽ bị gỡ bỏ và mọi mục nó đã thay thế sẽ được khôi phục như cũ, bắt đầu từ mục cuối cùng. Trước tiên bạn xác nhận danh tính của mình.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>%count mục bị thay đổi sau lần nhập</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Hoàn tác cả các mục bị thay đổi sau lần nhập</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Nếu không chọn, các mục đó được giữ lại và lần nhập chỉ được hoàn tác một phần (--force của bảng điều khiển).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Hoàn tác lần nhập này?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Hoàn tác lần nhập</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Các mục đã ghi</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from đến %to trong %count</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Lần nhập không ghi mục nào.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Các mục mà lần nhập đã ghi</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Dòng</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Địa chỉ cũ</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Mục</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Dẫn đến</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Thay đổi</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Trạng thái</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>Bí danh URL</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Ký tự đại diện</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Chuyển hướng</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Đã tạo</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Đã thay thế</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Đã áp dụng</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Đã giữ</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Hoàn tác một phần</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Lịch sử nhập (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>Mọi lần nhập bản đồ URL, mới nhất trước. Một lần nhập có thể được hoàn tác toàn bộ: mỗi mục nó đã ghi sẽ trở lại như trước đó.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Chưa có bản đồ URL nào được nhập.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>Các lần nhập bản đồ URL</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Số</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Đã bỏ qua</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Thất bại</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, %rows dòng</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>Đã nhập thành lần nhập %id.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Xem lần nhập hoặc hoàn tác nó</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Nhập tệp khác</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Chưa có gì được ghi. Mỗi dòng cho thấy lần nhập sẽ làm gì với nó. Các dòng được đánh dấu sẽ được nhập; bỏ đánh dấu một dòng để loại nó ra. Các dòng không mới chỉ có thể được nhập khi địa chỉ cũ của chúng được phép thay thế.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Lần nhập chưa được thực hiện: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Không có dòng nào được đánh dấu để nhập.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Chạy thử: không có gì được ghi.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Lần nhập sẽ tạo %created, thay thế %updated và bỏ qua %skipped; %failed sẽ thất bại.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Tổng quan</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Sẽ tạo</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Sẽ thay thế</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Sẽ bỏ qua</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Có vấn đề</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Giữ đến</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Lập kế hoạch lại</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Thay đổi những gì quyết định các dòng và lập kế hoạch lại cho tệp. Các dấu chọn bạn đã đổi bằng tay sẽ được đặt lại.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Các dòng của những máy chủ này không được nhập vì bản cài đặt này không phục vụ chúng. Hãy chọn điểm truy cập trang mà mỗi máy chủ cũ tương ứng.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Không được nhập</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Hiển thị</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tất cả</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Không có dòng nào ở trạng thái này.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hiển thị tất cả</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Các dòng của tệp và việc lần nhập sẽ làm với từng dòng</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Nhập</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Địa chỉ mới</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Loại</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Ghi chú</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>Nhập dòng %line</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Không</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Có</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Chạy thử</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Giữ các dấu chọn</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>Kế hoạch dạng CSV</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>Kế hoạch dạng JSON</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Hủy bỏ</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Nhập sẽ ghi các dòng được đánh dấu của mọi trang thành một lần nhập, có thể hoàn tác từ lịch sử nhập; trước tiên bạn xác nhận danh tính của mình. Chạy thử kiểm tra lại từng dòng với trang web và đếm những gì lần nhập sẽ làm, mà không ghi gì.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Chuyển hướng (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Chuyển hướng ký tự đại diện (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Ký tự đại diện (trực tiếp)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Mới</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Đã thay đổi</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Không đổi</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Trùng lặp</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Xung đột</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Đích bị hỏng</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Máy chủ không xác định</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Không thể nhập</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Bí danh URL toàn cục</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Lịch sử nhập</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>Bản đồ URL</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Chuyển hướng (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Các chuyển hướng này đến từ các lần nhập bản đồ URL: địa chỉ cũ có truy vấn (/index.php?id=12), chuyển hướng tạm thời và chuyển hướng đến trang web khác. Chúng được kiểm tra theo địa chỉ đầy đủ, trước bí danh URL và ký tự đại diện. Một chuyển hướng vĩnh viễn đến một trang của trang web này thì là bí danh URL toàn cục và được liệt kê ở đó.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Đã gỡ bỏ %count chuyển hướng.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Không có chuyển hướng nào. Chúng được tạo bằng cách nhập bản đồ URL.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Chuyển hướng được kiểm tra theo địa chỉ đầy đủ</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Chọn</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Trạng thái</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Từ lần nhập</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Gỡ bỏ</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>Chọn %address</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>Gỡ bỏ %address</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Gỡ bỏ chuyển hướng này?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Gỡ bỏ các chuyển hướng đã chọn?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Gỡ bỏ mục đã chọn</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Chuyển hướng bị gỡ bỏ sẽ ngừng hoạt động ngay lập tức.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Văn bản đã dán</translation>
     </message>
 </context>
 </TS>

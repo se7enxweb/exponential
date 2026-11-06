@@ -7320,6 +7320,18 @@
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
         <translation>Адреслар кая бара: бу сайтның юлы яки юнәлткәндә тулы адрес. {1\} - беренче * туры килгән текст. Мисал: dev/{1\}</translation>
     </message>
+    <message>
+        <source>are redirected to this address temporarily (HTTP 302).</source>
+        <translation>бу адреска вакытлыча юнәлтелә (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Visitors are redirected temporarily (HTTP 302).</source>
+        <translation>Килүчеләр вакытлыча юнәлтелә (HTTP 302).</translation>
+    </message>
+    <message>
+        <source>Temporary redirect (302)</source>
+        <translation>Вакытлыча юнәлтү (302)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -85491,6 +85503,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show %count items per page.</source>
         <translation>Битта %count элемент күрсәтү.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/urlimport</name>
+    <message>
+        <source>Export the URL map</source>
+        <translation>URL картасын экспортлау</translation>
+    </message>
+    <message>
+        <source>Download the global URL aliases, the wildcards and the redirects of this site as one file: to keep, to edit in a spreadsheet and import again, or to give to a web server as rewrite rules.</source>
+        <translation>Бу сайтның глобаль URL псевдонимнарын, алыштыру билгеләрен һәм юнәлтүләрен бер файл итеп йөкләп алыгыз: саклау өчен, электрон таблицада үзгәртеп кабат импортлау өчен яки веб-серверга яңадан язу кагыйдәләре итеп бирү өчен.</translation>
+    </message>
+    <message>
+        <source>Choose at least one kind of entry.</source>
+        <translation>Ким дигәндә бер төр язмаларны сайлагыз.</translation>
+    </message>
+    <message>
+        <source>The file could not be written.</source>
+        <translation>Файлны язып булмады.</translation>
+    </message>
+    <message>
+        <source>What to export</source>
+        <translation>Нәрсәне экспортларга</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Формат</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Язмалар</translation>
+    </message>
+    <message>
+        <source>Global URL aliases (the URL translator)</source>
+        <translation>Глобаль URL псевдонимнары (URL тәрҗемәчесе)</translation>
+    </message>
+    <message>
+        <source>Also the custom URL aliases of content</source>
+        <translation>Эчтәлекнең махсус URL псевдонимнары да</translation>
+    </message>
+    <message>
+        <source>Written with the node as target, for example node:42.</source>
+        <translation>Максат итеп төен белән языла, мәсәлән node:42.</translation>
+    </message>
+    <message>
+        <source>Wildcards</source>
+        <translation>Алыштыру билгеләре</translation>
+    </message>
+    <message>
+        <source>Redirects</source>
+        <translation>Юнәлтүләр</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Сайтка керү ноктасы</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Һәр сайтка керү ноктасы</translation>
+    </message>
+    <message>
+        <source>Only redirects belong to a siteaccess; URL aliases and wildcards are exported for every siteaccess.</source>
+        <translation>Сайтка керү ноктасына юнәлтүләр генә карый; URL псевдонимнары һәм алыштыру билгеләре һәр сайтка керү ноктасы өчен экспортлана.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Тел</translation>
+    </message>
+    <message>
+        <source>Every language</source>
+        <translation>Һәр тел</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Экспортлау</translation>
+    </message>
+    <message>
+        <source>Import a URL map</source>
+        <translation>URL картасын импортлау</translation>
+    </message>
+    <message>
+        <source>Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.</source>
+        <translation>Иске сайтның адресларын бер юлы күчерегез: файлда һәр иске адрес һәм аның хәзер бу сайтның кайсы битенә караганы күрсәтелгән. Төгәл адреслар юнәлтү яки URL псевдонимы була, * булган адреслар алыштыру билгесе була. Нәрсә дә булса язылганчы, һәр юлның нәрсә эшләячәген күрәсез, һәм һәр импортны тулысынча кире алып була.</translation>
+    </message>
+    <message>
+        <source>The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.</source>
+        <translation>URL картасы импорты таблицалары әлегә юк. Импортлаганчы 6.0.15-url-map яңарту адымын (./console exp:upgrade --apply) башкарыгыз.</translation>
+    </message>
+    <message>
+        <source>This import is no longer available: it expired after a day or belongs to another user. Upload the file again.</source>
+        <translation>Бу импорт инде мөмкин түгел: аның вакыты бер көннән соң чыккан яки ул башка кулланучыныкы. Файлны кабат йөкләгез.</translation>
+    </message>
+    <message>
+        <source>Choose a file or paste the rows.</source>
+        <translation>Файл сайлагыз яки юлларны куегыз.</translation>
+    </message>
+    <message>
+        <source>The file is larger than %size.</source>
+        <translation>Файл %size күләменнән зуррак.</translation>
+    </message>
+    <message>
+        <source>The file cannot be read: %error</source>
+        <translation>Файлны укып булмый: %error</translation>
+    </message>
+    <message>
+        <source>Choose a siteaccess of this installation.</source>
+        <translation>Бу урнаштыруның сайтка керү ноктасын сайлагыз.</translation>
+    </message>
+    <message>
+        <source>The import cannot be kept on the server: %error</source>
+        <translation>Импортны серверда саклап булмый: %error</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.</source>
+        <translation>CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache яки nginx яңадан язу кагыйдәләре, иң күбе %size.</translation>
+    </message>
+    <message>
+        <source>Or paste the rows</source>
+        <translation>Яки юлларны куегыз</translation>
+    </message>
+    <message>
+        <source>One row per line, for example /old-page,/new-page. A first line may name the columns: old_url, new_url, kind, siteaccess, language, note, status.</source>
+        <translation>Һәр юлда бер язма, мәсәлән /иске-бит,/яңа-бит. Беренче юл баганаларны атый ала: old_url, new_url, kind, siteaccess, language, note, status.</translation>
+    </message>
+    <message>
+        <source>Find out from the file</source>
+        <translation>Файлдан билгеләү</translation>
+    </message>
+    <message>
+        <source>Only needed when neither the name nor the content of the file says.</source>
+        <translation>Файлның исеме дә, эчтәлеге дә моны күрсәтмәгәндә генә кирәк.</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation>Килешү буенча кыйммәтләр</translation>
+    </message>
+    <message>
+        <source>Siteaccess of bare paths</source>
+        <translation>Гади юлларның сайтка керү ноктасы</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>килешү буенча</translation>
+    </message>
+    <message>
+        <source>Rows with a full address take the siteaccess of their host instead.</source>
+        <translation>Тулы адреслы юллар моның урынына үз хостларының сайтка керү ноктасын ала.</translation>
+    </message>
+    <message>
+        <source>The language of the siteaccess</source>
+        <translation>Сайтка керү ноктасының теле</translation>
+    </message>
+    <message>
+        <source>When an old address has an entry already</source>
+        <translation>Иске адреста инде язма булганда</translation>
+    </message>
+    <message>
+        <source>Keep the entry (skip the row)</source>
+        <translation>Язманы калдыру (юлны калдырып китү)</translation>
+    </message>
+    <message>
+        <source>Replace the entry</source>
+        <translation>Язманы алыштыру</translation>
+    </message>
+    <message>
+        <source>Old hosts</source>
+        <translation>Иске хостлар</translation>
+    </message>
+    <message>
+        <source>Full addresses of a host this installation does not know are not imported. Name the siteaccess each old host stands for, one per line: www.old-site.com = site</source>
+        <translation>Бу урнаштыру белмәгән хостның тулы адреслары импортланмый. Һәр иске хост кайсы сайтка керү ноктасына туры килгәнен һәр юлда берәрләп күрсәтегез: www.old-site.com = site</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Алдан карау</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet: the next page shows what each row would do.</source>
+        <translation>Әлегә бернәрсә дә язылмады: киләсе бит һәр юлның нәрсә эшләячәген күрсәтә.</translation>
+    </message>
+    <message>
+        <source>Import %id</source>
+        <translation>Импорт %id</translation>
+    </message>
+    <message>
+        <source>The import was undone.</source>
+        <translation>Импорт кире алынды.</translation>
+    </message>
+    <message>
+        <source>The import was undone, except for the entries changed after it, which were kept.</source>
+        <translation>Импорт кире алынды, аннан соң үзгәртелгән язмалардан тыш, алар сакланды.</translation>
+    </message>
+    <message>
+        <source>The import could not be undone: %error</source>
+        <translation>Импортны кире алып булмады: %error</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Дата</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Кем тарафыннан</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Юллар</translation>
+    </message>
+    <message>
+        <source>%created created, %updated replaced, %skipped skipped, %failed failed.</source>
+        <translation>Ясалды: %created, алыштырылды: %updated, калдырылды: %skipped, барып чыкмады: %failed.</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Кире алынган</translation>
+    </message>
+    <message>
+        <source>Undo this import</source>
+        <translation>Бу импортны кире алу</translation>
+    </message>
+    <message>
+        <source>Every entry the import created is removed and every entry it replaced is put back as it was, the last first. You confirm who you are first.</source>
+        <translation>Импорт ясаган һәр язма бетерелә, ә ул алыштырган һәр язма соңгысыннан башлап элеккеге хәленә кайтарыла. Башта сез шәхесегезне раслыйсыз.</translation>
+    </message>
+    <message>
+        <source>%count entries changed after the import</source>
+        <translation>Импорттан соң үзгәртелгән язмалар: %count</translation>
+    </message>
+    <message>
+        <source>Also undo the entries changed after the import</source>
+        <translation>Импорттан соң үзгәртелгән язмаларны да кире алу</translation>
+    </message>
+    <message>
+        <source>Without it they are kept and the import becomes partly undone (the console's --force).</source>
+        <translation>Моннан башка алар саклана, һәм импорт өлешчә кире алынган була (консольнең --force).</translation>
+    </message>
+    <message>
+        <source>Undo this import?</source>
+        <translation>Бу импорт кире алынсынмы?</translation>
+    </message>
+    <message>
+        <source>Undo import</source>
+        <translation>Импортны кире алу</translation>
+    </message>
+    <message>
+        <source>Entries written</source>
+        <translation>Язылган язмалар</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count арасыннан %from – %to</translation>
+    </message>
+    <message>
+        <source>The import wrote no entry.</source>
+        <translation>Импорт бер язма да язмады.</translation>
+    </message>
+    <message>
+        <source>The entries the import wrote</source>
+        <translation>Импорт язган язмалар</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Юл</translation>
+    </message>
+    <message>
+        <source>Old address</source>
+        <translation>Иске адрес</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Язма</translation>
+    </message>
+    <message>
+        <source>Leads to</source>
+        <translation>Алып бара</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Үзгәреш</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Хәл</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL псевдонимы</translation>
+    </message>
+    <message>
+        <source>Wildcard</source>
+        <translation>Алыштыру билгесе</translation>
+    </message>
+    <message>
+        <source>Redirect</source>
+        <translation>Юнәлтү</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Ясалды</translation>
+    </message>
+    <message>
+        <source>Replaced</source>
+        <translation>Алыштырылды</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Кулланылды</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Сакланды</translation>
+    </message>
+    <message>
+        <source>Partly undone</source>
+        <translation>Өлешчә кире алынган</translation>
+    </message>
+    <message>
+        <source>Import history (%count)</source>
+        <translation>Импорт тарихы (%count)</translation>
+    </message>
+    <message>
+        <source>Every import of a URL map, newest first. An import can be undone as a whole: each entry it wrote goes back to what was there before.</source>
+        <translation>URL карталарының барлык импортлары, иң яңасы беренче. Импортны тулысынча кире алып була: ул язган һәр язма элек булган хәленә кайта.</translation>
+    </message>
+    <message>
+        <source>No URL map has been imported yet.</source>
+        <translation>Әлегә бер URL картасы да импортланмады.</translation>
+    </message>
+    <message>
+        <source>Imports of URL maps</source>
+        <translation>URL карталары импортлары</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Сан</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Калдырылган</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Барып чыкмады</translation>
+    </message>
+    <message>
+        <source>%file, %format, %rows rows</source>
+        <translation>%file, %format, юллар: %rows</translation>
+    </message>
+    <message>
+        <source>Imported as import %id.</source>
+        <translation>%id номерлы импорт итеп импортланды.</translation>
+    </message>
+    <message>
+        <source>See the import, or undo it</source>
+        <translation>Импортны карау яки аны кире алу</translation>
+    </message>
+    <message>
+        <source>Import another file</source>
+        <translation>Башка файлны импортлау</translation>
+    </message>
+    <message>
+        <source>Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.</source>
+        <translation>Әлегә бернәрсә дә язылмады. Һәр юл импортның аның белән нәрсә эшләячәген күрсәтә. Билгеләнгән юллар импортлана; юлны чыгарып калдыру өчен билгесен алыгыз. Яңа булмаган юллар иске адресларын алыштырырга рөхсәт ителгәндә генә импортлана ала.</translation>
+    </message>
+    <message>
+        <source>The import was not done: %error</source>
+        <translation>Импорт башкарылмады: %error</translation>
+    </message>
+    <message>
+        <source>No row is ticked for import.</source>
+        <translation>Импорт өчен бер юл да билгеләнмәгән.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing was written.</source>
+        <translation>Сынау башкаруы: бернәрсә дә язылмады.</translation>
+    </message>
+    <message>
+        <source>The import would create %created, replace %updated and skip %skipped; %failed would fail.</source>
+        <translation>Импорт %created язма ясар, %updated язманы алыштырыр һәм %skipped язманы калдырыр иде; %failed язма барып чыкмас иде.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Күзәтү</translation>
+    </message>
+    <message>
+        <source>To create</source>
+        <translation>Ясалачак</translation>
+    </message>
+    <message>
+        <source>To replace</source>
+        <translation>Алыштырылачак</translation>
+    </message>
+    <message>
+        <source>To skip</source>
+        <translation>Калдырылачак</translation>
+    </message>
+    <message>
+        <source>With a problem</source>
+        <translation>Проблемалы</translation>
+    </message>
+    <message>
+        <source>Kept until</source>
+        <translation>Саклану вакыты</translation>
+    </message>
+    <message>
+        <source>Plan again</source>
+        <translation>Яңадан планлаштыру</translation>
+    </message>
+    <message>
+        <source>Change what decides the rows and plan the file again. Ticks you changed by hand are reset.</source>
+        <translation>Юлларны билгеләүче көйләүләрне үзгәртегез һәм файлны яңадан планлаштырыгыз. Кул белән үзгәртелгән билгеләр ташлана.</translation>
+    </message>
+    <message>
+        <source>Rows of these hosts are not imported, because this installation does not answer for them. Choose the siteaccess each old host stands for.</source>
+        <translation>Бу хостларның юллары импортланмый, чөнки бу урнаштыру аларга җавап бирми. Һәр иске хост кайсы сайтка керү ноктасына туры килгәнен сайлагыз.</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Импортланмады</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Күрсәтү</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Барысы</translation>
+    </message>
+    <message>
+        <source>No row has this state.</source>
+        <translation>Бу хәлдә юл юк.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Барысын күрсәтү</translation>
+    </message>
+    <message>
+        <source>The rows of the file and what the import would do with each</source>
+        <translation>Файлның юллары һәм импортның һәрберсе белән нәрсә эшләячәге</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Импортлау</translation>
+    </message>
+    <message>
+        <source>New address</source>
+        <translation>Яңа адрес</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Төр</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Искәрмәләр</translation>
+    </message>
+    <message>
+        <source>Import line %line</source>
+        <translation>%line юлны импортлау</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Юк</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Әйе</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Сынау башкаруы</translation>
+    </message>
+    <message>
+        <source>Keep the ticks</source>
+        <translation>Билгеләрне саклау</translation>
+    </message>
+    <message>
+        <source>Plan as CSV</source>
+        <translation>План CSV итеп</translation>
+    </message>
+    <message>
+        <source>Plan as JSON</source>
+        <translation>План JSON итеп</translation>
+    </message>
+    <message>
+        <source>Throw away</source>
+        <translation>Ташлау</translation>
+    </message>
+    <message>
+        <source>Import writes the ticked rows of every page as one import, which can be undone from the import history; you confirm who you are first. Dry run checks every row against the site again and counts what the import would do, without writing.</source>
+        <translation>Импортлау һәр битнең билгеләнгән юлларын бер импорт итеп яза, аны импорт тарихыннан кире алып була; башта сез шәхесегезне раслыйсыз. Сынау башкаруы һәр юлны сайт белән кабат тикшерә һәм бернәрсә дә язмыйча импортның нәрсә эшләячәген саный.</translation>
+    </message>
+    <message>
+        <source>Redirect (%status)</source>
+        <translation>Юнәлтү (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard redirect (%status)</source>
+        <translation>Алыштыру билгеле юнәлтү (%status)</translation>
+    </message>
+    <message>
+        <source>Wildcard (direct)</source>
+        <translation>Алыштыру билгесе (турыдан-туры)</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Яңа</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Үзгәртелгән</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Үзгәрешсез</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Кабатлану</translation>
+    </message>
+    <message>
+        <source>Conflict</source>
+        <translation>Конфликт</translation>
+    </message>
+    <message>
+        <source>Broken target</source>
+        <translation>Бозык максат</translation>
+    </message>
+    <message>
+        <source>Unknown host</source>
+        <translation>Билгесез хост</translation>
+    </message>
+    <message>
+        <source>Not importable</source>
+        <translation>Импортлап булмый</translation>
+    </message>
+    <message>
+        <source>Global URL aliases</source>
+        <translation>Глобаль URL псевдонимнары</translation>
+    </message>
+    <message>
+        <source>Import history</source>
+        <translation>Импорт тарихы</translation>
+    </message>
+    <message>
+        <source>URL maps</source>
+        <translation>URL карталары</translation>
+    </message>
+    <message>
+        <source>Redirects (%count)</source>
+        <translation>Юнәлтүләр (%count)</translation>
+    </message>
+    <message>
+        <source>These redirects come from URL map imports: old addresses with a query (/index.php?id=12), temporary redirects and redirects to other sites. They are checked on the full address, before the URL aliases and wildcards. A permanent redirect to a page of this site is a global URL alias instead and is listed there.</source>
+        <translation>Бу юнәлтүләр URL карталары импортыннан килә: сораулы иске адреслар (/index.php?id=12), вакытлыча юнәлтүләр һәм башка сайтларга юнәлтүләр. Алар URL псевдонимнарыннан һәм алыштыру билгеләреннән алда, тулы адрес буенча тикшерелә. Бу сайтның битенә даими юнәлтү исә глобаль URL псевдонимы була һәм шунда күрсәтелә.</translation>
+    </message>
+    <message>
+        <source>%count redirects removed.</source>
+        <translation>Бетерелгән юнәлтүләр: %count.</translation>
+    </message>
+    <message>
+        <source>There are no redirects. They are made by importing a URL map.</source>
+        <translation>Юнәлтүләр юк. Алар URL картасын импортлап ясала.</translation>
+    </message>
+    <message>
+        <source>Redirects checked on the full address</source>
+        <translation>Тулы адрес буенча тикшерелә торган юнәлтүләр</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Сайлау</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Статус</translation>
+    </message>
+    <message>
+        <source>From import</source>
+        <translation>Импорттан</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Алып ташлау</translation>
+    </message>
+    <message>
+        <source>Select %address</source>
+        <translation>%address сайлау</translation>
+    </message>
+    <message>
+        <source>Remove %address</source>
+        <translation>%address алып ташлау</translation>
+    </message>
+    <message>
+        <source>Remove this redirect?</source>
+        <translation>Бу юнәлтү алып ташлансынмы?</translation>
+    </message>
+    <message>
+        <source>Remove the selected redirects?</source>
+        <translation>Сайланган юнәлтүләр алып ташлансынмы?</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Сайланганнарны алып ташлау</translation>
+    </message>
+    <message>
+        <source>A removed redirect stops working at once.</source>
+        <translation>Алып ташланган юнәлтү шунда ук эшләүдән туктый.</translation>
+    </message>
+    <message>
+        <source>Pasted text</source>
+        <translation>Куелган текст</translation>
     </message>
 </context>
 </TS>
