@@ -773,6 +773,33 @@ CREATE SEQUENCE exppasskey_id_seq
 
 
 
+CREATE SEQUENCE exp_url_redirect_id_seq
+    START 1
+    INCREMENT 1
+    MAXVALUE 9223372036854775807
+    MINVALUE 1
+    CACHE 1;
+
+
+
+CREATE SEQUENCE exp_urlmap_batch_id_seq
+    START 1
+    INCREMENT 1
+    MAXVALUE 9223372036854775807
+    MINVALUE 1
+    CACHE 1;
+
+
+
+CREATE SEQUENCE exp_urlmap_batch_item_id_seq
+    START 1
+    INCREMENT 1
+    MAXVALUE 9223372036854775807
+    MINVALUE 1
+    CACHE 1;
+
+
+
 CREATE SEQUENCE exp_transfer_run_id_seq
     START 1
     INCREMENT 1
@@ -2799,6 +2826,61 @@ CREATE TABLE exp_migration_deploy_host (
 
 
 
+CREATE TABLE exp_url_redirect (
+    batch_id integer DEFAULT 0 NOT NULL,
+    created integer DEFAULT 0 NOT NULL,
+    id integer DEFAULT nextval('exp_url_redirect_id_seq'::text) NOT NULL,
+    "language" character varying(20) DEFAULT ''::character varying NOT NULL,
+    modified integer DEFAULT 0 NOT NULL,
+    siteaccess character varying(100) DEFAULT ''::character varying NOT NULL,
+    source_key character varying(32) DEFAULT ''::character varying NOT NULL,
+    source_path character varying(1000) DEFAULT ''::character varying NOT NULL,
+    source_query character varying(1000) DEFAULT ''::character varying NOT NULL,
+    status integer DEFAULT 301 NOT NULL,
+    target character varying(2000) DEFAULT ''::character varying NOT NULL
+);
+
+
+
+CREATE TABLE exp_urlmap_batch (
+    created integer DEFAULT 0 NOT NULL,
+    created_count integer DEFAULT 0 NOT NULL,
+    failed_count integer DEFAULT 0 NOT NULL,
+    format character varying(20) DEFAULT ''::character varying NOT NULL,
+    id integer DEFAULT nextval('exp_urlmap_batch_id_seq'::text) NOT NULL,
+    "language" character varying(20) DEFAULT ''::character varying NOT NULL,
+    on_conflict character varying(20) DEFAULT ''::character varying NOT NULL,
+    rows_total integer DEFAULT 0 NOT NULL,
+    siteaccess character varying(100) DEFAULT ''::character varying NOT NULL,
+    skipped_count integer DEFAULT 0 NOT NULL,
+    source_name character varying(255) DEFAULT ''::character varying NOT NULL,
+    state character varying(20) DEFAULT ''::character varying NOT NULL,
+    summary text,
+    undone integer DEFAULT 0 NOT NULL,
+    undone_by integer DEFAULT 0 NOT NULL,
+    updated_count integer DEFAULT 0 NOT NULL,
+    user_id integer DEFAULT 0 NOT NULL
+);
+
+
+
+CREATE TABLE exp_urlmap_batch_item (
+    "action" character varying(20) DEFAULT ''::character varying NOT NULL,
+    after_image text,
+    batch_id integer DEFAULT 0 NOT NULL,
+    before_image text,
+    id integer DEFAULT nextval('exp_urlmap_batch_item_id_seq'::text) NOT NULL,
+    kind character varying(30) DEFAULT ''::character varying NOT NULL,
+    line integer DEFAULT 0 NOT NULL,
+    old_url character varying(1000) DEFAULT ''::character varying NOT NULL,
+    seq integer DEFAULT 0 NOT NULL,
+    state character varying(20) DEFAULT ''::character varying NOT NULL,
+    target_key character varying(255) DEFAULT ''::character varying NOT NULL,
+    target_table character varying(50) DEFAULT ''::character varying NOT NULL
+);
+
+
+
 CREATE TABLE exp_migration_run (
     caption_post character varying(150) DEFAULT ''::character varying NOT NULL,
     caption_pre character varying(150) DEFAULT ''::character varying NOT NULL,
@@ -4424,6 +4506,22 @@ CREATE INDEX exp_static_run_target ON exp_static_run USING btree (target, starte
 
 
 
+CREATE INDEX exp_url_redirect_batch ON exp_url_redirect USING btree (batch_id);
+
+
+
+CREATE INDEX exp_url_redirect_source ON exp_url_redirect USING btree (source_key);
+
+
+
+CREATE INDEX exp_urlmap_batch_created ON exp_urlmap_batch USING btree (created);
+
+
+
+CREATE INDEX exp_urlmap_batch_item_batch ON exp_urlmap_batch_item USING btree (batch_id, seq);
+
+
+
 CREATE INDEX exp_migration_run_started ON exp_migration_run USING btree (started_at);
 
 
@@ -5556,6 +5654,21 @@ ALTER TABLE ONLY exp_static_page
 
 ALTER TABLE ONLY exp_static_run
     ADD CONSTRAINT exp_static_run_pkey PRIMARY KEY (run_id);
+
+
+
+ALTER TABLE ONLY exp_url_redirect
+    ADD CONSTRAINT exp_url_redirect_pkey PRIMARY KEY (id);
+
+
+
+ALTER TABLE ONLY exp_urlmap_batch
+    ADD CONSTRAINT exp_urlmap_batch_pkey PRIMARY KEY (id);
+
+
+
+ALTER TABLE ONLY exp_urlmap_batch_item
+    ADD CONSTRAINT exp_urlmap_batch_item_pkey PRIMARY KEY (id);
 
 
 

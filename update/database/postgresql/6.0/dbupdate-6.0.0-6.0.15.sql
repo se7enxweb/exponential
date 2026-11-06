@@ -1223,3 +1223,88 @@ CREATE TABLE IF NOT EXISTS exp_migration_deploy_host (
     CONSTRAINT exp_migration_deploy_host_pkey PRIMARY KEY ( deploy_id, remote_id )
 );
 CREATE INDEX IF NOT EXISTS exp_migration_deploy_host_remote ON exp_migration_deploy_host USING btree ( remote_id );
+
+-- exp_url_redirect, exp_urlmap_batch and exp_urlmap_batch_item: the redirects checked on the full request (path and
+-- query) before the URL aliases, and the record of URL map imports, so that each can be undone (the upgrade step
+-- 6.0.15-url-map makes them the same way). Each table with its sequence only when it is missing (a DO block,
+-- PostgreSQL 9.0 or newer), so running these blocks again changes nothing.
+DO $$
+BEGIN
+    IF NOT EXISTS ( SELECT 1 FROM information_schema.tables WHERE table_schema = current_schema() AND table_name = 'exp_url_redirect' ) THEN
+        IF NOT EXISTS ( SELECT 1 FROM information_schema.sequences WHERE sequence_schema = current_schema() AND sequence_name = 'exp_url_redirect_id_seq' ) THEN
+            CREATE SEQUENCE exp_url_redirect_id_seq START 1 INCREMENT 1 MAXVALUE 9223372036854775807 MINVALUE 1 CACHE 1;
+        END IF;
+        CREATE TABLE exp_url_redirect (
+          batch_id integer DEFAULT 0 NOT NULL,
+          created integer DEFAULT 0 NOT NULL,
+          id integer DEFAULT nextval('exp_url_redirect_id_seq'::text) NOT NULL,
+          "language" character varying(20) DEFAULT ''::character varying NOT NULL,
+          modified integer DEFAULT 0 NOT NULL,
+          siteaccess character varying(100) DEFAULT ''::character varying NOT NULL,
+          source_key character varying(32) DEFAULT ''::character varying NOT NULL,
+          source_path character varying(1000) DEFAULT ''::character varying NOT NULL,
+          source_query character varying(1000) DEFAULT ''::character varying NOT NULL,
+          status integer DEFAULT 301 NOT NULL,
+          target character varying(2000) DEFAULT ''::character varying NOT NULL
+        );
+        ALTER TABLE ONLY exp_url_redirect ADD CONSTRAINT exp_url_redirect_pkey PRIMARY KEY ( id );
+        CREATE INDEX exp_url_redirect_batch ON exp_url_redirect USING btree ( batch_id );
+        CREATE INDEX exp_url_redirect_source ON exp_url_redirect USING btree ( source_key );
+    END IF;
+END
+$$;
+DO $$
+BEGIN
+    IF NOT EXISTS ( SELECT 1 FROM information_schema.tables WHERE table_schema = current_schema() AND table_name = 'exp_urlmap_batch' ) THEN
+        IF NOT EXISTS ( SELECT 1 FROM information_schema.sequences WHERE sequence_schema = current_schema() AND sequence_name = 'exp_urlmap_batch_id_seq' ) THEN
+            CREATE SEQUENCE exp_urlmap_batch_id_seq START 1 INCREMENT 1 MAXVALUE 9223372036854775807 MINVALUE 1 CACHE 1;
+        END IF;
+        CREATE TABLE exp_urlmap_batch (
+          created integer DEFAULT 0 NOT NULL,
+          created_count integer DEFAULT 0 NOT NULL,
+          failed_count integer DEFAULT 0 NOT NULL,
+          format character varying(20) DEFAULT ''::character varying NOT NULL,
+          id integer DEFAULT nextval('exp_urlmap_batch_id_seq'::text) NOT NULL,
+          "language" character varying(20) DEFAULT ''::character varying NOT NULL,
+          on_conflict character varying(20) DEFAULT ''::character varying NOT NULL,
+          rows_total integer DEFAULT 0 NOT NULL,
+          siteaccess character varying(100) DEFAULT ''::character varying NOT NULL,
+          skipped_count integer DEFAULT 0 NOT NULL,
+          source_name character varying(255) DEFAULT ''::character varying NOT NULL,
+          state character varying(20) DEFAULT ''::character varying NOT NULL,
+          summary text,
+          undone integer DEFAULT 0 NOT NULL,
+          undone_by integer DEFAULT 0 NOT NULL,
+          updated_count integer DEFAULT 0 NOT NULL,
+          user_id integer DEFAULT 0 NOT NULL
+        );
+        ALTER TABLE ONLY exp_urlmap_batch ADD CONSTRAINT exp_urlmap_batch_pkey PRIMARY KEY ( id );
+        CREATE INDEX exp_urlmap_batch_created ON exp_urlmap_batch USING btree ( created );
+    END IF;
+END
+$$;
+DO $$
+BEGIN
+    IF NOT EXISTS ( SELECT 1 FROM information_schema.tables WHERE table_schema = current_schema() AND table_name = 'exp_urlmap_batch_item' ) THEN
+        IF NOT EXISTS ( SELECT 1 FROM information_schema.sequences WHERE sequence_schema = current_schema() AND sequence_name = 'exp_urlmap_batch_item_id_seq' ) THEN
+            CREATE SEQUENCE exp_urlmap_batch_item_id_seq START 1 INCREMENT 1 MAXVALUE 9223372036854775807 MINVALUE 1 CACHE 1;
+        END IF;
+        CREATE TABLE exp_urlmap_batch_item (
+          "action" character varying(20) DEFAULT ''::character varying NOT NULL,
+          after_image text,
+          batch_id integer DEFAULT 0 NOT NULL,
+          before_image text,
+          id integer DEFAULT nextval('exp_urlmap_batch_item_id_seq'::text) NOT NULL,
+          kind character varying(30) DEFAULT ''::character varying NOT NULL,
+          line integer DEFAULT 0 NOT NULL,
+          old_url character varying(1000) DEFAULT ''::character varying NOT NULL,
+          seq integer DEFAULT 0 NOT NULL,
+          state character varying(20) DEFAULT ''::character varying NOT NULL,
+          target_key character varying(255) DEFAULT ''::character varying NOT NULL,
+          target_table character varying(50) DEFAULT ''::character varying NOT NULL
+        );
+        ALTER TABLE ONLY exp_urlmap_batch_item ADD CONSTRAINT exp_urlmap_batch_item_pkey PRIMARY KEY ( id );
+        CREATE INDEX exp_urlmap_batch_item_batch ON exp_urlmap_batch_item USING btree ( batch_id, seq );
+    END IF;
+END
+$$;

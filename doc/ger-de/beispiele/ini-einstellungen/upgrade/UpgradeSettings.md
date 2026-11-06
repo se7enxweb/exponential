@@ -31,7 +31,7 @@ Bearbeiten Sie `settings/upgrade.ini` nie selbst: Ein Update ersetzt die Datei. 
 > Stufe scripts: die PHP-Upgrade-Schritte, über die Klassen der Skripte und Setup-Befehle  
 > Stufe finish: die Änderungen wirksam machen und die Site prüfen (nur wenn der Lauf etwas geändert hat)  
 
-Standard: eine Liste mit 47: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepMigrationTables`, `expUpgradeStepRecordTable`, `expUpgradeStepMigrationRecordingTables`, `expUpgradeStepSqliteCompositeKeys`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses` ....
+Standard: eine Liste mit 48: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepMigrationTables`, `expUpgradeStepRecordTable`, `expUpgradeStepMigrationRecordingTables`, `expUpgradeStepSqliteCompositeKeys`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -59,7 +59,7 @@ StepList[]=expUpgradeStepMailPreferenceTables
 StepList[]=expUpgradeStepApiKeyTable
 StepList[]=expUpgradeStepTransferRunTable
 StepList[]=expUpgradeStepDataTableTables
-# ... 27 weitere in der ausgelieferten Datei
+# ... 28 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

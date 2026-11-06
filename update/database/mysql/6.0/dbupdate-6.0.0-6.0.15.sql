@@ -1053,3 +1053,63 @@ CREATE TABLE IF NOT EXISTS exp_migration_deploy_host (
   PRIMARY KEY ( deploy_id, remote_id ),
   KEY exp_migration_deploy_host_remote ( remote_id )
 ) ENGINE=InnoDB;
+
+-- exp_url_redirect, exp_urlmap_batch and exp_urlmap_batch_item: the redirects checked on the full request (path and
+-- query) before the URL aliases, and the record of URL map imports, so that each can be undone (the upgrade step
+-- 6.0.15-url-map makes them the same way). Written with IF NOT EXISTS, so running these statements again changes
+-- nothing.
+CREATE TABLE IF NOT EXISTS exp_url_redirect (
+  batch_id int(11) NOT NULL DEFAULT '0',
+  created int(11) NOT NULL DEFAULT '0',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  language varchar(20) NOT NULL DEFAULT '',
+  modified int(11) NOT NULL DEFAULT '0',
+  siteaccess varchar(100) NOT NULL DEFAULT '',
+  source_key varchar(32) NOT NULL DEFAULT '',
+  source_path varchar(1000) NOT NULL DEFAULT '',
+  source_query varchar(1000) NOT NULL DEFAULT '',
+  status int(11) NOT NULL DEFAULT '301',
+  target varchar(2000) NOT NULL DEFAULT '',
+  PRIMARY KEY ( id ),
+  KEY exp_url_redirect_batch ( batch_id ),
+  KEY exp_url_redirect_source ( source_key )
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS exp_urlmap_batch (
+  created int(11) NOT NULL DEFAULT '0',
+  created_count int(11) NOT NULL DEFAULT '0',
+  failed_count int(11) NOT NULL DEFAULT '0',
+  format varchar(20) NOT NULL DEFAULT '',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  language varchar(20) NOT NULL DEFAULT '',
+  on_conflict varchar(20) NOT NULL DEFAULT '',
+  rows_total int(11) NOT NULL DEFAULT '0',
+  siteaccess varchar(100) NOT NULL DEFAULT '',
+  skipped_count int(11) NOT NULL DEFAULT '0',
+  source_name varchar(255) NOT NULL DEFAULT '',
+  state varchar(20) NOT NULL DEFAULT '',
+  summary longtext,
+  undone int(11) NOT NULL DEFAULT '0',
+  undone_by int(11) NOT NULL DEFAULT '0',
+  updated_count int(11) NOT NULL DEFAULT '0',
+  user_id int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY ( id ),
+  KEY exp_urlmap_batch_created ( created )
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS exp_urlmap_batch_item (
+  action varchar(20) NOT NULL DEFAULT '',
+  after_image longtext,
+  batch_id int(11) NOT NULL DEFAULT '0',
+  before_image longtext,
+  id int(11) NOT NULL AUTO_INCREMENT,
+  kind varchar(30) NOT NULL DEFAULT '',
+  line int(11) NOT NULL DEFAULT '0',
+  old_url varchar(1000) NOT NULL DEFAULT '',
+  seq int(11) NOT NULL DEFAULT '0',
+  state varchar(20) NOT NULL DEFAULT '',
+  target_key varchar(255) NOT NULL DEFAULT '',
+  target_table varchar(50) NOT NULL DEFAULT '',
+  PRIMARY KEY ( id ),
+  KEY exp_urlmap_batch_item_batch ( batch_id, seq )
+) ENGINE=InnoDB;

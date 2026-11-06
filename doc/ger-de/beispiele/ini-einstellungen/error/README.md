@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # error.ini
 
-Die ausgelieferten Einstellungen von `settings/error.ini`: 7 Blöcke, 22 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/error.ini`: 11 Blöcke, 30 Einstellungen.
 
 > Exponential-Konfigurationsdatei für die Fehlerbehandlung  
 >
@@ -42,6 +42,10 @@ Die ausgelieferten Einstellungen von `settings/error.ini`: 7 Blöcke, 22 Einstel
 | [ErrorSettings-shop](ErrorSettings-shop.md) | 5 |
 | [HTTPError-404](HTTPError-404.md) | 2 |
 | [HTTPError-301](HTTPError-301.md) | 2 |
+| [HTTPError-302](HTTPError-302.md) | 2 |
+| [HTTPError-303](HTTPError-303.md) | 2 |
+| [HTTPError-307](HTTPError-307.md) | 2 |
+| [HTTPError-308](HTTPError-308.md) | 2 |
 | [HTTPError-401](HTTPError-401.md) | 2 |
 | [HTTPError-403](HTTPError-403.md) | 2 |
 

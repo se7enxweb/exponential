@@ -105,6 +105,14 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
     protected $formTokenRefusal = null;
 
     /**
+     * Whether the redirect of this request leaves the request's query behind: a redirect of exp_url_redirect matched
+     * the query itself (expUrlRedirect), so the old query must not be carried to the target. Since 6.0.15.
+     *
+     * @var bool
+     */
+    protected $dropRedirectQuery = false;
+
+    /**
      * Whether run() started a web request whose request log (expRequestLog::finish()) shutdown() still ends
      *
      * @var bool
@@ -824,11 +832,17 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         $GLOBALS['ezpRequestRuleNoStore'] = false;
         $GLOBALS['ezpRequestRuleDecision'] = null;
 
+        // The redirects of exp_url_redirect (old addresses with a query, temporary redirects, URL map imports) are
+        // checked once, on the address the visitor asked for, before the URL aliases and wildcards
+        $urlRedirectChecked = false;
+        $this->dropRedirectQuery = false;
+
         // Start the module loop
         while ( $this->siteBasics['module-run-required'] )
         {
             $objectHasMovedError = false;
             $objectHasMovedURI = false;
+            $objectHasMovedStatus = 301;
             $this->actualRequestedURI = $this->uri->uriString();
 
             // Extract user specified parameters
@@ -846,8 +860,23 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                 'rewrites' => $requestRuleRewrites,
             );
 
+            $urlRedirect = null;
+            if ( !$urlRedirectChecked && $this->siteBasics['url-translator-allowed'] && class_exists( 'expUrlRedirect' ) )
+            {
+                $urlRedirectChecked = true;
+                $urlRedirect = expUrlRedirect::forRequest( isset( $this->access['name'] ) ? (string)$this->access['name'] : '',
+                                                           (string)eZSys::serverVariable( 'REQUEST_URI', true ), $this->uri->uriString(),
+                                                           (string)eZSys::queryString() );
+            }
+            if ( $urlRedirect !== null )
+            {
+                $objectHasMovedURI = $urlRedirect['location'];
+                $objectHasMovedStatus = $urlRedirect['status'];
+                $objectHasMovedError = true;
+                $this->dropRedirectQuery = true;
+            }
             // Check for URL translation
-            if ( $this->siteBasics['url-translator-allowed'] && eZURLAliasML::urlTranslationEnabledByUri( $this->uri ) )
+            elseif ( $this->siteBasics['url-translator-allowed'] && eZURLAliasML::urlTranslationEnabledByUri( $this->uri ) )
             {
                 $translateResult = eZURLAliasML::translate( $this->uri );
                 if ( strcasecmp( trim( $this->uri->uriString(), '/' ), trim( $requestRoute['typed_uri'], '/' ) ) !== 0 )
@@ -856,6 +885,8 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                 if ( !is_string( $translateResult ) && $ini->variable( 'URLTranslator', 'WildcardTranslation' ) === 'enabled' )
                 {
                     $translateResult = eZURLWildcard::translate( $this->uri );
+                    if ( is_string( $translateResult ) )
+                        $objectHasMovedStatus = eZURLWildcard::lastRedirectStatus() ?: 301;
                     if ( $requestRoute['via'] === 'system' && strcasecmp( trim( $this->uri->uriString(), '/' ), trim( $requestRoute['typed_uri'], '/' ) ) !== 0 )
                         $requestRoute['via'] = 'wildcard';
                 }
@@ -1031,7 +1062,8 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                 {
                     if ( $objectHasMovedError == true )
                     {
-                        $moduleResult = $this->module->handleError( eZError::KERNEL_MOVED, 'kernel', array( 'new_location' => $objectHasMovedURI ) );
+                        $moduleResult = $this->module->handleError( eZError::KERNEL_MOVED, 'kernel', array( 'new_location' => $objectHasMovedURI,
+                                                                                                  'redirect_status' => $objectHasMovedStatus ) );
                     }
                     else if ( !$moduleAccessAllowed )
                     {
@@ -1596,7 +1628,9 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         }
 
         // After the module redirect url is completed, add the queryString params so they carry over the redirect operation
-        $redirectURI = self::appendRequestQuery( $redirectURI, (string)eZSys::queryString(), (string)eZSys::hostname(),
+        // (not after a redirect of exp_url_redirect: it matched the query itself, which the target does not want)
+        if ( !$this->dropRedirectQuery )
+            $redirectURI = self::appendRequestQuery( $redirectURI, (string)eZSys::queryString(), (string)eZSys::hostname(),
             array( (string)parse_url( 'http://' . $ini->variable( 'SiteSettings', 'SiteURL' ), PHP_URL_HOST ) ) );
 
         if ( $ini->variable( 'ContentSettings', 'StaticCache' ) == 'enabled' )

@@ -88,6 +88,8 @@ class expAuditTaxonomy
         'content.object.always_available' => array( 'severity' => 'info', 'default' => 'off', 'channel' => 'content' ),
         'content.object.initial_language' => array( 'severity' => 'info', 'default' => 'off', 'channel' => 'content' ),
         'content.urlalias.change' => array( 'severity' => 'info', 'default' => 'off', 'channel' => 'content' ),
+        'content.urlalias.import' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'content', 'label' => 'URL map imported' ),
+        'content.urlalias.import_undo' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'content', 'label' => 'URL map import undone' ),
         'content.class.create' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'content' ),
         'content.class.change' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'content' ),
         'content.class.remove' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'content' ),

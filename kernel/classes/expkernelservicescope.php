@@ -64,6 +64,8 @@ class expKernelServiceScope
         // a static publishing build's request: its verdict is made again, the template debug switches it turned off
         // are given back (expStaticBuildSignature)
         'staticbuild' => array( 'expStaticBuildSignature', 'resetRequest' ),
+        // the redirects of exp_url_redirect are read again (an import or an undo of another process counts at once)
+        'urlredirect' => array( 'expUrlRedirect', 'resetRequest' ),
     );
 
     /**

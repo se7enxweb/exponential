@@ -391,6 +391,7 @@ version), the backup, every stage with every step (`id`, `stage`, `version`, `st
 | `6.0.15-user-login-unique-index` | database | `./console exp:user-login-check --fix-index` |
 | `6.0.15-contentobject-modified-index` | database | the index `ezcontentobject_modified` (Dashboard > Recent content) |
 | `6.0.15-static-publish-tables` | database | `exp_static_run`, `exp_static_page` (static publishing) |
+| `6.0.15-url-map` | database | `exp_url_redirect`, `exp_urlmap_batch`, `exp_urlmap_batch_item` (URL map import: [the BC note](../bc/6.0/url-map-import.md)) |
 | `6.0.15-migration-deploy-tables` | database | `exp_migration_deploy`, `exp_migration_deploy_host` (deploys of migrations to remotes) |
 | `6.0.15-active-extension-tables` | database | (new) the tables of every active extension that ships a `share/db_schema.dba` (ezstarrating, ezgmaplocation, eztags ...), where missing; no data loaded |
 | `6.0.15-site-version` | database | `ezsite_data` `ezpublish-version` set to 6.0.15 |

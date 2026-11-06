@@ -541,7 +541,7 @@ class expUrlMapRow
     {
         if ( $unknownKind )
             $this->problems[] = 'unknown kind "' . $this->kind . '"; use ' . implode( ', ', self::kinds() ) . ' (or leave it empty)';
-        if ( $this->siteaccess !== '' && !preg_match( '/^[A-Za-z0-9_\-]+$/', $this->siteaccess ) )
+        if ( $this->siteaccess !== '' && $this->siteaccess !== '*' && !preg_match( '/^[A-Za-z0-9_\-]+$/', $this->siteaccess ) )
             $this->problems[] = 'siteaccess "' . $this->siteaccess . '" is not a siteaccess name';
         if ( $this->language !== '' && !preg_match( '/^[a-z]{2,3}-[A-Za-z]{2,4}$/', $this->language ) )
             $this->problems[] = 'language "' . $this->language . '" is not a locale such as eng-GB';

@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # error.ini
 
-The shipped settings of `settings/error.ini`: 7 blocks, 22 settings.
+The shipped settings of `settings/error.ini`: 11 blocks, 30 settings.
 
 > Exponential configuration file for error handling  
 >
@@ -42,6 +42,10 @@ The shipped settings of `settings/error.ini`: 7 blocks, 22 settings.
 | [ErrorSettings-shop](ErrorSettings-shop.md) | 5 |
 | [HTTPError-404](HTTPError-404.md) | 2 |
 | [HTTPError-301](HTTPError-301.md) | 2 |
+| [HTTPError-302](HTTPError-302.md) | 2 |
+| [HTTPError-303](HTTPError-303.md) | 2 |
+| [HTTPError-307](HTTPError-307.md) | 2 |
+| [HTTPError-308](HTTPError-308.md) | 2 |
 | [HTTPError-401](HTTPError-401.md) | 2 |
 | [HTTPError-403](HTTPError-403.md) | 2 |
 

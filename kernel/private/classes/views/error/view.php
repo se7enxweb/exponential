@@ -91,6 +91,12 @@ class View extends \Exponential\Runnable\ModuleView
                     if ( isset( $errorMap[$errorNumber] ) )
                     {
                         $httpErrorCode = $errorMap[$errorNumber];
+                        // A moved page answers with the status its redirect asks for (302, 303, 307, 308 of a
+                        // temporary wildcard or a redirect of exp_url_redirect) when error.ini defines that status
+                        if ( $errorNumber == \eZError::KERNEL_MOVED && isset( $extraErrorParameters['redirect_status'] )
+                             && in_array( (int)$extraErrorParameters['redirect_status'], array( 302, 303, 307, 308 ), true )
+                             && $errorINI->hasVariable( 'HTTPError-' . (int)$extraErrorParameters['redirect_status'], 'HTTPName' ) )
+                            $httpErrorCode = (int)$extraErrorParameters['redirect_status'];
                         // The status lines (HTTPName) and the headers of [HTTPError-<code>] HeaderList[]
                         // Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 97690e9c93), Copyright (C) Mugo Web, GPL v2
                         $errorHeaders = \expErrorHeaderList::build( $errorINI, $httpErrorCode, \eZSys::serverVariable( 'SERVER_PROTOCOL', true ) );

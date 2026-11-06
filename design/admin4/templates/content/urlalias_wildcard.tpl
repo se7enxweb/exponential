@@ -118,7 +118,7 @@
             <dt>{'Becomes'|i18n( 'design/admin/content/urlalias_wildcard' )}</dt>
             <dd><code>{$test_result.destination|wash}</code></dd>
             <dt>{'Visitors'|i18n( 'design/admin/content/urlalias_wildcard' )}</dt>
-            <dd>{if eq( $test_result.type, 1 )}{'are redirected to this address (HTTP 301).'|i18n( 'design/admin/content/urlalias_wildcard' )}{else}{'see this address\'s page under the address they asked for.'|i18n( 'design/admin/content/urlalias_wildcard' )}{/if}</dd>
+            <dd>{if eq( $test_result.type, 1 )}{'are redirected to this address (HTTP 301).'|i18n( 'design/admin/content/urlalias_wildcard' )}{elseif eq( $test_result.type, 3 )}{'are redirected to this address temporarily (HTTP 302).'|i18n( 'design/admin/content/urlalias_wildcard' )}{else}{'see this address\'s page under the address they asked for.'|i18n( 'design/admin/content/urlalias_wildcard' )}{/if}</dd>
             <dt>{'Resolves to'|i18n( 'design/admin/content/urlalias_wildcard' )}</dt>
             <dd>{if $test_result.external}{'An address on another site.'|i18n( 'design/admin/content/urlalias_wildcard' )}{elseif $test_result.resolves}<code>{$test_result.resolves|wash}</code>{else}{'Nothing on this site: no URL alias or module has this address, so visitors get an error page.'|i18n( 'design/admin/content/urlalias_wildcard' )}{/if}</dd>
         </dl>
@@ -190,6 +190,7 @@
             <ul class="a4-badges">
             {switch match=$wildcard.type}
             {case match=1}<li class="a4-badge is-info" title="{'Visitors are redirected (HTTP 301).'|i18n( 'design/admin/content/urlalias_wildcard' )}">{'Forward'|i18n( 'design/admin/content/urlalias_wildcard' )}</li>{/case}
+            {case match=3}<li class="a4-badge is-info" title="{'Visitors are redirected temporarily (HTTP 302).'|i18n( 'design/admin/content/urlalias_wildcard' )}">{'Forward, temporary'|i18n( 'design/admin/content/urlalias_wildcard' )}</li>{/case}
             {case match=2}<li class="a4-badge" title="{'The destination is shown under the address asked for.'|i18n( 'design/admin/content/urlalias_wildcard' )}">{'Direct'|i18n( 'design/admin/content/urlalias_wildcard' )}</li>{/case}
             {case}<li class="a4-badge is-warn">{'Undefined'|i18n( 'design/admin/content/urlalias_wildcard' )}</li>{/case}
             {/switch}
@@ -199,7 +200,7 @@
     <dl class="a4-facts">
         <div class="a4-field-wide">
             <dt>{'Type'|i18n( 'design/admin/content/urlalias_wildcard' )}</dt>
-            <dd>{switch match=$wildcard.type}{case match=1}{'Visitors are redirected (HTTP 301).'|i18n( 'design/admin/content/urlalias_wildcard' )}{/case}{case match=2}{'The destination is shown under the address asked for.'|i18n( 'design/admin/content/urlalias_wildcard' )}{/case}{case}{'Undefined'|i18n( 'design/admin/content/urlalias_wildcard' )}{/case}{/switch}</dd>
+            <dd>{switch match=$wildcard.type}{case match=1}{'Visitors are redirected (HTTP 301).'|i18n( 'design/admin/content/urlalias_wildcard' )}{/case}{case match=3}{'Visitors are redirected temporarily (HTTP 302).'|i18n( 'design/admin/content/urlalias_wildcard' )}{/case}{case match=2}{'The destination is shown under the address asked for.'|i18n( 'design/admin/content/urlalias_wildcard' )}{/case}{case}{'Undefined'|i18n( 'design/admin/content/urlalias_wildcard' )}{/case}{/switch}</dd>
         </div>
         <div>
             <dt>{'ID'|i18n( 'design/admin/content/urlalias_wildcard' )}</dt>

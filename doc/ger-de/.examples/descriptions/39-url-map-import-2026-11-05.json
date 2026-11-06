@@ -1,0 +1,98 @@
+{
+    "command:expurlbatches": {
+        "en": "List the URL map imports: who imported which file when, the counts and whether it was undone",
+        "de": "Die Importe von URL-Zuordnungen auflisten: wer wann welche Datei importiert hat, die Anzahlen und ob er zurückgenommen wurde"
+    },
+    "command:expurlbatches --format": {
+        "en": "import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo: text (default) or json (the machine output exp-url/1)",
+        "de": "import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo: text (Standard) oder json (die Maschinenausgabe exp-url/1)"
+    },
+    "command:expurlbatches --limit": {
+        "en": "How many of the last imports to list (default 20)",
+        "de": "Wie viele der letzten Importe aufgelistet werden (Standard 20)"
+    },
+    "command:expurlexport": {
+        "en": "Export the URL translator, the wildcards and the redirects as a URL map (CSV, JSON, .xlsx, .ods, Apache or nginx rules)",
+        "de": "Den URL-Übersetzer, die Platzhalter und die Weiterleitungen als URL-Zuordnung exportieren (CSV, JSON, .xlsx, .ods, Apache- oder nginx-Regeln)"
+    },
+    "command:expurlexport --format": {
+        "en": "import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo: text (default) or json (the machine output exp-url/1)",
+        "de": "import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo: text (Standard) oder json (die Maschinenausgabe exp-url/1)"
+    },
+    "command:expurlexport --include-node-aliases": {
+        "en": "Also the custom URL aliases of nodes (target node:<id>), not only the URL translator's",
+        "de": "Auch die eigenen URL-Aliase von Knoten (Ziel node:<id>), nicht nur die des URL-Übersetzers"
+    },
+    "command:expurlexport --kind": {
+        "en": "Only these kinds: alias (the URL translator), wildcard, redirect (a comma list or repeated; default all)",
+        "de": "Nur diese Arten: alias (der URL-Übersetzer), wildcard, redirect (durch Kommas getrennt oder wiederholt; Standard alle)"
+    },
+    "command:expurlexport --language": {
+        "en": "import: the language of rows without one (default the siteaccess's); export: only this language",
+        "de": "import: die Sprache von Zeilen ohne eigene (Standard die des Siteaccess); export: nur diese Sprache"
+    },
+    "command:expurlexport --output": {
+        "en": "The file to write (default the standard output; needed for xlsx and ods)",
+        "de": "Die zu schreibende Datei (Standard die Standardausgabe; nötig für xlsx und ods)"
+    },
+    "command:expurlexport --output-format": {
+        "en": "import, export: what the command prints, text (default) or json (the machine output exp-url/1); --format is the file's format there",
+        "de": "import, export: was der Befehl ausgibt, text (Standard) oder json (die Maschinenausgabe exp-url/1); --format ist dort das Format der Datei"
+    },
+    "command:expurlimport": {
+        "en": "Import a URL map (CSV, JSON, .xlsx, .ods, Apache or nginx rules) into the URL translator, the wildcards and the redirects, as one batch that can be undone",
+        "de": "Eine URL-Zuordnung (CSV, JSON, .xlsx, .ods, Apache- oder nginx-Regeln) in den URL-Übersetzer, die Platzhalter und die Weiterleitungen importieren, als ein Stapel, der sich zurücknehmen lässt"
+    },
+    "command:expurlimport --dry-run": {
+        "en": "Plan and check only: list what would be imported, write nothing",
+        "de": "Nur planen und prüfen: auflisten, was importiert würde, nichts schreiben"
+    },
+    "command:expurlimport --format": {
+        "en": "import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo: text (default) or json (the machine output exp-url/1)",
+        "de": "import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo: text (Standard) oder json (die Maschinenausgabe exp-url/1)"
+    },
+    "command:expurlimport --host": {
+        "en": "An old host and the siteaccess it stands for, old-site.com=site (a comma list or repeated): for full addresses of a host that is not this installation's",
+        "de": "Ein alter Host und der Siteaccess, für den er steht, alte-website.de=site (durch Kommas getrennt oder wiederholt): für vollständige Adressen eines Hosts, der nicht zu dieser Installation gehört"
+    },
+    "command:expurlimport --language": {
+        "en": "import: the language of rows without one (default the siteaccess's); export: only this language",
+        "de": "import: die Sprache von Zeilen ohne eigene (Standard die des Siteaccess); export: nur diese Sprache"
+    },
+    "command:expurlimport --login": {
+        "en": "Run as this user (recorded with the import and in the audit)",
+        "de": "Als dieser Benutzer ausführen (mit dem Import und im Audit aufgezeichnet)"
+    },
+    "command:expurlimport --on-conflict": {
+        "en": "What happens to an old address that has another entry already: skip (default) or overwrite",
+        "de": "Was mit einer alten Adresse geschieht, die schon einen anderen Eintrag hat: skip (überspringen, Standard) oder overwrite (überschreiben)"
+    },
+    "command:expurlimport --output-format": {
+        "en": "import, export: what the command prints, text (default) or json (the machine output exp-url/1); --format is the file's format there",
+        "de": "import, export: was der Befehl ausgibt, text (Standard) oder json (die Maschinenausgabe exp-url/1); --format ist dort das Format der Datei"
+    },
+    "command:expurlimport --report": {
+        "en": "Also write the plan, row by row, to this file (.json, or .csv)",
+        "de": "Den Plan zusätzlich Zeile für Zeile in diese Datei schreiben (.json oder .csv)"
+    },
+    "command:expurlundo": {
+        "en": "Undo a URL map import: every alias, wildcard and redirect it created or changed back as it was",
+        "de": "Einen Import einer URL-Zuordnung zurücknehmen: jeden Alias, Platzhalter und jede Weiterleitung, die er angelegt oder geändert hat, wieder so, wie sie waren"
+    },
+    "command:expurlundo --force": {
+        "en": "Undo also the entries that changed after the import (default: they are kept)",
+        "de": "Auch die Einträge zurücknehmen, die sich nach dem Import geändert haben (Standard: sie bleiben)"
+    },
+    "command:expurlundo --format": {
+        "en": "import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo: text (default) or json (the machine output exp-url/1)",
+        "de": "import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo: text (Standard) oder json (die Maschinenausgabe exp-url/1)"
+    },
+    "command:expurlundo --login": {
+        "en": "Run as this user (recorded with the import and in the audit)",
+        "de": "Als dieser Benutzer ausführen (mit dem Import und im Audit aufgezeichnet)"
+    },
+    "ini:settings/error.ini [HTTPError-302]": {
+        "en": "The other statuses a moved page can answer with (since 6.0.15): a temporary URL wildcard (302) and the\nredirects of exp_url_redirect, which keep the status of the URL map they were imported from. Without the\ngroup of a status, such a redirect answers with 301.",
+        "de": "Die anderen Status, mit denen eine verschobene Seite antworten kann (seit 6.0.15): ein vorübergehender\nURL-Platzhalter (302) und die Weiterleitungen von exp_url_redirect, die den Status der URL-Zuordnung behalten,\naus der sie importiert wurden. Ohne die Gruppe eines Status antwortet eine solche Weiterleitung mit 301."
+    }
+}

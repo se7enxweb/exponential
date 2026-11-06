@@ -987,6 +987,52 @@ CREATE TABLE `exp_migration_deploy_host` (
 ,  `transport` varchar(20) NOT NULL DEFAULT ''
 ,  PRIMARY KEY (`deploy_id`,`remote_id`)
 );
+CREATE TABLE `exp_url_redirect` (
+  `batch_id` integer NOT NULL DEFAULT '0'
+,  `created` integer NOT NULL DEFAULT '0'
+,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `language` varchar(20) NOT NULL DEFAULT ''
+,  `modified` integer NOT NULL DEFAULT '0'
+,  `siteaccess` varchar(100) NOT NULL DEFAULT ''
+,  `source_key` varchar(32) NOT NULL DEFAULT ''
+,  `source_path` varchar(1000) NOT NULL DEFAULT ''
+,  `source_query` varchar(1000) NOT NULL DEFAULT ''
+,  `status` integer NOT NULL DEFAULT '301'
+,  `target` varchar(2000) NOT NULL DEFAULT ''
+);
+CREATE TABLE `exp_urlmap_batch` (
+  `created` integer NOT NULL DEFAULT '0'
+,  `created_count` integer NOT NULL DEFAULT '0'
+,  `failed_count` integer NOT NULL DEFAULT '0'
+,  `format` varchar(20) NOT NULL DEFAULT ''
+,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `language` varchar(20) NOT NULL DEFAULT ''
+,  `on_conflict` varchar(20) NOT NULL DEFAULT ''
+,  `rows_total` integer NOT NULL DEFAULT '0'
+,  `siteaccess` varchar(100) NOT NULL DEFAULT ''
+,  `skipped_count` integer NOT NULL DEFAULT '0'
+,  `source_name` varchar(255) NOT NULL DEFAULT ''
+,  `state` varchar(20) NOT NULL DEFAULT ''
+,  `summary` longtext
+,  `undone` integer NOT NULL DEFAULT '0'
+,  `undone_by` integer NOT NULL DEFAULT '0'
+,  `updated_count` integer NOT NULL DEFAULT '0'
+,  `user_id` integer NOT NULL DEFAULT '0'
+);
+CREATE TABLE `exp_urlmap_batch_item` (
+  `action` varchar(20) NOT NULL DEFAULT ''
+,  `after_image` longtext
+,  `batch_id` integer NOT NULL DEFAULT '0'
+,  `before_image` longtext
+,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `kind` varchar(30) NOT NULL DEFAULT ''
+,  `line` integer NOT NULL DEFAULT '0'
+,  `old_url` varchar(1000) NOT NULL DEFAULT ''
+,  `seq` integer NOT NULL DEFAULT '0'
+,  `state` varchar(20) NOT NULL DEFAULT ''
+,  `target_key` varchar(255) NOT NULL DEFAULT ''
+,  `target_table` varchar(50) NOT NULL DEFAULT ''
+);
 CREATE TABLE `exp_migration_run` (
   `caption_post` varchar(150) NOT NULL DEFAULT ''
 ,  `caption_pre` varchar(150) NOT NULL DEFAULT ''
@@ -1588,6 +1634,10 @@ CREATE INDEX exphelp_feedback_created ON exphelp_feedback ( created );
 CREATE INDEX exp_migration_run_id ON exp_migration ( run_id );
 CREATE INDEX exp_static_page_node ON exp_static_page ( node_id );
 CREATE INDEX exp_static_run_target ON exp_static_run ( target, started_at );
+CREATE INDEX exp_url_redirect_batch ON exp_url_redirect ( batch_id );
+CREATE INDEX exp_url_redirect_source ON exp_url_redirect ( source_key );
+CREATE INDEX exp_urlmap_batch_created ON exp_urlmap_batch ( created );
+CREATE INDEX exp_urlmap_batch_item_batch ON exp_urlmap_batch_item ( batch_id, seq );
 CREATE INDEX exp_migration_run_started ON exp_migration_run ( started_at );
 CREATE INDEX exp_migration_deploy_started ON exp_migration_deploy ( started_at );
 CREATE INDEX exp_migration_deploy_host_remote ON exp_migration_deploy_host ( remote_id );

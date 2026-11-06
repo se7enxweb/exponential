@@ -1578,6 +1578,74 @@ CREATE TABLE exp_static_run (
 
 
 
+CREATE TABLE exp_url_redirect (
+  batch_id int(11) NOT NULL default '0',
+  created int(11) NOT NULL default '0',
+  id int(11) NOT NULL auto_increment,
+  language varchar(20) NOT NULL default '',
+  modified int(11) NOT NULL default '0',
+  siteaccess varchar(100) NOT NULL default '',
+  source_key varchar(32) NOT NULL default '',
+  source_path varchar(1000) NOT NULL default '',
+  source_query varchar(1000) NOT NULL default '',
+  status int(11) NOT NULL default '301',
+  target varchar(2000) NOT NULL default '',
+  PRIMARY KEY  (id),
+  KEY exp_url_redirect_batch (batch_id),
+  KEY exp_url_redirect_source (source_key)
+) ENGINE=InnoDB;
+
+
+
+
+
+CREATE TABLE exp_urlmap_batch (
+  created int(11) NOT NULL default '0',
+  created_count int(11) NOT NULL default '0',
+  failed_count int(11) NOT NULL default '0',
+  format varchar(20) NOT NULL default '',
+  id int(11) NOT NULL auto_increment,
+  language varchar(20) NOT NULL default '',
+  on_conflict varchar(20) NOT NULL default '',
+  rows_total int(11) NOT NULL default '0',
+  siteaccess varchar(100) NOT NULL default '',
+  skipped_count int(11) NOT NULL default '0',
+  source_name varchar(255) NOT NULL default '',
+  state varchar(20) NOT NULL default '',
+  summary longtext,
+  undone int(11) NOT NULL default '0',
+  undone_by int(11) NOT NULL default '0',
+  updated_count int(11) NOT NULL default '0',
+  user_id int(11) NOT NULL default '0',
+  PRIMARY KEY  (id),
+  KEY exp_urlmap_batch_created (created)
+) ENGINE=InnoDB;
+
+
+
+
+
+CREATE TABLE exp_urlmap_batch_item (
+  action varchar(20) NOT NULL default '',
+  after_image longtext,
+  batch_id int(11) NOT NULL default '0',
+  before_image longtext,
+  id int(11) NOT NULL auto_increment,
+  kind varchar(30) NOT NULL default '',
+  line int(11) NOT NULL default '0',
+  old_url varchar(1000) NOT NULL default '',
+  seq int(11) NOT NULL default '0',
+  state varchar(20) NOT NULL default '',
+  target_key varchar(255) NOT NULL default '',
+  target_table varchar(50) NOT NULL default '',
+  PRIMARY KEY  (id),
+  KEY exp_urlmap_batch_item_batch (batch_id,seq)
+) ENGINE=InnoDB;
+
+
+
+
+
 CREATE TABLE exp_migration_run (
   caption_post varchar(150) NOT NULL default '',
   caption_pre varchar(150) NOT NULL default '',

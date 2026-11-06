@@ -415,6 +415,7 @@ Code-Version), die Sicherung, jede Stufe mit jedem Schritt (`id`, `stage`, `vers
 | `6.0.15-user-login-unique-index` | database | `./console exp:user-login-check --fix-index` |
 | `6.0.15-contentobject-modified-index` | database | der Index `ezcontentobject_modified` (Dashboard > Neue Inhalte) |
 | `6.0.15-static-publish-tables` | database | `exp_static_run`, `exp_static_page` (statisches Veröffentlichen) |
+| `6.0.15-url-map` | database | `exp_url_redirect`, `exp_urlmap_batch`, `exp_urlmap_batch_item` (Import von URL-Zuordnungen: [der BC-Hinweis](../bc/6.0/url-zuordnungen-importieren.md)) |
 | `6.0.15-migration-deploy-tables` | database | `exp_migration_deploy`, `exp_migration_deploy_host` (Auslieferungen von Migrationen an Gegenstellen) |
 | `6.0.15-active-extension-tables` | database | (neu) die Tabellen jeder aktiven Erweiterung mit einer `share/db_schema.dba` (ezstarrating, ezgmaplocation, eztags ...), wo sie fehlen; keine Daten geladen |
 | `6.0.15-site-version` | database | `ezsite_data` `ezpublish-version` auf 6.0.15 gesetzt |

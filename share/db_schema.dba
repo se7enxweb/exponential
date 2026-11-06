@@ -12179,6 +12179,361 @@ $schema = array (
       ),
     ),
   ),
+  'exp_url_redirect' => 
+  array (
+    'name' => 'exp_url_redirect',
+    'fields' => 
+    array (
+      'batch_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'created' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'id' => 
+      array (
+        'type' => 'auto_increment',
+        'default' => false,
+      ),
+      'language' => 
+      array (
+        'length' => 20,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'modified' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'siteaccess' => 
+      array (
+        'length' => 100,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'source_key' => 
+      array (
+        'length' => 32,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'source_path' => 
+      array (
+        'length' => 1000,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'source_query' => 
+      array (
+        'length' => 1000,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'status' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 301,
+      ),
+      'target' => 
+      array (
+        'length' => 2000,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+    ),
+    'indexes' => 
+    array (
+      'PRIMARY' => 
+      array (
+        'type' => 'primary',
+        'fields' => 
+        array (
+          0 => 'id',
+        ),
+      ),
+      'exp_url_redirect_batch' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'batch_id',
+        ),
+      ),
+      'exp_url_redirect_source' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'source_key',
+        ),
+      ),
+    ),
+  ),
+  'exp_urlmap_batch' => 
+  array (
+    'name' => 'exp_urlmap_batch',
+    'fields' => 
+    array (
+      'created' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'created_count' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'failed_count' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'format' => 
+      array (
+        'length' => 20,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'id' => 
+      array (
+        'type' => 'auto_increment',
+        'default' => false,
+      ),
+      'language' => 
+      array (
+        'length' => 20,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'on_conflict' => 
+      array (
+        'length' => 20,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'rows_total' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'siteaccess' => 
+      array (
+        'length' => 100,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'skipped_count' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'source_name' => 
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'state' => 
+      array (
+        'length' => 20,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'summary' => 
+      array (
+        'type' => 'longtext',
+        'default' => false,
+      ),
+      'undone' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'undone_by' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'updated_count' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'user_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+    ),
+    'indexes' => 
+    array (
+      'PRIMARY' => 
+      array (
+        'type' => 'primary',
+        'fields' => 
+        array (
+          0 => 'id',
+        ),
+      ),
+      'exp_urlmap_batch_created' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'created',
+        ),
+      ),
+    ),
+  ),
+  'exp_urlmap_batch_item' => 
+  array (
+    'name' => 'exp_urlmap_batch_item',
+    'fields' => 
+    array (
+      'action' => 
+      array (
+        'length' => 20,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'after_image' => 
+      array (
+        'type' => 'longtext',
+        'default' => false,
+      ),
+      'batch_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'before_image' => 
+      array (
+        'type' => 'longtext',
+        'default' => false,
+      ),
+      'id' => 
+      array (
+        'type' => 'auto_increment',
+        'default' => false,
+      ),
+      'kind' => 
+      array (
+        'length' => 30,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'line' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'old_url' => 
+      array (
+        'length' => 1000,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'seq' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'state' => 
+      array (
+        'length' => 20,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'target_key' => 
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'target_table' => 
+      array (
+        'length' => 50,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+    ),
+    'indexes' => 
+    array (
+      'PRIMARY' => 
+      array (
+        'type' => 'primary',
+        'fields' => 
+        array (
+          0 => 'id',
+        ),
+      ),
+      'exp_urlmap_batch_item_batch' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'batch_id',
+          1 => 'seq',
+        ),
+      ),
+    ),
+  ),
   '_info' => 
   array (
     'format' => 'generic',

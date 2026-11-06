@@ -43,7 +43,7 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [debugbar.ini](debugbar/README.md) | kernel | 42 |
 | [design.ini](design/README.md) | kernel | 5 |
 | [editorpolicies.ini](editorpolicies/README.md) | kernel | 2 |
-| [error.ini](error/README.md) | kernel | 7 |
+| [error.ini](error/README.md) | kernel | 11 |
 | [exphelp.ini](exphelp/README.md) | kernel | 69 |
 | [extendedattributefilter.ini](extendedattributefilter/README.md) | kernel | 0 |
 | [ezxml.ini](ezxml/README.md) | kernel | 4 |

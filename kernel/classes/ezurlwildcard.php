@@ -31,6 +31,11 @@ class eZURLWildcard extends eZPersistentObject
     const TYPE_NONE = 0;
     const TYPE_FORWARD = 1;
     const TYPE_DIRECT = 2;
+    /**
+     * A forward wildcard that redirects temporarily (302 Found) instead of permanently (301). Since 6.0.15.
+     * @var int
+     */
+    const TYPE_FORWARD_TEMPORARY = 3;
 
     /**
      * ExpiryHandler key
@@ -55,6 +60,12 @@ class eZURLWildcard extends eZPersistentObject
      * @var array
      */
     protected static $wildcardsIndex = null;
+
+    /**
+     * The status of the redirect the last translate() answered with (301 or 302), 0 when it did not redirect
+     * @var int
+     */
+    protected static $lastRedirectStatus = 0;
 
     public static function definition()
     {
@@ -340,6 +351,7 @@ class eZURLWildcard extends eZPersistentObject
     public static function translate( &$uri )
     {
         $result = false;
+        self::$lastRedirectStatus = 0;
 
         // get uri string
         $uriString = ( $uri instanceof eZURI ) ? $uri->elements() : $uri;
@@ -374,7 +386,7 @@ class eZURLWildcard extends eZPersistentObject
                     eZDebugSetting::writeDebug( 'kernel-urltranslator', "new uri string: '$uriString'", __METHOD__ );
 
                     // optimization: don't try further translation if wildcard type is 'forward'
-                    if ( ( $wildcardInfo['type'] ?? null ) == self::TYPE_FORWARD )
+                    if ( self::isForwardType( $wildcardInfo['type'] ?? null ) )
                     {
                         $urlTranslated = true;
                         break;
@@ -413,12 +425,14 @@ class eZURLWildcard extends eZPersistentObject
             switch ( $wildcardType )
             {
                 case self::TYPE_FORWARD:
+                case self::TYPE_FORWARD_TEMPORARY:
                 {
                     // do redirect:
                     //   => set $result to translated uri
-                    //   => set uri string to a MOVED PERMANENTLY HTTP code
+                    //   => set uri string to a MOVED HTTP code (the kernel answers with lastRedirectStatus())
                     $result = $uriString;
                     $uriString = 'error/301';
+                    self::$lastRedirectStatus = self::redirectStatusOfType( (int)$wildcardType );
                 }
                 break;
 
@@ -787,6 +801,54 @@ class eZURLWildcard extends eZPersistentObject
             }
         }
         return false;
+    }
+
+    /**
+     * Whether a wildcard type redirects (forward, forward temporary). Since 6.0.15.
+     *
+     * @param mixed $type
+     * @return bool
+     */
+    public static function isForwardType( $type )
+    {
+        return (int)$type === self::TYPE_FORWARD || (int)$type === self::TYPE_FORWARD_TEMPORARY;
+    }
+
+    /**
+     * The HTTP status a wildcard type redirects with: 301 for forward, 302 for forward temporary, 0 for direct.
+     * Since 6.0.15.
+     *
+     * @param mixed $type
+     * @return int
+     */
+    public static function redirectStatusOfType( $type )
+    {
+        if ( (int)$type === self::TYPE_FORWARD_TEMPORARY )
+            return 302;
+        return (int)$type === self::TYPE_FORWARD ? 301 : 0;
+    }
+
+    /**
+     * The name of a wildcard type: forward, forward-temporary, direct, none. Since 6.0.15.
+     *
+     * @param mixed $type
+     * @return string
+     */
+    public static function typeName( $type )
+    {
+        $names = array( self::TYPE_FORWARD => 'forward', self::TYPE_FORWARD_TEMPORARY => 'forward-temporary', self::TYPE_DIRECT => 'direct' );
+        return isset( $names[(int)$type] ) ? $names[(int)$type] : 'none';
+    }
+
+    /**
+     * The status of the redirect the last translate() answered with: 301 or 302, 0 when it did not redirect.
+     * Since 6.0.15.
+     *
+     * @return int
+     */
+    public static function lastRedirectStatus()
+    {
+        return self::$lastRedirectStatus;
     }
 }
 
