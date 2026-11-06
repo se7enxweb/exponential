@@ -302,7 +302,8 @@
 
 /* ---- trash ---- content/trash: filters, where an item was and what restoring it does ------------------------- */
 
-.a4-content-trash table.list td { max-width: 500px; overflow-wrap: break-word; }
+.a4-content-trash .content-navigation-childlist { overflow-x: auto; }
+.a4-content-trash table.list td { max-width: 500px; overflow-wrap: anywhere; }
 .a4-content-trash table.list td.a4-content-trash-narrow { max-width: 280px; }
 .a4-content-trash td.a4-content-trash-name { min-width: 14em; }
 .a4-content-trash .a4-content-trash-foot { margin-top: var(--a4-space-4); }
