@@ -1,0 +1,29 @@
+# Old site rules
+RewriteEngine On
+Redirect 301 /about-us.html /About
+RedirectPermanent /contact.php https://www.example.com/Contact
+Redirect /temp-page /Temporary
+Redirect gone /removed
+RedirectMatch 301 ^/blog/(.*)$ /News/$1
+RedirectMatch ^/archive/(\d+)$ /Archive/$1
+
+RewriteRule ^/?products/(.*)$ /Shop/$1 [R=301,L]
+RewriteRule ^old-shop/(.+)/item\.html$ /Shop/$1 [R,L,NC]
+RewriteRule ^/?print/(.*)$ /$1 [L]
+RewriteRule ^team$ /Team [PT,L]
+RewriteCond %{HTTP_HOST} ^(www\.)?old-site\.example\.com$ [NC]
+RewriteRule ^/?news$ /News [R=301,L]
+RewriteCond %{QUERY_STRING} ^id=5$
+RewriteRule ^/?index\.php$ /Home? [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [L]
+RewriteRule ^/?download/(.*)$ /Files/$1 [F]
+RewriteRule ^/?a|b$ /c [R=301,L]
+RewriteRule ^/?x/(.*)$ /y/%1 [R=301,L]
+#exp:alias /internal /Inside
+<VirtualHost *:80>
+    ServerName legacy.example.com
+    Redirect permanent /start /Home
+    RewriteRule ^/?very/long/\
+path$ /Long [R=301,L]
+</VirtualHost>

@@ -1,0 +1,9 @@
+old_url,new_url,kind,siteaccess,language,note
+/about-us.html,/About,,,,old about page
+https://Old-Site.example.com:443/news/2019/,/News,redirect,site,eng-GB,
+/products/*,/Shop/{1},wildcard-forward,,,"catalogue, all pages"
+/legacy/*/print,/{1},wildcard-direct,,,
+/team,node:42,alias,,,"two
+lines"
+/Über uns,/Ueber-uns,,,ger-DE,unicode path
+/old%20page,/new-page,,,,"say ""hello"""

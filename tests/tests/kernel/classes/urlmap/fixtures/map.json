@@ -1,0 +1,9 @@
+[
+    { "schema": "exp-url-map/1" },
+    { "old_url": "/about-us.html", "new_url": "/About", "note": "old about page" },
+    { "old_url": "https://old-site.example.com/news/2019", "new_url": "/News", "kind": "redirect", "siteaccess": "site", "language": "eng-GB" },
+    { "old_url": "/products/*", "new_url": "/Shop/{1}" },
+    { "from": "/team", "to": "eznode://42", "type": "alias" },
+    { "old_url": "/broken", "new_url": "/x/{1}" },
+    "not an object"
+]

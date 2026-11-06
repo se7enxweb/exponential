@@ -1,0 +1,40 @@
+# old site
+map $uri $new_location {
+    default "";
+    /about-us.html /About;
+    ~^/blog/(.*)$ /News/$1;
+    ~^/archive/(\d+)$ /Archive/$1;
+}
+
+server {
+    listen 80;
+    server_name old-site.example.com www.old-site.example.com;
+
+    if ($new_location) { return 301 $new_location; }
+
+    rewrite ^/products/(.*)$ /Shop/$1 permanent;
+    rewrite ^/temp$ /Temporary redirect;
+    rewrite ^/print/(.*)$ /$1 last;
+    rewrite ^/x/(.*)$ /y/$host/$1 permanent;
+
+    location = /contact.php {
+        return 301 https://$host/Contact;
+    }
+    location = /index.php {
+        if ($args = "id=5") { return 301 /Home; }
+        return 301 /;
+    }
+    location ~ ^/team/(.*)$ {
+        return 301 /Team/$1;
+    }
+    location /downloads {
+        return 301 /Files;
+    }
+    location = /gone {
+        return 410;
+    }
+    location = "/with space" {
+        return 302 /Spaced;
+    }
+    #exp:wildcard-direct /legacy/* /{1}
+}

@@ -3081,6 +3081,24 @@
     ],
     "lib/ezdbschema/classes/expmongoschema.php": [
       "tests/tests/lib/ezdb/mongodb/expMongoDBColumnAliasAndCollectionsTest.php"
+    ],
+    "kernel/classes/urlmap/*": [
+      "tests/tests/kernel/classes/urlmap/expUrlMapCsvJsonTest.php",
+      "tests/tests/kernel/classes/urlmap/expUrlMapRewriteRulesTest.php",
+      "tests/tests/kernel/classes/urlmap/expUrlMapRoundTripTest.php",
+      "tests/tests/kernel/classes/urlmap/expUrlMapRowTest.php",
+      "tests/tests/kernel/classes/urlmap/expUrlMapSpreadsheetTest.php"
+    ],
+    "tests/tests/kernel/classes/urlmap/fixtures/*": [
+      "tests/tests/kernel/classes/urlmap/expUrlMapCsvJsonTest.php",
+      "tests/tests/kernel/classes/urlmap/expUrlMapRewriteRulesTest.php",
+      "tests/tests/kernel/classes/urlmap/expUrlMapRoundTripTest.php",
+      "tests/tests/kernel/classes/urlmap/expUrlMapRowTest.php",
+      "tests/tests/kernel/classes/urlmap/expUrlMapSpreadsheetTest.php"
+    ],
+    "kernel/classes/spreadsheet/*": [
+      "tests/tests/kernel/classes/urlmap/expUrlMapSpreadsheetTest.php",
+      "tests/tests/kernel/classes/urlmap/expUrlMapRoundTripTest.php"
     ]
   },
   "generated": {
