@@ -40,6 +40,7 @@ instead and make an alias or a wildcard for it.
 | One old address to one page | the node's **URL aliases** tab: add the old address as an alias of the node |
 | One address to a module view | **Setup > URL translator**: a global alias, "Alias should redirect" checked (301) |
 | A group of old addresses | **Setup > URL wildcards**: `news/*` to `articles/{1}`, "Redirecting URL" checked |
+| Many old addresses at once, after a move or relaunch | **Setup > URL translator > Import**: a URL map file (CSV, Excel, or the old site's Apache or nginx rules), imported as one batch that can be undone; see [Migrating URLs](../../migrating-urls.md) |
 | Addresses of another site | a wildcard to an `https://` destination |
 
 Wildcards are only consulted when no alias matches, in the order they were created; **Try an address** shows which
@@ -82,6 +83,7 @@ the same functions in your own code ([Forms, CSRF protection and HTTP input](../
 
 ## Related pages
 
+- [Migrating URLs](../../migrating-urls.md)
 - [URL aliases and nice URLs](url-aliases-and-nice-urls.md)
 - [URL wildcards and custom aliases](url-wildcards.md)
 - [Moving from an older installation](../../../install/14-migrating-from-4x.md)

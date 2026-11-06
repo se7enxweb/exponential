@@ -35,6 +35,7 @@ use. So a tool in this table may be missing from your menus: then it is not acti
 | Turn a Word or OpenDocument file into an item, or download an item as a document | **Word and OpenDocument** | both | an item | DOCX, DOC, ODT | **Import/Export > Import a Word or OpenDocument file…** on a folder |
 | Print a folder or send it as a document | **PDF export** | export | a folder | PDF | **Setup > PDF export** |
 | Hand the audit trail to an auditor | **Audit export** | export | audit records | CSV, JSON lines, JSON | **Audit > Export** |
+| Keep the old addresses of a site working after a move: many redirects, aliases and wildcards from a file, undone as one, and written out again for the web server | **URL maps** | both | URL translator, URL wildcards, redirects | CSV, XLSX, ODS, JSON, Apache and nginx rules | **Setup > URL translator** (or **URL wildcards**) **> Import** and **Export**; [Migrating URLs](migrating-urls.md) |
 | Create or upgrade a module's table on another database, browse its rows, or set up a connection to an external database | **Data tables** | both | data tables, classes | SQL, .dba | **Setup > Data tables** |
 | Keep a data table and content of one class in step, once, on a schedule or live, in either direction | **Data tables** (synchronisations) | both | data tables, a class and a folder | (between a table and content) | **Setup > Data tables > Synchronisations**, or the group **Data tables** of the Imports catalogue |
 

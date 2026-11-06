@@ -1,0 +1,9 @@
+old_url,new_url,kind,siteaccess,language,note,status
+/about-us.html,/fitness,,,,"Alte Seite ""Über uns"", jetzt die Seite Fitness",
+/recipes.html,/recipes,,,,Rezeptübersicht,
+/recipes/kale-salad.html,/recipes/kale-salad,,,,,
+/recipes/hummus.html,/recipes/home-made-hummus,,,,Umbenanntes Rezept,
+/blog/eating-well.html,/healthy-eating,,,,,
+/contact.html,/contact,,,,,
+/running-tips,node:163,,,,Das Thema Running über seine Knoten-ID: folgt der Seite auch nach einem Verschieben,
+/eat-well,/healthy-eating,alias,,,"Unter der alten Adresse ausgeliefert, ohne Weiterleitung",

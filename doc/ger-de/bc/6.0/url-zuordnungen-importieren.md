@@ -5,6 +5,7 @@ von URL-Zuordnungen einer bestehenden Installation hinzufügt und ob sich an Vor
 URL-Aliase und Platzhalter arbeiten wie bisher; neu ist eine Tabelle von Weiterleitungen, die zuerst geprüft wird und
 leer ist, bis Sie in sie importieren.
 
+[URL-Zuordnungen importieren und exportieren](../../funktionen/6.0/url-zuordnungen-importieren-und-exportieren.md) · [URLs migrieren](../../hilfe/urls-migrieren.md) ·
 [Die Dateiformate von URL-Zuordnungen](../../spezifikationen/6.0/url-zuordnungsdateiformate.md) ·
 [Änderungsprotokoll 6.0.15](../../../changelogs/6.0/6.0.15.md)
 

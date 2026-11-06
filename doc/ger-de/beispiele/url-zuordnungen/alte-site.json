@@ -1,0 +1,10 @@
+[
+    { "schema": "exp-url-map/1" },
+    { "old_url": "/about-us.html", "new_url": "/fitness", "note": "Alte Seite \"Über uns\", jetzt die Seite Fitness" },
+    { "old_url": "/recipes.html", "new_url": "/recipes", "note": "Rezeptübersicht" },
+    { "old_url": "/recipes/kale-salad.html", "new_url": "/recipes/kale-salad" },
+    { "old_url": "/recipes/hummus.html", "new_url": "/recipes/home-made-hummus", "note": "Umbenanntes Rezept" },
+    { "old_url": "/blog/eating-well.html", "new_url": "/healthy-eating" },
+    { "old_url": "/contact.html", "new_url": "/contact" },
+    { "old_url": "/running-tips", "new_url": "node:163", "note": "Das Thema Running über seine Knoten-ID" }
+]

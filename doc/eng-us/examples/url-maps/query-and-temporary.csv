@@ -1,0 +1,6 @@
+old_url,new_url,kind,siteaccess,language,note,status
+/index.php?id=12,/recipes,,,,Old CMS address with a query: the order of the parameters does not count,
+/index.php?id=15&lang=en,/healthy-eating,,,,,
+/shop.php?category=3,/recipes/kale-salad,,,,Product moved for good,308
+/summer-challenge,/workout,redirect-temporary,,,Campaign page for the summer: search engines keep the old address,
+/spring-offer,/contact,,,,A temporary redirect by its status,307

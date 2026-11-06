@@ -4,6 +4,7 @@ Read this page when you upgrade to Exponential 6.0.15 and want to know what impo
 an existing installation, and whether anything you have changes. In short: your URL aliases and wildcards work as
 before; there is a new table of redirects that is checked first, and it is empty until you import into it.
 
+[Importing and exporting URL maps](../../features/6.0/url-map-import-export.md) · [Migrating URLs](../../help/migrating-urls.md) ·
 [The URL map file formats](../../specifications/6.0/url-map-file-formats.md) ·
 [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 

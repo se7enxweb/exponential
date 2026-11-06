@@ -1,0 +1,19 @@
+# Redirects of the old site, as its .htaccess had them.
+# exp:url:import reads Redirect, RedirectMatch and RewriteRule with RewriteCond.
+RewriteEngine On
+
+# One page each: a permanent redirect
+RewriteRule ^/?about-us\.html$ /fitness [R=301,L]
+RewriteRule ^/?contact\.html$ /contact [R=301,L]
+RewriteRule ^/?blog/eating-well\.html$ /healthy-eating [R=301,L]
+
+# A section moved: Apache reads Redirect as a prefix, so this is the page
+# /old-recipes plus everything below it (/old-recipes/* -> /recipes/{1})
+Redirect 301 /old-recipes /recipes
+
+# A pattern: a wildcard
+RedirectMatch 301 ^/topics/(.*)$ /$1
+
+# An old address with a query
+RewriteCond %{QUERY_STRING} ^id=12$
+RewriteRule ^/?index\.php$ /recipes? [R=301,L]

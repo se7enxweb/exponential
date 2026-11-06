@@ -54,6 +54,7 @@ The rules for writing code (naming, file layout, security, templates without inl
 | [PHP-FPM](web-servers/php-fpm.md) | A pool for one site |
 | [Velocity](web-servers/velocity.md) | `velocity.ini` overrides, the `/etc/vc` tree and a systemd unit |
 | [Demo mode](demo-mode/README.md) | `EXP_DEMO_MODE=1` for a public demo: `.htaccess`, virtual host, PHP-FPM pool, nginx, a systemd drop-in, a crontab, a container environment and a rebuild script |
+| [URL map examples](url-maps/README.md) | URL maps of an old site in CSV, JSON, Apache and nginx format, with query-string redirects, temporary redirects and wildcards, for `exp:url:import` |
 
 `staticcache_offload.conf` adds rules that serve pages from the static cache directly. See
 [Apache .htaccess](web-servers/apache-htaccess.md).

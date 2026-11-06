@@ -41,6 +41,7 @@ entscheiden Sie, wohin ihre Besucher stattdessen gehen sollen, und legen Sie daf
 | Eine alte Adresse auf eine Seite | der Reiter **URL-Aliase** des Knotens: fügen Sie die alte Adresse als Alias des Knotens hinzu |
 | Eine Adresse auf eine Modulansicht | **Setup > URL-Übersetzer**: ein globaler Alias, mit "Alias soll weiterleiten" angehakt (301) |
 | Eine Gruppe alter Adressen | **Setup > URL-Platzhalter**: `news/*` auf `articles/{1}`, mit "URL umleiten" angehakt |
+| Viele alte Adressen auf einmal, nach einem Umzug oder Relaunch | **Setup > URL-Übersetzer > Importieren**: eine Datei mit einer URL-Zuordnung (CSV, Excel oder die Apache- oder nginx-Regeln der alten Website), als ein Stapel importiert, der sich rückgängig machen lässt; siehe [URLs migrieren](../../urls-migrieren.md) |
 | Adressen einer anderen Website | ein Platzhalter auf ein `https://`-Ziel |
 
 Platzhalter werden nur herangezogen, wenn kein Alias passt, und zwar in der Reihenfolge ihrer Anlage; **Eine Adresse
@@ -86,6 +87,7 @@ Funktionen ([Formulare, CSRF und HTTP-Eingaben](../anwendungsentwickler/formular
 
 ## Verwandte Seiten
 
+- [URLs migrieren](../../urls-migrieren.md)
 - [URL-Aliasse und sprechende URLs](url-aliasse-und-sprechende-urls.md)
 - [URL-Platzhalter](url-platzhalter.md)
 - [Umzug von einer älteren Installation](../../../installation/14-migration-von-4x.md)

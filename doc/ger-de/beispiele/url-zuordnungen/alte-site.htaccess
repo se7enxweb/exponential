@@ -1,0 +1,19 @@
+# Weiterleitungen der alten Site, wie ihre .htaccess sie hatte.
+# exp:url:import liest Redirect, RedirectMatch und RewriteRule mit RewriteCond.
+RewriteEngine On
+
+# Je eine Seite: eine dauerhafte Weiterleitung
+RewriteRule ^/?about-us\.html$ /fitness [R=301,L]
+RewriteRule ^/?contact\.html$ /contact [R=301,L]
+RewriteRule ^/?blog/eating-well\.html$ /healthy-eating [R=301,L]
+
+# Ein Bereich ist umgezogen: Apache liest Redirect als Präfix, das ist also
+# die Seite /old-recipes und alles darunter (/old-recipes/* -> /recipes/{1})
+Redirect 301 /old-recipes /recipes
+
+# Ein Muster: ein Platzhalter (Wildcard)
+RedirectMatch 301 ^/topics/(.*)$ /$1
+
+# Eine alte Adresse mit Query
+RewriteCond %{QUERY_STRING} ^id=12$
+RewriteRule ^/?index\.php$ /recipes? [R=301,L]

@@ -79,8 +79,12 @@ Ein Platzhalter, der "nichts tut", wird meist von einem Alias oder einem ältere
 - Alte Website: `products/*.html` lässt sich nicht wörtlich ausdrücken; `products/*` auf `Products/{1}`, wobei die alten
   `.html`-Adressen an den abweichenden Knoten als Aliasse behandelt werden.
 
+Um viele globale URL-Aliase und Platzhalter auf einmal aus einer Datei anzulegen (CSV, Excel oder die Apache- oder
+nginx-Regeln der alten Website), importieren Sie eine URL-Zuordnung: [URLs migrieren](../../urls-migrieren.md).
+
 ## Verwandte Seiten
 
+- [URLs migrieren](../../urls-migrieren.md)
 - [Weiterleitungen und verschobene Inhalte](weiterleitungen-und-verschobene-inhalte.md)
 - [URL-Aliasse und sprechende URLs](url-aliasse-und-sprechende-urls.md)
 - [Einstellungsseite](../../../anleitungen/einstellungsseite.md)

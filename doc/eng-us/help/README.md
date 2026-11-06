@@ -55,6 +55,7 @@ allowed to use is shown grayed out or not at all.
 | [Searching](searching.md) | Find content in the administration and on the site |
 | [Languages](languages.md) | Translate content, and choose the language of the administration itself |
 | [The layouts editor](layouts-editor.md) | Arrange the blocks of a page in zones, and publish the layout |
+| [Migrating URLs](migrating-urls.md) | Keep the old addresses of a site working after a move: collect them, map them, import with a preview, test, undo, export |
 
 ## Accounts, roles and members
 

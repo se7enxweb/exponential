@@ -57,6 +57,7 @@ und wiederholt sie nicht.
 | [PHP-FPM](webserver/php-fpm.md) | Ein Pool für eine Website |
 | [Velocity](webserver/velocity.md) | Overrides von `velocity.ini`, der Baum `/etc/vc` und eine systemd-Unit |
 | [Demomodus](demomodus/README.md) | `EXP_DEMO_MODE=1` für eine öffentliche Demo: `.htaccess`, virtueller Host, PHP-FPM-Pool, nginx, ein systemd-Drop-in, eine Crontab, eine Container-Umgebung und ein Skript zum Neuaufbau |
+| [URL-Zuordnungen als Beispiele](url-zuordnungen/README.md) | URL-Zuordnungen einer alten Website im CSV-, JSON-, Apache- und nginx-Format, mit Weiterleitungen mit Abfrage, vorübergehenden Weiterleitungen und Platzhaltern, für `exp:url:import` |
 
 `staticcache_offload.conf` ergänzt Regeln, die Seiten direkt aus dem statischen Cache ausliefern. Siehe
 [Apache .htaccess](webserver/apache-htaccess.md).

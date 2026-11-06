@@ -1,0 +1,24 @@
+# Weiterleitungen der alten Site, wie ihr nginx-server-Block sie hatte.
+# exp:url:import liest location =, return, rewrite, if ($args) und map.
+
+location = /about-us.html {
+    return 301 /fitness;
+}
+
+location = /contact.html {
+    return 301 /contact;
+}
+
+location = /index.php {
+    if ($args = "id=12") { return 301 /recipes; }
+    if ($args = "id=15") { return 301 /healthy-eating; }
+}
+
+# Ein Muster: ein Platzhalter (Wildcard)
+rewrite ^/topics/(.*)$ /$1 permanent;
+
+# Eine Liste einzelner Seiten
+map $uri $old_site_target {
+    /recipes/kale-salad.html    /recipes/kale-salad;
+    /recipes/hummus.html        /recipes/home-made-hummus;
+}

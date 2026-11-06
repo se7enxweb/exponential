@@ -304,6 +304,7 @@ expUrlMapFormats::writeFile( 'map.xlsx', $rows );
 
 ## Related pages
 
+- [Importing and exporting URL maps](../../features/6.0/url-map-import-export.md), [Migrating URLs](../../help/migrating-urls.md) and [URL map examples](../../examples/url-maps/README.md)
 - [The migration file format](migration-file-format.md)
 - [Specifications 6.0](README.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

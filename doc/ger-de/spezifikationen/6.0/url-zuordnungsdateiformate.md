@@ -323,6 +323,7 @@ expUrlMapFormats::writeFile( 'map.xlsx', $rows );
 
 ## Verwandte Seiten
 
+- [URL-Zuordnungen importieren und exportieren](../../funktionen/6.0/url-zuordnungen-importieren-und-exportieren.md), [URLs migrieren](../../hilfe/urls-migrieren.md) und [URL-Zuordnungen als Beispiele](../../beispiele/url-zuordnungen/README.md)
 - [Das Migrationsdateiformat](migrationsdateiformat.md)
 - [Spezifikationen 6.0](README.md)
 - [Änderungsprotokoll 6.0.15](../../../changelogs/6.0/6.0.15.md)

@@ -3556,7 +3556,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-5aba88618586ec2d0675cb2920e2878a  doc/changelogs/6.0/6.0.15.md
+8f0d7ef0978f10f1a3943ff61a8885da  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3795,7 +3795,7 @@ cd72965db1f76b02f5d4df61cda1e0b5  doc/eng-us/bc/6.0/translated-documentation.md
 64389016aada25c568fdafc2ebe6ce5e  doc/eng-us/bc/6.0/trusted-proxies.md
 78f77d46a1c4fda9c55f0f24527261ed  doc/eng-us/bc/6.0/ui-switch-design.md
 0637dd8b6d6bcb69afd7fa771041c8f5  doc/eng-us/bc/6.0/ui-switch.md
-90a2e4ced53c75c7f20ea7f492f55a4c  doc/eng-us/bc/6.0/url-map-import.md
+42e2243cedc9c929c5d3725d54ac83cf  doc/eng-us/bc/6.0/url-map-import.md
 69d804d80e2da3a6139cf129f4fba8de  doc/eng-us/bc/6.0/user-account-approval.md
 7928239ba6369a6bb899ee998ce94b05  doc/eng-us/bc/6.0/user-password-change.md
 e37c2dcbaa794657ef0b6ade79057808  doc/eng-us/bc/6.0/velocity-engine-upgrade-notes.md
@@ -3813,7 +3813,7 @@ f80660723359bd447cf490c056530f56  doc/eng-us/competition/php-cms-and-frameworks.
 5e1974cccd31a0011917096aed04ecec  doc/eng-us/competition/proprietary-dxp-and-saas.md
 9aad8564171ca8a3ebbdf24d0ac878f1  doc/eng-us/doxygen/Doxyfile
 96a0cec80eb773687ca28840ecc67ca1  doc/eng-us/doxygen/empty.html
-218a5bdcfb7e8b6199a72d575b78aac8  doc/eng-us/examples/README.md
+2e99638c66e7ff7cbd1323639855656c  doc/eng-us/examples/README.md
 60c6766162de675fccae556a69c797aa  doc/eng-us/examples/commands/README.md
 0416e2e6ffd13c1ea43a337855961707  doc/eng-us/examples/commands/accesscheck.md
 47d52e658c8d83c44d5cb6fae172824e  doc/eng-us/examples/commands/addanonymouspublicpolicies.md
@@ -6659,6 +6659,13 @@ ee4898e722304b608f10324122e09fdf  doc/eng-us/examples/template-operators/view_pa
 607fe4332214e2735764d281775954fe  doc/eng-us/examples/template-operators/wrap.md
 bc129231cf0289cb931a741a6c9e423e  doc/eng-us/examples/template-operators/x18n.md
 c55e9272c733a9a75938a44a3e9551c0  doc/eng-us/examples/template-operators/xml_encode.md
+e0685cb034767e37047681b04bfb6fc6  doc/eng-us/examples/url-maps/README.md
+175dc75ec6bf551046e47c0e422ee2b7  doc/eng-us/examples/url-maps/old-site.csv
+544eec63bf58c1aa3e5965bdba67ae29  doc/eng-us/examples/url-maps/old-site.htaccess
+8b1fa9a5bc9ba0ee7f78f2ccdbe8f676  doc/eng-us/examples/url-maps/old-site.json
+9dc0c86d352958950d253a4046c919a0  doc/eng-us/examples/url-maps/old-site.nginx
+f1adf7944ec54a89a950e928fa03076f  doc/eng-us/examples/url-maps/query-and-temporary.csv
+cd7675d888d6cda670a0e89e171d5ef2  doc/eng-us/examples/url-maps/wildcards.csv
 33da36f0c7267aa2b77bfbeed6a8d54d  doc/eng-us/examples/web-servers/Caddyfile.example
 a2fb912564cfa277635d6e32eddd3172  doc/eng-us/examples/web-servers/README.md
 0a1607d8088bf44ff03ab24051264811  doc/eng-us/examples/web-servers/apache-htaccess.md
@@ -6904,7 +6911,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-81fb787d19d4c349bfeca4002d20cd1a  doc/eng-us/features/6.0/README.md
+e04fea912f024a32757b0d4a67faf177  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -7098,6 +7105,7 @@ d3145c14972f62fc3e55bd0ddb7339f3  doc/eng-us/features/6.0/twig-templates.md
 01c1af354bf09f4fd77c533d051b7106  doc/eng-us/features/6.0/ui-switch-design.md
 8b06af1fe3206dcb8524386def7ef35f  doc/eng-us/features/6.0/ui-switch-languages.md
 dddc25f5090a5e0f97d83e3714f992fd  doc/eng-us/features/6.0/ui-switch.md
+f626cb25be9c45565dd8e5a4c15ae74a  doc/eng-us/features/6.0/url-map-import-export.md
 4eb0035d7a5bc5506999e05b2f435660  doc/eng-us/features/6.0/user-audit.md
 c0e09b5d8b7bb4e8b9c51429f8396694  doc/eng-us/features/6.0/user-hygiene.md
 a89198e7aad1fb1b1406e0781775eac4  doc/eng-us/features/6.0/user-management-from-the-console.md
@@ -7119,7 +7127,7 @@ a6804237b42b490f18b7266b7f276e2a  doc/eng-us/features/6.0/velocity-uwebserver.md
 732b0806269c31cc1c081b166d7a7662  doc/eng-us/features/6.0/version-preview-view-modes.md
 e8e271a078b41c7c877fad14d5156f2e  doc/eng-us/features/6.0/web-server-and-solr-commands.md
 9a239d46246c4ca0e1d8f6ddd3bf6a24  doc/eng-us/features/6.0/website-sidebar.md
-a5621820f4516cedaa2b79e888328b30  doc/eng-us/glossary.md
+c8e358cd2b6c2fafdbd732811e5dc063  doc/eng-us/glossary.md
 4c9effab75570c880f3e4c867f7cbc80  doc/eng-us/goals.md
 859ae00cfb07a75e332938a9535a3482  doc/eng-us/guides/README.md
 c3cd4759e8cbd9569458f6ad5c01021a  doc/eng-us/guides/a-static-blog-with-exponential.md
@@ -7282,14 +7290,14 @@ fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
 dd4acb3114392fbaac07d6148d4af8c1  doc/eng-us/guides/upgrade-steps-for-extensions.md
 caf19cb8a6e8919b665ea0f51ddf08b2  doc/eng-us/guides/upgrading-with-the-console.md
 2987ca23a79d43b361eea5b899af2eec  doc/eng-us/guides/upgrading.md
-e7e22d37dc0c2e855e5c26a7cc163c09  doc/eng-us/guides/url-maps.md
-f668db27cb3444f6364a9cfbb6fc5b51  doc/eng-us/guides/urls-and-aliases.md
+8c83c286abed55c79cca43869a20860d  doc/eng-us/guides/url-maps.md
+c6826cf2b7f23a160762b979b996d435  doc/eng-us/guides/urls-and-aliases.md
 c0ef983a2b3afe72eea1bf3e56b186a3  doc/eng-us/guides/user-management-from-the-console.md
 1f700f137c0530c000780ce7289cc55e  doc/eng-us/guides/verify-its-you.md
 041e81212cd3f6adbc8e3f2dcdfa7a23  doc/eng-us/guides/view-count-statistics.md
 952b7b28226e6eff085df210c88d6b08  doc/eng-us/guides/workflows.md
 ba6c6e3806e95b1fc79ffa6020f4bac3  doc/eng-us/guides/your-devices-and-sessions.md
-1ba5ebfde9579e699f5bb0b7c109f23f  doc/eng-us/help/README.md
+37c084d24f6e06d3cca863fc3bf2e43b  doc/eng-us/help/README.md
 c0dbadb03afd2d838c4286bd16213561  doc/eng-us/help/accounts-and-sign-in.md
 d01718b937d8c4a62ee8bfdc16551093  doc/eng-us/help/admin-tour.md
 7f1138a79b4899b1a89537b328971761  doc/eng-us/help/adopters/adopters-checklists.md
@@ -8288,7 +8296,7 @@ f4bfea98029753022ac8808298b1c610  doc/eng-us/help/creators/website-creators/paym
 98cc9d380fd64a7ba8e4e1ccf3de0436  doc/eng-us/help/creators/website-creators/performance-and-caching.md
 8d75f5669ab2d54cbf976541b73f51b3  doc/eng-us/help/creators/website-creators/planning-your-website.md
 83a0a8362b113a18e2a867528e68a27d  doc/eng-us/help/creators/website-creators/products-prices-and-vat.md
-3f88e7c03304d9cc4fa97872d0c08525  doc/eng-us/help/creators/website-creators/redirects-and-moved-content.md
+b13b3a257fa96b407ac348bf0f49a852  doc/eng-us/help/creators/website-creators/redirects-and-moved-content.md
 00cfd088e157af40895ca01cd3575f4d  doc/eng-us/help/creators/website-creators/relations-and-reuse.md
 2f4ba71ba666ace7526333ab436580f0  doc/eng-us/help/creators/website-creators/right-to-left-sites.md
 7aee4f68066252a286a0d8a07435fd41  doc/eng-us/help/creators/website-creators/robots-txt.md
@@ -8316,7 +8324,7 @@ f7711a22c5b2dcc52106dea498afa5c6  doc/eng-us/help/creators/website-creators/test
 1ca7dd5209e92b0ea92a7341dbb2947c  doc/eng-us/help/creators/website-creators/the-pagelayout.md
 b728526e036c9f2590ba097180254ee9  doc/eng-us/help/creators/website-creators/updates-and-upgrades.md
 905b338a01ad653cdb8080fcf4e4d0a1  doc/eng-us/help/creators/website-creators/url-aliases-and-nice-urls.md
-95347dc9776c827c0f18b9fe8c1b92be  doc/eng-us/help/creators/website-creators/url-wildcards.md
+f8a964769e16a896ca623be615b56911  doc/eng-us/help/creators/website-creators/url-wildcards.md
 3d4244e053d20386527c2dd037c56eb2  doc/eng-us/help/creators/website-creators/view-cache-and-cache-blocks.md
 02a4634892ff5d6a83f51f8b58debb20  doc/eng-us/help/creators/website-creators/visitor-permissions.md
 56362b5b3f8f143ee7219da4d88b172c  doc/eng-us/help/creators/website-creators/website-creator-faq.md
@@ -10902,7 +10910,7 @@ baf66aa17d127641f5998381cf0a59c3  doc/eng-us/help/images/update-cli-a5-check.web
 2ee3c65057ea308d18a427bc3e0450a3  doc/eng-us/help/images/update-maintenance.webp
 1f80a35c16fb4004febb83c4a11c98e2  doc/eng-us/help/images/update-upgrade-check.webp
 f7310491d28b2e21502fa6ba5b206888  doc/eng-us/help/images/versions.webp
-2ab2b4a509bb2fbecc4064a71522e9ad  doc/eng-us/help/import-export-tools.md
+8db61356b79e297dd816b768bd9eb3c5  doc/eng-us/help/import-export-tools.md
 3f1fd52ae8ba44cde8a744607256f9d8  doc/eng-us/help/individuals/blogs/README.md
 6f49f66fc0315af888a25f434845d86f  doc/eng-us/help/individuals/blogs/comments-on-your-blog.md
 9204da412456007d62cd41e3a53380ce  doc/eng-us/help/individuals/blogs/moving-from-another-blog-platform.md
@@ -11147,7 +11155,7 @@ e390552fb9582a509a1e89b5dfa805e0  doc/eng-us/help/manual/how-do-i-preview-a-draf
 1950bb284472f3457240d92559697ef8  doc/eng-us/help/manual/how-do-i-publish-an-rss-feed.md
 e5b10f990624936faf089fd2b4e08c07  doc/eng-us/help/manual/how-do-i-publish-content-at-a-later-time.md
 680558c8f58cba3d277e806143f1f0cf  doc/eng-us/help/manual/how-do-i-read-the-log-files.md
-382a5ea6ef20f4838397033aeb6c28bc  doc/eng-us/help/manual/how-do-i-redirect-old-addresses.md
+7c18a1c59bf95b9fec3e63e4102d99ea  doc/eng-us/help/manual/how-do-i-redirect-old-addresses.md
 d691ea29861a1b47c43330fecd12f52f  doc/eng-us/help/manual/how-do-i-relate-other-items-while-editing.md
 498efd76f0b1bfc30468011e51c743ef  doc/eng-us/help/manual/how-do-i-remove-a-translation-or-change-the-main-language.md
 cc9c2197f40434d3ef0ab4889bad5f10  doc/eng-us/help/manual/how-do-i-remove-an-item.md
@@ -11211,6 +11219,7 @@ bb2c62e602eaf652c3de2e1fc55ce6a3  doc/eng-us/help/manual/where-do-i-see-my-pendi
 e6cdbd205e096f3fa39d20f244750a42  doc/eng-us/help/manual/which-cache-do-i-clear.md
 5d3832d7488d0a0d33a369e193b859eb  doc/eng-us/help/manual/why-does-search-not-find-an-item.md
 eb3c1d8ea3f1c2d59fea27643182f612  doc/eng-us/help/media-and-uploads.md
+c51913c7f3f627e12ebc4a7ea6a2cf54  doc/eng-us/help/migrating-urls.md
 2ca595b6a48438624a95b9030dac2445  doc/eng-us/help/migrations/README.md
 1f86d0333bf91a6672892aed8540eb22  doc/eng-us/help/migrations/a-tour-of-setup-migrations.md
 0de786d1d32d9ee69618ba001e1acbab  doc/eng-us/help/migrations/add-a-remote-step-by-step.md
@@ -13293,7 +13302,7 @@ acf80981b12ccd8ca2d672ee2d1c1ec0  doc/eng-us/specifications/6.0/runnable-command
 c267a0550b900807dfed443c52266c85  doc/eng-us/specifications/6.0/static-publishing-form-endpoint.md
 b452d0a629e4af725d82380f64c0b4b2  doc/eng-us/specifications/6.0/static-publishing-manifest.md
 b118225dc0e1ae32082c94ca48138d4c  doc/eng-us/specifications/6.0/syndication.md
-f9ca7fe0db27c466c189ceb72eb69a9d  doc/eng-us/specifications/6.0/url-map-file-formats.md
+620e833a0c66640a594982dc10dbae1c  doc/eng-us/specifications/6.0/url-map-file-formats.md
 b23159133a1d0d3c2ad55fbda0c8597a  doc/eng-us/specifications/6.0/velocity-engine-settings.md
 1f27955fa2b346075a4c0762ba079e22  doc/eng-us/specifications/6.0/velocity-http2-and-security.md
 493e3e8ae5773cb18e4cfdbe895c11d6  doc/eng-us/specifications/6.0/velocity-worker-pool.md
@@ -13566,7 +13575,7 @@ c45483a87246afbeec7f80e3f1a33407  doc/ger-de/.examples/descriptions/39-url-map-i
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-fd0c63d281eb65f58c3e639af4e8cadd  doc/ger-de/.paths.json
+650a3a753c834fd9add3737497b2f0ef  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
 9bdbb093fbea997ef82dced8249f77e4  doc/ger-de/CONFIGURING.md
 c541e681abb9f1a0541f1e05e061e1c1  doc/ger-de/DISTRIBUTIONS.md
@@ -13738,8 +13747,8 @@ f379e585d7ef4d25192e9e0c4505de3c  doc/ger-de/anleitungen/twig-templates-tutorial
 96c7e7570232e91c8971eb947b341ba1  doc/ger-de/anleitungen/umgebungsvariablen.md
 58ef9ee1db2c783c9a482cfa4b020230  doc/ger-de/anleitungen/upgrade-pruefung.md
 06171cbbe0b34253535878cf87685009  doc/ger-de/anleitungen/upgrade-schritte-fuer-erweiterungen.md
-b90894b07279f48a29872bfacdb13b7e  doc/ger-de/anleitungen/url-zuordnungen.md
-b11a22225b42ccc4c1ab499f48114605  doc/ger-de/anleitungen/urls-und-aliase.md
+c1c8278213eb670e6b935f24adbb53ee  doc/ger-de/anleitungen/url-zuordnungen.md
+6776c5fa994d1b38f17a9b126fbf0769  doc/ger-de/anleitungen/urls-und-aliase.md
 1daf6e6c7cb5c69aa8b955e48c7d1846  doc/ger-de/anleitungen/vom-statischen-cache-zum-statischen-veroeffentlichen.md
 e3df8372cd5e4c7aa625e0fab21222ad  doc/ger-de/anleitungen/von-statischem-html-zu-exponential-und-zurueck.md
 b055f7da6714bbbb0030b07eb7b6615c  doc/ger-de/anleitungen/wartungsmodus.md
@@ -13871,7 +13880,7 @@ e4869727f8ce40ea4e61fe437f8030e0  doc/ger-de/bc/6.0/tabellenoptionen-der-unterel
 cc494c00ecd01129c6c76c3e175c8e48  doc/ger-de/bc/6.0/ui-umschalter-design.md
 fb7e473b95d422399e463bfe56d9395d  doc/ger-de/bc/6.0/ui-umschalter.md
 6444af39a4f005b744ebce2ec72a46cf  doc/ger-de/bc/6.0/unterelemente-weitere-aktionen-verstecken-einblenden.md
-40d804a388657babf9c35c537ed8babe  doc/ger-de/bc/6.0/url-zuordnungen-importieren.md
+166862733292de4d56bef5320391c982  doc/ger-de/bc/6.0/url-zuordnungen-importieren.md
 271c73727f0fff7506e5831158e4122d  doc/ger-de/bc/6.0/velocity-engine-upgrade-hinweise.md
 5f2fa56405a5e809d03e0b2383de4457  doc/ger-de/bc/6.0/velocity-engines.md
 5d2e214aff835b2b72b2c43b01fd5ffa  doc/ger-de/bc/6.0/velocity-verzeichnisstruktur.md
@@ -13885,7 +13894,7 @@ a0a8364c2f555c71637fa962fe98910d  doc/ger-de/bc/6.0/vertrauenswuerdige-proxys.md
 3003dc9569476e80429e7952a96524ab  doc/ger-de/bc/6.0/yui-entfernung.md
 1f6ee4c60a711526c9cd31416441a991  doc/ger-de/bc/6.0/zugriff-auf-entwuerfe.md
 87bcef5fa01d68c26dfd2cb9e2021c07  doc/ger-de/bc/6.0/zusaetzliche-erweiterungsverzeichnisse.md
-73895665ec5c4c5ba649a9ab6b9c1d7d  doc/ger-de/beispiele/README.md
+62dead33b2a91097778c60aa4f36a9c9  doc/ger-de/beispiele/README.md
 fd602266013a0312f40e9e1aeb34e3b9  doc/ger-de/beispiele/befehle/README.md
 fb78cc24f28e4e7e208a831fc04c7de3  doc/ger-de/beispiele/befehle/accesscheck.md
 e5b188fae769a1201a72f50d98683190  doc/ger-de/beispiele/befehle/addanonymouspublicpolicies.md
@@ -16720,6 +16729,13 @@ b3e0468e76ff6f8c9b6526915c9e417f  doc/ger-de/beispiele/template-operatoren/wordt
 c622d4c266f46ceafecb0e31013d680e  doc/ger-de/beispiele/template-operatoren/wrap.md
 7184f9eff33c2a9eec01cdc8537aad77  doc/ger-de/beispiele/template-operatoren/x18n.md
 daf0c69d584667351d9aeaeaf1f299b0  doc/ger-de/beispiele/template-operatoren/xml_encode.md
+285840c1fb5fcbf955d1091b9c1b0c06  doc/ger-de/beispiele/url-zuordnungen/README.md
+29523411d1263a97413e8f1cf462d75f  doc/ger-de/beispiele/url-zuordnungen/alte-site.csv
+b2663a45d50c50e6a200a29ffc7e584a  doc/ger-de/beispiele/url-zuordnungen/alte-site.htaccess
+af6c4a79c396ca7dd73c10cf6fda1f93  doc/ger-de/beispiele/url-zuordnungen/alte-site.json
+a4a52fe5a8a98f7cad7d19ec872ddea9  doc/ger-de/beispiele/url-zuordnungen/alte-site.nginx
+93b14bec27d147a7a1bb8c15351f87c1  doc/ger-de/beispiele/url-zuordnungen/query-und-voruebergehend.csv
+eca301af7e62f9214856a822145088ae  doc/ger-de/beispiele/url-zuordnungen/wildcards.csv
 d086ee518ef891c637501fbc9c6521ec  doc/ger-de/beispiele/webserver/README.md
 c60bc76938a9db29c1e577082f98488b  doc/ger-de/beispiele/webserver/apache-htaccess.md
 531b78c1c34214d1d8ac1805b5299c30  doc/ger-de/beispiele/webserver/apache-virtueller-host.md
@@ -16958,7 +16974,7 @@ acc487d9c36faff1bcb4a95e881e5d84  doc/ger-de/funktionen/5.3/shop_product_datatyp
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-ffde5bbc12b899586b333c33527520d2  doc/ger-de/funktionen/6.0/README.md
+f92c77c76601baec01f770d0d1793e4a  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -17148,6 +17164,7 @@ a9a3c90a874bd8a7a8b9c19cfbd9d5ea  doc/ger-de/funktionen/6.0/ui-umschalter-sprach
 491d879bcd909b60ac5fb9ffe5a83da4  doc/ger-de/funktionen/6.0/umbenennung-in-exponential.md
 fdbd3678418acb16837dc2783cd78dd7  doc/ger-de/funktionen/6.0/umgebungseinstellungen.md
 b8efc890590fb7c297851b4d3a6067b3  doc/ger-de/funktionen/6.0/unterelemente-auswahl-kopieren.md
+b1fbab347e73979c40a540cefd71e88d  doc/ger-de/funktionen/6.0/url-zuordnungen-importieren-und-exportieren.md
 718df527f9f810acfaaf721b7e218dd4  doc/ger-de/funktionen/6.0/valkey-cache-hooks.md
 9780b7727f61cc999450e9e34295af34  doc/ger-de/funktionen/6.0/velocity-antwort-cache.md
 56ab9bea52576b2f3e20e3caabdfabce  doc/ger-de/funktionen/6.0/velocity-control-panel.md
@@ -17508,8 +17525,8 @@ dfce835ea41187dc08f7603fdbc6630e  doc/ger-de/geschichte/velocity/2026-09d.md
 b24fea4973006b0896c1709f46c42007  doc/ger-de/geschichte/velocity/2026-10.md
 1549837b01e8d4331951a6ab40a67e4c  doc/ger-de/geschichte/velocity/README.md
 e462cda8d5b6e1e0d0d0185eecad9e94  doc/ger-de/geschichte/velocity/installer-und-pakete.md
-1e0475115e2815ba1a8cec3b2d31249f  doc/ger-de/glossar.md
-394932ed045bb76e3f2852067aec99e2  doc/ger-de/hilfe/README.md
+3c9327be076354f022f39a6128917cd0  doc/ger-de/glossar.md
+acbed119c0911a3979dd37227b8138aa  doc/ger-de/hilfe/README.md
 184a29662c44eee5ace950f8eff0cd18  doc/ger-de/hilfe/administratorpasswort-aendern.md
 576cb2fcc82b008d018d872d90666a88  doc/ger-de/hilfe/anmelden-im-editor.md
 b473aa8178553d782b630e6635214095  doc/ger-de/hilfe/anmelden-in-der-administration.md
@@ -18910,7 +18927,7 @@ aeb6078a5f761ad5c1022debe863608f  doc/ger-de/hilfe/ersteller/website-ersteller/s
 76898ad3beae8af177be8b27c6662cc0  doc/ger-de/hilfe/ersteller/website-ersteller/template-overrides.md
 74bae0d84d644b2d4f9e9508d95834f3  doc/ger-de/hilfe/ersteller/website-ersteller/updates-und-aktualisierungen.md
 2ccc95ed917c9a24d1954b086df43a45  doc/ger-de/hilfe/ersteller/website-ersteller/url-aliasse-und-sprechende-urls.md
-46510d49e0b3cc69f96610b592c2d1ed  doc/ger-de/hilfe/ersteller/website-ersteller/url-platzhalter.md
+55d2dbd5a28ae9bd6f187458d1ff9dfa  doc/ger-de/hilfe/ersteller/website-ersteller/url-platzhalter.md
 576d088cdf295eea13d788d45cb4cb98  doc/ger-de/hilfe/ersteller/website-ersteller/verschlagworten-mit-eztags.md
 0af13b9eb1ad859b884061c507d2ba2a  doc/ger-de/hilfe/ersteller/website-ersteller/view-cache-und-cache-bloecke.md
 50d73b061d60f7f7420fffd05bbc745d  doc/ger-de/hilfe/ersteller/website-ersteller/warenkorb-kasse-und-bestellungen.md
@@ -18918,7 +18935,7 @@ cf0d7aa1703c3678c8f13325b87c83a3  doc/ger-de/hilfe/ersteller/website-ersteller/w
 1339679e0a3ad89407f68bfd53ed9c4b  doc/ger-de/hilfe/ersteller/website-ersteller/was-sie-bauen-koennen.md
 bd53f39ff9205a3d0895dee173e1bb36  doc/ger-de/hilfe/ersteller/website-ersteller/website-ersteller-hier-beginnen.md
 0fffe437e444b95d1ebc6fa39d7893fe  doc/ger-de/hilfe/ersteller/website-ersteller/websites-von-rechts-nach-links.md
-fc72bcbb68054e3d1e0f7d3b88545f42  doc/ger-de/hilfe/ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md
+6a584937118e0bb1010eb342c203f0bb  doc/ger-de/hilfe/ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md
 688faea010582852bc1e3ba288acd966  doc/ger-de/hilfe/erweiterungen-zurueckgeben.md
 a09ad8d9790fae00b03f8127296555d5  doc/ger-de/hilfe/erweiterungsentwicklung/README.md
 24b12f1c0d15045acaa1009c43196770  doc/ger-de/hilfe/erweiterungsentwicklung/lesepfade.md
@@ -19393,7 +19410,7 @@ b3d423c78999fa45a12cde2742746443  doc/ger-de/hilfe/handbuch/wie-leere-ich-den-pa
 21e5323c4cc0a1f6cd761dbbdc0a4f4e  doc/ger-de/hilfe/handbuch/wie-lege-ich-den-preis-eines-produkts-pro-waehrung-fest.md
 c668f919a63259467b30012fa7fd4e18  doc/ger-de/hilfe/handbuch/wie-lege-ich-eine-sektion-an-und-ordne-ihr-inhalte-zu.md
 bb715e3cba2a7c15a3665f2f7256665e  doc/ger-de/hilfe/handbuch/wie-lege-ich-einen-benutzer-oder-eine-benutzergruppe-an.md
-af9ed714dbfd4c092194064282ec97da  doc/ger-de/hilfe/handbuch/wie-leite-ich-alte-adressen-um.md
+02c6aec2e954fe9b634f8a5cc562203d  doc/ger-de/hilfe/handbuch/wie-leite-ich-alte-adressen-um.md
 eb5d37c2a46516fd6d89b1b8fa79c0a9  doc/ger-de/hilfe/handbuch/wie-lese-ich-die-logdateien.md
 3af0540b8332453eb62492f175f14fef  doc/ger-de/hilfe/handbuch/wie-nutze-ich-den-ki-assistenten-im-editor.md
 ab1e4caef68597f24d6024ce162f47a1  doc/ger-de/hilfe/handbuch/wie-richte-ich-die-ust-ein.md
@@ -19625,7 +19642,7 @@ e713b66950fb95f81366badd9d5f2b41  doc/ger-de/hilfe/images/bookmarks/saved-search
 4d089a46cb0db43855cbdf3b9ee215c0  doc/ger-de/hilfe/images/bookmarks/saved-search-form--editor-dark.webp
 93068b40cdd363e987117833d4e04ab0  doc/ger-de/hilfe/images/bookmarks/saved-search-form--editor-light.webp
 93068b40cdd363e987117833d4e04ab0  doc/ger-de/hilfe/images/bookmarks/saved-search-form.webp
-af530df3ce52b122801f888888ed0b44  doc/ger-de/hilfe/import-oder-export-werkzeug.md
+96cf41600298720a2c9d085970b54d76  doc/ger-de/hilfe/import-oder-export-werkzeug.md
 70a4be9c7ac5d9c10a3fb483aa46b771  doc/ger-de/hilfe/inhalte-bearbeiten.md
 0530058a847a325a95b5520e3d6f2f9f  doc/ger-de/hilfe/integratoren/anbindung-einer-suchmaschine.md
 47264559aec7552a1f459da8390c37c1  doc/ger-de/hilfe/integratoren/arbeitsblatt-zur-bestandsaufnahme-einer-integration.md
@@ -21724,6 +21741,7 @@ ba7793b2fec2edcf0958f5d53de2c231  doc/ger-de/hilfe/unterstuetzer/uebersetzungen-
 f0687bf060cce59c0f305119e7688dc4  doc/ger-de/hilfe/unterstuetzer/unterstuetzer-hier-beginnen.md
 2216c280fa293d19e4b72fa57ea6711b  doc/ger-de/hilfe/unterstuetzer/wege-exponential-zu-unterstuetzen.md
 949f36ab10a099af1f1b695b4b1e64ce  doc/ger-de/hilfe/urheberrecht-und-copyleft.md
+afaa379bb610a2cd9dc36f9e857924eb  doc/ger-de/hilfe/urls-migrieren.md
 8501a6e9e9d4c7791492ebc6811fb632  doc/ger-de/hilfe/velocity-ist-teil-von-exponential-6-0-15.md
 f54354e620ec6d2ecca243b49756962f  doc/ger-de/hilfe/veroeffentlichen-und-versionen.md
 a4250d59379c8916dc799d1011d02f05  doc/ger-de/hilfe/verwaltung/aufbauen/README.md
@@ -23121,7 +23139,7 @@ e74b59965ce8bdb608a720100c84692b  doc/ger-de/spezifikationen/6.0/sicherheitsvorg
 3b4c9352f7670bd3c487fd1b31af9f28  doc/ger-de/spezifikationen/6.0/statisches-veroeffentlichen-formular-endpunkt.md
 f443531cf0ddf1ae2f5ca3f0028045b9  doc/ger-de/spezifikationen/6.0/statisches-veroeffentlichen-manifest.md
 f6ce87b6422da987a43c79641d17de0c  doc/ger-de/spezifikationen/6.0/syndikation.md
-ac130e49c9c84daf561ccafd2102a885  doc/ger-de/spezifikationen/6.0/url-zuordnungsdateiformate.md
+f63ee5cde47273035cd416ced97057c8  doc/ger-de/spezifikationen/6.0/url-zuordnungsdateiformate.md
 8faea3493dbcfc10fdf62435ec8c2a7d  doc/ger-de/spezifikationen/6.0/velocity-engine-einstellungen.md
 c26c10f120d2b58bf79e3ceefedb7568  doc/ger-de/spezifikationen/6.0/velocity-http2-und-sicherheit.md
 0a829bee13ffa1d319b038f4c24af29e  doc/ger-de/spezifikationen/6.0/velocity-worker-pool.md

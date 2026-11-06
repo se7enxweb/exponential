@@ -1,0 +1,5 @@
+old_url,new_url,kind,siteaccess,language,note,status
+/old-recipes/*,/recipes/{1},,,,Jede alte Rezeptadresse behält ihren letzten Teil,
+/topics/*/index.html,/{1},,,,/topics/running/index.html führt zu /running,
+/sale/*,/workout,wildcard-forward-temporary,,,Vorübergehend: Die Angebotsseiten kommen nächstes Jahr wieder,
+/print/*,/recipes/{1},wildcard-direct,,,Ohne Weiterleitung ausgeliefert,
