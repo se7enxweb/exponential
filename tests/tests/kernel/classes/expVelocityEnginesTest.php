@@ -419,6 +419,10 @@ class expVelocityEnginesTest extends ezpTestCase
         $cwd = getcwd();
         putenv( 'VELOCITY_WARMUP_URLS' );
         $GLOBALS['x1VelocityServerOwn'] = 'kept';
+        // the temporary root has no settings: eZINI finds none of the override directories there, but would store
+        // what it read in the installation's var/cache/ini under the name every process uses, so no INI cache
+        $iniCache = eZINI::isCacheEnabled();
+        eZINI::setIsCacheEnabled( false );
         try
         {
             chdir( $root );
@@ -436,6 +440,7 @@ class expVelocityEnginesTest extends ezpTestCase
         finally
         {
             chdir( $cwd );
+            eZINI::setIsCacheEnabled( $iniCache );
             @unlink( $root . '/var/maintenance.json' );
             @unlink( $root . '/autoload.php' );
             @rmdir( $root . '/var' );
