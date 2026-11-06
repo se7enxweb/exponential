@@ -87409,5 +87409,129 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>Pasted text</source>
         <translation>Vložený text</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Zadejte adresu mapy webu nebo ji nahrajte.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Nebyla nalezena žádná stará adresa.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Ze staré mapy webu</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Z protokolu 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Navrhnout cíle</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Adresy starého webu z jeho mapy webu (sitemap.xml, indexu map webu nebo .gz) nebo ze seznamu s jednou adresou na řádek. Každá se stane řádkem s prázdnou novou adresou.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Adresa mapy webu</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Nebo nahrajte mapu webu či seznam</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Také adresy jiných hostitelů</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Adresy, které návštěvníci na tomto webu požadovali a nenašli, nejžádanější první. Obrázky, skripty a boti jsou vynechány.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Protokol 404 je vypnutý (site.ini [RequestLogSettings] NotFoundLog): nemá žádné nové adresy.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Alespoň tolik požadavků</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>V posledních dnech</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Mapa, jejíž řádky nemají novou adresu: každý dostane stránky tohoto webu, jejichž adresa nebo název se nejvíce podobá staré.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Nejvýše tolik řádků</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Nové adresy</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Vyplnit návrh se skóre alespoň</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Skóre od 0 do 100 říká, jak moc se stará adresa podobá stránce tohoto webu. Ostatní návrhy jsou uvedeny v poznámkách řádku.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Stáhnout jako CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Zatím se nic nezapíše. Stáhněte mapu, abyste ji doplnili v tabulce, nebo si ji zobrazte v náhledu: řádky bez nové adresy se zobrazí jako nelze importovat.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Nahrát soubor</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Způsoby, jak začít</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Otestovat staré adresy</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Přístup k webu nemá adresu webu (site.ini [SiteSettings] SiteURL), proto zde nelze staré adresy otestovat. ./console exp:url:test je testuje proti libovolné adrese.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Vyžádá si každou starou adresu na %base, sleduje její přesměrování a ověří, zda skončí na své nové adrese.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Otestovat znovu</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Test</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed dorazilo, %status s chybným stavem, %target na chybné stránce, %none nepřesměrováno, %error selhalo, %skipped přeskočeno.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Otestováno bylo jen prvních %count řádků.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Řádky, které nedorazily na svou novou adresu</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Staré adresy se nepodařilo otestovat.</translation>
+    </message>
 </context>
 </TS>

@@ -86121,5 +86121,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>لګول شوی متن</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>د سایټ نقشې پته ورکړئ یا یې پورته کړئ.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>هیڅ زوړ پته ونه موندل شو.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>له زوړ سایټ نقشې څخه</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>د 404 له لاګ څخه</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>موخې وړاندیز کړئ</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>د زوړ سایټ پتې د هغه له سایټ نقشې (sitemap.xml، د سایټ نقشو فهرست یا .gz) یا په هر کرښه کې د یو پته لرونکې لیست څخه. هر یو د خالي نوي پته سره یوه کرښه کېږي.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>د سایټ نقشې پته</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>یا د سایټ نقشه یا لیست پورته کړئ</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>د نورو کوربه ګانو پتې هم</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>هغه پتې چې لیدونکو پر دې سایټ غوښتې او نه دي موندلي، تر ټولو ډېرې غوښتل شوې لومړی. انځورونه، سکریپټونه او بوټونه پرېښودل شوي دي.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>د 404 لاګ بند دی (site.ini [RequestLogSettings] NotFoundLog): نوې پتې نه لري.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>لږ تر لږه دومره غوښتنې</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>په وروستیو ورځو کې</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>یوه نقشه چې د کرښو نوی پته نه لري: هره کرښه د دې سایټ هغه پاڼې ترلاسه کوي چې پته یا نوم یې له زوړ سره تر ټولو ډېر ورته وي.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>تر ټولو ډېر دومره کرښې</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>نوې پتې</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>هغه وړاندیز ډک کړئ چې نمره یې لږ تر لږه</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>له 0 تر 100 پورې نمره ښيي چې زوړ پته د دې سایټ له یوې پاڼې سره څومره ورته ده. نور وړاندیزونه د کرښې په یادښتونو کې لیست شوي.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>د CSV په توګه ښکته کړئ</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>تر اوسه څه نه دي لیکل شوي. نقشه ښکته کړئ چې په سپریډشیټ کې یې بشپړه کړئ، یا مخکتنه یې وکړئ: هغه کرښې چې نوی پته نه لري د نه واردېدونکو په توګه ښودل کېږي.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>یو فایل پورته کړئ</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>د پېل لارې</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>زړې پتې ازمایښت کړئ</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>د سایټ لاسرسي سایټ پته نه لري (site.ini [SiteSettings] SiteURL)، نو زړې پتې دلته نه شي ازمویل کېدای. ./console exp:url:test دا پر هر پته ازمایي.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>په %base هره زړه پته غواړي، د هغې مسیر بدلونونه تعقیبوي او ګوري چې نوې پتې ته رسېږي که نه.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>بیا ازمایښت کړئ</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>ازمایښت</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed ورسېدې، %status له ناسم حالت سره، %target ناسمې پاڼې ته، %none مسیر بدل شوي نه دي، %error ناکامې، %skipped پرېښودل شوې.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>یوازې لومړۍ %count کرښې وازمویل شوې.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>هغه کرښې چې خپلې نوې پتې ته ونه رسېدې</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>زړې پتې ونه ازمویل شوې.</translation>
+    </message>
 </context>
 </TS>

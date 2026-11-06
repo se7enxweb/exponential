@@ -86121,5 +86121,129 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <source>Pasted text</source>
         <translation>Umbhalo onamathiselwe</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Nikeza ikheli lemephu yesayithi noma uyilayishe.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Alikho ikheli elidala elitholakele.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Kumephu yesayithi endala</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Kusuka kulogi ye-404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Phakamisa izinhloso</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Amakheli esayithi endala asuka kumephu yayo yesayithi (sitemap.xml, inkomba yemephu yesayithi noma .gz) noma ohlwini olunekheli elilodwa emgqeni ngamunye. Lilinye liba umugqa onekheli elisha elingenalutho.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Ikheli lemephu yesayithi</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Noma layisha imephu yesayithi noma uhlu</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Namakheli ezinye izimvu</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Amakheli iziqeshi ezawacela kuleli sayithi zangawatholi, acelwa kakhulu aqala. Izithombe, izikripthi namabhothi ayashiywa.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Ilogi ye-404 ivaliwe (site.ini [RequestLogSettings] NotFoundLog): ayinawo amakheli amasha.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Okungenani lezi zicelo</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Ezinsukwini zokugcina</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Imephu enemigqa engenalo ikheli elisha: owodwa ngamunye uthola amakhasi alesi sayithi anekheli noma igama elifana kakhulu nelidala.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Okuningi kakhulu le migqa</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Amakheli amasha</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Gcwalisa isiphakamiso esinamaphuzu okungenani</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Amaphuzu asuka ku-0 kuya ku-100 abonisa ukuthi ikheli elidala lifana kangakanani nekhasi lalesi sayithi. Ezinye iziphakamiso ziyalandiswa emanothini emigqa.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Landa njenge-CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Akukabhalwa lutho. Landa imephu ukuze uyiqedele kusipredishithi, noma uyibuke kuqala: imigqa engenalo ikheli elisha ibonakala njengengenakungeniswa.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Layisha ifayela</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Izindlela zokuqala</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Hlola amakheli amadala</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Ukufinyelela isayithi akunalo ikheli lesayithi (site.ini [SiteSettings] SiteURL), ngakho amakheli amadala awakwazi ukuhlolwa lapha. ./console exp:url:test iyawahlola kunoma yikuphi ikheli.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Icela ikheli ngalinye elidala ku-%base, ilandele ukuhambisa kwalo kwenye indawo bese ihlola ukuthi lifika yini ekhelini lalo elisha.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Hlola futhi</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Hlola</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed zifikile, %status zinesimo esingalungile, %target ekhasini elingalungile, %none azihanjiswanga kwenye indawo, %error zehlulekile, %skipped ziqediwe.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Imigqa engu-%count yokuqala kuphela ehloliwe.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Imigqa engafikanga ekhelini layo elisha</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Amakheli amadala awakwazanga ukuhlolwa.</translation>
+    </message>
 </context>
 </TS>

@@ -86123,5 +86123,129 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>Pasted text</source>
         <translation>Kikokikona i hoʻopili ʻia</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>E hāʻawi i ka helu wahi o ka palapala ʻāina pūnaewele a i ʻole e hoʻouka iā ia.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>ʻAʻohe helu wahi kahiko i loaʻa.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Mai ka palapala ʻāina pūnaewele kahiko</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Mai ka moʻolelo 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>E manaʻo i nā wahi hoʻopaʻa</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Nā helu wahi o ka pūnaewele kahiko mai kāna palapala ʻāina (sitemap.xml, helu kuhikuhi palapala ʻāina a i ʻole .gz) a i ʻole mai kahi papa inoa me hoʻokahi helu wahi ma kēlā laina kēia laina. Lilo kēlā me kēia i lālani me ka helu wahi hou ʻole.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Ka helu wahi o ka palapala ʻāina pūnaewele</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>A i ʻole e hoʻouka i ka palapala ʻāina pūnaewele a i ʻole ka papa inoa</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>A me nā helu wahi o nā host ʻē aʻe</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Nā helu wahi a nā malihini i noi ai ma kēia pūnaewele a loaʻa ʻole, ka mea i noi nui ʻia ma mua. Hoʻokaʻawale ʻia nā kiʻi, nā palapala hoʻohana a me nā bot.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Ua pio ka moʻolelo 404 (site.ini [RequestLogSettings] NotFoundLog): ʻaʻohe ona helu wahi hou.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>ʻO kēia nui noi ma ka liʻiliʻi loa</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>I nā lā i hala iho nei</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>He palapala ʻāina nona nā lālani i nele i ka helu wahi hou: loaʻa i kēlā me kēia nā ʻaoʻao o kēia pūnaewele i like loa ka helu wahi a inoa paha me ka mea kahiko.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>ʻO kēia nui lālani ma ka nui loa</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Nā helu wahi hou</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>E hoʻopiha i ka manaʻo i loaʻa ka helu ma ka liʻiliʻi loa</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Ke hōʻike nei ka helu mai 0 a 100 i ke ʻano like o ka helu wahi kahiko me kekahi ʻaoʻao o kēia pūnaewele. Papa inoa ʻia nā manaʻo ʻē aʻe ma nā memo o ka lālani.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Hoʻoiho ma ke ʻano CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>ʻAʻole i kākau ʻia kekahi mea. E hoʻoiho i ka palapala ʻāina e hoʻopau ai ma kahi spreadsheet, a i ʻole e nānā mua iā ia: hōʻike ʻia nā lālani me ka helu wahi hou ʻole he hiki ʻole ke hoʻokomo ʻia.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>E hoʻouka i kahi waihona</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Nā ʻano e hoʻomaka ai</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>E hoʻāʻo i nā helu wahi kahiko</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>ʻAʻohe helu wahi pūnaewele o ka siteaccess (site.ini [SiteSettings] SiteURL), no laila ʻaʻole hiki ke hoʻāʻo ʻia nā helu wahi kahiko ma ʻaneʻi. Hoʻāʻo ʻo ./console exp:url:test iā lākou ma kekahi helu wahi.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Noi i kēlā me kēia helu wahi kahiko ma %base, hahai i kāna mau hoʻohuli, a nānā inā pae ia i kāna helu wahi hou.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>E hoʻāʻo hou</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Hoʻāʻo</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>Pae ʻo %landed, %status me ke kūlana kūpono ʻole, %target ma ka ʻaoʻao kūpono ʻole, %none hoʻohuli ʻole ʻia, %error hāʻule, %skipped ua lele ʻia.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>ʻO nā lālani mua wale nō %count i hoʻāʻo ʻia.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Nā lālani i pae ʻole i ko lākou helu wahi hou</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>ʻAʻole hiki ke hoʻāʻo ʻia nā helu wahi kahiko.</translation>
+    </message>
 </context>
 </TS>

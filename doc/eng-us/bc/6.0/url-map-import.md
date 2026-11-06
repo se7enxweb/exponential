@@ -123,6 +123,10 @@ Four console commands build and check a URL map; none of them changes the instal
 - The commands follow the contract of the other `exp:url` commands: `--format=json` prints the machine output
   `exp-url/1`, `--output` and `--output-format` write the map in any format the import reads, the exit codes are
   the same.
+- In the administration the import screen has the same helpers as tabs: **From the old sitemap** (an address of a
+  public host, never one of the server's own network, or an uploaded sitemap or list), **From the 404 log** and
+  **Suggest targets**, each downloaded as CSV or opened as an import to preview; after an import, **Test** requests
+  its old addresses (the first 500) on the site of its siteaccess and lists the rows that did not land.
 
 ## In the administration
 

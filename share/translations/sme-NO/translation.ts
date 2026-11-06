@@ -86123,5 +86123,129 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>Pasted text</source>
         <translation>Lasihuvvon teaksta</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Addte čujuhusa neahttasiidokárttas dahje sádde dan bajás.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Ii gávdnan ovttage boares čujuhus.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Boares neahttasiidokárttas</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404-loggas</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Evttoš ulbmiliid</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Boares neahttasiiddu čujuhusat das neahttasiidokárttas (sitemap.xml, neahttasiidokártaindeaksa dahje .gz) dahje listtus gos lea okta čujuhus juohke linjjás. Juohke šaddá linján main lea guorus ođđa čujuhus.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Neahttasiidokárta čujuhus</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Dahje sádde bajás neahttasiidokárta dahje listtu</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Maiddái eará hosttaid čujuhusat</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Čujuhusat maid ovdanbuktit dán neahttasiiddus bivde ja eai gávdnan, eanemus bivdojuvvon vuos. Govat, skripttat ja botat leat guđđojuvvon eret.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404-logga lea gaskkalduhttojuvvon (site.ini [RequestLogSettings] NotFoundLog): das eai leat ođđa čujuhusat.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Unnimusat nu máŋga bivdagiid</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Maŋimus beivviin</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Kárta man linjjáin váilu ođđa čujuhus: juohke linján leat dán neahttasiiddu siidut maid čujuhus dahje nama lea eanemus lagas boares čujuhussii.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Eanemusat nu máŋga linjjá</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Ođđa čujuhusat</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Deavdde evttohusa mas lea unnimusat dát čuoggáid</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Čuokkis 0 rájes 100 rádjái muitala man lagas boares čujuhus lea dán neahttasiiddu siidui. Eará evttohusat leat linjjá čilgehusain.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Viečča vuolláguovdu CSV:n</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Ii leat vel maidege čállojuvvon. Viečča kárta vai deavdet dan čállinfállus, dahje geahča ovdacájáhusa: linjját main ii leat ođđa čujuhus čájehuvvojit dego eai sáhte importerejuvvot.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Sádde fiilla bajás</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Vugiid álggahit</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Geahččal boares čujuhusaid</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Neahttabáikebeassamis ii leat neahttasiiddu čujuhus (site.ini [SiteSettings] SiteURL), nu ahte boares čujuhusaid ii sáhte geahččalit dáppe. ./console exp:url:test geahččala daid juohke čujuhussii.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Bivdá juohke boares čujuhusa %base:s, čuovvu su ođđasitstivremiid ja geahčada olliibeaškku go ođđa čujuhussii.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Geahččal ođđasit</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Geahččal</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed ollii, %status boasttu stáhtusiin, %target boasttu siidui, %none ii ođđasitstivrejuvvon, %error šlahtii, %skipped hilgojuvvui.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Dušše vuosttaš %count linjjá geahččaluvvojedje.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Linjját mat eai ollen iežaset ođđa čujuhussii</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Boares čujuhusaid ii sáhttán geahččalit.</translation>
+    </message>
 </context>
 </TS>

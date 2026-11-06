@@ -129,6 +129,11 @@ Vier Konsolenbefehle erstellen und prüfen eine URL-Zuordnung; keiner von ihnen 
 - Die Befehle folgen dem Vertrag der anderen `exp:url`-Befehle: `--format=json` gibt die Maschinenausgabe
   `exp-url/1` aus, `--output` und `--output-format` schreiben die Zuordnung in jedem Format, das der Import liest,
   die Exit-Codes sind dieselben.
+- In der Administration hat die Importseite dieselben Hilfen als Reiter: **Aus der alten Sitemap** (eine Adresse eines
+  öffentlichen Hosts, nie eine aus dem eigenen Netz des Servers, oder eine hochgeladene Sitemap oder Liste), **Aus dem
+  404-Protokoll** und **Ziele vorschlagen**, jeweils als CSV herunterzuladen oder als Import in der Vorschau zu öffnen;
+  nach einem Import ruft **Prüfen** seine alten Adressen (die ersten 500) auf der Website seines Siteaccess auf und
+  listet die Zeilen, die nicht angekommen sind.
 
 ## In der Administration
 

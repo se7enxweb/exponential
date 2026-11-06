@@ -86153,5 +86153,129 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>Pasted text</source>
         <translation>Tekst i ngjitur</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Jepni adresën e hartës së sajtit ose ngarkojeni.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Nuk u gjet asnjë adresë e vjetër.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Nga harta e vjetër e sajtit</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Nga regjistri 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Sugjero objektiva</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Adresat e sajtit të vjetër nga harta e tij e sajtit (sitemap.xml, një indeks hartash ose .gz) ose nga një listë me një adresë për rresht. Secila bëhet një rresht me adresë të re bosh.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Adresa e hartës së sajtit</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Ose ngarkoni hartën e sajtit ose listën</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Edhe adresat e hosteve të tjerë</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Adresat që vizitorët kërkuan në këtë sajt dhe nuk i gjetën, më të kërkuarat të parat. Imazhet, skriptet dhe robotët janë lënë jashtë.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Regjistri 404 është çaktivizuar (site.ini [RequestLogSettings] NotFoundLog): nuk ka adresa të reja.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Të paktën kaq kërkesa</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Në ditët e fundit</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Një hartë rreshtat e së cilës nuk kanë adresë të re: secili merr faqet e këtij sajti adresa ose emri i të cilave i ngjan më shumë të vjetrës.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Të shumtën kaq rreshta</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Adresa të reja</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Plotëso një sugjerim me rezultat të paktën</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Një rezultat nga 0 deri në 100 tregon sa i ngjan adresa e vjetër një faqeje të këtij sajti. Sugjerimet e tjera janë renditur në shënimet e rreshtit.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Shkarko si CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Ende nuk është shkruar asgjë. Shkarkoni hartën për ta plotësuar në një fletë llogaritëse ose shihni paraprakisht: rreshtat pa adresë të re shfaqen si të paimportueshëm.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Ngarko një skedar</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Mënyra për të nisur</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Testo adresat e vjetra</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Qasja në sajt nuk ka adresë sajti (site.ini [SiteSettings] SiteURL), kështu që adresat e vjetra nuk mund të testohen këtu. ./console exp:url:test i teston ato në çdo adresë.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Kërkon çdo adresë të vjetër në %base, ndjek ridrejtimet e saj dhe kontrollon nëse arrin te adresa e re.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Testo përsëri</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Testo</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed arritën, %status me status të gabuar, %target në faqen e gabuar, %none pa ridrejtim, %error dështuan, %skipped u anashkaluan.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>U testuan vetëm %count rreshtat e parë.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Rreshtat që nuk arritën te adresa e tyre e re</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Adresat e vjetra nuk mund të testoheshin.</translation>
+    </message>
 </context>
 </TS>

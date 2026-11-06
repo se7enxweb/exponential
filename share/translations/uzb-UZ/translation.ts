@@ -86123,5 +86123,129 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>Pasted text</source>
         <translation>Joylashtirilgan matn</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Sayt xaritasining manzilini kiriting yoki uni yuklang.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Hech qanday eski manzil topilmadi.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Eski sayt xaritasidan</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 jurnalidan</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Maqsadlarni taklif qilish</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Eski saytning manzillari uning sayt xaritasidan (sitemap.xml, sayt xaritalari indeksi yoki .gz) yoki har qatorda bitta manzil bor ro‘yxatdan olinadi. Har biri yangi manzili bo‘sh qatorga aylanadi.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Sayt xaritasining manzili</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Yoki sayt xaritasini yoki ro‘yxatni yuklang</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Boshqa xostlarning manzillari ham</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Tashrif buyuruvchilar bu saytda so‘rab topolmagan manzillar, eng ko‘p so‘ralganlari birinchi. Rasmlar, skriptlar va botlar kiritilmaydi.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 jurnali o‘chirilgan (site.ini [RequestLogSettings] NotFoundLog): unda yangi manzillar yo‘q.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Kamida shuncha so‘rov</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Oxirgi kunlarda</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Qatorlarida yangi manzil yo‘q xarita: har biriga manzili yoki nomi eskisiga eng ko‘p o‘xshaydigan shu saytning sahifalari beriladi.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Ko‘pi bilan shuncha qator</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Yangi manzillar</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Bali kamida shuncha bo‘lgan taklifni to‘ldiring</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0 dan 100 gacha bo‘lgan bal eski manzil shu saytdagi sahifaga qanchalik o‘xshashligini ko‘rsatadi. Boshqa takliflar qatorning izohlarida keltirilgan.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>CSV sifatida yuklab olish</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Hali hech narsa yozilmadi. Xaritani jadvalda yakunlash uchun yuklab oling yoki oldindan ko‘ring: yangi manzili yo‘q qatorlar import qilib bo‘lmaydigan deb ko‘rsatiladi.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Fayl yuklash</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Boshlash yo‘llari</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Eski manzillarni sinash</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Sayt kirish nuqtasining sayt manzili yo‘q (site.ini [SiteSettings] SiteURL), shuning uchun eski manzillarni bu yerda sinab bo‘lmaydi. ./console exp:url:test ularni istalgan manzilga qarshi sinaydi.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Har bir eski manzilni %base da so‘raydi, yo‘naltirishlariga ergashadi va yangi manziliga yetib borishini tekshiradi.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Yana sinash</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Sinash</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed yetib bordi, %status noto‘g‘ri holat bilan, %target noto‘g‘ri sahifada, %none yo‘naltirilmadi, %error xato bilan, %skipped o‘tkazib yuborildi.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Faqat birinchi %count qator sinaldi.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Yangi manziliga yetib bormagan qatorlar</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Eski manzillarni sinab bo‘lmadi.</translation>
+    </message>
 </context>
 </TS>

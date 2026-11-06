@@ -86123,5 +86123,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>संलग्नः पाठः</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>जालस्थलमानचित्रस्य सङ्केतं ददातु अथवा तत् उपारोपयतु।</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>कोऽपि पुरातनः सङ्केतः न प्राप्तः।</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>पुरातनात् जालस्थलमानचित्रात्</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 अभिलेखात्</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>लक्ष्याणि सूचयतु</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>पुरातनस्य जालस्थलस्य सङ्केताः तस्य जालस्थलमानचित्रात् (sitemap.xml, जालस्थलमानचित्रसूच्याः अथवा .gz) अथवा प्रतिपङ्क्ति एकसङ्केतयुक्तायाः सूच्याः। प्रत्येकः रिक्तनूतनसङ्केतयुक्ता पङ्क्तिः भवति।</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>जालस्थलमानचित्रस्य सङ्केतः</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>अथवा जालस्थलमानचित्रं सूचीं वा उपारोपयतु</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>अन्यातिथेयानां सङ्केताः अपि</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>येषां सङ्केतान् आगन्तुकाः अस्मिन् जालस्थले अयाचन्त किन्तु न अविन्दन्, अधिकतमयाचिताः प्रथमम्। चित्राणि, स्क्रिप्ट्स्, बोट्स् च परित्यक्ताः।</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 अभिलेखः निवारितः (site.ini [RequestLogSettings] NotFoundLog): तस्मिन् नूतनसङ्केताः न सन्ति।</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>न्यूनातिन्यूनम् एतावन्त्यः याचनाः</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>गतेषु दिनेषु</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>मानचित्रं यस्य पङ्क्तिषु नूतनसङ्केतः नास्ति: प्रत्येकं पङ्क्तिः अस्य जालस्थलस्य ताः पृष्ठाः प्राप्नोति यासां सङ्केतः नाम वा पुरातनेन सह अधिकतमं सदृशम्।</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>अधिकतमम् एतावन्त्यः पङ्क्तयः</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>नूतनसङ्केताः</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>न्यूनातिन्यूनम् एतावदङ्कयुक्तं सूचनं पूरयतु</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0 तः 100 पर्यन्तम् अङ्कः दर्शयति यत् पुरातनसङ्केतः अस्य जालस्थलस्य पृष्ठेन सह कियत् सदृशः। अन्याः सूचनाः पङ्क्तेः टिप्पण्याम् सूचीकृताः।</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>CSV रूपेण अवारोपयतु</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>अद्यापि किमपि न लिखितम्। मानचित्रं स्प्रेड्शीट्-मध्ये पूरयितुम् अवारोपयतु, अथवा पूर्वावलोकनं करोतु: नूतनसङ्केतरहिताः पङ्क्तयः आयातानर्हाः इति दर्श्यन्ते।</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>सञ्चिकाम् उपारोपयतु</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>आरम्भस्य उपायाः</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>पुरातनसङ्केतान् परीक्षताम्</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>जालस्थलप्रवेशस्य जालस्थलसङ्केतः नास्ति (site.ini [SiteSettings] SiteURL), अतः पुरातनसङ्केताः अत्र परीक्षितुं न शक्यन्ते। ./console exp:url:test तान् यस्मिन् कस्मिन् अपि सङ्केते परीक्षते।</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>%base इत्यस्मिन् प्रत्येकं पुरातनसङ्केतं याचते, तस्य पुनर्निर्देशान् अनुसरति, नूतनसङ्केतं प्राप्नोति वा इति परीक्षते च।</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>पुनः परीक्षताम्</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>परीक्षा</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed प्राप्ताः, %status अशुद्धस्थित्या सह, %target अशुद्धपृष्ठे, %none पुनर्निर्देशरहिताः, %error असफलाः, %skipped परित्यक्ताः।</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>केवलं प्रथमाः %count पङ्क्तयः परीक्षिताः।</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>याः पङ्क्तयः स्वनूतनसङ्केतं न प्राप्ताः</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>पुरातनसङ्केताः परीक्षितुं न शक्ताः।</translation>
+    </message>
 </context>
 </TS>

@@ -17,6 +17,7 @@
 <p class="a4-intro">{'Bring the addresses of an old site over in one go: a file lists each old address and the page of this site it belongs to now. Exact addresses become redirects or URL aliases, addresses with * become wildcards. You see what each row would do before anything is written, and every import can be undone as a whole.'|i18n( 'design/admin/content/urlimport' )}</p>
 
 {include uri='design:content/urlmap_toolbar.tpl' current='import' all=true()}
+{include uri='design:content/urlimport_sources.tpl' current='upload'}
 
 {if $import_tables|not}
 <div class="a4-notice is-warn" role="alert"><p>{'The tables of URL map imports do not exist yet. Run the upgrade step 6.0.15-url-map (./console exp:upgrade --apply) before importing.'|i18n( 'design/admin/content/urlimport' )}</p></div>

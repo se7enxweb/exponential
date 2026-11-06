@@ -86123,5 +86123,129 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>Pasted text</source>
         <translation>Ebiwandiiko ebiteekeddwamu</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Wa endagiriro lya sitemap oba yigatte.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Tewali ndagiriro nkadde esangiddwa.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Okuva ku sitemap enkadde</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Okuva mu lukalala lwa 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Teesa ebifo eby'okutuukako</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Endagiriro z'omukutu omukadde okuva ku sitemap yaagwo (sitemap.xml, olukalala lwa sitemap oba .gz) oba okuva ku lukalala nga buli lunyiriri lulina endagiriro emu. Buli emu efuuka olunyiriri nga lulina endagiriro empya etaliimu kantu.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Endagiriro ya sitemap</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Oba yigatte sitemap oba olukalala</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>N'endagiriro z'abakyaza abalala</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Endagiriro abagenyi ze baasaba ku mukutu guno ne batazisanga, ezisabiddwa ennyo zisooka. Ebifaananyi, scripts ne bots tebiriimu.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Olukalala lwa 404 luzikiziddwa (site.ini [RequestLogSettings] NotFoundLog): terulina ndagiriro mpya.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Okusaba kuno oba okusingawo</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Mu nnaku ezisembyeyo</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Maapu nga ennyiriri zaayo zibulamu endagiriro empya: buli emu efuna empapula z'omukutu guno endagiriro oba erinnya lyazo ly'ekwata ennyo ku enkadde.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Ennyiriri zino oba ntono</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Endagiriro empya</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Jjuza ky'oteesezza ekirina obubonero buno oba okusingawo</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Obubonero okuva ku 0 okutuuka ku 100 bulaga endagiriro enkadde bw'efaanana ekipapula ky'omukutu guno. Ebirala by'oteesezza biri mu bijjukizo by'olunyiriri.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Wanula nga CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Tewali kiwandiikiddwa nkyaali. Wanula maapu ogimalirize mu spreadsheet, obaogirabeko nga tonnagiyingiza: ennyiriri ezitalina ndagiriro mpya zikiragibwa nga tezisobola kuyingizibwa.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Yigatta fayiro</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Engeri z'okutandikamu</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Gezesa endagiriro enkadde</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Omulyango gw'omukutu tegulina ndagiriro ya mukutu (site.ini [SiteSettings] SiteURL), n'olwekyo endagiriro enkadde tezisobola kugezesebwa wano. ./console exp:url:test ezigezesa ku ndagiriro yonna.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Esaba buli ndagiriro enkadde ku %base, egoberera okukyusibwa kwayo era n'etunuulira oba etuuka ku ndagiriro yaayo empya.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Ddamu ogezese</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Gezesa</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed zituuse, %status n'embeera etali ya butuufu, %target ku kipapula ekikyamu, %none tezikyusiddwa, %error zalemye, %skipped ziyitiddwa.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Ennyiriri %count ezisooka zokka ze zagezeseddwa.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Ennyiriri ezitaatuuse ku ndagiriro yaazo empya</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Endagiriro enkadde tezisobodde kugezesebwa.</translation>
+    </message>
 </context>
 </TS>

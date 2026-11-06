@@ -86156,5 +86156,129 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Pasted text</source>
         <translation>Textus insertus</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Inscriptionem tabulae situs (sitemap) date aut eam imponite.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Nulla inscriptio vetus inventa est.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Ex tabula situs vetere</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Ex commentario 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Fines suggerere</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Inscriptiones situs veteris ex eius tabula situs (sitemap.xml, indice tabularum aut .gz) aut ex indice cum una inscriptione in ordine. Ex unaquaque fit ordo cum inscriptione nova vacua.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Inscriptio tabulae situs</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Vel tabulam situs aut indicem imponite</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Etiam inscriptiones aliorum hospitum</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Inscriptiones quas visitatores in hoc situ petiverunt nec invenerunt, maxime petitae primae. Imagines, scripta et bots omittuntur.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Commentarius 404 exstinctus est (site.ini [RequestLogSettings] NotFoundLog): inscriptiones novas non habet.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Saltem tot petitiones</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>His proximis diebus</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Tabula cuius ordines inscriptione nova carent: unusquisque paginas huius situs accipit quarum inscriptio aut nomen veteri simillimum est.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Ad summum tot ordines</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Inscriptiones novae</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Suggestionem imple cuius nota est saltem</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Nota a 0 ad 100 indicat quam similis sit inscriptio vetus paginae huius situs. Aliae suggestiones in notis ordinis recensentur.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Ut CSV deponere</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Nihil adhuc scriptum est. Tabulam depone ut in tabula computatrali compleatur, aut praevide: ordines sine inscriptione nova ut non importabiles ostenduntur.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Fasciculum imponere</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Modi incipiendi</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Inscriptiones veteres probare</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Aditus situs inscriptionem situs non habet (site.ini [SiteSettings] SiteURL), itaque inscriptiones veteres hic probari non possunt. ./console exp:url:test eas contra quamlibet inscriptionem probat.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Unamquamque inscriptionem veterem apud %base petit, redirectiones sequitur et inspicit num ad inscriptionem novam perveniat.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Iterum probare</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Probare</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed pervenerunt, %status cum statu errato, %target ad paginam erratam, %none non redirectae, %error defecerunt, %skipped omissae.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Tantum primi %count ordines probati sunt.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Ordines qui ad inscriptionem novam non pervenerunt</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Inscriptiones veteres probari non potuerunt.</translation>
+    </message>
 </context>
 </TS>

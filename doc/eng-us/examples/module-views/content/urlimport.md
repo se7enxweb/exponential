@@ -14,10 +14,10 @@ A view of the `content` module, defined in `kernel/content/module.php` and run b
 ## Address
 
 ```text
-/content/urlimport/(plan)/<Plan>/(state)/<State>/(offset)/<Offset>/(report)/<Report>
+/content/urlimport/(plan)/<Plan>/(state)/<State>/(offset)/<Offset>/(report)/<Report>/(source)/<Source>
 ```
 
-Unordered parameters, in any order as `/(name)/value`: `(plan)` sets `Plan`, `(state)` sets `State`, `(offset)` sets `Offset`, `(report)` sets `Report`.
+Unordered parameters, in any order as `/(name)/value`: `(plan)` sets `Plan`, `(state)` sets `State`, `(offset)` sets `Offset`, `(report)` sets `Report`, `(source)` sets `Source`.
 
 ## Who may open it
 

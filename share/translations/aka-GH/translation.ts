@@ -86123,5 +86123,129 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>Pasted text</source>
         <translation>Nsɛm a wɔde ahyɛ mu</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Fa saet mapo no adrɛse ma anaasɛ fa fael no bra.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Wɔanhunu adrɛse dada biara.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Firi saet dada mapo no mu</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Firi 404 nkyerɛwee no mu</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Fa mmeae a ɛbɛkɔ no ho adwenkyerɛ ma</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Saet dada no adrɛse a efi n'saet mapo (sitemap.xml, saet mapo nkyerɛwee anaasɛ .gz) mu anaasɛ efi nsɛm a adrɛse baako wɔ nsantenteɛ biara mu. Biara bɛyɛ nsantenteɛ a adrɛse foforɔ nni mu.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Saet mapo no adrɛse</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Anaasɛ fa saet mapo no anaasɛ nsɛm no bra</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Ne nso adrɛse a efi host afoforɔ mu</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Adrɛse a ahɔhoɔ bisaa wɔ saet yi so na wɔanhunu, deɛ wɔbisa pii no di kan. Mfonini, scripts ne bots no wɔapow.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Wɔapa 404 nkyerɛwee no mu (site.ini [RequestLogSettings] NotFoundLog): enni adrɛse foforɔ.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Nhyɛdeɛ a ɛnnyɛ koro ho</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Nnansa yi mu</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Mapo a ne nsantenteɛ nni adrɛse foforɔ: biara benya saet yi krataafa a n'adrɛse anaasɛ ne din te sɛ deɛ ɛdada no.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Nsantenteɛ a ɛnnyɛ koro ho</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Adrɛse foforɔ</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Hyɛ adwenkyerɛ a ne score nnyɛ koro ho</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Score a efi 0 kɔsi 100 kyerɛ sɛ adrɛse dada no te sɛ saet yi krataafa bi. Adwenkyerɛ a aka no wɔ nsantenteɛ no nkaeɛ mu.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Twe sɛ CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Wɔnkyerɛw hwee ɛnnɛ. Twe mapo no na wuwie wɔ sigblad mu, anaasɛ hwɛ kane: nsantenteɛ a adrɛse foforɔ nni mu wɔkyerɛ sɛ wɔrentumi mfa mma mu.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Fa fael bra</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Akwan a wɔfa so hyɛ ase</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Sɔ adrɛse dada no hwɛ</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Wɛbsaet kwan no nni saet adrɛse (site.ini [SiteSettings] SiteURL), enti wontumi nsɔ adrɛse dada no hwɛ ha. ./console exp:url:test sɔ hwɛ wɔ adrɛse biara so.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Ɛsrɛ adrɛse dada biara wɔ %base so, di ne kwan-sesa no akyi na hwɛ sɛ ɛkɔ ne adrɛse foforɔ no so.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Sɔ hwɛ bio</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Sɔ hwɛ</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed adu hɔ, %status wɔ tebea mfomsoɔ, %target wɔ krataafa mfomsoɔ so, %none wɔnnsesaa kwan, %error ɛantumi, %skipped wɔatwa mu.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Wɔsɔɔ nsantenteɛ %count a ɛdi kan nko ara hwɛɛ.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Nsantenteɛ a wɔankɔ wɔn adrɛse foforɔ so</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Wɔantumi ansɔ adrɛse dada no hwɛ.</translation>
+    </message>
 </context>
 </TS>

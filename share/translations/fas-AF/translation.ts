@@ -86123,5 +86123,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>متن جای‌گذاری‌شده</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>نشانی نقشه سایت را وارد کنید یا آن را آپلود کنید.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>هیچ نشانی قدیمی پیدا نشد.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>از نقشه سایت قدیمی</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>از گزارش ۴۰۴</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>پیشنهاد مقصدها</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>نشانی‌های سایت قدیمی از نقشه سایت آن (sitemap.xml، یک فهرست نقشه سایت یا .gz) یا از فهرستی با یک نشانی در هر خط. هر کدام به ردیفی با نشانی جدید خالی تبدیل می‌شود.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>نشانی نقشه سایت</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>یا نقشه سایت یا فهرست را آپلود کنید</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>نشانی‌های میزبان‌های دیگر هم</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>نشانی‌هایی که بازدیدکنندگان در این سایت درخواست کرده‌اند و پیدا نشده‌اند، پرتکرارترین‌ها اول. تصاویر، اسکریپت‌ها و ربات‌ها کنار گذاشته می‌شوند.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>گزارش ۴۰۴ خاموش است (site.ini [RequestLogSettings] NotFoundLog): نشانی جدیدی ندارد.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>دست‌کم این تعداد درخواست</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>در روزهای اخیر</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>نقشه‌ای که ردیف‌هایش نشانی جدید ندارند: هر ردیف صفحه‌های این سایت را می‌گیرد که نشانی یا نامشان بیشتر به نشانی قدیمی شبیه است.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>حداکثر این تعداد ردیف</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>نشانی‌های جدید</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>پر کردن پیشنهادی با امتیاز دست‌کم</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>امتیاز از ۰ تا ۱۰۰ نشان می‌دهد نشانی قدیمی چقدر به یک صفحه از این سایت شبیه است. پیشنهادهای دیگر در یادداشت‌های ردیف فهرست شده‌اند.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>دانلود به‌صورت CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>هنوز چیزی نوشته نشده است. نقشه را دانلود کنید تا در صفحه‌گسترده کامل شود، یا پیش‌نمایش آن را ببینید: ردیف‌های بدون نشانی جدید به‌صورت غیرقابل درون‌ریزی نشان داده می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>آپلود فایل</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>راه‌های شروع</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>آزمایش نشانی‌های قدیمی</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>این دسترسی سایت نشانی سایت ندارد (site.ini [SiteSettings] SiteURL)، بنابراین نشانی‌های قدیمی را نمی‌توان اینجا آزمایش کرد. ./console exp:url:test آن‌ها را روی هر نشانی آزمایش می‌کند.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>هر نشانی قدیمی را در %base درخواست می‌کند، تغییر مسیرهای آن را دنبال می‌کند و بررسی می‌کند که به نشانی جدیدش برسد.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>آزمایش دوباره</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>آزمایش</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed درست رسیدند، %status با وضعیت نادرست، %target به صفحه نادرست، %none بدون تغییر مسیر، %error ناموفق، %skipped ردشده.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>فقط %count ردیف اول آزمایش شد.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>ردیف‌هایی که به نشانی جدید خود نرسیدند</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>نشانی‌های قدیمی را نمی‌شد آزمایش کرد.</translation>
+    </message>
 </context>
 </TS>

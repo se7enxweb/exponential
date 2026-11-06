@@ -86123,5 +86123,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>អត្ថបទដែលបានបិទភ្ជាប់</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>ផ្តល់អាសយដ្ឋានផែនទីគេហទំព័រ ឬបញ្ចូលវាឡើង។</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>រកមិនឃើញអាសយដ្ឋានចាស់ទេ។</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>ពីផែនទីគេហទំព័រចាស់</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>ពីកំណត់ហេតុ 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>ស្នើគោលដៅ</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>អាសយដ្ឋានរបស់គេហទំព័រចាស់ ពីផែនទីគេហទំព័ររបស់វា (sitemap.xml លិបិក្រមផែនទីគេហទំព័រ ឬ .gz) ឬពីបញ្ជីដែលមានអាសយដ្ឋានមួយក្នុងមួយបន្ទាត់។ អាសយដ្ឋាននីមួយៗក្លាយជាជួរដែលមានអាសយដ្ឋានថ្មីទទេ។</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>អាសយដ្ឋានផែនទីគេហទំព័រ</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>ឬបញ្ចូលផែនទីគេហទំព័រ ឬបញ្ជីឡើង</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>ព្រមទាំងអាសយដ្ឋានរបស់ម៉ាស៊ីនផ្សេងទៀត</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>អាសយដ្ឋានដែលអ្នកទស្សនាបានស្នើនៅលើគេហទំព័រនេះ ហើយរកមិនឃើញ ដោយអ្វីដែលត្រូវបានស្នើច្រើនបំផុតមុនគេ។ រូបភាព ស្គ្រីប និងបូតត្រូវបានដកចេញ។</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>កំណត់ហេតុ 404 ត្រូវបានបិទ (site.ini [RequestLogSettings] NotFoundLog)៖ វាមិនមានអាសយដ្ឋានថ្មីទេ។</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>យ៉ាងតិចចំនួនសំណើនេះ</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>ក្នុងប៉ុន្មានថ្ងៃចុងក្រោយ</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>ផែនទីដែលជួររបស់វាខ្វះអាសយដ្ឋានថ្មី៖ ជួរនីមួយៗទទួលបានទំព័ររបស់គេហទំព័រនេះ ដែលអាសយដ្ឋាន ឬឈ្មោះដូចអាសយដ្ឋានចាស់បំផុត។</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>យ៉ាងច្រើនចំនួនជួរនេះ</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>អាសយដ្ឋានថ្មី</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>បំពេញសំណើដែលមានពិន្ទុយ៉ាងតិច</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>ពិន្ទុពី 0 ដល់ 100 បង្ហាញថាអាសយដ្ឋានចាស់ស្រដៀងនឹងទំព័រមួយរបស់គេហទំព័រនេះប៉ុនណា។ សំណើផ្សេងទៀតត្រូវបានរាយក្នុងកំណត់ចំណាំរបស់ជួរ។</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>ទាញយកជា CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>មិនទាន់មានអ្វីត្រូវបានសរសេរនៅឡើយទេ។ ទាញយកផែនទីដើម្បីបំពេញក្នុងសៀវភៅបញ្ជី ឬមើលជាមុន៖ ជួរដែលគ្មានអាសយដ្ឋានថ្មីត្រូវបានបង្ហាញថាមិនអាចនាំចូលបាន។</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>បញ្ចូលឯកសារឡើង</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>វិធីចាប់ផ្តើម</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>សាកល្បងអាសយដ្ឋានចាស់</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>ការចូលគេហទំព័រមិនមានអាសយដ្ឋានគេហទំព័រ (site.ini [SiteSettings] SiteURL) ទេ ដូច្នេះមិនអាចសាកល្បងអាសយដ្ឋានចាស់នៅទីនេះបានទេ។ ./console exp:url:test សាកល្បងវាជាមួយអាសយដ្ឋានណាមួយ។</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>ស្នើអាសយដ្ឋានចាស់នីមួយៗនៅ %base តាមការបញ្ជូនបន្តរបស់វា ហើយពិនិត្យថាវាទៅដល់អាសយដ្ឋានថ្មីរបស់វា។</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>សាកល្បងម្តងទៀត</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>សាកល្បង</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed បានដល់, %status ដោយស្ថានភាពខុស, %target នៅទំព័រខុស, %none មិនបានបញ្ជូនបន្ត, %error បរាជ័យ, %skipped រំលង។</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>បានសាកល្បងតែ %count ជួរដំបូងប៉ុណ្ណោះ។</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>ជួរដែលមិនបានទៅដល់អាសយដ្ឋានថ្មីរបស់ខ្លួន</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>មិនអាចសាកល្បងអាសយដ្ឋានចាស់បានទេ។</translation>
+    </message>
 </context>
 </TS>

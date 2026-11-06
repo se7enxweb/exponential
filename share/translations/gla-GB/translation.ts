@@ -86123,5 +86123,129 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>Pasted text</source>
         <translation>Teacsa air a chur a-steach</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Thoir seòladh an sitemap no luchdaich suas e.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Cha deach seann seòladh a lorg.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Bhon t-seann sitemap</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Bho loga 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Mol targaidean</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Seòlaidhean an t-seann làraich bhon sitemap aice (sitemap.xml, clàr-amais sitemap no .gz) no bho liosta le aon seòladh gach loidhne. Bidh gach fear na ràgh le seòladh ùr falamh.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Seòladh an sitemap</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>No luchdaich suas an sitemap no an liosta</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Seòlaidhean òstaichean eile cuideachd</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Na seòlaidhean a dh'iarr luchd-tadhail air an làrach seo agus nach d'fhuair iad, an fheadhainn as trice an toiseach. Tha dealbhan, sgriobtaichean agus botaichean air an fhàgail a-mach.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Tha an loga 404 dheth (site.ini [RequestLogSettings] NotFoundLog): chan eil seòlaidhean ùra ann.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Co-dhiù an uiread seo de dh'iarrtasan</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Anns na làithean mu dheireadh</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Mapa aig nach eil seòladh ùr anns na ràghan: gheibh gach fear duilleagan na làraich seo aig a bheil seòladh no ainm as coltaiche ris an t-seann fhear.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Aig a' char as motha an uiread seo de ràghan</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Seòlaidhean ùra</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Lìon moladh aig a bheil sgòr de co-dhiù</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Tha sgòr o 0 gu 100 ag innse dè cho coltach 's a tha an seann seòladh ri duilleag den làrach seo. Tha na molaidhean eile air an liostadh ann an nòtaichean an ràgh.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Luchdaich a-nuas mar CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Cha deach dad a sgrìobhadh fhathast. Luchdaich a-nuas am mapa gus a chrìochnachadh ann an cliath-dhuilleag, no faic ro-shealladh dheth: tha ràghan gun seòladh ùr air an sealltainn mar fheadhainn nach gabh ion-phortadh.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Luchdaich suas faidhle</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Dòighean air tòiseachadh</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Deuchainn air na seann seòlaidhean</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Chan eil seòladh làraich aig an inntrigeadh làraich (site.ini [SiteSettings] SiteURL), agus mar sin chan urrainnear na seann seòlaidhean fheuchainn an seo. Bidh ./console exp:url:test gam feuchainn an aghaidh seòladh sam bith.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Iarraidh e gach seann seòladh air %base, leanaidh e na h-ath-stiùiridhean aige agus dearbhaidh e gu bheil e a' tighinn gu a sheòladh ùr.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Feuch a-rithist</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Deuchainn</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>Ràinig %landed ceart, %status leis an inbhe cheàrr, %target an duilleag cheàrr, %none gun ath-stiùireadh, dh'fhàillig %error, chaidh %skipped a leumadh.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Cha deach ach a' chiad %count ràghan fheuchainn.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Na ràghan nach do ràinig an seòladh ùr</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Cha b' urrainnear na seann seòlaidhean fheuchainn.</translation>
+    </message>
 </context>
 </TS>

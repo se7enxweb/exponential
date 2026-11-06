@@ -86153,5 +86153,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>Pasted text</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Give the address of the sitemap or upload it.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>No old address was found.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>From the old sitemap</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>From the 404 log</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Suggest targets</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Address of the sitemap</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Or upload the sitemap or the list</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Also the addresses of other hosts</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>At least this many requests</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>In the last days</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>At most this many rows</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>New addresses</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Fill in a suggestion that scores at least</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Download as CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Upload a file</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Ways to start</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Test the old addresses</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Test again</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Test</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Only the first %count rows were tested.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>The rows that did not land on their new address</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>The old addresses could not be tested.</translation>
+    </message>
 </context>
 </TS>

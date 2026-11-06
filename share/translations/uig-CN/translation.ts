@@ -86123,5 +86123,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>چاپلانغان تېكىست</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>تور بېكەت خەرىتىسىنىڭ ئادرېسىنى كىرگۈزۈڭ ياكى ئۇنى يۈكلەڭ.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>ھېچقانداق كونا ئادرېس تېپىلمىدى.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>كونا تور بېكەت خەرىتىسىدىن</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 خاتىرىسىدىن</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>نىشان تەكلىپ قىلىش</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>كونا تور بېكەتنىڭ ئادرېسلىرى ئۇنىڭ تور بېكەت خەرىتىسىدىن (sitemap.xml، تور بېكەت خەرىتىسى كاتالوگى ياكى .gz) ياكى ھەر قۇرغا بىر ئادرېس يېزىلغان تىزىملىكتىن ئېلىنىدۇ. ھەر بىرى يېڭى ئادرېسى بوش بىر قۇر بولىدۇ.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>تور بېكەت خەرىتىسىنىڭ ئادرېسى</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>ياكى تور بېكەت خەرىتىسى ياكى تىزىملىكنى يۈكلەڭ</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>باشقا باش ماشىنىلارنىڭ ئادرېسلىرىمۇ</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>زىيارەتچىلەر بۇ تور بېكەتتە تەلەپ قىلىپ تاپالمىغان ئادرېسلار، ئەڭ كۆپ تەلەپ قىلىنغانلىرى ئالدىدا. رەسىم، قوليازما ۋە ماشىنا ئادەملەر چىقىرىۋېتىلگەن.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 خاتىرىسى ئېتىك (site.ini [RequestLogSettings] NotFoundLog): ئۇنىڭدا يېڭى ئادرېس يوق.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>ئەڭ ئاز بولغاندا بۇنچە تەلەپ</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>ئالدىنقى بىر نەچچە كۈندە</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>قۇرلىرىدا يېڭى ئادرېس يوق خەرىتە: ھەر بىرىگە ئادرېسى ياكى ئىسمى كونىسىغا ئەڭ ئوخشايدىغان بۇ تور بېكەتنىڭ بەتلىرى بېرىلىدۇ.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>ئەڭ كۆپ بولغاندا بۇنچە قۇر</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>يېڭى ئادرېسلار</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>ئۇتۇقى ئەڭ ئاز بولغاندا مۇنچە بولغان تەكلىپنى تولدۇرۇڭ</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0 دىن 100 گىچە بولغان نومۇر كونا ئادرېسنىڭ بۇ تور بېكەتتىكى بىر بەتكە قانچىلىك ئوخشايدىغانلىقىنى كۆرسىتىدۇ. باشقا تەكلىپلەر قۇرنىڭ ئىزاھلىرىدا تىزىلىدۇ.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>CSV سۈپىتىدە چۈشۈرۈش</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>تېخى ھېچنېمە يېزىلمىدى. خەرىتىنى جەدۋەلدە تاماملاش ئۈچۈن چۈشۈرۈڭ ياكى ئالدىن كۆرۈڭ: يېڭى ئادرېسى يوق قۇرلار ئەكىرىشكە بولمايدىغان دەپ كۆرسىتىلىدۇ.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>ھۆججەت يۈكلەش</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>باشلاش ئۇسۇللىرى</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>كونا ئادرېسلارنى سىناش</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>تور بېكەت زىيارىتىنىڭ تور بېكەت ئادرېسى يوق (site.ini [SiteSettings] SiteURL)، شۇڭا كونا ئادرېسلارنى بۇ يەردە سىناشقا بولمايدۇ. ./console exp:url:test ئۇلارنى خالىغان ئادرېسقا قارىتا سىنايدۇ.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>ھەر بىر كونا ئادرېسنى %base دا تەلەپ قىلىدۇ، يوللاشلىرىغا ئەگىشىدۇ ۋە يېڭى ئادرېسىغا يەتكەن-يەتمىگەنلىكىنى تەكشۈرىدۇ.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>قايتا سىناش</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>سىناش</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed يەتتى، %status ھالىتى خاتا، %target خاتا بەتتە، %none يوللانمىدى، %error مەغلۇپ بولدى، %skipped ئاتلاپ ئۆتۈلدى.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>پەقەت ئالدىنقى %count قۇر سىналدى.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>يېڭى ئادرېسىغا يەتمىگەن قۇرلار</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>كونا ئادرېسلارنى سىناش مۇمكىن بولمىدى.</translation>
+    </message>
 </context>
 </TS>

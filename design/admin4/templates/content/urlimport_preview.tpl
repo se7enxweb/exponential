@@ -7,7 +7,8 @@
 
    Variables (kernel/private/classes/views/content/urlimport.php): import_token, import_meta, import_options,
    import_counts, import_states, import_state, import_rows, import_row_count, import_limit, import_page_uri,
-   import_unknown_hosts, import_siteaccesses, import_dry_run, import_result, import_error, import_error_text,
+   import_unknown_hosts, import_siteaccesses, import_dry_run, import_result, import_test, import_test_base, import_error,
+   import_error_text,
    view_parameters. The same file is in design/admin and design/admin4. Works without javascript. *}
 
 {def $base = concat( 'content/urlimport/(plan)/', $import_token )
@@ -34,6 +35,7 @@
     <p>{'%created created, %updated replaced, %skipped skipped, %failed failed.'|i18n( 'design/admin/content/urlimport',, hash( '%created', $import_result.counts.created, '%updated', $import_result.counts.updated, '%skipped', $import_result.counts.skipped, '%failed', $import_result.counts.failed ) )|wash}</p>
     <p><a href={concat( 'content/urlimporthistory/', $import_result.batch_id )|ezurl}>{'See the import, or undo it'|i18n( 'design/admin/content/urlimport' )}</a> &middot; <a href={'content/urlimport'|ezurl}>{'Import another file'|i18n( 'design/admin/content/urlimport' )}</a></p>
 </div>
+{include uri='design:content/urlimport_test.tpl' test=$import_test base=$import_test_base token=$import_token}
 {else}
 <p class="a4-intro">{'Nothing has been written yet. Each row shows what the import would do with it. Ticked rows are imported; untick a row to leave it out. Rows that are not new can only be imported when their old address may be replaced.'|i18n( 'design/admin/content/urlimport' )}</p>
 {/if}

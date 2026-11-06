@@ -86123,5 +86123,129 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>Pasted text</source>
         <translation>Testun wedi'i gludo</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Rhowch gyfeiriad map y safle neu llwythwch ef i fyny.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Ni chafwyd hyd i unrhyw hen gyfeiriad.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>O hen fap y safle</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>O'r log 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Awgrymu targedau</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Cyfeiriadau'r hen safle o fap y safle (sitemap.xml, mynegai map safle neu .gz) neu o restr gydag un cyfeiriad ar bob llinell. Daw pob un yn rhes gyda chyfeiriad newydd gwag.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Cyfeiriad map y safle</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Neu llwythwch fap y safle neu'r rhestr i fyny</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Hefyd cyfeiriadau gwesteiwyr eraill</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Y cyfeiriadau y gofynnodd ymwelwyr amdanynt ar y safle hwn ac na chawsant hyd iddynt, y rhai y gofynnwyd amdanynt fwyaf yn gyntaf. Gadewir delweddau, sgriptiau a botiau allan.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Mae'r log 404 wedi'i ddiffodd (site.ini [RequestLogSettings] NotFoundLog): nid oes ganddo gyfeiriadau newydd.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>O leiaf y nifer hwn o geisiadau</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Yn ystod y dyddiau diwethaf</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Map lle mae rhesi heb gyfeiriad newydd: mae pob un yn cael tudalennau'r safle hwn y mae eu cyfeiriad neu eu henw agosaf at yr hen un.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Hyd at y nifer hwn o resi</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Cyfeiriadau newydd</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Llenwch awgrym sy'n sgorio o leiaf</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Mae sgôr o 0 i 100 yn dweud pa mor debyg yw'r hen gyfeiriad i dudalen o'r safle hwn. Rhestrir yr awgrymiadau eraill yn nodiadau'r rhes.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Lawrlwytho fel CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Nid oes dim wedi'i ysgrifennu eto. Lawrlwythwch y map i'w gwblhau mewn taenlen, neu cymerwch ragolwg ohono: dangosir rhesi heb gyfeiriad newydd fel rhai dim modd eu mewnforio.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Llwytho ffeil i fyny</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Ffyrdd o ddechrau</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Profi'r hen gyfeiriadau</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Nid oes gan y mynediad i'r wefan gyfeiriad gwefan (site.ini [SiteSettings] SiteURL), felly ni ellir profi'r hen gyfeiriadau yma. Mae ./console exp:url:test yn eu profi yn erbyn unrhyw gyfeiriad.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Yn gofyn am bob hen gyfeiriad ar %base, yn dilyn ei ailgyfeiriadau ac yn gwirio ei fod yn cyrraedd ei gyfeiriad newydd.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Profi eto</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Prawf</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>Cyrhaeddodd %landed, %status gyda'r statws anghywir, %target ar y dudalen anghywir, %none heb eu hailgyfeirio, %error wedi methu, %skipped wedi'u hepgor.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Dim ond y %count rhes gyntaf a brofwyd.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Y rhesi na chyrhaeddodd eu cyfeiriad newydd</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Nid oedd modd profi'r hen gyfeiriadau.</translation>
+    </message>
 </context>
 </TS>

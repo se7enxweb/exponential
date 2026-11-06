@@ -86123,5 +86123,129 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>Pasted text</source>
         <translation>Itsatsitako testua</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Eman sitemap-aren helbidea edo igo ezazu.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Ez da helbide zaharrik aurkitu.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Sitemap zaharretik</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 erregistrotik</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Iradoki helburuak</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Gune zaharraren helbideak, bere sitemap-etik (sitemap.xml, sitemap-indize bat edo .gz) edo helbide bat lerroko duen zerrenda batetik. Bakoitza helbide berri hutsa duen errenkada bihurtzen da.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Sitemap-aren helbidea</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Edo igo sitemap-a edo zerrenda</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Beste ostalarien helbideak ere</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Bisitariek gune honetan eskatu eta aurkitu ez dituzten helbideak, gehien eskatuak lehenengo. Irudiak, scriptak eta botak kanpoan geratzen dira.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 erregistroa desaktibatuta dago (site.ini [RequestLogSettings] NotFoundLog): ez du helbide berririk.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Gutxienez eskaera kopuru hau</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Azken egunetan</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Errenkadek helbide berririk ez duten mapa bat: bakoitzak gune honetako orriak jasotzen ditu, helbide edo izen zaharrarekin gehien antzeko direnak.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Gehienez errenkada kopuru hau</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Helbide berriak</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Bete gutxienez puntuazio hau duen iradokizuna</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0tik 100era bitarteko puntuazioak adierazten du helbide zaharra zenbateraino den gune honetako orri baten antzekoa. Beste iradokizunak errenkadaren oharretan agertzen dira.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Deskargatu CSV gisa</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Oraindik ez da ezer idatzi. Deskargatu mapa kalkulu-orri batean osatzeko, edo aurreikusi: helbide berririk gabeko errenkadak inporta ezin direnak bezala erakusten dira.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Igo fitxategi bat</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Hasteko moduak</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Probatu helbide zaharrak</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Siteaccess-ak ez du gune-helbiderik (site.ini [SiteSettings] SiteURL), beraz hemen ezin dira helbide zaharrak probatu. ./console exp:url:test komandoak edozein helbiderekin probatzen ditu.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Helbide zahar bakoitza eskatzen du %base helbidean, birbideratzeak jarraitzen ditu eta helbide berrira iristen dela egiaztatzen du.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Probatu berriro</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Probatu</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed ondo iritsi dira, %status egoera okerrarekin, %target orri okerrera, %none birbideratu gabe, %error huts eginda, %skipped saltatuta.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Lehenengo %count errenkadak soilik probatu dira.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Helbide berrira iritsi ez diren errenkadak</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Ezin izan dira helbide zaharrak probatu.</translation>
+    </message>
 </context>
 </TS>

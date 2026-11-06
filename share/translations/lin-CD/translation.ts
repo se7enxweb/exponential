@@ -86123,5 +86123,129 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>Pasted text</source>
         <translation>Makomi oyo etyami</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Pesá adresi ya sitemap to kotinda yango.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Adresi ya kala moko te emonani.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Uta na sitemap ya kala</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Uta na mokanda ya 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Kopesa makanisi ya bisika ya kokóma</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Ba adresi ya site ya kala uta na sitemap na yango (sitemap.xml, lisanga ya sitemap to .gz) to uta na liste oyo ezali na adresi moko na molɔngɔ moko. Moko na moko akomi molɔngɔ oyo adresi ya sika ezali na yango te.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Adresi ya sitemap</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>To tinda sitemap to liste</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Mpe ba adresi ya ba hôte mosusu</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Ba adresi oyo bavandi basengaki na site oyo mpe bamonaki te, oyo esengami mingi ezali liboso. Bilili, ba script mpe ba bot ezali te.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Mokanda ya 404 efungami te (site.ini [RequestLogSettings] NotFoundLog): ezali na ba adresi ya sika te.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Soki moke ba requêtes boye</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Na mikolo ya suka</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Karte oyo milɔngɔ na yango ezali na adresi ya sika te: moko na moko azwi ba pɛjɛ ya site oyo adresi to nkombo na yango ekokani mingi na ya kala.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Mingi mingi milɔngɔ boye</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Ba adresi ya sika</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Etondisa likanisi oyo ezali na ba point soki moke</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Point uta na 0 tii 100 elobi boniboni adresi ya kala ekokani na pɛjɛ ya site oyo. Makanisi mosusu ezali na makomi ya molɔngɔ.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Kozwa lokola CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Ekomami naino te. Zwá karte mpo na kosilisa yango na tableur, to tala yango liboso: milɔngɔ oyo adresi ya sika ezali te emonani lokola ekoki kokɔtisama te.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Tinda fisyé</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Ba nzela ya kobanda</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Meka ba adresi ya kala</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Siteaccess ezali na adresi ya site te (site.ini [SiteSettings] SiteURL), yango wana ekoki te komeka ba adresi ya kala awa. ./console exp:url:test emekaka yango na adresi nyonso.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Esengi adresi nyonso ya kala na %base, elandi ba redirection na yango mpe ekotala soki ekómi na adresi na yango ya sika.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Meka lisusu</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Meka</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed ekómi malamu, %status na état ya mabe, %target na pɛjɛ ya mabe, %none ebongwani te, %error esili malamu te, %skipped eleki.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Milɔngɔ %count ya liboso kaka nde etalemi.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Milɔngɔ oyo ekómaki te na adresi na yango ya sika</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Ekoki te komeka ba adresi ya kala.</translation>
+    </message>
 </context>
 </TS>

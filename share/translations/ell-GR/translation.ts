@@ -86153,5 +86153,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>Επικολλημένο κείμενο</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Δώστε τη διεύθυνση του sitemap ή ανεβάστε το.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Δεν βρέθηκε καμία παλιά διεύθυνση.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Από το παλιό sitemap</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Από το αρχείο καταγραφής 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Πρόταση προορισμών</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Οι διευθύνσεις του παλιού ιστότοπου από το sitemap του (sitemap.xml, ευρετήριο sitemap ή .gz) ή από μια λίστα με μία διεύθυνση ανά γραμμή. Κάθε μία γίνεται γραμμή με κενή νέα διεύθυνση.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Διεύθυνση του sitemap</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Ή ανεβάστε το sitemap ή τη λίστα</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Και οι διευθύνσεις άλλων hosts</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Οι διευθύνσεις που ζήτησαν οι επισκέπτες σε αυτόν τον ιστότοπο και δεν βρέθηκαν, με πρώτες τις πιο συχνές. Εικόνες, scripts και bots εξαιρούνται.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Το αρχείο καταγραφής 404 είναι απενεργοποιημένο (site.ini [RequestLogSettings] NotFoundLog): δεν περιέχει νέες διευθύνσεις.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Τουλάχιστον τόσα αιτήματα</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Τις τελευταίες ημέρες</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Ένας χάρτης με γραμμές χωρίς νέα διεύθυνση: κάθε μία παίρνει τις σελίδες αυτού του ιστότοπου των οποίων η διεύθυνση ή το όνομα μοιάζει περισσότερο με την παλιά.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Το πολύ τόσες γραμμές</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Νέες διευθύνσεις</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Συμπλήρωση πρότασης με βαθμολογία τουλάχιστον</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Μια βαθμολογία από 0 έως 100 δείχνει πόσο μοιάζει η παλιά διεύθυνση με μια σελίδα αυτού του ιστότοπου. Οι υπόλοιπες προτάσεις αναφέρονται στις σημειώσεις της γραμμής.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Λήψη ως CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Δεν έχει γραφτεί ακόμη τίποτα. Κατεβάστε τον χάρτη για να τον συμπληρώσετε σε υπολογιστικό φύλλο ή δείτε προεπισκόπηση: οι γραμμές χωρίς νέα διεύθυνση εμφανίζονται ως μη εισάξιμες.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Ανέβασμα αρχείου</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Τρόποι έναρξης</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Δοκιμή των παλιών διευθύνσεων</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Το siteaccess δεν έχει διεύθυνση ιστότοπου (site.ini [SiteSettings] SiteURL), επομένως οι παλιές διευθύνσεις δεν μπορούν να δοκιμαστούν εδώ. Το ./console exp:url:test τις δοκιμάζει με οποιαδήποτε διεύθυνση.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Ζητά κάθε παλιά διεύθυνση στο %base, ακολουθεί τις ανακατευθύνσεις της και ελέγχει ότι καταλήγει στη νέα της διεύθυνση.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Νέα δοκιμή</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Δοκιμή</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed κατέληξαν σωστά, %status με λάθος κατάσταση, %target σε λάθος σελίδα, %none χωρίς ανακατεύθυνση, %error απέτυχαν, %skipped παραλείφθηκαν.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Δοκιμάστηκαν μόνο οι πρώτες %count γραμμές.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Οι γραμμές που δεν κατέληξαν στη νέα τους διεύθυνση</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Οι παλιές διευθύνσεις δεν μπόρεσαν να δοκιμαστούν.</translation>
+    </message>
 </context>
 </TS>

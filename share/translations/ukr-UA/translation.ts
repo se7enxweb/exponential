@@ -86153,5 +86153,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>Вставлений текст</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Вкажіть адресу мапи сайту або завантажте її.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Жодної старої адреси не знайдено.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Зі старої мапи сайту</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>З журналу 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Запропонувати цілі</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Адреси старого сайту з його мапи (sitemap.xml, індексу мап сайту або .gz) чи зі списку з однією адресою в рядку. Кожна стає рядком із порожньою новою адресою.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Адреса мапи сайту</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Або завантажте мапу сайту чи список</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Також адреси інших хостів</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Адреси, які відвідувачі запитували на цьому сайті й не знайшли, найчастіше запитувані першими. Зображення, скрипти й боти не враховуються.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Журнал 404 вимкнено (site.ini [RequestLogSettings] NotFoundLog): у ньому немає нових адрес.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Щонайменше стільки запитів</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>За останні дні</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Мапа, рядки якої не мають нової адреси: кожен отримує сторінки цього сайту, адреса чи назва яких найбільше схожа на стару.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Щонайбільше стільки рядків</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Нові адреси</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Заповнити пропозицію з оцінкою щонайменше</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Оцінка від 0 до 100 показує, наскільки стара адреса схожа на сторінку цього сайту. Інші пропозиції перелічено в примітках рядка.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Завантажити як CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Ще нічого не записано. Завантажте мапу, щоб завершити її в електронній таблиці, або перегляньте її: рядки без нової адреси показано як такі, що не імпортуються.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Завантажити файл</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Способи почати</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Перевірити старі адреси</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Доступ до сайту не має адреси сайту (site.ini [SiteSettings] SiteURL), тому старі адреси тут перевірити не можна. ./console exp:url:test перевіряє їх на будь-якій адресі.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Запитує кожну стару адресу на %base, іде за її переспрямуваннями й перевіряє, чи вона веде на нову адресу.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Перевірити ще раз</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Перевірити</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed потрапили, %status з неправильним статусом, %target на неправильну сторінку, %none без переспрямування, %error з помилкою, %skipped пропущено.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Перевірено лише перші %count рядків.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Рядки, що не потрапили на свою нову адресу</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Старі адреси не вдалося перевірити.</translation>
+    </message>
 </context>
 </TS>

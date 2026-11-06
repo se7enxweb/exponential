@@ -86153,5 +86153,129 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
         <source>Pasted text</source>
         <translation>Nalepljeni tekst</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Navedite adresu mape sajta ili je otpremite.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Nije pronađena nijedna stara adresa.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Iz stare mape sajta</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Iz evidencije 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Predloži odredišta</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Adrese starog sajta iz njegove mape sajta (sitemap.xml, indeksa mapa sajta ili .gz) ili sa liste sa jednom adresom po redu. Svaka postaje red sa praznom novom adresom.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Adresa mape sajta</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Ili otpremite mapu sajta ili listu</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Takođe adrese drugih hostova</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Adrese koje su posetioci tražili na ovom sajtu i nisu ih pronašli, najtraženije prve. Slike, skripte i botovi su izostavljeni.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Evidencija 404 je isključena (site.ini [RequestLogSettings] NotFoundLog): nema novih adresa.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Najmanje toliko zahteva</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>U poslednjim danima</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Mapa čijim redovima nedostaje nova adresa: svaki dobija stranice ovog sajta čija je adresa ili naziv najsličniji staroj.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Najviše toliko redova</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Nove adrese</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Popuni predlog sa ocenom od najmanje</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Ocena od 0 do 100 kaže koliko je stara adresa slična stranici ovog sajta. Ostali predlozi navedeni su u napomenama reda.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Preuzmi kao CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Još ništa nije upisano. Preuzmite mapu da biste je dopunili u tabeli ili pogledajte pregled: redovi bez nove adrese prikazani su kao neuvozivi.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Otpremi datoteku</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Načini za početak</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Testiraj stare adrese</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Pristup sajtu nema adresu sajta (site.ini [SiteSettings] SiteURL), pa se stare adrese ovde ne mogu testirati. ./console exp:url:test testira ih prema bilo kojoj adresi.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Zahteva svaku staru adresu na %base, prati njena preusmeravanja i proverava da li stiže na novu adresu.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Testiraj ponovo</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Testiraj</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed stiglo, %status sa pogrešnim statusom, %target na pogrešnu stranicu, %none bez preusmeravanja, %error neuspešno, %skipped preskočeno.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Testirano je samo prvih %count redova.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Redovi koji nisu stigli na svoju novu adresu</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Stare adrese nije bilo moguće testirati.</translation>
+    </message>
 </context>
 </TS>

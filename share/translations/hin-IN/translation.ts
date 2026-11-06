@@ -86153,5 +86153,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>चिपकाया गया टेक्स्ट</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>साइटमैप का पता दें या उसे अपलोड करें।</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>कोई पुराना पता नहीं मिला।</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>पुराने साइटमैप से</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 लॉग से</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>लक्ष्य सुझाएँ</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>पुरानी साइट के पते उसके साइटमैप (sitemap.xml, साइटमैप इंडेक्स या .gz) से, या प्रति पंक्ति एक पते वाली सूची से। हर पता खाली नए पते वाली एक पंक्ति बन जाता है।</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>साइटमैप का पता</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>या साइटमैप या सूची अपलोड करें</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>अन्य होस्ट के पते भी</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>इस साइट पर आगंतुकों ने जो पते माँगे और जो नहीं मिले, सबसे अधिक माँगे गए पहले। चित्र, स्क्रिप्ट और बॉट शामिल नहीं हैं।</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 लॉग बंद है (site.ini [RequestLogSettings] NotFoundLog): इसमें कोई नया पता नहीं है।</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>कम से कम इतने अनुरोध</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>पिछले कुछ दिनों में</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>ऐसा मैप जिसकी पंक्तियों में नया पता नहीं है: हर पंक्ति को इस साइट के वे पृष्ठ मिलते हैं जिनका पता या नाम पुराने के सबसे समान है।</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>अधिकतम इतनी पंक्तियाँ</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>नए पते</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>कम से कम इस स्कोर वाला सुझाव भरें</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0 से 100 तक का स्कोर बताता है कि पुराना पता इस साइट के किसी पृष्ठ से कितना मिलता-जुलता है। अन्य सुझाव पंक्ति की टिप्पणियों में सूचीबद्ध हैं।</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>CSV के रूप में डाउनलोड करें</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>अभी कुछ नहीं लिखा गया है। मैप को स्प्रेडशीट में पूरा करने के लिए डाउनलोड करें, या उसका पूर्वावलोकन करें: बिना नए पते वाली पंक्तियाँ आयात-अयोग्य दिखाई जाती हैं।</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>फ़ाइल अपलोड करें</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>शुरू करने के तरीके</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>पुराने पतों का परीक्षण करें</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>साइट एक्सेस में साइट का पता (site.ini [SiteSettings] SiteURL) नहीं है, इसलिए पुराने पतों का यहाँ परीक्षण नहीं हो सकता। ./console exp:url:test उन्हें किसी भी पते के विरुद्ध जाँचता है।</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>%base पर हर पुराने पते का अनुरोध करता है, उसके रीडायरेक्ट का अनुसरण करता है और जाँचता है कि वह अपने नए पते पर पहुँचता है।</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>फिर से परीक्षण करें</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>परीक्षण</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed पहुँचे, %status गलत स्टेटस के साथ, %target गलत पृष्ठ पर, %none रीडायरेक्ट नहीं हुए, %error विफल, %skipped छोड़े गए।</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>केवल पहली %count पंक्तियों का परीक्षण हुआ।</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>वे पंक्तियाँ जो अपने नए पते पर नहीं पहुँचीं</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>पुराने पतों का परीक्षण नहीं हो सका।</translation>
+    </message>
 </context>
 </TS>

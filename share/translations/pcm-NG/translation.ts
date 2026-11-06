@@ -86131,5 +86131,129 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>Pasted text</source>
         <translation>Text wey you paste</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Give di sitemap address or upload am.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>We no find any old address.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>From di old sitemap</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>From di 404 log</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Suggest where dem go point to</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Di addresses of di old site from im sitemap (sitemap.xml, sitemap index or .gz) or from list wey get one address for each line. Each one go become row wey get empty new address.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Address of di sitemap</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Or upload di sitemap or di list</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Also di addresses of other hosts</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Di addresses wey visitors ask for for dis site but no find, di one wey dem ask pass first. We no include images, scripts and bots.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Dem don switch off di 404 log (site.ini [RequestLogSettings] NotFoundLog): e no get new addresses.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>At least dis number of requests</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>For di last days</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Map wey im rows no get new address: each one go get pages of dis site wey im address or name resemble di old one pass.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>At most dis number of rows</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Di new addresses</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Fill suggestion wey score at least</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Score from 0 to 100 dey show how di old address resemble one page of dis site. Di other suggestions dey inside di notes of di row.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Download am as CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Dem never write anything. Download di map make you complete am for spreadsheet, or preview am: rows wey no get new address dey show as no fit import.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Upload one file</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>How you fit start</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Test di old addresses</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Di siteaccess no get site address (site.ini [SiteSettings] SiteURL), so we no fit test di old addresses here. ./console exp:url:test dey test dem against any address.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>E dey request each old address for %base, follow im redirects and check say e land for im new address.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Test am again</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Check am</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed land, %status get wrong status, %target land for wrong page, %none no redirect, %error fail, %skipped skip.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Na only di first %count rows we test.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Di rows wey no land for dem new address</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>We no fit test di old addresses.</translation>
+    </message>
 </context>
 </TS>

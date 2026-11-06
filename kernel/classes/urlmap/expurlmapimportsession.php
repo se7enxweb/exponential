@@ -265,22 +265,45 @@ class expUrlMapImportSession
     /**
      * Keeps a dry run's or an import's result.
      *
-     * @param string $kind dryrun or result
+     * @param string $kind dryrun, result or test (exp:url:test's result after the import)
      * @param array $result expUrlMapImporter::apply()'s
      */
     public function saveResult( $kind, array $result )
     {
-        $this->write( ( $kind === 'result' ? 'result' : 'dryrun' ) . '.json', self::json( $result + array( 'time' => time() ) ) );
+        $this->write( self::resultFile( $kind ), self::json( $result + array( 'time' => time() ) ) );
     }
 
     /**
-     * @param string $kind dryrun or result
+     * @param string $kind dryrun, result or test (exp:url:test's result after the import)
      * @return array|null
      */
     public function result( $kind )
     {
-        $data = $this->read( ( $kind === 'result' ? 'result' : 'dryrun' ) . '.json' );
+        $data = $this->read( self::resultFile( $kind ) );
         return is_array( $data ) ? $data : null;
+    }
+
+    /**
+     * The file of a result kind. Pure.
+     *
+     * @param string $kind
+     * @return string
+     */
+    public static function resultFile( $kind )
+    {
+        return ( in_array( $kind, array( 'result', 'test' ), true ) ? $kind : 'dryrun' ) . '.json';
+    }
+
+    /**
+     * The rows of the kept file, as its format reads them.
+     *
+     * @return expUrlMapRow[]
+     * @throws expUrlMapFormatException
+     */
+    public function rows()
+    {
+        $meta = $this->meta();
+        return expUrlMapFormats::readFile( $this->sourcePath(), isset( $meta['format'] ) && $meta['format'] !== '' ? (string)$meta['format'] : null );
     }
 
     /** Removes the import now (after it is done the plan is no longer needed). */

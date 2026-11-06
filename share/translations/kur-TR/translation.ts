@@ -86121,5 +86121,129 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>Pasted text</source>
         <translation>Nivîsa hatiye xistin</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Navnîşana sitemapê bide an jî wê barke.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Tu navnîşaneke kevn nehat dîtin.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Ji sitemapa kevn</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Ji tomara 404ê</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Armancan pêşniyar bike</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Navnîşanên malpera kevn ji sitemapa wê (sitemap.xml, indeksa sitemapê an .gz) an jî ji lîsteyeke ku her rêzek navnîşanek e. Her yek dibe rêzeke bi navnîşana nû ya vala.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Navnîşana sitemapê</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>An jî sitemapê an lîsteyê barke</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Navnîşanên mêvandarên din jî</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Navnîşanên ku mêvan di vê malperê de xwestin û nedîtin, yên herî zêde hatine xwestin pêşî. Wêne, skrîpt û bot nayên nîşandan.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Tomara 404ê girtî ye (site.ini [RequestLogSettings] NotFoundLog): navnîşanên nû tune ne.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Herî kêm ev qas daxwaz</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Di rojên dawî de</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Nexşeyeke ku rêzên wê navnîşana nû ya wan tune ye: her yek rûpelên vê malperê distîne ku navnîşan an navê wan herî zêde dişibe yê kevn.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Herî zêde ev qas rêz</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Navnîşanên nû</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Pêşniyarek tijî bike ku xalê wê herî kêm ev be</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Xalek ji 0 heta 100 dibêje ku navnîşana kevn çiqas dişibe rûpelekî vê malperê. Pêşniyarên din di nîşeyên rêzê de têne rêz kirin.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Wekî CSV daxe</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Hê tiştek nehatiye nivîsandin. Nexşeyê daxe da ku di tabloyekê de temam bikî, an jî pêşdîtin bike: rêzên bê navnîşana nû wekî neşiyayî ji bo importê têne nîşandan.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Pelekî barke</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Awayên destpêkirinê</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Navnîşanên kevn test bike</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Gihîştina malperê navnîşana malperê (site.ini [SiteSettings] SiteURL) nîne, ji ber vê navnîşanên kevn li vir nayên testkirin. ./console exp:url:test wan li hember her navnîşanekê test dike.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Her navnîşana kevn li %base dixwaze, guhastinên wê dişopîne û kontrol dike ka digihîje navnîşana wê ya nû.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Dîsa test bike</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Test bike</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed gihîştin, %status bi rewşa şaş, %target li rûpela şaş, %none nehatine guhastin, %error têk çûn, %skipped hatin berdan.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Tenê %count rêzên pêşî hatin testkirin.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Rêzên ku negihîştin navnîşana xwe ya nû</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Navnîşanên kevn nehatin testkirin.</translation>
+    </message>
 </context>
 </TS>

@@ -86153,5 +86153,129 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>Pasted text</source>
         <translation>Liitetty teksti</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Anna sivustokartan osoite tai lataa se.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Vanhoja osoitteita ei löytynyt.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Vanhasta sivustokartasta</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404-lokista</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Ehdota kohteita</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Vanhan sivuston osoitteet sen sivustokartasta (sitemap.xml, sivustokarttahakemisto tai .gz) tai luettelosta, jossa on yksi osoite riviä kohden. Jokaisesta tulee rivi, jonka uusi osoite on tyhjä.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Sivustokartan osoite</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Tai lataa sivustokartta tai luettelo</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Myös muiden isäntien osoitteet</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Osoitteet, joita kävijät pyysivät tältä sivustolta ja joita ei löytynyt, eniten pyydetyt ensin. Kuvat, skriptit ja botit jätetään pois.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404-loki on pois käytöstä (site.ini [RequestLogSettings] NotFoundLog): siinä ei ole uusia osoitteita.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Vähintään näin monta pyyntöä</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Viimeisten päivien aikana</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Kartta, jonka riveiltä puuttuu uusi osoite: kukin saa tämän sivuston sivut, joiden osoite tai nimi muistuttaa eniten vanhaa.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Enintään näin monta riviä</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Uudet osoitteet</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Täytä ehdotus, jonka pistemäärä on vähintään</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Pistemäärä 0–100 kertoo, kuinka paljon vanha osoite muistuttaa tämän sivuston sivua. Muut ehdotukset luetellaan rivin huomautuksissa.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Lataa CSV-tiedostona</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Mitään ei ole vielä kirjoitettu. Lataa kartta täydentääksesi sen taulukkolaskentaohjelmassa tai esikatsele sitä: rivit ilman uutta osoitetta näytetään tuomiskelvottomina.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Lähetä tiedosto</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Tapoja aloittaa</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Testaa vanhat osoitteet</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Siteaccessilla ei ole sivuston osoitetta (site.ini [SiteSettings] SiteURL), joten vanhoja osoitteita ei voi testata täällä. ./console exp:url:test testaa ne mitä tahansa osoitetta vasten.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Pyytää jokaisen vanhan osoitteen osoitteessa %base, seuraa sen uudelleenohjauksia ja tarkistaa, että se päätyy uuteen osoitteeseen.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Testaa uudelleen</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Testaa</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed päätyi oikein, %status väärällä tilakoodilla, %target väärälle sivulle, %none ei uudelleenohjattu, %error epäonnistui, %skipped ohitettu.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Vain ensimmäiset %count riviä testattiin.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Rivit, jotka eivät päätyneet uuteen osoitteeseensa</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Vanhoja osoitteita ei voitu testata.</translation>
+    </message>
 </context>
 </TS>

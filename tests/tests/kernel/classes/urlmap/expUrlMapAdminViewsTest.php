@@ -14,6 +14,8 @@
  *        rows keep their decision, posted values that are not whole numbers are ignored
  *  UV-05 the export's options and file name, the ids a removal of redirects takes, what an entry of an import leads to
  *  UV-06 the module: the views, their policy functions and view parameters, and the function urltranslator_import
+ *  UV-07 the helper tabs: the form of a helper within its limits, the tab addresses, the site address the test after
+ *        an import requests, the kept results of an import (dry run, import, test) and its rows
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -170,13 +172,44 @@ class expUrlMapAdminViewsTest extends PHPUnit\Framework\TestCase
     }
 
     /** UV-06 */
+    /** UV-07 */
+    public function testTheHelperTabs()
+    {
+        $sas = array( 'site', 'ger' );
+        $this->assertSame( array( 'address' => '', 'limit' => 1000, 'any_host' => false, 'min_hits' => 2, 'days' => 30, 'suggest' => false, 'fill_above' => 90,
+                                  'siteaccess' => 'site' ), UrlImport::helperForm( array(), $sas, 'site' ) );
+        $form = UrlImport::helperForm( array( 'Address' => ' https://old.example/sitemap.xml ', 'Limit' => '999999', 'AnyHost' => '1', 'MinHits' => '0',
+                                              'Days' => 'x', 'Suggest' => '1', 'FillAbove' => '101', 'SiteAccess' => 'ger' ), $sas, 'site' );
+        $this->assertSame( array( 'https://old.example/sitemap.xml', UrlImport::HELPER_MAX_ROWS, true, 1, 30, true, 100, 'ger' ),
+                           array_values( $form ) );
+        $this->assertSame( 'site', UrlImport::helperForm( array( 'SiteAccess' => 'admin' ), $sas, 'site' )['siteaccess'], 'only a siteaccess of the list' );
+        $this->assertSame( 'site', UrlImport::helperForm( array( 'SiteAccess' => array( 'ger' ) ), $sas, 'site' )['siteaccess'] );
+        $this->assertSame( 'content/urlimport/(source)/404', UrlImport::sourceURL( '404' ) );
+        $this->assertSame( array( 'sitemap', '404', 'suggest' ), UrlImport::SOURCES );
+
+        $this->assertSame( array( 'https://www.example.com', 'http://www.example.com/site', 'http://x.example', '' ), array(
+            UrlImport::baseFromSiteURL( 'www.example.com/', true ), UrlImport::baseFromSiteURL( 'www.example.com/site', false ),
+            UrlImport::baseFromSiteURL( 'http://x.example/', true ), UrlImport::baseFromSiteURL( ' ', true ) ) );
+
+        $this->assertSame( array( 'dryrun.json', 'result.json', 'test.json', 'dryrun.json' ), array(
+            expUrlMapImportSession::resultFile( 'dryrun' ), expUrlMapImportSession::resultFile( 'result' ), expUrlMapImportSession::resultFile( 'test' ),
+            expUrlMapImportSession::resultFile( '../x' ) ) );
+        $session = expUrlMapAdminViewsTestSession::create( 14, self::CSV, 'old.csv', 'csv', array( 'siteaccess' => 'site', 'on_conflict' => 'skip' ) );
+        $session->saveResult( 'test', array( 'base' => 'https://www.example.com', 'counts' => array( 'landed' => 3 ) ) );
+        $again = expUrlMapAdminViewsTestSession::load( $session->token(), 14 );
+        $this->assertSame( 3, $again->result( 'test' )['counts']['landed'] );
+        $this->assertNull( $again->result( 'result' ) );
+        $this->assertSame( array( '/about-us.html', 'https://www.unknown.org/x', '/old/*', '/gone', '/about-us.html' ),
+                           array_map( function ( $row ) { return $row->oldUrl(); }, $again->rows() ) );
+    }
+
     public function testTheModuleDeclaresTheViews()
     {
         // module.php reads the state groups from the database, so its text is read
         $root = dirname( __DIR__, 5 );
         $module = (string)file_get_contents( $root . '/kernel/content/module.php' );
         $this->assertStringContainsString( "\$FunctionList['urltranslator_import'] = array();", $module );
-        $expected = array( 'urlimport' => array( 'urltranslator_import', "'plan' => 'Plan', 'state' => 'State', 'offset' => 'Offset', 'report' => 'Report'" ),
+        $expected = array( 'urlimport' => array( 'urltranslator_import', "'plan' => 'Plan', 'state' => 'State', 'offset' => 'Offset', 'report' => 'Report', 'source' => 'Source'" ),
                            'urlimporthistory' => array( 'urltranslator_import', "'offset' => 'Offset', 'done' => 'Done'" ),
                            'urlexport' => array( 'urltranslator', null ),
                            'urlredirects' => array( 'urltranslator', "'offset' => 'Offset', 'removed' => 'Removed'" ) );

@@ -86123,5 +86123,129 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>Pasted text</source>
         <translation>Algluita teksto</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Donu la adreson de la retmapo aŭ alŝutu ĝin.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Neniu malnova adreso troviĝis.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>El la malnova retmapo</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>El la 404-protokolo</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Sugesti celojn</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>La adresoj de la malnova retejo el ĝia retmapo (sitemap.xml, retmapa indekso aŭ .gz) aŭ el listo kun unu adreso por linio. Ĉiu fariĝas vico kun malplena nova adreso.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Adreso de la retmapo</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Aŭ alŝutu la retmapon aŭ la liston</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Ankaŭ la adresoj de aliaj gastigoj</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>La adresoj, kiujn vizitantoj petis ĉe ĉi tiu retejo kaj ne trovis, la plej petitaj unue. Bildoj, skriptoj kaj robotoj estas preterlasitaj.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>La 404-protokolo estas malŝaltita (site.ini [RequestLogSettings] NotFoundLog): ĝi enhavas neniujn novajn adresojn.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Almenaŭ tiom da petoj</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>En la lastaj tagoj</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Mapo, kies vicoj mankas novan adreson: ĉiu ricevas la paĝojn de ĉi tiu retejo, kies adreso aŭ nomo plej similas al la malnova.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Maksimume tiom da vicoj</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Novaj adresoj</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Plenigu sugeston kun poentaro de almenaŭ</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Poentaro de 0 ĝis 100 diras, kiom la malnova adreso similas al paĝo de ĉi tiu retejo. La aliaj sugestoj estas listigitaj en la notoj de la vico.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Elŝuti kiel CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Ankoraŭ nenio estas skribita. Elŝutu la mapon por kompletigi ĝin en kalkultabelo, aŭ antaŭrigardu ĝin: vicoj sen nova adreso estas montrataj kiel neimportebla.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Alŝuti dosieron</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Manieroj komenci</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Testi la malnovajn adresojn</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>La siteaccess ne havas retejan adreson (site.ini [SiteSettings] SiteURL), do la malnovaj adresoj ne povas esti testataj ĉi tie. ./console exp:url:test testas ilin kontraŭ ajna adreso.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Petas ĉiun malnovan adreson ĉe %base, sekvas ĝiajn resendojn kaj kontrolas, ke ĝi alvenas al sia nova adreso.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Testi denove</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Testi</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed alvenis ĝuste, %status kun malĝusta stato, %target al malĝusta paĝo, %none ne resendita, %error malsukcesis, %skipped preterlasita.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Nur la unuaj %count vicoj estis testitaj.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>La vicoj, kiuj ne alvenis al sia nova adreso</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>La malnovaj adresoj ne povis esti testitaj.</translation>
+    </message>
 </context>
 </TS>
