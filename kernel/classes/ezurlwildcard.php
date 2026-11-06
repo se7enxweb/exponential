@@ -538,6 +538,18 @@ class eZURLWildcard extends eZPersistentObject
         $handler->setTimestamp( self::CACHE_SIGNATURE, time() );
         $handler->store();
 
+        // the index goes too (since 6.0.15): one built in the same second as the expiry counted as current, and a
+        // PHP-FPM worker whose OPcache still held the previous expiry.php kept using the old index for up to
+        // opcache.revalidate_freq seconds, so a wildcard made or removed did not answer at once
+        try
+        {
+            self::loadCacheFile()->delete();
+        }
+        catch ( Throwable $e )
+        {
+            eZDebug::writeWarning( 'The wildcard cache index was not removed: ' . $e->getMessage(), __METHOD__ );
+        }
+        self::$cacheFiles = array();
         self::$wildcardsIndex = null;
     }
 
