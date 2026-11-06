@@ -39,6 +39,9 @@ class Hide extends \Exponential\Runnable\CronjobPart
         $currentDate = time();
 
         \eZINI::instance()->setVariable( 'SiteAccessSettings', 'ShowHiddenNodes', 'false' );
+        // The fetches below must leave out what this run has hidden, or the batch loop never ends; the value is
+        // cached, so a fetch made earlier in this process (an earlier cronjob part) would keep ShowHiddenNodes=true
+        \eZContentObjectTreeNode::resetShowInvisibleNodesCache();
 
         $hiddenNodesParams = array(
             'LoadDataMap' => false,
@@ -65,20 +68,35 @@ class Hide extends \Exponential\Runnable\CronjobPart
                 {
                     $cli->output( "Hiding {$nodeArrayCount} node(s) of class {$hideClass}." );
 
+                    $hiddenNodeIDs = array();
                     do
                     {
                         $nodeArray = $rootNode->subTree( $hiddenNodesParams + $countParams );
+                        $newInBatch = 0;
 
                         foreach ( $nodeArray as $node )
                         {
-                            $cli->output( 'Hiding node: "' . $node->attribute( 'name' ) . '" (' . $node->attribute( 'node_id' ) . ')' );
+                            $hideNodeID = (int)$node->attribute( 'node_id' );
+                            if ( isset( $hiddenNodeIDs[$hideNodeID] ) )
+                                continue;
+                            $hiddenNodeIDs[$hideNodeID] = true;
+                            $newInBatch++;
+                            $cli->output( 'Hiding node: "' . $node->attribute( 'name' ) . '" (' . $hideNodeID . ')' );
                             \eZContentObjectTreeNode::hideSubTree( $node );
 
                             //call appropriate method from search engine
-                            \eZSearch::updateNodeVisibility( $node->attribute( 'node_id' ), 'hide' );
+                            \eZSearch::updateNodeVisibility( $hideNodeID, 'hide' );
                         }
                         // clear memory after every batch
                         \eZContentObject::clearCache();
+
+                        // A batch of nodes this run has hidden already: the fetch still returns hidden nodes, and
+                        // fetching again would return the same batch for ever
+                        if ( is_array( $nodeArray ) && !empty( $nodeArray ) && $newInBatch === 0 )
+                        {
+                            $cli->warning( 'The fetch returned only nodes hidden by this run already; stopped to avoid an endless loop.' );
+                            break;
+                        }
                     } while ( is_array( $nodeArray ) && !empty( $nodeArray ) );
 
                     $cli->output();

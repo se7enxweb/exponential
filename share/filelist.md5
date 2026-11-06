@@ -24936,7 +24936,7 @@ fc6f6834eed639ece543d094ba8e8d86  kernel/classes/ezcontentclassname.php
 3eacb3a9f4146c1b46da85f2640e8dfd  kernel/classes/ezcontentobjectoperations.php
 b88ed727eb2e649bb566de243808c35d  kernel/classes/ezcontentobjecttranslation.php
 3111400be468fd9f63e203de1285120a  kernel/classes/ezcontentobjecttrashnode.php
-d61555209de4191ce3226d3c9f0eab77  kernel/classes/ezcontentobjecttreenode.php
+0058a24c3ab6cdfb8d78e5fd3844f298  kernel/classes/ezcontentobjecttreenode.php
 bdcc4a1367d97df7bf69dbcb835f8b4e  kernel/classes/ezcontentobjecttreenodeoperations.php
 b9770c6b028f7ba0c9d70639acd1e354  kernel/classes/ezcontentobjectversion.php
 2287cb6e7a772477b9e052f4f8ecbd70  kernel/classes/ezcontentupload.php
@@ -26110,7 +26110,7 @@ b4e438d889c9b76ff605201076b3775a  kernel/private/classes/cronjobs/contentcheck.p
 924c38cc6aadd95e9f3d62ca23211a36  kernel/private/classes/cronjobs/exphelp.php
 4476dc3a5650433e542687b319543298  kernel/private/classes/cronjobs/explogrotate.php
 6a68ea8fe76d185290d85672363f7d7d  kernel/private/classes/cronjobs/graphqlwebhooks.php
-2c98f5bc55ad6dfda1e96f60cccf68b4  kernel/private/classes/cronjobs/hide.php
+67f51ff4335866281d7f549e116b9335  kernel/private/classes/cronjobs/hide.php
 7072a4c924167fdaf87d78b378e70f08  kernel/private/classes/cronjobs/httpcache_cleanup.php
 634bc6649976efa4415087975ed4026c  kernel/private/classes/cronjobs/indexcontent.php
 353f5f009dfa16160261b9ad3e6c4380  kernel/private/classes/cronjobs/internal_drafts_cleanup.php
@@ -29777,7 +29777,7 @@ d02b3565b60ccbebd922668c4a183089  tests/tests/kernel/classes/rest/ezpRestPrefixF
 c6aa9b2c88d7b8b8659eca50a3eda17d  tests/tests/kernel/classes/runnable/CommandHelpersTest.php
 0082d26b308d1f7877e700c73c54b0b3  tests/tests/kernel/classes/runnable/CronjobPartRunFilterTest.php
 5d604b4c6f8964093b44f1779ad89406  tests/tests/kernel/classes/runnable/ExtractedRunMethodsTest.php
-6efe1d406300b1de801faf9dcb6da6e1  tests/tests/kernel/classes/runnable/HideCronjobSearchIndexTest.php
+e2ed6f960d4d0c21a85e7ba4bf04e07a  tests/tests/kernel/classes/runnable/HideCronjobSearchIndexTest.php
 d75a172653fb0e52cc78a4a25b907e4a  tests/tests/kernel/classes/runnable/InstallPasswordTest.php
 8d5647c0a94e6a8e77c7517375849a3e  tests/tests/kernel/classes/runnable/ModuleViewScopeTest.php
 f308fe4e0cf8e0608cf78a053732e787  tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php
