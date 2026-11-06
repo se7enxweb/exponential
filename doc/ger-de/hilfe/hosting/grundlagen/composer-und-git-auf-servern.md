@@ -29,7 +29,8 @@ Quelle ist [Kapitel 3 des Installationsbuchs, Den Code holen](../../../installat
 
 ## Warum Composer Teil der Plattform ist
 
-Exponential wird mit [Composer](https://getcomposer.org/) 2 installiert. Composer lädt die Zeta Components herunter,
+Exponential wird mit [Composer](https://getcomposer.org/) 2 installiert. Composer lädt die Bibliotheken des Kernels
+herunter (die [expcomponents](../../../funktionen/6.0/expcomponents.md), `se7enxweb/expcomponents-*`, den Fork der Zeta Components),
 jede Erweiterung, die `composer.json` verlangt, und auf Wunsch Velocity. Ohne Composer fehlt `vendor/`, und die Website
 kann nicht starten. Nach `composer install` führt das Skript `legacy-scripts` den Befehl
 `php bin/php/ezpgenerateautoloads.php` aus, der die Klassenzuordnungen erzeugt

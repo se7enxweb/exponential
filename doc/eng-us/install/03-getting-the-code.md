@@ -102,8 +102,8 @@ The recommended way for anyone who builds websites with Exponential. With Git cl
 and send fixes back as pull requests. [Develop with Git](../help/develop-with-git.md) explains each of these step by
 step.
 
-First tell Composer, once per user account, to install every `se7enxweb/*` package as a Git clone and everything
-else (the Zeta Components and other libraries) as a release archive:
+First tell Composer, once per user account, to install every `se7enxweb/*` package as a Git clone (the extensions,
+and since 6.0.15 the expcomponents libraries as well) and everything else (other libraries) as a release archive:
 
 ```bash
 composer config --global 'preferred-install.se7enxweb/*' source
@@ -404,7 +404,7 @@ Git repository; the others are created by Composer or at run time.
 | `tests/` | yes | The PHPUnit test suite (`tests/runtests.php`, `phpunit.xml`). |
 | `update/` | yes | Database update files per engine and version (`update/database/<engine>/`) and data repair scripts (`update/common/scripts/`); see [chapter 11](11-upgrading.md). |
 | `var/` | no (only `var/webdav/`) | Everything written at run time: `var/cache/`, `var/log/`, `var/storage/` (uploaded files, packages, the SQLite database in `var/storage/sqlite3/`), `var/autoload/` (the extensions' class maps), `var/vc/` (Velocity's run files and logs). Must be writable by the web server. |
-| `vendor/` | no | The Composer libraries: Zeta Components, the installer plugin, Velocity when installed. |
+| `vendor/` | no | The Composer libraries: the expcomponents (`vendor/se7enxweb/expcomponents-*`, the fork of the Zeta Components), the installer plugin, Velocity when installed. |
 
 ### Files
 
@@ -420,7 +420,7 @@ Git repository; the others are created by Composer or at run time.
 | `runcronjobs.php` | Runs cronjob parts: `php runcronjobs.php --list`. |
 | `autoload.php` | Loads Composer's autoloader and the kernel's; every entry point starts with it. |
 | `ezpm.php` | The package manager on the command line. |
-| `composer.json` | The requirements: PHP, extensions, Zeta Components. `composer.dev.json` holds the development tools of `make devtools` (installed into `.devtools/`); `composer.json.dist` is an older upstream manifest kept for reference. |
+| `composer.json` | The requirements: PHP, extensions, the expcomponents libraries. `composer.dev.json` holds the development tools of `make devtools` (installed into `.devtools/`); `composer.json.dist` is an older upstream manifest kept for reference. |
 | `.htaccess_root` | Apache rewrite rules; copy to `.htaccess` with `./console exp:setup:htaccess --apply` (or `cp .htaccess_root .htaccess`). `.htaccess_root_static` is the same with the rules that serve the static cache ahead of the application (`exp:setup:htaccess --static --apply`). |
 | `kickstart.ini-dist` | The commented template of `kickstart.ini`; `kickstart.ini--example` is an example. |
 | `config.php-RECOMMENDED` | A documented list of the settings `config.php` can make. Copy it to `config.php` with `./console exp:setup:config --apply` (or `cp config.php-RECOMMENDED config.php`), list the settings with `./console exp:config:list` and set one with `./console exp:config:set <NAME> <value> --apply` instead of uncommenting it in an editor. See [Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md). |

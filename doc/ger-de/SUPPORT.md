@@ -130,7 +130,7 @@ und [Abschnitt 4](#4-unterstützung-durch-die-exponential-gemeinschaft-die-freiw
 | Ubuntu | [Ask Ubuntu](https://askubuntu.com), [Ubuntu Discourse](https://discourse.ubuntu.com) |
 | HTML, CSS, JavaScript | [MDN Web Docs](https://developer.mozilla.org) |
 | Exponential Layouts | Der Upstream-Code von [Netgen Layouts](https://github.com/netgen-layouts/layouts-core) und seine [Dokumentation](https://docs.netgen.io) |
-| Die expcomponents-Bibliotheken | Ihre Repositories unter [se7enxweb](https://github.com/se7enxweb) (`expcomponents-*`) |
+| Die expcomponents-Bibliotheken | Ihre Repositories unter [se7enxweb](https://github.com/se7enxweb) (`expcomponents-*`, [Exponential Components](funktionen/6.0/expcomponents.md)); die API ist die der Zeta Components, dokumentiert auf [zetacomponents.org](https://zetacomponents.org/documentation/overview.html) |
 
 ### Die Frage ohne Exponential formulieren
 

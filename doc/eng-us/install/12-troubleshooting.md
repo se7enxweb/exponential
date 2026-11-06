@@ -173,7 +173,7 @@ The headings below are those of `design/standard/templates/setup/tests/<test>_er
 | "Missing Session Extension" | no `session` | install it |
 | "Missing zlib extension", "Missing DOM extension", "Missing iconv extension", "Missing MBString extension", "Missing intl extension", "Missing xsl extension" | the extension is not loaded in the web server's PHP | install it for that PHP (see [chapter 2](02-requirements.md#29-operating-system-notes)) and reload PHP |
 | "Time zone configuration" ("You are using the default time zone, UTC. ...") | `php.ini` has no `date.timezone`, so `index.php` fell back to UTC | set `date.timezone`; to keep UTC on purpose, set it to `UTC` or tick **Ignore this test** |
-| "Wrong eZ Components version detected" or "Missing eZ Components dependancy" | the Zeta Components are missing (`ezcBaseFile` not found) | `composer install` |
+| "Wrong eZ Components version detected" or "Missing eZ Components dependancy" | the kernel's libraries are missing (`ezcBaseFile` not found): the expcomponents since 6.0.15, the Zeta Components before; the messages keep their historical names | `composer install` |
 | "Unstable PHP version" | a PHP listed in `[phpversion] UnstableVersions` | use another PHP |
 | "Missing cURL extension", "Missing imagegd2 extension", "Missing ImageMagick program", "Missing text creation functions", "Missing database handlers" | optional tests on **System finetuning** | install them, or press **Next** |
 | "PHP does not register environment variables" | `variables_order` lacks `E` | set it to `EGPCS` |

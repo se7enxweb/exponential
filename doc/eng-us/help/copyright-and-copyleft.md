@@ -284,6 +284,12 @@ The complete list of these exceptions, with the reason for each, is the file
 `tests/tests/bin/copyright-notice-allowlist.json`. Notices that name only other holders need no entry there: the test
 recognizes them as third-party notices and leaves them alone.
 
+The libraries in `vendor/` are not part of this list: they are separate packages with their own license and notices.
+The kernel's libraries, the **expcomponents** (since 6.0.15 Exponential's fork of the Zeta Components, licensed under
+the Apache License 2.0), keep the notices of the Zeta Components development group, the Apache Software Foundation
+and eZ Systems AS in each package's `LICENSE.txt` and in their source files, as Apache 2.0 requires; the fork adds its
+own changes under the same license ([Exponential Components](../features/6.0/expcomponents.md#the-license)).
+
 ## Writing the notice in new files
 
 Every new file of the kernel starts with the header form, in the comment style of its language. Keep the layout of

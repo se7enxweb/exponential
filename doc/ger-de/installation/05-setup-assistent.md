@@ -205,7 +205,7 @@ Die kritischen Tests stehen in `settings/site.ini [SetupSettings] CriticalTests`
 | `file_upload` | `file_uploads` ist eingeschaltet und das Upload-Verzeichnis beschreibbar | |
 | `zlib_extension`, `dom_extension`, `iconv_extension`, `mbstring_extension`, `intl_extension`, `xsl_extension` | die PHP-Extensions | |
 | `timezone` | `date.timezone` ist in `php.ini` gesetzt (dort gewähltes UTC besteht; UTC nur als Rückfallwert schlägt fehl) | |
-| `ezcversion` | die Zeta Components | `[ezcversion] TestClass=ezcBaseFile`, `MinimumVersion=2008.2` |
+| `ezcversion` | die Bibliotheken des Kernels: seit 6.0.15 die expcomponents, davor die Zeta Components (die Klasse `ezcBaseFile` steckt in beiden) | `[ezcversion] TestClass=ezcBaseFile`, `MinimumVersion=2008.2` |
 
 **Bildschirm.** „Systemtest“, dann „Es gibt einige Probleme, die gelöst werden müssen. Eine Liste finden Sie unten.
 Jeder Abschnitt enthält eine Beschreibung des Problems und eine vorgeschlagene / empfohlene Lösung.“ und „Wenn die

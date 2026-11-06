@@ -103,7 +103,7 @@ Berechtigungen die genauen Befehle `chmod` und `chown` ([Kapitel 2.4](../../../i
 | `allow_url_fopen` | an |
 | `php_session`, `file_upload`, `timezone` | Sitzungen, Uploads, eine Zeitzone |
 | `zlib_extension`, `dom_extension`, `iconv_extension`, `mbstring_extension`, `intl_extension`, `xsl_extension` | die Erweiterung ist geladen |
-| `ezcversion` | die Zeta Components sind installiert (`composer install` lief) |
+| `ezcversion` | die Bibliotheken des Kernels sind installiert (`composer install` lief): seit 6.0.15 die expcomponents, davor die Zeta Components |
 
 > **Warnung**
 > Der Verzeichnistest läuft als der Benutzer, der die Prüfung ausführt: im Browser der Benutzer des Webservers, auf der

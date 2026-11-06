@@ -65,9 +65,13 @@ prüfen Sie PHP-Code gegen die PHP-Versionen, die Sie betreiben, und Installatio
 
 ## Bibliotheken, die Exponential verwendet
 
-Exponential verwendet die Zeta Components, eine Sammlung von PHP-Bibliotheken für Aufgaben wie E-Mail, Archive, die
-Datenbank und die Konfiguration. Ihre Dokumentation mit vielen Beispielen finden Sie unter
-[zetacomponents.org](https://zetacomponents.org/documentation/overview.html).
+Exponential verwendet die [expcomponents](../../funktionen/6.0/expcomponents.md), seinen eigenen Fork (seit 6.0.15)
+der Zeta Components, eine Sammlung von PHP-Bibliotheken für Aufgaben wie E-Mail, Archive, die Datenbank und die
+Konfiguration. Klassennamen und APIs haben sich im Fork nicht geändert, daher beschreibt die Dokumentation der Zeta
+Components mit vielen Beispielen sie weiterhin:
+[zetacomponents.org](https://zetacomponents.org/documentation/overview.html). Das Repository jedes Forks
+(`github.com/se7enxweb/expcomponents-<name>`) enthält dieselbe Dokumentation im Ordner `docs/` und eigene
+Release-Notes.
 
 ## Wie Sie sie zusammen nutzen
 

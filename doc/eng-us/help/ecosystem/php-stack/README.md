@@ -34,7 +34,7 @@ works with.
 |---|---|---|
 | Language | PHP 8.0 to 8.5 (PHP 7.4 usable without support) | `README.md` |
 | Package manager | Composer, Packagist | `README.md` |
-| Kernel libraries | Zeta Components | `composer.json` |
+| Kernel libraries | expcomponents (`se7enxweb/expcomponents-*`), the fork of the Zeta Components, since 6.0.15 | `composer.json`, [expcomponents](../../../features/6.0/expcomponents.md) |
 | Database | SQLite 3 (default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Database support](../../database-support.md) |
 | Server | Velocity (Qbix, FrankenPHP or PHP's built-in server), or Apache, Nginx, LiteSpeed, Caddy, IIS and others | `README.md` |
 | Operating system | Almost any that runs PHP 8.0 or later | [Operating system support](../../os-support.md) |

@@ -37,7 +37,8 @@ in `site.ini [MailSettings] Transport` genannten **Transport** wählt. Die Refer
 | `AdminEmail`, `EmailSender`, `EmailReplyTo` | Adressen; `EmailSender` ist der Standard-Absender (From) |
 | `DebugSending`, `DebugReceiverEmail` | jede E-Mail stattdessen an eine Testadresse senden |
 
-`eZSMTPTransport` sendet über die Mail-Bibliothek der Zeta Components; `tls` bedeutet STARTTLS
+`eZSMTPTransport` sendet über die Mail-Bibliothek der [expcomponents](../../funktionen/6.0/expcomponents.md)
+(`se7enxweb/expcomponents-mail`, seit 6.0.15 der Fork der Mail-Bibliothek der Zeta Components); `tls` bedeutet STARTTLS
 ([API- und Protokollstandards, SMTP](../../standards/apis-und-protokolle.md#smtp-rfc-5321-und-mail)).
 
 ## SMTP zu einem E-Mail-Anbieter

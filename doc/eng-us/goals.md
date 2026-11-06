@@ -81,7 +81,7 @@ December 2023 is told in [the history](history/README.md) and recorded in [the l
 | PHP | 8.0 to 8.5 supported; the test suite runs on PHP 8.1 to 8.5 on every push and pull request | [PHP versions](help/who-is-the-exponential-foundation.md#php-versions) |
 | Security | Private reports to security@se7enx.com; fixes on `main`, published with the next 6.0.x release; a Content Security Policy, a tamper-evident audit trail and a hardening guide | [Security fixes](help/who-is-the-exponential-foundation.md#security-fixes), [Audit trail](features/6.0/audit-trail.md), [Security hardening](help/security-hardening.md) |
 | Accessibility | The admin4 design follows WCAG rules that tests check (contrast in light and dark mode, target sizes); right-to-left layouts; keyboard shortcuts | [Languages and accessibility](help/who-is-the-exponential-foundation.md#languages-and-accessibility), [Right to left](features/6.0/right-to-left.md), [Keyboard shortcuts](help/keyboard-shortcuts.md) |
-| The stack around it | Maintained forks and patches of Zeta Components, Symfony, Twig and Doctrine pieces, with security pull requests sent upstream | [The PHP stack it stands on and gives back to](help/who-is-the-exponential-foundation.md#the-php-stack-it-stands-on-and-gives-back-to) |
+| The stack around it | The kernel's libraries forked as [expcomponents](features/6.0/expcomponents.md) (from Zeta Components, Apache 2.0, since 6.0.15), maintained forks and patches of Symfony, Twig and Doctrine pieces, with security pull requests sent upstream | [The PHP stack it stands on and gives back to](help/who-is-the-exponential-foundation.md#the-php-stack-it-stands-on-and-gives-back-to) |
 
 ## "The problems are already answered"
 

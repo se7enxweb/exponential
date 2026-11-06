@@ -13,18 +13,20 @@ und aufgegeben haben, versuchen Sie es erneut.
 
 Exponential 6, PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar), GD2 oder ImageMagick und ein Bearbeitungsformular von Exponential (Admin oder ein
 Design, das die Skripte des Bearbeitungsformulars lädt). Er verwendet jQuery, jQuery UI, die Plugins Jcrop und
-colorpicker und die Bildkonvertierung der Zeta Components.
+colorpicker und die Bildkonvertierungsbibliothek der [expcomponents](../expcomponents.md) (`ezcImageConverter`, ein Fork der
+Zeta Components).
 
 ## Installieren
 
 ezie wird mit Exponential installiert: Die `composer.json` im Wurzelverzeichnis verlangt `se7enxweb/ezie` und die
-Bildkonvertierung der Zeta Components, die er braucht (`zetacomponents/image-conversion`) und selbst nicht als
+Bildkonvertierung, die er braucht (seit 6.0.15 `se7enxweb/expcomponents-image-conversion`, davor
+`zetacomponents/image-conversion`) und selbst nicht als
 Abhängigkeit angibt. Das Site-Paket `sevenx_multisite` aktiviert ihn für die klassischen Admin-Designs; der
 Setup-Assistent und der Kickstarter aktivieren für admin4 stattdessen [expimageeditor](expimageeditor.md). Ein Projekt,
 das seine eigene `composer.json` ohne die des Wurzelverzeichnisses aufbaut, verlangt beide:
 
 ```bash
-composer require se7enxweb/ezie zetacomponents/image-conversion
+composer require se7enxweb/ezie se7enxweb/expcomponents-image-conversion
 ```
 
 Um ezie auch in admin4 zu verwenden: `ActiveExtensions[]=ezie` statt `expimageeditor` (beide ersetzen dasselbe

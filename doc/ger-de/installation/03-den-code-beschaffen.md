@@ -106,8 +106,9 @@ hat (`git bisect`); Sie können eine Korrektur nutzen, bevor sie veröffentlicht
 Branch halten, den Updates nie überschreiben, und Korrekturen als Pull Requests zurückschicken.
 [Mit Git entwickeln](../hilfe/mit-git-entwickeln.md) erklärt jeden dieser Punkte Schritt für Schritt.
 
-Weisen Sie Composer zuerst, einmal pro Benutzerkonto, an, jedes `se7enxweb/*`-Paket als Git-Klon und alles andere
-(die Zeta Components und andere Bibliotheken) als Release-Archiv zu installieren:
+Weisen Sie Composer zuerst, einmal pro Benutzerkonto, an, jedes `se7enxweb/*`-Paket als Git-Klon (die Extensions und
+seit 6.0.15 auch die expcomponents-Bibliotheken) und alles andere
+(andere Bibliotheken) als Release-Archiv zu installieren:
 
 ```bash
 composer config --global 'preferred-install.se7enxweb/*' source
@@ -420,7 +421,7 @@ das Verzeichnis zum Git-Repository gehört; die übrigen werden von Composer ode
 | `tests/` | ja | Die PHPUnit-Testsuite (`tests/runtests.php`, `phpunit.xml`). |
 | `update/` | ja | Datenbank-Update-Dateien pro Engine und Version (`update/database/<engine>/`) und Skripte zur Datenreparatur (`update/common/scripts/`); siehe [Kapitel 11](11-aktualisieren.md). |
 | `var/` | nein (nur `var/webdav/`) | Alles, was zur Laufzeit geschrieben wird: `var/cache/`, `var/log/`, `var/storage/` (hochgeladene Dateien, Pakete, die SQLite-Datenbank in `var/storage/sqlite3/`), `var/autoload/` (die Class Maps der Extensions), `var/vc/` (Laufzeitdateien und Protokolle von Velocity). Muss für den Webserver beschreibbar sein. |
-| `vendor/` | nein | Die Composer-Bibliotheken: Zeta Components, das Installer-Plugin, Velocity, sofern installiert. |
+| `vendor/` | nein | Die Composer-Bibliotheken: die expcomponents (`vendor/se7enxweb/expcomponents-*`, der Fork der Zeta Components), das Installer-Plugin, Velocity, sofern installiert. |
 
 ### Dateien
 
@@ -436,7 +437,7 @@ das Verzeichnis zum Git-Repository gehört; die übrigen werden von Composer ode
 | `runcronjobs.php` | Führt Cronjob-Teile aus: `php runcronjobs.php --list`. |
 | `autoload.php` | Lädt den Autoloader von Composer und den des Kernels; jeder Einstiegspunkt beginnt damit. |
 | `ezpm.php` | Der Paketmanager auf der Kommandozeile. |
-| `composer.json` | Die Anforderungen: PHP, Extensions, Zeta Components. `composer.dev.json` enthält die Entwicklungswerkzeuge von `make devtools` (installiert nach `.devtools/`); `composer.json.dist` ist ein älteres Upstream-Manifest, das zur Referenz aufbewahrt wird. |
+| `composer.json` | Die Anforderungen: PHP, Extensions, die expcomponents-Bibliotheken. `composer.dev.json` enthält die Entwicklungswerkzeuge von `make devtools` (installiert nach `.devtools/`); `composer.json.dist` ist ein älteres Upstream-Manifest, das zur Referenz aufbewahrt wird. |
 | `.htaccess_root` | Apache-Rewrite-Regeln; kopieren Sie die Datei mit `./console exp:setup:htaccess --apply` nach `.htaccess` (oder mit `cp .htaccess_root .htaccess`). `.htaccess_root_static` ist dieselbe Datei mit den Regeln, die den statischen Cache vor der Anwendung ausliefern (`exp:setup:htaccess --static --apply`). |
 | `kickstart.ini-dist` | Die kommentierte Vorlage für `kickstart.ini`; `kickstart.ini--example` ist ein Beispiel. |
 | `config.php-RECOMMENDED` | Eine dokumentierte Liste der Einstellungen, die `config.php` vornehmen kann. Kopieren Sie die Datei mit `./console exp:setup:config --apply` nach `config.php` (oder mit `cp config.php-RECOMMENDED config.php`), listen Sie die Einstellungen mit `./console exp:config:list` auf und setzen Sie eine mit `./console exp:config:set <NAME> <value> --apply`, statt in einem Editor die Kommentarzeichen zu entfernen. Siehe [.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md). |

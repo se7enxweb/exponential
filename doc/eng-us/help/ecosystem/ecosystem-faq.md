@@ -65,6 +65,11 @@ SQLite 3 (default), PostgreSQL, MongoDB, MariaDB, Oracle and MySQL, in that orde
 **Which operating systems?**
 Almost any that runs PHP 8.0 or later (PHP 7.4 usable without support), in four tiers ([Operating systems](php-stack/operating-systems.md)).
 
+**Which PHP libraries does the kernel use?**
+Its own fork of the Zeta Components, the **expcomponents** (`se7enxweb/expcomponents-*`, Apache 2.0), since 6.0.15;
+the upstream Zeta Components before, and eZ Components in the 4.x days
+([Exponential Components](../../features/6.0/expcomponents.md)).
+
 ## Organizations and people
 
 **Who leads Exponential?**

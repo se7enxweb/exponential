@@ -118,7 +118,7 @@ markiert, was fehlt, und gibt den Installationsbefehl für Ihr System aus.
 
 ### Composer
 
-Composer 2.x. Er installiert die Zeta Components und die Exponential-Extensions, die `composer.json` aufführt.
+Composer 2.x. Er installiert die Bibliotheken des Kernels, die [expcomponents](funktionen/6.0/expcomponents.md) (`se7enxweb/expcomponents-*`, seit 6.0.15 der Fork der Zeta Components durch Exponential), und die Exponential-Extensions, die `composer.json` aufführt.
 
 ### Datenbank
 
@@ -268,7 +268,7 @@ Die Reihenfolge ist die Schritttabelle in `kernel/setup/steps/ezstep_data.php`.
 | # | Seite | Was Sie eingeben |
 |---|---|---|
 | 1 | Willkommen | Nichts; fahren Sie fort. |
-| 2 | Systemtest | Die kritischen Prüfungen: Verzeichnisberechtigungen, PHP-Version, eine Datenbank-Extension, Bildkonvertierung, Speicherlimit, Ausführungszeit, `allow_url_fopen`, Sitzungen, Datei-Uploads, `zlib`, `dom`, `iconv`, `mbstring`, `intl`, `xsl`, die Zeitzone und die Zeta Components. Zu jedem Problem wird die Lösung angezeigt, bei Berechtigungen die genauen `chmod`-/`chown`-Befehle. Beheben Sie sie und klicken Sie auf **Weiter**, um die Prüfung erneut auszuführen. Ein Test kann mit seinem Kontrollkästchen ignoriert werden (nicht empfohlen). |
+| 2 | Systemtest | Die kritischen Prüfungen: Verzeichnisberechtigungen, PHP-Version, eine Datenbank-Extension, Bildkonvertierung, Speicherlimit, Ausführungszeit, `allow_url_fopen`, Sitzungen, Datei-Uploads, `zlib`, `dom`, `iconv`, `mbstring`, `intl`, `xsl`, die Zeitzone und die Bibliotheken des Kernels (die expcomponents, früher die Zeta Components). Zu jedem Problem wird die Lösung angezeigt, bei Berechtigungen die genauen `chmod`-/`chown`-Befehle. Beheben Sie sie und klicken Sie auf **Weiter**, um die Prüfung erneut auszuführen. Ein Test kann mit seinem Kontrollkästchen ignoriert werden (nicht empfohlen). |
 | 3 | Feineinstellung des Systems | Optionale Prüfungen (`curl`, GD, ImageMagick, die anderen Datenbank-Extensions, TrueType-Textfunktionen, `open_basedir`). Beheben Sie sie und klicken Sie auf **Feineinstellungen**, oder klicken Sie auf **Weiter**, um fortzufahren. |
 | 4 | Postausgang | Sendmail/MTA oder SMTP mit Server, Benutzer und Passwort. |
 | 5 | Datenbanksystem auswählen | SQLite steht an erster Stelle und ist vorausgewählt (`settings/setup.ini [DatabaseSettings] DefaultType=sqlite3`). Fehlt die Extension `sqlite3`, wird das erste verfügbare System gewählt, und die Seite weist darauf hin. |

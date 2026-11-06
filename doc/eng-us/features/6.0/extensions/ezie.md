@@ -11,19 +11,19 @@ that made tools fail, and closed two security holes. If you tried the editor bef
 ## Requirements
 
 Exponential 6, PHP 8.0 or later (PHP 7.4 usable without support), GD2 or ImageMagick, and an Exponential edit form (admin, or a design that loads the
-edit form scripts). It uses jQuery, jQuery UI, the Jcrop and colorpicker plugins and the Zeta Components image
-conversion.
+edit form scripts). It uses jQuery, jQuery UI, the Jcrop and colorpicker plugins and the image
+conversion library of the [expcomponents](../expcomponents.md) (`ezcImageConverter`, forked from the Zeta Components).
 
 ## Install it
 
-ezie is installed with Exponential: the root `composer.json` requires `se7enxweb/ezie` and the Zeta Components image
-conversion it needs (`zetacomponents/image-conversion`), which ezie does not declare itself. The `sevenx_multisite`
+ezie is installed with Exponential: the root `composer.json` requires `se7enxweb/ezie` and the image
+conversion it needs (`se7enxweb/expcomponents-image-conversion` since 6.0.15, `zetacomponents/image-conversion` before), which ezie does not declare itself. The `sevenx_multisite`
 site package activates it for the classic admin designs; the setup wizard and the kickstarter activate
 [expimageeditor](expimageeditor.md) for admin4 instead. A project that builds its own `composer.json` without the
 root's requires both:
 
 ```bash
-composer require se7enxweb/ezie zetacomponents/image-conversion
+composer require se7enxweb/ezie se7enxweb/expcomponents-image-conversion
 ```
 
 To use ezie in admin4 too, `ActiveExtensions[]=ezie` instead of `expimageeditor` (both replace the same include, only

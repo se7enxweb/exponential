@@ -44,8 +44,9 @@ Standards beschreibt [Standards für APIs und Protokolle](../../standards/apis-u
 > schreibt einmal am Tag eine Warnung und wird in einer späteren Hauptversion entfernt. Ändern Sie Ihren virtuellen
 > Host (HTTP **und** HTTPS) und die Rewrite-Regeln, und testen Sie sie: [Das WebDAV-Einstiegsskript heißt jetzt index_webdav.php](../../bc/6.0/webdav-einstiegsskript-index-webdav.md).
 
-Der Einstiegspunkt ist `index_webdav.php` im Wurzelverzeichnis der Installation. Er führt den WebDAV-Server der Zeta
-Components (`se7enxweb/expcomponents-webdav ~1.2.2`) mit dem Inhalts-Backend
+Der Einstiegspunkt ist `index_webdav.php` im Wurzelverzeichnis der Installation. Er führt den WebDAV-Server der
+[expcomponents](../../funktionen/6.0/expcomponents.md), des Forks der Zeta
+Components (`se7enxweb/expcomponents-webdav ~1.2.2`), mit dem Inhalts-Backend
 `kernel/private/classes/webdav/ezwebdavcontentbackend.php` und Basic-Authentifizierung gegen Exponential-Benutzer aus
 (`ezwebdavcontentbackendauth.php`).
 

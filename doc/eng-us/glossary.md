@@ -102,6 +102,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **exp:ini**: the command that reads and writes **INI** settings in every scope. [exp:ini](features/6.0/exp-ini-command.md).
 - **exp:user**: the console commands that manage user accounts, groups, roles, sessions and two-step sign-in, as the administration does. [User management from the console](help/user-management-from-the-console/README.md).
 - **exp_enhanced_link**: the extension that provides the enhanced link field type. [exp_enhanced_link](features/6.0/extensions/exp_enhanced_link.md).
+- **expcomponents** (Exponential Components): Exponential's fork of the **Zeta Components**, the PHP libraries the kernel is built on (`ezcMail`, `ezcArchive`, `ezcWebdavServer` ...), one Composer package each (`se7enxweb/expcomponents-<name>`), Apache License 2.0, required by the kernel since 6.0.15; each fork replaces its `zetacomponents/<name>` package and keeps the class names. [expcomponents](features/6.0/expcomponents.md), [upgrade notes](bc/6.0/expcomponents.md), [packages](specifications/6.0/expcomponents-packages.md), [contributing](guides/contributing-to-expcomponents.md).
 - **explayouts**: the extensions that bring layouts, blocks, zones and rules to the admin. [Exponential Layouts](bc/6.0/LAYOUTS.md), [explayouts_ui](features/6.0/extensions/explayouts_ui.md), [API specification](specifications/6.0/explayouts-ui-api.md).
 - **Exponential Intelligence** (expai): the writing assistant of the administration interface; it writes drafts as the editor, with the editor's permissions, and never publishes on its own. [expai](features/6.0/extensions/expai.md), [README](../README.md#exponential-intelligence-new).
 - **Exponential Platform**: the Symfony based product line (`bin/console`, `exponential:*` commands) that can run Exponential 6 through the **legacy bridge**. [Platform package map](specifications/6.0/platform-package-map.md), [command names](specifications/6.0/platform-console-commands.md).
@@ -110,6 +111,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **expui** (Exponential UI): the JavaScript component layer (`exp::*`) that replaced YUI in the admin. [jQuery 4 and YUI removal](features/6.0/jquery4-and-yui-removal.md).
 - **extension**: a folder under `extension/` that adds settings, classes, modules, templates or designs; activated in `ActiveExtensions`. [Extension list](features/6.0/extension-list-and-downloads.md), [loading order](features/6.0/extension-loading-order.md).
 - **extension metadata**: version, license and website of an extension, read by the about page. [Extension metadata](specifications/6.0/extension-metadata.md).
+- **eZ Components**: the original name of the PHP libraries with `ezc` class names, developed by eZ Systems from 2005 under the New BSD license and needed beside the code by eZ Publish 4.x, the discontinued product Exponential grew from; continued as the **Zeta Components** and, since 6.0.15, as **expcomponents**. [expcomponents history](features/6.0/expcomponents.md#history-ez-components-zeta-components-expcomponents), [migrating from 4.x](install/14-migrating-from-4x.md).
 - **ezautosave**: automatic saving of the draft in the edit form. [ezautosave](features/6.0/extensions/ezautosave.md).
 - **ezdemo**: the demo website of Exponential. [ezdemo](features/6.0/extensions/ezdemo.md).
 - **ezflow**: the page builder of the classic design (a page datatype with zones and blocks). [ezflow](features/6.0/extensions/ezflow.md).
@@ -324,6 +326,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 
 ## Z
 
+- **Zeta Components**: the continuation of the **eZ Components** under the Apache License 2.0, first in the Apache Software Foundation's incubator (Apache Zeta Components), then as an independent project (`zetacomponents/*` on Packagist); the kernel's libraries up to 6.0.14, forked as **expcomponents** since 6.0.15. [expcomponents](features/6.0/expcomponents.md).
 - **zygote**: a helper process of **Velocity** that forks new **workers** so they inherit no visitor connections. [Velocity worker pool](specifications/6.0/velocity-worker-pool.md).
 
 **Demo mode** - The state of an installation whose processes have the environment variable `EXP_DEMO_MODE=1`: a public demo. Administrator passwords cannot be changed or reset, the installers accept the published demo password, and the administration shows a banner. Never on a real site. [Demo mode](bc/6.0/demo-mode.md).

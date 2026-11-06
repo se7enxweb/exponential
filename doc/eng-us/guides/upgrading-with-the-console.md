@@ -165,6 +165,11 @@ The install is refused, and nothing is installed, when:
 
 `--allow-vendor-changes` installs over the first two.
 
+On the way to 6.0.15 this stage also swaps the kernel's libraries: the release's `composer.lock` names the
+**expcomponents** (`se7enxweb/expcomponents-*`, Exponential's fork of the Zeta Components) instead of
+`zetacomponents/*`, so `composer install` removes each upstream package and installs its fork. The dry run lists both.
+The classes are the same; see [Upgrade notes: the switch to expcomponents](../bc/6.0/expcomponents.md).
+
 ## Captions
 
 A caption is a safe point in time: git_manager's full backup (`extension/git_manager`, the database dump and the

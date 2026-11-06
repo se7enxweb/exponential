@@ -45,7 +45,7 @@ Exponential 6.0 ist derselbe Legacy-Kernel, weitergeführt. Das bestimmt die For
 | Klassennamen | Kernel-Klassen mit dem Präfix `eZ` behalten ihre Namen. Die Versionsklasse ist `ExponentialSDK`; `eZPublishSDK` existiert weiterhin als Unterklasse davon (`lib/ezpublishsdk.php`). |
 
 **Was sich ändert:** PHP 5 zu PHP 8 (Ihr eigener PHP-Code ist der größte Arbeitsanteil), eZ Components ersetzt durch
-die per Composer installierten Zeta Components, die Cluster-Handler, die Dateien in der Datenbank speicherten, YUI
+die per Composer installierten Zeta Components (seit 6.0.15 ihr Fork, die expcomponents), die Cluster-Handler, die Dateien in der Datenbank speicherten, YUI
 (entfernt), jQuery (4.0.0), der Online-Editor (standardmäßig TinyMCE 3, optional TinyMCE 8), mehrere Rewrite-Regeln und
 eine strengere Sicherheitsgrundlage. All das wird unten behandelt.
 
@@ -724,10 +724,13 @@ deklarieren. Die Abfolge der PHP-8-Änderungen des Kernels selbst, Release für 
 ### eZ Components
 
 4.x benötigte eZ Components, die neben dem Code installiert waren, in einer Mindestversion je Release (2008.2 für 4.1,
-2009.1 für 4.2, 2009.2.1 für 4.3 und 4.4, später `ezcomponents-ezp45` bis `ezcomponents-ezp47`). Exponential verwendet
+2009.1 für 4.2, 2009.2.1 für 4.3 und 4.4, später `ezcomponents-ezp45` bis `ezcomponents-ezp47`). Exponential verwendete
 deren Fortführung, die Zeta Components, installiert per Composer (`zetacomponents/*` in `composer.json`) und geladen
-über `ezcBase::autoload`. Die Klassennamen (`ezcMail`, `ezcConsoleInput` ...) sind dieselben; entfernen Sie jeden
-Include-Pfad und jedes `ezc`-Verzeichnis, das Sie für 4.x eingerichtet haben.
+über die Klassen-Map von Composer. Seit 6.0.15 verwendet es seinen eigenen Fork davon, die **expcomponents**
+(`se7enxweb/expcomponents-*`, Apache 2.0), die die Namen `zetacomponents/*` ersetzen
+([Exponential Components](../funktionen/6.0/expcomponents.md)). Die Klassennamen (`ezcMail`, `ezcConsoleInput` ...)
+sind in allen dreien dieselben; entfernen Sie jeden Include-Pfad und jedes `ezc`-Verzeichnis, das Sie für 4.x
+eingerichtet haben.
 
 ## 14.10 Benutzer, Passwörter und Anmeldung
 
@@ -919,7 +922,7 @@ diese Tabelle sagt, wo, und wie sich Exponential unterscheidet.
 | 4.6: `removetrashedimages.php`, `updateordernumber.php`, Overrides der Benutzer-Tabs entfernen, die Regel für `index_ajax.php` entfernen ([4.5 auf 4.6](https://ezpublishdoc.mugo.ca/eZ-Publish/Upgrading/Upgrading-to-4.6/Upgrading-from-4.5-to-4.6.html)) | 14.5.6, 14.7 | `index_ajax.php` gibt es nicht mehr |
 | 4.7: Einstellungen von `index_cluster.php` in `config.php` / `config.cluster.php`; Cluster-Spalte `datatype`; Erkennung mobiler Geräte; eZ-Flow-Override `add_to_block_frontpage` ([4.6 auf 4.7](https://ezpublishdoc.mugo.ca/eZ-Publish/Upgrading/Upgrading-to-4.7/Upgrading-from-4.6-to-4.7.html)) | 14.5.5, 14.6, 14.7 | nur DFS; die Hälfte für `ezdbfile` gilt dem entfernten Handler |
 | Direkt von 4.1 auf 4.7: SQL-Dateien der Reihe nach, SQL je Patch-Release, Index für `ezm_pool`, das Sektionsskript von 4.4 überspringen, ezjscore und admin2 aktivieren ([direktes Upgrade](https://ezpublishdoc.mugo.ca/eZ-Publish/Upgrading/Direct-upgrading/Direct-upgrading-to-4.7-from-4.1-4.2-4.3-4.4-and-4.5/Direct-upgrading-from-4.1-to-4.7.html)) | 14.5.5, 14.8 | `START: from`-Markierungen; der Index für `ezm_pool` ist im aktuellen ezflow-Schema enthalten |
-| Mindestversion der eZ Components je Release | 14.9 | Zeta Components über Composer |
+| Mindestversion der eZ Components je Release | 14.9 | Zeta Components über Composer; seit 6.0.15 der Fork expcomponents |
 | `chmod -R a+rwx` auf design, extension, settings, var | 14.6 | nicht tun; siehe Kapitel 8 und 13 |
 | `ezcache.php --clear-all --purge` und eine manuelle Kontrolle der Cache-Verzeichnisse | 14.6 | derselbe Befehl |
 

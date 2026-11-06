@@ -67,6 +67,11 @@ SQLite 3 (Standard), PostgreSQL, MongoDB, MariaDB, Oracle und MySQL, in dieser R
 **Welche Betriebssysteme?**
 Fast jedes, auf dem PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar) läuft, in vier Stufen ([Betriebssysteme](php-stack/betriebssysteme.md)).
 
+**Welche PHP-Bibliotheken verwendet der Kernel?**
+Seit 6.0.15 seinen eigenen Fork der Zeta Components, die **expcomponents** (`se7enxweb/expcomponents-*`, Apache 2.0);
+davor die Zeta Components selbst und zu Zeiten von 4.x die eZ Components
+([Exponential Components](../../funktionen/6.0/expcomponents.md)).
+
 ## Organisationen und Menschen
 
 **Wer führt Exponential?**

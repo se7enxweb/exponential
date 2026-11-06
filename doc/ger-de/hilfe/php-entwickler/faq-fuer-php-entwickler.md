@@ -65,6 +65,17 @@ sind global mit einem Präfix ([Klassenbenennung und das Präfix exp](klassenben
 Exponential 6 läuft auf seinem eigenen Kernel. Die Legacy Bridge führt es innerhalb einer Installation der
 Symfony-Plattform aus ([Symfony und die Legacy Bridge](../ersteller/anwendungsentwickler/symfony-und-die-legacy-bridge.md)).
 
+**Was sind die `ezc*`-Klassen, und woher kommen sie?**
+Es sind die Bibliotheken des Kernels (`ezcMail`, `ezcArchive`, `ezcWebdavServer`, `ezcMvcController` ...). Seit
+6.0.15 kommen sie aus den **expcomponents** (`se7enxweb/expcomponents-*`), dem Fork der Zeta Components durch
+Exponential, unter der Apache License 2.0; Klassennamen und APIs haben sich nicht geändert. Ein Fehler in einer davon
+gehört in das Repository dieses Forks ([Exponential Components](../../funktionen/6.0/expcomponents.md),
+[Zu expcomponents beitragen](../../anleitungen/zu-expcomponents-beitragen.md)).
+
+**Meine Erweiterung verlangt `zetacomponents/mail`. Muss ich das ändern?**
+Nein: Jeder Fork ersetzt seinen Ursprungsnamen, die Anforderung ist also erfüllt. Benennen Sie sie in Ihrem nächsten
+Release in `se7enxweb/expcomponents-mail` um ([Upgrade-Hinweise: der Wechsel zu expcomponents](../../bc/6.0/expcomponents.md#erweiterungen)).
+
 ## Klassen und Einstellungen
 
 **Meine neue Klasse wird „nicht gefunden“.**

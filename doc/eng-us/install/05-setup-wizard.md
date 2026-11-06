@@ -186,7 +186,7 @@ The critical tests are listed in `settings/site.ini [SetupSettings] CriticalTest
 | `file_upload` | `file_uploads` is on and the upload directory is writable | |
 | `zlib_extension`, `dom_extension`, `iconv_extension`, `mbstring_extension`, `intl_extension`, `xsl_extension` | the PHP extensions | |
 | `timezone` | `date.timezone` is set in `php.ini` (UTC chosen there passes; UTC only as the fallback fails) | |
-| `ezcversion` | the Zeta Components | `[ezcversion] TestClass=ezcBaseFile`, `MinimumVersion=2008.2` |
+| `ezcversion` | the kernel's libraries: the expcomponents since 6.0.15, the Zeta Components before (the class `ezcBaseFile` is in both) | `[ezcversion] TestClass=ezcBaseFile`, `MinimumVersion=2008.2` |
 
 **Screen.** "System check", then "There are some important issues that have to be resolved. A list of issues /
 problems is presented below. Each section contains a description and a suggested / recommended solution." and

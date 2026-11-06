@@ -43,9 +43,9 @@ Exponential 6.0 is the same legacy kernel, carried forward. That decides the sha
 | Class names | `eZ`-prefixed kernel classes keep their names. The version class is `ExponentialSDK`; `eZPublishSDK` still exists as a subclass of it (`lib/ezpublishsdk.php`). |
 
 **What does change:** PHP 5 to PHP 8 (your own PHP code is the largest piece of work), eZ Components replaced by
-Zeta Components installed by Composer, the cluster handlers that stored files in the database, YUI (gone), jQuery
-(4.0.0), the online editor (TinyMCE 3 by default, TinyMCE 8 optional), several rewrite rules and a stricter security
-baseline. All of it is below.
+Zeta Components installed by Composer (since 6.0.15 their fork, the expcomponents), the cluster handlers that stored
+files in the database, YUI (gone), jQuery (4.0.0), the online editor (TinyMCE 3 by default, TinyMCE 8 optional),
+several rewrite rules and a stricter security baseline. All of it is below.
 
 ### Compared with the vendor's migration to its newer platform
 
@@ -687,10 +687,12 @@ release by release, is in [PHP 8 support](../bc/6.0/php8.md).
 ### eZ Components
 
 4.x needed eZ Components installed beside the code, at a minimum version per release (2008.2 for 4.1, 2009.1 for 4.2,
-2009.2.1 for 4.3 and 4.4, `ezcomponents-ezp45` to `ezcomponents-ezp47` later). Exponential uses their continuation,
-Zeta Components, installed by Composer (`zetacomponents/*` in `composer.json`) and loaded by `ezcBase::autoload`. The
-class names (`ezcMail`, `ezcConsoleInput` ...) are the same; remove any include path or `ezc` directory you set up
-for 4.x.
+2009.2.1 for 4.3 and 4.4, `ezcomponents-ezp45` to `ezcomponents-ezp47` later). Exponential used their continuation,
+Zeta Components, installed by Composer (`zetacomponents/*` in `composer.json`) and loaded by Composer's class map.
+Since 6.0.15 it uses Exponential's own fork of them, the **expcomponents** (`se7enxweb/expcomponents-*`, Apache 2.0),
+which replace the `zetacomponents/*` names ([Exponential Components](../features/6.0/expcomponents.md)). The class
+names (`ezcMail`, `ezcConsoleInput` ...) are the same in all three; remove any include path or `ezc` directory you set
+up for 4.x.
 
 ## 14.10 Users, passwords and sign-in
 
@@ -868,7 +870,7 @@ says where, and how Exponential differs.
 | 4.6: `removetrashedimages.php`, `updateordernumber.php`, remove user-tab overrides, remove the `index_ajax.php` rule ([4.5 to 4.6](https://ezpublishdoc.mugo.ca/eZ-Publish/Upgrading/Upgrading-to-4.6/Upgrading-from-4.5-to-4.6.html)) | 14.5.6, 14.7 | `index_ajax.php` no longer exists |
 | 4.7: `index_cluster.php` settings into `config.php` / `config.cluster.php`; cluster `datatype` column; mobile device detection; eZ Flow `add_to_block_frontpage` override ([4.6 to 4.7](https://ezpublishdoc.mugo.ca/eZ-Publish/Upgrading/Upgrading-to-4.7/Upgrading-from-4.6-to-4.7.html)) | 14.5.5, 14.6, 14.7 | DFS only; the `ezdbfile` half is for the removed handler |
 | Direct 4.1 to 4.7: SQL files in sequence, per-patch-release SQL, `ezm_pool` index, skip the 4.4 section script, enable ezjscore and admin2 ([direct upgrade](https://ezpublishdoc.mugo.ca/eZ-Publish/Upgrading/Direct-upgrading/Direct-upgrading-to-4.7-from-4.1-4.2-4.3-4.4-and-4.5/Direct-upgrading-from-4.1-to-4.7.html)) | 14.5.5, 14.8 | `START: from` markers; the `ezm_pool` index is in the current ezflow schema |
-| Minimum eZ Components per release | 14.9 | Zeta Components by Composer |
+| Minimum eZ Components per release | 14.9 | Zeta Components by Composer; since 6.0.15 the expcomponents fork |
 | `chmod -R a+rwx` on design, extension, settings, var | 14.6 | do not; see chapters 8 and 13 |
 | `ezcache.php --clear-all --purge` and a manual check of the cache directories | 14.6 | same command |
 

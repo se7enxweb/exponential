@@ -50,7 +50,7 @@ Quellen: [Kapitel 14.1](../../../../installation/14-migration-von-4x.md#141-was-
 
 1. **Was bleibt, was sich ändert** (5 Minuten). Zeigen Sie die erste Tabelle aus 14.1: Die Schemafamilie, die
    Datentypen, XmlText, ezflow-Seiten, Templates, die Erweiterungs-API und die `eZ`-Klassennamen bleiben. Was sich
-   ändert: PHP 5 zu PHP 8 (das größte Arbeitspaket), Zeta Components, die entfernten Cluster-Handler, YUI entfällt,
+   ändert: PHP 5 zu PHP 8 (das größte Arbeitspaket), Zeta Components (seit 6.0.15 ihr Fork, expcomponents), die entfernten Cluster-Handler, YUI entfällt,
    jQuery 4, der Online-Editor, Rewrite-Regeln und eine strengere Sicherheitsgrundlage.
 2. **Welche Version** (3 Minuten). Die Zeilen `ezpublish-version` und `ezpublish-release` von `ezsite_data` sagen, wo
    die Kette beginnt ([Kapitel 11.2](../../../../installation/11-aktualisieren.md#112-welche-version-betreiben-sie)). Die

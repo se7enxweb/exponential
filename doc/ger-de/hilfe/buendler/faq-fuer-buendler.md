@@ -44,6 +44,7 @@ Einzelheiten. Antworten zur Lizenzierung sind keine Rechtsberatung.
 | Müssen wir unsere eigenen Erweiterungen veröffentlichen? | Wenn Sie sie mit Exponential weitergeben, klären Sie mit einem Rechtsbeistand, ob sie GPL-kompatibel sein müssen; Code, den Sie nicht weitergeben, ist nicht betroffen ([Lizenzierung für Partner](../partner/lizenzierung-fuer-partner.md#häufige-fragen)). |
 | Was müssen wir mitliefern? | Lizenztexte, Hinweise, das Quellcode-Angebot, die Liste der Komponenten Dritter ([Lizenztexte und Hinweise](mitzuliefernde-lizenztexte-und-hinweise.md)). |
 | Dürfen wir die Dokumentation beilegen? | Ja, unter der GFDL 1.3: Behalten Sie die Hinweise bei und legen Sie die Lizenz bei ([Mitzuliefernde Dokumentation](mitzuliefernde-dokumentation.md)). |
+| Der Ordner `vendor/` enthält Pakete unter Apache 2.0. Ist das ein Problem? | Nein. Es sind die Bibliotheken des Kernels, die expcomponents (seit 6.0.15 der Fork der Zeta Components durch Exponential); liefern Sie sie mit ihrer `LICENSE.txt` aus und führen Sie sie als Komponenten Dritter auf. Das „GPL Version 2 oder später“ des Kernels erlaubt, die Kombination unter GPL 3 zu verbreiten, mit der Apache 2.0 kompatibel ist. Keine Rechtsberatung ([Komponenten Dritter](komponenten-dritter-und-ihre-lizenzen.md#die-bibliotheken-des-kernels-expcomponents-apache-20)). |
 
 ## Bauen
 

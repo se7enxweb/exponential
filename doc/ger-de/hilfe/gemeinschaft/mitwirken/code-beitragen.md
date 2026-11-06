@@ -73,6 +73,7 @@ Die Prüfungen, die die CI ausführt, beschreibt [Qualitätsprüfungen](../../..
 | Ihr Code | Wohin er geht | CLA? |
 |---|---|---|
 | Eine Korrektur an einer Erweiterung mit eigenem Repository | Die Pull Requests dieses Repositorys | Fragen Sie den Maintainer; das CLA deckt Code ab, „den 7x“ in das Projekt „aufnehmen soll“ |
+| Eine Korrektur an einer Bibliothek des Kernels (`ezc*`-Klassen) | Das Repository des Forks, `se7enxweb/expcomponents-<name>` | Code unter Apache 2.0; siehe [Zu expcomponents beitragen](../../../anleitungen/zu-expcomponents-beitragen.md) |
 | Ihre eigene Erweiterung, Ihr Theme oder Seitenpaket | Ihr eigenes Repository, Projects, Packagist | Nein ([Erweiterungen und Themes teilen](erweiterungen-und-themes-teilen.md)) |
 | Eine Korrektur an einer Bibliothek, von der Exponential abhängt | Das eigene Projekt der Bibliothek | Dessen Regeln |
 

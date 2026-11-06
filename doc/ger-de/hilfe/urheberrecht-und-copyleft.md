@@ -290,6 +290,13 @@ verschiebt sie nie. Diese blieben am 29.10.2026 erhalten:
 Die vollständige Liste dieser Ausnahmen mit dem Grund für jede ist die Datei
 `tests/tests/bin/copyright-notice-allowlist.json`.
 
+Die Bibliotheken in `vendor/` gehören nicht zu dieser Liste: Sie sind eigene Pakete mit eigener Lizenz und eigenen
+Hinweisen. Die Bibliotheken des Kernels, die **expcomponents** (seit 6.0.15 der Fork der Zeta Components durch
+Exponential, lizenziert unter der Apache License 2.0), behalten die Hinweise der Zeta Components development group,
+der Apache Software Foundation und von eZ Systems AS in der `LICENSE.txt` jedes Pakets und in ihren Quelldateien, wie
+Apache 2.0 es verlangt; der Fork fügt seine eigenen Änderungen unter derselben Lizenz hinzu
+([Exponential Components](../funktionen/6.0/expcomponents.md#die-lizenz)).
+
 ## Den Hinweis in neue Dateien schreiben
 
 Jede neue Datei des Kernels beginnt mit der Form für Dateien, im Kommentarstil ihrer Sprache. Behalten Sie den Aufbau

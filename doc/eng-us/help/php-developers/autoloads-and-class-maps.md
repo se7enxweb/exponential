@@ -83,7 +83,7 @@ extension point, a handler named by a setting, an event listener, or a `[Runnabl
 
 ## Composer's autoloader
 
-Libraries in `vendor/` (Zeta Components, PHPUnit, `mongodb/mongodb` and the rest) are loaded by Composer's own
+Libraries in `vendor/` (the [expcomponents](../../features/6.0/expcomponents.md) with their `ezc*` classes, PHPUnit, `mongodb/mongodb` and the rest) are loaded by Composer's own
 autoloader, which `vendor/autoload.php` registers. An extension that needs a library declares it in its own
 `composer.json`; it never copies `vendor/` into the extension ([Composer for PHP developers](composer-for-php-developers.md)).
 

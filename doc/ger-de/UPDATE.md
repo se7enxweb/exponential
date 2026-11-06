@@ -121,6 +121,12 @@ composer update se7enxweb/exponential
 Mit Composer installierte Extensions werden genauso aktualisiert, ein Paket nach dem anderen, nachdem Sie ihre
 Release-Notes gelesen haben (`composer update se7enxweb/<package>`; siehe `doc/changelogs/extensions/`).
 
+> **Seit 6.0.15** verlangt der Kernel seine Bibliotheken als **expcomponents** (`se7enxweb/expcomponents-*`), den Fork
+> der Zeta Components durch Exponential, statt `zetacomponents/*`. Führen Sie beim Update auf 6.0.15
+> `composer update se7enxweb/exponential --with-all-dependencies` aus, damit Composer die Bibliotheken austauschen kann;
+> es entfernt jedes Paket `zetacomponents/*` und installiert seinen Fork. Die Klassen sind dieselben; sonst ändert sich
+> nichts ([Upgrade-Hinweise: der Wechsel zu expcomponents](bc/6.0/expcomponents.md)).
+
 **Ein Git-Klon** (der Kernel ist `https://github.com/se7enxweb/exponential.git`): holen Sie den Stand, wechseln Sie
 auf den Release-Tag oder führen Sie den Zweig in Ihren eigenen Zweig zusammen und installieren Sie dann die
 Bibliotheken, die `composer.lock` nennt:

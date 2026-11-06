@@ -43,6 +43,7 @@ answers are not legal advice.
 | Must we publish our own extensions? | If you distribute them with Exponential, ask counsel whether they must be GPL-compatible; code you do not distribute is not affected ([Licensing for partners](../partners/licensing-for-partners.md#common-questions)). |
 | What must we ship? | License texts, notices, the source offer, the third-party list ([License texts and notices](license-texts-and-notices-to-ship.md)). |
 | May we include the documentation? | Yes, under the GFDL 1.3: keep the notices and include the license ([Documentation to ship](documentation-to-ship.md)). |
+| The `vendor/` folder has Apache 2.0 packages. Is that a problem? | No. They are the kernel's libraries, the expcomponents (since 6.0.15 Exponential's fork of the Zeta Components); ship them with their `LICENSE.txt` and list them as third-party components. The kernel's "GPL version 2 or later" lets the combination go under GPL 3, with which Apache 2.0 is compatible. Not legal advice ([Third-party components](third-party-components-and-their-licenses.md#the-kernels-libraries-expcomponents-apache-20)). |
 
 ## Building
 

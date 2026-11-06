@@ -21,7 +21,7 @@ type: help
 | Schicht | Teile | Seite |
 |---|---|---|
 | 1. Sprache und Werkzeuge | PHP 8.0 und neuer (PHP 7.4 ohne Support nutzbar), Composer, Packagist, Git | [PHP-Versionen](php-stack/php-versionen.md), [Composer und Packagist](pakete/composer-und-packagist.md) |
-| 2. Bibliotheken | Zeta Components (Kernel); Symfony, Twig, Doctrine (Platform-Linie) | [Upstream-Projekte und Forks](php-stack/upstream-projekte-und-forks.md) |
+| 2. Bibliotheken | expcomponents, der Fork der Zeta Components (Kernel, seit 6.0.15); Symfony, Twig, Doctrine (Platform-Linie) | [Upstream-Projekte und Forks](php-stack/upstream-projekte-und-forks.md) |
 | 3. Kernel | Exponential 6 (`se7enxweb/exponential`) | [Der Kernel von Exponential 6](produkte/exponential-6-kernel.md) |
 | 4. Auslieferung | Velocity, FrankenPHP, der eingebaute Server von PHP, Apache oder nginx mit PHP-FPM | [Webserver und Engines](php-stack/webserver-und-engines.md) |
 | 5. Speicherung | SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Datenbanken](php-stack/datenbanken.md) |
@@ -33,7 +33,7 @@ type: help
 ## Was wovon abhängt
 
 ```text
-your site  ->  extensions and designs  ->  Exponential 6 kernel  ->  Zeta Components  ->  PHP
+your site  ->  extensions and designs  ->  Exponential 6 kernel  ->  expcomponents  ->  PHP
                                               ^
                     Velocity serves it        |  legacy bridge
                                               |

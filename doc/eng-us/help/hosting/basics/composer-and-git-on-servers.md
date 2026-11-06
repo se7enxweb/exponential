@@ -29,7 +29,8 @@ commands are dangerous on a live site. The source is
 
 ## Why Composer is part of the platform
 
-Exponential installs with [Composer](https://getcomposer.org/) 2. Composer downloads the Zeta Components, every
+Exponential installs with [Composer](https://getcomposer.org/) 2. Composer downloads the kernel's libraries (the
+[expcomponents](../../../features/6.0/expcomponents.md), `se7enxweb/expcomponents-*`, the fork of the Zeta Components), every
 extension `composer.json` requires and, when asked, Velocity. Without it, `vendor/` is missing and the site cannot
 start. After `composer install`, the script `legacy-scripts` runs `php bin/php/ezpgenerateautoloads.php`, which
 generates the class maps ([chapter 2.7](../../../install/02-requirements.md#27-composer)).

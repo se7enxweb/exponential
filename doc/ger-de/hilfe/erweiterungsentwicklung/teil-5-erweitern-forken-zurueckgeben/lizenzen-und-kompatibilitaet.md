@@ -33,7 +33,7 @@ eigene Erweiterung ist die des Kernels: GPL-2.0-or-later.
 | GPL-3.0-or-later | ja, aber das Ganze steht dann unter GPL 3 | Ihre Dateien unter GPL-2.0-or-later erlauben das |
 | LGPL-2.1 oder LGPL-3.0 | ja | die LGPL erlaubt es |
 | MIT, BSD-2-Clause, BSD-3-Clause | ja | Copyright-Hinweis und Lizenztext behalten |
-| Apache-2.0 | nur mit GPL 3 | Apache 2.0 ist mit „nur GPL 2“ nicht kompatibel; mit GPL-2.0-or-later wird die Kombination als GPL 3 verbreitet |
+| Apache-2.0 | nur mit GPL 3 | Apache 2.0 ist mit „nur GPL 2“ nicht kompatibel; mit GPL-2.0-or-later wird die Kombination als GPL 3 verbreitet. Die eigenen Bibliotheken des Kernels, die [expcomponents](../../../funktionen/6.0/expcomponents.md#die-lizenz), stehen unter Apache-2.0 |
 | „All rights reserved“, keine Lizenz | nein | Sie haben überhaupt keine Erlaubnis |
 | Creative Commons nicht-kommerziell (NC) oder ohne Bearbeitungen (ND) | nein | keine Lizenzen für freie Software |
 

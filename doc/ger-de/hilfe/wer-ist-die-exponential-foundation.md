@@ -418,7 +418,7 @@ In den für diese Seite verwendeten Quellen sind keine Veranstaltungen (Konferen
 |---|---|---|---|
 | PHP | Die Sprache | Unterstützung jeder neuen PHP-Version | README |
 | Composer und Packagist | Installation des Kernels und jeder Erweiterung | 219 von se7enxweb veröffentlichte Pakete | composer.json, Packagist |
-| Zeta Components | Die Bibliotheken des Kernels (Cache, Datenbank, Feeds, Bildkonvertierung ...) | „Forked and patched 47+ Zeta Components repos“; „14 security PRs submitted upstream to zetacomponents“ | composer.json, se7enxweb-Profil-README |
+| Zeta Components, geforkt als expcomponents | Die Bibliotheken des Kernels (Archive, Cache, Datenbank, Feeds, Bildkonvertierung, Mail, WebDAV ...) | „Forked and patched 47+ Zeta Components repos“; „14 security PRs submitted upstream to zetacomponents“; seit 6.0.15 verlangt der Kernel die Forks `se7enxweb/expcomponents-*`, gepflegt von 7x und der Foundation unter Apache 2.0 ([expcomponents](../funktionen/6.0/expcomponents.md)) | composer.json, se7enxweb-Profil-README |
 | Symfony, Twig, Doctrine | Die Plattform-Linie | Gepflegte Forks für PHP 8.4 und 8.5 | [Ökosystem](../geschichte/oekosystem.md) |
 | Upstream-Layouts-Pakete, Media Site, Site API | Exponential Layouts und Nexus | Portierungen auf den Exponential-Kernel; ein Fork von layouts-core | README, [Ökosystem](../geschichte/oekosystem.md) |
 | Qbix-Webserver | Die Engine von Velocity | Ein darauf gebauter Produktionsserver | Velocity-README |
@@ -445,6 +445,7 @@ In den für diese Seite verwendeten Quellen sind keine Veranstaltungen (Konferen
 | 7. Juni 2026 | Exponential 6.0.14 | Release-Übersicht |
 | September 2026 | Exponential Velocity kommt zu Exponential | [Velocity-Chronik](../geschichte/velocity/README.md) |
 | Oktober 2026 | Exponential Intelligence, die LoveStack-Funktionen und das Hilfesystem in der Linie 6.0.15 | [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md) |
+| November 2026 | Die Zeta Components werden offiziell als expcomponents geforkt (Apache 2.0); der Kernel wechselt in der Linie 6.0.15 auf die Forks | [expcomponents](../funktionen/6.0/expcomponents.md) |
 
 ## Unterstützen oder mitmachen
 

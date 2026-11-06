@@ -30,7 +30,7 @@ From the installation root (the directory that holds `index.php`):
 | `autoload/` | The generated class maps (`ezp_kernel.php`, and the extension map) | Never; regenerate them |
 | `doc/` | The documentation, including this book | Improve it with a pull request |
 | `tests/` | The kernel's test suites | Read them; they are executable examples |
-| `vendor/` | Composer libraries (Zeta Components and others) | Never |
+| `vendor/` | Composer libraries (the expcomponents, Exponential's fork of the Zeta Components, and others) | Never; a library is changed in its own repository ([Contributing to expcomponents](../../../guides/contributing-to-expcomponents.md)) |
 
 Two rules follow from the table: **you read the kernel, you do not edit it**, and **your work lives in
 `extension/`**. Everything in this book respects them.

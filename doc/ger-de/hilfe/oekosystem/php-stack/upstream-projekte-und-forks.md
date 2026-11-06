@@ -4,7 +4,7 @@ audience: ecosystem, developer, partner, advocate
 category: ecosystem
 order: 35
 summary: Die PHP-Projekte, auf denen das Ökosystem von Exponential steht und denen es etwas zurückgibt - PHP, Composer, Zeta Components, Symfony, Twig, Doctrine, die Projekte von Netgen, der Webserver Qbix, AdminNeo und die Frontend-Bibliotheken -, wofür jedes verwendet wird, die Forks, die 7x pflegt, und wie Sie respektvoll mit Ursprungsprojekten umgehen.
-keywords: Upstream, Ursprungsprojekte, Forks, Zeta Components, Symfony, Twig, Doctrine, Media Site, Qbix, AdminNeo, jQuery, TinyMCE, zurückgeben, Pull-Requests an Upstream, upstream, forks, give back, pull requests upstream
+keywords: Upstream, Ursprungsprojekte, Forks, Zeta Components, expcomponents, eZ Components, Symfony, Twig, Doctrine, Media Site, Qbix, AdminNeo, jQuery, TinyMCE, zurückgeben, Pull-Requests an Upstream, upstream, forks, give back, pull requests upstream
 type: help
 ---
 # Upstream-Projekte und Forks
@@ -21,7 +21,7 @@ type: help
 |---|---|---|---|
 | PHP | Die Sprache | Unterstützung für jede neue PHP-Version | `README.md` |
 | Composer und Packagist | Installation des Kernels und jeder Erweiterung | 219 von se7enxweb veröffentlichte Pakete | `composer.json`, Packagist |
-| Zeta Components | Die Bibliotheken des Kernels (Cache, Datenbank, Feed, Bildumwandlung ...) | "Forked and patched 47+ Zeta Components repos", über 47 Repositorys geforkt und gepatcht; "14 security PRs submitted upstream to zetacomponents", 14 Sicherheits-Pull-Requests an zetacomponents | Profil-README von se7enxweb |
+| Zeta Components | Die Bibliotheken des Kernels (Archive, Cache, Datenbank, Feed, Bildumwandlung, Mail, WebDAV ...) bis 6.0.14; seit 6.0.15 über die expcomponents-Forks | "Forked and patched 47+ Zeta Components repos", über 47 Repositorys geforkt und gepatcht; "14 security PRs submitted upstream to zetacomponents", 14 Sicherheits-Pull-Requests an zetacomponents; der offizielle Fork expcomponents (Apache 2.0) | Profil-README von se7enxweb, [expcomponents](../../../funktionen/6.0/expcomponents.md) |
 | Symfony, Twig, Doctrine | Die Platform-Linie | Gepflegte Forks für PHP 8.4 und 8.5 | [Das Ökosystem der Exponential-Plattform](../../../geschichte/oekosystem.md) |
 | Upstream-Layouts-Pakete, Media Site, Site API | Exponential Layouts und Nexus | Portierungen auf den Kernel von Exponential; ein Fork von layouts-core | `README.md` |
 | Webserver Qbix | Die Engine von Velocity | Ein darauf gebauter Produktionsserver | README von Velocity |
@@ -37,6 +37,19 @@ Viele Ursprungspakete des alten Stacks wurden für aktuelles PHP nicht mehr gepf
 [Paketübersicht](../../../spezifikationen/6.0/platform-paketzuordnung.md) auf, welcher Fork welches Ursprungspaket ersetzt.
 Was sich für Anwender eines Forks geändert hat, steht unter
 [Paket-Forks und umbenannte Befehle](../../../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md).
+
+## Die Bibliotheken des Kernels: expcomponents
+
+Seit 6.0.15 sind auch die eigenen Bibliotheken des Kernels Forks. Die Zeta Components, die als eZ Components bei eZ
+Systems begannen (New-BSD-Lizenz) und über den Inkubator der Apache Software Foundation (Apache License 2.0) zu einem
+unabhängigen Projekt wurden, sind als **expcomponents** geforkt: ein Paket je Bibliothek,
+`se7enxweb/expcomponents-<name>` (`se7enxweb/expcomponents-mail` für `zetacomponents/mail`), weiter unter der Apache
+License 2.0, gepflegt von 7x und der Exponential Foundation und intern modernisiert. Die Klassennamen mit `ezc` und
+die APIs bleiben, und jeder Fork ersetzt in Composer seinen Ursprungsnamen, sodass Code und Pakete Dritter weiter
+funktionieren. Die ersten beiden Forks waren Archive und WebDAV; die vollständige Liste, die Geschichte und die
+Gründe stehen auf der Funktionsseite [Exponential Components (expcomponents)](../../../funktionen/6.0/expcomponents.md),
+das Upgrade in den [Upgrade-Hinweisen](../../../bc/6.0/expcomponents.md). Korrekturen, die allen nützen, gehen
+weiterhin als Pull-Requests an das Projekt Zeta Components.
 
 ## Nennung und Respekt
 

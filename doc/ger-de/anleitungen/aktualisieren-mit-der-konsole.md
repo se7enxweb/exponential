@@ -173,6 +173,11 @@ Die Installation wird verweigert, und nichts wird installiert, wenn:
 
 `--allow-vendor-changes` installiert über die ersten beiden hinweg.
 
+Auf dem Weg zu 6.0.15 tauscht diese Stufe auch die Bibliotheken des Kernels aus: Die `composer.lock` des Releases
+nennt die **expcomponents** (`se7enxweb/expcomponents-*`, den Fork der Zeta Components durch Exponential) statt
+`zetacomponents/*`, daher entfernt `composer install` jedes Ursprungspaket und installiert seinen Fork. Der Probelauf
+zeigt beides. Die Klassen sind dieselben; siehe [Upgrade-Hinweise: der Wechsel zu expcomponents](../bc/6.0/expcomponents.md).
+
 ## Sicherungspunkte
 
 Ein Sicherungspunkt (Caption) ist ein sicherer Zeitpunkt: die vollständige Sicherung von git_manager

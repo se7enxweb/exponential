@@ -147,7 +147,7 @@ only), with their parameters in `settings/setup.ini`.
 | `intl` | critical test `intl_extension` | the setup wizard does not continue without it; the kernel also uses it for international host names (`idn_to_ascii()`) |
 | `pcre` | `composer.json` | regular expressions everywhere (part of PHP) |
 | `json` | `composer.json` | JSON in the admin, the REST API and the console (part of PHP since 8.0) |
-| `reflection`, `spl` | `composer.json` | used by the kernel and the Zeta Components (part of PHP) |
+| `reflection`, `spl` | `composer.json` | used by the kernel and the expcomponents (part of PHP) |
 | `session` | `composer.json`; critical test `php_session` | user sessions |
 | `zlib` | critical test `zlib_extension` | gzip: package archives, the gzip file handlers in `lib/ezfile/`, compressed audit files |
 | one database extension | critical test `database_extensions` | `sqlite3`, `mysqli`, `pgsql`, `mongodb` or `oci8`; at least one (`Require=one`) |
@@ -241,7 +241,7 @@ ignored with its checkbox, which is not recommended: an ignored test usually fai
 | `file_upload` | `file_uploads` on, and the upload directory exists and is writable | `[file_upload]` | see [2.5](#25-phpini-settings) |
 | `zlib_extension`, `dom_extension`, `iconv_extension`, `mbstring_extension`, `intl_extension`, `xsl_extension` | the extension is loaded | one block each | install it |
 | `timezone` | a time zone was chosen | | set `date.timezone` |
-| `ezcversion` | the Zeta Components are there: class `ezcBaseFile` with method `walkrecursive` | `[ezcversion]` | `composer install` |
+| `ezcversion` | the kernel's libraries (the expcomponents, earlier the Zeta Components) are there: class `ezcBaseFile` with method `walkrecursive` | `[ezcversion]` | `composer install` |
 
 The directory test runs as the user that runs the check: in the browser the web server's user, on the command line
 whoever starts the kickstarter. A command-line install by another user can pass the test and still leave files the
@@ -340,7 +340,8 @@ installers do not create databases or users. Choosing and tuning a database is t
 
 ## 2.7 Composer
 
-Exponential installs with [Composer](https://getcomposer.org/) 2. Composer downloads the Zeta Components, the
+Exponential installs with [Composer](https://getcomposer.org/) 2. Composer downloads the kernel's libraries (the
+[expcomponents](../features/6.0/expcomponents.md), since 6.0.15 Exponential's fork of the Zeta Components), the
 extensions `composer.json` requires and, when you ask for it, Velocity. Without Composer, or without running it,
 `vendor/` is missing and the site cannot start.
 

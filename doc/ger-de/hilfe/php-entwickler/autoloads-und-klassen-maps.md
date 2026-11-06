@@ -87,7 +87,7 @@ Event-Listener oder eine Unterklasse über `[RunnableSettings] Implementation[]`
 
 ## Der Autoloader von Composer
 
-Bibliotheken in `vendor/` (Zeta Components, PHPUnit, `mongodb/mongodb` und der Rest) werden vom eigenen Autoloader von
+Bibliotheken in `vendor/` (die [expcomponents](../../funktionen/6.0/expcomponents.md) mit ihren `ezc*`-Klassen, PHPUnit, `mongodb/mongodb` und der Rest) werden vom eigenen Autoloader von
 Composer geladen, den `vendor/autoload.php` registriert. Eine Erweiterung, die eine Bibliothek braucht, gibt sie in ihrer
 eigenen `composer.json` an; sie kopiert niemals `vendor/` in die Erweiterung
 ([Composer für PHP-Entwickler](composer-fuer-php-entwickler.md)).

@@ -34,7 +34,8 @@ consumer view is [REST API v1 and v2 for applications](../creators/app-creators/
 ## The REST kernel
 
 `index_rest.php` runs the REST kernel in `kernel/private/rest/` (`ezpkernelrest.php`, the router, the MVC configuration,
-renderers, OAuth). It is built on the Zeta Components MVC tools (`zetacomponents/mvc-tools`), so a provider supplies
+renderers, OAuth). It is built on the MVC tools of the expcomponents (`se7enxweb/expcomponents-mvc-tools`, the fork of
+`zetacomponents/mvc-tools` since 6.0.15; [expcomponents](../../features/6.0/expcomponents.md)), so a provider supplies
 routes and controllers in that framework's shape. Settings are in `settings/rest.ini`:
 
 | Block | Holds |
@@ -75,7 +76,7 @@ the exact format.
 ## Controllers
 
 Controllers extend `ezpRestMvcController` (`kernel/private/rest/classes/controllers/rest_controller.php`), which extends
-the Zeta Components `ezcMvcController`. Each action reads its route variables and request, does the work through your
+the `ezcMvcController` of the MVC tools (the class name is unchanged in the fork). Each action reads its route variables and request, does the work through your
 service classes, and returns a result that the view controller renders as JSON. Keep actions thin, as for module views:
 the same service should be callable from a command and a test.
 

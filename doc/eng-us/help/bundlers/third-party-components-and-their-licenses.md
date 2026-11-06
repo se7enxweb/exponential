@@ -46,6 +46,23 @@ composer licenses --no-dev --format=json > var/log/bundle-licenses.json
 
 A package without a license field shows as "none"; look it up by hand before you ship it.
 
+### The kernel's libraries: expcomponents (Apache 2.0)
+
+Every bundle of Exponential contains the kernel's libraries. Since 6.0.15 they are the **expcomponents**,
+Exponential's fork of the Zeta Components, one Composer package each (`se7enxweb/expcomponents-mail`,
+`se7enxweb/expcomponents-archive` ...), installed in `vendor/se7enxweb/expcomponents-*/`. Up to 6.0.14 they were the
+upstream `zetacomponents/*` packages in `vendor/zetacomponents/`. Either way:
+
+- their license is the **Apache License 2.0** (`Apache-2.0` in `composer licenses`), not the GPL;
+- each package's `LICENSE.txt` begins with notice lines ("Zeta Components ...", "Apache Zeta Components ...",
+  "Originally developed by eZ Systems as eZ Components ...") that must be passed on with the package; shipping the
+  `vendor/` folder unchanged does that;
+- list them in the third-party list; `composer licenses --no-dev | grep expcomponents` prints them.
+
+The kernel's license, GPL version 2 or later, allows the combination to be distributed under GPL version 3, with
+which the Free Software Foundation considers Apache 2.0 compatible ([Exponential Components](../../features/6.0/expcomponents.md#the-license)).
+Not legal advice.
+
 ## Extensions
 
 The **Info > About** page of an installed bundle lists every extension "with its license and website", and a
@@ -79,6 +96,7 @@ Ship one list (`THIRD-PARTY.txt` or a section of your notice) in this shape:
 ```text
 Component            Version     License               Source / where to get it
 se7enxweb/exponential 6.0.14     GPL-2.0-or-later      https://github.com/se7enxweb/exponential
+se7enxweb/expcomponents-mail <version> Apache-2.0 https://github.com/se7enxweb/expcomponents-mail
 <extension>          <version>   <license>             <URL>
 <library>            <version>   <license>             <URL>
 PHP                  <version>   <license>             <URL>

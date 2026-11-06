@@ -46,6 +46,23 @@ composer licenses --no-dev --format=json > var/log/bundle-licenses.json
 
 Ein Paket ohne Lizenzfeld erscheint als "none"; prüfen Sie es von Hand, bevor Sie es ausliefern.
 
+### Die Bibliotheken des Kernels: expcomponents (Apache 2.0)
+
+Jedes Bündel von Exponential enthält die Bibliotheken des Kernels. Seit 6.0.15 sind das die **expcomponents**, der
+Fork der Zeta Components durch Exponential, ein Composer-Paket je Bibliothek (`se7enxweb/expcomponents-mail`,
+`se7enxweb/expcomponents-archive` ...), installiert in `vendor/se7enxweb/expcomponents-*/`. Bis 6.0.14 waren es die
+Ursprungspakete `zetacomponents/*` in `vendor/zetacomponents/`. In beiden Fällen gilt:
+
+- ihre Lizenz ist die **Apache License 2.0** (`Apache-2.0` in `composer licenses`), nicht die GPL;
+- die `LICENSE.txt` jedes Pakets beginnt mit Hinweiszeilen („Zeta Components ...“, „Apache Zeta Components ...“,
+  „Originally developed by eZ Systems as eZ Components ...“), die mit dem Paket weitergegeben werden müssen; wer den
+  Ordner `vendor/` unverändert ausliefert, tut das;
+- führen Sie sie in der Liste der Komponenten Dritter auf; `composer licenses --no-dev | grep expcomponents` gibt sie aus.
+
+Die Lizenz des Kernels, GPL Version 2 oder später, erlaubt, die Kombination unter GPL Version 3 zu verbreiten, mit der
+die Free Software Foundation Apache 2.0 für kompatibel hält ([Exponential Components](../../funktionen/6.0/expcomponents.md#die-lizenz)).
+Keine Rechtsberatung.
+
 ## Erweiterungen
 
 Die Seite **Info > Über** eines installierten Bundles listet jede Erweiterung "mit ihrer Lizenz und Website" auf, dazu
@@ -82,6 +99,7 @@ Liefern Sie eine Liste (`THIRD-PARTY.txt` oder einen Abschnitt Ihres Hinweises) 
 ```text
 Component            Version     License               Source / where to get it
 se7enxweb/exponential 6.0.14     GPL-2.0-or-later      https://github.com/se7enxweb/exponential
+se7enxweb/expcomponents-mail <version> Apache-2.0 https://github.com/se7enxweb/expcomponents-mail
 <extension>          <version>   <license>             <URL>
 <library>            <version>   <license>             <URL>
 PHP                  <version>   <license>             <URL>

@@ -112,6 +112,22 @@ If you write a "bridge" extension for an outside library, the website asks you n
 project repository; tell users how to install it instead (with Composer where possible), and open an issue first if
 you think it really must be included.
 
+### The kernel's own libraries are under the Apache License 2.0. How does that fit?
+
+The libraries the kernel is built on, the **expcomponents** (since 6.0.15 Exponential's fork of the Zeta Components,
+`se7enxweb/expcomponents-*`), are licensed under the Apache License 2.0, as the Zeta Components were before them.
+The Free Software Foundation considers Apache 2.0 compatible with GPL version 3 and incompatible with GPL version 2
+*only*. Exponential's license, GPL version 2 **or any later version**, lets the combination be distributed under GPL
+version 3, so the kernel and its libraries can be shipped together. The fork changed nothing about this: the same was
+true of the upstream libraries. Two consequences:
+
+- the libraries keep their own license and notices (`LICENSE.txt` of each package); a bundle lists them as
+  third-party components ([Third-party components and their licenses](../bundlers/third-party-components-and-their-licenses.md));
+- an extension licensed GPL version 2 *only* that ships together with Apache 2.0 code is a combination to avoid;
+  license it "or later".
+
+This is not legal advice. The fork and its license: [Exponential Components](../../features/6.0/expcomponents.md#the-license).
+
 ### May I contribute code under GPL version 3 only, or GPL version 2 only?
 
 You may publish your own work under any license compatible with GPL 2 or later. But code that goes **into the

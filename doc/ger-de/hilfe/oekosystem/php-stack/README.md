@@ -34,7 +34,7 @@ auf denen Exponential läuft und mit denen es arbeitet.
 |---|---|---|
 | Sprache | PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) | `README.md` |
 | Paketmanager | Composer, Packagist | `README.md` |
-| Kernel-Bibliotheken | Zeta Components | `composer.json` |
+| Kernel-Bibliotheken | expcomponents (`se7enxweb/expcomponents-*`), der Fork der Zeta Components, seit 6.0.15 | `composer.json`, [expcomponents](../../../funktionen/6.0/expcomponents.md) |
 | Datenbank | SQLite 3 (Standard), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Datenbankunterstützung](../../datenbankunterstuetzung.md) |
 | Server | Velocity (Qbix, FrankenPHP oder der eingebaute Server von PHP), oder Apache, Nginx, LiteSpeed, Caddy, IIS und andere | `README.md` |
 | Betriebssystem | Fast jedes, auf dem PHP 8.0 oder neuer läuft | [Unterstützte Betriebssysteme](../../betriebssystemunterstuetzung.md) |

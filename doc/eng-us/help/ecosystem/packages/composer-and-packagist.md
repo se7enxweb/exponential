@@ -21,7 +21,8 @@ type: help
 
 "Exponential 6.0.x specifically requires the php package manager called Composer" (`README.md`). Composer "installs
 the required Zeta Components php libraries and the extensions listed in `composer.json`" (`README.md`,
-"Requirements"). Without `composer install`, the software does not run.
+"Requirements"). Since 6.0.15 those libraries are the [expcomponents](../../../features/6.0/expcomponents.md), Exponential's
+fork of the Zeta Components (`se7enxweb/expcomponents-*`). Without `composer install`, the software does not run.
 
 ## The se7enxweb vendor
 

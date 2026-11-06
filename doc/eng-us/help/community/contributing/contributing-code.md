@@ -71,6 +71,7 @@ The checks that CI runs are described in [Quality checks](../../../features/6.0/
 | Your code | Where it goes | CLA? |
 |---|---|---|
 | A fix to an extension that has its own repository | That repository's pull requests | Ask its maintainer; the CLA covers code "you want 7x to include" in the project |
+| A fix to one of the kernel's libraries (`ezc*` classes) | The fork's repository, `se7enxweb/expcomponents-<name>` | Apache 2.0 code; see [Contributing to expcomponents](../../../guides/contributing-to-expcomponents.md) |
 | Your own extension, theme or site package | Your own repository, Projects, Packagist | No ([Sharing extensions and themes](sharing-extensions-and-themes.md)) |
 | A fix to a library Exponential depends on | The library's own project | Its rules |
 

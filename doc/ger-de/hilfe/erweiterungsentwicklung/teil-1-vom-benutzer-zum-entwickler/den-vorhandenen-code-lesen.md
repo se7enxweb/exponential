@@ -30,7 +30,7 @@ Vom Wurzelverzeichnis der Installation aus (dem Verzeichnis, das `index.php` ent
 | `autoload/` | Die erzeugten Klassenzuordnungen (`ezp_kernel.php` und die Zuordnung der Erweiterungen) | Nie; erzeugen Sie sie neu |
 | `doc/` | Die Dokumentation, einschließlich dieses Buchs | Verbessern Sie sie mit einem Pull Request |
 | `tests/` | Die Testsuiten des Kernels | Lesen Sie sie; sie sind ausführbare Beispiele |
-| `vendor/` | Composer-Bibliotheken (Zeta Components und andere) | Nie |
+| `vendor/` | Composer-Bibliotheken (die expcomponents, der Fork der Zeta Components durch Exponential, und andere) | Nie; eine Bibliothek wird in ihrem eigenen Repository geändert ([Zu expcomponents beitragen](../../../anleitungen/zu-expcomponents-beitragen.md)) |
 
 Aus der Tabelle folgen zwei Regeln: **Sie lesen den Kernel, Sie bearbeiten ihn nicht**, und **Ihre Arbeit lebt in
 `extension/`**. Alles in diesem Buch hält sich daran.

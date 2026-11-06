@@ -64,7 +64,7 @@ guide](../install/02-requirements.md); where an item is a recommendation rather 
 | A database | SQLite 3 needs only the `sqlite3` extension; the others need their server somewhere on the network | see [Database support](database-support.md) |
 | A web server | none, if Velocity or PHP's built-in server serves the site; otherwise anything that can send a URL to `index.php` | see [Web servers](#web-servers) |
 | 64-bit PHP | recommended | the languages of an object are bits of one integer; `composer.json` suggests `php-64bit` "for support of more than 30 languages" |
-| Composer 2 | to install | downloads the Zeta Components and the extensions |
+| Composer 2 | to install | downloads the expcomponents libraries (the fork of the Zeta Components) and the extensions |
 | Writable directories | `var/`, `settings/override`, `settings/siteaccess` and the others the wizard checks | caches, uploads, logs, the SQLite database |
 
 Nothing in that list names an operating system. That is why the list of systems below is long.

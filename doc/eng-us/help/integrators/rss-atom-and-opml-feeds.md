@@ -40,7 +40,7 @@ at `/rss/feed/<address>`, on the public site of the export's siteaccess. Formats
 
 | Format | Stored value | Notes |
 |---|---|---|
-| RSS 1.0 | `1.0` | Written with the Zeta Components Feed library |
+| RSS 1.0 | `1.0` | Written, like RSS 2.0 and Atom, with the feed library of the [expcomponents](../../features/6.0/expcomponents.md) (`ezcFeed`, the fork of the Zeta Components Feed library) |
 | RSS 2.0 | `2.0` | The usual choice; an image can be set |
 | Atom 1.0 | `ATOM` | RFC 4287 |
 | OPML 2.0 | `OPML` | A list of other feeds; `site.ini [RSSSettings] OPMLMaxOutlines` (default 5000) |

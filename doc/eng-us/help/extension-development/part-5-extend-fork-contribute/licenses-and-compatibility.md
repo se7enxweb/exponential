@@ -32,7 +32,7 @@ kernel's own: GPL-2.0-or-later.
 | GPL-3.0-or-later | yes, but the whole then is GPL 3 | your GPL-2.0-or-later files allow that |
 | LGPL-2.1 or LGPL-3.0 | yes | the LGPL allows it |
 | MIT, BSD-2-Clause, BSD-3-Clause | yes | keep their copyright notice and license text |
-| Apache-2.0 | only with GPL 3 | Apache 2.0 is not compatible with GPL 2 only; with GPL-2.0-or-later the combination goes as GPL 3 |
+| Apache-2.0 | only with GPL 3 | Apache 2.0 is not compatible with GPL 2 only; with GPL-2.0-or-later the combination goes as GPL 3. The kernel's own libraries, the [expcomponents](../../../features/6.0/expcomponents.md#the-license), are Apache-2.0 |
 | "All rights reserved", no license | no | you have no permission at all |
 | Creative Commons non-commercial (NC) or no-derivatives (ND) | no | not free software licenses |
 

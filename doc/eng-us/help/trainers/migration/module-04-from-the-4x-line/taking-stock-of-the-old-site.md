@@ -47,7 +47,7 @@ Sources: [chapter 14.1](../../../../install/14-migrating-from-4x.md#141-what-cha
 
 1. **What stays, what changes** (5 minutes). Show the first table of 14.1: the schema family, the datatypes, XmlText,
    ezflow pages, templates, the extension API and the `eZ` class names stay. What changes: PHP 5 to PHP 8 (the largest
-   piece of work), Zeta Components, the removed cluster handlers, YUI gone, jQuery 4, the online editor, rewrite rules
+   piece of work), Zeta Components (since 6.0.15 their fork, expcomponents), the removed cluster handlers, YUI gone, jQuery 4, the online editor, rewrite rules
    and a stricter security baseline.
 2. **Which version** (3 minutes). The rows `ezpublish-version` and `ezpublish-release` of `ezsite_data` tell where
    the chain starts ([chapter 11.2](../../../../install/11-upgrading.md#112-which-version-do-you-run)). The row

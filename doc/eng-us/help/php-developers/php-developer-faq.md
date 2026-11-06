@@ -63,6 +63,16 @@ Yes. The kernel uses them for commands, cronjob parts, views and services
 Exponential 6 runs on its own kernel. The legacy bridge runs it inside a Symfony platform installation
 ([Symfony and the legacy bridge](../creators/app-creators/symfony-and-the-legacy-bridge.md)).
 
+**What are the `ezc*` classes, and where do they come from?**
+They are the kernel's libraries (`ezcMail`, `ezcArchive`, `ezcWebdavServer`, `ezcMvcController` ...). Since 6.0.15
+they come from the **expcomponents** (`se7enxweb/expcomponents-*`), Exponential's fork of the Zeta Components, under
+the Apache License 2.0; the class names and APIs did not change. A bug in one of them goes to that fork's repository
+([Exponential Components](../../features/6.0/expcomponents.md), [Contributing to expcomponents](../../guides/contributing-to-expcomponents.md)).
+
+**My extension requires `zetacomponents/mail`. Must I change it?**
+No: each fork replaces its upstream name, so the requirement is met. Rename it to `se7enxweb/expcomponents-mail` in
+your next release ([Upgrade notes: the switch to expcomponents](../../bc/6.0/expcomponents.md#extensions)).
+
 ## Classes and settings
 
 **My new class is "not found".**

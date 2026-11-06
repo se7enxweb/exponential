@@ -110,7 +110,10 @@ geänderten Eigenschaften.
 
 - Die `composer.json` im Wurzelverzeichnis hat keinen Abschnitt `psr-4` oder `psr-0`; ihr `autoload` führt nur
   `files: ["autoload.php"]` auf.
-- `autoload.php` registriert `ezpAutoloader` (Klassenzuordnungen) und `ezcBase::autoload` (Zeta Components).
+- `autoload.php` bindet `vendor/autoload.php` von Composer ein, dessen Klassen-Maps die `ezc*`-Klassen der
+  [expcomponents](../funktionen/6.0/expcomponents.md) laden (seit 6.0.15 der Fork der Zeta Components), und registriert
+  `ezpAutoloader` (die Klassenzuordnungen des Kernels und der Erweiterungen); `ezcBase::autoload` wird nur registriert,
+  wenn `EZCBASE_ENABLED` als `true` definiert ist, was eine Composer-Installation nicht tut.
 - Die Klassenzuordnung des Kernels `autoload/ezp_kernel.php` und die Klassenzuordnung der Extensions (unter
   `var/autoload/`) werden von `bin/php/ezpgenerateautoloads.php` generiert; `post-install-cmd` und `post-update-cmd`
   von Composer führen es aus (`"legacy-scripts"` in `composer.json`).

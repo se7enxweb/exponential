@@ -51,7 +51,8 @@ Exponential 6.0 ist derselbe Legacy-Kernel, weitergeführt ([14.1](../../../inst
 ## Was sich ändert
 
 Aus demselben Abschnitt von Kapitel 14: PHP 5 zu PHP 8 (Ihr eigener PHP-Code ist das größte Stück Arbeit), eZ Components
-ersetzt durch Zeta Components, die Composer installiert, die Cluster-Handler, die Dateien in der Datenbank speicherten, YUI
+ersetzt durch Zeta Components, die Composer installiert (seit 6.0.15 ihr Fork, die
+[expcomponents](../../../funktionen/6.0/expcomponents.md)), die Cluster-Handler, die Dateien in der Datenbank speicherten, YUI
 (entfernt), jQuery (4.0.0), der Online-Editor, mehrere Rewrite-Regeln und eine strengere Sicherheitsgrundlage.
 
 Für eine Website auf 5.x ist der Umzug eher ein Herauslösen als eine Neufassung: Der Legacy-Teil wird aus der

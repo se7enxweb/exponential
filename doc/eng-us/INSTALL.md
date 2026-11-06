@@ -113,7 +113,7 @@ and prints the install command for your system.
 
 ### Composer
 
-Composer 2.x. It installs the Zeta Components and the Exponential extensions that `composer.json` lists.
+Composer 2.x. It installs the kernel's libraries, the [expcomponents](features/6.0/expcomponents.md) (`se7enxweb/expcomponents-*`, Exponential's fork of the Zeta Components, since 6.0.15), and the Exponential extensions that `composer.json` lists.
 
 ### Database
 
@@ -260,7 +260,7 @@ The order is the step table in `kernel/setup/steps/ezstep_data.php`.
 | # | Page | What to enter |
 |---|---|---|
 | 1 | Welcome | Nothing; continue. |
-| 2 | System check | The critical checks: directory permissions, PHP version, a database extension, image conversion, memory limit, execution time, `allow_url_fopen`, sessions, file uploads, `zlib`, `dom`, `iconv`, `mbstring`, `intl`, `xsl`, the timezone and the Zeta Components. Each problem comes with the fix, for permissions the exact `chmod`/`chown` commands. Fix them and press **Next** to run the check again. A test can be ignored with its checkbox (not recommended). |
+| 2 | System check | The critical checks: directory permissions, PHP version, a database extension, image conversion, memory limit, execution time, `allow_url_fopen`, sessions, file uploads, `zlib`, `dom`, `iconv`, `mbstring`, `intl`, `xsl`, the timezone and the kernel's libraries (the expcomponents, earlier the Zeta Components). Each problem comes with the fix, for permissions the exact `chmod`/`chown` commands. Fix them and press **Next** to run the check again. A test can be ignored with its checkbox (not recommended). |
 | 3 | System finetuning | Optional checks (`curl`, GD, ImageMagick, the other database extensions, TrueType text functions, `open_basedir`). Fix and press **Finetune**, or press **Next** to go on. |
 | 4 | Outgoing Email | Sendmail/MTA, or SMTP with server, user and password. |
 | 5 | Choose database system | SQLite is listed first and preselected (`settings/setup.ini [DatabaseSettings] DefaultType=sqlite3`). If the `sqlite3` extension is missing, the first available system is chosen and the page says so. |

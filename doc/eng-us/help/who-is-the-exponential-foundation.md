@@ -413,7 +413,7 @@ No events (conferences, meetups) are documented in the sources used for this pag
 |---|---|---|---|
 | PHP | The language | Support for each new PHP version | README |
 | Composer and Packagist | Installation of the kernel and every extension | 219 packages published by se7enxweb | composer.json, Packagist |
-| Zeta Components | The kernel's libraries (cache, database, feed, image conversion ...) | "Forked and patched 47+ Zeta Components repos"; "14 security PRs submitted upstream to zetacomponents" | composer.json, se7enxweb profile README |
+| Zeta Components, forked as expcomponents | The kernel's libraries (archive, cache, database, feed, image conversion, mail, WebDAV ...) | "Forked and patched 47+ Zeta Components repos"; "14 security PRs submitted upstream to zetacomponents"; since 6.0.15 the kernel requires the forks `se7enxweb/expcomponents-*`, maintained by 7x and the Foundation under Apache 2.0 ([expcomponents](../features/6.0/expcomponents.md)) | composer.json, se7enxweb profile README |
 | Symfony, Twig, Doctrine | The platform line | Maintained forks for PHP 8.4 and 8.5 | [Ecosystem](../history/ecosystem.md) |
 | Upstream layouts packages, Media Site, Site API | Exponential Layouts and Nexus | Ports to the Exponential kernel; a fork of layouts-core | README, [Ecosystem](../history/ecosystem.md) |
 | Qbix web server | The engine of Velocity | A production server built on it | Velocity README |
@@ -440,6 +440,7 @@ No events (conferences, meetups) are documented in the sources used for this pag
 | 7 June 2026 | Exponential 6.0.14 | release overview |
 | September 2026 | Exponential Velocity joins Exponential | [Velocity chronicle](../history/velocity/README.md) |
 | October 2026 | Exponential Intelligence, the LoveStack features and the help system in the 6.0.15 line | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md) |
+| November 2026 | The Zeta Components are officially forked as expcomponents (Apache 2.0); the kernel switches to the forks in the 6.0.15 line | [expcomponents](../features/6.0/expcomponents.md) |
 
 ## How to support or join
 

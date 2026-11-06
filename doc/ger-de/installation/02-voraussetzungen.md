@@ -154,7 +154,7 @@ Setup-Assistenten, aufgeführt in `settings/site.ini`, `[SetupSettings] Critical
 | `intl` | kritischer Test `intl_extension` | der Setup-Assistent fährt ohne sie nicht fort; der Kernel verwendet sie außerdem für internationale Hostnamen (`idn_to_ascii()`) |
 | `pcre` | `composer.json` | reguläre Ausdrücke überall (Teil von PHP) |
 | `json` | `composer.json` | JSON in der Administration, in der REST-API und in der Konsole (seit 8.0 Teil von PHP) |
-| `reflection`, `spl` | `composer.json` | verwendet vom Kernel und von den Zeta Components (Teil von PHP) |
+| `reflection`, `spl` | `composer.json` | verwendet vom Kernel und von den expcomponents (Teil von PHP) |
 | `session` | `composer.json`; kritischer Test `php_session` | Benutzersitzungen |
 | `zlib` | kritischer Test `zlib_extension` | gzip: Paketarchive, die gzip-Datei-Handler in `lib/ezfile/`, komprimierte Audit-Dateien |
 | eine Datenbank-Extension | kritischer Test `database_extensions` | `sqlite3`, `mysqli`, `pgsql`, `mongodb` oder `oci8`; mindestens eine (`Require=one`) |
@@ -250,7 +250,7 @@ meist erneut fehl, dann als defekte Seite).
 | `file_upload` | `file_uploads` an, und das Upload-Verzeichnis existiert und ist beschreibbar | `[file_upload]` | siehe [2.5](#25-einstellungen-in-der-phpini) |
 | `zlib_extension`, `dom_extension`, `iconv_extension`, `mbstring_extension`, `intl_extension`, `xsl_extension` | die Extension ist geladen | je ein Block | installieren |
 | `timezone` | eine Zeitzone wurde gewählt | | `date.timezone` setzen |
-| `ezcversion` | die Zeta Components sind vorhanden: Klasse `ezcBaseFile` mit der Methode `walkrecursive` | `[ezcversion]` | `composer install` |
+| `ezcversion` | die Bibliotheken des Kernels (die expcomponents, früher die Zeta Components) sind vorhanden: Klasse `ezcBaseFile` mit der Methode `walkrecursive` | `[ezcversion]` | `composer install` |
 
 Der Verzeichnistest läuft als der Benutzer, der die Prüfung ausführt: im Browser der Benutzer des Webservers, auf der
 Kommandozeile derjenige, der den Kickstarter startet. Eine Installation über die Kommandozeile durch einen anderen
@@ -352,7 +352,8 @@ darf; die Installer legen weder Datenbanken noch Benutzer an. Die Auswahl und da
 
 ## 2.7 Composer
 
-Exponential wird mit [Composer](https://getcomposer.org/) 2 installiert. Composer lädt die Zeta Components, die
+Exponential wird mit [Composer](https://getcomposer.org/) 2 installiert. Composer lädt die Bibliotheken des Kernels (die
+[expcomponents](../funktionen/6.0/expcomponents.md), seit 6.0.15 der Fork der Zeta Components durch Exponential), die
 Extensions, die `composer.json` verlangt, und, wenn Sie es wünschen, Velocity herunter. Ohne Composer oder ohne dass er
 ausgeführt wurde, fehlt `vendor/`, und die Site kann nicht starten.
 

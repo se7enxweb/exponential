@@ -42,7 +42,7 @@ die Unterelemente) unter `/rss/feed/<address>` auf, auf der öffentlichen Websit
 
 | Format | Gespeicherter Wert | Hinweise |
 |---|---|---|
-| RSS 1.0 | `1.0` | Mit der Feed-Bibliothek der Zeta Components geschrieben |
+| RSS 1.0 | `1.0` | Wie RSS 2.0 und Atom mit der Feed-Bibliothek der [expcomponents](../../funktionen/6.0/expcomponents.md) geschrieben (`ezcFeed`, der Fork der Feed-Bibliothek der Zeta Components) |
 | RSS 2.0 | `2.0` | Die übliche Wahl; ein Bild lässt sich festlegen |
 | Atom 1.0 | `ATOM` | RFC 4287 |
 | OPML 2.0 | `OPML` | Eine Liste anderer Feeds; `site.ini [RSSSettings] OPMLMaxOutlines` (Standard 5000) |

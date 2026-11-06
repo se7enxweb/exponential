@@ -127,7 +127,7 @@ When the quick test fails too, you have found the layer. When it works, the prob
 | Ubuntu | [Ask Ubuntu](https://askubuntu.com), [Ubuntu Discourse](https://discourse.ubuntu.com) |
 | HTML, CSS, JavaScript | [MDN Web Docs](https://developer.mozilla.org) |
 | Exponential Layouts | The upstream [Netgen Layouts](https://github.com/netgen-layouts/layouts-core) code and [documentation](https://docs.netgen.io) |
-| The expcomponents libraries | Their repositories under [se7enxweb](https://github.com/se7enxweb) (`expcomponents-*`) |
+| The expcomponents libraries | Their repositories under [se7enxweb](https://github.com/se7enxweb) (`expcomponents-*`, [Exponential Components](features/6.0/expcomponents.md)); the API is the Zeta Components API, documented at [zetacomponents.org](https://zetacomponents.org/documentation/overview.html) |
 
 ### Phrase the question without Exponential
 

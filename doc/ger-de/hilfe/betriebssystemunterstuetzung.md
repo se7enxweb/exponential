@@ -68,7 +68,7 @@ das dabei.
 | Eine Datenbank | SQLite 3 braucht nur die Erweiterung `sqlite3`; die anderen brauchen ihren Server irgendwo im Netzwerk | siehe [Unterstützte Datenbanken](datenbankunterstuetzung.md) |
 | Ein Webserver | keiner, wenn Velocity oder der eingebaute Server von PHP die Site ausliefert; sonst alles, was eine URL an `index.php` weiterreichen kann | siehe [Webserver](#webserver) |
 | 64-Bit-PHP | empfohlen | die Sprachen eines Objekts sind Bits einer einzigen Ganzzahl; `composer.json` empfiehlt `php-64bit` „for support of more than 30 languages“ |
-| Composer 2 | zur Installation | lädt die Zeta Components und die Erweiterungen herunter |
+| Composer 2 | zur Installation | lädt die expcomponents-Bibliotheken (den Fork der Zeta Components) und die Erweiterungen herunter |
 | Beschreibbare Verzeichnisse | `var/`, `settings/override`, `settings/siteaccess` und die anderen, die der Assistent prüft | Caches, Uploads, Protokolle, die SQLite-Datenbank |
 
 Nichts in dieser Liste nennt ein Betriebssystem. Deshalb ist die folgende Liste der Systeme lang.

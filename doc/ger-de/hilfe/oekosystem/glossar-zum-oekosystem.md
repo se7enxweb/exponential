@@ -4,7 +4,7 @@ audience: ecosystem, community, developer, partner
 category: ecosystem
 order: 7
 summary: Die Wörter des Ökosystems von Exponential - von AdminUI, CMF und Distribution bis Dual-Kernel, Fork, Legacy Bridge, Metapaket, Nexus, Packagist, Qbix, Seitenpaket und Zeta Components -, jeweils in ein oder zwei Sätzen mit einem Link.
-keywords: Glossar, Begriffe, Ökosystem, AdminUI, Distribution, Dual-Kernel, Fork, Legacy Bridge, Metapaket, Nexus, Packagist, Qbix, Seitenpaket, Zeta Components, DXP, glossary, terms, ecosystem, distribution, dual kernel, fork, legacy bridge, meta package, site package
+keywords: Glossar, Begriffe, Ökosystem, AdminUI, Distribution, Dual-Kernel, Fork, Legacy Bridge, Metapaket, Nexus, Packagist, Qbix, Seitenpaket, Zeta Components, expcomponents, DXP, glossary, terms, ecosystem, distribution, dual kernel, fork, legacy bridge, meta package, site package
 type: help
 ---
 # Glossar zum Ökosystem
@@ -19,6 +19,7 @@ type: help
 | **DXP** | Digital Experience Platform; Exponential Platform DXP ist die reine Symfony-Variante | [Exponential Platform DXP](produkte/platform-dxp.md) |
 | **Ökosystem** | Alle Aspekte der Welt von Exponential innerhalb des PHP-Stacks: ihre Anwender und Ersteller | [Was das Ökosystem ist](was-das-oekosystem-ist.md) |
 | **Engine** | Der Server, den Velocity antreibt: Qbix, FrankenPHP oder der eingebaute Server von PHP | [Webserver und Engines](php-stack/webserver-und-engines.md) |
+| **expcomponents** | Exponential Components: der Fork der Zeta Components (`se7enxweb/expcomponents-*`, Apache 2.0), den der Kernel seit 6.0.15 verlangt | [expcomponents](../../funktionen/6.0/expcomponents.md) |
 | **Erweiterung** | Ein Paket, das dem Kernel Funktionen, Designs oder Einstellungen hinzufügt | [Die mitgelieferten Erweiterungen](pakete/die-mitgelieferten-erweiterungen.md) |
 | **Fork** | Eine gepflegte Kopie eines anderen Projekts, hier meist, um es auf aktuellem PHP lauffähig zu halten | [Upstream-Projekte und Forks](php-stack/upstream-projekte-und-forks.md) |
 | **Kernel** | Exponential 6 selbst, `se7enxweb/exponential` | [Der Kernel von Exponential 6](produkte/exponential-6-kernel.md) |
@@ -33,7 +34,7 @@ type: help
 | **se7enxweb** | Die GitHub-Organisation und der Packagist-Anbieter von 7x | [7x im Ökosystem](organisationen/7x-im-oekosystem.md) |
 | **Seitenpaket** | Eine fertige Website, die der Einrichtungsassistent installiert (`.ezpkg`) | [Seitenpakete und der Paketserver](pakete/seitenpakete-und-der-paketserver.md) |
 | **Velocity** | Exponential Velocity, der Anwendungsserver | [Exponential Velocity](produkte/exponential-velocity.md) |
-| **Zeta Components** | Die PHP-Bibliotheken, die der Kernel verwendet | [Upstream-Projekte und Forks](php-stack/upstream-projekte-und-forks.md) |
+| **Zeta Components** | Die PHP-Bibliotheken, die der Kernel bis 6.0.14 verwendete (früher eZ Components); seit 6.0.15 als **expcomponents** geforkt | [Upstream-Projekte und Forks](php-stack/upstream-projekte-und-forks.md) |
 
 ## Verwandte Seiten
 

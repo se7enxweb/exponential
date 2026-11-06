@@ -103,7 +103,7 @@ their `SystemCheck` step. A failure stops the install and prints the cause and t
 | `allow_url_fopen` | on |
 | `php_session`, `file_upload`, `timezone` | sessions, uploads, a time zone |
 | `zlib_extension`, `dom_extension`, `iconv_extension`, `mbstring_extension`, `intl_extension`, `xsl_extension` | the extension is loaded |
-| `ezcversion` | the Zeta Components are installed (`composer install` ran) |
+| `ezcversion` | the kernel's libraries are installed (`composer install` ran): the expcomponents since 6.0.15, the Zeta Components before |
 
 > **Warning**
 > The directory test runs as the user that runs the check: in the browser the web server's user, on the command line

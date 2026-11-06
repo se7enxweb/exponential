@@ -320,7 +320,7 @@ beschrieben. Die Betriebssysteme sind unter [Unterstützte Betriebssysteme](betr
 |---|---|---|
 | Sprache | PHP 8.0 bis 8.5 (die `php`-Anforderung in `composer.json` erlaubt bis 8.8); Velocity läuft ab seinem Release 0.0.4.54 ebenfalls unter 8.0 bis 8.5 | README, „What version of PHP is required“; [composer.json](https://github.com/se7enxweb/exponential/blob/main/composer.json) |
 | Pakete | Composer: Der Kernel `se7enxweb/exponential` und seine Erweiterungen sind Composer-Pakete auf Packagist | README, „Important Notice“ |
-| Bibliotheken | Zeta Components (Archive, Cache, Datenbank, Feeds, Bildkonvertierung und mehr) | composer.json |
+| Bibliotheken | expcomponents, der Fork der Zeta Components, den 7x und die Exponential Foundation seit 6.0.15 pflegen (Archive, Cache, Datenbank, Feeds, Bildkonvertierung, Mail, WebDAV und mehr; Apache 2.0); davor die Zeta Components | composer.json; [expcomponents](../funktionen/6.0/expcomponents.md) |
 | Installer | `se7enxweb/exponential-legacy-installer`, ein Composer-Plugin, das Erweiterungen in `extension/` ablegt | [Ökosystem](../geschichte/oekosystem.md) |
 | Webserver | Jeder Server, der URLs umschreibt, oder Exponential Velocity | README |
 | Datenbank | SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | README |

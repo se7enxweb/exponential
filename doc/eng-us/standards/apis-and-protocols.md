@@ -32,7 +32,7 @@ says what the standard is, what Exponential implements, where the code, settings
 | RSS export and import | RSS 1.0, RSS 2.0 (export); 0.91 to 2.0 (import) | **Complies** | `kernel/classes/ezrssexport.php`, `ezrssimport.php` |
 | Atom | RFC 4287 | **Partly complies** | export only (`rss_version` `ATOM`); no Atom import |
 | Sitemaps | sitemaps.org 0.9 | **Complies** | `bcgooglesitemaps` extension writes `http://www.sitemaps.org/schemas/sitemap/0.9` |
-| SMTP mail transport | RFC 5321 | **Complies** | `lib/ezutils/classes/ezsmtptransport.php` on `zetacomponents/mail`; STARTTLS available |
+| SMTP mail transport | RFC 5321 | **Complies** | `lib/ezutils/classes/ezsmtptransport.php` on `se7enxweb/expcomponents-mail` (the fork of `zetacomponents/mail`, since 6.0.15); STARTTLS available |
 | One-click unsubscribe | RFC 8058 | **Complies** | `kernel/classes/mailpreferences/expmailgate.php` adds `List-Unsubscribe` and `List-Unsubscribe-Post` |
 | LDAP authentication | RFC 4511 (LDAPv3) | **Partly complies** | `kernel/classes/datatypes/ezuser/ezldapuser.php`; default `LDAPVersion=2`; no StartTLS |
 | Webhooks (outgoing, signed) | no formal standard | **Complies** with its own documented contract | `kernel/classes/audit/sinks/expauditwebhooksink.php`, HMAC-SHA-256 signature |
@@ -139,7 +139,7 @@ RFC 9110, June 2022) defines methods and status codes.
 ### How Exponential complies
 
 - The REST framework is in the kernel (`kernel/private/rest/classes/`: router, dispatcher, auth styles, views) on
-  `zetacomponents/mvc-tools`. The content API is the `ezprestapi` extension (required as `~1.2.6`), routes
+  `se7enxweb/expcomponents-mvc-tools` (the fork of `zetacomponents/mvc-tools`, since 6.0.15). The content API is the `ezprestapi` extension (required as `~1.2.6`), routes
   `/api/ezp/v1/...` and `/api/ezp/v2/...`; reads answer at both versions, writes (create, update, delete) at v2 only.
   Every route checks the user's content policies (`expRestContentPermission`).
 - Status codes: `ezpHttpResponseCodes` (`kernel/private/rest/classes/http_response_codes.php`) names 200, 400, 401,
@@ -204,7 +204,8 @@ PROPFIND, PROPPATCH, MKCOL, COPY, MOVE, LOCK and UNLOCK. Class 1 is the basic se
 ### How Exponential complies
 
 - Entry point `index_webdav.php` at the installation root (`webdav.php` until 6.0.14, now a forwarding shim, see
-  [the change](../bc/6.0/webdav-entry-script-index-webdav.md)); it uses the Zeta Components WebDAV server
+  [the change](../bc/6.0/webdav-entry-script-index-webdav.md)); it uses the WebDAV server of the expcomponents, the fork of
+  the Zeta Components
   (`se7enxweb/expcomponents-webdav ~1.2.2` in `composer.json`) with the content backend
   `kernel/private/classes/webdav/ezwebdavcontentbackend.php` and the authentication backend
   `ezwebdavcontentbackendauth.php` (basic authentication against Exponential users).
@@ -269,7 +270,8 @@ Atom Syndication Format, RFC 4287 (December 2005). OPML 2.0 lists feeds.
 ### How Exponential complies
 
 - **Export** (`kernel/classes/ezrssexport.php`, `rssXmlContent()`): RSS 1.0 (`rss1`), RSS 2.0 (`rss2`) and Atom
-  (`atom`) through the Zeta Components Feed library (`zetacomponents/feed ~1.4.6`); Apple Podcasts feeds
+  (`atom`) through the feed library of the expcomponents (`se7enxweb/expcomponents-feed`, the fork of
+  `zetacomponents/feed` 1.4.6, since 6.0.15); Apple Podcasts feeds
   (`ITUNES`) and OPML are written by Exponential itself. Feeds are served at `/rss/feed/<address>`.
 - **Import** (`kernel/classes/ezrssimport.php`, cronjob part `kernel/private/classes/cronjobs/rssimport.php`): RSS
   0.91, 0.92, 1.0 and 2.0, read with external entities refused and the network switched off (`LIBXML_NONET`).
@@ -321,8 +323,9 @@ The Simple Mail Transfer Protocol, IETF RFC 5321 (October 2008). STARTTLS for SM
   (`TransportAlias[smtp]=eZSMTPTransport`). SMTP settings: `TransportServer`, `TransportPort=25`,
   `TransportConnectionType` (empty, `ssl`, `tls` and older values), `TransportUser`, `TransportPassword`.
 - `eZSMTPTransport` (`lib/ezutils/classes/ezsmtptransport.php`) sends through `ezcMailSmtpTransport` from
-  `zetacomponents/mail ~1.10.1`. In that library `tls` means STARTTLS: it requires the server to announce `STARTTLS`
-  (`vendor/zetacomponents/mail/src/transports/smtp/smtp_transport.php`).
+  `se7enxweb/expcomponents-mail` (the fork of `zetacomponents/mail` 1.10.1, since 6.0.15). In that library `tls` means
+  STARTTLS: it requires the server to announce `STARTTLS`
+  (`vendor/se7enxweb/expcomponents-mail/src/transports/smtp/smtp_transport.php`; `vendor/zetacomponents/mail/...` before).
 - RFC 8058: mail preferences add `List-Unsubscribe` and `List-Unsubscribe-Post` per recipient
   (`kernel/classes/mailpreferences/expmailgate.php`, `expmailtoken.php`); see
   [Mail preferences compliance](../specifications/6.0/mail-preferences-compliance.md).

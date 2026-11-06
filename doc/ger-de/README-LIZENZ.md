@@ -90,3 +90,14 @@ Foundation zuerst genannt: „Exponential Copyright © 1998-2026 Exponential Fou
 „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ Wer es hält und warum, was die
 GPL Ihnen erlaubt, welche Hinweise Dritter bleiben und wie der Hinweis in neue Dateien und Erweiterungen kommt:
 [Urheberrecht und Copyleft](hilfe/urheberrecht-und-copyleft.md).
+
+## Die Lizenz der Bibliotheken
+
+Diese Dokumentation (GNU FDL 1.3 oder später) und der Kernel (GNU GPL Version 2 oder später) sind nicht die einzigen
+Lizenzen in einer Installation. Die Bibliotheken des Kernels, die **expcomponents** (`se7enxweb/expcomponents-*`, seit
+6.0.15 der Fork der Zeta Components durch Exponential, die als eZ Components begannen), stehen unter der **Apache
+License 2.0** und behalten in `vendor/` ihre eigenen Lizenzdateien und Hinweise. Seiten dieser Dokumentation, die diese
+Bibliotheken zitieren oder beschreiben, ändern ihre Lizenz nicht. Was der Fork ist und wie Apache 2.0 und das „GPL
+Version 2 oder später“ des Kernels zusammenpassen: [Exponential Components](funktionen/6.0/expcomponents.md#die-lizenz);
+was ein Bündel aufführen muss:
+[Komponenten Dritter und ihre Lizenzen](hilfe/buendler/komponenten-dritter-und-ihre-lizenzen.md).

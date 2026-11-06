@@ -114,6 +114,22 @@ Schreiben Sie eine „Brücken“-Erweiterung für eine externe Bibliothek, bitt
 ein Repository des Projekts zu kopieren; sagen Sie den Benutzern stattdessen, wie sie sie installieren (wo möglich
 mit Composer), und eröffnen Sie zuerst ein Issue, wenn Sie meinen, dass sie wirklich mitgeliefert werden muss.
 
+### Die eigenen Bibliotheken des Kernels stehen unter der Apache License 2.0. Wie passt das?
+
+Die Bibliotheken, auf denen der Kernel aufbaut, die **expcomponents** (seit 6.0.15 der Fork der Zeta Components durch
+Exponential, `se7enxweb/expcomponents-*`), stehen unter der Apache License 2.0, wie zuvor die Zeta Components. Die
+Free Software Foundation hält Apache 2.0 für kompatibel mit GPL Version 3 und für inkompatibel mit *ausschließlich*
+GPL Version 2. Die Lizenz von Exponential, GPL Version 2 **oder jede spätere Version**, erlaubt, die Kombination unter
+GPL Version 3 zu verbreiten; Kernel und Bibliotheken können also zusammen ausgeliefert werden. Der Fork hat daran
+nichts geändert: Für die Ursprungsbibliotheken galt dasselbe. Zwei Folgen:
+
+- die Bibliotheken behalten ihre eigene Lizenz und ihre Hinweise (`LICENSE.txt` jedes Pakets); ein Bündel führt sie
+  als Komponenten Dritter auf ([Komponenten Dritter und ihre Lizenzen](../buendler/komponenten-dritter-und-ihre-lizenzen.md));
+- eine Erweiterung unter *ausschließlich* GPL Version 2, die zusammen mit Code unter Apache 2.0 ausgeliefert wird, ist
+  eine Kombination, die man vermeiden sollte; lizenzieren Sie sie „oder später“.
+
+Das ist keine Rechtsberatung. Der Fork und seine Lizenz: [Exponential Components](../../funktionen/6.0/expcomponents.md#die-lizenz).
+
 ### Darf ich Code ausschließlich unter GPL Version 3 oder ausschließlich unter GPL Version 2 beitragen?
 
 Ihre eigene Arbeit dürfen Sie unter jeder Lizenz veröffentlichen, die mit der GPL 2 oder später kompatibel ist. Code,

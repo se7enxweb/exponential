@@ -4,7 +4,7 @@ audience: ecosystem, community, developer, partner
 category: ecosystem
 order: 7
 summary: The words of the Exponential ecosystem - from AdminUI, CMF and distribution to dual kernel, fork, legacy bridge, meta package, Nexus, Packagist, Qbix, site package and Zeta Components - each in one or two sentences with a link.
-keywords: glossary, terms, ecosystem, AdminUI, distribution, dual kernel, fork, legacy bridge, meta package, Nexus, Packagist, Qbix, site package, Zeta Components, DXP
+keywords: glossary, terms, ecosystem, AdminUI, distribution, dual kernel, fork, legacy bridge, meta package, Nexus, Packagist, Qbix, site package, Zeta Components, expcomponents, DXP
 type: help
 ---
 # Ecosystem glossary
@@ -19,6 +19,7 @@ type: help
 | **DXP** | Digital Experience Platform; Exponential Platform DXP is the Symfony-only one | [Exponential Platform DXP](products/platform-dxp.md) |
 | **Ecosystem** | All aspects of the Exponential world within the PHP stack: its users and creators | [What the ecosystem is](what-the-ecosystem-is.md) |
 | **Engine** | The server Velocity drives: Qbix, FrankenPHP or PHP's built-in server | [Web servers and engines](php-stack/web-servers-and-engines.md) |
+| **expcomponents** | Exponential Components: the fork of the Zeta Components (`se7enxweb/expcomponents-*`, Apache 2.0) that the kernel requires since 6.0.15 | [expcomponents](../../features/6.0/expcomponents.md) |
 | **Extension** | A package that adds features, designs or settings to the kernel | [The bundled extensions](packages/the-bundled-extensions.md) |
 | **Fork** | A maintained copy of another project, here usually to keep it running on current PHP | [Upstream projects and forks](php-stack/upstream-projects-and-forks.md) |
 | **Kernel** | Exponential 6 itself, `se7enxweb/exponential` | [The Exponential 6 kernel](products/exponential-6-kernel.md) |
@@ -33,7 +34,7 @@ type: help
 | **se7enxweb** | The GitHub organization and Packagist vendor of 7x | [7x in the ecosystem](organizations/7x-in-the-ecosystem.md) |
 | **Site package** | A ready-made site installed by the setup wizard (`.ezpkg`) | [Site packages and the package server](packages/site-packages-and-the-package-server.md) |
 | **Velocity** | Exponential Velocity, the application server | [Exponential Velocity](products/exponential-velocity.md) |
-| **Zeta Components** | The PHP libraries the kernel uses | [Upstream projects and forks](php-stack/upstream-projects-and-forks.md) |
+| **Zeta Components** | The PHP libraries the kernel used up to 6.0.14 (earlier eZ Components); since 6.0.15 forked as **expcomponents** | [Upstream projects and forks](php-stack/upstream-projects-and-forks.md) |
 
 ## Related pages
 

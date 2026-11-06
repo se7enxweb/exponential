@@ -314,7 +314,7 @@ or later".
 |---|---|---|
 | Language | PHP 8.0 to 8.5 (the `php` requirement in `composer.json` allows up to 8.8); Velocity runs on 8.0 to 8.5 too, from its release 0.0.4.54 | README, "What version of PHP is required"; [composer.json](https://github.com/se7enxweb/exponential/blob/main/composer.json) |
 | Packages | Composer: the kernel `se7enxweb/exponential` and its extensions are Composer packages on Packagist | README, "Important Notice" |
-| Libraries | Zeta Components (archive, cache, database, feed, image conversion and more) | composer.json |
+| Libraries | expcomponents, the fork of the Zeta Components that 7x and the Exponential Foundation maintain since 6.0.15 (archive, cache, database, feed, image conversion, mail, WebDAV and more; Apache 2.0); Zeta Components before | composer.json; [expcomponents](../features/6.0/expcomponents.md) |
 | Installer | `se7enxweb/exponential-legacy-installer`, a Composer plugin that places extensions in `extension/` | [Ecosystem](../history/ecosystem.md) |
 | Web server | Any server that rewrites URLs, or Exponential Velocity | README |
 | Database | SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | README |

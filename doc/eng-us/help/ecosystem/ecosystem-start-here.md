@@ -53,7 +53,8 @@ How the three relate: [Partners, community and ecosystem](../community/partners-
 - **Open packages.** Every package is a public GitHub repository under se7enxweb and a Composer package; the kernel's
   `composer.json` required 66 se7enxweb packages, and the vendor had 219 packages on Packagist, both counted on
   18 October 2026 ([Packages](packages/README.md)).
-- **Standing on the PHP stack.** PHP, Composer, Zeta Components, Symfony, Twig, Doctrine, Netgen's projects and more,
+- **Standing on the PHP stack.** PHP, Composer, the Zeta Components (forked as expcomponents since 6.0.15), Symfony,
+  Twig, Doctrine, Netgen's projects and more,
   with fixes given back upstream ([The PHP stack](php-stack/README.md)).
 - **Two organizations and many companies.** 7x leads development; the nonprofit Exponential Foundation operates the
   project; partners, hosts and agencies build businesses on it ([Organizations](organizations/README.md)).
@@ -67,7 +68,7 @@ How the three relate: [Partners, community and ecosystem](../community/partners-
 ```text
                          PHP, Composer, Packagist
                                    |
-   Zeta Components -- Exponential 6 kernel -- Velocity (application server)
+     expcomponents -- Exponential 6 kernel -- Velocity (application server)
                           |        |       \
          66 bundled se7enxweb   Layouts,    admin designs
          extensions             Intelligence, AdminUI

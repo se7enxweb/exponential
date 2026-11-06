@@ -302,7 +302,8 @@ byte for byte identical. The only difference is `OutputFormat=xhtml`, whose `ren
 
 `GET /content/node/<id>/listAtom` answers `500` at v1 and v2, before and after this change. Two things are missing:
 the route's URL generation, and the feed view handler of the Zeta Components MVC feed tie-in
-(`ezcMvcFeedViewHandler`), which the distribution does not install. Use the `list` route, or the site's RSS export,
+(`ezcMvcFeedViewHandler`), a package the distribution does not install and that is not among the
+[expcomponents](../features/6.0/expcomponents.md) forks. Use the `list` route, or the site's RSS export,
 until it is fixed.
 
 **Demo mode.** On a public demo (environment variable `EXP_DEMO_MODE=1`) the web services refuse to change or reset the password of an administrator: `expaccount.reset`, `expaccount.changePassword` and `expuser.setPassword` answer HTTP 403 with the reason, and `expaccount.forgotRequest` sends no key and gives the same answer as for any address. [Demo mode](../bc/6.0/demo-mode.md).

@@ -50,7 +50,8 @@ Exponential 6.0 is "the same legacy kernel, carried forward" ([14.1](../../../in
 ## What changes
 
 From the same section of chapter 14: PHP 5 to PHP 8 ("your own PHP code is the largest piece of work"), eZ Components
-replaced by Zeta Components installed by Composer, the cluster handlers that stored files in the database, YUI (gone),
+replaced by Zeta Components installed by Composer (since 6.0.15 their fork, the
+[expcomponents](../../../features/6.0/expcomponents.md)), the cluster handlers that stored files in the database, YUI (gone),
 jQuery (4.0.0), the online editor, several rewrite rules and a stricter security baseline.
 
 For a 5.x site, the move is "an extraction rather than a rewrite": the legacy part is taken out of the Symfony

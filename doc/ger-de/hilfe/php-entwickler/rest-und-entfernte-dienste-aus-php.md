@@ -35,7 +35,9 @@ der REST-Schicht etwas hinzufügen; die Sicht der Verbraucher ist
 ## Der REST-Kernel
 
 `index_rest.php` führt den REST-Kernel in `kernel/private/rest/` aus (`ezpkernelrest.php`, der Router, die
-MVC-Konfiguration, Renderer, OAuth). Er baut auf den MVC-Werkzeugen der Zeta Components (`zetacomponents/mvc-tools`)
+MVC-Konfiguration, Renderer, OAuth). Er baut auf den MVC-Werkzeugen der expcomponents
+(`se7enxweb/expcomponents-mvc-tools`, seit 6.0.15 der Fork von `zetacomponents/mvc-tools`;
+[expcomponents](../../funktionen/6.0/expcomponents.md))
 auf, sodass ein Provider Routen und Controller in der Form dieses Frameworks liefert. Die Einstellungen stehen in
 `settings/rest.ini`:
 
@@ -77,7 +79,7 @@ beste Referenz für das genaue Format.
 ## Controller
 
 Controller erweitern `ezpRestMvcController` (`kernel/private/rest/classes/controllers/rest_controller.php`), das
-`ezcMvcController` der Zeta Components erweitert. Jede Aktion liest ihre Routenvariablen und die Anfrage, erledigt die
+`ezcMvcController` der MVC-Werkzeuge erweitert (der Klassenname ist im Fork unverändert). Jede Aktion liest ihre Routenvariablen und die Anfrage, erledigt die
 Arbeit über Ihre Dienstklassen und gibt ein Ergebnis zurück, das der View-Controller als JSON rendert. Halten Sie
 Aktionen schlank, wie bei Modul-Views: Derselbe Dienst sollte aus einem Befehl und einem Test aufrufbar sein.
 

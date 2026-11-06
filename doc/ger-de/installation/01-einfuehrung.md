@@ -67,7 +67,7 @@ installation root
 ├── design/                designs: templates, stylesheets, images
 ├── settings/              shipped settings; settings/siteaccess/ and settings/override/ hold yours
 ├── var/                   everything written at run time: cache, logs, storage, the SQLite database
-├── vendor/                the libraries Composer installs (Zeta Components and others)
+├── vendor/                the libraries Composer installs (expcomponents and others)
 ├── bin/                   command line tools; bin/php/console runs all of them
 ├── cronjobs/              the jobs runcronjobs.php runs
 ├── share/                 the database schema and data, locales, translations, the file manifest
@@ -103,8 +103,10 @@ console (Exponential) 6.0.15stable
 selbst aussagt, keine Aussage darüber, dass eine Release mit dieser Nummer veröffentlicht wurde: siehe
 [1.5](#15-konventionen), **Versionen**.
 
-Der Kernel hängt von den **Zeta Components** ab (`zetacomponents/*` in `composer.json`), einer Sammlung von
-PHP-Bibliotheken für Caching, Konfiguration, Mail, Archive, Bildkonvertierung und mehr. Ihretwegen ist Composer
+Der Kernel hängt von den **expcomponents** ab (`se7enxweb/expcomponents-*` in `composer.json`), einer Sammlung von
+PHP-Bibliotheken für Caching, Konfiguration, Mail, Archive, Bildkonvertierung und mehr. Sie sind der Fork der Zeta
+Components (`zetacomponents/*`, die der Kernel bis 6.0.14 verlangte) durch Exponential, unter derselben Apache License
+2.0 und mit denselben `ezc*`-Klassennamen ([Exponential Components](../funktionen/6.0/expcomponents.md)). Ihretwegen ist Composer
 erforderlich: Ohne `vendor/` kann der Kernel nicht starten, und jede Seite und jeder Befehl schlägt fehl, bevor er
 etwas Sinnvolles tut (siehe [Fehlerbehebung](12-fehlerbehebung.md)).
 
@@ -420,7 +422,8 @@ enthält jeden Begriff der Dokumentation.
 | PHP-FPM | Der Prozessmanager von PHP, der PHP hinter Apache oder nginx ausliefert. |
 | Composer | Der PHP-Paketmanager, der die Bibliotheken und Extensions installiert, die `composer.json` aufführt. |
 | Packagist | Das Paket-Repository, das Composer standardmäßig liest. |
-| Zeta Components | Die PHP-Bibliotheken (`zetacomponents/*`), auf denen der Kernel aufbaut. |
+| expcomponents | Exponential Components: die PHP-Bibliotheken (`se7enxweb/expcomponents-*`), auf denen der Kernel seit 6.0.15 aufbaut, der Fork der Zeta Components durch Exponential. |
+| Zeta Components | Die PHP-Bibliotheken (`zetacomponents/*`), auf denen der Kernel bis 6.0.14 aufbaute; fortgeführt als expcomponents. |
 | Autoload | Die erzeugten Klassenzuordnungen (`autoload/ezp_kernel.php`, `var/autoload/ezp_extension.php`), die PHP mitteilen, wo jede Klasse liegt. |
 | Cache | Gespeicherte Ergebnisse, die Seiten schneller machen (INI, Template, Inhaltsansicht, Antwort-Cache von Velocity); geleert mit `ezcache.php`. |
 | Wartungsmodus | Die Site beantwortet jede Seite mit einem Hinweis (HTTP 503), während sie installiert oder gewartet wird; aktiv, solange `var/maintenance.json` existiert. |
