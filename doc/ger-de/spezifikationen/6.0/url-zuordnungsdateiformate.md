@@ -15,7 +15,8 @@ gehören nicht zu dieser Seite.
 
 ## Die Zeile
 
-Jedes Format trägt dieselben sechs Spalten:
+Jedes Format trägt dieselben sieben Spalten (`status` kam nach den ersten sechs hinzu; eine Datei ohne sie wird gelesen
+wie zuvor):
 
 | Spalte | Inhalt |
 |---|---|
@@ -25,20 +26,27 @@ Jedes Format trägt dieselben sechs Spalten:
 | `siteaccess` | Optional: der Siteaccess, zu dem die Zuordnung gehört. Buchstaben, Ziffern, `_` und `-`. |
 | `language` | Optional: ein Gebietsschema wie `eng-GB`. |
 | `note` | Optional: freier Text. |
+| `status` | Optional: der Status, mit dem eine Weiterleitung antwortet, `301` oder `308` (dauerhaft) oder `302`, `303`, `307` (vorübergehend). Leer ist der der Art: 301 für `redirect` und `wildcard-forward`, 302 für ihre vorübergehenden Arten. |
 
 ### Arten
 
 | Art | Bedeutung |
 |---|---|
-| (leer) | Automatisch: ein Platzhalter (weiterleitend), wenn `old_url` ein `*` enthält, sonst eine Weiterleitung |
-| `redirect` | Ein globaler URL-Alias, der mit 301 auf das Ziel weiterleitet |
+| (leer) | Automatisch: ein Platzhalter (weiterleitend), wenn `old_url` ein `*` enthält, sonst eine Weiterleitung; vorübergehend, wenn `status` 302, 303 oder 307 ist |
+| `redirect` | Eine dauerhafte Weiterleitung (301, oder 308 in `status`) auf das Ziel |
+| `redirect-temporary` | Eine vorübergehende Weiterleitung (302, oder 303 oder 307 in `status`): Suchmaschinen behalten die alte Adresse |
 | `alias` | Ein globaler URL-Alias ohne Weiterleitung: die Zielseite wird unter der alten Adresse ausgeliefert |
-| `wildcard-forward` | Ein URL-Platzhalter, der weiterleitet |
+| `wildcard-forward` | Ein URL-Platzhalter, der dauerhaft weiterleitet (301) |
+| `wildcard-forward-temporary` | Ein URL-Platzhalter, der vorübergehend weiterleitet (302) |
 | `wildcard-direct` | Ein URL-Platzhalter, der das Ziel ohne Weiterleitung ausliefert |
 
 Eine Art wird in Kleinbuchstaben verglichen, und `_` oder ein Leerzeichen gilt als `-` (`Wildcard_Forward` ist
-`wildcard-forward`). `auto` ist dasselbe wie leer. Jeder andere Wert bleibt, wie er geschrieben ist, und macht die
-Zeile nicht importierbar.
+`wildcard-forward`). `auto` ist dasselbe wie leer; `temporary-redirect` und `redirect-temp` werden als
+`redirect-temporary` gelesen, `wildcard-temporary` als `wildcard-forward-temporary`. Jeder andere Wert bleibt, wie er
+geschrieben ist, und macht die Zeile nicht importierbar. Ein `status`, der der Art widerspricht (`redirect` mit 302)
+oder bei einer Art steht, die nicht weiterleitet, ist ebenfalls ein Problem.
+
+Wo jede Art gespeichert wird, regelt der Import: siehe [URL-Zuordnungen importieren](../../bc/6.0/url-zuordnungen-importieren.md).
 
 ### Normalisierung
 
@@ -102,12 +110,12 @@ Gelesen und geschrieben. Endungen `.csv`, `.tsv` und `.txt`.
   ähnliche) und ihre erste Zelle keine Adresse ist. Ihre Spalten können in beliebiger Reihenfolge stehen; unbekannte
   Spalten werden übergangen. Ohne Kopfzeile stehen die Spalten in der Reihenfolge oben.
 - Leere Zeilen und Zeilen, deren erste Zelle mit `#` beginnt, werden übersprungen. Eine Zeile ohne Kopfzeile mit mehr
-  als sechs gefüllten Spalten ist ein Problem.
+  als sieben gefüllten Spalten ist ein Problem.
 - Geschrieben mit Kopfzeile, CRLF-Zeilenenden, nur bei Bedarf eingefassten Feldern und einer UTF-8-Byte-Order-Mark
   (die Option `bom`, standardmäßig an, damit Excel UTF-8 liest). Eine `.tsv`-Datei wird mit Tabulatoren geschrieben.
 
 ```text
-old_url,new_url,kind,siteaccess,language,note
+old_url,new_url,kind,siteaccess,language,note,status
 /about-us.html,/About,,,,old about page
 https://old-site.com/news/2019/,/News,redirect,site,eng-GB,
 /products/*,/Shop/{1},,,,"catalogue, all pages"
@@ -122,14 +130,14 @@ Ein Array von Objekten mit den kanonischen Schlüsseln. Der erste Eintrag kann d
 sein; ein Objekt `{"schema": "exp-url-map/1", "rows": [...]}` wird ebenfalls gelesen. Ein anderes Schema wird
 abgelehnt. Die anderen Spaltennamen der CSV-Kopfzeile werden als Schlüssel angenommen; Zahlen werden als Text gelesen;
 ein Eintrag, der kein Objekt ist, oder ein Wert, der ein Array ist, ist eine Zeile mit einem Problem. Geschrieben wird
-das Array mit dem Kopf zuerst und allen sechs Schlüsseln in jedem Objekt, eingerückt, Schrägstriche und Unicode nicht
+das Array mit dem Kopf zuerst und allen sieben Schlüsseln in jedem Objekt, eingerückt, Schrägstriche und Unicode nicht
 maskiert.
 
 ```json
 [
     { "schema": "exp-url-map/1" },
-    { "old_url": "/about-us.html", "new_url": "/About", "kind": "", "siteaccess": "", "language": "", "note": "" },
-    { "old_url": "/products/*", "new_url": "/Shop/{1}", "kind": "", "siteaccess": "", "language": "", "note": "" }
+    { "old_url": "/about-us.html", "new_url": "/About", "kind": "", "siteaccess": "", "language": "", "note": "", "status": "" },
+    { "old_url": "/products/*", "new_url": "/Shop/{1}", "kind": "", "siteaccess": "", "language": "", "note": "", "status": "" }
 ]
 ```
 
@@ -151,10 +159,21 @@ und Schreiben von Tabellen mit einer Meldung ab, die das sagt, und CSV und JSON 
 
 ## OpenDocument-Tabelle (.ods)
 
-Nur geschrieben (für LibreOffice Calc). Endung `.ods`. Benötigt die PHP-Erweiterung zip. Ein Blatt „URL map“ mit der
-Kopfzeile in Fettschrift; der Eintrag `mimetype` steht zuerst und unkomprimiert, wie OpenDocument es verlangt;
-Leerzeichen, Tabulatoren und Zeilenumbrüche in einer Zelle werden als OpenDocument-Elemente geschrieben, damit sie
-erhalten bleiben. Um eine in Calc bearbeitete Zuordnung zu importieren, speichern Sie sie als .xlsx oder CSV.
+Gelesen und geschrieben (LibreOffice Calc). Endung `.ods`. Benötigt die PHP-Erweiterung zip.
+
+- Lesen: die erste Tabelle von `content.xml`, mit einer Kopfzeile wie bei CSV. Die Absätze einer Zelle werden mit
+  Zeilenenden verbunden; `text:s` (Leerzeichen), `text:tab` und `text:line-break` werden als die Zeichen gelesen,
+  Spans und Links mit ihrem Text, Anmerkungen entfallen; eine Zelle ohne Absätze ergibt ihren Wert. Wiederholte Zeilen
+  und Spalten werden gelesen, wie LibreOffice sie schreibt: eine leere rückt nur die Position weiter (ein Blatt endet
+  mit einer leeren Zeile, die rund eine Million Mal wiederholt wird), eine mit Text wird höchstens 1.024-mal
+  wiederholt. Kopfzeilengruppen zählen als Zeilen. Ein `content.xml` mit `DOCTYPE` oder über 100 MB und eine
+  OpenDocument-Datei, die keine Tabelle ist, werden abgelehnt.
+- Schreiben: ein Blatt „URL map“ mit der Kopfzeile in Fettschrift; der Eintrag `mimetype` steht zuerst und
+  unkomprimiert, wie OpenDocument es verlangt; Leerzeichen, Tabulatoren und Zeilenumbrüche in einer Zelle werden als
+  OpenDocument-Elemente geschrieben, damit sie erhalten bleiben.
+
+Temporäre Dateien der Tabellenklassen liegen im Cache-Verzeichnis der Installation (`var/<site>/cache/spreadsheet`),
+sonst in `var/tmp`, nie im temporären Verzeichnis des Systems, damit sie auch unter `open_basedir` funktionieren.
 
 ## Apache
 
@@ -165,7 +184,7 @@ Gelesen:
 
 | Direktive | Zeile |
 |---|---|
-| `Redirect [status] /old /new`, `RedirectPermanent`, `RedirectTemp` | Eine Weiterleitung genau dieses Pfads. Apaches `Redirect` erfasst auch die Pfade darunter; für einen Teilbaum verwenden Sie `RedirectMatch` oder eine Platzhalter-Zeile. |
+| `Redirect [status] /old /new`, `RedirectPermanent`, `RedirectTemp` | Wie bei Apache ein Präfix: zwei Zeilen, `/old` als Weiterleitung und der Platzhalter (weiterleitend) `/old/*` -> `/new/{1}` für die Pfade darunter (nur die Weiterleitung, wenn das Ziel eine Abfrage hat) |
 | `RedirectMatch [status] ^/old/(.*)$ /new/$1` | Ein Platzhalter (weiterleitend), wenn der Ausdruck einfach ist (unten) |
 | `RewriteRule ^/?old$ /new [R=301,L]` | Eine Weiterleitung oder mit Gruppen ein Platzhalter (weiterleitend) |
 | `RewriteRule ^/?old/(.*)$ /new/$1 [L]` (ohne `R`) | Eine interne Umschreibung: ein Alias oder ein Platzhalter (direkt) |
@@ -173,16 +192,19 @@ Gelesen:
 | `RewriteCond %{QUERY_STRING} ^id=5$` vor einer Regel | Die Abfrage der alten Adresse |
 | `ServerName` innerhalb von `<VirtualHost>` | Der Host der Zeilen in diesem Block |
 | `RewriteBase /base/` | Die Basis relativer Ziele |
-| `#exp:<kind> <old> <new>` | Eine Zeile dieser Art (von Exponential geschrieben, unten) |
+| `#exp:<kind> <old> <new> [<status>]` | Eine Zeile dieser Art (von Exponential geschrieben, unten) |
 
-Eine Weiterleitung mit 302, 303 oder 307 wird als Weiterleitung mit einer Notiz gelesen („the source answered with
-302; Exponential redirects with 301“). Nicht importierbar, mit dem Grund in der Zeile und der Direktive in ihrer
+Eine Weiterleitung behält ihren Status: 301 und 308 sind dauerhafte Arten, 302, 303 und 307 vorübergehende; ein
+anderer Status als der der Art (301, 302) steht in der Spalte `status`. Eine `RewriteRule` mit `R` ohne Status ist
+302, wie bei Apache.
+
+Nicht importierbar, mit dem Grund in der Zeile und der Direktive in ihrer
 Notiz: `gone`/410 und andere Statuscodes, andere Bedingungen (`%{REQUEST_FILENAME}`, `[OR]`), die Flags `F`, `G`,
 `P`, `C`, `S`, `E`, `CO`, `T`, `H`, `N`, ein negiertes Muster, das Ziel `-`, `%1` und `%{...}` im Ziel. Die Flags
 `L`, `NC`, `QSA`, `QSD`, `NE`, `END` und `PT` ändern die Zeile nicht. Mit `\` fortgesetzte Zeilen werden verbunden.
 Andere Direktiven werden übergangen.
 
-Geschrieben, für einen `<VirtualHost>` oder die `.htaccess` des Dokumentverzeichnisses:
+Geschrieben, für einen `<VirtualHost>` oder die `.htaccess` des Dokumentverzeichnisses (`R=` ist der Status der Zeile):
 
 ```apache
 RewriteEngine On
@@ -217,21 +239,22 @@ Gelesen:
 
 | Direktive | Zeile |
 |---|---|
-| `rewrite ^/old$ /new permanent;` | Eine Weiterleitung (`redirect` ist 302 und erhält die Notiz); mit Gruppen ein Platzhalter (weiterleitend) |
+| `rewrite ^/old$ /new permanent;` | Eine Weiterleitung (`redirect` ist 302, eine vorübergehende); mit Gruppen ein Platzhalter (weiterleitend) |
 | `rewrite ^/old/(.*)$ /new/$1 last;` (`last`, `break`) | Eine interne Umschreibung: ein Alias oder ein Platzhalter (direkt) |
 | `location = /old { return 301 /new; }` | Eine Weiterleitung |
 | `location ~ ^/old/(.*)$ { return 301 /new/$1; }` | Ein Platzhalter (weiterleitend) |
 | `if ($args = "id=5") { return 301 /new; }` innerhalb von `location =` | Eine Weiterleitung der alten Adresse mit dieser Abfrage |
 | `map $uri $new { /old /new; ~^/old/(.*)$ /new/$1; }` | Eine Weiterleitung (oder ein Platzhalter) je Eintrag; auch `$request_uri` und `$document_uri`. Das `return 301 $new;`, das die Zuordnung verwendet, ergibt keine eigene Zeile. |
 | `server_name` in einem `server`-Block | Der Host der Zeilen in diesem Block (der erste Name ohne `*`, `~` oder `$`) |
-| `#exp:<kind> <old> <new>` | Eine Zeile dieser Art |
+| `#exp:<kind> <old> <new> [<status>]` | Eine Zeile dieser Art |
 
 `$scheme://$host` (oder `https://$host`) vor einem Ziel ist derselbe Host und entfällt. Nicht importierbar: ein
 `return` in einer Präfix-Location (`location /old` erfasst jeden Pfad, der mit `/old` beginnt) oder außerhalb einer
 Location, ein `return` mit einem anderen Status (410, 404), ein `rewrite` innerhalb eines `if`, ein `return` innerhalb
 eines `if` mit einer anderen Bedingung, andere Variablen im Ziel, eine `map` von etwas anderem als einem Pfad.
 
-Geschrieben, zum Einbinden in den Server-Block der Website:
+Geschrieben, zum Einbinden in den Server-Block der Website (`return` mit dem Status der Zeile; ein vorübergehender
+Platzhalter ist `rewrite ... redirect;` für 302 und `location ~ ... { return 307 ...; }` für die anderen Status):
 
 ```nginx
 location = /about-us.html {
@@ -284,8 +307,9 @@ maskiert.
 ## Die Wahl des Formats
 
 `expUrlMapFormats` wählt Leser und Schreiber: nach einem ausdrücklichen Formatnamen (`csv`, `json`, `xlsx`, `ods`,
-`apache`, `nginx`), sonst nach der Endung der Datei, sonst nach ihrem Inhalt (ein ZIP-Archiv ist .xlsx, `[` oder `{`
-zuerst ist JSON, Apache- oder nginx-Direktiven, sonst CSV). ODS kann nur geschrieben werden.
+`apache`, `nginx`), sonst nach der Endung der Datei, sonst nach ihrem Inhalt (ein ZIP-Archiv ist .ods, wenn sein erster Eintrag der
+OpenDocument-Tabellen-mimetype ist, sonst .xlsx; `[` oder `{` zuerst ist JSON, Apache- oder nginx-Direktiven, sonst
+CSV).
 
 ```php
 $rows = expUrlMapFormats::readFile( 'old-site.htaccess' );

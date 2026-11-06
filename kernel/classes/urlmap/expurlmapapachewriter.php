@@ -9,7 +9,7 @@
 
 /**
  * Writes the redirects of a URL map as Apache mod_rewrite rules, for a <VirtualHost> or the .htaccess of the document
- * root: one "RewriteRule ^/?old/?$ /new [R=301,L]" per redirect and wildcard (forward), with
+ * root: one "RewriteRule ^/?old/?$ /new [R=301,L]" per redirect and wildcard (forward), R= the row's status, with
  * "RewriteCond %{HTTP_HOST}" for an old address with a host and "RewriteCond %{QUERY_STRING}" for one with a query.
  *
  * Aliases and wildcards (direct) are served by Exponential without a redirect, and a target node:<id> is only known
@@ -26,7 +26,8 @@ class expUrlMapApacheWriter extends expUrlMapWriter
     {
         $out = "# URL map for Apache (mod_rewrite), written by Exponential.\n"
              . "# Place it inside <VirtualHost> or in the .htaccess file of the document root.\n"
-             . "# Redirects answer with 301. Lines \"#exp:alias\" and \"#exp:wildcard-direct\" are internal: Exponential\n"
+             . "# Redirects answer with the status of their row (301 unless it says otherwise).\n"
+             . "# Lines \"#exp:alias\" and \"#exp:wildcard-direct\" are internal: Exponential\n"
              . "# serves the new page at the old address itself, without a redirect, so Apache has nothing to do for them.\n"
              . "RewriteEngine On\n";
         foreach ( $rows as $row )
@@ -43,7 +44,8 @@ class expUrlMapApacheWriter extends expUrlMapWriter
                 $out .= '# ' . $comment . "\n";
             if ( !$row->isForward() || strpos( $row->newUrl(), 'node:' ) === 0 )
             {
-                $out .= '#exp:' . $row->effectiveKind() . ' ' . self::argument( $row->oldUrl() ) . ' ' . self::argument( $row->newUrl() ) . "\n";
+                $out .= '#exp:' . $row->effectiveKind() . ' ' . self::argument( $row->oldUrl() ) . ' ' . self::argument( $row->newUrl() )
+                      . ( $row->status() !== '' ? ' ' . $row->status() : '' ) . "\n";
                 continue;
             }
             if ( $row->oldHost() !== '' )
@@ -54,7 +56,7 @@ class expUrlMapApacheWriter extends expUrlMapWriter
             $target = expUrlMapRegex::fromPlaceholders( self::decoded( $row->newUrl() ), true );
             if ( $row->oldQuery() !== '' && strpos( $target, '?' ) === false )
                 $target .= '?';
-            $out .= 'RewriteRule ' . self::argument( $pattern ) . ' ' . self::argument( $target ) . " [R=301,L]\n";
+            $out .= 'RewriteRule ' . self::argument( $pattern ) . ' ' . self::argument( $target ) . ' [R=' . $row->redirectStatus() . ",L]\n";
         }
         return $out;
     }

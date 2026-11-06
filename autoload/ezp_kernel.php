@@ -1967,6 +1967,7 @@ return array(
       'expUrlMapJsonWriter'                                          => 'kernel/classes/urlmap/expurlmapjsonwriter.php',
       'expUrlMapNginxReader'                                         => 'kernel/classes/urlmap/expurlmapnginxreader.php',
       'expUrlMapNginxWriter'                                         => 'kernel/classes/urlmap/expurlmapnginxwriter.php',
+      'expUrlMapOdsReader'                                           => 'kernel/classes/urlmap/expurlmapodsreader.php',
       'expUrlMapReader'                                              => 'kernel/classes/urlmap/expurlmapreader.php',
       'expUrlMapRegex'                                               => 'kernel/classes/urlmap/expurlmapregex.php',
       'expUrlMapRow'                                                 => 'kernel/classes/urlmap/expurlmaprow.php',

@@ -176,11 +176,11 @@ class expUrlMapRowTest extends PHPUnit\Framework\TestCase
         // no header: canonical positions; an extra filled column is a problem
         $rows = expUrlMapTable::rowsFromTable( array(
             1 => array( '/a', '/b', 'alias' ),
-            2 => array( '/c', '/d', '', '', '', '', 'extra' ),
+            2 => array( '/c', '/d', '', '', '', '', '', 'extra' ),
         ) );
         $this->assertSame( 'alias', $rows[0]->kind() );
         $this->assertTrue( $rows[0]->isImportable() );
-        $this->assertStringContainsString( 'more than 6 columns', implode( ' ', $rows[1]->problems() ) );
+        $this->assertStringContainsString( 'more than 7 columns', implode( ' ', $rows[1]->problems() ) );
 
         // sparse cells (spreadsheets)
         $rows = expUrlMapTable::rowsFromTable( array( 3 => array( 0 => '/a', 5 => 'note' ) ) );

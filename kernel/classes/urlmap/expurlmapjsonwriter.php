@@ -9,7 +9,7 @@
 
 /**
  * Writes JSON: an array whose first entry is the header {"schema": "exp-url-map/1"}, then one object per row with
- * all six canonical keys, pretty-printed, UTF-8 and slashes unescaped, "\n" line ends and a final line end.
+ * all canonical keys, pretty-printed, UTF-8 and slashes unescaped, "\n" line ends and a final line end.
  */
 class expUrlMapJsonWriter extends expUrlMapWriter
 {

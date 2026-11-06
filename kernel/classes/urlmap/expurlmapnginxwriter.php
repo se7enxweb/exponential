@@ -10,8 +10,9 @@
 /**
  * Writes the redirects of a URL map as nginx configuration, for inclusion in the server block of the site: an exact
  * redirect is "location = /old { return 301 /new; }" (rows of the same path with a query each get an
- * "if ($args = ...)" inside it), a wildcard (forward) is "rewrite ^/old/(.*)$ /new/$1 permanent;". Rows whose old
- * address has a host go into a "server { server_name <host>; ... }" block of their own.
+ * "if ($args = ...)" inside it), a wildcard (forward) is "rewrite ^/old/(.*)$ /new/$1 permanent;" ("redirect" for 302,
+ * "location ~ ^/old/(.*)$ { return 307 /new/$1; }" for the other statuses). Each redirect answers with its row's
+ * status. Rows whose old address has a host go into a "server { server_name <host>; ... }" block of their own.
  *
  * Aliases and wildcards (direct) are served by Exponential without a redirect, and a target node:<id> is only known
  * to Exponential, so those are written as "#exp:<kind> <old> <new>" comments, which expUrlMapNginxReader reads back.
@@ -27,7 +28,8 @@ class expUrlMapNginxWriter extends expUrlMapWriter
     {
         $out = "# URL map for nginx, written by Exponential.\n"
              . "# Include it in the server block of the site (the server blocks below are for other host names).\n"
-             . "# Redirects answer with 301. Lines \"#exp:alias\" and \"#exp:wildcard-direct\" are internal: Exponential\n"
+             . "# Redirects answer with the status of their row (301 unless it says otherwise).\n"
+             . "# Lines \"#exp:alias\" and \"#exp:wildcard-direct\" are internal: Exponential\n"
              . "# serves the new page at the old address itself, without a redirect, so nginx has nothing to do for them.\n";
         $byHost = array( '' => array() );
         foreach ( $rows as $row )
@@ -81,7 +83,8 @@ class expUrlMapNginxWriter extends expUrlMapWriter
             {
                 if ( $comment !== '' )
                     $out .= $indent . '# ' . $comment . "\n";
-                $out .= $indent . '#exp:' . $row->effectiveKind() . ' ' . self::word( $row->oldUrl() ) . ' ' . self::word( $row->newUrl() ) . "\n";
+                $out .= $indent . '#exp:' . $row->effectiveKind() . ' ' . self::word( $row->oldUrl() ) . ' ' . self::word( $row->newUrl() )
+                      . ( $row->status() !== '' ? ' ' . $row->status() : '' ) . "\n";
                 continue;
             }
             if ( $row->isWildcard() )
@@ -89,8 +92,12 @@ class expUrlMapNginxWriter extends expUrlMapWriter
                 if ( $comment !== '' )
                     $out .= $indent . '# ' . $comment . "\n";
                 $regex = expUrlMapRegex::fromWildcard( expUrlMapApacheWriter::decoded( $row->oldPath() ), false, false );
-                $out .= $indent . 'rewrite ' . self::word( $regex ) . ' '
-                      . self::word( expUrlMapRegex::fromPlaceholders( $row->newUrl(), false ) . ( $row->oldQuery() !== '' ? '?' : '' ) ) . " permanent;\n";
+                $target = self::word( expUrlMapRegex::fromPlaceholders( $row->newUrl(), false ) . ( $row->oldQuery() !== '' ? '?' : '' ) );
+                $status = $row->redirectStatus();
+                if ( $status === 301 || $status === 302 )
+                    $out .= $indent . 'rewrite ' . self::word( $regex ) . ' ' . $target . ( $status === 301 ? " permanent;\n" : " redirect;\n" );
+                else
+                    $out .= $indent . 'location ~ ' . self::word( $regex ) . " {\n" . $indent . '    return ' . $status . ' ' . $target . ";\n" . $indent . "}\n";
                 continue;
             }
             $plain = null;
@@ -106,9 +113,9 @@ class expUrlMapNginxWriter extends expUrlMapWriter
                     $comments .= $indent . '# ' . $memberComment . "\n";
                 $target = self::word( $memberRow->newUrl() );
                 if ( $memberRow->oldQuery() !== '' )
-                    $conditions .= $indent . '    if ($args = ' . self::word( $memberRow->oldQuery(), true ) . ') { return 301 ' . $target . "; }\n";
+                    $conditions .= $indent . '    if ($args = ' . self::word( $memberRow->oldQuery(), true ) . ') { return ' . $memberRow->redirectStatus() . ' ' . $target . "; }\n";
                 elseif ( $plain === null )
-                    $plain = $indent . '    return 301 ' . $target . ";\n";
+                    $plain = $indent . '    return ' . $memberRow->redirectStatus() . ' ' . $target . ";\n";
                 else
                     $skipped .= $indent . '# not written: a second redirect of ' . expUrlMapApacheWriter::comment( $memberRow->oldUrl() ) . ' to ' . expUrlMapApacheWriter::comment( $memberRow->newUrl() ) . "\n";
             }

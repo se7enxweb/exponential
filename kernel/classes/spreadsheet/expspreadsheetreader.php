@@ -9,15 +9,25 @@
 
 /**
  * Reads the table of the first sheet of an Office Open XML workbook (.xlsx): the cells' text and numbers, from shared
- * strings, inline strings and values. Styles, formulas (their last result is read), merged cells, other sheets and
- * everything else are ignored. Needs the PHP extension zip (ZipArchive); no other library.
+ * strings, inline strings and values; and of the first table of an OpenDocument spreadsheet (.ods): each cell's text
+ * paragraphs (spaces, tabs and line breaks as written), repeated rows and columns. Styles, formulas (their last
+ * result is read), merged cells, other sheets and everything else are ignored. Needs the PHP extension zip
+ * (ZipArchive); no other library.
  *
- * Limits against hostile files: no DOCTYPE in any part, each part at most MAX_PART_BYTES uncompressed.
+ * Limits against hostile files: no DOCTYPE in any part, each part at most MAX_PART_BYTES uncompressed, a repeated
+ * row or column with content repeated at most MAX_REPEAT times (an empty one only moves the position on).
  */
 class expSpreadsheetReader
 {
     /** @var int the largest uncompressed part read */
     const MAX_PART_BYTES = 104857600;
+
+    /** @var int the most times a row or column with content is repeated (.ods table:number-*-repeated) */
+    const MAX_REPEAT = 1024;
+
+    const NS_ODF_OFFICE = 'urn:oasis:names:tc:opendocument:xmlns:office:1.0';
+    const NS_ODF_TABLE = 'urn:oasis:names:tc:opendocument:xmlns:table:1.0';
+    const NS_ODF_TEXT = 'urn:oasis:names:tc:opendocument:xmlns:text:1.0';
 
     const NS_RELATIONSHIPS = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships';
     const NS_PACKAGE_RELATIONSHIPS = 'http://schemas.openxmlformats.org/package/2006/relationships';
@@ -84,6 +94,216 @@ class expSpreadsheetReader
         {
             @unlink( $file );
         }
+    }
+
+    /**
+     * @param string $path an .ods file
+     * @return array as readXlsxFile(): spreadsheet row number (from 1) => column index (from 0) => string
+     * @throws expSpreadsheetException
+     */
+    static function readOdsFile( $path )
+    {
+        self::requireZip();
+        $zip = new ZipArchive();
+        if ( !is_file( $path ) || $zip->open( $path ) !== true )
+            throw new expSpreadsheetException( 'The file is not an .ods spreadsheet (not a ZIP archive)' );
+        try
+        {
+            $mimetype = $zip->getFromName( 'mimetype' );
+            if ( $mimetype !== false && trim( $mimetype ) !== 'application/vnd.oasis.opendocument.spreadsheet' )
+                throw new expSpreadsheetException( 'The file is an OpenDocument file but not a spreadsheet (' . trim( $mimetype ) . ')' );
+            $stat = $zip->statName( 'content.xml' );
+            if ( $stat === false )
+                throw new expSpreadsheetException( 'The file is not an .ods spreadsheet (no content.xml)' );
+            if ( $stat['size'] > self::MAX_PART_BYTES )
+                throw new expSpreadsheetException( 'The part content.xml is larger than ' . self::MAX_PART_BYTES . ' bytes' );
+            $xml = $zip->getFromName( 'content.xml' );
+            if ( $xml === false )
+                throw new expSpreadsheetException( 'The part content.xml cannot be read' );
+        }
+        finally
+        {
+            $zip->close();
+        }
+        return self::odsTable( $xml );
+    }
+
+    /**
+     * @param string $data the bytes of an .ods file
+     * @return array as readOdsFile()
+     * @throws expSpreadsheetException
+     */
+    static function readOdsString( $data )
+    {
+        self::requireZip();
+        $file = expSpreadsheetWriter::temporaryFile();
+        try
+        {
+            file_put_contents( $file, $data );
+            return self::readOdsFile( $file );
+        }
+        finally
+        {
+            @unlink( $file );
+        }
+    }
+
+    /**
+     * The table of the first sheet of an OpenDocument content.xml. Pure.
+     *
+     * @param string $xml
+     * @return array row number (from 1) => column index (from 0) => string
+     * @throws expSpreadsheetException
+     */
+    static function odsTable( $xml )
+    {
+        if ( stripos( $xml, '<!DOCTYPE' ) !== false )
+            throw new expSpreadsheetException( 'The part content.xml has a DOCTYPE, which a spreadsheet never needs' );
+        $document = new DOMDocument();
+        $previous = libxml_use_internal_errors( true );
+        $loaded = $document->loadXML( $xml, LIBXML_NONET | LIBXML_COMPACT | ( defined( 'LIBXML_PARSEHUGE' ) ? LIBXML_PARSEHUGE : 0 ) );
+        libxml_clear_errors();
+        libxml_use_internal_errors( $previous );
+        if ( !$loaded )
+            throw new expSpreadsheetException( 'The part content.xml is not well-formed XML' );
+        $tables = $document->getElementsByTagNameNS( self::NS_ODF_TABLE, 'table' );
+        if ( $tables->length === 0 )
+            return array();
+        $table = array();
+        $rowNumber = 0;
+        foreach ( self::odsRows( $tables->item( 0 ) ) as $row )
+        {
+            $repeat = max( 1, (int)$row->getAttributeNS( self::NS_ODF_TABLE, 'number-rows-repeated' ) );
+            $cells = self::odsCells( $row );
+            if ( !$cells )
+            {
+                $rowNumber += $repeat;
+                continue;
+            }
+            for ( $i = 0; $i < min( $repeat, self::MAX_REPEAT ); $i++ )
+                $table[++$rowNumber] = $cells;
+            if ( $repeat > self::MAX_REPEAT )
+                $rowNumber += $repeat - self::MAX_REPEAT;
+        }
+        return $table;
+    }
+
+    /**
+     * The rows of a table, also those inside table:table-header-rows and table:table-rows groups.
+     *
+     * @param DOMElement $table
+     * @return DOMElement[]
+     */
+    private static function odsRows( DOMElement $table )
+    {
+        $rows = array();
+        foreach ( $table->childNodes as $child )
+        {
+            if ( !$child instanceof DOMElement || $child->namespaceURI !== self::NS_ODF_TABLE )
+                continue;
+            if ( $child->localName === 'table-row' )
+                $rows[] = $child;
+            elseif ( in_array( $child->localName, array( 'table-header-rows', 'table-rows', 'table-row-group' ), true ) )
+                $rows = array_merge( $rows, self::odsRows( $child ) );
+        }
+        return $rows;
+    }
+
+    /**
+     * The cells of a row with text: column index => text.
+     *
+     * @param DOMElement $row
+     * @return string[]
+     */
+    private static function odsCells( DOMElement $row )
+    {
+        $cells = array();
+        $column = 0;
+        foreach ( $row->childNodes as $cell )
+        {
+            if ( !$cell instanceof DOMElement || $cell->namespaceURI !== self::NS_ODF_TABLE
+                 || ( $cell->localName !== 'table-cell' && $cell->localName !== 'covered-table-cell' ) )
+                continue;
+            $repeat = max( 1, (int)$cell->getAttributeNS( self::NS_ODF_TABLE, 'number-columns-repeated' ) );
+            $text = $cell->localName === 'table-cell' ? self::odsCellText( $cell ) : '';
+            if ( $text !== '' )
+            {
+                for ( $i = 0; $i < min( $repeat, self::MAX_REPEAT ); $i++ )
+                    $cells[$column + $i] = $text;
+            }
+            $column += $repeat;
+        }
+        return $cells;
+    }
+
+    /**
+     * The text of a cell: its paragraphs joined by line ends; a cell without paragraphs gives its value.
+     *
+     * @param DOMElement $cell
+     * @return string
+     */
+    private static function odsCellText( DOMElement $cell )
+    {
+        $paragraphs = array();
+        foreach ( $cell->childNodes as $child )
+        {
+            if ( $child instanceof DOMElement && $child->namespaceURI === self::NS_ODF_TEXT && ( $child->localName === 'p' || $child->localName === 'h' ) )
+                $paragraphs[] = self::odfText( $child );
+        }
+        if ( $paragraphs )
+            return implode( "\n", $paragraphs );
+        foreach ( array( 'value', 'string-value', 'date-value', 'time-value', 'boolean-value' ) as $attribute )
+        {
+            if ( $cell->hasAttributeNS( self::NS_ODF_OFFICE, $attribute ) )
+                return self::number( $cell->getAttributeNS( self::NS_ODF_OFFICE, $attribute ) );
+        }
+        return '';
+    }
+
+    /**
+     * The text of an OpenDocument paragraph: text:s as its count of spaces, text:tab as a tab, text:line-break as a
+     * line end, spans and links by their text; notes and annotations are left out.
+     *
+     * @param DOMNode $node
+     * @return string
+     */
+    private static function odfText( DOMNode $node )
+    {
+        $text = '';
+        foreach ( $node->childNodes as $child )
+        {
+            if ( $child instanceof DOMText )
+            {
+                $text .= $child->data;
+                continue;
+            }
+            if ( !$child instanceof DOMElement )
+                continue;
+            if ( $child->namespaceURI === self::NS_ODF_TEXT )
+            {
+                switch ( $child->localName )
+                {
+                    case 's':
+                        $text .= str_repeat( ' ', max( 1, min( 1000, (int)$child->getAttributeNS( self::NS_ODF_TEXT, 'c' ) ) ) );
+                        continue 2;
+                    case 'tab':
+                        $text .= "\t";
+                        continue 2;
+                    case 'line-break':
+                        $text .= "\n";
+                        continue 2;
+                    case 'note':
+                    case 'bookmark':
+                    case 'bookmark-start':
+                    case 'bookmark-end':
+                        continue 2;
+                }
+            }
+            if ( $child->namespaceURI === self::NS_ODF_OFFICE && $child->localName === 'annotation' )
+                continue;
+            $text .= self::odfText( $child );
+        }
+        return $text;
     }
 
     /**

@@ -37,7 +37,7 @@ class expUrlMapCsvJsonTest extends PHPUnit\Framework\TestCase
         $rows = $reader->readFile( __DIR__ . '/fixtures/map.csv' );
         $this->assertCount( 7, $rows );
         $this->assertSame( array( 'old_url' => '/about-us.html', 'new_url' => '/About', 'kind' => '', 'siteaccess' => '',
-                                  'language' => '', 'note' => 'old about page' ), $rows[0]->toArray() );
+                                  'language' => '', 'note' => 'old about page', 'status' => '' ), $rows[0]->toArray() );
         $this->assertSame( 2, $rows[0]->line() );
         $this->assertSame( 'https://old-site.example.com/news/2019', $rows[1]->oldUrl() );
         $this->assertSame( 'eng-GB', $rows[1]->language() );
@@ -122,13 +122,13 @@ class expUrlMapCsvJsonTest extends PHPUnit\Framework\TestCase
             new expUrlMapRow( '/c', '/d', 'alias', 'site', 'eng-GB', "two\nlines" ),
         );
         $writer = new expUrlMapCsvWriter();
-        $this->assertSame( "\xEF\xBB\xBFold_url,new_url,kind,siteaccess,language,note\r\n/a,/b,,,,\"x, \"\"y\"\"\"\r\n"
-                         . "/c,/d,alias,site,eng-GB,\"two\nlines\"\r\n", $writer->writeString( $rows ) );
+        $this->assertSame( "\xEF\xBB\xBFold_url,new_url,kind,siteaccess,language,note,status\r\n/a,/b,,,,\"x, \"\"y\"\"\",\r\n"
+                         . "/c,/d,alias,site,eng-GB,\"two\nlines\",\r\n", $writer->writeString( $rows ) );
         $writer = new expUrlMapCsvWriter( array( 'bom' => false, 'delimiter' => ';' ) );
         $out = $writer->writeString( array( new expUrlMapRow( '/a', '/b', '', '', '', 'a;b' ) ) );
-        $this->assertSame( "old_url;new_url;kind;siteaccess;language;note\r\n/a;/b;;;;\"a;b\"\r\n", $out );
+        $this->assertSame( "old_url;new_url;kind;siteaccess;language;note;status\r\n/a;/b;;;;\"a;b\";\r\n", $out );
         $this->assertSame( "\"  padded\"", expUrlMapCsvWriter::field( '  padded', ',' ) );
-        $this->assertSame( "\xEF\xBB\xBFold_url,new_url,kind,siteaccess,language,note\r\n", ( new expUrlMapCsvWriter() )->writeString( array() ) );
+        $this->assertSame( "\xEF\xBB\xBFold_url,new_url,kind,siteaccess,language,note,status\r\n", ( new expUrlMapCsvWriter() )->writeString( array() ) );
     }
 
     /** UC-06 */

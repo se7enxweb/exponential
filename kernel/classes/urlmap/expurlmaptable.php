@@ -22,6 +22,7 @@ class expUrlMapTable
         'siteaccess' => array( 'siteaccess', 'site', 'sitezugang' ),
         'language' => array( 'language', 'lang', 'locale', 'sprache' ),
         'note' => array( 'note', 'notes', 'comment', 'comments', 'notiz', 'bemerkung', 'kommentar', 'hinweis' ),
+        'status' => array( 'status', 'code', 'statuscode', 'httpstatus', 'redirectstatus', 'statuskode' ),
     );
 
     /**

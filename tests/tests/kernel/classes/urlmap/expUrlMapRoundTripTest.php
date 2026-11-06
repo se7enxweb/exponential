@@ -3,12 +3,12 @@
  * Round trips through every URL map format and the format registry (kernel/classes/urlmap/expurlmapformats.php and
  * every reader and writer). No database; the .xlsx and .ods parts need the PHP extension zip.
  *
- *  RT-01 - Every readable fixture, written by every writer and read back, gives the same rows: CSV, JSON and XLSX
- *          every column; Apache and nginx the old host, path and query, the target and the kind (a rewrite rule has
+ *  RT-01 - Every readable fixture (and rows of every redirect status), written by every writer and read back, gives
+ *          the same rows: CSV, JSON, XLSX and ODS every column; Apache and nginx the old host, path and query, the target, the kind and the status (a rewrite rule has
  *          no scheme, siteaccess, language or note)
  *  RT-02 - Writing what was read back gives the same file again (CSV, JSON, Apache, nginx)
  *  RT-03 - The registry: names, readable and writable formats, detection by extension, by name and by content,
- *          readers and writers by name, a .tsv written with tabs, unknown formats and ODS reading refused
+ *          readers and writers by name, a .tsv written with tabs, unknown formats refused
  *  RT-04 - 10,000 rows through every format in reasonable time, with every row back
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
@@ -43,6 +43,11 @@ class expUrlMapRoundTripTest extends PHPUnit\Framework\TestCase
         );
         if ( class_exists( 'ZipArchive' ) )
             $sources['xlsx'] = expUrlMapFormats::readFile( __DIR__ . '/fixtures/map-libreoffice.xlsx' );
+        // every redirect status, as kinds and in the column status
+        $sources['statuses'] = array( new expUrlMapRow( '/t1', '/n1', 'redirect-temporary' ), new expUrlMapRow( '/t2', '/n2', 'redirect-temporary', '', '', '', 0, '307' ),
+                                        new expUrlMapRow( '/t3', '/n3', 'redirect', '', '', '', 0, '308' ), new expUrlMapRow( '/t4/*', '/n4/{1}', 'wildcard-forward-temporary' ),
+                                        new expUrlMapRow( '/t5/*', '/n5/{1}', 'wildcard-forward-temporary', '', '', '', 0, '307' ),
+                                        new expUrlMapRow( '/t6', 'node:12', 'redirect-temporary', '', '', '', 0, '303' ), new expUrlMapRow( '/t7?a=1', '/n7', 'redirect-temporary' ) );
         foreach ( $sources as $name => $rows )
             $sources[$name] = array_values( array_filter( $rows, function( expUrlMapRow $row ) { return $row->isImportable(); } ) );
         return $sources;
@@ -61,7 +66,7 @@ class expUrlMapRoundTripTest extends PHPUnit\Framework\TestCase
             if ( $full )
                 $out[] = $row->toArray();
             else
-                $out[] = array( $row->oldHost(), $row->oldPath(), $row->oldQuery(), $row->newUrl(), $row->effectiveKind() );
+                $out[] = array( $row->oldHost(), $row->oldPath(), $row->oldQuery(), $row->newUrl(), $row->effectiveKind(), $row->redirectStatus() );
         }
         return $out;
     }
@@ -69,9 +74,9 @@ class expUrlMapRoundTripTest extends PHPUnit\Framework\TestCase
     /** RT-01, RT-02 */
     public function testEveryFormatRoundTrips()
     {
-        $writable = array_values( array_diff( expUrlMapFormats::writable(), array( 'ods' ) ) );
+        $writable = expUrlMapFormats::writable();
         if ( !class_exists( 'ZipArchive' ) )
-            $writable = array_values( array_diff( $writable, array( 'xlsx' ) ) );
+            $writable = array_values( array_diff( $writable, array( 'xlsx', 'ods' ) ) );
         $checked = 0;
         foreach ( $this->sources() as $source => $rows )
         {
@@ -81,7 +86,7 @@ class expUrlMapRoundTripTest extends PHPUnit\Framework\TestCase
                 $writer = expUrlMapFormats::writer( $format );
                 $written = $writer->writeString( $rows );
                 $back = expUrlMapFormats::reader( $format )->readString( $written );
-                $full = $format === 'csv' || $format === 'json' || $format === 'xlsx';
+                $full = in_array( $format, array( 'csv', 'json', 'xlsx', 'ods' ), true );
                 $expected = $this->comparable( $rows, $full );
                 $actual = $this->comparable( $back, $full );
                 if ( $format === 'nginx' )
@@ -97,7 +102,7 @@ class expUrlMapRoundTripTest extends PHPUnit\Framework\TestCase
                 $withoutComments = function( $text ) { return preg_replace( '/^[ \t]*# .*\n/m', '', $text ); };
                 if ( $format === 'csv' || $format === 'json' )
                     $this->assertSame( $written, $writer->writeString( $back ), $source . ' -> ' . $format . ' written again' );
-                elseif ( $format !== 'xlsx' )
+                elseif ( $format !== 'xlsx' && $format !== 'ods' )
                     $this->assertSame( $withoutComments( $written ), $withoutComments( $writer->writeString( $back ) ), $source . ' -> ' . $format . ' written again' );
                 $checked++;
             }
@@ -109,7 +114,7 @@ class expUrlMapRoundTripTest extends PHPUnit\Framework\TestCase
     public function testRegistry()
     {
         $this->assertSame( array( 'csv', 'json', 'xlsx', 'ods', 'apache', 'nginx' ), expUrlMapFormats::names() );
-        $this->assertSame( array( 'csv', 'json', 'xlsx', 'apache', 'nginx' ), expUrlMapFormats::readable() );
+        $this->assertSame( expUrlMapFormats::names(), expUrlMapFormats::readable() );
         $this->assertSame( expUrlMapFormats::names(), expUrlMapFormats::writable() );
 
         $byName = array(
@@ -129,7 +134,8 @@ class expUrlMapRoundTripTest extends PHPUnit\Framework\TestCase
 
         $this->assertInstanceOf( 'expUrlMapNginxReader', expUrlMapFormats::reader( 'NGINX' ) );
         $this->assertInstanceOf( 'expUrlMapSpreadsheetWriter', expUrlMapFormats::writer( 'ods' ) );
-        foreach ( array( function() { expUrlMapFormats::reader( 'ods' ); }, function() { expUrlMapFormats::writer( 'yaml' ); },
+        $this->assertInstanceOf( 'expUrlMapOdsReader', expUrlMapFormats::reader( 'ods' ) );
+        foreach ( array( function() { expUrlMapFormats::reader( 'yaml' ); }, function() { expUrlMapFormats::writer( 'yaml' ); },
                          function() { expUrlMapFormats::writeFile( 'map.unknown', array() ); } ) as $call )
         {
             try

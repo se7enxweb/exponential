@@ -17,7 +17,10 @@
  * - "map $uri $new { /old /new; ~^/old/(.*)$ /new/$1; }" (also $request_uri, $document_uri): each entry a redirect;
  *   the "return 301 $new;" that uses the map gives no row of its own
  * - server_name inside a server block gives the host of the rows in that block
- * - "#exp:<kind> <old> <new>" comments (written by expUrlMapNginxWriter for the mappings a rule cannot express)
+ * - "#exp:<kind> <old> <new> [<status>]" comments (written by expUrlMapNginxWriter for the mappings a rule cannot
+ *   express)
+ *
+ * A redirect keeps its status (301 and 308 permanent, 302, 303 and 307 temporary, as in expUrlMapApacheReader).
  *
  * Everything else that redirects (a return in a prefix location or at the server level, other status codes, other
  * variables, rewrite inside another if) is a row that is not importable, with the reason. Other directives are
@@ -194,7 +197,8 @@ class expUrlMapNginxReader extends expUrlMapReader
                 if ( preg_match( '/^\s*exp:([a-z\-]+)\s+(.*)$/', $node['comment'], $m ) )
                 {
                     $args = expUrlMapApacheReader::tokenize( $m[2] );
-                    $this->rows[] = new expUrlMapRow( isset( $args[0] ) ? $args[0] : '', isset( $args[1] ) ? $args[1] : '', $m[1], '', '', '', $node['line'] );
+                    $this->rows[] = new expUrlMapRow( isset( $args[0] ) ? $args[0] : '', isset( $args[1] ) ? $args[1] : '', $m[1], '', '', '', $node['line'],
+                                                      isset( $args[2] ) ? $args[2] : '' );
                 }
                 continue;
             }
@@ -430,13 +434,11 @@ class expUrlMapNginxReader extends expUrlMapReader
             $this->rows[] = expUrlMapRow::notImportable( $path, $target, $converted['reason'], $line, $text );
             return;
         }
-        if ( $code !== 301 && $code !== 308 )
-            $notes[] = 'the source answered with ' . $code . '; Exponential redirects with 301';
         $old = self::withHost( $context, $path );
         if ( is_string( $context['if'] ) && $context['if'] !== '' )
             $old .= '?' . $context['if'];
-        $kind = strpos( $path, '*' ) !== false ? expUrlMapRow::KIND_WILDCARD_FORWARD : expUrlMapRow::KIND_REDIRECT;
-        $this->rows[] = new expUrlMapRow( $old, $converted['target'], $kind, '', '', implode( '; ', $notes ), $line );
+        $kind = expUrlMapRow::kindForStatus( strpos( $path, '*' ) !== false, $code );
+        $this->rows[] = new expUrlMapRow( $old, $converted['target'], $kind, '', '', implode( '; ', $notes ), $line, expUrlMapRow::statusColumn( $code ) );
     }
 
     /**

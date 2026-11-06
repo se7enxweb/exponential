@@ -13,7 +13,7 @@ use no database. Importing the rows into an installation, the preview and the un
 
 ## The row
 
-Every format carries the same six columns:
+Every format carries the same seven columns (`status` came after the first six; a file without it is read as before):
 
 | Column | Content |
 |---|---|
@@ -23,19 +23,26 @@ Every format carries the same six columns:
 | `siteaccess` | Optional: the siteaccess the mapping belongs to. Letters, digits, `_` and `-`. |
 | `language` | Optional: a locale such as `eng-GB`. |
 | `note` | Optional free text. |
+| `status` | Optional: the status a redirect answers with, `301` or `308` (permanent) or `302`, `303`, `307` (temporary). Empty is the kind's own: 301 for `redirect` and `wildcard-forward`, 302 for their temporary kinds. |
 
 ### Kinds
 
 | Kind | Meaning |
 |---|---|
-| (empty) | Automatic: a wildcard (forward) when `old_url` has a `*`, else a redirect |
-| `redirect` | A global URL alias that redirects with 301 to the target |
+| (empty) | Automatic: a wildcard (forward) when `old_url` has a `*`, else a redirect; temporary when `status` is 302, 303 or 307 |
+| `redirect` | A permanent redirect (301, or 308 in `status`) to the target |
+| `redirect-temporary` | A temporary redirect (302, or 303 or 307 in `status`): search engines keep the old address |
 | `alias` | A global URL alias without a redirect: the target page is served at the old address |
-| `wildcard-forward` | A URL wildcard that redirects |
+| `wildcard-forward` | A URL wildcard that redirects permanently (301) |
+| `wildcard-forward-temporary` | A URL wildcard that redirects temporarily (302) |
 | `wildcard-direct` | A URL wildcard that serves the target without a redirect |
 
 A kind is compared in lower case, and `_` or a space counts as `-` (`Wildcard_Forward` is `wildcard-forward`).
-`auto` is the same as empty. Any other value is kept as written and makes the row not importable.
+`temporary-redirect` and `redirect-temp` are read as `redirect-temporary`, `wildcard-temporary` as
+`wildcard-forward-temporary`. `auto` is the same as empty. Any other value is kept as written and makes the row not importable. A `status` that
+contradicts the kind (`redirect` with 302) or is given for a kind that does not redirect is a problem too.
+
+Where each kind is stored is the importer's business: see [URL map import](../../bc/6.0/url-map-import.md).
 
 ### Normalization
 
@@ -92,13 +99,13 @@ Read and written. Extensions `.csv`, `.tsv` and `.txt`.
   `new`, `to`, `target`, `destination`, and the German `Alte URL`, `Quelle`, `Neue URL`, `Ziel` and the like) and
   its first cell is not an address. Its columns may be in any order; unknown columns are ignored. Without a header
   the columns are in the order above.
-- Blank lines and lines whose first cell starts with `#` are skipped. A row without a header that has more than six
+- Blank lines and lines whose first cell starts with `#` are skipped. A row without a header that has more than seven
   filled columns is a problem.
 - Written with a header, CRLF line ends, fields quoted only when they need it, and a UTF-8 byte order mark (the
   option `bom`, on by default, so that Excel reads UTF-8). A `.tsv` file is written with tabs.
 
 ```text
-old_url,new_url,kind,siteaccess,language,note
+old_url,new_url,kind,siteaccess,language,note,status
 /about-us.html,/About,,,,old about page
 https://old-site.com/news/2019/,/News,redirect,site,eng-GB,
 /products/*,/Shop/{1},,,,"catalogue, all pages"
@@ -112,14 +119,14 @@ Read and written. Extension `.json`.
 An array of objects with the canonical keys. The first entry may be the header `{"schema": "exp-url-map/1"}`; an
 object `{"schema": "exp-url-map/1", "rows": [...]}` is read as well. Another schema is refused. The other column
 names of CSV headers are accepted as keys; numbers are read as text; an entry that is not an object, or a value that
-is an array, is a row with a problem. Written as the array with the header first and all six keys in every object,
+is an array, is a row with a problem. Written as the array with the header first and all seven keys in every object,
 pretty-printed, slashes and Unicode not escaped.
 
 ```json
 [
     { "schema": "exp-url-map/1" },
-    { "old_url": "/about-us.html", "new_url": "/About", "kind": "", "siteaccess": "", "language": "", "note": "" },
-    { "old_url": "/products/*", "new_url": "/Shop/{1}", "kind": "", "siteaccess": "", "language": "", "note": "" }
+    { "old_url": "/about-us.html", "new_url": "/About", "kind": "", "siteaccess": "", "language": "", "note": "", "status": "" },
+    { "old_url": "/products/*", "new_url": "/Shop/{1}", "kind": "", "siteaccess": "", "language": "", "note": "", "status": "" }
 ]
 ```
 
@@ -140,10 +147,21 @@ spreadsheets stops with a message that says so, and CSV and JSON still work.
 
 ## OpenDocument spreadsheet (.ods)
 
-Written only (for LibreOffice Calc). Extension `.ods`. Needs the PHP extension zip. One sheet "URL map" with the
-header row in bold; the `mimetype` entry comes first and uncompressed, as OpenDocument requires; spaces, tabs and
-line breaks in a cell are written as OpenDocument elements so that they survive. To import a map edited in Calc,
-save it as .xlsx or CSV.
+Read and written (LibreOffice Calc). Extension `.ods`. Needs the PHP extension zip.
+
+- Reading: the first table of `content.xml`, with a header row as in CSV. A cell's paragraphs are joined with line
+  ends; `text:s` (spaces), `text:tab` and `text:line-break` are read as the characters, spans and links by their text,
+  annotations are left out; a cell without paragraphs gives its value. Repeated rows and columns are read as
+  LibreOffice writes them: an empty one only moves the position on (a sheet ends with an empty row repeated about a
+  million times), one with text is repeated at most 1,024 times. Header row groups count as rows. A `content.xml` with
+  a `DOCTYPE` or over 100 MB, and an OpenDocument file that is not a spreadsheet, are refused.
+- Writing: one sheet "URL map" with the header row in bold; the `mimetype` entry comes first and uncompressed, as
+  OpenDocument requires; spaces, tabs and line breaks in a cell are written as OpenDocument elements so that they
+  survive.
+
+Temporary files of the spreadsheet classes go to the cache directory of the installation
+(`var/<site>/cache/spreadsheet`), else `var/tmp`, never the system's temporary directory, so they work under
+`open_basedir`.
 
 ## Apache
 
@@ -154,7 +172,7 @@ Read:
 
 | Directive | Row |
 |---|---|
-| `Redirect [status] /old /new`, `RedirectPermanent`, `RedirectTemp` | A redirect of that one path. Apache's `Redirect` also matches the paths below it; for a subtree, use `RedirectMatch` or a wildcard row. |
+| `Redirect [status] /old /new`, `RedirectPermanent`, `RedirectTemp` | As Apache does, a prefix: two rows, `/old` as a redirect and the wildcard (forward) `/old/*` -> `/new/{1}` for the paths below it (only the redirect when the target has a query) |
 | `RedirectMatch [status] ^/old/(.*)$ /new/$1` | A wildcard (forward) when the expression is simple (below) |
 | `RewriteRule ^/?old$ /new [R=301,L]` | A redirect, or a wildcard (forward) with groups |
 | `RewriteRule ^/?old/(.*)$ /new/$1 [L]` (no `R`) | An internal rewrite: an alias, or a wildcard (direct) |
@@ -162,15 +180,16 @@ Read:
 | `RewriteCond %{QUERY_STRING} ^id=5$` before a rule | The query of the old address |
 | `ServerName` inside `<VirtualHost>` | The host of the rows in that block |
 | `RewriteBase /base/` | The base of relative targets |
-| `#exp:<kind> <old> <new>` | A row of that kind (written by Exponential, below) |
+| `#exp:<kind> <old> <new> [<status>]` | A row of that kind (written by Exponential, below) |
 
-A redirect with 302, 303 or 307 is read as a redirect with a note ("the source answered with 302; Exponential
-redirects with 301"). Not importable, with the reason in the row and the directive in its note: `gone`/410 and other
-status codes, other conditions (`%{REQUEST_FILENAME}`, `[OR]`), the flags `F`, `G`, `P`, `C`, `S`, `E`, `CO`, `T`,
+A redirect keeps its status: 301 and 308 are permanent kinds, 302, 303 and 307 temporary ones; a status other than
+the kind's own (301, 302) goes in the column `status`. A `RewriteRule` with `R` and no status is 302, as in Apache.
+
+Not importable, with the reason in the row and the directive in its note: `gone`/410 and other status codes, other conditions (`%{REQUEST_FILENAME}`, `[OR]`), the flags `F`, `G`, `P`, `C`, `S`, `E`, `CO`, `T`,
 `H`, `N`, a negated pattern, the target `-`, `%1` and `%{...}` in the target. The flags `L`, `NC`, `QSA`, `QSD`,
 `NE`, `END` and `PT` do not change the row. Lines continued with `\` are joined. Other directives are ignored.
 
-Written, for a `<VirtualHost>` or the `.htaccess` of the document root:
+Written, for a `<VirtualHost>` or the `.htaccess` of the document root (`R=` is the row's status):
 
 ```apache
 RewriteEngine On
@@ -204,21 +223,22 @@ Read:
 
 | Directive | Row |
 |---|---|
-| `rewrite ^/old$ /new permanent;` | A redirect (`redirect` is 302 and gets the note); with groups a wildcard (forward) |
+| `rewrite ^/old$ /new permanent;` | A redirect (`redirect` is 302, a temporary one); with groups a wildcard (forward) |
 | `rewrite ^/old/(.*)$ /new/$1 last;` (`last`, `break`) | An internal rewrite: an alias or a wildcard (direct) |
 | `location = /old { return 301 /new; }` | A redirect |
 | `location ~ ^/old/(.*)$ { return 301 /new/$1; }` | A wildcard (forward) |
 | `if ($args = "id=5") { return 301 /new; }` inside `location =` | A redirect of the old address with that query |
 | `map $uri $new { /old /new; ~^/old/(.*)$ /new/$1; }` | A redirect (or wildcard) per entry; `$request_uri` and `$document_uri` too. The `return 301 $new;` that uses the map gives no row. |
 | `server_name` in a `server` block | The host of the rows in that block (the first name without `*`, `~` or `$`) |
-| `#exp:<kind> <old> <new>` | A row of that kind |
+| `#exp:<kind> <old> <new> [<status>]` | A row of that kind |
 
 `$scheme://$host` (or `https://$host`) in front of a target is the same host and is dropped. Not importable: a
 `return` in a prefix location (`location /old` matches every path that starts with `/old`) or outside a location, a
 `return` with another status (410, 404), a `rewrite` inside an `if`, a `return` inside an `if` with another
 condition, other variables in the target, a `map` of something other than a path.
 
-Written, for inclusion in the server block of the site:
+Written, for inclusion in the server block of the site (`return` with the row's status; a temporary wildcard is
+`rewrite ... redirect;` for 302 and `location ~ ... { return 307 ...; }` for the other statuses):
 
 ```nginx
 location = /about-us.html {
@@ -269,8 +289,8 @@ When a map is written as rules, each `*` becomes `(.*)` and each `{N}` becomes `
 ## Choosing the format
 
 `expUrlMapFormats` chooses the reader and writer: by an explicit format name (`csv`, `json`, `xlsx`, `ods`,
-`apache`, `nginx`), else by the file's extension, else by its content (a ZIP archive is .xlsx, `[` or `{` first is
-JSON, Apache or nginx directives, else CSV). ODS can only be written.
+`apache`, `nginx`), else by the file's extension, else by its content (a ZIP archive is .ods when its first entry is the
+OpenDocument spreadsheet mimetype, else .xlsx; `[` or `{` first is JSON, Apache or nginx directives, else CSV).
 
 ```php
 $rows = expUrlMapFormats::readFile( 'old-site.htaccess' );

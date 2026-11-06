@@ -13,6 +13,13 @@
  *          breaks as OpenDocument elements
  *  SS-05 - Files that are not workbooks throw: not a ZIP, no workbook, a DOCTYPE, empty input gives no rows
  *  SS-06 - With LibreOffice on the host: the written .xlsx and .ods converted to CSV by soffice give the same rows
+ *  SS-07 - A spreadsheet saved by LibreOffice as .ods reads as the same rows as the CSV it came from; the format is
+ *          found by the extension and by content (ZIP with the OpenDocument mimetype)
+ *  SS-08 - .ods cells: text:s, text:tab, text:line-break, spans and links, several paragraphs, repeated rows and
+ *          columns (an empty row repeated a million times only moves on), covered cells, values without paragraphs,
+ *          header row groups, annotations left out; the written .ods reads back as the same rows
+ *  SS-09 - Files that are not .ods throw: another OpenDocument type, no content.xml, a DOCTYPE
+ *  SS-10 - Temporary files go below the installation (var/...), not the system directory
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -271,6 +278,112 @@ class expUrlMapSpreadsheetTest extends PHPUnit\Framework\TestCase
                 $this->markTestSkipped( 'soffice did not convert: ' . implode( ' ', $output ) );
             $back = $csv->readFile( $converted );
             $this->assertSame( $this->arrays( $rows ), $this->arrays( $back ), $type . ' through LibreOffice' );
+        }
+    }
+
+    /** SS-07 */
+    public function testLibreOfficeOds()
+    {
+        $csv = new expUrlMapCsvReader();
+        $ods = new expUrlMapOdsReader();
+        $expected = $this->arrays( $csv->readFile( __DIR__ . '/fixtures/map.csv' ) );
+        $rows = $ods->readFile( __DIR__ . '/fixtures/map-libreoffice.ods' );
+        $this->assertSame( $expected, $this->arrays( $rows ) );
+        $this->assertSame( 2, $rows[0]->line() );
+        $data = file_get_contents( __DIR__ . '/fixtures/map-libreoffice.ods' );
+        $this->assertSame( $expected, $this->arrays( $ods->readString( $data ) ) );
+        $this->assertSame( 'ods', expUrlMapFormats::detect( 'old-site.ods' ) );
+        $this->assertSame( 'ods', expUrlMapFormats::sniff( $data ) );
+        $this->assertSame( 'xlsx', expUrlMapFormats::sniff( file_get_contents( __DIR__ . '/fixtures/map-libreoffice.xlsx' ) ) );
+        $this->assertSame( $expected, $this->arrays( expUrlMapFormats::readFile( __DIR__ . '/fixtures/map-libreoffice.ods' ) ) );
+        $this->assertContains( 'ods', expUrlMapFormats::readable() );
+    }
+
+    /** SS-08 */
+    public function testOdsCells()
+    {
+        $t = 'urn:oasis:names:tc:opendocument:xmlns:table:1.0';
+        $content = '<?xml version="1.0" encoding="UTF-8"?>'
+            . '<office:document-content xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:table="' . $t . '"'
+            . ' xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><office:body><office:spreadsheet>'
+            . '<table:table table:name="A"><table:table-column table:number-columns-repeated="3"/>'
+            . '<table:table-header-rows><table:table-row><table:table-cell><text:p>old_url</text:p></table:table-cell>'
+            . '<table:table-cell><text:p>new_url</text:p></table:table-cell><table:table-cell table:number-columns-repeated="2"/>'
+            . '<table:table-cell><text:p>note</text:p></table:table-cell></table:table-row></table:table-header-rows>'
+            . '<table:table-row><table:table-cell><text:p><text:a xlink:href="http://x">/a</text:a></text:p></table:table-cell>'
+            . '<table:table-cell office:value-type="string"><text:p><text:span>/b</text:span></text:p></table:table-cell>'
+            . '<table:table-cell table:number-columns-repeated="2"/><table:table-cell><office:annotation><text:p>hidden</text:p></office:annotation>'
+            . '<text:p>a<text:s text:c="3"/>b<text:tab/>c<text:line-break/>d</text:p><text:p>second</text:p></table:table-cell></table:table-row>'
+            . '<table:table-row table:number-rows-repeated="1048000"><table:table-cell table:number-columns-repeated="1024"/></table:table-row>'
+            . '<table:table-row table:number-rows-repeated="2"><table:table-cell office:value-type="float" office:value="12"/>'
+            . '<table:covered-table-cell/><table:table-cell><text:p>z</text:p></table:table-cell></table:table-row>'
+            . '</table:table><table:table table:name="B"><table:table-row><table:table-cell><text:p>other sheet</text:p></table:table-cell></table:table-row></table:table>'
+            . '</office:spreadsheet></office:body></office:document-content>';
+        $table = expSpreadsheetReader::odsTable( $content );
+        $this->assertSame( array(
+            1 => array( 0 => 'old_url', 1 => 'new_url', 4 => 'note' ),
+            2 => array( 0 => '/a', 1 => '/b', 4 => "a   b\tc\nd\nsecond" ),
+            1048003 => array( 0 => '12', 2 => 'z' ),
+            1048004 => array( 0 => '12', 2 => 'z' ),
+        ), $table );
+
+        // the written .ods reads back as the same rows
+        $rows = array( new expUrlMapRow( '/a', '/b', '', '', '', '  two  spaces' ), new expUrlMapRow( '/c', '/d', 'redirect-temporary', 'site', 'eng-GB', "x\ty\nz", 0, '307' ) );
+        $writer = new expUrlMapSpreadsheetWriter( array( 'type' => 'ods' ) );
+        $back = ( new expUrlMapOdsReader() )->readString( $writer->writeString( $rows ) );
+        $this->assertSame( array_map( function( $r ) { $a = $r->toArray(); $a['note'] = trim( $a['note'] ); return $a; }, $rows ), $this->arrays( $back ) );
+        $this->assertSame( 307, $back[1]->redirectStatus() );
+    }
+
+    /** SS-09 */
+    public function testNotAnOds()
+    {
+        $reader = new expUrlMapOdsReader();
+        $this->assertSame( array(), $reader->readString( '' ) );
+        $cases = array(
+            'not an .ods spreadsheet (not a ZIP' => 'old_url,new_url',
+            'not a spreadsheet' => file_get_contents( $this->zipOf( array( 'mimetype' => 'application/vnd.oasis.opendocument.text', 'content.xml' => '<x/>' ) ) ),
+            'no content.xml' => file_get_contents( $this->zipOf( array( 'mimetype' => 'application/vnd.oasis.opendocument.spreadsheet' ) ) ),
+            'DOCTYPE' => file_get_contents( $this->zipOf( array( 'content.xml' => '<?xml version="1.0"?><!DOCTYPE x [<!ENTITY a "aaaa">]><x/>' ) ) ),
+            'not well-formed' => file_get_contents( $this->zipOf( array( 'content.xml' => '<x' ) ) ),
+        );
+        foreach ( $cases as $expected => $data )
+        {
+            try
+            {
+                $reader->readString( $data );
+                $this->fail( 'no exception: ' . $expected );
+            }
+            catch ( expUrlMapFormatException $e )
+            {
+                $this->assertStringContainsString( $expected, $e->getMessage() );
+            }
+        }
+    }
+
+    /** SS-10 */
+    public function testTemporaryDirectory()
+    {
+        $directory = expSpreadsheetWriter::temporaryDirectory();
+        $this->assertNotSame( realpath( sys_get_temp_dir() ), realpath( $directory ) );
+        $this->assertMatchesRegularExpression( '#(^|/)var/#', $directory );
+        $file = expSpreadsheetWriter::temporaryFile();
+        $this->assertSame( realpath( $directory ), realpath( dirname( $file ) ) );
+        unlink( $file );
+        $saved = expSpreadsheetWriter::$temporaryDirectory;
+        expSpreadsheetWriter::$temporaryDirectory = $directory . '/does-not-exist-' . getmypid();
+        try
+        {
+            expSpreadsheetWriter::temporaryFile();
+            $this->fail( 'a file outside the directory given' );
+        }
+        catch ( expSpreadsheetException $e )
+        {
+            $this->assertStringContainsString( 'No temporary file can be made', $e->getMessage() );
+        }
+        finally
+        {
+            expSpreadsheetWriter::$temporaryDirectory = $saved;
         }
     }
 }

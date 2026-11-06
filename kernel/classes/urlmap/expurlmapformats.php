@@ -14,7 +14,7 @@
  *   csv     read, write   .csv .tsv .txt (a .tsv is written with tabs)
  *   json    read, write   .json
  *   xlsx    read, write   .xlsx
- *   ods     write         .ods
+ *   ods     read, write   .ods
  *   apache  read, write   .htaccess .apache .apacheconf (and .conf with Apache directives)
  *   nginx   read, write   .nginx (and .conf with nginx directives)
  */
@@ -41,7 +41,7 @@ class expUrlMapFormats
             self::XLSX => array( 'label' => 'Excel (.xlsx)', 'extensions' => array( 'xlsx' ), 'reader' => 'expUrlMapXlsxReader',
                                  'writer' => 'expUrlMapSpreadsheetWriter',
                                  'mime' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'options' => array( 'type' => 'xlsx' ) ),
-            self::ODS => array( 'label' => 'OpenDocument (.ods)', 'extensions' => array( 'ods' ), 'reader' => null,
+            self::ODS => array( 'label' => 'OpenDocument (.ods)', 'extensions' => array( 'ods' ), 'reader' => 'expUrlMapOdsReader',
                                 'writer' => 'expUrlMapSpreadsheetWriter', 'mime' => 'application/vnd.oasis.opendocument.spreadsheet',
                                 'options' => array( 'type' => 'ods' ) ),
             self::APACHE => array( 'label' => 'Apache rewrite rules', 'extensions' => array( 'htaccess', 'apache', 'apacheconf' ),
@@ -92,7 +92,8 @@ class expUrlMapFormats
     }
 
     /**
-     * The format by content: a ZIP archive is .xlsx, "[" or "{" first is JSON, Apache or nginx directives, else CSV.
+     * The format by content: a ZIP archive is .ods when its first entry is the OpenDocument spreadsheet mimetype, else
+     * .xlsx; "[" or "{" first is JSON, Apache or nginx directives, else CSV.
      *
      * @param string $content
      * @return string
@@ -101,7 +102,7 @@ class expUrlMapFormats
     {
         $content = (string)$content;
         if ( strncmp( $content, "PK\x03\x04", 4 ) === 0 )
-            return self::XLSX;
+            return substr( $content, 30, 8 ) === 'mimetype' && strpos( substr( $content, 38, 60 ), 'opendocument.spreadsheet' ) !== false ? self::ODS : self::XLSX;
         $text = ltrim( preg_replace( '/^\xEF\xBB\xBF/', '', $content ) );
         if ( $text !== '' && ( $text[0] === '[' || $text[0] === '{' ) )
             return self::JSON;

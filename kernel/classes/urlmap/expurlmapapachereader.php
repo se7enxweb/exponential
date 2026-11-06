@@ -10,17 +10,21 @@
 /**
  * Reads the redirects of an Apache configuration or .htaccess file:
  *
- * - Redirect [status] /old /new, RedirectPermanent, RedirectTemp: a redirect of that one path
+ * - Redirect [status] /old /new, RedirectPermanent, RedirectTemp: as Apache does, a prefix: two rows, the path itself
+ *   as a redirect and a wildcard (forward) /old/* -> /new/{1} for everything below it (not when the target has a query)
  * - RedirectMatch [status] ^/old/(.*)$ /new/$1: a wildcard (forward) when the expression is simple (expUrlMapRegex)
  * - RewriteRule ^/?old$ /new [R=301,L]: a redirect or wildcard (forward); without R an internal rewrite, which is an
  *   alias or a wildcard (direct); RewriteCond %{HTTP_HOST} ^host$ and %{QUERY_STRING} ^query$ before it give the
  *   old address's host and query, any other condition makes the rule not importable
  * - ServerName inside <VirtualHost> gives the host of the rules in that block; RewriteBase the base of relative targets
- * - "#exp:<kind> <old> <new>" comments (written by expUrlMapApacheWriter for the mappings a rule cannot express)
+ * - "#exp:<kind> <old> <new> [<status>]" comments (written by expUrlMapApacheWriter for the mappings a rule cannot
+ *   express)
  *
- * A temporary redirect (302, 303, 307) is read as a redirect with a note: Exponential redirects with 301. Everything
- * a mapping cannot say (other flags and conditions, regular expressions beyond the simple ones, status 410) is a row
- * that is not importable, with the reason and the directive in the note. Other directives are ignored.
+ * A redirect keeps its status: 301 and 308 are permanent (redirect, wildcard-forward), 302, 303 and 307 temporary
+ * (redirect-temporary, wildcard-forward-temporary); a status other than the kind's own (301, 302) is in the column
+ * status. Everything a mapping cannot say (other flags and conditions, regular expressions beyond the simple ones,
+ * status 410) is a row that is not importable, with the reason and the directive in the note. Other directives are
+ * ignored.
  */
 class expUrlMapApacheReader extends expUrlMapReader
 {
@@ -51,7 +55,8 @@ class expUrlMapApacheReader extends expUrlMapReader
                 if ( preg_match( '/^#\s*exp:([a-z\-]+)\s+(.*)$/', $line, $m ) )
                 {
                     $args = self::tokenize( $m[2] );
-                    $rows[] = new expUrlMapRow( isset( $args[0] ) ? $args[0] : '', isset( $args[1] ) ? $args[1] : '', $m[1], '', '', '', $number );
+                    $rows[] = new expUrlMapRow( isset( $args[0] ) ? $args[0] : '', isset( $args[1] ) ? $args[1] : '', $m[1], '', '', '', $number,
+                                                isset( $args[2] ) ? $args[2] : '' );
                 }
                 continue;
             }
@@ -92,7 +97,8 @@ class expUrlMapApacheReader extends expUrlMapReader
                 case 'redirectpermanent':
                 case 'redirecttemp':
                 case 'redirectmatch':
-                    $rows[] = $this->redirect( $directive, $args, $serverName, $line, $number );
+                    foreach ( $this->redirect( $directive, $args, $serverName, $line, $number ) as $row )
+                        $rows[] = $row;
                     break;
             }
         }
@@ -148,7 +154,7 @@ class expUrlMapApacheReader extends expUrlMapReader
      * @param string $host
      * @param string $line
      * @param int $number
-     * @return expUrlMapRow
+     * @return expUrlMapRow[] one row; two for Redirect (the path and the wildcard for what is below it)
      */
     private function redirect( $directive, array $args, $host, $line, $number )
     {
@@ -164,32 +170,33 @@ class expUrlMapApacheReader extends expUrlMapReader
         }
         $old = isset( $args[0] ) ? $args[0] : '';
         $new = isset( $args[1] ) ? $args[1] : '';
-        if ( $status < 300 || $status > 399 )
-            return expUrlMapRow::notImportable( $old, $new, 'status ' . $status . ' is not a redirect', $number, $line );
+        if ( !in_array( $status, array_merge( expUrlMapRow::PERMANENT_STATUSES, expUrlMapRow::TEMPORARY_STATUSES ), true ) )
+            return array( expUrlMapRow::notImportable( $old, $new, 'status ' . $status . ' is not a redirect', $number, $line ) );
         if ( $old === '' || $new === '' )
-            return expUrlMapRow::notImportable( $old, $new, 'the directive has no path or no target', $number, $line );
-        $notes = array();
+            return array( expUrlMapRow::notImportable( $old, $new, 'the directive has no path or no target', $number, $line ) );
+        $prefix = $host !== '' ? '//' . $host : '';
+        $statusColumn = expUrlMapRow::statusColumn( $status );
         if ( $directive === 'redirectmatch' )
         {
             $wildcard = expUrlMapRegex::toWildcard( $old );
             if ( isset( $wildcard['reason'] ) )
-                return expUrlMapRow::notImportable( $old, $new, $wildcard['reason'], $number, $line );
+                return array( expUrlMapRow::notImportable( $old, $new, $wildcard['reason'], $number, $line ) );
             $target = expUrlMapRegex::toPlaceholders( $new, $wildcard['groups'], 'apache' );
             if ( isset( $target['reason'] ) )
-                return expUrlMapRow::notImportable( $old, $new, $target['reason'], $number, $line );
+                return array( expUrlMapRow::notImportable( $old, $new, $target['reason'], $number, $line ) );
             $path = $wildcard['pattern'];
-            $new = $target['target'];
-            $notes = $wildcard['notes'];
+            $kind = expUrlMapRow::kindForStatus( strpos( $path, '*' ) !== false, $status );
+            return array( new expUrlMapRow( $prefix . $path, $target['target'], $kind, '', '', implode( '; ', $wildcard['notes'] ), $number, $statusColumn ) );
         }
-        else
-            $path = $old;
-        if ( strpos( $path, '*' ) === false && $directive !== 'redirectmatch' )
-            $kind = expUrlMapRow::KIND_REDIRECT;
-        else
-            $kind = strpos( $path, '*' ) === false ? expUrlMapRow::KIND_REDIRECT : expUrlMapRow::KIND_WILDCARD_FORWARD;
-        if ( $status !== 301 && $status !== 308 )
-            $notes[] = 'the source answered with ' . $status . '; Exponential redirects with 301';
-        return new expUrlMapRow( ( $host !== '' ? '//' . $host : '' ) . $path, $new, $kind, '', '', implode( '; ', $notes ), $number );
+        // Redirect matches a prefix: /old answers itself and everything below it (/old/x -> /new/x), as two rows
+        $rows = array( new expUrlMapRow( $prefix . $old, $new, expUrlMapRow::kindForStatus( false, $status ), '', '', '', $number, $statusColumn ) );
+        if ( strpos( $new, '?' ) === false && strpos( $old, '*' ) === false && strpos( $old, '?' ) === false )
+        {
+            $base = rtrim( expUrlMapRow::normalizePath( preg_replace( '#^[a-z]+://[^/]*#i', '', $old ) ), '/' );
+            $rows[] = new expUrlMapRow( $prefix . $base . '/*', rtrim( $new, '/' ) . '/{1}', expUrlMapRow::kindForStatus( true, $status ), '', '',
+                                        'below ' . ( $base === '' ? '/' : $base ) . ' (Redirect matches a prefix)', $number, $statusColumn );
+        }
+        return $rows;
     }
 
     /**
@@ -263,16 +270,18 @@ class expUrlMapApacheReader extends expUrlMapReader
         {
             $status = isset( $flags['r'] ) ? $flags['r'] : ( isset( $flags['redirect'] ) ? $flags['redirect'] : '' );
             $status = $status === '' ? 302 : ( strtolower( $status ) === 'permanent' ? 301 : ( strtolower( $status ) === 'temp' ? 302 : (int)$status ) );
-            if ( $status < 300 || $status > 399 )
+            if ( !in_array( $status, array_merge( expUrlMapRow::PERMANENT_STATUSES, expUrlMapRow::TEMPORARY_STATUSES ), true ) )
                 return expUrlMapRow::notImportable( $pattern, $target, 'status ' . $status . ' is not a redirect', $number, $line );
-            if ( $status !== 301 && $status !== 308 )
-                $notes[] = 'the source answered with ' . $status . '; Exponential redirects with 301';
-            $kind = $isWildcard ? expUrlMapRow::KIND_WILDCARD_FORWARD : expUrlMapRow::KIND_REDIRECT;
+            $kind = expUrlMapRow::kindForStatus( $isWildcard, $status );
+            $statusColumn = expUrlMapRow::statusColumn( $status );
         }
         else
+        {
             $kind = $isWildcard ? expUrlMapRow::KIND_WILDCARD_DIRECT : expUrlMapRow::KIND_ALIAS;
+            $statusColumn = '';
+        }
         $old = ( $host !== '' ? '//' . $host : '' ) . $wildcard['pattern'] . ( $query !== '' ? '?' . $query : '' );
-        return new expUrlMapRow( $old, $converted['target'], $kind, '', '', implode( '; ', $notes ), $number );
+        return new expUrlMapRow( $old, $converted['target'], $kind, '', '', implode( '; ', $notes ), $number, $statusColumn );
     }
 
     /**

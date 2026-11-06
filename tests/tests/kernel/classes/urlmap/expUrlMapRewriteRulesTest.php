@@ -111,13 +111,16 @@ class expUrlMapRewriteRulesTest extends PHPUnit\Framework\TestCase
         $summary = $this->summary( $rows );
         $expected = array(
             '3: /about-us.html -> /About redirect',
+            '3: /about-us.html/* -> /About/{1} wildcard-forward',
             '4: /contact.php -> https://www.example.com/Contact redirect',
-            '5: /temp-page -> /Temporary redirect',
+            '4: /contact.php/* -> https://www.example.com/Contact/{1} wildcard-forward',
+            '5: /temp-page -> /Temporary redirect-temporary',
+            '5: /temp-page/* -> /Temporary/{1} wildcard-forward-temporary',
             '6: X not importable: status 410 is not a redirect',
             '7: /blog/* -> /News/{1} wildcard-forward',
             '8: X not importable: the group (\d+) in ^/archive/(\d+)$ is not a simple (.*) group',
             '10: /products/* -> /Shop/{1} wildcard-forward',
-            '11: /old-shop/*/item.html -> /Shop/{1} wildcard-forward',
+            '11: /old-shop/*/item.html -> /Shop/{1} wildcard-forward-temporary',
             '12: /print/* -> /{1} wildcard-direct',
             '13: /team -> /Team alias',
             '15: //old-site.example.com/news -> /News redirect',
@@ -128,12 +131,23 @@ class expUrlMapRewriteRulesTest extends PHPUnit\Framework\TestCase
             '22: X not importable: the target /y/%1 uses %1 (a condition back-reference or a server variable)',
             '23: /internal -> /Inside alias',
             '26: //legacy.example.com/start -> /Home redirect',
+            '26: //legacy.example.com/start/* -> /Home/{1} wildcard-forward',
             '27: //legacy.example.com/very/long/path -> /Long redirect',
         );
         $this->assertSame( $expected, $summary );
-        $this->assertStringContainsString( 'answered with 302', $rows[2]->note() );
-        $this->assertStringContainsString( 'answered with 302', $rows[7]->note() );
-        $this->assertSame( 'Redirect gone /removed', $rows[3]->note() );
+        // a temporary redirect keeps its status: 302 is the temporary kinds' own, so the column status stays empty
+        $this->assertSame( 302, $rows[4]->redirectStatus() );
+        $this->assertSame( '', $rows[4]->status() );
+        $this->assertSame( 302, $rows[10]->redirectStatus() );
+        $this->assertSame( 'below /temp-page (Redirect matches a prefix)', $rows[5]->note() );
+        $this->assertSame( 'Redirect gone /removed', $rows[6]->note() );
+        // 307 and 308 are kept in the column status
+        $rows = $reader->readString( "Redirect 307 /a /b\nRewriteRule ^/?c$ /d [R=308,L]\n#exp:redirect-temporary /e node:5 303\n" );
+        $this->assertSame( array( 'redirect-temporary', 'wildcard-forward-temporary', 'redirect', 'redirect-temporary' ), array_map( function( $r ) { return $r->effectiveKind(); }, $rows ) );
+        $this->assertSame( array( 307, 307, 308, 303 ), array_map( function( $r ) { return $r->redirectStatus(); }, $rows ) );
+        $this->assertSame( array( '307', '307', '308', '303' ), array_map( function( $r ) { return $r->status(); }, $rows ) );
+        // a target with a query: no wildcard for what is below
+        $this->assertCount( 1, $reader->readString( "Redirect /f /g?x=1\n" ) );
         $this->assertSame( array(), $reader->readString( '' ) );
         $this->assertSame( array(), $reader->readString( "# nothing\nRewriteEngine On\nOptions -Indexes\n" ) );
         $this->assertSame( array( 'Rewrite', 'a b', 'c"d' ), expUrlMapApacheReader::tokenize( 'Rewrite "a b" "c\\"d"' ) );
@@ -149,7 +163,7 @@ class expUrlMapRewriteRulesTest extends PHPUnit\Framework\TestCase
             '5: /blog/* -> /News/{1} wildcard-forward',
             '6: X not importable: the group (\d+) in ^/archive/(\d+)$ is not a simple (.*) group',
             '15: //old-site.example.com/products/* -> /Shop/{1} wildcard-forward',
-            '16: //old-site.example.com/temp -> /Temporary redirect',
+            '16: //old-site.example.com/temp -> /Temporary redirect-temporary',
             '17: //old-site.example.com/print/* -> /{1} wildcard-direct',
             '18: X not importable: the target /y/$host/$1 uses a variable, which a mapping cannot express',
             '21: //old-site.example.com/contact.php -> /Contact redirect',
@@ -158,11 +172,14 @@ class expUrlMapRewriteRulesTest extends PHPUnit\Framework\TestCase
             '28: //old-site.example.com/team/* -> /Team/{1} wildcard-forward',
             '31: X not importable: a return in a prefix location matches every path that starts with /downloads; use location = or a regular expression',
             '34: X not importable: return 410 does not redirect',
-            '37: //old-site.example.com/with%20space -> /Spaced redirect',
+            '37: //old-site.example.com/with%20space -> /Spaced redirect-temporary',
             '39: /legacy/* -> /{1} wildcard-direct',
         );
         $this->assertSame( $expected, $this->summary( $rows ) );
-        $this->assertStringContainsString( 'answered with 302', $rows[4]->note() );
+        $this->assertSame( 302, $rows[4]->redirectStatus() );
+        $rows = $reader->readString( "location = /a { return 307 /b; }\nlocation ~ ^/c/(.*)$ { return 308 /d/$1; }\n" );
+        $this->assertSame( array( '1: /a -> /b redirect-temporary', '2: /c/* -> /d/{1} wildcard-forward' ), $this->summary( $rows ) );
+        $this->assertSame( array( 307, 308 ), array( $rows[0]->redirectStatus(), $rows[1]->redirectStatus() ) );
         $this->assertSame( array(), $reader->readString( '' ) );
         $this->assertSame( array(), $reader->readString( "server { listen 80; root /var/www; }\n" ) );
         $rows = $reader->readString( "return 301 /x;\nmap \$host \$y { a b; }\nrewrite ^/a$ /b break;\nif (\$x) { rewrite ^/c$ /d permanent; }" );

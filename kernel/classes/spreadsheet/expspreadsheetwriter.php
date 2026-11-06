@@ -14,7 +14,10 @@
  */
 class expSpreadsheetWriter
 {
-    /** @var string|null where temporary files go; null is the system's temporary directory */
+    /**
+     * @var string|null where temporary files go; null is the installation's cache directory
+     *                  (var/<site>/cache/spreadsheet, see temporaryDirectory())
+     */
     public static $temporaryDirectory = null;
 
     /**
@@ -190,11 +193,52 @@ class expSpreadsheetWriter
      */
     static function temporaryFile()
     {
-        $directory = self::$temporaryDirectory !== null ? self::$temporaryDirectory : sys_get_temp_dir();
+        $directory = self::temporaryDirectory();
         $file = @tempnam( $directory, 'expsheet' );
-        if ( $file === false )
+        // tempnam() falls back to the system's directory when it cannot use the one given: not wanted under
+        // open_basedir, where only the installation's own folders can be written
+        if ( $file === false || realpath( dirname( $file ) ) !== realpath( $directory ) )
+        {
+            if ( $file !== false )
+                @unlink( $file );
             throw new expSpreadsheetException( "No temporary file can be made in $directory" );
+        }
         return $file;
+    }
+
+    /**
+     * Where temporary files go: $temporaryDirectory when it is set; else the cache directory of the installation
+     * (var/<site>/cache/spreadsheet, made when missing), which the web server can write also under open_basedir;
+     * else var/tmp of the installation; the system's temporary directory only outside an installation.
+     *
+     * @return string
+     */
+    static function temporaryDirectory()
+    {
+        if ( self::$temporaryDirectory !== null )
+            return self::$temporaryDirectory;
+        $candidates = array();
+        if ( class_exists( 'eZSys' ) && class_exists( 'eZINI' ) )
+        {
+            try
+            {
+                $candidates[] = eZSys::cacheDirectory() . '/spreadsheet';
+            }
+            catch ( Throwable $e )
+            {
+                // no settings: not in an installation
+            }
+        }
+        if ( defined( 'EXP_ROOT_DIR' ) )
+            $candidates[] = EXP_ROOT_DIR . '/var/tmp';
+        foreach ( $candidates as $directory )
+        {
+            if ( !is_dir( $directory ) )
+                @mkdir( $directory, 0775, true );
+            if ( is_dir( $directory ) && is_writable( $directory ) )
+                return $directory;
+        }
+        return sys_get_temp_dir();
     }
 
     /**

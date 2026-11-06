@@ -8,7 +8,8 @@
  */
 
 /**
- * One row of a URL map file: an old address and where it goes (old_url, new_url, kind, siteaccess, language, note).
+ * One row of a URL map file: an old address and where it goes (old_url, new_url, kind, siteaccess, language, note,
+ * status).
  * Pure and DB-less; the specification is doc/eng-us/specifications/6.0/url-map-file-formats.md.
  *
  * The old and the new address are normalized when the row is made, so that every format gives the same row for the
@@ -22,6 +23,10 @@
  * - the fragment (#...) is dropped, the query (?...) is kept as given
  * A new address "node:123" or "eznode://123" becomes "node:123".
  *
+ * A redirect answers with a status: 301 (permanent) for redirect and wildcard-forward, 302 (temporary) for
+ * redirect-temporary and wildcard-forward-temporary. The column status gives another one of the same kind (308 is
+ * permanent; 302, 303 and 307 are temporary); with an empty kind a temporary status makes the row temporary.
+ *
  * A row knows the problems that keep it from being imported (problems()): what validation found, and what a reader
  * added (a rewrite rule that a row cannot express is read as a row that is not importable, with the reason).
  */
@@ -29,12 +34,18 @@ class expUrlMapRow
 {
     const KIND_AUTO = '';
     const KIND_REDIRECT = 'redirect';
+    const KIND_REDIRECT_TEMPORARY = 'redirect-temporary';
     const KIND_ALIAS = 'alias';
     const KIND_WILDCARD_FORWARD = 'wildcard-forward';
+    const KIND_WILDCARD_FORWARD_TEMPORARY = 'wildcard-forward-temporary';
     const KIND_WILDCARD_DIRECT = 'wildcard-direct';
 
-    /** @var string[] the canonical columns, in file order */
-    const COLUMNS = array( 'old_url', 'new_url', 'kind', 'siteaccess', 'language', 'note' );
+    /** @var string[] the canonical columns, in file order (status was added in 6.0.15 after the first six) */
+    const COLUMNS = array( 'old_url', 'new_url', 'kind', 'siteaccess', 'language', 'note', 'status' );
+
+    /** @var int[] the redirect statuses a row can have; the first two are permanent */
+    const PERMANENT_STATUSES = array( 301, 308 );
+    const TEMPORARY_STATUSES = array( 302, 303, 307 );
 
     /** @var string */
     private $oldUrl;
@@ -48,6 +59,8 @@ class expUrlMapRow
     private $language;
     /** @var string */
     private $note;
+    /** @var string the status as given: '' or one of 301, 302, 303, 307, 308 */
+    private $status = '';
     /** @var int */
     private $line;
     /** @var string */
@@ -70,10 +83,12 @@ class expUrlMapRow
      * @param string $language
      * @param string $note
      * @param int $line where the row was in its file (a line, a spreadsheet row, a JSON entry); 0 when not from a file
+     * @param string|int $status the redirect status (301, 302, 303, 307, 308) or empty for the kind's own
      */
-    function __construct( $oldUrl, $newUrl, $kind = '', $siteaccess = '', $language = '', $note = '', $line = 0 )
+    function __construct( $oldUrl, $newUrl, $kind = '', $siteaccess = '', $language = '', $note = '', $line = 0, $status = '' )
     {
         $this->line = (int)$line;
+        $this->status = trim( (string)$status );
         $this->siteaccess = trim( (string)$siteaccess );
         $this->language = trim( (string)$language );
         $this->note = trim( (string)$note );
@@ -126,7 +141,7 @@ class expUrlMapRow
             return isset( $values[$key] ) && is_scalar( $values[$key] ) ? (string)$values[$key] : '';
         };
         return new self( $get( 'old_url' ), $get( 'new_url' ), $get( 'kind' ), $get( 'siteaccess' ),
-                         $get( 'language' ), $get( 'note' ), $line );
+                         $get( 'language' ), $get( 'note' ), $line, $get( 'status' ) );
     }
 
     /**
@@ -151,7 +166,7 @@ class expUrlMapRow
     }
 
     /**
-     * @return array the six canonical columns as strings
+     * @return array the canonical columns as strings
      */
     function toArray()
     {
@@ -162,6 +177,7 @@ class expUrlMapRow
             'siteaccess' => $this->siteaccess,
             'language' => $this->language,
             'note' => $this->note,
+            'status' => $this->status,
         );
     }
 
@@ -199,6 +215,12 @@ class expUrlMapRow
     function note()
     {
         return $this->note;
+    }
+
+    /** @return string the status as given: '' or one of 301, 302, 303, 307, 308 */
+    function status()
+    {
+        return $this->status;
     }
 
     /** @return int */
@@ -241,21 +263,71 @@ class expUrlMapRow
     {
         if ( $this->kind !== self::KIND_AUTO )
             return $this->kind;
-        return strpos( $this->oldPath, '*' ) !== false ? self::KIND_WILDCARD_FORWARD : self::KIND_REDIRECT;
+        $wildcard = strpos( $this->oldPath, '*' ) !== false;
+        return self::kindForStatus( $wildcard, in_array( (int)$this->status, self::TEMPORARY_STATUSES, true ) ? (int)$this->status : 301 );
     }
 
     /** @return bool */
     function isWildcard()
     {
-        $kind = $this->effectiveKind();
-        return $kind === self::KIND_WILDCARD_FORWARD || $kind === self::KIND_WILDCARD_DIRECT;
+        return in_array( $this->effectiveKind(), array( self::KIND_WILDCARD_FORWARD, self::KIND_WILDCARD_FORWARD_TEMPORARY, self::KIND_WILDCARD_DIRECT ), true );
     }
 
-    /** @return bool true for the kinds that answer with a redirect (redirect, wildcard-forward) */
+    /** @return bool true for the kinds that answer with a redirect (redirect, wildcard-forward and their temporary kinds) */
     function isForward()
     {
+        return in_array( $this->effectiveKind(), array( self::KIND_REDIRECT, self::KIND_REDIRECT_TEMPORARY, self::KIND_WILDCARD_FORWARD,
+                                                        self::KIND_WILDCARD_FORWARD_TEMPORARY ), true );
+    }
+
+    /** @return bool true for redirect-temporary and wildcard-forward-temporary */
+    function isTemporary()
+    {
         $kind = $this->effectiveKind();
-        return $kind === self::KIND_REDIRECT || $kind === self::KIND_WILDCARD_FORWARD;
+        return $kind === self::KIND_REDIRECT_TEMPORARY || $kind === self::KIND_WILDCARD_FORWARD_TEMPORARY;
+    }
+
+    /**
+     * The status the redirect answers with: the row's status, else 302 for a temporary kind and 301 for the others;
+     * 0 for alias and wildcard-direct, which do not redirect.
+     *
+     * @return int
+     */
+    function redirectStatus()
+    {
+        if ( !$this->isForward() )
+            return 0;
+        if ( $this->status !== '' && ctype_digit( $this->status ) )
+            return (int)$this->status;
+        return $this->isTemporary() ? 302 : 301;
+    }
+
+    /**
+     * The kind of a redirect of a source with a status: redirect or wildcard-forward for a permanent one (301, 308),
+     * their temporary kinds for 302, 303 and 307. Pure.
+     *
+     * @param bool $wildcard
+     * @param int $status
+     * @return string
+     */
+    static function kindForStatus( $wildcard, $status )
+    {
+        $temporary = in_array( (int)$status, self::TEMPORARY_STATUSES, true );
+        if ( $wildcard )
+            return $temporary ? self::KIND_WILDCARD_FORWARD_TEMPORARY : self::KIND_WILDCARD_FORWARD;
+        return $temporary ? self::KIND_REDIRECT_TEMPORARY : self::KIND_REDIRECT;
+    }
+
+    /**
+     * The status column for a redirect read from a source: empty when the kind says it (301 for a permanent kind,
+     * 302 for a temporary one), else the number. Pure.
+     *
+     * @param int $status
+     * @return string
+     */
+    static function statusColumn( $status )
+    {
+        return (int)$status === 301 || (int)$status === 302 ? '' : (string)(int)$status;
     }
 
     /** @return string[] */
@@ -300,14 +372,18 @@ class expUrlMapRow
         $kind = preg_replace( '/[\s_]+/', '-', $kind );
         if ( $kind === '' || $kind === 'auto' )
             return self::KIND_AUTO;
-        $known = array( self::KIND_REDIRECT, self::KIND_ALIAS, self::KIND_WILDCARD_FORWARD, self::KIND_WILDCARD_DIRECT );
-        return in_array( $kind, $known, true ) ? $kind : null;
+        $other = array( 'temporary-redirect' => self::KIND_REDIRECT_TEMPORARY, 'redirect-temp' => self::KIND_REDIRECT_TEMPORARY,
+                        'wildcard-forward-temp' => self::KIND_WILDCARD_FORWARD_TEMPORARY, 'wildcard-temporary' => self::KIND_WILDCARD_FORWARD_TEMPORARY );
+        if ( isset( $other[$kind] ) )
+            return $other[$kind];
+        return in_array( $kind, self::kinds(), true ) ? $kind : null;
     }
 
     /** @return string[] the kinds a row can have, without auto */
     static function kinds()
     {
-        return array( self::KIND_REDIRECT, self::KIND_ALIAS, self::KIND_WILDCARD_FORWARD, self::KIND_WILDCARD_DIRECT );
+        return array( self::KIND_REDIRECT, self::KIND_REDIRECT_TEMPORARY, self::KIND_ALIAS, self::KIND_WILDCARD_FORWARD,
+                      self::KIND_WILDCARD_FORWARD_TEMPORARY, self::KIND_WILDCARD_DIRECT );
     }
 
     /**
@@ -464,13 +540,24 @@ class expUrlMapRow
     private function validate( $unknownKind )
     {
         if ( $unknownKind )
-            $this->problems[] = 'unknown kind "' . $this->kind . '"; use redirect, alias, wildcard-forward or wildcard-direct (or leave it empty)';
+            $this->problems[] = 'unknown kind "' . $this->kind . '"; use ' . implode( ', ', self::kinds() ) . ' (or leave it empty)';
         if ( $this->siteaccess !== '' && !preg_match( '/^[A-Za-z0-9_\-]+$/', $this->siteaccess ) )
             $this->problems[] = 'siteaccess "' . $this->siteaccess . '" is not a siteaccess name';
         if ( $this->language !== '' && !preg_match( '/^[a-z]{2,3}-[A-Za-z]{2,4}$/', $this->language ) )
             $this->problems[] = 'language "' . $this->language . '" is not a locale such as eng-GB';
+        if ( $this->status !== '' && !in_array( (int)$this->status, array_merge( self::PERMANENT_STATUSES, self::TEMPORARY_STATUSES ), true ) )
+            $this->problems[] = 'status "' . $this->status . '" is not a redirect status; use 301 or 308 (permanent), 302, 303 or 307 (temporary), or leave it empty';
+        elseif ( $this->status !== '' )
+            $this->status = (string)(int)$this->status;
         if ( $this->oldUrl === '' || $this->newUrl === '' || $unknownKind )
             return;
+        if ( $this->status !== '' && ctype_digit( $this->status ) )
+        {
+            if ( !$this->isForward() )
+                $this->problems[] = 'status ' . $this->status . ': the kind ' . $this->effectiveKind() . ' does not redirect';
+            elseif ( $this->isTemporary() !== in_array( (int)$this->status, self::TEMPORARY_STATUSES, true ) )
+                $this->problems[] = 'status ' . $this->status . ' is ' . ( $this->isTemporary() ? 'permanent' : 'temporary' ) . ' but the kind ' . $this->effectiveKind() . ' is not';
+        }
 
         $stars = substr_count( $this->oldPath, '*' );
         if ( strpos( $this->oldHost, '*' ) !== false )
@@ -478,7 +565,7 @@ class expUrlMapRow
         if ( $this->oldQuery !== '' && $stars )
             $this->problems[] = 'old_url: a wildcard cannot have a query (?...)';
         $kind = $this->effectiveKind();
-        $wildcard = $kind === self::KIND_WILDCARD_FORWARD || $kind === self::KIND_WILDCARD_DIRECT;
+        $wildcard = $this->isWildcard();
         if ( $stars && !$wildcard )
             $this->problems[] = 'old_url has a * but the kind ' . $kind . ' is not a wildcard';
         if ( $wildcard && !$stars )
