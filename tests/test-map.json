@@ -1230,10 +1230,12 @@
       "tests/tests/kernel/classes/uiswitch/expUISwitchLanguageProviderTest.php"
     ],
     "lib/ezi18n/classes/eztstranslator.php": [
-      "tests/tests/lib/ezi18n/eZTSTranslatorFallbackChainTest.php"
+      "tests/tests/lib/ezi18n/eZTSTranslatorFallbackChainTest.php",
+      "tests/tests/lib/ezi18n/eZTranslationCacheLocaleTest.php"
     ],
     "lib/ezi18n/classes/eztranslationcache.php": [
-      "tests/tests/lib/ezi18n/eZTSTranslatorFallbackChainTest.php"
+      "tests/tests/lib/ezi18n/eZTSTranslatorFallbackChainTest.php",
+      "tests/tests/lib/ezi18n/eZTranslationCacheLocaleTest.php"
     ],
     "kernel/classes/i18n/*": [
       "tests/tests/kernel/classes/i18n/expI18nFallbackReportTest.php",
