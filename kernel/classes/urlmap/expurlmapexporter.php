@@ -23,6 +23,10 @@
  * Filters: kinds (alias, wildcard, redirect; default all), siteaccess and language (for redirects and aliases; the
  * aliases and wildcards themselves have no siteaccess). Import of the export gives the same entries again.
  *
+ * Aliases are written as visitors use them: an alias stored below the PathPrefix of the siteaccess (the option
+ * visitor_siteaccess, default the siteaccess filter, else the default siteaccess) is written without the prefix and
+ * with that siteaccess in its siteaccess column, so importing it again stores it at the same place.
+ *
  * @since 6.0.15
  * @package kernel
  */
@@ -36,11 +40,18 @@ class expUrlMapExporter
      */
     public function export( array $options = array() )
     {
-        $options += array( 'kinds' => self::KINDS, 'siteaccess' => '', 'language' => '', 'include_node_aliases' => false );
+        $options += array( 'kinds' => self::KINDS, 'siteaccess' => '', 'language' => '', 'include_node_aliases' => false, 'visitor_siteaccess' => null );
         $kinds = array_values( array_intersect( self::KINDS, (array)$options['kinds'] ) );
         $rows = array();
         if ( in_array( 'alias', $kinds, true ) )
-            $rows = array_merge( $rows, $this->aliases( (string)$options['language'], !empty( $options['include_node_aliases'] ) ) );
+        {
+            $environment = new expUrlMapKernelEnvironment();
+            $visitor = $options['visitor_siteaccess'] !== null ? (string)$options['visitor_siteaccess']
+                     : ( (string)$options['siteaccess'] !== '' && $options['siteaccess'] !== '*' ? (string)$options['siteaccess'] : $environment->defaultSiteaccess() );
+            $prefix = $visitor !== '' ? $environment->pathPrefix( $visitor ) : array( 'prefix' => '', 'exclude' => array() );
+            foreach ( $this->aliases( (string)$options['language'], !empty( $options['include_node_aliases'] ) ) as $row )
+                $rows[] = self::visitorRow( $row, $visitor, $prefix['prefix'], $prefix['exclude'] );
+        }
         if ( in_array( 'wildcard', $kinds, true ) )
             $rows = array_merge( $rows, $this->wildcards() );
         if ( in_array( 'redirect', $kinds, true ) )
@@ -74,6 +85,25 @@ class expUrlMapExporter
                 $rows[] = new expUrlMapRow( $path, $target, $kind, '', $locale );
         }
         return $rows;
+    }
+
+    /**
+     * An alias row in the visitor's form: below the siteaccess's PathPrefix, the path without it and the siteaccess
+     * in its column; any other row as it is. Pure.
+     *
+     * @param expUrlMapRow $row
+     * @param string $siteaccess
+     * @param string $prefix
+     * @param string[] $exclude
+     * @return expUrlMapRow
+     */
+    public static function visitorRow( expUrlMapRow $row, $siteaccess, $prefix, array $exclude )
+    {
+        $path = $row->oldHost() === '' && $row->oldQuery() === '' && $row->siteaccess() === ''
+              ? expUrlMapKernelEnvironment::unprefixedPath( $row->oldUrl(), $prefix, $exclude ) : null;
+        if ( $path === null || $siteaccess === '' )
+            return $row;
+        return new expUrlMapRow( $path, $row->newUrl(), $row->kind(), $siteaccess, $row->language(), $row->note(), $row->line(), $row->status() );
     }
 
     /** @return expUrlMapRow[] */

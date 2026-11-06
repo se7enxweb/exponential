@@ -137,17 +137,8 @@ class expUrlMapKernelEnvironment implements expUrlMapEnvironment
 
     public function aliasPath( $siteaccess, $path )
     {
-        $prefix = '';
-        $exclude = array();
-        if ( $siteaccess !== '' && in_array( $siteaccess, $this->siteaccesses(), true ) )
-        {
-            $ini = eZSiteAccess::getIni( $siteaccess, 'site.ini' );
-            if ( $ini && $ini->hasVariable( 'SiteAccessSettings', 'PathPrefix' ) )
-                $prefix = trim( (string)$ini->variable( 'SiteAccessSettings', 'PathPrefix' ), '/' );
-            if ( $ini && $ini->hasVariable( 'SiteAccessSettings', 'PathPrefixExclude' ) )
-                $exclude = (array)$ini->variable( 'SiteAccessSettings', 'PathPrefixExclude' );
-        }
-        return self::prefixedPath( $path, $prefix, $exclude );
+        $settings = $this->pathPrefix( (string)$siteaccess );
+        return self::prefixedPath( $path, $settings['prefix'], $settings['exclude'] );
     }
 
     /**
@@ -173,6 +164,57 @@ class expUrlMapKernelEnvironment implements expUrlMapEnvironment
                 return $path;
         }
         return '/' . $prefix . ( $path === '/' ? '' : $path );
+    }
+
+    /**
+     * The visitor's form of a stored URL alias path, the inverse of prefixedPath(): the path without the PathPrefix
+     * when it is below it, else null (the prefix itself, a path outside it, and one whose first element after the
+     * prefix is one of PathPrefixExclude[], which prefixedPath() would not put below the prefix again). Pure.
+     *
+     * @param string $path
+     * @param string $prefix
+     * @param string[] $exclude
+     * @return string|null
+     */
+    public static function unprefixedPath( $path, $prefix, array $exclude )
+    {
+        $path = '/' . trim( (string)$path, '/' );
+        $prefix = trim( (string)$prefix, '/' );
+        if ( $prefix === '' || stripos( ltrim( $path, '/' ) . '/', $prefix . '/' ) !== 0 )
+            return null;
+        $rest = '/' . trim( (string)substr( ltrim( $path, '/' ), strlen( $prefix ) ), '/' );
+        if ( $rest === '/' )
+            return null;
+        $first = strtolower( (string)explode( '/', ltrim( $rest, '/' ) )[0] );
+        if ( $first === strtolower( explode( '/', $prefix )[0] ) )
+            return null;
+        foreach ( $exclude as $item )
+        {
+            if ( strtolower( trim( (string)$item, '/' ) ) === $first )
+                return null;
+        }
+        return $rest;
+    }
+
+    /**
+     * The PathPrefix and PathPrefixExclude[] of a siteaccess (site.ini [SiteAccessSettings]).
+     *
+     * @param string $siteaccess
+     * @return array prefix (without slashes, '' for none), exclude
+     */
+    public function pathPrefix( $siteaccess )
+    {
+        $prefix = '';
+        $exclude = array();
+        if ( $siteaccess !== '' && in_array( $siteaccess, $this->siteaccesses(), true ) )
+        {
+            $ini = eZSiteAccess::getIni( $siteaccess, 'site.ini' );
+            if ( $ini && $ini->hasVariable( 'SiteAccessSettings', 'PathPrefix' ) )
+                $prefix = trim( (string)$ini->variable( 'SiteAccessSettings', 'PathPrefix' ), '/' );
+            if ( $ini && $ini->hasVariable( 'SiteAccessSettings', 'PathPrefixExclude' ) )
+                $exclude = (array)$ini->variable( 'SiteAccessSettings', 'PathPrefixExclude' );
+        }
+        return array( 'prefix' => $prefix, 'exclude' => $exclude );
     }
 
     public function isSystemPath( $path )

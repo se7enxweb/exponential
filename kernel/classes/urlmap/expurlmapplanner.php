@@ -212,7 +212,8 @@ class expUrlMapPlanner
         $resolved = null;
         if ( !$target['external'] )
         {
-            $resolved = $this->environment->resolveTarget( $target['node'] !== '' ? $target['node'] : $target['path'], $siteaccess, $language );
+            $resolved = $target['node'] !== '' ? $this->environment->resolveTarget( $target['node'], $siteaccess, $language )
+                                                 : $this->resolvePath( $target['path'], $item['siteaccess'] === '*' ? '' : $siteaccess, $language );
             if ( $resolved === null )
                 return self::finish( $item, expUrlMapPlan::STATE_BROKEN_TARGET, array( 'the target ' . $row->newUrl() . ' does not exist on this site' ) );
         }
@@ -278,6 +279,31 @@ class expUrlMapPlanner
         if ( (string)$existing['target'] === $value && (int)$existing['status'] === $item['status'] )
             return self::finish( $item, expUrlMapPlan::STATE_UNCHANGED );
         return self::finish( $item, expUrlMapPlan::STATE_CHANGED, array( 'the redirect is there to ' . $existing['target'] . ' (' . $existing['status'] . ')' ) );
+    }
+
+    /**
+     * A target path as the siteaccess serves it: a visitor's address (/recipes) is looked up below the siteaccess's
+     * PathPrefix first (/fit-healthy/recipes; not when its first element is one of PathPrefixExclude[]), then as it
+     * is, so a path written with the prefix, or one outside it, resolves too.
+     *
+     * @param string $path
+     * @param string $siteaccess '' for a row of every siteaccess (no prefix)
+     * @param string $language
+     * @return array|null as expUrlMapEnvironment::resolveTarget()
+     */
+    protected function resolvePath( $path, $siteaccess, $language )
+    {
+        if ( $siteaccess !== '' && trim( (string)$path, '/' ) !== '' )
+        {
+            $prefixed = $this->environment->aliasPath( $siteaccess, $path );
+            if ( $prefixed !== $path )
+            {
+                $resolved = $this->environment->resolveTarget( $prefixed, $siteaccess, $language );
+                if ( $resolved !== null )
+                    return $resolved;
+            }
+        }
+        return $this->environment->resolveTarget( $path, $siteaccess, $language );
     }
 
     /**

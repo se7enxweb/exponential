@@ -18,6 +18,8 @@
  *        path ignored, trailing slash and dot segments normalized), match() by siteaccess before every siteaccess,
  *        the location of node, path and URL targets
  *  UP-06 sameRow() and sameEntry() of the importer, and the wildcard types
+ *  UP-07 a target path as the siteaccess serves it (below its PathPrefix first, PathPrefixExclude[] honored, then
+ *        as it is), and the export of an alias below the prefix in the visitor's form with its siteaccess
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -214,6 +216,39 @@ class expUrlMapPlannerTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'ger', 'eng-GB' ), array( $plan->items()[0]['siteaccess'], $plan->items()[0]['language'] ) );
         $this->expectException( InvalidArgumentException::class );
         $this->plan( array(), array( 'on_conflict' => 'merge' ) );
+    }
+
+    /** UP-07 */
+    public function testTargetPathsBelowThePathPrefix()
+    {
+        // the siteaccess ger has PathPrefix=de (PathPrefixExclude[]=media): its page /recipes is stored as /de/recipes
+        $this->env->targets['/de/recipes'] = array( 'type' => 'node', 'action' => 'eznode:80', 'link' => 90, 'node_id' => 80 );
+        $this->env->targets['/media/logo'] = array( 'type' => 'node', 'action' => 'eznode:81', 'link' => 91, 'node_id' => 81 );
+        $plan = $this->plan( array(
+            array( '/about-us.html', '/recipes', '', 'ger' ),      // the visitor's address of the page
+            array( '/old-recipes', '/de/recipes', '', 'ger' ),     // the stored path still resolves
+            array( '/old-about', '/about', '', 'ger' ),            // a page outside the prefix resolves as it is
+            array( '/old-logo', '/media/logo', '', 'ger' ),        // an excluded first element is not prefixed
+            array( '/elsewhere', '/recipes' ),                     // the siteaccess site has no prefix
+            array( '/every', '/recipes', 'redirect-temporary', '*' ), // a row of every siteaccess has none either
+        ) );
+        $items = $plan->items();
+        $this->assertSame( array( 'new alias', 'new alias', 'new alias', 'new alias', 'broken-target ', 'broken-target ' ), self::summary( $plan ) );
+        $this->assertSame( array( 'eznode:80', 'eznode:80', 'eznode:60', 'eznode:81' ), array_column( array_column( array_slice( $items, 0, 4 ), 'write' ), 'action' ) );
+        $this->assertSame( '/de/about-us.html', $items[0]['write']['path'] );
+
+        // the export writes an alias below the prefix the way visitors use it, with its siteaccess, so importing it
+        // again stores it at the same place
+        $this->assertSame( array( '/x/y', null, null, null, null, null ), array(
+            expUrlMapKernelEnvironment::unprefixedPath( '/de/x/y', 'de', array() ), expUrlMapKernelEnvironment::unprefixedPath( '/de', 'de', array() ),
+            expUrlMapKernelEnvironment::unprefixedPath( '/other/x', 'de', array() ), expUrlMapKernelEnvironment::unprefixedPath( '/de/media/x', 'de', array( 'Media' ) ),
+            expUrlMapKernelEnvironment::unprefixedPath( '/de/de/x', 'de', array() ), expUrlMapKernelEnvironment::unprefixedPath( '/de/x', '', array() ) ) );
+        $exported = expUrlMapExporter::visitorRow( new expUrlMapRow( '/de/about-us.html', 'node:80', 'redirect' ), 'ger', 'de', array( 'media' ) );
+        $this->assertSame( array( '/about-us.html', 'ger' ), array( $exported->oldUrl(), $exported->siteaccess() ) );
+        $this->assertSame( '/media/x', expUrlMapExporter::visitorRow( new expUrlMapRow( '/media/x', 'node:80' ), 'ger', 'de', array( 'media' ) )->oldUrl() );
+        $this->assertSame( '/de/x', expUrlMapExporter::visitorRow( new expUrlMapRow( '/de/x', 'node:80' ), '', 'de', array() )->oldUrl() );
+        $again = $this->plan( array( array( $exported->oldUrl(), '/recipes', 'redirect', $exported->siteaccess() ) ) )->items()[0];
+        $this->assertSame( '/de/about-us.html', $again['write']['path'], 'the round trip stores the alias at the same place' );
     }
 
     /** UP-04 */
