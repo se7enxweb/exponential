@@ -785,6 +785,11 @@ class eZURLWildcard extends eZPersistentObject
      */
     public static function fetchCacheFile( $filepath )
     {
+        // A cache file written again under the same name: OPcache would serve the old one until opcache.revalidate_freq
+        // passes (60 s on many hosts), so a wildcard added or removed seemed to have no effect for a minute. Without
+        // force the cached script is only dropped when the file is newer than it (one stat).
+        if ( function_exists( 'opcache_invalidate' ) )
+            @opcache_invalidate( $filepath, false );
         return include( $filepath );
     }
 

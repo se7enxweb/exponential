@@ -369,6 +369,9 @@ class expUrlRedirect extends eZPersistentObject
      */
     public static function fetchCacheFile( $path )
     {
+        // rewritten under the same name: drop a stale OPcache copy when the file is newer (see eZURLWildcard)
+        if ( function_exists( 'opcache_invalidate' ) )
+            @opcache_invalidate( $path, false );
         return include $path;
     }
 
