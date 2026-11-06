@@ -31,8 +31,8 @@ class Expurlbatches extends ExpurlBase
                              "./console exp:url:batches --limit=100 --format=json",
         ) + self::SCRIPT );
         return (array)$this->startup( '[limit:][format:]', '', array(
-            'limit' => 'How many of the last imports to list (default 20)',
-            'format' => 'import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo: text (default) or json (the machine output exp-url/1)',
+            'limit' => 'batches: how many of the last imports to list (default 20); from-sitemap, from-404, test: the most rows (default all)',
+            'format' => 'import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo, from-sitemap, from-404, suggest, test: text (default) or json (the machine output exp-url/1)',
         ) );
     }
 

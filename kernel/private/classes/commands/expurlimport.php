@@ -35,14 +35,14 @@ class Expurlimport extends ExpurlBase
                              "./console exp:url:import map.xlsx --host=www.old-site.com=site --output-format=json",
         ) + self::SCRIPT );
         return (array)$this->startup( '[format:][language:][on-conflict:][dry-run][report:][host:*][login:][output-format:]', '[file]', array(
-            'format' => 'import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo: text (default) or json (the machine output exp-url/1)',
+            'format' => 'import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo, from-sitemap, from-404, suggest, test: text (default) or json (the machine output exp-url/1)',
             'language' => 'import: the language of rows without one (default the siteaccess\'s); export: only this language',
             'on-conflict' => 'What happens to an old address that has another entry already: skip (default) or overwrite',
             'dry-run' => 'Plan and check only: list what would be imported, write nothing',
-            'report' => 'Also write the plan, row by row, to this file (.json, or .csv)',
+            'report' => 'import: also write the plan, row by row, to this file (.json, or .csv); suggest, test: also write every row with its suggestions or its result to this file (.json, or .csv)',
             'host' => 'An old host and the siteaccess it stands for, old-site.com=site (a comma list or repeated): for full addresses of a host that is not this installation\'s',
             'login' => 'Run as this user (recorded with the import and in the audit)',
-            'output-format' => 'import, export: what the command prints, text (default) or json (the machine output exp-url/1); --format is the file\'s format there',
+            'output-format' => 'import, export: what the command prints, text (default) or json (the machine output exp-url/1); --format is the file\'s format there; from-sitemap, from-404, suggest: the format of the file written (csv, json, xlsx, ods, apache, nginx; default from --output, else csv)',
         ) );
     }
 
