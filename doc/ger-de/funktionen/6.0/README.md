@@ -74,6 +74,8 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Eine defekte Installation im Browser reparieren](reparatur-im-browser.md)
 - [Prüfung der Dateikonsistenz und die Dateiliste des Release](dateikonsistenzpruefung.md)
 - [Qualitätsprüfungen: Git-Hooks, Dateimanifest, Codestil und PHPStan](qualitaetspruefungen.md)
+- [Exponential Components (expcomponents): die Bibliotheken des Kernels, geforkt aus den Zeta Components](expcomponents.md):
+  `se7enxweb/expcomponents-*` unter Apache 2.0, dieselben `ezc`-Klassen, die Paketzuordnung und die Geschichte
 - [Cache leeren, indem Verzeichnisse beiseitegeschoben werden](cache-leeren-durch-umbenennen.md)
 - [Inhalts- und INI-Cache in Redis oder Valkey halten](valkey-cache-hooks.md)
 - [Generator für den statischen Cache](generator-fuer-den-statischen-cache.md)

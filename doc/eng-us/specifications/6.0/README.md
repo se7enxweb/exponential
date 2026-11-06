@@ -20,6 +20,7 @@ default, scope) and ends with "Related pages".
 | [The static publishing form endpoint](static-publishing-form-endpoint.md) | The endpoint `staticpublish/form` that forms of a static copy post to: origin, signed token, rate limit |
 | [The migration file format](migration-file-format.md) | File names, the header, the PHP class, the checksum, order, states, the record tables, the status file, the run log, `exp-migration/1` |
 | [The URL map file formats](url-map-file-formats.md) | The rows of URL translator and wildcard import and export files: columns, kinds, normalization, CSV, JSON, .xlsx, .ods, Apache and nginx rules, `exp-url-map/1` |
+| [The expcomponents packages](expcomponents-packages.md) | Each library of the kernel's fork of the Zeta Components: purpose, the kernel classes and features that use it, the replaced package, the repository and the fork release |
 | [Extension metadata](extension-metadata.md) | `ezinfo.php`, `extension.xml`, `expInfo`, the release rule |
 | [Installer logs and seed data](installer-logs-and-seed-data.md) | Seed files, the content tree of a new installation, installer logs |
 | [Notifications](notifications.md) | Events, handlers, rules, digest, the service, lock and run record, views, templates |

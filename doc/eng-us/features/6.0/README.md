@@ -68,6 +68,8 @@ nginx with PHP-FPM keep working as before.
 - [Repair a broken installation from the browser](repair-from-the-browser.md)
 - [File consistency check and the release file list](file-consistency-check.md)
 - [Quality checks: git hooks, file manifest, code style and PHPStan](quality-checks.md)
+- [Exponential Components (expcomponents): the kernel's libraries, forked from Zeta Components](expcomponents.md):
+  `se7enxweb/expcomponents-*` under Apache 2.0, the same `ezc` classes, the package map and the history
 - [Cache clears that move directories aside](cache-clear-rename-aside.md)
 - [Keep the content and INI caches in Redis or Valkey](valkey-cache-hooks.md)
 - [Static cache generator](static-cache-generator.md)

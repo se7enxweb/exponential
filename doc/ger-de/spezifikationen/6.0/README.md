@@ -20,6 +20,7 @@ Block, Schlüssel, Standard, Geltungsbereich) und endet mit „Verwandte Seiten�
 | [Der Formular-Endpunkt des statischen Veröffentlichens](statisches-veroeffentlichen-formular-endpunkt.md) | Der Endpunkt `staticpublish/form`, an den Formulare einer statischen Kopie senden: Herkunft, signiertes Token, Ratenbegrenzung |
 | [Das Migrationsdateiformat](migrationsdateiformat.md) | Dateinamen, der Kopf, die PHP-Klasse, die Prüfsumme, Reihenfolge, Zustände, die Aufzeichnungstabellen, die Statusdatei, das Laufprotokoll, `exp-migration/1` |
 | [Die Dateiformate für URL-Zuordnungen](url-zuordnungsdateiformate.md) | Die Zeilen der Import- und Exportdateien für URL-Übersetzer und Platzhalter: Spalten, Arten, Normalisierung, CSV, JSON, .xlsx, .ods, Apache- und nginx-Regeln, `exp-url-map/1` |
+| [Die expcomponents-Pakete](expcomponents-pakete.md) | Jede Bibliothek des Forks der Zeta Components für den Kernel: Zweck, die Klassen und Funktionen des Kernels, die sie verwenden, das ersetzte Paket, das Repository und das Release des Forks |
 | [Metadaten von Extensions](extension-metadaten.md) | `ezinfo.php`, `extension.xml`, `expInfo`, die Release-Regel |
 | [Installer-Protokolle und Startdaten](installer-protokolle-und-startdaten.md) | Startdatendateien, der Inhaltsbaum einer neuen Installation, Installer-Protokolle |
 | [Benachrichtigungen](benachrichtigungen.md) | Ereignisse, Handler, Regeln, Sammelbenachrichtigung, der Service, Sperre und Laufprotokoll, Views, Templates |

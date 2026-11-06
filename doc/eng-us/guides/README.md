@@ -175,6 +175,7 @@ Read them in this order the first time. Each one also stands on its own.
 | [REST API v1 and v2: one extension](rest-api-v1-and-v2.md) | Which URL answers at v1 and v2 from the one `ezprestapi` extension, a client authenticated with OAuth2 or a key, the API called with curl, `rest.ini` read, an installation moved off the deprecated `ezprestapiprovider` | 20 minutes |
 | [Upgrading](upgrading.md) | An installation of 4.x, 5.x or an earlier 6.0.x moved to the current 6.0 line, and checked | 20 minutes for a small site |
 | [Upgrading with the console](upgrading-with-the-console.md) | The state of every upgrade step read, a dry run, the upgrade applied with a backup in one call, a failure resumed, drift found, the same from a pipeline | 15 minutes |
+| [Contributing to expcomponents](contributing-to-expcomponents.md) | A fix to one of the kernel's libraries (the fork of the Zeta Components) cloned, tested on every supported PHP version, committed with its ChangeLog entry and offered as a pull request; how releases, versions and upstream syncs work | 30 minutes, then the fix |
 | [Upgrade steps for extensions](upgrade-steps-for-extensions.md) | A table, a column and a default row of an extension made upgrade steps, registered, tested fresh, old, twice and half applied | 30 minutes |
 | [The upgrade check](upgrade-check.md) | The files and the database compared with the release on Setup > Upgrade check, every kind of finding read and dealt with, the report downloaded, the same check run from a shell | 15 minutes |
 | [Migrations](migrations.md) | What a migration is and when to use one, the life cycle from writing to pushing, where files live, order, environments, the record, transactions, the lock, every default and switch | 15 minutes |
@@ -247,6 +248,8 @@ You write extensions, templates with logic, commands and integrations.
 5. Notifications: [architecture, extending and testing](notifications-developer.md), [the specification](../specifications/6.0/notifications.md), [the INI reference](../specifications/6.0/notifications-ini.md), [the commands](../specifications/6.0/notifications-cli.md).
    E-mail preferences: [categories, the mail gate and testing](mail-preferences-developer.md), [the specification](../specifications/6.0/mail-preferences.md), [the commands](../specifications/6.0/mail-preferences-cli.md), [the law checklist](../specifications/6.0/mail-preferences-compliance.md).
 6. Tests and compatibility: [Continuous integration](../specifications/6.0/continuous-integration.md), [PHP 8 support](../bc/6.0/php8.md).
+   The kernel's libraries (`ezc*` classes): [Exponential Components](../features/6.0/expcomponents.md) and
+   [Contributing to expcomponents](contributing-to-expcomponents.md).
    Changes to a site's database and content in code: [Migrations](migrations.md), starting with [the tutorial](migrations-tutorial.md), then [PHP migrations](migrations-php.md) and [the file format](../specifications/6.0/migration-file-format.md).
 7. Bridges to the Symfony platform: [Legacy bridge](../features/6.0/legacy-bridge.md), [the platform repositories](../history/ecosystem.md).
 
