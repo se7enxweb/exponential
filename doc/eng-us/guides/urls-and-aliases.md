@@ -10,7 +10,7 @@ rule below was checked against the code of this repository on 6 October 2026; th
 [References](#references).
 
 [Guides](README.md) · Related: [Paging in the admin](../features/6.0/admin-list-paging.md) ·
-[Cronjobs](cronjobs.md) · [Operating a site](operating-a-site.md)
+[Cronjobs](cronjobs.md) · [Operating a site](operating-a-site.md) · [Migrating URLs](../help/migrating-urls.md)
 
 ## In short
 

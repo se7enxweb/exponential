@@ -40,6 +40,7 @@ Users whose role has `content/urltranslator`.
 ## Related pages
 
 - [How do I give a page an extra address?](how-do-i-give-a-page-an-extra-address.md)
+- [Migrating URLs](../migrating-urls.md): many old addresses at once, from a file
 - [URL wildcards](../creators/website-creators/url-wildcards.md)
 - [Redirects and moved content](../creators/website-creators/redirects-and-moved-content.md)
 - [User manual](README.md)

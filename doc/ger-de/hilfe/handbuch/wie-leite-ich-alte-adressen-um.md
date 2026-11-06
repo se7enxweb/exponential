@@ -41,6 +41,7 @@ Benutzer, deren Rolle `content/urltranslator` hat.
 ## Verwandte Seiten
 
 - [Wie gebe ich einer Seite eine zusätzliche Adresse?](wie-gebe-ich-einer-seite-eine-zusaetzliche-adresse.md)
+- [URLs migrieren](../urls-migrieren.md): viele alte Adressen auf einmal, aus einer Datei
 - [URL-Platzhalter](../ersteller/website-ersteller/url-platzhalter.md)
 - [Weiterleitungen und verschobene Inhalte](../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md)
 - [Benutzerhandbuch](README.md)

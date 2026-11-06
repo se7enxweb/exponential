@@ -57,6 +57,7 @@ ausgegraut oder gar nicht angezeigt.
 | [Suchen](suchen.md) | Inhalte in der Administration und auf der Site finden |
 | [Sprachen](sprachen.md) | Inhalte übersetzen und die Sprache der Administration selbst wählen |
 | [Der Layout-Editor](layout-editor.md) | Die Blöcke einer Seite in Zonen anordnen und das Layout veröffentlichen |
+| [URLs migrieren](urls-migrieren.md) | Die alten Adressen einer Website nach einem Umzug erhalten: sammeln, zuordnen, mit Vorschau importieren, testen, rückgängig machen, exportieren |
 
 ## Konten, Rollen und Mitglieder
 

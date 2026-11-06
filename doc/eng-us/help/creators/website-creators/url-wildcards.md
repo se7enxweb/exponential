@@ -78,8 +78,12 @@ A wildcard that "does nothing" is usually shadowed by an alias or an older wildc
 - Old site: `products/*.html` cannot be expressed literally; `products/*` to `Products/{1}` with the old `.html`
   addresses handled as aliases on the nodes that differ.
 
+To create many global URL aliases and wildcards at once from a file (CSV, Excel, or the old site's Apache or nginx
+rules), import a URL map: [Migrating URLs](../../migrating-urls.md).
+
 ## Related pages
 
+- [Migrating URLs](../../migrating-urls.md)
 - [Redirects and moved content](redirects-and-moved-content.md)
 - [URL aliases and nice URLs](url-aliases-and-nice-urls.md)
 - [Settings page](../../../guides/settings-page.md)

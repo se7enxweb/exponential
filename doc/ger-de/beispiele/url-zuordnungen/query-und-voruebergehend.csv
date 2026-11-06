@@ -1,0 +1,6 @@
+old_url,new_url,kind,siteaccess,language,note,status
+/index.php?id=12,/recipes,,,,Alte CMS-Adresse mit Query: Die Reihenfolge der Parameter zählt nicht,
+/index.php?id=15&lang=en,/healthy-eating,,,,,
+/shop.php?category=3,/recipes/kale-salad,,,,Produkt dauerhaft umgezogen,308
+/summer-challenge,/workout,redirect-temporary,,,Aktionsseite für den Sommer: Suchmaschinen behalten die alte Adresse,
+/spring-offer,/contact,,,,Eine vorübergehende Weiterleitung über ihren Status,307

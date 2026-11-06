@@ -10,7 +10,7 @@ jedes Feld und jede Regel unten wurde am 6. Oktober 2026 mit dem Code dieses Rep
 unter [Quellen](#quellen) aufgeführt.
 
 [Anleitungen](README.md) · Siehe auch: [Seitenweise Listen in der Administration](../funktionen/6.0/seitenweise-listen-im-admin.md) ·
-[Cronjobs](cronjobs.md) · [Betrieb einer Site](betrieb-einer-website.md)
+[Cronjobs](cronjobs.md) · [Betrieb einer Site](betrieb-einer-website.md) · [URLs migrieren](../hilfe/urls-migrieren.md)
 
 ## Kurz gesagt
 

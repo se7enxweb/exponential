@@ -1,0 +1,5 @@
+old_url,new_url,kind,siteaccess,language,note,status
+/old-recipes/*,/recipes/{1},,,,Every old recipe address keeps its last part,
+/topics/*/index.html,/{1},,,,/topics/running/index.html goes to /running,
+/sale/*,/workout,wildcard-forward-temporary,,,Temporary: the sale pages come back next year,
+/print/*,/recipes/{1},wildcard-direct,,,Served without a redirect,

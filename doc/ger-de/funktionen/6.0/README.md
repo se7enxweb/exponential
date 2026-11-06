@@ -167,6 +167,7 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 
 - [Links zu Inhalten einer anderen Site einer Multisite-Installation](websiteuebergreifende-links-im-multisite.md)
 - [Siteaccess nach Host-Präfix und die Weiterleitung zur Sprache](siteaccess-zuordnung-nach-host-und-sprache.md)
+- [URL-Zuordnungen importieren und exportieren: alte Adressen nach einem Umzug erhalten, mit Rückgängig](url-zuordnungen-importieren-und-exportieren.md)
 - [Übersetzungen und Sprachen](uebersetzungen-und-sprachen.md)
 - [Sprachen mit Schreibrichtung von rechts nach links in der Administration](rechts-nach-links.md)
 - [Sprache der Oberfläche und der UI-Umschalter](ui-umschalter.md)

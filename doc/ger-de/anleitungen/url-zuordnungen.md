@@ -13,7 +13,8 @@ Installation hinzufügt und die Konsolenbefehle beschreibt
 [URL-Zuordnungen importieren und exportieren](../bc/6.0/url-zuordnungen-importieren.md).
 
 [Anleitungen](README.md) · Siehe auch: [Links, URL-Aliase, Platzhalter und Suchstatistik](urls-und-aliase.md),
-[Identität bestätigen](identitaet-bestaetigen.md)
+[Identität bestätigen](identitaet-bestaetigen.md), [URL-Zuordnungen importieren und exportieren](../funktionen/6.0/url-zuordnungen-importieren-und-exportieren.md),
+[URLs migrieren](../hilfe/urls-migrieren.md) (ein Tutorial), [URL-Zuordnungen als Beispiele](../beispiele/url-zuordnungen/README.md)
 
 ## 1. Eine URL-Zuordnung importieren
 

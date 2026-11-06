@@ -197,6 +197,7 @@ nginx with PHP-FPM keep working as before.
 
 - [Links to content of another site of a multisite installation](multisite-cross-site-links.md)
 - [Siteaccess by host prefix, and the redirect to the language](siteaccess-host-and-language-matching.md)
+- [Importing and exporting URL maps: old addresses kept after a move, with undo](url-map-import-export.md)
 - [Translations and languages](translations-and-languages.md)
 - [Right-to-left languages in the administration](right-to-left.md)
 - [Interface language and the UI switch](ui-switch.md)

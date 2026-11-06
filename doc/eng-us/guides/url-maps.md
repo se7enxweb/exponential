@@ -11,7 +11,8 @@ The file formats are described in [The URL map file formats](../specifications/6
 the import adds to an installation, and the console commands, in [URL map import and export](../bc/6.0/url-map-import.md).
 
 [Guides](README.md) · Related: [Links, URL aliases, wildcards and search statistics](urls-and-aliases.md),
-[Verify it's you](verify-its-you.md)
+[Verify it's you](verify-its-you.md), [Importing and exporting URL maps](../features/6.0/url-map-import-export.md),
+[Migrating URLs](../help/migrating-urls.md) (a tutorial), [URL map examples](../examples/url-maps/README.md)
 
 ## 1. Import a URL map
 

@@ -233,6 +233,7 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 - **Q shell** (Q-Shell): die ausklappbare Konsole im Velocity-Control-Panel. [Q-Shell](funktionen/6.0/velocity-q-shell.md).
 - **qbix**: der Engine-Name von **Velocity** in den Einstellungen von Exponential und das Upstream-Projekt, auf dem er beruht. [Velocity-Engines](bc/6.0/velocity-engines.md).
 - **query cache (SQL)** (SQL-Abfrage-Cache): beantwortet wiederholte `SELECT`-Abfragen, ohne die Datenbank zu fragen, bis ein Schreibvorgang sie veralten lässt. [SQL-Abfrage-Cache](bc/6.0/sql-abfrage-cache.md).
+- **query-string redirect** (Weiterleitung mit Abfrage): eine Weiterleitung einer alten Adresse mit Abfrage, etwa `/index.php?id=12`, erkannt an Pfad und Abfrage (in beliebiger Reihenfolge der Parameter) vor den URL-Aliasen und Platzhaltern; entsteht durch den Import einer **URL map**. [URL-Zuordnungen importieren und exportieren](funktionen/6.0/url-zuordnungen-importieren-und-exportieren.md#weiterleitungen-mit-abfrage).
 
 ## R
 
@@ -283,6 +284,7 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 - **template** (Template): eine `.tpl`-Datei in der Template-Sprache von Exponential; aufgelöst über Design und **overrides**. [Kommentare mit Template-Pfaden](funktionen/6.0/template-pfad-kommentare.md).
 - **template engine** (Template-Engine): eine der drei Sprachen, in denen ein Template geschrieben sein kann: Exponential-Templates (`.tpl`), Smarty (`.stpl`) oder Twig (`.twig`); gewählt über die Dateiendung, in einem Design frei gemischt. [Templates nebeneinander](hilfe/template-sprache/tpl-twig-smarty-nebeneinander.md), [Geschwindigkeit der drei Template-Engines](anleitungen/template-engines-geschwindigkeit.md).
 - **template path comments** (Kommentare mit Template-Pfaden): Kommentare `START` und `STOP`, die jedes Template im Seitenquelltext benennen. [Kommentare mit Template-Pfaden](funktionen/6.0/template-pfad-kommentare.md).
+- **temporary redirect** (vorübergehende Weiterleitung): eine Weiterleitung, die mit 302, 303 oder 307 antwortet, damit Suchmaschinen die alte Adresse behalten; die Arten `redirect-temporary` und `wildcard-forward-temporary` einer **URL map**. [URL-Zuordnungen importieren und exportieren](funktionen/6.0/url-zuordnungen-importieren-und-exportieren.md#arten-und-status).
 - **test suite** (Testsuite): die PHPUnit-Suites aus `phpunit.xml`, ausgeführt mit `php vendor/bin/phpunit`. [Kontinuierliche Integration und die Testsuite](spezifikationen/6.0/kontinuierliche-integration.md).
 - **TinyMCE**: die Editor-Engine hinter **ezoe**, in den Versionen 3 und 8. [TinyMCE 8](funktionen/6.0/online-editor-tinymce8.md).
 - **translation** (Übersetzung): eine Sprachversion eines Inhaltsobjekts oder eine Sprachdatei der Oberfläche. [Übersetzungen und Sprachen](funktionen/6.0/uebersetzungen-und-sprachen.md).
@@ -295,6 +297,7 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 - **UI switch** (UI-Umschalter): das Framework hinter dem Feld *Oberfläche* in der rechten Werkzeugleiste der Administration: die Auswahl eines angemeldeten Benutzers für die Oberfläche selbst (zuerst die **interface language**), pro Siteaccess in der Sitzung gehalten und früh in jeder Anfrage angewendet. [Oberflächensprache](funktionen/6.0/ui-umschalter.md), [Einstellungen](anleitungen/ui-umschalter-einstellungen.md).
 - **UI switch provider** (UI-Switch-Provider): eine Klasse, die eine Auswahl des **UI switch** anbietet (`expUISwitchProviderInterface`, meist als Erweiterung von `expUISwitchProvider`), genannt in `uiswitch.ini [UISwitchSettings] ProviderList[]` und durch die Richtlinie `uiswitch/<identifier>` geschützt. [API für UI-Switch-Provider](bc/6.0/ui-umschalter.md).
 - **URL alias** (URL-Alias): eine lesbare Adresse, die einem Knoten zugeordnet ist; `exp:updateniceurls` baut sie neu auf. [Inhaltsmodell](anleitungen/inhaltsmodell-und-bearbeitung.md).
+- **URL map** (URL-Zuordnung): eine Datei (CSV, JSON, `.xlsx`, `.ods`, Apache- oder nginx-Regeln), die alte Adressen und ihr jeweiliges Ziel auflistet; wird als ein rückgängig zu machender Stapel in den URL-Übersetzer, die Platzhalter und die Weiterleitungen importiert und wieder exportiert. [URL-Zuordnungen importieren und exportieren](funktionen/6.0/url-zuordnungen-importieren-und-exportieren.md), [URLs migrieren](hilfe/urls-migrieren.md).
 - **uwebserver**: ein kleiner C-Webserver, der mit Velocity ausgeliefert wird, für statische Dateien und Benchmarks. [uwebserver](funktionen/6.0/velocity-uwebserver.md).
 
 ## V

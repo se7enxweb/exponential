@@ -1,0 +1,9 @@
+old_url,new_url,kind,siteaccess,language,note,status
+/about-us.html,/fitness,,,,"Old ""About us"" page, now the Fitness page",
+/recipes.html,/recipes,,,,Recipe overview,
+/recipes/kale-salad.html,/recipes/kale-salad,,,,,
+/recipes/hummus.html,/recipes/home-made-hummus,,,,Renamed recipe,
+/blog/eating-well.html,/healthy-eating,,,,,
+/contact.html,/contact,,,,,
+/running-tips,node:163,,,,The Running topic by its node id: follows the page if it moves,
+/eat-well,/healthy-eating,alias,,,Served at the old address without a redirect,

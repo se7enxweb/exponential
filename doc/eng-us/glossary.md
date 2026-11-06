@@ -232,6 +232,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **Q shell**: the drop-down console in the Velocity control panel. [Q shell](features/6.0/velocity-q-shell.md).
 - **qbix**: the engine name of **Velocity** inside Exponential's settings and the upstream project it is based on. [Velocity engines](bc/6.0/velocity-engines.md).
 - **query cache (SQL)**: answers repeated `SELECT` queries without asking the database until a write makes them stale. [SQL query cache](bc/6.0/sql-query-cache.md).
+- **query-string redirect**: a redirect of an old address with a query, such as `/index.php?id=12`, matched on the path and the query (in any order of its parameters) before the URL aliases and wildcards; made by importing a **URL map**. [Importing and exporting URL maps](features/6.0/url-map-import-export.md#query-string-redirects).
 
 ## R
 
@@ -282,6 +283,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **template**: a `.tpl` file in Exponential's template language; resolved by design and **overrides**. [Template path comments](features/6.0/template-path-comments.md).
 - **template engine**: one of the three languages a template can be written in: Exponential templates (`.tpl`), Smarty (`.stpl`) or Twig (`.twig`); chosen by the file ending, mixed freely in one design. [The three template engines compared](guides/template-engines.md), [Templates side by side](help/template-language/tpl-twig-smarty-side-by-side.md).
 - **template path comments**: `START` and `STOP` comments naming each template in the page source. [Template path comments](features/6.0/template-path-comments.md).
+- **temporary redirect**: a redirect that answers 302, 303 or 307, so search engines keep the old address; the kinds `redirect-temporary` and `wildcard-forward-temporary` of a **URL map**. [Importing and exporting URL maps](features/6.0/url-map-import-export.md#kinds-and-statuses).
 - **test suite**: the PHPUnit suites of `phpunit.xml`, run with `php vendor/bin/phpunit`. [Continuous integration and the test suite](specifications/6.0/continuous-integration.md).
 - **TinyMCE**: the editor engine behind **ezoe**, in versions 3 and 8. [TinyMCE 8](features/6.0/online-editor-tinymce8.md).
 - **translation**: a language version of a content object, or a language file of the interface. [Translations and languages](features/6.0/translations-and-languages.md).
@@ -294,6 +296,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **UI switch**: the framework behind the *Interface* box of the administration's right toolbar: a signed-in user's choices for the interface itself (the **interface language** first), kept in the session per siteaccess and applied early in every request. [Interface language](features/6.0/ui-switch.md), [settings](guides/ui-switch-settings.md).
 - **UI switch provider**: a class that offers one choice of the **UI switch** (`expUISwitchProviderInterface`, usually extending `expUISwitchProvider`), named in `uiswitch.ini [UISwitchSettings] ProviderList[]` and guarded by the policy `uiswitch/<identifier>`. [UI switch provider API](bc/6.0/ui-switch.md).
 - **URL alias**: a readable address mapped to a node; `exp:updateniceurls` rebuilds them. [Content model](guides/content-model-and-editing.md).
+- **URL map**: a file (CSV, JSON, `.xlsx`, `.ods`, Apache or nginx rules) that lists old addresses and where each one goes; imported into the URL translator, the wildcards and the redirects as one batch that can be undone, and exported again. [Importing and exporting URL maps](features/6.0/url-map-import-export.md), [Migrating URLs](help/migrating-urls.md).
 - **uwebserver**: a small C web server shipped with Velocity, used for static files and benchmarks. [uwebserver](features/6.0/velocity-uwebserver.md).
 
 ## V
