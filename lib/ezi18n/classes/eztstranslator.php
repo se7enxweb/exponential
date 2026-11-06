@@ -172,16 +172,16 @@ class eZTSTranslator extends eZTranslatorHandler
 
             $key = 'cachecontexts';
             if ( $this->HasRestoredCache or
-                 eZTranslationCache::canRestoreCache( $key, $tsTimeStamp ) )
+                 eZTranslationCache::canRestoreCache( $key, $tsTimeStamp, $this->Locale ) )
             {
                 eZDebug::accumulatorStart( 'tstranslator_cache_load', 'tstranslator', 'TS cache load' );
                 if ( !$this->HasRestoredCache )
                 {
-                    if ( !eZTranslationCache::restoreCache( $key ) )
+                    if ( !eZTranslationCache::restoreCache( $key, $this->Locale ) )
                     {
                         $this->BuildCache = true;
                     }
-                    $contexts = eZTranslationCache::contextCache( $key );
+                    $contexts = eZTranslationCache::contextCache( $key, $this->Locale );
                     if ( !is_array( $contexts ) )
                         $contexts = array();
                     $this->HasRestoredCache = $contexts;
@@ -194,14 +194,14 @@ class eZTSTranslator extends eZTranslatorHandler
                     if ( !isset( $this->CachedMessages[$contextName] ) )
                     {
                         eZDebug::accumulatorStart( 'tstranslator_context_load', 'tstranslator', 'TS context load' );
-                        if ( eZTranslationCache::canRestoreCache( $contextName, $tsTimeStamp ) )
+                        if ( eZTranslationCache::canRestoreCache( $contextName, $tsTimeStamp, $this->Locale ) )
                         {
-                            if ( !eZTranslationCache::restoreCache( $contextName ) )
+                            if ( !eZTranslationCache::restoreCache( $contextName, $this->Locale ) )
                             {
                                 $this->BuildCache = true;
                             }
                             $this->CachedMessages[$contextName] =
-                                 eZTranslationCache::contextCache( $contextName );
+                                 eZTranslationCache::contextCache( $contextName, $this->Locale );
 
                             foreach ( $this->CachedMessages[$contextName] as $key => $msg )
                             {
@@ -330,20 +330,20 @@ class eZTSTranslator extends eZTranslatorHandler
             eZDebug::accumulatorStart( 'tstranslator_store_cache', 'tstranslator', 'TS store cache' );
             // strictly null: a locale without a catalogue caches an empty list of contexts, and array() == null would
             // set it again for every untranslated message (a warning each time in the debug output)
-            if ( eZTranslationCache::contextCache( 'cachecontexts' ) === null )
+            if ( eZTranslationCache::contextCache( 'cachecontexts', $this->Locale ) === null )
             {
                 $contexts = array_keys( $this->CachedMessages );
                 eZTranslationCache::setContextCache( 'cachecontexts',
-                                                     $contexts );
-                eZTranslationCache::storeCache( 'cachecontexts' );
+                                                     $contexts, $this->Locale );
+                eZTranslationCache::storeCache( 'cachecontexts', $this->Locale );
                 $this->HasRestoredCache = $contexts;
             }
 
             foreach ( $this->CachedMessages as $contextName => $context )
             {
-                if ( eZTranslationCache::contextCache( $contextName ) == null )
-                    eZTranslationCache::setContextCache( $contextName, $context );
-                eZTranslationCache::storeCache( $contextName );
+                if ( eZTranslationCache::contextCache( $contextName, $this->Locale ) == null )
+                    eZTranslationCache::setContextCache( $contextName, $context, $this->Locale );
+                eZTranslationCache::storeCache( $contextName, $this->Locale );
             }
 
             $this->BuildCache = false;

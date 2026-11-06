@@ -17,7 +17,9 @@ class eZTSTranslatorEmptyContextListTest extends PHPUnit\Framework\TestCase
     public function testTheContextListIsStoredOnlyWhenNoneIsCached()
     {
         $code = file_get_contents( dirname( __DIR__, 4 ) . '/lib/ezi18n/classes/eztstranslator.php' );
-        $this->assertStringContainsString( "if ( eZTranslationCache::contextCache( 'cachecontexts' ) === null )", $code );
+        // the translator names its own locale, so the cache of another locale is not read (eZTranslationCache)
+        $this->assertStringContainsString( "if ( eZTranslationCache::contextCache( 'cachecontexts', \$this->Locale ) === null )", $code );
+        $this->assertStringNotContainsString( "eZTranslationCache::contextCache( 'cachecontexts', \$this->Locale ) == null", $code );
         $this->assertStringNotContainsString( "eZTranslationCache::contextCache( 'cachecontexts' ) == null", $code );
     }
 
