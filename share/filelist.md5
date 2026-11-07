@@ -299,8 +299,8 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-78961bb7ae168a254a9d44c2cca5ac19  composer.json
-865d26e026c157c7975535547539df4b  composer.json.dist
+9599ed8cc3640b79db5592457368a53e  composer.json
+a180ccab56cfc079f1e8da6819229745  composer.json.dist
 493b236b88d569268b7381a695b9b22a  config.env.php.example
 b226014797143b612684b0aacc22d64c  config.php-RECOMMENDED
 3be3d7ac52263ec84d8a70dfa1f7821e  cronjobs/audit.php
@@ -3556,7 +3556,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-8f0d7ef0978f10f1a3943ff61a8885da  doc/changelogs/6.0/6.0.15.md
+a6976f73607ec368a8ef4acafbd91dc2  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -29492,7 +29492,7 @@ bd25076f8b7ba02a3816eb1c5ffc7ed0  tests/tests/kernel/classes/ini/fixtures/expini
 ec56419b8f81359360afffd966df8bea  tests/tests/kernel/classes/mail/expMailLayoutMailsTest.php
 9ff27e0531dcf1671ef85dd7d7399bcb  tests/tests/kernel/classes/mail/expMailTemplateBodyTest.php
 f40856b781c318dab05e018c6ea674a0  tests/tests/kernel/classes/mail/expTipafriendSenderTest.php
-3e29462061fb2c25e82b15b09690a6c2  tests/tests/kernel/classes/mail/ezpMailMessageIdTest.php
+ad5ae1271edba613ce112980f36380da  tests/tests/kernel/classes/mail/ezpMailMessageIdTest.php
 8817a1a96a7e3fdf98492eb054c4adff  tests/tests/kernel/classes/mailpreferences/MailPreferencesBounceListenersTest.php
 dbb44762a425e7a8c6fbc524c2b031bb  tests/tests/kernel/classes/mailpreferences/MailPreferencesComplianceTest.php
 e3f9c03f825fe3e5c0698ab07d1296f0  tests/tests/kernel/classes/mailpreferences/MailPreferencesCoreTest.php
@@ -29767,7 +29767,7 @@ b83f5be0ae45e5e12e00ac3a6d48d978  tests/tests/kernel/classes/setup/SetupPhpVersi
 3fab058df2a1fac9d6fb158aa8602dd4  tests/tests/kernel/classes/setup/SetupRunCommandAuditTest.php
 69da13299d7e71b170dc4462efb11304  tests/tests/kernel/classes/setup/SetupWizardGuardTest.php
 ea953e65d4945e5540b845c02e2fd50f  tests/tests/kernel/classes/setup/SiteInstallerContentRootLookupTest.php
-899be0978acb28c9cb51f5e1d6a47c33  tests/tests/kernel/classes/setup/expComposerKernelRequirementsTest.php
+c8ae4acad51fa0edf6b62163b8decd0d  tests/tests/kernel/classes/setup/expComposerKernelRequirementsTest.php
 f895533bef23d3248a37993d3c8bb60d  tests/tests/kernel/classes/setupsteps/eZSetupCheckFunctionsTest.php
 72350a4bcdb5806753218c82594bff27  tests/tests/kernel/classes/setupsteps/eZSetupStepTestHelper.php
 2dcbeb2171ec30dd25d5e0e751249fff  tests/tests/kernel/classes/setupsteps/eZSetupStepsTest.php

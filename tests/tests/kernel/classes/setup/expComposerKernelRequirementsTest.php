@@ -6,10 +6,11 @@
  *          composer.json nor by composer.json.dist
  *  CR-02 - no PHP code of the kernel, its libraries, designs, scripts, test toolkit or the extensions the kernel
  *          repository ships names a class of those three (comments may say where code was adopted from)
- *  CR-03 - zetacomponents/configuration stays required while composer.json requires a 7x SQLI Import whose releases
- *          throw ezcConfigurationNoConfigException (2.0.x; the extension's own copy is checked too when installed)
- *  CR-04 - se7enxweb/ezie and zetacomponents/image-conversion stay required: the sevenx_multisite site package
- *          activates ezie, and ezie does not declare the image conversion it needs
+ *  CR-03 - se7enxweb/expcomponents-configuration stays required while composer.json requires a 7x SQLI Import whose
+ *          releases throw ezcConfigurationNoConfigException (2.0.x; the extension's own copy is checked too when
+ *          installed)
+ *  CR-04 - se7enxweb/ezie and se7enxweb/expcomponents-image-conversion stay required: the sevenx_multisite site
+ *          package activates ezie, and ezie does not declare the image conversion it needs
  *  CR-05 - the setup wizard and the kickstarter activate expimageeditor, not ezie (only one of the two can draw the
  *          button in admin4)
  *
@@ -99,9 +100,9 @@ class expComposerKernelRequirementsTest extends PHPUnit\Framework\TestCase
         // 2.0.0 and 2.0.1 throw ezcConfigurationNoConfigException; ~2.0.0 allows them
         $constraintAllowsIt = preg_match( '/^[~^]?2\.0(\.[01])?$/', trim( $require['se7enxweb/sqliimport'] ) ) === 1;
         if ( !$installedUsesIt && !$constraintAllowsIt )
-            $this->markTestSkipped( 'the required 7x SQLI Import no longer uses zetacomponents/configuration: it may go' );
+            $this->markTestSkipped( 'the required 7x SQLI Import no longer uses the configuration component: it may go' );
 
-        $this->assertArrayHasKey( 'zetacomponents/configuration', $require,
+        $this->assertArrayHasKey( 'se7enxweb/expcomponents-configuration', $require,
             '7x SQLI Import ' . $require['se7enxweb/sqliimport'] . ' throws ezcConfigurationNoConfigException; drop the component together with a repin to a release that does not' );
     }
 
@@ -110,7 +111,7 @@ class expComposerKernelRequirementsTest extends PHPUnit\Framework\TestCase
     {
         $require = self::composer()['require'];
         $this->assertArrayHasKey( 'se7enxweb/ezie', $require, 'the sevenx_multisite site package activates ezie' );
-        $this->assertArrayHasKey( 'zetacomponents/image-conversion', $require, 'ezie needs it and does not require it itself' );
+        $this->assertArrayHasKey( 'se7enxweb/expcomponents-image-conversion', $require, 'ezie needs it and does not require it itself' );
     }
 
     /** CR-05 */

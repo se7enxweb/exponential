@@ -8,6 +8,7 @@
  *          two messages)
  *  MI-03 - one set with eZMail::setMessageID() stays as it is
  *  MI-04 - without a sender, or with a sender domain that is no host name, the host is localhost, as in the library
+ *  MI-05 - a sender with whitespace or < > , ; " would break the header: the mail component refuses it
  *
  * DB-less; nothing is sent. Fake addresses use the .invalid domain.
  *
@@ -68,8 +69,19 @@ class ezpMailMessageIdTest extends PHPUnit\Framework\TestCase
     public function testLocalhostWithoutAUsableSenderDomain()
     {
         $this->assertMatchesRegularExpression( '/^<[0-9a-f]{32}@localhost>$/', (string)self::messageId( self::mail( null )->Mail ) );
+        // a sender the mail component accepts whose domain is no host name (no "_" in host names)
+        $mail = self::mail();
+        $mail->Mail->from = new ezcMailAddress( 'odd@exa_mple.invalid' );
+        $this->assertMatchesRegularExpression( '/^<[0-9a-f]{32}@localhost>$/', (string)self::messageId( $mail->Mail ) );
+    }
+
+    /** MI-05 */
+    public function testASenderThatWouldBreakTheHeaderIsRefused()
+    {
+        // se7enxweb/expcomponents-mail refuses whitespace and < > , ; " in an address before any header is written
         $mail = self::mail();
         $mail->Mail->from = new ezcMailAddress( 'odd@exa mple>.invalid' );
-        $this->assertMatchesRegularExpression( '/^<[0-9a-f]{32}@localhost>$/', (string)self::messageId( $mail->Mail ) );
+        $this->expectException( ezcMailException::class );
+        self::messageId( $mail->Mail );
     }
 }
