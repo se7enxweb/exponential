@@ -68,7 +68,9 @@ werden.
 Der Kommentar über der Liste erklärt es: Die Reihenfolge zählt, weil spätere Erweiterungen bei Design- und Template-Overrides gewinnen;
 deshalb bleiben die zwei Themes am Ende. Wenn ein Datentyp nachgeschlagen wird, gewinnt der erste Treffer, weshalb
 `activateSiteExtensionSettings()` die Ordner der Einstellungen in der Reihenfolge hinzufügt, in der die Website sie laden wird
-(`eZExtension::extensionOrdering()` wird angewendet, wenn `[ExtensionSettings] ExtensionOrdering=enabled` gilt).
+(`eZExtension::extensionOrdering()` wird angewendet, wenn `[ExtensionSettings] ExtensionOrdering=enabled` gilt). Bei
+Einstellungen gewinnt die **zuerst** genannte Erweiterung: Der Ordner der Einstellungen jeder Erweiterung wird vor die
+vorherigen gestellt ([Konfigurieren, Abschnitt 2](../../../CONFIGURING.md#2-wo-einstellungen-liegen-und-welche-datei-gewinnt)).
 
 > **Tipp**
 > Um der Standardinstallation eine Erweiterung hinzuzufügen, setzen Sie sie an die Stelle in `extension_list`, die ihre Einstellungen

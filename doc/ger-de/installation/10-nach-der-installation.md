@@ -902,7 +902,9 @@ installieren Sie sie so, wie es ihre Dokumentation beschreibt (oft `share/db_sch
 **Reihenfolge.** Wenn zwei Extensions dieselbe Einstellung, dasselbe Template oder dieselbe Design-Datei bereitstellen,
 gewinnt die **frühere** in `ActiveExtensions[]`: Das Einstellungsverzeichnis jeder Extension wird der Reihe nach
 vorangestellt, sodass eine spätere Extension am Ende eine niedrigere Priorität hat. `settings/override/` gewinnt immer
-gegen jede Extension, und die Einstellungen eines Siteaccess gegen die globalen. `[ExtensionSettings]
+gegen jede Extension. Die Einstellungen eines Siteaccess gewinnen gegen die Vorgaben und gegen die Extensions in seinem
+`ActiveAccessExtensions[]`, aber nicht gegen die in `ActiveExtensions[]`, die nach ihm gelesen werden
+([Konfigurieren, Abschnitt 2](../CONFIGURING.md#2-wo-einstellungen-liegen-und-welche-datei-gewinnt)). `[ExtensionSettings]
 ExtensionOrdering=enabled` (ausgeliefert) sortiert Extensions zusätzlich nach den Abhängigkeiten, die sie in
 `extension.xml` deklarieren, was nicht jeden Fall lösen kann (es ordnet nicht über `ActiveExtensions` und
 `ActiveAccessExtensions` hinweg um). Daher:

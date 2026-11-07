@@ -85,7 +85,7 @@ After you change a setting, the INI cache may still hold the old value. Clear it
 |---|---|---|
 | Editing `settings/site.ini` | Lost at the next upgrade | Use an `.ini.append.php` file in `settings/override/` or a siteaccess folder |
 | Changing the `site` siteaccess and looking at `bold` | No change where you look | Find the siteaccess of the page you look at |
-| Setting a value in `settings/siteaccess/<sa>/` that an extension also sets | The extension's value wins | `settings/override/`, or the extension's own siteaccess folder |
+| Setting a value in `settings/siteaccess/<sa>/` that an extension also sets | The extension's value wins | `settings/override/`, or list the extension in that siteaccess's `ActiveAccessExtensions[]` instead (its own siteaccess folder is read before yours and does not help) |
 | Writing `true` where the default uses `enabled` | The switch does not work | Use the form the default file uses |
 | Forgetting the cache | The old value stays | Clear the INI cache |
 | Putting a password into a settings file you commit | The password is published | Keep `settings/override/` and its secrets out of public repositories |

@@ -3566,7 +3566,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-d826449cd92e32ca2e4d20a40695aac5  doc/changelogs/6.0/6.0.15.md
+506bb8c48dc8fee65be218ea3c32e667  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3665,7 +3665,7 @@ ded49d230901ad3762b2ceae14619701  doc/changelogs/extensions/twig.md
 af285ac8d63f408a2ebaf23e88716894  doc/changelogs/extensions/xrowextract.md
 bbcfbb1065eefc4a3f53987a1bad5fb1  doc/changelogs/extensions/xrowmetadata.md
 7f3212d2b818141cfb164d47fa2a4d33  doc/eng-us/COMMUNITY.md
-77e01fdb115a92bfa93b6f172fd4c59f  doc/eng-us/CONFIGURING.md
+f486b57776a216ca028203e4ff0bb49b  doc/eng-us/CONFIGURING.md
 aa7617c6f5563d4cd4ff63ed6af720cc  doc/eng-us/DISTRIBUTIONS.md
 8f1308a0bb70a3295a8a8d9c3a214333  doc/eng-us/EXTENDING.md
 ba34fdb46710aeaf4d07089fce9a4354  doc/eng-us/HISTORY.md
@@ -7049,7 +7049,7 @@ ec55512dfd4d53e21c83bcc5cb3607ee  doc/eng-us/features/6.0/migrations.md
 edf63d0c3d2620ae2f29a5a96f1c6fa1  doc/eng-us/features/6.0/moderation.md
 572060f2ace6a44b07cdaec2a772a43a  doc/eng-us/features/6.0/modern-password-change.md
 df9251aeb6fb79ab9f17590b0bbbb3fb  doc/eng-us/features/6.0/mongodb-database-support.md
-ee73985215cffde6a73d4c2b4f7b0dff  doc/eng-us/features/6.0/multi-site-ini-overrides.md
+3bd8e093800aafdb91540e9466fa4756  doc/eng-us/features/6.0/multi-site-ini-overrides.md
 8c507b215068aeb519298aebe32659da  doc/eng-us/features/6.0/multi-site-log-and-cache-paths.md
 89aef2cbcbbeb2e4a7246cd080448bae  doc/eng-us/features/6.0/multisite-cross-site-links.md
 1e5257640f8fa49f18f0eebd491884c2  doc/eng-us/features/6.0/notifications.md
@@ -7251,7 +7251,7 @@ f337e682866a0c40c31e27575e8f3a38  doc/eng-us/guides/rss-feeds.md
 95673ee9935e9be417754641a1ca13dc  doc/eng-us/guides/sections.md
 e67ab38d5e8cc5665cbf0bbf6028b8d1  doc/eng-us/guides/security-and-audit.md
 f56d2ea6074f72bef319498c442ce1bb  doc/eng-us/guides/sessions.md
-ee611ae868bab0755ccaf719a285f4d3  doc/eng-us/guides/settings-page.md
+bc5789db89e77478d074b71e426a4c54  doc/eng-us/guides/settings-page.md
 926922ffc72e7cffcc1c5984abf81ffe  doc/eng-us/guides/setup-files-from-the-console.md
 9c7e915d3de9058d4a96dd75e2aefe78  doc/eng-us/guides/smarty-templates-caching.md
 45dd17a50696dc86c1e59061c3c56c0a  doc/eng-us/guides/smarty-templates-converter.md
@@ -7534,7 +7534,7 @@ ab9127252ddaa3073df891629bed2262  doc/eng-us/help/book-learning/fetching-content
 b32c1ae36fb227879c6782b503175d72  doc/eng-us/help/book-learning/inside-the-core-classes-and-services.md
 3930ff06cd77afeaf36b42c8d27794da  doc/eng-us/help/book-learning/inside-the-core-permissions-and-persistence.md
 c5a8a6353b3e384d57fd958c8c0488ad  doc/eng-us/help/book-learning/installation-problems-then-and-now.md
-81bff7e37733bee81afc8f3b095fee41  doc/eng-us/help/book-learning/installing-then-and-now.md
+7b373d7122bc91ca99967fdea977b52a  doc/eng-us/help/book-learning/installing-then-and-now.md
 1dab96b028f57822d3afb060377ab241  doc/eng-us/help/book-learning/more-administrator-functions.md
 72ee47cc55e01db0f5b262ce8fc81826  doc/eng-us/help/book-learning/overriding-templates.md
 40c827c1fa4066414014246725c4222f  doc/eng-us/help/book-learning/planning-an-example-site.md
@@ -11901,7 +11901,7 @@ c655f874f438a502f9329eb4c342a48e  doc/eng-us/help/site-packages/requirements/thu
 788c8a6c4345a8df5491817eb54fe784  doc/eng-us/help/site-packages/requirements/validating-a-package-before-publishing.md
 920f493941adcc979b417d9f9a1aecc0  doc/eng-us/help/site-packages/requirements/version-numbers.md
 4bdd3332ad2517e616037347d4d08958  doc/eng-us/help/site-packages/sevenx-multisite/README.md
-3661ae1ac223b6259780d475d0eb8328  doc/eng-us/help/site-packages/sevenx-multisite/extensions-it-activates.md
+6ddeab3d5ab1e47541d59ebe45725429  doc/eng-us/help/site-packages/sevenx-multisite/extensions-it-activates.md
 b15ea7c1fdde5ce5fd8572e4a9de2e01  doc/eng-us/help/site-packages/sevenx-multisite/layouts-data-and-share-dba.md
 05a122d9ac02b4947367f268bc6d8bc4  doc/eng-us/help/site-packages/sevenx-multisite/post-install-fixes.md
 ddd9dfb14d8ad2a51608e2ae78278304  doc/eng-us/help/site-packages/sevenx-multisite/roles-and-policies.md
@@ -12067,7 +12067,7 @@ ba6e92c4363ff2ff2e55a9b90c0fbadd  doc/eng-us/help/students/the-cla-for-students.
 fa3e47939fe22c6fac6c254b657aff19  doc/eng-us/help/students/translating-as-a-student.md
 c378d4ca471b608c7a997fd19b7cb053  doc/eng-us/help/students/trying-the-public-demo.md
 997b2a9dadd536336948e24a83136728  doc/eng-us/help/students/understanding-caches.md
-80b60dacd5b83aeb73c01b35dd00331a  doc/eng-us/help/students/understanding-siteaccesses-and-settings.md
+8e7ea95801a8fa9a8bcae7f0751d789a  doc/eng-us/help/students/understanding-siteaccesses-and-settings.md
 0f8a1061e7a4f47282d0ac9e667acf76  doc/eng-us/help/students/understanding-the-content-model.md
 4d0f74b40640211d221b8d1d9fd96fb8  doc/eng-us/help/students/using-git-as-a-student.md
 666b544c5cea52b8bf689f6eafd7b5e3  doc/eng-us/help/students/your-first-contribution-step-by-step.md
@@ -13211,7 +13211,7 @@ d3248ba618a795e355b992750019bb49  doc/eng-us/install/04-choosing-an-install-meth
 2715303134a3c94a032f71a9015fbc35  doc/eng-us/install/07-console-install.md
 07aad3b63fb725e2ca3a48aa954e39f6  doc/eng-us/install/08-serving-the-site.md
 775ac59139d5fbe41099044e578388be  doc/eng-us/install/09-databases.md
-19e7302db7679cf8534a2437c58206b2  doc/eng-us/install/10-after-installing.md
+278eeb7d25c1222ac28937a2f8165689  doc/eng-us/install/10-after-installing.md
 37decaa74fbd47826653347e4b02ac49  doc/eng-us/install/11-upgrading.md
 7d7d72184cb95c9e937886f4057bcbbc  doc/eng-us/install/12-troubleshooting.md
 e0ed3f1b2800db174a22fcca4f43b5d0  doc/eng-us/install/13-security-hardening.md
@@ -13596,7 +13596,7 @@ d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-eve
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
 76611fd36fc10cf3567344b553f95e76  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
-9bdbb093fbea997ef82dced8249f77e4  doc/ger-de/CONFIGURING.md
+2c9c088afa250f27572410a15afb2558  doc/ger-de/CONFIGURING.md
 c541e681abb9f1a0541f1e05e061e1c1  doc/ger-de/DISTRIBUTIONS.md
 d92e7d32e4f6ac50174e4d7f82ca379b  doc/ger-de/EXTENDING.md
 72a6daa6760de22190206de884484e7d  doc/ger-de/HISTORY.md
@@ -13665,7 +13665,7 @@ e9159f73e1f92f04a0571a6696814f4c  doc/ger-de/anleitungen/eigentuemer-aendern.md
 187275b90a6a296fc3e1d51138bf9d46  doc/ger-de/anleitungen/ein-statisches-blog-mit-exponential.md
 ecf5050bf3158f3d72a6e59ccdb12a88  doc/ger-de/anleitungen/eine-extension-dokumentieren.md
 b406cbc3208dc72c2f80f6fd73e6c3ae  doc/ger-de/anleitungen/eine-statische-dokumentations-site.md
-1d34a16a2b5967dd35fff27ef271a844  doc/ger-de/anleitungen/einstellungsseite.md
+ce104ca6d402d223888adfc31a7b5999  doc/ger-de/anleitungen/einstellungsseite.md
 3fe6751fd962193fc20de472c59b64c5  doc/ger-de/anleitungen/entfernte-dienste-und-apps.md
 7a9042cb3c39fb122fb664e3758b0364  doc/ger-de/anleitungen/entwuerfe-und-ausstehende-objekte.md
 da2fd34417b7d95107e2b27cb760034b  doc/ger-de/anleitungen/erste-schritte.md
@@ -17112,7 +17112,7 @@ fcff990386609795d127db9b90605ca9  doc/ger-de/funktionen/6.0/hilfesystem.md
 5b3b088b68957758753acb3f0e3a1ca5  doc/ger-de/funktionen/6.0/inhalts-finder.md
 c9687b21e2ca92f984b5c8ff01b66a7e  doc/ger-de/funktionen/6.0/inhaltsauftraege.md
 250191d1e65820f70ee9802b02e89be3  doc/ger-de/funktionen/6.0/inhaltspruefungen.md
-fe6defdb1be0b4b09da100b8f3f2391f  doc/ger-de/funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md
+e185906d5935602e533301b3c5e4bbad  doc/ger-de/funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md
 e58171389200d729f83da2332732500e  doc/ger-de/funktionen/6.0/installation-mit-einem-befehl.md
 bc213bb8f5033a0ce486c9bfbe9fa047  doc/ger-de/funktionen/6.0/installationsname-in-seiten.md
 e92e4911d0e5f8a9b081e9373ea8d5d4  doc/ger-de/funktionen/6.0/jquery4-und-entfernung-von-yui.md
@@ -18227,7 +18227,7 @@ dd07313ee31bd9456a20b5993164928d  doc/ger-de/hilfe/buch-lernen/im-inneren-des-ke
 fabc7065a4036bb899bdd9cc2ed2400e  doc/ger-de/hilfe/buch-lernen/inhalt-und-darstellung.md
 21454ce93e79c84890dd35ada77162ff  doc/ger-de/hilfe/buch-lernen/inhalte-in-templates-abrufen.md
 c50d9194a0ffcda96cf5f6c1b0021e52  doc/ger-de/hilfe/buch-lernen/installationsprobleme-damals-und-heute.md
-bd3179147234288db46a6b2a7db95bbb  doc/ger-de/hilfe/buch-lernen/installieren-damals-und-heute.md
+0a0f682c6cd2cf89977e46816b18ae4d  doc/ger-de/hilfe/buch-lernen/installieren-damals-und-heute.md
 e54d9a67aa744789dcf6f21f1880d4f4  doc/ger-de/hilfe/buch-lernen/klassen-attribute-und-objekte.md
 7b4f450fea2702e8547b4620b25b2e83  doc/ger-de/hilfe/buch-lernen/objekte-anlegen-und-bearbeiten.md
 20a99a3d933c3cd6b48d1ebe2ff389f1  doc/ger-de/hilfe/buch-lernen/rich-text-tags.md
@@ -19981,7 +19981,7 @@ ea90869ea38bc1c7d8212d5781ce925d  doc/ger-de/hilfe/lernende/projekt-03-ein-templ
 daa24859fb4ec884a35cc7030c842345  doc/ger-de/hilfe/lernende/projekt-09-rollen-fuer-einen-eingeschraenkten-redakteur.md
 ed9188fd036520f31fe05ac4400a0bb3  doc/ger-de/hilfe/lernende/projekt-10-abschlussprojekt-eine-vollstaendige-kleine-website.md
 098ea98dffdf7764e2b2d78b7811a2c8  doc/ger-de/hilfe/lernende/site-pakete-fuer-lernende.md
-df04cd8e3e0b30314748a48103af3300  doc/ger-de/hilfe/lernende/siteaccesses-und-einstellungen-verstehen.md
+5407dfd1cad55389437442bc15c561fc  doc/ger-de/hilfe/lernende/siteaccesses-und-einstellungen-verstehen.md
 bc9be82fd34bb315b71eedcbb473a269  doc/ger-de/hilfe/lernende/stufe-student-oder-freie-community.md
 cfd327f5eec9af1313c82aa13f8bf19e  doc/ger-de/hilfe/lernende/um-hilfe-bitten-und-lerngruppen.md
 6b28c64183bade4fba3eb0f5ca52425d  doc/ger-de/hilfe/lernende/zertifizierungen-und-zertifikate.md
@@ -20767,7 +20767,7 @@ e5e949c0a9b61357fdf1aeb80902b302  doc/ger-de/hilfe/seitenpakete/paketserver/wenn
 fd459a697c3c1d9e6c7cc56b90eb4c79  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/das-skript-des-multisite-installers.md
 d1e43646eb0b345f8e43beb016b5a215  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/die-clean-variante-und-sevenx-site.md
 a18505cc314994807556b39c2a375173  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/die-demo-inhaltspakete.md
-d277929b8f890e2bf6f1e7c8d05df398  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/erweiterungen-die-sevenx-multisite-aktiviert.md
+7274b991804e981e9346bc5a413d9a2e  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/erweiterungen-die-sevenx-multisite-aktiviert.md
 6f1ed7a32e9ab127044aa98e37f1752f  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/korrekturen-nach-der-installation-von-sevenx-multisite.md
 c3b56811a2dda0b6752fd5a0de6b887a  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/layoutdaten-und-share-dba-dateien.md
 2bee7c5f19c8ffd0823e4281e64858c7  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/rollen-und-richtlinien-von-sevenx-multisite.md
@@ -23080,7 +23080,7 @@ bb19e39caf6993f1bcf9f5b660eb3d9d  doc/ger-de/installation/06-kickstarter.md
 19a73d7020c9efdd3373bc905a7a6752  doc/ger-de/installation/07-installation-ueber-die-konsole.md
 49d3969dc5eb57efeccff41886e3a9a0  doc/ger-de/installation/08-die-website-ausliefern.md
 c7ee2583299b7d3cc39b8f46e97d32c8  doc/ger-de/installation/09-datenbanken.md
-ca94003c942e8d7a75afec899e9c5842  doc/ger-de/installation/10-nach-der-installation.md
+706664b7b744252ec94b974f9c76a582  doc/ger-de/installation/10-nach-der-installation.md
 b8d795ebb1ea91d94d2d59204e2bc9de  doc/ger-de/installation/11-aktualisieren.md
 67d6821808a454e3ccd632f63e4905f0  doc/ger-de/installation/12-fehlerbehebung.md
 cdebe1d97bb3bc6c64aeee618b8d897a  doc/ger-de/installation/13-sicherheitshaertung.md

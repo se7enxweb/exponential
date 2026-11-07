@@ -50,8 +50,10 @@ aktiv ist. Höchste Priorität zuerst:
 | `extension/site_example/settings/siteaccess/<siteaccess>/` | nur diesen Siteaccess (wie bisher) |
 
 Eine Einstellung in `override/` schlägt also dieselbe Einstellung in einem Siteaccess-Verzeichnis derselben Extension,
-so wie das globale `settings/override/` alles schlägt. Das eigene `settings/override/` der Installation hat weiterhin
-das letzte Wort über alle drei. Die Dateien heißen wie die normalen (`site.ini.append.php` und so weiter).
+so wie das globale `settings/override/` alles schlägt. Alle drei werden vor dem eigenen
+`settings/siteaccess/<siteaccess>/` des Siteaccess und vor den Extensions in `ActiveExtensions[]` gelesen, beide
+gewinnen also weiterhin gegen sie, und das eigene `settings/override/` der Installation hat das letzte Wort über alles.
+Die Dateien heißen wie die normalen (`site.ini.append.php` und so weiter).
 
 ## Ein INI-Cache-Verzeichnis für jedes Projekt
 

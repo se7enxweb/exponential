@@ -105,7 +105,10 @@ workflows that wait for the job and notifications by e-mail do not.
 
 The book's explanation is still exactly right: settings live in `.ini` files; the defaults are in `settings/`; the
 folders `settings/siteaccess/<name>/` and `settings/override/` change them; the order is **override, then
-siteaccess, then the defaults** (the first value found for a setting wins, from the top). The files a builder
+siteaccess, then the defaults** (the first value found for a setting wins, from the top). Extensions add layers the
+book's example did not need: an active extension in `ActiveExtensions[]` sits between override and siteaccess, so its
+value beats the siteaccess's
+([Configuring, section 2](../../CONFIGURING.md#2-where-settings-live-and-which-file-wins)). The files a builder
 touches most are as in the book: `site.ini`, `override.ini`, `image.ini`, and `i18n.ini` for languages. The file
 name should end in `.ini.append.php`. The reason the book gives is still the reason: if a web server ever served the
 file, it would run as PHP, and the settings are written as PHP comments, so nothing is shown.

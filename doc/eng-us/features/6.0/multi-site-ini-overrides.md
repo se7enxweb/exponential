@@ -49,8 +49,9 @@ priority first:
 | `extension/site_example/settings/siteaccess/<siteaccess>/` | that siteaccess only (as before) |
 
 So a setting in `override/` beats the same setting in a siteaccess directory of the same extension, just as the global
-`settings/override/` beats everything. The installation's own `settings/override/` still has the last word over all
-three. Files are named like the normal ones (`site.ini.append.php` and so on).
+`settings/override/` beats everything. All three are read before the siteaccess's own `settings/siteaccess/<siteaccess>/`
+and before the extensions in `ActiveExtensions[]`, so both of those still win over them, and the installation's own
+`settings/override/` has the last word over all of it. Files are named like the normal ones (`site.ini.append.php` and so on).
 
 ## One INI cache directory for every project
 

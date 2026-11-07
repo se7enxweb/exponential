@@ -88,10 +88,25 @@ ein Array, außer sie leert es zuerst.
 | Reihenfolge | Schicht | Wo | Auf der Einstellungsseite angezeigt als |
 |---|---|---|---|
 | 1 | Die Vorgaben | `settings/<datei>.ini` | Vorgabe |
-| 2 | Die aktiven Extensions | `extension/<ext>/settings/<datei>.ini.append.php` | Extension *Name* |
-| 3 | Der Siteaccess | `settings/siteaccess/<siteaccess>/<datei>.ini.append.php` | Siteaccess *Name* |
-| 4 | Der Siteaccess einer Extension | `extension/<ext>/settings/siteaccess/<siteaccess>/` | Extension *Name* für *Siteaccess* |
-| 5 | Der globale Override | `settings/override/<datei>.ini.append.php` | Globaler Override |
+| 2 | Die Extensions, die ein Siteaccess für sich aktiviert (`ActiveAccessExtensions[]`) | `extension/<ext>/settings/<datei>.ini.append.php` | Extension *Name* |
+| 3 | Der Siteaccess einer Extension | `extension/<ext>/settings/siteaccess/<siteaccess>/` | Extension *Name* für *Siteaccess* |
+| 4 | Der Siteaccess | `settings/siteaccess/<siteaccess>/<datei>.ini.append.php` | Siteaccess *Name* |
+| 5 | Die aktiven Extensions (`ActiveExtensions[]`) | `extension/<ext>/settings/<datei>.ini.append.php` | Extension *Name* |
+| 6 | Der globale Override | `settings/override/<datei>.ini.append.php` | Globaler Override |
+
+Das ist die Reihenfolge von `eZINI::overrideDirsByScope()` (`lib/ezutils/classes/ezini.php`): nach den Vorgaben die
+Scopes `sa-extension`, `siteaccess`, `extension` und `override`. Zu Schicht 3 gehören auch `settings/override/` und
+`settings/override__<gruppe>/` einer Extension, solange einer ihrer eigenen Siteaccesses läuft
+([Website-Einstellungen in Extensions](funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md)); all das
+bleibt unter dem eigenen Verzeichnis des Siteaccess.
+
+Innerhalb einer Schicht gewinnt die **zuerst** genannte Extension: Jede Extension wird vor die vorherigen gestellt,
+die zuerst genannte also zuletzt gelesen. Mit `[ExtensionSettings] ExtensionOrdering=enabled` (der Vorgabe) wird die
+Liste zuvor nach den Abhängigkeiten in jeder `extension.xml` sortiert: Eine Extension kommt nach den Extensions, die
+sie benötigt oder nutzt, und vor denen, die sie erweitert
+([Die Extensions-Seite](anleitungen/extensions-seite.md#4-geschriebene-reihenfolge-und-ladereihenfolge)).
+`./console exp:ini where <datei>/<Block>/<Einstellung> <siteaccess>` listet die Dateien einer Einstellung in der
+Reihenfolge, in der sie gelesen werden.
 
 Was eine Zeile mit dem Wert davor macht:
 
@@ -105,6 +120,18 @@ Was eine Zeile mit dem Wert davor macht:
 `settings/override/` gewinnt also für jeden Siteaccess über alles. Verwenden Sie es für das, was überall gleich ist
 (die Datenbank, E-Mail, die aktiven Extensions), und `settings/siteaccess/<siteaccess>/` für das, was zu einem
 Siteaccess gehört (sein Design, seine Sprachen, seine Debug-Ausgabe).
+
+Eine Extension in `ActiveExtensions[]` gewinnt trotzdem gegen den Siteaccess: Setzt sie denselben Wert, bleibt die
+Zeile in `settings/siteaccess/<siteaccess>/` ohne Wirkung, und ein Array, das sie füllt, lässt sich dort nicht leeren.
+Kein Verzeichnis, das zu einem Siteaccess gehört, wird nach den aktiven Extensions gelesen; das eigene
+`settings/siteaccess/<siteaccess>/` einer Extension wird *vor* dem Verzeichnis des Siteaccess gelesen und hilft
+daher nicht. Für einen Wert eines Siteaccess, der gegen eine Extension gewinnen muss:
+
+- aktivieren Sie diese Extension in `ActiveAccessExtensions[]` der Siteaccesses, die sie brauchen, statt in
+  `ActiveExtensions[]`: Ihre Einstellungen werden dann vor denen des Siteaccess gelesen;
+- oder, wenn die Extension Ihre eigene ist, nehmen Sie den Wert aus ihrem `settings/` heraus und setzen ihn pro
+  Siteaccess;
+- oder setzen Sie ihn in `settings/override/`, wenn derselbe Wert für jeden Siteaccess gelten darf.
 
 Drei weitere Schichtungen, für größere Installationen:
 
@@ -404,7 +431,10 @@ im [Audit-Protokoll](funktionen/6.0/pruefprotokoll.md) festgehalten.
 
 Eine Extension ist aktiv, wenn sie in `site.ini [ExtensionSettings] ActiveExtensions[]` (jeder Siteaccess, in
 `settings/override/`) oder `ActiveAccessExtensions[]` (ein Siteaccess, in `settings/siteaccess/<siteaccess>/`) steht.
-Die Reihenfolge der Liste ist die Ladereihenfolge: Templates und Einstellungen einer späteren Extension gewinnen.
+Die Reihenfolge der Liste ist die Ladereihenfolge, bei `ExtensionOrdering=enabled` nach den Abhängigkeiten in
+`extension.xml` sortiert: Die zuerst genannte Extension gewinnt, bei Templates wie bei Einstellungen. Die Einstellungen
+aus `ActiveExtensions[]` gewinnen außerdem gegen die des Siteaccess selbst, die aus `ActiveAccessExtensions[]` nicht
+([Abschnitt 2](#2-wo-einstellungen-liegen-und-welche-datei-gewinnt)).
 
 - **Setup > Extensions** (`/setup/extensions`) aktiviert, deaktiviert und ordnet sie, prüft ihre Abhängigkeiten und
   schreibt die Liste für Sie.

@@ -44,11 +44,14 @@ Die Zahlen oben beschreiben die Datei in diesem Siteaccess:
 | Gelesene Dateien | Aus wie vielen Dateien sich diese Datei in diesem Siteaccess zusammensetzt. |
 | Noch nicht wirksam | Einstellungen, deren Wert auf der Festplatte von dem abweicht, mit dem dieser Server läuft (siehe Schritt 6). |
 
-**Die gelesenen Dateien, in Reihenfolge** öffnet die Ladereihenfolge selbst: `settings/<file>.ini`, die
-Siteaccess-Verzeichnisse der Extensions, `settings/siteaccess/<siteaccess>`, die aktiven Extensions, dann
-`settings/override`. Die Zahl neben jeder Datei gibt an, wie viele Einstellungen sie setzt. Eine Datei, die dieser
-Server nicht lesen kann (falscher Eigentümer oder falsche Berechtigungen), ist als **nicht lesbar** markiert, mit einer
-Warnung darüber: Ihre Einstellungen fehlen auf diesem Server.
+**Die gelesenen Dateien, in Reihenfolge** öffnet die Ladereihenfolge selbst: `settings/<file>.ini`, die Extensions,
+die der Siteaccess für sich aktiviert (`ActiveAccessExtensions[]`), die Siteaccess-Verzeichnisse der Extensions,
+`settings/siteaccess/<siteaccess>`, die aktiven Extensions (`ActiveExtensions[]`), dann `settings/override`. Eine
+aktive Extension gewinnt also gegen die eigene Datei des Siteaccess
+([Konfigurieren, Abschnitt 2](../CONFIGURING.md#2-wo-einstellungen-liegen-und-welche-datei-gewinnt)). Die Zahl
+neben jeder Datei gibt an, wie viele Einstellungen sie setzt. Eine Datei, die dieser Server nicht lesen kann (falscher
+Eigentümer oder falsche Berechtigungen), ist als **nicht lesbar** markiert, mit einer Warnung darüber: Ihre
+Einstellungen fehlen auf diesem Server.
 
 ## 3. Eine Einstellung lesen
 
@@ -57,7 +60,7 @@ Jeder Block ist eine Karte; die Chips über den Karten springen zu einem Block. 
 - ihren **Namen**, mit `[]` für ein Array, und Badges: **geändert**, **kein Standard**, **Geheimnis, verborgen**,
   **Liste mit N** oder **N Schlüssel**, **Velocity-Neustart**, **noch nicht wirksam**;
 - ihren **wirksamen Wert**. `true`/`enabled` ist grün, `false`/`disabled` rot, ein leerer Wert sagt *leer*;
-- rechts, **woher er kommt**: Standard, Extension *Name*, Siteaccess *Name*, Extension *Name* für *Siteaccess* oder
+- rechts, **woher er kommt**: Standard, Extension *Name* für *Siteaccess*, Siteaccess *Name*, Extension *Name* oder
   Globaler Override. Bei einem Array wird jede Datei aufgeführt, die Elemente hinzufügt, und jedes Element nennt seine
   Datei, wenn es mehr als eine gibt;
 - **Standard:** den Standardwert, wenn der wirksame Wert davon abweicht;

@@ -85,10 +85,24 @@ empties the array first.
 | Order | Layer | Where | Shown on the settings page as |
 |---|---|---|---|
 | 1 | The defaults | `settings/<file>.ini` | Default |
-| 2 | The active extensions | `extension/<ext>/settings/<file>.ini.append.php` | Extension *name* |
-| 3 | The siteaccess | `settings/siteaccess/<siteaccess>/<file>.ini.append.php` | Siteaccess *name* |
-| 4 | An extension's siteaccess | `extension/<ext>/settings/siteaccess/<siteaccess>/` | Extension *name* for *siteaccess* |
-| 5 | The global override | `settings/override/<file>.ini.append.php` | Global override |
+| 2 | The extensions one siteaccess activates for itself (`ActiveAccessExtensions[]`) | `extension/<ext>/settings/<file>.ini.append.php` | Extension *name* |
+| 3 | An extension's siteaccess | `extension/<ext>/settings/siteaccess/<siteaccess>/` | Extension *name* for *siteaccess* |
+| 4 | The siteaccess | `settings/siteaccess/<siteaccess>/<file>.ini.append.php` | Siteaccess *name* |
+| 5 | The active extensions (`ActiveExtensions[]`) | `extension/<ext>/settings/<file>.ini.append.php` | Extension *name* |
+| 6 | The global override | `settings/override/<file>.ini.append.php` | Global override |
+
+This is the order of `eZINI::overrideDirsByScope()` (`lib/ezutils/classes/ezini.php`): the scopes `sa-extension`,
+`siteaccess`, `extension` and `override`, after the defaults. Layer 3 also holds an extension's `settings/override/`
+and `settings/override__<group>/` while one of its own siteaccesses runs
+([Per-site settings inside extensions](features/6.0/multi-site-ini-overrides.md)); all of it stays below the
+siteaccess's own directory.
+
+Inside one layer, the extension listed **first** wins: each extension is put in front of the ones before it, so the
+first one listed is read last. With `[ExtensionSettings] ExtensionOrdering=enabled` (the default) the list is first
+sorted by the dependencies in each `extension.xml`: an extension comes after the extensions it requires or uses, and
+before the ones it extends ([The Extensions page](guides/extensions-page.md#4-written-order-and-loading-order)).
+`./console exp:ini where <file>/<Block>/<Setting> <siteaccess>` lists the files of a setting in the order they are
+read.
 
 What one line does to the value before it:
 
@@ -102,6 +116,17 @@ What one line does to the value before it:
 So `settings/override/` wins over everything for every siteaccess. Use it for what is the same everywhere (the
 database, mail, the active extensions), and `settings/siteaccess/<siteaccess>/` for what belongs to one siteaccess
 (its design, its languages, its debug output).
+
+An extension in `ActiveExtensions[]` still wins over the siteaccess: when it sets the same value, the line in
+`settings/siteaccess/<siteaccess>/` has no effect, and an array it fills cannot be emptied there. No directory that
+belongs to one siteaccess is read after the active extensions; an extension's own `settings/siteaccess/<siteaccess>/`
+is read *before* the siteaccess's directory, so it does not help. For a value of one siteaccess that must beat an
+extension:
+
+- activate that extension in the `ActiveAccessExtensions[]` of the siteaccesses that need it instead of in
+  `ActiveExtensions[]`: its settings are then read before the siteaccess's own;
+- or, if the extension is yours, take the value out of its `settings/` and set it per siteaccess;
+- or set it in `settings/override/`, when the same value may hold for every siteaccess.
 
 Three more ways settings are layered, for larger setups:
 
@@ -392,7 +417,9 @@ Walk-through: [Roles and policies](guides/roles-and-policies.md). Every change i
 
 An extension is active when it is listed in `site.ini [ExtensionSettings] ActiveExtensions[]` (every siteaccess, in
 `settings/override/`) or `ActiveAccessExtensions[]` (one siteaccess, in `settings/siteaccess/<siteaccess>/`). The order
-of the list is the loading order: a later extension's templates and settings win.
+of the list is the loading order, sorted by the dependencies in `extension.xml` while `ExtensionOrdering=enabled`: the
+extension listed first wins, for templates and for settings. The settings of `ActiveExtensions[]` also win over the
+siteaccess's own, those of `ActiveAccessExtensions[]` do not ([section 2](#2-where-settings-live-and-which-file-wins)).
 
 - **Setup > Extensions** (`/setup/extensions`) activates, deactivates and orders them, checks their dependencies and
   writes the list for you.

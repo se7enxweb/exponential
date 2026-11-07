@@ -40,10 +40,13 @@ The figures at the top describe the file in this siteaccess:
 | Files read | How many files make up this file in this siteaccess. |
 | Not in effect yet | Settings whose value on disk differs from what this server is running with (see step 6). |
 
-**The files read, in order** opens the load order itself: `settings/<file>.ini`, the extension siteaccess
-directories, `settings/siteaccess/<siteaccess>`, the active extensions, then `settings/override`. The number beside
-each file is how many settings it sets. A file this server cannot read (wrong owner or permissions) is marked
-**not readable**, with a warning above: its settings are missing on this server.
+**The files read, in order** opens the load order itself: `settings/<file>.ini`, the extensions the siteaccess
+activates for itself (`ActiveAccessExtensions[]`), the extension siteaccess directories,
+`settings/siteaccess/<siteaccess>`, the active extensions (`ActiveExtensions[]`), then `settings/override`. So an
+active extension wins over the siteaccess's own file
+([Configuring, section 2](../CONFIGURING.md#2-where-settings-live-and-which-file-wins)). The number beside each file
+is how many settings it sets. A file this server cannot read (wrong owner or permissions) is marked **not readable**,
+with a warning above: its settings are missing on this server.
 
 ## 3. Read one setting
 
@@ -52,8 +55,8 @@ Each block is a card; the chips above the cards jump to a block. Each setting sh
 - its **name**, with `[]` for an array, and badges: **changed**, **no default**, **secret, masked**,
   **list of N** or **N keys**, **Velocity restart**, **not in effect yet**;
 - its **value in effect**. `true`/`enabled` is green, `false`/`disabled` red, an empty value says *empty*;
-- on the right, **where it comes from**: Default, Extension *name*, Siteaccess *name*, Extension *name* for
-  *siteaccess*, or Global override. For an array, every file that adds elements is listed, and each element names
+- on the right, **where it comes from**: Default, Extension *name* for *siteaccess*, Siteaccess *name*, Extension
+  *name*, or Global override. For an array, every file that adds elements is listed, and each element names
   its file when there is more than one;
 - **Default:** the default value, when the value in effect differs from it;
 - **Set in N files, M overridden**: open it to see the chain. Every file that sets the setting is listed in load

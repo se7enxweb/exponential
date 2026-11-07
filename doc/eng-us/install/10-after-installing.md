@@ -852,8 +852,9 @@ documentation says (often `share/db_schema.dba` with `bin/php/ezsqlinsertschema.
 
 **Order.** When two extensions provide the same setting, template or design file, the **earlier** one in
 `ActiveExtensions[]` wins: each extension's settings directory is prepended in turn, so a later extension ends up
-with lower priority. `settings/override/` always wins over every extension, and a siteaccess's settings over the
-global ones. `[ExtensionSettings] ExtensionOrdering=enabled` (shipped) also sorts extensions by the dependencies they
+with lower priority. `settings/override/` always wins over every extension. A siteaccess's settings win over the
+defaults and over the extensions in its `ActiveAccessExtensions[]`, but not over those in `ActiveExtensions[]`, which
+are read after it ([Configuring, section 2](../CONFIGURING.md#2-where-settings-live-and-which-file-wins)). `[ExtensionSettings] ExtensionOrdering=enabled` (shipped) also sorts extensions by the dependencies they
 declare in `extension.xml`, which cannot fix every case (it does not reorder across `ActiveExtensions` and
 `ActiveAccessExtensions`). So:
 

@@ -110,6 +110,9 @@ Website, aber Workflows, die auf die Aufgabe warten, und Benachrichtigungen per 
 Die Erklärung des Buchs stimmt noch genau: Einstellungen liegen in `.ini`-Dateien; die Standardwerte stehen in
 `settings/`; die Ordner `settings/siteaccess/<name>/` und `settings/override/` ändern sie; die Reihenfolge ist
 **Override, dann Siteaccess, dann die Standardwerte** (der erste gefundene Wert einer Einstellung gewinnt, von oben).
+Extensions bringen Schichten hinzu, die das Beispiel des Buchs nicht brauchte: Eine aktive Extension in
+`ActiveExtensions[]` liegt zwischen Override und Siteaccess, ihr Wert schlägt also den des Siteaccess
+([Konfigurieren, Abschnitt 2](../../CONFIGURING.md#2-wo-einstellungen-liegen-und-welche-datei-gewinnt)).
 Die Dateien, die ein Builder am häufigsten anfasst, sind wie im Buch: `site.ini`, `override.ini`, `image.ini` und
 `i18n.ini` für Sprachen. Der Dateiname sollte auf `.ini.append.php` enden. Der Grund, den das Buch nennt, ist immer
 noch der Grund: Würde ein Webserver die Datei jemals ausliefern, liefe sie als PHP, und die Einstellungen stehen als

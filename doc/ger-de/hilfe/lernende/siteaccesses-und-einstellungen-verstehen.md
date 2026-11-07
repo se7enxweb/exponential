@@ -87,7 +87,7 @@ Nachdem Sie eine Einstellung geändert haben, kann der INI-Cache noch den alten 
 |---|---|---|
 | `settings/site.ini` bearbeiten | Beim nächsten Upgrade verloren | Eine Datei `.ini.append.php` in `settings/override/` oder einem Siteaccess-Ordner verwenden |
 | Den Siteaccess `site` ändern und `bold` betrachten | Keine Änderung dort, wo Sie hinsehen | Den Siteaccess der Seite finden, die Sie betrachten |
-| Einen Wert in `settings/siteaccess/<sa>/` setzen, den auch eine Erweiterung setzt | Der Wert der Erweiterung gewinnt | `settings/override/` oder der eigene Siteaccess-Ordner der Erweiterung |
+| Einen Wert in `settings/siteaccess/<sa>/` setzen, den auch eine Erweiterung setzt | Der Wert der Erweiterung gewinnt | `settings/override/`, oder die Erweiterung stattdessen in `ActiveAccessExtensions[]` dieses Siteaccess aufführen (ihr eigener Siteaccess-Ordner wird vor Ihrem gelesen und hilft nicht) |
 | `true` schreiben, wo die Voreinstellung `enabled` verwendet | Der Schalter funktioniert nicht | Die Form verwenden, die die Standarddatei verwendet |
 | Den Cache vergessen | Der alte Wert bleibt | Den INI-Cache leeren |
 | Ein Passwort in eine Einstellungsdatei schreiben, die Sie committen | Das Passwort wird veröffentlicht | `settings/override/` und seine Geheimnisse aus öffentlichen Repositorys heraushalten |
