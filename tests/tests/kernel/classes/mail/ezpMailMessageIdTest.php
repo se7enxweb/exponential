@@ -78,7 +78,13 @@ class ezpMailMessageIdTest extends PHPUnit\Framework\TestCase
     /** MI-05 */
     public function testASenderThatWouldBreakTheHeaderIsRefused()
     {
-        // se7enxweb/expcomponents-mail refuses whitespace and < > , ; " in an address before any header is written
+        // se7enxweb/expcomponents-mail refuses whitespace and < > , ; " in an address before any header is written;
+        // a vendor/ still holding the upstream zetacomponents/mail 1.10.1 does not, so there is nothing to check
+        if ( !class_exists( \Composer\InstalledVersions::class )
+            || !\Composer\InstalledVersions::isInstalled( 'se7enxweb/expcomponents-mail' ) )
+        {
+            $this->markTestSkipped( 'se7enxweb/expcomponents-mail is not installed (vendor/ has the upstream mail package)' );
+        }
         $mail = self::mail();
         $mail->Mail->from = new ezcMailAddress( 'odd@exa mple>.invalid' );
         $this->expectException( ezcMailException::class );
