@@ -53,6 +53,16 @@ Sie es mit `./console exp:url:undo <nummer>` wieder rückgängig (die Nummer gib
 `./console exp:url:batches` listet sie). In der Administration gehen dieselben Dateien unter **Setup** >
 **URL-Übersetzer** > **Importieren**.
 
+Prüfen Sie nach einem echten Import, dass jede alte Adresse dort ankommt, wo die Datei es sagt (die Basis ist die
+Website, in die Sie importiert haben):
+
+```bash
+./console exp:url:test doc/ger-de/beispiele/url-zuordnungen/alte-site.csv --base=https://www.example.com -s site
+```
+
+In der Administration tut **Prüfen** auf der Seite mit dem Ergebnis des Imports dasselbe. Für eine eigene Datei zeigt
+das Tutorial `exp:url:from-sitemap`, `exp:url:from-404` und `exp:url:suggest`.
+
 ## Wie sie geprüft wurden
 
 Jede Datei wurde mit `exp:url:import --dry-run` gegen eine Installation mit der Website Fit & Healthy geplant: Jede

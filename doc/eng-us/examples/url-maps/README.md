@@ -50,6 +50,15 @@ In a dry run, "Done" counts what the import would do. Leave out `--dry-run` to i
 `./console exp:url:undo <number>` (the number is printed by the import and listed by `./console exp:url:batches`).
 In the administration, the same files go into **Setup** > **URL translator** > **Import**.
 
+After a real import, check that every old address lands where the file says (the base is the site you imported into):
+
+```bash
+./console exp:url:test doc/eng-us/examples/url-maps/old-site.csv --base=https://www.example.com -s site
+```
+
+In the administration, **Test** on the page of the import's result does the same. To start a file of your own, the
+tutorial shows `exp:url:from-sitemap`, `exp:url:from-404` and `exp:url:suggest`.
+
 ## How they were checked
 
 Each file was planned with `exp:url:import --dry-run` against an installation with the Fit & Healthy site: every row
