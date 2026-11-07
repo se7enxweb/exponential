@@ -86121,5 +86121,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>ஒட்டப்பட்ட உரை</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>தளவரைபடத்தின் முகவரியைக் கொடுக்கவும் அல்லது அதைப் பதிவேற்றவும்.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>பழைய முகவரி எதுவும் கிடைக்கவில்லை.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>பழைய தளவரைபடத்திலிருந்து</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 பதிவிலிருந்து</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>இலக்குகளைப் பரிந்துரைக்கவும்</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>பழைய தளத்தின் முகவரிகள், அதன் தளவரைபடத்திலிருந்து (sitemap.xml, தளவரைபடக் குறியீட்டு அல்லது .gz) அல்லது ஒரு வரிக்கு ஒரு முகவரி கொண்ட பட்டியலிலிருந்து. ஒவ்வொன்றும் வெற்றுப் புதிய முகவரியுடன் ஒரு வரிசையாகும்.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>தளவரைபடத்தின் முகவரி</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>அல்லது தளவரைபடத்தை அல்லது பட்டியலைப் பதிவேற்றவும்</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>பிற ஹோஸ்ட்களின் முகவரிகளும்</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>இந்தத் தளத்தில் பார்வையாளர்கள் கேட்டு கிடைக்காத முகவரிகள், அதிகம் கேட்கப்பட்டவை முதலில். படங்கள், ஸ்கிரிப்ட்கள், போட்கள் விலக்கப்பட்டுள்ளன.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 பதிவு அணைக்கப்பட்டுள்ளது (site.ini [RequestLogSettings] NotFoundLog): அதில் புதிய முகவரிகள் இல்லை.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>குறைந்தது இத்தனை கோரிக்கைகள்</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>கடந்த நாட்களில்</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>புதிய முகவரி இல்லாத வரிசைகள் கொண்ட வரைபடம்: ஒவ்வொன்றுக்கும் பழைய முகவரியுடன் முகவரி அல்லது பெயர் மிகவும் ஒத்திருக்கும் இந்தத் தளத்தின் பக்கங்கள் வழங்கப்படும்.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>அதிகபட்சம் இத்தனை வரிசைகள்</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>புதிய முகவரிகள்</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>குறைந்தது இந்த மதிப்பெண் பெறும் பரிந்துரையை நிரப்பவும்</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0 முதல் 100 வரையிலான மதிப்பெண், பழைய முகவரி இந்தத் தளத்தின் ஒரு பக்கத்துடன் எவ்வளவு ஒத்துள்ளது என்பதைக் காட்டுகிறது. மற்ற பரிந்துரைகள் வரிசையின் குறிப்புகளில் பட்டியலிடப்படும்.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>CSV ஆகப் பதிவிறக்கவும்</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>இன்னும் எதுவும் எழுதப்படவில்லை. வரைபடத்தை விரிதாளில் முடிக்கப் பதிவிறக்கவும், அல்லது முன்னோட்டம் பார்க்கவும்: புதிய முகவரி இல்லாத வரிசைகள் இறக்குமதி செய்ய முடியாதவையாகக் காட்டப்படும்.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>கோப்பைப் பதிவேற்றவும்</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>தொடங்கும் வழிகள்</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>பழைய முகவரிகளைச் சோதிக்கவும்</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>தள அணுகலுக்கு தள முகவரி இல்லை (site.ini [SiteSettings] SiteURL), எனவே பழைய முகவரிகளை இங்கே சோதிக்க முடியாது. ./console exp:url:test அவற்றை எந்த முகவரிக்கு எதிராகவும் சோதிக்கும்.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>%base இல் ஒவ்வொரு பழைய முகவரியையும் கோரி, அதன் வழிமாற்றுகளைப் பின்தொடர்ந்து, அது புதிய முகவரியில் சேர்கிறதா எனச் சரிபார்க்கிறது.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>மீண்டும் சோதிக்கவும்</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>சோதிக்கவும்</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed சேர்ந்தன, %status தவறான நிலையுடன், %target தவறான பக்கத்தில், %none வழிமாற்றப்படவில்லை, %error தோல்வி, %skipped தவிர்க்கப்பட்டன.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>முதல் %count வரிசைகள் மட்டுமே சோதிக்கப்பட்டன.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>புதிய முகவரியில் சேராத வரிசைகள்</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>பழைய முகவரிகளைச் சோதிக்க முடியவில்லை.</translation>
+    </message>
 </context>
 </TS>

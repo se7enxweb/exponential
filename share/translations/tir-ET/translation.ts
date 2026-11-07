@@ -86123,5 +86123,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>ዝተለጠፈ ጽሑፍ</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>ኣድራሻ ናይ ካርታ ሳይት ሃቡ ወይ ጸዓንዎ።</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>ዝኾነ ኣረጊት ኣድራሻ ኣይተረኽበን።</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>ካብ ኣረጊት ካርታ ሳይት</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>ካብ ምዝገባ 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>ዕላማታት ሓሲብኩም ሃቡ</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>ኣድራሻታት ናይ ኣረጊት ሳይት ካብ ካርታ ሳይቱ (sitemap.xml፣ ኢንዴክስ ካርታ ሳይት ወይ .gz) ወይ ካብ ሓደ ኣድራሻ ኣብ ሓደ መስመር ዘለዎ ዝርዝር። ነፍሲ ወከፉ ብባዶ ሓድሽ ኣድራሻ ሓደ መስመር ይኸውን።</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>ኣድራሻ ናይ ካርታ ሳይት</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>ወይ ካርታ ሳይት ወይ ዝርዝር ጸዓኑ</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>ኣድራሻታት ካልኦት ሆስትታትውን</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>ተሓተትቲ ኣብዚ ሳይት ዝሓተትዎን ዘይረኸብዎን ኣድራሻታት፣ ዝበዝሕ ዝተሓተተ ቀዳማይ። ስእልታት፣ ስክሪፕታትን ቦታትን ኣይተኣቱን።</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>ምዝገባ 404 ጠፊኡ ኣሎ (site.ini [RequestLogSettings] NotFoundLog): ሓደስቲ ኣድራሻታት የብሉን።</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>እንተዘይተሓተተ ብዝሒ ሕቶታት</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>ኣብ ዝሓለፉ መዓልታት</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>መስመራቱ ሓድሽ ኣድራሻ ዘይብሉ ካርታ: ነፍሲ ወከፍ ኣድራሻኡ ወይ ስሙ ምስ ኣረጊቱ ዝበዝሕ ዝመሳሰል ገጻት ናይዚ ሳይት ይወሃቦ።</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>እቲ ዝለዓለ ብዝሒ መስመራት</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>ሓደስቲ ኣድራሻታት</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>እቲ ውጽኢቱ እንተወሓደ ከምዚ ዝኾነ ሓሳብ መሊእኩም</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>ውጽኢት ካብ 0 ክሳብ 100 ኣረጊት ኣድራሻ ምስ ገጽ ናይዚ ሳይት ክንደይ ከም ዝመሳሰል የርኢ። እቶም ካልኦት ሓሳባት ኣብ ሕዝብታት መስመር ተዘርዚሮም ኣለዉ።</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>ከም CSV ኣውርዱ</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>ገና ዝተጻሕፈ የለን። ካርታ ኣብ ሰንጠረዥ ንምውዳእ ኣውርዱ ወይ ቅድመ ርእይቶ ርኣዩ: መስመራት ሓድሽ ኣድራሻ ዘይብሎም ከም ዘይኣተዉ ይርአዩ።</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>ፋይል ጸዓኑ</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>መገዲ ምጅማር</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>ኣረጊት ኣድራሻታት ፈትኑ</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>እቲ ምእታው ሳይት ኣድራሻ ሳይት የብሉን (site.ini [SiteSettings] SiteURL)፣ ስለዚ ኣረጊት ኣድራሻታት ኣብዚ ክፍተኑ ኣይከኣሉን። ./console exp:url:test ኣብ ዝኾነ ኣድራሻ የፍትኖም።</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>ነፍሲ ወከፍ ኣረጊት ኣድራሻ ኣብ %base ይሓትት፣ ሰግራቱ ይስዕብ፣ ከምኡውን ናብ ሓድሽ ኣድራሻኡ ከም ዝበጽሕ የረጋግጽ።</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>ዳግማይ ፈትኑ</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>ፈትኑ</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed በጺሖም፣ %status ብጌጋ ኩነታት፣ %target ኣብ ጌጋ ገጽ፣ %none ዘይተሰገሩ፣ %error ዘይተዓወቱ፣ %skipped ዝተሓለፉ።</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>ቀዳምቲ %count መስመራት ጥራይ ተፈቲኖም።</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>ናብ ሓድሽ ኣድራሻኦም ዘይበጸሑ መስመራት</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>ኣረጊት ኣድራሻታት ክፍተኑ ኣይከኣሉን።</translation>
+    </message>
 </context>
 </TS>

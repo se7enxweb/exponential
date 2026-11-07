@@ -86153,5 +86153,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>貼り付けたテキスト</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>サイトマップのアドレスを指定するか、アップロードしてください。</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>旧アドレスが見つかりませんでした。</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>旧サイトマップから</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404ログから</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>移行先を提案</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>旧サイトのアドレスを、そのサイトマップ(sitemap.xml、サイトマップインデックス、または.gz)から、または1行に1つのアドレスを記載した一覧から取得します。各アドレスは、新しいアドレスが空の行になります。</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>サイトマップのアドレス</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>またはサイトマップや一覧をアップロード</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>他のホストのアドレスも含める</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>このサイトで訪問者が要求したが見つからなかったアドレスを、要求の多い順に表示します。画像、スクリプト、ボットは除外されます。</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404ログは無効です(site.ini [RequestLogSettings] NotFoundLog)。新しいアドレスはありません。</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>リクエスト数の下限</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>過去の日数</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>新しいアドレスのない行を持つマップです。各行に、アドレスまたは名前が旧アドレスに最も近いこのサイトのページが割り当てられます。</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>行数の上限</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>新しいアドレス</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>次のスコア以上の候補を入力する</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0〜100のスコアは、旧アドレスがこのサイトのページにどれだけ似ているかを示します。その他の候補は行のメモに一覧表示されます。</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>CSVとしてダウンロード</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>まだ何も書き込まれていません。マップをダウンロードして表計算ソフトで仕上げるか、プレビューしてください。新しいアドレスのない行はインポート不可として表示されます。</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>ファイルをアップロード</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>開始方法</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>旧アドレスをテスト</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>サイトアクセスにサイトのアドレス(site.ini [SiteSettings] SiteURL)がないため、ここでは旧アドレスをテストできません。./console exp:url:test なら任意のアドレスに対してテストできます。</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>各旧アドレスを %base にリクエストし、リダイレクトをたどって、新しいアドレスに到達するか確認します。</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>もう一度テスト</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>テスト</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>到達 %landed 件、ステータス不正 %status 件、ページ違い %target 件、リダイレクトなし %none 件、失敗 %error 件、スキップ %skipped 件。</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>最初の %count 行のみテストしました。</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>新しいアドレスに到達しなかった行</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>旧アドレスをテストできませんでした。</translation>
+    </message>
 </context>
 </TS>

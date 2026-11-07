@@ -86121,5 +86121,129 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>Pasted text</source>
         <translation>Rubutun da aka liƙa</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Ba da adireshin taswirar shafi ko ka ɗora shi.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Ba a sami tsohon adireshi ba.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Daga tsohuwar taswirar shafi</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Daga rajistar 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Ba da shawarar wuraren zuwa</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Adiresoshin tsohon shafin daga taswirar shafinsa (sitemap.xml, jerin taswirori ko .gz) ko daga jerin adireshi ɗaya a kowane layi. Kowanne zai zama jere mai sabon adireshi maras komai.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Adireshin taswirar shafi</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Ko ka ɗora taswirar shafi ko jerin</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Da adiresoshin sauran runduna</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Adiresoshin da baƙi suka nema a wannan shafi amma ba su samu ba, mafi yawan nema a farko. An bar hotuna, rubutun shirye-shirye da bots.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>An kashe rajistar 404 (site.ini [RequestLogSettings] NotFoundLog): ba ta da sabbin adireshi.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Aƙalla wannan adadin buƙatu</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>A cikin kwanakin ƙarshe</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Taswira wadda jerenta ba su da sabon adireshi: kowanne zai sami shafukan wannan shafi waɗanda adireshinsu ko sunansu ya fi kama da tsohon.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Mafi yawa wannan adadin jere</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Sabbin adireshi</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Cika shawarar da maki ya kai aƙalla</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Maki daga 0 zuwa 100 yana nuna yadda tsohon adireshi ya yi kama da wani shafi na wannan shafi. Ana jera sauran shawarwari a bayanan jere.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Sauke a matsayin CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Ba a rubuta komai ba tukuna. Sauke taswirar don kammala ta a spreadsheet, ko ka duba ta tukuna: jerin da ba su da sabon adireshi ana nuna su a matsayin waɗanda ba za a shigo da su ba.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Ɗora fayil</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Hanyoyin farawa</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Gwada tsofaffin adireshi</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Hanyar shiga shafi ba ta da adireshin shafi (site.ini [SiteSettings] SiteURL), don haka ba za a iya gwada tsofaffin adireshi a nan ba. ./console exp:url:test yana gwada su a kan kowane adireshi.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Yana neman kowane tsohon adireshi a %base, yana bin karkatarwarsa, yana tabbatar ya isa sabon adireshinsa.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Sake gwadawa</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Gwaji</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed sun isa, %status da matsayi mara kyau, %target a shafi mara kyau, %none ba a karkatar ba, %error sun kasa, %skipped an tsallake.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>An gwada jere %count na farko kawai.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Jerin da ba su isa sabon adireshinsu ba</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Ba a iya gwada tsofaffin adireshi ba.</translation>
+    </message>
 </context>
 </TS>

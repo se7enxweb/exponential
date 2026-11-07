@@ -86153,5 +86153,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>نص ملصوق</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>أدخل عنوان خريطة الموقع أو ارفعها.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>لم يُعثر على أي عنوان قديم.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>من خريطة الموقع القديمة</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>من سجل 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>اقتراح الوجهات</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>عناوين الموقع القديم من خريطة موقعه (sitemap.xml أو فهرس خرائط الموقع أو .gz) أو من قائمة بعنوان واحد في كل سطر. يصبح كل عنوان صفًا بعنوان جديد فارغ.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>عنوان خريطة الموقع</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>أو ارفع خريطة الموقع أو القائمة</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>وكذلك عناوين المضيفات الأخرى</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>العناوين التي طلبها الزوار على هذا الموقع ولم يجدوها، الأكثر طلبًا أولًا. تُستثنى الصور والبرامج النصية وروبوتات الزحف.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>سجل 404 متوقف (site.ini [RequestLogSettings] NotFoundLog): فلا توجد فيه عناوين جديدة.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>عدد الطلبات على الأقل</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>في الأيام الأخيرة</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>خريطة تفتقر صفوفها إلى عنوان جديد: يحصل كل صف على صفحات هذا الموقع التي يشبه عنوانها أو اسمها العنوان القديم أكثر من غيرها.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>عدد الصفوف على الأكثر</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>العناوين الجديدة</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>املأ اقتراحًا درجته على الأقل</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>تبيّن الدرجة من 0 إلى 100 مدى تشابه العنوان القديم مع صفحة من هذا الموقع. تُدرج الاقتراحات الأخرى في ملاحظات الصف.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>تنزيل بصيغة CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>لم يُكتب شيء بعد. نزّل الخريطة لإكمالها في جدول بيانات، أو اعرض معاينة لها: تظهر الصفوف التي بلا عنوان جديد على أنها غير قابلة للاستيراد.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>رفع ملف</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>طرق البدء</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>اختبار العناوين القديمة</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>ليس لـ siteaccess عنوان موقع (site.ini [SiteSettings] SiteURL)، لذا لا يمكن اختبار العناوين القديمة هنا. يختبرها ./console exp:url:test على أي عنوان.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>يطلب كل عنوان قديم على %base، ويتبع عمليات إعادة التوجيه الخاصة به، ويتحقق من وصوله إلى عنوانه الجديد.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>اختبار مرة أخرى</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>اختبار</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>وصل %landed، و%status بحالة خاطئة، و%target على صفحة خاطئة، و%none دون إعادة توجيه، و%error فشل، و%skipped تم تخطيه.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>اختُبرت أول %count صفوف فقط.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>الصفوف التي لم تصل إلى عنوانها الجديد</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>تعذّر اختبار العناوين القديمة.</translation>
+    </message>
 </context>
 </TS>

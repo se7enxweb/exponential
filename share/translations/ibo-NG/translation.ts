@@ -86121,5 +86121,129 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>Pasted text</source>
         <translation>Ederede a mabara</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Nye adreesị maapụ saịtị ma ọ bụ bulite ya.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Achọtaghị adreesị ochie ọ bụla.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Site na maapụ saịtị ochie</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Site na ndekọ 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Tụpụta ebe ebumnuche</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Adreesị saịtị ochie site na maapụ saịtị ya (sitemap.xml, ndepụta maapụ saịtị ma ọ bụ .gz) ma ọ bụ site na ndepụta nwere otu adreesị n'ahịrị ọ bụla. Nke ọ bụla ga-aghọ ahịrị nwere adreesị ọhụrụ efu.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Adreesị maapụ saịtị</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Ma ọ bụ bulite maapụ saịtị ma ọ bụ ndepụta</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Yana adreesị nke ndị ọzọ na-akwado saịtị (host)</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Adreesị ndị ọbịa rịọrọ na saịtị a ma ahụghị, nke e rịọrọ ọtụtụ ugboro bụ nke mbụ. Ahapụrụ ihe osise, ihe odide edemede na bot.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Ndekọ 404 anaghị arụ ọrụ (site.ini [RequestLogSettings] NotFoundLog): enweghị adreesị ọhụrụ n'ime ya.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Opekata mpe ọtụtụ ịrịọ a</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>N'ụbọchị ndị gara aga</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Maapụ nke ahịrị ya enweghị adreesị ọhụrụ: nke ọ bụla na-enweta ibe saịtị a nke adreesị ma ọ bụ aha ya yiri nke ochie karịa.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Kacha ọtụtụ ahịrị a</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Adreesị ọhụrụ</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Mejupụta atụmatụ nwere akara opekata mpe</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Akara site na 0 ruo 100 na-egosi ka adreesị ochie si yie ibe nke saịtị a. Edepụtara atụmatụ ndị ọzọ n'ndetu nke ahịrị.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Budata dị ka CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Edeghị ihe ọ bụla ugbu a. Budata maapụ ka i mezuo ya na spreadsheet, ma ọ bụ buru ụzọ lee ya: ahịrị na-enweghị adreesị ọhụrụ pụtara dị ka ndị enweghị ike iweta.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Bulite faịlụ</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Ụzọ isi malite</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Nwaa adreesị ochie</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Nnweta saịtị enweghị adreesị saịtị (site.ini [SiteSettings] SiteURL), ya mere enweghị ike ịnwale adreesị ochie ebe a. ./console exp:url:test na-anwale ha megide adreesị ọ bụla.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Na-arịọ adreesị ochie ọ bụla na %base, na-eso ntụgharị ụzọ ya ma lelee na ọ rutere adreesị ọhụrụ ya.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Nwaa ọzọ</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Nnwale</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed rutere, %status nwere ọkwa ezighị ezi, %target na ibe ezighị ezi, %none ejighị ntụgharị ụzọ, %error dara, %skipped agabigara.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Anwalela naanị ahịrị %count mbụ.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Ahịrị ndị na-erutebeghị adreesị ọhụrụ ha</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Enweghị ike ịnwale adreesị ochie.</translation>
+    </message>
 </context>
 </TS>

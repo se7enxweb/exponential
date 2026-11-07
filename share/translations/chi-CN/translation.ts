@@ -86121,5 +86121,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>粘贴的文本</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>请提供站点地图的地址或上传站点地图。</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>未找到旧地址。</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>来自旧站点地图</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>来自 404 日志</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>建议目标页面</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>旧站点的地址，来自其站点地图（sitemap.xml、站点地图索引或 .gz），或来自每行一个地址的列表。每个地址都会成为一行，新地址为空。</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>站点地图的地址</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>或上传站点地图或列表</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>同时包含其他主机的地址</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>访客在本站点请求但未找到的地址，请求最多的排在最前。图片、脚本和机器人已排除。</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 日志已关闭（site.ini [RequestLogSettings] NotFoundLog）：其中没有新地址。</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>至少这么多次请求</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>最近几天内</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>行缺少新地址的映射：每一行会获得本站点中地址或名称与旧地址最相似的页面。</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>最多这么多行</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>新地址</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>填入得分至少为以下值的建议</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0 到 100 的得分表示旧地址与本站点某个页面的相似程度。其他建议列在该行的备注中。</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>下载为 CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>尚未写入任何内容。请下载映射，在电子表格中补全，或先预览：没有新地址的行会显示为无法导入。</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>上传文件</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>开始方式</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>测试旧地址</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>该站点访问没有站点地址（site.ini [SiteSettings] SiteURL），因此无法在此测试旧地址。./console exp:url:test 可以针对任意地址进行测试。</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>在 %base 上请求每个旧地址，跟随其重定向，并检查是否到达其新地址。</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>重新测试</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>测试</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed 个已到达，%status 个状态错误，%target 个页面错误，%none 个未重定向，%error 个失败，%skipped 个已跳过。</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>仅测试了前 %count 行。</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>未到达其新地址的行</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>无法测试旧地址。</translation>
+    </message>
 </context>
 </TS>

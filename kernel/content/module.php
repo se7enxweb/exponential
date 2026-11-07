@@ -266,7 +266,7 @@ $ViewList['urlimport'] = array(
     'script' => 'urlimport.php',
     'ui_context' => 'administration',
     'params' => array( ),
-    'unordered_params' => array( 'plan' => 'Plan', 'state' => 'State', 'offset' => 'Offset', 'report' => 'Report' ) );
+    'unordered_params' => array( 'plan' => 'Plan', 'state' => 'State', 'offset' => 'Offset', 'report' => 'Report', 'source' => 'Source' ) );
 
 $ViewList['urlimporthistory'] = array(
     'functions' => array( 'urltranslator_import' ),

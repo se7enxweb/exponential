@@ -4,7 +4,7 @@ audience: admin, website-creator
 category: website-creation
 order: 445
 summary: Die alten Adressen einer Website nach dem Umzug zu Exponential erhalten - sammeln, eine Zuordnungsdatei bauen, mit Vorschau und Probelauf importieren, testen, bei Bedarf rückgängig machen und für den Webserver oder als Sicherung exportieren.
-keywords: URLs migrieren, Migration, Relaunch, Umzug, alte Adressen, Weiterleitung, 301, URL-Zuordnung, Zuordnungsdatei, Import, Export, rückgängig, Probelauf, Sitemap, 404, CSV, Excel, htaccess, nginx, URL-Übersetzer, URL-Platzhalter, exp:url:import, exp:url:export, migrating URLs, redirect, URL map, mapping file, dry run, undo
+keywords: URLs migrieren, Migration, Relaunch, Umzug, alte Adressen, Weiterleitung, 301, URL-Zuordnung, Zuordnungsdatei, Import, Export, rückgängig, Probelauf, Sitemap, 404, CSV, Excel, htaccess, nginx, URL-Übersetzer, URL-Platzhalter, exp:url:import, exp:url:export, exp:url:from-sitemap, exp:url:from-404, exp:url:suggest, exp:url:test, Ziele vorschlagen, 404-Protokoll, migrating URLs, redirect, URL map, mapping file, dry run, undo
 type: help
 ---
 # URLs migrieren
@@ -33,25 +33,48 @@ Beispieldateien: [URL-Zuordnungen als Beispiele](../beispiele/url-zuordnungen/RE
 
 ## 1. Die alten Adressen sammeln
 
-Beginnen Sie mit jeder Adresse, die die alte Website hatte, bevor Sie sie abschalten. Zwei Stellen haben sie:
+Beginnen Sie mit jeder Adresse, die die alte Website hatte, bevor Sie sie abschalten. Zwei Stellen haben sie, und
+Exponential macht aus beiden den Anfang einer Zuordnungsdatei: eine Zeile je alter Adresse, die neue Adresse noch
+leer.
 
-- **Die Sitemap der alten Website**, meist `https://www.alte-seite.de/sitemap.xml`. Sie listet die Seiten, die die
-  Website Suchmaschinen zeigen wollte. Speichern Sie die Adressen in einer Textdatei:
+**Die Sitemap der alten Website**, meist `https://www.alte-seite.de/sitemap.xml`, listet die Seiten, die die Website
+Suchmaschinen zeigen wollte.
+
+- In der Administration: **Setup** > **URL-Übersetzer** > **Importieren**, Reiter **Aus der alten Sitemap**. Geben
+  Sie die **Adresse der Sitemap** ein, oder laden Sie die Sitemap oder eine Liste mit einer Adresse je Zeile unter
+  **Oder die Sitemap oder die Liste hochladen** hoch. Klicken Sie dann auf **Als CSV herunterladen**, um die Zuordnung
+  in einer Tabellenkalkulation auszufüllen, oder auf **Vorschau**, um mit dem Import weiterzumachen.
+- Auf der Kommandozeile:
 
   ```bash
-  curl -s https://www.alte-seite.de/sitemap.xml | grep -o '<loc>[^<]*</loc>' \
-      | sed -e 's#<loc>##' -e 's#</loc>##' > var/tmp/old-urls.txt
+  ./console exp:url:from-sitemap https://www.alte-seite.de/sitemap.xml --output=var/tmp/old-site.csv
   ```
 
-- **Das Zugriffsprotokoll des Webservers**, nach dem Umstellen: die Adressen, die Besucher weiter aufrufen und die
-  jetzt „404 Not Found“ antworten, die häufigsten zuerst. Mit dem üblichen Protokollformat von Apache oder nginx:
+  Ein Sitemap-Index und gzip-komprimierte Sitemaps werden verfolgt. Nur die Adressen des eigenen Hosts der Sitemap
+  bleiben, außer Sie geben `--any-host` an (im Reiter: **Auch die Adressen anderer Hosts**). `--limit=500` hört nach
+  500 Zeilen auf.
+
+**Das 404-Protokoll**, nach dem Umstellen: die Adressen, die Besucher auf der neuen Website weiter aufrufen und nicht
+finden, die häufigsten zuerst. Es findet, was die Sitemap nicht kennt: Adressen, auf die andere Websites verlinken,
+Dateien, alte Adressen mit Tippfehler.
+
+- In der Administration: Reiter **Aus dem 404-Protokoll**, mit **Mindestens so viele Aufrufe** und **In den letzten
+  Tagen**.
+- Auf der Kommandozeile:
 
   ```bash
-  awk '$9 == 404 {print $7}' /pfad/zum/access_log | sort | uniq -c | sort -rn | head -50
+  ./console exp:url:from-404 -s site --min-hits=3 --since=30d --output=var/tmp/not-found.csv
   ```
 
-  Das findet, was die Sitemap nicht kennt: alte Adressen mit Abfrage (`/index.php?id=12`), Dateien und Adressen, auf
-  die andere Websites verlinken. Sehen Sie einige Tage nach dem Umstellen noch einmal hinein.
+  `-s` behält die Anfragen eines Siteaccess. `--log=<datei>` liest statt des eigenen Protokolls von Exponential ein
+  Zugriffsprotokoll eines Webservers (Format common oder combined, auch `.gz`), zum Beispiel das des alten Servers vor
+  dem Umstellen.
+
+Das 404-Protokoll von Exponential (`var/log/404.log`, standardmäßig an: `site.ini [RequestLogSettings]
+NotFoundLog`) verbirgt die Werte einer Abfrage als `***` und liefert daher nur die **Pfade**. Alte Adressen mit
+Abfrage, etwa `/index.php?id=12`, kommen aus der Sitemap oder aus dem Zugriffsprotokoll des alten Servers (`--log`).
+Bilder, Skripte, Stylesheets und Anfragen von Bots bleiben außen vor. Sehen Sie einige Tage nach dem Umstellen noch
+einmal ins 404-Protokoll.
 
 Hatte der Webserver der alten Website eigene Weiterleitungen (eine `.htaccess`-Datei oder eine nginx-Konfiguration),
 heben Sie diese Datei auf: Exponential liest sie in Schritt 3 direkt.
@@ -69,15 +92,33 @@ old_url,new_url
 /old-recipes/*,/recipes/{1}
 ```
 
-Machen Sie aus der Liste von Schritt 1 den Anfang einer solchen Datei, ohne Host und mit leerer neuer Adresse:
+Die Datei aus Schritt 1 hat die alten Adressen; die Spalte `new_url` ist noch leer. Lassen Sie Exponential **Ziele
+vorschlagen**: Es vergleicht jede alte Adresse (vor allem ihren letzten Teil, ohne Endungen wie `.html`) mit den
+Adressen und Namen der Seiten der neuen Website und bewertet die besten mit 0 bis 100.
 
-```bash
-{ echo 'old_url,new_url'; sed -e 's#^https\{0,1\}://[^/]*##' -e 's#$#,#' var/tmp/old-urls.txt; } > var/tmp/old-site.csv
+- In der Administration: Reiter **Ziele vorschlagen**. Laden Sie die Zuordnung hoch und setzen Sie **Einen Vorschlag
+  eintragen, der mindestens so bewertet ist**, zum Beispiel auf 85. Die Reiter **Aus der alten Sitemap** und **Aus dem
+  404-Protokoll** können gleich Ziele vorschlagen.
+- Auf der Kommandozeile:
+
+  ```bash
+  ./console exp:url:suggest var/tmp/old-site.csv -s site --fill-above=85 --output=var/tmp/old-site-suggested.csv
+  ```
+
+Ein Vorschlag, der mindestens so bewertet ist (und nicht gleichauf mit einem anderen liegt), wird in `new_url`
+eingetragen; die übrigen stehen in der Spalte `note` der Zeile, zum Beispiel:
+
+```text
+old_url,new_url,kind,siteaccess,language,note,status
+/recipes/kale-salad.html,/recipes/kale-salad,,,,"suggested target, score 100",
+/contact-us.html,,,,,suggested: /contact (70),
+/hummus-recipe.php,,,,,"suggested: /recipes (55), /recipes/home-made-hummus (45)",
 ```
 
-Öffnen Sie sie dann in einem Tabellenprogramm und füllen Sie die Spalte `new_url` aus. Die neue Adresse einer Seite
-finden Sie, indem Sie die Seite auf der neuen Website öffnen und den Pfad aus der Adresszeile kopieren, oder Sie
-nehmen die Knoten-ID der Seite (`node:163`), die auch dann weiter funktioniert, wenn die Seite später verschoben wird.
+Öffnen Sie die Datei dann in einem Tabellenprogramm, prüfen Sie die eingetragenen Ziele und füllen Sie den Rest aus.
+Die neue Adresse einer Seite finden Sie, indem Sie die Seite auf der neuen Website öffnen und den Pfad aus der
+Adresszeile kopieren, oder Sie nehmen die Knoten-ID der Seite (`node:163`), die auch dann weiter funktioniert, wenn
+die Seite später verschoben wird. Importiert wird erst in Schritt 3.
 
 Tipps für die Zuordnung:
 
@@ -141,23 +182,35 @@ die Datei vollständige Adressen eines Hosts, der nicht zu dieser Installation g
 
 ## 4. Die alten Adressen testen
 
-Fragen Sie direkt nach dem Import jede alte Adresse bei der Website an und sehen Sie sich die Antwort an. Eine
-dauerhafte Weiterleitung antwortet mit `301` und der neuen Adresse:
+Fragen Sie direkt nach dem Import jede alte Adresse bei der Website an, folgen Sie ihren Weiterleitungen und prüfen
+Sie, dass sie mit der richtigen Art von Weiterleitung auf ihrer neuen Adresse ankommt.
 
-```bash
-while IFS=, read -r old new rest; do
-    [ "$old" = old_url ] && continue
-    printf '%s %s\n' "$(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' "https://www.example.com$old")" "$old"
-done < var/tmp/old-site.csv
-```
+- In der Administration: Die Seite mit dem Ergebnis des Imports hat den Abschnitt **Die alten Adressen prüfen**.
+  Klicken Sie auf **Prüfen**: Es fragt die alten Adressen (die ersten 500) unter der Website-Adresse des Siteaccess
+  (`site.ini [SiteSettings] SiteURL`) an und listet die Zeilen, die nicht angekommen sind. **Erneut prüfen**
+  wiederholt das nach einer Korrektur.
+- Auf der Kommandozeile, gegen jede Adresse, auch gegen eine Staging-Website vor dem Umstellen:
 
-Ersetzen Sie `https://www.example.com` durch die Adresse der neuen Website. Jede Zeile sollte mit `301` beginnen
-(oder `302`, `307` bei vorübergehenden Weiterleitungen) oder mit `200` bei einem `alias`. Ein `404` heißt, dass die
-Adresse fehlt oder nicht importiert wurde: Schlagen Sie sie im Plan von Schritt 3 nach. Auf der Seite URL-Platzhalter
-zeigt **Eine Adresse ausprobieren**, wohin eine einzelne Adresse führt.
+  ```bash
+  ./console exp:url:test var/tmp/old-site.csv --base=https://www.example.com -s site --report=var/tmp/test.csv
+  ```
 
-Sehen Sie sich die 404-Liste des Webservers aus Schritt 1 nach einigen Tagen erneut an und importieren Sie eine
-zweite Datei für das, was dabei auftaucht.
+  ```text
+  URL map test of var/tmp/old-site.csv on https://www.example.com: 3 rows in 1.2 s
+    2 landed, 0 wrong-status, 0 wrong-target, 1 not-redirected, 0 error, 0 skipped
+    not-redirected line 4     /recipes.html -> /recipes: answered 404 without a redirect
+  ```
+
+Jede Zeile ist **landed** (angekommen), **wrong-status** (dauerhaft, wo eine vorübergehende Weiterleitung erwartet
+war, oder umgekehrt), **wrong-target** (falsche Seite), **not-redirected** (nicht weitergeleitet) oder **error**;
+Zeilen ohne neue Adresse werden übersprungen, ein Platzhalter wird mit einer Beispieladresse geprüft. Der Befehl endet
+mit dem Exit-Code 1, wenn eine Zeile nicht angekommen ist, und eignet sich so auch für ein Deployment-Skript.
+`--insecure` nimmt das selbst signierte Zertifikat eines Testhosts an. Eine Zeile, die nicht angekommen ist, fehlt
+oder wurde nicht importiert: Schlagen Sie sie im Plan von Schritt 3 nach. Auf der Seite URL-Platzhalter zeigt **Eine
+Adresse ausprobieren**, wohin eine einzelne Adresse führt.
+
+Nehmen Sie nach einigen Tagen erneut **Aus dem 404-Protokoll** aus Schritt 1 und importieren Sie eine zweite Datei
+für das, was dabei auftaucht.
 
 ## 5. Einen Import rückgängig machen
 

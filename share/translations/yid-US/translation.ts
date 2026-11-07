@@ -86123,5 +86123,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>אַרייַנגעלייגטער טעקסט</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>גיב אָן דעם אַדרעס פֿון דער וועבזייַטל־מאַפּע אָדער לאָד זי אַרויף.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>קיין אַלטער אַדרעס איז נישט געפֿונען געוואָרן.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>פֿון דער אַלטער וועבזייַטל־מאַפּע</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>פֿון דער 404־לאָג</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>פֿאָרשלאָגן ציִלן</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>די אַדרעסן פֿון דער אַלטער וועבזייַטל פֿון איר וועבזייַטל־מאַפּע (sitemap.xml, אַן אינדעקס פֿון וועבזייַטל־מאַפּעס אָדער .gz) אָדער פֿון אַ ליסטע מיט איין אַדרעס אין יעדער שורה. יעדער ווערט אַ שורה מיט אַ ליידיקן נייַעם אַדרעס.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>אַדרעס פֿון דער וועבזייַטל־מאַפּע</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>אָדער לאָד אַרויף די וועבזייַטל־מאַפּע אָדער די ליסטע</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>אויך אַדרעסן פֿון אַנדערע האָסטס</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>די אַדרעסן וואָס באַזוכער האָבן געבעטן אויף דעם וועבזייַטל און נישט געפֿונען, די מערסט געבעטענע פֿריִער. בילדער, סקריפּטן און באָטס ווערן אויסגעלאָזט.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>די 404־לאָג איז אויסגעלעשט (site.ini [RequestLogSettings] NotFoundLog): זי האָט נישט קיין נייַע אַדרעסן.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>מינדסטנס אַזוי פֿיל בקשות</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>אין די לעצטע טעג</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>אַ מאַפּע וועמענס שורות פֿעלט אַ נייַער אַדרעס: יעדע באַקומט די בלעטער פֿון דעם וועבזייַטל וועמענס אַדרעס אָדער נאָמען איז אַלעמען מער ענלעך צום אַלטן.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>העכסטנס אַזוי פֿיל שורות</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>נייַע אַדרעסן</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>פֿול אויס אַ פֿאָרשלאָג מיט אַ סקאָר פֿון מינדסטנס</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>אַ סקאָר פֿון 0 ביז 100 זאָגט ווי ענלעך דער אַלטער אַדרעס איז צו אַ בלאַט פֿון דעם וועבזייַטל. די אַנדערע פֿאָרשלאָגן שטייען אין די באַמערקונגען פֿון דער שורה.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>אַראָפּלאָדן ווי CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>נאָך גאָרנישט איז נישט געשריבן. לאָד די מאַפּע אַראָפּ כּדי זי צו פֿאַרענדיקן אין אַ טאַבעלע, אָדער קוק זי פֿאָרויס: שורות אָן אַ נייַעם אַדרעס ווערן געוויזן ווי נישט אימפּאָרטירעוודיק.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>לאָד אַרויף אַ טעקע</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>וועגן אָנצוהייבן</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>פּרובירן די אַלטע אַדרעסן</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>דער וועבזייַטל־צוטריט האָט נישט קיין וועבזייַטל־אַדרעס (site.ini [SiteSettings] SiteURL), דעריבער קענען די אַלטע אַדרעסן נישט ווערן געפּרוּווט דאָ. ./console exp:url:test פּרוּווט זיי קעגן יעדן אַדרעס.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>בעט יעדן אַלטן אַדרעס אויף %base, גייט נאָך זיינע ווייַטערפֿירונגען און קוקט צי ער קומט צו זיין נייַעם אַדרעס.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>פּרובירן נאָך אַ מאָל</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>פּרובירן</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed אָנגעקומען, %status מיט אַ פֿאַלשן סטאַטוס, %target אויף אַ פֿאַלשן בלאַט, %none נישט ווייַטערגעפֿירט, %error דורכגעפֿאַלן, %skipped איבערגעשפּרונגען.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>נאָר די ערשטע %count שורות זענען געפּרוּווט געוואָרן.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>די שורות וואָס זענען נישט אָנגעקומען צו זייער נייַעם אַדרעס</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>די אַלטע אַדרעסן האָבן נישט געקענט ווערן געפּרוּווט.</translation>
+    </message>
 </context>
 </TS>

@@ -86123,5 +86123,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>पेस्ट कीता गेदा टैक्स्ट</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>साइटमैप दा पता देओ जां उसी अपलोड करो।</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>कोई पुराना पता नेईं मिलेआ।</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>पुराने साइटमैप थमां</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 लॉग थमां</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>लक्ष्य सुझाओ</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>पुराने साइट दे पते उसदे साइटमैप (sitemap.xml, साइटमैप इंडेक्स जां .gz) जां इक-इक पते आली सूची थमां। हर इक खाली नमें पते आली पंगति बनी जंदा ऐ।</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>साइटमैप दा पता</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>जां साइटमैप जां सूची अपलोड करो</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>होर होस्टें दे पते बी</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>जेह्ड़े पते इस साइट पर आए दे लोकें मंगे ते नेईं मिले, सब्भै थमां मते मंगे दे पैह्लें। तस्वीरां, स्क्रिप्ट ते बॉट छोड़े दे न।</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 लॉग बंद ऐ (site.ini [RequestLogSettings] NotFoundLog): इस च नमें पते नेईं न।</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>घट्ट-घट्ट इन्ने अनुरोध</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>पिछले दिनें च</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>इक मैप जिसदियें पंगतियें च नमां पता नेईं ऐ: हर इक गी इस साइट दे ओह् पन्ने मिलदे न जिंदा पता जां नांऽ पुराने कन्नै सब्भै थमां मिलदा ऐ।</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>मते-थमां-मते इन्नियां पंगतियां</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>नमें पते</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>इक सुझाऽ भरो जिसदा स्कोर घट्ट-घट्ट होऐ</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0 थमां 100 तकर दा स्कोर दस्सदा ऐ जे पुराना पता इस साइट दे इक पन्ने कन्नै कितना मिलदा ऐ। होर सुझाऽ पंगति दे नोटें च सूचीबद्ध न।</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>CSV दे रूप च डाउनलोड करो</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>अजें किश नेईं लिखेआ गेआ। मैप डाउनलोड करो ताकि उसी स्प्रेडशीट च पूरा करी सकौ, जां पूर्वावलोकन करो: नमें पते कोला बिना आली पंगतियां इंपोर्ट नेईं होई सकने आली दस्सियां जंदियां न।</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>फाइल अपलोड करो</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>शुरू करने दे तरीके</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>पुराने पते जांचो</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>साइटएक्सेस दा कोई साइट पता नेईं ऐ (site.ini [SiteSettings] SiteURL), इस करी पुराने पते इत्थें जांचे नेईं जाई सकदे। ./console exp:url:test उनेंगी कुसै बी पते कन्नै जांची लैंदा ऐ।</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>%base उप्पर हर पुराने पते गी मंगदा ऐ, उसदे रीडायरेक्टें पिच्छें जंदा ऐ ते जांचदा ऐ जे ओह् अपने नमें पते उप्पर पुज्जदा ऐ।</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>फ्ही जांचो</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>जांच</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed ठीक पुज्जे, %status गलत स्थिति कन्नै, %target गलत पन्ने उप्पर, %none रीडायरेक्ट नेईं होए, %error नाकाम होए, %skipped छोड़े गे।</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>सिर्फ पैह्लियां %count पंगतियां जांचियां गेइयां।</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>जेह्ड़ियां पंगतियां अपने नमें पते उप्पर नेईं पुज्जियां</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>पुराने पते जांचे नेईं जाई सके।</translation>
+    </message>
 </context>
 </TS>

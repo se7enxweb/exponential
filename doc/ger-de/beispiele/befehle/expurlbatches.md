@@ -36,8 +36,8 @@ the counts, and whether it was undone (exp:url:undo).
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--limit` | erforderlich | Wie viele der letzten Importe aufgelistet werden (Standard 20) |
-| `--format` | erforderlich | import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo: text (Standard) oder json (die Maschinenausgabe exp-url/1) |
+| `--limit` | erforderlich | batches: wie viele der letzten Importe aufgelistet werden (Standard 20); from-sitemap, from-404, test: die meisten Zeilen (Standard alle) |
+| `--format` | erforderlich | import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo, from-sitemap, from-404, suggest, test: text (Standard) oder json (die Maschinenausgabe exp-url/1) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

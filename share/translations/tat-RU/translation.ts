@@ -86123,5 +86123,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>Куелган текст</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Сайт картасының адресын күрсәтегез яки аны йөкләгез.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Иске адрес табылмады.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Иске сайт картасыннан</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 журналыннан</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Максатларны тәкъдим итү</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Иске сайтның адреслары аның сайт картасыннан (sitemap.xml, сайт карталары индексы яки .gz) яки һәр юлда бер адрес булган исемлектән. Һәрберсе яңа адресы буш юлга әйләнә.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Сайт картасы адресы</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Яки сайт картасын я исемлекне йөкләгез</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Башка хостлар адреслары да</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Кунаклар бу сайтта сорап тапмаган адреслар, иң еш соралганнары беренче. Рәсемнәр, скриптлар һәм ботлар кертелми.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 журналы сүндерелгән (site.ini [RequestLogSettings] NotFoundLog): анда яңа адреслар юк.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Ким дигәндә шулкадәр сорау</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Соңгы көннәрдә</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Юлларында яңа адрес җитмәгән карта: һәрберсенә бу сайтның адресы яки исеме иске адреска иң якын булган битләр бирелә.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Иң күбе шулкадәр юл</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Яңа адреслар</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Ким дигәндә шундый бәяле тәкъдимне тутырыгыз</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0дән 100гә кадәр бәя иске адрес бу сайт битенә никадәр охшаганын күрсәтә. Калган тәкъдимнәр юлның искәрмәләрендә күрсәтелә.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>CSV буларак йөкләп алу</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Әлегә бернәрсә дә язылмаган. Картаны таблицада тәмамлар өчен йөкләп алыгыз яки алдан карагыз: яңа адресы юк юллар импортланмый дип күрсәтелә.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Файл йөкләү</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Башлау юллары</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Иске адресларны сынау</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Siteaccess-ның сайт адресы юк (site.ini [SiteSettings] SiteURL), шуңа күрә иске адресларны монда сынап булмый. ./console exp:url:test аларны теләсә кайсы адреска каршы сыный.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Һәр иске адресны %base өстендә сорый, аның юнәлтүләрен үтә һәм яңа адреска барып җитүен тикшерә.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Янә сынау</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Сынау</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed барып җиткән, %status дөрес булмаган статус белән, %target дөрес булмаган биттә, %none юнәлтелмәгән, %error хата белән, %skipped үткәрелгән.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Беренче %count юл гына сыналды.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Яңа адреска барып җитмәгән юллар</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Иске адресларны сынап булмады.</translation>
+    </message>
 </context>
 </TS>

@@ -86121,5 +86121,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>পেস্ট করা টেক্সট</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>সাইটম্যাপের ঠিকানা দিন অথবা এটি আপলোড করুন।</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>কোনো পুরোনো ঠিকানা পাওয়া যায়নি।</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>পুরোনো সাইটম্যাপ থেকে</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 লগ থেকে</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>লক্ষ্য প্রস্তাব করুন</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>পুরোনো সাইটের ঠিকানাগুলো এর সাইটম্যাপ (sitemap.xml, একটি সাইটম্যাপ সূচি বা .gz) থেকে অথবা প্রতি লাইনে একটি ঠিকানা সহ একটি তালিকা থেকে। প্রতিটি একটি খালি নতুন ঠিকানাসহ সারি হয়ে যায়।</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>সাইটম্যাপের ঠিকানা</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>অথবা সাইটম্যাপ বা তালিকাটি আপলোড করুন</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>অন্যান্য হোস্টের ঠিকানাও</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>দর্শকেরা এই সাইটে যে ঠিকানাগুলো চেয়েছিলেন কিন্তু পাননি, সবচেয়ে বেশি চাওয়াগুলো আগে। ছবি, স্ক্রিপ্ট এবং বট বাদ দেওয়া হয়েছে।</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 লগ বন্ধ আছে (site.ini [RequestLogSettings] NotFoundLog): এতে কোনো নতুন ঠিকানা নেই।</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>কমপক্ষে এতগুলো অনুরোধ</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>গত কয়েক দিনে</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>যে ম্যাপের সারিগুলোতে নতুন ঠিকানা নেই: প্রতিটি এই সাইটের সেই পৃষ্ঠাগুলো পায় যেগুলোর ঠিকানা বা নাম পুরোনোটির সবচেয়ে কাছাকাছি।</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>সর্বোচ্চ এতগুলো সারি</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>নতুন ঠিকানা</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>কমপক্ষে এই স্কোরের একটি প্রস্তাব পূরণ করুন</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0 থেকে 100 পর্যন্ত একটি স্কোর বলে পুরোনো ঠিকানাটি এই সাইটের একটি পৃষ্ঠার সাথে কতটা মিলে। অন্যান্য প্রস্তাব সারির নোটে তালিকাভুক্ত করা হয়।</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>CSV হিসেবে ডাউনলোড করুন</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>এখনও কিছু লেখা হয়নি। ম্যাপটি স্প্রেডশিটে সম্পূর্ণ করতে ডাউনলোড করুন, অথবা এর পূর্বরূপ দেখুন: নতুন ঠিকানা ছাড়া সারিগুলো ইমপোর্টযোগ্য নয় হিসেবে দেখানো হয়।</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>একটি ফাইল আপলোড করুন</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>শুরু করার উপায়</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>পুরোনো ঠিকানাগুলো পরীক্ষা করুন</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>সাইটঅ্যাক্সেসের কোনো সাইট ঠিকানা নেই (site.ini [SiteSettings] SiteURL), তাই পুরোনো ঠিকানাগুলো এখানে পরীক্ষা করা যাবে না। ./console exp:url:test সেগুলো যেকোনো ঠিকানার বিপরীতে পরীক্ষা করে।</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>%base-এ প্রতিটি পুরোনো ঠিকানার অনুরোধ করে, এর পুনঃনির্দেশ অনুসরণ করে এবং যাচাই করে যে এটি এর নতুন ঠিকানায় পৌঁছেছে।</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>আবার পরীক্ষা করুন</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>পরীক্ষা</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed পৌঁছেছে, %status ভুল স্ট্যাটাসসহ, %target ভুল পৃষ্ঠায়, %none পুনঃনির্দেশ হয়নি, %error ব্যর্থ, %skipped বাদ দেওয়া।</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>শুধু প্রথম %count সারি পরীক্ষা করা হয়েছে।</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>যে সারিগুলো তাদের নতুন ঠিকানায় পৌঁছায়নি</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>পুরোনো ঠিকানাগুলো পরীক্ষা করা যায়নি।</translation>
+    </message>
 </context>
 </TS>

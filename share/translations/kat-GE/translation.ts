@@ -86123,5 +86123,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>ჩასმული ტექსტი</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>მიუთითეთ საიტის რუკის მისამართი ან ატვირთეთ იგი.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>ძველი მისამართი ვერ მოიძებნა.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>ძველი საიტის რუკიდან</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404-ის ჟურნალიდან</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>სამიზნეების შემოთავაზება</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>ძველი საიტის მისამართები მისი საიტის რუკიდან (sitemap.xml, საიტის რუკების ინდექსი ან .gz) ან სიიდან, სადაც თითო ხაზზე ერთი მისამართია. თითოეული ხდება რიგი ცარიელი ახალი მისამართით.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>საიტის რუკის მისამართი</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>ან ატვირთეთ საიტის რუკა ან სია</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>სხვა ჰოსტების მისამართებიც</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>მისამართები, რომლებიც სტუმრებმა ამ საიტზე მოითხოვეს და ვერ იპოვეს, ყველაზე ხშირად მოთხოვნილი პირველია. სურათები, სკრიპტები და ბოტები გამორიცხულია.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404-ის ჟურნალი გამორთულია (site.ini [RequestLogSettings] NotFoundLog): მასში ახალი მისამართები არ არის.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>სულ მცირე ამდენი მოთხოვნა</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>ბოლო დღეების განმავლობაში</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>რუკა, რომლის რიგებს ახალი მისამართი აკლია: თითოეულს ენიჭება ამ საიტის ის გვერდები, რომელთა მისამართი ან სახელი ყველაზე მეტად ჰგავს ძველს.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>მაქსიმუმ ამდენი რიგი</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>ახალი მისამართები</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>შეავსეთ შემოთავაზება, რომლის ქულა სულ მცირე</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0-დან 100-მდე ქულა გვიჩვენებს, რამდენად ჰგავს ძველი მისამართი ამ საიტის გვერდს. დანარჩენი შემოთავაზებები რიგის შენიშვნებშია ჩამოთვლილი.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>ჩამოტვირთვა CSV-ის სახით</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>ჯერ არაფერი ჩაწერილა. ჩამოტვირთეთ რუკა, რომ ცხრილში დაასრულოთ, ან გადახედეთ მას: რიგები ახალი მისამართის გარეშე ნაჩვენებია როგორც იმპორტისთვის უვარგისი.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>ფაილის ატვირთვა</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>დაწყების გზები</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>ძველი მისამართების შემოწმება</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>საიტზე წვდომას საიტის მისამართი არ აქვს (site.ini [SiteSettings] SiteURL), ამიტომ ძველი მისამართების შემოწმება აქ შეუძლებელია. ./console exp:url:test ამოწმებს მათ ნებისმიერ მისამართთან.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>თითოეულ ძველ მისამართს მოითხოვს %base-ზე, მიჰყვება მის გადამისამართებებს და ამოწმებს, აღწევს თუ არა ახალ მისამართს.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>ხელახლა შემოწმება</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>შემოწმება</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed მიაღწია, %status არასწორი სტატუსით, %target არასწორ გვერდზე, %none არ გადამისამართებულა, %error ვერ შესრულდა, %skipped გამოტოვებულია.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>შემოწმდა მხოლოდ პირველი %count რიგი.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>რიგები, რომლებმაც ახალ მისამართს ვერ მიაღწიეს</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>ძველი მისამართების შემოწმება ვერ მოხერხდა.</translation>
+    </message>
 </context>
 </TS>

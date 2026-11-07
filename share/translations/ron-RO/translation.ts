@@ -86153,5 +86153,129 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>Pasted text</source>
         <translation>Text lipit</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Indicați adresa hărții site-ului sau încărcați-o.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Nu a fost găsită nicio adresă veche.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Din harta veche a site-ului</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Din jurnalul 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Sugerează destinații</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Adresele vechiului site din harta lui (sitemap.xml, un index de hărți sau .gz) sau dintr-o listă cu o adresă pe linie. Fiecare devine un rând cu adresa nouă goală.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Adresa hărții site-ului</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Sau încărcați harta site-ului ori lista</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Și adresele altor gazde</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Adresele cerute de vizitatori pe acest site și negăsite, cele mai cerute primele. Imaginile, scripturile și boții sunt omiși.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Jurnalul 404 este dezactivat (site.ini [RequestLogSettings] NotFoundLog): nu are adrese noi.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Cel puțin atâtea cereri</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>În ultimele zile</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>O hartă ale cărei rânduri nu au adresă nouă: fiecare primește paginile acestui site a căror adresă sau nume seamănă cel mai mult cu cea veche.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Cel mult atâtea rânduri</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Adrese noi</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Completează o sugestie cu scor de cel puțin</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Un scor de la 0 la 100 arată cât de asemănătoare este adresa veche cu o pagină a acestui site. Celelalte sugestii sunt listate în notele rândului.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Descarcă ca CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Nu s-a scris încă nimic. Descărcați harta pentru a o completa într-o foaie de calcul sau previzualizați-o: rândurile fără adresă nouă sunt afișate ca neimportabile.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Încarcă un fișier</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Moduri de a începe</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Testează adresele vechi</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Accesul la site nu are adresă de site (site.ini [SiteSettings] SiteURL), deci adresele vechi nu pot fi testate aici. ./console exp:url:test le testează pe orice adresă.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Cere fiecare adresă veche pe %base, urmează redirecționările ei și verifică dacă ajunge la adresa nouă.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Testează din nou</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Testează</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed au ajuns, %status cu stare greșită, %target pe pagina greșită, %none neredirecționate, %error eșuate, %skipped omise.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Au fost testate doar primele %count rânduri.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Rândurile care nu au ajuns la adresa nouă</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Adresele vechi nu au putut fi testate.</translation>
+    </message>
 </context>
 </TS>

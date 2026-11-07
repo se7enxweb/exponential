@@ -86153,5 +86153,129 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>Pasted text</source>
         <translation>Prilepljeno besedilo</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Navedite naslov zemljevida spletnega mesta ali ga naložite.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Najden ni bil noben star naslov.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Iz starega zemljevida spletnega mesta</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Iz dnevnika 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Predlagaj cilje</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Naslovi starega spletnega mesta iz njegovega zemljevida (sitemap.xml, kazala zemljevidov ali .gz) ali s seznama z enim naslovom v vrstici. Vsak postane vrstica s praznim novim naslovom.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Naslov zemljevida spletnega mesta</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Ali naložite zemljevid spletnega mesta ali seznam</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Tudi naslovi drugih gostiteljev</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Naslovi, ki so jih obiskovalci zahtevali na tem spletnem mestu in jih niso našli, najprej najpogostejši. Slike, skripti in roboti so izpuščeni.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Dnevnik 404 je izklopljen (site.ini [RequestLogSettings] NotFoundLog): nima novih naslovov.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Vsaj toliko zahtevkov</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>V zadnjih dneh</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Zemljevid, katerega vrstice nimajo novega naslova: vsaka dobi strani tega spletnega mesta, katerih naslov ali ime je staremu najbolj podobno.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Največ toliko vrstic</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Novi naslovi</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Izpolni predlog z oceno vsaj</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Ocena od 0 do 100 pove, kako podoben je star naslov strani tega spletnega mesta. Drugi predlogi so navedeni v opombah vrstice.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Prenesi kot CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Zapisano še ni nič. Prenesite zemljevid, da ga dopolnite v preglednici, ali si oglejte predogled: vrstice brez novega naslova so prikazane kot neuvozljive.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Naloži datoteko</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Načini za začetek</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Preizkusi stare naslove</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Dostop do spletnega mesta nima naslova spletnega mesta (site.ini [SiteSettings] SiteURL), zato starih naslovov tu ni mogoče preizkusiti. ./console exp:url:test jih preizkusi na poljubnem naslovu.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Zahteva vsak star naslov na %base, sledi njegovim preusmeritvam in preveri, ali pristane na novem naslovu.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Ponovno preizkusi</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Preizkusi</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed pristalih, %status z napačnim statusom, %target na napačni strani, %none brez preusmeritve, %error neuspešnih, %skipped preskočenih.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Preizkušenih je bilo le prvih %count vrstic.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Vrstice, ki niso pristale na svojem novem naslovu</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Starih naslovov ni bilo mogoče preizkusiti.</translation>
+    </message>
 </context>
 </TS>

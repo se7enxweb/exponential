@@ -86128,5 +86128,129 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>Pasted text</source>
         <translation>Yapıştırılan metin</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Site haritasının adresini verin veya yükleyin.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Eski adres bulunamadı.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Eski site haritasından</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 günlüğünden</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Hedef öner</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Eski sitenin adresleri, site haritasından (sitemap.xml, bir site haritası dizini veya .gz) ya da satır başına bir adres içeren bir listeden alınır. Her biri boş yeni adresli bir satır olur.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Site haritasının adresi</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Veya site haritasını ya da listeyi yükleyin</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Diğer sunucuların adresleri de</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Ziyaretçilerin bu sitede istediği ve bulamadığı adresler, en çok istenenler başta. Görseller, betikler ve botlar hariç tutulur.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 günlüğü kapalı (site.ini [RequestLogSettings] NotFoundLog): yeni adres içermiyor.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>En az bu kadar istek</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Son günlerde</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Satırlarında yeni adres bulunmayan bir harita: her satıra, adresi veya adı eskisine en çok benzeyen bu sitenin sayfaları verilir.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>En fazla bu kadar satır</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Yeni adresler</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Puanı en az şu olan bir öneriyi doldurun</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0 ile 100 arasındaki bir puan, eski adresin bu sitedeki bir sayfaya ne kadar benzediğini gösterir. Diğer öneriler satırın notlarında listelenir.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>CSV olarak indir</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Henüz hiçbir şey yazılmadı. Haritayı bir elektronik tabloda tamamlamak için indirin veya önizleyin: yeni adresi olmayan satırlar içe aktarılamaz olarak gösterilir.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Dosya yükle</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Başlama yolları</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Eski adresleri sına</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Site erişiminin site adresi yok (site.ini [SiteSettings] SiteURL), bu yüzden eski adresler burada sınanamaz. ./console exp:url:test onları herhangi bir adrese karşı sınar.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Her eski adresi %base üzerinde ister, yönlendirmelerini izler ve yeni adresine ulaşıp ulaşmadığını denetler.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Yeniden sına</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Sına</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed ulaştı, %status yanlış durumla, %target yanlış sayfada, %none yönlendirilmedi, %error başarısız, %skipped atlandı.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Yalnızca ilk %count satır sınandı.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Yeni adresine ulaşmayan satırlar</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Eski adresler sınanamadı.</translation>
+    </message>
 </context>
 </TS>

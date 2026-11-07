@@ -86123,5 +86123,129 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>Pasted text</source>
         <translation>Texto pegado</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Indique o enderezo do sitemap ou envíeo.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Non se atopou ningún enderezo antigo.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Desde o sitemap antigo</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Desde o rexistro de 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Suxerir destinos</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Os enderezos do sitio antigo, tomados do seu sitemap (sitemap.xml, un índice de sitemaps ou .gz) ou dunha lista cun enderezo por liña. Cada un convértese nunha fila co enderezo novo baleiro.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Enderezo do sitemap</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Ou envíe o sitemap ou a lista</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Tamén os enderezos doutros hosts</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Os enderezos que os visitantes pediron neste sitio e non atoparon, os máis pedidos primeiro. Omítense as imaxes, os scripts e os bots.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>O rexistro de 404 está desactivado (site.ini [RequestLogSettings] NotFoundLog): non ten enderezos novos.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Polo menos este número de solicitudes</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Nos últimos días</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Un mapa cuxas filas carecen de enderezo novo: cada unha recibe as páxinas deste sitio cuxo enderezo ou nome máis se parece ao antigo.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Como máximo este número de filas</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Enderezos novos</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Encher unha suxestión cunha puntuación de polo menos</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Unha puntuación de 0 a 100 indica canto se parece o enderezo antigo a unha páxina deste sitio. As outras suxestións aparecen nas notas da fila.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Descargar como CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Aínda non se escribiu nada. Descargue o mapa para completalo nunha folla de cálculo, ou vexa unha vista previa: as filas sen enderezo novo móstranse como non importables.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Enviar un ficheiro</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Formas de comezar</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Probar os enderezos antigos</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>O siteaccess non ten enderezo de sitio (site.ini [SiteSettings] SiteURL), polo que aquí non se poden probar os enderezos antigos. ./console exp:url:test próbaos contra calquera enderezo.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Solicita cada enderezo antigo en %base, segue as súas redireccións e comproba que chega ao seu enderezo novo.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Probar de novo</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Probar</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed chegaron ben, %status co estado incorrecto, %target á páxina equivocada, %none sen redirección, %error con erro, %skipped omitidas.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Só se probaron as primeiras %count filas.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>As filas que non chegaron ao seu enderezo novo</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Non se puideron probar os enderezos antigos.</translation>
+    </message>
 </context>
 </TS>

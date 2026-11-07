@@ -38,12 +38,12 @@ redirect's -s filter is the siteaccess it belongs to. Importing the file again g
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--format` | erforderlich | import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo: text (Standard) oder json (die Maschinenausgabe exp-url/1) |
+| `--format` | erforderlich | import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo, from-sitemap, from-404, suggest, test: text (Standard) oder json (die Maschinenausgabe exp-url/1) |
 | `--kind` | erforderlich | Nur diese Arten: alias (der URL-Übersetzer), wildcard, redirect (durch Kommas getrennt oder wiederholt; Standard alle) |
 | `--language` | erforderlich | import: die Sprache von Zeilen ohne eigene (Standard die des Siteaccess); export: nur diese Sprache |
 | `--output` | erforderlich | Die zu schreibende Datei (Standard die Standardausgabe; nötig für xlsx und ods) |
 | `--include-node-aliases` |  | Auch die eigenen URL-Aliase von Knoten (Ziel node:<id>), nicht nur die des URL-Übersetzers |
-| `--output-format` | erforderlich | import, export: was der Befehl ausgibt, text (Standard) oder json (die Maschinenausgabe exp-url/1); --format ist dort das Format der Datei |
+| `--output-format` | erforderlich | import, export: was der Befehl ausgibt, text (Standard) oder json (die Maschinenausgabe exp-url/1); --format ist dort das Format der Datei; from-sitemap, from-404, suggest: das Format der geschriebenen Datei (csv, json, xlsx, ods, apache, nginx; Standard nach --output, sonst csv) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

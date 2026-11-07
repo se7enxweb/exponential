@@ -86123,5 +86123,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>Матни гузошташуда</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Нишонии харитаи сомонаро диҳед ё онро бор кунед.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Ягон нишонии кӯҳна ёфт нашуд.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Аз харитаи кӯҳнаи сомона</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Аз гузориши 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Пешниҳоди ҳадафҳо</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Нишониҳои сомонаи кӯҳна аз харитаи сомонаи он (sitemap.xml, феҳристи харитаи сомона ё .gz) ё аз рӯйхате, ки дар ҳар сатр як нишонӣ дорад. Ҳар яке ба сатри дорои нишонии нави холӣ табдил меёбад.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Нишонии харитаи сомона</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Ё харитаи сомона ё рӯйхатро бор кунед</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Инчунин нишониҳои хостҳои дигар</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Нишониҳое, ки меҳмонон дар ин сомона талаб карданд ва наёфтанд, аввал аз ҳама бештар талабшуда. Тасвирҳо, скриптҳо ва ботҳо дохил карда намешаванд.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Гузориши 404 хомӯш аст (site.ini [RequestLogSettings] NotFoundLog): он нишониҳои нав надорад.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Камаш чандин дархост</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Дар рӯзҳои охир</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Харитае, ки сатрҳояш нишонии нав надоранд: ба ҳар яке саҳифаҳои ин сомона дода мешаванд, ки нишонӣ ё номашон ба кӯҳна бештар монанд аст.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Бештаринаш чандин сатр</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Нишониҳои нав</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Пешниҳодеро пур кунед, ки холаш камаш</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Хол аз 0 то 100 нишон медиҳад, ки нишонии кӯҳна ба саҳифаи ин сомона то чӣ андоза монанд аст. Пешниҳодҳои дигар дар қайдҳои сатр рӯйхат шудаанд.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Боргирӣ ҳамчун CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Ҳанӯз чизе навишта нашудааст. Харитаро барои анҷом додан дар ҷадвал боргирӣ кунед ё пешнамоиш намоед: сатрҳои бе нишонии нав ҳамчун ворид нашаванда нишон дода мешаванд.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Бор кардани файл</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Роҳҳои оғоз</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Озмоиши нишониҳои кӯҳна</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Дастрасии сомона нишонии сомона надорад (site.ini [SiteSettings] SiteURL), аз ин рӯ нишониҳои кӯҳнаро дар ин ҷо озмоиш кардан мумкин нест. ./console exp:url:test онҳоро бо ҳар нишонӣ месанҷад.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Ҳар нишонии кӯҳнаро дар %base дархост мекунад, такрорҳидоятҳои онро пайгирӣ мекунад ва месанҷад, ки ба нишонии нави худ мерасад.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Боз озмоиш кардан</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Озмоиш</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed расиданд, %status бо ҳолати нодуруст, %target ба саҳифаи нодуруст, %none такрорҳидоят нашуданд, %error ноком шуданд, %skipped гузаронида шуданд.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Танҳо %count сатри аввал озмоиш шуд.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Сатрҳое, ки ба нишонии нави худ нарасиданд</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Нишониҳои кӯҳнаро озмоиш кардан имкон надошт.</translation>
+    </message>
 </context>
 </TS>

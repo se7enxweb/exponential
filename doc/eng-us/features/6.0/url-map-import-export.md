@@ -22,6 +22,8 @@ administration, and there was no way to export them.
   into the same site changes nothing.
 - **Redirects old addresses with a query**, such as `/index.php?id=12` of an old CMS, to the new page.
 - **Keeps temporary redirects temporary** (302, 303, 307), so search engines keep the old address where that is meant.
+- **Helps build the map**: starts it from the old site's sitemap or from the addresses visitors do not find (the
+  404 log), suggests the new page for each old address, and tests the old addresses on the site after the import.
 
 It works in the administration (the URL translator and URL wildcards pages) and on the command line.
 
@@ -121,6 +123,25 @@ wildcards and the redirects, in any of the formats above. Use it as a backup bef
 in a spreadsheet and import it again, or to hand the redirects to the web server: the Apache and nginx exports are
 rules the server answers itself, without PHP.
 
+## Helpers for a migration
+
+Four helpers build and check a map, on the command line and as tabs of the import screen. None of them imports
+anything; they write a map you can edit and import.
+
+| Helper | Tab of the import screen | What it gives you |
+|---|---|---|
+| `exp:url:from-sitemap` | **From the old sitemap** | Every address of the old site's sitemap (a sitemap index and `.gz` too) or of a crawl list, once, as a row with an empty new address. Only the sitemap's own host, unless `--any-host` (**Also the addresses of other hosts**). |
+| `exp:url:from-404` | **From the 404 log** | The addresses that answered 404 or 410, the most asked first, with the hits in the note. Assets and bots are left out. `--min-hits`, `--since`; `--log` reads a web server's access log instead. |
+| `exp:url:suggest` | **Suggest targets** | For every row without a new address, the pages of the site most like the old address, scored 0 to 100; `--fill-above=85` writes the best one into the row, the others go into its note. |
+| `exp:url:test` | **Test the old addresses**, after an import | Requests every old address on a site, follows the redirects and reports each row as landed, wrong-status, wrong-target, not-redirected or error; exit code 1 when a row did not land. |
+
+Exponential's own 404 log (`var/log/404.log`, `site.ini [RequestLogSettings] NotFoundLog`, on by default) hides the
+values of a query as `***`. `exp:url:from-404` therefore gives paths only; old addresses with a query come from the
+sitemap or from an access log read with `--log`. The tab **From the old sitemap** fetches only addresses of public
+hosts, never one of the server's own network. In the administration, **Test** checks the first 500 old addresses on
+the site address of the import's siteaccess (`site.ini [SiteSettings] SiteURL`); `exp:url:test --base=<address>`
+tests any site, a staging site too.
+
 ## In the administration
 
 On the **URL translator** and **URL wildcards** pages (**Setup** tab), the buttons **Import**, **Export**, **Import
@@ -128,7 +149,7 @@ history** and **Redirects** lead to the screens:
 
 | Screen | Address | What it does |
 |---|---|---|
-| Import | `/content/urlimport` | Upload a file or paste rows, choose the siteaccess and language of bare paths and what happens to existing entries, map old hosts; then the preview with a filter per state, a tick per row, **Dry run**, the plan as CSV or JSON, and **Import** |
+| Import | `/content/urlimport` | Tabs **Upload a file**, **From the old sitemap**, **From the 404 log** and **Suggest targets**. Upload a file or paste rows, choose the siteaccess and language of bare paths and what happens to existing entries, map old hosts; then the preview with a filter per state, a tick per row, **Dry run**, the plan as CSV or JSON, **Import**, and after the import **Test the old addresses** |
 | Import history | `/content/urlimporthistory` | Every import with who, when, the file and the counts; one import's entries; **Undo import** |
 | Export | `/content/urlexport` | The format, what to include, the siteaccess and language; downloads the file |
 | Redirects | `/content/urlredirects` | The redirects with a query or a status, with removing one or the ticked ones |
@@ -155,6 +176,10 @@ audit trail (`content.urlalias.import`, `content.urlalias.import_undo`).
 | [`exp:url:export`](../../examples/commands/expurlexport.md) | Write the URL map to a file or the standard output |
 | [`exp:url:batches`](../../examples/commands/expurlbatches.md) | List the imports |
 | [`exp:url:undo`](../../examples/commands/expurlundo.md) | Undo an import |
+| [`exp:url:from-sitemap`](../../examples/commands/expurlfromsitemap.md) | Start a map from an old sitemap (also a sitemap index, `.gz`) or a crawl list |
+| [`exp:url:from-404`](../../examples/commands/expurlfrom404.md) | Start a map from the addresses that answered 404, the most asked first |
+| [`exp:url:suggest`](../../examples/commands/expurlsuggest.md) | Suggest new targets for the rows without one, scored 0 to 100 |
+| [`exp:url:test`](../../examples/commands/expurltest.md) | Request every old address on a site and check that it lands on its new address |
 
 ```bash
 ./console exp:url:import old-site.csv -s site --dry-run --report=var/tmp/plan.csv
@@ -164,6 +189,10 @@ audit trail (`content.urlalias.import`, `content.urlalias.import_undo`).
 ./console exp:url:undo 3
 ./console exp:url:export --output=var/tmp/url-map.xlsx
 ./console exp:url:export --kind=wildcard,redirect --format=nginx
+./console exp:url:from-sitemap https://www.old-site.com/sitemap.xml --output=var/tmp/old-site.csv
+./console exp:url:from-404 -s site --min-hits=3 --since=30d --output=var/tmp/not-found.csv
+./console exp:url:suggest var/tmp/old-site.csv -s site --fill-above=85 --output=var/tmp/map.csv
+./console exp:url:test var/tmp/map.csv --base=https://www.example.com -s site
 ```
 
 Bare paths belong to the siteaccess given with `-s` (else the default siteaccess). With `--on-conflict=overwrite`

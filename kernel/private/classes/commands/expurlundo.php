@@ -33,7 +33,7 @@ class Expurlundo extends ExpurlBase
         ) + self::SCRIPT );
         return (array)$this->startup( '[force][format:][login:]', '[batch]', array(
             'force' => 'Undo also the entries that changed after the import (default: they are kept)',
-            'format' => 'import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo: text (default) or json (the machine output exp-url/1)',
+            'format' => 'import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo, from-sitemap, from-404, suggest, test: text (default) or json (the machine output exp-url/1)',
             'login' => 'Run as this user (recorded with the import and in the audit)',
         ) );
     }

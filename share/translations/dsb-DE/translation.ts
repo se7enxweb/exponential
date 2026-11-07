@@ -86153,5 +86153,129 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>Pasted text</source>
         <translation>Zasajźony tekst</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Pódajśo adresu sedłowego wopisanja abo nagrajśo jo.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Žedna stara adresa njejo se namakała.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Ze starego sedłowego wopisanja</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Z protokola 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Cele pśepórucyś</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Adresy starego sedła z jogo sedłowego wopisanja (sitemap.xml, indeks sedłowych wopisanjow abo .gz) abo z lisćiny z jadneju adresu na smužku. Kužda stanjo se smužka z prozneju noweju adresu.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Adresa sedłowego wopisanja</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Abo nagrajśo sedłowe wopisanje abo lisćinu</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Teke adresy drugich hostow</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Adresy, kótarež wopytowarje su na toś tom sedle pytali a njejsu namakali, nejcesćej pytane nejpjerwjej. Wobraze, skripty a boty se pominaju.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Protokol 404 jo wušaltowany (site.ini [RequestLogSettings] NotFoundLog): njama nowe adresy.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Nanejmjenjej toś tólko napšašowanjow</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>W slědnych dnjach</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Kórta, na kótarejž smužkam nowa adresa felujo: kužda dostanjo boki toś togo sedła, kótarychž adresa abo mě jo starej nejpódobnjej.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Nanejwěcej toś tólko smužkow</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Nowe adresy</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Pśepórucenje wupołniś, kótarež ma nanejmjenjej toś te dypki</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Dypki wót 0 do 100 pokazuju, kak pódobna jo stara adresa boku toś togo sedła. Druge pśepórucenja stoje w pśispomnjeśach smužki.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Ako CSV ześěgnuś</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Hyšći nic njejo napisane. Ześěgniśo kórtu, aby ju w tabelowem programje dokóńcył, abo se pśeglědniśo ju: smužki bźez noweje adresy se kazaju ako njeimportěrujobne.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Dataju nagraś</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Tšojenja za zachopjeńk</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Stare adresy testowaś</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Pśistup k sedłu njama sedłowu adresu (site.ini [SiteSettings] SiteURL), tak až stare adresy njemógu se how testowaś. ./console exp:url:test testujo je pśeśiwo kuždej adresy.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Napšašujo kužde staru adresu na %base, slěduje jeje dalejpósrědnjenjam a kontrolěrujo, lěc pśiźo na swóju nowu adresu.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Hyšći raz testowaś</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Pśespytowanje</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed jo pśiśeł pšawje, %status ze wopacnym statusom, %target na wopacny bok, %none njejo dalej pósrědnjone, %error njejo se raźiło, %skipped pominone.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Jano prědne %count smužki su se testowali.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Smužki, kótarež njejsu na swóju nowu adresu pśiśli</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Stare adresy njejsu se mógli testowaś.</translation>
+    </message>
 </context>
 </TS>

@@ -86123,5 +86123,129 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>Pasted text</source>
         <translation>Kuputuhi kua whakapirihia</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Homai te wāhitau o te mahere pae, tukuna rānei.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Kāore i kitea he wāhitau tawhito.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Mai i te mahere pae tawhito</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Mai i te rārangi 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Whakaaro mai he wāhi hei whāinga</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Ngā wāhitau o te pae tawhito mai i tōna mahere pae (sitemap.xml, he taurangi mahere pae, he .gz rānei), mai i tētahi rārangi kotahi te wāhitau ki ia raina rānei. Ka noho ia wāhitau hei rārangi he wāhitau hou kau tōna.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Wāhitau o te mahere pae</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Tukuna rānei te mahere pae, te rārangi rānei</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Me ngā wāhitau o ētahi atu kaiwhakahaere</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Ngā wāhitau i tonoa e ngā manuhiri ki tēnei pae, kāore i kitea, ko ngā mea tino tonoa te tuatahi. Kāore ngā whakaahua, ngā tuhinga whakahaere me ngā pāoro i konei.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Kua whakaweto te rārangi 404 (site.ini [RequestLogSettings] NotFoundLog): kāore he wāhitau hou i roto.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Neke atu i te tokomaha nei o ngā tono</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>I ngā rā kua hipa</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>He mahere kāore he wāhitau hou i ōna rārangi: ka whiwhi ia rārangi i ngā whārangi o tēnei pae e tino rite ana tō rātou wāhitau, ingoa rānei ki te mea tawhito.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Kia kaua e neke ake i te tokomaha nei o ngā rārangi</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Ngā wāhitau hou</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Whakaki i tētahi whakaaro whai kaute kāore e iti iho i</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Ko te kaute mai i te 0 ki te 100 e kī ana he pēhea te rite o te wāhitau tawhito ki tētahi whārangi o tēnei pae. Kua rārangihia ērā atu whakaaro ki ngā tuhipoka o te rārangi.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Tikiake hei CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Kāore anō kia tuhia tētahi mea. Tikiakehia te mahere hei whakaoti i roto i te whārangi tātai, arokitea rānei: ko ngā rārangi kāore he wāhitau hou ka whakaatuhia he kāore e taea te kawemai.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Tukuna he kōnae</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Ngā huarahi tīmata</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Whakamātauria ngā wāhitau tawhito</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Kāore he wāhitau pae a te urunga pae (site.ini [SiteSettings] SiteURL), nō reira kāore e taea te whakamātau i ngā wāhitau tawhito i konei. Ka whakamātau a ./console exp:url:test i a rātou ki tētahi wāhitau ahakoa te aha.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Ka tono i ia wāhitau tawhito ki %base, ka whai i ōna whakaaronga atu, ka tirotiro mēnā ka tae ki tōna wāhitau hou.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Whakamātau anō</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Whakamātau</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>I tae %landed, he tūnga hē %status, i te whārangi hē %target, kāore i whakaaronga atu %none, i rahua %error, i tukua %skipped.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Ko ngā rārangi %count tuatahi anake i whakamātauria.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Ngā rārangi kāore i tae ki tō rātou wāhitau hou</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Kāore i taea te whakamātau i ngā wāhitau tawhito.</translation>
+    </message>
 </context>
 </TS>

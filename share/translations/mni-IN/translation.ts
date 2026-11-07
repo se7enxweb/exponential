@@ -86123,5 +86123,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>পেস্ত তৌরবা তেক্স্ত</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>সাইটমেপ্কী এদ্রেস পীয়ু নত্তরগা ফীরোকপীয়ু।</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>অরিবা এদ্রেস অমাসু ফংখ্রে।</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>অরিবা সাইটমেপ্তগী</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 লোগ্তগী</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>মথক্তা তৌবা শেংনবা</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>অরিবা সাইট্কী এদ্রেসশিং মহাক্কী সাইটমেপ্তগী (sitemap.xml, সাইটমেপ্কী ইন্দেক্স নত্তরগা .gz) নত্তরগা এদ্রেস অমা লাইন অমদা লৈবা লিস্ত অমাগীদগী। অমা অমা ওইনা অনৌবা এদ্রেস শূন্য লৈবা রো অমা ওইরি।</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>সাইটমেপ্কী এদ্রেস</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>নত্তরগা সাইটমেপ্ নত্তরগা লিস্ত ফীরোকপীয়ু</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>মখোয় লৈবা হোস্তকী এদ্রেসশিংসু</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>মীওই অমসুং ফংদ্রবা অসি সাইট অদুদা য়াম্না খায়বা এদ্রেসশিং, য়াম্না খায়বা অদু অহানবা। ইমেজ, স্ক্রিপ্ত অমসুং বোতশিং থোকখ্রে।</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 লোগ্ অদু লোয়ননা লৈ (site.ini [RequestLogSettings] NotFoundLog): মদুদা অনৌবা এদ্রেস লৈতে।</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>অমত্তা অসিগী রিকোয়েস্ত</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>মতমদা লৈবা নুমিৎশিংদা</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>রোশিংদা অনৌবা এদ্রেস লৈতবা মেপ্: অমা অমা দা সাইট অসিগী পেজশিং, মখোয়গী এদ্রেস নত্তরগা মিং অরিবা অদুগা য়াম্না ফাওবা, ফংই।</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>অমত্তা অসিগী রো</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>অনৌবা এদ্রেসশিং</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>স্কোর অসিগী অমত্তা লৈবা শেংনবা অমা ফোংদোক্পীয়ু</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0 দগী 100 পুক্লবা স্কোর অসিনা অরিবা এদ্রেস অদু সাইট অসিগী পেজ অমাগা অমুক ফাওবা ফাওই haiba ঙাক্লবা ঙাক্লে। শেংনবা অমুকশিং রোগী নোতশিংদা লৈ।</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>CSV ওইনা ডাউনলোদ তৌবা</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>ইমুংদা অমাসু য়াওদ্রে। মেপ্ অদু স্প্রেদশীত্তা য়াওহন্নবা ডাউনলোদ তৌয়ু নত্তরগা প্রিভিউ য়েংয়ু: অনৌবা এদ্রেস লৈতবা রোশিং অদু ইম্পোর্ত তৌনবা ঙম্লদবা ওইনা উনরি।</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>ফাইল অমা ফীরোকপীয়ু</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>মথোক্তা হৌবা মতম</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>অরিবা এদ্রেসশিং তেস্ত তৌবা</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>সাইট একসেসতা সাইট এদ্রেস (site.ini [SiteSettings] SiteURL) লৈতে, মদুগী মীওইনা অরিবা এদ্রেসশিং অসি অদুদা তেস্ত তৌবা ঙমতে। ./console exp:url:test অদুনা এদ্রেস অমসুং তেস্ত তৌই।</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>অরিবা এদ্রেস অমা অমা %base দা রিকোয়েস্ত তৌই, মহাক্কী রিদাইরেক্তশিং ঙাইদুনা অনৌবা এদ্রেসতা ফাওরিবনি নত্তনি haiba মরীংদুনা য়েংই।</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>অমুক তেস্ত তৌবা</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>তেস্ত</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed ফাখ্রে, %status থোরোইবা স্তেতসগা, %target থোরোইবা পেজদা, %none রিদাইরেক্ত তৌদ্রে, %error থোরোক্খ্রে, %skipped লেপ্খ্রে।</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>%count রো অহানবা অদু তেস্ত তৌখ্রে।</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>অনৌবা এদ্রেসতা ফাদ্রবা রোশিং</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>অরিবা এদ্রেসশিং তেস্ত তৌবা ঙমখ্রে।</translation>
+    </message>
 </context>
 </TS>
