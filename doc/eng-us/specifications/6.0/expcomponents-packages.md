@@ -43,39 +43,40 @@ component.
 | Package name | `se7enxweb/expcomponents-<name>`, where `<name>` is the upstream package name without `zetacomponents/` |
 | Repository | `https://github.com/se7enxweb/expcomponents-<name>`, a GitHub fork of `https://github.com/zetacomponents/<Name>` |
 | `replace` | `"zetacomponents/<name>": "self.version"` (webdav also `se7enxweb/zetacomponents-webdav`) |
-| License | `Apache-2.0`; `LICENSE.txt` with the upstream notice lines, `CREDITS`, `ChangeLog` kept |
+| License | `Apache-2.0`; `LICENSE.txt` with the upstream notice lines, a `NOTICE` file with the upstream notices and the fork's name, `CREDITS`, `ChangeLog` |
 | Class prefix | `ezc<Component>`, unchanged |
 | Autoload | `"classmap": ["src"]` in the package's `composer.json`, loaded by `vendor/autoload.php` |
 | Installed at | `vendor/se7enxweb/expcomponents-<name>/` |
 | Tags | Without a `v` prefix (`1.5.2`); permanent once pushed |
-| Kernel constraint | Tilde form (`~1.5.2`) in the kernel's `composer.json` `require` |
+| Kernel constraint | Tilde form (`~1.5.3`), caret for base and console-tools (`^1.9.6`, `^1.7.6`), in the kernel's `composer.json` `require` |
 | Tests | `tests/` with `phpunit.xml.dist`; development dependencies `zetacomponents/unit-test` and PHPUnit |
 
-Version state: "released" means a tag and a GitHub release exist; "proposed" means the next release is planned under
-that number and is not published until the release is approved.
+Version state: every fork named on this page was released on 2026-11-06 (a tag, a GitHub release and the version on
+Packagist); archive 1.5.2 and webdav 1.2.2 were released a few days before. Each fork requires the others by their
+fork names (`se7enxweb/expcomponents-base ~1.8`, not `zetacomponents/base`).
 
 ## Summary table
 
-| Component | Fork package | Replaces | Kernel needs it for | Fork release |
+| Component | Fork package | Replaces | Kernel needs it for | Fork release (kernel constraint) |
 |---|---|---|---|---|
-| base | `se7enxweb/expcomponents-base` | `zetacomponents/base` | every component; the autoload generator's file walk; exceptions and options of the REST layer | 1.9.6 proposed |
-| archive | `se7enxweb/expcomponents-archive` | `zetacomponents/archive` | package import, export and upload (`.ezpkg`, tar and zip) | 1.5.2 released, 1.5.3 proposed |
-| authentication | `se7enxweb/expcomponents-authentication` | `zetacomponents/authentication` | REST authentication filters: basic, API key, OAuth | 1.4.2 proposed |
-| cache | `se7enxweb/expcomponents-cache` | `zetacomponents/cache` | REST response and route caching | 1.6.4 proposed |
-| configuration | `se7enxweb/expcomponents-configuration` | `zetacomponents/configuration` | SQLI Import 2.0.x (one exception class) | 1.4.1 proposed |
-| console-tools | `se7enxweb/expcomponents-console-tools` | `zetacomponents/console-tools` | `ezpgenerateautoloads.php`, the help examples generator, an update script | 1.7.6 proposed |
-| database | `se7enxweb/expcomponents-database` | `zetacomponents/database` | the REST layer's database handle; the OAuth client list | 1.5.5 proposed |
-| debug | `se7enxweb/expcomponents-debug` | `zetacomponents/debug` | the REST debug output | 1.3.1 proposed |
-| event-log | `se7enxweb/expcomponents-event-log` | `zetacomponents/event-log` | log levels of the REST router and controller | 1.5.1 proposed |
-| feed | `se7enxweb/expcomponents-feed` | `zetacomponents/feed` | RSS 1.0, RSS 2.0 and Atom exports; REST feed views | 1.4.7 proposed |
-| image-analysis | `se7enxweb/expcomponents-image-analysis` | `zetacomponents/image-analysis` | required by image-conversion; the ezie image editor | 1.2.1 proposed |
-| image-conversion | `se7enxweb/expcomponents-image-conversion` | `zetacomponents/image-conversion` | the ezie image editor | 1.5.2 proposed |
-| mail | `se7enxweb/expcomponents-mail` | `zetacomponents/mail` | every mail: `eZMail`, SMTP and sendmail transports, the mail gate, bounces | 1.10.2 proposed |
-| mvc-tools | `se7enxweb/expcomponents-mvc-tools` | `zetacomponents/mvc-tools` | the REST API and the REST endpoints of GraphQL, help and migrations | 1.2.5 proposed |
-| persistent-object | `se7enxweb/expcomponents-persistent-object` | `zetacomponents/persistent-object` | OAuth clients, tokens and authorization codes | 1.8.3 proposed |
-| signal-slot | `se7enxweb/expcomponents-signal-slot` | `zetacomponents/signal-slot` | the hooks of the content publishing queue | 1.2.1 proposed |
-| system-information | `se7enxweb/expcomponents-system-information` | `zetacomponents/system-information` | Setup > System information | 1.1.3 proposed |
-| webdav | `se7enxweb/expcomponents-webdav` | `zetacomponents/webdav`, `se7enxweb/zetacomponents-webdav` | the WebDAV server (`index_webdav.php`) | 1.2.2 released, 1.2.3 proposed |
+| base | `se7enxweb/expcomponents-base` | `zetacomponents/base` | every component; the autoload generator's file walk; exceptions and options of the REST layer | 1.9.6 (`^1.9.6`) |
+| archive | `se7enxweb/expcomponents-archive` | `zetacomponents/archive` | package import, export and upload (`.ezpkg`, tar and zip) | 1.5.3 (`~1.5.3`); 1.5.2 on 2026-11-03 |
+| authentication | `se7enxweb/expcomponents-authentication` | `zetacomponents/authentication` | REST authentication filters: basic, API key, OAuth | 1.4.2 (`~1.4.2`) |
+| cache | `se7enxweb/expcomponents-cache` | `zetacomponents/cache` | REST response and route caching | 1.6.4 (`~1.6.4`) |
+| configuration | `se7enxweb/expcomponents-configuration` | `zetacomponents/configuration` | SQLI Import 2.0.x (one exception class) | 1.4.1 (`~1.4.1`) |
+| console-tools | `se7enxweb/expcomponents-console-tools` | `zetacomponents/console-tools` | `ezpgenerateautoloads.php`, the help examples generator, an update script | 1.7.6 (`^1.7.6`) |
+| database | `se7enxweb/expcomponents-database` | `zetacomponents/database` | the REST layer's database handle; the OAuth client list | 1.5.5 (`~1.5.5`) |
+| debug | `se7enxweb/expcomponents-debug` | `zetacomponents/debug` | the REST debug output | 1.3.1 (`~1.3.1`) |
+| event-log | `se7enxweb/expcomponents-event-log` | `zetacomponents/event-log` | log levels of the REST router and controller | 1.5.1 (`~1.5.1`) |
+| feed | `se7enxweb/expcomponents-feed` | `zetacomponents/feed` | RSS 1.0, RSS 2.0 and Atom exports; REST feed views | 1.4.7 (`~1.4.7`) |
+| image-analysis | `se7enxweb/expcomponents-image-analysis` | `zetacomponents/image-analysis` | required by image-conversion; the ezie image editor | 1.2.1 (through image-conversion) |
+| image-conversion | `se7enxweb/expcomponents-image-conversion` | `zetacomponents/image-conversion` | the ezie image editor | 1.5.2 (`~1.5.2`) |
+| mail | `se7enxweb/expcomponents-mail` | `zetacomponents/mail` | every mail: `eZMail`, SMTP and sendmail transports, the mail gate, bounces | 1.10.2 (`~1.10.2`) |
+| mvc-tools | `se7enxweb/expcomponents-mvc-tools` | `zetacomponents/mvc-tools` | the REST API and the REST endpoints of GraphQL, help and migrations | 1.2.5 (`~1.2.5`) |
+| persistent-object | `se7enxweb/expcomponents-persistent-object` | `zetacomponents/persistent-object` | OAuth clients, tokens and authorization codes | 1.8.3 (`~1.8.3`) |
+| signal-slot | `se7enxweb/expcomponents-signal-slot` | `zetacomponents/signal-slot` | the hooks of the content publishing queue | 1.2.1 (`~1.2.1`) |
+| system-information | `se7enxweb/expcomponents-system-information` | `zetacomponents/system-information` | Setup > System information | 1.1.3 (`~1.1.3`) |
+| webdav | `se7enxweb/expcomponents-webdav` | `zetacomponents/webdav`, `se7enxweb/zetacomponents-webdav` | the WebDAV server (`index_webdav.php`) | 1.2.3 (`~1.2.3`); 1.2.2 on 2026-11-01 |
 
 ## base
 
@@ -96,7 +97,7 @@ that number and is not published until the release is approved.
 - **Autoload note:** `autoload.php` registers `ezcBase::autoload` only when `EZCBASE_ENABLED` is defined as `true`;
   with Composer it is not needed and not registered.
 - **Fork:** `se7enxweb/expcomponents-base`, [repository](https://github.com/se7enxweb/expcomponents-base), replaces
-  `zetacomponents/base`. Every other fork requires `zetacomponents/base` by its old name and gets this fork.
+  `zetacomponents/base`. Every other fork requires it by this name (`se7enxweb/expcomponents-base ~1.8`).
 
 ## archive
 
@@ -110,7 +111,7 @@ that number and is not published until the release is approved.
   - `kernel/classes/exppackagejson.php`: the JSON package format reads the same archives.
 - **Features:** Setup > Packages (import, export, upload), `ezpm` on the command line, site package installation.
 - **Fork:** `se7enxweb/expcomponents-archive`, [repository](https://github.com/se7enxweb/expcomponents-archive),
-  replaces `zetacomponents/archive`. Required by the kernel since 2026-11-03 (`~1.5.2`). Release 1.5.2 (from
+  replaces `zetacomponents/archive`. Required by the kernel since 2026-11-03 (`~1.5.2`, `~1.5.3` since 2026-11-06). Release 1.5.2 (from
   upstream 1.5.1): no deprecations on PHP 8.4 and 8.5, GNU tar entries with long names or long links extracted again,
   tests on PHP 7.4 to 8.5.
 
@@ -145,7 +146,7 @@ that number and is not published until the release is approved.
   2.0.x throws one of its exception classes ([behaviour changes of October 2026](../../bc/6.0/behaviour-changes-2026-10.md)).
 - **Fork:** `se7enxweb/expcomponents-configuration`,
   [repository](https://github.com/se7enxweb/expcomponents-configuration), replaces `zetacomponents/configuration`.
-  The repository is new with the official fork.
+  The repository is new with the official fork; first fork release on 2026-11-06.
 
 ## console-tools
 
@@ -159,7 +160,7 @@ that number and is not published until the release is approved.
 - **Features:** class map generation (also run by `./console exp:velocity deploy` and Composer's post-install hooks).
 - **Fork:** `se7enxweb/expcomponents-console-tools`,
   [repository](https://github.com/se7enxweb/expcomponents-console-tools), replaces `zetacomponents/console-tools`.
-  The repository is new with the official fork.
+  The repository is new with the official fork; first fork release on 2026-11-06.
 
 ## database
 
@@ -179,7 +180,7 @@ that number and is not published until the release is approved.
   (`ezcDebug`, `ezcDebugStructure`, `ezcDebugOutputFormatter`, `ezcDebugStacktraceIterator`, `ezcDebugTimerStruct`).
   The page debug output of the kernel (`eZDebug`, the Exp Debug bar) does not use it.
 - **Fork:** `se7enxweb/expcomponents-debug`, [repository](https://github.com/se7enxweb/expcomponents-debug), replaces
-  `zetacomponents/debug`. The repository is new with the official fork.
+  `zetacomponents/debug`. The repository is new with the official fork; first fork release on 2026-11-06.
 
 ## event-log
 
@@ -188,7 +189,7 @@ that number and is not published until the release is approved.
   `kernel/private/rest/classes/controllers/rest_controller.php` log REST errors with the `ezcLog` severities through
   the REST debug class. The kernel's own logs (`eZLog`, `var/log/`) do not use it.
 - **Fork:** `se7enxweb/expcomponents-event-log`, [repository](https://github.com/se7enxweb/expcomponents-event-log),
-  replaces `zetacomponents/event-log`. The repository is new with the official fork.
+  replaces `zetacomponents/event-log`. The repository is new with the official fork; first fork release on 2026-11-06.
 
 ## feed
 
@@ -199,7 +200,7 @@ that number and is not published until the release is approved.
   - `kernel/private/rest/classes/views/feed_decorator.php`: feed views of the REST layer (`ezcFeedEntryElement`).
 - **Features:** RSS exports at `/rss/feed/<address>` ([RSS, Atom and OPML feeds](../../help/integrators/rss-atom-and-opml-feeds.md)).
 - **Fork:** `se7enxweb/expcomponents-feed`, [repository](https://github.com/se7enxweb/expcomponents-feed), replaces
-  `zetacomponents/feed`. The repository is new with the official fork.
+  `zetacomponents/feed`. The repository is new with the official fork; first fork release on 2026-11-06.
 
 ## image-analysis
 
@@ -219,6 +220,13 @@ that number and is not published until the release is approved.
   `eZImageManager` handlers, not this library.
 - **Fork:** `se7enxweb/expcomponents-image-conversion`,
   [repository](https://github.com/se7enxweb/expcomponents-image-conversion), replaces `zetacomponents/image-conversion`.
+  Release 1.5.2 includes upstream's change to run ImageMagick through the argument-list form of `proc_open()` (no
+  shell parses the command) and fixes what that change broke: scaling and cropping with ImageMagick failed with
+  "unrecognized option `-resize '" because the filters passed option names with a trailing blank. The fix is offered
+  upstream as [zetacomponents/ImageConversion pull request #9](https://github.com/zetacomponents/ImageConversion/pull/9).
+  The release also shows the command in the error message of a failed ImageMagick call, fails at once when the target
+  directory cannot be written, refuses a JPEG that libjpeg reports an error for with every GD build, and prints no
+  deprecations on PHP 8.5.
 
 ## mail
 
@@ -235,7 +243,12 @@ that number and is not published until the release is approved.
 - **Features:** every mail of the site: notifications, registration, password, forms, newsletters through
   cjw_newsletter (which extends `ezcMail` in `CjwNewsletterMailComposer`), the mail preferences and their gate.
 - **Fork:** `se7enxweb/expcomponents-mail`, [repository](https://github.com/se7enxweb/expcomponents-mail), replaces
-  `zetacomponents/mail`. The repository is new with the official fork.
+  `zetacomponents/mail`. The repository is new with the official fork; first fork release on 2026-11-06.
+  Release 1.10.2 includes upstream's changes after 1.10.1, among them protection against header injection: an
+  address with whitespace or one of `< > , ; "` is refused before any header is written, header values, names and
+  addresses can no longer add headers, empty header names and blank continuation lines are refused,
+  `ezcMailTools::validateEmailAddress()` no longer accepts a trailing newline, and
+  Content-IDs are random. `ezpMailMessageIdTest` (MI-04, MI-05) checks the kernel against it.
 
 ## mvc-tools
 
@@ -247,7 +260,7 @@ that number and is not published until the release is approved.
   `ezcMvcInternalRedirect`, `ezcMvcController`, `ezcMvcResponseWriter`, `ezcMvcHttpResponseWriter`.
 - **Features:** [REST API v1 and v2](../../guides/rest-api-v1-and-v2.md) with the ezprestapi extension.
 - **Fork:** `se7enxweb/expcomponents-mvc-tools`, [repository](https://github.com/se7enxweb/expcomponents-mvc-tools),
-  replaces `zetacomponents/mvc-tools`. The repository is new with the official fork.
+  replaces `zetacomponents/mvc-tools`. The repository is new with the official fork; first fork release on 2026-11-06.
 
 ## persistent-object
 
@@ -268,7 +281,7 @@ that number and is not published until the release is approved.
   `ezcSignalCollection`, connects the hooks configured for the asynchronous publishing queue and emits `preQueue`
   before a version is queued.
 - **Fork:** `se7enxweb/expcomponents-signal-slot`, [repository](https://github.com/se7enxweb/expcomponents-signal-slot),
-  replaces `zetacomponents/signal-slot`. The repository is new with the official fork.
+  replaces `zetacomponents/signal-slot`. The repository is new with the official fork; first fork release on 2026-11-06.
 
 ## system-information
 
@@ -278,7 +291,7 @@ that number and is not published until the release is approved.
   the page shows no system values and a debug notice is written.
 - **Fork:** `se7enxweb/expcomponents-system-information`,
   [repository](https://github.com/se7enxweb/expcomponents-system-information), replaces
-  `zetacomponents/system-information`. The repository is new with the official fork.
+  `zetacomponents/system-information`. The repository is new with the official fork; first fork release on 2026-11-06.
 
 ## webdav
 
@@ -290,7 +303,7 @@ that number and is not published until the release is approved.
 - **Features:** editing content as files over WebDAV ([WebDAV and SOAP](../../help/integrators/webdav-and-soap.md)).
 - **Fork:** `se7enxweb/expcomponents-webdav`, [repository](https://github.com/se7enxweb/expcomponents-webdav),
   replaces `zetacomponents/webdav` and `se7enxweb/zetacomponents-webdav`. Required by the kernel since 1.2.2
-  (`~1.2.2`). Release 1.2.1 was published as `se7enxweb/zetacomponents-webdav` (WebDAV on PHP 8); release 1.2.2, the
+  (`~1.2.2`, `~1.2.3` since 2026-11-06). Release 1.2.1 was published as `se7enxweb/zetacomponents-webdav` (WebDAV on PHP 8); release 1.2.2, the
   first under the new name, keeps request paths and the destination of COPY and MOVE inside the back end's root, does
   not follow symbolic links out of it, refuses request bodies with a document type declaration, compares digest
   authentication in constant time and creates random lock tokens.
@@ -299,9 +312,9 @@ that number and is not published until the release is approved.
 
 | Fork | Replaces | Note |
 |---|---|---|
-| `se7enxweb/expcomponents-authentication-database-tiein` ([repository](https://github.com/se7enxweb/expcomponents-authentication-database-tiein)) | `zetacomponents/authentication-database-tiein` | Not required since October 2026; nothing in the kernel or its required packages uses `ezcAuthenticationDatabase*`. Next release 1.2.1 proposed. |
-| `se7enxweb/expcomponents-graph` ([repository](https://github.com/se7enxweb/expcomponents-graph)) | `zetacomponents/graph` | Charts; not used by the kernel or a shipped extension. Next release 1.7.3 proposed. |
-| `se7enxweb/expcomponents-workflow` ([repository](https://github.com/se7enxweb/expcomponents-workflow)) | `zetacomponents/workflow` | A workflow engine; the kernel has its own (`eZWorkflow`). Next release 1.5.2 proposed. |
+| `se7enxweb/expcomponents-authentication-database-tiein` ([repository](https://github.com/se7enxweb/expcomponents-authentication-database-tiein)) | `zetacomponents/authentication-database-tiein` | Not required since October 2026; nothing in the kernel or its required packages uses `ezcAuthenticationDatabase*`. Release 1.2.1 (2026-11-06). |
+| `se7enxweb/expcomponents-graph` ([repository](https://github.com/se7enxweb/expcomponents-graph)) | `zetacomponents/graph` | Charts; not used by the kernel or a shipped extension. Release 1.7.3 (2026-11-06). |
+| `se7enxweb/expcomponents-workflow` ([repository](https://github.com/se7enxweb/expcomponents-workflow)) | `zetacomponents/workflow` | A workflow engine; the kernel has its own (`eZWorkflow`). Release 1.5.2 (2026-11-06). |
 
 An extension that needs one of them requires the fork by its name.
 

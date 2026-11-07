@@ -56,7 +56,7 @@ upstream `zetacomponents/*` packages in `vendor/zetacomponents/`. Either way:
 - their license is the **Apache License 2.0** (`Apache-2.0` in `composer licenses`), not the GPL;
 - each package's `LICENSE.txt` begins with notice lines ("Zeta Components ...", "Apache Zeta Components ...",
   "Originally developed by eZ Systems as eZ Components ...") that must be passed on with the package; shipping the
-  `vendor/` folder unchanged does that;
+  `vendor/` folder unchanged does that, together with the `NOTICE` file each fork ships;
 - list them in the third-party list; `composer licenses --no-dev | grep expcomponents` prints them.
 
 The kernel's license, GPL version 2 or later, allows the combination to be distributed under GPL version 3, with

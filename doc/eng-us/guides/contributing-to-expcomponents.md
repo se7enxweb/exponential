@@ -145,9 +145,8 @@ changes in that installation's `composer.json` when you are done; never ship a `
 5. **Every fix has a test** that fails without it, in the package's `tests/` folder, named as the package names its
    tests (`*_test.php`).
 6. **No new runtime dependency** without discussion in the pull request. A component should stay installable on its own.
-7. **The forks require each other by their upstream names** (`zetacomponents/base ~1.8`) where upstream did. Keep
-   that; the `replace` of each fork makes it resolve to the fork. Do not change it to the `se7enxweb/` name in a
-   patch release.
+7. **The forks require each other by their fork names** (`se7enxweb/expcomponents-base ~1.8`), not by the upstream
+   names. A new requirement on another component names its fork.
 8. **`composer.json` `replace` stays** with `"zetacomponents/<name>": "self.version"`.
 
 ## License headers and notices
@@ -157,19 +156,10 @@ code. Keep them, and the fork stays a fork anyone may use:
 
 - **Never remove or change** the license header of a source file, the notice lines at the top of `LICENSE.txt`
   ("Zeta Components ...", "Apache Zeta Components ...", "Originally developed by eZ Systems as eZ Components ..."),
-  `CREDITS`, or a `NOTICE` file where a package has one.
-- **Changed files carry a notice that they were changed** (Apache 2.0, section 4(b)). Record each change in the
-  package's `ChangeLog` (below), and when you change a file substantially, add a line to its file-level comment block
-  below the existing header, for example:
-
-  ```php
-  /**
-   * ... the existing header, unchanged ...
-   *
-   * Modified by the Exponential project (expcomponents), 2026: explicitly nullable parameters for PHP 8.4.
-   */
-  ```
-
+  `CREDITS`, or the `NOTICE` file every fork ships (the upstream notices and the fork's name).
+- **Changes are recorded** (Apache 2.0, section 4(b), asks that changed files carry prominent notices that they were
+  changed): each change is a commit with its own message and an entry in the package's `ChangeLog` (below), and the
+  release notes list it. Ask the maintainers in the pull request if you think a file needs more than that.
 - **New files** carry the same Apache 2.0 header as the files around them, with the Exponential project as the
   author of the new file.
 - **Code from elsewhere** goes in only if its license is compatible with Apache 2.0 (MIT, BSD, Apache 2.0); GPL
@@ -209,7 +199,7 @@ Each package has a `ChangeLog` file at its root, newest release first. Add your 
 release (the maintainers set the date when they release):
 
 ```text
-1.10.2 - not released yet
+1.10.3 - not released yet
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Fixed: The SMTP transport gives up after the configured timeout when the

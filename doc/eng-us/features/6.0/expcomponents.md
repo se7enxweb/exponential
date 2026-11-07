@@ -41,7 +41,7 @@ the guide [Contributing to expcomponents](../../guides/contributing-to-expcompon
 | Who maintains it | 7x and the Exponential Foundation, in the open, on GitHub under `se7enxweb` |
 | What an installation must do | Nothing beyond the usual `composer update` of an upgrade; see the [upgrade notes](../../bc/6.0/expcomponents.md) |
 | Third-party code that requires `zetacomponents/<name>` | Keeps working: each fork declares that it replaces the old name |
-| Since | 6.0.15. The first two forks, `se7enxweb/expcomponents-archive` and `se7enxweb/expcomponents-webdav`, were required before the rest |
+| Since | 6.0.15. All forks were released on 2026-11-06, and the kernel requires them since then; archive and webdav had been required as forks a few days before |
 
 ## What the components are
 
@@ -90,8 +90,8 @@ What this meant for the product line:
   `se7enxweb/expcomponents-webdav` 1.2.2, with security fixes to the WebDAV server (the fork had been published as
   `se7enxweb/zetacomponents-webdav` 1.2.1 before its rename), and `se7enxweb/expcomponents-archive` 1.5.2, which
   extracts GNU tar entries with long names again and prints no deprecations on PHP 8.4 and 8.5. Then the project
-  made it official: every Zeta Component the kernel needs is forked as expcomponents, and the kernel requires the
-  forks.
+  made it official: every Zeta Component the kernel needs is forked as expcomponents, all 21 forks were released on
+  2026-11-06, and the 6.0.15 line requires them in place of the upstream packages.
 
 ## Why Exponential forks them
 
@@ -147,32 +147,41 @@ April 2026), and upstream fixes are merged into the forks ([syncing with upstrea
 
 ## The packages
 
-Every Zeta Component the kernel needs has a fork. The table lists them all: the upstream package, its fork, the
-repository, whether the repository existed before the fork was made official (**existing**) or is created for it
-(**new**), the upstream release the fork starts from and the fork release. Versions marked *proposed* are what the
-next fork release is planned to be called; they are not published until the release is approved, and the kernel
-requires them in the constraint form (`~1.10.2`, never an exact version).
+Every Zeta Component the kernel needs has a fork, and every fork was released on 2026-11-06 and is on Packagist. The
+table lists them all: the upstream package, its fork, the repository, the upstream release the fork starts from, the
+current fork release and the constraint in the kernel's `composer.json` (the tilde or caret form, never an exact
+version). The repositories marked *new* were created when the fork became official; the others existed before.
 
-| Upstream package | Fork package | Repository | Repository | Upstream release | Fork release |
+| Upstream package | Fork package | Repository | Upstream release | Fork release | Kernel requires |
 |---|---|---|---|---|---|
-| `zetacomponents/base` | `se7enxweb/expcomponents-base` | [expcomponents-base](https://github.com/se7enxweb/expcomponents-base) | existing | 1.9.5 | 1.9.6 (proposed) |
-| `zetacomponents/archive` | `se7enxweb/expcomponents-archive` | [expcomponents-archive](https://github.com/se7enxweb/expcomponents-archive) | existing | 1.5.1 | **1.5.2 released** (2026-11-03); next 1.5.3 (proposed) |
-| `zetacomponents/authentication` | `se7enxweb/expcomponents-authentication` | [expcomponents-authentication](https://github.com/se7enxweb/expcomponents-authentication) | existing | 1.4.1 | 1.4.2 (proposed) |
-| `zetacomponents/cache` | `se7enxweb/expcomponents-cache` | [expcomponents-cache](https://github.com/se7enxweb/expcomponents-cache) | existing | 1.6.3 | 1.6.4 (proposed) |
-| `zetacomponents/configuration` | `se7enxweb/expcomponents-configuration` | [expcomponents-configuration](https://github.com/se7enxweb/expcomponents-configuration) | new | 1.4 | 1.4.1 (proposed) |
-| `zetacomponents/console-tools` | `se7enxweb/expcomponents-console-tools` | [expcomponents-console-tools](https://github.com/se7enxweb/expcomponents-console-tools) | new | 1.7.5 | 1.7.6 (proposed) |
-| `zetacomponents/database` | `se7enxweb/expcomponents-database` | [expcomponents-database](https://github.com/se7enxweb/expcomponents-database) | existing | 1.5.4 | 1.5.5 (proposed) |
-| `zetacomponents/debug` | `se7enxweb/expcomponents-debug` | [expcomponents-debug](https://github.com/se7enxweb/expcomponents-debug) | new | 1.3 | 1.3.1 (proposed) |
-| `zetacomponents/event-log` | `se7enxweb/expcomponents-event-log` | [expcomponents-event-log](https://github.com/se7enxweb/expcomponents-event-log) | new | 1.5 | 1.5.1 (proposed) |
-| `zetacomponents/feed` | `se7enxweb/expcomponents-feed` | [expcomponents-feed](https://github.com/se7enxweb/expcomponents-feed) | new | 1.4.6 | 1.4.7 (proposed) |
-| `zetacomponents/image-analysis` | `se7enxweb/expcomponents-image-analysis` | [expcomponents-image-analysis](https://github.com/se7enxweb/expcomponents-image-analysis) | new | 1.2 | 1.2.1 (proposed) |
-| `zetacomponents/image-conversion` | `se7enxweb/expcomponents-image-conversion` | [expcomponents-image-conversion](https://github.com/se7enxweb/expcomponents-image-conversion) | existing | 1.5.1 | 1.5.2 (proposed) |
-| `zetacomponents/mail` | `se7enxweb/expcomponents-mail` | [expcomponents-mail](https://github.com/se7enxweb/expcomponents-mail) | new | 1.10.1 | 1.10.2 (proposed) |
-| `zetacomponents/mvc-tools` | `se7enxweb/expcomponents-mvc-tools` | [expcomponents-mvc-tools](https://github.com/se7enxweb/expcomponents-mvc-tools) | new | 1.2.4 | 1.2.5 (proposed) |
-| `zetacomponents/persistent-object` | `se7enxweb/expcomponents-persistent-object` | [expcomponents-persistent-object](https://github.com/se7enxweb/expcomponents-persistent-object) | existing | 1.8.2 | 1.8.3 (proposed) |
-| `zetacomponents/signal-slot` | `se7enxweb/expcomponents-signal-slot` | [expcomponents-signal-slot](https://github.com/se7enxweb/expcomponents-signal-slot) | new | 1.2 | 1.2.1 (proposed) |
-| `zetacomponents/system-information` | `se7enxweb/expcomponents-system-information` | [expcomponents-system-information](https://github.com/se7enxweb/expcomponents-system-information) | new | 1.1.2 | 1.1.3 (proposed) |
-| `zetacomponents/webdav` | `se7enxweb/expcomponents-webdav` | [expcomponents-webdav](https://github.com/se7enxweb/expcomponents-webdav) | existing | 1.2 | **1.2.2 released** (2026-11-01); next 1.2.3 (proposed) |
+| `zetacomponents/base` | `se7enxweb/expcomponents-base` | [expcomponents-base](https://github.com/se7enxweb/expcomponents-base) | 1.9.5 | 1.9.6 | `^1.9.6` |
+| `zetacomponents/archive` | `se7enxweb/expcomponents-archive` | [expcomponents-archive](https://github.com/se7enxweb/expcomponents-archive) | 1.5.1 | 1.5.3 (1.5.2 on 2026-11-03) | `~1.5.3` |
+| `zetacomponents/authentication` | `se7enxweb/expcomponents-authentication` | [expcomponents-authentication](https://github.com/se7enxweb/expcomponents-authentication) | 1.4.1 | 1.4.2 | `~1.4.2` |
+| `zetacomponents/cache` | `se7enxweb/expcomponents-cache` | [expcomponents-cache](https://github.com/se7enxweb/expcomponents-cache) | 1.6.3 | 1.6.4 | `~1.6.4` |
+| `zetacomponents/configuration` | `se7enxweb/expcomponents-configuration` | [expcomponents-configuration](https://github.com/se7enxweb/expcomponents-configuration) (new) | 1.4 | 1.4.1 | `~1.4.1` |
+| `zetacomponents/console-tools` | `se7enxweb/expcomponents-console-tools` | [expcomponents-console-tools](https://github.com/se7enxweb/expcomponents-console-tools) (new) | 1.7.5 | 1.7.6 | `^1.7.6` |
+| `zetacomponents/database` | `se7enxweb/expcomponents-database` | [expcomponents-database](https://github.com/se7enxweb/expcomponents-database) | 1.5.4 | 1.5.5 | `~1.5.5` |
+| `zetacomponents/debug` | `se7enxweb/expcomponents-debug` | [expcomponents-debug](https://github.com/se7enxweb/expcomponents-debug) (new) | 1.3 | 1.3.1 | `~1.3.1` |
+| `zetacomponents/event-log` | `se7enxweb/expcomponents-event-log` | [expcomponents-event-log](https://github.com/se7enxweb/expcomponents-event-log) (new) | 1.5 | 1.5.1 | `~1.5.1` |
+| `zetacomponents/feed` | `se7enxweb/expcomponents-feed` | [expcomponents-feed](https://github.com/se7enxweb/expcomponents-feed) (new) | 1.4.6 | 1.4.7 | `~1.4.7` |
+| `zetacomponents/image-analysis` | `se7enxweb/expcomponents-image-analysis` | [expcomponents-image-analysis](https://github.com/se7enxweb/expcomponents-image-analysis) (new) | 1.2 | 1.2.1 | through image-conversion |
+| `zetacomponents/image-conversion` | `se7enxweb/expcomponents-image-conversion` | [expcomponents-image-conversion](https://github.com/se7enxweb/expcomponents-image-conversion) | 1.5.1 | 1.5.2 | `~1.5.2` |
+| `zetacomponents/mail` | `se7enxweb/expcomponents-mail` | [expcomponents-mail](https://github.com/se7enxweb/expcomponents-mail) (new) | 1.10.1 | 1.10.2 | `~1.10.2` |
+| `zetacomponents/mvc-tools` | `se7enxweb/expcomponents-mvc-tools` | [expcomponents-mvc-tools](https://github.com/se7enxweb/expcomponents-mvc-tools) (new) | 1.2.4 | 1.2.5 | `~1.2.5` |
+| `zetacomponents/persistent-object` | `se7enxweb/expcomponents-persistent-object` | [expcomponents-persistent-object](https://github.com/se7enxweb/expcomponents-persistent-object) | 1.8.2 | 1.8.3 | `~1.8.3` |
+| `zetacomponents/signal-slot` | `se7enxweb/expcomponents-signal-slot` | [expcomponents-signal-slot](https://github.com/se7enxweb/expcomponents-signal-slot) (new) | 1.2 | 1.2.1 | `~1.2.1` |
+| `zetacomponents/system-information` | `se7enxweb/expcomponents-system-information` | [expcomponents-system-information](https://github.com/se7enxweb/expcomponents-system-information) (new) | 1.1.2 | 1.1.3 | `~1.1.3` |
+| `zetacomponents/webdav` | `se7enxweb/expcomponents-webdav` | [expcomponents-webdav](https://github.com/se7enxweb/expcomponents-webdav) | 1.2 | 1.2.3 (1.2.2 on 2026-11-01) | `~1.2.3` |
+
+The image-conversion fork also carries a fix that was offered upstream as
+[zetacomponents/ImageConversion pull request #9](https://github.com/zetacomponents/ImageConversion/pull/9): since
+upstream runs ImageMagick through an argument list instead of a shell, scaling and cropping failed with
+"unrecognized option `-resize '", and the fork trims the option names. Its 1.5.2 release notes list the rest.
+
+The mail fork 1.10.2 includes the changes upstream made after its 1.10.1 release, among them protection against
+header injection: it refuses an address that contains whitespace or one of `< > , ; "` before it writes any header,
+because such an address could end the header or add recipients
+([upgrade notes](../../bc/6.0/expcomponents.md#custom-code)).
 
 `image-analysis` is not used by the kernel directly: `image-conversion` requires it, and the image editor ezie uses
 both. `configuration` stays required while 7x SQLI Import 2.0.x throws one of its exceptions.
@@ -181,9 +190,9 @@ Forks that exist but that the kernel does not require:
 
 | Upstream package | Fork package | Why it is not required |
 |---|---|---|
-| `zetacomponents/authentication-database-tiein` | `se7enxweb/expcomponents-authentication-database-tiein` (fork release 1.2.1 proposed) | No code of the kernel or of the packages it requires uses it; the kernel stopped requiring it in October 2026 ([behaviour changes of October 2026](../../bc/6.0/behaviour-changes-2026-10.md)). |
-| `zetacomponents/graph` | `se7enxweb/expcomponents-graph` (1.7.3 proposed) | Neither the kernel nor any shipped extension draws charts with it; the fork is there for extensions that do. |
-| `zetacomponents/workflow` | `se7enxweb/expcomponents-workflow` (1.5.2 proposed) | The kernel has its own workflow engine (`eZWorkflow`); the fork is there for extensions that use the component. |
+| `zetacomponents/authentication-database-tiein` | `se7enxweb/expcomponents-authentication-database-tiein` (1.2.1, released 2026-11-06) | No code of the kernel or of the packages it requires uses it; the kernel stopped requiring it in October 2026 ([behaviour changes of October 2026](../../bc/6.0/behaviour-changes-2026-10.md)). |
+| `zetacomponents/graph` | `se7enxweb/expcomponents-graph` (1.7.3, released 2026-11-06) | Neither the kernel nor any shipped extension draws charts with it; the fork is there for extensions that do. |
+| `zetacomponents/workflow` | `se7enxweb/expcomponents-workflow` (1.5.2, released 2026-11-06) | The kernel has its own workflow engine (`eZWorkflow`); the fork is there for extensions that use the component. |
 
 Upstream packages that are not forked:
 
@@ -205,7 +214,7 @@ Each fork's `composer.json` says which package it replaces. The archive fork, as
     "license": "Apache-2.0",
     "require": {
         "php": ">=7.1",
-        "zetacomponents/base": "~1.8"
+        "se7enxweb/expcomponents-base": "~1.8"
     },
     "replace": {
         "zetacomponents/archive": "self.version"
@@ -216,13 +225,13 @@ Each fork's `composer.json` says which package it replaces. The archive fork, as
 What `replace` means to Composer:
 
 1. **A requirement on the old name is met by the fork.** A package that requires `zetacomponents/archive ~1.5` is
-   satisfied by `se7enxweb/expcomponents-archive` 1.5.2, because `self.version` makes the fork stand in for the same
+   satisfied by `se7enxweb/expcomponents-archive` 1.5.3, because `self.version` makes the fork stand in for the same
    version of the old name.
 2. **The old package is not installed next to it.** A replaced package and its replacement are never installed
    together; there is one copy of each class.
-3. **The forks find each other through the old names.** The archive fork above still requires
-   `zetacomponents/base ~1.8`. Once `se7enxweb/expcomponents-base` is installed, it replaces `zetacomponents/base` and
-   satisfies that requirement; the upstream `base` is not installed.
+3. **The forks require each other by their fork names.** The archive fork above requires
+   `se7enxweb/expcomponents-base`, not `zetacomponents/base`; a third-party package that still requires
+   `zetacomponents/base` gets the base fork through its `replace`, and the upstream `base` is not installed.
 4. **The WebDAV fork replaces two names**: `zetacomponents/webdav` and `se7enxweb/zetacomponents-webdav`, the name it
    was published under for 1.2.1.
 
@@ -238,11 +247,11 @@ these conditions, which the forks follow:
 - each package keeps the license text and the notice lines it came with (`LICENSE.txt`, with the notices of the
   Zeta Components development group, the Apache Software Foundation and eZ Systems AS), and the copyright headers in
   its source files;
-- Apache 2.0 (section 4(b)) asks that modified files carry prominent notices stating that they were changed; the
-  [contributor guide](../../guides/contributing-to-expcomponents.md#license-headers-and-notices) says how a change
-  records that, and every change is also a commit with its own message and an entry in the package's `ChangeLog`;
-- a `NOTICE` file is passed on wherever the upstream package has one (Apache 2.0, section 4(d)); the Zeta Components
-  packages put their notice lines at the top of `LICENSE.txt`, and those lines stay.
+- Apache 2.0 (section 4(b)) asks that modified files carry prominent notices stating that they were changed; every
+  change of a fork is a commit with its own message and an entry in the package's `ChangeLog`, and the release notes
+  list them;
+- every fork ships a `NOTICE` file (Apache 2.0, section 4(d)) that keeps the upstream copyright notices and names the
+  fork; the notice lines at the top of `LICENSE.txt` stay as well.
 
 The Exponential kernel itself is licensed under the **GNU GPL version 2 or (at your option) any later version**
 (`GPL-2.0-or-later`). How the two fit together, briefly and without overstating it: the Free Software Foundation
@@ -261,7 +270,7 @@ This is not legal advice; ask counsel about your own distribution.
   `zetacomponents/Mail`), so the upstream history is kept and visible.
 - **Packages:** on Packagist as `se7enxweb/expcomponents-<name>`, for example
   [packagist.org/packages/se7enxweb/expcomponents-archive](https://packagist.org/packages/se7enxweb/expcomponents-archive).
-  A package appears there with its first release.
+  Every fork is there since its release on 2026-11-06.
 - **Documentation:** each repository's `docs/` folder and `README`. The API is the same as upstream, so the
   [Zeta Components documentation](https://zetacomponents.org/documentation/overview.html) still describes it.
 - **Installed copies:** `vendor/se7enxweb/expcomponents-<name>/` in an installation; `composer show` lists them.
@@ -275,7 +284,7 @@ This is not legal advice; ask counsel about your own distribution.
   next release, whose notes say what was wrong.
 - The kernel requires each fork with a tilde constraint (`~1.5.2`), which accepts every later release of the same
   line (1.5.3, 1.5.10) and no new minor line.
-- Releases are approved by the maintainers; versions on this page marked *proposed* are plans, not releases. The
+- Releases are approved by the maintainers. The
   release notes of each fork on GitHub are the record of what was released.
 
 ## Reporting issues and contributing

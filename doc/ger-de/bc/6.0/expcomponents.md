@@ -60,32 +60,33 @@ Vorher (6.0.14 und die Linie 6.0.15 bis zum Wechsel), mit den beiden Forks, die 
 "zetacomponents/base": "^1.9.5"
 ```
 
-Nachher: Jede Zeile nennt `se7enxweb/expcomponents-<name>`. Die Paketzuordnung, eins zu eins:
+Nachher (das Release 6.0.15, mit jedem Fork am 2026-11-06 veröffentlicht): Jede Zeile nennt
+`se7enxweb/expcomponents-<name>`. Die Paketzuordnung, eins zu eins, mit der Bedingung, die der Kernel verlangt:
 
 | Vorher | Nachher |
 |---|---|
-| `zetacomponents/archive` (bereits `se7enxweb/expcomponents-archive ~1.5.2`) | `se7enxweb/expcomponents-archive` |
-| `zetacomponents/authentication` | `se7enxweb/expcomponents-authentication` |
-| `zetacomponents/base` | `se7enxweb/expcomponents-base` |
-| `zetacomponents/cache` | `se7enxweb/expcomponents-cache` |
-| `zetacomponents/configuration` | `se7enxweb/expcomponents-configuration` |
-| `zetacomponents/console-tools` | `se7enxweb/expcomponents-console-tools` |
-| `zetacomponents/database` | `se7enxweb/expcomponents-database` |
-| `zetacomponents/debug` | `se7enxweb/expcomponents-debug` |
-| `zetacomponents/event-log` | `se7enxweb/expcomponents-event-log` |
-| `zetacomponents/feed` | `se7enxweb/expcomponents-feed` |
-| `zetacomponents/image-conversion` | `se7enxweb/expcomponents-image-conversion` |
-| `zetacomponents/mail` | `se7enxweb/expcomponents-mail` |
-| `zetacomponents/mvc-tools` | `se7enxweb/expcomponents-mvc-tools` |
-| `zetacomponents/persistent-object` | `se7enxweb/expcomponents-persistent-object` |
-| `zetacomponents/signal-slot` | `se7enxweb/expcomponents-signal-slot` |
-| `zetacomponents/system-information` | `se7enxweb/expcomponents-system-information` |
-| `zetacomponents/webdav` (bereits `se7enxweb/expcomponents-webdav ~1.2.2`) | `se7enxweb/expcomponents-webdav` |
+| `zetacomponents/archive` (bereits `se7enxweb/expcomponents-archive ~1.5.2`) | `se7enxweb/expcomponents-archive ~1.5.3` |
+| `zetacomponents/authentication` | `se7enxweb/expcomponents-authentication ~1.4.2` |
+| `zetacomponents/base` | `se7enxweb/expcomponents-base ^1.9.6` |
+| `zetacomponents/cache` | `se7enxweb/expcomponents-cache ~1.6.4` |
+| `zetacomponents/configuration` | `se7enxweb/expcomponents-configuration ~1.4.1` |
+| `zetacomponents/console-tools` | `se7enxweb/expcomponents-console-tools ^1.7.6` |
+| `zetacomponents/database` | `se7enxweb/expcomponents-database ~1.5.5` |
+| `zetacomponents/debug` | `se7enxweb/expcomponents-debug ~1.3.1` |
+| `zetacomponents/event-log` | `se7enxweb/expcomponents-event-log ~1.5.1` |
+| `zetacomponents/feed` | `se7enxweb/expcomponents-feed ~1.4.7` |
+| `zetacomponents/image-conversion` | `se7enxweb/expcomponents-image-conversion ~1.5.2` |
+| `zetacomponents/mail` | `se7enxweb/expcomponents-mail ~1.10.2` |
+| `zetacomponents/mvc-tools` | `se7enxweb/expcomponents-mvc-tools ~1.2.5` |
+| `zetacomponents/persistent-object` | `se7enxweb/expcomponents-persistent-object ~1.8.3` |
+| `zetacomponents/signal-slot` | `se7enxweb/expcomponents-signal-slot ~1.2.1` |
+| `zetacomponents/system-information` | `se7enxweb/expcomponents-system-information ~1.1.3` |
+| `zetacomponents/webdav` (bereits `se7enxweb/expcomponents-webdav ~1.2.2`) | `se7enxweb/expcomponents-webdav ~1.2.3` |
 
 `zetacomponents/image-analysis` stand nie im `require` des Kernels; es kam mit `image-conversion` und kommt jetzt mit
-dessen Fork als `se7enxweb/expcomponents-image-analysis`. Die Versionen, in denen jeder Fork veröffentlicht wird,
-stehen mit ihrem Stand auf der [Funktionsseite](../../funktionen/6.0/expcomponents.md#die-pakete); der Kernel verlangt
-jeden in der Tilde-Form (`~1.5.2`), nie als exakte Version.
+dessen Fork als `se7enxweb/expcomponents-image-analysis` (1.2.1). Jeder Fork steht mit Repository und Release auf der
+[Funktionsseite](../../funktionen/6.0/expcomponents.md#die-pakete); der Kernel verlangt jeden in der Tilde- oder
+Caret-Form, nie als exakte Version.
 
 ## Installationen: das Upgrade
 
@@ -133,11 +134,11 @@ Legacy Bridge), die Pakete der Zeta Components direkt nennt, etwa weil eine alte
 
 ```bash
 composer remove --no-update zetacomponents/mail zetacomponents/feed
-composer require --no-update se7enxweb/expcomponents-mail:~1.10.1 se7enxweb/expcomponents-feed:~1.4.6
+composer require --no-update se7enxweb/expcomponents-mail:~1.10.2 se7enxweb/expcomponents-feed:~1.4.7
 composer update --with-all-dependencies 'se7enxweb/expcomponents-*' 'zetacomponents/*'
 ```
 
-Verwenden Sie die Bedingungen aus der `composer.json` des Kernels Ihres Releases statt der Beispiele oben.
+Das sind die Bedingungen der `composer.json` von 6.0.15; verwenden Sie die Ihres Releases.
 
 **Ebenfalls möglich: stehen lassen.** Eine Anforderung an `zetacomponents/mail` wird von `se7enxweb/expcomponents-mail`
 erfüllt, weil der Fork diesen Namen ersetzt. Composer installiert den Fork (den der Kernel verlangt) und nicht das
@@ -178,8 +179,13 @@ zusammen laden.
 - **Tests, die nach Paketen fragen** (`InstalledVersions::isInstalled('zetacomponents/mail')`): Die Laufzeit-API von
   Composer meldet ersetzte Namen als installiert, daher liefert das weiter `true`; ein Test, der
   `vendor/zetacomponents/` auf der Platte liest, nicht.
-- **Zeichenketten im User-Agent:** Der Standard-`User-Agent` der Mail-Bibliothek gehört zur Bibliothek; die ersten
-  Releases des Forks ändern ihn nicht. Eine Site, die `[MailSettings] UserAgent` setzt, ist gar nicht betroffen.
+- **Zeichenketten im User-Agent:** Der Standard-`User-Agent` der Mail-Bibliothek gehört zur Bibliothek; im Release
+  1.10.2 des Forks ist er unverändert („Apache Zeta Components“). Eine Site, die `[MailSettings] UserAgent` setzt, ist
+  gar nicht betroffen.
+- **Mail-Adressen:** `se7enxweb/expcomponents-mail` 1.10.2 weist eine Adresse ab, die Leerraum oder eines der Zeichen
+  `< > , ; "` enthält, bevor ein Header geschrieben wird; eine solche Adresse könnte den Header beenden oder Empfänger
+  hinzufügen. Code, der Absender oder Empfänger aus Benutzereingaben baute und sich darauf verließ, dass die Bibliothek
+  sie durchreicht, erhält jetzt eine Ausnahme; prüfen Sie die Adresse vorher (`eZMail::validate()`).
 
 ## Die Bedeutung von replace im Einzelnen
 
@@ -195,8 +201,8 @@ Die `composer.json` jedes Forks hat einen Abschnitt `replace` mit dem alten Name
   `zetacomponents/mail` 1.10.2 ein.
 - Composer installiert ein Paket und seinen Ersatz nie zusammen. Wird der Fork (vom Kernel) verlangt, erfüllt er jede
   Anforderung an den alten Namen, und das Ursprungspaket wird entfernt, falls es installiert war.
-- Die Forks nennen einander weiter mit ihren alten Namen, wo das Original es tat (der Archive-Fork verlangt
-  `zetacomponents/base ~1.8`); `se7enxweb/expcomponents-base` ersetzt `zetacomponents/base` und erfüllt das.
+- Die Forks verlangen einander mit ihren Fork-Namen (der Archive-Fork verlangt `se7enxweb/expcomponents-base ~1.8`).
+  Ein Paket Dritter, das noch `zetacomponents/base` verlangt, bedient der Base-Fork über sein `replace`.
 - Der WebDAV-Fork ersetzt zwei Namen: `zetacomponents/webdav` und `se7enxweb/zetacomponents-webdav`, seinen eigenen
   Namen für das Release 1.2.1.
 - `replace` betrifft Pakete, nicht Klassen. Es gibt kein `class_alias` und keinen zweiten Klassennamen; die Klasse ist
@@ -230,8 +236,8 @@ composer licenses --no-dev | grep expcomponents   # jeder Fork mit Apache-2.0
 - Lassen Sie die Site eine E-Mail senden (zum Beispiel eine Passwort-Erinnerung), öffnen Sie einen RSS-Export,
   importieren Sie ein Paket und verbinden Sie, falls WebDAV genutzt wird, einen Client: Jedes davon verwendet einen der
   Forks.
-- `composer why zetacomponents/base` gibt die Pakete aus, die noch den alten Namen nennen (die Forks selbst); das ist
-  erwartet und harmlos.
+- `composer why zetacomponents/base` gibt die Pakete aus, die noch den alten Namen verlangen: keines des Kernels,
+  höchstens ein Paket Dritter von Ihnen. Das ist harmlos: Der Base-Fork erfüllt es.
 
 In einer Entwicklungsinstallation (`composer install` mit Entwicklungspaketen) können `zetacomponents/unit-test` und
 andere Entwicklungspakete der eigenen Testsuiten der Forks noch auftauchen; sie gehören nicht zu einer Site.
@@ -275,7 +281,7 @@ Dann:
 Was ein Zurückrollen kostet: die Korrekturen, die die Forks enthalten. Rollen Sie `se7enxweb/expcomponents-webdav` auf
 einer Site, die WebDAV nutzt, **nicht** zurück: Sein Release 1.2.2 behebt Pfad-Traversal, symbolische Links aus der
 Wurzel heraus, Dokumenttyp-Deklarationen in Anfragekörpern, den Digest-Vergleich und die Sperr-Token, und das
-ursprüngliche `zetacomponents/webdav` 1.2 hat nichts davon. Der Archive-Fork (1.5.2) wird schon seit vor dem Wechsel
+ursprüngliche `zetacomponents/webdav` 1.2 hat nichts davon. Der Archive-Fork (1.5.2 und später) wurde schon vor dem übrigen Wechsel
 verlangt und sollte ebenfalls bleiben. Ein Zurückrollen ist als Weg gedacht, ein Problem einzugrenzen; melden Sie das
 Problem, damit es im Fork behoben werden kann.
 

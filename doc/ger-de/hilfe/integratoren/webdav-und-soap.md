@@ -46,7 +46,7 @@ Standards beschreibt [Standards für APIs und Protokolle](../../standards/apis-u
 
 Der Einstiegspunkt ist `index_webdav.php` im Wurzelverzeichnis der Installation. Er führt den WebDAV-Server der
 [expcomponents](../../funktionen/6.0/expcomponents.md), des Forks der Zeta
-Components (`se7enxweb/expcomponents-webdav ~1.2.2`), mit dem Inhalts-Backend
+Components (`se7enxweb/expcomponents-webdav ~1.2.3`), mit dem Inhalts-Backend
 `kernel/private/classes/webdav/ezwebdavcontentbackend.php` und Basic-Authentifizierung gegen Exponential-Benutzer aus
 (`ezwebdavcontentbackendauth.php`).
 

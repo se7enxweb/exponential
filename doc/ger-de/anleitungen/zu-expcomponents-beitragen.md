@@ -152,9 +152,8 @@ Anforderung `dev-` aus.
    seine Tests benennt (`*_test.php`).
 6. **Keine neue Laufzeitabhängigkeit** ohne Diskussion im Pull-Request. Eine Komponente soll allein installierbar
    bleiben.
-7. **Die Forks verlangen einander mit ihren Ursprungsnamen** (`zetacomponents/base ~1.8`), wo das Original es tat.
-   Behalten Sie das bei; das `replace` jedes Forks löst es zum Fork auf. Ändern Sie es in einem Patch-Release nicht
-   auf den Namen `se7enxweb/`.
+7. **Die Forks verlangen einander mit ihren Fork-Namen** (`se7enxweb/expcomponents-base ~1.8`), nicht mit den
+   Ursprungsnamen. Eine neue Anforderung an eine andere Komponente nennt deren Fork.
 8. **`replace` in `composer.json` bleibt**, mit `"zetacomponents/<name>": "self.version"`.
 
 ## Lizenzköpfe und Hinweise
@@ -164,19 +163,11 @@ Codes. Halten Sie sie ein, dann bleibt der Fork ein Fork, den jeder verwenden da
 
 - **Entfernen oder ändern Sie nie** den Lizenzkopf einer Quelldatei, die Hinweiszeilen am Anfang von `LICENSE.txt`
   („Zeta Components ...“, „Apache Zeta Components ...“, „Originally developed by eZ Systems as eZ Components ...“),
-  `CREDITS` oder eine Datei `NOTICE`, wo ein Paket eine hat.
-- **Geänderte Dateien tragen einen Hinweis, dass sie geändert wurden** (Apache 2.0, Abschnitt 4(b)). Halten Sie jede
-  Änderung im `ChangeLog` des Pakets fest (unten), und wenn Sie eine Datei wesentlich ändern, fügen Sie ihrem
-  Kommentarblock auf Dateiebene unter dem bestehenden Kopf eine Zeile hinzu, zum Beispiel:
-
-  ```php
-  /**
-   * ... der bestehende Kopf, unverändert ...
-   *
-   * Modified by the Exponential project (expcomponents), 2026: explicitly nullable parameters for PHP 8.4.
-   */
-  ```
-
+  `CREDITS` oder die Datei `NOTICE`, die jeder Fork mitliefert (die Hinweise des Originals und der Name des Forks).
+- **Änderungen werden festgehalten** (Apache 2.0, Abschnitt 4(b), verlangt, dass geänderte Dateien gut sichtbare
+  Hinweise tragen, dass sie geändert wurden): Jede Änderung ist ein Commit mit eigener Nachricht und ein Eintrag im
+  `ChangeLog` des Pakets (unten), und die Release-Notes führen sie auf. Fragen Sie die Verantwortlichen im
+  Pull-Request, wenn Sie meinen, dass eine Datei mehr braucht.
 - **Neue Dateien** tragen denselben Apache-2.0-Kopf wie die Dateien um sie herum, mit dem Projekt Exponential als
   Autor der neuen Datei.
 - **Code von anderswo** kommt nur hinein, wenn seine Lizenz mit Apache 2.0 vereinbar ist (MIT, BSD, Apache 2.0);
@@ -217,7 +208,7 @@ Jedes Paket hat eine Datei `ChangeLog` in seinem Wurzelverzeichnis, das neueste 
 Eintrag unter einer Überschrift für das nächste Release hinzu (das Datum setzen die Verantwortlichen beim Release):
 
 ```text
-1.10.2 - not released yet
+1.10.3 - not released yet
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Fixed: The SMTP transport gives up after the configured timeout when the

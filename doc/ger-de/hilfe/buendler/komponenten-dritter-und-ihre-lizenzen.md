@@ -56,7 +56,7 @@ Ursprungspakete `zetacomponents/*` in `vendor/zetacomponents/`. In beiden Fälle
 - ihre Lizenz ist die **Apache License 2.0** (`Apache-2.0` in `composer licenses`), nicht die GPL;
 - die `LICENSE.txt` jedes Pakets beginnt mit Hinweiszeilen („Zeta Components ...“, „Apache Zeta Components ...“,
   „Originally developed by eZ Systems as eZ Components ...“), die mit dem Paket weitergegeben werden müssen; wer den
-  Ordner `vendor/` unverändert ausliefert, tut das;
+  Ordner `vendor/` unverändert ausliefert, tut das, zusammen mit der Datei `NOTICE`, die jeder Fork mitliefert;
 - führen Sie sie in der Liste der Komponenten Dritter auf; `composer licenses --no-dev | grep expcomponents` gibt sie aus.
 
 Die Lizenz des Kernels, GPL Version 2 oder später, erlaubt, die Kombination unter GPL Version 3 zu verbreiten, mit der

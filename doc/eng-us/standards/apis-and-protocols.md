@@ -206,7 +206,7 @@ PROPFIND, PROPPATCH, MKCOL, COPY, MOVE, LOCK and UNLOCK. Class 1 is the basic se
 - Entry point `index_webdav.php` at the installation root (`webdav.php` until 6.0.14, now a forwarding shim, see
   [the change](../bc/6.0/webdav-entry-script-index-webdav.md)); it uses the WebDAV server of the expcomponents, the fork of
   the Zeta Components
-  (`se7enxweb/expcomponents-webdav ~1.2.2` in `composer.json`) with the content backend
+  (`se7enxweb/expcomponents-webdav ~1.2.3` in `composer.json`) with the content backend
   `kernel/private/classes/webdav/ezwebdavcontentbackend.php` and the authentication backend
   `ezwebdavcontentbackendauth.php` (basic authentication against Exponential users).
 - `settings/webdav.ini` (`[GeneralSettings]`, `[FolderSettings]`).
@@ -270,7 +270,7 @@ Atom Syndication Format, RFC 4287 (December 2005). OPML 2.0 lists feeds.
 ### How Exponential complies
 
 - **Export** (`kernel/classes/ezrssexport.php`, `rssXmlContent()`): RSS 1.0 (`rss1`), RSS 2.0 (`rss2`) and Atom
-  (`atom`) through the feed library of the expcomponents (`se7enxweb/expcomponents-feed`, the fork of
+  (`atom`) through the feed library of the expcomponents (`se7enxweb/expcomponents-feed ~1.4.7`, the fork of
   `zetacomponents/feed` 1.4.6, since 6.0.15); Apple Podcasts feeds
   (`ITUNES`) and OPML are written by Exponential itself. Feeds are served at `/rss/feed/<address>`.
 - **Import** (`kernel/classes/ezrssimport.php`, cronjob part `kernel/private/classes/cronjobs/rssimport.php`): RSS
@@ -323,7 +323,7 @@ The Simple Mail Transfer Protocol, IETF RFC 5321 (October 2008). STARTTLS for SM
   (`TransportAlias[smtp]=eZSMTPTransport`). SMTP settings: `TransportServer`, `TransportPort=25`,
   `TransportConnectionType` (empty, `ssl`, `tls` and older values), `TransportUser`, `TransportPassword`.
 - `eZSMTPTransport` (`lib/ezutils/classes/ezsmtptransport.php`) sends through `ezcMailSmtpTransport` from
-  `se7enxweb/expcomponents-mail` (the fork of `zetacomponents/mail` 1.10.1, since 6.0.15). In that library `tls` means
+  `se7enxweb/expcomponents-mail ~1.10.2` (the fork of `zetacomponents/mail` 1.10.1, since 6.0.15). In that library `tls` means
   STARTTLS: it requires the server to announce `STARTTLS`
   (`vendor/se7enxweb/expcomponents-mail/src/transports/smtp/smtp_transport.php`; `vendor/zetacomponents/mail/...` before).
 - RFC 8058: mail preferences add `List-Unsubscribe` and `List-Unsubscribe-Post` per recipient
