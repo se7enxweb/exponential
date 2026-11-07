@@ -3,7 +3,7 @@
 <img width="1200" height="693" alt="MongoDB-exp" src="https://github.com/user-attachments/assets/ef51c832-149e-4742-8b41-6f2c07ea6b6b" />
 ![Exponential - Project Logo](https://github.com/user-attachments/assets/c2f9e973-0b4f-4e58-ac76-f0308775e3c1)
 
-# Important Notice for New or first time Users
+# Important Notice for New or First Time Users
 
 **Exponential 6.0.x specifically requires the php package manager called Composer to be installed and run the command `composer install;` run before Exponential can be used.**
 
@@ -573,6 +573,49 @@ Thank you to **Mugo Web**, who built these improvements and published them as op
 rebuilt feature keeps their copyright notice and names the LoveStack commit it comes from. "LoveStack" is Mugo Web's
 name for their distribution; Exponential uses it only to say where these features come from, and nothing here
 implies an endorsement by Mugo Web. They are friends of this project, and we are grateful for their work.
+
+# Exponential Documentation
+
+**[doc.exponential.earth](https://doc.exponential.earth/)** is the documentation portal for Exponential: the user
+manual for editors, the technical manual for developers and administrators, the extensions catalog and answers to
+the questions people ask most. It is itself an Exponential site, and it is free to read.
+
+## How it saves you time and money
+
+- **Answers before you build.** Most of what a project needs (multiple languages, access control, workflows,
+  scheduled jobs, a shop, clustering) is already in Exponential. The manuals show how to configure what is there,
+  so you do not pay to develop, test and maintain your own version of it.
+- **Shorter onboarding.** Editors learn their daily tasks from step-by-step pages with screenshots of the real
+  administration interface, instead of from your developers' time.
+- **Fewer support hours.** Installation requirements, virtual host setup and troubleshooting are written down, so
+  a broken setup is usually a page away rather than a support ticket.
+- **Better estimates.** Concepts such as the content tree, classes, sections and the design and template system
+  explain how a site is put together, which makes it easier to plan a project and to judge what an extension or a
+  change will cost.
+- **The right extension, not a new one.** The extensions pages list what exists, who maintains it and how it is
+  supported, before you commission custom code.
+
+## Where to start
+
+| You want to... | Start here |
+|---|---|
+| See everything in one place | [Exponential documentation home](https://doc.exponential.earth/exponential) |
+| Get quick answers about licensing, support and upgrades | [Frequently asked questions](https://doc.exponential.earth/exponential/frequently-asked-questions) |
+| Learn to edit and publish content | [User manual](https://doc.exponential.earth/exponential/6/user-manual), and its [daily tasks](https://doc.exponential.earth/exponential/6/user-manual/daily-tasks) such as [adding content](https://doc.exponential.earth/exponential/6/user-manual/daily-tasks/adding-content), [images and files](https://doc.exponential.earth/exponential/6/user-manual/daily-tasks/images-and-files) and [translating content](https://doc.exponential.earth/exponential/6/user-manual/daily-tasks/translating-content) |
+| Build pages visually | [Building pages with layouts](https://doc.exponential.earth/exponential/6/user-manual/building-pages-with-layouts) |
+| Manage people and what they may do | [Managing users](https://doc.exponential.earth/exponential/6/user-manual/daily-tasks/managing-users) and [access control](https://doc.exponential.earth/exponential/6/technical-manual/concepts-and-basics/access-control) |
+| Install Exponential | [Installation](https://doc.exponential.earth/exponential/6/technical-manual/installation): [requirements](https://doc.exponential.earth/exponential/6/technical-manual/installation/requirements), [virtual host setup](https://doc.exponential.earth/exponential/6/technical-manual/installation/virtual-host-setup) and [troubleshooting](https://doc.exponential.earth/exponential/6/technical-manual/installation/troubleshooting) |
+| Understand how Exponential works | [Concepts and basics](https://doc.exponential.earth/exponential/6/technical-manual/concepts-and-basics), including [content management](https://doc.exponential.earth/exponential/6/technical-manual/concepts-and-basics/content-management) and [multiple languages](https://doc.exponential.earth/exponential/6/technical-manual/concepts-and-basics/content-management/multiple-languages) |
+| Configure one or several sites | [Configuration](https://doc.exponential.earth/exponential/6/technical-manual/concepts-and-basics/configuration) and [site management](https://doc.exponential.earth/exponential/6/technical-manual/concepts-and-basics/configuration/site-management) |
+| Design and theme a site | [Templates](https://doc.exponential.earth/exponential/6/technical-manual/templates), starting with [how templates work](https://doc.exponential.earth/exponential/6/technical-manual/templates/how-templates-work) and [the pagelayout](https://doc.exponential.earth/exponential/6/technical-manual/templates/the-pagelayout) |
+| Use built-in features | [Features](https://doc.exponential.earth/exponential/6/technical-manual/features), for example [cronjobs](https://doc.exponential.earth/exponential/6/technical-manual/features/cronjobs) and [clustering](https://doc.exponential.earth/exponential/6/technical-manual/features/clustering2) |
+| Look up settings, operators and functions | [Reference](https://doc.exponential.earth/exponential/6/technical-manual/reference) |
+| Extend Exponential | [Exponential extensions](https://doc.exponential.earth/exponential/extensions/exponential-extensions) and the [list of extensions and their support options](https://doc.exponential.earth/exponential/extensions/list-of-exponential-extensions-and-their-support-options) |
+| Read the built-in help center online | [Help center](https://doc.exponential.earth/exphelp/dashboard) |
+
+The documentation is published under the [GNU Free Documentation License, version 1.3 or any later
+version](https://doc.exponential.earth/documentation-license). The same help center also ships with every
+installation under [doc/](doc/) and in the administration interface.
 
 # Installation
 
