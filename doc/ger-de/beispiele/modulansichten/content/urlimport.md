@@ -14,10 +14,10 @@ Eine Ansicht des Moduls `content`, definiert in `kernel/content/module.php` und 
 ## Adresse
 
 ```text
-/content/urlimport/(plan)/<Plan>/(state)/<State>/(offset)/<Offset>/(report)/<Report>
+/content/urlimport/(plan)/<Plan>/(state)/<State>/(offset)/<Offset>/(report)/<Report>/(source)/<Source>
 ```
 
-Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(plan)` setzt `Plan`, `(state)` setzt `State`, `(offset)` setzt `Offset`, `(report)` setzt `Report`.
+Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(plan)` setzt `Plan`, `(state)` setzt `State`, `(offset)` setzt `Offset`, `(report)` setzt `Report`, `(source)` setzt `Source`.
 
 ## Wer sie öffnen darf
 
@@ -57,4 +57,4 @@ return $Module->redirectTo( '/content/urlimport' );
 
 ---
 
-Erzeugt von `./console exp:help:examples --language=ger-de` aus `kernel/content/module.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../../hilfe/freie-dokumentation.md).
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `kernel/content/module.php`, `kernel/content/urlimport.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../../hilfe/freie-dokumentation.md).

@@ -87348,5 +87348,129 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>Pasted text</source>
         <translation>Geplakte tekst</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Geef het adres van de sitemap op of upload hem.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Er is geen oud adres gevonden.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Uit de oude sitemap</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Uit het 404-logboek</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Doelen voorstellen</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>De adressen van de oude site uit zijn sitemap (sitemap.xml, een sitemapindex of .gz) of uit een lijst met één adres per regel. Elk wordt een rij met een leeg nieuw adres.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Adres van de sitemap</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Of upload de sitemap of de lijst</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Ook de adressen van andere hosts</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>De adressen die bezoekers op deze site hebben opgevraagd en niet hebben gevonden, de meest opgevraagde eerst. Afbeeldingen, scripts en bots worden weggelaten.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Het 404-logboek staat uit (site.ini [RequestLogSettings] NotFoundLog): het bevat geen nieuwe adressen.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Minstens zoveel verzoeken</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>In de laatste dagen</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Een map waarvan de rijen geen nieuw adres hebben: elke rij krijgt de pagina's van deze site waarvan het adres of de naam het meest op het oude lijkt.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Hooguit zoveel rijen</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Nieuwe adressen</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Vul een suggestie in met een score van minstens</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Een score van 0 tot 100 geeft aan hoeveel het oude adres lijkt op een pagina van deze site. De andere suggesties staan in de opmerkingen van de rij.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Download als CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Er is nog niets geschreven. Download de map om hem in een spreadsheet aan te vullen, of bekijk een voorbeeld: rijen zonder nieuw adres worden getoond als niet importeerbaar.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Upload een bestand</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Manieren om te beginnen</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Test de oude adressen</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>De siteaccess heeft geen siteadres (site.ini [SiteSettings] SiteURL), dus de oude adressen kunnen hier niet worden getest. ./console exp:url:test test ze tegen elk adres.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Vraagt elk oud adres op bij %base, volgt de doorsturingen en controleert of het op het nieuwe adres uitkomt.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Opnieuw testen</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Test</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed goed beland, %status met de verkeerde status, %target op de verkeerde pagina, %none niet doorgestuurd, %error mislukt, %skipped overgeslagen.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Alleen de eerste %count rijen zijn getest.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>De rijen die niet op hun nieuwe adres zijn beland</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>De oude adressen konden niet worden getest.</translation>
+    </message>
 </context>
 </TS>

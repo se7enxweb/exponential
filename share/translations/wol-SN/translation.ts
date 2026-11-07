@@ -86123,5 +86123,129 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>Pasted text</source>
         <translation>Mbind mu ñu taqal</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Jox adrees bi ci sit map bi walla yeb ko.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Amul adrees bu yàgg bu am.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Ci sit map bu yàgg bi</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Ci log 404 bi</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Wox bu ñuy tëb</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Adrees yu sit bu yàgg bi ci sit map am (sitemap.xml, indeks sit map walla .gz) walla ci lëkkalekaay bu am benn adrees ci sàtt bu nekk. Bu nekk dina nekk benn rëdd bu am adrees bu bees bu ñàkk.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Adrees bu sit map bi</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Walla yeb sit map bi walla lëkkalekaay bi</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Itam adrees yu ñeneen hoost</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Adrees yi way-seetu yi laaj ci sit bii te gisuñu ko, yi gën a ñu laaj jiitu. Nataal yi, skrippt yi ak bot yi dañuy ñàkk.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Log 404 bi dañu ko tàkk (site.ini [RequestLogSettings] NotFoundLog): amul adrees yu bees ci biir.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Ñaari laaj yu tuuti ba tuti</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Ci fan yi weesu</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Map bu rëdd yi amul adrees bu bees: bu nekk dina am xëtu sit bii yu adreesam walla tur am gën a méngoo ak bu yàgg bi.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Rëdd yu bari ba bari</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Adrees yu bees</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Fillil wox bu am skoor bu tuuti ba tuti</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Skoor bu juddu ci 0 ba 100 dafay wone ni adrees bu yàgg bi méngoo ak xët bu sit bii. Wox yi ci des dañu leen bind ci mbind yu rëdd bi.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Yebal ni CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Dara bindagul léegi. Yebal map bi ngir mu jeex ci tabloo, walla xool ko jiitu: rëdd yi amul adrees bu bees dañuy feeñ ni du dugal.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Yeb benn fiichee</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Yoon yi ngir tàmbali</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Seetlu adrees yu yàgg yi</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Buntu sit bi amul adrees bu sit (site.ini [SiteSettings] SiteURL), kon manaawul a seetlu adrees yu yàgg yi fii. ./console exp:url:test dina leen seetlu ci adrees bu ci nekk.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Dafay laaj adrees bu yàgg bu nekk ci %base, di topp jubluwaat yi te seet ndax mu àgg ci adrees bu bees bi.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Seetlu ba noppi</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Seetlu</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed àgg nañu, %status ak statut bu baaxul, %target ci xët bu baaxul, %none jubluwaatuñu, %error ñàkk nañu, %skipped baxaasu nañu.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Rëdd yu njëkk yi %count rekk la ñu seetlu.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Rëdd yi àggul ci seen adrees bu bees</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Manuta a seetlu adrees yu yàgg yi.</translation>
+    </message>
 </context>
 </TS>

@@ -1,0 +1,142 @@
+{
+    "command:expurlfrom404": {
+        "en": "Start a URL map from the not-found log: the addresses visitors asked for and did not find, the most asked first, as rows to fill in",
+        "de": "Eine URL-Zuordnung aus dem Protokoll nicht gefundener Seiten beginnen: die Adressen, die Besucher aufgerufen und nicht gefunden haben, die häufigsten zuerst, als auszufüllende Zeilen"
+    },
+    "command:expurlfrom404 --format": {
+        "en": "import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo, from-sitemap, from-404, suggest, test: text (default) or json (the machine output exp-url/1)",
+        "de": "import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo, from-sitemap, from-404, suggest, test: text (Standard) oder json (die Maschinenausgabe exp-url/1)"
+    },
+    "command:expurlfrom404 --include-assets": {
+        "en": "from-404: also images, scripts, style sheets, fonts and files below /var/, /design/ and /extension/",
+        "de": "from-404: auch Bilder, Skripte, Stylesheets, Schriften und Dateien unter /var/, /design/ und /extension/"
+    },
+    "command:expurlfrom404 --include-bots": {
+        "en": "from-404: also the requests of bots and crawlers",
+        "de": "from-404: auch die Anfragen von Bots und Crawlern"
+    },
+    "command:expurlfrom404 --limit": {
+        "en": "batches: how many of the last imports to list (default 20); from-sitemap, from-404, test: the most rows (default all)",
+        "de": "batches: wie viele der letzten Importe aufgelistet werden (Standard 20); from-sitemap, from-404, test: die meisten Zeilen (Standard alle)"
+    },
+    "command:expurlfrom404 --log": {
+        "en": "from-404: read these logs instead of this installation's not-found log: 404.log files or web server access logs in the common or combined format, .gz too (a comma list or repeated)",
+        "de": "from-404: diese Protokolle statt des Protokolls nicht gefundener Seiten dieser Installation lesen: 404.log-Dateien oder Zugriffsprotokolle des Webservers im Format common oder combined, auch .gz (durch Kommas getrennt oder wiederholt)"
+    },
+    "command:expurlfrom404 --min-hits": {
+        "en": "from-404: only addresses asked for this many times or more (default 1)",
+        "de": "from-404: nur Adressen, die so oft oder öfter aufgerufen wurden (Standard 1)"
+    },
+    "command:expurlfrom404 --output-format": {
+        "en": "import, export: what the command prints, text (default) or json (the machine output exp-url/1); --format is the file's format there; from-sitemap, from-404, suggest: the format of the file written (csv, json, xlsx, ods, apache, nginx; default from --output, else csv)",
+        "de": "import, export: was der Befehl ausgibt, text (Standard) oder json (die Maschinenausgabe exp-url/1); --format ist dort das Format der Datei; from-sitemap, from-404, suggest: das Format der geschriebenen Datei (csv, json, xlsx, ods, apache, nginx; Standard nach --output, sonst csv)"
+    },
+    "command:expurlfrom404 --since": {
+        "en": "from-404: only requests since this date (2026-11-01) or this long ago (30d, 12h, 2w)",
+        "de": "from-404: nur Anfragen seit diesem Datum (2026-11-01) oder seit dieser Zeitspanne (30d, 12h, 2w)"
+    },
+    "command:expurlfromsitemap": {
+        "en": "Start a URL map from an old site's sitemap (sitemap.xml, a sitemap index, .gz) or a crawl list: every old address as a row to fill in",
+        "de": "Eine URL-Zuordnung aus der Sitemap einer alten Website (sitemap.xml, ein Sitemap-Index, .gz) oder einer Crawl-Liste beginnen: jede alte Adresse als auszufüllende Zeile"
+    },
+    "command:expurlfromsitemap --any-host": {
+        "en": "from-sitemap: keep the addresses of every host",
+        "de": "from-sitemap: die Adressen aller Hosts behalten"
+    },
+    "command:expurlfromsitemap --format": {
+        "en": "import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo, from-sitemap, from-404, suggest, test: text (default) or json (the machine output exp-url/1)",
+        "de": "import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo, from-sitemap, from-404, suggest, test: text (Standard) oder json (die Maschinenausgabe exp-url/1)"
+    },
+    "command:expurlfromsitemap --full-urls": {
+        "en": "from-sitemap: write the old addresses with scheme and host (default: the path and query, as an import on this site needs them)",
+        "de": "from-sitemap: die alten Adressen mit Schema und Host schreiben (Standard: Pfad und Abfrage, wie ein Import auf dieser Website sie braucht)"
+    },
+    "command:expurlfromsitemap --insecure": {
+        "en": "from-sitemap, test: do not verify TLS certificates (for test hosts with a self-signed one)",
+        "de": "from-sitemap, test: TLS-Zertifikate nicht prüfen (für Testhosts mit einem selbst signierten)"
+    },
+    "command:expurlfromsitemap --keep-duplicates": {
+        "en": "from-sitemap: keep an address listed more than once (default: once)",
+        "de": "from-sitemap: eine mehrfach aufgeführte Adresse mehrfach behalten (Standard: einmal)"
+    },
+    "command:expurlfromsitemap --limit": {
+        "en": "batches: how many of the last imports to list (default 20); from-sitemap, from-404, test: the most rows (default all)",
+        "de": "batches: wie viele der letzten Importe aufgelistet werden (Standard 20); from-sitemap, from-404, test: die meisten Zeilen (Standard alle)"
+    },
+    "command:expurlfromsitemap --only-host": {
+        "en": "from-sitemap: keep only the addresses of this host (a comma list or repeated; default the host of the sitemap address, or of its first address)",
+        "de": "from-sitemap: nur die Adressen dieses Hosts behalten (durch Kommas getrennt oder wiederholt; Standard der Host der Sitemap-Adresse oder ihrer ersten Adresse)"
+    },
+    "command:expurlfromsitemap --output-format": {
+        "en": "import, export: what the command prints, text (default) or json (the machine output exp-url/1); --format is the file's format there; from-sitemap, from-404, suggest: the format of the file written (csv, json, xlsx, ods, apache, nginx; default from --output, else csv)",
+        "de": "import, export: was der Befehl ausgibt, text (Standard) oder json (die Maschinenausgabe exp-url/1); --format ist dort das Format der Datei; from-sitemap, from-404, suggest: das Format der geschriebenen Datei (csv, json, xlsx, ods, apache, nginx; Standard nach --output, sonst csv)"
+    },
+    "command:expurlfromsitemap --timeout": {
+        "en": "from-sitemap, test: the seconds a request may take (default 15)",
+        "de": "from-sitemap, test: die Sekunden, die eine Anfrage dauern darf (Standard 15)"
+    },
+    "command:expurlsuggest": {
+        "en": "Suggest new targets for the rows of a URL map that have none, by how alike their old address is to the addresses and names of this site's pages",
+        "de": "Neue Ziele für die Zeilen einer URL-Zuordnung vorschlagen, die keines haben, danach, wie ähnlich ihre alte Adresse den Adressen und Namen der Seiten dieser Website ist"
+    },
+    "command:expurlsuggest --fill-above": {
+        "en": "suggest: write the best suggestion into new_url when it scores this much or more (0 to 100; never a tie; default: never)",
+        "de": "suggest: den besten Vorschlag in new_url schreiben, wenn er so hoch oder höher bewertet ist (0 bis 100; nie bei Gleichstand; Standard: nie)"
+    },
+    "command:expurlsuggest --format": {
+        "en": "import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo, from-sitemap, from-404, suggest, test: text (default) or json (the machine output exp-url/1)",
+        "de": "import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo, from-sitemap, from-404, suggest, test: text (Standard) oder json (die Maschinenausgabe exp-url/1)"
+    },
+    "command:expurlsuggest --min-score": {
+        "en": "suggest: the lowest score suggested (0 to 100, default 30)",
+        "de": "suggest: die niedrigste vorgeschlagene Bewertung (0 bis 100, Standard 30)"
+    },
+    "command:expurlsuggest --output-format": {
+        "en": "import, export: what the command prints, text (default) or json (the machine output exp-url/1); --format is the file's format there; from-sitemap, from-404, suggest: the format of the file written (csv, json, xlsx, ods, apache, nginx; default from --output, else csv)",
+        "de": "import, export: was der Befehl ausgibt, text (Standard) oder json (die Maschinenausgabe exp-url/1); --format ist dort das Format der Datei; from-sitemap, from-404, suggest: das Format der geschriebenen Datei (csv, json, xlsx, ods, apache, nginx; Standard nach --output, sonst csv)"
+    },
+    "command:expurlsuggest --report": {
+        "en": "import: also write the plan, row by row, to this file (.json, or .csv); suggest, test: also write every row with its suggestions or its result to this file (.json, or .csv)",
+        "de": "import: den Plan zusätzlich Zeile für Zeile in diese Datei schreiben (.json oder .csv); suggest, test: jede Zeile mit ihren Vorschlägen oder ihrem Ergebnis zusätzlich in diese Datei schreiben (.json oder .csv)"
+    },
+    "command:expurlsuggest --top": {
+        "en": "suggest: the suggestions per row (default 3)",
+        "de": "suggest: die Vorschläge je Zeile (Standard 3)"
+    },
+    "command:expurltest": {
+        "en": "Test a URL map against a running site: request every old address, follow the redirects and compare where it lands with the new_url",
+        "de": "Eine URL-Zuordnung an einer laufenden Website prüfen: jede alte Adresse aufrufen, den Weiterleitungen folgen und vergleichen, wo sie landet, mit new_url"
+    },
+    "command:expurltest --base": {
+        "en": "test: the site to test, https://www.example.com (needed)",
+        "de": "test: die zu prüfende Website, https://www.example.com (erforderlich)"
+    },
+    "command:expurltest --concurrency": {
+        "en": "test: the requests at the same time (default 8)",
+        "de": "test: die gleichzeitigen Anfragen (Standard 8)"
+    },
+    "command:expurltest --format": {
+        "en": "import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo, from-sitemap, from-404, suggest, test: text (default) or json (the machine output exp-url/1)",
+        "de": "import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo, from-sitemap, from-404, suggest, test: text (Standard) oder json (die Maschinenausgabe exp-url/1)"
+    },
+    "command:expurltest --insecure": {
+        "en": "from-sitemap, test: do not verify TLS certificates (for test hosts with a self-signed one)",
+        "de": "from-sitemap, test: TLS-Zertifikate nicht prüfen (für Testhosts mit einem selbst signierten)"
+    },
+    "command:expurltest --limit": {
+        "en": "batches: how many of the last imports to list (default 20); from-sitemap, from-404, test: the most rows (default all)",
+        "de": "batches: wie viele der letzten Importe aufgelistet werden (Standard 20); from-sitemap, from-404, test: die meisten Zeilen (Standard alle)"
+    },
+    "command:expurltest --max-redirects": {
+        "en": "test: the redirects followed before a row counts as an error (default 5)",
+        "de": "test: die Weiterleitungen, denen gefolgt wird, bevor eine Zeile als Fehler zählt (Standard 5)"
+    },
+    "command:expurltest --report": {
+        "en": "import: also write the plan, row by row, to this file (.json, or .csv); suggest, test: also write every row with its suggestions or its result to this file (.json, or .csv)",
+        "de": "import: den Plan zusätzlich Zeile für Zeile in diese Datei schreiben (.json oder .csv); suggest, test: jede Zeile mit ihren Vorschlägen oder ihrem Ergebnis zusätzlich in diese Datei schreiben (.json oder .csv)"
+    },
+    "command:expurltest --timeout": {
+        "en": "from-sitemap, test: the seconds a request may take (default 15)",
+        "de": "from-sitemap, test: die Sekunden, die eine Anfrage dauern darf (Standard 15)"
+    }
+}

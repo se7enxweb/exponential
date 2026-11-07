@@ -86123,5 +86123,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>ຂໍ້ຄວາມທີ່ວາງ</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>ໃສ່ທີ່ຢູ່ຂອງ sitemap ຫຼື ອັບໂຫຼດມັນ.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>ບໍ່ພົບທີ່ຢູ່ເກົ່າ.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>ຈາກ sitemap ເກົ່າ</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>ຈາກບັນທຶກ 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>ແນະນຳປາຍທາງ</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>ທີ່ຢູ່ຂອງເວັບໄຊເກົ່າຈາກ sitemap ຂອງມັນ (sitemap.xml, ດັດຊະນີ sitemap ຫຼື .gz) ຫຼື ຈາກລາຍການທີ່ມີໜຶ່ງທີ່ຢູ່ຕໍ່ແຖວ. ແຕ່ລະອັນຈະກາຍເປັນແຖວທີ່ມີທີ່ຢູ່ໃໝ່ເປົ່າ.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>ທີ່ຢູ່ຂອງ sitemap</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>ຫຼື ອັບໂຫຼດ sitemap ຫຼື ລາຍການ</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>ລວມທັງທີ່ຢູ່ຂອງໂຮສອື່ນ</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>ທີ່ຢູ່ທີ່ຜູ້ເຂົ້າຊົມຮ້ອງຂໍໃນເວັບໄຊນີ້ ແຕ່ບໍ່ພົບ, ລຽງຈາກທີ່ຖືກຂໍຫຼາຍທີ່ສຸດກ່ອນ. ຮູບພາບ, ສະຄຣິບ ແລະ ບອດ ບໍ່ລວມ.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>ບັນທຶກ 404 ຖືກປິດຢູ່ (site.ini [RequestLogSettings] NotFoundLog): ຈຶ່ງບໍ່ມີທີ່ຢູ່ໃໝ່.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>ຢ່າງໜ້ອຍຈຳນວນຄຳຮ້ອງຂໍນີ້</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>ໃນຫຼາຍມື້ຜ່ານມາ</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>ແຜນທີ່ທີ່ແຖວຂາດທີ່ຢູ່ໃໝ່: ແຕ່ລະແຖວຈະໄດ້ໜ້າຂອງເວັບໄຊນີ້ທີ່ທີ່ຢູ່ ຫຼື ຊື່ຄ້າຍກັບອັນເກົ່າທີ່ສຸດ.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>ຢ່າງຫຼາຍຈຳນວນແຖວນີ້</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>ທີ່ຢູ່ໃໝ່</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>ຕື່ມຄຳແນະນຳທີ່ມີຄະແນນຢ່າງໜ້ອຍ</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>ຄະແນນ 0 ເຖິງ 100 ບອກວ່າທີ່ຢູ່ເກົ່າຄ້າຍກັບໜ້າໃດໜ້າໜຶ່ງຂອງເວັບໄຊນີ້ຫຼາຍປານໃດ. ຄຳແນະນຳອື່ນຖືກລະບຸໄວ້ໃນໝາຍເຫດຂອງແຖວ.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>ດາວໂຫຼດເປັນ CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>ຍັງບໍ່ໄດ້ຂຽນຫຍັງເທື່ອ. ດາວໂຫຼດແຜນທີ່ເພື່ອເຮັດໃຫ້ສົມບູນໃນສະເປຣດຊີດ, ຫຼື ສະແດງຕົວຢ່າງ: ແຖວທີ່ບໍ່ມີທີ່ຢູ່ໃໝ່ ຈະສະແດງວ່ານຳເຂົ້າບໍ່ໄດ້.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>ອັບໂຫຼດໄຟລ໌</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>ວິທີເລີ່ມຕົ້ນ</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>ທົດສອບທີ່ຢູ່ເກົ່າ</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>ການເຂົ້າເຖິງໄຊບໍ່ມີທີ່ຢູ່ເວັບໄຊ (site.ini [SiteSettings] SiteURL), ດັ່ງນັ້ນຈຶ່ງທົດສອບທີ່ຢູ່ເກົ່າຢູ່ນີ້ບໍ່ໄດ້. ./console exp:url:test ທົດສອບກັບທີ່ຢູ່ໃດກໍໄດ້.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>ຮ້ອງຂໍແຕ່ລະທີ່ຢູ່ເກົ່າທີ່ %base, ຕິດຕາມການປ່ຽນເສັ້ນທາງ ແລະ ກວດວ່າໄປຮອດທີ່ຢູ່ໃໝ່ຫຼືບໍ່.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>ທົດສອບອີກຄັ້ງ</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>ທົດສອບ</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>ໄປຮອດ %landed, ສະຖານະຜິດ %status, ຜິດໜ້າ %target, ບໍ່ໄດ້ປ່ຽນເສັ້ນທາງ %none, ລົ້ມເຫຼວ %error, ຂ້າມ %skipped.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>ທົດສອບພຽງ %count ແຖວທຳອິດ.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>ແຖວທີ່ບໍ່ໄດ້ໄປຮອດທີ່ຢູ່ໃໝ່</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>ບໍ່ສາມາດທົດສອບທີ່ຢູ່ເກົ່າໄດ້.</translation>
+    </message>
 </context>
 </TS>

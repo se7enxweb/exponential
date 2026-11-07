@@ -86123,5 +86123,129 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>Pasted text</source>
         <translation>Goýlan tekst</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Sahypa kartasynyň salgysyny giriziň ýa-da ony ýükläň.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Hiç hili köne salgy tapylmady.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Köne sahypa kartasyndan</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 žurnalyndan</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Maksatlary teklip et</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Köne saýtyň salgylary onuň sahypa kartasyndan (sitemap.xml, sahypa kartasynyň indeksi ýa-da .gz) ýa-da her setirde bir salgyly sanawdan. Her biri boş täze salgyly bir setir bolýar.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Sahypa kartasynyň salgysy</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Ýa-da sahypa kartasyny ýa-da sanawy ýükläň</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Başga hostlaryň salgylary hem</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Myhmanlaryň bu saýtda sorap tapmadyk salgylary, iň köp soralanlary ilki. Suratlar, skriptler we botlar goşulmaýar.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 žurnaly öçürilen (site.ini [RequestLogSettings] NotFoundLog): onda täze salgy ýok.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Iň azyndan şunça sorag</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Soňky günlerde</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Setirlerinde täze salgy ýok karta: her birine bu saýtyň salgysy ýa-da ady köne salga iň ýakyn sahypalary berilýär.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Iň köp şunça setir</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Täze salgylar</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Baly iň azyndan şunça bolan teklibi dolduryň</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0-dan 100-e çenli bal köne salgynyň bu saýtyň sahypasyna näçe meňzeşdigini görkezýär. Beýleki teklipler setiriň bellikleriniň içinde sanalýar.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>CSV hökmünde ýükle</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Entek hiç zat ýazylmady. Kartany jedwelde tamamlamak üçin ýükläp alyň ýa-da öňünden görüň: täze salgysy ýok setirler import edip bolmajak hökmünde görkezilýär.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Faýl ýükle</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Başlamagyň ýollary</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Köne salgylary synag et</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Saýta girişiň saýt salgysy ýok (site.ini [SiteSettings] SiteURL), şonuň üçin köne salgylary bu ýerde synap bolmaýar. ./console exp:url:test olary islendik salga garşy synaýar.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Her köne salgyny %base boýunça soraýar, gönükdirmelerini yzarlaýar we täze salgysyna ýetýändigini barlaýar.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Ýene synag et</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Synag et</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed ýetdi, %status nädogry ýagdaý bilen, %target nädogry sahypada, %none gönükdirilmedi, %error şowsuz boldy, %skipped geçirildi.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Diňe ilkinji %count setir synaldy.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Täze salgysyna ýetmedik setirler</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Köne salgylary synap bolmady.</translation>
+    </message>
 </context>
 </TS>

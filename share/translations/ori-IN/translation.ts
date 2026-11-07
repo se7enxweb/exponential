@@ -86121,5 +86121,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>ପେଷ୍ଟ କରାଯାଇଥିବା ପାଠ୍ୟ</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>ସାଇଟମ୍ୟାପର ଠିକଣା ଦିଅନ୍ତୁ କିମ୍ବା ଏହାକୁ ଅପଲୋଡ୍ କରନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>କୌଣସି ପୁରୁଣା ଠିକଣା ମିଳିଲା ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>ପୁରୁଣା ସାଇଟମ୍ୟାପରୁ</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 ଲଗରୁ</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>ଲକ୍ଷ୍ୟ ପ୍ରସ୍ତାବ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>ପୁରୁଣା ସାଇଟର ଠିକଣାଗୁଡ଼ିକ ଏହାର ସାଇଟମ୍ୟାପରୁ (sitemap.xml, ଏକ ସାଇଟମ୍ୟାପ୍ ସୂଚୀ କିମ୍ବା .gz) ଅଥବା ପ୍ରତି ଧାଡ଼ିରେ ଗୋଟିଏ ଠିକଣା ଥିବା ତାଲିକାରୁ ନିଆଯାଏ। ପ୍ରତ୍ୟେକ ଠିକଣା ଖାଲି ନୂଆ ଠିକଣା ସହ ଗୋଟିଏ ଧାଡ଼ି ହୁଏ।</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>ସାଇଟମ୍ୟାପର ଠିକଣା</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>କିମ୍ବା ସାଇଟମ୍ୟାପ୍ ବା ତାଲିକା ଅପଲୋଡ୍ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>ଅନ୍ୟ ହୋଷ୍ଟର ଠିକଣା ମଧ୍ୟ</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>ଏହି ସାଇଟରେ ଭ୍ରମଣକାରୀମାନେ ମାଗିଥିବା ଓ ମିଳି ନଥିବା ଠିକଣାଗୁଡ଼ିକ, ସବୁଠାରୁ ଅଧିକ ମାଗାଯାଇଥିବା ପ୍ରଥମେ। ଛବି, ସ୍କ୍ରିପ୍ଟ ଓ ବଟ୍ ବାଦ୍ ଦିଆଯାଇଛି।</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 ଲଗ୍ ବନ୍ଦ ଅଛି (site.ini [RequestLogSettings] NotFoundLog): ଏଥିରେ ନୂଆ ଠିକଣା ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>ଅତିକମରେ ଏତିକି ଅନୁରୋଧ</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>ଗତ କେତେ ଦିନରେ</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>ଯେଉଁ ମ୍ୟାପର ଧାଡ଼ିରେ ନୂଆ ଠିକଣା ନାହିଁ: ପ୍ରତ୍ୟେକ ଧାଡ଼ି ପାଇଁ ଏହି ସାଇଟର ସେହି ପୃଷ୍ଠା ମିଳେ ଯାହାର ଠିକଣା ବା ନାମ ପୁରୁଣାଟି ସହ ସବୁଠୁ ଅଧିକ ମିଳେ।</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>ଅଧିକରୁ ଅଧିକ ଏତିକି ଧାଡ଼ି</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>ନୂଆ ଠିକଣା</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>ଅତିକମରେ ଏତିକି ସ୍କୋର ଥିବା ପ୍ରସ୍ତାବ ଭରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0 ରୁ 100 ସ୍କୋର ଦର୍ଶାଏ ପୁରୁଣା ଠିକଣା ଏହି ସାଇଟର ଗୋଟିଏ ପୃଷ୍ଠା ସହ କେତେ ମିଳେ। ଅନ୍ୟ ପ୍ରସ୍ତାବଗୁଡ଼ିକ ଧାଡ଼ିର ଟିପ୍ପଣୀରେ ତାଲିକାଭୁକ୍ତ।</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>CSV ଭାବରେ ଡାଉନଲୋଡ୍ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>ଏପର୍ଯ୍ୟନ୍ତ କିଛି ଲେଖାଯାଇନାହିଁ। ମ୍ୟାପକୁ ସ୍ପ୍ରେଡ୍‌ସିଟ୍‌ରେ ସମ୍ପୂର୍ଣ୍ଣ କରିବାକୁ ଡାଉନଲୋଡ୍ କରନ୍ତୁ, କିମ୍ବା ପୂର୍ବାବଲୋକନ କରନ୍ତୁ: ନୂଆ ଠିକଣା ବିନା ଧାଡ଼ିଗୁଡ଼ିକ ଆମଦାନୀଯୋଗ୍ୟ ନୁହେଁ ବୋଲି ଦେଖାଯାଏ।</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>ଏକ ଫାଇଲ୍ ଅପଲୋଡ୍ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>ଆରମ୍ଭ କରିବାର ଉପାୟ</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>ପୁରୁଣା ଠିକଣା ପରୀକ୍ଷା କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>ସାଇଟ୍ ଆକ୍ସେସ୍‌ର ସାଇଟ୍ ଠିକଣା ନାହିଁ (site.ini [SiteSettings] SiteURL), ତେଣୁ ପୁରୁଣା ଠିକଣା ଏଠାରେ ପରୀକ୍ଷା ହୋଇପାରିବ ନାହିଁ। ./console exp:url:test ଯେକୌଣସି ଠିକଣାରେ ସେଗୁଡ଼ିକୁ ପରୀକ୍ଷା କରେ।</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>%base ରେ ପ୍ରତ୍ୟେକ ପୁରୁଣା ଠିକଣାକୁ ଅନୁରୋଧ କରେ, ଏହାର ରିଡାଇରେକ୍ଟ ଅନୁସରଣ କରେ ଓ ନୂଆ ଠିକଣାରେ ପହଞ୍ଚିଲା କି ନାହିଁ ଯାଞ୍ଚ କରେ।</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>ପୁଣି ପରୀକ୍ଷା କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>ପରୀକ୍ଷା</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed ପହଞ୍ଚିଲା, %status ଭୁଲ୍ ସ୍ଥିତି ସହ, %target ଭୁଲ୍ ପୃଷ୍ଠାରେ, %none ରିଡାଇରେକ୍ଟ ହୋଇନାହିଁ, %error ବିଫଳ, %skipped ଛାଡ଼ିଦିଆଗଲା।</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>କେବଳ ପ୍ରଥମ %count ଧାଡ଼ି ପରୀକ୍ଷା ହେଲା।</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>ଯେଉଁ ଧାଡ଼ି ନୂଆ ଠିକଣାରେ ପହଞ୍ଚିଲା ନାହିଁ</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>ପୁରୁଣା ଠିକଣା ପରୀକ୍ଷା କରାଯାଇପାରିଲା ନାହିଁ।</translation>
+    </message>
 </context>
 </TS>

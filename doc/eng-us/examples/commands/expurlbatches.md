@@ -34,8 +34,8 @@ the counts, and whether it was undone (exp:url:undo).
 
 | Option | Value | Help |
 |---|---|---|
-| `--limit` | required | How many of the last imports to list (default 20) |
-| `--format` | required | import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo: text (default) or json (the machine output exp-url/1) |
+| `--limit` | required | batches: how many of the last imports to list (default 20); from-sitemap, from-404, test: the most rows (default all) |
+| `--format` | required | import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo, from-sitemap, from-404, suggest, test: text (default) or json (the machine output exp-url/1) |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

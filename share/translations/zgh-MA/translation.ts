@@ -86123,5 +86123,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>ⴰⴹⵔⵉⵚ ⵉⵜⵜⵓⵙⵏⵜⵉⵏ</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>ⴱⴰⵢⵏ ⵜⴰⵏⵙⴰ ⵏ ⵜⵉⴼⵍⵡⵉⵜ ⵏ ⵓⵙⵎⵍ ⵏⵖ ⵙⵙⵓⵖⵍ ⴰⵙ.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>ⵓⵔ ⵜⵜⵓⴼⴰ ⴽⵔⴰ ⵏ ⵜⴰⵏⵙⴰ ⵜⴰⵇⴱⵓⵔⵜ.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>ⵙ ⵜⴼⵍⵡⵉⵜ ⵏ ⵓⵙⵎⵍ ⴰⵇⴱⵓⵔ</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>ⵙ ⵓⵙⴽⵍ ⵏ 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>ⵙⵙⵓⵖⵎⵏ ⵉⵎⴰⵏⴰⵏ</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>ⵜⵉⵏⵙⴰⵡⵉⵏ ⵏ ⵓⵙⵎⵍ ⴰⵇⴱⵓⵔ ⵙ ⵜⴼⵍⵡⵉⵜ ⵏⵏⵙ (sitemap.xml, ⴰⵙⵏⵏⵉ ⵏ ⵜⴼⵍⵡⵉⵡⵉⵏ ⵏ ⵓⵙⵎⵍ ⵏⵖ .gz) ⵏⵖ ⵙ ⵜⵍⴳⴰⵎⵜ ⵢⵓⵏ ⵜⴰⵏⵙⴰ ⵉ ⵢⴰⵏ ⵓⵣⵔⵉⴳ. ⴽⵓⵍⵍⵓ ⵢⴰⵏ ⵢⴰⵍⴰ ⵢⴰⵏ ⵓⵣⵔⵉⴳ ⵙ ⵜⴰⵏⵙⴰ ⵜⴰⵎⴰⵢⵏⵓⵜ ⵜⴰⴼⵔⴰⵔⵜ.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>ⵜⴰⵏⵙⴰ ⵏ ⵜⴼⵍⵡⵉⵜ ⵏ ⵓⵙⵎⵍ</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>ⵏⵖ ⵙⵙⵓⵖⵍ ⵜⴼⵍⵡⵉⵜ ⵏ ⵓⵙⵎⵍ ⵏⵖ ⵜⵍⴳⴰⵎⵜ</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>ⴰⴽⴽⵯ ⵜⵉⵏⵙⴰⵡⵉⵏ ⵏ ⵉⵎⵙⴰⵡⴰⵏ ⵢⴰⴹⵏⵉⵏ</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>ⵜⵉⵏⵙⴰⵡⵉⵏ ⵏ ⵉⵎⵣⵔⵉⵢⵏ ⵉ ⵙⵙⵓⵜⵔⵏ ⴳ ⵓⵙⵎⵍ ⴰⴷ ⵓⵔ ⵜⵜⵓⴼⴰⵏ, ⵉⵎⵣⵡⵓⵔⵏ ⵉⴳⴰⵏ ⵉⵎⵓⵜⴰⵔⵏ ⴳ ⵓⵙⵙⵓⵜⵔ. ⵜⵉⵡⵍⴰⴼⵉⵏ, ⵉⵙⴽⵔⵉⴱⵜⵏ ⴷ ⵉⴱⵓⵜⵏ ⵓⵔ ⵜⵜⵓⵙⵎⵔⵙⵏ.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>ⴰⵙⴽⵍ ⵏ 404 ⵉⵜⵜⵓⵔⵣⵎ (site.ini [RequestLogSettings] NotFoundLog): ⵓⵔ ⵉⵍⵍⵉ ⴽⵔⴰ ⵏ ⵜⵉⵏⵙⴰⵡⵉⵏ ⵜⵉⵎⴰⵢⵏⵓⵜⵉⵏ.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>ⵜⴰⵎⴰⵜⴰⵔⵜ ⵏ ⵜⵓⵜⵔⴰⵡⵉⵏ</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>ⴳ ⵡⵓⵙⵙⴰⵏ ⵏ ⵓⴳⵯⴰⵙ</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>ⵜⴼⵍⵡⵉⵜ ⵏ ⵉⵣⵔⵉⴳⵏ ⵓⵔ ⵙⵙⵉⵏⵏ ⵜⴰⵏⵙⴰ ⵜⴰⵎⴰⵢⵏⵓⵜ: ⴽⵓⵍⵍⵓ ⵢⴰⵏ ⵢⴰⵔⴰ ⵜⵉⵙⵏⴰⵡⵉⵏ ⵏ ⵓⵙⵎⵍ ⴰⴷ ⵉ ⵜⵏⵙⴰ ⵏⵖ ⵉⵙⵎ ⵏⵏⵙⵏ ⵉⵎⴰⵢⵏⵓⵜ ⵉ ⵜⵉⵏ ⵜⴰⵇⴱⵓⵔⵜ.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>ⴰⴳⵯⵎⵎⴰⴹ ⵏ ⵉⵣⵔⵉⴳⵏ</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>ⵜⴰⵏⵙⵉⵡⵉⵏ ⵜⵉⵎⴰⵢⵏⵓⵜⵉⵏ</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>ⵙⵎⵍⵍⵓ ⴰⵙⵙⵓⵖⵎ ⵉ ⵉⵍⵍⴰⵏ ⵜⵉⵎⵓⵔⵜ ⵏⵏⵙ ⵜⴰⵎⴰⵜⴰⵔⵜ</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>ⵜⵉⵎⵓⵔⵜ ⵙⴳ 0 ⵖⵔ 100 ⵜⵙⵙⵏⵉⵜⵜ ⵎⴰⵙ ⵜⵎⵙⴰⵡⴰ ⵜⴰⵏⵙⴰ ⵜⴰⵇⴱⵓⵔⵜ ⴷ ⵜⴰⵙⵏⴰ ⵏ ⵓⵙⵎⵍ ⴰⴷ. ⵉⵙⵙⵓⵖⵎⵏ ⵢⴰⴹⵏⵉⵏ ⵜⵜⵓⵙⵎⵍⴰⵏ ⴳ ⵉⵏⵎⵎⵍⴰⵢⵏ ⵏ ⵓⵣⵔⵉⴳ.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>ⵙⵙⴽⴰⵔ ⵙ CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>ⵓⵔⴰⴷ ⵜⵜⵓⵔⵔⵉⵙ ⵓⵍⴰ ⵎⴰⵙⵙⴰ. ⵙⵙⴽⴰⵔ ⵜⴰⴼⵍⵡⵉⵜ ⴰⴷ ⵜⵙⵎⴰⵍ ⴳ ⵓⴱⴰⵔⵔⴰⵔ ⵏⵖ ⵙⴽⵏ ⴰⵙⴽⴰⵏ: ⵉⵣⵔⵉⴳⵏ ⵓⵔ ⵉⵍⵍⵉⵏ ⵙ ⵜⴰⵏⵙⴰ ⵜⴰⵎⴰⵢⵏⵓⵜ ⵜⵜⵓⵙⴽⴰⵏⵏ ⵎⵉ ⵓⵔ ⵜⵜⵓⵙⴽⵛⵎⵏⵜ.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>ⵙⵙⵓⵖⵍ ⴰⴼⴰⵢⵍⵓ</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>ⵜⵉⵖⵔⵉⵡⵉⵏ ⵏ ⵓⴱⴷⴰⵔ</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>ⴰⵔⵎ ⵜⵉⵏⵙⴰⵡⵉⵏ ⵜⵉⵇⴱⵓⵔⵉⵏ</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>ⴰⴽⵛⵛⵓⵎ ⵖⵔ ⵓⵙⵎⵍ ⵓⵔ ⵉⵍⵍⵉ ⵙ ⵜⴰⵏⵙⴰ ⵏ ⵓⵙⵎⵍ (site.ini [SiteSettings] SiteURL), ⴰⵎⵎⴰ ⵜⵉⵏⵙⴰⵡⵉⵏ ⵜⵉⵇⴱⵓⵔⵉⵏ ⵓⵔ ⵜⵜⵓⴷⵓⵍⵏ ⴰⴷ ⵜⵜⵓⵔⵎⵏ ⴷⴰⵖ. ./console exp:url:test ⵜⵜⵔⵎⵜ ⵜⵉⵏⵙⴰⵡⵉⵏ ⵙ ⵜⴰⵏⵙⴰ ⵉⴳⴰⵏ.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>ⵜⵙⵙⵓⵜⵔ ⴽⵓⵍⵍⵓ ⵜⴰⵏⵙⴰ ⵜⴰⵇⴱⵓⵔⵜ ⴳ %base, ⵜⴹⴼⵔ ⵉⵙⵏⴼⵍⵏ ⵏⵏⵙ ⴷ ⵜⵙⵙⵏⵉⵜⵜ ⵎⴰⵙ ⵜⵍⵍⴰ ⵜⵡⵍⵍⴰ ⵖⵔ ⵜⴰⵏⵙⴰ ⵜⴰⵎⴰⵢⵏⵓⵜ.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>ⴰⵔⵎ ⴰⵙⵙⵏ</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>ⴰⵔⵎ</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed ⵉⵡⵙⵉⵏ, %status ⵙ ⵜⴰⴷⴷⴰⵔⵜ ⵓⵔ ⵉⵣⴷⵉⵏ, %target ⵖⵔ ⵜⴰⵙⵏⴰ ⵓⵔ ⵉⵣⴷⵉⵏ, %none ⵓⵔ ⵜⵜⵓⵙⵏⴼⵍⵏ, %error ⵓⵔ ⵉⵙⵙⵓⴼⵖ, %skipped ⵜⵜⵓⴼⵜⵜⵏ.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>ⵉⵣⵔⵉⴳⵏ ⵉⵎⵣⵡⵓⵔⵏ %count ⴰⵎⴽⵔ ⵓⵔⴰⵏ ⵜⵜⵓⵔⵎⵏ.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>ⵉⵣⵔⵉⴳⵏ ⵉ ⵓⵔ ⵉⵡⵙⵉⵏ ⵖⵔ ⵜⵏⵙⴰ ⵜⵉⵎⴰⵢⵏⵓⵜ ⵏⵏⵙⵏ</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>ⵜⵉⵏⵙⴰⵡⵉⵏ ⵜⵉⵇⴱⵓⵔⵉⵏ ⵓⵔ ⵜⵜⵓⵔⵎⵏ.</translation>
+    </message>
 </context>
 </TS>

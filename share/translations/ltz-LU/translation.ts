@@ -86123,5 +86123,129 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>Pasted text</source>
         <translation>Agefügten Text</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Gitt d'Adress vum Sitemap un oder luet en erop.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Et gouf keng al Adress fonnt.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Vum ale Sitemap</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Vum 404-Log</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Ziler virschloen</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>D'Adresse vun der aler Websäit aus hirem Sitemap (sitemap.xml, engem Sitemap-Index oder .gz) oder aus enger Lëscht mat enger Adress pro Zeil. All eenzel gëtt eng Zeil mat eidel neier Adress.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Adress vum Sitemap</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Oder luet de Sitemap oder d'Lëscht erop</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Och d'Adresse vun anere Hosten</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>D'Adressen, déi Besucher op dëser Websäit ugefrot an net fonnt hunn, déi meescht ugefrote fir ze éischt. Biller, Skripter a Bots ginn net gewisen.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>D'404-Log ass ausgeschalt (site.ini [RequestLogSettings] NotFoundLog): et huet keng nei Adressen.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Op d'mannst esou vill Ufroen</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>An de leschten Deeg</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Eng Kaart, där hir Zeilen eng nei Adress feelt: jiddereng kritt d'Säite vun dëser Websäit, där hir Adress oder Numm deem aale am ähnlechsten ass.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Héchstens esou vill Zeilen</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Nei Adressen</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Eng Virschlag ausfëllen, dee mindestens dëse Score huet</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>E Score vun 0 bis 100 seet, wéi ähnlech déi al Adress enger Säit vun dëser Websäit ass. D'aner Virschléi stinn an den Notize vun der Zeil.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Als CSV eroflueden</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Et ass nach näischt geschriwwen. Luet d'Kaart erof, fir se an engem Tabellekalkulatiounsprogramm ze vervollstännegen, oder kuckt se virun: Zeilen ouni nei Adress ginn als net importéierbar ugewisen.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Eng Datei eroplueden</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Weeër fir unzefänken</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>D'ale Adresse testen</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>De Site-Zougang huet keng Websäit-Adress (site.ini [SiteSettings] SiteURL), dofir kënnen d'ale Adresse hei net getest ginn. ./console exp:url:test testt se géint all Adress.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Freet all al Adress op %base un, follegt hire Viruleedungen a kontrolléiert, ob se op hirer neier Adress landen.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Nach eng Kéier testen</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Testen</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed ukomm, %status mam falsche Status, %target op der falscher Säit, %none net viruleet, %error feelgeschloen, %skipped iwwersprong.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Nëmmen déi éischt %count Zeile goufe getest.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>D'Zeilen, déi net op hirer neier Adress ukomm sinn</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>D'ale Adresse konnte net getest ginn.</translation>
+    </message>
 </context>
 </TS>

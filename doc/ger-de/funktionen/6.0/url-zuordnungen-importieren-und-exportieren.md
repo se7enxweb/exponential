@@ -25,6 +25,9 @@ angelegt werden, und einen Export gab es nicht.
 - **Leitet alte Adressen mit Abfrage weiter**, etwa `/index.php?id=12` eines alten CMS, auf die neue Seite.
 - **Lässt vorübergehende Weiterleitungen vorübergehend** (302, 303, 307), damit Suchmaschinen die alte Adresse
   behalten, wo das gemeint ist.
+- **Hilft beim Aufbau der Zuordnung**: beginnt sie mit der Sitemap der alten Website oder mit den Adressen, die
+  Besucher nicht finden (dem 404-Protokoll), schlägt für jede alte Adresse die neue Seite vor und prüft die alten
+  Adressen nach dem Import auf der Website.
 
 Das geht in der Administration (auf den Seiten URL-Übersetzer und URL-Platzhalter) und auf der Kommandozeile.
 
@@ -130,6 +133,25 @@ einem großen Import, um die Zuordnung in einer Tabelle zu bearbeiten und wieder
 Weiterleitungen dem Webserver zu übergeben: Die Apache- und nginx-Exporte sind Regeln, die der Server selbst
 beantwortet, ohne PHP.
 
+## Helfer für eine Migration
+
+Vier Helfer bauen und prüfen eine Zuordnung, auf der Kommandozeile und als Reiter der Importseite. Keiner von ihnen
+importiert etwas; sie schreiben eine Zuordnung, die Sie bearbeiten und importieren können.
+
+| Helfer | Reiter der Importseite | Was er liefert |
+|---|---|---|
+| `exp:url:from-sitemap` | **Aus der alten Sitemap** | Jede Adresse der Sitemap der alten Website (auch eines Sitemap-Index und `.gz`) oder einer Crawl-Liste, einmal, als Zeile mit leerer neuer Adresse. Nur der eigene Host der Sitemap, außer mit `--any-host` (**Auch die Adressen anderer Hosts**). |
+| `exp:url:from-404` | **Aus dem 404-Protokoll** | Die Adressen, die 404 oder 410 geantwortet haben, die häufigsten zuerst, mit der Zahl der Aufrufe im Hinweis. Dateien wie Bilder und Bots bleiben außen vor. `--min-hits`, `--since`; `--log` liest stattdessen ein Zugriffsprotokoll eines Webservers. |
+| `exp:url:suggest` | **Ziele vorschlagen** | Für jede Zeile ohne neue Adresse die Seiten der Website, die der alten Adresse am ähnlichsten sind, bewertet mit 0 bis 100; `--fill-above=85` trägt die beste in die Zeile ein, die übrigen kommen in ihren Hinweis. |
+| `exp:url:test` | **Die alten Adressen prüfen**, nach einem Import | Fragt jede alte Adresse auf einer Website an, folgt den Weiterleitungen und meldet jede Zeile als landed, wrong-status, wrong-target, not-redirected oder error; Exit-Code 1, wenn eine Zeile nicht angekommen ist. |
+
+Das eigene 404-Protokoll von Exponential (`var/log/404.log`, `site.ini [RequestLogSettings] NotFoundLog`,
+standardmäßig an) verbirgt die Werte einer Abfrage als `***`. `exp:url:from-404` liefert daher nur Pfade; alte
+Adressen mit Abfrage kommen aus der Sitemap oder aus einem Zugriffsprotokoll, das `--log` liest. Der Reiter **Aus der
+alten Sitemap** ruft nur Adressen öffentlicher Hosts ab, nie eine aus dem eigenen Netz des Servers. In der
+Administration prüft **Prüfen** die ersten 500 alten Adressen unter der Website-Adresse des Siteaccess des Imports
+(`site.ini [SiteSettings] SiteURL`); `exp:url:test --base=<adresse>` prüft jede Website, auch eine Staging-Website.
+
 ## In der Administration
 
 Auf den Seiten **URL-Übersetzer** und **URL-Platzhalter** (Reiter **Setup**) führen die Schaltflächen
@@ -137,7 +159,7 @@ Auf den Seiten **URL-Übersetzer** und **URL-Platzhalter** (Reiter **Setup**) f�
 
 | Seite | Adresse | Was sie tut |
 |---|---|---|
-| Importieren | `/content/urlimport` | Eine Datei hochladen oder Zeilen einfügen, Siteaccess und Sprache reiner Pfade wählen und was mit bestehenden Einträgen geschieht, alte Hosts zuordnen; dann die Vorschau mit einem Filter je Zustand, einem Haken je Zeile, **Probelauf**, dem Plan als CSV oder JSON und **Importieren** |
+| Importieren | `/content/urlimport` | Reiter **Eine Datei hochladen**, **Aus der alten Sitemap**, **Aus dem 404-Protokoll** und **Ziele vorschlagen**. Eine Datei hochladen oder Zeilen einfügen, Siteaccess und Sprache reiner Pfade wählen und was mit bestehenden Einträgen geschieht, alte Hosts zuordnen; dann die Vorschau mit einem Filter je Zustand, einem Haken je Zeile, **Probelauf**, dem Plan als CSV oder JSON, **Importieren** und nach dem Import **Die alten Adressen prüfen** |
 | Importhistorie | `/content/urlimporthistory` | Jeder Import mit wer, wann, Datei und Zahlen; die Einträge eines Imports; **Import rückgängig machen** |
 | Exportieren | `/content/urlexport` | Format, Umfang, Siteaccess und Sprache; lädt die Datei herunter |
 | Weiterleitungen | `/content/urlredirects` | Die Weiterleitungen mit Abfrage oder Status, mit dem Entfernen einer oder der angehakten |
@@ -164,6 +186,10 @@ jedes Rückgängigmachen steht im Audit-Protokoll (`content.urlalias.import`, `c
 | [`exp:url:export`](../../beispiele/befehle/expurlexport.md) | Die URL-Zuordnung in eine Datei oder auf die Standardausgabe schreiben |
 | [`exp:url:batches`](../../beispiele/befehle/expurlbatches.md) | Die Importe auflisten |
 | [`exp:url:undo`](../../beispiele/befehle/expurlundo.md) | Einen Import rückgängig machen |
+| [`exp:url:from-sitemap`](../../beispiele/befehle/expurlfromsitemap.md) | Eine Zuordnung mit einer alten Sitemap (auch einem Sitemap-Index, `.gz`) oder einer Crawl-Liste beginnen |
+| [`exp:url:from-404`](../../beispiele/befehle/expurlfrom404.md) | Eine Zuordnung mit den Adressen beginnen, die 404 geantwortet haben, die häufigsten zuerst |
+| [`exp:url:suggest`](../../beispiele/befehle/expurlsuggest.md) | Neue Ziele für die Zeilen ohne eines vorschlagen, bewertet mit 0 bis 100 |
+| [`exp:url:test`](../../beispiele/befehle/expurltest.md) | Jede alte Adresse auf einer Website anfragen und prüfen, dass sie auf ihrer neuen Adresse ankommt |
 
 ```bash
 ./console exp:url:import alte-site.csv -s site --dry-run --report=var/tmp/plan.csv
@@ -173,6 +199,10 @@ jedes Rückgängigmachen steht im Audit-Protokoll (`content.urlalias.import`, `c
 ./console exp:url:undo 3
 ./console exp:url:export --output=var/tmp/url-map.xlsx
 ./console exp:url:export --kind=wildcard,redirect --format=nginx
+./console exp:url:from-sitemap https://www.alte-seite.de/sitemap.xml --output=var/tmp/old-site.csv
+./console exp:url:from-404 -s site --min-hits=3 --since=30d --output=var/tmp/not-found.csv
+./console exp:url:suggest var/tmp/old-site.csv -s site --fill-above=85 --output=var/tmp/map.csv
+./console exp:url:test var/tmp/map.csv --base=https://www.example.com -s site
 ```
 
 Reine Pfade gehören zum Siteaccess, der mit `-s` angegeben ist (sonst zum Standard-Siteaccess). Mit

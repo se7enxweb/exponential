@@ -86123,5 +86123,129 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>Pasted text</source>
         <translation>Gi-paste nga teksto</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Ihatag ang address sa sitemap o i-upload kini.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Walay daang address nga nakit-an.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Gikan sa daang sitemap</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Gikan sa 404 log</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Susiha ang mga target</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Ang mga address sa daang site gikan sa sitemap niini (sitemap.xml, usa ka sitemap index o .gz) o gikan sa lista nga usa ka address kada linya. Ang matag usa mahimong laray nga walay sulod ang bag-ong address.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Address sa sitemap</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>O i-upload ang sitemap o ang lista</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Apil ang mga address sa ubang host</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Ang mga address nga gihangyo sa mga bisita niining site ug wala nakit-an, nga una ang labing gihangyo. Gibiyaan ang mga hulagway, script ug bot.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Gipalong ang 404 log (site.ini [RequestLogSettings] NotFoundLog): wala kini bag-ong address.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Labing menos kini nga kadaghan sa mga hangyo</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Sa miaging mga adlaw</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Usa ka map nga ang mga laray walay bag-ong address: ang matag usa makakuha sa mga panid niining site nga ang address o ngalan labing susama sa daan.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Labing daghan kini nga kadaghan sa mga laray</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Mga bag-ong address</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Pun-a ang suggestion nga adunay score nga labing menos</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Ang score gikan 0 hangtod 100 nagsulti kung unsa ka susama ang daang address sa usa ka panid niining site. Ang ubang mga suggestion gilista sa mga nota sa laray.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>I-download isip CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Wala pay nasulat. I-download ang map aron kumpletuhon sa usa ka spreadsheet, o tan-awa ang preview: ang mga laray nga walay bag-ong address gipakita nga dili ma-import.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>I-upload ang usa ka file</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Mga paagi sa pagsugod</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Sulayi ang daang mga address</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Ang access sa site walay address sa site (site.ini [SiteSettings] SiteURL), busa dili masulayan dinhi ang daang mga address. Gisulayan sa ./console exp:url:test sila batok sa bisan unsang address.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Nag-hangyo sa matag daang address sa %base, nagsunod sa mga redirect niini ug nagsusi kung moabot ba kini sa bag-ong address niini.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Sulayi pag-usab</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Pagsulay</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed miabot, %status nga sayop ang status, %target sa sayop nga panid, %none wala ma-redirect, %error napakyas, %skipped gilaktawan.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Ang unang %count ka laray lang ang nasulayan.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Ang mga laray nga wala moabot sa ilang bag-ong address</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Ang daang mga address wala masulayi.</translation>
+    </message>
 </context>
 </TS>

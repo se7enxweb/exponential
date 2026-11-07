@@ -86123,5 +86123,129 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>Pasted text</source>
         <translation>Text encollà</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Inditgai l'adressa da la sitemap u chargiai si si.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Naginas veglias adressas n'èn vegnidas chattadas.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Da la veglia sitemap</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Dal log 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Proponer finamiras</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Las adressas da la veglia website or da sia sitemap (sitemap.xml, in index da sitemaps u .gz) u or d'ina glista cun ina adressa per lingia. Mintgina daventa ina lingia cun ina nova adressa vida.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Adressa da la sitemap</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>U chargiai si la sitemap u la glista</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Era las adressas d'auters hosts</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Las adressas che las visitadras ed ils visitaders han empruvà da chattar sin questa website e na chattavan betg, las pli dumandadas l'emprim. Maletgs, scripts e bots èn exclus.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Il log 404 è deactivà (site.ini [RequestLogSettings] NotFoundLog): el n'ha naginas novas adressas.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Almain uschè blers dumondas</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Ils ultims dis</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Ina map cun lingias senza nova adressa: mintgina survegn las paginas da questa website, da las qualas l'adressa u il num è il pli sumegliant a la veglia.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Maximalmain uschè blera lingias</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Novas adressas</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Endatar ina proposta cun in score da almain</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>In score da 0 fin 100 di quant sumegliant che la veglia adressa è ad ina pagina da questa website. Las autras propostas èn endiquadas en las annotaziuns da la lingia.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Telechargiar sco CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Anc nagut n'è vegnì scrit. Telechargiai la map per la cumplettar en in chalcular tabellar u guardai la prevista: las lingias senza nova adressa vegnan mussadas sco betg importablas.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Chargiar si in file</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Moduls per cumenzar</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Testar las veglias adressas</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>L'access a la website n'ha naginas adressas da website (site.ini [SiteSettings] SiteURL), perquai na pon las veglias adressas betg vegnir testadas qua. ./console exp:url:test las testa sin mintga adressa.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Dumonda mintga veglia adressa sin %base, suonda ses renviaments e controllescha, sch'ella arriva a la nova adressa.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Testar danovamain</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Testar</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed èn arrivadas, %status cun status fauss, %target sin la pagina sbagliada, %none senza renviament, %error faltadas, %skipped sursautadas.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Be las emprimas %count lingias èn vegnidas testadas.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Las lingias che n'èn betg arrivadas a lur nova adressa</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Las veglias adressas n'han betg pudì vegnir testadas.</translation>
+    </message>
 </context>
 </TS>

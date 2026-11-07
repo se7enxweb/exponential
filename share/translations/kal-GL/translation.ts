@@ -86153,5 +86153,129 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>Pasted text</source>
         <translation>Allaaserisaq ikkunneqartoq</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Nittartakkap kaartiata najugaqarfia nalunaarsuutigiuk imaluunniit ilanngutiguk.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Najugaqarfik pisoqaaq nassaarineqanngilaq.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Nittartakkap kaartiaanit pisoqaaneersoq</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404-imik nalunaarsuutinit</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Anguniagassanik siunnersuteqarit</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Nittartakkap pisoqaap najugaqarfii kaartiaaneersut (sitemap.xml, kaartiat allattorsiaat imaluunniit .gz) imaluunniit allattorsiaaneersut linjimut ataatsimut najugaqarfimmik ataaseqartoq. Ataasiakkaat linjinngortinneqartarput najugaqarfimmik nutaamik imaqanngitsumik.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Nittartakkap kaartiata najugaqarfia</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Imaluunniit nittartakkap kaartia allattorsiaaluunniit ilanngutiguk</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Hostit allat najugaqarfii ilanngullugit</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Najugaqarfiit nittartakkami una takuuffigisat qinnuigineqarsimasut nassaarineqarsimanngitsullu, amerlanerpaatut qinnuigineqartut siulliullugit. Assit, scriptit botillu ilanngunneqanngillat.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404-p nalunaarsuutaa matoqqasoq (site.ini [RequestLogSettings] NotFoundLog): najugaqarfinnik nutaanik imaqanngilaq.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Minnerpaamik qinnuteqarnerit taama amerlatigisut</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Ullut kingullerni</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Linjeqarfik najugaqarfimmik nutaamik amigaateqartoq: ataasiakkaat nittartakkap una qupperneqarfii najugaqarfimmikkut ateqarfimmikkulluunniit pisoqaaq assingunerpaat pissarsiarineqartarput.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Maksimalimik linjet taama amerlatigisut</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Najugaqarfiit nutaat</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Siunnersuut minnerpaamik taama score-iusoq ilanngullugu</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0-miit 100-mut score najugaqarfik pisoqaaq nittartakkap una qupperneqarfianut qanoq assigiinnersoq takutippaa. Siunnersuutit allat linjip maluginiagassaani allattorsimapput.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>CSV-tut nuussiguk</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Suli sumik allanneqanngilaq. Kaartia nuussiguk spreadsheet-imi naammassiumallugu, imaluunniit sioqqullugu takuuk: linjet najugaqarfimmik nutaamik amigaateqartut isersinneqarsinnaanngitsutut takutinneqarput.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Fiilimik ilanngutiguk</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Aallartinnermi periaatsit</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Najugaqarfiit pisoqaat misissuiguk</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Nittartakkamut isaariaqarfik nittartakkap najugaqarfeqanngilaq (site.ini [SiteSettings] SiteURL), taamaammat najugaqarfiit pisoqaat uani misissorneqarsinnaanngillat. ./console exp:url:test taakku najugaqarfiit tamaasa misissorpai.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Najugaqarfik pisoqaaq tamaasa %base-mi qinnuigaa, allamut ingerlatsinerit malinnaavigaa, najugaqarfimminullu nutaamut tikinnersoq misissuivoq.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Misissuiguk uteqqillugu</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Misissuineq</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed tikikkut, %status ajortumik inissisimanermik, %target qupperneqarfimmi ajortumi, %none allamut ingerlanneqanngitsut, %error ajorsimasut, %skipped qimaanneqarsimasut.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Linjet siulliit %count kisimik misissorneqarput.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Linjet najugaqarfimminut nutaamut tikinngitsut</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Najugaqarfiit pisoqaat misissorneqarsinnaanngillat.</translation>
+    </message>
 </context>
 </TS>

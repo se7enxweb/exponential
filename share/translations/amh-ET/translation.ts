@@ -86121,5 +86121,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>የተለጠፈ ጽሑፍ</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>የጣቢያ ካርታውን አድራሻ ይስጡ ወይም ይስቀሉት።</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>ምንም አሮጌ አድራሻ አልተገኘም።</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>ከአሮጌው የጣቢያ ካርታ</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>ከ404 መዝገብ</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>መድረሻዎችን ጠቁም</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>የአሮጌው ጣቢያ አድራሻዎች ከጣቢያ ካርታው (sitemap.xml፣ የጣቢያ ካርታ ማውጫ ወይም .gz) ወይም በአንድ መስመር አንድ አድራሻ ካለው ዝርዝር። እያንዳንዳቸው ባዶ አዲስ አድራሻ ያለው ረድፍ ይሆናሉ።</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>የጣቢያ ካርታው አድራሻ</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>ወይም የጣቢያ ካርታውን ወይም ዝርዝሩን ይስቀሉ</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>እንዲሁም የሌሎች አስተናጋጆች አድራሻዎች</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>ጎብኚዎች በዚህ ጣቢያ ላይ የጠየቋቸው ግን ያልተገኙ አድራሻዎች፣ በብዛት የተጠየቁት መጀመሪያ። ምስሎች፣ ስክሪፕቶች እና ቦቶች አይካተቱም።</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>የ404 መዝገብ ጠፍቷል (site.ini [RequestLogSettings] NotFoundLog)፦ ምንም አዲስ አድራሻ የለውም።</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>ቢያንስ ይህን ያህል ጥያቄዎች</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>ባለፉት ቀናት</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>አዲስ አድራሻ የሌላቸው ረድፎች ያሉት ካርታ፦ እያንዳንዳቸው አድራሻቸው ወይም ስማቸው ከአሮጌው ጋር በጣም የሚመሳሰል የዚህ ጣቢያ ገጾችን ያገኛሉ።</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>ቢበዛ ይህን ያህል ረድፎች</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>አዲስ አድራሻዎች</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>ቢያንስ ይህን ያህል ነጥብ ያለውን ጥቆማ ሙላ</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>ከ0 እስከ 100 ያለው ነጥብ አሮጌው አድራሻ ከዚህ ጣቢያ ገጽ ጋር ምን ያህል እንደሚመሳሰል ይናገራል። ሌሎቹ ጥቆማዎች በረድፉ ማስታወሻዎች ውስጥ ተዘርዝረዋል።</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>እንደ CSV ያውርዱ</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>እስካሁን ምንም አልተጻፈም። ካርታውን በተመን ሉህ ለመጨረስ ያውርዱት፣ ወይም ቅድመ እይታውን ይመልከቱ፦ አዲስ አድራሻ የሌላቸው ረድፎች ሊመጡ የማይችሉ ተብለው ይታያሉ።</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>ፋይል ይስቀሉ</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>የመጀመሪያ መንገዶች</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>አሮጌዎቹን አድራሻዎች ሞክር</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>የጣቢያ መዳረሻው የጣቢያ አድራሻ የለውም (site.ini [SiteSettings] SiteURL)፣ ስለዚህ አሮጌዎቹ አድራሻዎች እዚህ ሊሞከሩ አይችሉም። ./console exp:url:test በማንኛውም አድራሻ ላይ ይሞክራቸዋል።</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>እያንዳንዱን አሮጌ አድራሻ በ%base ላይ ይጠይቃል፣ አቅጣጫ ማስቀየሪያዎቹን ይከተላል እና አዲሱ አድራሻው ላይ መድረሱን ያረጋግጣል።</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>እንደገና ሞክር</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>ሞክር</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed ደረሱ፣ %status የተሳሳተ ሁኔታ ያላቸው፣ %target በተሳሳተ ገጽ ላይ፣ %none ያልተቀየሩ፣ %error አልተሳካም፣ %skipped ተዘሏል።</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>የመጀመሪያዎቹ %count ረድፎች ብቻ ተሞክረዋል።</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>አዲሱ አድራሻቸው ላይ ያልደረሱ ረድፎች</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>አሮጌዎቹ አድራሻዎች ሊሞከሩ አልቻሉም።</translation>
+    </message>
 </context>
 </TS>

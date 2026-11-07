@@ -86121,5 +86121,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>Ọ̀rọ̀ tí a lẹ̀</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Fi àdírẹ́sì àwòrán ojúlé sílẹ̀ tàbí gbé e sókè.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>A kò rí àdírẹ́sì àtijọ́ kankan.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Láti inú àwòrán ojúlé àtijọ́</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Láti inú àkọsílẹ̀ 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Dábàá àwọn ibùdó àfojúsùn</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Àwọn àdírẹ́sì ojúlé àtijọ́ láti inú àwòrán ojúlé rẹ̀ (sitemap.xml, atọ́ka àwòrán ojúlé tàbí .gz) tàbí láti inú àtòjọ tí ó ní àdírẹ́sì kan ní ìlà kọ̀ọ̀kan. Ọ̀kọ̀ọ̀kan di ìlà kan pẹ̀lú àdírẹ́sì tuntun òfo.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Àdírẹ́sì àwòrán ojúlé</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Tàbí gbé àwòrán ojúlé tàbí àtòjọ sókè</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Àti àwọn àdírẹ́sì àwọn agbalejo mìíràn</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Àwọn àdírẹ́sì tí àwọn àlejò béèrè fún lórí ojúlé yìí tí wọn kò rí, èyí tí wọ́n béèrè jù ní àkọ́kọ́. A fi àwọn àwòrán, àwọn àkọsílẹ̀ àṣẹ àti àwọn bọ́ọ̀tì sílẹ̀.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>A ti pa àkọsílẹ̀ 404 (site.ini [RequestLogSettings] NotFoundLog): kò ní àdírẹ́sì tuntun.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Ó kéré jù iye ìbéèrè yìí</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Ní àwọn ọjọ́ tó kọjá</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Àwòrán tí àwọn ìlà rẹ̀ kò ní àdírẹ́sì tuntun: ọ̀kọ̀ọ̀kan gba àwọn ojú-ìwé ojúlé yìí tí àdírẹ́sì tàbí orúkọ wọn jọ ti àtijọ́ jù.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Ó pọ̀ jù iye ìlà yìí</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Àwọn àdírẹ́sì tuntun</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Kún ìdábàá kan tí ìdíwọ̀n rẹ̀ kéré jù</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Ìdíwọ̀n láti 0 sí 100 fi hàn bí àdírẹ́sì àtijọ́ ṣe jọ ojú-ìwé kan ti ojúlé yìí tó. A ṣàtòkọ àwọn ìdábàá yòókù sínú àkíyèsí ìlà náà.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Gbà sílẹ̀ bí CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>A kò tíì kọ nǹkan kan. Gbà àwòrán náà sílẹ̀ kí o parí rẹ̀ nínú ìwé àlàyé, tàbí wo àwotẹ́lẹ̀ rẹ̀: àwọn ìlà tí kò ní àdírẹ́sì tuntun ni a fi hàn bí èyí tí a kò lè gbé wọlé.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Gbé fáìlì sókè</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Àwọn ọ̀nà láti bẹ̀rẹ̀</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Dán àwọn àdírẹ́sì àtijọ́ wò</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Ìwọlé sáìtì kò ní àdírẹ́sì sáìtì (site.ini [SiteSettings] SiteURL), nítorí náà a kò lè dán àwọn àdírẹ́sì àtijọ́ wò níbí. ./console exp:url:test ń dán wọn wò lórí àdírẹ́sì èyíkéyìí.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Ó ń béèrè fún àdírẹ́sì àtijọ́ kọ̀ọ̀kan lórí %base, ó ń tẹ̀lé àwọn àtúnṣètò ọ̀nà rẹ̀, ó sì ń ṣàyẹ̀wò bóyá ó dé àdírẹ́sì tuntun rẹ̀.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Dán wò lẹ́ẹ̀kan sí i</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Dán wò</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed dé, %status pẹ̀lú ipò tí kò tọ́, %target sórí ojú-ìwé tí kò tọ́, %none a kò darí wọn, %error kùnà, %skipped a fò wọ́n.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Àwọn ìlà %count àkọ́kọ́ nìkan ni a dán wò.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Àwọn ìlà tí kò dé àdírẹ́sì tuntun wọn</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>A kò lè dán àwọn àdírẹ́sì àtijọ́ wò.</translation>
+    </message>
 </context>
 </TS>

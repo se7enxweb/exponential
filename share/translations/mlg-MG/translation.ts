@@ -86123,5 +86123,129 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>Pasted text</source>
         <translation>Lahatsoratra napetaka</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Omeo ny adiresin'ny sitemap na ampakaro izy.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Tsy nahitana adiresy taloha.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Avy amin'ny sitemap taloha</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Avy amin'ny diarin'ny 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Manoro lalana kendrena</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Ny adiresin'ny tranonkala taloha avy amin'ny sitemap-ny (sitemap.xml, lisitry ny sitemap na .gz) na avy amin'ny lisitra misy adiresy iray isaky ny andalana. Ny tsirairay dia lasa andalana misy adiresy vaovao foana.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Adiresin'ny sitemap</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Na ampakaro ny sitemap na ny lisitra</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Ary koa ny adiresin'ny mpampiantrano hafa</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Ny adiresy nangatahin'ny mpitsidika teto amin'ity tranonkala ity ka tsy hita, ny be indrindra nangatahina no aloha. Tsy ao ny sary, ny script ary ny bot.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Mihidy ny diarin'ny 404 (site.ini [RequestLogSettings] NotFoundLog): tsy misy adiresy vaovao ao.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Isan'ny fangatahana farafahakeliny</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Tao anatin'ny andro farany</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Sarintany izay tsy misy adiresy vaovao ny andalany: ny tsirairay dia mahazo pejy amin'ity tranonkala ity izay adiresy na anarana mitovy indrindra amin'ny taloha.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Isan'ny andalana fara-fahabetsany</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Adiresy vaovao</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Fenoy ny soso-kevitra izay manana isa farafahakeliny</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Ny isa manomboka amin'ny 0 hatramin'ny 100 dia milaza hoe hatraiza ny fitovian'ny adiresy taloha amin'ny pejy iray amin'ity tranonkala ity. Ny soso-kevitra hafa dia voatanisa ao amin'ny fanamarihan'ny andalana.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Alaivo ho CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Mbola tsy misy voasoratra. Alaivo ny sarintany mba hamitana azy ao anaty tabilao, na topazo maso: ny andalana tsy misy adiresy vaovao dia aseho ho tsy azo ampidirina.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Ampakaro rakitra</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Fomba hanombohana</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Andramo ny adiresy taloha</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Tsy manana adiresin'ny tranonkala ny fidirana amin'ny tranonkala (site.ini [SiteSettings] SiteURL), ka tsy azo andramana eto ny adiresy taloha. ./console exp:url:test dia manandrana azy amin'ny adiresy rehetra.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Mangataka ny adiresy taloha tsirairay ao amin'ny %base, manaraka ny fandefasana indray azy ary manamarina raha tonga amin'ny adiresy vaovao izy.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Andramo indray</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Andramo</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed tonga, %status misy sata diso, %target eo amin'ny pejy diso, %none tsy nandefa indray, %error tsy nahomby, %skipped nolavina.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Ny andalana %count voalohany ihany no nandramana.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Ny andalana tsy tonga tamin'ny adiresy vaovao</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Tsy azo andramana ny adiresy taloha.</translation>
+    </message>
 </context>
 </TS>

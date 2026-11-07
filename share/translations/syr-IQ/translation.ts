@@ -86131,5 +86131,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>ܟܬܝܒܬܐ ܕܒܝܩܬܐ</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>ܬܠ ܡܘܢܥܐ ܕܡܦܬܐ ܕܐܬܪܐ ܐܘ ܣܠܩܘ̈ܗܝ.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>ܠܐ ܐܫܬܟܚ ܡܘܢܥܐ ܥܬܝܩܐ.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>ܡܢ ܡܦܬܐ ܕܐܬܪܐ ܥܬܝܩܬܐ</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>ܡܢ ܣܓܠܐ ܕ-404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>ܐܚܘܢ ܡܬܩܒܠ̈ܢܐ</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>ܡܘܢܥ̈ܐ ܕܐܬܪܐ ܥܬܝܩܐ ܡܢ ܡܦܬܐ ܕܐܬܪܐ ܕܝܠܗ (sitemap.xml، ܡܦܬܚܐ ܕܡܦܬܐ ܕܐܬܪܐ ܐܘ .gz) ܐܘ ܡܢ ܡܢܝܢܐ ܕܒܗ ܡܘܢܥܐ ܚܕ ܒܟܠ ܫܘܪܝܐ. ܟܠ ܚܕ ܗܘܐ ܫܘܪܝܐ ܥܡ ܡܘܢܥܐ ܚܕܬܐ ܣܪܝܩܐ.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>ܡܘܢܥܐ ܕܡܦܬܐ ܕܐܬܪܐ</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>ܐܘ ܣܠܩ ܡܦܬܐ ܕܐܬܪܐ ܐܘ ܡܢܝܢܐ</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>ܐܦ ܡܘܢܥ̈ܐ ܕܡܥܡܪ̈ܐ ܐܚܪ̈ܢܐ</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>ܡܘܢܥ̈ܐ ܕܫܐܠܘ ܥܠܝܗܘܢ ܥܡܘܪ̈ܐ ܒܐܬܪܐ ܗܢܐ ܘܠܐ ܐܫܟܚܘ، ܗܢܘܢ ܕܝܬܝܪ ܐܬܫܝܠܘ ܒܪܝܫܐ. ܨܘܪ̈ܬܐ ܘܣܟܪܝܦܛ̈ܐ ܘܒܘܛ̈ܐ ܠܐ ܡܬܚܫܒܝܢ.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>ܣܓܠܐ ܕ-404 ܡܛܦܝܐ ܗܘ (site.ini [RequestLogSettings] NotFoundLog): ܠܝܬ ܒܗ ܡܘܢܥ̈ܐ ܚܕܬ̈ܐ.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>ܠܐܪܥܐ ܡܢ ܡܟܝܠܘܬ ܫܘܐܠ̈ܐ</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>ܒܝܘܡ̈ܬܐ ܐܚܪ̈ܝܐ</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>ܡܦܬܐ ܕܫܘܪ̈ܝܗ ܚܣܝܪܝܢ ܡܘܢܥܐ ܚܕܬܐ: ܠܟܠ ܚܕ ܡܬܬܪܡܝܢ ܦܬܟܐ ܕܐܬܪܐ ܗܢܐ ܕܡܘܢܥܗܘܢ ܐܘ ܫܡܗܘܢ ܕܡܝܐ ܝܬܝܪ ܠܗܘ ܥܬܝܩܐ.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>ܠܐܪܥܐ ܡܢ ܡܟܝܠܘܬ ܫܘܪ̈ܝܐ</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>ܡܘܢܥ̈ܐ ܚܕܬ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>ܡܠܝ ܐܚܘܢܐ ܕܡܬܚܫܒ ܠܐܪܥܐ ܡܢ</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>ܡܢܬܐ ܡܢ 0 ܥܕܡܐ ܠ-100 ܡܚܘܐ ܟܡܐ ܕܡܝܐ ܡܘܢܥܐ ܥܬܝܩܐ ܠܦܬܟܐ ܕܐܬܪܐ ܗܢܐ. ܐܚܘܢ̈ܐ ܐܚܪ̈ܢܐ ܡܬܡܢܝܢ ܒܗܘܪ̈ܐ ܕܫܘܪܝܐ.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>ܐܚܬ ܐܝܟ CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>ܥܕܡܐ ܠܗܫܐ ܠܐ ܐܬܟܬܒ ܡܕܡ. ܐܚܬ ܡܦܬܐ ܕܬܫܠܡܝܗ ܒܛܠܝܐ ܚܘܫܒܢܝܐ، ܐܘ ܚܙܝܗ ܩܕܡܝܐ: ܫܘܪ̈ܐ ܕܠܐ ܡܘܢܥܐ ܚܕܬܐ ܡܬܚܙܝܢ ܐܝܟ ܕܠܐ ܡܬܡܥܠܢܐ.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>ܣܠܩ ܠܦܝܠܐ</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>ܐܘܪ̈ܚܬܐ ܕܫܘܪܝܐ</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>ܒܚܘܢ ܡܘܢܥ̈ܐ ܥܬܝܩ̈ܐ</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>ܠܡܥܠܢܐ ܕܐܬܪܐ ܠܝܬ ܠܗ ܡܘܢܥܐ ܕܐܬܪܐ (site.ini [SiteSettings] SiteURL)، ܒܗܢܐ ܠܐ ܡܨܝܐ ܠܡܒܚܢܘ ܠܡܘܢܥ̈ܐ ܥܬܝܩ̈ܐ ܗܪܟܐ. ./console exp:url:test ܒܚܢ ܠܗܘܢ ܠܟܠ ܡܘܢܥܐ.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>ܫܐܠ ܠܟܠ ܡܘܢܥܐ ܥܬܝܩܐ ܒ-%base، ܐܬܪܗܒ ܒܬܪ ܡܦܢܝ̈ܗ ܘܒܚܢ ܐܢ ܡܛܐ ܠܡܘܢܥܐ ܚܕܬܐ ܕܝܠܗ.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>ܒܚܘܢ ܬܘܒ</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>ܒܚܘܢ</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed ܡܛܘ، %status ܒܐܘܪܚܐ ܕܠܐ ܬܪܝܨܬܐ، %target ܒܦܬܟܐ ܕܠܐ ܬܪܝܨܬܐ، %none ܠܐ ܐܬܦܢܝ، %error ܐܬܒܛܠܘ، %skipped ܐܬܥܒܪܘ.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>ܒܠܚܘܕ ܩܕܡܝܐ %count ܫܘܪ̈ܐ ܐܬܒܚܢܘ.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>ܫܘܪ̈ܐ ܕܠܐ ܡܛܘ ܠܡܘܢܥܐ ܚܕܬܐ ܕܝܠܗܘܢ</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>ܠܐ ܐܫܬܘܫܛ ܠܡܒܚܢܘ ܠܡܘܢܥ̈ܐ ܥܬܝܩ̈ܐ.</translation>
+    </message>
 </context>
 </TS>

@@ -86131,5 +86131,129 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>Pasted text</source>
         <translation>Téks nu ditémpélkeun</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Lebetkeun alamat peta situs atawa unggah.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Teu aya alamat heubeul anu kapanggih.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Tina peta situs heubeul</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Tina log 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Usulkeun udagan</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Alamat situs heubeul tina peta situsna (sitemap.xml, indéks peta situs atawa .gz) atawa tina daptar anu eusina hiji alamat per baris. Unggal alamat jadi hiji baris kalayan alamat anyar kosong.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Alamat peta situs</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Atawa unggah peta situs atawa daptarna</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Kaasup alamat ti host séjén</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Alamat anu dipménta ku nu ngadon tapi teu kapanggih di situs ieu, anu pangseringna dipénta ti heula. Gambar, skrip jeung bot teu kaasup.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Log 404 dipareuman (site.ini [RequestLogSettings] NotFoundLog): teu aya alamat anyar di dinya.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Sahenteuna sabaraha pamundut</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Dina sababaraha poé ka tukang</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Peta anu barisna can boga alamat anyar: unggal baris meunang kaca-kaca situs ieu anu alamat atawa ngaranna paling nyarupaan alamat heubeul.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Paling loba sabaraha baris</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Alamat anyar</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Eusian usulan anu skorna sahenteuna</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Skor ti 0 nepi ka 100 nuduhkeun sabaraha sarupana alamat heubeul jeung hiji kaca di situs ieu. Usulan séjénna didaptarkeun dina catetan baris.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Unduh salaku CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Can aya anu ditulis. Unduh peta pikeun ngalengkepanana dina spreadsheet, atawa pratinjau: baris tanpa alamat anyar dipidangkeun salaku teu bisa diimpor.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Unggah koropak</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Cara ngamimitian</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Uji alamat-alamat heubeul</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Siteaccess teu boga alamat situs (site.ini [SiteSettings] SiteURL), jadi alamat heubeul teu bisa diuji didieu. ./console exp:url:test nguji alamat-alamat eta ka alamat naon waé.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Ménta unggal alamat heubeul di %base, nuturkeun alihanna sarta mariksa naha eta mendarat di alamat anyarna.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Uji deui</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Uji</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed mendarat, %status status salah, %target kaca salah, %none teu dialihkeun, %error gagal, %skipped dilangkungan.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Ngan %count baris munggaran anu diuji.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Baris anu teu mendarat di alamat anyarna</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Alamat-alamat heubeul teu bisa diuji.</translation>
+    </message>
 </context>
 </TS>

@@ -86123,5 +86123,129 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>Pasted text</source>
         <translation>Testu apegáu</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Da la direición del mapa del sitiu o xúbilu.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Nun s'alcontró denguna direición antigua.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Del mapa del sitiu antiguu</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Del rexistru 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Suxerir destinos</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Les direiciones del sitiu antiguu a partir del so mapa del sitiu (sitemap.xml, un índiz de mapes del sitiu o .gz) o d'una llista con una direición por llinia. Cada una convertiráse nuna filera con una direición nueva balera.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Direición del mapa del sitiu</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>O xuba'l mapa del sitiu o la llista</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Tamién les direiciones d'otros hosts</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Les direiciones que los visitantes pidieron nesti sitiu y nun alcontraron, les más pidíes primero. Les imáxenes, los scripts y los bots quédenun fuera.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>El rexistru 404 ta desactiváu (site.ini [RequestLogSettings] NotFoundLog): nun tien direiciones nueves.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Polo menos tantes solicitúes</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Nos caberos díes</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Un mapa a les fileres del cual-yos falta una direición nueva: a cada una apliquen-se les páxines d'esti sitiu que la so direición o nome más se paeza a l'antigua.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Como muncho tantes fileres</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Direiciones nueves</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Rellena una suxerencia con una puntuación d'al menos</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Una puntuación de 0 a 100 indica cuánto se paez la direición antigua a una páxina d'esti sitiu. Les otres suxerencies apaecen nes notes de la filera.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Baxar como CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Entá nun s'escribió nada. Baxa'l mapa pa completalu nuna fueya de cálculu, o amuésalu en previsualización: les fileres ensin direición nueva apaecen como nun importables.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Xubir un ficheru</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Maneres de començar</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Probar les direiciones antigües</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>L'accesu al sitiu nun tien direición del sitiu (site.ini [SiteSettings] SiteURL), por eso les direiciones antigües nun pueden probase equí. ./console exp:url:test pruébales contra cualquier direición.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Solicita cada direición antigua en %base, sigue les sos redireiciones y comprueba que va dar a la so direición nueva.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Probar otra vez</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Prueba</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed aportaron, %status con un estáu incorrectu, %target nuna páxina incorrecta, %none ensin redireición, %error fallaron, %skipped saltaes.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Namái se probaron les primeres %count fileres.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Les fileres que nun aportaron a la so direición nueva</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Nun pudieron probase les direiciones antigües.</translation>
+    </message>
 </context>
 </TS>

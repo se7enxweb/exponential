@@ -86123,5 +86123,129 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>Pasted text</source>
         <translation>Ndeto ĩhandĩtwo</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Ĩkĩra adirethi ya mapu ya saiti kana ũmĩhaande.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Gũtirĩ adirethi ya tene ĩronyirwo.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Kuuma mapu ya saiti ya tene</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Kuuma rekodi ya 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Taarĩria kũrĩa kũngĩtwarwo</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Adirethi cia saiti ya tene kuuma mapu yayo ya saiti (sitemap.xml, ndandĩko ya mapu cia saiti kana .gz) kana kuuma ndandĩko ĩrĩ na adirethi ĩmwe mũsitari o mũsitari. Ĩmwe o ĩmwe ĩgaatuĩka mũsitari ũrĩ na adirethi njeru ĩtarĩ kĩndũ.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Adirethi ya mapu ya saiti</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Kana ũhaande mapu ya saiti kana ndandĩko</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Na adirethi cia host ingĩ</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Adirethi iria agĩthĩ moririe saiti-inĩ ĩno no matiigana kuona, iria irorirwo mũno nĩcio cia mbere. Mĩhianĩre, hati cia script na bot itiherwo.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Rekodi ya 404 nĩyakĩtwo (site.ini [RequestLogSettings] NotFoundLog): ndĩrĩ na adirethi njeru.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Ndũmĩrĩri cia ũnini ta ici</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Matukũ-inĩ marĩa mathirĩte</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Mapu ĩrĩa mĩsitari yayo ĩtarĩ na adirethi njeru: ĩmwe o ĩmwe ĩkaanyuuaga ciĩra cia saiti ĩno iria adirethi kana rĩĩtwa rĩayo rĩhaanaine mũno na rĩa tene.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Mĩsitari ta ino o hamwe nĩyo mĩingĩ</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Adirethi njeru</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Iyũria ũtaarĩria ũrĩ na ngoro ya ũnini ta</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Ngoro kuuma 0 nginya 100 yonania adirethi ya tene ĩhaanaine ũrĩa ciĩra cia saiti ĩno. Mataaro mangĩ marĩ thĩinĩ wa ciũmbe cia mũsitari.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Rehe ta CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Gũtirĩ kĩndũ kĩandĩkĩtwo o rĩ. Rehe mapu nĩguo wĩkĩrie thĩinĩ wa spreadsheet, kana ũmĩone mbere: mĩsitari ĩtarĩ na adirethi njeru nĩyonanagio ta ĩtangĩingĩrio.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Haanda faili</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Njĩra cia gũtĩĩrĩria</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Geria adirethi cia tene</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Njĩra ya saiti ndĩrĩ na adirethi ya saiti (site.ini [SiteSettings] SiteURL), nĩ ũndũ ũcio adirethi cia tene itingĩgeriwo haha. ./console exp:url:test igeragia ciothe kũrĩ adirethi ĩrĩkoro.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Ĩũria adirethi yothe ya tene %base-inĩ, ĩgakũrũrũra marehe mayo na ĩgathuthuria ikinyie adirethi yayo njeru.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Geria rĩngĩ</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Ũgerio</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed nĩikinyĩte, %status irĩ na gĩkĩria kĩũru, %target ciĩra-inĩ itarĩ cia ma, %none itarehetwo handũ ngĩ, %error nĩciaremirwo, %skipped nĩciahĩtũkirio.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Mĩsitari %count ya mbere o nĩyo yagerirwo.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Mĩsitari ĩtakinyire adirethi yayo njeru</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Adirethi cia tene itiahotekire gũgeriwo.</translation>
+    </message>
 </context>
 </TS>

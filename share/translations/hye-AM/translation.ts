@@ -86123,5 +86123,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>Տեղադրված տեքստ</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Նշեք կայքի քարտեզի հասցեն կամ վերբեռնեք այն։</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Հին հասցե չի գտնվել։</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Հին կայքի քարտեզից</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 մատյանից</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Առաջարկել թիրախներ</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Հին կայքի հասցեները նրա կայքի քարտեզից (sitemap.xml, կայքի քարտեզների ինդեքս կամ .gz) կամ յուրաքանչյուր տողում մեկ հասցե պարունակող ցանկից։ Յուրաքանչյուրը դառնում է տող դատարկ նոր հասցեով։</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Կայքի քարտեզի հասցեն</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Կամ վերբեռնեք կայքի քարտեզը կամ ցանկը</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Նաև այլ հոսթերի հասցեները</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Հասցեները, որոնք այցելուները պահանջել են այս կայքում և չեն գտել, ամենաշատ պահանջվածները՝ առաջինը։ Պատկերները, սկրիպտները և բոտերը բացառված են։</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 մատյանն անջատված է (site.ini [RequestLogSettings] NotFoundLog)․ այն նոր հասցեներ չունի։</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Առնվազն այսքան հարցում</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Վերջին օրերին</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Քարտեզ, որի տողերում նոր հասցե չկա․ յուրաքանչյուրը ստանում է այս կայքի այն էջերը, որոնց հասցեն կամ անունը առավել նման է հինին։</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Առավելագույնը այսքան տող</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Նոր հասցեներ</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Լրացրեք առաջարկ, որի գնահատականը առնվազն</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0-ից 100 գնահատականը ցույց է տալիս, թե հին հասցեն որքան է նման այս կայքի էջին։ Մյուս առաջարկները թվարկված են տողի նշումներում։</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Ներբեռնել որպես CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Դեռ ոչինչ գրված չէ։ Ներբեռնեք քարտեզը՝ աղյուսակում լրացնելու համար, կամ դիտեք նախադիտումը․ առանց նոր հասցեի տողերը ցուցադրվում են որպես ներմուծման ոչ ենթակա։</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Վերբեռնել ֆայլ</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Սկսելու եղանակներ</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Փորձարկել հին հասցեները</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Կայքի մուտքի կետը կայքի հասցե չունի (site.ini [SiteSettings] SiteURL), ուստի հին հասցեները այստեղ չեն կարող փորձարկվել։ ./console exp:url:test հրամանը փորձարկում է դրանք ցանկացած հասցեի դեմ։</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Հարցում է անում յուրաքանչյուր հին հասցեի %base-ում, հետևում է նրա վերահղումներին և ստուգում, որ այն հասնում է իր նոր հասցեին։</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Փորձարկել նորից</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Փորձարկում</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed հասել է, %status սխալ կարգավիճակով, %target սխալ էջում, %none չվերահղված, %error ձախողված, %skipped բաց թողնված։</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Փորձարկվել են միայն առաջին %count տողերը։</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Տողերը, որոնք չհասան իրենց նոր հասցեին</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Հին հասցեները չհաջողվեց փորձարկել։</translation>
+    </message>
 </context>
 </TS>

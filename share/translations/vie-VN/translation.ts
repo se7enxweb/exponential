@@ -86123,5 +86123,129 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>Pasted text</source>
         <translation>Văn bản đã dán</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Nhập địa chỉ của sơ đồ trang hoặc tải nó lên.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Không tìm thấy địa chỉ cũ nào.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Từ sơ đồ trang cũ</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Từ nhật ký 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Đề xuất đích</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Các địa chỉ của trang cũ lấy từ sơ đồ trang của nó (sitemap.xml, một chỉ mục sơ đồ trang hoặc .gz) hoặc từ danh sách có một địa chỉ mỗi dòng. Mỗi địa chỉ trở thành một dòng có địa chỉ mới trống.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Địa chỉ của sơ đồ trang</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Hoặc tải lên sơ đồ trang hoặc danh sách</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Cả địa chỉ của các máy chủ khác</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Các địa chỉ khách truy cập đã yêu cầu trên trang này mà không tìm thấy, địa chỉ được yêu cầu nhiều nhất xếp trước. Hình ảnh, tập lệnh và bot được bỏ qua.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Nhật ký 404 đang tắt (site.ini [RequestLogSettings] NotFoundLog): nó không có địa chỉ mới.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Ít nhất bằng này yêu cầu</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Trong những ngày qua</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Một bản đồ mà các dòng chưa có địa chỉ mới: mỗi dòng nhận các trang của trang này có địa chỉ hoặc tên giống địa chỉ cũ nhất.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Nhiều nhất bằng này dòng</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Địa chỉ mới</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Điền đề xuất có điểm ít nhất là</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Điểm từ 0 đến 100 cho biết địa chỉ cũ giống một trang của trang này đến mức nào. Các đề xuất khác được liệt kê trong ghi chú của dòng.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Tải xuống dạng CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Chưa có gì được ghi. Hãy tải bản đồ xuống để hoàn thiện trong bảng tính, hoặc xem trước: các dòng không có địa chỉ mới được hiển thị là không thể nhập.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Tải tệp lên</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Cách bắt đầu</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Kiểm tra các địa chỉ cũ</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Điểm truy cập trang không có địa chỉ trang (site.ini [SiteSettings] SiteURL), nên không thể kiểm tra các địa chỉ cũ tại đây. ./console exp:url:test kiểm tra chúng với bất kỳ địa chỉ nào.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Yêu cầu từng địa chỉ cũ trên %base, theo các chuyển hướng của nó và kiểm tra xem nó có đến địa chỉ mới hay không.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Kiểm tra lại</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Kiểm tra</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed đã đến đích, %status sai trạng thái, %target sai trang, %none không được chuyển hướng, %error thất bại, %skipped bị bỏ qua.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Chỉ %count dòng đầu tiên được kiểm tra.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Các dòng không đến được địa chỉ mới</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Không thể kiểm tra các địa chỉ cũ.</translation>
+    </message>
 </context>
 </TS>

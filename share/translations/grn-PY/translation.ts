@@ -86095,5 +86095,129 @@ Remoambuevaerã nódo klase swap tembiapo rupive.</translation>
         <source>Pasted text</source>
         <translation>Moñe'ẽrã ojembojáva</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Eme'ẽ sitemap kundaharakuérape térã ehupi.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Ndaiporiha kundahára tuja.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Sitemap tuja guive</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 rehegua rembiapo-ñongatu guive</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Emoĩ ñemoĩ jehecha</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Tenda tujakuéra kundahára sitemap-pe guive (sitemap.xml, sitemap-kuéra rysýi térã .gz) térã tysỹi peteĩ kundahára rehegua guive. Peteĩteĩ oiko tysỹikuéra kundahára pyahu nandi reheve.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Sitemap kundahára</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Térã ehupi sitemap térã tysỹi</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Ambue host kundahára avei</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Kundahára ko tendápe ojejerure ha ndojejuhúiva, umi ojejerureve ypy. Ta'ãnga, script ha bot ojepoi.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 rembiapo-ñongatu ojepe'a (site.ini [RequestLogSettings] NotFoundLog): ndaipórigui kundahára pyahu.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Pya'e kóichagua jerure</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Ára paha rupi</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Peteĩ mapa oguerekóva tysỹikuéra kundahára pyahu'ỹ: peteĩteĩ ohupyty ko tenda kuatiakuéra oĩva kundahára térã téra ojoguaitéva tujápe.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Hetaveha kóichagua tysỹi</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Kundahára pyahu</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Emyenyhẽ peteĩ ñemoĩ jehecha oguerekóva sa'i</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Peteĩ puntaje 0 guive 100 peve he'i mba'eichaitépa kundahára tuja ojoguáva ko tenda kuatia rehe. Ambue ñemoĩ oĩ tysỹi jehaipy mbykymípe.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Emboguejy CSV ramo</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Ndojehaivéi gueteri mba'eve. Emboguejy mapa emohu'ã hag̃ua tabla kuatiápe, térã ehecha ypy: tysỹi kundahára pyahu'ỹ ojehechauka ndojeguerujey kuaáiva ramo.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Ehupi marandurenda</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Mba'éichapa eñepyrũ</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Eha'ã kundahára tujakuéra</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Siteaccess ndorekói tenda kundahára (site.ini [SiteSettings] SiteURL), upévare ndaikatúi ojeha'ã ápe kundahára tujakuéra. ./console exp:url:test oha'ã ambue kundahára rehe.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Ojerure peteĩteĩ kundahára tuja %base-pe, osegi ñemondo jey ha ohecha ohupytypa kundahára pyahu.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Eha'ã jey</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Eha'ã</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed ohupyty porã, %status mba'éichapa oĩ añete'ỹ, %target kuatia ojavy, %none ndojemondojeýi, %error ojavy, %skipped ojehejáva.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Ojeha'ã añoite ypykue %count tysỹi.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Tysỹikuéra ndohupytýiva kundahára pyahu</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Kundahára tujakuéra ndaikatúi ojeha'ã.</translation>
+    </message>
 </context>
 </TS>

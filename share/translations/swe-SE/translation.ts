@@ -87426,5 +87426,129 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>Pasted text</source>
         <translation>Inklistrad text</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Ange adressen till webbplatskartan eller ladda upp den.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Ingen gammal adress hittades.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Från den gamla webbplatskartan</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Från 404-loggen</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Föreslå mål</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Adresserna på den gamla webbplatsen från dess webbplatskarta (sitemap.xml, ett webbplatskartindex eller .gz) eller från en lista med en adress per rad. Varje adress blir en rad med tom ny adress.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Webbplatskartans adress</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Eller ladda upp webbplatskartan eller listan</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Även adresser på andra värdar</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Adresserna som besökare begärde på den här webbplatsen och inte hittade, de mest begärda först. Bilder, skript och bottar utelämnas.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404-loggen är avstängd (site.ini [RequestLogSettings] NotFoundLog): den har inga nya adresser.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Minst så här många förfrågningar</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Under de senaste dagarna</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>En karta vars rader saknar ny adress: varje rad får de sidor på den här webbplatsen vars adress eller namn mest liknar den gamla.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Högst så här många rader</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Nya adresser</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Fyll i ett förslag med poäng på minst</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>En poäng från 0 till 100 anger hur lik den gamla adressen är en sida på den här webbplatsen. De övriga förslagen listas i radens anteckningar.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Ladda ner som CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Inget är skrivet än. Ladda ner kartan för att slutföra den i ett kalkylblad, eller förhandsgranska den: rader utan ny adress visas som icke importerbara.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Ladda upp en fil</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Sätt att börja</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Testa de gamla adresserna</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Webbplatsingången har ingen webbplatsadress (site.ini [SiteSettings] SiteURL), så de gamla adresserna kan inte testas här. ./console exp:url:test testar dem mot valfri adress.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Begär varje gammal adress på %base, följer dess omdirigeringar och kontrollerar att den hamnar på sin nya adress.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Testa igen</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Testa</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed hamnade rätt, %status med fel status, %target på fel sida, %none inte omdirigerade, %error misslyckades, %skipped hoppades över.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Endast de första %count raderna testades.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Raderna som inte hamnade på sin nya adress</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>De gamla adresserna kunde inte testas.</translation>
+    </message>
 </context>
 </TS>

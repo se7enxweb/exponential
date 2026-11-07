@@ -86123,5 +86123,129 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>Pasted text</source>
         <translation>Sɛbɛn nɔrɔlen</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Siti karti adirɛsi di walima a ladon.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Adirɛsi kɔrɔ si ma sɔrɔ.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Siti kɔrɔ karti la</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 sɛbɛnni la</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Sigiyɔrɔ ɲɛfɔ</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Siti kɔrɔ ka adirɛsiw ka bɔ a ka siti karti la (sitemap.xml, siti karti lakalisira walima .gz) walima lisiri dɔ la min na adirɛsi kelen bɛ layini kelen-kelen bɛɛ la. Kelen-kelen bɛɛ bɛ kɛ layini ye adirɛsi kura lankolon na.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Siti karti adirɛsi</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Walima siti karti walima lisiri ladon</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Host wɛrɛw ka adirɛsiw fana</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Adirɛsi minnu ɲininkalilaw ye nin siti in kan k'u ma u sɔrɔ, minnu ɲinina ka caya, olu bɛ ye fɔlɔ. Ja, sikiripiti ani bɔtiw bɛ bɔ a la.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 sɛbɛnni banna (site.ini [RequestLogSettings] NotFoundLog): adirɛsi kura si t'a la.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Ɲininkali hakɛ dɔɔnin</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Don laban nin na</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Karti min ka layiniw tɛ adirɛsi kura la: kelen-kelen bɛɛ bɛ nin siti in sɛbɛnfuraw ta minnu ka adirɛsi walima tɔgɔ ka surun kɔrɔ ma kosɛbɛ.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Layini hakɛ caman</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Adirɛsi kuraw</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Laadili dɔ fa min ka sikɔri bɛ ten dɔɔnin</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Sikɔri min bɛ 0 ma ka taa 100 ma, o b'a jira adirɛsi kɔrɔ bɛ nin siti in sɛbɛnfura dɔ suma cogo di. Laadili tɔw bɛ layini ka kunnafoniw la.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Ta CSV ye</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Foyi ma sɛbɛn fɔlɔ. Karti ta walasa k'a dafa sɛbɛnnikɛlan na, walima ɲɛfɛlajɛ: layini minnu tɛ adirɛsi kura la, olu bɛ jira i ko minnu tɛ se ka ladon.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Dosiye lase</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Daminɛ siraw</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Adirɛsi kɔrɔw sɛgɛsɛgɛ</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Siti donda tɛ siti adirɛsi si ta (site.ini [SiteSettings] SiteURL), o la adirɛsi kɔrɔw tɛ se ka sɛgɛsɛgɛ yan. ./console exp:url:test bɛ u sɛgɛsɛgɛ adirɛsi o adirɛsi kan.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>A bɛ adirɛsi kɔrɔ kelen-kelen bɛɛ ɲini %base kan, a bɛ u ka sirayɛlɛmaw ta ka a lajɛ ni u sera u ka adirɛsi kura ma.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Sɛgɛsɛgɛ tugun</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Sɛgɛsɛgɛli</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed sera, %status cogoya jugu la, %target sɛbɛnfura jugu kan, %none sirayɛlɛma tɛ u la, %error ma ɲɛ, %skipped tɛmɛna.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Layini fɔlɔ %count dɔrɔn de sɛgɛsɛgɛra.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Layini minnu ma se u ka adirɛsi kura ma</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Adirɛsi kɔrɔw ma se ka sɛgɛsɛgɛ.</translation>
+    </message>
 </context>
 </TS>

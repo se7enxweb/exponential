@@ -86123,5 +86123,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>སྦྱར་བའི་ཡི་གེ</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>དྲ་ཚིགས་ས་ཁྲའི་ཁ་བྱང་སྤྲོད་རོགས། ཡང་ན་དེ་སྐྱེལ་འཇུག་བྱེད་རོགས།</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>ཁ་བྱང་རྙིང་པ་གང་ཡང་མ་རྙེད།</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>དྲ་ཚིགས་ས་ཁྲ་རྙིང་པ་ནས།</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 ཟིན་ཐོ་ནས།</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>དམིགས་ཡུལ་འོས་སྦྱོར་བྱེད།</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>དྲ་ཚིགས་རྙིང་པའི་ཁ་བྱང་རྣམས་དེའི་དྲ་ཚིགས་ས་ཁྲ (sitemap.xml, དྲ་ཚིགས་ས་ཁྲའི་དཀར་ཆག་གམ་ .gz) ནས་སམ། ཕྲེང་རེར་ཁ་བྱང་གཅིག་ཡོད་པའི་ཐོ་གཞུང་ནས། རེ་རེ་ཁ་བྱང་གསར་པ་སྟོང་པ་ཡོད་པའི་ཕྲེང་ཞིག་ཏུ་འགྱུར།</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>དྲ་ཚིགས་ས་ཁྲའི་ཁ་བྱང་།</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>ཡང་ན་དྲ་ཚིགས་ས་ཁྲའམ་ཐོ་གཞུང་སྐྱེལ་འཇུག་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>གཙོ་འཁོར་གཞན་གྱི་ཁ་བྱང་ཡང་།</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>ལྟ་མཁན་གྱིས་དྲ་ཚིགས་འདིར་རེ་བ་བྱས་ཀྱང་མ་རྙེད་པའི་ཁ་བྱང་རྣམས། མང་ཤོས་ཐོག་མར། པར་རིས། ཡིག་ཚགས་དང་ཟུར་འགྲོ་རྣམས་སྤངས།</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 ཟིན་ཐོ་ཁ་བརྒྱབ་ཡོད (site.ini [RequestLogSettings] NotFoundLog)། དེའི་ནང་ཁ་བྱང་གསར་པ་མེད།</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>ཉུང་མཐར་རེ་བ་འདི་ཙམ།</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>ཉིན་མ་ཉེ་ཆར་གྱི་ནང་།</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>ཕྲེང་ལ་ཁ་བྱང་གསར་པ་མེད་པའི་ས་ཁྲ། རེ་རེས་དྲ་ཚིགས་འདིའི་ཤོག་ངོས་ཁ་བྱང་ངམ་མིང་རྙིང་པར་ཆེས་ཉེ་བ་རྣམས་ཐོབ།</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>མང་ཤོས་ཕྲེང་འདི་ཙམ།</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>ཁ་བྱང་གསར་པ།</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>ཉུང་མཐར་སྐར་གྲངས་འདི་ཙམ་ཡོད་པའི་འོས་སྦྱོར་བཀང་།</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>སྐར་གྲངས་ 0 ནས 100 བར་གྱིས་ཁ་བྱང་རྙིང་པ་དྲ་ཚིགས་འདིའི་ཤོག་ངོས་ཀྱི་དང་ཇི་ཙམ་འདྲ་མིན་སྟོན། འོས་སྦྱོར་གཞན་རྣམས་ཕྲེང་གི་མཆན་ནང་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>CSV ལྟར་ཕབ་ལེན།</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>ད་དུང་ཅི་ཡང་བྲིས་མེད། ས་ཁྲ་ཕབ་ལེན་བྱས་ནས་རྩིས་ཁྲ་ནང་ཚང་བར་བྱེད་པའམ། སྔོན་ལྟ་བྱེད། ཁ་བྱང་གསར་པ་མེད་པའི་ཕྲེང་རྣམས་ནང་འདྲེན་མི་ཐུབ་པར་སྟོན།</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>ཡིག་ཆ་ཞིག་སྐྱེལ་འཇུག་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>འགོ་འཛུགས་ཐབས།</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>ཁ་བྱང་རྙིང་པ་ཚོད་ལྟ།</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>དྲ་ཚིགས་འཛུལ་སྒོའི་དྲ་ཚིགས་ཁ་བྱང་མེད (site.ini [SiteSettings] SiteURL)། དེའི་ཕྱིར་ཁ་བྱང་རྙིང་པ་འདིར་ཚོད་ལྟ་བྱེད་མི་ཐུབ། ./console exp:url:test ཡིས་ཁ་བྱང་གང་ལའང་ཚོད་ལྟ་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>ཁ་བྱང་རྙིང་པ་རེ་རེ་ %base སྟེང་རེ་བ་བྱེད། དེའི་ཡང་སྟོན་རྗེས་སུ་འདེད། ཁ་བྱང་གསར་པར་སླེབས་མིན་ཞིབ་བཤེར་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>ཡང་ཚོད་ལྟ།</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>ཚོད་ལྟ།</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed སླེབས། %status གནས་སྟངས་ནོར་བ། %target ཤོག་ངོས་ནོར་བ། %none ཡང་སྟོན་མེད། %error ཕམ། %skipped མཆོངས།</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>ཕྲེང་དང་པོ་ %count ཁོ་ན་ཚོད་ལྟ་བྱས།</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>ཁ་བྱང་གསར་པར་མ་སླེབས་པའི་ཕྲེང་རྣམས།</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>ཁ་བྱང་རྙིང་པ་ཚོད་ལྟ་བྱེད་མ་ཐུབ།</translation>
+    </message>
 </context>
 </TS>

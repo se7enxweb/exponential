@@ -36,7 +36,7 @@ partly-undone), unless --force is given. exp:url:batches lists the imports.
 | Option | Value | Help |
 |---|---|---|
 | `--force` |  | Undo also the entries that changed after the import (default: they are kept) |
-| `--format` | required | import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo: text (default) or json (the machine output exp-url/1) |
+| `--format` | required | import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo, from-sitemap, from-404, suggest, test: text (default) or json (the machine output exp-url/1) |
 | `--login` | required | Run as this user (recorded with the import and in the audit) |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

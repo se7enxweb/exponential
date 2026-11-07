@@ -86121,5 +86121,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>ഒട്ടിച്ച വാചകം</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>സൈറ്റ്മാപ്പിന്റെ വിലാസം നൽകുക അല്ലെങ്കിൽ അത് അപ്‌ലോഡ് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>പഴയ വിലാസമൊന്നും കണ്ടെത്തിയില്ല.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>പഴയ സൈറ്റ്മാപ്പിൽ നിന്ന്</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 ലോഗിൽ നിന്ന്</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>ലക്ഷ്യങ്ങൾ നിർദ്ദേശിക്കുക</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>പഴയ സൈറ്റിന്റെ വിലാസങ്ങൾ അതിന്റെ സൈറ്റ്മാപ്പിൽ നിന്ന് (sitemap.xml, സൈറ്റ്മാപ്പ് സൂചിക അല്ലെങ്കിൽ .gz) അല്ലെങ്കിൽ ഓരോ വരിയിലും ഒരു വിലാസമുള്ള പട്ടികയിൽ നിന്ന്. ഓരോന്നും പുതിയ വിലാസം ശൂന്യമായ ഒരു വരിയാകും.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>സൈറ്റ്മാപ്പിന്റെ വിലാസം</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>അല്ലെങ്കിൽ സൈറ്റ്മാപ്പ് അല്ലെങ്കിൽ പട്ടിക അപ്‌ലോഡ് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>മറ്റ് ഹോസ്റ്റുകളുടെ വിലാസങ്ങളും</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>സന്ദർശകർ ഈ സൈറ്റിൽ ആവശ്യപ്പെടുകയും കണ്ടെത്താതിരിക്കുകയും ചെയ്ത വിലാസങ്ങൾ, ഏറ്റവും കൂടുതൽ ആവശ്യപ്പെട്ടത് ആദ്യം. ചിത്രങ്ങൾ, സ്ക്രിപ്റ്റുകൾ, ബോട്ടുകൾ എന്നിവ ഒഴിവാക്കിയിരിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 ലോഗ് ഓഫാക്കിയിരിക്കുന്നു (site.ini [RequestLogSettings] NotFoundLog): അതിൽ പുതിയ വിലാസങ്ങളില്ല.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>ഏറ്റവും കുറഞ്ഞത് ഇത്രയും അഭ്യർത്ഥനകൾ</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>കഴിഞ്ഞ ദിവസങ്ങളിൽ</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>വരികൾക്ക് പുതിയ വിലാസമില്ലാത്ത ഒരു മാപ്പ്: ഓരോ വരിക്കും വിലാസമോ പേരോ പഴയതിനോട് ഏറ്റവും സാമ്യമുള്ള ഈ സൈറ്റിന്റെ പേജുകൾ ലഭിക്കും.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>പരമാവധി ഇത്രയും വരികൾ</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>പുതിയ വിലാസങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>ഏറ്റവും കുറഞ്ഞത് ഈ സ്കോറുള്ള നിർദ്ദേശം പൂരിപ്പിക്കുക</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0 മുതൽ 100 വരെയുള്ള സ്കോർ പഴയ വിലാസം ഈ സൈറ്റിലെ ഒരു പേജിനോട് എത്ര സാമ്യമുള്ളതാണെന്ന് സൂചിപ്പിക്കുന്നു. മറ്റ് നിർദ്ദേശങ്ങൾ വരിയുടെ കുറിപ്പുകളിൽ പട്ടികപ്പെടുത്തിയിരിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>CSV ആയി ഡൗൺലോഡ് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>ഇതുവരെ ഒന്നും എഴുതിയിട്ടില്ല. മാപ്പ് ഒരു സ്പ്രെഡ്ഷീറ്റിൽ പൂർത്തിയാക്കാൻ ഡൗൺലോഡ് ചെയ്യുക, അല്ലെങ്കിൽ പ്രിവ്യൂ ചെയ്യുക: പുതിയ വിലാസമില്ലാത്ത വരികൾ ഇറക്കുമതി ചെയ്യാനാകാത്തവയായി കാണിക്കും.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>ഒരു ഫയൽ അപ്‌ലോഡ് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>ആരംഭിക്കാനുള്ള വഴികൾ</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>പഴയ വിലാസങ്ങൾ പരീക്ഷിക്കുക</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>സൈറ്റ്ആക്സസിന് സൈറ്റ് വിലാസം (site.ini [SiteSettings] SiteURL) ഇല്ല, അതിനാൽ പഴയ വിലാസങ്ങൾ ഇവിടെ പരീക്ഷിക്കാനാവില്ല. ./console exp:url:test അവയെ ഏത് വിലാസത്തിനെതിരെയും പരീക്ഷിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>ഓരോ പഴയ വിലാസവും %base ൽ അഭ്യർത്ഥിക്കുകയും അതിന്റെ റീഡയറക്ടുകൾ പിന്തുടരുകയും അത് പുതിയ വിലാസത്തിൽ എത്തുന്നുണ്ടോ എന്ന് പരിശോധിക്കുകയും ചെയ്യുന്നു.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>വീണ്ടും പരീക്ഷിക്കുക</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>പരീക്ഷിക്കുക</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed എത്തി, %status തെറ്റായ നിലയിൽ, %target തെറ്റായ പേജിൽ, %none റീഡയറക്ട് ചെയ്തില്ല, %error പരാജയപ്പെട്ടു, %skipped ഒഴിവാക്കി.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>ആദ്യത്തെ %count വരികൾ മാത്രമേ പരീക്ഷിച്ചുള്ളൂ.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>പുതിയ വിലാസത്തിൽ എത്താത്ത വരികൾ</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>പഴയ വിലാസങ്ങൾ പരീക്ഷിക്കാനായില്ല.</translation>
+    </message>
 </context>
 </TS>

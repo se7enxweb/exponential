@@ -86121,5 +86121,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>అతికించిన వచనం</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>సైట్‌మ్యాప్ చిరునామా ఇవ్వండి లేదా దాన్ని అప్‌లోడ్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>పాత చిరునామా ఏదీ కనుగొనబడలేదు.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>పాత సైట్‌మ్యాప్ నుండి</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 లాగ్ నుండి</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>లక్ష్యాలను సూచించండి</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>పాత సైట్ చిరునామాలు దాని సైట్‌మ్యాప్ నుండి (sitemap.xml, సైట్‌మ్యాప్ సూచిక లేదా .gz) లేదా ఒక్కో వరుసకు ఒక చిరునామా ఉన్న జాబితా నుండి. ప్రతిదీ ఖాళీ కొత్త చిరునామాతో ఒక వరుస అవుతుంది.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>సైట్‌మ్యాప్ చిరునామా</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>లేదా సైట్‌మ్యాప్‌ను లేదా జాబితాను అప్‌లోడ్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>ఇతర హోస్ట్‌ల చిరునామాలు కూడా</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>సందర్శకులు ఈ సైట్‌లో అడిగి దొరకని చిరునామాలు, ఎక్కువగా అడిగినవి మొదట. చిత్రాలు, స్క్రిప్ట్‌లు, బాట్‌లు చేర్చబడవు.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 లాగ్ ఆపివేయబడింది (site.ini [RequestLogSettings] NotFoundLog): దానిలో కొత్త చిరునామాలు లేవు.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>కనీసం ఇన్ని అభ్యర్థనలు</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>గత రోజుల్లో</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>వరుసలకు కొత్త చిరునామా లేని మ్యాప్: ప్రతిదానికి పాత చిరునామాకు చిరునామా లేదా పేరు అత్యంత దగ్గరగా ఉన్న ఈ సైట్ పేజీలు ఇవ్వబడతాయి.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>గరిష్ఠంగా ఇన్ని వరుసలు</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>కొత్త చిరునామాలు</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>కనీసం ఈ స్కోరు ఉన్న సూచనను నింపండి</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0 నుండి 100 వరకు స్కోరు పాత చిరునామా ఈ సైట్‌లోని పేజీకి ఎంత దగ్గరగా ఉందో తెలుపుతుంది. ఇతర సూచనలు వరుస గమనికలలో జాబితా చేయబడతాయి.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>CSV గా డౌన్‌లోడ్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>ఇంకా ఏమీ వ్రాయబడలేదు. మ్యాప్‌ను స్ప్రెడ్‌షీట్‌లో పూర్తి చేయడానికి డౌన్‌లోడ్ చేయండి, లేదా ప్రివ్యూ చూడండి: కొత్త చిరునామా లేని వరుసలు దిగుమతి చేయలేనివిగా చూపబడతాయి.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>ఫైల్‌ను అప్‌లోడ్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>ప్రారంభించే మార్గాలు</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>పాత చిరునామాలను పరీక్షించండి</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>సైట్‌యాక్సెస్‌కు సైట్ చిరునామా లేదు (site.ini [SiteSettings] SiteURL), కాబట్టి పాత చిరునామాలను ఇక్కడ పరీక్షించలేము. ./console exp:url:test వాటిని ఏ చిరునామాపైనైనా పరీక్షిస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>%base పై ప్రతి పాత చిరునామాను అభ్యర్థించి, దాని దారిమార్పులను అనుసరించి, అది కొత్త చిరునామాకు చేరుతుందో లేదో తనిఖీ చేస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>మళ్లీ పరీక్షించండి</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>పరీక్షించండి</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed చేరాయి, %status తప్పు స్థితితో, %target తప్పు పేజీలో, %none దారిమార్పు కాలేదు, %error విఫలమయ్యాయి, %skipped దాటవేయబడ్డాయి.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>మొదటి %count వరుసలు మాత్రమే పరీక్షించబడ్డాయి.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>కొత్త చిరునామాకు చేరని వరుసలు</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>పాత చిరునామాలను పరీక్షించలేకపోయాం.</translation>
+    </message>
 </context>
 </TS>

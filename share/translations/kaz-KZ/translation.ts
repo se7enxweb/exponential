@@ -86123,5 +86123,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>Қойылған мәтін</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Сайт картасының мекенжайын көрсетіңіз немесе оны жүктеп салыңыз.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Ескі мекенжай табылмады.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Ескі сайт картасынан</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 журналынан</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Мақсаттарды ұсыну</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Ескі сайттың мекенжайлары оның сайт картасынан (sitemap.xml, сайт карталарының индексі немесе .gz) немесе әр жолға бір мекенжайдан тұратын тізімнен алынады. Әрқайсысы жаңа мекенжайы бос жолға айналады.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Сайт картасының мекенжайы</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Немесе сайт картасын не тізімді жүктеп салыңыз</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Басқа хосттардың мекенжайлары да</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Келушілер осы сайттан сұраған, бірақ таппаған мекенжайлар, ең көп сұралғаны бірінші. Суреттер, скрипттер мен боттар қосылмайды.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 журналы өшірулі (site.ini [RequestLogSettings] NotFoundLog): онда жаңа мекенжайлар жоқ.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Кемінде осынша сұрау</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Соңғы күндерде</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Жолдарында жаңа мекенжайы жоқ карта: әрқайсысына мекенжайы не атауы ескісіне ең ұқсас осы сайттың беттері беріледі.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Ең көбі осынша жол</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Жаңа мекенжайлар</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Балы кемінде мынаған тең ұсынысты толтыру</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0-ден 100-ге дейінгі балл ескі мекенжайдың осы сайттың бетіне қаншалықты ұқсайтынын көрсетеді. Басқа ұсыныстар жолдың ескертпелерінде тізілген.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>CSV ретінде жүктеп алу</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Әзірге ештеңе жазылған жоқ. Картаны электрондық кестеде аяқтау үшін жүктеп алыңыз немесе алдын ала қарап шығыңыз: жаңа мекенжайы жоқ жолдар импорттауға болмайтын ретінде көрсетіледі.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Файлды жүктеп салу</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Бастау тәсілдері</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Ескі мекенжайларды тексеру</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Сайтқа кіру нүктесінде сайт мекенжайы жоқ (site.ini [SiteSettings] SiteURL), сондықтан ескі мекенжайларды мұнда тексеруге болмайды. ./console exp:url:test оларды кез келген мекенжайға қарсы тексереді.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Әрбір ескі мекенжайды %base бойынша сұрайды, оның қайта бағыттауларын орындайды және жаңа мекенжайына жеткенін тексереді.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Қайта тексеру</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Тексеру</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed жетті, %status қате күйімен, %target қате бетте, %none қайта бағытталмады, %error сәтсіз, %skipped өткізілді.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Тек алғашқы %count жол тексерілді.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Жаңа мекенжайына жетпеген жолдар</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Ескі мекенжайларды тексеру мүмкін болмады.</translation>
+    </message>
 </context>
 </TS>

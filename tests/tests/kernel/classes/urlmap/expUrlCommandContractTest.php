@@ -11,6 +11,7 @@
  *  UC-04 the exit codes, the schema, listOption(), the text of a plan and an import (planLines())
  *  UC-05 the upgrade step is registered in settings/upgrade.ini, the audit events are known, error.ini answers the
  *        redirect statuses
+ *  UC-06 the values of the helpers: --since (a date or a span back), a report value (suggestions, a redirect chain)
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -26,12 +27,19 @@ class expUrlCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:url:export' => '[format:][kind:*][language:][output:][include-node-aliases][output-format:]',
         'exp:url:batches' => '[limit:][format:]',
         'exp:url:undo' => '[force][format:][login:]',
+        'exp:url:from-sitemap' => '[output:][output-format:][format:][limit:][only-host:*][any-host][keep-duplicates][full-urls][timeout:][insecure]',
+        'exp:url:suggest' => '[output:][output-format:][format:][top:][fill-above:][min-score:][report:]',
+        'exp:url:from-404' => '[output:][output-format:][format:][min-hits:][since:][limit:][include-assets][include-bots][log:*]',
+        'exp:url:test' => '[base:][format:][report:][limit:][concurrency:][timeout:][max-redirects:][insecure]',
     );
 
     /** The arguments. Add, never change or remove. */
     const ARGUMENTS = array(
         'exp:url:import' => '[file]',
         'exp:url:undo' => '[batch]',
+        'exp:url:from-sitemap' => '[source]',
+        'exp:url:suggest' => '[file]',
+        'exp:url:test' => '[file]',
     );
 
     /** command => entry point in bin/php */
@@ -40,6 +48,10 @@ class expUrlCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:url:export' => 'expurlexport',
         'exp:url:batches' => 'expurlbatches',
         'exp:url:undo' => 'expurlundo',
+        'exp:url:from-sitemap' => 'expurlfromsitemap',
+        'exp:url:suggest' => 'expurlsuggest',
+        'exp:url:from-404' => 'expurlfrom404',
+        'exp:url:test' => 'expurltest',
     );
 
     public static function setUpBeforeClass(): void
@@ -141,6 +153,22 @@ class expUrlCommandContractTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'batch 7 (exp:url:undo 7 undoes it)', $lines[3] );
         $this->assertStringContainsString( 'broken-target  line 4     /x -> /y: the target /y does not exist', $lines[4] );
         $this->assertSame( array(), \Exponential\Command\Kernel\ExpurlBase::planLines( array() ) );
+    }
+
+    /** UC-06 */
+    public function testHelperValues()
+    {
+        $now = 1700000000;
+        $this->assertSame( array( $now - 30 * 86400, $now - 12 * 3600, $now - 2 * 604800, $now - 45 * 60, null, null ), array(
+            \Exponential\Command\Kernel\ExpurlBase::sinceTime( '30d', $now ), \Exponential\Command\Kernel\ExpurlBase::sinceTime( '12h', $now ),
+            \Exponential\Command\Kernel\ExpurlBase::sinceTime( '2W', $now ), \Exponential\Command\Kernel\ExpurlBase::sinceTime( '45m', $now ),
+            \Exponential\Command\Kernel\ExpurlBase::sinceTime( 'yesterday', $now ), \Exponential\Command\Kernel\ExpurlBase::sinceTime( '2026-13-45', $now ) ) );
+        $this->assertSame( strtotime( '2026-11-01' ), \Exponential\Command\Kernel\ExpurlBase::sinceTime( '2026-11-01', $now ) );
+        $this->assertSame( array( 'yes', '/a (90); /b (40)', '301 https://x/old > 200 https://x/new', '7' ), array(
+            \Exponential\Command\Kernel\ExpurlBase::reportValue( true ),
+            \Exponential\Command\Kernel\ExpurlBase::reportValue( array( array( 'path' => '/a', 'score' => 90 ), array( 'path' => '/b', 'score' => 40 ) ) ),
+            \Exponential\Command\Kernel\ExpurlBase::reportValue( array( array( 'status' => 301, 'url' => 'https://x/old' ), array( 'status' => 200, 'url' => 'https://x/new' ) ) ),
+            \Exponential\Command\Kernel\ExpurlBase::reportValue( 7 ) ) );
     }
 
     /** UC-05 */

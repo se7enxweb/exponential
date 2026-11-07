@@ -33,12 +33,12 @@ class Expurlexport extends ExpurlBase
                              "./console exp:url:export --kind=redirect -s site --language=ger-DE --format=json",
         ) + self::SCRIPT );
         return (array)$this->startup( '[format:][kind:*][language:][output:][include-node-aliases][output-format:]', '', array(
-            'format' => 'import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo: text (default) or json (the machine output exp-url/1)',
+            'format' => 'import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo, from-sitemap, from-404, suggest, test: text (default) or json (the machine output exp-url/1)',
             'kind' => 'Only these kinds: alias (the URL translator), wildcard, redirect (a comma list or repeated; default all)',
             'language' => 'import: the language of rows without one (default the siteaccess\'s); export: only this language',
             'output' => 'The file to write (default the standard output; needed for xlsx and ods)',
             'include-node-aliases' => 'Also the custom URL aliases of nodes (target node:<id>), not only the URL translator\'s',
-            'output-format' => 'import, export: what the command prints, text (default) or json (the machine output exp-url/1); --format is the file\'s format there',
+            'output-format' => 'import, export: what the command prints, text (default) or json (the machine output exp-url/1); --format is the file\'s format there; from-sitemap, from-404, suggest: the format of the file written (csv, json, xlsx, ods, apache, nginx; default from --output, else csv)',
         ) );
     }
 

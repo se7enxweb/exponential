@@ -86153,5 +86153,129 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>Pasted text</source>
         <translation>Test imwaħħal</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Agħti l-indirizz tas-sitemap jew tella'ha.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Ma nstab ebda indirizz qadim.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Mis-sitemap l-antika</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Mir-reġistru tal-404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Issuġġerixxi miri</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>L-indirizzi tas-sit il-qadim mis-sitemap tiegħu (sitemap.xml, indiċi ta' sitemaps jew .gz) jew minn lista b'indirizz wieħed f'kull linja. Kull wieħed isir ringiela b'indirizz ġdid battal.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Indirizz tas-sitemap</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Jew tella' s-sitemap jew il-lista</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>L-indirizzi ta' hosts oħra wkoll</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>L-indirizzi li żjarat talbu f'dan is-sit u ma sabux, l-aktar mitluba l-ewwel. Immaġini, skripts u bots huma esklużi.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Ir-reġistru tal-404 huwa mitfi (site.ini [RequestLogSettings] NotFoundLog): m'għandux indirizzi ġodda.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Mill-inqas dan l-għadd ta' talbiet</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Fl-aħħar jiem</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Mappa li r-ringieli tagħha m'għandhomx indirizz ġdid: kull waħda tieħu l-paġni ta' dan is-sit li l-indirizz jew l-isem tagħhom huwa l-aktar qrib dak il-qadim.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>L-aktar dan l-għadd ta' ringieli</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Indirizzi ġodda</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Imla suġġeriment li għandu punteġġ ta' mill-inqas</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Punteġġ minn 0 sa 100 jgħid kemm l-indirizz qadim huwa simili għal paġna ta' dan is-sit. Is-suġġerimenti l-oħra huma elenkati fin-noti tar-ringiela.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Niżżel bħala CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Għadu ma nkiteb xejn. Niżżel il-mappa biex tlestiha fi spreadsheet, jew ara minn qabel: ir-ringieli mingħajr indirizz ġdid jintwerew bħala li ma jistgħux jiġu importati.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Tella' fajl</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Modi kif tibda</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Ittestja l-indirizzi l-qodma</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>L-aċċess għas-sit m'għandux indirizz tas-sit (site.ini [SiteSettings] SiteURL), għalhekk l-indirizzi l-qodma ma jistgħux jiġu ttestjati hawn. ./console exp:url:test jittestjahom kontra kwalunkwe indirizz.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Jitlob kull indirizz qadim fuq %base, isegwi r-rindirizzar tiegħu u jiċċekkja jekk jaslix fl-indirizz il-ġdid tiegħu.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Ittestja mill-ġdid</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Ittestja</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed waslu, %status bi stat ħażin, %target fuq il-paġna ħażina, %none mhux rindirizzati, %error falliet, %skipped maqbżin.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Ġew ittestjati biss l-ewwel %count ringieli.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Ir-ringieli li ma waslux fl-indirizz il-ġdid tagħhom</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>L-indirizzi l-qodma ma setgħux jiġu ttestjati.</translation>
+    </message>
 </context>
 </TS>

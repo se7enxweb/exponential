@@ -86153,5 +86153,129 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>Pasted text</source>
         <translation>Ielīmētais teksts</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Norādiet vietnes kartes adresi vai augšupielādējiet to.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Neviena vecā adrese netika atrasta.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>No vecās vietnes kartes</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>No 404 žurnāla</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Ieteikt mērķus</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Vecās vietnes adreses no tās vietnes kartes (sitemap.xml, vietņu karšu indeksa vai .gz) vai no saraksta, kurā katrā rindā ir viena adrese. Katra kļūst par rindu ar tukšu jauno adresi.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Vietnes kartes adrese</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Vai augšupielādējiet vietnes karti vai sarakstu</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Arī citu resursdatoru adreses</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Adreses, ko apmeklētāji pieprasīja šajā vietnē un neatrada, visbiežāk pieprasītās pirmās. Attēli, skripti un boti netiek iekļauti.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 žurnāls ir izslēgts (site.ini [RequestLogSettings] NotFoundLog): tajā nav jaunu adrešu.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Vismaz tik pieprasījumu</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Pēdējās dienās</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Karte, kuras rindām trūkst jaunās adreses: katrai tiek piešķirtas šīs vietnes lapas, kuru adrese vai nosaukums ir vislīdzīgākais vecajam.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Ne vairāk kā tik rindu</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Jaunās adreses</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Aizpildīt ieteikumu, kura vērtējums ir vismaz</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Vērtējums no 0 līdz 100 norāda, cik līdzīga vecā adrese ir kādai šīs vietnes lapai. Pārējie ieteikumi ir norādīti rindas piezīmēs.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Lejupielādēt kā CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Vēl nekas nav ierakstīts. Lejupielādējiet karti, lai to pabeigtu izklājlapā, vai apskatiet to iepriekš: rindas bez jaunās adreses tiek rādītas kā neimportējamas.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Augšupielādēt failu</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Kā sākt</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Pārbaudīt vecās adreses</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Vietnes piekļuvei nav vietnes adreses (site.ini [SiteSettings] SiteURL), tāpēc vecās adreses šeit nevar pārbaudīt. ./console exp:url:test pārbauda tās pret jebkuru adresi.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Pieprasa katru veco adresi vietnē %base, seko tās pāradresācijām un pārbauda, vai tā nonāk jaunajā adresē.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Pārbaudīt vēlreiz</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Pārbaudīt</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed nonāca pareizi, %status ar nepareizu statusu, %target nepareizā lapā, %none nav pāradresētas, %error neizdevās, %skipped izlaistas.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Pārbaudītas tikai pirmās %count rindas.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Rindas, kas nenonāca savā jaunajā adresē</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Vecās adreses nevarēja pārbaudīt.</translation>
+    </message>
 </context>
 </TS>

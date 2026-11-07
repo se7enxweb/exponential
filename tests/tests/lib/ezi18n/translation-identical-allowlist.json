@@ -278,7 +278,8 @@
         "WebDAV": "protocol name",
         "Font": "spelled the same in Croatian (font, the standard word for a typeface)",
         "+%added ~%changed -%removed": "Fixed counter notation, kept exactly as the brief requires",
-        "Webhook": "Croatian IT usage keeps the English term Webhook"
+        "Webhook": "Croatian IT usage keeps the English term Webhook",
+        "Test": "a loanword spelled the same"
     },
     "cze-CZ": {
         "Relevance": "Relevance is the Czech word for relevance, spelled the same",
@@ -424,7 +425,8 @@
         "Tablet": "the Czech word for a tablet",
         "WebDAV": "protocol name",
         "Webhook": "Czech uses the English term Webhook",
-        "Import %id": "Czech word 'import' spelled the same"
+        "Import %id": "Czech word 'import' spelled the same",
+        "Test": "a loanword spelled the same"
     },
     "dan-DK": {
         "Cookie": "Danish standard term for an HTTP cookie is Cookie",
@@ -1802,7 +1804,8 @@
         "page": "page is the French word too",
         "Public": "French adjective public is spelled the same as English",
         "public": "French adjective public is spelled the same as English",
-        "Import %id": "French word import spelled the same"
+        "Import %id": "French word import spelled the same",
+        "Test": "Common loan word, spelled the same as in the language"
     },
     "ger-DE": {
         "Session": "German IT usage writes Session (the guide and the tab say Session)",
@@ -2848,7 +2851,8 @@
         "Sepia": "spelled the same in Polish (sepia, the brown photo tone)",
         "Webhook": "Polish uses the English technical term webhook",
         "Import %id": "Polish noun 'import' spelled the same",
-        "Status": "Polish word spelled the same"
+        "Status": "Polish word spelled the same",
+        "Test": "Polish uses the same word for a test"
     },
     "por-BR": {
         "Cookie": "Brazilian Portuguese uses the English loanword \"cookie\" as the standard web term",
@@ -3979,7 +3983,8 @@
         "Font": "spelled the same in Bosnian (font, the standard word for a typeface)",
         "Commit": "Bosnian uses the English git term commit (the catalogue writes commitovano)",
         "Webhook": "Bosnian uses the English loanword webhook",
-        "git host": "Bosnian uses git and the loanword host, as the catalogue's allowlist does for Host"
+        "git host": "Bosnian uses git and the loanword host, as the catalogue's allowlist does for Host",
+        "Test": "a loanword spelled the same"
     },
     "dsb-DE": {
         "Cookie": "Lower Sorbian uses the loanword Cookie for a browser cookie (Mozilla dsb terminology)",

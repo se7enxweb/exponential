@@ -86123,5 +86123,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>পেষ্ট কৰা পাঠ</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>ছাইটমেপৰ ঠিকনা দিয়ক বা ইয়াক আপলোড কৰক।</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>কোনো পুৰণি ঠিকনা পোৱা নগ'ল।</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>পুৰণি ছাইটমেপৰ পৰা</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 লগৰ পৰা</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>লক্ষ্যৰ পৰামৰ্শ দিয়ক</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>পুৰণি ছাইটৰ ঠিকনাবোৰ ইয়াৰ ছাইটমেপৰ (sitemap.xml, এটা ছাইটমেপ সূচী বা .gz) পৰা বা প্ৰতি শাৰীত এটা ঠিকনা থকা তালিকাৰ পৰা। প্ৰতিটো এটা খালী নতুন ঠিকনা থকা শাৰী হৈ পৰে।</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>ছাইটমেপৰ ঠিকনা</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>অথবা ছাইটমেপ বা তালিকাখন আপলোড কৰক</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>আন হোষ্টৰ ঠিকনাবোৰো</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>এই ছাইটত দৰ্শকে বিচাৰি নোপোৱা ঠিকনাবোৰ, সৰ্বাধিক বিচৰাবোৰ প্ৰথমে। ছবি, স্ক্ৰিপ্ট আৰু বটবোৰ বাদ দিয়া হৈছে।</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 লগ বন্ধ কৰি থোৱা হৈছে (site.ini [RequestLogSettings] NotFoundLog): ইয়াত কোনো নতুন ঠিকনা নাই।</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>কমেও ইমানবোৰ অনুৰোধ</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>শেহতীয়া দিনবোৰত</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>যি মেপৰ শাৰীবোৰত নতুন ঠিকনা নাই: প্ৰতিটোৱে এই ছাইটৰ সেই পৃষ্ঠাবোৰ পায় যাৰ ঠিকনা বা নাম পুৰণিটোৰ আটাইতকৈ ওচৰৰ।</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>বেছিকৈ ইমানবোৰ শাৰী</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>নতুন ঠিকনাসমূহ</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>কমেও এই স্ক'ৰ থকা এটা পৰামৰ্শ পূৰণ কৰক</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0 ৰ পৰা 100 লৈকে এটা স্ক'ৰে কয় যে পুৰণি ঠিকনাটো এই ছাইটৰ এটা পৃষ্ঠাৰ লগত কিমান একে। আন পৰামৰ্শবোৰ শাৰীটোৰ টোকাত তালিকাভুক্ত কৰা হৈছে।</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>CSV হিচাপে ডাউনলোড কৰক</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>এতিয়াও একো লিখা হোৱা নাই। মেপখন স্প্ৰেডশ্বীটত সম্পূৰ্ণ কৰিবলৈ ডাউনলোড কৰক, বা ইয়াৰ পূৰ্বদৰ্শন চাওক: নতুন ঠিকনা নথকা শাৰীবোৰ আমদানিযোগ্য নহয় বুলি দেখুওৱা হয়।</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>এটা ফাইল আপলোড কৰক</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>আৰম্ভ কৰাৰ উপায়</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>পুৰণি ঠিকনাবোৰ পৰীক্ষা কৰক</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>ছাইট প্ৰৱেশৰ কোনো ছাইট ঠিকনা নাই (site.ini [SiteSettings] SiteURL), গতিকে পুৰণি ঠিকনাবোৰ ইয়াত পৰীক্ষা কৰিব নোৱাৰি। ./console exp:url:test এ সেইবোৰ যিকোনো ঠিকনাৰ বিপক্ষে পৰীক্ষা কৰে।</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>%base ত প্ৰতিটো পুৰণি ঠিকনাৰ অনুৰোধ কৰে, ইয়াৰ পুনৰ্নিৰ্দেশবোৰ অনুসৰণ কৰে আৰু ই ইয়াৰ নতুন ঠিকনাত পৰিছে নে নাই পৰীক্ষা কৰে।</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>পুনৰ পৰীক্ষা কৰক</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>পৰীক্ষা</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed পৰিল, %status ভুল স্থিতিৰ সৈতে, %target ভুল পৃষ্ঠাত, %none পুনৰ্নিৰ্দেশিত নহ'ল, %error বিফল, %skipped এৰা হ'ল।</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>কেৱল প্ৰথম %count শাৰী পৰীক্ষা কৰা হ'ল।</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>যিবোৰ শাৰী নতুন ঠিকনাত পৰা নাই</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>পুৰণি ঠিকনাবোৰ পৰীক্ষা কৰিব পৰা নগ'ল।</translation>
+    </message>
 </context>
 </TS>

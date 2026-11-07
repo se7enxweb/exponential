@@ -101,6 +101,33 @@ is the row's, else `--language`, else the siteaccess's content language.
 aliases of nodes, target `node:<id>`), the wildcards and the redirects, in every format the import reads and as
 `.ods`. Importing the export into the same installation finds every row unchanged.
 
+## Helpers for moving a site
+
+Four console commands build and check a URL map; none of them changes the installation:
+
+| Command | What it does |
+|---|---|
+| [`exp:url:from-sitemap <address or file>`](../../examples/commands/expurlfromsitemap.md) | the old site's addresses from its sitemap, a sitemap index (with the sitemaps it names), `.gz`, or a crawl list with one address per line, as rows with an empty `new_url`; only the sitemap's host (`--only-host`, `--any-host`), every address once (`--keep-duplicates`), `--limit`, paths or `--full-urls` |
+| [`exp:url:suggest <file>`](../../examples/commands/expurlsuggest.md) | for every row without a target, the pages of the siteaccess of `-s` most like the old address (its URL alias and name, scored 0 to 100); `--fill-above=<score>` writes the best one into `new_url`, the others are listed in the note or in `--report` |
+| [`exp:url:from-404`](../../examples/commands/expurlfrom404.md) | the addresses of the not-found log, the most asked first (`--min-hits`, `--since`, `--limit`), without assets and bots; `--log` reads web server access logs instead |
+| [`exp:url:test <file> --base=<address>`](../../examples/commands/expurltest.md) | requests every old address on a site, several at a time (`--concurrency`), follows the redirects and reports landed, wrong-status, wrong-target, not-redirected or error per row; exit 1 when a row did not land; `--insecure` for a test host with a self-signed certificate |
+
+- The 404 source is the not-found log the kernel already writes (`site.ini [RequestLogSettings] NotFoundLog=enabled`,
+  the default; `var/log/404.log` and its rotated files). No new log or table is added. The log writes every query
+  value as `***`, so an address's query is dropped there; access logs keep it.
+- The suggestions read the URL aliases, the tree and the object names once (three queries), visible nodes below the
+  siteaccess's content root only, and write targets as visitors use them, without the `PathPrefix`.
+- Requests go through `expUrlMapHttp`: GET only, http and https only, a timeout, the user agent
+  `Exponential URL map`, a size limit, the proxy of `site.ini [ProxySettings]`. A sitemap's XML is never read with
+  a DOCTYPE or from the network.
+- The commands follow the contract of the other `exp:url` commands: `--format=json` prints the machine output
+  `exp-url/1`, `--output` and `--output-format` write the map in any format the import reads, the exit codes are
+  the same.
+- In the administration the import screen has the same helpers as tabs: **From the old sitemap** (an address of a
+  public host, never one of the server's own network, or an uploaded sitemap or list), **From the 404 log** and
+  **Suggest targets**, each downloaded as CSV or opened as an import to preview; after an import, **Test** requests
+  its old addresses (the first 500) on the site of its siteaccess and lists the rows that did not land.
+
 ## In the administration
 
 The URL translator and the wildcards pages have the buttons **Import**, **Export**, **Import history** and

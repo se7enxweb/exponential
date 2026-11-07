@@ -86123,5 +86123,129 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <source>Pasted text</source>
         <translation>Inyandiko yafatanijwe</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Tanga aderese ya sitemap canke uyishire kuri seriveri.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Nta aderese ya kera yabonetse.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Kuva kuri sitemap ya kera</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Kuva kuri log ya 404</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Tanga ibigenewe</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Aderese z'urubuga rwa kera ziva kuri sitemap yarwo (sitemap.xml, urutonde rwa sitemap canke .gz) canke ku rutonde rufise aderese imwe ku murongo. Imwe imwe ihinduka umurongo ufise aderese nshasha irimwo ubusa.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Aderese ya sitemap</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Canke uyishire sitemap canke urutonde</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>N'aderese z'izindi host</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Aderese abashitsi basavye kuri uru rubuga ntibazibone, izisavwe cane zibanza. Amashusho, scripts na bots ntibirimwo.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Log ya 404 yazimye (site.ini [RequestLogSettings] NotFoundLog): nta aderese nshasha irimwo.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Nibura ubu bwinshi bw'ibisabwa</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Mu misi iheruka</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Ikarata imirongo yayo idafise aderese nshasha: umurongo wose uronka amapaji y'uru rubuga aderese canke izina ryayo risa cane n'iya kera.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Cane cane ubu bwinshi bw'imirongo</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Aderese nshasha</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Uzuza icifuzo gifise amanota nibura</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Amanota kuva kuri 0 gushika kuri 100 yerekana ukuntu aderese ya kera isa n'ipaji y'uru rubuga. Ibindi bifuzo biri mu nteruro z'umurongo.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Kuramanura nka CSV</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Nta kintu ciranditswe. Uramanure ikarata kugira uyuzuze muri spreadsheet, canke urabe ibanza: imirongo itagira aderese nshasha yerekanwa ko idashobora kwinjizwa.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Kwinjiza dosiye</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Uburyo bwo gutangura</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Gerageza aderese za kera</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Uburyo bwo gushika ku rubuga nta aderese y'urubuga bufise (site.ini [SiteSettings] SiteURL), kubera ico aderese za kera ntizishobora gugeragezwa hano. ./console exp:url:test izigerageza kuri aderese iyo ari yo yose.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Isaba buri aderese ya kera kuri %base, ikurikira ukwerekeza ahandi kwayo ikareba ko ishika kuri aderese nshasha.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Ongera ugerageze</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Gerageza</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed zashitse, %status zifise status itari yo, %target ku paji itari yo, %none ziterekejwe ahandi, %error zananiwe, %skipped zasimbutse.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Imirongo %count ya mbere gusa niyo yagerageje.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Imirongo itashitse kuri aderese yayo nshasha</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Aderese za kera ntizashoboye kugeragezwa.</translation>
+    </message>
 </context>
 </TS>

@@ -86123,5 +86123,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>पेस्ट खालामनाय लिरथाय</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>साइट-नक्सानि ठिकाना हो एबा बेखौ आपल'ड खालाम।</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>गोजाम ठिकाना मोनसेबो मोनाखै।</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>गोजाम साइट-नक्साआव</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 लगआव</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>गोनां फोरायनाय</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>गोजाम साइटनि ठिकानाफोर बेनि साइट-नक्सा (sitemap.xml, साइट-नक्सानि सूचि एबा .gz) निफ्राय एबा लाइन मोनसेआव ठिकाना मोनसे थानाय लिस्टनिफ्राय। गासैबो गोदान ठिकाना गोवां सारि मोनसे जायो।</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>साइट-नक्सानि ठिकाना</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>एबा साइट-नक्सा एबा लिस्टखौ आपल'ड खालाम</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>मेगनथाइ ह'स्टफोरनि ठिकानाबो</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>बे साइटआव नायनायारिफोरा फोनांगोन आरो मोनाखै ठिकानाफोर, जौसेसे फोनांनायफोर गोहोआव। थाइलायफोर, स्क्रिप्टफोर आरो बटफोरखौ आलादा खालामनाय जादों।</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 लग बन्द जादों (site.ini [RequestLogSettings] NotFoundLog): बेआव गोदान ठिकाना गैया।</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>गोबांनिफ्राय बे नामाव फोनांनाय</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>मोसौ सानफोरआव</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>गोदान ठिकाना गैया सारिफोर थानाय नक्सा: गासैखौ बे साइटनि बिलाइफोर, जेफोरनि ठिकाना एबा मुं गोजाम नि जोबोद नुजाथाव, लाबो।</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>जौसेसे बे नामाव सारिफोर</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>गोदान ठिकानाफोर</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>गोबांनिफ्राय बे स्कर थानाय फोरायनाय फिनाय</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0 निफ्राय 100 सम्मा स्कर मोनसेआ गोजाम ठिकाना बे साइटनि बिलाइ मोनसेनि सिन्थो जोबोद नुजाथाव फोरमायो। गुबुन फोरायनायफोर सारिनि नोटफोराव लिस्ट खालामनाय दं।</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>CSV महरै डाउनलोड खालाम</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>दासिमबो जेबो लिरा। नक्सा खौ स्प्रेडशीटआव जोबोद खालामनो डाउनलोड खालाम, एबा बेनि सोलोंथाइ नाय: गोदान ठिकाना गैया सारिफोरखौ इम्पोर्ट खालामनो हाया महरै दिन्थिनाय जायो।</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>फाइल मोनसे आपल'ड खालाम</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>जागायनायनि फारसेफोर</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>गोजाम ठिकानाफोरखौ सोलोंथाइ खालाम</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>साइट-प्रबेशआ साइट ठिकाना गैया (site.ini [SiteSettings] SiteURL), बेनिफ्राय गोजाम ठिकानाफोरखौ बेयाव सोलोंथाइ खालामनो हाया। ./console exp:url:test आ बिसोरखौ जेबो ठिकानानि गोहोआव सोलोंथाइ खालामो।</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>%base आव गासै गोजाम ठिकानाखौ फोनांनो, बिनि रिडाइरेक्टफोरखौ दिहुनो आरो बे बिनि गोदान ठिकानाआव थाखाय नेवसिन नायो।</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>फिन सोलोंथाइ खालाम</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>सोलोंथाइ</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed थाखाय, %status मोजां गैया थासारिजों, %target मोजां गैया बिलाइआव, %none रिडाइरेक्ट जाया, %error फेलें जाबाय, %skipped बारहोबाय।</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>गिबिं %count सारिफोरावनो सोलोंथाइ खालामबाय।</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>गोदान ठिकानाआव थाखै सारिफोर</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>गोजाम ठिकानाफोरखौ सोलोंथाइ खालामनो हायाखै।</translation>
+    </message>
 </context>
 </TS>

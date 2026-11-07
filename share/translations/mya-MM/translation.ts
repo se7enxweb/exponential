@@ -86123,5 +86123,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>ကူးထည့်ထားသော စာသား</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>ဆိုက်မြေပုံ၏ လိပ်စာကို ပေးပါ သို့မဟုတ် ၎င်းကို တင်ပါ။</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>လိပ်စာဟောင်း မတွေ့ပါ။</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>ဆိုက်မြေပုံဟောင်းမှ</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 မှတ်တမ်းမှ</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>ပစ်မှတ်များ အကြံပြုရန်</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>ဆိုက်ဟောင်း၏ လိပ်စာများကို ၎င်း၏ ဆိုက်မြေပုံ (sitemap.xml၊ ဆိုက်မြေပုံ အညွှန်း သို့မဟုတ် .gz) မှ သို့မဟုတ် တစ်တန်းလျှင် လိပ်စာတစ်ခုပါသော စာရင်းမှ ယူသည်။ တစ်ခုစီသည် လိပ်စာအသစ် ဗလာဖြစ်သော အတန်းတစ်တန်း ဖြစ်လာမည်။</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>ဆိုက်မြေပုံ၏ လိပ်စာ</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>သို့မဟုတ် ဆိုက်မြေပုံ သို့မဟုတ် စာရင်းကို တင်ပါ</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>အခြားဟိုစ့်များ၏ လိပ်စာများလည်း</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>ဤဆိုက်တွင် ဧည့်သည်များ တောင်းဆိုခဲ့ပြီး မတွေ့ခဲ့သော လိပ်စာများ၊ အများဆုံး တောင်းဆိုထားသည်ကို ရှေ့ဆုံးတွင်။ ပုံများ၊ စကရစ်များနှင့် ဘော့များကို ချန်ထားသည်။</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 မှတ်တမ်းကို ပိတ်ထားသည် (site.ini [RequestLogSettings] NotFoundLog): လိပ်စာအသစ် မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>အနည်းဆုံး ဤမျှသော တောင်းဆိုမှုများ</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>လွန်ခဲ့သော ရက်များတွင်</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>အတန်းများတွင် လိပ်စာအသစ် မရှိသော မြေပုံ: တစ်တန်းစီသည် လိပ်စာ သို့မဟုတ် အမည်သည် ဟောင်းနှင့် အတူဆုံးဖြစ်သော ဤဆိုက်၏ စာမျက်နှာများကို ရရှိမည်။</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>အများဆုံး ဤမျှသော အတန်းများ</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>လိပ်စာအသစ်များ</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>အနည်းဆုံး ဤရမှတ်ရှိသော အကြံပြုချက်ကို ဖြည့်ပါ</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>၀ မှ ၁၀၀ အထိ ရမှတ်သည် လိပ်စာဟောင်းသည် ဤဆိုက်၏ စာမျက်နှာတစ်ခုနှင့် မည်မျှ တူသည်ကို ပြသည်။ အခြားအကြံပြုချက်များကို အတန်း၏ မှတ်ချက်များတွင် စာရင်းပြုထားသည်။</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>CSV အဖြစ် ဒေါင်းလုဒ်လုပ်ရန်</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>ယခုထိ ဘာမျှ မရေးရသေးပါ။ မြေပုံကို စာရင်းဇယားတွင် အပြီးသတ်ရန် ဒေါင်းလုဒ်လုပ်ပါ သို့မဟုတ် အစမ်းကြည့်ပါ: လိပ်စာအသစ် မရှိသော အတန်းများကို တင်သွင်း၍မရဟု ပြသည်။</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>ဖိုင်တစ်ခု တင်ရန်</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>စတင်ရန် နည်းလမ်းများ</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>လိပ်စာဟောင်းများကို စမ်းသပ်ရန်</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>ဆိုက်ဝင်ရောက်မှုတွင် ဆိုက်လိပ်စာ (site.ini [SiteSettings] SiteURL) မရှိသဖြင့် လိပ်စာဟောင်းများကို ဤနေရာတွင် စမ်းသပ်၍မရပါ။ ./console exp:url:test သည် မည်သည့်လိပ်စာနှင့်မဆို စမ်းသပ်ပေးသည်။</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>လိပ်စာဟောင်းတစ်ခုစီကို %base တွင် တောင်းဆိုပြီး ပြန်ညွှန်းမှုများကို လိုက်၍ လိပ်စာအသစ်သို့ ရောက်မရောက် စစ်ဆေးသည်။</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>ထပ်မံ စမ်းသပ်ရန်</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>စမ်းသပ်ရန်</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed ရောက်ရှိ၊ %status အခြေအနေမှား၊ %target စာမျက်နှာမှား၊ %none ပြန်မညွှန်း၊ %error မအောင်မြင်၊ %skipped ကျော်ထား။</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>ပထမ %count တန်းကိုသာ စမ်းသပ်ခဲ့သည်။</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>လိပ်စာအသစ်သို့ မရောက်ခဲ့သော အတန်းများ</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>လိပ်စာဟောင်းများကို စမ်းသပ်၍ မရခဲ့ပါ။</translation>
+    </message>
 </context>
 </TS>

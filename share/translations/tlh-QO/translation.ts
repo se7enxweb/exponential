@@ -86156,5 +86156,129 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Pasted text</source>
         <translation>ghItlh lanlu'ta'bogh</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Daq ngoqDaq Daqmey yIlaD pagh yIngaS.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>ngo' Daq tu'lu'be'.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>ngo' ngoqDaq vo'</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 QonoS vo'</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Daqmey yIcha'</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>ngo' DaH Daqmey ngoqDaq vo' (sitemap.xml, ngoqDaq tlhegh pagh .gz) pagh tlhegh wa' Daq tlheghvaD. Daq 'ey tlhegh chu' Daq chIm.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>ngoqDaq Daq</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>pagh ngoqDaq pagh tlhegh yIngaS</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>pagh Daqmey latlh yoSmey</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Daqmey legh jonwI'pu' vegh DaHjaj 'ej tu'be'bogh, law'bogh ghoSbogh nIteb. Sar, ghItlhmey, bot nobbogh.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 QonoS tlhoS (site.ini [RequestLogSettings] NotFoundLog): chu' Daqmey ghaj ghIj.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Daqmey wa'maH puS</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>jajmey 'Iv</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>ngoq Daq chu' ghajbe'bogh tlheghmeyvam: tlhegh 'ey ngoqDaq pagh pong Daq ngo' rap law'bogh Daq 'ey ghaj.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>tlheghmey law' puS</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Daqmey chu'</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>chovnatlh DaSop DaH Dajatlh 'op 'ej jaS puS</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>jaS 0 vo' 100 Daq ngo' Daq ngoqDaq Daq rap 'ej vIlegh. chovnatlh latlh QInHommey tlhegh 'ey Daq.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>CSV 'ay' yIqem</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>qaStaHvIS pagh ghItlh. ngoq yIqem tlhegh QonoSDaq pagh yInaw: tlheghmey Daq chu' ghajbe'bogh yIqemlaHbe'.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Segh yIngaS</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>chap Hemey</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>ngo' Daqmey yItob</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>yoS lojmIt Daq Daq ghajbe' (site.ini [SiteSettings] SiteURL), ngo' Daqmey vItoblaHbe' naDev. ./console exp:url:test Daq vay' Daq vItob.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>ngo' Daq 'ey %base Daq yIje' 'ej choHghachmey pol 'ej ngoq chu' Daq SoH.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>pIm yItob</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>yItob</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed SoH, %status Qagh qeylIS, %target Qagh ngoq, %none choH 'e' wIvbe', %error Qapbe', %skipped lang.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>wa' %count tlheghmey neH tob.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>tlheghmey ngoq chu' Daq SoHbe'bogh</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>ngo' Daqmey tob laHbe'.</translation>
+    </message>
 </context>
 </TS>

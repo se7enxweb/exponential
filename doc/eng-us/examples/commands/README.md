@@ -106,7 +106,11 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | [exp:exptemplateengines](exptemplateengines.md) | exp:template:engines | List the template engines: library found or not, version, file endings, settings, security policy, compiled-template cache |
 | [exp:expurlbatches](expurlbatches.md) | exp:url:batches | List the URL map imports: who imported which file when, the counts and whether it was undone |
 | [exp:expurlexport](expurlexport.md) | exp:url:export | Export the URL translator, the wildcards and the redirects as a URL map (CSV, JSON, .xlsx, .ods, Apache or nginx rules) |
+| [exp:expurlfrom404](expurlfrom404.md) | exp:url:from-404 | Start a URL map from the not-found log: the addresses visitors asked for and did not find, the most asked first, as rows to fill in |
+| [exp:expurlfromsitemap](expurlfromsitemap.md) | exp:url:from-sitemap | Start a URL map from an old site's sitemap (sitemap.xml, a sitemap index, .gz) or a crawl list: every old address as a row to fill in |
 | [exp:expurlimport](expurlimport.md) | exp:url:import | Import a URL map (CSV, JSON, .xlsx, .ods, Apache or nginx rules) into the URL translator, the wildcards and the redirects, as one batch that can be undone |
+| [exp:expurlsuggest](expurlsuggest.md) | exp:url:suggest | Suggest new targets for the rows of a URL map that have none, by how alike their old address is to the addresses and names of this site's pages |
+| [exp:expurltest](expurltest.md) | exp:url:test | Test a URL map against a running site: request every old address, follow the redirects and compare where it lands with the new_url |
 | [exp:expurlundo](expurlundo.md) | exp:url:undo | Undo a URL map import: every alias, wildcard and redirect it created or changed back as it was |
 | [exp:expuser2fa](expuser2fa.md) | exp:user:2fa | Two-step sign-in and passkeys of an account: show them; reset the second step for someone who lost the phone, remove the passkeys of a lost device (changes are a dry run unless --apply) |
 | [exp:expuserapprove](expuserapprove.md) | exp:user:approve | Approve a waiting registration (activate the account, or accept its approval item and publish it), or reject it with --reject, as Users > Unactivated and the approval item do (a dry run unless --apply) |

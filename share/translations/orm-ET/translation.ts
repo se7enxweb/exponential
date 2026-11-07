@@ -86123,5 +86123,129 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>Pasted text</source>
         <translation>Barruu maxxanfame</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>Teessoo kaartaa marsariitii kenni yookaan ol fe'i.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>Teessoon moofaa tokkollee hin argamne.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>Kaartaa marsariitii moofaa irraa</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>Galmee 404 irraa</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>Kaayyoowwan yaadi</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>Teessoowwan marsariitii moofaa kaartaa isaa irraa (sitemap.xml, tarreeffama kaartaa yookaan .gz) yookaan tarree teessoo tokko sarara tokkoon irraa. Tokkoon tokkoon isaanii sararaa teessoo haaraa duwwaa qabu ta'a.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>Teessoo kaartaa marsariitii</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>Yookaan kaartaa marsariitii ykn tarree ol fe'i</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>Teessoowwan hoostii biroos</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>Teessoowwan daawwattoonni marsariitii kana irratti gaafatanii hin arganne, kanneen baay'ee gaafataman duraan. Suuraawwan, iskiriptoonni fi roboonni ala kaafamaniiru.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>Galmeen 404 cufamaniiru (site.ini [RequestLogSettings] NotFoundLog): teessoo haaraa hin qabu.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>Yoo xiqqaate gaaffii kana ni'i</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>Guyyoota darban keessa</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>Kaartaa sararoonni isaa teessoo haaraa hin qabne: tokkoon tokkoon isaa fuulota marsariitii kanaa teessoon yookaan maqaan isaanii kan moofaa waliin baay'ee wal fakkaatan argata.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>Yoo baay'atte sarara kana ni'i</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>Teessoowwan haaraa</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>Yaada qabxii yoo xiqqaate kanaa qabu guuti</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>Qabxiin 0 hanga 100 teessoon moofaan fuula marsariitii kanaa waliin hangam akka wal fakkaatu agarsiisa. Yaadonni kaan yaada sararaa keessatti tarreeffamaniiru.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>Akka CSV buufadhu</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>Ammaaf homtu hin barreeffamne. Kaartaa kana buufadhuutii unka herregaa keessatti xumuri, yookaan duraan ilaali: sararoonni teessoo haaraa hin qabne akka hin galfamne ni agarsiifamu.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>Faayilii ol fe'i</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>Karaawwan jalqabaa</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>Teessoowwan moofaa qori</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>Seensi marsariitii teessoo marsariitii hin qabu (site.ini [SiteSettings] SiteURL), kanaaf teessoowwan moofaa as hin qoramu. ./console exp:url:test teessoo kamiyyuu irratti ni qora.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>Teessoo moofaa tokkoon tokkoon %base irratti gaafata, qajeelchiiwwan isaa hordofa, teessoo haaraa irra ga'uu isaa ni mirkaneessa.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>Deebi'ii qori</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Qori</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed ga'e, %status haala dogoggoraan, %target fuula dogoggoraa irratti, %none hin qajeelfamne, %error kufe, %skipped dhiisame.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>Sararoota jalqabaa %count qofa qoramaniiru.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>Sararoota teessoo haaraa isaanii irra hin gahin</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>Teessoowwan moofaa qoruun hin danda'amne.</translation>
+    </message>
 </context>
 </TS>

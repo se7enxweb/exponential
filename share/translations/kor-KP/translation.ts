@@ -86123,5 +86123,129 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Pasted text</source>
         <translation>붙여넣은 텍스트</translation>
     </message>
+    <message>
+        <source>Give the address of the sitemap or upload it.</source>
+        <translation>사이트맵의 주소를 입력하거나 화일을 올리십시오.</translation>
+    </message>
+    <message>
+        <source>No old address was found.</source>
+        <translation>이전 주소를 찾지 못했습니다.</translation>
+    </message>
+    <message>
+        <source>From the old sitemap</source>
+        <translation>이전 사이트맵에서</translation>
+    </message>
+    <message>
+        <source>From the 404 log</source>
+        <translation>404 기록에서</translation>
+    </message>
+    <message>
+        <source>Suggest targets</source>
+        <translation>대상 제안</translation>
+    </message>
+    <message>
+        <source>The addresses of the old site from its sitemap (sitemap.xml, a sitemap index or .gz) or from a list with one address per line. Each becomes a row with an empty new address.</source>
+        <translation>이전 싸이트의 주소를 사이트맵(sitemap.xml, 사이트맵 색인 또는 .gz)이나 한 줄에 주소 하나씩 적은 목록에서 가져옵니다. 주소마다 새 주소가 빈 행이 하나씩 만들어집니다.</translation>
+    </message>
+    <message>
+        <source>Address of the sitemap</source>
+        <translation>사이트맵 주소</translation>
+    </message>
+    <message>
+        <source>Or upload the sitemap or the list</source>
+        <translation>또는 사이트맵이나 목록 화일 올리기</translation>
+    </message>
+    <message>
+        <source>Also the addresses of other hosts</source>
+        <translation>다른 호스트의 주소도 포함</translation>
+    </message>
+    <message>
+        <source>The addresses visitors asked for on this site and did not find, the most asked first. Images, scripts and bots are left out.</source>
+        <translation>방문자가 이 싸이트에서 요청했지만 찾지 못한 주소이며 요청이 많은 순서로 나열합니다. 화상, 스크립트, 봇은 제외합니다.</translation>
+    </message>
+    <message>
+        <source>The 404 log is switched off (site.ini [RequestLogSettings] NotFoundLog): it has no new addresses.</source>
+        <translation>404 기록이 꺼져 있습니다(site.ini [RequestLogSettings] NotFoundLog). 그래서 새 주소가 없습니다.</translation>
+    </message>
+    <message>
+        <source>At least this many requests</source>
+        <translation>최소 요청 수</translation>
+    </message>
+    <message>
+        <source>In the last days</source>
+        <translation>최근 일수</translation>
+    </message>
+    <message>
+        <source>A map whose rows lack a new address: each gets the pages of this site whose address or name is most like the old one.</source>
+        <translation>새 주소가 없는 행이 있는 맵입니다. 각 행에 주소나 이름이 이전 주소와 가장 비슷한 이 싸이트의 페이지를 지정합니다.</translation>
+    </message>
+    <message>
+        <source>At most this many rows</source>
+        <translation>최대 행 수</translation>
+    </message>
+    <message>
+        <source>New addresses</source>
+        <translation>새 주소</translation>
+    </message>
+    <message>
+        <source>Fill in a suggestion that scores at least</source>
+        <translation>점수가 다음 이상인 제안 채우기</translation>
+    </message>
+    <message>
+        <source>A score from 0 to 100 says how alike the old address is to a page of this site. The other suggestions are listed in the notes of the row.</source>
+        <translation>0에서 100까지의 점수는 이전 주소가 이 싸이트의 페이지와 얼마나 비슷한지 나타냅니다. 나머지 제안은 행의 메모에 나열됩니다.</translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation>CSV로 다운로드</translation>
+    </message>
+    <message>
+        <source>Nothing is written yet. Download the map to complete it in a spreadsheet, or preview it: rows without a new address are shown as not importable.</source>
+        <translation>아직 아무것도 기록되지 않았습니다. 맵을 다운로드하여 스프레드시트에서 완성하거나 미리 보십시오. 새 주소가 없는 행은 가져올 수 없는 것으로 표시됩니다.</translation>
+    </message>
+    <message>
+        <source>Upload a file</source>
+        <translation>화일 올리기</translation>
+    </message>
+    <message>
+        <source>Ways to start</source>
+        <translation>시작 방법</translation>
+    </message>
+    <message>
+        <source>Test the old addresses</source>
+        <translation>이전 주소 시험</translation>
+    </message>
+    <message>
+        <source>The siteaccess has no site address (site.ini [SiteSettings] SiteURL), so the old addresses cannot be tested here. ./console exp:url:test tests them against any address.</source>
+        <translation>싸이트접근에 사이트 주소(site.ini [SiteSettings] SiteURL)가 없어 이전 주소를 여기서 시험할 수 없습니다. ./console exp:url:test 로 임의의 주소에 대해 시험할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Requests each old address on %base, follows its redirects and checks that it lands on its new address.</source>
+        <translation>%base 에서 각 이전 주소를 요청하고 리디렉션을 따라가 새 주소에 도착하는지 확인합니다.</translation>
+    </message>
+    <message>
+        <source>Test again</source>
+        <translation>다시 시험</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>시험</translation>
+    </message>
+    <message>
+        <source>%landed landed, %status with the wrong status, %target on the wrong page, %none not redirected, %error failed, %skipped skipped.</source>
+        <translation>%landed 도착, 상태 오류 %status, 엉뚱한 페이지 %target, 리디렉션 없음 %none, 실패 %error, 건너뜀 %skipped.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows were tested.</source>
+        <translation>처음 %count개 행만 시험했습니다.</translation>
+    </message>
+    <message>
+        <source>The rows that did not land on their new address</source>
+        <translation>새 주소에 도착하지 못한 행</translation>
+    </message>
+    <message>
+        <source>The old addresses could not be tested.</source>
+        <translation>이전 주소를 시험할 수 없었습니다.</translation>
+    </message>
 </context>
 </TS>
