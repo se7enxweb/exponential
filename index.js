@@ -25,6 +25,9 @@
  *  ----------------
  *  1. The navigation cache (below): repeat page visits answered from the
  *     browser, refreshed in the background.
+ *  2. The packed-asset fallback (before the fetch handler): the last good copy
+ *     of each packed stylesheet and script stands in when a cache clear has
+ *     deleted the file a stored page names, so no page shows without styles.
  *
  * =============================================================================
  */
@@ -84,12 +87,18 @@
  * browser that has it will drop it on its next update check.
  */
 
+// v6: drops every page stored by v5, many of which named packed stylesheets
+// that a cache clear had since deleted (pages shown without styles, mostly on
+// phones), and adds the packed-asset fallback below.
 // v5: drops every page stored by v4, which kept showing the site while it
 // answered the maintenance page (503) during an installation.
 // v4 dropped every page stored by v3, which never let go of a page that later
 // answered 404 (ezinfo/about kept showing to anyone who had seen it before).
-const VERSION = 'exp-nav-v5';
+const VERSION = 'exp-nav-v6';
 const CACHE = VERSION;
+// The last good copy of each packed stylesheet and script (see packedAsset()).
+// Not versioned with the pages: a copy only ever stands in for a deleted file.
+const ASSETS = 'exp-packed-last-good';
 
 // Paths this must never touch.
 const OFF_LIMITS = [
@@ -127,7 +136,7 @@ self.addEventListener('message', (event) => {
 self.addEventListener('activate', (event) => {
 	event.waitUntil((async () => {
 		const names = await caches.keys();
-		await Promise.all(names.filter((n) => n !== CACHE).map((n) => caches.delete(n)));
+		await Promise.all(names.filter((n) => n !== CACHE && n !== ASSETS).map((n) => caches.delete(n)));
 		await self.clients.claim();
 	})());
 });
@@ -220,11 +229,69 @@ async function refresh(cache, request, clientId) {
 	}
 }
 
+/* Packed stylesheets and scripts (ezjscore's packer, var/<site>/cache/public).
+ *
+ * Their names carry the newest source file's time
+ * ([Packer] AppendLastModifiedTime), so a changed stylesheet gets a new name
+ * and browsers fetch it. Clearing the packer cache deletes every packed file,
+ * though, and a page stored above (or in any other cache) still names the old
+ * one: the browser gets a 404 and shows the page without styles. So every
+ * packed file that loads is also kept here under its name without the time
+ * (md5 of the file list + suffix), and when a packed file answers 404 the
+ * last good copy of that same list stands in, and the stored pages are
+ * dropped so the next navigation gets the page that names the new file.
+ * A copy is written only when the name changed (once per new version), never
+ * on the hot path of an asset the browser's HTTP cache already answers.
+ */
+const PACKED = /^\/var\/[^/]+\/cache\/public\/(stylesheets|javascript)\/([0-9a-f]{32})_\d+(_all)?\.(css|js)$/;
+const assetHandle = caches.open(ASSETS);
+const assetSeen = {};
+
+function packedKey(url) {
+	const m = PACKED.exec(url.pathname);
+	return m ? url.origin + '/__packed/' + m[1] + '/' + m[2] + (m[3] || '') + '.' + m[4] : null;
+}
+
+async function packedAsset(request, key) {
+	const store = await assetHandle;
+	let response;
+	try {
+		response = await fromNetwork(request);
+	} catch (e) {
+		response = null;
+	}
+	if (response && response.status === 200) {
+		if (assetSeen[key] !== request.url) {
+			assetSeen[key] = request.url;
+			const copy = response.clone();
+			store.put(key, copy).catch(() => {});
+		}
+		return response;
+	}
+	const lastGood = await store.match(key);
+	if (lastGood) {
+		// The page that asked for this file is out of date: let the next
+		// navigation fetch it again instead of replaying it.
+		try {
+			const pages = await cacheHandle;
+			const keys = await pages.keys();
+			await Promise.all(keys.map((k) => pages.delete(k)));
+		} catch (e) {}
+		return lastGood;
+	}
+	return response || new Response('', { status: 504 });
+}
+
 self.addEventListener('fetch', (event) => {
 	const request = event.request;
 
 	if (request.method !== 'GET') return;
-	if (request.mode !== 'navigate') return;
+	if (request.mode !== 'navigate') {
+		const asset = new URL(request.url);
+		const key = asset.origin === self.location.origin ? packedKey(asset) : null;
+		if (key) event.respondWith(packedAsset(request, key));
+		return;
+	}
 
 	// A signed-in visitor is served from the network, every time.
 	//
