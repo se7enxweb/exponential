@@ -28,7 +28,7 @@ e9a221cfefd482545e28180305af7f54  .htaccess_root_static
 4debf1d8dd6c381fcf99f60409da582b  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-db389a73a3bd0f481923589a8aa1a582  autoload/ezp_kernel.php
+6037b07c733c25825dc9c4005874d6ee  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 c7d5434eac3788fbeb0a44161d7cdda8  benchmarks/classes/ezbenchmarkclirunner.php
@@ -25605,6 +25605,7 @@ e7c03fd6acbcb85405613d4fc5c367ee  kernel/classes/user/expusergeoip.php
 61397d7fb799550b4dbece98da7006c2  kernel/classes/user/expusergroupmanager.php
 efe03069dd0732748edad0ad8e1e53f3  kernel/classes/user/expuserhygiene.php
 68507e26a2026e62d0b49324651f9a70  kernel/classes/user/expusermanager.php
+b51f38e1c335a15035e54d9b96de0afa  kernel/classes/user/expuserownaccountattributes.php
 f9ed25680a6043c533120206f2247998  kernel/classes/user/expusersecurityactivity.php
 15efb4a07a7598ead00744a4051597cf  kernel/classes/user/expusersecurityalerts.php
 1050b547e3d53d82934805f8363462ac  kernel/classes/user/expusersession.php
@@ -25676,7 +25677,7 @@ ef14a24ca0cdc27e16bd86f5449f92d5  kernel/common/ezwordtoimageoperator.php
 e7d3d51e4726f6c28e398092ba9f2052  kernel/common/template.php
 6ebb6f2f7b9d0330561914a6e3dd67d8  kernel/content/action.php
 87170a107c008e0195a4524d61b24dc5  kernel/content/advancedsearch.php
-855dfe5873ee0c5a558dbf2c96376157  kernel/content/attribute_edit.php
+6fdca9be135e160157977dae2acc1a8d  kernel/content/attribute_edit.php
 2721bdf1da166c87a93b572664c4904d  kernel/content/bookmark.php
 b85dea0cf41c041c649e4aa6c4e07d3e  kernel/content/browse.php
 4a15987c2ac1b11fb836200acae4a60f  kernel/content/collectedinfo.php
@@ -29936,6 +29937,7 @@ ec2d2a4f7214466c8f4c733494efeef1  tests/tests/kernel/classes/user/expUserHygiene
 2f9592755f881aacbebff3e74ff35a8e  tests/tests/kernel/classes/user/expUserManagerDatabaseTest.php
 15d882ebfaee2d6815e28127757ae82c  tests/tests/kernel/classes/user/expUserManagerEngineChecks.php
 f38260a8ed455450b63a049ac9a44ff7  tests/tests/kernel/classes/user/expUserManagerSqliteTest.php
+b9d13b826beb3a47f565cad1d5553ee1  tests/tests/kernel/classes/user/expUserOwnAccountAttributesTest.php
 c94480646557d629bc8ba0808b6532bb  tests/tests/kernel/classes/user/expUserSecurityActivityTest.php
 a13fe07be9f2c4058965f87ab6025111  tests/tests/kernel/classes/user/expUserSecurityAlertsTest.php
 1e44098be37a64bc2547bc04434dca14  tests/tests/kernel/classes/user/expUserSessionInfoTest.php

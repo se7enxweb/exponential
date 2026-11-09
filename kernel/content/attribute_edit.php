@@ -60,6 +60,9 @@ if ( $contentObjectAttributes === null or
     $contentObjectAttributes = $version->contentObjectAttributes();
     $EditLanguage = $version->initialLanguageCode();
 }
+// A member editing their own account, or a visitor signing up, never gets the account's "meta" attributes (Meta
+// Data): out of the list before anything uses it, so no design shows them and no posted value is read or stored
+$contentObjectAttributes = expUserOwnAccountAttributes::filter( $contentObjectAttributes, $object );
 
 $fromContentObjectAttributes = false;
 $isTranslatingContent = false;

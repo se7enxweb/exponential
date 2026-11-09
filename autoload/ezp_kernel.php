@@ -2019,6 +2019,7 @@ return array(
       'expUserHygiene'                                               => 'kernel/classes/user/expuserhygiene.php',
       'expUserLoginIntegrity'                                        => 'kernel/classes/expuserloginintegrity.php',
       'expUserManager'                                               => 'kernel/classes/user/expusermanager.php',
+      'expUserOwnAccountAttributes'                                  => 'kernel/classes/user/expuserownaccountattributes.php',
       'expUserSecurityActivity'                                      => 'kernel/classes/user/expusersecurityactivity.php',
       'expUserSecurityAlerts'                                        => 'kernel/classes/user/expusersecurityalerts.php',
       'expUserSession'                                               => 'kernel/classes/user/expusersession.php',
