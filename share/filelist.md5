@@ -3742,7 +3742,7 @@ ac6e038afa43bb7abe89a1cfd1a6533e  doc/eng-us/bc/6.0/http2-and-cache-warming.md
 4daa97aa9e1afa3dccfca44847b5a274  doc/eng-us/bc/6.0/httpcache.md
 2b3cb1c9f14801037ef6f761686abd69  doc/eng-us/bc/6.0/image-focal-point.md
 ca5c128dd8208e512e824d14b875859f  doc/eng-us/bc/6.0/ini-save-file-permissions.md
-24d7e5caa496255e38881fcd63bbee64  doc/eng-us/bc/6.0/installer-crontab.md
+8229956155d37f992275bb9335479918  doc/eng-us/bc/6.0/installer-crontab.md
 3660f38720e7641629091aba0a56e2b5  doc/eng-us/bc/6.0/kernel-services.md
 68f4f3e4160b983bbac0e3414f0baeec  doc/eng-us/bc/6.0/kickstartercli.md
 5ca820d5c8967133b8ad17d9f5876d7c  doc/eng-us/bc/6.0/legacy-fork-fixes.md
@@ -24823,7 +24823,7 @@ ceb8038b13ca2723d475c854688ff1f8  kernel/classes/expcontentpendinglist.php
 7095ac9b1c33221a57179539d8c6911f  kernel/classes/expcontentschedule.php
 b163cc0f92edc0fa9de9132ab60f1713  kernel/classes/expcontentsearchfilters.php
 b96ea510a324ff861e315d1ac4aed6cd  kernel/classes/expcronjobpause.php
-c9b12f35141dfbdc4e1ca9e9bace958f  kernel/classes/expcrontabsetup.php
+9aaaaa342d5ab69aed3faff7d943ae21  kernel/classes/expcrontabsetup.php
 ca0b83c97f16b3f65467bc6d405bf5fc  kernel/classes/expdatatypeinventory.php
 903bec3bf1081f1d2721446139da40ca  kernel/classes/expdemomode.php
 328f0f343306f7be09f2e7d2c922bffb  kernel/classes/expdependencyorder.php
@@ -29308,7 +29308,7 @@ c48ba5febcabb5c7047da60c517c1ceb  tests/tests/kernel/classes/expContentSearchFil
 25a6ff60c12764a1b9811f86ce18533f  tests/tests/kernel/classes/expCronjobRunnerScheduleTest.php
 9f3998cf6c064a3c02c62ad6c6f696f9  tests/tests/kernel/classes/expCronjobScriptDocumentationTest.php
 6db0fecbb771dd2f8012e6fbb5185256  tests/tests/kernel/classes/expCronjobsCompactViewTest.php
-3a7b354aa8197b0b8a2d56c092c859d0  tests/tests/kernel/classes/expCrontabSetupTest.php
+7ef12faa5d0d4230f99e684ede16e0eb  tests/tests/kernel/classes/expCrontabSetupTest.php
 8adba9e408fac28c2fc68557e044c5fd  tests/tests/kernel/classes/expDataTypeInventoryNodesSqliteTest.php
 cad6a60aec657679da2dc644499b8fd0  tests/tests/kernel/classes/expDataTypeInventorySqliteTest.php
 f7ab9764d885bf443173d550c0716700  tests/tests/kernel/classes/expDataTypeInventoryTest.php

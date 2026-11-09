@@ -267,6 +267,44 @@ class expCrontabSetupTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( '-' ), $calls[1] );
     }
 
+    public function testBlocksOfFoldersThatAreGoneArePruned()
+    {
+        $old = '/var/www/site/build-20261024';
+        $lines = array( 'MAILTO=ops@example.invalid',
+                        expCrontabSetup::BEGIN . $old, '* * * * * cd ' . $old . ' && php runcronjobs.php -q', expCrontabSetup::END . $old,
+                        expCrontabSetup::BEGIN . '/var/www/other', '* * * * * cd /var/www/other && php runcronjobs.php -q', expCrontabSetup::END . '/var/www/other',
+                        expCrontabSetup::BEGIN . $old, '*/5 * * * * cd ' . $old . ' && php runcronjobs.php -q frequent', expCrontabSetup::END . $old,
+                        expCrontabSetup::BEGIN . self::ROOT, '17 * * * * cd ' . self::ROOT . ' && php runcronjobs.php -q', expCrontabSetup::END . self::ROOT,
+                        '0 3 * * * /usr/local/bin/backup' );
+        $gone = function ( $root ) use ( $old ) { return $root !== $old && $root !== self::ROOT; };
+        $pruned = expCrontabSetup::pruneGone( $lines, $gone, self::ROOT );
+        $this->assertSame( array( $old ), $pruned['roots'], 'both blocks of the gone folder go, once reported' );
+        $this->assertSame( array( 'MAILTO=ops@example.invalid',
+                                  expCrontabSetup::BEGIN . '/var/www/other', '* * * * * cd /var/www/other && php runcronjobs.php -q', expCrontabSetup::END . '/var/www/other',
+                                  expCrontabSetup::BEGIN . self::ROOT, '17 * * * * cd ' . self::ROOT . ' && php runcronjobs.php -q', expCrontabSetup::END . self::ROOT,
+                                  '0 3 * * * /usr/local/bin/backup' ), $pruned['lines'] );
+        // the installation being written stays even when its folder looks gone (it is being installed)
+        $all = expCrontabSetup::pruneGone( $lines, function () { return false; }, self::ROOT );
+        $this->assertNotContains( self::ROOT, $all['roots'] );
+        $this->assertContains( expCrontabSetup::BEGIN . self::ROOT, $all['lines'] );
+    }
+
+    public function testAddTakesOutTheBlocksOfFoldersThatAreGone()
+    {
+        $old = '/var/www/site/build-20261024';
+        $crontab = "MAILTO=ops@example.invalid\n" . expCrontabSetup::BEGIN . $old . "\n* * * * * cd $old && php runcronjobs.php -q\n" . expCrontabSetup::END . $old . "\n";
+        $calls = array();
+        $setup = new expCrontabSetupTestGoneFolders( self::fakeCrontab( $crontab, $calls ), PHP_BINARY, 1001, array( 'uid' => 1001, 'name' => 'site' ) );
+        $setup->gone = array( $old );
+        $result = $setup->add( self::description() );
+        $this->assertSame( 'written', $result['status'] );
+        $this->assertSame( array( $old ), $result['pruned'] );
+        $this->assertStringContainsString( 'took out the blocks of 1 folder(s) that are gone', $result['message'] );
+        $this->assertStringNotContainsString( $old, $crontab );
+        $this->assertStringContainsString( "MAILTO=ops@example.invalid\n", $crontab );
+        $this->assertStringContainsString( expCrontabSetup::BEGIN . self::ROOT, $crontab );
+    }
+
     public function testDryRunWritesNothing()
     {
         $crontab = "A=1\n";
@@ -381,5 +419,16 @@ class expCrontabSetupTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'expqueue' => array( 'started' => 600, 'finished' => 601, 'siteaccess' => 'admin' ),
                                   'global' => array( 'started' => 500, 'finished' => 0, 'siteaccess' => 'site' ) ),
                            expCrontabSetup::lastRuns( $root ) );
+    }
+}
+
+/** The crontab setup with folders the test says are gone (pruneGone() without touching the file system) */
+class expCrontabSetupTestGoneFolders extends expCrontabSetup
+{
+    public $gone = array();
+
+    public function folderExists( $root )
+    {
+        return !in_array( $root, $this->gone, true );
     }
 }

@@ -512,20 +512,30 @@ class expCrontabSetup
      *
      * @param array $description as describe() gives it
      * @param bool $dryRun only say what would happen
+     * The blocks of installations whose folder is gone are taken out on the way (pruneGone()): a copy that was built
+     * in a folder of its own and then moved into place, or deleted, leaves a block that can only fail every minute.
+     *
      * @return array status (written, unchanged, dry-run, fallback, empty), user, block (the lines), skipped
-     *               (part => the line outside the block that runs it), before, after (the crontab), message
+     *               (part => the line outside the block that runs it), pruned (the roots whose blocks were taken
+     *               out), before, after (the crontab), message
      */
     public function add( array $description, $dryRun = false )
     {
         $root = $description['root'];
         $outside = array();
-        $result = array( 'status' => '', 'user' => '', 'block' => array(), 'skipped' => array(), 'before' => array(),
-                         'after' => array(), 'message' => '' );
+        $result = array( 'status' => '', 'user' => '', 'block' => array(), 'skipped' => array(), 'pruned' => array(),
+                         'before' => array(), 'after' => array(), 'message' => '' );
 
         $state = $this->open( $root, $description['settings']['command'] );
         $result['user'] = $state['user'];
+        $original = $state['lines'];
         if ( $state['ok'] )
+        {
+            $pruned = self::pruneGone( $state['lines'], array( $this, 'folderExists' ), $root );
+            $state['lines'] = $pruned['lines'];
+            $result['pruned'] = $pruned['roots'];
             $outside = self::scheduledOutside( $state['lines'], $root );
+        }
 
         $entries = array();
         foreach ( $description['entries'] as $entry )
@@ -543,19 +553,61 @@ class expCrontabSetup
                                                 'message' => $state['why'] ) );
 
         $after = self::merge( $state['lines'], $block, $root );
-        $result['before'] = $state['lines'];
+        $result['before'] = $original;
         $result['after'] = $after;
-        if ( !$block && self::blockRange( $state['lines'], $root ) === null )
+        $prunedNote = $result['pruned'] ? '; took out the blocks of ' . count( $result['pruned'] ) . ' folder(s) that are gone' : '';
+        if ( !$block && self::blockRange( $state['lines'], $root ) === null && !$result['pruned'] )
             return array_merge( $result, array( 'status' => 'empty', 'message' => $result['skipped'] ? 'every part runs already from lines outside the block' : 'no cronjob part to schedule' ) );
-        if ( $after === $state['lines'] )
+        if ( $after === $original )
             return array_merge( $result, array( 'status' => 'unchanged', 'message' => 'the crontab of ' . $state['user'] . ' has these lines already' ) );
         if ( $dryRun )
-            return array_merge( $result, array( 'status' => 'dry-run', 'message' => 'would write the crontab of ' . $state['user'] ) );
+            return array_merge( $result, array( 'status' => 'dry-run', 'message' => 'would write the crontab of ' . $state['user'] . $prunedNote ) );
 
         $written = $this->write( $state, $after );
         if ( $written !== true )
             return array_merge( $result, array( 'status' => 'fallback', 'message' => $written ) );
-        return array_merge( $result, array( 'status' => 'written', 'message' => 'wrote the crontab of ' . $state['user'] ) );
+        return array_merge( $result, array( 'status' => 'written', 'message' => 'wrote the crontab of ' . $state['user'] . $prunedNote ) );
+    }
+
+    /**
+     * The crontab without the blocks of installations whose folder no longer exists (pure apart from $exists).
+     * Such a block can only fail: its lines change into a folder that is gone, every minute, and mail the failure.
+     * The installation being written ($keep) always stays, and an unterminated block is left alone (see merge()).
+     *
+     * @param string[] $lines
+     * @param callable $exists folder => bool
+     * @param string $keep the root of the installation being written
+     * @return array lines, roots (the roots whose blocks were taken out)
+     */
+    public static function pruneGone( array $lines, $exists, $keep = '' )
+    {
+        $roots = array();
+        foreach ( $lines as $line )
+            if ( strpos( $line, self::BEGIN ) === 0 )
+                $roots[] = substr( $line, strlen( self::BEGIN ) );
+        $removed = array();
+        foreach ( array_unique( $roots ) as $root )
+        {
+            if ( $root === '' || $root === $keep || call_user_func( $exists, $root ) )
+                continue;
+            $before = count( $lines );
+            while ( self::blockRange( $lines, $root ) !== null )
+                $lines = self::strip( $lines, $root );
+            if ( count( $lines ) !== $before )
+                $removed[] = $root;
+        }
+        return array( 'lines' => array_values( $lines ), 'roots' => $removed );
+    }
+
+    /**
+     * Whether an installation folder still exists (a method, so the tests can say).
+     *
+     * @param string $root
+     * @return bool
+     */
+    public function folderExists( $root )
+    {
+        return is_dir( $root );
     }
 
     /**

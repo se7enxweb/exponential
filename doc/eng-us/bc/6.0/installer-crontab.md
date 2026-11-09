@@ -57,6 +57,10 @@ Cron job: added to the crontab of example (6 lines; php bin/php/installcrontab.p
 - The lines stand between `# BEGIN Exponential cronjobs: <root>` and `# END Exponential cronjobs: <root>`, so one
   user can run several installations, each with its own block.
 - A second run replaces the block in its place, or writes nothing when it is the same (`already in the crontab`).
+- Blocks of installations whose folder is gone are taken out on the way (6.0.15): a copy built in a folder of its own
+  and then moved into place, or deleted, leaves a block that can only fail every minute and mail the failure. The
+  result names them (`took out the blocks of N folder(s) that are gone`). An installation that is built in one folder and
+  served from another installs with `--no-crontab` and writes its block after the move, from the folder it is served from.
 - Every other line of the crontab (a `MAILTO=`, other jobs, other installations' blocks) is kept as it is, in its
   place.
 - A part that a line outside the block runs already for this installation (written by hand, from `exponential.cron`)
