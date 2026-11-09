@@ -1,9 +1,9 @@
-# Handoff: marketing automation and campaign management — five planned changes
+# Handoff: marketing automation and campaign management — seven planned changes
 
 Redmine #16741 (https://pm.team.in-mv.com/issues/16741). Builds on the workflow designer, Redmine #16702
 (https://pm.team.in-mv.com/issues/16702), whose build spec is `openspec/handoff/expworkflow-16702-spec.md`.
 
-This page is the design source the five changes below cite, and the guide for the developer who builds them. It
+This page is the design source the seven changes below cite, and the guide for the developer who builds them. It
 was written on 09.11.2026 against `se7enxweb/exponential` `main` at `d5263e7883`, and against the packages
 `se7enxweb/cjw_newsletter` 4.2.x and `se7enxweb/expai` as they are installed by that commit's `composer.json`.
 
@@ -17,7 +17,7 @@ open and click statistics), the queue `expqueue`, the AI extension `expai`, and 
 editorial workflows of `expworkflow` with their action registry and webhooks.
 
 What is missing is the step from *publishing* to *campaigning*: doing the right thing automatically when content
-is published, when somebody subscribes or fills in a form, and doing it safely. These five changes close that gap.
+is published, when somebody subscribes or fills in a form, and doing it safely. These seven changes close that gap.
 None of them adds a campaign engine of its own.
 
 ## 2. The principles every change follows
@@ -54,8 +54,11 @@ None of them adds a campaign engine of its own.
 | 3 | `add-newsletter-welcome-series` | `cjw_newsletter` | none for the series itself; `add-workflow-jobs-and-timers` and 1 for its workflow action | package `se7enxweb/cjw_newsletter` |
 | 4 | `add-form-destinations` | to be decided in its design (see 5.4) | 1, `add-workflow-webhooks-and-importers` for the webhook destination, 3 for the series destination | this repository or a package |
 | 5 | `add-ai-field-provenance` | `expai` | none | package `se7enxweb/expai` |
+| 6 | `add-newsletter-segments` | `cjw_newsletter` | none for sends; 1 and 3 to use segments in workflow actions and series | package `se7enxweb/cjw_newsletter` |
+| 7 | `add-share-metadata` | to be decided in its design (see 5.7) | none; 2 takes its post text and image from it | this repository |
 
-Changes 3 (without its workflow action) and 5 do not depend on #16702 and can be built in parallel with it.
+Changes 3 (without its workflow action), 5, 6 (for sends) and 7 do not depend on #16702 and can be built in
+parallel with it.
 Changes 1, 2 and 4 need #16702 up to the milestones named in the table.
 
 ## 4. What to do with the changes
@@ -72,7 +75,7 @@ For each change, in the order of section 3:
 2. **Validate**: `openspec validate <change> --strict` must pass after every edit.
 3. **Write `design.md`.** The rules in `openspec/config.yaml` apply: name the extension, the INI files and keys
    and where they live, the policies and limitations, the database tables and how an existing installation gets
-   them, and justify any edit in `lib/` or `kernel/` (none is expected for any of the five). Resolve the
+   them, and justify any edit in `lib/` or `kernel/` (none is expected for any of the seven). Resolve the
    **Verify** items of section 5 by reading or running the code, and record the result in `design.md`.
 4. **Write `tasks.md`**, grouped so that each group lands its own tests and documentation.
 5. **Write `plan.md`**: the tasks as executable steps, test first.
@@ -116,6 +119,12 @@ override, never in the database. The workflow action `channel.post` is the only 
 a definition with that action. Once per instance, action and destination; a later version posts again only when
 the action allows it. First providers: Mastodon and Matrix (open protocols); Slack, LinkedIn and others are later
 posters behind the same interface.
+
+Next posters after Mastodon and Matrix: Bluesky (AT Protocol, `com.atproto.repo.createRecord` with an app
+password; a deterministic record key (`rkey`) derived from the post id makes a retry fail detectably instead of
+posting twice; links need facets to be clickable, images go through `uploadBlob`, and a post has at most 300
+graphemes) and LinkedIn (Posts API with an organization or member access token; needs an app approved by LinkedIn and
+a token refresh — **verify** the current access requirements before building it).
 
 Open: the extension name (`expchannels` is a proposal); how "the content was last written by the AI service or a
 system user" is detected (expai's draft log, the version's creator, or both). **Verify** the posting APIs of the
@@ -164,7 +173,38 @@ expected answer is yes). **Verify** how the existing draft log of expai (`expai_
 of the edit form already record AI writes — the draft log is per version today, with the action `field`, not per
 attribute —, and build on them instead of adding a parallel record.
 
-## 6. Out of scope for all five
+### 5.6 `add-newsletter-segments`
+
+Decided: a segment is a saved selection of the subscribers of one list (conditions on subscription, profile fields,
+interests and reading behavior, combined with all or any), evaluated when a send's mail queue is made. Behavior
+conditions read only the per-person statistics, which exist only for subscribers who consented to newsletter
+statistics (tracking mode "per person with consent") and only within `[TrackingSettings] PersonRetentionMonths`;
+they never match anybody else, and the segment page says how many subscribers they cannot see.
+
+A series audience is a segment: checked when a subscriber would enter and before each step (see
+`add-newsletter-welcome-series`). A send to a segment goes to members whose subscription is approved, the state the
+list sends to.
+
+Open: whether the existing virtual lists (`CjwNewsletterListVirtual`, filter types e-mail and salutation) become
+segments or stay beside them; whether the segment page hides very small counts for users who may not see
+subscribers (a count of 1 can identify a person) — decide and record it in design.md. **Verify** how the send form and the queue creation pick the recipients of a list today
+and where a segment fits without a second recipient path.
+
+### 5.7 `add-share-metadata`
+
+Decided: one template writes Open Graph and Twitter Card tags from attributes configured per class with fallbacks
+and site defaults; the bundled designs include it and drop their own tags in the same step; Matrix and other
+messengers are served by "copy link" (they have no share URL); the LinkedIn link carries only the address; admin4 shows a share preview with warnings; share links are plain
+links, no script or image of a network is loaded before a click; Mastodon asks for the visitor's instance and keeps
+it in the browser only.
+
+Open: the carrying extension (new, or the one that holds the site metadata datatype). Today `bootstrap5`, `media`
+and `simple` carry copies of the same `og:*` code in `page_head.tpl` (`media` adds its image through the metadata
+extension's own template), and `starter` has a separate `pagelayout/head/opengraph.tpl` with its own fallback
+chain; all read the site metadata datatype. **Verify** the attributes each reads, so the default configuration gives
+the same result before a site changes anything.
+
+## 6. Out of scope for all seven
 
 - A separate campaign or marketing-automation engine, or an external automation platform inside the CMS.
   External tools talk to the CMS through webhooks and the REST API (as in #16702, section 11).

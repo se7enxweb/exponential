@@ -53,7 +53,7 @@ Ist die Änderung gemergt, wandert sie nach `openspec/changes/archive/`, und ihr
 | Änderung | Stand |
 |---|---|
 | `add-workflow-definitions`, `add-workflow-runtime`, `add-workflow-jobs-and-timers`, `add-workflow-admin-ui`, `add-workflow-review-options`, `add-workflow-integrations`, `add-workflow-webhooks-and-importers`, `add-workflow-reference-cases` | Geplant: die grafischen redaktionellen Workflows der Erweiterung `expworkflow`; Entwurfsquelle `openspec/handoff/expworkflow-16702-spec.md` |
-| `add-workflow-outward-action-safeguards`, `add-channel-posts`, `add-newsletter-welcome-series`, `add-form-destinations`, `add-ai-field-provenance` | Geplant: Marketing-Automatisierung auf dem Workflow-Designer (Schutz für Aktionen nach außen, Beiträge in Kanäle, Willkommensserie im Newsletter, Ziele für Formulare, Herkunft von KI-Feldern); Entwurfsquelle und Bauanleitung `openspec/handoff/marketing-automation-16741.md` |
+| `add-workflow-outward-action-safeguards`, `add-channel-posts`, `add-newsletter-welcome-series`, `add-form-destinations`, `add-ai-field-provenance`, `add-newsletter-segments`, `add-share-metadata` | Geplant: Marketing-Automatisierung auf dem Workflow-Designer (Schutz für Aktionen nach außen, Beiträge in Kanäle, Willkommensserie im Newsletter, Ziele für Formulare, Herkunft von KI-Feldern, Segmente im Newsletter, Metadaten zum Teilen); Entwurfsquelle und Bauanleitung `openspec/handoff/marketing-automation-16741.md` |
 | `archive/2026-11-02-add-admin-search` | Fertig: Suchvorschläge beim Tippen und die Suchseite mit ihrer Filterleiste; Specs in `openspec/specs/admin/` |
 
 Die Artefakte von OpenSpec selbst sind auf Englisch geschrieben.

@@ -1,6 +1,6 @@
 # Proposal
 
-Redmine #16741 (https://pm.team.in-mv.com/issues/16741), change 5 of 5.
+Redmine #16741 (https://pm.team.in-mv.com/issues/16741), change 5 of 7.
 Binding design source: `openspec/handoff/marketing-automation-16741.md`, sections 2 and 5.5.
 Meant for upstream (se7enxweb). The code lands in the package `se7enxweb/expai`; this change is the plan.
 No dependency.

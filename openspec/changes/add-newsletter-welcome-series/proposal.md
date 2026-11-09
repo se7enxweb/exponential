@@ -1,6 +1,6 @@
 # Proposal
 
-Redmine #16741 (https://pm.team.in-mv.com/issues/16741), change 3 of 5.
+Redmine #16741 (https://pm.team.in-mv.com/issues/16741), change 3 of 7.
 Binding design source: `openspec/handoff/marketing-automation-16741.md`, sections 2 and 5.3.
 Meant for upstream (se7enxweb). The code lands in the package `se7enxweb/cjw_newsletter`; this change is the plan.
 No dependency for the series itself; the workflow action needs the action registry of
@@ -24,6 +24,9 @@ third after two weeks. Sites do this by hand today, or not at all.
   with the next step not yet received.
 - Each step is sent through the existing send path, so the list's skin, language, tracking setting, statistics
   and privacy rules apply unchanged; each subscriber receives each step at most once.
+- Optionally an **audience**: a segment of the list (`add-newsletter-segments`). A subscriber enters only as a
+  member, and a member who leaves the segment gets no further step; the progress is kept, as for a subscription
+  that is not approved.
 - Admin pages: the series of a list with its steps, the number of subscribers at each step, and a "send this
   step to me" test. A series can be paused and resumed.
 - A workflow action `newsletter.series.start` (outward) that subscribes an address to a list through the list's

@@ -1,6 +1,6 @@
 # Proposal
 
-Redmine #16741 (https://pm.team.in-mv.com/issues/16741), change 4 of 5.
+Redmine #16741 (https://pm.team.in-mv.com/issues/16741), change 4 of 7.
 Binding design source: `openspec/handoff/marketing-automation-16741.md`, sections 2 and 5.4.
 Meant for upstream (se7enxweb). Depends on `add-workflow-outward-action-safeguards` and, for the webhook
 destination, `add-workflow-webhooks-and-importers`; the series destination depends on

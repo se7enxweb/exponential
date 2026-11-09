@@ -54,6 +54,19 @@ with the next step not yet received, sent in the next send run, and later steps 
 - **WHEN** the same subscriber is approved again a week later
 - **THEN** "Welcome" is not sent again, "Getting started" is sent in the next send run, and "Tips" 14 days after that
 
+### Requirement: Audience
+A series MAY be limited to a segment of its list. Then a subscriber SHALL enter only while a member of the segment,
+and SHALL receive a step only while still a member; a subscriber who leaves the segment keeps the progress and
+continues with the next step not yet received when a member again.
+
+#### Scenario: Leaves the segment
+- **WHEN** a subscriber received "Welcome" and then removes the interest that the audience segment requires
+- **THEN** "Getting started" is not sent while the subscriber is not a member
+
+#### Scenario: Not a member when approved
+- **WHEN** a subscription becomes approved while the subscriber is not a member of the audience segment
+- **THEN** no step is sent, and "Welcome" follows in the next send run after the subscriber becomes a member
+
 ### Requirement: Sent like any edition
 Each step SHALL be sent with the list's skin, language and tracking setting, and SHALL count in the statistics
 like any edition.

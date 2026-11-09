@@ -1,6 +1,6 @@
 # Proposal
 
-Redmine #16741 (https://pm.team.in-mv.com/issues/16741), change 1 of 5.
+Redmine #16741 (https://pm.team.in-mv.com/issues/16741), change 1 of 7.
 Binding design source: `openspec/handoff/marketing-automation-16741.md`, sections 2 and 5.1; builds on the
 workflow designer, Redmine #16702 (https://pm.team.in-mv.com/issues/16702), `openspec/handoff/expworkflow-16702-spec.md`
 sections 3, 6.6, 7.1 and 7.4.

@@ -1,6 +1,6 @@
 # Proposal
 
-Redmine #16741 (https://pm.team.in-mv.com/issues/16741), change 2 of 5.
+Redmine #16741 (https://pm.team.in-mv.com/issues/16741), change 2 of 7.
 Binding design source: `openspec/handoff/marketing-automation-16741.md`, sections 2 and 5.2.
 Meant for upstream (se7enxweb). Depends on `add-workflow-outward-action-safeguards`.
 
@@ -19,7 +19,9 @@ when to post matters more than for a mail.
 - **Outbound posts**: one record per post and destination with the states pending, sent, failed and cancelled,
   the number of attempts and the provider's id of the sent message. Producers only create the record; delivery
   runs in expqueue workers with retries, and a cron part sweeps pending and failed records.
-- **One poster per provider** behind one interface; the first two are Mastodon and Matrix.
+- **One poster per provider** behind one interface; the first two are Mastodon and Matrix, then Bluesky and LinkedIn
+  (handoff 5.2 names what each needs). The text and image of a post come from the share metadata of
+  `add-share-metadata` when that change is built.
 - The workflow action `channel.post` (outward) posts a rendered text of the content to one or more destinations.
   It is the only producer in the first version; posting on publish without a workflow definition is done with a
   definition that has this action, not with a separate switch.
@@ -47,6 +49,6 @@ when to post matters more than for a mail.
 
 ## Out of scope
 
-- Providers beyond Mastodon and Matrix (later posters behind the same interface).
+- Providers beyond Mastodon, Matrix, Bluesky and LinkedIn (later posters behind the same interface).
 - Reading from channels (replies, likes, statistics).
 - Posting without a workflow definition.
