@@ -106,6 +106,10 @@ const OFF_LIMITS = [
 	// the editor siteaccess: the admin for content editing
 	/^\/editor(\/|$)/,
 	/^\/user(\/|$)/,
+	// the shop: the basket, its updates and the checkout belong to the visitor's
+	// session (an HttpOnly cookie the worker cannot see). Handled here, a basket
+	// update came back showing the basket as it was before the change.
+	/^\/shop(\/|$)/,
 	/^\/explayouts_ui/,
 	/^\/var\/site\/cache\//,
 	/\/api(\/|$)/,

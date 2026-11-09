@@ -24541,7 +24541,7 @@ e65182a8e462ca0d7bd99f6011003023  extension/ezoe/translations/zul-ZA/translation
 0b2a7e44df6b1c682412ea87f29e8431  ezpm.php
 855e225a60e154204dde78feafe5d1b5  ezpublish.cron
 91b1aa0e8f21ce629c9cf29eef5a4569  favicon.ico
-8d1a0b3f353dd2fdbcaf7c3f7e83d7bf  index.js
+f77c7ff120d382289ba6ea5cecbb33f6  index.js
 6a4841552b9bf6001ec6516ff49d500d  index.php
 9cc272c1c96c2a1b557a4bc4e027b678  index_cluster.php
 aa6fdf4b7f8ff02491f654d4aa531bb5  index_rest.php
@@ -29793,7 +29793,7 @@ ce07d06be04fe3fe2e14b3ca85f9bbe6  tests/tests/kernel/classes/setup/KickstarterIn
 85244003bad387e5427200ef80ae200c  tests/tests/kernel/classes/setup/KickstarterOptionsTest.php
 20d2d9e9d98f43003e3c003e19b7f941  tests/tests/kernel/classes/setup/KickstarterResumeTest.php
 a6613fd572dd041a5cc36eb2cc3254fc  tests/tests/kernel/classes/setup/MaintenancePageTest.php
-e12ec43bf68f1a7cd44b6b3ca9037d65  tests/tests/kernel/classes/setup/MaintenanceRequestTest.php
+8d9bd680b3ec2eb48f6e2c1c3fc00447  tests/tests/kernel/classes/setup/MaintenanceRequestTest.php
 b0ca51dba1541f55f4144795a3735a6a  tests/tests/kernel/classes/setup/MaintenanceRunTest.php
 9fd74dc0c0226564e387c4192b3ae7f8  tests/tests/kernel/classes/setup/RegistrationAndDryRunTest.php
 22cf0d977f1fba1e4dd4fd677569c3cf  tests/tests/kernel/classes/setup/SessionPageTest.php

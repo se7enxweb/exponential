@@ -185,4 +185,16 @@ class MaintenanceRequestTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "fetch(request, { cache: 'no-cache' })", $js );
         $this->assertSame( 0, preg_match( '/[^.\w]fetch\(request\)/', $js ), 'every fetch goes through fromNetwork()' );
     }
+
+    public function testTheServiceWorkerLeavesTheVisitorsOwnPagesToTheBrowser()
+    {
+        $js = file_get_contents( $this->kernelRoot . '/index.js' );
+        $this->assertSame( 1, preg_match( '/const OFF_LIMITS = \[(.*?)\n\];/s', $js, $m ), 'the list of paths the worker never handles' );
+        // the basket, its updates and the checkout follow the visitor's session: a basket update handled by the
+        // worker came back showing the basket as it was before the change
+        foreach ( array( '/^\/admin(\/|$)/', '/^\/editor(\/|$)/', '/^\/user(\/|$)/', '/^\/shop(\/|$)/' ) as $rule )
+        {
+            $this->assertStringContainsString( $rule, $m[1] );
+        }
+    }
 }
