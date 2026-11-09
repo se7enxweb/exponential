@@ -11844,7 +11844,7 @@ a5222d6181149b9dc971b6b0e7f50ec8  doc/eng-us/help/resellers/sales/naming-and-bra
 41ae0d0facf25f9c806d6926bbc62138  doc/eng-us/help/resellers/sales/pre-sales-questions-and-answers.md
 a420b17ab5dabd8778223cc4aae2b073  doc/eng-us/help/resellers/sales/sales-process.md
 c70361337ad5dd16f517a0ade52890a6  doc/eng-us/help/searching.md
-198fd6fc5616d604a165c38a34a5dfa3  doc/eng-us/help/security-hardening.md
+4eaa6b0b236a2c043c65810fb9c7fd53  doc/eng-us/help/security-hardening.md
 0e664fa25d750b89071708b2406b538c  doc/eng-us/help/setting-up-editor-and-admin-accounts.md
 633930576e562b5c2200cd0a1ae93a7c  doc/eng-us/help/site-packages/README.md
 91942493ef5ce934473bb7e67e280b77  doc/eng-us/help/site-packages/admin-gui/README.md
@@ -20776,7 +20776,7 @@ c3b56811a2dda0b6752fd5a0de6b887a  doc/ger-de/hilfe/seitenpakete/sevenx-multisite
 b0200212398d100a07f395dcecc75e21  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/siteaccesses-und-sprachen-von-sevenx-multisite.md
 c3a61289ca948e9b152733bd800f252a  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/was-sie-nach-der-installation-von-sevenx-multisite-haben.md
 27f30d5a9f89ed9593b599f2582c1bdc  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/woraus-sevenx-multisite-besteht.md
-ec4fc365003dc1fcba351e2f18b093ab  doc/ger-de/hilfe/sicherheitshaertung.md
+f6f1a3b28fca9cab895024fdd28f5afd  doc/ger-de/hilfe/sicherheitshaertung.md
 c702aca91ab21f76627d538e4011e007  doc/ger-de/hilfe/softwareingenieure/abhaengigkeitsverwaltung-mit-composer.md
 476e52a10fdca789926b377d7d701538  doc/ger-de/hilfe/softwareingenieure/anwendungsserver.md
 f6d7722fd05bb14f5012d2a44023f56f  doc/ger-de/hilfe/softwareingenieure/api-design-rest-ezjscore-headless.md
@@ -24701,7 +24701,7 @@ cda32345bdf57a9717f559a416005a7f  kernel/classes/datatable/sync/expdatasync.php
 8496d42ad205b056aa73e0602f744df7  kernel/classes/datatypes/ezauthor/ezauthor.php
 89bc5e682620149b9336a291ab2dbab8  kernel/classes/datatypes/ezauthor/ezauthortype.php
 dbea0d8e5a34f89440434c8fa4c582ae  kernel/classes/datatypes/ezbinaryfile/ezbinaryfile.php
-1c6b2127b9871551de58f5a07488569a  kernel/classes/datatypes/ezbinaryfile/ezbinaryfiletype.php
+7edd608e11e658d376165139796b5626  kernel/classes/datatypes/ezbinaryfile/ezbinaryfiletype.php
 35d73c4e30f868b6635d7b20b28dd797  kernel/classes/datatypes/ezbinaryfile/plugins/ezpdfparser.php
 56b22d6fc7450841f2807b422174c7bf  kernel/classes/datatypes/ezbinaryfile/plugins/ezplaintextparser.php
 d6c2c46ec20298775bb1f4eefdd4b5f6  kernel/classes/datatypes/ezbinaryfile/plugins/ezwordparser.php
@@ -24738,7 +24738,7 @@ f8941c5570047c76cff3e63199828257  kernel/classes/datatypes/ezmatrix/ezmatrix.php
 749509a8edc9df295c0c6c4fbd9fe72d  kernel/classes/datatypes/ezmatrix/ezmatrixdefinition.php
 ae6d3e58d0f51fe4a284b4e5e7095e3b  kernel/classes/datatypes/ezmatrix/ezmatrixtype.php
 36215103c741c5bd361d07babb553ae4  kernel/classes/datatypes/ezmedia/ezmedia.php
-6752b8e55b2bb8a3e7f2ce57e1ba8339  kernel/classes/datatypes/ezmedia/ezmediatype.php
+136fe0ca683c19910b334d6a10485ac9  kernel/classes/datatypes/ezmedia/ezmediatype.php
 e5b84b0003a1bc96822938071f6099cb  kernel/classes/datatypes/ezmultioption/ezmultioption.php
 d25e83fcbeb0148a7f0509eb9e6ecb53  kernel/classes/datatypes/ezmultioption/ezmultioptiontype.php
 70133e23b5593f0b16eb848756683b14  kernel/classes/datatypes/ezmultioption2/ezmultioption2.php
@@ -27005,7 +27005,7 @@ e10e04e1ef27b7c9cdcc355bbf3bc81d  lib/ezi18n/classes/eztextcodec.php
 da8d263c5154ea00c70fcd3fc73e4a53  lib/ezi18n/classes/eztstranslator.php
 2fa3bdd2b425b9762ea7c3505cca2112  lib/ezi18n/classes/ezutf8codec.php
 8221c88da8c0beddf763b149c9b72f61  lib/ezimage/classes/expimagefocalpoint.php
-4f38ac221c25fe2f9194e274c1da789b  lib/ezimage/classes/expsvgsanitizer.php
+dae4524fcea813d47cb5e927622299c2  lib/ezimage/classes/expsvgsanitizer.php
 f7c94bfa8064d4523b04b8e0a9aaa538  lib/ezimage/classes/ezexifimageanalyzer.php
 ead393ae19eba7a1f689b9881b03d7de  lib/ezimage/classes/ezgifimageanalyzer.php
 b245ac9a8ab848aaec43c4d12ca875ff  lib/ezimage/classes/ezimageanalyzer.php
@@ -27137,7 +27137,7 @@ b671b6c2a143cd801f3ce3ce4a01248c  lib/ezutils/classes/ezexpiryhandler.php
 bc9273bdffd0c33f2850f1f79167860a  lib/ezutils/classes/ezfiletransport.php
 d7ab655e877ac2a6cb313bba14f33505  lib/ezutils/classes/ezfloatvalidator.php
 20ec69994d508c11a4a98d02edb6334e  lib/ezutils/classes/ezfunctionhandler.php
-f9d998128a4cb21044f46fb2474919ce  lib/ezutils/classes/ezhttpfile.php
+81eb2fe2e661f59b7784ce3f58764b8b  lib/ezutils/classes/ezhttpfile.php
 96744a5512d7d89c096150ae2f50183a  lib/ezutils/classes/ezhttppersistence.php
 6fa9bafc7b70c2a6a8b56ce25b25906a  lib/ezutils/classes/ezhttptool.php
 4783b723ac5c2bb2ae972e88d93aef3a  lib/ezutils/classes/ezini.php
@@ -27326,7 +27326,7 @@ ab00f79238eebe7e595134867213df63  settings/error.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
-8a08f49a06fb10c51b72ec58628b9aba  settings/file.ini
+d499e1cc92fe60e211f354626835e624  settings/file.ini
 48030b94ca3f24f7ace0b42095a051d7  settings/graphql.ini
 d67b9d8070da89d40e422a18fd8d5142  settings/httpcache.ini
 7950720aa3badcf77219100657347b45  settings/i18n.ini
@@ -29321,7 +29321,7 @@ d3160db2f56eddb9e6e594789e952315  tests/tests/kernel/classes/expEditorPoliciesTe
 63560f7fcb44741dad70668afb867c2a  tests/tests/kernel/classes/expKernelServiceScopeMemoTest.php
 69e930b35051a508205c2c4d5482c24b  tests/tests/kernel/classes/expKernelServicesTest.php
 cdc3a84370d7973c391aa502601fc541  tests/tests/kernel/classes/expKernelTransferRegistryTest.php
-3b2b910bb1e42b0e3f7b92b6a5940a16  tests/tests/kernel/classes/expLegacyForkFixesTest.php
+39b9585e67ff669df4e25290133f3d75  tests/tests/kernel/classes/expLegacyForkFixesTest.php
 e2d49a13d3ace90fa9eb9d1fa6fe2190  tests/tests/kernel/classes/expLinkCheckTest.php
 3e50c9be12a35dbb019b3378de3d7236  tests/tests/kernel/classes/expLoveStackCheckTest.php
 be0d9664a26c04457647f96100bb1fa9  tests/tests/kernel/classes/expLoveStackFixture.php
@@ -30469,7 +30469,7 @@ e9086b6ec3b4d0523a25a94ef7d2fac9  tests/tests/lib/ezimage/data/svg/wordmark.svg
 75c5dbb4ccf0994e2ef210b0f171f57a  tests/tests/lib/ezimage/eZImageManagerTest.php
 4e7de3ec4aa1518a13c79eb005afacce  tests/tests/lib/ezimage/eZImageShellHandlerTest.php
 2c7f2bc7854e416387f3e84eb607dec6  tests/tests/lib/ezimage/expImageFocalPointTest.php
-11525f46ca9064bb5218c19b0ff7bfea  tests/tests/lib/ezimage/expSvgSanitizerTest.php
+7d06827c1824827e84aec5f9b0dc803f  tests/tests/lib/ezimage/expSvgSanitizerTest.php
 31371d0534d6dce6bd41254a3302bf34  tests/tests/lib/ezimage/ezimagemanager_test.php
 4125507090fdf662918405f4f1cdbc44  tests/tests/lib/ezimage/ezimageshellhandler_test.php
 b83fff926e672238cf615fe6606c82ed  tests/tests/lib/ezimage/suite.php

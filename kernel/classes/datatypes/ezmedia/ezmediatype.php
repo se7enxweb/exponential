@@ -602,6 +602,13 @@ class eZMediaType extends eZDataType
             return false;
         }
 
+        // an SVG is kept only sanitized: it is served as a file the browser renders
+        if ( !expSvgSanitizer::sanitizeStoredUpload( $destination, $fileName ) )
+        {
+            unlink( $destination );
+            return false;
+        }
+
         $fileHandler = eZClusterFileHandler::instance();
         $fileHandler->fileStore( $destination, 'mediafile', true, $mimeData['name'] );
 
@@ -918,6 +925,12 @@ class eZMediaType extends eZDataType
 
         eZFileHandler::copy( $sourcePath, $destinationPath . $basename );
         eZDebug::writeNotice( 'Copied: ' . $sourcePath . ' to: ' . $destinationPath . $basename, __METHOD__ );
+        // an SVG is kept only sanitized: it is served as a file the browser renders
+        if ( !expSvgSanitizer::sanitizeStoredUpload( $destinationPath . $basename, $basename ) )
+        {
+            unlink( $destinationPath . $basename );
+            return false;
+        }
 
         $mediaFile->setAttribute( 'contentobject_attribute_id', $objectAttribute->attribute( 'id' ) );
         $mediaFile->setAttribute( 'filename', $basename );

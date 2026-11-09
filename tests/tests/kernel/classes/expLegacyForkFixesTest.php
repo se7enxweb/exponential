@@ -210,7 +210,7 @@ class expLegacyForkFixesTest extends PHPUnit\Framework\TestCase
         preg_match_all( '/^FileExtensionBlackList\[\]=(.+)$/m', $ini, $match );
         $shipped = array_map( 'trim', $match[1] );
         foreach ( array( 'php', 'php3', 'php4', 'php5', 'php7', 'php8', 'phps', 'phar', 'phpt', 'pht', 'phtml', 'pgif',
-                         'shtml', 'cgi', 'pl', 'asp', 'aspx', 'jsp', 'htaccess' ) as $extension )
+                         'shtml', 'cgi', 'pl', 'asp', 'aspx', 'jsp', 'htaccess', 'html', 'htm', 'xhtml', 'xht' ) as $extension )
         {
             $this->assertContains( $extension, $shipped );
         }
@@ -220,7 +220,7 @@ class expLegacyForkFixesTest extends PHPUnit\Framework\TestCase
         }
 
         $validator = new eZFileExtensionBlackListValidator();
-        foreach ( array( 'shell.php5', 'shell.PHP7', 'page.shtml', '.htaccess', 'run.cgi' ) as $name )
+        foreach ( array( 'shell.php5', 'shell.PHP7', 'page.shtml', '.htaccess', 'run.cgi', 'payload.html', 'page.HTM', 'doc.xhtml' ) as $name )
         {
             $this->assertSame( eZInputValidator::STATE_INVALID, $validator->validate( $name ), $name );
         }

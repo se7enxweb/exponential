@@ -156,18 +156,23 @@ script in the browser (SVG, HTML), or a huge or malformed file that exhausts the
   `content/download`, which checks the reader's permissions ([13.2](../install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out)).
 - Images are accepted by what the file contains, not by its name: `expImageUploadValidator` reads the type with
   PHP's fileinfo and compares it with `image.ini [ImageUploadSettings] AllowedMIMETypes[]`.
-- SVG files are never stored as uploaded: `expSvgSanitizer` keeps only what is known to be safe, and the stored file
+- SVG files are never stored as uploaded, whichever datatype takes them (image, binary file, media, and their file
+  and package imports): `expSvgSanitizer` keeps only what is known to be safe, and the stored file
   is served with headers that stop it from running anything ([SVG images](../bc/6.0/svg-images.md)).
 - Package uploads need the `package` policies, and `ManagedByDeployment` blocks them.
 - The binary file, media and image datatypes refuse every extension a web server may run as code
   (`file.ini [FileSettings] FileExtensionBlackList[]`: `php` to `php8`, `phtml`, `pht`, `phps`, `phar`, `phpt`,
-  `pgif`, `shtml`, `cgi`, `pl`, `asp`, `aspx`, `jsp`, `htaccess`), compared in lower case
+  `pgif`, `shtml`, `cgi`, `pl`, `asp`, `aspx`, `jsp`, `htaccess`) and HTML pages (`html`, `htm`, `xhtml`, `xht`),
+  compared in lower case
   ([Fixes from the Opencontent and Mugo Web forks](../features/6.0/legacy-fork-fixes.md#uploads-a-longer-list-of-refused-file-extensions)).
 
 **Harden.** Keep the rewrite rules current after every upgrade (`.htaccess_root`, or the derived nginx block;
 `./console exp:setup:htaccess` shows the diff between your `.htaccess` and the shipped rules and exits 1 while they
 differ, see [Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md)). Give
-upload rights only to the roles that need them. Keep `TemporaryDir` private to the site
+upload rights only to the roles that need them. Never serve `var/` as static files beyond the shipped allow-list
+(`storage/images`, `storage/pdf/*.pdf`, `storage/original/image/*.{png,jpg,gif,webp,svg}` and the public caches):
+a server that hands out `storage/original/` as files, or PHP's built-in server started without the router of the
+built-in server engine, serves uploads in the site's origin. Keep `TemporaryDir` private to the site
 ([13.11](../install/13-security-hardening.md#1311-file-permissions-and-ownership)).
 
 ### Path traversal and access to internal files

@@ -125,6 +125,14 @@ class eZHTTPFile
             chmod( $dest_name, eZFile::fileMode( octdec( $perm ) ) );
             umask( $oldumask );
 
+            // An SVG kept by the file or media datatype is served as a file the browser renders:
+            // it is stored only sanitized, like the image datatype's SVGs
+            if ( !expSvgSanitizer::sanitizeStoredUpload( $dest_name, $this->OriginalFilename ) )
+            {
+                unlink( $dest_name );
+                return false;
+            }
+
             // Write log message to storage.log
             $storageDir = $dir . "/";
             eZLog::writeStorageLog( basename( $this->Filename ), $storageDir );

@@ -16,6 +16,8 @@
  *          image functions that take a plain string are checked like any declaration
  *  SV-11 - isSVGFile() recognises SVG behind a DOCTYPE or processing instruction with ">" and a prolog longer than 64 kB
  *  SV-12 - labels and titles (aria-*, title, xlink:title) keep ordinary text; only a script or data URL in them goes
+ *  SV-13 - sanitizeStoredUpload(): an SVG upload (by its name, the uploader's name or its content) is sanitized in
+ *          place, a .svg that is no SVG is refused, any other file is left alone
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -426,6 +428,26 @@ class expSvgSanitizerTest extends PHPUnit\Framework\TestCase
         $start = microtime( true );
         $this->assertFalse( expSvgSanitizer::isSVGMarkup( str_repeat( '<!-- a --> <?p b?> ', 3000 ) . '<html/>' ) );
         $this->assertLessThan( 2.0, microtime( true ) - $start );
+    }
+
+    /** SV-13 */
+    public function testStoredUploadsAreSanitizedWhenTheyAreSvg()
+    {
+        $svg = self::OPEN . '<script>alert(1)</script>' . self::RECT . '</svg>';
+        // by its name, by the uploader's name and by its content (an SVG stored as .png)
+        foreach ( array( array( 'a.svg', null ), array( 'b.bin', 'logo.SVG' ), array( 'c.png', 'c.png' ), array( 'd.svgz', null ) ) as $case )
+        {
+            $path = $this->file( $case[0], $case[0] === 'd.svgz' ? gzencode( $svg ) : $svg );
+            $this->assertTrue( expSvgSanitizer::sanitizeStoredUpload( $path, $case[1] ), $case[0] );
+            $this->assertHarmless( file_get_contents( $path ) );
+        }
+        // a file named .svg that is no SVG (an HTML page) is refused and left for the caller to remove
+        $html = $this->file( 'page.svg', '<html><script>alert(1)</script></html>' );
+        $this->assertFalse( expSvgSanitizer::sanitizeStoredUpload( $html, 'page.svg' ) );
+        // anything else is left byte for byte
+        $pdf = $this->file( 'r.pdf', "%PDF-1.4\n<script>not svg</script>" );
+        $this->assertTrue( expSvgSanitizer::sanitizeStoredUpload( $pdf, 'r.pdf' ) );
+        $this->assertSame( "%PDF-1.4\n<script>not svg</script>", file_get_contents( $pdf ) );
     }
 
     /**

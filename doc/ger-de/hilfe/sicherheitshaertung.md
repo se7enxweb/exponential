@@ -170,19 +170,25 @@ die im Browser Skript ausführt (SVG, HTML), oder eine riesige oder fehlerhafte 
   ([13.2](../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf)).
 - Bilder werden nach ihrem Inhalt angenommen, nicht nach ihrem Namen: `expImageUploadValidator` liest den Typ mit
   fileinfo von PHP und vergleicht ihn mit `image.ini [ImageUploadSettings] AllowedMIMETypes[]`.
-- SVG-Dateien werden nie so gespeichert, wie sie hochgeladen wurden: `expSvgSanitizer` behält nur, was als sicher
+- SVG-Dateien werden nie so gespeichert, wie sie hochgeladen wurden, gleich welcher Datentyp sie annimmt (Bild,
+  Binärdatei, Medien sowie deren Datei- und Paketimporte): `expSvgSanitizer` behält nur, was als sicher
   bekannt ist, und die gespeicherte Datei wird mit Headern ausgeliefert, die verhindern, dass sie etwas ausführt
   ([SVG-Bilder](../bc/6.0/svg-bilder.md)).
 - Paket-Uploads brauchen die `package`-Richtlinien, und `ManagedByDeployment` sperrt sie.
 - Die Datentypen Datei, Medien und Bild lehnen jede Endung ab, die ein Webserver als Code ausführen kann
   (`file.ini [FileSettings] FileExtensionBlackList[]`: `php` bis `php8`, `phtml`, `pht`, `phps`, `phar`, `phpt`,
-  `pgif`, `shtml`, `cgi`, `pl`, `asp`, `aspx`, `jsp`, `htaccess`), verglichen in Kleinbuchstaben
+  `pgif`, `shtml`, `cgi`, `pl`, `asp`, `aspx`, `jsp`, `htaccess`) und HTML-Seiten (`html`, `htm`, `xhtml`, `xht`),
+  verglichen in Kleinbuchstaben
   ([Korrekturen aus den Forks von Opencontent und Mugo Web](../funktionen/6.0/korrekturen-aus-den-legacy-forks.md#uploads-eine-längere-liste-abgelehnter-dateiendungen)).
 
 **Härten.** Halten Sie die Rewrite-Regeln nach jedem Upgrade aktuell (`.htaccess_root` oder der daraus abgeleitete
 nginx-Block; `./console exp:setup:htaccess` zeigt den Unterschied zwischen Ihrer `.htaccess` und den mitgelieferten
 Regeln und endet mit Exit-Code 1, solange sie abweichen, siehe
-[.htaccess und config.php von der Konsole einrichten](../anleitungen/setup-dateien-von-der-konsole.md)). Geben Sie Upload-Rechte nur den Rollen, die sie brauchen. Halten Sie `TemporaryDir` privat für die Site
+[.htaccess und config.php von der Konsole einrichten](../anleitungen/setup-dateien-von-der-konsole.md)). Geben Sie Upload-Rechte nur den Rollen, die sie brauchen. Liefern Sie `var/` nie über die mitgelieferte
+Freigabeliste hinaus als statische Dateien aus (`storage/images`, `storage/pdf/*.pdf`,
+`storage/original/image/*.{png,jpg,gif,webp,svg}` und die öffentlichen Caches): Ein Server, der `storage/original/`
+als Dateien ausgibt, oder PHPs eingebauter Server ohne den Router der Built-in-Server-Engine liefert Uploads im
+Ursprung der Site aus. Halten Sie `TemporaryDir` privat für die Site
 ([13.11](../installation/13-sicherheitshaertung.md#1311-dateiberechtigungen-und-eigentümer)).
 
 ### Path Traversal und Zugriff auf interne Dateien

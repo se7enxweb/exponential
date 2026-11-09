@@ -284,6 +284,31 @@ class expSvgSanitizer
     }
 
     /**
+     * Sanitizes a stored upload in place when it is an SVG, by its name ($name, the uploader's file
+     * name, or $path) ending in .svg or .svgz, or by its content. Every datatype that keeps files
+     * under storage/original calls it (file, media), since an SVG there lands in original/image/,
+     * which web servers serve as a file the browser renders, not through the download handler.
+     * The image datatype sanitizes its SVGs itself (eZImageType::sanitizeSVGFile()).
+     *
+     * @param string $path the stored file
+     * @param string|null $name the file name the upload came with
+     * @return bool true when the file is no SVG or was sanitized; false when it is refused (the
+     *              caller removes it and refuses the upload)
+     */
+    public static function sanitizeStoredUpload( $path, $name = null )
+    {
+        $named = preg_match( '/\.svgz?$/i', (string)$path ) || ( is_string( $name ) && preg_match( '/\.svgz?$/i', $name ) );
+        if ( !$named && !static::isSVGFile( $path ) )
+            return true;
+        if ( !static::sanitizeFile( $path ) )
+        {
+            eZDebug::writeWarning( 'SVG upload refused: ' . static::lastError(), __METHOD__ );
+            return false;
+        }
+        return true;
+    }
+
+    /**
      * Whether $markup (or its start) has <svg> as its root element.
      *
      * @param string $markup
