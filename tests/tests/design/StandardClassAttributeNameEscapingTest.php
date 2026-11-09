@@ -21,8 +21,8 @@ class StandardClassAttributeNameEscapingTest extends PHPUnit\Framework\TestCase
     public static function templateProvider()
     {
         return array(
-            'user registration' => array( 'design/standard/templates/user/register.tpl',
-                '$ContentObjectAttribute:item.contentclass_attribute.name', 1 ),
+            'user registration' => array( 'design/standard/templates/user/register_attribute.tpl',
+                '$attribute.contentclass_attribute.name', 2 ),
             'comment edit' => array( 'design/base/override/templates/edit/comment.tpl',
                 '$attribute.contentclass_attribute.name', 3 ),
             'poll result' => array( 'design/standard/templates/content/collectedinfo/poll.tpl',

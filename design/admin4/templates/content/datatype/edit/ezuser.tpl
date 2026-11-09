@@ -1,11 +1,13 @@
 {* admin4: the account's fields stand in one row (.a4-content-parts), each label above its field; no colon after a label; the status is a badge *}
-{default attribute_base=ContentObjectAttribute}
+{default attribute_base=ContentObjectAttribute register=false()}
 
-{* User ID. *}
+{* User ID: not on the sign-up form (register=true(), user/register_attribute.tpl), where the account has no id to show yet. *}
+{if $register|not}
 <div class="block">
     <p class="a4-label">{'User ID'|i18n( 'design/standard/content/datatype' )}</p>
     <p>{$attribute.content.contentobject_id}</p>
 </div>
+{/if}
 
 {if ne( $attribute_base, 'ContentObjectAttribute' )}
     {def $id_base = concat( 'ezcoa-', $attribute_base, '-', $attribute.contentclassattribute_id, '_', $attribute.contentclass_attribute_identifier )}
@@ -71,6 +73,8 @@
 {/if}
 {undef $pwc_editor $pwc_checked}
 
+{* Status: not on the sign-up form either, where every new account starts disabled until it is confirmed. *}
+{if $register|not}
 {* Status: a text, not the label of a control *}
 <div class="block">
     <p>{'Current account status:'|i18n( 'design/standard/content/datatype' )}
@@ -82,4 +86,5 @@
     </p>
 </div>
 
+{/if}
 {/default}

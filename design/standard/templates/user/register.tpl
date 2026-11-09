@@ -29,13 +29,7 @@
 {/section}
 
 {section show=count($content_attributes)|gt(0)}
-    {section name=ContentObjectAttribute loop=$content_attributes}
-    <input type="hidden" name="ContentObjectAttribute_id[]" value="{$ContentObjectAttribute:item.id}" />
-    <div class="block">
-        <label>{$ContentObjectAttribute:item.contentclass_attribute.name|wash}</label><div class="labelbreak"></div>
-        {attribute_edit_gui attribute=$ContentObjectAttribute:item}
-    </div>
-    {/section}
+    {foreach $content_attributes as $attribute}{include uri='design:user/register_attribute.tpl' attribute=$attribute}{/foreach}
 
     {include uri='design:mailpreferences/parts/signup.tpl' categories=first_set( $mail_categories, array() )}
 

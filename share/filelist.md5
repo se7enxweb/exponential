@@ -1409,7 +1409,7 @@ d65ca7814a7ac0f3c806e77b64e784ae  design/admin4/templates/content/datatype/edit/
 f52a06c27d1dad1d12d4de6b3431b898  design/admin4/templates/content/datatype/edit/ezrangeoption.tpl
 45ae3eda694d1ff7f6efc69bcdbc0ef9  design/admin4/templates/content/datatype/edit/eztime.tpl
 ee173977953a7194a21267d46673100a  design/admin4/templates/content/datatype/edit/ezurl.tpl
-6f2fc88021d25a0bbb53dfcbbbc1efd3  design/admin4/templates/content/datatype/edit/ezuser.tpl
+a8ff42f8e568a043564c6ed462bf4dec  design/admin4/templates/content/datatype/edit/ezuser.tpl
 9da33d1967da5abff9e5e93122d26540  design/admin4/templates/content/datatype/view/ezxmltags/literal.tpl
 cab16f51924286858df9bb86ed2b818d  design/admin4/templates/content/draft.tpl
 535f92a2ecb7f90b10c789c42115c2a9  design/admin4/templates/content/edit.tpl
@@ -2677,7 +2677,7 @@ c9923239d6657afe161ccc0ff7ec4840  design/standard/templates/content/datatype/edi
 77e988f6671299f05578038ef6bf14f6  design/standard/templates/content/datatype/edit/eztext.tpl
 176a0090580da63a4bada06574bd3242  design/standard/templates/content/datatype/edit/eztime.tpl
 1b8415d30428b93c0b1777063243c3cc  design/standard/templates/content/datatype/edit/ezurl.tpl
-740c1e47dd2af3de654c04ea2573da82  design/standard/templates/content/datatype/edit/ezuser.tpl
+32694833301dde32010cc54f98882132  design/standard/templates/content/datatype/edit/ezuser.tpl
 e4a4254586e6c414f613c6ca2fbf9a4a  design/standard/templates/content/datatype/edit/ezxmltext.tpl
 ba2531fa5b75963db552b718de0ed7bb  design/standard/templates/content/datatype/edit/multioption2/multioption.tpl
 eadce5c78eae14e589c12749f7015bb1  design/standard/templates/content/datatype/edit/multioption2/multioption2.tpl
@@ -3373,7 +3373,8 @@ f9d1e41dbc9415cbe73ee2464431d556  design/standard/templates/user/passkeys.tpl
 12094ca1cd1f3d2ec15cf8729c552837  design/standard/templates/user/password_changed_mail.tpl
 0df6c6679df5971b6ce443d1bd0fe421  design/standard/templates/user/preferences_confirm.tpl
 7f22497d3ade71c1bea689a901cd8e41  design/standard/templates/user/reauth.tpl
-7d62aeac7ad3b7636d3429748085c159  design/standard/templates/user/register.tpl
+139a568a8a3ba98d3ac663ba16f44931  design/standard/templates/user/register.tpl
+28a5bffd5864af01ebd7a79091d18d4d  design/standard/templates/user/register_attribute.tpl
 ed5856b59fd9402bdad145c9c129582b  design/standard/templates/user/register_user_not_valid.tpl
 a31eca132c1aa9d51bcf5825b31dcb5c  design/standard/templates/user/registration.tpl
 be1ed870602e97378284d47a65ab8fb5  design/standard/templates/user/registrationapproved.tpl
@@ -28843,7 +28844,7 @@ c0c0f5eb8bbcd4ba17e6dac25d579b6b  tests/tests/design/AdminTokenUsageTest.php
 8e8452be9fc384ea01e7f33ad8dc1183  tests/tests/design/LogViewerCopyMessagesTest.php
 6daf7c6280369c901a6b348253f70dae  tests/tests/design/LogViewerNavTest.php
 99ab3a3c3209b08677582574e8a9a4c4  tests/tests/design/PageLayoutHooksTest.php
-295eaf509f785e62086efa8aa330141a  tests/tests/design/StandardClassAttributeNameEscapingTest.php
+592daf629179528f5fdafd6c8c593a79  tests/tests/design/StandardClassAttributeNameEscapingTest.php
 85daef76e773824aa1ce1d4a83b8b72b  tests/tests/design/StandardContentEditAccessibleNamesTest.php
 ac1753103e03e6df70dc4322713064cd  tests/tests/design/StandardDatatypeEditNoStyleAttributeTest.php
 2e54316bc8bb08233cbf2deaba88eae3  tests/tests/design/TranslationFilesValidTest.php
