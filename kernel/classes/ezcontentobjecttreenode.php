@@ -2305,6 +2305,16 @@ class eZContentObjectTreeNode extends eZPersistentObject
     }
 
     /**
+     * Forgets the ShowHiddenNodes value showInvisibleNodes() read, so the next call reads site.ini again. For code
+     * that changes [SiteAccessSettings] ShowHiddenNodes while it runs (the hide cronjob): without it, fetches in the
+     * same process keep the value read before the change.
+     */
+    public static function resetShowInvisibleNodesCache()
+    {
+        self::$showInvisibleNodesCache = null;
+    }
+
+    /**
      * Per-request cache for showInvisibleNodes(); null means "not computed".
      *
      * @var bool|null

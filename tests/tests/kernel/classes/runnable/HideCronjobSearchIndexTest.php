@@ -6,7 +6,10 @@
  *  HC-01 - A node whose date in content.ini [HideSettings] HideDateAttributeList has passed is hidden, and the
  *          search engine's updateNodeVisibility() is called with the node and 'hide'
  *  HC-02 - The content/cache event of the hide gives listeners ( $nodeIDs, $objectIDs ) with the hidden object's
- *          id; a listener that takes only the node ids keeps working
+ *          id; a listener that takes only the node ids keeps working (with ViewCaching enabled, as only then the
+ *          view caches are cleared and the event is sent)
+ *  HC-03 - The cronjob ends when the process read ShowHiddenNodes=true before it (an earlier test or cronjob part):
+ *          it sets ShowHiddenNodes=false and the fetches follow it, so hidden nodes are not fetched again
  *
  * Live database, nothing kept: a throwaway folder and one object below it are created inside a database
  * transaction that is rolled back at the end, and the cronjob runs only below that folder (RootNodeList), so no
@@ -42,6 +45,12 @@ class HideCronjobSearchIndexTest extends PHPUnit\Framework\TestCase
     /** @var int[] content/cache listener ids */
     private $listeners = array();
 
+    /** @var callable|null the error handler on top of PHP's stack before the test (PHPUnit's) */
+    private $errorHandlerBefore;
+
+    /** @var callable the marker pushed above it, see pushErrorHandlerMarker() */
+    private $errorHandlerMarker;
+
     public static function setUpBeforeClass(): void
     {
         parent::setUpBeforeClass();
@@ -51,6 +60,7 @@ class HideCronjobSearchIndexTest extends PHPUnit\Framework\TestCase
     protected function setUp(): void
     {
         parent::setUp();
+        $this->pushErrorHandlerMarker();
         if ( self::$unavailable !== null )
             $this->markTestSkipped( self::$unavailable );
         $admin = eZUser::fetchByName( 'admin' );
@@ -81,6 +91,8 @@ class HideCronjobSearchIndexTest extends PHPUnit\Framework\TestCase
                 $ini->removeSetting( $block, $name );
         }
         $this->settings = array();
+        // the cronjob read ShowHiddenNodes=false into the cache; later tests read the restored setting again
+        eZContentObjectTreeNode::resetShowInvisibleNodesCache();
         if ( $this->engineKey !== null )
         {
             if ( $this->engineBackup === null )
@@ -89,7 +101,56 @@ class HideCronjobSearchIndexTest extends PHPUnit\Framework\TestCase
                 $GLOBALS[$this->engineKey] = $this->engineBackup[0];
         }
         eZContentObject::clearCache();
+        $this->popErrorHandlersToMarker();
         parent::tearDown();
+    }
+
+    /**
+     * Pushes a marker onto PHP's stack of error handlers that passes every error on to the handler below it.
+     * With ViewCaching enabled the hide clears view caches, and the debug messages written then make eZDebug switch
+     * its handling (eZDebug::setHandleType()): it takes the top handler off the stack, assuming it is its own, and
+     * pushes its own again. Without the marker that top handler was PHPUnit's, and the test was risky ("removed error
+     * handlers other than its own"). popErrorHandlersToMarker() leaves the stack as it was before the test.
+     */
+    private function pushErrorHandlerMarker()
+    {
+        $this->errorHandlerBefore = self::currentErrorHandler();
+        $before = $this->errorHandlerBefore;
+        $this->errorHandlerMarker = static function () use ( $before ) {
+            return is_callable( $before ) ? call_user_func_array( $before, func_get_args() ) : false;
+        };
+        set_error_handler( $this->errorHandlerMarker );
+    }
+
+    /**
+     * Pops the error handlers the tested code left above the marker and the marker itself; stops at the handler that
+     * was on top before the test when the tested code took the marker off already.
+     */
+    private function popErrorHandlersToMarker()
+    {
+        if ( $this->errorHandlerMarker === null )
+            return;
+        for ( $i = 0; $i < 100; $i++ )
+        {
+            $current = self::currentErrorHandler();
+            if ( $current === $this->errorHandlerMarker )
+            {
+                restore_error_handler();
+                break;
+            }
+            if ( $current === $this->errorHandlerBefore )
+                break;
+            restore_error_handler();
+        }
+        $this->errorHandlerMarker = null;
+    }
+
+    /** @return callable|null the error handler on top of PHP's stack, which stays as it is */
+    private static function currentErrorHandler()
+    {
+        $current = set_error_handler( null );
+        restore_error_handler();
+        return $current;
     }
 
     private function setting( $file, $block, $name, $value )
@@ -137,6 +198,12 @@ class HideCronjobSearchIndexTest extends PHPUnit\Framework\TestCase
         $this->setting( 'content.ini', 'HideSettings', 'RootNodeList', array( $folderNodeID ) );
         $this->setting( 'content.ini', 'HideSettings', 'HideDateAttributeList', array( $classIdentifier => $attributeIdentifier ) );
         $this->setting( 'site.ini', 'SiteAccessSettings', 'ShowHiddenNodes', eZINI::instance()->variable( 'SiteAccessSettings', 'ShowHiddenNodes' ) );
+        // HC-02: eZContentCacheManager sends content/cache only when it clears view caches
+        $this->setting( 'site.ini', 'ContentSettings', 'ViewCaching', 'enabled' );
+        // as after an earlier fetch of this process with ShowHiddenNodes=true: the cronjob must not loop on it
+        $this->setting( 'site.ini', 'SiteAccessSettings', 'ShowHiddenNodes', 'true' );
+        eZContentObjectTreeNode::resetShowInvisibleNodesCache();
+        $this->assertTrue( eZContentObjectTreeNode::showInvisibleNodes() );
 
         $engine = new class extends eZSearchEngine {
             public $visibility = array();
