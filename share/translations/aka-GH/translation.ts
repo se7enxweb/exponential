@@ -86247,5 +86247,181 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>Wɔantumi ansɔ adrɛse dada no hwɛ.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL mapo kyerɛ adrɛs dedaw biara ne krataafa a ɛwɔ saet yi so a ɛfa ho seesei. Yeinom ne nhyehyɛeɛ a mfaeba no kenkan, nhwɛsoɔ baako biara ka ho a wobɛtumi akɔpi: sesa adrɛs no ma ɛnyɛ wo de, na afei fa fael no bra anaasɛ fa hyɛ mu. Nhwɛsoɔ biara kɔ demo saet no mu sɛdeɛ ɛte.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Fael %file, %size · wɔakenkan afi %extensions · nsantenteɛ %rows wɔ mfaeba no mu</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Twe</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Wɔakɔpi akɔ clipboard no so</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Wɔantumi ankɔpi</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kɔpi</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Bue wɔ mfaeba no mu</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Afadum no</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV fael anaa spreadsheet bi nsensaneɛ a ɛdi kan no bɔ afadum no din, nhyehyɛeɛ biara mu; JSON de din korɔ no ara di dwuma sɛ safe. old_url ne new_url nko ara na ɛho hia. Sɛ nsensaneɛ a ɛdi kan a ɛwɔ din nni hɔ a, wɔfa afadum no wɔ nhyehyɛeɛ yi mu.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Afadum</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Deɛ ɛkura</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Adrɛs dedaw no: kwan bi (/about-us.html), kwan a nsɛmmisa ka ho (/index.php?id=12) anaa adrɛs a ɛyɛ mã a ɛfiri host dedaw no so. * hyia ɔfa biara.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Saet yi krataafa no: ne kwan (/recipes), ne node ID (node:163, a ɛdi krataafa no akyi sɛ ɛtu kɔ a) anaa adrɛs a ɛyɛ mã wɔ baabi foforɔ. %first, %second fa deɛ * no hyiaeɛ.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Deɛ nsantenteɛ no bɛyɛ, hwɛ ahodoɔ no. Hwee nni mu: kwan-sesa a ɛtena hɔ daa, wildcard a ɛsesa kwan sɛ old_url wɔ * a.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Kwan hunu bi wɛbsaet kwan; hwee nni mu: deɛ wɔpaw wɔ mfaeba krataafa no so.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL alias no kasa, sɛ nhwɛsoɔ eng-GB; hwee nni mu: wɛbsaet kwan no kasa.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Wo ankasa nkaeɛ; wɔde sie ka mfaeba no ho.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Kwan-sesa tebea: 301 anaa 308 (daa), 302, 303 anaa 307 (bere tiaa); hwee nni mu: su no na ɛsi gyinaeɛ.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Ahodoɔ no</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Deɛ ahɔhoɔ nya</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Kwan-sesa a ɛtena hɔ daa; URL alias a ɛwɔ baabiara a ɛsesa kwan.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Kwan-sesa a ɛyɛ bere tiaa: nhwehwɛmu afidie kora adrɛs dedaw no.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Krataafa foforɔ no wɔ adrɛs dedaw no so, a kwan-sesa nni mu; URL alias a ɛwɔ baabiara.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Kwan-sesa a ɛtena hɔ daa ma adrɛs biara a ɛhyia; URL wildcard.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Kwan-sesa a ɛyɛ bere tiaa ma adrɛs biara a ɛhyia.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Krataafa foforɔ no wɔ adrɛs biara a ɛhyia so, a kwan-sesa nni mu.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Fael kɔsi %size. Nhyehyɛeɛ no ho nsɛm nyinaa wɔ mmoa beaeɛ hɔ: URL tu kɔ, ne URL mapo nhwɛsoɔ.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Hwɛ nhyehyɛeɛ biara ho nhwɛsoɔ</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Nhyehyɛeɛ ne nhwɛsoɔ</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Krataafa baako baako</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Kwan-sesa a ɛtena hɔ daa ma krataafa baako baako, botaeɛ a ɛnam node ID (node:163) so a ɛdi krataafa no akyi sɛ ɛtu kɔ a, ne alias a ɛkyerɛ krataafa no wɔ adrɛs dedaw no so. Nsensaneɛ a ɛdi kan no bɔ afadum no din; old_url ne new_url nko ara na ɛho hia. Wɔkenkan .tsv fael wɔ ɔkwan korɔ no ara so, a tabs wom.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* hyia adrɛs bi ɔfa biara na {1} de hyɛ foforɔ no mu: ɔfa bi a atu kɔ, * wɔ adrɛs bi mfinimfini, wildcard a ɛyɛ bere tiaa ne deɛ ɛkɔ tee (kwan-sesa nni mu).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Nsɛmmisa ne kwan-sesa a ɛyɛ bere tiaa</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Adrɛs dedaw a nsɛmmisa ka ho (/index.php?id=12), 308, ne kwan-sesa a ɛyɛ bere tiaa denam su (redirect-temporary) ne tebea (307) so.</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Nneɛma nkyerɛwee a safe korɔ no ara wɔ ho sɛ CSV afadum no; nneɛma a ɛdi kan no bɛtumi abɔ schema exp-url-map/1 din. Deɛ export no kyerɛw na dwumadie foforɔ yɛ no mmerɛw.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Krataafa baako baako no sɛ Excel nwoma: krataa a ɛdi kan, afadum din wɔ nsensaneɛ a ɛdi kan mu. Bue, sesa adrɛs no na kora sɛ .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Ɛno ara sɛ OpenDocument spreadsheet, ma LibreOffice ne OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache mmara a wɔde sesa kwan</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Saet dedaw bi .htaccess sɛdeɛ ɛte: RewriteRule, RewriteCond ma nsɛmmisa, Redirect ma ɔfa mũ (krataafa no ne deɛ ɛwɔ n'ase nyinaa) ne RedirectMatch sɛ wildcard.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx mmara a wɔde sesa kwan</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Saet dedaw bi server block: location = ne return, if ($args) ma nsɛmmisa, rewrite sɛ wildcard ne map a ɛyɛ krataafa baako baako.</translation>
+    </message>
 </context>
 </TS>

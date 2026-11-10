@@ -86245,5 +86245,181 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>Ba a iya gwada tsofaffin adireshi ba.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Taswirar URL na lissafa kowane tsohon adireshi da shafin wannan rukunin yanar gizo da yake nasa yanzu. Waɗannan su ne tsarukan da shigo da ke karantawa, kowanne da misalin da za a kwafa: canza adiresoshin zuwa naka, sannan ka loda fayil ɗin ko ka liƙa shi. Kowane misali yana shiga shafin gwaji kamar yadda yake.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Fayil %file, %size · an karanta daga %extensions · layuka %rows a cikin shigo da</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Sauke</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>An kwafa zuwa allon rubutu</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Ba a iya kwafawa ba</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kwafa</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Buɗe a cikin shigo da</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Ginshiƙai</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Layin farko na fayil ɗin CSV ko maƙunshin bayanai yana ba ginshiƙai suna, a kowane tsari; JSON yana amfani da sunaye iri ɗaya a matsayin maɓallai. old_url da new_url kaɗai ake buƙata. Idan babu layin farko na sunaye, ana ɗaukar ginshiƙai a wannan tsari.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Ginshiƙi</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Abin da yake ƙunshe</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Tsohon adireshi: hanya (/about-us.html), hanya mai tambaya (/index.php?id=12) ko cikakken adireshin tsohon mai masauki. * yana dacewa da kowane sashe.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Shafin wannan rukunin: hanyarsa (/recipes), ID na kumburinsa (node:163, wanda ke bin shafin idan aka matsar da shi) ko cikakken adireshi a wani wuri. %first, %second suna ɗaukar abin da * ya dace da shi.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Abin da layin zai zama, duba nau'o'in. Babu komai: karkatarwa ta dindindin, alamar kati mai karkatarwa idan old_url yana da *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Hanyar shiga shafi ta hanya kawai; babu komai: wadda aka zaɓa a shafin shigo da.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Harshen laƙabin URL, misali eng-GB; babu komai: harshen hanyar shiga shafi.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Bayaninka na kanka; ana ajiye shi tare da shigo da.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Matsayin karkatarwa: 301 ko 308 (dindindin), 302, 303 ko 307 (na ɗan lokaci); babu komai: nau'in ne ke yanke shawara.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Nau'o'in</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Abin da baƙi ke samu</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Karkatarwa ta dindindin; laƙabin URL na gaba ɗaya mai karkatarwa.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Karkatarwa ta ɗan lokaci: injunan bincike suna riƙe tsohon adireshi.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Sabon shafi a tsohon adireshi, ba tare da karkatarwa ba; laƙabin URL na gaba ɗaya.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Karkatarwa ta dindindin ga kowane adireshi mai dacewa; alamar kati ta URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Karkatarwa ta ɗan lokaci ga kowane adireshi mai dacewa.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Sabon shafi a kowane adireshi mai dacewa, ba tare da karkatarwa ba.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Fayiloli har zuwa %size. Duk cikakkun bayanai na tsarukan suna cikin cibiyar taimako: Ƙaura URLs, da misalan taswirar URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Duba misalin kowane tsari</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Tsaruka da misalai</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Shafuka guda ɗaya</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Karkatarwa ta dindindin na shafuka guda ɗaya, manufa ta ID na kumburi (node:163) da ke bin shafin idan aka matsar da shi, da laƙabi da ke nuna shafin a tsohon adireshi. Layin farko yana ba ginshiƙai suna; old_url da new_url kaɗai ake buƙata. Ana karanta fayil ɗin .tsv haka nan, da tab.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* yana dacewa da kowane sashe na adireshi kuma {1} yana saka shi a cikin sabon: sashen da aka matsar, * a tsakiyar adireshi, alamar kati ta ɗan lokaci da wadda ke kai tsaye (ba karkatarwa).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Tambayoyi da karkatarwa ta ɗan lokaci</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Tsofaffin adiresoshi masu tambaya (/index.php?id=12), 308, da karkatarwa ta ɗan lokaci ta nau'i (redirect-temporary) da ta matsayi (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Jerin abubuwa masu maɓallai iri ɗaya da ginshiƙan CSV; abu na farko zai iya ambaton tsarin exp-url-map/1. Abin da fitarwa ke rubutawa kenan, kuma sauran shirye-shirye sun fi sauƙin yin sa.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Shafuka guda ɗaya a matsayin littafin aiki na Excel: takarda ta farko, sunayen ginshiƙai a layin farko. Buɗe shi, canza adiresoshin kuma ajiye shi a matsayin .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Iri ɗaya a matsayin maƙunshin bayanai na OpenDocument, don LibreOffice da OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Dokokin sake rubutu na Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Fayil ɗin .htaccess na tsohon shafi kamar yadda yake: RewriteRule, RewriteCond don tambaya, Redirect na dukan sashe (shafin da duk abin da ke ƙarƙashinsa) da RedirectMatch a matsayin alamar kati.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Dokokin sake rubutu na nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Toshen server na tsohon shafi: location = tare da return, if ($args) don tambaya, rewrite a matsayin alamar kati da map na shafuka guda ɗaya.</translation>
+    </message>
 </context>
 </TS>

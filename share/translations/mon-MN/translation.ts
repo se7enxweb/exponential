@@ -86247,5 +86247,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>Хуучин хаягуудыг шалгах боломжгүй байлаа.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL зураглал нь хуучин хаяг бүрийг болон одоо харьяалагдах энэ сайтын хуудсыг жагсаадаг. Эдгээр нь импортын уншдаг форматууд бөгөөд тус бүр нь хуулж авах жишээтэй: хаягуудыг өөрийнхөөрөө солиод, файлаа байршуулах эсвэл буулгана уу. Жишээ бүр демо сайт руу байгаа чигээрээ импортлогдоно.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Файл %file, %size · %extensions-с уншсан · импортод %rows мөр</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Татаж авах</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Санах ойд хуулсан</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Хуулж чадсангүй</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Хуулах</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Импортод нээх</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Баганууд</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV файл эсвэл хүснэгтийн эхний мөр баганыг дурын дарааллаар нэрлэнэ; JSON ижил нэрсийг түлхүүр болгон ашигладаг. Зөвхөн old_url болон new_url шаардлагатай. Нэрсийн эхний мөргүй бол баганыг энэ дарааллаар авна.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Багана</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Юу агуулдаг</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Хуучин хаяг: зам (/about-us.html), асуулгатай зам (/index.php?id=12) эсвэл хуучин хостын бүтэн хаяг. * нь дурын хэсэгт тохирно.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Энэ сайтын хуудас: түүний зам (/recipes), зангилааны ID (node:163, хуудсыг зөөхөд даган явдаг) эсвэл өөр газрын бүтэн хаяг. %first, %second нь * тохирсон зүйлийг авна.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Мөр юу болох вэ, төрлүүдийг харна уу. Хоосон: байнгын дахин чиглүүлэлт, old_url-д * байвал дахин чиглүүлэх орлуулах тэмдэгт.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Зөвхөн замын сайтын хандалт; хоосон: импортын хуудсанд сонгосон нь.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL өөр нэрийн хэл, жишээ нь eng-GB; хоосон: сайтын хандалтын хэл.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Таны өөрийн тэмдэглэл; импорттой хамт хадгалагдана.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Дахин чиглүүлэлтийн төлөв: 301 эсвэл 308 (байнгын), 302, 303 эсвэл 307 (түр); хоосон: төрөл нь шийднэ.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Төрлүүд</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Зочид юу авах вэ</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Байнгын дахин чиглүүлэлт; дахин чиглүүлдэг глобал URL өөр нэр.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Түр дахин чиглүүлэлт: хайлтын системүүд хуучин хаягийг хадгална.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Хуучин хаяг дээрх шинэ хуудас, дахин чиглүүлэлтгүй; глобал URL өөр нэр.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Тохирох хаяг бүрд байнгын дахин чиглүүлэлт; URL орлуулах тэмдэгт.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Тохирох хаяг бүрд түр дахин чиглүүлэлт.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Тохирох хаяг бүр дээрх шинэ хуудас, дахин чиглүүлэлтгүй.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>%size хүртэлх файлууд. Форматуудын бүх нарийн мэдээлэл тусламжийн төвд байна: URL шилжүүлэх, болон URL зураглалын жишээнүүд.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Формат бүрийн жишээг харах</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Форматууд ба жишээнүүд</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Тусдаа хуудсууд</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Тусдаа хуудсуудын байнгын дахин чиглүүлэлтүүд, хуудсыг зөөхөд даган явдаг зангилааны ID (node:163)-аар заасан зорилт, мөн хуудсыг хуучин хаяг дээр харуулдаг өөр нэр. Эхний мөр баганыг нэрлэнэ; зөвхөн old_url болон new_url шаардлагатай. .tsv файлыг табуудтай ижил байдлаар уншина.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* нь хаягийн дурын хэсэгт тохирох ба {1} нь түүнийг шинэ хаяг руу оруулна: зөөгдсөн хэсэг, хаягийн дунд байгаа *, түр орлуулах тэмдэгт болон шууд нэг (дахин чиглүүлэлтгүй).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Асуулгууд ба түр дахин чиглүүлэлтүүд</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Асуулгатай хуучин хаягууд (/index.php?id=12), 308, мөн төрлөөр (redirect-temporary) болон төлөвөөр (307) түр дахин чиглүүлэлтүүд.</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>CSV баганатай ижил түлхүүртэй объектуудын жагсаалт; эхний объект exp-url-map/1 схемийг нэрлэж болно. Экспортын бичдэг, бусад программууд хамгийн амархан үүсгэдэг формат.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Тусдаа хуудсууд Excel ажлын ном хэлбэрээр: эхний хуудас, эхний мөрөнд баганын нэрс. Нээгээд хаягуудыг солиод .xlsx болгон хадгална уу.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Үүнтэй ижил OpenDocument хүснэгт хэлбэрээр, LibreOffice болон OpenOffice-д зориулсан.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache дахин бичих дүрмүүд</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Хуучин сайтын .htaccess байгаа чигээрээ: RewriteRule, асуулгад зориулсан RewriteCond, бүхэл хэсгийн Redirect (хуудас болон түүний доорх бүх зүйл) ба орлуулах тэмдэгт болгон RedirectMatch.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx дахин бичих дүрмүүд</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Хуучин сайтын server блок: return-тэй location =, асуулгад зориулсан if ($args), орлуулах тэмдэгт болгон rewrite ба тусдаа хуудсуудын map.</translation>
+    </message>
 </context>
 </TS>

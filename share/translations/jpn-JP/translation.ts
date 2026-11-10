@@ -86277,5 +86277,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>旧アドレスをテストできませんでした。</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URLマップは、古いアドレスごとに、それが現在このサイトのどのページに対応するかを一覧にしたものです。インポートが読み込める形式と、それぞれのコピー用の例を示します。アドレスをご自身のものに変更してから、ファイルをアップロードするか貼り付けてください。どの例もそのままデモサイトにインポートできます。</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>ファイル %file、%size · %extensions から読み込み · インポートに %rows 行</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>ダウンロード</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>クリップボードにコピーしました</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>コピーできませんでした</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>コピー</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>インポートで開く</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>列</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSVファイルまたはスプレッドシートの1行目で、列の名前を任意の順序で指定します。JSONでは同じ名前をキーとして使います。必須なのは old_url と new_url だけです。名前の1行目がない場合、列はこの順序で解釈されます。</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>列</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>内容</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>古いアドレス:パス(/about-us.html)、クエリ付きのパス(/index.php?id=12)、または古いホストの完全なアドレス。* は任意の部分に一致します。</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>このサイトのページ:そのパス(/recipes)、ノードID(node:163。ページが移動しても追従します)、または他の場所の完全なアドレス。%first、%second には * に一致した部分が入ります。</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>その行が何になるか。種類を参照してください。空の場合:恒久的なリダイレクト、old_url に * がある場合はリダイレクトするワイルドカード。</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>パスだけの場合のサイトアクセス。空の場合:インポートページで選択したもの。</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URLエイリアスの言語(例:eng-GB)。空の場合:サイトアクセスの言語。</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>自分用のメモ。インポートと一緒に保存されます。</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>リダイレクトのステータス:301 または 308(恒久的)、302、303 または 307(一時的)。空の場合:種類によって決まります。</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>種類</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>訪問者に表示されるもの</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>恒久的なリダイレクト。リダイレクトするグローバルURLエイリアス。</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>一時的なリダイレクト。検索エンジンは古いアドレスを保持します。</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>古いアドレスで新しいページを表示(リダイレクトなし)。グローバルURLエイリアス。</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>一致するすべてのアドレスへの恒久的なリダイレクト。URLワイルドカード。</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>一致するすべてのアドレスへの一時的なリダイレクト。</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>一致するすべてのアドレスで新しいページを表示(リダイレクトなし)。</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>%size までのファイル。形式の詳細はすべてヘルプセンターにあります:URLの移行、URLマップの例。</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>各形式の例を見る</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>形式と例</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>個別ページ</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>個別ページの恒久的なリダイレクト、ページが移動しても追従するノードID(node:163)による転送先、古いアドレスでページを表示するエイリアス。1行目で列の名前を指定します。必須なのは old_url と new_url だけです。.tsv ファイルもタブ区切りで同じように読み込まれます。</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* はアドレスの任意の部分に一致し、{1} はそれを新しいアドレスに挿入します:移動したセクション、アドレスの途中の *、一時的なワイルドカード、直接のワイルドカード(リダイレクトなし)。</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>クエリと一時的なリダイレクト</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>クエリ付きの古いアドレス(/index.php?id=12)、308、種類(redirect-temporary)およびステータス(307)による一時的なリダイレクト。</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>CSVの列と同じキーを持つオブジェクトのリスト。最初のオブジェクトでスキーマ exp-url-map/1 を指定できます。エクスポートが書き出す形式で、他のプログラムでも最も簡単に作成できます。</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>個別ページをExcelブックにしたもの:最初のシート、1行目に列名。開いてアドレスを変更し、.xlsx として保存してください。</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>同じ内容をOpenDocumentスプレッドシートにしたもの(LibreOffice および OpenOffice 用)。</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache の書き換えルール</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>古いサイトの .htaccess をそのまま:RewriteRule、クエリ用の RewriteCond、セクション全体(ページとその下のすべて)の Redirect、ワイルドカードとしての RedirectMatch。</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx の書き換えルール</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>古いサイトの server ブロック:return を使った location =、クエリ用の if ($args)、ワイルドカードとしての rewrite、個別ページの map。</translation>
+    </message>
 </context>
 </TS>

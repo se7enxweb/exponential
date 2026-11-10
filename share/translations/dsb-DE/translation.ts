@@ -86277,5 +86277,181 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>Stare adresy njejsu se mógli testowaś.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL-kórta naliconujo kuždu staru adresu a bok toś togo sedła, ku kótaremuž něnto słuša. To su formaty, kótarež import cyta, kuždy z pśikładom na kopěrowanje: změńśo adrese na swóje, pótom nagrajśo dataju abo zasajźćo ju. Kuždy pśikład se do demonstraciskego sedła importěrujo tak, ako jo.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Dataja %file, %size · cytane z %extensions · %rows smužkow w importe</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Ześěgnuś</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Do mjazywótkłada kopěrowane</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Kopěrowanje njejo se raźiło</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopěrowaś</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>W importe wócyniś</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Słupy</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Prědna smužka CSV-dataje abo tabelowego dokumenta pomjenijo słupy, w někakem pórěźe; JSON wužywa te same mjenja ako kluce. Trěbne stej jano old_url a new_url. Bźez prědneje smužki z mjenjami se słupy w toś tom pórěźe wezmu.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Słup</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Co wopśimujo</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Stara adresa: sćažka (/about-us.html), sćažka z napšašowanim (/index.php?id=12) abo dopołna adresa starego hosta. * wótpowědujo kuždemu źěloju.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Bok toś togo sedła: jogo sćažka (/recipes), jogo ID suka (node:163, kótaryž bokoju slědujo, gaž se pśesuwa) abo dopołna adresa hynźej. %first, %second pśewzeju to, což jo * namakała.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Co z smužki buźo, glejśo družyny. Prozne: stawne dalejpósrědnjenje, dalejpósrědnjece zastupne znamuško, gaž ma old_url *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Pśistup k sedłu goleje sćažki; prozne: ten, kótaryž jo se na importowem boku wubrał.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Rěc URL-aliasa, na pśikład eng-GB; prozne: rěc pśistupa k sedłu.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Waša swójska notica; wóna se z importom wobchowa.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Status dalejpósrědnjenja: 301 abo 308 (stawny), 302, 303 abo 307 (nachylny); prozne: družyna rozsuźijo.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Družyny</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Co woglědowarje dostanu</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Stawne dalejpósrědnjenje; globalny URL-alias, kótaryž dalej pósrědnja.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Nachylne dalejpósrědnjenje: pytawe mašyny wobchowaju staru adresu.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Nowy bok na starej adresy, bźez dalejpósrědnjenja; globalny URL-alias.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Stawne dalejpósrědnjenje za kuždu wótpowědujucu adresu; URL-zastupne znamuško.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Nachylne dalejpósrědnjenje za kuždu wótpowědujucu adresu.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Nowy bok na kuždej wótpowědujucej adresy, bźez dalejpósrědnjenja.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Dataje až do %size. Wšykne drobnostki formatow su w centrumje pomocy: URL migrěrowaś a pśikłady URL-kórtow.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Pśikład kuždego formata pokazaś</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Formaty a pśikłady</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Jadnotliwe boki</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Stawne dalejpósrědnjenja jadnotliwych bokow, cel pó ID suka (node:163), kótaryž bokoju slědujo, gaž se pśesuwa, a alias, kótaryž bok na starej adresy pokazujo. Prědna smužka pomjenijo słupy; trěbne stej jano old_url a new_url. .tsv-dataja se samsko cyta, z tabulatorami.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* wótpowědujo kuždemu źěloju adrese a {1} jen do noweje sajźijo: wótrězk, kótaryž jo se pśesunuł, * w srjejźi adrese, nachylne zastupne znamuško a direktne (bźez dalejpósrědnjenja).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Napšašowanja a nachylne dalejpósrědnjenja</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Stare adrese z napšašowanim (/index.php?id=12), 308 a nachylne dalejpósrědnjenja pó družynje (redirect-temporary) a pó statusu (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Lisćina objektow z tymi samymi klucami ako CSV-słupy; prědny objekt móžo šemu exp-url-map/1 pomjeniś. To pišo eksport a to druge programy nejlažčej napóraju.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Jadnotliwe boki ako Excel-źěłowy zešyw: prědna tabela, mjenja słupow w prědnej smužce. Wócyńśo jen, změńśo adrese a składujśo jen ako .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>To samo ako OpenDocument-tabela, za LibreOffice a OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache-pšawidła pśepisanja</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>.htaccess starego sedła tak, ako jo: RewriteRule, RewriteCond za napšašowanje, Redirect cełego wótrězka (bok a wšykno pód nim) a RedirectMatch ako zastupne znamuško.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx-pšawidła pśepisanja</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Blok server starego sedła: location = z return, if ($args) za napšašowanje, rewrite ako zastupne znamuško a map jadnotliwych bokow.</translation>
+    </message>
 </context>
 </TS>

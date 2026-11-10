@@ -86247,5 +86247,181 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>D'ale Adresse konnte net getest ginn.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Eng URL-Kaart lëscht all al Adress an d'Säit vun dësem Site, zu där se elo gehéiert. Dëst sinn d'Formater, déi den Import liest, all mat engem Beispill zum Kopéieren: ännert d'Adressen an Är eegen, lued dann d'Datei erop oder fügt se an. All Beispill gëtt esou wéi et ass an den Demo-Site importéiert.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Datei %file, %size · gelies aus %extensions · %rows Zeilen am Import</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Eroflueden</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>An d'Tëschenoflag kopéiert</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Konnt net kopéiert ginn</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopéieren</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Am Import opmaachen</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>D'Kolonnen</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Déi éischt Zeil vun enger CSV-Datei oder enger Tabell nennt d'Kolonnen, an all Reiefolleg; JSON benotzt déi selwecht Nimm als Schlësselen. Nëmmen old_url an new_url si néideg. Ouni éischt Zeil mat Nimm ginn d'Kolonnen an dëser Reiefolleg geholl.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Kolonn</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Wat se enthält</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Déi al Adress: e Wee (/about-us.html), e Wee mat enger Ufro (/index.php?id=12) oder eng komplett Adress vum alen Host. E * passt op all Deel.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>D'Säit vun dësem Site: hire Wee (/recipes), hir Node-ID (node:163, déi der Säit nogeet, wann se verréckelt gëtt) oder eng komplett Adress soss anzwousch. %first, %second huelen dat, wat de * getraff huet.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Wat aus der Zeil gëtt, kuckt d'Aarten. Eidel: eng permanent Ëmleedung, e Joker mat Ëmleedung, wann old_url e * huet.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>De Site-Zougang vun engem bloe Wee; eidel: deen, deen op der Import-Säit gewielt gouf.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>D'Sprooch vum URL-Alias, zum Beispill eng-GB; eidel: d'Sprooch vum Site-Zougang.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Är eege Notiz; se gëtt mam Import gehal.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>De Status vun der Ëmleedung: 301 oder 308 (permanent), 302, 303 oder 307 (temporär); eidel: d'Aart entscheet.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>D'Aarten</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Wat d'Besucher kréien</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Eng permanent Ëmleedung; e globalen URL-Alias, deen ëmleet.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Eng temporär Ëmleedung: Sichmaschinne behalen déi al Adress.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Déi nei Säit op der aler Adress, ouni Ëmleedung; e globalen URL-Alias.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Eng permanent Ëmleedung fir all passend Adress; en URL-Joker.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Eng temporär Ëmleedung fir all passend Adress.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Déi nei Säit op all passender Adress, ouni Ëmleedung.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Dateie bis %size. All Detail vun de Formater steet am Hëllefszenter: URLen migréieren, an d'Beispiller fir URL-Kaarten.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>E Beispill vun all Format kucken</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Formater a Beispiller</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Eenzel Säiten</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Permanent Ëmleedunge vun eenzelne Säiten, en Zil iwwer d'Node-ID (node:163), dat der Säit nogeet, wann se verréckelt gëtt, an en Alias, deen d'Säit op der aler Adress weist. Déi éischt Zeil nennt d'Kolonnen; nëmmen old_url an new_url si néideg. Eng .tsv-Datei gëtt d'selwecht gelies, mat Tabulatoren.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>E * passt op all Deel vun enger Adress an {1} setzt en an déi nei: eng Rubrik, déi geplënnert ass, e * an der Mëtt vun enger Adress, en temporäre Joker an en direkten (ouni Ëmleedung).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Ufroen an temporär Ëmleedungen</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Al Adresse mat enger Ufro (/index.php?id=12), e 308, an temporär Ëmleedungen no Aart (redirect-temporary) an no Status (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Eng Lëscht vun Objeten mat de selwechte Schlësselen wéi d'CSV-Kolonnen; den éischten Objet kann de Schema exp-url-map/1 nennen. Dat, wat den Export schreift an aner Programmer am einfachsten erstellen.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Déi eenzel Säiten als Excel-Aarbechtsmapp: dat éischt Blat, d'Kolonnennimm an der éischter Zeil. Maacht se op, ännert d'Adressen a späichert se als .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>D'selwecht als OpenDocument-Tabell, fir LibreOffice an OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache-Rewrite-Reegelen</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>D'.htaccess vun engem alen Site esou wéi se ass: RewriteRule, RewriteCond fir eng Ufro, Redirect vun enger ganzer Rubrik (d'Säit an alles drënner) a RedirectMatch als Joker.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx-Rewrite-Reegelen</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>De server-Block vun engem alen Site: location = mat return, if ($args) fir eng Ufro, rewrite als Joker an eng map vun eenzelne Säiten.</translation>
+    </message>
 </context>
 </TS>

@@ -86277,5 +86277,181 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>The old addresses could not be tested.</source>
         <translation>Adresele vechi nu au putut fi testate.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>O hartă URL enumeră fiecare adresă veche și pagina acestui site căreia îi aparține acum. Acestea sunt formatele pe care le citește importul, fiecare cu un exemplu de copiat: înlocuiți adresele cu ale dumneavoastră, apoi încărcați fișierul sau lipiți-l. Fiecare exemplu se importă în site-ul demo așa cum este.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Fișier %file, %size · citit din %extensions · %rows rânduri în import</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Descarcă</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Copiat în clipboard</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Nu s-a putut copia</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Copiază</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Deschide în import</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Coloanele</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Primul rând al unui fișier CSV sau al unei foi de calcul denumește coloanele, în orice ordine; JSON folosește aceleași nume drept chei. Sunt necesare doar old_url și new_url. Fără un prim rând cu nume, coloanele sunt luate în această ordine.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Coloană</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Ce conține</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Adresa veche: o cale (/about-us.html), o cale cu interogare (/index.php?id=12) sau o adresă completă a vechiului host. Un * se potrivește cu orice parte.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Pagina acestui site: calea ei (/recipes), ID-ul nodului ei (node:163, care urmează pagina când aceasta se mută) sau o adresă completă în altă parte. %first, %second preiau ce s-a potrivit cu *.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Ce devine rândul, vedeți tipurile. Gol: o redirecționare permanentă, un metacaracter care redirecționează când old_url conține un *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Accesul la site al unei căi simple; gol: cel ales pe pagina de import.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Limba aliasului URL, de exemplu eng-GB; gol: limba accesului la site.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Nota dumneavoastră; este păstrată împreună cu importul.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Starea redirecționării: 301 sau 308 (permanentă), 302, 303 sau 307 (temporară); gol: decide tipul.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Tipurile</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Ce primesc vizitatorii</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>O redirecționare permanentă; un alias URL global care redirecționează.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>O redirecționare temporară: motoarele de căutare păstrează adresa veche.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Pagina nouă la adresa veche, fără redirecționare; un alias URL global.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>O redirecționare permanentă pentru fiecare adresă potrivită; un metacaracter URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>O redirecționare temporară pentru fiecare adresă potrivită.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Pagina nouă la fiecare adresă potrivită, fără redirecționare.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Fișiere de până la %size. Toate detaliile formatelor sunt în centrul de ajutor: Migrarea URL-urilor și Exemple de hărți URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Vedeți un exemplu din fiecare format</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Formate și exemple</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Pagini individuale</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Redirecționări permanente ale paginilor individuale, o țintă după ID-ul nodului (node:163) care urmează pagina când aceasta se mută și un alias care afișează pagina la adresa veche. Primul rând denumește coloanele; sunt necesare doar old_url și new_url. Un fișier .tsv se citește la fel, cu tabulatori.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>Un * se potrivește cu orice parte a unei adrese, iar {1} o pune în cea nouă: o secțiune mutată, un * în mijlocul unei adrese, un metacaracter temporar și unul direct (fără redirecționare).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Interogări și redirecționări temporare</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Adrese vechi cu interogare (/index.php?id=12), un 308 și redirecționări temporare după tip (redirect-temporary) și după stare (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>O listă de obiecte cu aceleași chei ca și coloanele CSV; primul obiect poate numi schema exp-url-map/1. Ceea ce scrie exportul și ceea ce alte programe produc cel mai ușor.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Paginile individuale ca registru de lucru Excel: prima foaie, numele coloanelor în primul rând. Deschideți-l, schimbați adresele și salvați-l ca .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Același lucru ca foaie de calcul OpenDocument, pentru LibreOffice și OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Reguli de rescriere Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Fișierul .htaccess al unui site vechi așa cum este: RewriteRule, RewriteCond pentru o interogare, Redirect al unei secțiuni întregi (pagina și tot ce se află sub ea) și RedirectMatch ca metacaracter.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Reguli de rescriere nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Blocul server al unui site vechi: location = cu return, if ($args) pentru o interogare, rewrite ca metacaracter și un map de pagini individuale.</translation>
+    </message>
 </context>
 </TS>

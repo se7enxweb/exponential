@@ -86247,5 +86247,181 @@ Muzakenera guhindura ubwoko bw'ingingo mukoresheje imikorere yo guhinduranya.</t
         <source>The old addresses could not be tested.</source>
         <translation>Aderesi za kera ntizashoboye kugeragezwa.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Ikarita ya URL igaragaza buri aderesi ya kera n'urupapuro rw'uru rubuga ruyireba ubu. Izi ni imiterere kuzana bisoma, buri umwe ufite urugero rwo kwigana: hindura aderesi uzisimbuze izawe, hanyuma wohereze dosiye cyangwa uyishyiremo. Buri rugero ruzanwa mu rubuga rw'igerageza uko ruri.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Dosiye %file, %size · yasomwe muri %extensions · imirongo %rows mu kuzana</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Kuramo</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Byiganywe ku kibaho cyo kwiganiraho</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Ntibyashobotse kwigana</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Gukoporora</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Fungura mu kuzana</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Inkingi</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Umurongo wa mbere wa dosiye CSV cyangwa urupapuro rw'imibare uvuga amazina y'inkingi, mu buryo ubwo ari bwo bwose; JSON ikoresha amazina amwe nk'imfunguzo. Hakenewe gusa old_url na new_url. Iyo nta murongo wa mbere w'amazina uhari, inkingi zifatwa muri uru rutonde.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Inkingi</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Icyo ibitse</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Aderesi ya kera: inzira (/about-us.html), inzira ifite ikibazo (/index.php?id=12) cyangwa aderesi yuzuye ya seriveri ya kera. * ihura n'igice icyo ari cyo cyose.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Urupapuro rw'uru rubuga: inzira yarwo (/recipes), ID y'ipfundo ryarwo (node:163, ikurikira urupapuro iyo rwimuwe) cyangwa aderesi yuzuye ahandi. %first, %second bifata icyo * yahuye na cyo.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Icyo umurongo uhinduka, reba ubwoko. Ubusa: iyoherezwa ahandi rihoraho, cyangwa URL ifite akamenyetso gasimbura yohereza ahandi iyo old_url ifite *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Uburyo bwo kugera ku rubuga bw'inzira yonyine; ubusa: ubwatoranyijwe ku rupapuro rwo kuzana.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Ururimi rw'aliyasi ya URL, urugero eng-GB; ubusa: ururimi rw'uburyo bwo kugera ku rubuga.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Icyitonderwa cyawe bwite; kibikwa hamwe n'ibyazanywe.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Imiterere y'iyoherezwa ahandi: 301 cyangwa 308 (rihoraho), 302, 303 cyangwa 307 (ry'agateganyo); ubusa: ubwoko ni bwo bufata icyemezo.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Ubwoko</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Icyo abasura babona</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Iyoherezwa ahandi rihoraho; aliyasi ya URL rusange yohereza ahandi.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Iyoherezwa ahandi ry'agateganyo: moteri zishakisha zigumana aderesi ya kera.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Urupapuro rushya kuri aderesi ya kera, nta iyoherezwa ahandi; aliyasi ya URL rusange.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Iyoherezwa ahandi rihoraho kuri buri aderesi ihuye; URL ifite akamenyetso gasimbura.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Iyoherezwa ahandi ry'agateganyo kuri buri aderesi ihuye.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Urupapuro rushya kuri buri aderesi ihuye, nta iyoherezwa ahandi.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Dosiye zigeza kuri %size. Ibisobanuro byose by'imiterere biri mu kigo cy'ubufasha: Kwimura URL, n'ingero z'ikarita ya URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Reba urugero rwa buri miterere</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Imiterere n'ingero</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Impapuro imwe imwe</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Iyoherezwa ahandi rihoraho ry'impapuro imwe imwe, intego ikoresheje ID y'ipfundo (node:163) ikurikira urupapuro iyo rwimuwe, n'aliyasi igaragaza urupapuro kuri aderesi ya kera. Umurongo wa mbere uvuga amazina y'inkingi; hakenewe gusa old_url na new_url. Dosiye .tsv isomwa kimwe, hakoreshejwe tab.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* ihura n'igice icyo ari cyo cyose cya aderesi kandi {1} igishyira muri nshya: igice cyimuwe, * hagati muri aderesi, URL ifite akamenyetso gasimbura y'agateganyo n'iy'ako kanya (nta iyoherezwa ahandi).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Ibibazo n'iyoherezwa ahandi ry'agateganyo</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Aderesi za kera zifite ikibazo (/index.php?id=12), 308, n'iyoherezwa ahandi ry'agateganyo hakurikijwe ubwoko (redirect-temporary) n'imiterere (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Urutonde rw'ibintu bifite imfunguzo zimwe n'inkingi za CSV; ikintu cya mbere gishobora kuvuga igishushanyo exp-url-map/1. Ni byo kohereza hanze byandika kandi ni byo izindi porogaramu zikora byoroshye kurusha.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Impapuro imwe imwe nk'igitabo cy'akazi cya Excel: urupapuro rwa mbere, amazina y'inkingi ku murongo wa mbere. Gifungure, uhindure aderesi maze ubike nka .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Ibimwe nk'urupapuro rw'imibare rwa OpenDocument, kuri LibreOffice na OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Amategeko yo kwandika bundi bushya ya Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Dosiye .htaccess y'urubuga rwa kera uko iri: RewriteRule, RewriteCond y'ikibazo, Redirect y'igice cyose (urupapuro n'ibiri munsi yarwo byose) na RedirectMatch nk'akamenyetso gasimbura.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Amategeko yo kwandika bundi bushya ya nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Igice cya server cy'urubuga rwa kera: location = hamwe na return, if ($args) y'ikibazo, rewrite nk'akamenyetso gasimbura na map y'impapuro imwe imwe.</translation>
+    </message>
 </context>
 </TS>

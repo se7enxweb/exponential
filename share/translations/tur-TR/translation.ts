@@ -86252,5 +86252,181 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>The old addresses could not be tested.</source>
         <translation>Eski adresler sınanamadı.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Bir URL haritası, her eski adresi ve bu sitede artık ait olduğu sayfayı listeler. İçe aktarmanın okuduğu biçimler bunlardır, her biri kopyalanacak bir örnekle: adresleri kendi adreslerinizle değiştirin, ardından dosyayı yükleyin veya yapıştırın. Her örnek, olduğu gibi demo siteye içe aktarılır.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Dosya %file, %size · %extensions uzantılarından okunur · içe aktarmada %rows satır</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>İndir</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Panoya kopyalandı</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Kopyalanamadı</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopyala</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>İçe aktarmada aç</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Sütunlar</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Bir CSV dosyasının veya bir elektronik tablonun ilk satırı sütunları herhangi bir sırayla adlandırır; JSON aynı adları anahtar olarak kullanır. Yalnızca old_url ve new_url gereklidir. Adların bulunduğu bir ilk satır yoksa sütunlar bu sırayla alınır.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Sütun</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Ne içerir</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Eski adres: bir yol (/about-us.html), sorgulu bir yol (/index.php?id=12) veya eski sunucunun tam adresi. Bir * herhangi bir kısımla eşleşir.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Bu sitenin sayfası: yolu (/recipes), düğüm kimliği (node:163; sayfa taşındığında onu izler) veya başka bir yerdeki tam adres. %first, %second, * işaretinin eşleştirdiğini alır.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Satırın neye dönüşeceği, türlere bakın. Boş: kalıcı bir yönlendirme; old_url bir * içeriyorsa yönlendiren bir joker karakter.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Yalın bir yolun site erişimi; boş: içe aktarma sayfasında seçilen.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL takma adının dili, örneğin eng-GB; boş: site erişiminin dili.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Kendi notunuz; içe aktarmayla birlikte saklanır.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Yönlendirme durumu: 301 veya 308 (kalıcı), 302, 303 veya 307 (geçici); boş: tür belirler.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Türler</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Ziyaretçilerin aldığı</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Kalıcı bir yönlendirme; yönlendiren genel bir URL takma adı.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Geçici bir yönlendirme: arama motorları eski adresi korur.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Eski adreste yeni sayfa, yönlendirme olmadan; genel bir URL takma adı.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Eşleşen her adres için kalıcı bir yönlendirme; bir URL joker karakteri.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Eşleşen her adres için geçici bir yönlendirme.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Eşleşen her adreste yeni sayfa, yönlendirme olmadan.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>%size boyutuna kadar dosyalar. Biçimlerin her ayrıntısı yardım merkezindedir: URL'leri taşıma ve URL haritası örnekleri.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Her biçimin bir örneğini görün</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Biçimler ve örnekler</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Tekil sayfalar</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Tekil sayfaların kalıcı yönlendirmeleri, sayfa taşındığında onu izleyen düğüm kimliğiyle bir hedef (node:163) ve sayfayı eski adreste gösteren bir takma ad. İlk satır sütunları adlandırır; yalnızca old_url ve new_url gereklidir. Bir .tsv dosyası da aynı şekilde, sekmelerle okunur.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>Bir * bir adresin herhangi bir kısmıyla eşleşir ve {1} onu yenisine koyar: taşınmış bir bölüm, bir adresin ortasında bir *, geçici bir joker karakter ve doğrudan bir joker karakter (yönlendirmesiz).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Sorgular ve geçici yönlendirmeler</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Sorgulu eski adresler (/index.php?id=12), bir 308 ve türe (redirect-temporary) ve duruma (307) göre geçici yönlendirmeler.</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>CSV sütunlarıyla aynı anahtarlara sahip nesnelerden oluşan bir liste; ilk nesne exp-url-map/1 şemasını belirtebilir. Dışa aktarmanın yazdığı ve diğer programların en kolay ürettiği biçim.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Tekil sayfalar bir Excel çalışma kitabı olarak: ilk sayfa, ilk satırda sütun adları. Açın, adresleri değiştirin ve .xlsx olarak kaydedin.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Aynısı, LibreOffice ve OpenOffice için bir OpenDocument elektronik tablosu olarak.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache yeniden yazma kuralları</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Eski bir sitenin .htaccess dosyası olduğu gibi: RewriteRule, sorgu için RewriteCond, bütün bir bölümün Redirect'i (sayfa ve altındaki her şey) ve joker karakter olarak RedirectMatch.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx yeniden yazma kuralları</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Eski bir sitenin server bloğu: return ile location =, sorgu için if ($args), joker karakter olarak rewrite ve tekil sayfaların bir map'i.</translation>
+    </message>
 </context>
 </TS>

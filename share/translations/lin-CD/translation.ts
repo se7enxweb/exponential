@@ -86247,5 +86247,181 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>Ekoki te komeka ba adresi ya kala.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Karte ya ba-URL elakisaka adresi moko na moko ya kala mpe lokasa ya site oyo oyo ezali sikoyo ya yango. Oyo ezali ba-lolenge ya fisyé oyo bokɔtisi etángaka, moko na moko na ndakisa ya kokopia: bongolá ba-adresi na oyo na yo, sima tindá fisyé to kangisá yango. Ndakisa nyonso ekɔtaka na site ya ndakisa ndenge ezali.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Fisyé %file, %size · etángami na %extensions · milongo %rows na bokɔtisi</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Kitisá</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Ekopiami na clipboard</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Ekokaki kokopiama te</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopiá</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Fungolá na bokɔtisi</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Ba-colonne</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Molongo ya liboso ya fisyé CSV to ya tablo epesaka ba-colonne nkombo, na molɔngɔ nyonso; JSON esalelaka bankombo yango moko lokola ba-clé. Kaka old_url mpe new_url nde esengeli. Soki molongo ya liboso ya bankombo ezali te, ba-colonne ezwamaka na molɔngɔ oyo.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Colonne</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Nini ezali na kati</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Adresi ya kala: nzela (/about-us.html), nzela na motuna (/index.php?id=12) to adresi mobimba ya hôte ya kala. * eyokani na eteni nyonso.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Lokasa ya site oyo: nzela na yango (/recipes), ID ya nœud na yango (node:163, oyo elandaka lokasa soki ebongwani esika) to adresi mobimba na esika mosusu. %first, %second ezwaka oyo * eyokanaki na yango.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Oyo molongo ekokóma, talá ba-lolenge. Mpamba: botindi ya libela, wildcard oyo etindaka soki old_url ezali na *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Siteaccess ya nzela mpamba; mpamba: oyo eponami na lokasa ya bokɔtisi.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Lokóta ya URL alias, ndakisa eng-GB; mpamba: lokóta ya siteaccess.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Likebisi na yo moko; ebombamaka elongo na bokɔtisi.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Status ya botindi: 301 to 308 (ya libela), 302, 303 to 307 (ya ntango moke); mpamba: lolenge nde ekozwa mokano.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Ba-lolenge</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Oyo bapaya bakozwa</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Botindi ya libela; URL alias ya mokili mobimba oyo etindaka.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Botindi ya ntango moke: ba-moteur ya boluki babombaka adresi ya kala.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Lokasa ya sika na adresi ya kala, kozanga botindi; URL alias ya mokili mobimba.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Botindi ya libela mpo na adresi nyonso oyo eyokani; wildcard ya URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Botindi ya ntango moke mpo na adresi nyonso oyo eyokani.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Lokasa ya sika na adresi nyonso oyo eyokani, kozanga botindi.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Ba-fisyé kino %size. Makambo nyonso ya ba-lolenge ezali na esika ya lisalisi: Kobongola ba-URL, mpe ba-ndakisa ya karte ya ba-URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Talá ndakisa ya lolenge moko na moko</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Ba-lolenge mpe ba-ndakisa</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Ba-lokasa moko moko</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Ba-botindi ya libela ya ba-lokasa moko moko, esika ya kokende na ID ya nœud (node:163) oyo elandaka lokasa soki ebongwani esika, mpe alias oyo elakisaka lokasa na adresi ya kala. Molongo ya liboso epesaka ba-colonne nkombo; kaka old_url mpe new_url nde esengeli. Fisyé .tsv etángamaka ndenge moko, na ba-tab.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* eyokani na eteni nyonso ya adresi mpe {1} etyaka yango na adresi ya sika: eteni oyo ebongwani esika, * na katikati ya adresi, wildcard ya ntango moke mpe wildcard ya semba (kozanga botindi).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Mituna mpe ba-botindi ya ntango moke</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Ba-adresi ya kala na motuna (/index.php?id=12), 308, mpe ba-botindi ya ntango moke na lolenge (redirect-temporary) mpe na status (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Liste ya ba-objet na ba-clé ndenge moko na ba-colonne ya CSV; objet ya liboso ekoki kopesa nkombo ya schéma exp-url-map/1. Oyo bobimisi ekomaka mpe oyo ba-programme mosusu esalaka na pɛtɛɛ.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Ba-lokasa moko moko lokola buku ya Excel: lokasa ya liboso, bankombo ya ba-colonne na molongo ya liboso. Fungolá yango, bongolá ba-adresi mpe bomba yango lokola .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Ndenge moko lokola tablo ya OpenDocument, mpo na LibreOffice mpe OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Mibeko ya kokoma lisusu ya Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>.htaccess ya site ya kala ndenge ezali: RewriteRule, RewriteCond mpo na motuna, Redirect ya eteni mobimba (lokasa mpe nyonso oyo ezali na nse na yango) mpe RedirectMatch lokola wildcard.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Mibeko ya kokoma lisusu ya nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Bloc ya serveur ya site ya kala: location = na return, if ($args) mpo na motuna, rewrite lokola wildcard mpe map ya ba-lokasa moko moko.</translation>
+    </message>
 </context>
 </TS>

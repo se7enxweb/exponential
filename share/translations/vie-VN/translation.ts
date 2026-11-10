@@ -86247,5 +86247,181 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>The old addresses could not be tested.</source>
         <translation>Không thể kiểm tra các địa chỉ cũ.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Bản đồ URL liệt kê từng địa chỉ cũ và trang của trang web này mà nó thuộc về hiện nay. Đây là các định dạng mà chức năng nhập đọc được, mỗi định dạng có một ví dụ để sao chép: thay các địa chỉ bằng địa chỉ của bạn, rồi tải tệp lên hoặc dán vào. Mọi ví dụ đều nhập được vào trang demo nguyên trạng.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Tệp %file, %size · đọc từ %extensions · %rows dòng trong lần nhập</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Tải xuống</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Đã sao chép vào bộ nhớ tạm</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Không thể sao chép</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Sao chép</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Mở trong trang nhập</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Các cột</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Dòng đầu tiên của tệp CSV hoặc bảng tính đặt tên các cột, theo thứ tự bất kỳ; JSON dùng cùng các tên đó làm khóa. Chỉ cần old_url và new_url. Nếu không có dòng tên đầu tiên, các cột được lấy theo thứ tự này.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Cột</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Nội dung</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Địa chỉ cũ: một đường dẫn (/about-us.html), một đường dẫn có truy vấn (/index.php?id=12) hoặc địa chỉ đầy đủ của máy chủ cũ. Dấu * khớp với bất kỳ phần nào.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Trang của trang web này: đường dẫn của nó (/recipes), ID nút của nó (node:163, đi theo trang khi trang được di chuyển) hoặc một địa chỉ đầy đủ ở nơi khác. %first, %second nhận phần mà * đã khớp.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Dòng sẽ trở thành gì, xem các loại. Để trống: chuyển hướng vĩnh viễn, ký tự đại diện có chuyển hướng khi old_url có dấu *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Điểm truy cập trang của một đường dẫn trần; để trống: điểm được chọn trên trang nhập.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Ngôn ngữ của bí danh URL, ví dụ eng-GB; để trống: ngôn ngữ của điểm truy cập trang.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Ghi chú của riêng bạn; được lưu cùng lần nhập.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Trạng thái chuyển hướng: 301 hoặc 308 (vĩnh viễn), 302, 303 hoặc 307 (tạm thời); để trống: do loại quyết định.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Các loại</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Khách truy cập nhận được gì</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Chuyển hướng vĩnh viễn; một bí danh URL toàn cục có chuyển hướng.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Chuyển hướng tạm thời: công cụ tìm kiếm giữ lại địa chỉ cũ.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Trang mới tại địa chỉ cũ, không chuyển hướng; một bí danh URL toàn cục.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Chuyển hướng vĩnh viễn cho mọi địa chỉ khớp; một ký tự đại diện URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Chuyển hướng tạm thời cho mọi địa chỉ khớp.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Trang mới tại mọi địa chỉ khớp, không chuyển hướng.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Tệp tối đa %size. Mọi chi tiết về các định dạng có trong trung tâm trợ giúp: Di chuyển URL, và các ví dụ bản đồ URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Xem ví dụ cho từng định dạng</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Định dạng và ví dụ</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Trang đơn lẻ</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Chuyển hướng vĩnh viễn của các trang đơn lẻ, một đích theo ID nút (node:163) đi theo trang khi trang được di chuyển, và một bí danh hiển thị trang tại địa chỉ cũ. Dòng đầu tiên đặt tên các cột; chỉ cần old_url và new_url. Tệp .tsv được đọc theo cùng cách, với ký tự tab.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>Dấu * khớp với bất kỳ phần nào của địa chỉ và {1} đưa phần đó vào địa chỉ mới: một mục đã chuyển chỗ, một dấu * ở giữa địa chỉ, một ký tự đại diện tạm thời và một ký tự đại diện trực tiếp (không chuyển hướng).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Truy vấn và chuyển hướng tạm thời</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Địa chỉ cũ có truy vấn (/index.php?id=12), một 308, và chuyển hướng tạm thời theo loại (redirect-temporary) và theo trạng thái (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Danh sách các đối tượng có cùng khóa với các cột CSV; đối tượng đầu tiên có thể ghi lược đồ exp-url-map/1. Đây là định dạng mà chức năng xuất ghi ra và các chương trình khác tạo dễ nhất.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Các trang đơn lẻ dưới dạng sổ làm việc Excel: trang tính đầu tiên, tên cột ở dòng đầu tiên. Mở nó, thay đổi địa chỉ và lưu thành .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Nội dung tương tự dưới dạng bảng tính OpenDocument, cho LibreOffice và OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Quy tắc viết lại Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Tệp .htaccess của một trang web cũ nguyên trạng: RewriteRule, RewriteCond cho truy vấn, Redirect cho cả một mục (trang và mọi thứ bên dưới) và RedirectMatch làm ký tự đại diện.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Quy tắc viết lại nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Khối server của một trang web cũ: location = với return, if ($args) cho truy vấn, rewrite làm ký tự đại diện và một map các trang đơn lẻ.</translation>
+    </message>
 </context>
 </TS>

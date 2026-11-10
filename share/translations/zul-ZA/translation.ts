@@ -86245,5 +86245,181 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <source>The old addresses could not be tested.</source>
         <translation>Amakheli amadala awakwazanga ukuhlolwa.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Imephu ye-URL ibala ikheli ngalinye elidala kanye nekhasi lale sayithi elingelalo manje. Lawa amafomethi afundwa wukungenisa, ngalinye linesibonelo ongasikopisha: shintsha amakheli abe ngawakho, bese ulayisha ifayela noma ulinamathisele. Zonke izibonelo zingeniswa kusayithi yedemo njengoba zinjalo.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Ifayela %file, %size · lifundwa kusuka ku-%extensions · imigqa engu-%rows ekungeniseni</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Landa</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Kukopishelwe kubhodi lokunamathisela</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Akukwazanga ukukopisha</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopisha</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Vula ekungeniseni</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Amakholomu</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Umugqa wokuqala wefayela le-CSV noma wespredishithi uqamba amakholomu, nganoma iyiphi indlela yokulandelana; i-JSON isebenzisa amagama afanayo njengokhiye. Kudingeka kuphela old_url kanye ne-new_url. Uma kungekho mugqa wokuqala wamagama, amakholomu athathwa ngale ndlela yokulandelana.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Ikholomu</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Okuqukethwe yiyo</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Ikheli elidala: indlela (/about-us.html), indlela enombuzo (/index.php?id=12) noma ikheli eligcwele lomsingathi omdala. U-* ufana nanoma iyiphi ingxenye.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Ikhasi lale sayithi: indlela yalo (/recipes), i-ID yenodi yalo (node:163, elandela ikhasi uma lithuthelwa kwenye indawo) noma ikheli eligcwele kwenye indawo. %first, %second kuthatha lokho u-* akufanisile.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Lokho umugqa oba yikho, bheka izinhlobo. Akunalutho: ukuhambisa kwenye indawo okuhlala njalo, i-wildcard ehambisayo uma old_url ine-*.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Ukufinyelela isayithi kwendlela nje; akunalutho: lokho okukhethwe ekhasini lokungenisa.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Ulimi legama elingaphandle le-URL, isibonelo eng-GB; akunalutho: ulimi lokufinyelela isayithi.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Inothi lakho; ligcinwa kanye nokungenisa.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Isimo sokuhambisa: 301 noma 308 (okuhlala njalo), 302, 303 noma 307 (okwesikhashana); akunalutho: uhlobo luyanquma.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Izinhlobo</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Lokho izivakashi ezikutholayo</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Ukuhambisa kwenye indawo okuhlala njalo; igama elingaphandle le-URL lomhlaba wonke elihambisayo.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Ukuhambisa kwenye indawo okwesikhashana: izinjini zokusesha zigcina ikheli elidala.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Ikhasi elisha ekhelini elidala, ngaphandle kokuhambisa; igama elingaphandle le-URL lomhlaba wonke.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Ukuhambisa okuhlala njalo kulo lonke ikheli elifanayo; i-wildcard ye-URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Ukuhambisa okwesikhashana kulo lonke ikheli elifanayo.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Ikhasi elisha kulo lonke ikheli elifanayo, ngaphandle kokuhambisa.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Amafayela afinyelela ku-%size. Yonke imininingwane yamafomethi isesikhungweni sosizo: Ukuthutha ama-URL, nezibonelo zemephu ye-URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Bona isibonelo sefomethi ngayinye</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Amafomethi nezibonelo</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Amakhasi angawodwana</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Ukuhambisa okuhlala njalo kwamakhasi angawodwana, okuhlosiwe nge-ID yenodi (node:163) okulandela ikhasi uma lithuthelwa kwenye indawo, negama elingaphandle elibonisa ikhasi ekhelini elidala. Umugqa wokuqala uqamba amakholomu; kudingeka kuphela old_url kanye ne-new_url. Ifayela le-.tsv lifundwa ngendlela efanayo, ngamathebhu.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>U-* ufana nanoma iyiphi ingxenye yekheli futhi u-{1} uyifaka kwelisha: isigaba esithuthiwe, u-* phakathi nekheli, i-wildcard yesikhashana nenqondile (ngaphandle kokuhambisa).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Imibuzo nokuhambisa okwesikhashana</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Amakheli amadala anombuzo (/index.php?id=12), i-308, nokuhambisa okwesikhashana ngohlobo (redirect-temporary) nangesimo (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Uhlu lwezinto ezinokhiye abafanayo namakholomu e-CSV; into yokuqala ingaqamba uhlaka exp-url-map/1. Lokho ukuthekelisa okubhalayo nokwenziwa kalula kakhulu ngezinye izinhlelo.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Amakhasi angawodwana njengebhuku lokusebenza le-Excel: ishidi lokuqala, amagama amakholomu emugqeni wokuqala. Livule, ushintshe amakheli bese ulilondoloza njenge-.xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Okufanayo njengespredishithi ye-OpenDocument, ye-LibreOffice ne-OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Imithetho yokubhala kabusha ye-Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>I-.htaccess yesayithi endala njengoba injalo: RewriteRule, RewriteCond yombuzo, Redirect yesigaba sonke (ikhasi nakho konke okungaphansi kwalo) ne-RedirectMatch njenge-wildcard.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Imithetho yokubhala kabusha ye-nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Ibhulokhi ye-server yesayithi endala: location = ne-return, if ($args) yombuzo, rewrite njenge-wildcard ne-map yamakhasi angawodwana.</translation>
+    </message>
 </context>
 </TS>

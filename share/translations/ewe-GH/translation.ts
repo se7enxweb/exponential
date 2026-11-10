@@ -86247,5 +86247,181 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <source>The old addresses could not be tested.</source>
         <translation>Womete ŋu ado adrɛs xoxowo kpɔ o.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL ƒe mapa ŋlɔa adrɛs xoxo ɖe sia ɖe kple axa si wòku ɖo fifia le nyatakakaɖoƒe sia dzi. Esiawoe nye ɖoɖo siwo nutsɔvaeme la xlẽna, ɖe sia ɖe kple kpɔɖeŋu aɖe si nàkɔpi: trɔ adrɛswo wòazu wò ŋutɔ tɔwo, emegbe ɖo faɛl la ɖa alo tsɔe de eme. Kpɔɖeŋu ɖe sia ɖe vaa eme le nyatakakaɖoƒe si wotsɔ fiaa nu dzi abe ale si wòle ene.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Faɛl %file, %size · wohlẽe tso %extensions me · fli %rows le nutsɔvaeme la me</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Tsɔe va wò kɔmpiuta dzi</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Wokɔpii ɖe kɔpiƒe dzi</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Mete ŋu kɔpii o</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kɔpii</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Ʋui le nutsɔvaeme la me</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Kɔlɔmwo</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV faɛl alo akɔntaŋlɔgbalẽ ƒe fli gbãtɔ ŋlɔa kɔlɔmwo ƒe ŋkɔwo, le ɖoɖo ɖe sia ɖe nu; JSON zãa ŋkɔ mawo ke abe safuiwo ene. old_url kple new_url koe hiã. Ne ŋkɔwo ƒe fli gbãtɔ meli o la, woxɔa kɔlɔmwo le ɖoɖo sia nu.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Kɔlɔm</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Nu si le eme</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Adrɛs xoxoa: mɔ aɖe (/about-us.html), mɔ si me biabia le (/index.php?id=12) alo host xoxoa ƒe adrɛs blibo. * ɖeka sɔna kple akpa ɖe sia ɖe.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Nyatakakaɖoƒe sia ƒe axa: eƒe mɔ (/recipes), eƒe node ID (node:163, si dzea axa la yome ne woʋãe) alo adrɛs blibo le teƒe bubu. %first, %second xɔa nu si * la sɔ kplii.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Nu si fli la azu, kpɔ ƒomeawo. Ne eƒo ƒuƒlu: mɔtrɔtrɔ ɖaa, dzesi-ɖesiaɖe si trɔa mɔ ne * le old_url me.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Mɔ ɖeɖe aɖe ƒe nyatakakaɖoƒe ƒe mɔnu; ne eƒo ƒuƒlu: esi wotia le nutsɔvaeme ƒe axa la dzi.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL ŋkɔ bubu la ƒe gbe, le kpɔɖeŋu me eng-GB; ne eƒo ƒuƒlu: nyatakakaɖoƒe ƒe mɔnu la ƒe gbe.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Wò ŋutɔ wò nuŋlɔɖi; wodzranɛ ɖo kple nutsɔvaeme la.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Mɔtrɔtrɔ ƒe nɔnɔme: 301 alo 308 (ɖaa), 302, 303 alo 307 (ɣeyiɣi kpui); ne eƒo ƒuƒlu: ƒomea tsoe nya me.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Ƒomeawo</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Nu si srãfiawo xɔna</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Mɔtrɔtrɔ ɖaa; URL ŋkɔ bubu si katã ŋu wo si trɔa mɔ.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Mɔtrɔtrɔ ɣeyiɣi kpui: nudila mɔ̃wo léa adrɛs xoxoa ɖe asi.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Axa yeye le adrɛs xoxoa dzi, mɔtrɔtrɔ manɔmee; URL ŋkɔ bubu si katã ŋu wo.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Mɔtrɔtrɔ ɖaa na adrɛs ɖe sia ɖe si sɔ; URL dzesi-ɖesiaɖe.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Mɔtrɔtrɔ ɣeyiɣi kpui na adrɛs ɖe sia ɖe si sɔ.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Axa yeye le adrɛs ɖe sia ɖe si sɔ dzi, mɔtrɔtrɔ manɔmee.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Faɛlwo va ɖo %size. Ɖoɖowo ŋuti nyatakaka ɖe sia ɖe le kpekpeɖeŋu ƒe nyatakakaɖoƒe: URLwo ƒe ʋuʋu, kple URL ƒe mapa ƒe kpɔɖeŋuwo.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Kpɔ ɖoɖo ɖe sia ɖe ƒe kpɔɖeŋu</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Ɖoɖowo kple kpɔɖeŋuwo</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Axa ɖekaɖekawo</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Axa ɖekaɖekawo ƒe mɔtrɔtrɔ ɖaawo, taɖodzinu le node ID (node:163) nu si dzea axa la yome ne woʋãe, kple ŋkɔ bubu si ɖea axa la fiana le adrɛs xoxoa dzi. Fli gbãtɔ ŋlɔa kɔlɔmwo ƒe ŋkɔwo; old_url kple new_url koe hiã. Wohlẽa .tsv faɛl le mɔ ma ke nu, kple tabwo.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* ɖeka sɔna kple adrɛs ƒe akpa ɖe sia ɖe eye {1} tsɔnɛ dea yeyea me: akpa si woʋã, * le adrɛs ƒe titina, dzesi-ɖesiaɖe ɣeyiɣi kpui tɔ kple tẽ tɔ (mɔtrɔtrɔ manɔmee).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Biabiawo kple mɔtrɔtrɔ ɣeyiɣi kpui tɔwo</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Adrɛs xoxo siwo me biabia le (/index.php?id=12), 308 ɖeka, kple mɔtrɔtrɔ ɣeyiɣi kpui tɔwo le ƒome (redirect-temporary) kple nɔnɔme (307) nu.</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Nuwo ƒe ŋkɔŋlɔɖi si ƒe safuiwo nye CSV kɔlɔmwo tɔwo ke; nu gbãtɔ ate ŋu aŋlɔ ɖoɖo exp-url-map/1 ƒe ŋkɔ. Esiae nutsɔdo la ŋlɔna, eye esiae dɔwɔnu bubuwo wɔna bɔbɔe wu.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Axa ɖekaɖekawo abe Excel dɔwɔgbalẽ ene: gbalẽ gbãtɔ, kɔlɔmwo ƒe ŋkɔwo le fli gbãtɔ me. Ʋui, trɔ adrɛswo eye nàdzrae ɖo abe .xlsx ene.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Nu ma ke abe OpenDocument akɔntaŋlɔgbalẽ ene, na LibreOffice kple OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache ƒe gbugbɔŋlɔ ƒe sewo</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Nyatakakaɖoƒe xoxo aɖe ƒe .htaccess abe ale si wòle ene: RewriteRule, RewriteCond na biabia, Redirect na akpa blibo (axa la kple nu siwo katã le ete) kple RedirectMatch abe dzesi-ɖesiaɖe ene.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx ƒe gbugbɔŋlɔ ƒe sewo</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Nyatakakaɖoƒe xoxo aɖe ƒe server blɔk: location = kple return, if ($args) na biabia, rewrite abe dzesi-ɖesiaɖe ene kple axa ɖekaɖekawo ƒe map.</translation>
+    </message>
 </context>
 </TS>

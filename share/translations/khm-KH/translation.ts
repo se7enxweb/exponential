@@ -86247,5 +86247,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>មិនអាចសាកល្បងអាសយដ្ឋានចាស់បានទេ។</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>ផែនទី URL រាយបញ្ជីអាសយដ្ឋានចាស់នីមួយៗ និងទំព័រនៃគេហទំព័រនេះដែលវាជាកម្មសិទ្ធិឥឡូវនេះ។ ទាំងនេះជាទម្រង់ដែលការនាំចូលអាន ដោយមានឧទាហរណ៍សម្រាប់ចម្លងនីមួយៗ៖ ប្ដូរអាសយដ្ឋានទៅជារបស់អ្នក រួចផ្ទុកឯកសារឡើង ឬបិទភ្ជាប់វា។ ឧទាហរណ៍នីមួយៗនាំចូលទៅក្នុងគេហទំព័រសាកល្បងដូចដែលវាមាន។</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>ឯកសារ %file, %size · អានពី %extensions · %rows ជួរក្នុងការនាំចូល</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>ទាញយក</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>បានចម្លងទៅក្ដារតម្បៀតខ្ទាស់</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>មិនអាចចម្លងបានទេ</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>ចម្លង</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>បើកក្នុងការនាំចូល</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>ជួរឈរ</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>ជួរទីមួយនៃឯកសារ CSV ឬសៀវភៅបញ្ជីដាក់ឈ្មោះជួរឈរ តាមលំដាប់ណាក៏បាន; JSON ប្រើឈ្មោះដូចគ្នាជាគន្លឹះ។ ត្រូវការតែ old_url និង new_url ប៉ុណ្ណោះ។ បើគ្មានជួរទីមួយនៃឈ្មោះទេ ជួរឈរត្រូវបានយកតាមលំដាប់នេះ។</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>ជួរឈរ</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>អ្វីដែលវាផ្ទុក</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>អាសយដ្ឋានចាស់៖ ផ្លូវ (/about-us.html) ផ្លូវដែលមានសំណួរ (/index.php?id=12) ឬអាសយដ្ឋានពេញនៃម៉ាស៊ីនចាស់។ * ត្រូវនឹងផ្នែកណាមួយ។</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>ទំព័រនៃគេហទំព័រនេះ៖ ផ្លូវរបស់វា (/recipes) លេខសម្គាល់ថ្នាំងរបស់វា (node:163 ដែលតាមទំព័រពេលវាផ្លាស់ទី) ឬអាសយដ្ឋានពេញនៅកន្លែងផ្សេង។ %first, %second យកអ្វីដែល * បានត្រូវ។</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>អ្វីដែលជួរនេះក្លាយជា សូមមើលប្រភេទ។ ទទេ៖ ការបញ្ជូនបន្តអចិន្ត្រៃយ៍ ឬម៉ាស្កដែលបញ្ជូនបន្ត នៅពេល old_url មាន *។</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>ការចូលគេហទំព័រនៃផ្លូវទទេ; ទទេ៖ អ្វីដែលបានជ្រើសនៅទំព័រនាំចូល។</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>ភាសានៃឈ្មោះក្លែង URL ឧទាហរណ៍ eng-GB; ទទេ៖ ភាសានៃការចូលគេហទំព័រ។</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>កំណត់ចំណាំផ្ទាល់ខ្លួនរបស់អ្នក; វាត្រូវបានរក្សាទុកជាមួយការនាំចូល។</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>ស្ថានភាពបញ្ជូនបន្ត៖ 301 ឬ 308 (អចិន្ត្រៃយ៍), 302, 303 ឬ 307 (បណ្ដោះអាសន្ន); ទទេ៖ ប្រភេទជាអ្នកសម្រេច។</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>ប្រភេទ</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>អ្វីដែលអ្នកទស្សនាទទួលបាន</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>ការបញ្ជូនបន្តអចិន្ត្រៃយ៍; ឈ្មោះក្លែង URL សកលដែលបញ្ជូនបន្ត។</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>ការបញ្ជូនបន្តបណ្ដោះអាសន្ន៖ ម៉ាស៊ីនស្វែងរករក្សាអាសយដ្ឋានចាស់។</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>ទំព័រថ្មីនៅអាសយដ្ឋានចាស់ ដោយគ្មានការបញ្ជូនបន្ត; ឈ្មោះក្លែង URL សកល។</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>ការបញ្ជូនបន្តអចិន្ត្រៃយ៍សម្រាប់គ្រប់អាសយដ្ឋានដែលត្រូវគ្នា; ម៉ាស្ក URL។</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>ការបញ្ជូនបន្តបណ្ដោះអាសន្នសម្រាប់គ្រប់អាសយដ្ឋានដែលត្រូវគ្នា។</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>ទំព័រថ្មីនៅគ្រប់អាសយដ្ឋានដែលត្រូវគ្នា ដោយគ្មានការបញ្ជូនបន្ត។</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>ឯកសាររហូតដល់ %size។ ព័ត៌មានលម្អិតទាំងអស់នៃទម្រង់មាននៅមជ្ឈមណ្ឌលជំនួយ៖ ការផ្ទេរ URL និងឧទាហរណ៍ផែនទី URL។</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>មើលឧទាហរណ៍នៃទម្រង់នីមួយៗ</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>ទម្រង់ និងឧទាហរណ៍</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>ទំព័រតែមួយ</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>ការបញ្ជូនបន្តអចិន្ត្រៃយ៍នៃទំព័រតែមួយ គោលដៅតាមលេខសម្គាល់ថ្នាំង (node:163) ដែលតាមទំព័រពេលវាផ្លាស់ទី និងឈ្មោះក្លែងដែលបង្ហាញទំព័រនៅអាសយដ្ឋានចាស់។ ជួរទីមួយដាក់ឈ្មោះជួរឈរ; ត្រូវការតែ old_url និង new_url។ ឯកសារ .tsv ត្រូវបានអានដូចគ្នា ដោយប្រើថេប។</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* ត្រូវនឹងផ្នែកណាមួយនៃអាសយដ្ឋាន ហើយ {1} ដាក់វាទៅក្នុងអាសយដ្ឋានថ្មី៖ ផ្នែកដែលបានផ្លាស់ទី * នៅកណ្ដាលអាសយដ្ឋាន ម៉ាស្កបណ្ដោះអាសន្ន និងម៉ាស្កផ្ទាល់ (គ្មានការបញ្ជូនបន្ត)។</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>សំណួរ និងការបញ្ជូនបន្តបណ្ដោះអាសន្ន</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>អាសយដ្ឋានចាស់ដែលមានសំណួរ (/index.php?id=12) 308 និងការបញ្ជូនបន្តបណ្ដោះអាសន្នតាមប្រភេទ (redirect-temporary) និងតាមស្ថានភាព (307)។</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>បញ្ជីវត្ថុដែលមានគន្លឹះដូចជួរឈរ CSV; វត្ថុទីមួយអាចដាក់ឈ្មោះគ្រោងការណ៍ exp-url-map/1។ អ្វីដែលការនាំចេញសរសេរ ហើយកម្មវិធីផ្សេងទៀតបង្កើតបានងាយបំផុត។</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>ទំព័រតែមួយជាសៀវភៅការងារ Excel៖ សន្លឹកទីមួយ ឈ្មោះជួរឈរនៅជួរទីមួយ។ បើកវា ប្ដូរអាសយដ្ឋាន ហើយរក្សាទុកជា .xlsx។</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>ដូចគ្នា ជាសៀវភៅបញ្ជី OpenDocument សម្រាប់ LibreOffice និង OpenOffice។</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>ច្បាប់សរសេរឡើងវិញរបស់ Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>ឯកសារ .htaccess នៃគេហទំព័រចាស់ដូចដែលវាមាន៖ RewriteRule, RewriteCond សម្រាប់សំណួរ, Redirect នៃផ្នែកទាំងមូល (ទំព័រ និងអ្វីៗទាំងអស់នៅក្រោមវា) និង RedirectMatch ជាម៉ាស្ក។</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>ច្បាប់សរសេរឡើងវិញរបស់ nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>ប្លុក server នៃគេហទំព័រចាស់៖ location = ជាមួយ return, if ($args) សម្រាប់សំណួរ, rewrite ជាម៉ាស្ក និង map នៃទំព័រតែមួយ។</translation>
+    </message>
 </context>
 </TS>

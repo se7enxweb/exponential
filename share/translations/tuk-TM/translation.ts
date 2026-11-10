@@ -86247,5 +86247,181 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>The old addresses could not be tested.</source>
         <translation>Köne salgylary synap bolmady.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL kartasy her köne salgyny we onuň indi degişli bolan bu saýtdaky sahypasyny sanap görkezýär. Importyň okaýan formatlary şulardyr, her biri göçürmek üçin mysal bilen: salgylary öz salgylaryňyz bilen çalşyň, soňra faýly ýükläň ýa-da goýuň. Her mysal demo saýta üýtgedilmezden import edilýär.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Faýl %file, %size · %extensions-dan okalýar · importda %rows setir</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Göçürip al</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Alyş-çalyş buferine göçürildi</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Göçürip bolmady</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Göçür</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Importda aç</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Sütünler</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV faýlynyň ýa-da elektron tablisanyň birinji setiri sütünleri islendik tertipde atlandyrýar; JSON şol atlary açar hökmünde ulanýar. Diňe old_url we new_url gerek. Atlar ýazylan birinji setir bolmasa, sütünler şu tertipde alynýar.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Sütün</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Näme saklaýar</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Köne salgy: ýol (/about-us.html), soragly ýol (/index.php?id=12) ýa-da köne hostuň doly salgysy. * islendik bölege gabat gelýär.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Bu saýtyň sahypasy: onuň ýoly (/recipes), düwün ID-si (node:163, sahypa göçürilende oňa eýerýär) ýa-da başga ýerdäki doly salgy. %first, %second *-yň gabat gelen bölegini alýar.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Setiriň nämä öwrülýändigi, görnüşlere serediň. Boş: hemişelik gönükdirme, old_url-da * bar bolsa gönükdirýän çalşyryjy belgi.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Ýönekeý ýoluň saýta giriş nokady; boş: import sahypasynda saýlanany.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL lakamynyň dili, meselem eng-GB; boş: saýta giriş nokadynyň dili.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Öz belligiňiz; import bilen bilelikde saklanýar.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Gönükdirme ýagdaýy: 301 ýa-da 308 (hemişelik), 302, 303 ýa-da 307 (wagtlaýyn); boş: görnüş kesgitleýär.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Görnüşler</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Myhmanlar näme alýar</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Hemişelik gönükdirme; gönükdirýän global URL lakamy.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Wagtlaýyn gönükdirme: gözleg ulgamlary köne salgyny saklaýar.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Köne salgydaky täze sahypa, gönükdirmesiz; global URL lakamy.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Her gabat gelýän salgy üçin hemişelik gönükdirme; URL çalşyryjy belgisi.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Her gabat gelýän salgy üçin wagtlaýyn gönükdirme.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Her gabat gelýän salgydaky täze sahypa, gönükdirmesiz.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>%size çenli faýllar. Formatlaryň ähli jikme-jiklikleri kömek merkezinde: URL-leri göçürmek we URL kartasynyň mysallary.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Her formatyň mysalyny gör</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Formatlar we mysallar</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Aýry sahypalar</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Aýry sahypalaryň hemişelik gönükdirmeleri, sahypa göçürilende oňa eýerýän düwün ID-si boýunça maksat (node:163) we sahypany köne salgyda görkezýän lakam. Birinji setir sütünleri atlandyrýar; diňe old_url we new_url gerek. .tsv faýly hem şeýle, tablar bilen okalýar.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* salgynyň islendik bölegine gabat gelýär we {1} ony täze salga goýýar: göçen bölüm, salgynyň ortasyndaky *, wagtlaýyn çalşyryjy belgi we gönüden-göni çalşyryjy belgi (gönükdirmesiz).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Soraglar we wagtlaýyn gönükdirmeler</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Soragly köne salgylar (/index.php?id=12), 308 we görnüş (redirect-temporary) hem-de ýagdaý (307) boýunça wagtlaýyn gönükdirmeler.</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>CSV sütünleri bilen birmeňzeş açarly obýektleriň sanawy; birinji obýekt exp-url-map/1 shemasyny görkezip biler. Eksportyň ýazýany we beýleki programmalaryň iň aňsat döredýäni.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Aýry sahypalar Excel kitaby hökmünde: birinji sahypa, sütün atlary birinji setirde. Ony açyň, salgylary üýtgediň we .xlsx hökmünde saklaň.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Şol bir zat OpenDocument elektron tablisasy hökmünde, LibreOffice we OpenOffice üçin.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache gaýtadan ýazmak düzgünleri</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Köne saýtyň .htaccess faýly bolşy ýaly: RewriteRule, sorag üçin RewriteCond, tutuş bölümiň Redirect-i (sahypa we onuň aşagyndaky ähli zat) we çalşyryjy belgi hökmünde RedirectMatch.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx gaýtadan ýazmak düzgünleri</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Köne saýtyň server bloky: return bilen location =, sorag üçin if ($args), çalşyryjy belgi hökmünde rewrite we aýry sahypalaryň map-i.</translation>
+    </message>
 </context>
 </TS>

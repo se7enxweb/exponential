@@ -86247,5 +86247,181 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>The old addresses could not be tested.</source>
         <translation>Tsy azo andramana ny adiresy taloha.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Ny sarintanin'ny URL dia mitanisa ny adiresy taloha tsirairay sy ny pejin'ity tranonkala ity izay anaovany ankehitriny. Ireto ny endrika vakian'ny fampidirana, samy manana ohatra azo adika: ovay ho anao ny adiresy, avy eo alefaso ny rakitra na apetaho. Ny ohatra tsirairay dia miditra ao amin'ny tranonkala fanandramana araka izay misy azy.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Rakitra %file, %size · novakiana avy amin'ny %extensions · andalana %rows ao amin'ny fampidirana</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Ampidino</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Voadika ao amin'ny clipboard</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Tsy afaka nadika</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Adikao</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Sokafy ao amin'ny fampidirana</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Ny tsanganana</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Ny andalana voalohany amin'ny rakitra CSV na tabilao dia manome anarana ny tsanganana, araka izay filaharana tianao; ny JSON dia mampiasa ireo anarana ireo ho lakile. Ny old_url sy ny new_url ihany no ilaina. Raha tsy misy andalana voalohany misy anarana, dia raisina amin'ity filaharana ity ny tsanganana.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Tsanganana</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Izay ao anatiny</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Ny adiresy taloha: lalana (/about-us.html), lalana misy fangatahana (/index.php?id=12) na adiresy feno an'ny mpampiantrano taloha. Ny * dia mifanaraka amin'ny ampahany rehetra.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Ny pejin'ity tranonkala ity: ny lalany (/recipes), ny ID-n'ny node-ny (node:163, izay manaraka ny pejy rehefa afindra) na adiresy feno any an-kafa. Ny %first, %second dia maka izay nifanaraka tamin'ny *.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Izay ho lasan'ilay andalana, jereo ny karazany. Foana: fandefasana maharitra, mpitovo mandefa rehefa misy * ny old_url.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Ny fidirana amin'ny tranonkala an'ny lalana tsotra; foana: ilay nofidiana teo amin'ny pejin'ny fampidirana.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Ny fitenin'ny solon-anarana URL, ohatra eng-GB; foana: ny fitenin'ny fidirana amin'ny tranonkala.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Ny fanamarihanao manokana; tehirizina miaraka amin'ny fampidirana izany.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Ny satan'ny fandefasana: 301 na 308 (maharitra), 302, 303 na 307 (vonjimaika); foana: ny karazany no manapaka.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Ny karazany</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Izay azon'ny mpitsidika</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Fandefasana maharitra; solon-anarana URL maneran-tany izay mandefa.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Fandefasana vonjimaika: ny milina fikarohana dia mitazona ny adiresy taloha.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Ny pejy vaovao amin'ny adiresy taloha, tsy misy fandefasana; solon-anarana URL maneran-tany.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Fandefasana maharitra ho an'ny adiresy mifanaraka rehetra; mpitovo URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Fandefasana vonjimaika ho an'ny adiresy mifanaraka rehetra.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Ny pejy vaovao amin'ny adiresy mifanaraka rehetra, tsy misy fandefasana.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Rakitra hatramin'ny %size. Ny antsipiriany rehetra momba ny endrika dia ao amin'ny foibe fanampiana: Famindrana URL, sy ny ohatra amin'ny sarintanin'ny URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Jereo ohatra amin'ny endrika tsirairay</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Endrika sy ohatra</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Pejy tokana</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Fandefasana maharitra amin'ny pejy tokana, tanjona amin'ny ID-n'ny node (node:163) izay manaraka ny pejy rehefa afindra, ary solon-anarana mampiseho ny pejy amin'ny adiresy taloha. Ny andalana voalohany dia manome anarana ny tsanganana; ny old_url sy ny new_url ihany no ilaina. Ny rakitra .tsv dia vakiana toy izany koa, misy tabulation.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>Ny * dia mifanaraka amin'ny ampahany rehetra amin'ny adiresy ary ny {1} dia mametraka izany ao amin'ny vaovao: fizarana nafindra, * eo afovoan'ny adiresy, mpitovo vonjimaika ary mpitovo mivantana (tsy misy fandefasana).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Fangatahana sy fandefasana vonjimaika</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Adiresy taloha misy fangatahana (/index.php?id=12), 308, ary fandefasana vonjimaika araka ny karazany (redirect-temporary) sy araka ny sata (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Lisitry ny zavatra manana lakile mitovy amin'ny tsanganana CSV; ny zavatra voalohany dia afaka manome ny anaran'ny schéma exp-url-map/1. Izay soratan'ny fanondranana sy izay mora indrindra amin'ny programa hafa.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Ny pejy tokana ho boky fiasana Excel: ny takelaka voalohany, ny anaran'ny tsanganana ao amin'ny andalana voalohany. Sokafy, ovay ny adiresy ary tehirizo ho .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Mitovy amin'izany ho tabilao OpenDocument, ho an'ny LibreOffice sy OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Fitsipika fanoratana indray Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Ny .htaccess an'ny tranonkala taloha araka izay misy azy: RewriteRule, RewriteCond ho an'ny fangatahana, Redirect amin'ny fizarana iray manontolo (ny pejy sy izay rehetra ao ambaniny) ary RedirectMatch ho mpitovo.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Fitsipika fanoratana indray nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Ny sakana server an'ny tranonkala taloha: location = miaraka amin'ny return, if ($args) ho an'ny fangatahana, rewrite ho mpitovo ary map an'ny pejy tokana.</translation>
+    </message>
 </context>
 </TS>

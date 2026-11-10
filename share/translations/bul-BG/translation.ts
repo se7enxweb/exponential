@@ -86277,5 +86277,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>Старите адреси не можаха да бъдат тествани.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL картата изброява всеки стар адрес и страницата от този сайт, към която той принадлежи сега. Това са форматите, които импортът чете, всеки с пример за копиране: сменете адресите със своите, след това качете файла или го поставете. Всеки пример се импортира в демо сайта такъв, какъвто е.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Файл %file, %size · чете се от %extensions · %rows реда в импорта</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Изтегли</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Копирано в клипборда</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Неуспешно копиране</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Копирай</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Отвори в импорта</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Колоните</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Първият ред на CSV файл или електронна таблица именува колоните, в произволен ред; JSON използва същите имена като ключове. Нужни са само old_url и new_url. Без първи ред с имена колоните се вземат в този ред.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Колона</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Какво съдържа</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Старият адрес: път (/about-us.html), път със заявка (/index.php?id=12) или пълен адрес на стария хост. Знакът * съвпада с произволна част.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Страницата от този сайт: нейният път (/recipes), ID на възела ѝ (node:163, което следва страницата, когато тя се премести) или пълен адрес другаде. %first, %second поемат това, с което * е съвпаднал.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Какво става редът, вижте видовете. Празно: постоянно пренасочване, пренасочващ заместващ символ, когато old_url съдържа *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Достъпът до сайта за голия път; празно: избраният на страницата за импорт.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Езикът на URL псевдонима, например eng-GB; празно: езикът на достъпа до сайта.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Ваша собствена бележка; пази се заедно с импорта.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Статусът на пренасочването: 301 или 308 (постоянно), 302, 303 или 307 (временно); празно: решава видът.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Видовете</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Какво получават посетителите</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Постоянно пренасочване; глобален URL псевдоним, който пренасочва.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Временно пренасочване: търсачките запазват стария адрес.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Новата страница на стария адрес, без пренасочване; глобален URL псевдоним.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Постоянно пренасочване за всеки съвпадащ адрес; URL заместващ символ.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Временно пренасочване за всеки съвпадащ адрес.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Новата страница на всеки съвпадащ адрес, без пренасочване.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Файлове до %size. Всички подробности за форматите са в помощния център: Мигриране на URL адреси и примерите за URL карти.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Вижте пример за всеки формат</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Формати и примери</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Отделни страници</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Постоянни пренасочвания на отделни страници, цел по ID на възел (node:163), която следва страницата при преместване, и псевдоним, който показва страницата на стария адрес. Първият ред именува колоните; нужни са само old_url и new_url. Файл .tsv се чете по същия начин, с табулации.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>Знакът * съвпада с произволна част от адреса, а {1} я поставя в новия: преместен раздел, * в средата на адрес, временен заместващ символ и директен (без пренасочване).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Заявки и временни пренасочвания</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Стари адреси със заявка (/index.php?id=12), 308 и временни пренасочвания по вид (redirect-temporary) и по статус (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Списък от обекти със същите ключове като колоните на CSV; първият обект може да посочи схемата exp-url-map/1. Това, което записва експортът и което други програми създават най-лесно.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Отделните страници като работна книга на Excel: първият лист, имената на колоните в първия ред. Отворете я, сменете адресите и я запишете като .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Същото като електронна таблица OpenDocument, за LibreOffice и OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Правила за пренаписване на Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Файлът .htaccess на стар сайт такъв, какъвто е: RewriteRule, RewriteCond за заявка, Redirect на цял раздел (страницата и всичко под нея) и RedirectMatch като заместващ символ.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Правила за пренаписване на nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Блокът server на стар сайт: location = с return, if ($args) за заявка, rewrite като заместващ символ и map от отделни страници.</translation>
+    </message>
 </context>
 </TS>

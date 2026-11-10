@@ -86247,5 +86247,181 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <source>The old addresses could not be tested.</source>
         <translation>Alamat lama tidak dapat diuji.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Peta URL menyenaraikan setiap alamat lama dan halaman laman ini yang dimilikinya sekarang. Ini ialah format yang dibaca oleh import, setiap satu dengan contoh untuk disalin: tukar alamat kepada alamat anda sendiri, kemudian muat naik fail atau tampalnya. Setiap contoh diimport ke dalam laman demo sebagaimana adanya.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Fail %file, %size · dibaca daripada %extensions · %rows baris dalam import</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Muat turun</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Disalin ke papan klip</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Tidak dapat menyalin</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Salin</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Buka dalam import</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Lajur</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Baris pertama fail CSV atau hamparan menamakan lajur, dalam sebarang susunan; JSON menggunakan nama yang sama sebagai kunci. Hanya old_url dan new_url diperlukan. Tanpa baris pertama nama, lajur diambil dalam susunan ini.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Lajur</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Apa yang dikandungnya</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Alamat lama: laluan (/about-us.html), laluan dengan pertanyaan (/index.php?id=12) atau alamat penuh hos lama. * sepadan dengan sebarang bahagian.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Halaman laman ini: laluannya (/recipes), ID nodnya (node:163, yang mengikut halaman apabila ia dipindahkan) atau alamat penuh di tempat lain. %first, %second mengambil apa yang dipadankan oleh *.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Apa yang menjadi baris itu, lihat jenis. Kosong: ubah hala kekal, kad bebas yang mengubah hala apabila old_url mempunyai *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Akses laman bagi laluan kosong; kosong: yang dipilih pada halaman import.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Bahasa alias URL, contohnya eng-GB; kosong: bahasa akses laman.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Nota anda sendiri; ia disimpan bersama import.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Status ubah hala: 301 atau 308 (kekal), 302, 303 atau 307 (sementara); kosong: jenis yang menentukan.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Jenis</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Apa yang pelawat dapat</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Ubah hala kekal; alias URL global yang mengubah hala.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Ubah hala sementara: enjin carian mengekalkan alamat lama.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Halaman baharu pada alamat lama, tanpa ubah hala; alias URL global.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Ubah hala kekal untuk setiap alamat yang sepadan; kad bebas URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Ubah hala sementara untuk setiap alamat yang sepadan.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Halaman baharu pada setiap alamat yang sepadan, tanpa ubah hala.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Fail sehingga %size. Setiap butiran format ada dalam pusat bantuan: Memindahkan URL, dan contoh peta URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Lihat contoh setiap format</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Format dan contoh</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Halaman tunggal</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Ubah hala kekal bagi halaman tunggal, sasaran mengikut ID nod (node:163) yang mengikut halaman apabila ia dipindahkan, dan alias yang menunjukkan halaman pada alamat lama. Baris pertama menamakan lajur; hanya old_url dan new_url diperlukan. Fail .tsv dibaca dengan cara yang sama, dengan tab.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* sepadan dengan sebarang bahagian alamat dan {1} meletakkannya ke dalam alamat baharu: bahagian yang dipindahkan, * di tengah alamat, kad bebas sementara dan kad bebas langsung (tanpa ubah hala).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Pertanyaan dan ubah hala sementara</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Alamat lama dengan pertanyaan (/index.php?id=12), 308, dan ubah hala sementara mengikut jenis (redirect-temporary) dan mengikut status (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Senarai objek dengan kunci yang sama seperti lajur CSV; objek pertama boleh menamakan skema exp-url-map/1. Apa yang ditulis oleh eksport dan paling mudah dihasilkan oleh program lain.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Halaman tunggal sebagai buku kerja Excel: helaian pertama, nama lajur di baris pertama. Bukanya, tukar alamat dan simpan sebagai .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Sama seperti hamparan OpenDocument, untuk LibreOffice dan OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Peraturan tulis semula Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>.htaccess laman lama sebagaimana adanya: RewriteRule, RewriteCond untuk pertanyaan, Redirect bagi seluruh bahagian (halaman dan semua di bawahnya) dan RedirectMatch sebagai kad bebas.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Peraturan tulis semula nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Blok server laman lama: location = dengan return, if ($args) untuk pertanyaan, rewrite sebagai kad bebas dan map halaman tunggal.</translation>
+    </message>
 </context>
 </TS>

@@ -209,7 +209,7 @@ class expUrlMapAdminViewsTest extends PHPUnit\Framework\TestCase
         $root = dirname( __DIR__, 5 );
         $module = (string)file_get_contents( $root . '/kernel/content/module.php' );
         $this->assertStringContainsString( "\$FunctionList['urltranslator_import'] = array();", $module );
-        $expected = array( 'urlimport' => array( 'urltranslator_import', "'plan' => 'Plan', 'state' => 'State', 'offset' => 'Offset', 'report' => 'Report', 'source' => 'Source'" ),
+        $expected = array( 'urlimport' => array( 'urltranslator_import', "'plan' => 'Plan', 'state' => 'State', 'offset' => 'Offset', 'report' => 'Report', 'source' => 'Source', 'example' => 'Example', 'use' => 'Use'" ),
                            'urlimporthistory' => array( 'urltranslator_import', "'offset' => 'Offset', 'done' => 'Done'" ),
                            'urlexport' => array( 'urltranslator', null ),
                            'urlredirects' => array( 'urltranslator', "'offset' => 'Offset', 'removed' => 'Removed'" ) );

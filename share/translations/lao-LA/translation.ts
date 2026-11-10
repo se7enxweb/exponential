@@ -86247,5 +86247,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>ບໍ່ສາມາດທົດສອບທີ່ຢູ່ເກົ່າໄດ້.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>ແຜນທີ່ URL ລະບຸແຕ່ລະທີ່ຢູ່ເກົ່າ ແລະ ໜ້າຂອງໄຊນີ້ທີ່ມັນເປັນຂອງຕອນນີ້. ນີ້ແມ່ນຮູບແບບທີ່ການນຳເຂົ້າອ່ານ, ແຕ່ລະອັນມີຕົວຢ່າງໃຫ້ສຳເນົາ: ປ່ຽນທີ່ຢູ່ເປັນຂອງທ່ານເອງ, ແລ້ວອັບໂຫຼດໄຟລ໌ ຫຼື ວາງມັນ. ທຸກຕົວຢ່າງນຳເຂົ້າສູ່ໄຊສາທິດໄດ້ຕາມທີ່ມັນເປັນ.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>ໄຟລ໌ %file, %size · ອ່ານຈາກ %extensions · %rows ແຖວໃນການນຳເຂົ້າ</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>ດາວໂຫຼດ</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>ສຳເນົາໄປຄລິບບອດແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>ບໍ່ສາມາດສຳເນົາໄດ້</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>ສຳເນົາ</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>ເປີດໃນການນຳເຂົ້າ</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>ຖັນ</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>ແຖວທຳອິດຂອງໄຟລ໌ CSV ຫຼື ສະເປຣດຊີດຕັ້ງຊື່ຖັນ, ຕາມລຳດັບໃດກໍໄດ້; JSON ໃຊ້ຊື່ດຽວກັນເປັນກະແຈ. ຕ້ອງການພຽງ old_url ແລະ new_url. ຖ້າບໍ່ມີແຖວທຳອິດຂອງຊື່, ຖັນຈະຖືກອ່ານຕາມລຳດັບນີ້.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>ຖັນ</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>ສິ່ງທີ່ມັນບັນຈຸ</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>ທີ່ຢູ່ເກົ່າ: ເສັ້ນທາງ (/about-us.html), ເສັ້ນທາງທີ່ມີຄິວຣີ (/index.php?id=12) ຫຼື ທີ່ຢູ່ເຕັມຂອງໂຮສເກົ່າ. * ກົງກັບສ່ວນໃດກໍໄດ້.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>ໜ້າຂອງໄຊນີ້: ເສັ້ນທາງຂອງມັນ (/recipes), ID ໂນດຂອງມັນ (node:163, ເຊິ່ງຕິດຕາມໜ້າເມື່ອມັນຍ້າຍ) ຫຼື ທີ່ຢູ່ເຕັມຢູ່ບ່ອນອື່ນ. %first, %second ຮັບສິ່ງທີ່ * ກົງກັບ.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>ແຖວກາຍເປັນຫຍັງ, ເບິ່ງປະເພດ. ຫວ່າງ: ການປ່ຽນເສັ້ນທາງຖາວອນ, ຫຼື ໄວລດ໌ຄາດທີ່ປ່ຽນເສັ້ນທາງເມື່ອ old_url ມີ *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>ການເຂົ້າເຖິງໄຊຂອງເສັ້ນທາງເປົ່າ; ຫວ່າງ: ອັນທີ່ເລືອກໃນໜ້ານຳເຂົ້າ.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>ພາສາຂອງນາມແຝງ URL, ຕົວຢ່າງ eng-GB; ຫວ່າງ: ພາສາຂອງການເຂົ້າເຖິງໄຊ.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>ບັນທຶກຂອງທ່ານເອງ; ມັນຖືກເກັບໄວ້ກັບການນຳເຂົ້າ.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>ສະຖານະການປ່ຽນເສັ້ນທາງ: 301 ຫຼື 308 (ຖາວອນ), 302, 303 ຫຼື 307 (ຊົ່ວຄາວ); ຫວ່າງ: ປະເພດເປັນຕົວຕັດສິນ.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>ປະເພດ</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>ສິ່ງທີ່ຜູ້ເຂົ້າຊົມໄດ້ຮັບ</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>ການປ່ຽນເສັ້ນທາງຖາວອນ; ນາມແຝງ URL ສ່ວນກາງທີ່ປ່ຽນເສັ້ນທາງ.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>ການປ່ຽນເສັ້ນທາງຊົ່ວຄາວ: ເຄື່ອງມືຊອກຫາຮັກສາທີ່ຢູ່ເກົ່າໄວ້.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>ໜ້າໃໝ່ຢູ່ທີ່ຢູ່ເກົ່າ, ໂດຍບໍ່ມີການປ່ຽນເສັ້ນທາງ; ນາມແຝງ URL ສ່ວນກາງ.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>ການປ່ຽນເສັ້ນທາງຖາວອນສຳລັບທຸກທີ່ຢູ່ທີ່ກົງກັນ; ໄວລດ໌ຄາດ URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>ການປ່ຽນເສັ້ນທາງຊົ່ວຄາວສຳລັບທຸກທີ່ຢູ່ທີ່ກົງກັນ.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>ໜ້າໃໝ່ຢູ່ທຸກທີ່ຢູ່ທີ່ກົງກັນ, ໂດຍບໍ່ມີການປ່ຽນເສັ້ນທາງ.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>ໄຟລ໌ສູງສຸດ %size. ລາຍລະອຽດທັງໝົດຂອງຮູບແບບຢູ່ໃນສູນຊ່ວຍເຫຼືອ: ການຍ້າຍ URL, ແລະ ຕົວຢ່າງແຜນທີ່ URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>ເບິ່ງຕົວຢ່າງຂອງແຕ່ລະຮູບແບບ</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>ຮູບແບບ ແລະ ຕົວຢ່າງ</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>ໜ້າດ່ຽວ</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>ການປ່ຽນເສັ້ນທາງຖາວອນຂອງໜ້າດ່ຽວ, ເປົ້າໝາຍຕາມ ID ໂນດ (node:163) ທີ່ຕິດຕາມໜ້າເມື່ອມັນຍ້າຍ, ແລະ ນາມແຝງທີ່ສະແດງໜ້າຢູ່ທີ່ຢູ່ເກົ່າ. ແຖວທຳອິດຕັ້ງຊື່ຖັນ; ຕ້ອງການພຽງ old_url ແລະ new_url. ໄຟລ໌ .tsv ຖືກອ່ານແບບດຽວກັນ, ດ້ວຍແທັບ.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* ກົງກັບສ່ວນໃດກໍໄດ້ຂອງທີ່ຢູ່ ແລະ {1} ໃສ່ມັນເຂົ້າໃນທີ່ຢູ່ໃໝ່: ພາກສ່ວນທີ່ຍ້າຍໄປ, * ຢູ່ກາງທີ່ຢູ່, ໄວລດ໌ຄາດຊົ່ວຄາວ ແລະ ແບບໂດຍກົງ (ບໍ່ມີການປ່ຽນເສັ້ນທາງ).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>ຄິວຣີ ແລະ ການປ່ຽນເສັ້ນທາງຊົ່ວຄາວ</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>ທີ່ຢູ່ເກົ່າທີ່ມີຄິວຣີ (/index.php?id=12), 308, ແລະ ການປ່ຽນເສັ້ນທາງຊົ່ວຄາວຕາມປະເພດ (redirect-temporary) ແລະ ຕາມສະຖານະ (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>ລາຍການວັດຖຸທີ່ມີກະແຈດຽວກັນກັບຖັນ CSV; ວັດຖຸທຳອິດອາດຕັ້ງຊື່ສະຄີມາ exp-url-map/1. ສິ່ງທີ່ການສົ່ງອອກຂຽນ ແລະ ໂປຣແກຣມອື່ນສ້າງໄດ້ງ່າຍທີ່ສຸດ.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>ໜ້າດ່ຽວເປັນປຶ້ມວຽກ Excel: ແຜ່ນທຳອິດ, ຊື່ຖັນຢູ່ແຖວທຳອິດ. ເປີດມັນ, ປ່ຽນທີ່ຢູ່ ແລະ ບັນທຶກເປັນ .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>ອັນດຽວກັນເປັນສະເປຣດຊີດ OpenDocument, ສຳລັບ LibreOffice ແລະ OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>ກົດການຂຽນຄືນຂອງ Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>.htaccess ຂອງໄຊເກົ່າຕາມທີ່ມັນເປັນ: RewriteRule, RewriteCond ສຳລັບຄິວຣີ, Redirect ຂອງພາກສ່ວນທັງໝົດ (ໜ້າ ແລະ ທຸກຢ່າງທີ່ຢູ່ລຸ່ມມັນ) ແລະ RedirectMatch ເປັນໄວລດ໌ຄາດ.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>ກົດການຂຽນຄືນຂອງ nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>ບລັອກ server ຂອງໄຊເກົ່າ: location = ກັບ return, if ($args) ສຳລັບຄິວຣີ, rewrite ເປັນໄວລດ໌ຄາດ ແລະ map ຂອງໜ້າດ່ຽວ.</translation>
+    </message>
 </context>
 </TS>

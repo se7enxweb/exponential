@@ -86247,5 +86247,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>Эски даректерди текшерүү мүмкүн болган жок.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL картасы ар бир эски даректи жана ал азыр таандык болгон ушул сайттын барагын тизмелейт. Төмөндө импорт окуган форматтар, ар биринде көчүрүү үчүн мисал бар: даректерди өзүңүздүкүнө алмаштырып, файлды жүктөңүз же чаптаңыз. Ар бир мисал демо сайтка өзгөрүүсүз импорттолот.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Файл %file, %size · %extensions форматынан окулду · импортто %rows сап</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Жүктөп алуу</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Алмашуу буферине көчүрүлдү</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Көчүрүү мүмкүн болбоду</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Көчүрүү</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Импортто ачуу</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Мамычалар</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV файлынын же электрондук жадыбалдын биринчи сабы мамычаларды каалаган тартипте атайт; JSON ошол эле аттарды ачкыч катары колдонот. Болгону old_url жана new_url керек. Аттары бар биринчи сап жок болсо, мамычалар ушул тартипте алынат.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Мамыча</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Эмнени камтыйт</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Эски дарек: жол (/about-us.html), суроосу бар жол (/index.php?id=12) же эски хосттун толук дареги. * каалаган бөлүккө дал келет.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Ушул сайттын барагы: анын жолу (/recipes), түйүн ID (node:163, барак жылганда артынан ээрчийт) же башка жердеги толук дарек. %first, %second * дал келген бөлүктү алат.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Сап эмнеге айланат, түрлөрүн караңыз. Бош болсо: туруктуу кайра багыттоо, old_url ичинде * болсо, кайра багыттоочу ордун басуучу белги.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Жөнөкөй жолдун сайтка кирүү чекити; бош болсо: импорт барагында тандалганы.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL псевдониминин тили, мисалы eng-GB; бош болсо: сайтка кирүү чекитинин тили.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Өзүңүздүн эскертмеңиз; ал импорт менен бирге сакталат.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Кайра багыттоо статусу: 301 же 308 (туруктуу), 302, 303 же 307 (убактылуу); бош болсо: түрү чечет.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Түрлөрү</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Келүүчүлөр эмне алат</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Туруктуу кайра багыттоо; кайра багыттоочу глобалдык URL псевдоними.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Убактылуу кайра багыттоо: издөө системалары эски даректи сакташат.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Эски даректеги жаңы барак, кайра багыттоосуз; глобалдык URL псевдоними.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Ар бир дал келген дарек үчүн туруктуу кайра багыттоо; URL ордун басуучу белгиси.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Ар бир дал келген дарек үчүн убактылуу кайра багыттоо.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Ар бир дал келген даректеги жаңы барак, кайра багыттоосуз.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>%size чейинки файлдар. Форматтардын бардык чоо-жайы жардам борборунда: URL даректерин көчүрүү жана URL картасынын мисалдары.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Ар бир форматтын мисалын көрүү</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Форматтар жана мисалдар</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Жеке барактар</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Жеке барактардын туруктуу кайра багыттоолору, барак жылганда артынан ээрчиген түйүн ID (node:163) боюнча максат жана баракты эски даректе көрсөткөн псевдоним. Биринчи сап мамычаларды атайт; болгону old_url жана new_url керек. .tsv файлы да ошондой эле, табуляциялар менен окулат.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* даректин каалаган бөлүгүнө дал келет, ал эми {1} аны жаңысына коёт: жылган бөлүм, даректин ортосундагы *, убактылуу ордун басуучу белги жана түз белги (кайра багыттоосуз).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Суроолор жана убактылуу кайра багыттоолор</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Суроосу бар эски даректер (/index.php?id=12), 308 жана түрү (redirect-temporary) менен статусу (307) боюнча убактылуу кайра багыттоолор.</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>CSV мамычалары менен бирдей ачкычтары бар объекттердин тизмеси; биринчи объект exp-url-map/1 схемасын атай алат. Экспорт ушуну жазат жана башка программалар ушуну эң оңой түзөт.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Жеке барактар Excel жумуш китеби катары: биринчи барак, мамычалардын аттары биринчи сапта. Аны ачып, даректерди өзгөртүп, .xlsx катары сактаңыз.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Ошол эле, LibreOffice жана OpenOffice үчүн OpenDocument электрондук жадыбалы катары.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache кайра жазуу эрежелери</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Эски сайттын .htaccess файлы өзгөрүүсүз: RewriteRule, суроо үчүн RewriteCond, бүтүндөй бөлүмдүн Redirect (барак жана анын астындагылардын баары) жана ордун басуучу белги катары RedirectMatch.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx кайра жазуу эрежелери</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Эски сайттын server блогу: return менен location =, суроо үчүн if ($args), ордун басуучу белги катары rewrite жана жеке барактардын map картасы.</translation>
+    </message>
 </context>
 </TS>

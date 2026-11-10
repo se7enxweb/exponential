@@ -86277,5 +86277,181 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>Níorbh fhéidir na seanseoltaí a thástáil.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Liostaíonn léarscáil URL gach seanseoladh agus an leathanach den suíomh seo lena mbaineann sé anois. Seo iad na formáidí a léann an iompórtáil, gach ceann acu le sampla le cóipeáil: athraigh na seoltaí go do sheoltaí féin, ansin uaslódáil an comhad nó greamaigh é. Iompórtáiltear gach sampla isteach sa suíomh taispeána mar atá sé.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Comhad %file, %size · léite ó %extensions · %rows ró san iompórtáil</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Íoslódáil</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Cóipeáilte chuig an ngearrthaisce</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Níorbh fhéidir cóipeáil</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Cóipeáil</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Oscail san iompórtáil</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Na colúin</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Ainmníonn an chéad líne de chomhad CSV nó de scarbhileog na colúin, in ord ar bith; úsáideann JSON na hainmneacha céanna mar eochracha. Níl ach old_url agus new_url ag teastáil. Gan chéad líne ainmneacha, glactar na colúin san ord seo.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Colún</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>A bhfuil ann</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>An seanseoladh: conair (/about-us.html), conair le ceist (/index.php?id=12) nó seoladh iomlán an tseanóstaigh. Meaitseálann * cuid ar bith.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Leathanach an tsuímh seo: a chonair (/recipes), aitheantas a nóid (node:163, a leanann an leathanach nuair a bhogtar é) nó seoladh iomlán in áit eile. Glacann %first, %second an méid a mheaitseáil an *.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>A mbeidh sa ró, féach na cineálacha. Folamh: atreorú buan, saoróg atreoraithe nuair atá * in old_url.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Rochtain suímh conaire loim; folamh: an ceann a roghnaíodh ar leathanach na hiompórtála.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Teanga an ailias URL, mar shampla eng-GB; folamh: teanga na rochtana suímh.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Do nóta féin; coinnítear é leis an iompórtáil.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Stádas an atreoraithe: 301 nó 308 (buan), 302, 303 nó 307 (sealadach); folamh: socraíonn an cineál.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Na cineálacha</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>A bhfaigheann cuairteoirí</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Atreorú buan; ailias URL domhanda a atreoraíonn.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Atreorú sealadach: coinníonn innill chuardaigh an seanseoladh.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>An leathanach nua ag an seanseoladh, gan atreorú; ailias URL domhanda.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Atreorú buan do gach seoladh a mheaitseálann; saoróg URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Atreorú sealadach do gach seoladh a mheaitseálann.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>An leathanach nua ag gach seoladh a mheaitseálann, gan atreorú.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Comhaid suas le %size. Tá gach mionsonra faoi na formáidí san ionad cabhrach: URLanna a imirce, agus samplaí de léarscáileanna URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Féach sampla de gach formáid</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Formáidí agus samplaí</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Leathanaigh aonair</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Atreoruithe buana de leathanaigh aonair, sprioc de réir aitheantas nóid (node:163) a leanann an leathanach nuair a bhogtar é, agus ailias a thaispeánann an leathanach ag an seanseoladh. Ainmníonn an chéad líne na colúin; níl ach old_url agus new_url ag teastáil. Léitear comhad .tsv ar an mbealach céanna, le táib.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>Meaitseálann * cuid ar bith de sheoladh agus cuireann {1} isteach sa cheann nua é: rannán a bogadh, * i lár seolta, saoróg shealadach agus ceann díreach (gan atreorú).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Ceisteanna agus atreoruithe sealadacha</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Seanseoltaí le ceist (/index.php?id=12), 308, agus atreoruithe sealadacha de réir cineáil (redirect-temporary) agus de réir stádais (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Liosta réad leis na heochracha céanna leis na colúin CSV; féadfaidh an chéad réad an scéimre exp-url-map/1 a ainmniú. Is é seo a scríobhann an easpórtáil agus is fusa do ríomhchláir eile a dhéanamh.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Na leathanaigh aonair mar leabhar oibre Excel: an chéad bhileog, ainmneacha na gcolún sa chéad ró. Oscail é, athraigh na seoltaí agus sábháil é mar .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>An rud céanna mar scarbhileog OpenDocument, do LibreOffice agus OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Rialacha athscríofa Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>An .htaccess de sheansuíomh mar atá sé: RewriteRule, RewriteCond do cheist, Redirect de rannán iomlán (an leathanach agus gach a bhfuil faoi) agus RedirectMatch mar shaoróg.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Rialacha athscríofa nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Bloc server de sheansuíomh: location = le return, if ($args) do cheist, rewrite mar shaoróg agus map de leathanaigh aonair.</translation>
+    </message>
 </context>
 </TS>

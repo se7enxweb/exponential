@@ -86277,5 +86277,181 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>Vanu aadresse ei saanud testida.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL-i kaart loetleb iga vana aadressi ja selle saidi lehe, kuhu see nüüd kuulub. Need on vormingud, mida importimine loeb, igaühel kopeeritav näide: asendage aadressid enda omadega, seejärel laadige fail üles või kleepige see. Iga näide impordib demosaiti muutmata kujul.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Fail %file, %size · loetud failidest %extensions · %rows rida importimises</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Laadi alla</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Kopeeritud lõikelauale</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Kopeerimine ebaõnnestus</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopeeri</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Ava importimises</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Veerud</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV-faili või arvutustabeli esimene rida nimetab veerud suvalises järjekorras; JSON kasutab samu nimesid võtmetena. Vaja on ainult old_url ja new_url. Kui nimedega esimest rida pole, võetakse veerud selles järjekorras.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Veerg</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Mida see sisaldab</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Vana aadress: tee (/about-us.html), päringuga tee (/index.php?id=12) või vana hosti täielik aadress. * sobib mis tahes osaga.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Selle saidi leht: selle tee (/recipes), sõlme ID (node:163, mis järgib lehte, kui see liigub) või täielik aadress mujal. %first, %second võtavad selle, millega * sobis.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Milleks rida muutub, vt liike. Tühi: püsiv ümbersuunamine, ümbersuunav metamärk, kui old_url sisaldab *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Palja tee saidi juurdepääs; tühi: impordilehel valitud juurdepääs.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL-i aliase keel, näiteks eng-GB; tühi: saidi juurdepääsu keel.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Teie enda märkus; see säilitatakse koos importimisega.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Ümbersuunamise olek: 301 või 308 (püsiv), 302, 303 või 307 (ajutine); tühi: otsustab liik.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Liigid</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Mida külastajad saavad</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Püsiv ümbersuunamine; globaalne URL-i alias, mis suunab ümber.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Ajutine ümbersuunamine: otsingumootorid jätavad alles vana aadressi.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Uus leht vanal aadressil, ilma ümbersuunamiseta; globaalne URL-i alias.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Püsiv ümbersuunamine iga sobiva aadressi jaoks; URL-i metamärk.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Ajutine ümbersuunamine iga sobiva aadressi jaoks.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Uus leht igal sobival aadressil, ilma ümbersuunamiseta.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Failid kuni %size. Kõik vormingute üksikasjad on abikeskuses: URL-ide migreerimine ja URL-i kaartide näited.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Vaata iga vormingu näidet</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Vormingud ja näited</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Üksikud lehed</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Üksikute lehtede püsivad ümbersuunamised, sõlme ID-ga sihtkoht (node:163), mis järgib lehte, kui see liigub, ja alias, mis näitab lehte vanal aadressil. Esimene rida nimetab veerud; vaja on ainult old_url ja new_url. .tsv-faili loetakse samamoodi, tabulaatoritega.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* sobib aadressi mis tahes osaga ja {1} paneb selle uude: teisaldatud jaotis, * aadressi keskel, ajutine metamärk ja otsene (ilma ümbersuunamiseta).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Päringud ja ajutised ümbersuunamised</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Päringuga vanad aadressid (/index.php?id=12), üks 308 ning ajutised ümbersuunamised liigi (redirect-temporary) ja oleku (307) järgi.</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Objektide loend samade võtmetega nagu CSV veerud; esimene objekt võib nimetada skeemi exp-url-map/1. Seda kirjutab eksport ja seda teevad teised programmid kõige lihtsamini.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Üksikud lehed Exceli töövihikuna: esimene leht, veergude nimed esimeses reas. Avage see, muutke aadresse ja salvestage see .xlsx-failina.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Sama OpenDocumenti arvutustabelina, LibreOffice'i ja OpenOffice'i jaoks.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache ümberkirjutusreeglid</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Vana saidi .htaccess muutmata kujul: RewriteRule, RewriteCond päringu jaoks, Redirect terve jaotise jaoks (leht ja kõik selle all) ja RedirectMatch metamärgina.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx ümberkirjutusreeglid</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Vana saidi server-plokk: location = koos return-iga, if ($args) päringu jaoks, rewrite metamärgina ja üksikute lehtede map.</translation>
+    </message>
 </context>
 </TS>

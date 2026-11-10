@@ -86245,5 +86245,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>زړې پتې ونه ازمویل شوې.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>د URL نقشه هره زړه پته او د دې سایټ هغه پاڼه لیستوي چې اوس ورپورې اړه لري. دا هغه بڼې دي چې وارد یې لولي، هره یوه د کاپي کولو لپاره له یوې بېلګې سره: پتې په خپلو پتو بدلې کړئ، بیا دوتنه پورته کړئ یا یې ولګوئ. هره بېلګه همداسې د نندارې سایټ ته واردېږي.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>دوتنه %file، %size · له %extensions څخه لوستل کېږي · په وارد کې %rows کرښې</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>ښکته کول</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>کلیپ بورډ ته کاپي شو</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>کاپي نه شو</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>کاپي</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>په وارد کې پرانیستل</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>ستنې</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>د CSV دوتنې یا سپریډشیټ لومړۍ کرښه د ستنو نومونه ښيي، په هر ترتیب؛ JSON همدا نومونه د کلیلونو په توګه کاروي. یوازې old_url او new_url اړین دي. که د نومونو لومړۍ کرښه نه وي، ستنې په دې ترتیب اخیستل کېږي.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>ستنه</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>څه پکې وي</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>زړه پته: یوه لاره (/about-us.html)، د پوښتنې سره لاره (/index.php?id=12) یا د زاړه کوربه بشپړه پته. یو * له هرې برخې سره سمون خوري.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>د دې سایټ پاڼه: د هغې لاره (/recipes)، د هغې د غوټې ID (node:163، چې کله پاڼه ځای بدل کړي ورپسې ځي) یا بل ځای کې بشپړه پته. %first, %second هغه اخلي چې * ورسره سمون خوړلی.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>کرښه په څه بدلېږي، ډولونه وګورئ. تش: تلپاتې مسیر بدلون، کله چې old_url * ولري مسیر بدلوونکی وایلډکارډ.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>د ساده لارې د سایټ لاسرسی؛ تش: هغه چې د وارد په پاڼه کې ټاکل شوی.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>د URL بل نوم ژبه، د بېلګې په توګه eng-GB؛ تش: د سایټ لاسرسي ژبه.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>ستاسې خپل یادښت؛ له وارد سره ساتل کېږي.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>د مسیر بدلون حالت: 301 یا 308 (تلپاتې)، 302، 303 یا 307 (لنډمهاله)؛ تش: ډول پرېکړه کوي.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>ډولونه</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>لیدونکي څه ترلاسه کوي</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>تلپاتې مسیر بدلون؛ نړیوال URL بل نوم چې مسیر بدلوي.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>لنډمهاله مسیر بدلون: لټون ماشینونه زړه پته ساتي.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>په زړه پته نوې پاڼه، پرته له مسیر بدلون؛ نړیوال URL بل نوم.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>د هرې سمون خوړونکې پتې لپاره تلپاتې مسیر بدلون؛ URL وایلډکارډ.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>د هرې سمون خوړونکې پتې لپاره لنډمهاله مسیر بدلون.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>په هره سمون خوړونکې پته نوې پاڼه، پرته له مسیر بدلون.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>تر %size پورې دوتنې. د بڼو ټول جزئیات د مرستې په مرکز کې دي: د URLونو لېږدول، او د URL نقشې بېلګې.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>د هرې بڼې یوه بېلګه وګورئ</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>بڼې او بېلګې</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>یوازینۍ پاڼې</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>د یوازینیو پاڼو تلپاتې مسیر بدلونونه، د غوټې ID (node:163) له لارې موخه چې کله پاڼه ځای بدل کړي ورپسې ځي، او یو بل نوم چې پاڼه په زړه پته ښيي. لومړۍ کرښه د ستنو نومونه ښيي؛ یوازې old_url او new_url اړین دي. .tsv دوتنه هم همداسې، له ټبونو سره، لوستل کېږي.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>یو * د پتې له هرې برخې سره سمون خوري او {1} یې په نوې پته کې ږدي: یوه برخه چې ځای یې بدل کړی، د پتې په منځ کې *، لنډمهاله وایلډکارډ او مستقیم وایلډکارډ (پرته له مسیر بدلون).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>پوښتنې او لنډمهاله مسیر بدلونونه</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>زړې پتې له پوښتنې سره (/index.php?id=12)، یو 308، او د ډول (redirect-temporary) او حالت (307) له مخې لنډمهاله مسیر بدلونونه.</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>د هغو شیانو لیست چې د CSV ستنو په څېر کلیلونه لري؛ لومړی شی کولی شي د سکیما exp-url-map/1 نوم واخلي. هغه څه چې صادرول یې لیکي او نور پروګرامونه یې په اسانۍ جوړوي.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>یوازینۍ پاڼې د Excel کاري کتاب په توګه: لومړۍ پاڼه، د ستنو نومونه په لومړۍ کرښه کې. پرانیزئ یې، پتې بدلې کړئ او د .xlsx په توګه یې خوندي کړئ.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>همدا د OpenDocument سپریډشیټ په توګه، د LibreOffice او OpenOffice لپاره.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>د Apache د بیا لیکلو قواعد</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>د زاړه سایټ .htaccess همداسې: RewriteRule، د پوښتنې لپاره RewriteCond، د یوې بشپړې برخې Redirect (پاڼه او هر څه چې لاندې یې دي) او RedirectMatch د وایلډکارډ په توګه.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>د nginx د بیا لیکلو قواعد</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>د زاړه سایټ server بلاک: location = له return سره، د پوښتنې لپاره if ($args)، rewrite د وایلډکارډ په توګه او د یوازینیو پاڼو map.</translation>
+    </message>
 </context>
 </TS>

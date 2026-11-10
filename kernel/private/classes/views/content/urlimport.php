@@ -13,6 +13,11 @@
  *                                                            this site's 404 log, or a map whose rows lack targets;
  *                                                            targets suggested (expUrlMapSuggester); downloaded as CSV
  *                                                            or planned as an import to preview
+ *   /content/urlimport/(source)/examples                     Formats and examples: an example file of each format to
+ *                                                            look at and copy, the columns and the kinds
+ *                                                            (expUrlMapExamples, the files of the documentation)
+ *   /content/urlimport/(example)/<id>                        an example file as a download
+ *   /content/urlimport/(use)/<id>                            the first page with a text example in the form
  *
  * After an import, TestButton on the preview requests every old address on the site of its siteaccess
  * (expUrlMapTester, the first TEST_MAX_ROWS rows) and keeps the result with the import (test.json).
@@ -159,10 +164,22 @@ class UrlImport extends \Exponential\Runnable\ModuleView
 
         if ( $token === '' )
         {
+            $locale = \eZLocale::instance()->localeCode();
+            $example = isset( $userParameters['example'] ) ? (string)$userParameters['example'] : '';
+            if ( $example !== '' )
+            {
+                $examplePath = \expUrlMapExamples::path( $example, $locale );
+                if ( $examplePath === '' )
+                    return $this->viewResult( null, $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+                $this->sendExample( $example, $examplePath );
+            }
             $source = isset( $userParameters['source'] ) ? (string)$userParameters['source'] : '';
+            if ( $source === 'examples' )
+                return $this->viewResult( null, $this->examplesPage( $Module, $locale ) );
             if ( in_array( $source, self::SOURCES, true ) )
                 return $this->viewResult( null, $this->helperPage( $Module, $environment, $userId, $source ) );
-            return $this->viewResult( null, $this->uploadPage( $Module, $environment, $userId ) );
+            $use = isset( $userParameters['use'] ) ? \expUrlMapExamples::forImport( (string)$userParameters['use'], $locale ) : null;
+            return $this->viewResult( null, $this->uploadPage( $Module, $environment, $userId, '', '', $use ) );
         }
 
         $session = \expUrlMapImportSession::load( $token, $userId );
@@ -321,14 +338,20 @@ class UrlImport extends \Exponential\Runnable\ModuleView
      * @param int $userId
      * @param string $error
      * @param string $errorText
+     * @param array|null $example an example to start from (expUrlMapExamples::forImport()): its text and format
      * @return array the view's result
      */
-    protected function uploadPage( $Module, \expUrlMapKernelEnvironment $environment, $userId, $error = '', $errorText = '' )
+    protected function uploadPage( $Module, \expUrlMapKernelEnvironment $environment, $userId, $error = '', $errorText = '', $example = null )
     {
         $http = \eZHTTPTool::instance();
         $siteaccesses = $environment->siteaccesses();
         $form = array( 'format' => '', 'siteaccess' => $environment->defaultSiteaccess(), 'language' => '', 'on_conflict' => \expUrlMapPlan::ON_CONFLICT_SKIP,
                        'hosts' => '', 'text' => '' );
+        if ( $example )
+        {
+            $form['format'] = $example['format'];
+            $form['text'] = $example['text'];
+        }
         if ( \expViewParameters::isPost() && $http->hasPostVariable( 'PreviewButton' ) )
         {
             foreach ( array( 'format' => 'Format', 'siteaccess' => 'SiteAccess', 'language' => 'Language', 'on_conflict' => 'OnConflict',
@@ -416,6 +439,50 @@ class UrlImport extends \Exponential\Runnable\ModuleView
         $Result['content'] = $tpl->fetch( 'design:content/urlimport.tpl' );
         $Result['path'] = self::path();
         return $Result;
+    }
+
+    /**
+     * The tab Formats and examples: an example file of each format to look at, copy, download or open in the import,
+     * the columns and the kinds.
+     *
+     * @param \eZModule $Module
+     * @param string $locale
+     * @return array the view's result
+     */
+    protected function examplesPage( $Module, $locale )
+    {
+        $tpl = \eZTemplate::factory();
+        $tpl->setVariable( 'module', $Module );
+        $tpl->setVariable( 'examples', \expUrlMapExamples::all( $locale ) );
+        $tpl->setVariable( 'example_columns', \expUrlMapRow::COLUMNS );
+        $tpl->setVariable( 'import_max_size', \expUrlMapImportSession::MAX_SIZE );
+
+        $Module->setTitle( \ezpI18n::tr( 'design/admin/content/urlimport', 'Formats and examples' ) );
+        $Result = array();
+        $Result['content'] = $tpl->fetch( 'design:content/urlimport_examples.tpl' );
+        $Result['path'] = self::path( \ezpI18n::tr( 'design/admin/content/urlimport', 'Formats and examples' ) );
+        return $Result;
+    }
+
+    /**
+     * Sends an example file as a download (content/urlimport/(example)/<id>) and ends the request.
+     *
+     * @param string $id one of expUrlMapExamples::definitions()
+     * @param string $path its file (expUrlMapExamples::path())
+     */
+    protected function sendExample( $id, $path )
+    {
+        $definitions = \expUrlMapFormats::definitions();
+        $format = \expUrlMapExamples::definitions()[$id]['format'];
+        $mime = $definitions[$format]['mime'];
+        while ( @ob_end_clean() );
+        header( 'Content-Type: ' . $mime . ( \expUrlMapExamples::isText( $format ) ? '; charset=utf-8' : '' ) );
+        header( 'Content-Disposition: attachment; filename="' . basename( $path ) . '"' );
+        header( 'Content-Length: ' . filesize( $path ) );
+        header( 'X-Content-Type-Options: nosniff' );
+        readfile( $path );
+        // no catch( Exception ) around the download and cleanExit(): under Velocity cleanExit() throws
+        \eZExecution::cleanExit();
     }
 
     /**

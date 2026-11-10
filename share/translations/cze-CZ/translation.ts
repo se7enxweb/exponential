@@ -87533,5 +87533,181 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>Staré adresy se nepodařilo otestovat.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Mapa URL uvádí každou starou adresu a stránku tohoto webu, ke které nyní patří. Toto jsou formáty, které import čte, každý s příkladem ke zkopírování: změňte adresy na své, pak soubor nahrajte nebo jej vložte. Každý příklad se do ukázkového webu importuje tak, jak je.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Soubor %file, %size · čteno z %extensions · %rows řádků v importu</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Stáhnout</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Zkopírováno do schránky</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Kopírování se nezdařilo</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopírovat</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Otevřít v importu</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Sloupce</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>První řádek souboru CSV nebo tabulky pojmenovává sloupce, v libovolném pořadí; JSON používá stejné názvy jako klíče. Povinné jsou jen old_url a new_url. Bez prvního řádku s názvy se sloupce berou v tomto pořadí.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Sloupec</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Co obsahuje</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Stará adresa: cesta (/about-us.html), cesta s dotazem (/index.php?id=12) nebo úplná adresa starého hostitele. Znak * odpovídá libovolné části.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Stránka tohoto webu: její cesta (/recipes), ID jejího uzlu (node:163, které stránku sleduje, když se přesune) nebo úplná adresa jinde. %first, %second převezmou to, čemu * odpovídala.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Čím se řádek stane, viz druhy. Prázdné: trvalé přesměrování, přesměrovávající zástupný znak, když old_url obsahuje *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Přístup k webu pro holou cestu; prázdné: ten zvolený na stránce importu.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Jazyk aliasu URL, například eng-GB; prázdné: jazyk přístupu k webu.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Vaše vlastní poznámka; uchovává se s importem.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Stav přesměrování: 301 nebo 308 (trvalé), 302, 303 nebo 307 (dočasné); prázdné: rozhodne druh.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Druhy</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Co návštěvníci dostanou</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Trvalé přesměrování; globální alias URL, který přesměrovává.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Dočasné přesměrování: vyhledávače si ponechají starou adresu.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Nová stránka na staré adrese, bez přesměrování; globální alias URL.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Trvalé přesměrování pro každou odpovídající adresu; zástupný znak URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Dočasné přesměrování pro každou odpovídající adresu.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Nová stránka na každé odpovídající adrese, bez přesměrování.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Soubory do %size. Všechny podrobnosti o formátech najdete v centru nápovědy: Migrace URL a příklady map URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Zobrazit příklad každého formátu</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Formáty a příklady</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Jednotlivé stránky</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Trvalá přesměrování jednotlivých stránek, cíl podle ID uzlu (node:163), který stránku sleduje, když se přesune, a alias, který zobrazí stránku na staré adrese. První řádek pojmenovává sloupce; povinné jsou jen old_url a new_url. Soubor .tsv se čte stejně, s tabulátory.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>Znak * odpovídá libovolné části adresy a {1} ji vloží do nové: přesunutá sekce, * uprostřed adresy, dočasný zástupný znak a přímý (bez přesměrování).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Dotazy a dočasná přesměrování</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Staré adresy s dotazem (/index.php?id=12), 308 a dočasná přesměrování podle druhu (redirect-temporary) a podle stavu (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Seznam objektů se stejnými klíči jako sloupce CSV; první objekt může uvést schéma exp-url-map/1. To zapisuje export a to ostatní programy vytvoří nejsnáze.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Jednotlivé stránky jako sešit Excel: první list, názvy sloupců v prvním řádku. Otevřete jej, změňte adresy a uložte jej jako .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Totéž jako tabulka OpenDocument, pro LibreOffice a OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Přepisovací pravidla Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Soubor .htaccess starého webu tak, jak je: RewriteRule, RewriteCond pro dotaz, Redirect celé sekce (stránka a vše pod ní) a RedirectMatch jako zástupný znak.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Přepisovací pravidla nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Blok server starého webu: location = s return, if ($args) pro dotaz, rewrite jako zástupný znak a map jednotlivých stránek.</translation>
+    </message>
 </context>
 </TS>

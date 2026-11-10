@@ -86247,5 +86247,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>လိပ်စာဟောင်းများကို စမ်းသပ်၍ မရခဲ့ပါ။</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL မြေပုံတစ်ခုတွင် လိပ်စာဟောင်းတစ်ခုစီနှင့် ယခု ၎င်းနှင့် သက်ဆိုင်သော ဤဆိုက်၏ စာမျက်နှာကို စာရင်းပြုထားသည်။ တင်သွင်းမှုက ဖတ်သော ပုံစံများမှာ ဤအရာများဖြစ်ပြီး တစ်ခုစီတွင် ကူးယူရန် ဥပမာတစ်ခု ပါသည်- လိပ်စာများကို သင့်ကိုယ်ပိုင်လိပ်စာများဖြင့် ပြောင်းပါ၊ ထို့နောက် ဖိုင်ကို အပ်လုဒ်လုပ်ပါ သို့မဟုတ် ကူးထည့်ပါ။ ဥပမာတိုင်းကို ဒီမိုဆိုက်ထဲသို့ ရှိသည့်အတိုင်း တင်သွင်းနိုင်သည်။</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>ဖိုင် %file၊ %size · %extensions မှ ဖတ်သည် · တင်သွင်းမှုတွင် အတန်း %rows</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>ဒေါင်းလုဒ်</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>ကလစ်ဘုတ်သို့ ကူးယူပြီးပါပြီ</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>ကူးယူ၍ မရပါ</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>ကူးယူရန်</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>တင်သွင်းမှုတွင် ဖွင့်ရန်</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>ကော်လံများ</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV ဖိုင် သို့မဟုတ် spreadsheet ၏ ပထမစာကြောင်းသည် ကော်လံများကို မည်သည့်အစီအစဉ်ဖြင့်မဆို အမည်ပေးသည်; JSON သည် တူညီသောအမည်များကို key များအဖြစ် အသုံးပြုသည်။ old_url နှင့် new_url သာ လိုအပ်သည်။ အမည်များပါသော ပထမစာကြောင်း မရှိလျှင် ကော်လံများကို ဤအစီအစဉ်အတိုင်း ယူသည်။</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>ကော်လံ</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>၎င်းတွင် ပါဝင်သည့်အရာ</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>လိပ်စာဟောင်း- လမ်းကြောင်းတစ်ခု (/about-us.html)၊ query ပါသော လမ်းကြောင်း (/index.php?id=12) သို့မဟုတ် host ဟောင်း၏ လိပ်စာအပြည့်အစုံ။ * သည် မည်သည့်အပိုင်းနှင့်မဆို ကိုက်ညီသည်။</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>ဤဆိုက်၏ စာမျက်နှာ- ၎င်း၏ လမ်းကြောင်း (/recipes)၊ ၎င်း၏ node ID (node:163၊ စာမျက်နှာကို ရွှေ့သည့်အခါ လိုက်သွားသည်) သို့မဟုတ် အခြားနေရာရှိ လိပ်စာအပြည့်အစုံ။ %first, %second သည် * ကိုက်ညီခဲ့သည့်အရာကို ယူသည်။</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>အတန်းသည် ဘာဖြစ်လာမည်၊ အမျိုးအစားများကို ကြည့်ပါ။ ဗလာ- အမြဲတမ်း လမ်းကြောင်းလွှဲမှု၊ old_url တွင် * ပါလျှင် လမ်းကြောင်းလွှဲသော wildcard။</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>ရိုးရိုးလမ်းကြောင်း၏ ဆိုက်ဝင်ရောက်မှု; ဗလာ- တင်သွင်းမှုစာမျက်နှာတွင် ရွေးထားသည့်အရာ။</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL အမည်ကွဲ၏ ဘာသာစကား၊ ဥပမာ eng-GB; ဗလာ- ဆိုက်ဝင်ရောက်မှု၏ ဘာသာစကား။</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>သင့်ကိုယ်ပိုင် မှတ်စု; ၎င်းကို တင်သွင်းမှုနှင့်အတူ သိမ်းထားသည်။</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>လမ်းကြောင်းလွှဲမှု အခြေအနေ- 301 သို့မဟုတ် 308 (အမြဲတမ်း)၊ 302၊ 303 သို့မဟုတ် 307 (ယာယီ); ဗလာ- အမျိုးအစားက ဆုံးဖြတ်သည်။</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>အမျိုးအစားများ</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>ဧည့်သည်များ ရရှိသည့်အရာ</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>အမြဲတမ်း လမ်းကြောင်းလွှဲမှု; လမ်းကြောင်းလွှဲသော Global URL အမည်ကွဲ။</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>ယာယီ လမ်းကြောင်းလွှဲမှု- ရှာဖွေရေးအင်ဂျင်များက လိပ်စာဟောင်းကို ဆက်ထားသည်။</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>လိပ်စာဟောင်းတွင် စာမျက်နှာအသစ်၊ လမ်းကြောင်းလွှဲမှု မပါ; Global URL အမည်ကွဲ။</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>ကိုက်ညီသော လိပ်စာတိုင်းအတွက် အမြဲတမ်း လမ်းကြောင်းလွှဲမှု; URL wildcard။</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>ကိုက်ညီသော လိပ်စာတိုင်းအတွက် ယာယီ လမ်းကြောင်းလွှဲမှု။</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>ကိုက်ညီသော လိပ်စာတိုင်းတွင် စာမျက်နှာအသစ်၊ လမ်းကြောင်းလွှဲမှု မပါ။</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>%size အထိ ဖိုင်များ။ ပုံစံများ၏ အသေးစိတ်အားလုံး အကူအညီစင်တာတွင် ရှိသည်- URL များ ပြောင်းရွှေ့ခြင်း နှင့် URL မြေပုံ ဥပမာများ။</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>ပုံစံတစ်ခုစီ၏ ဥပမာကို ကြည့်ရန်</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>ပုံစံများနှင့် ဥပမာများ</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>စာမျက်နှာတစ်ခုချင်း</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>စာမျက်နှာတစ်ခုချင်း၏ အမြဲတမ်း လမ်းကြောင်းလွှဲမှုများ၊ စာမျက်နှာ ရွှေ့သည့်အခါ လိုက်သွားသော node ID (node:163) ဖြင့် ပန်းတိုင်တစ်ခုနှင့် စာမျက်နှာကို လိပ်စာဟောင်းတွင် ပြသော အမည်ကွဲတစ်ခု။ ပထမစာကြောင်းသည် ကော်လံများကို အမည်ပေးသည်; old_url နှင့် new_url သာ လိုအပ်သည်။ .tsv ဖိုင်ကိုလည်း tab များဖြင့် ထိုနည်းအတိုင်း ဖတ်သည်။</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* သည် လိပ်စာ၏ မည်သည့်အပိုင်းနှင့်မဆို ကိုက်ညီပြီး {1} က ၎င်းကို လိပ်စာအသစ်ထဲ ထည့်သည်- ရွှေ့ထားသော အပိုင်း၊ လိပ်စာ၏ အလယ်ရှိ *၊ ယာယီ wildcard နှင့် တိုက်ရိုက် wildcard (လမ်းကြောင်းလွှဲမှု မပါ)။</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Query များနှင့် ယာယီ လမ်းကြောင်းလွှဲမှုများ</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>query ပါသော လိပ်စာဟောင်းများ (/index.php?id=12)၊ 308 တစ်ခု၊ နှင့် အမျိုးအစား (redirect-temporary) နှင့် အခြေအနေ (307) အလိုက် ယာယီ လမ်းကြောင်းလွှဲမှုများ။</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>CSV ကော်လံများနှင့် တူညီသော key များပါသည့် object စာရင်း; ပထမ object သည် schema exp-url-map/1 ကို အမည်ပေးနိုင်သည်။ ထုတ်ယူမှုက ရေးသည့်ပုံစံဖြစ်ပြီး အခြားပရိုဂရမ်များ အလွယ်ဆုံး ဖန်တီးနိုင်သည်။</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>စာမျက်နှာတစ်ခုချင်းကို Excel workbook အဖြစ်- ပထမ sheet၊ ပထမအတန်းတွင် ကော်လံအမည်များ။ ၎င်းကို ဖွင့်ပါ၊ လိပ်စာများကို ပြောင်းပြီး .xlsx အဖြစ် သိမ်းပါ။</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>အလားတူ OpenDocument spreadsheet အဖြစ်၊ LibreOffice နှင့် OpenOffice အတွက်။</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache rewrite စည်းမျဉ်းများ</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>ဆိုက်ဟောင်း၏ .htaccess ကို ရှိသည့်အတိုင်း- RewriteRule၊ query အတွက် RewriteCond၊ အပိုင်းတစ်ခုလုံး၏ Redirect (စာမျက်နှာနှင့် ၎င်းအောက်ရှိ အရာအားလုံး) နှင့် wildcard အဖြစ် RedirectMatch။</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx rewrite စည်းမျဉ်းများ</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>ဆိုက်ဟောင်း၏ server block- return ပါသော location =၊ query အတွက် if ($args)၊ wildcard အဖြစ် rewrite နှင့် စာမျက်နှာတစ်ခုချင်း၏ map။</translation>
+    </message>
 </context>
 </TS>

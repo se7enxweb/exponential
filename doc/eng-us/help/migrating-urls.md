@@ -123,7 +123,8 @@ Tips for the mapping:
 
 The columns and kinds are explained in [Importing and exporting URL maps](../features/6.0/url-map-import-export.md#kinds-and-statuses).
 Excel (`.xlsx`), LibreOffice (`.ods`), JSON and the old site's Apache or nginx rules are read as well. Ready-made
-examples: [URL map examples](../examples/url-maps/README.md).
+examples: [URL map examples](../examples/url-maps/README.md). In the administration, **Import** > **Formats and examples**
+shows an example file of every format with the columns and the kinds, to copy, download or open in the import.
 
 ## 3. Import it with a preview and a dry run
 

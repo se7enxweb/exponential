@@ -86245,5 +86245,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>A kò lè dán àwọn àdírẹ́sì àtijọ́ wò.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Máàpù URL kan ń ṣe àkójọ àdírẹ́sì àtijọ́ kọ̀ọ̀kan àti ojú-ìwé sáìtì yìí tí ó jẹ́ tirẹ̀ báyìí. Ìwọ̀nyí ni àwọn ọ̀nà kíkọ tí ìgbéwọlé ń kà, ọ̀kọ̀ọ̀kan pẹ̀lú àpẹẹrẹ láti dà kọ: yí àwọn àdírẹ́sì padà sí tìrẹ, lẹ́yìn náà gbé fáìlì náà sókè tàbí lẹ̀ ẹ́. Àpẹẹrẹ kọ̀ọ̀kan ń wọlé sí sáìtì àfihàn bí ó ṣe wà.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Fáìlì %file, %size · a kà á láti %extensions · ìlà %rows nínú ìgbéwọlé</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Ṣe ìgbàsílẹ̀</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>A ti dà á kọ sí pátákó ìgbàdí</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Kò ṣeé dà kọ</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Dà kọ</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Ṣí i nínú ìgbéwọlé</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Àwọn ọ̀wọ̀n</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Ìlà àkọ́kọ́ fáìlì CSV tàbí ìwé ìṣirò ń sọ orúkọ àwọn ọ̀wọ̀n, ní ètò èyíkéyìí; JSON ń lo àwọn orúkọ kan náà gẹ́gẹ́ bí kọ́kọ́rọ́. old_url àti new_url nìkan ni a nílò. Láìsí ìlà àkọ́kọ́ ti orúkọ, a ń mú àwọn ọ̀wọ̀n ní ètò yìí.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Ọ̀wọ̀n</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Ohun tí ó ní</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Àdírẹ́sì àtijọ́: ipa ọ̀nà kan (/about-us.html), ipa ọ̀nà pẹ̀lú ìbéèrè (/index.php?id=12) tàbí àdírẹ́sì kíkún ti olùgbàlejò àtijọ́. * kan bá apá èyíkéyìí mu.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Ojú-ìwé sáìtì yìí: ipa ọ̀nà rẹ̀ (/recipes), ID nódù rẹ̀ (node:163, tí ó ń tẹ̀lé ojú-ìwé náà nígbà tí a bá gbé e lọ) tàbí àdírẹ́sì kíkún níbòmíràn. %first, %second ń mú ohun tí * bá mu.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Ohun tí ìlà náà di, wo àwọn irú. Òfo: àtúnṣètò ọ̀nà àìyípadà, àmì àfidípò tí ń tún ọ̀nà ṣètò nígbà tí old_url bá ní *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Ìwọlé sáìtì ti ipa ọ̀nà lásán; òfo: èyí tí a yàn lórí ojú-ìwé ìgbéwọlé.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Èdè orúkọ àfidípò URL, fún àpẹẹrẹ eng-GB; òfo: èdè ìwọlé sáìtì.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Àkọsílẹ̀ tìrẹ; a ń pa á mọ́ pẹ̀lú ìgbéwọlé.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Ipò àtúnṣètò ọ̀nà: 301 tàbí 308 (àìyípadà), 302, 303 tàbí 307 (fún ìgbà díẹ̀); òfo: irú ló ń pinnu.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Àwọn irú</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Ohun tí àwọn olùbẹ̀wò ń gbà</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Àtúnṣètò ọ̀nà àìyípadà; orúkọ àfidípò URL àgbáyé tí ń tún ọ̀nà ṣètò.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Àtúnṣètò ọ̀nà fún ìgbà díẹ̀: àwọn ẹ̀rọ ìwádìí ń pa àdírẹ́sì àtijọ́ mọ́.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Ojú-ìwé tuntun ní àdírẹ́sì àtijọ́, láìsí àtúnṣètò ọ̀nà; orúkọ àfidípò URL àgbáyé.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Àtúnṣètò ọ̀nà àìyípadà fún gbogbo àdírẹ́sì tí ó bá mu; àmì àfidípò URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Àtúnṣètò ọ̀nà fún ìgbà díẹ̀ fún gbogbo àdírẹ́sì tí ó bá mu.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Ojú-ìwé tuntun ní gbogbo àdírẹ́sì tí ó bá mu, láìsí àtúnṣètò ọ̀nà.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Àwọn fáìlì títí dé %size. Gbogbo kúlẹ̀kúlẹ̀ àwọn ọ̀nà kíkọ wà nínú ibùdó ìrànlọ́wọ́: Ṣíṣí àwọn URL kúrò, àti àwọn àpẹẹrẹ máàpù URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Wo àpẹẹrẹ ọ̀nà kíkọ kọ̀ọ̀kan</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Àwọn ọ̀nà kíkọ àti àpẹẹrẹ</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Àwọn ojú-ìwé ẹyọkan</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Àtúnṣètò ọ̀nà àìyípadà ti àwọn ojú-ìwé ẹyọkan, ibi àfojúsùn nípasẹ̀ ID nódù (node:163) tí ó ń tẹ̀lé ojú-ìwé náà nígbà tí a bá gbé e lọ, àti orúkọ àfidípò tí ó ń fi ojú-ìwé hàn ní àdírẹ́sì àtijọ́. Ìlà àkọ́kọ́ ń sọ orúkọ àwọn ọ̀wọ̀n; old_url àti new_url nìkan ni a nílò. A ń ka fáìlì .tsv lọ́nà kan náà, pẹ̀lú àwọn táàbù.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* kan bá apá èyíkéyìí ti àdírẹ́sì mu, {1} sì ń fi í sínú èyí tuntun: abala kan tí ó ti kúrò, * kan ní àárín àdírẹ́sì, àmì àfidípò fún ìgbà díẹ̀ àti èyí tààrà (láìsí àtúnṣètò ọ̀nà).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Àwọn ìbéèrè àti àtúnṣètò ọ̀nà fún ìgbà díẹ̀</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Àwọn àdírẹ́sì àtijọ́ pẹ̀lú ìbéèrè (/index.php?id=12), 308 kan, àti àtúnṣètò ọ̀nà fún ìgbà díẹ̀ nípasẹ̀ irú (redirect-temporary) àti nípasẹ̀ ipò (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Àkójọ àwọn ohun pẹ̀lú àwọn kọ́kọ́rọ́ kan náà bí àwọn ọ̀wọ̀n CSV; ohun àkọ́kọ́ lè sọ orúkọ ètò exp-url-map/1. Ohun tí ìgbéjáde ń kọ àti èyí tí àwọn ètò mìíràn ń ṣe jù lọ ní ìrọ̀rùn.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Àwọn ojú-ìwé ẹyọkan gẹ́gẹ́ bí ìwé iṣẹ́ Excel: ìwé àkọ́kọ́, orúkọ àwọn ọ̀wọ̀n ní ìlà àkọ́kọ́. Ṣí i, yí àwọn àdírẹ́sì padà kí o sì fi pamọ́ gẹ́gẹ́ bí .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Bákan náà gẹ́gẹ́ bí ìwé ìṣirò OpenDocument, fún LibreOffice àti OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Àwọn òfin àtúnkọ Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>.htaccess ti sáìtì àtijọ́ bí ó ṣe wà: RewriteRule, RewriteCond fún ìbéèrè, Redirect ti abala odindi (ojú-ìwé náà àti gbogbo ohun tí ó wà nísàlẹ̀ rẹ̀) àti RedirectMatch gẹ́gẹ́ bí àmì àfidípò.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Àwọn òfin àtúnkọ nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Búlọ́ọ̀kù server ti sáìtì àtijọ́: location = pẹ̀lú return, if ($args) fún ìbéèrè, rewrite gẹ́gẹ́ bí àmì àfidípò àti map ti àwọn ojú-ìwé ẹyọkan.</translation>
+    </message>
 </context>
 </TS>

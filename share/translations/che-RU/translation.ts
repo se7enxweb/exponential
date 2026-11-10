@@ -86247,5 +86247,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>Шира адресаш талла ца хилира.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL-картехь хӀора шира адрес а, хӀинца иза хӀокху сайтан муьлхачу агӀона лаьцна а гойту. ХӀорш бу импорто бешна форматаш, хӀораннан а копи ян масал ду: адресаш шайчарах хийца, тӀаккха файл чуяккха я чуйилла. ХӀора масал демо-сайте ма-дарра импорт йо.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Файл %file, %size · %extensions чуьра ешна · импортехь %rows могӀа</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Схьаэца</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Буфере копи йина</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Копи ян ца делира</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Копи ян</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Импортехь схьаелла</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>БӀогӀамаш</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV-файлан я электронни таблицин хьалхарчу могӀано бӀогӀамийн цӀерш йо, муьлххачу а рогӀаллехь; JSON-о уьш догӀанаш санна лелайо. Оьшу old_url а, new_url а бен. ЦӀерийн хьалхара могӀа ца хилча, бӀогӀамаш хӀокху рогӀаллехь лоцу.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>БӀогӀам</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Чохь хӀун ду</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Шира адрес: некъ (/about-us.html), запрос болу некъ (/index.php?id=12) я шира хостан юьззина адрес. * муьлххачу а декъах догӀу.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>ХӀокху сайтан агӀо: цуьнан некъ (/recipes), цуьнан шадан ID (node:163, агӀо меттахйолуш цунна тӀаьхьа йогӀу) я кхечахь юьззина адрес. %first, %second * догӀуш хилларг лоцу.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>МогӀа хӀун хира ю, тайпанаш хьажа. Еса: даиманна дӀахьажор, old_url чохь * елахь дӀахьажош йолу URL-маска.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Еса некъан сайте тӀекхачар; еса: импортан агӀонгахь харжинарг.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL-псевдониман мотт, масала eng-GB; еса: сайте тӀекхачаран мотт.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Шайн билгалдаккхар; иза импортаца лардо.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>ДӀахьажоран статус: 301 я 308 (даиманна), 302, 303 я 307 (ханна); еса: тайпано къастадо.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Тайпанаш</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Хьешашна хӀун кхочу</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Даиманна дӀахьажор; дӀахьажош долу глобальни URL-псевдоним.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Ханна дӀахьажор: лахаран системаша шира адрес лардо.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Шира адрес тӀехь керла агӀо, дӀахьажор доцуш; глобальни URL-псевдоним.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>ХӀора догӀуш долчу адресана даиманна дӀахьажор; URL-маска.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>ХӀора догӀуш долчу адресана ханна дӀахьажор.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>ХӀора догӀуш долчу адресехь керла агӀо, дӀахьажор доцуш.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>%size кхаччалц файлаш. Форматийн массо а хиламаш гӀоьнан центрехь бу: URL-ш дӀакхехьар, URL-картийн масалш.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>ХӀора форматан масал хьажа</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Форматаш а, масалш а</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Цхьалха агӀонаш</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Цхьалха агӀонийн даиманна дӀахьажораш, шадан ID-ца (node:163) Ӏалашо, агӀо меттахйолуш цунна тӀаьхьа йогӀу, а шира адрес тӀехь агӀо гойтуш долу псевдоним а. Хьалхарчу могӀано бӀогӀамийн цӀерш йо; оьшу old_url а, new_url а бен. .tsv-файл иштта еша, табуляцешца.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* адресан муьлххачу а декъах догӀу, {1} цуьнга керлачу адресе йиллийта: меттахдаьлла дакъа, адресан юккъехь *, ханна маска а, нийса маска а (дӀахьажор доцуш).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Запросаш а, ханна дӀахьажораш а</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Запрос болу шира адресаш (/index.php?id=12), 308, тайпанца (redirect-temporary) а, статусца (307) а ханна дӀахьажораш.</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>CSV-бӀогӀамийн догӀанаш долу объектийн могӀам; хьалхарчу объекто схема exp-url-map/1 цӀе яккха мега. Экспорто яздийриг а, кхечу программаша атта йийриг а.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Цхьалха агӀонаш Excel-книга санна: хьалхара лист, хьалхарчу могӀанехь бӀогӀамийн цӀерш. Иза схьаелла, адресаш хийца, .xlsx санна ларъе.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Иштта OpenDocument-таблица санна, LibreOffice а, OpenOffice а лелорхьама.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache-н URL хийцаран бакъонаш</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Шира сайтан .htaccess ма-дарра: RewriteRule, запросна RewriteCond, дерриге декъан Redirect (агӀо а, цул лахара массо а) а, маска санна RedirectMatch а.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx-н URL хийцаран бакъонаш</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Шира сайтан server блок: return йолу location =, запросна if ($args), маска санна rewrite, цхьалха агӀонийн map а.</translation>
+    </message>
 </context>
 </TS>

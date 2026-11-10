@@ -86247,5 +86247,181 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>Manuta a seetlu adrees yu yàgg yi.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Kaartu URL dafay lim bépp adrees bu yàgg ak xët wi ci sit bii mu bokk léegi. Lii ñooy foorma yi dugal bi di jàng, ku nekk am misaal bu ñu mën a duppi: soppil adrees yi ak say yos, ba noppi yebal dosye bi walla taf ko. Bépp misaal dafay dugg ci situ demo bi ni mu mel.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Dosye %file, %size · ñu jàng ko ci %extensions · %rows rëdd ci dugal bi</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Yebbi</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Duppi nañu ko ci kayitu-taf bi</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Mënul woon a duppi</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Duppi</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Ubbi ko ci dugal bi</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Kolon yi</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Rëdd bu njëkk bu dosye CSV walla tablo dafay tudd kolon yi, ci nenn toftal; JSON dafay jëfandikoo tur yooyu ni caabi. old_url ak new_url rekk ñoo war. Su amul rëdd bu njëkk bu tur yi, kolon yi dañu leen jël ci toftal bii.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Kolon</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Li mu yor</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Adrees bu yàgg bi: yoon (/about-us.html), yoon bu am laaj (/index.php?id=12) walla adrees bu mat bu serwëru yàgg bi. Benn * dafay dëppoo ak nenn pàcc.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Xët wi ci sit bii: yoonam (/recipes), ID bu noddam (node:163, mu topp xët wi bu ñu ko toxale) walla adrees bu mat ci beneen béreb. %first, %second dañuy jël li * dëppoo.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Li rëdd bi di nekk, xoolal xeet yi. Neen: jubluwaat bu sax, màndarga wuutukat buy jubluwaat bu old_url amee *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Buntu sit bu yoon bu amul domen; neen: bi ñu tànn ci xëtu dugal bi.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Làkku turu URL bu wuute bi, misaal eng-GB; neen: làkku buntu sit bi.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Sa bos bind; dañu koy denc ak dugal bi.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Xaalatu jubluwaat bi: 301 walla 308 (bu sax), 302, 303 walla 307 (bu diir); neen: xeet bi moo koy dogal.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Xeet yi</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Li gan yi di am</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Jubluwaat bu sax; turu URL bu wuute bu mbooloo mépp buy jubluwaat.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Jubluwaat bu diir: masini wut yi dañuy denc adrees bu yàgg bi.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Xët wu bees wi ci adrees bu yàgg bi, te amul jubluwaat; turu URL bu wuute bu mbooloo mépp.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Jubluwaat bu sax ngir bépp adrees bu dëppoo; màndarga wuutukat bu URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Jubluwaat bu diir ngir bépp adrees bu dëppoo.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Xët wu bees wi ci bépp adrees bu dëppoo, te amul jubluwaat.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Dosye yu tollu ba %size. Bépp leeral ci foorma yi mu ngi ci béreb ndimbal bi: Toxal URL yi, ak misaali kaartu URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Xool misaal bu foorma bu nekk</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Foorma ak misaal</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Xët yu kenn</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Jubluwaat yu sax yu xët yu kenn, jublu bu ID bu nodd (node:163) buy topp xët wi bu ñu ko toxale, ak tur bu wuute buy wone xët wi ci adrees bu yàgg bi. Rëdd bu njëkk bi dafay tudd kolon yi; old_url ak new_url rekk ñoo war. Dosye .tsv dañu koy jàng ni noonu, ak tab yi.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>Benn * dafay dëppoo ak nenn pàccu adrees te {1} dafay ko def ci bu bees bi: xaaj bu toxoon, * ci digg adrees, màndarga wuutukat bu diir ak bu jub (amul jubluwaat).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Laaj yi ak jubluwaat yu diir</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Adrees yu yàgg yu am laaj (/index.php?id=12), benn 308, ak jubluwaat yu diir ci xeet (redirect-temporary) ak ci xaalat (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Limu lëf yu am caabi yu mel ni kolon yu CSV; lëf bu njëkk bi mën na tudd sema exp-url-map/1. Li génné bi di bind te yeneen prograam yi gëna yomb a def.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Xët yu kenn yi ni téereb liggéey bu Excel: xët bu njëkk bi, turi kolon yi ci rëdd bu njëkk bi. Ubbi ko, soppi adrees yi te denc ko ni .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Lenn lu mel noonu ni tablo OpenDocument, ngir LibreOffice ak OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Sàrti bindaat yu Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>.htaccess bu sit bu yàgg ni mu mel: RewriteRule, RewriteCond ngir laaj, Redirect bu xaaj bu mat (xët wi ak lépp lu nekk ci suufam) ak RedirectMatch ni màndarga wuutukat.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Sàrti bindaat yu nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Bloku server bu sit bu yàgg: location = ak return, if ($args) ngir laaj, rewrite ni màndarga wuutukat ak benn map bu xët yu kenn.</translation>
+    </message>
 </context>
 </TS>

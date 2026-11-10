@@ -86245,5 +86245,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>పాత చిరునామాలను పరీక్షించలేకపోయాం.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL మ్యాప్ ప్రతి పాత చిరునామాను మరియు అది ఇప్పుడు చెందిన ఈ సైట్ పేజీని జాబితా చేస్తుంది. దిగుమతి చదివే ఫార్మాట్‌లు ఇవి, ప్రతి దానికీ కాపీ చేయడానికి ఒక ఉదాహరణ ఉంది: చిరునామాలను మీ సొంత వాటితో మార్చి, ఆపై ఫైల్‌ను అప్‌లోడ్ చేయండి లేదా అతికించండి. ప్రతి ఉదాహరణ ఉన్నది ఉన్నట్లుగా డెమో సైట్‌లోకి దిగుమతి అవుతుంది.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>ఫైల్ %file, %size · %extensions నుండి చదవబడింది · దిగుమతిలో %rows వరుసలు</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>డౌన్‌లోడ్</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>క్లిప్‌బోర్డ్‌కు కాపీ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>కాపీ చేయడం సాధ్యం కాలేదు</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>కాపీ</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>దిగుమతిలో తెరవండి</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>నిలువు వరుసలు</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV ఫైల్ లేదా స్ప్రెడ్‌షీట్ యొక్క మొదటి పంక్తి నిలువు వరుసలకు పేర్లు పెడుతుంది, ఏ క్రమంలోనైనా; JSON అవే పేర్లను కీలుగా ఉపయోగిస్తుంది. old_url మరియు new_url మాత్రమే అవసరం. పేర్ల మొదటి పంక్తి లేకపోతే, నిలువు వరుసలు ఈ క్రమంలో తీసుకోబడతాయి.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>నిలువు వరుస</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>అందులో ఏముంది</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>పాత చిరునామా: ఒక పాత్ (/about-us.html), క్వెరీతో కూడిన పాత్ (/index.php?id=12) లేదా పాత హోస్ట్ యొక్క పూర్తి చిరునామా. ఒక * ఏ భాగానికైనా సరిపోలుతుంది.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>ఈ సైట్ పేజీ: దాని పాత్ (/recipes), దాని నోడ్ ID (node:163, పేజీ తరలించబడినప్పుడు దానిని అనుసరిస్తుంది) లేదా వేరే చోట పూర్తి చిరునామా. %first, %second లు * సరిపోలిన దానిని తీసుకుంటాయి.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>వరుస ఏమవుతుందో, రకాలను చూడండి. ఖాళీ: శాశ్వత దారిమార్పు, old_url లో * ఉన్నప్పుడు దారిమార్చే వైల్డ్‌కార్డ్.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>సాధారణ పాత్ యొక్క సైట్‌యాక్సెస్; ఖాళీ: దిగుమతి పేజీలో ఎంచుకున్నది.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL మారుపేరు యొక్క భాష, ఉదాహరణకు eng-GB; ఖాళీ: సైట్‌యాక్సెస్ భాష.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>మీ సొంత గమనిక; అది దిగుమతితో పాటు ఉంచబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>దారిమార్పు స్థితి: 301 లేదా 308 (శాశ్వత), 302, 303 లేదా 307 (తాత్కాలిక); ఖాళీ: రకం నిర్ణయిస్తుంది.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>రకాలు</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>సందర్శకులకు ఏమి లభిస్తుంది</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>శాశ్వత దారిమార్పు; దారిమార్చే గ్లోబల్ URL మారుపేరు.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>తాత్కాలిక దారిమార్పు: శోధన యంత్రాలు పాత చిరునామాను ఉంచుకుంటాయి.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>పాత చిరునామాలో కొత్త పేజీ, దారిమార్పు లేకుండా; గ్లోబల్ URL మారుపేరు.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>సరిపోలే ప్రతి చిరునామాకు శాశ్వత దారిమార్పు; URL వైల్డ్‌కార్డ్.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>సరిపోలే ప్రతి చిరునామాకు తాత్కాలిక దారిమార్పు.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>సరిపోలే ప్రతి చిరునామాలో కొత్త పేజీ, దారిమార్పు లేకుండా.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>%size వరకు ఫైల్‌లు. ఫార్మాట్‌ల ప్రతి వివరాలు సహాయ కేంద్రంలో ఉన్నాయి: URL లను మార్చడం, మరియు URL మ్యాప్ ఉదాహరణలు.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>ప్రతి ఫార్మాట్ ఉదాహరణను చూడండి</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>ఫార్మాట్‌లు మరియు ఉదాహరణలు</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>ఒక్కొక్క పేజీలు</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>ఒక్కొక్క పేజీల శాశ్వత దారిమార్పులు, పేజీ తరలించబడినప్పుడు దానిని అనుసరించే నోడ్ ID (node:163) ద్వారా గమ్యం, మరియు పాత చిరునామాలో పేజీని చూపించే మారుపేరు. మొదటి పంక్తి నిలువు వరుసలకు పేర్లు పెడుతుంది; old_url మరియు new_url మాత్రమే అవసరం. .tsv ఫైల్ కూడా అదే విధంగా, ట్యాబ్‌లతో చదవబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>ఒక * చిరునామాలోని ఏ భాగానికైనా సరిపోలుతుంది మరియు {1} దానిని కొత్త దానిలో ఉంచుతుంది: తరలించబడిన విభాగం, చిరునామా మధ్యలో ఒక *, తాత్కాలిక వైల్డ్‌కార్డ్ మరియు నేరుగా ఉండేది (దారిమార్పు లేకుండా).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>క్వెరీలు మరియు తాత్కాలిక దారిమార్పులు</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>క్వెరీతో కూడిన పాత చిరునామాలు (/index.php?id=12), ఒక 308, మరియు రకం (redirect-temporary) మరియు స్థితి (307) ద్వారా తాత్కాలిక దారిమార్పులు.</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>CSV నిలువు వరుసల వంటి కీలు ఉన్న ఆబ్జెక్ట్‌ల జాబితా; మొదటి ఆబ్జెక్ట్ exp-url-map/1 స్కీమాను పేర్కొనవచ్చు. ఎగుమతి వ్రాసేది మరియు ఇతర ప్రోగ్రామ్‌లు అత్యంత సులభంగా తయారుచేసేది.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>ఒక్కొక్క పేజీలు Excel వర్క్‌బుక్‌గా: మొదటి షీట్, మొదటి వరుసలో నిలువు వరుసల పేర్లు. దాన్ని తెరిచి, చిరునామాలను మార్చి .xlsx గా సేవ్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>LibreOffice మరియు OpenOffice కోసం, OpenDocument స్ప్రెడ్‌షీట్‌గా అదే.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache రీరైట్ నియమాలు</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>పాత సైట్ యొక్క .htaccess ఉన్నది ఉన్నట్లుగా: RewriteRule, క్వెరీ కోసం RewriteCond, మొత్తం విభాగం యొక్క Redirect (పేజీ మరియు దాని కింద ఉన్న ప్రతిదీ) మరియు వైల్డ్‌కార్డ్‌గా RedirectMatch.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx రీరైట్ నియమాలు</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>పాత సైట్ యొక్క server బ్లాక్: return తో location =, క్వెరీ కోసం if ($args), వైల్డ్‌కార్డ్‌గా rewrite మరియు ఒక్కొక్క పేజీల map.</translation>
+    </message>
 </context>
 </TS>

@@ -86245,5 +86245,181 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>The old addresses could not be tested.</source>
         <translation>Navnîşanên kevn nehatin testkirin.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Nexşeyeke URL her navnîşana kevn û rûpela vê malperê ya ku niha girêdayî wê ye rêz dike. Ev formatên ku hawirdekirin dixwîne ne, her yek bi mînakeke ji bo kopîkirinê: navnîşanan bi yên xwe biguherîne, paşê pelê bar bike an pêve bike. Her mînak wekî xwe di malpera demoyê de tê hawirdekirin.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Pel %file, %size · ji %extensions hat xwendin · %rows rêz di hawirdekirinê de</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Daxe</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Li panoyê hat kopîkirin</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Nehat kopîkirin</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopî bike</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Di hawirdekirinê de veke</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Stûn</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Rêza yekem a pelê CSV an tabloyekê navê stûnan dide, bi her rêzê; JSON heman navan wekî mifteyan bi kar tîne. Tenê old_url û new_url pêwîst in. Bêyî rêza yekem a navan, stûn bi vê rêzê têne girtin.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Stûn</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Çi tê de ye</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Navnîşana kevn: rêyek (/about-us.html), rêyek bi pirsê (/index.php?id=12) an navnîşaneke tevahî ya mêvandarê kevn. * li her beşekê tê.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Rûpela vê malperê: rêya wê (/recipes), ID ya girêka wê (node:163, ku dema rûpel tê guhastin li pey wê diçe) an navnîşaneke tevahî li cihekî din. %first, %second tiştê ku * lê hat digirin.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Rêz dibe çi, li cureyan binêre. Vala: beralîkirineke daîmî, an jokereke ku beralî dike dema old_url * hebe.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Gihîştina malperê ya rêyeke tazî; vala: ya ku li rûpela hawirdekirinê hat hilbijartin.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Zimanê nasnavê URL, bo nimûne eng-GB; vala: zimanê gihîştina malperê.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Nota te ya xwe; ew bi hawirdekirinê re tê parastin.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Rewşa beralîkirinê: 301 an 308 (daîmî), 302, 303 an 307 (demkî); vala: cure biryar dide.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Cure</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Mêvan çi distînin</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Beralîkirineke daîmî; nasnaveke URL ya giştî ku beralî dike.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Beralîkirineke demkî: motorên lêgerînê navnîşana kevn diparêzin.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Rûpela nû li navnîşana kevn, bêyî beralîkirinê; nasnaveke URL ya giştî.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Beralîkirineke daîmî ji bo her navnîşana lihevhatî; jokereke URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Beralîkirineke demkî ji bo her navnîşana lihevhatî.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Rûpela nû li her navnîşana lihevhatî, bêyî beralîkirinê.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Pel heta %size. Hemû hûrguliyên formatan di navenda alîkariyê de ne: Koçkirina URLyan, û mînakên nexşeya URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Mînakeke her formatê bibîne</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Format û mînak</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Rûpelên yekane</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Beralîkirinên daîmî yên rûpelên yekane, armancek bi ID ya girêkê (node:163) ku dema rûpel tê guhastin li pey wê diçe, û nasnavek ku rûpelê li navnîşana kevn nîşan dide. Rêza yekem navê stûnan dide; tenê old_url û new_url pêwîst in. Pelek .tsv bi heman awayî, bi taban, tê xwendin.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* li her beşeke navnîşanê tê û {1} wê dixe nav ya nû: beşek ku hatiye guhastin, * di nava navnîşanê de, jokereke demkî û yeke rasterast (bêyî beralîkirinê).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Pirs û beralîkirinên demkî</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Navnîşanên kevn bi pirsê (/index.php?id=12), 308, û beralîkirinên demkî bi cureyê (redirect-temporary) û bi rewşê (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Lîsteyeke tiştan bi heman mifteyên stûnên CSV; tişta yekem dikare şemaya exp-url-map/1 binav bike. Ya ku derxistin dinivîse û bernameyên din herî hêsan çêdikin.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Rûpelên yekane wekî pirtûka xebatê ya Excel: pela yekem, navên stûnan di rêza yekem de. Veke, navnîşanan biguherîne û wekî .xlsx tomar bike.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Heman tişt wekî tabloyeke OpenDocument, ji bo LibreOffice û OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Qaîdeyên ji nû ve nivîsandinê yên Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>.htaccess a malpereke kevn wekî xwe: RewriteRule, RewriteCond ji bo pirsê, Redirect a beşeke tevahî (rûpel û her tiştê di binê wê de) û RedirectMatch wekî joker.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Qaîdeyên ji nû ve nivîsandinê yên nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Bloka server a malpereke kevn: location = bi return, if ($args) ji bo pirsê, rewrite wekî joker û map a rûpelên yekane.</translation>
+    </message>
 </context>
 </TS>

@@ -86245,5 +86245,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>ಹಳೆಯ ವಿಳಾಸಗಳನ್ನು ಪರೀಕ್ಷಿಸಲಾಗಲಿಲ್ಲ.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL ನಕ್ಷೆಯು ಪ್ರತಿಯೊಂದು ಹಳೆಯ ವಿಳಾಸವನ್ನು ಮತ್ತು ಅದು ಈಗ ಸೇರಿರುವ ಈ ಸೈಟ್‌ನ ಪುಟವನ್ನು ಪಟ್ಟಿ ಮಾಡುತ್ತದೆ. ಆಮದು ಓದುವ ಸ್ವರೂಪಗಳು ಇವು, ಪ್ರತಿಯೊಂದಕ್ಕೂ ನಕಲಿಸಲು ಒಂದು ಉದಾಹರಣೆ ಇದೆ: ವಿಳಾಸಗಳನ್ನು ನಿಮ್ಮದೇ ವಿಳಾಸಗಳಿಗೆ ಬದಲಾಯಿಸಿ, ನಂತರ ಫೈಲ್ ಅನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ ಅಥವಾ ಅಂಟಿಸಿ. ಪ್ರತಿಯೊಂದು ಉದಾಹರಣೆಯೂ ಇರುವಂತೆಯೇ ಡೆಮೊ ಸೈಟ್‌ಗೆ ಆಮದಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>ಫೈಲ್ %file, %size · %extensions ನಿಂದ ಓದಲಾಗುತ್ತದೆ · ಆಮದಿನಲ್ಲಿ %rows ಸಾಲುಗಳು</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ನಕಲಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>ನಕಲಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>ನಕಲಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>ಆಮದಿನಲ್ಲಿ ತೆರೆಯಿರಿ</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>ಕಾಲಮ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV ಫೈಲ್ ಅಥವಾ ಸ್ಪ್ರೆಡ್‌ಶೀಟ್‌ನ ಮೊದಲ ಸಾಲು ಕಾಲಮ್‌ಗಳಿಗೆ ಯಾವುದೇ ಕ್ರಮದಲ್ಲಿ ಹೆಸರು ನೀಡುತ್ತದೆ; JSON ಅದೇ ಹೆಸರುಗಳನ್ನು ಕೀಗಳಾಗಿ ಬಳಸುತ್ತದೆ. old_url ಮತ್ತು new_url ಮಾತ್ರ ಅಗತ್ಯ. ಹೆಸರುಗಳ ಮೊದಲ ಸಾಲು ಇಲ್ಲದಿದ್ದರೆ, ಕಾಲಮ್‌ಗಳನ್ನು ಈ ಕ್ರಮದಲ್ಲಿ ತೆಗೆದುಕೊಳ್ಳಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>ಕಾಲಮ್</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>ಇದರಲ್ಲಿ ಏನಿದೆ</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>ಹಳೆಯ ವಿಳಾಸ: ಒಂದು ಪಥ (/about-us.html), ಕ್ವೆರಿ ಇರುವ ಪಥ (/index.php?id=12) ಅಥವಾ ಹಳೆಯ ಹೋಸ್ಟ್‌ನ ಪೂರ್ಣ ವಿಳಾಸ. * ಯಾವುದೇ ಭಾಗಕ್ಕೆ ಹೊಂದುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>ಈ ಸೈಟ್‌ನ ಪುಟ: ಅದರ ಪಥ (/recipes), ಅದರ ನೋಡ್ ID (node:163, ಪುಟ ಸ್ಥಳಾಂತರಗೊಂಡಾಗ ಅದನ್ನು ಅನುಸರಿಸುತ್ತದೆ) ಅಥವಾ ಬೇರೆಡೆಯ ಪೂರ್ಣ ವಿಳಾಸ. %first, %second * ಹೊಂದಿದ ಭಾಗವನ್ನು ತೆಗೆದುಕೊಳ್ಳುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>ಸಾಲು ಏನಾಗುತ್ತದೆ, ಪ್ರಕಾರಗಳನ್ನು ನೋಡಿ. ಖಾಲಿ: ಶಾಶ್ವತ ಮರುನಿರ್ದೇಶನ, old_url ನಲ್ಲಿ * ಇದ್ದರೆ ಮರುನಿರ್ದೇಶಿಸುವ ವೈಲ್ಡ್‌ಕಾರ್ಡ್.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>ಕೇವಲ ಪಥದ ಸೈಟ್‌ಆಕ್ಸೆಸ್; ಖಾಲಿ: ಆಮದು ಪುಟದಲ್ಲಿ ಆಯ್ಕೆ ಮಾಡಿದ್ದು.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL ಅಲಿಯಾಸ್‌ನ ಭಾಷೆ, ಉದಾಹರಣೆಗೆ eng-GB; ಖಾಲಿ: ಸೈಟ್‌ಆಕ್ಸೆಸ್‌ನ ಭಾಷೆ.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>ನಿಮ್ಮದೇ ಟಿಪ್ಪಣಿ; ಇದನ್ನು ಆಮದಿನೊಂದಿಗೆ ಇರಿಸಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>ಮರುನಿರ್ದೇಶನದ ಸ್ಥಿತಿ: 301 ಅಥವಾ 308 (ಶಾಶ್ವತ), 302, 303 ಅಥವಾ 307 (ತಾತ್ಕಾಲಿಕ); ಖಾಲಿ: ಪ್ರಕಾರವೇ ನಿರ್ಧರಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>ಪ್ರಕಾರಗಳು</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>ಸಂದರ್ಶಕರಿಗೆ ಏನು ಸಿಗುತ್ತದೆ</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>ಶಾಶ್ವತ ಮರುನಿರ್ದೇಶನ; ಮರುನಿರ್ದೇಶಿಸುವ ಜಾಗತಿಕ URL ಅಲಿಯಾಸ್.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>ತಾತ್ಕಾಲಿಕ ಮರುನಿರ್ದೇಶನ: ಸರ್ಚ್ ಎಂಜಿನ್‌ಗಳು ಹಳೆಯ ವಿಳಾಸವನ್ನು ಉಳಿಸಿಕೊಳ್ಳುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>ಹಳೆಯ ವಿಳಾಸದಲ್ಲಿ ಹೊಸ ಪುಟ, ಮರುನಿರ್ದೇಶನವಿಲ್ಲದೆ; ಜಾಗತಿಕ URL ಅಲಿಯಾಸ್.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>ಹೊಂದುವ ಪ್ರತಿಯೊಂದು ವಿಳಾಸಕ್ಕೂ ಶಾಶ್ವತ ಮರುನಿರ್ದೇಶನ; URL ವೈಲ್ಡ್‌ಕಾರ್ಡ್.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>ಹೊಂದುವ ಪ್ರತಿಯೊಂದು ವಿಳಾಸಕ್ಕೂ ತಾತ್ಕಾಲಿಕ ಮರುನಿರ್ದೇಶನ.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>ಹೊಂದುವ ಪ್ರತಿಯೊಂದು ವಿಳಾಸದಲ್ಲೂ ಹೊಸ ಪುಟ, ಮರುನಿರ್ದೇಶನವಿಲ್ಲದೆ.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>%size ವರೆಗಿನ ಫೈಲ್‌ಗಳು. ಸ್ವರೂಪಗಳ ಪ್ರತಿಯೊಂದು ವಿವರವೂ ಸಹಾಯ ಕೇಂದ್ರದಲ್ಲಿದೆ: URL ಗಳ ಸ್ಥಳಾಂತರ, ಮತ್ತು URL ನಕ್ಷೆಯ ಉದಾಹರಣೆಗಳು.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>ಪ್ರತಿ ಸ್ವರೂಪದ ಉದಾಹರಣೆಯನ್ನು ನೋಡಿ</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>ಸ್ವರೂಪಗಳು ಮತ್ತು ಉದಾಹರಣೆಗಳು</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>ಏಕ ಪುಟಗಳು</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>ಏಕ ಪುಟಗಳ ಶಾಶ್ವತ ಮರುನಿರ್ದೇಶನಗಳು, ಪುಟ ಸ್ಥಳಾಂತರಗೊಂಡಾಗ ಅದನ್ನು ಅನುಸರಿಸುವ ನೋಡ್ ID (node:163) ಮೂಲಕ ಗುರಿ, ಮತ್ತು ಹಳೆಯ ವಿಳಾಸದಲ್ಲಿ ಪುಟವನ್ನು ತೋರಿಸುವ ಅಲಿಯಾಸ್. ಮೊದಲ ಸಾಲು ಕಾಲಮ್‌ಗಳಿಗೆ ಹೆಸರು ನೀಡುತ್ತದೆ; old_url ಮತ್ತು new_url ಮಾತ್ರ ಅಗತ್ಯ. .tsv ಫೈಲ್ ಅನ್ನು ಟ್ಯಾಬ್‌ಗಳೊಂದಿಗೆ ಇದೇ ರೀತಿ ಓದಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* ವಿಳಾಸದ ಯಾವುದೇ ಭಾಗಕ್ಕೆ ಹೊಂದುತ್ತದೆ ಮತ್ತು {1} ಅದನ್ನು ಹೊಸ ವಿಳಾಸಕ್ಕೆ ಸೇರಿಸುತ್ತದೆ: ಸ್ಥಳಾಂತರಗೊಂಡ ವಿಭಾಗ, ವಿಳಾಸದ ಮಧ್ಯದಲ್ಲಿ *, ತಾತ್ಕಾಲಿಕ ವೈಲ್ಡ್‌ಕಾರ್ಡ್ ಮತ್ತು ನೇರ ವೈಲ್ಡ್‌ಕಾರ್ಡ್ (ಮರುನಿರ್ದೇಶನವಿಲ್ಲದೆ).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>ಕ್ವೆರಿಗಳು ಮತ್ತು ತಾತ್ಕಾಲಿಕ ಮರುನಿರ್ದೇಶನಗಳು</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>ಕ್ವೆರಿ ಇರುವ ಹಳೆಯ ವಿಳಾಸಗಳು (/index.php?id=12), ಒಂದು 308, ಮತ್ತು ಪ್ರಕಾರದ ಮೂಲಕ (redirect-temporary) ಹಾಗೂ ಸ್ಥಿತಿಯ ಮೂಲಕ (307) ತಾತ್ಕಾಲಿಕ ಮರುನಿರ್ದೇಶನಗಳು.</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>CSV ಕಾಲಮ್‌ಗಳಂತೆಯೇ ಕೀಗಳಿರುವ ಆಬ್ಜೆಕ್ಟ್‌ಗಳ ಪಟ್ಟಿ; ಮೊದಲ ಆಬ್ಜೆಕ್ಟ್ exp-url-map/1 ಸ್ಕೀಮಾವನ್ನು ಹೆಸರಿಸಬಹುದು. ರಫ್ತು ಬರೆಯುವುದು ಇದನ್ನೇ, ಮತ್ತು ಇತರ ಪ್ರೋಗ್ರಾಂಗಳು ಅತ್ಯಂತ ಸುಲಭವಾಗಿ ರಚಿಸುವುದೂ ಇದನ್ನೇ.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>ಏಕ ಪುಟಗಳು Excel ವರ್ಕ್‌ಬುಕ್ ಆಗಿ: ಮೊದಲ ಶೀಟ್, ಮೊದಲ ಸಾಲಿನಲ್ಲಿ ಕಾಲಮ್ ಹೆಸರುಗಳು. ಅದನ್ನು ತೆರೆಯಿರಿ, ವಿಳಾಸಗಳನ್ನು ಬದಲಾಯಿಸಿ ಮತ್ತು .xlsx ಆಗಿ ಉಳಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>ಅದೇ, OpenDocument ಸ್ಪ್ರೆಡ್‌ಶೀಟ್ ಆಗಿ, LibreOffice ಮತ್ತು OpenOffice ಗಾಗಿ.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache ಮರುಬರಹ ನಿಯಮಗಳು</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>ಹಳೆಯ ಸೈಟ್‌ನ .htaccess ಇರುವಂತೆಯೇ: RewriteRule, ಕ್ವೆರಿಗಾಗಿ RewriteCond, ಸಂಪೂರ್ಣ ವಿಭಾಗದ Redirect (ಪುಟ ಮತ್ತು ಅದರ ಕೆಳಗಿನ ಎಲ್ಲವೂ) ಮತ್ತು ವೈಲ್ಡ್‌ಕಾರ್ಡ್ ಆಗಿ RedirectMatch.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx ಮರುಬರಹ ನಿಯಮಗಳು</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>ಹಳೆಯ ಸೈಟ್‌ನ server ಬ್ಲಾಕ್: return ಜೊತೆಗೆ location =, ಕ್ವೆರಿಗಾಗಿ if ($args), ವೈಲ್ಡ್‌ಕಾರ್ಡ್ ಆಗಿ rewrite ಮತ್ತು ಏಕ ಪುಟಗಳ map.</translation>
+    </message>
 </context>
 </TS>

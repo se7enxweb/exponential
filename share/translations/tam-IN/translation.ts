@@ -86245,5 +86245,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>பழைய முகவரிகளைச் சோதிக்க முடியவில்லை.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>ஒரு URL வரைபடம் ஒவ்வொரு பழைய முகவரியையும் அது இப்போது சேர்ந்திருக்கும் இந்தத் தளத்தின் பக்கத்தையும் பட்டியலிடுகிறது. இறக்குமதி படிக்கும் வடிவங்கள் இவை, ஒவ்வொன்றும் நகலெடுக்க ஒரு எடுத்துக்காட்டுடன்: முகவரிகளை உங்களுடையதாக மாற்றி, பின்னர் கோப்பைப் பதிவேற்றவும் அல்லது ஒட்டவும். ஒவ்வொரு எடுத்துக்காட்டும் அப்படியே டெமோ தளத்தில் இறக்குமதியாகும்.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>கோப்பு %file, %size · %extensions இலிருந்து படிக்கப்பட்டது · இறக்குமதியில் %rows வரிசைகள்</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>பதிவிறக்கு</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>நகலெடுக்க முடியவில்லை</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>நகலெடு</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>இறக்குமதியில் திற</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>நெடுவரிசைகள்</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>ஒரு CSV கோப்பு அல்லது விரிதாளின் முதல் வரி நெடுவரிசைகளுக்குப் பெயரிடுகிறது, எந்த வரிசையிலும்; JSON அதே பெயர்களை விசைகளாகப் பயன்படுத்துகிறது. old_url மற்றும் new_url மட்டுமே தேவை. பெயர்களின் முதல் வரி இல்லையெனில், நெடுவரிசைகள் இந்த வரிசையில் எடுக்கப்படும்.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>நெடுவரிசை</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>அதில் உள்ளது</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>பழைய முகவரி: ஒரு பாதை (/about-us.html), வினவலுடன் கூடிய பாதை (/index.php?id=12) அல்லது பழைய ஹோஸ்டின் முழு முகவரி. ஒரு * எந்தப் பகுதியுடனும் பொருந்தும்.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>இந்தத் தளத்தின் பக்கம்: அதன் பாதை (/recipes), அதன் கணு ID (node:163, பக்கம் நகர்த்தப்படும்போது அதைப் பின்தொடரும்) அல்லது வேறு இடத்தில் உள்ள முழு முகவரி. %first, %second ஆகியவை * பொருந்தியதை எடுக்கும்.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>வரிசை எதுவாக மாறும், வகைகளைப் பார்க்கவும். காலியாக இருந்தால்: நிரந்தர வழிமாற்று, old_url இல் * இருக்கும்போது வழிமாற்றும் வைல்டுகார்டு.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>வெறும் பாதையின் தள அணுகல்; காலியாக இருந்தால்: இறக்குமதிப் பக்கத்தில் தேர்ந்தெடுக்கப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL மாற்றுப்பெயரின் மொழி, எடுத்துக்காட்டாக eng-GB; காலியாக இருந்தால்: தள அணுகலின் மொழி.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>உங்கள் சொந்தக் குறிப்பு; இது இறக்குமதியுடன் வைக்கப்படும்.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>வழிமாற்று நிலை: 301 அல்லது 308 (நிரந்தரம்), 302, 303 அல்லது 307 (தற்காலிகம்); காலியாக இருந்தால்: வகை தீர்மானிக்கும்.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>வகைகள்</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>பார்வையாளர்கள் பெறுவது</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>நிரந்தர வழிமாற்று; வழிமாற்றும் பொது URL மாற்றுப்பெயர்.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>தற்காலிக வழிமாற்று: தேடுபொறிகள் பழைய முகவரியை வைத்திருக்கும்.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>பழைய முகவரியில் புதிய பக்கம், வழிமாற்று இல்லாமல்; பொது URL மாற்றுப்பெயர்.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>பொருந்தும் ஒவ்வொரு முகவரிக்கும் நிரந்தர வழிமாற்று; URL வைல்டுகார்டு.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>பொருந்தும் ஒவ்வொரு முகவரிக்கும் தற்காலிக வழிமாற்று.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>பொருந்தும் ஒவ்வொரு முகவரியிலும் புதிய பக்கம், வழிமாற்று இல்லாமல்.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>%size வரையிலான கோப்புகள். வடிவங்களின் ஒவ்வொரு விவரமும் உதவி மையத்தில் உள்ளது: URL களை இடம்பெயர்த்தல், மற்றும் URL வரைபட எடுத்துக்காட்டுகள்.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>ஒவ்வொரு வடிவத்தின் எடுத்துக்காட்டைப் பார்க்கவும்</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>வடிவங்களும் எடுத்துக்காட்டுகளும்</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>தனிப் பக்கங்கள்</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>தனிப் பக்கங்களின் நிரந்தர வழிமாற்றுகள், பக்கம் நகர்த்தப்படும்போது அதைப் பின்தொடரும் கணு ID (node:163) மூலமான இலக்கு, மற்றும் பழைய முகவரியில் பக்கத்தைக் காட்டும் மாற்றுப்பெயர். முதல் வரி நெடுவரிசைகளுக்குப் பெயரிடுகிறது; old_url மற்றும் new_url மட்டுமே தேவை. ஒரு .tsv கோப்பு தத்தல்களுடன் அதே முறையில் படிக்கப்படும்.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>ஒரு * முகவரியின் எந்தப் பகுதியுடனும் பொருந்தும், {1} அதைப் புதியதில் வைக்கும்: நகர்ந்த ஒரு பிரிவு, முகவரியின் நடுவில் ஒரு *, ஒரு தற்காலிக வைல்டுகார்டு மற்றும் ஒரு நேரடி வைல்டுகார்டு (வழிமாற்று இல்லை).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>வினவல்களும் தற்காலிக வழிமாற்றுகளும்</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>வினவலுடன் கூடிய பழைய முகவரிகள் (/index.php?id=12), ஒரு 308, மற்றும் வகை (redirect-temporary) மற்றும் நிலை (307) மூலமான தற்காலிக வழிமாற்றுகள்.</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>CSV நெடுவரிசைகளின் அதே விசைகளைக் கொண்ட பொருள்களின் பட்டியல்; முதல் பொருள் exp-url-map/1 என்ற திட்டத்தைக் குறிப்பிடலாம். ஏற்றுமதி எழுதுவதும் பிற நிரல்கள் மிக எளிதாக உருவாக்குவதும் இதுவே.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>தனிப் பக்கங்கள் ஒரு Excel பணிப்புத்தகமாக: முதல் தாள், முதல் வரிசையில் நெடுவரிசைப் பெயர்கள். அதைத் திறந்து, முகவரிகளை மாற்றி, .xlsx ஆகச் சேமிக்கவும்.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>LibreOffice மற்றும் OpenOffice க்கான OpenDocument விரிதாளாக அதே உள்ளடக்கம்.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache மறுஎழுதல் விதிகள்</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>ஒரு பழைய தளத்தின் .htaccess அப்படியே: RewriteRule, வினவலுக்கான RewriteCond, ஒரு முழுப் பிரிவின் Redirect (பக்கமும் அதன் கீழுள்ள அனைத்தும்) மற்றும் வைல்டுகார்டாக RedirectMatch.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx மறுஎழுதல் விதிகள்</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>ஒரு பழைய தளத்தின் server தொகுதி: return உடன் location =, வினவலுக்கான if ($args), வைல்டுகார்டாக rewrite மற்றும் தனிப் பக்கங்களின் ஒரு map.</translation>
+    </message>
 </context>
 </TS>

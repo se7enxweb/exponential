@@ -1979,6 +1979,7 @@ return array(
       'expUrlMapCsvReader'                                           => 'kernel/classes/urlmap/expurlmapcsvreader.php',
       'expUrlMapCsvWriter'                                           => 'kernel/classes/urlmap/expurlmapcsvwriter.php',
       'expUrlMapEnvironment'                                         => 'kernel/classes/urlmap/expurlmapenvironment.php',
+      'expUrlMapExamples'                                            => 'kernel/classes/urlmap/expurlmapexamples.php',
       'expUrlMapExporter'                                            => 'kernel/classes/urlmap/expurlmapexporter.php',
       'expUrlMapFormatException'                                     => 'kernel/classes/urlmap/expurlmapformatexception.php',
       'expUrlMapFormats'                                             => 'kernel/classes/urlmap/expurlmapformats.php',

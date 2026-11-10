@@ -86247,5 +86247,181 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>De âlde adressen koene net test wurde.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>In URL-kaart neamt elk âld adres en de side fan dizze webside dêr't it no by heart. Dit binne de opmaken dy't de ymport lêst, elk mei in foarbyld om te kopiearjen: feroarje de adressen yn jo eigen adressen, laad dan it bestân op of plak it. Elk foarbyld wurdt sa't it is yn de demowebside ymportearre.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Bestân %file, %size · lêzen út %extensions · %rows rigels yn de ymport</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Downloade</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Nei it klamboerd kopiearre</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Kopiearjen slagge net</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopiearje</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Iepenje yn de ymport</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>De kolommen</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>De earste rigel fan in CSV-bestân of in rekkenblêd neamt de kolommen, yn elke folchoarder; JSON brûkt deselde nammen as kaaien. Allinnich old_url en new_url binne nedich. Sûnder in earste rigel mei nammen wurde de kolommen yn dizze folchoarder nommen.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Kolom</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Wat er yn stiet</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>It âlde adres: in paad (/about-us.html), in paad mei in query (/index.php?id=12) of in folslein adres fan de âlde host. In * komt oerien mei elk diel.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>De side fan dizze webside: it paad (/recipes), de node-ID (node:163, dy't de side folget as dy ferpleatst wurdt) of in folslein adres earne oars. %first, %second nimme oer wat de * fûn.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Wat de rigel wurdt, sjoch de soarten. Leech: in permaninte trochstjoering, in trochstjoerend jokerteken as old_url in * hat.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>De websidetagong fan in keal paad; leech: dy't op de ymportside keazen is.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>De taal fan de URL-alias, bygelyks eng-GB; leech: de taal fan de websidetagong.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Jo eigen notysje; dy wurdt by de ymport bewarre.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>De trochstjoerstatus: 301 of 308 (permanint), 302, 303 of 307 (tydlik); leech: de soarte beslist.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>De soarten</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Wat besikers krije</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>In permaninte trochstjoering; in globale URL-alias dy't trochstjoert.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>In tydlike trochstjoering: sykmasines hâlde it âlde adres.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>De nije side op it âlde adres, sûnder trochstjoering; in globale URL-alias.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>In permaninte trochstjoering foar elk oerienkommend adres; in URL-jokerteken.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>In tydlike trochstjoering foar elk oerienkommend adres.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>De nije side op elk oerienkommend adres, sûnder trochstjoering.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Bestannen oant %size. Alle details fan de opmaken steane yn it helpsintrum: URL's migrearje, en de foarbylden fan URL-kaarten.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Besjoch in foarbyld fan elke opmaak</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Opmaken en foarbylden</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Losse siden</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Permaninte trochstjoeringen fan losse siden, in doel fia node-ID (node:163) dat de side folget as dy ferpleatst wurdt, en in alias dy't de side op it âlde adres toant. De earste rigel neamt de kolommen; allinnich old_url en new_url binne nedich. In .tsv-bestân wurdt op deselde wize lêzen, mei tabs.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>In * komt oerien mei elk diel fan in adres en {1} set it yn it nije: in seksje dy't ferpleatst is, in * midden yn in adres, in tydlik jokerteken en in direkt jokerteken (gjin trochstjoering).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Queries en tydlike trochstjoeringen</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Âlde adressen mei in query (/index.php?id=12), in 308, en tydlike trochstjoeringen neffens soarte (redirect-temporary) en neffens status (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>In list fan objekten mei deselde kaaien as de CSV-kolommen; it earste objekt kin it skema exp-url-map/1 neame. Dit skriuwt de eksport, en oare programma's meitsje it it maklikst.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>De losse siden as Excel-wurkmap: it earste blêd, de kolomnammen yn de earste rige. Iepenje it, feroarje de adressen en bewarje it as .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Itselde as OpenDocument-rekkenblêd, foar LibreOffice en OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache-rewrite-regels</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>De .htaccess fan in âlde webside sa't er is: RewriteRule, RewriteCond foar in query, Redirect fan in hiele seksje (de side en alles dêrûnder) en RedirectMatch as jokerteken.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx-rewrite-regels</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>It server-blok fan in âlde webside: location = mei return, if ($args) foar in query, rewrite as jokerteken en in map fan losse siden.</translation>
+    </message>
 </context>
 </TS>

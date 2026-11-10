@@ -86247,5 +86247,181 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>The old addresses could not be tested.</source>
         <translation>Nid oedd modd profi'r hen gyfeiriadau.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Mae map URL yn rhestru pob hen gyfeiriad a'r dudalen ar y wefan hon y mae'n perthyn iddi bellach. Dyma'r fformatau y mae'r mewnforio yn eu darllen, pob un ag enghraifft i'w chopïo: newidiwch y cyfeiriadau i'ch rhai chi, yna llwythwch y ffeil i fyny neu ei gludo. Mae pob enghraifft yn mewnforio i'r wefan demo fel y mae.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Ffeil %file, %size · wedi'i darllen o %extensions · %rows rhes yn y mewnforio</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Llwytho i lawr</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Wedi'i gopïo i'r clipfwrdd</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Methu copïo</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Copïo</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Agor yn y mewnforio</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Y colofnau</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Mae llinell gyntaf ffeil CSV neu daenlen yn enwi'r colofnau, mewn unrhyw drefn; mae JSON yn defnyddio'r un enwau fel allweddi. Dim ond old_url a new_url sydd eu hangen. Heb linell gyntaf o enwau, cymerir y colofnau yn y drefn hon.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Colofn</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Beth sydd ynddi</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Yr hen gyfeiriad: llwybr (/about-us.html), llwybr gydag ymholiad (/index.php?id=12) neu gyfeiriad llawn yr hen westeiwr. Mae * yn cyfateb i unrhyw ran.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Y dudalen ar y wefan hon: ei llwybr (/recipes), ID ei nod (node:163, sy'n dilyn y dudalen pan gaiff ei symud) neu gyfeiriad llawn mewn man arall. Mae %first, %second yn cymryd yr hyn y cyfatebodd y * iddo.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Beth fydd y rhes, gweler y mathau. Gwag: ailgyfeiriad parhaol, cerdyn gwyllt sy'n ailgyfeirio pan fo * yn old_url.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Mynediad i'r wefan ar gyfer llwybr moel; gwag: yr un a ddewiswyd ar y dudalen fewnforio.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Iaith yr arallenw URL, er enghraifft eng-GB; gwag: iaith y mynediad i'r wefan.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Eich nodyn eich hun; caiff ei gadw gyda'r mewnforio.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Statws yr ailgyfeiriad: 301 neu 308 (parhaol), 302, 303 neu 307 (dros dro); gwag: y math sy'n penderfynu.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Y mathau</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Beth mae ymwelwyr yn ei gael</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Ailgyfeiriad parhaol; arallenw URL cyffredinol sy'n ailgyfeirio.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Ailgyfeiriad dros dro: mae peiriannau chwilio'n cadw'r hen gyfeiriad.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Y dudalen newydd ar yr hen gyfeiriad, heb ailgyfeiriad; arallenw URL cyffredinol.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Ailgyfeiriad parhaol ar gyfer pob cyfeiriad sy'n cyfateb; cerdyn gwyllt URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Ailgyfeiriad dros dro ar gyfer pob cyfeiriad sy'n cyfateb.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Y dudalen newydd ar bob cyfeiriad sy'n cyfateb, heb ailgyfeiriad.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Ffeiliau hyd at %size. Mae pob manylyn am y fformatau yn y ganolfan gymorth: Mudo URLau, ac enghreifftiau'r map URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Gweld enghraifft o bob fformat</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Fformatau ac enghreifftiau</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Tudalennau unigol</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Ailgyfeiriadau parhaol o dudalennau unigol, targed yn ôl ID nod (node:163) sy'n dilyn y dudalen pan gaiff ei symud, ac arallenw sy'n dangos y dudalen ar yr hen gyfeiriad. Mae'r llinell gyntaf yn enwi'r colofnau; dim ond old_url a new_url sydd eu hangen. Darllenir ffeil .tsv yn yr un ffordd, gyda thabiau.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>Mae * yn cyfateb i unrhyw ran o gyfeiriad ac mae {1} yn ei roi yn yr un newydd: adran a symudwyd, * yng nghanol cyfeiriad, cerdyn gwyllt dros dro ac un uniongyrchol (heb ailgyfeiriad).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Ymholiadau ac ailgyfeiriadau dros dro</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Hen gyfeiriadau gydag ymholiad (/index.php?id=12), 308, ac ailgyfeiriadau dros dro yn ôl math (redirect-temporary) ac yn ôl statws (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Rhestr o wrthrychau gyda'r un allweddi â'r colofnau CSV; gall y gwrthrych cyntaf enwi'r sgema exp-url-map/1. Dyma'r hyn y mae'r allforio yn ei ysgrifennu a'r hyn y mae rhaglenni eraill yn ei greu hawsaf.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Y tudalennau unigol fel llyfr gwaith Excel: y ddalen gyntaf, enwau'r colofnau yn y rhes gyntaf. Agorwch ef, newidiwch y cyfeiriadau a'i gadw fel .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Yr un peth fel taenlen OpenDocument, ar gyfer LibreOffice ac OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Rheolau ailysgrifennu Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Ffeil .htaccess hen wefan fel y mae: RewriteRule, RewriteCond ar gyfer ymholiad, Redirect adran gyfan (y dudalen a phopeth oddi tani) a RedirectMatch fel cerdyn gwyllt.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Rheolau ailysgrifennu nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Bloc server hen wefan: location = gyda return, if ($args) ar gyfer ymholiad, rewrite fel cerdyn gwyllt a map o dudalennau unigol.</translation>
+    </message>
 </context>
 </TS>

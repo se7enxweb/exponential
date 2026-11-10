@@ -86245,5 +86245,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>نشانی‌های قدیمی را نمی‌شد آزمایش کرد.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>یک نقشهٔ URL هر نشانی قدیمی و صفحه‌ای از این سایت را که اکنون به آن تعلق دارد فهرست می‌کند. این‌ها قالب‌هایی هستند که درون‌ریزی می‌خواند، هر کدام با نمونه‌ای برای کپی: نشانی‌ها را به نشانی‌های خودتان تغییر دهید، سپس فایل را بارگذاری کنید یا آن را جای‌گذاری کنید. هر نمونه همان‌طور که هست در سایت نمایشی درون‌ریزی می‌شود.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>فایل %file، %size · خوانده‌شده از %extensions · %rows ردیف در درون‌ریزی</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>بارگیری</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>در کلیپ‌بورد کپی شد</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>کپی نشد</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>کپی</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>باز کردن در درون‌ریزی</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>ستون‌ها</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>سطر اول یک فایل CSV یا یک صفحه‌گسترده نام ستون‌ها را به هر ترتیبی می‌آورد؛ JSON همین نام‌ها را به‌عنوان کلید به کار می‌برد. فقط old_url و new_url لازم‌اند. بدون سطر اولِ نام‌ها، ستون‌ها به این ترتیب خوانده می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>ستون</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>چه چیزی در آن است</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>نشانی قدیمی: یک مسیر (/about-us.html)، یک مسیر با پرس‌وجو (/index.php?id=12) یا نشانی کامل میزبان قدیمی. یک * با هر بخشی جور می‌شود.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>صفحهٔ این سایت: مسیر آن (/recipes)، شناسهٔ گرهٔ آن (node:163، که هنگام جابه‌جایی صفحه آن را دنبال می‌کند) یا یک نشانی کامل در جای دیگر. %first، %second آنچه را که * با آن جور شد می‌گیرند.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>ردیف به چه تبدیل می‌شود، انواع را ببینید. خالی: یک تغییر مسیر دائمی، و اگر old_url یک * داشته باشد یک الگوی عام تغییر مسیر.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>دسترسی سایتِ یک مسیر ساده؛ خالی: همان که در صفحهٔ درون‌ریزی انتخاب شده است.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>زبان نام مستعار URL، برای نمونه eng-GB؛ خالی: زبان دسترسی سایت.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>یادداشت خودتان؛ همراه درون‌ریزی نگه داشته می‌شود.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>وضعیت تغییر مسیر: 301 یا 308 (دائمی)، 302، 303 یا 307 (موقت)؛ خالی: نوع تعیین می‌کند.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>انواع</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>آنچه بازدیدکنندگان دریافت می‌کنند</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>یک تغییر مسیر دائمی؛ یک نام مستعار سراسری URL که تغییر مسیر می‌دهد.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>یک تغییر مسیر موقت: موتورهای جست‌وجو نشانی قدیمی را نگه می‌دارند.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>صفحهٔ جدید در نشانی قدیمی، بدون تغییر مسیر؛ یک نام مستعار سراسری URL.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>یک تغییر مسیر دائمی برای هر نشانی منطبق؛ یک الگوی عام URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>یک تغییر مسیر موقت برای هر نشانی منطبق.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>صفحهٔ جدید در هر نشانی منطبق، بدون تغییر مسیر.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>فایل‌ها تا %size. همهٔ جزئیات قالب‌ها در مرکز راهنما آمده است: انتقال URLها، و نمونه‌های نقشهٔ URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>دیدن نمونه‌ای از هر قالب</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>قالب‌ها و نمونه‌ها</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>صفحه‌های تکی</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>تغییر مسیرهای دائمی صفحه‌های تکی، مقصدی با شناسهٔ گره (node:163) که هنگام جابه‌جایی صفحه آن را دنبال می‌کند، و یک نام مستعار که صفحه را در نشانی قدیمی نشان می‌دهد. سطر اول نام ستون‌ها را می‌آورد؛ فقط old_url و new_url لازم‌اند. فایل .tsv به همین شیوه، با تب، خوانده می‌شود.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>یک * با هر بخشی از نشانی جور می‌شود و {1} آن را در نشانی جدید می‌گذارد: بخشی که جابه‌جا شده، یک * در میانهٔ نشانی، یک الگوی عام موقت و یک الگوی مستقیم (بدون تغییر مسیر).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>پرس‌وجوها و تغییر مسیرهای موقت</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>نشانی‌های قدیمی با پرس‌وجو (/index.php?id=12)، یک 308، و تغییر مسیرهای موقت بر اساس نوع (redirect-temporary) و بر اساس وضعیت (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>فهرستی از اشیاء با همان کلیدهای ستون‌های CSV؛ شیء اول می‌تواند طرح‌واره exp-url-map/1 را نام ببرد. همان چیزی که برون‌بری می‌نویسد و برنامه‌های دیگر به آسانی می‌سازند.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>صفحه‌های تکی به‌صورت کارپوشهٔ Excel: برگهٔ اول، نام ستون‌ها در ردیف اول. آن را باز کنید، نشانی‌ها را تغییر دهید و به‌صورت .xlsx ذخیره کنید.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>همان، به‌صورت صفحه‌گستردهٔ OpenDocument، برای LibreOffice و OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>قواعد بازنویسی Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>فایل .htaccess یک سایت قدیمی همان‌طور که هست: RewriteRule، RewriteCond برای پرس‌وجو، Redirect یک بخش کامل (صفحه و هر چه زیر آن است) و RedirectMatch به‌عنوان الگوی عام.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>قواعد بازنویسی nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>بلوک server یک سایت قدیمی: location = همراه return، if ($args) برای پرس‌وجو، rewrite به‌عنوان الگوی عام و یک map از صفحه‌های تکی.</translation>
+    </message>
 </context>
 </TS>

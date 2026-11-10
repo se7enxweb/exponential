@@ -44,7 +44,7 @@
     <div class="a4-field">
         <label for="urlimport-file">{'File'|i18n( 'design/admin/content/urlimport' )}</label>
         <input type="file" id="urlimport-file" name="UrlMapFile" accept=".csv,.tsv,.txt,.json,.xlsx,.ods,.htaccess,.apache,.apacheconf,.conf,.nginx" aria-describedby="urlimport-file-help" />
-        <span class="a4-help" id="urlimport-file-help">{'CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.'|i18n( 'design/admin/content/urlimport',, hash( '%size', $import_max_size|si( byte ) ) )|wash}</span>
+        <span class="a4-help" id="urlimport-file-help">{'CSV, JSON, Excel (.xlsx), OpenDocument (.ods), Apache or nginx rewrite rules, at most %size.'|i18n( 'design/admin/content/urlimport',, hash( '%size', $import_max_size|si( byte ) ) )|wash} <a href={'content/urlimport/(source)/examples'|ezurl}>{'See an example of each format'|i18n( 'design/admin/content/urlimport' )}</a></span>
     </div>
     <div class="a4-field">
         <label for="urlimport-text">{'Or paste the rows'|i18n( 'design/admin/content/urlimport' )}</label>

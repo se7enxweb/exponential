@@ -86247,5 +86247,181 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>Ezin izan dira helbide zaharrak probatu.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL mapa batek helbide zahar bakoitza eta orain dagokion gune honetako orria zerrendatzen ditu. Hauek dira inportazioak irakurtzen dituen formatuak, bakoitza kopiatzeko adibide batekin: aldatu helbideak zureekin, eta gero igo fitxategia edo itsatsi. Adibide bakoitza dagoen bezala inportatzen da demo gunean.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>%file fitxategia, %size · %extensions fitxategietatik irakurria · %rows errenkada inportazioan</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Deskargatu</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Arbelean kopiatu da</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Ezin izan da kopiatu</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopiatu</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Ireki inportazioan</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Zutabeak</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV fitxategi baten edo kalkulu-orri baten lehen lerroak zutabeak izendatzen ditu, edozein ordenatan; JSONek izen berak erabiltzen ditu gako gisa. old_url eta new_url bakarrik behar dira. Izenen lehen lerrorik gabe, zutabeak ordena honetan hartzen dira.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Zutabea</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Zer daukan</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Helbide zaharra: bide bat (/about-us.html), kontsulta duen bide bat (/index.php?id=12) edo ostalari zaharraren helbide oso bat. * batek edozein zatirekin bat egiten du.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Gune honetako orria: bere bidea (/recipes), bere nodo IDa (node:163, orria lekuz aldatzean jarraitzen diona) edo beste nonbaiteko helbide oso bat. %first, %second aldagaiek * ikurrak bat egin duena hartzen dute.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Errenkada zer bihurtzen den, ikus motak. Hutsik: birbideratze iraunkor bat, birbideratzen duen komodin bat old_url-k * badu.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Bide soil baten gune-sarbidea; hutsik: inportazio-orrian aukeratutakoa.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL ezizenaren hizkuntza, adibidez eng-GB; hutsik: gune-sarbidearen hizkuntza.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Zure ohar propioa; inportazioarekin gordetzen da.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Birbideratzearen egoera: 301 edo 308 (iraunkorra), 302, 303 edo 307 (behin-behinekoa); hutsik: motak erabakitzen du.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Motak</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Bisitariek zer jasotzen duten</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Birbideratze iraunkor bat; birbideratzen duen URL ezizen global bat.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Behin-behineko birbideratze bat: bilatzaileek helbide zaharra gordetzen dute.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Orri berria helbide zaharrean, birbideratzerik gabe; URL ezizen global bat.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Birbideratze iraunkor bat bat datorren helbide bakoitzerako; URL komodin bat.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Behin-behineko birbideratze bat bat datorren helbide bakoitzerako.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Orri berria bat datorren helbide bakoitzean, birbideratzerik gabe.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Gehienez %size-ko fitxategiak. Formatuen xehetasun guztiak laguntza-zentroan daude: URLak migratzea, eta URL mapen adibideak.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Ikusi formatu bakoitzaren adibide bat</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Formatuak eta adibideak</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Orri bakarrak</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Orri bakarren birbideratze iraunkorrak, nodo IDaren bidezko helburu bat (node:163) orria lekuz aldatzean jarraitzen diona, eta orria helbide zaharrean erakusten duen ezizen bat. Lehen lerroak zutabeak izendatzen ditu; old_url eta new_url bakarrik behar dira. .tsv fitxategi bat modu berean irakurtzen da, tabulazioekin.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* batek helbide baten edozein zatirekin bat egiten du eta {1} ikurrak berrian jartzen du: lekuz aldatutako atal bat, helbide baten erdian dagoen * bat, behin-behineko komodin bat eta zuzeneko bat (birbideratzerik gabe).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Kontsultak eta behin-behineko birbideratzeak</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Kontsulta duten helbide zaharrak (/index.php?id=12), 308 bat, eta behin-behineko birbideratzeak motaren arabera (redirect-temporary) eta egoeraren arabera (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>CSV zutabeen gako berak dituzten objektuen zerrenda bat; lehen objektuak exp-url-map/1 eskema izenda dezake. Esportazioak hori idazten du, eta beste programek errazen sortzen dutena da.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Orri bakarrak Excel liburu gisa: lehen orria, zutabeen izenak lehen errenkadan. Ireki, aldatu helbideak eta gorde .xlsx gisa.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Gauza bera OpenDocument kalkulu-orri gisa, LibreOffice eta OpenOfficerako.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache berridazte-arauak</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Gune zahar baten .htaccess dagoen bezala: RewriteRule, RewriteCond kontsulta baterako, atal oso baten Redirect (orria eta haren azpiko guztia) eta RedirectMatch komodin gisa.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx berridazte-arauak</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Gune zahar baten server blokea: location = return-ekin, if ($args) kontsulta baterako, rewrite komodin gisa eta orri bakarren map bat.</translation>
+    </message>
 </context>
 </TS>

@@ -86277,5 +86277,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>Οι παλιές διευθύνσεις δεν μπόρεσαν να δοκιμαστούν.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Ένας χάρτης URL απαριθμεί κάθε παλιά διεύθυνση και τη σελίδα αυτού του ιστότοπου στην οποία ανήκει τώρα. Αυτές είναι οι μορφές που διαβάζει η εισαγωγή, η καθεμία με ένα παράδειγμα για αντιγραφή: αλλάξτε τις διευθύνσεις με τις δικές σας και, στη συνέχεια, ανεβάστε το αρχείο ή επικολλήστε το. Κάθε παράδειγμα εισάγεται στον ιστότοπο επίδειξης όπως είναι.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Αρχείο %file, %size · ανάγνωση από %extensions · %rows γραμμές στην εισαγωγή</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Λήψη</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Αντιγράφηκε στο πρόχειρο</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Η αντιγραφή απέτυχε</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Αντιγραφή</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Άνοιγμα στην εισαγωγή</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Οι στήλες</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Η πρώτη γραμμή ενός αρχείου CSV ή ενός υπολογιστικού φύλλου ονομάζει τις στήλες, με οποιαδήποτε σειρά· το JSON χρησιμοποιεί τα ίδια ονόματα ως κλειδιά. Χρειάζονται μόνο τα old_url και new_url. Χωρίς πρώτη γραμμή με ονόματα, οι στήλες λαμβάνονται με αυτή τη σειρά.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Στήλη</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Τι περιέχει</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Η παλιά διεύθυνση: μια διαδρομή (/about-us.html), μια διαδρομή με ερώτημα (/index.php?id=12) ή μια πλήρης διεύθυνση του παλιού διακομιστή. Ένα * ταιριάζει με οποιοδήποτε τμήμα.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Η σελίδα αυτού του ιστότοπου: η διαδρομή της (/recipes), το ID κόμβου της (node:163, που ακολουθεί τη σελίδα όταν μετακινείται) ή μια πλήρης διεύθυνση αλλού. Τα %first, %second παίρνουν ό,τι ταίριαξε με το *.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Τι γίνεται η γραμμή, δείτε τα είδη. Κενό: μια μόνιμη ανακατεύθυνση, ένα μπαλαντέρ που ανακατευθύνει όταν το old_url έχει *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Η πρόσβαση ιστότοπου μιας σκέτης διαδρομής· κενό: αυτή που επιλέχθηκε στη σελίδα εισαγωγής.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Η γλώσσα του ψευδωνύμου URL, για παράδειγμα eng-GB· κενό: η γλώσσα της πρόσβασης ιστότοπου.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Η δική σας σημείωση· φυλάσσεται μαζί με την εισαγωγή.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Η κατάσταση ανακατεύθυνσης: 301 ή 308 (μόνιμη), 302, 303 ή 307 (προσωρινή)· κενό: αποφασίζει το είδος.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Τα είδη</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Τι παίρνουν οι επισκέπτες</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Μια μόνιμη ανακατεύθυνση· ένα καθολικό ψευδώνυμο URL που ανακατευθύνει.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Μια προσωρινή ανακατεύθυνση: οι μηχανές αναζήτησης κρατούν την παλιά διεύθυνση.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Η νέα σελίδα στην παλιά διεύθυνση, χωρίς ανακατεύθυνση· ένα καθολικό ψευδώνυμο URL.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Μια μόνιμη ανακατεύθυνση για κάθε διεύθυνση που ταιριάζει· ένα μπαλαντέρ URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Μια προσωρινή ανακατεύθυνση για κάθε διεύθυνση που ταιριάζει.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Η νέα σελίδα σε κάθε διεύθυνση που ταιριάζει, χωρίς ανακατεύθυνση.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Αρχεία έως %size. Κάθε λεπτομέρεια των μορφών βρίσκεται στο κέντρο βοήθειας: Μετάβαση URL και τα παραδείγματα χαρτών URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Δείτε ένα παράδειγμα κάθε μορφής</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Μορφές και παραδείγματα</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Μεμονωμένες σελίδες</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Μόνιμες ανακατευθύνσεις μεμονωμένων σελίδων, ένας προορισμός με ID κόμβου (node:163) που ακολουθεί τη σελίδα όταν μετακινείται, και ένα ψευδώνυμο που δείχνει τη σελίδα στην παλιά διεύθυνση. Η πρώτη γραμμή ονομάζει τις στήλες· χρειάζονται μόνο τα old_url και new_url. Ένα αρχείο .tsv διαβάζεται με τον ίδιο τρόπο, με στηλοθέτες.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>Ένα * ταιριάζει με οποιοδήποτε τμήμα μιας διεύθυνσης και το {1} το βάζει στη νέα: μια ενότητα που μετακινήθηκε, ένα * στη μέση μιας διεύθυνσης, ένα προσωρινό μπαλαντέρ και ένα άμεσο (χωρίς ανακατεύθυνση).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Ερωτήματα και προσωρινές ανακατευθύνσεις</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Παλιές διευθύνσεις με ερώτημα (/index.php?id=12), ένα 308 και προσωρινές ανακατευθύνσεις κατά είδος (redirect-temporary) και κατά κατάσταση (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Μια λίστα αντικειμένων με τα ίδια κλειδιά με τις στήλες του CSV· το πρώτο αντικείμενο μπορεί να ονομάζει το σχήμα exp-url-map/1. Αυτό γράφει η εξαγωγή και αυτό φτιάχνουν πιο εύκολα άλλα προγράμματα.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Οι μεμονωμένες σελίδες ως βιβλίο εργασίας Excel: το πρώτο φύλλο, τα ονόματα στηλών στην πρώτη γραμμή. Ανοίξτε το, αλλάξτε τις διευθύνσεις και αποθηκεύστε το ως .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Το ίδιο ως υπολογιστικό φύλλο OpenDocument, για LibreOffice και OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Κανόνες επανεγγραφής Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Το .htaccess ενός παλιού ιστότοπου όπως είναι: RewriteRule, RewriteCond για ερώτημα, Redirect μιας ολόκληρης ενότητας (η σελίδα και ό,τι βρίσκεται κάτω από αυτήν) και RedirectMatch ως μπαλαντέρ.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Κανόνες επανεγγραφής nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Το μπλοκ server ενός παλιού ιστότοπου: location = με return, if ($args) για ερώτημα, rewrite ως μπαλαντέρ και ένα map μεμονωμένων σελίδων.</translation>
+    </message>
 </context>
 </TS>

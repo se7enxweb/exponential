@@ -155,11 +155,12 @@ Administration prüft **Prüfen** die ersten 500 alten Adressen unter der Websit
 ## In der Administration
 
 Auf den Seiten **URL-Übersetzer** und **URL-Platzhalter** (Reiter **Setup**) führen die Schaltflächen
-**Importieren**, **Exportieren**, **Importhistorie** und **Weiterleitungen** zu den Seiten:
+**Importieren**, **Formate und Beispiele**, **Exportieren**, **Importhistorie** und **Weiterleitungen** zu den Seiten:
 
 | Seite | Adresse | Was sie tut |
 |---|---|---|
 | Importieren | `/content/urlimport` | Reiter **Eine Datei hochladen**, **Aus der alten Sitemap**, **Aus dem 404-Protokoll** und **Ziele vorschlagen**. Eine Datei hochladen oder Zeilen einfügen, Siteaccess und Sprache reiner Pfade wählen und was mit bestehenden Einträgen geschieht, alte Hosts zuordnen; dann die Vorschau mit einem Filter je Zustand, einem Haken je Zeile, **Probelauf**, dem Plan als CSV oder JSON, **Importieren** und nach dem Import **Die alten Adressen prüfen** |
+| Formate und Beispiele | `/content/urlimport/(source)/examples` | Eine Beispieldatei jedes Formats (CSV, JSON, Excel, LibreOffice, Apache, nginx) mit dem, was sie zeigt, und den Zeilen, die sie ergibt, zum Kopieren, **Herunterladen** oder **Im Import öffnen** (die Textformate); die Spalten und die Arten. Die Dateien sind die [URL-Zuordnungen als Beispiele](../../beispiele/url-zuordnungen/README.md), bei deutscher Oberfläche die deutschen |
 | Importhistorie | `/content/urlimporthistory` | Jeder Import mit wer, wann, Datei und Zahlen; die Einträge eines Imports; **Import rückgängig machen** |
 | Exportieren | `/content/urlexport` | Format, Umfang, Siteaccess und Sprache; lädt die Datei herunter |
 | Weiterleitungen | `/content/urlredirects` | Die Weiterleitungen mit Abfrage oder Status, mit dem Entfernen einer oder der angehakten |

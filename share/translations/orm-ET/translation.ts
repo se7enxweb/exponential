@@ -86247,5 +86247,181 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>Teessoowwan moofaa qoruun hin danda'amne.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Kaartaan URL teessoo moofaa hundaa fi fuula marsariitii kanaa amma itti dhimma qabu tarreessa. Bifoonni galchiin dubbisu kunniin, tokkoon tokkoon isaanii fakkeenya waraabamu qabu: teessoowwan kan keetiin jijjiiri, achiis faayilicha olkaa'i yookiin maxxansi. Fakkeenyi hundi akkuma jirutti marsariitii agarsiisaa keessatti galfama.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Faayilii %file, %size · %extensions irraa dubbifama · galchii keessatti tooraalee %rows</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Buusi</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Kilippiboordiitti waraabameera</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Waraabuu hin dandeenye</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Waraabi</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Galchii keessatti bani</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Utubaalee</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Sarari jalqabaa faayilii CSV yookiin gabatee herregaa utubaalee moggaasa, tartiiba kamiinuu; JSON maqaalee wal fakkaatan akka furtuutti fayyadama. old_url fi new_url qofatu barbaachisa. Sarara jalqabaa maqaalee malee, utubaaleen tartiiba kanaan fudhatamu.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Utubaa</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Maal qabata</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Teessoo moofaa: daandii (/about-us.html), daandii gaaffii qabu (/index.php?id=12) yookiin teessoo guutuu keessummeessaa moofaa. * kutaa kamiin iyyuu wal sima.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Fuula marsariitii kanaa: daandii isaa (/recipes), ID noodii isaa (node:163, kan fuulli yeroo socho'u isa hordofu) yookiin teessoo guutuu bakka biraa. %first, %second waan * wal sime fudhatu.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Toorri maal akka ta'u, gosoota ilaali. Duwwaa: qajeelchii dhaabbataa, yeroo old_url * qabu mallattoo bakka bu'aa qajeelchu.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Seensa marsariitii daandii qullaa; duwwaa: kan fuula galchii irratti filatame.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Afaan maqaa URL, fakkeenyaaf eng-GB; duwwaa: afaan seensa marsariitii.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Yaadannoo kee mataa keetii; galchii wajjin kuufama.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Haala qajeelchii: 301 yookiin 308 (dhaabbataa), 302, 303 yookiin 307 (yeroof); duwwaa: gosni murteessa.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Gosoota</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Daawwattoonni maal argatu</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Qajeelchii dhaabbataa; maqaa URL addunyaa kan qajeelchu.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Qajeelchii yeroof: meeshaaleen barbaachaa teessoo moofaa ni eegu.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Fuula haaraa teessoo moofaa irratti, qajeelchii malee; maqaa URL addunyaa.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Teessoo wal simu hundaaf qajeelchii dhaabbataa; mallattoo bakka bu'aa URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Teessoo wal simu hundaaf qajeelchii yeroof.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Teessoo wal simu hunda irratti fuula haaraa, qajeelchii malee.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Faayilota hanga %size. Bal'inni bifootaa hundi giddugala gargaarsaa keessa jira: URL dabarsuu, fi fakkeenyota kaartaa URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Fakkeenya bifa hundaa ilaali</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Bifoota fi fakkeenyota</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Fuulota tokkoon</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Qajeelchiiwwan dhaabbataa fuulota tokkoon, galma ID noodiin (node:163) kan fuulli yeroo socho'u isa hordofu, fi maqaa fuula teessoo moofaa irratti agarsiisu. Sarari jalqabaa utubaalee moggaasa; old_url fi new_url qofatu barbaachisa. Faayiliin .tsv akkasuma, taabiidhaan, dubbifama.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* kutaa teessoo kamiin iyyuu wal sima, {1} immoo isa teessoo haaraa keessa galcha: kutaa bakka jijjiirate, * gidduu teessoo, mallattoo bakka bu'aa yeroof fi kallattii (qajeelchii malee).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Gaaffilee fi qajeelchiiwwan yeroof</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Teessoowwan moofaa gaaffii qaban (/index.php?id=12), 308 tokko, fi qajeelchiiwwan yeroof gosaan (redirect-temporary) fi haalaan (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Tarree wantoota furtuu utubaalee CSV wal fakkaatu qaban; wanti jalqabaa saxaxa exp-url-map/1 moggaasuu danda'a. Waan baasiin barreessuu fi sagantaaleen biroo salphaatti hojjetan.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Fuulota tokkoon akka kitaaba hojii Excel: waraqaa jalqabaa, maqaalee utubaa toora jalqabaa keessatti. Bani, teessoowwan jijjiiri, akka .xlsx olkaa'i.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Wanuma kana akka gabatee herregaa OpenDocument, LibreOffice fi OpenOfficeef.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Seerota irra deebiin barreessuu Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>.htaccess marsariitii moofaa akkuma jirutti: RewriteRule, gaaffiif RewriteCond, Redirect kutaa guutuu (fuula fi waan isa jala jiru hunda) fi RedirectMatch akka mallattoo bakka bu'aa.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Seerota irra deebiin barreessuu nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Bulookii server marsariitii moofaa: location = return wajjin, gaaffiif if ($args), rewrite akka mallattoo bakka bu'aa fi map fuulota tokkoon.</translation>
+    </message>
 </context>
 </TS>

@@ -86247,5 +86247,181 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>Ne c'hell ket ar chomlec'hioù kozh bezañ amprouet.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Ur gartenn URL a ro roll pep chomlec'h kozh hag ar bajenn eus al lec'hienn-mañ a zere outañ bremañ. Setu ar mentrezhioù a vez lennet gant an enporzhiañ, pep hini gant ur skouer da eilañ: cheñchit ar chomlec'hioù evit ho re deoc'h, ha goude pellgasit ar restr pe pegit anezhi. Pep skouer a vez enporzhiet el lec'hienn demo evel m'emañ.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Restr %file, %size · lennet diwar %extensions · %rows renk en enporzhiadenn</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Pellgargañ</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Eilet er golver</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>N'eus ket bet gallet eilañ</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Eilañ</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Digeriñ en enporzhiañ</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Ar bannoù</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Linenn gentañ ur restr CSV pe ur follenn-jediñ a ro anv ar bannoù, en urzh ma karit; JSON a implij an hevelep anvioù evel alc'hwezioù. Ret eo kaout old_url ha new_url hepken. Hep linenn gentañ gant anvioù e vez kemeret ar bannoù en urzh-mañ.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Bann</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Petra a zo ennañ</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Ar chomlec'h kozh: un hent (/about-us.html), un hent gant ur reked (/index.php?id=12) pe ur chomlec'h klok eus an ostiz kozh. Ur * a glot gant forzh peseurt lodenn.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Pajenn al lec'hienn-mañ: he hent (/recipes), niverenn he skoulm (node:163, a heuilh ar bajenn pa vez dilec'hiet) pe ur chomlec'h klok e lec'h all. %first, %second a gemer ar pezh a zo bet klotet gant ar *.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Petra e teu ar renk da vezañ, gwelit ar seurtoù. Goullo: un adkas padus, ur joker a adkas pa vez ur * en old_url.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Haeziñ al lec'hienn evit un hent noazh; goullo: an hini dibabet war bajenn an enporzhiañ.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Yezh an alias URL, da skouer eng-GB; goullo: yezh an haeziñ al lec'hienn.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Hoc'h notenn deoc'h; miret e vez gant an enporzhiadenn.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Statud an adkas: 301 pe 308 (padus), 302, 303 pe 307 (berrbad); goullo: ar seurt a ziviz.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Ar seurtoù</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Petra a resev ar weladennerien</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Un adkas padus; un alias URL hollek a adkas.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Un adkas berrbad: al luskerioù klask a vir ar chomlec'h kozh.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Ar bajenn nevez war ar chomlec'h kozh, hep adkas; un alias URL hollek.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Un adkas padus evit pep chomlec'h a glot; ur joker URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Un adkas berrbad evit pep chomlec'h a glot.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Ar bajenn nevez war pep chomlec'h a glot, hep adkas.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Restroù betek %size. Pep munud eus ar mentrezhioù a zo er greizenn skoazell: Dilec'hiañ an URLoù, ha skouerioù ar c'hartennoù URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Gwelet ur skouer eus pep mentrezh</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Mentrezhioù ha skouerioù</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Pajennoù hiniennel</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Adkasoù padus evit pajennoù hiniennel, ur pal dre niverenn skoulm (node:163) a heuilh ar bajenn pa vez dilec'hiet, hag un alias a ziskouez ar bajenn war ar chomlec'h kozh. Al linenn gentañ a ro anv ar bannoù; ret eo kaout old_url ha new_url hepken. Ur restr .tsv a vez lennet en hevelep doare, gant taolennerezhioù.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>Ur * a glot gant forzh peseurt lodenn eus ur chomlec'h ha {1} a laka anezhi en hini nevez: ur rann a zo bet dilec'hiet, ur * e-kreiz ur chomlec'h, ur joker berrbad hag unan war-eeun (hep adkas).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Rekedoù hag adkasoù berrbad</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Chomlec'hioù kozh gant ur reked (/index.php?id=12), ur 308, hag adkasoù berrbad dre seurt (redirect-temporary) ha dre statud (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Ur roll traezoù gant an hevelep alc'hwezioù ha bannoù ar CSV; an traezenn gentañ a c'hall envel ar chema exp-url-map/1. Ar pezh a skriv an ezporzhiañ hag ar pezh a vez graet an aesañ gant programmoù all.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Ar pajennoù hiniennel evel ur c'harned labour Excel: ar follenn gentañ, anvioù ar bannoù er renk kentañ. Digorit anezhañ, cheñchit ar chomlec'hioù hag enrollit anezhañ evel .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>An hevelep tra evel ur follenn-jediñ OpenDocument, evit LibreOffice hag OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Reolennoù adskrivañ Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Ar restr .htaccess eus ul lec'hienn gozh evel m'emañ: RewriteRule, RewriteCond evit ur reked, Redirect eus ur rann a-bezh (ar bajenn ha kement tra a zo dindani) ha RedirectMatch evel joker.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Reolennoù adskrivañ nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Bloc'h server ul lec'hienn gozh: location = gant return, if ($args) evit ur reked, rewrite evel joker hag ur map eus ar pajennoù hiniennel.</translation>
+    </message>
 </context>
 </TS>

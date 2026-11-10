@@ -86247,5 +86247,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>অরিবা এদ্রেসশিং তেস্ত তৌবা ঙমখ্রে।</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL মেপ অমনা অরিবা এদ্রেস খুদিংমক অমসুং মদু হৌজিক থোকপা সাইট অসিগী লমায় অদু পাংথোকই. মসি ইম্পোর্টনা পারিবা ফোর্মেতশিংনি, মখোয় খুদিংমক কোপি তৌনবা উদাহরণ অমগা লোয়নবা: এদ্রেসশিং নখোয়গী মশাগী ওইনা হোংদোকউ, মতুংদা ফাইল অদু অপলোড তৌবিয়ু নত্তরগা পেস্ট তৌবিয়ু. উদাহরণ খুদিংমক লৈবা মওং অদুমক্তগী দেমো সাইটতা ইম্পোর্ট ওই.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>ফাইল %file, %size · %extensions দগী পারি · ইম্পোর্টতা লাইন %rows</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>দাউনলোড তৌবা</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>ক্লিপবোর্দতা কোপি তৌরে</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>কোপি তৌবা ঙমদে</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>কোপি তৌবা</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>ইম্পোর্টতা হাংদোকপা</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>কলমশিং</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV ফাইল নত্তরগা স্প্রেদশীত অমগী অহানবা লাইননা কলমশিংগী মমিং থোনই, কররম্বা মথং মনাওসু; JSON না মমিং অদুমক কী ওইনা শিজিন্নই. old_url অমসুং new_url খক্তমক মথৌ তাই. মমিংগী অহানবা লাইন অমা লৈতবদি, কলমশিং মথং মনাও অসিদা লৌই.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>কলম</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>মসিদা করি লৈবগে</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>অরিবা এদ্রেস: লম্বী অমা (/about-us.html), কোয়েরি লোয়নবা লম্বী (/index.php?id=12) নত্তরগা অরিবা হোস্টকী মপুং ফাবা এদ্রেস অমা. * না শরুক কররম্বা অমগা মান্নৈ.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>সাইট অসিগী লমায়: মসিগী লম্বী (/recipes), মসিগী নোদ ID (node:163, লমায় অদু তোংলবা মতমদা মতুং ইন্নবা) নত্তরগা অতোপ্পা মফম অমগী মপুং ফাবা এদ্রেস. * না মান্নখিবা অদু %first, %second না লৌই.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>লাইন অদু করি ওইগনি, মখলশিং য়েংউ. অহাংবা: অচুম্বা রিদাইরেক্ট অমা, old_url দা * লৈবদি রিদাইরেক্ট তৌবা ৱাইল্দকার্দ অমা.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>লম্বী খক্তগী সাইট একসেস; অহাংবা: ইম্পোর্ট লমায়দা খনখিবা অদু.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL এলিয়াসকী লোন্, খুদম ওইনা eng-GB; অহাংবা: সাইট একসেসকী লোন্.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>নহাক্কী মশাগী নোত; মসি ইম্পোর্টকা লোয়ননা থম্মি.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>রিদাইরেক্টকী স্তেতস: 301 নত্তরগা 308 (অচুম্বা), 302, 303 নত্তরগা 307 (মতম খরগী); অহাংবা: মখলনা ৱারেপ লৌই.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>মখলশিং</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>লাক্লিবশিংনা ফংলিবা</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>অচুম্বা রিদাইরেক্ট অমা; রিদাইরেক্ট তৌবা গ্লোবেল URL এলিয়াস অমা.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>মতম খরগী রিদাইরেক্ট অমা: থীবগী ইঞ্জিনশিংনা অরিবা এদ্রেস থম্মি.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>অরিবা এদ্রেসতা অনৌবা লমায়, রিদাইরেক্ট য়াওদনা; গ্লোবেল URL এলিয়াস অমা.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>মান্নবা এদ্রেস খুদিংমককী অচুম্বা রিদাইরেক্ট অমা; URL ৱাইল্দকার্দ অমা.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>মান্নবা এদ্রেস খুদিংমককী মতম খরগী রিদাইরেক্ট অমা.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>মান্নবা এদ্রেস খুদিংমকতা অনৌবা লমায়, রিদাইরেক্ট য়াওদনা.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>%size ফাওবগী ফাইলশিং. ফোর্মেতশিংগী অকুপ্পা পুম্নমক মতেং পাংবগী সেন্তরদা লৈ: URLশিং থোংনাংবা, অমসুং URL মেপকী উদাহরণশিং.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>ফোর্মেত খুদিংমককী উদাহরণ অমা য়েংউ</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>ফোর্মেতশিং অমসুং উদাহরণশিং</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>অমত্তা ওইবা লমায়শিং</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>অমত্তা ওইবা লমায়শিংগী অচুম্বা রিদাইরেক্টশিং, লমায় অদু তোংলবা মতমদা মতুং ইন্নবা নোদ ID (node:163) না পনবা পান্দম অমা, অমসুং অরিবা এদ্রেসতা লমায় অদু উৎপা এলিয়াস অমা. অহানবা লাইননা কলমশিংগী মমিং থোনই; old_url অমসুং new_url খক্তমক মথৌ তাই. .tsv ফাইল অমসু মওং অদুমক্তা, তেবশিংগা লোয়ননা পারি.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* না এদ্রেস অমগী শরুক কররম্বা অমগা মান্নৈ অমসুং {1} না মদু অনৌবা অদুদা থম্মি: তোংলকপা সেক্সন অমা, এদ্রেস অমগী মরক্তা * অমা, মতম খরগী ৱাইল্দকার্দ অমা অমসুং চুম্থোক্লবা অমা (রিদাইরেক্ট য়াওদনা).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>কোয়েরিশিং অমসুং মতম খরগী রিদাইরেক্টশিং</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>কোয়েরি লোয়নবা অরিবা এদ্রেসশিং (/index.php?id=12), 308 অমা, অমসুং মখল (redirect-temporary) অমসুং স্তেতস (307) না মতম খরগী রিদাইরেক্টশিং.</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>CSV কলমশিংগা চপ মান্নবা কীশিং লৈবা অবজেক্তশিংগী লিস্ত অমা; অহানবা অবজেক্তনা স্কীমা exp-url-map/1 গী মমিং থোনবা য়াই. এক্সপোর্টনা ইবা অমসুং অতোপ্পা প্রোগ্রামশিংনা খ্বাইদগী লায়না শেম্বা.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>অমত্তা ওইবা লমায়শিং Excel ৱার্কবুক অমা ওইনা: অহানবা শীত, অহানবা লাইনদা কলমগী মমিংশিং. মসি হাংদোকউ, এদ্রেসশিং হোংদোকউ অমসুং .xlsx ওইনা সেভ তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>মদুমক OpenDocument স্প্রেদশীত অমা ওইনা, LibreOffice অমসুং OpenOffice গীদমক.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache রিরাইত নিয়মশিং</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>অরিবা সাইট অমগী .htaccess লৈবা মওং অদুমক: RewriteRule, কোয়েরিগীদমক RewriteCond, সেক্সন পুম্নমককী Redirect (লমায় অদু অমসুং মখাদা লৈবা পুম্নমক) অমসুং ৱাইল্দকার্দ ওইনা RedirectMatch.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx রিরাইত নিয়মশিং</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>অরিবা সাইট অমগী server ব্লোক: return গা লোয়নবা location =, কোয়েরিগীদমক if ($args), ৱাইল্দকার্দ ওইনা rewrite অমসুং অমত্তা ওইবা লমায়শিংগী map অমা.</translation>
+    </message>
 </context>
 </TS>

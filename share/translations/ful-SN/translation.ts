@@ -86247,5 +86247,181 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>Ñiiɓirde ɓooyɗe ngaasaaka eprewu.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Kaartal URL ina limtoo ñiiɓirde kiiɗnde kala e hello lowre ndee nde ñiiɓirde ndee jeyaa jooni. Ɗee ko mbaydiiji ɗi naattingol ngol janngata, gooto kala e misal ngam natto: waylu ñiiɓirɗe ɗee e maa, refti yollu fichier oo walla ɗakku ɗum. Misal kala ina naattee e lowre holluɓre ndee no woorni nii.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Fichier %file, %size · janngaama e %extensions · diidi %rows e naattingol ngol</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Telchin</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Nattaama e clipboard</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Waawaa nattude</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Natto</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Uddit e naattingol ngol</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Kolonji ɗi</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Diidol arandeewol fichier CSV walla tabelo ina inna kolonji ɗi, e doggol kala; JSON ina huutoroo inɗe ɗe wootere ɗe no coktirɗe. Ko old_url e new_url tan ngoni haani. So diidol arandeewol inɗe alaa, kolonji ɗi ina ƴettee e ndee doggol.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Kolon</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Ko o waɗi</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Ñiiɓirde kiiɗnde: laawol (/about-us.html), laawol e naamnal (/index.php?id=12) walla ñiiɓirde timmunde jaatiiɗo kiiɗɗo. * ina fotondira e geɗal kala.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Hello lowre ndee: laawol mum (/recipes), ID nokkuure mum (node:163, nde jokkata hello ngoo so ndurniima) walla ñiiɓirde timmunde nokku goo. %first, %second ina ƴetta ko * fotondiri.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Ko diidol ngol wonata, ndaar sifaaji ɗi. Mehol: jahnde duumiinde, wildcard jahnoowo so old_url ina jogii *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Siteaccess laawol tan; mehol: ngo suɓaa e hello naattingol.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Ɗemngal URL alias, misal eng-GB; mehol: ɗemngal siteaccess.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Binndol maa; ina mooftee e naattingol ngol.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Ngonka jahnde: 301 walla 308 (duumiiɗo), 302, 303 walla 307 (ko wonaa duumiiɗo); mehol: sifaa ngoo ina taƴa.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Sifaaji ɗi</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Ko koɓɓe ɓee keɓata</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Jahnde duumiinde; URL alias lowre ndee fof jahnoowo.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Jahnde ko wonaa duumiinde: masiŋaaji njiylaw ina mooftoo ñiiɓirde kiiɗnde ndee.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Hello kesko e ñiiɓirde kiiɗnde, tawa jahnde alaa; URL alias lowre ndee fof.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Jahnde duumiinde ngam ñiiɓirde kala fotondirnde; wildcard URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Jahnde ko wonaa duumiinde ngam ñiiɓirde kala fotondirnde.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Hello kesko e ñiiɓirde kala fotondirnde, tawa jahnde alaa.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Fichieruuji haa %size. Geɗe mbaydiiji ɗi fof ina e hello ballal: Ɗurnude URL, e misalji kaartal URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Yiy misal mbaydi kala</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Mbaydiiji e misalji</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Kelle gooto gooto</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Jahnɗe duumiiɗe kelle gooto gooto, fannu e ID nokkuure (node:163) jokkoowo hello ngoo so ndurniima, e alias hollowo hello ngoo e ñiiɓirde kiiɗnde. Diidol arandeewol ina inna kolonji ɗi; ko old_url e new_url tan ngoni haani. Fichier .tsv ina janngee no non, e tab.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* ina fotondira e geɗal kala ñiiɓirde, {1} ina naatna ɗum e kesal ngal: taƴre ndurniinde, * hakkunde ñiiɓirde, wildcard ko wonaa duumiiɗo e wildcard tiimɗo (jahnde alaa).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Naamne e jahnɗe ko wonaa duumiiɗe</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Ñiiɓirɗe kiiɗɗe e naamnal (/index.php?id=12), 308, e jahnɗe ko wonaa duumiiɗe e sifaa (redirect-temporary) e ngonka (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Doggol geɗe jogiiɗe coktirɗe gootum e kolonji CSV; geɗel arandeewel ina waawi inndude schema exp-url-map/1. Ko ɗum yaltingol ngol winndata, ko ɗum kadi porogaraamuuji goɗɗi ngaɗata ko ɓuri newnude.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Kelle gooto gooto no deftere golle Excel: hello arandeewo, inɗe kolonji e diidol arandeewol. Uddit ɗum, waylu ñiiɓirɗe ɗee, mooftu ɗum no .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Ko wootere ndee no tabelo OpenDocument, ngam LibreOffice e OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Sarɗiiji winndito Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>.htaccess lowre kiiɗnde no woorni nii: RewriteRule, RewriteCond ngam naamnal, Redirect taƴre timmunde (hello ngoo e kala ko les mum) e RedirectMatch no wildcard.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Sarɗiiji winndito nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Bulo server lowre kiiɗnde: location = e return, if ($args) ngam naamnal, rewrite no wildcard e map kelle gooto gooto.</translation>
+    </message>
 </context>
 </TS>

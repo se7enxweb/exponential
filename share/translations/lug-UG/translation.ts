@@ -86247,5 +86247,181 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>The old addresses could not be tested.</source>
         <translation>Endagiriro enkadde tezisobodde kugezesebwa.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Maapu ya URL eraga buli ndagiriro enkadde n'olupapula lw'omukutu guno lw'ekwatagana nalwo kati. Zino ze nkola okuyingiza ze kusoma, buli emu n'ekyokulabirako eky'okukoppa: kyusa endagiriro zibe zizo, oluvannyuma tikka fayiro oba gisseemu. Buli kyokulabirako kiyingira mu mukutu ogw'okulaga nga bwe kiri.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Fayiro %file, %size · esomeddwa okuva mu %extensions · ennyiriri %rows mu kuyingiza</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Wanula</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Ekoppeddwa ku clipboard</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Tekisobose kukoppa</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Koppa</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Ggulawo mu kuyingiza</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Empagi</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Olunyiriri olusooka olwa fayiro ya CSV oba ekipandi ky'emiwendo lutuuma empagi, mu nsengeka yonna; JSON ekozesa amannya ago ge gamu ng'ebisumuluzo. old_url ne new_url bye byokka ebyetaagisa. Bwe watabaawo lunyiriri lusooka lwa mannya, empagi zitwalibwa mu nsengeka eno.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Empagi</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Ky'ekwata</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Endagiriro enkadde: ekkubo (/about-us.html), ekkubo n'ekibuuzo (/index.php?id=12) oba endagiriro enzijuvu ey'omukutu omukadde. * ekwatagana n'ekitundu kyonna.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Olupapula lw'omukutu guno: ekkubo lyalwo (/recipes), ID ya node yaalwo (node:163, egoberera olupapula bwe lukyusibwa ekifo) oba endagiriro enzijuvu awalala. %first, %second bitwala ekyo * kye yakwatagana nakyo.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Olunyiriri kye lufuuka, laba ebika. Bwe kiba kikalu: okusindika awalala okw'olubeerera, akabonero akakiikirira akasindika awalala nga old_url erina *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Omulyango gw'omukutu ogw'ekkubo eryereere; bwe kiba kikalu: ogwo ogwalondebwa ku lupapula lw'okuyingiza.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Olulimi lw'erinnya eddala erya URL, okugeza eng-GB; bwe kiba kikalu: olulimi lw'omulyango gw'omukutu.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Ekiwandiiko kyo ggwe; kiterekebwa wamu n'okuyingiza.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Embeera y'okusindika awalala: 301 oba 308 (olubeerera), 302, 303 oba 307 (okw'akaseera); bwe kiba kikalu: ekika kye kisalawo.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Ebika</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Abakyalira kye bafuna</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Okusindika awalala okw'olubeerera; erinnya eddala erya URL ery'awamu erisindika awalala.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Okusindika awalala okw'akaseera: yingini z'okunoonya zikuuma endagiriro enkadde.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Olupapula oluggya ku ndagiriro enkadde, awatali kusindika awalala; erinnya eddala erya URL ery'awamu.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Okusindika awalala okw'olubeerera ku buli ndagiriro ekwatagana; akabonero akakiikirira aka URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Okusindika awalala okw'akaseera ku buli ndagiriro ekwatagana.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Olupapula oluggya ku buli ndagiriro ekwatagana, awatali kusindika awalala.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Fayiro okutuuka ku %size. Buli kantu ku nkola kali mu kifo ky'obuyambi: Okusengula URL, n'ebyokulabirako bya maapu ya URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Laba ekyokulabirako kya buli nkola</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Enkola n'ebyokulabirako</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Empapula ssekinnoomu</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Okusindika awalala okw'olubeerera okw'empapula ssekinnoomu, ekigendererwa ku ID ya node (node:163) egoberera olupapula bwe lukyusibwa ekifo, n'erinnya eddala eriraga olupapula ku ndagiriro enkadde. Olunyiriri olusooka lutuuma empagi; old_url ne new_url bye byokka ebyetaagisa. Fayiro ya .tsv esomebwa mu ngeri y'emu, ne tabu.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* ekwatagana n'ekitundu kyonna eky'endagiriro ate {1} ekiteeka mu ndagiriro empya: ekitundu ekyakyusibwa ekifo, * wakati mu ndagiriro, akabonero akakiikirira ak'akaseera n'ak'obutereevu (awatali kusindika awalala).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Ebibuuzo n'okusindika awalala okw'akaseera</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Endagiriro enkadde ez'ekibuuzo (/index.php?id=12), 308, n'okusindika awalala okw'akaseera okusinziira ku kika (redirect-temporary) n'okusinziira ku mbeera (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Olukalala lw'ebintu ebirina ebisumuluzo bye bimu n'empagi za CSV; ekintu ekisooka kiyinza okutuuma enteekateeka exp-url-map/1. Kye kufulumya kuwandiika era pulogulaamu endala kye zikola mu bwangu.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Empapula ssekinnoomu nga ekitabo kya Excel: olupapula olusooka, amannya g'empagi mu lunyiriri olusooka. Kiggulewo, kyusa endagiriro era kiterekere nga .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Kye kimu nga ekipandi ky'emiwendo ekya OpenDocument, ku lwa LibreOffice ne OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Amateeka g'okuwandiika obuggya aga Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>.htaccess y'omukutu omukadde nga bw'eri: RewriteRule, RewriteCond ku kibuuzo, Redirect y'ekitundu kyonna (olupapula na byonna ebiri wansi waalwo) ne RedirectMatch ng'akabonero akakiikirira.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Amateeka g'okuwandiika obuggya aga nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Ekitundu kya server eky'omukutu omukadde: location = ne return, if ($args) ku kibuuzo, rewrite ng'akabonero akakiikirira ne map y'empapula ssekinnoomu.</translation>
+    </message>
 </context>
 </TS>

@@ -86247,5 +86247,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>ᱯᱩᱨᱟᱹᱱ ᱴᱷᱤᱠᱟᱱᱟ ᱠᱚ ᱵᱟᱭ ᱯᱨᱚᱵᱟ ᱫᱟᱲᱮ ᱠᱟᱱᱟ।</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL ᱱᱚᱠᱥᱟ ᱨᱮ ᱡᱚᱛᱚ ᱯᱩᱨᱟᱹᱱ ᱴᱷᱤᱠᱟᱱᱟ ᱟᱨ ᱱᱤᱛᱚᱜ ᱚᱱᱟ ᱥᱮᱫ ᱱᱚᱶᱟ ᱥᱟᱭᱤᱴ ᱨᱮᱭᱟᱜ ᱥᱟᱦᱴᱟ ᱚᱞ ᱢᱮᱱᱟᱜᱼᱟ᱾ ᱱᱚᱶᱟ ᱠᱚ ᱫᱚ ᱤᱢᱯᱚᱨᱴ ᱯᱟᱲᱦᱟᱣᱟᱜ ᱯᱷᱚᱨᱢᱮᱴ ᱠᱚ ᱠᱟᱱᱟ, ᱡᱚᱛᱚ ᱥᱟᱶ ᱱᱚᱠᱚᱞ ᱞᱟᱹᱜᱤᱫ ᱢᱤᱫ ᱫᱟᱹᱭᱠᱟᱹ ᱢᱮᱱᱟᱜᱼᱟ: ᱴᱷᱤᱠᱟᱱᱟ ᱠᱚ ᱟᱢᱟᱜ ᱛᱮ ᱵᱚᱫᱚᱞ ᱢᱮ, ᱚᱱᱟ ᱛᱟᱭᱚᱢ ᱯᱷᱟᱭᱤᱞ ᱞᱟᱫᱮ ᱢᱮ ᱥᱮ ᱞᱟᱴᱷᱟ ᱢᱮ᱾ ᱡᱚᱛᱚ ᱫᱟᱹᱭᱠᱟᱹ ᱰᱮᱢᱳ ᱥᱟᱭᱤᱴ ᱨᱮ ᱡᱮᱞᱠᱟ ᱢᱮᱱᱟᱜᱼᱟ ᱚᱱᱟ ᱞᱮᱠᱟ ᱤᱢᱯᱚᱨᱴ ᱚᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>ᱯᱷᱟᱭᱤᱞ %file, %size · %extensions ᱠᱷᱚᱱ ᱯᱟᱲᱦᱟᱣ ᱟᱠᱟᱱ · ᱤᱢᱯᱚᱨᱴ ᱨᱮ %rows ᱥᱟᱨᱤ</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>ᱛᱮᱞᱟ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>ᱠᱞᱤᱯᱵᱚᱨᱰ ᱨᱮ ᱱᱚᱠᱚᱞ ᱮᱱᱟ</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>ᱵᱟᱝ ᱱᱚᱠᱚᱞ ᱫᱟᱲᱮᱭᱟᱜ ᱞᱮᱱᱟ</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>ᱱᱚᱠᱚᱞ</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>ᱤᱢᱯᱚᱨᱴ ᱨᱮ ᱡᱷᱤᱡᱽ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>ᱠᱚᱞᱚᱢ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV ᱯᱷᱟᱭᱤᱞ ᱥᱮ ᱥᱯᱨᱮᱰᱥᱤᱴ ᱨᱮᱭᱟᱜ ᱯᱩᱭᱞᱩ ᱥᱟᱨᱤ ᱠᱚᱞᱚᱢ ᱠᱚᱣᱟᱜ ᱧᱩᱛᱩᱢ ᱮ ᱞᱟᱹᱭᱟ, ᱡᱟᱦᱟᱱ ᱛᱷᱟᱨ ᱨᱮ ᱦᱚᱸ; JSON ᱚᱱᱟ ᱧᱩᱛᱩᱢ ᱠᱚ ᱜᱮ ᱠᱟᱹᱴᱤᱡ ᱞᱮᱠᱟ ᱵᱮᱵᱷᱟᱨ ᱮᱫᱟ᱾ ᱮᱠᱮᱱ old_url ᱟᱨ new_url ᱜᱮ ᱞᱟᱹᱠᱛᱤᱜ ᱠᱟᱱᱟ᱾ ᱧᱩᱛᱩᱢ ᱨᱮᱭᱟᱜ ᱯᱩᱭᱞᱩ ᱥᱟᱨᱤ ᱵᱟᱹᱱᱩᱜ ᱠᱷᱟᱱ, ᱠᱚᱞᱚᱢ ᱠᱚ ᱱᱚᱶᱟ ᱛᱷᱟᱨ ᱨᱮ ᱦᱟᱛᱟᱣᱚᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>ᱠᱚᱞᱚᱢ</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>ᱪᱮᱫ ᱢᱮᱱᱟᱜᱼᱟ</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>ᱯᱩᱨᱟᱹᱱ ᱴᱷᱤᱠᱟᱱᱟ: ᱢᱤᱫ ᱦᱚᱨ (/about-us.html), ᱠᱩᱞᱤ ᱢᱮᱱᱟᱜ ᱦᱚᱨ (/index.php?id=12) ᱥᱮ ᱯᱩᱨᱟᱹᱱ ᱦᱚᱥᱴ ᱨᱮᱭᱟᱜ ᱯᱩᱨᱟᱹ ᱴᱷᱤᱠᱟᱱᱟ᱾ * ᱡᱟᱦᱟᱱ ᱦᱟᱹᱴᱤᱧ ᱥᱟᱶ ᱦᱚᱸ ᱢᱤᱞᱟᱹᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>ᱱᱚᱶᱟ ᱥᱟᱭᱤᱴ ᱨᱮᱭᱟᱜ ᱥᱟᱦᱴᱟ: ᱚᱱᱟᱜ ᱦᱚᱨ (/recipes), ᱚᱱᱟᱜ ᱱᱳᱰ ID (node:163, ᱥᱟᱦᱴᱟ ᱥᱟᱦᱟᱭ ᱚᱠᱛᱚ ᱛᱟᱭᱚᱢ ᱛᱮ ᱥᱮᱱᱚᱜᱼᱟ) ᱥᱮ ᱮᱴᱟᱜ ᱴᱷᱟᱶ ᱨᱮ ᱯᱩᱨᱟᱹ ᱴᱷᱤᱠᱟᱱᱟ᱾ * ᱡᱟᱦᱟᱸ ᱢᱤᱞᱟᱹᱣ ᱠᱮᱫᱟ ᱚᱱᱟ %first, %second ᱦᱟᱛᱟᱣᱟ᱾</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>ᱥᱟᱨᱤ ᱪᱮᱫ ᱦᱩᱭᱩᱜᱼᱟ, ᱞᱮᱠᱟ ᱠᱚ ᱧᱮᱞ ᱢᱮ᱾ ᱠᱷᱟᱹᱞᱤ: ᱛᱤᱥ ᱦᱚᱸ ᱞᱟᱹᱜᱤᱫ ᱨᱤᱰᱟᱭᱨᱮᱠᱴ, old_url ᱨᱮ * ᱢᱮᱱᱟᱜ ᱠᱷᱟᱱ ᱨᱤᱰᱟᱭᱨᱮᱠᱴ ᱣᱟᱭᱞᱰᱠᱟᱨᱰ᱾</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>ᱥᱟᱫᱷᱟᱨᱚᱬ ᱦᱚᱨ ᱨᱮᱭᱟᱜ ᱥᱟᱭᱤᱴ ᱥᱟᱵᱷᱤᱥ; ᱠᱷᱟᱹᱞᱤ: ᱤᱢᱯᱚᱨᱴ ᱥᱟᱦᱴᱟ ᱨᱮ ᱵᱟᱪᱷᱟᱣ ᱟᱠᱟᱱ᱾</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL ᱥᱟᱵᱟᱭ ᱧᱩᱛᱩᱢ ᱨᱮᱭᱟᱜ ᱯᱟᱨᱥᱤ, ᱡᱮᱞᱠᱟ eng-GB; ᱠᱷᱟᱹᱞᱤ: ᱥᱟᱭᱤᱴ ᱥᱟᱵᱷᱤᱥ ᱨᱮᱭᱟᱜ ᱯᱟᱨᱥᱤ᱾</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>ᱟᱢᱟᱜ ᱟᱡᱟᱜ ᱱᱚᱴ; ᱚᱱᱟ ᱤᱢᱯᱚᱨᱴ ᱥᱟᱶ ᱫᱚᱦᱚᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>ᱨᱤᱰᱟᱭᱨᱮᱠᱴ ᱨᱮᱭᱟᱜ ᱦᱟᱹᱞᱚᱛ: 301 ᱥᱮ 308 (ᱛᱤᱥ ᱦᱚᱸ ᱞᱟᱹᱜᱤᱫ), 302, 303 ᱥᱮ 307 (ᱠᱷᱟᱹᱴᱤ ᱚᱠᱛᱚ ᱞᱟᱹᱜᱤᱫ); ᱠᱷᱟᱹᱞᱤ: ᱞᱮᱠᱟ ᱜᱮ ᱥᱟᱱᱟᱢ ᱠᱷᱟᱴᱟᱣᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>ᱞᱮᱠᱟ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>ᱦᱮᱡ ᱦᱚᱲ ᱠᱚ ᱪᱮᱫ ᱧᱟᱢᱟ</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>ᱛᱤᱥ ᱦᱚᱸ ᱞᱟᱹᱜᱤᱫ ᱨᱤᱰᱟᱭᱨᱮᱠᱴ; ᱨᱤᱰᱟᱭᱨᱮᱠᱴ ᱠᱟᱹᱢᱤᱭᱟᱜ ᱜᱟᱱᱚᱛ URL ᱥᱟᱵᱟᱭ ᱧᱩᱛᱩᱢ᱾</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>ᱠᱷᱟᱹᱴᱤ ᱚᱠᱛᱚ ᱞᱟᱹᱜᱤᱫ ᱨᱤᱰᱟᱭᱨᱮᱠᱴ: ᱥᱮᱸᱫᱽᱨᱟ ᱤᱧᱡᱤᱱ ᱠᱚ ᱯᱩᱨᱟᱹᱱ ᱴᱷᱤᱠᱟᱱᱟ ᱫᱚᱦᱚᱭᱟ ᱠᱚᱭ᱾</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>ᱯᱩᱨᱟᱹᱱ ᱴᱷᱤᱠᱟᱱᱟ ᱨᱮ ᱱᱟᱶᱟ ᱥᱟᱦᱴᱟ, ᱨᱤᱰᱟᱭᱨᱮᱠᱴ ᱵᱮᱜᱚᱨ; ᱜᱟᱱᱚᱛ URL ᱥᱟᱵᱟᱭ ᱧᱩᱛᱩᱢ᱾</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>ᱡᱚᱛᱚ ᱢᱤᱞᱟᱹᱣᱟᱜ ᱴᱷᱤᱠᱟᱱᱟ ᱞᱟᱹᱜᱤᱫ ᱛᱤᱥ ᱦᱚᱸ ᱞᱟᱹᱜᱤᱫ ᱨᱤᱰᱟᱭᱨᱮᱠᱴ; URL ᱣᱟᱭᱞᱰᱠᱟᱨᱰ᱾</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>ᱡᱚᱛᱚ ᱢᱤᱞᱟᱹᱣᱟᱜ ᱴᱷᱤᱠᱟᱱᱟ ᱞᱟᱹᱜᱤᱫ ᱠᱷᱟᱹᱴᱤ ᱚᱠᱛᱚ ᱞᱟᱹᱜᱤᱫ ᱨᱤᱰᱟᱭᱨᱮᱠᱴ᱾</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>ᱡᱚᱛᱚ ᱢᱤᱞᱟᱹᱣᱟᱜ ᱴᱷᱤᱠᱟᱱᱟ ᱨᱮ ᱱᱟᱶᱟ ᱥᱟᱦᱴᱟ, ᱨᱤᱰᱟᱭᱨᱮᱠᱴ ᱵᱮᱜᱚᱨ᱾</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>%size ᱦᱟᱹᱵᱤᱡ ᱯᱷᱟᱭᱤᱞ ᱠᱚ᱾ ᱯᱷᱚᱨᱢᱮᱴ ᱠᱚᱣᱟᱜ ᱡᱚᱛᱚ ᱵᱤᱵᱨᱚᱬ ᱜᱚᱲᱚ ᱥᱮᱱᱴᱟᱨ ᱨᱮ ᱢᱮᱱᱟᱜᱼᱟ: URL ᱠᱚ ᱥᱟᱦᱟᱭ, ᱟᱨ URL ᱱᱚᱠᱥᱟ ᱫᱟᱹᱭᱠᱟᱹ ᱠᱚ᱾</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>ᱡᱚᱛᱚ ᱯᱷᱚᱨᱢᱮᱴ ᱨᱮᱭᱟᱜ ᱫᱟᱹᱭᱠᱟᱹ ᱧᱮᱞ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>ᱯᱷᱚᱨᱢᱮᱴ ᱟᱨ ᱫᱟᱹᱭᱠᱟᱹ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>ᱢᱤᱫᱴᱟᱹᱝ ᱥᱟᱦᱴᱟ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>ᱢᱤᱫᱴᱟᱹᱝ ᱥᱟᱦᱴᱟ ᱠᱚᱣᱟᱜ ᱛᱤᱥ ᱦᱚᱸ ᱞᱟᱹᱜᱤᱫ ᱨᱤᱰᱟᱭᱨᱮᱠᱴ, ᱱᱳᱰ ID (node:163) ᱛᱮ ᱡᱚᱠᱷᱟ ᱡᱟᱦᱟᱸ ᱥᱟᱦᱴᱟ ᱥᱟᱦᱟᱭ ᱚᱠᱛᱚ ᱛᱟᱭᱚᱢ ᱛᱮ ᱥᱮᱱᱚᱜᱼᱟ, ᱟᱨ ᱢᱤᱫ ᱥᱟᱵᱟᱭ ᱧᱩᱛᱩᱢ ᱡᱟᱦᱟᱸ ᱯᱩᱨᱟᱹᱱ ᱴᱷᱤᱠᱟᱱᱟ ᱨᱮ ᱥᱟᱦᱴᱟ ᱩᱫᱩᱜᱼᱟ᱾ ᱯᱩᱭᱞᱩ ᱥᱟᱨᱤ ᱠᱚᱞᱚᱢ ᱠᱚᱣᱟᱜ ᱧᱩᱛᱩᱢ ᱮ ᱞᱟᱹᱭᱟ; ᱮᱠᱮᱱ old_url ᱟᱨ new_url ᱜᱮ ᱞᱟᱹᱠᱛᱤᱜ ᱠᱟᱱᱟ᱾ .tsv ᱯᱷᱟᱭᱤᱞ ᱦᱚᱸ ᱚᱱᱟ ᱞᱮᱠᱟ ᱜᱮ ᱴᱮᱵᱽ ᱥᱟᱶ ᱯᱟᱲᱦᱟᱣᱚᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* ᱴᱷᱤᱠᱟᱱᱟ ᱨᱮᱭᱟᱜ ᱡᱟᱦᱟᱱ ᱦᱟᱹᱴᱤᱧ ᱥᱟᱶ ᱦᱚᱸ ᱢᱤᱞᱟᱹᱜᱼᱟ ᱟᱨ {1} ᱚᱱᱟ ᱱᱟᱶᱟ ᱴᱷᱤᱠᱟᱱᱟ ᱨᱮ ᱫᱚᱦᱚᱭᱟ: ᱥᱟᱦᱟᱭ ᱟᱠᱟᱱ ᱦᱟᱹᱴᱤᱧ, ᱴᱷᱤᱠᱟᱱᱟ ᱛᱟᱞᱟ ᱨᱮ *, ᱠᱷᱟᱹᱴᱤ ᱚᱠᱛᱚ ᱞᱟᱹᱜᱤᱫ ᱣᱟᱭᱞᱰᱠᱟᱨᱰ ᱟᱨ ᱥᱚᱡᱷᱮ ᱢᱤᱫᱴᱟᱹᱝ (ᱨᱤᱰᱟᱭᱨᱮᱠᱴ ᱵᱮᱜᱚᱨ)᱾</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>ᱠᱩᱞᱤ ᱟᱨ ᱠᱷᱟᱹᱴᱤ ᱚᱠᱛᱚ ᱞᱟᱹᱜᱤᱫ ᱨᱤᱰᱟᱭᱨᱮᱠᱴ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>ᱠᱩᱞᱤ ᱢᱮᱱᱟᱜ ᱯᱩᱨᱟᱹᱱ ᱴᱷᱤᱠᱟᱱᱟ ᱠᱚ (/index.php?id=12), ᱢᱤᱫ 308, ᱟᱨ ᱞᱮᱠᱟ (redirect-temporary) ᱟᱨ ᱦᱟᱹᱞᱚᱛ (307) ᱛᱮ ᱠᱷᱟᱹᱴᱤ ᱚᱠᱛᱚ ᱞᱟᱹᱜᱤᱫ ᱨᱤᱰᱟᱭᱨᱮᱠᱴ ᱠᱚ᱾</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>CSV ᱠᱚᱞᱚᱢ ᱠᱚ ᱞᱮᱠᱟ ᱜᱮ ᱠᱟᱹᱴᱤᱡ ᱢᱮᱱᱟᱜ ᱡᱤᱱᱤᱥ ᱠᱚᱣᱟᱜ ᱞᱤᱥᱴᱤ; ᱯᱩᱭᱞᱩ ᱡᱤᱱᱤᱥ exp-url-map/1 ᱥᱠᱤᱢᱟ ᱨᱮᱭᱟᱜ ᱧᱩᱛᱩᱢ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ᱾ ᱮᱠᱥᱯᱚᱨᱴ ᱡᱟᱦᱟᱸ ᱚᱞᱟ ᱟᱨ ᱮᱴᱟᱜ ᱯᱨᱚᱜᱽᱨᱟᱢ ᱠᱚ ᱟᱹᱰᱤ ᱟᱞᱜᱟ ᱛᱮ ᱵᱮᱱᱟᱣᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>ᱢᱤᱫᱴᱟᱹᱝ ᱥᱟᱦᱴᱟ ᱠᱚ Excel ᱣᱟᱨᱠᱵᱩᱠ ᱞᱮᱠᱟ: ᱯᱩᱭᱞᱩ ᱥᱤᱴ, ᱯᱩᱭᱞᱩ ᱥᱟᱨᱤ ᱨᱮ ᱠᱚᱞᱚᱢ ᱧᱩᱛᱩᱢ ᱠᱚ᱾ ᱡᱷᱤᱡᱽ ᱢᱮ, ᱴᱷᱤᱠᱟᱱᱟ ᱠᱚ ᱵᱚᱫᱚᱞ ᱢᱮ ᱟᱨ .xlsx ᱞᱮᱠᱟ ᱥᱟᱺᱪᱟᱣ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>ᱚᱱᱟ ᱜᱮ OpenDocument ᱥᱯᱨᱮᱰᱥᱤᱴ ᱞᱮᱠᱟ, LibreOffice ᱟᱨ OpenOffice ᱞᱟᱹᱜᱤᱫ᱾</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache ᱫᱩᱦᱲᱟᱹ ᱚᱞ ᱨᱮᱭᱟᱜ ᱱᱤᱭᱚᱢ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>ᱯᱩᱨᱟᱹᱱ ᱥᱟᱭᱤᱴ ᱨᱮᱭᱟᱜ .htaccess ᱡᱮᱞᱠᱟ ᱢᱮᱱᱟᱜᱼᱟ: RewriteRule, ᱠᱩᱞᱤ ᱞᱟᱹᱜᱤᱫ RewriteCond, ᱯᱩᱨᱟᱹ ᱦᱟᱹᱴᱤᱧ ᱨᱮᱭᱟᱜ Redirect (ᱥᱟᱦᱴᱟ ᱟᱨ ᱚᱱᱟ ᱞᱟᱛᱟᱨ ᱡᱚᱛᱚ) ᱟᱨ ᱣᱟᱭᱞᱰᱠᱟᱨᱰ ᱞᱮᱠᱟ RedirectMatch᱾</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx ᱫᱩᱦᱲᱟᱹ ᱚᱞ ᱨᱮᱭᱟᱜ ᱱᱤᱭᱚᱢ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>ᱯᱩᱨᱟᱹᱱ ᱥᱟᱭᱤᱴ ᱨᱮᱭᱟᱜ server ᱵᱞᱚᱠ: return ᱥᱟᱶ location =, ᱠᱩᱞᱤ ᱞᱟᱹᱜᱤᱫ if ($args), ᱣᱟᱭᱞᱰᱠᱟᱨᱰ ᱞᱮᱠᱟ rewrite ᱟᱨ ᱢᱤᱫᱴᱟᱹᱝ ᱥᱟᱦᱴᱟ ᱠᱚᱣᱟᱜ map᱾</translation>
+    </message>
 </context>
 </TS>

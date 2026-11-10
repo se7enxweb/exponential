@@ -100,7 +100,9 @@
         "GitHub Pages": "product name (GitHub's hosting service)",
         "GitHub Actions": "product name (GitHub's workflow service)",
         "GitHub App": "product name (a kind of GitHub integration)",
-        "In AvailableDataTypes[]": "names the content.ini setting AvailableDataTypes[]; In is the same word in Afrikaans, Dutch, German, Irish, Italian and Latin"
+        "In AvailableDataTypes[]": "names the content.ini setting AvailableDataTypes[]; In is the same word in Afrikaans, Dutch, German, Irish, Italian and Latin",
+        "Excel": "product name (Microsoft Excel)",
+        "LibreOffice": "product name"
     },
     "ara-SA": {
         "#level1 - #level2": "format placeholders only",

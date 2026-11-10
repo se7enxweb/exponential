@@ -86280,5 +86280,181 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>Inscriptiones veteres probari non potuerunt.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Mappa URL singulas inscriptiones veteres enumerat et paginam huius situs ad quam nunc pertinent. Haec sunt formae quas importatio legit, singulae cum exemplo ad describendum: inscriptiones tuis muta, deinde fasciculum submitte aut insere. Omne exemplum in situm demonstrationis ita ut est importatur.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Fasciculus %file, %size · ex %extensions lectus · %rows ordines in importatione</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Depromere</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>In tabulam transcriptum</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Transcribi non potuit</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Transcribere</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>In importatione aperire</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Columnae</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Prima linea fasciculi CSV aut tabulae computatoriae columnas nominat, quolibet ordine; JSON eadem nomina ut claves adhibet. Tantum old_url et new_url requiruntur. Sine prima linea nominum, columnae hoc ordine accipiuntur.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Columna</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Quid continet</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Inscriptio vetus: via (/about-us.html), via cum quaestione (/index.php?id=12) aut plena inscriptio hospitis veteris. * quamlibet partem congruit.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Pagina huius situs: via eius (/recipes), ID nodi eius (node:163, quod paginam sequitur cum movetur) aut plena inscriptio alibi. %first, %second accipiunt quod * congruit.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Quid ordo fiat, vide genera. Vacuum: redirectio perpetua, aut forma generalis redirigens cum old_url * habet.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Aditus situs viae nudae; vacuum: is qui in pagina importationis electus est.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Lingua cognominis URL, exempli gratia eng-GB; vacuum: lingua aditus situs.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Nota tua propria; cum importatione servatur.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Status redirectionis: 301 aut 308 (perpetua), 302, 303 aut 307 (temporaria); vacuum: genus decernit.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Genera</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Quid visitatores accipiant</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Redirectio perpetua; cognomen URL generale quod redirigit.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Redirectio temporaria: machinae quaesitoriae inscriptionem veterem retinent.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Pagina nova in inscriptione vetere, sine redirectione; cognomen URL generale.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Redirectio perpetua pro omni inscriptione congruente; forma generalis URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Redirectio temporaria pro omni inscriptione congruente.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Pagina nova in omni inscriptione congruente, sine redirectione.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Fasciculi usque ad %size. Omnia formarum singula in centro auxilii sunt: URL migrare, et exempla mappae URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Exemplum cuiusque formae videre</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Formae et exempla</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Paginae singulae</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Redirectiones perpetuae paginarum singularum, meta per ID nodi (node:163) quae paginam sequitur cum movetur, et cognomen quod paginam in inscriptione vetere ostendit. Prima linea columnas nominat; tantum old_url et new_url requiruntur. Fasciculus .tsv eodem modo legitur, cum tabulationibus.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* quamlibet partem inscriptionis congruit et {1} eam in novam ponit: sectio quae mota est, * in media inscriptione, forma generalis temporaria et directa (sine redirectione).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Quaestiones et redirectiones temporariae</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Inscriptiones veteres cum quaestione (/index.php?id=12), 308, et redirectiones temporariae per genus (redirect-temporary) et per statum (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Index obiectorum cum eisdem clavibus ac columnae CSV; primum obiectum schema exp-url-map/1 nominare potest. Id quod exportatio scribit et alia programmata facillime faciunt.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Paginae singulae ut liber operis Excel: prima scheda, nomina columnarum in primo ordine. Aperi eum, inscriptiones muta et ut .xlsx serva.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Idem ut tabula computatoria OpenDocument, pro LibreOffice et OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Regulae rescribendi Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>.htaccess situs veteris ita ut est: RewriteRule, RewriteCond pro quaestione, Redirect totius sectionis (pagina et omnia sub ea) et RedirectMatch ut forma generalis.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Regulae rescribendi nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Truncus server situs veteris: location = cum return, if ($args) pro quaestione, rewrite ut forma generalis et map paginarum singularum.</translation>
+    </message>
 </context>
 </TS>

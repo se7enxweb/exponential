@@ -86277,5 +86277,181 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>A régi címeket nem lehetett tesztelni.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Az URL-térkép felsorolja az egyes régi címeket és azt az oldalt, amelyhez most tartoznak ezen a webhelyen. Ezeket a formátumokat olvassa az importálás, mindegyikhez egy másolható példával: cserélje a címeket a sajátjaira, majd töltse fel a fájlt, vagy illessze be. Minden példa változtatás nélkül importálható a bemutató webhelyre.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Fájl: %file, %size · olvasott formátumok: %extensions · %rows sor az importálásban</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Letöltés</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Vágólapra másolva</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Nem sikerült másolni</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Másolás</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Megnyitás az importálásban</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Az oszlopok</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Egy CSV-fájl vagy táblázat első sora nevezi meg az oszlopokat, tetszőleges sorrendben; a JSON ugyanezeket a neveket használja kulcsként. Csak az old_url és a new_url szükséges. Nevek első sora nélkül az oszlopok ebben a sorrendben értendők.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Oszlop</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Mit tartalmaz</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>A régi cím: egy útvonal (/about-us.html), egy lekérdezéses útvonal (/index.php?id=12) vagy a régi gazdagép teljes címe. A * bármely részre illeszkedik.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Az oldal ezen a webhelyen: útvonala (/recipes), csomópont-azonosítója (node:163, amely követi az oldalt, ha az áthelyeződik) vagy egy máshol lévő teljes cím. A %first, %second azt veszi át, amire a * illeszkedett.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Mivé válik a sor, lásd a típusokat. Üres: állandó átirányítás, illetve átirányító URL-helyettesítő minta, ha az old_url tartalmaz *-ot.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Egy puszta útvonal webhely-hozzáférése; üres: az importálási oldalon kiválasztott.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Az URL-álnév nyelve, például eng-GB; üres: a webhely-hozzáférés nyelve.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Saját megjegyzés; az importálással együtt megőrződik.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Az átirányítás állapotkódja: 301 vagy 308 (állandó), 302, 303 vagy 307 (ideiglenes); üres: a típus dönt.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>A típusok</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Mit kapnak a látogatók</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Állandó átirányítás; egy globális URL-álnév, amely átirányít.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Ideiglenes átirányítás: a keresőmotorok megtartják a régi címet.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Az új oldal a régi címen, átirányítás nélkül; egy globális URL-álnév.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Állandó átirányítás minden illeszkedő címre; egy URL-helyettesítő minta.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Ideiglenes átirányítás minden illeszkedő címre.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Az új oldal minden illeszkedő címen, átirányítás nélkül.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Legfeljebb %size méretű fájlok. A formátumok minden részlete megtalálható a súgóközpontban: URL-ek átköltöztetése és az URL-térkép példái.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Példa megtekintése minden formátumhoz</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Formátumok és példák</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Egyes oldalak</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Egyes oldalak állandó átirányításai, csomópont-azonosító szerinti cél (node:163), amely követi az oldalt, ha az áthelyeződik, és egy álnév, amely a régi címen mutatja az oldalt. Az első sor nevezi meg az oszlopokat; csak az old_url és a new_url szükséges. Egy .tsv fájl ugyanígy olvasható, tabulátorokkal.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>A * egy cím bármely részére illeszkedik, a {1} pedig beilleszti azt az újba: egy áthelyezett szakasz, egy * a cím közepén, egy ideiglenes és egy közvetlen (átirányítás nélküli) URL-helyettesítő minta.</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Lekérdezések és ideiglenes átirányítások</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Lekérdezést tartalmazó régi címek (/index.php?id=12), egy 308-as, valamint ideiglenes átirányítások típus (redirect-temporary) és állapotkód (307) szerint.</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Objektumok listája a CSV-oszlopokkal azonos kulcsokkal; az első objektum megnevezheti az exp-url-map/1 sémát. Ezt írja az exportálás, és ezt állítják elő a legkönnyebben más programok.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Az egyes oldalak Excel-munkafüzetként: az első munkalap, az oszlopnevek az első sorban. Nyissa meg, módosítsa a címeket, és mentse .xlsx formátumban.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Ugyanez OpenDocument-táblázatként, LibreOffice-hoz és OpenOffice-hoz.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache átírási szabályok</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Egy régi webhely .htaccess fájlja változatlanul: RewriteRule, RewriteCond egy lekérdezéshez, egy teljes szakasz Redirect-je (az oldal és minden alatta) és RedirectMatch URL-helyettesítő mintaként.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx átírási szabályok</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Egy régi webhely server blokkja: location = return-nel, if ($args) egy lekérdezéshez, rewrite URL-helyettesítő mintaként és egyes oldalak map-je.</translation>
+    </message>
 </context>
 </TS>

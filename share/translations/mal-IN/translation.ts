@@ -86245,5 +86245,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>പഴയ വിലാസങ്ങൾ പരീക്ഷിക്കാനായില്ല.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>ഒരു URL മാപ്പ് ഓരോ പഴയ വിലാസവും അത് ഇപ്പോൾ ഉൾപ്പെടുന്ന ഈ സൈറ്റിലെ പേജും പട്ടികപ്പെടുത്തുന്നു. ഇറക്കുമതി വായിക്കുന്ന ഫോർമാറ്റുകൾ ഇവയാണ്, ഓരോന്നിനും പകർത്താനുള്ള ഒരു ഉദാഹരണവുമുണ്ട്: വിലാസങ്ങൾ നിങ്ങളുടേതാക്കി മാറ്റുക, തുടർന്ന് ഫയൽ അപ്‌ലോഡ് ചെയ്യുക അല്ലെങ്കിൽ ഒട്ടിക്കുക. ഓരോ ഉദാഹരണവും അതേപടി ഡെമോ സൈറ്റിലേക്ക് ഇറക്കുമതി ചെയ്യപ്പെടുന്നു.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>ഫയൽ %file, %size · %extensions ൽ നിന്ന് വായിച്ചു · ഇറക്കുമതിയിൽ %rows വരികൾ</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>ഡൗൺലോഡ് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>ക്ലിപ്പ്ബോർഡിലേക്ക് പകർത്തി</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>പകർത്താനായില്ല</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>പകർത്തുക</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>ഇറക്കുമതിയിൽ തുറക്കുക</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>കോളങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>ഒരു CSV ഫയലിന്റെയോ സ്പ്രെഡ്ഷീറ്റിന്റെയോ ആദ്യ വരി കോളങ്ങൾക്ക് പേര് നൽകുന്നു, ഏത് ക്രമത്തിലും; JSON അതേ പേരുകൾ കീകളായി ഉപയോഗിക്കുന്നു. old_url, new_url എന്നിവ മാത്രമേ ആവശ്യമുള്ളൂ. പേരുകളുടെ ആദ്യ വരി ഇല്ലെങ്കിൽ, കോളങ്ങൾ ഈ ക്രമത്തിൽ എടുക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>കോളം</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>ഇതിൽ എന്താണുള്ളത്</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>പഴയ വിലാസം: ഒരു പാത്ത് (/about-us.html), ക്വറിയുള്ള പാത്ത് (/index.php?id=12) അല്ലെങ്കിൽ പഴയ ഹോസ്റ്റിന്റെ പൂർണ്ണ വിലാസം. * ഏത് ഭാഗവുമായും പൊരുത്തപ്പെടുന്നു.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>ഈ സൈറ്റിലെ പേജ്: അതിന്റെ പാത്ത് (/recipes), അതിന്റെ നോഡ് ID (node:163, പേജ് നീങ്ങുമ്പോൾ അതിനെ പിന്തുടരുന്നു) അല്ലെങ്കിൽ മറ്റെവിടെയെങ്കിലുമുള്ള പൂർണ്ണ വിലാസം. * പൊരുത്തപ്പെട്ടത് %first, %second എടുക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>വരി എന്തായി മാറുന്നു, തരങ്ങൾ കാണുക. ശൂന്യം: ഒരു സ്ഥിരം റീഡയറക്ട്, old_url ൽ * ഉണ്ടെങ്കിൽ റീഡയറക്ട് ചെയ്യുന്ന വൈൽഡ്കാർഡ്.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>വെറും പാത്തിന്റെ സൈറ്റ്ആക്സസ്; ശൂന്യം: ഇറക്കുമതി പേജിൽ തിരഞ്ഞെടുത്തത്.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL അപരനാമത്തിന്റെ ഭാഷ, ഉദാഹരണത്തിന് eng-GB; ശൂന്യം: സൈറ്റ്ആക്സസിന്റെ ഭാഷ.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>നിങ്ങളുടെ സ്വന്തം കുറിപ്പ്; അത് ഇറക്കുമതിയോടൊപ്പം സൂക്ഷിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>റീഡയറക്ട് സ്റ്റാറ്റസ്: 301 അല്ലെങ്കിൽ 308 (സ്ഥിരം), 302, 303 അല്ലെങ്കിൽ 307 (താൽക്കാലികം); ശൂന്യം: തരം തീരുമാനിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>തരങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>സന്ദർശകർക്ക് ലഭിക്കുന്നത്</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>ഒരു സ്ഥിരം റീഡയറക്ട്; റീഡയറക്ട് ചെയ്യുന്ന ഒരു ഗ്ലോബൽ URL അപരനാമം.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>ഒരു താൽക്കാലിക റീഡയറക്ട്: സെർച്ച് എഞ്ചിനുകൾ പഴയ വിലാസം നിലനിർത്തുന്നു.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>പഴയ വിലാസത്തിൽ പുതിയ പേജ്, റീഡയറക്ട് ഇല്ലാതെ; ഒരു ഗ്ലോബൽ URL അപരനാമം.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>പൊരുത്തപ്പെടുന്ന ഓരോ വിലാസത്തിനും ഒരു സ്ഥിരം റീഡയറക്ട്; ഒരു URL വൈൽഡ്കാർഡ്.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>പൊരുത്തപ്പെടുന്ന ഓരോ വിലാസത്തിനും ഒരു താൽക്കാലിക റീഡയറക്ട്.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>പൊരുത്തപ്പെടുന്ന ഓരോ വിലാസത്തിലും പുതിയ പേജ്, റീഡയറക്ട് ഇല്ലാതെ.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>%size വരെയുള്ള ഫയലുകൾ. ഫോർമാറ്റുകളുടെ എല്ലാ വിശദാംശങ്ങളും സഹായ കേന്ദ്രത്തിലുണ്ട്: URL-കൾ മാറ്റുന്നു, URL മാപ്പ് ഉദാഹരണങ്ങൾ.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>ഓരോ ഫോർമാറ്റിന്റെയും ഒരു ഉദാഹരണം കാണുക</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>ഫോർമാറ്റുകളും ഉദാഹരണങ്ങളും</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>ഒറ്റ പേജുകൾ</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>ഒറ്റ പേജുകളുടെ സ്ഥിരം റീഡയറക്ടുകൾ, പേജ് നീങ്ങുമ്പോൾ അതിനെ പിന്തുടരുന്ന നോഡ് ID (node:163) വഴിയുള്ള ലക്ഷ്യം, പഴയ വിലാസത്തിൽ പേജ് കാണിക്കുന്ന ഒരു അപരനാമം. ആദ്യ വരി കോളങ്ങൾക്ക് പേര് നൽകുന്നു; old_url, new_url എന്നിവ മാത്രമേ ആവശ്യമുള്ളൂ. ഒരു .tsv ഫയൽ ടാബുകളോടെ ഇതേ രീതിയിൽ വായിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* ഒരു വിലാസത്തിന്റെ ഏത് ഭാഗവുമായും പൊരുത്തപ്പെടുന്നു, {1} അതിനെ പുതിയതിലേക്ക് ചേർക്കുന്നു: നീങ്ങിയ ഒരു വിഭാഗം, വിലാസത്തിന്റെ നടുവിൽ ഒരു *, ഒരു താൽക്കാലിക വൈൽഡ്കാർഡ്, ഒരു നേരിട്ടുള്ളതും (റീഡയറക്ട് ഇല്ലാതെ).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>ക്വറികളും താൽക്കാലിക റീഡയറക്ടുകളും</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>ക്വറിയുള്ള പഴയ വിലാസങ്ങൾ (/index.php?id=12), ഒരു 308, തരം (redirect-temporary) വഴിയും സ്റ്റാറ്റസ് (307) വഴിയുമുള്ള താൽക്കാലിക റീഡയറക്ടുകൾ.</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>CSV കോളങ്ങളുടെ അതേ കീകളുള്ള ഒബ്ജക്റ്റുകളുടെ ഒരു പട്ടിക; ആദ്യ ഒബ്ജക്റ്റിന് സ്കീമ exp-url-map/1 എന്ന് പേര് നൽകാം. കയറ്റുമതി എഴുതുന്നതും മറ്റ് പ്രോഗ്രാമുകൾ ഏറ്റവും എളുപ്പത്തിൽ നിർമ്മിക്കുന്നതും.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>ഒറ്റ പേജുകൾ ഒരു Excel വർക്ക്ബുക്കായി: ആദ്യ ഷീറ്റ്, ആദ്യ വരിയിൽ കോളം പേരുകൾ. അത് തുറക്കുക, വിലാസങ്ങൾ മാറ്റുക, .xlsx ആയി സേവ് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>ഇതുതന്നെ ഒരു OpenDocument സ്പ്രെഡ്ഷീറ്റായി, LibreOffice, OpenOffice എന്നിവയ്ക്കായി.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache റീറൈറ്റ് നിയമങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>ഒരു പഴയ സൈറ്റിന്റെ .htaccess അതേപടി: RewriteRule, ക്വറിക്കായി RewriteCond, ഒരു മുഴുവൻ വിഭാഗത്തിന്റെ (പേജും അതിനു താഴെയുള്ളതെല്ലാം) Redirect, വൈൽഡ്കാർഡായി RedirectMatch.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx റീറൈറ്റ് നിയമങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>ഒരു പഴയ സൈറ്റിന്റെ server ബ്ലോക്ക്: return ഉള്ള location =, ക്വറിക്കായി if ($args), വൈൽഡ്കാർഡായി rewrite, ഒറ്റ പേജുകളുടെ ഒരു map.</translation>
+    </message>
 </context>
 </TS>

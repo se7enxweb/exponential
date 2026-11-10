@@ -87505,5 +87505,181 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>De gamle adressene kunne ikke testes.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Et URL-kart lister hver gamle adresse og siden på dette nettstedet den hører til nå. Dette er formatene importen leser, hvert med et eksempel å kopiere: bytt ut adressene med dine egne, og last deretter opp filen eller lim den inn. Hvert eksempel importeres i demonettstedet slik det er.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Fil %file, %size · leses fra %extensions · %rows rader i importen</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Last ned</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Kopiert til utklippstavlen</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Kunne ikke kopiere</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopier</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Åpne i importen</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Kolonnene</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Den første linjen i en CSV-fil eller et regneark navngir kolonnene, i hvilken som helst rekkefølge; JSON bruker de samme navnene som nøkler. Bare old_url og new_url er nødvendige. Uten en første linje med navn tas kolonnene i denne rekkefølgen.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Kolonne</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Hva den inneholder</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Den gamle adressen: en sti (/about-us.html), en sti med spørring (/index.php?id=12) eller en full adresse på den gamle verten. En * samsvarer med hvilken som helst del.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Siden på dette nettstedet: stien (/recipes), node-ID-en (node:163, som følger siden når den flyttes) eller en full adresse et annet sted. %first, %second tar det * samsvarte med.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Hva raden blir, se typene. Tom: en permanent videresending, et videresendende jokertegn når old_url har en *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Nettstedstilgangen for en ren sti; tom: den som er valgt på importsiden.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Språket til URL-aliaset, for eksempel eng-GB; tom: språket til nettstedstilgangen.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Ditt eget notat; det lagres sammen med importen.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Videresendingsstatusen: 301 eller 308 (permanent), 302, 303 eller 307 (midlertidig); tom: typen avgjør.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Typene</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Hva besøkende får</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>En permanent videresending; et globalt URL-alias som videresender.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>En midlertidig videresending: søkemotorer beholder den gamle adressen.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Den nye siden på den gamle adressen, uten videresending; et globalt URL-alias.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>En permanent videresending for hver adresse som samsvarer; et URL-jokertegn.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>En midlertidig videresending for hver adresse som samsvarer.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Den nye siden på hver adresse som samsvarer, uten videresending.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Filer på opptil %size. Alle detaljer om formatene finnes i hjelpesenteret: Migrere URL-er, og eksemplene på URL-kart.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Se et eksempel på hvert format</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Formater og eksempler</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Enkeltsider</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Permanente videresendinger av enkeltsider, et mål via node-ID (node:163) som følger siden når den flyttes, og et alias som viser siden på den gamle adressen. Den første linjen navngir kolonnene; bare old_url og new_url er nødvendige. En .tsv-fil leses på samme måte, med tabulatorer.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>En * samsvarer med hvilken som helst del av en adresse, og {1} setter den inn i den nye: en seksjon som er flyttet, en * midt i en adresse, et midlertidig jokertegn og et direkte (uten videresending).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Spørringer og midlertidige videresendinger</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Gamle adresser med spørring (/index.php?id=12), en 308, og midlertidige videresendinger etter type (redirect-temporary) og etter status (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>En liste med objekter med de samme nøklene som CSV-kolonnene; det første objektet kan angi skjemaet exp-url-map/1. Det eksporten skriver, og det andre programmer lettest lager.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Enkeltsidene som en Excel-arbeidsbok: det første arket, kolonnenavnene i den første raden. Åpne den, endre adressene og lagre den som .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Det samme som et OpenDocument-regneark, for LibreOffice og OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache-omskrivingsregler</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>En .htaccess fra et gammelt nettsted slik den er: RewriteRule, RewriteCond for en spørring, Redirect av en hel seksjon (siden og alt under den) og RedirectMatch som jokertegn.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx-omskrivingsregler</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Server-blokken til et gammelt nettsted: location = med return, if ($args) for en spørring, rewrite som jokertegn og et map over enkeltsider.</translation>
+    </message>
 </context>
 </TS>

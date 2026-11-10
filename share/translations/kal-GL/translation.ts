@@ -86277,5 +86277,181 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>The old addresses could not be tested.</source>
         <translation>Najugaqarfiit pisoqaat misissorneqarsinnaanngillat.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL-ip nunap assingani najugaq pisoqaq tamarmi nittartakkallu matuma quppernera maanna atuuffigisaa allassimapput. Taakku tassaapput formatit isertitsinermit atuarneqartartut, tamarmik assilisassamik assersuutillit: najugaqarfiit illit najugaqarfinnut taarseriguk, taava fiili ilioruk imaluunniit ikkukkuk. Assersuut tamarmi demo-nittartakkamut ilusimisut isertinneqarsinnaavoq.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Fiili %file, %size · %extensions-mit atuarneqartoq · isertitsinermi titarnerit %rows</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Aaguk</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Clipboardimut assilineqarpoq</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Assilineqarsinnaanngilaq</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Assiliguk</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Isertitsinermi ammaruk</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Kolonnit</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV-fiilip imaluunniit naatsorsuutip titarnera siulleq kolonnit aqqinik taasarpai, sumilluunniit tulleriiaarlugit; JSON-ip aqqit taakku kodeqarfittut atortarpai. old_url aamma new_url kisimik pisariaqarput. Aqqit titarnerat siulleq peqanngippat kolonnit tulleriiaarnermi matumani tigusarineqarput.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Kolonni</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Imai</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Najugaq pisoqaq: aqqut (/about-us.html), aqqut apeqqummik ilallugu (/index.php?id=12) imaluunniit host-ip pisoqaap najugaa tamakkiisoq. * ilaanut sumulluunniit naleqqussarpoq.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Nittartakkap matuma quppernera: aqqutaa (/recipes), node ID-ia (node:163, quppernerup nuunneqarnerani malinnaasartoq) imaluunniit allami najugaq tamakkiisoq. %first, %second * naleqqussarfigisaa tigusarpaat.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Titarneq sunngortussaasoq, suussusii takukkit. Imaqanngippat: allamut ingerlatsineq aalajangersimasoq, old_url-imi * peqarpat wildcard allamut ingerlatsisoq.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Aqqutip nakkaannartup nittartakkamut isaariaa; imaqanngippat: isertitsinermi quppernermi toqqarneqartoq.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL-aliasip oqaasia, assersuutigalugu eng-GB; imaqanngippat: nittartakkamut isaariap oqaasia.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Nammineq allaaserisat; isertitsinermi toqqorneqartarpoq.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Allamut ingerlatsinerup qanoq innera: 301 imaluunniit 308 (aalajangersimasoq), 302, 303 imaluunniit 307 (piffissami killilimmi); imaqanngippat: suussusaa aalajangiisuuvoq.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Suussusii</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Alakkaasut sunik pissarsisarnersut</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Allamut ingerlatsineq aalajangersimasoq; URL-alias nalinginnaasoq allamut ingerlatsisoq.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Allamut ingerlatsineq piffissami killilimmi: ujaasissutit najugaq pisoqaq toqqortarpaat.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Quppernera nutaaq najugami pisoqami, allamut ingerlatsinani; URL-alias nalinginnaasoq.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Najugaq naleqquttoq tamaat allamut ingerlatsineq aalajangersimasoq; URL-imi wildcard.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Najugaq naleqquttoq tamaat allamut ingerlatsineq piffissami killilimmi.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Quppernera nutaaq najugami naleqquttumi tamani, allamut ingerlatsinani.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Fiilit %size tikillugu. Formatit pillugit paasissutissat tamarmik ikiorsiivimmiipput: URL-it nuunnerat, aamma URL-ip nunap assingata assersuutai.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Format tamarmi assersuutaa takuuk</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Formatit assersuutillu</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Quppernerit ataasiakkaat</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Quppernerit ataasiakkaat allamut ingerlatsinerit aalajangersimasut, node ID-mik (node:163) anguniagaq quppernerup nuunneqarnerani malinnaasartoq, aamma alias quppernermik najugami pisoqami takutitsisoq. Titarneq siulleq kolonnit aqqinik taasarpai; old_url aamma new_url kisimik pisariaqarput. .tsv-fiili aamma taamatut atuarneqartarpoq, tab-inik.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* najugap ilaanut sumulluunniit naleqqussarpoq aamma {1}-ip najugamut nutaamut ikkussortarpaa: immikkoortoq nuunneqarsimasoq, * najugap qeqqani, wildcard piffissami killilimmi aamma toqqaannartoq (allamut ingerlatsinani).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Apeqqutit allamullu ingerlatsinerit piffissami killilimmi</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Najugaqarfiit pisoqaat apeqqummik ilallit (/index.php?id=12), 308, aamma allamut ingerlatsinerit piffissami killilimmi suussusaa (redirect-temporary) qanorlu innera (307) naapertorlugit.</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Objektit allattorsimaffiat CSV-kolonnit kodeqarfiinik assigiinnik; objekti siulleq schema exp-url-map/1 taasinnaavaa. Anitsinerup allattagaa programmillu allanit pilersinneqarnerpaajusartoq.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Quppernerit ataasiakkaat Excel-ip suliffiatut: ark siulleq, kolonnit aqqi titarnermi siullermi. Ammaruk, najugaqarfiit allanngortikkit .xlsx-itullu toqqoruk.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Tamanna OpenDocument-naatsorsuutitut, LibreOffice aamma OpenOffice-imut.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache-ip allanngortitsinermut maleruagassai</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Nittartakkap pisoqaap .htaccess-ia ilusimisut: RewriteRule, apeqqummut RewriteCond, immikkoortup tamarmiusup Redirect-ia (quppernera ataanilu tamarmi) aamma RedirectMatch wildcard-itut.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx-ip allanngortitsinermut maleruagassai</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Nittartakkap pisoqaap server-blokia: location = return-ilik, apeqqummut if ($args), rewrite wildcard-itut aamma quppernerit ataasiakkaat map-iat.</translation>
+    </message>
 </context>
 </TS>

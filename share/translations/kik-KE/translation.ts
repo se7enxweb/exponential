@@ -86247,5 +86247,181 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>The old addresses could not be tested.</source>
         <translation>Adirethi cia tene itiahotekire gũgeriwo.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Mapu ya URL nĩ ĩandĩkaga o anwani ya tene na ũrathi wa saiti ĩno ũrĩa ĩrĩ yaguo rĩu. Ĩno nĩ mĩhiano ĩrĩa kũrehe thĩinĩ gũthomaga, o ũmwe na kĩonereria gĩa gũkobia: garũra anwani ituĩke ciaku, ũcooka wambatie faili kana ũmĩĩkĩre. O kĩonereria nĩ kĩrehagwo thĩinĩ wa saiti ya kĩonereria o ũrĩa kĩrĩ.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Faili %file, %size · yathomwo kuuma %extensions · mĩhari %rows thĩinĩ wa kũrehe</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Kuruta</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Nĩyakobio kũrĩ clipboard</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Ndĩĩhotekire gũkobia</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kobia</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Hingũra thĩinĩ wa kũrehe</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Mĩhari ya kũrũgama</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Mũhari wa mbere wa faili ya CSV kana spreadsheet nĩ ũheaga mĩhari ya kũrũgama marĩĩtwa, na mũthiĩre o wothe; JSON ĩhũthagĩra marĩĩtwa o macio ta cihingũro. No old_url na new_url ciitagĩrio. Hatarĩ mũhari wa mbere wa marĩĩtwa, mĩhari ya kũrũgama yoyagwo na mũthiĩre ũyũ.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Mũhari wa kũrũgama</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Kĩrĩa kĩrĩ naguo</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Anwani ya tene: njĩra (/about-us.html), njĩra ĩrĩ na kĩũria (/index.php?id=12) kana anwani yothe ya host ya tene. * nĩ ĩiganaine na gĩcunjĩ o gĩothe.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Ũrathi wa saiti ĩno: njĩra yaguo (/recipes), ID ya node yaguo (node:163, ĩrĩa ĩrũmagĩrĩra ũrathi rĩrĩa wathamio) kana anwani yothe kũndũ kũngĩ. %first, %second ciosaga kĩrĩa * kĩaiganaine nakĩo.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Kĩrĩa mũhari ũgũtuĩka, rora mĩthemba. Ũtarĩ na kĩndũ: rehe ya gũtũũra, kana kĩambĩrĩria kĩrĩa kĩrehaga rĩrĩa old_url ĩrĩ na *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Njĩra ya saiti ya njĩra tũhũ; ũtarĩ na kĩndũ: ĩrĩa yathuurirwo ũrathi-inĩ wa kũrehe thĩinĩ.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Rũthiomi rwa rĩĩtwa rĩa URL rĩa kũmĩrĩria, ta eng-GB; ũtarĩ na kĩndũ: rũthiomi rwa njĩra ya saiti.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Mũandĩko waku mwene; ũigagwo hamwe na kũrehe thĩinĩ.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Ũhoro wa rehe: 301 kana 308 (ya gũtũũra), 302, 303 kana 307 (ya kahinda); ũtarĩ na kĩndũ: mũthemba nĩguo ũtuaga.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Mĩthemba</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Kĩrĩa ageni maheagwo</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Rehe ya gũtũũra; rĩĩtwa rĩa URL rĩa kũmĩrĩria rĩa bũrũri wothe rĩrĩa rĩrehaga.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Rehe ya kahinda: injini cia gũcaria nĩ ciikaraga na anwani ya tene.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Ũrathi mwerũ anwani-inĩ ya tene, hatarĩ rehe; rĩĩtwa rĩa URL rĩa kũmĩrĩria rĩa bũrũri wothe.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Rehe ya gũtũũra ya o anwani ĩrĩa ĩiganaine; kĩambĩrĩria kĩa URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Rehe ya kahinda ya o anwani ĩrĩa ĩiganaine.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Ũrathi mwerũ o anwani-inĩ ĩrĩa ĩiganaine, hatarĩ rehe.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Faili nginya %size. Maũndũ mothe ma mĩhiano marĩ kĩhumo-inĩ kĩa ũteithio: Gũthamia URL, na cionereria cia mapu ya URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Rora kĩonereria kĩa o mũhiano</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Mĩhiano na cionereria</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Ũrathi ũmwe ũmwe</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Marehe ma gũtũũra ma ũrathi ũmwe ũmwe, kĩerekero na ID ya node (node:163) ĩrĩa ĩrũmagĩrĩra ũrathi rĩrĩa wathamio, na rĩĩtwa rĩa kũmĩrĩria rĩrĩa rĩonanagia ũrathi anwani-inĩ ya tene. Mũhari wa mbere nĩ ũheaga mĩhari ya kũrũgama marĩĩtwa; no old_url na new_url ciitagĩrio. Faili ya .tsv ĩthomagwo o ũguo, na tab.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* nĩ ĩiganaine na gĩcunjĩ o gĩothe kĩa anwani na {1} nĩ ĩgĩĩkagĩra anwani-inĩ njerũ: gĩcunjĩ kĩrĩa gĩathamire, * gatagatĩ ka anwani, kĩambĩrĩria kĩa kahinda na kĩa ũrũngĩrĩru (hatarĩ rehe).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Ciũria na marehe ma kahinda</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Anwani cia tene irĩ na kĩũria (/index.php?id=12), 308, na marehe ma kahinda na mũthemba (redirect-temporary) na na ũhoro (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Rũtha rwa indo irĩ na cihingũro o ta mĩhari ya kũrũgama ya CSV; kĩndũ kĩa mbere no kĩhe schema rĩĩtwa exp-url-map/1. Nĩkĩo kũruta kwandĩkaga na nĩkĩo pũrogramu ingĩ ciũmbaga na ũhũthũ mũno.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Ũrathi ũmwe ũmwe ta ibuku rĩa wĩra rĩa Excel: rũthanju rwa mbere, marĩĩtwa ma mĩhari ya kũrũgama mũhari-inĩ wa mbere. Rĩhingũre, ũgarũre anwani na ũrĩige ta .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>O ũguo ta spreadsheet ya OpenDocument, ya LibreOffice na OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Mawatho ma kwandĩka rĩngĩ ma Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Faili ya .htaccess ya saiti ya tene o ũrĩa ĩrĩ: RewriteRule, RewriteCond ya kĩũria, Redirect ya gĩcunjĩ gĩothe (ũrathi na kĩrĩa gĩothe kĩrĩ rungu rwaguo) na RedirectMatch ta kĩambĩrĩria.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Mawatho ma kwandĩka rĩngĩ ma nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Mbuthu ya server ya saiti ya tene: location = na return, if ($args) ya kĩũria, rewrite ta kĩambĩrĩria na map ya ũrathi ũmwe ũmwe.</translation>
+    </message>
 </context>
 </TS>

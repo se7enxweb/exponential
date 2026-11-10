@@ -86255,5 +86255,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>ܠܐ ܐܫܬܘܫܛ ܠܡܒܚܢܘ ܠܡܘܢܥ̈ܐ ܥܬܝܩ̈ܐ.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>ܡܦܐ ܕ URL ܡܚܘܝܐ ܟܠ ܡܘܢܥܐ ܥܬܝܩܐ ܘܦܐܬܐ ܕܗܢܐ ܐܬܪܐ ܕܗܫܐ ܕܝܠܗ ܗܝ. ܗܠܝܢ ܐܢܘܢ ܦܘܪܡܐܛ̈ܐ ܕܡܥܠܐ ܩܪܐ، ܟܠ ܚܕ ܥܡ ܡܬܠܐ ܠܡܢܣܚ: ܫܚܠܦ ܡܘܢܥ̈ܐ ܒܕܝܠܟ، ܘܗܝܕܝܢ ܐܣܩ ܦܢܩܝܬܐ ܐܘ ܕܒܩ ܠܗ̇. ܟܠ ܡܬܠܐ ܥܐܠ ܠܐܬܪܐ ܕܬܚܘܝܬܐ ܐܝܟ ܕܐܝܬܘܗܝ.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>ܦܢܩܝܬܐ %file، %size · ܡܬܩܪܝܐ ܡܢ %extensions · %rows ܫܘܪ̈ܬܐ ܒܡܥܠܐ</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>ܐܚܬ</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>ܐܬܢܣܚ ܠܠܘܚܐ ܕܢܣܚܐ</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>ܠܐ ܐܫܟܚ ܠܡܢܣܚ</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>ܢܣܘܚ</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>ܦܬܚ ܒܡܥܠܐ</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>ܥܡܘܕ̈ܐ</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>ܫܘܪܬܐ ܩܕܡܝܬܐ ܕܦܢܩܝܬܐ CSV ܐܘ ܕܦܬܩܐ ܕܚܘܫܒܢܐ ܩܪܝܐ ܫܡ̈ܗܐ ܠܥܡܘܕ̈ܐ، ܒܐܝܢܐ ܛܘܟܣܐ ܕܗܘ؛ JSON ܡܦܠܚ ܗܢܘܢ ܫܡ̈ܗܐ ܐܝܟ ܩܠܝܕ̈ܐ. old_url ܘ new_url ܒܠܚܘܕ ܣܢܝܩܝܢ. ܕܠܐ ܫܘܪܬܐ ܩܕܡܝܬܐ ܕܫܡ̈ܗܐ، ܥܡܘܕ̈ܐ ܡܬܢܣܒܝܢ ܒܗܢܐ ܛܘܟܣܐ.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>ܥܡܘܕܐ</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>ܡܢܐ ܐܚܝܕ</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>ܡܘܢܥܐ ܥܬܝܩܐ: ܫܒܝܠܐ (/about-us.html)، ܫܒܝܠܐ ܥܡ ܫܘܐܠܐ (/index.php?id=12) ܐܘ ܡܘܢܥܐ ܓܡܝܪܐ ܕܡܐܪܚܢܐ ܥܬܝܩܐ. * ܫܘܐ ܠܟܠ ܡܢܬܐ.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>ܦܐܬܐ ܕܗܢܐ ܐܬܪܐ: ܫܒܝܠܗ̇ (/recipes)، ܐܝܕܝ ܕܩܛܪܗ̇ (node:163، ܕܐܙܠ ܒܬܪ ܦܐܬܐ ܟܕ ܡܫܬܢܝܐ) ܐܘ ܡܘܢܥܐ ܓܡܝܪܐ ܒܕܘܟܬܐ ܐܚܪܬܐ. %first، %second ܢܣܒܝܢ ܡܐ ܕ * ܫܘܐ.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>ܡܢܐ ܗܘܝܐ ܫܘܪܬܐ، ܚܙܝ ܓܢ̈ܣܐ. ܣܦܝܩܐ: ܡܦܢܝܐ ܩܝܘܡܐ، ܐܬܐ ܟܠܢܝܬܐ ܕܡܦܢܝܐ ܟܕ ܐܝܬ ܒ old_url *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>ܡܥܠܢܐ ܕܐܬܪܐ ܕܫܒܝܠܐ ܦܫܝܛܐ؛ ܣܦܝܩܐ: ܗܘ ܕܐܬܓܒܝ ܒܦܐܬܐ ܕܡܥܠܐ.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>ܠܫܢܐ ܕܫܡܐ ܚܠܘܦܐ ܕ URL، ܐܝܟ eng-GB؛ ܣܦܝܩܐ: ܠܫܢܐ ܕܡܥܠܢܐ ܕܐܬܪܐ.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>ܥܘܗܕܢܐ ܕܝܠܟ؛ ܡܬܢܛܪ ܥܡ ܡܥܠܐ.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>ܐܝܟܢܝܘܬܐ ܕܡܦܢܝܐ: 301 ܐܘ 308 (ܩܝܘܡܐ)، 302، 303 ܐܘ 307 (ܙܒܢܢܝܐ)؛ ܣܦܝܩܐ: ܓܢܣܐ ܦܣܩ.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>ܓܢ̈ܣܐ</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>ܡܢܐ ܢܣܒܝܢ ܣܥܘܪ̈ܐ</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>ܡܦܢܝܐ ܩܝܘܡܐ؛ ܫܡܐ ܚܠܘܦܐ ܓܠܘܒܠܝܐ ܕ URL ܕܡܦܢܐ.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>ܡܦܢܝܐ ܙܒܢܢܝܐ: ܡܟܝܢ̈ܬܐ ܕܒܥܬܐ ܢܛܪܢ ܡܘܢܥܐ ܥܬܝܩܐ.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>ܦܐܬܐ ܚܕܬܐ ܒܡܘܢܥܐ ܥܬܝܩܐ، ܕܠܐ ܡܦܢܝܐ؛ ܫܡܐ ܚܠܘܦܐ ܓܠܘܒܠܝܐ ܕ URL.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>ܡܦܢܝܐ ܩܝܘܡܐ ܠܟܠ ܡܘܢܥܐ ܕܫܘܐ؛ ܐܬܐ ܟܠܢܝܬܐ ܕ URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>ܡܦܢܝܐ ܙܒܢܢܝܐ ܠܟܠ ܡܘܢܥܐ ܕܫܘܐ.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>ܦܐܬܐ ܚܕܬܐ ܒܟܠ ܡܘܢܥܐ ܕܫܘܐ، ܕܠܐ ܡܦܢܝܐ.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>ܦܢܩܝ̈ܬܐ ܥܕܡܐ ܠ %size. ܟܠ ܦܘܪܫܐ ܕܦܘܪܡܐܛ̈ܐ ܐܝܬܘܗܝ ܒܡܪܟܙܐ ܕܥܘܕܪܢܐ: ܫܘܢܝܐ ܕ URL، ܘܡܬܠ̈ܐ ܕܡܦܐ ܕ URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>ܚܙܝ ܡܬܠܐ ܕܟܠ ܦܘܪܡܐܛ</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>ܦܘܪܡܐܛ̈ܐ ܘܡܬܠ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>ܦܐܬ̈ܐ ܝܚܝܕ̈ܝܬܐ</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>ܡܦܢܝ̈ܐ ܩܝܘܡ̈ܐ ܕܦܐܬ̈ܐ ܝܚܝܕ̈ܝܬܐ، ܢܝܫܐ ܒܐܝܕܝ ܕܩܛܪܐ (node:163) ܕܐܙܠ ܒܬܪ ܦܐܬܐ ܟܕ ܡܫܬܢܝܐ، ܘܫܡܐ ܚܠܘܦܐ ܕܡܚܘܐ ܦܐܬܐ ܒܡܘܢܥܐ ܥܬܝܩܐ. ܫܘܪܬܐ ܩܕܡܝܬܐ ܩܪܝܐ ܫܡ̈ܗܐ ܠܥܡܘܕ̈ܐ؛ old_url ܘ new_url ܒܠܚܘܕ ܣܢܝܩܝܢ. ܦܢܩܝܬܐ .tsv ܡܬܩܪܝܐ ܒܗ̇ ܒܐܘܪܚܐ، ܥܡ ܛܒ̈ܐ.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* ܫܘܐ ܠܟܠ ܡܢܬܐ ܕܡܘܢܥܐ ܘ {1} ܣܐܡ ܠܗ̇ ܒܚܕܬܐ: ܦܠܓܘܬܐ ܕܐܫܬܢܝܬ، * ܒܡܨܥܬܐ ܕܡܘܢܥܐ، ܐܬܐ ܟܠܢܝܬܐ ܙܒܢܢܝܬܐ ܘܚܕܐ ܬܪܝܨܬܐ (ܕܠܐ ܡܦܢܝܐ).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>ܫܘܐܠ̈ܐ ܘܡܦܢܝ̈ܐ ܙܒܢܢ̈ܝܐ</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>ܡܘܢܥ̈ܐ ܥܬܝܩ̈ܐ ܥܡ ܫܘܐܠܐ (/index.php?id=12)، 308، ܘܡܦܢܝ̈ܐ ܙܒܢܢ̈ܝܐ ܒܓܢܣܐ (redirect-temporary) ܘܒܐܝܟܢܝܘܬܐ (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>ܪܫܝܡܬܐ ܕܨܒܘ̈ܬܐ ܥܡ ܗܢܘܢ ܩܠܝܕ̈ܐ ܐܝܟ ܥܡܘܕ̈ܐ ܕ CSV؛ ܨܒܘܬܐ ܩܕܡܝܬܐ ܡܫܟܚܐ ܬܩܪܐ ܠܐܣܟܝܡܐ exp-url-map/1. ܡܐ ܕܡܦܩܐ ܟܬܒ ܘܡܐ ܕܬܘܟܢܝ̈ܬܐ ܐܚܪ̈ܢܝܬܐ ܥܒܕܢ ܒܦܫܝܛܘܬܐ ܝܬܝܪܬܐ.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>ܦܐܬ̈ܐ ܝܚܝܕ̈ܝܬܐ ܐܝܟ ܟܬܒܐ ܕܥܒܕܐ ܕ Excel: ܦܬܩܐ ܩܕܡܝܐ، ܫܡ̈ܗܐ ܕܥܡܘܕ̈ܐ ܒܫܘܪܬܐ ܩܕܡܝܬܐ. ܦܬܚ ܠܗ، ܫܚܠܦ ܡܘܢܥ̈ܐ ܘܢܛܘܪ ܠܗ ܐܝܟ .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>ܗܘ ܗܘ ܐܝܟ ܦܬܩܐ ܕܚܘܫܒܢܐ ܕ OpenDocument، ܠ LibreOffice ܘ OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>ܢܡܘܣ̈ܐ ܕܟܬܝܒܘܬܐ ܡܢ ܕܪܝܫ ܕ Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>.htaccess ܕܐܬܪܐ ܥܬܝܩܐ ܐܝܟ ܕܐܝܬܘܗܝ: RewriteRule، RewriteCond ܠܫܘܐܠܐ، Redirect ܕܦܠܓܘܬܐ ܟܠܗ̇ (ܦܐܬܐ ܘܟܠ ܡܐ ܕܠܬܚܬ ܡܢܗ̇) ܘ RedirectMatch ܐܝܟ ܐܬܐ ܟܠܢܝܬܐ.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>ܢܡܘܣ̈ܐ ܕܟܬܝܒܘܬܐ ܡܢ ܕܪܝܫ ܕ nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>ܦܠܓܘܬܐ server ܕܐܬܪܐ ܥܬܝܩܐ: location = ܥܡ return، if ($args) ܠܫܘܐܠܐ، rewrite ܐܝܟ ܐܬܐ ܟܠܢܝܬܐ ܘ map ܕܦܐܬ̈ܐ ܝܚܝܕ̈ܝܬܐ.</translation>
+    </message>
 </context>
 </TS>

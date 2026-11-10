@@ -86245,5 +86245,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>پرانے پتے جانچے نہیں جا سکے۔</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL نقشہ ہر پرانے پتے اور اس سائٹ کے اس صفحے کی فہرست دیتا ہے جس سے وہ اب تعلق رکھتا ہے۔ یہ وہ فارمیٹ ہیں جنہیں درآمد پڑھتی ہے، ہر ایک کے ساتھ کاپی کرنے کے لیے ایک مثال: پتوں کو اپنے پتوں سے بدلیں، پھر فائل اپ لوڈ کریں یا اسے چسپاں کریں۔ ہر مثال جوں کی توں ڈیمو سائٹ میں درآمد ہو جاتی ہے۔</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>فائل %file، %size · %extensions سے پڑھی جاتی ہے · درآمد میں %rows قطاریں</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>ڈاؤن لوڈ</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>کلپ بورڈ پر کاپی ہو گیا</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>کاپی نہیں ہو سکا</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>کاپی کریں</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>درآمد میں کھولیں</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>کالم</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV فائل یا اسپریڈشیٹ کی پہلی سطر کالموں کے نام دیتی ہے، کسی بھی ترتیب میں؛ JSON انہی ناموں کو کلیدوں کے طور پر استعمال کرتا ہے۔ صرف old_url اور new_url ضروری ہیں۔ ناموں والی پہلی سطر کے بغیر، کالم اس ترتیب میں لیے جاتے ہیں۔</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>کالم</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>اس میں کیا ہوتا ہے</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>پرانا پتہ: ایک راستہ (/about-us.html)، سوال والا راستہ (/index.php?id=12) یا پرانے ہوسٹ کا مکمل پتہ۔ ایک * کسی بھی حصے سے میل کھاتا ہے۔</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>اس سائٹ کا صفحہ: اس کا راستہ (/recipes)، اس کا نوڈ ID (node:163، جو صفحہ منتقل ہونے پر اس کے ساتھ رہتا ہے) یا کہیں اور کا مکمل پتہ۔ %first، %second وہ لیتے ہیں جس سے * نے میل کھایا۔</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>قطار کیا بنتی ہے، اقسام دیکھیں۔ خالی: مستقل ری ڈائریکٹ، اور جب old_url میں * ہو تو ری ڈائریکٹ کرنے والا وائلڈ کارڈ۔</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>سادہ راستے کی سائٹ ایکسیس؛ خالی: درآمد کے صفحے پر منتخب کردہ۔</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL عرف کی زبان، مثال کے طور پر eng-GB؛ خالی: سائٹ ایکسیس کی زبان۔</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>آپ کا اپنا نوٹ؛ یہ درآمد کے ساتھ محفوظ رہتا ہے۔</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>ری ڈائریکٹ کی حیثیت: 301 یا 308 (مستقل)، 302، 303 یا 307 (عارضی)؛ خالی: قسم فیصلہ کرتی ہے۔</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>اقسام</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>زائرین کو کیا ملتا ہے</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>مستقل ری ڈائریکٹ؛ ری ڈائریکٹ کرنے والا عالمی URL عرف۔</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>عارضی ری ڈائریکٹ: سرچ انجن پرانا پتہ رکھتے ہیں۔</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>پرانے پتے پر نیا صفحہ، بغیر ری ڈائریکٹ کے؛ عالمی URL عرف۔</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>ہر میل کھانے والے پتے کے لیے مستقل ری ڈائریکٹ؛ URL وائلڈ کارڈ۔</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>ہر میل کھانے والے پتے کے لیے عارضی ری ڈائریکٹ۔</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>ہر میل کھانے والے پتے پر نیا صفحہ، بغیر ری ڈائریکٹ کے۔</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>%size تک کی فائلیں۔ فارمیٹس کی ہر تفصیل مدد مرکز میں ہے: URLs کی منتقلی، اور URL نقشے کی مثالیں۔</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>ہر فارمیٹ کی ایک مثال دیکھیں</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>فارمیٹس اور مثالیں</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>انفرادی صفحات</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>انفرادی صفحات کے مستقل ری ڈائریکٹ، نوڈ ID کے ذریعے ہدف (node:163) جو صفحہ منتقل ہونے پر اس کے ساتھ رہتا ہے، اور ایک عرف جو صفحے کو پرانے پتے پر دکھاتا ہے۔ پہلی سطر کالموں کے نام دیتی ہے؛ صرف old_url اور new_url ضروری ہیں۔ .tsv فائل بھی اسی طرح، ٹیبز کے ساتھ پڑھی جاتی ہے۔</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>ایک * پتے کے کسی بھی حصے سے میل کھاتا ہے اور {1} اسے نئے پتے میں رکھتا ہے: منتقل شدہ سیکشن، پتے کے درمیان میں ایک *، عارضی وائلڈ کارڈ اور براہ راست وائلڈ کارڈ (بغیر ری ڈائریکٹ کے)۔</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>سوالات اور عارضی ری ڈائریکٹ</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>سوال والے پرانے پتے (/index.php?id=12)، ایک 308، اور قسم (redirect-temporary) اور حیثیت (307) کے لحاظ سے عارضی ری ڈائریکٹ۔</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>اشیاء کی فہرست جن کی کلیدیں CSV کالموں جیسی ہیں؛ پہلی شے exp-url-map/1 اسکیما کا نام دے سکتی ہے۔ وہی جو برآمد لکھتی ہے اور دوسرے پروگرام سب سے آسانی سے بناتے ہیں۔</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>انفرادی صفحات ایک Excel ورک بک کے طور پر: پہلی شیٹ، کالموں کے نام پہلی قطار میں۔ اسے کھولیں، پتے بدلیں اور .xlsx کے طور پر محفوظ کریں۔</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>یہی چیز OpenDocument اسپریڈشیٹ کے طور پر، LibreOffice اور OpenOffice کے لیے۔</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache ری رائٹ قواعد</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>پرانی سائٹ کی .htaccess فائل جوں کی توں: RewriteRule، سوال کے لیے RewriteCond، پورے سیکشن کا Redirect (صفحہ اور اس کے نیچے سب کچھ) اور وائلڈ کارڈ کے طور پر RedirectMatch۔</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx ری رائٹ قواعد</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>پرانی سائٹ کا server بلاک: return کے ساتھ location =، سوال کے لیے if ($args)، وائلڈ کارڈ کے طور پر rewrite اور انفرادی صفحات کا ایک map۔</translation>
+    </message>
 </context>
 </TS>

@@ -86277,5 +86277,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>Старі адреси не вдалося перевірити.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Мапа URL перелічує кожну стару адресу та сторінку цього сайту, якій вона тепер відповідає. Ось формати, які читає імпорт, кожен із прикладом для копіювання: замініть адреси на власні, а потім завантажте файл або вставте його. Кожен приклад імпортується в демонстраційний сайт без змін.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Файл %file, %size · читається з %extensions · %rows рядків в імпорті</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Завантажити</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Скопійовано в буфер обміну</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Не вдалося скопіювати</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Копіювати</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Відкрити в імпорті</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Стовпці</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Перший рядок файлу CSV або електронної таблиці називає стовпці в будь-якому порядку; JSON використовує ті самі назви як ключі. Потрібні лише old_url і new_url. Якщо першого рядка з назвами немає, стовпці беруться в такому порядку.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Стовпець</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Що містить</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Стара адреса: шлях (/about-us.html), шлях із запитом (/index.php?id=12) або повна адреса старого хоста. Символ * відповідає будь-якій частині.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Сторінка цього сайту: її шлях (/recipes), її ID вузла (node:163, що слідує за сторінкою, коли її переміщують) або повна адреса деінде. %first, %second отримують те, чому відповідав *.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Чим стає рядок, див. види. Порожньо: постійне переспрямування, шаблон підстановки з переспрямуванням, якщо old_url містить *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Доступ до сайту для простого шляху; порожньо: той, що вибрано на сторінці імпорту.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Мова псевдоніма URL, наприклад eng-GB; порожньо: мова доступу до сайту.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Ваша власна примітка; вона зберігається разом з імпортом.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Статус переспрямування: 301 або 308 (постійне), 302, 303 або 307 (тимчасове); порожньо: визначає вид.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Види</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Що отримують відвідувачі</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Постійне переспрямування; глобальний псевдонім URL, що переспрямовує.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Тимчасове переспрямування: пошукові системи зберігають стару адресу.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Нова сторінка за старою адресою, без переспрямування; глобальний псевдонім URL.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Постійне переспрямування для кожної відповідної адреси; шаблон підстановки URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Тимчасове переспрямування для кожної відповідної адреси.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Нова сторінка за кожною відповідною адресою, без переспрямування.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Файли до %size. Усі подробиці форматів — у довідковому центрі: Перенесення URL та приклади мапи URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Переглянути приклад кожного формату</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Формати та приклади</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Окремі сторінки</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Постійні переспрямування окремих сторінок, ціль за ID вузла (node:163), що слідує за сторінкою, коли її переміщують, і псевдонім, який показує сторінку за старою адресою. Перший рядок називає стовпці; потрібні лише old_url і new_url. Файл .tsv читається так само, з табуляціями.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>Символ * відповідає будь-якій частині адреси, а {1} вставляє її в нову: розділ, що переїхав, * посередині адреси, тимчасовий шаблон підстановки та прямий (без переспрямування).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Запити та тимчасові переспрямування</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Старі адреси із запитом (/index.php?id=12), 308 і тимчасові переспрямування за видом (redirect-temporary) та за статусом (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Список об'єктів із тими самими ключами, що й стовпці CSV; перший об'єкт може вказувати схему exp-url-map/1. Те, що записує експорт і що іншим програмам найлегше створити.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Окремі сторінки як книга Excel: перший аркуш, назви стовпців у першому рядку. Відкрийте її, змініть адреси та збережіть як .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Те саме як електронна таблиця OpenDocument, для LibreOffice та OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Правила перезапису Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Файл .htaccess старого сайту як є: RewriteRule, RewriteCond для запиту, Redirect цілого розділу (сторінка й усе під нею) та RedirectMatch як шаблон підстановки.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Правила перезапису nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Блок server старого сайту: location = з return, if ($args) для запиту, rewrite як шаблон підстановки та map окремих сторінок.</translation>
+    </message>
 </context>
 </TS>

@@ -86277,5 +86277,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>تعذّر اختبار العناوين القديمة.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>تسرد خريطة URL كل عنوان قديم والصفحة التي ينتمي إليها الآن في هذا الموقع. هذه هي التنسيقات التي يقرؤها الاستيراد، ولكل منها مثال للنسخ: غيّر العناوين إلى عناوينك، ثم ارفع الملف أو الصقه. كل مثال يُستورد إلى الموقع التجريبي كما هو.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>الملف %file، %size · مقروء من %extensions · %rows صفوف في الاستيراد</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>تنزيل</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>نُسخ إلى الحافظة</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>تعذّر النسخ</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>نسخ</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>فتح في الاستيراد</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>الأعمدة</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>يسمّي السطر الأول من ملف CSV أو جدول البيانات الأعمدة بأي ترتيب؛ ويستخدم JSON الأسماء نفسها كمفاتيح. لا يلزم إلا old_url و new_url. وبدون سطر أول للأسماء تؤخذ الأعمدة بهذا الترتيب.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>العمود</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>ما يحتويه</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>العنوان القديم: مسار (/about-us.html)، أو مسار مع استعلام (/index.php?id=12) أو عنوان كامل للمضيف القديم. يطابق * أي جزء.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>صفحة هذا الموقع: مسارها (/recipes)، أو معرّف عقدتها (node:163، الذي يتبع الصفحة عند نقلها) أو عنوان كامل في مكان آخر. تأخذ %first، %second ما طابقه *.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>ما يصبح عليه الصف، انظر الأنواع. فارغ: إعادة توجيه دائمة، أو حرف بدل يعيد التوجيه عندما يحتوي old_url على *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>الـ siteaccess لمسار مجرد؛ فارغ: الذي اختير في صفحة الاستيراد.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>لغة اسم URL المستعار، مثلًا eng-GB؛ فارغ: لغة الـ siteaccess.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>ملاحظتك الخاصة؛ تُحفظ مع الاستيراد.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>حالة إعادة التوجيه: 301 أو 308 (دائمة)، 302 أو 303 أو 307 (مؤقتة)؛ فارغ: يقرر النوع.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>الأنواع</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>ما يحصل عليه الزوار</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>إعادة توجيه دائمة؛ اسم URL مستعار عام يعيد التوجيه.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>إعادة توجيه مؤقتة: تحتفظ محركات البحث بالعنوان القديم.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>الصفحة الجديدة على العنوان القديم، بدون إعادة توجيه؛ اسم URL مستعار عام.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>إعادة توجيه دائمة لكل عنوان مطابق؛ حرف بدل URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>إعادة توجيه مؤقتة لكل عنوان مطابق.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>الصفحة الجديدة على كل عنوان مطابق، بدون إعادة توجيه.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>ملفات حتى %size. كل تفاصيل التنسيقات موجودة في مركز المساعدة: ترحيل عناوين URL، وأمثلة خريطة URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>اعرض مثالًا لكل تنسيق</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>التنسيقات والأمثلة</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>صفحات مفردة</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>إعادات توجيه دائمة لصفحات مفردة، وهدف بمعرّف العقدة (node:163) يتبع الصفحة عند نقلها، واسم مستعار يعرض الصفحة على العنوان القديم. يسمّي السطر الأول الأعمدة؛ لا يلزم إلا old_url و new_url. ويُقرأ ملف .tsv بالطريقة نفسها، مع علامات الجدولة.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>يطابق * أي جزء من العنوان ويضعه {1} في العنوان الجديد: قسم نُقل، و * في وسط عنوان، وحرف بدل مؤقت وآخر مباشر (بدون إعادة توجيه).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>الاستعلامات وإعادات التوجيه المؤقتة</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>عناوين قديمة مع استعلام (/index.php?id=12)، و 308، وإعادات توجيه مؤقتة حسب النوع (redirect-temporary) وحسب الحالة (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>قائمة كائنات بالمفاتيح نفسها التي لأعمدة CSV؛ يمكن أن يسمّي الكائن الأول المخطط exp-url-map/1. هذا ما يكتبه التصدير وما تنشئه البرامج الأخرى بأسهل طريقة.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>الصفحات المفردة كمصنف Excel: الورقة الأولى، وأسماء الأعمدة في الصف الأول. افتحه وغيّر العناوين واحفظه بصيغة .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>الشيء نفسه كجدول بيانات OpenDocument، لـ LibreOffice و OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>قواعد إعادة الكتابة في Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>ملف .htaccess لموقع قديم كما هو: RewriteRule، و RewriteCond لاستعلام، و Redirect لقسم كامل (الصفحة وكل ما تحتها) و RedirectMatch كحرف بدل.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>قواعد إعادة الكتابة في nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>كتلة server لموقع قديم: location = مع return، و if ($args) لاستعلام، و rewrite كحرف بدل و map للصفحات المفردة.</translation>
+    </message>
 </context>
 </TS>

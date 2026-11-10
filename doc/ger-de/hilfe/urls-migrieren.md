@@ -137,7 +137,9 @@ Tipps für die Zuordnung:
 
 Die Spalten und Arten erklärt [URL-Zuordnungen importieren und exportieren](../funktionen/6.0/url-zuordnungen-importieren-und-exportieren.md#arten-und-status).
 Excel (`.xlsx`), LibreOffice (`.ods`), JSON und die Apache- oder nginx-Regeln der alten Website werden ebenfalls
-gelesen. Fertige Beispiele: [URL-Zuordnungen als Beispiele](../beispiele/url-zuordnungen/README.md).
+gelesen. Fertige Beispiele: [URL-Zuordnungen als Beispiele](../beispiele/url-zuordnungen/README.md). In der
+Administration zeigt **Importieren** > **Formate und Beispiele** eine Beispieldatei jedes Formats mit den Spalten und
+Arten, zum Kopieren, Herunterladen oder zum Öffnen im Import.
 
 ## 3. Mit Vorschau und Probelauf importieren
 

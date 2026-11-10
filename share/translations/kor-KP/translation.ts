@@ -86247,5 +86247,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>이전 주소를 시험할 수 없었습니다.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL 맵은 매 낡은 주소와 그 주소가 지금 속하는 이 싸이트의 페지를 렬거합니다. 다음은 가져오기가 읽는 형식이며 매 형식마다 복사할 수 있는 실례가 있습니다: 주소를 자기의 것으로 바꾼 다음 화일을 올리적재하거나 붙여넣으십시오. 모든 실례는 그대로 시범싸이트에 가져올수 있습니다.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>화일 %file, %size · %extensions에서 읽음 · 가져오기에 %rows개 행</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>내리적재</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>클립보드에 복사되였습니다</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>복사할수 없습니다</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>복사</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>가져오기에서 열기</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>렬</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV 화일이나 표계산문서의 첫 행은 렬의 이름을 임의의 순서로 지정합니다. JSON은 같은 이름을 열쇠로 씁니다. old_url과 new_url만 필요합니다. 이름이 있는 첫 행이 없으면 렬은 이 순서대로 읽어들입니다.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>렬</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>들어있는 내용</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>낡은 주소: 경로(/about-us.html), 질문이 있는 경로(/index.php?id=12) 또는 낡은 호스트의 완전한 주소. *는 임의의 부분과 일치합니다.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>이 싸이트의 페지: 그 경로(/recipes), 마디 ID(node:163, 페지가 옮겨져도 따라감) 또는 다른 곳의 완전한 주소. %first, %second는 *가 일치한 부분을 받습니다.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>행이 무엇으로 되는가, 종류를 보십시오. 비여있으면: 영구 리디렉션, old_url에 *가 있으면 리디렉션하는 와일드카드.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>경로만 있는 주소의 싸이트접근. 비여있으면: 가져오기 페지에서 선택한 싸이트접근.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL 별칭의 언어, 실례로 eng-GB. 비여있으면: 싸이트접근의 언어.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>자기의 메모. 가져오기와 함께 보관됩니다.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>리디렉션 상태: 301 또는 308(영구), 302, 303 또는 307(림시). 비여있으면: 종류가 결정합니다.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>종류</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>방문자가 받는것</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>영구 리디렉션. 리디렉션하는 전역 URL 별칭.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>림시 리디렉션: 검색기는 낡은 주소를 유지합니다.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>리디렉션없이 낡은 주소에 나타나는 새 페지. 전역 URL 별칭.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>일치하는 모든 주소에 대한 영구 리디렉션. URL 와일드카드.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>일치하는 모든 주소에 대한 림시 리디렉션.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>리디렉션없이 일치하는 모든 주소에 나타나는 새 페지.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>%size까지의 화일. 형식의 모든 세부는 도움말쎈터에 있습니다: URL 이전 및 URL 맵 실례.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>매 형식의 실례 보기</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>형식과 실례</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>단일 페지</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>단일 페지의 영구 리디렉션, 페지가 옮겨져도 따라가는 마디 ID(node:163)에 의한 목표, 그리고 낡은 주소에 페지를 보여주는 별칭. 첫 행은 렬의 이름을 지정하며 old_url과 new_url만 필요합니다. .tsv 화일도 타브로 같은 방식으로 읽어들입니다.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>*는 주소의 임의 부분과 일치하고 {1}은 그것을 새 주소에 넣습니다: 옮겨진 부분, 주소 중간의 *, 림시 와일드카드와 직접 와일드카드(리디렉션 없음).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>질문과 림시 리디렉션</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>질문이 있는 낡은 주소(/index.php?id=12), 308, 그리고 종류(redirect-temporary)와 상태(307)에 의한 림시 리디렉션.</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>CSV 렬과 같은 열쇠를 가진 객체목록. 첫 객체는 도식 exp-url-map/1을 지정할수 있습니다. 내보내기가 쓰는 형식이며 다른 프로그람들이 가장 쉽게 만드는 형식입니다.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Excel 작업책으로 된 단일 페지: 첫 장, 첫 행에 렬의 이름. 열어서 주소를 바꾸고 .xlsx로 보관하십시오.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>LibreOffice와 OpenOffice를 위한 OpenDocument 표계산문서로 된 같은 내용.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache 재작성규칙</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>낡은 싸이트의 .htaccess 그대로: RewriteRule, 질문을 위한 RewriteCond, 부분전체(페지와 그 아래의 모든것)의 Redirect, 와일드카드로서의 RedirectMatch.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx 재작성규칙</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>낡은 싸이트의 server 블로크: return이 있는 location =, 질문을 위한 if ($args), 와일드카드로서의 rewrite, 그리고 단일 페지의 map.</translation>
+    </message>
 </context>
 </TS>

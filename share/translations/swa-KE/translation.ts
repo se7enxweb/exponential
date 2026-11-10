@@ -86245,5 +86245,181 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>The old addresses could not be tested.</source>
         <translation>Anwani za zamani hazikuweza kujaribiwa.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Ramani ya URL inaorodhesha kila anwani ya zamani na ukurasa wa tovuti hii ambao sasa ni wake. Hii ndiyo miundo ambayo uletaji husoma, kila mmoja ukiwa na mfano wa kunakili: badilisha anwani ziwe zako, kisha pakia faili au uibandike. Kila mfano huletwa kwenye tovuti ya maonyesho kama ulivyo.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Faili %file, %size · imesomwa kutoka %extensions · safu %rows katika uletaji</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Pakua</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Imenakiliwa kwenye ubao wa kunakili</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Haikuweza kunakili</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Nakili</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Fungua katika uletaji</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Safu wima</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Mstari wa kwanza wa faili ya CSV au lahajedwali hutaja safu wima, kwa mpangilio wowote; JSON hutumia majina yale yale kama funguo. Ni old_url na new_url pekee zinazohitajika. Bila mstari wa kwanza wa majina, safu wima huchukuliwa kwa mpangilio huu.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Safu wima</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Kilichomo</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Anwani ya zamani: njia (/about-us.html), njia yenye hoja (/index.php?id=12) au anwani kamili ya seva pangishi ya zamani. Alama * hulingana na sehemu yoyote.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Ukurasa wa tovuti hii: njia yake (/recipes), kitambulisho cha fundo lake (node:163, kinachofuata ukurasa unapohamishwa) au anwani kamili mahali pengine. %first, %second huchukua kile ambacho * ililingana nacho.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Kile ambacho safu inakuwa, angalia aina. Tupu: elekezo upya la kudumu, kadi-pori inayoelekeza upya wakati old_url ina *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Siteaccess ya njia tupu; tupu: ile iliyochaguliwa kwenye ukurasa wa uletaji.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Lugha ya lakabu ya URL, kwa mfano eng-GB; tupu: lugha ya siteaccess.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Dokezo lako mwenyewe; huhifadhiwa pamoja na uletaji.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Hali ya elekezo upya: 301 au 308 (la kudumu), 302, 303 au 307 (la muda); tupu: aina huamua.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Aina</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Kile wageni wanachopata</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Elekezo upya la kudumu; lakabu ya URL ya jumla inayoelekeza upya.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Elekezo upya la muda: injini za utafutaji huhifadhi anwani ya zamani.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Ukurasa mpya kwenye anwani ya zamani, bila elekezo upya; lakabu ya URL ya jumla.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Elekezo upya la kudumu kwa kila anwani inayolingana; kadi-pori ya URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Elekezo upya la muda kwa kila anwani inayolingana.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Ukurasa mpya kwenye kila anwani inayolingana, bila elekezo upya.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Faili hadi %size. Kila undani wa miundo uko katika kituo cha usaidizi: Kuhamisha URL, na mifano ya ramani za URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Tazama mfano wa kila muundo</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Miundo na mifano</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Kurasa moja moja</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Maelekezo upya ya kudumu ya kurasa moja moja, lengo kwa kitambulisho cha fundo (node:163) linalofuata ukurasa unapohamishwa, na lakabu inayoonyesha ukurasa kwenye anwani ya zamani. Mstari wa kwanza hutaja safu wima; ni old_url na new_url pekee zinazohitajika. Faili ya .tsv husomwa vivyo hivyo, kwa vichupo.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>Alama * hulingana na sehemu yoyote ya anwani na {1} huiweka kwenye anwani mpya: sehemu iliyohamishwa, * katikati ya anwani, kadi-pori ya muda na ya moja kwa moja (bila elekezo upya).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Hoja na maelekezo upya ya muda</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Anwani za zamani zenye hoja (/index.php?id=12), 308, na maelekezo upya ya muda kwa aina (redirect-temporary) na kwa hali (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Orodha ya vitu vyenye funguo zile zile kama safu wima za CSV; kitu cha kwanza kinaweza kutaja skima exp-url-map/1. Kile ambacho uhamishaji huandika na ambacho programu nyingine hutengeneza kwa urahisi zaidi.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Kurasa moja moja kama kitabu cha kazi cha Excel: laha ya kwanza, majina ya safu wima katika mstari wa kwanza. Kifungue, badilisha anwani na ukihifadhi kama .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Vivyo hivyo kama lahajedwali ya OpenDocument, kwa LibreOffice na OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Kanuni za kuandika upya za Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>.htaccess ya tovuti ya zamani kama ilivyo: RewriteRule, RewriteCond kwa hoja, Redirect ya sehemu nzima (ukurasa na kila kitu chini yake) na RedirectMatch kama kadi-pori.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Kanuni za kuandika upya za nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Kizuizi cha server cha tovuti ya zamani: location = pamoja na return, if ($args) kwa hoja, rewrite kama kadi-pori na map ya kurasa moja moja.</translation>
+    </message>
 </context>
 </TS>

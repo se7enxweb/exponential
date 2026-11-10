@@ -3,7 +3,7 @@ title: URL-Zuordnungen als Beispiele
 audience: admin, developer
 category: examples
 order: 60
-summary: Kleine, realistische URL-Zuordnungen im CSV-, JSON-, Apache- und nginx-Format, mit Weiterleitungen mit Abfrage, vorübergehenden Weiterleitungen und Platzhaltern, jede mit exp:url:import --dry-run geprüft.
+summary: Kleine, realistische URL-Zuordnungen im CSV-, JSON-, Excel-, LibreOffice-, Apache- und nginx-Format, mit Weiterleitungen mit Abfrage, vorübergehenden Weiterleitungen und Platzhaltern, jede mit exp:url:import --dry-run geprüft.
 keywords: URL-Zuordnung, Beispiel, Zuordnungsdatei, CSV, JSON, htaccess, Apache, nginx, Weiterleitung, Platzhalter, Abfrage, Query-String, vorübergehende Weiterleitung, exp:url:import, URL map, example, mapping file, redirect, wildcard, query string, temporary redirect
 type: example
 ---
@@ -29,6 +29,8 @@ Jede Einzelheit der Formate: [Die Dateiformate für URL-Zuordnungen](../../spezi
 | [`alte-site.nginx`](alte-site.nginx) | nginx | `location =` mit `return`, alte Adressen mit Abfrage (`if ($args = ...)`), `rewrite` als Platzhalter und eine `map` einzelner Seiten | 7 |
 | [`query-und-voruebergehend.csv`](query-und-voruebergehend.csv) | CSV | Weiterleitungen mit Abfrage (`/index.php?id=12`), eine 308 und vorübergehende Weiterleitungen über die Art (`redirect-temporary`) und über den Status (307) | 5 |
 | [`wildcards.csv`](wildcards.csv) | CSV | Platzhalter: ein umgezogener Bereich, ein `*` mitten in einer Adresse, ein vorübergehender Platzhalter und ein direkter (ohne Weiterleitung) | 4 |
+| [`alte-site.xlsx`](alte-site.xlsx) | Excel | Die einzelnen Seiten aus `alte-site.csv` als Excel-Arbeitsmappe: die Spaltennamen in der ersten Zeile des ersten Blatts | 8 |
+| [`alte-site.ods`](alte-site.ods) | OpenDocument | Dasselbe als LibreOffice-Tabelle | 8 |
 
 „Zeilen“ ist, was der Import aus der Datei macht: Ein `Redirect` von Apache ergibt zwei Zeilen (die Seite und einen
 Platzhalter für alles darunter).
@@ -50,8 +52,9 @@ URL map dry run: doc/ger-de/beispiele/url-zuordnungen/alte-site.csv (8 rows)
 
 Bei einem Probelauf zählt „Done“, was der Import tun würde. Lassen Sie `--dry-run` weg, um zu importieren, und machen
 Sie es mit `./console exp:url:undo <nummer>` wieder rückgängig (die Nummer gibt der Import aus, und
-`./console exp:url:batches` listet sie). In der Administration gehen dieselben Dateien unter **Setup** >
-**URL-Übersetzer** > **Importieren**.
+`./console exp:url:batches` listet sie). In der Administration zeigt **Setup** > **URL-Übersetzer** > **Importieren** >
+**Formate und Beispiele** jede dieser Dateien mit den Spalten und Arten: kopieren, herunterladen oder eine Textdatei
+mit **Im Import öffnen** gleich in den Import übernehmen (bei deutscher Oberfläche die deutschen Dateien).
 
 Prüfen Sie nach einem echten Import, dass jede alte Adresse dort ankommt, wo die Datei es sagt (die Basis ist die
 Website, in die Sie importiert haben):

@@ -86280,5 +86280,181 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>ngo' Daqmey tob laHbe'.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL pu'jIn tetlh: ngo' Daq Hoch 'ej Qa'Hom vam nav'e' DaH Hevbogh. qemghach laDbogh ghItlh Seghmey chaH, wa'wa' velqa'meH chovnatlh ghaj: Daqmey tIchoH, Daqmey'lIj DalI'meH, ghIq ghItlh yIngeH pagh yIlan. chovnatlh Hoch qemlaHlu' 'aghmeH Qa'HomDaq, choHlu'be'chugh.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>ghItlh %file, %size · %extensions vo' laDlu' · qemghachDaq %rows tlheghmey</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>yIlI'</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>velqa'lu'pu'</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>velqa'laHbe'lu'</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>yIvelqa'</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>qemghachDaq yIpoSmoH</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>tutmey</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV ghItlh pagh mI' nagh beQ wa'DIch tlhegh tutmey pong, Hoch mIw lo'lu'laH; JSON pongmey rap lo' ngaQHa'moHwI'mey rur. old_url new_url je neH poQlu'. pongmey wa'DIch tlhegh tu'lu'be'chugh, mIw vam tutmey tlhaplu'.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>tut</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>nuq ngaS</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>ngo' Daq: He (/about-us.html), tlhobghach ghajbogh He (/index.php?id=12) pagh ngo' jabwI' Daq naQ. * ghom Hoch 'ay'.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Qa'Hom vam nav: He (/recipes), ghoch ngaSwI' ID (node:163, nav tlha' nav vIHmoHlu'DI') pagh latlh Daq naQ. %first, %second ghom * 'ay'mey lutlhap.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>tlhegh moj nuq, Seghmey yIlegh. chIm: reH He choHghach, old_url * ghajDI' He choHmoHbogh Hoch mu'.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>He chIm yoS lojmIt; chIm: qemghach nav'e' wIvlu'pu'bogh.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL pong latlh Hol, chovnatlh eng-GB; chIm: yoS lojmIt Hol.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>ghItlhHom'lIj; qemghach tlhej pollu'.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>He choHghach Dotlh: 301 pagh 308 (reH), 302, 303 pagh 307 (ru'); chIm: Segh wuq.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Seghmey</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>nuq Hev SuchwI'pu'</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>reH He choHghach; He choHmoHbogh Hoch URL pong latlh.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>ru' He choHghach: ngo' Daq polmoH nejwI'mey.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>ngo' DaqDaq chu' nav, He choHghach Hutlh; Hoch URL pong latlh.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Hoch Daq rapbogh reH He choHghach; URL Hoch mu'.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Hoch Daq rapbogh ru' He choHghach.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Hoch Daq rapbogh chu' nav, He choHghach Hutlh.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>%size tIn ghItlhmey. ghItlh Seghmey De' Hoch QaHwI' botlhDaq tu'lu': URLmey vIHmoH, URL pu'jIn chovnatlhmey je.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>ghItlh Segh Hoch chovnatlh yIlegh</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>ghItlh Seghmey chovnatlhmey je</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>mob navmey</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>mob navmey reH He choHghachmey, ghoch ngaSwI' ID (node:163) nav tlha'bogh vIHDI', ngo' DaqDaq nav cha'bogh pong latlh je. wa'DIch tlhegh tutmey pong; old_url new_url je neH poQlu'. .tsv ghItlh rap laDlu', tab lo'.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* ghom Daq 'ay' Hoch 'ej Daq chu'Daq lan {1}: vIHpu'bogh 'ay', Daq botlhDaq *, ru' Hoch mu', He choHghach Hutlhbogh Hoch mu' je.</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>tlhobghachmey ru' He choHghachmey je</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>tlhobghach ghajbogh ngo' Daqmey (/index.php?id=12), wa' 308, Segh (redirect-temporary) Dotlh (307) je lo'bogh ru' He choHghachmey.</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>CSV tutmey ngaQHa'moHwI'mey rap ghajbogh Dochmey tetlh; exp-url-map/1 mIw pong wa'DIch Doch. lellu'DI' ghItlhlu'bogh 'ej latlh ghunmeymo' ngeD chenmoHlu'bogh.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Excel vum paq rur mob navmey: wa'DIch nagh beQ, wa'DIch tlheghDaq tut pongmey. yIpoSmoH, Daqmey yIchoH 'ej .xlsx rur yIpol.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>OpenDocument mI' nagh beQ rur Doch rap, LibreOfficevaD OpenOfficevaD je.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache ghItlhqa'meH chutmey</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>ngo' Qa'Hom .htaccess choHlu'be'bogh: RewriteRule, tlhobghachvaD RewriteCond, 'ay' naQ Redirect (nav 'ej bIng Hoch) 'ej Hoch mu' rur RedirectMatch.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx ghItlhqa'meH chutmey</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>ngo' Qa'Hom server buq'Ir: return tlhej location =, tlhobghachvaD if ($args), Hoch mu' rur rewrite 'ej mob navmey map.</translation>
+    </message>
 </context>
 </TS>

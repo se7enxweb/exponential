@@ -86277,5 +86277,181 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>Senųjų adresų išbandyti nepavyko.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL žemėlapyje nurodomas kiekvienas senas adresas ir šios svetainės puslapis, kuriam jis dabar priklauso. Tai formatai, kuriuos skaito importas, kiekvienas su pavyzdžiu, kurį galima nukopijuoti: pakeiskite adresus savais, tada įkelkite failą arba įklijuokite jį. Kiekvienas pavyzdys importuojamas į demonstracinę svetainę toks, koks yra.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Failas %file, %size · skaitoma iš %extensions · %rows eilučių importe</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Atsisiųsti</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Nukopijuota į iškarpinę</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Nepavyko nukopijuoti</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopijuoti</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Atidaryti importe</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Stulpeliai</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Pirmoji CSV failo ar skaičiuoklės eilutė nurodo stulpelių pavadinimus bet kokia tvarka; JSON tuos pačius pavadinimus naudoja kaip raktus. Būtini tik old_url ir new_url. Jei pirmosios eilutės su pavadinimais nėra, stulpeliai imami šia tvarka.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Stulpelis</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Ką jis talpina</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Senas adresas: kelias (/about-us.html), kelias su užklausa (/index.php?id=12) arba visas senojo serverio adresas. * atitinka bet kokią dalį.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Šios svetainės puslapis: jo kelias (/recipes), jo mazgo ID (node:163, kuris seka puslapį, kai šis perkeliamas) arba visas adresas kitur. %first, %second paima tai, ką atitiko *.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Kuo tampa eilutė, žr. rūšis. Tuščia: nuolatinis peradresavimas, peradresuojantis pakaitos simbolis, kai old_url turi *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Pliko kelio prieiga prie svetainės; tuščia: ta, kuri pasirinkta importo puslapyje.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL pseudonimo kalba, pavyzdžiui, eng-GB; tuščia: prieigos prie svetainės kalba.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Jūsų pastaba; ji saugoma kartu su importu.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Peradresavimo būsena: 301 arba 308 (nuolatinis), 302, 303 arba 307 (laikinas); tuščia: lemia rūšis.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Rūšys</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Ką gauna lankytojai</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Nuolatinis peradresavimas; globalus URL pseudonimas, kuris peradresuoja.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Laikinas peradresavimas: paieškos sistemos išlaiko seną adresą.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Naujas puslapis senuoju adresu, be peradresavimo; globalus URL pseudonimas.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Nuolatinis peradresavimas kiekvienam atitinkančiam adresui; URL pakaitos simbolis.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Laikinas peradresavimas kiekvienam atitinkančiam adresui.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Naujas puslapis kiekvienu atitinkančiu adresu, be peradresavimo.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Failai iki %size. Visos formatų detalės yra pagalbos centre: URL perkėlimas ir URL žemėlapio pavyzdžiai.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Žiūrėti kiekvieno formato pavyzdį</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Formatai ir pavyzdžiai</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Atskiri puslapiai</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Nuolatiniai atskirų puslapių peradresavimai, tikslas pagal mazgo ID (node:163), kuris seka puslapį, kai šis perkeliamas, ir pseudonimas, rodantis puslapį senuoju adresu. Pirmoji eilutė nurodo stulpelių pavadinimus; būtini tik old_url ir new_url. .tsv failas skaitomas taip pat, su tabuliacijomis.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* atitinka bet kokią adreso dalį, o {1} įterpia ją į naująjį: perkeltas skyrius, * adreso viduryje, laikinas pakaitos simbolis ir tiesioginis (be peradresavimo).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Užklausos ir laikini peradresavimai</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Seni adresai su užklausa (/index.php?id=12), 308 ir laikini peradresavimai pagal rūšį (redirect-temporary) bei pagal būseną (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Objektų sąrašas su tais pačiais raktais kaip CSV stulpeliai; pirmasis objektas gali nurodyti schemą exp-url-map/1. Tai, ką rašo eksportas ir ką kitos programos sukuria lengviausiai.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Atskiri puslapiai kaip Excel darbaknygė: pirmasis lapas, stulpelių pavadinimai pirmoje eilutėje. Atidarykite ją, pakeiskite adresus ir išsaugokite kaip .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Tas pats kaip OpenDocument skaičiuoklė, skirta LibreOffice ir OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache perrašymo taisyklės</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Senos svetainės .htaccess toks, koks yra: RewriteRule, RewriteCond užklausai, Redirect visam skyriui (puslapiui ir viskam po juo) ir RedirectMatch kaip pakaitos simbolis.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx perrašymo taisyklės</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Senos svetainės server blokas: location = su return, if ($args) užklausai, rewrite kaip pakaitos simbolis ir map atskiriems puslapiams.</translation>
+    </message>
 </context>
 </TS>

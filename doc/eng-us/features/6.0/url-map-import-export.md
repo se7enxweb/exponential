@@ -144,12 +144,13 @@ tests any site, a staging site too.
 
 ## In the administration
 
-On the **URL translator** and **URL wildcards** pages (**Setup** tab), the buttons **Import**, **Export**, **Import
+On the **URL translator** and **URL wildcards** pages (**Setup** tab), the buttons **Import**, **Formats and examples**, **Export**, **Import
 history** and **Redirects** lead to the screens:
 
 | Screen | Address | What it does |
 |---|---|---|
 | Import | `/content/urlimport` | Tabs **Upload a file**, **From the old sitemap**, **From the 404 log** and **Suggest targets**. Upload a file or paste rows, choose the siteaccess and language of bare paths and what happens to existing entries, map old hosts; then the preview with a filter per state, a tick per row, **Dry run**, the plan as CSV or JSON, **Import**, and after the import **Test the old addresses** |
+| Formats and examples | `/content/urlimport/(source)/examples` | An example file of every format (CSV, JSON, Excel, LibreOffice, Apache, nginx) with what it shows and the rows it makes, to copy, **Download** or **Open in the import** (the text ones); the columns and the kinds. The files are the [URL map examples](../../examples/url-maps/README.md), the German ones for a German interface |
 | Import history | `/content/urlimporthistory` | Every import with who, when, the file and the counts; one import's entries; **Undo import** |
 | Export | `/content/urlexport` | The format, what to include, the siteaccess and language; downloads the file |
 | Redirects | `/content/urlredirects` | The redirects with a query or a status, with removing one or the ticked ones |

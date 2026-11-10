@@ -3088,10 +3088,17 @@
     ],
     "kernel/classes/urlmap/*": [
       "tests/tests/kernel/classes/urlmap/expUrlMapCsvJsonTest.php",
+      "tests/tests/kernel/classes/urlmap/expUrlMapExamplesTest.php",
       "tests/tests/kernel/classes/urlmap/expUrlMapRewriteRulesTest.php",
       "tests/tests/kernel/classes/urlmap/expUrlMapRoundTripTest.php",
       "tests/tests/kernel/classes/urlmap/expUrlMapRowTest.php",
       "tests/tests/kernel/classes/urlmap/expUrlMapSpreadsheetTest.php"
+    ],
+    "doc/eng-us/examples/url-maps/*": [
+      "tests/tests/kernel/classes/urlmap/expUrlMapExamplesTest.php"
+    ],
+    "doc/ger-de/beispiele/url-zuordnungen/*": [
+      "tests/tests/kernel/classes/urlmap/expUrlMapExamplesTest.php"
     ],
     "tests/tests/kernel/classes/urlmap/fixtures/*": [
       "tests/tests/kernel/classes/urlmap/expUrlMapCsvJsonTest.php",

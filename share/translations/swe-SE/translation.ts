@@ -87550,5 +87550,181 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>De gamla adresserna kunde inte testas.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>En url-karta listar varje gammal adress och den sida på den här webbplatsen som den hör till nu. Det här är formaten som importen läser, vart och ett med ett exempel att kopiera: byt adresserna mot dina egna och ladda sedan upp filen eller klistra in den. Varje exempel importeras till demowebbplatsen som det är.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Fil %file, %size · läses från %extensions · %rows rader i importen</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Ladda ner</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Kopierat till urklipp</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Kunde inte kopiera</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopiera</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Öppna i importen</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Kolumnerna</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Första raden i en CSV-fil eller ett kalkylark namnger kolumnerna, i valfri ordning; JSON använder samma namn som nycklar. Endast old_url och new_url behövs. Utan en första rad med namn tas kolumnerna i den här ordningen.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Kolumn</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Vad den innehåller</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Den gamla adressen: en sökväg (/about-us.html), en sökväg med frågesträng (/index.php?id=12) eller en fullständig adress på den gamla värden. En * matchar vilken del som helst.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Sidan på den här webbplatsen: dess sökväg (/recipes), dess nod-id (node:163, som följer sidan när den flyttas) eller en fullständig adress någon annanstans. %first, %second tar det som * matchade.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Vad raden blir, se typerna. Tom: en permanent omdirigering, ett omdirigerande jokertecken när old_url har en *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Webbplatsingången för en ren sökväg; tom: den som valts på importsidan.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Språket för url-aliaset, till exempel eng-GB; tom: webbplatsingångens språk.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Din egen anteckning; den sparas med importen.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Omdirigeringens status: 301 eller 308 (permanent), 302, 303 eller 307 (tillfällig); tom: typen avgör.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Typerna</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Vad besökarna får</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>En permanent omdirigering; ett globalt url-alias som omdirigerar.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>En tillfällig omdirigering: sökmotorerna behåller den gamla adressen.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Den nya sidan på den gamla adressen, utan omdirigering; ett globalt url-alias.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>En permanent omdirigering för varje matchande adress; ett url-jokertecken.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>En tillfällig omdirigering för varje matchande adress.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Den nya sidan på varje matchande adress, utan omdirigering.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Filer upp till %size. Alla detaljer om formaten finns i hjälpcentret: Migrera url:er, och exemplen på url-kartor.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Se ett exempel på varje format</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Format och exempel</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Enskilda sidor</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Permanenta omdirigeringar av enskilda sidor, ett mål via nod-id (node:163) som följer sidan när den flyttas, och ett alias som visar sidan på den gamla adressen. Första raden namnger kolumnerna; endast old_url och new_url behövs. En .tsv-fil läses på samma sätt, med tabbar.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>En * matchar vilken del av en adress som helst och {1} sätter in den i den nya: en sektion som flyttats, en * mitt i en adress, ett tillfälligt jokertecken och ett direkt (utan omdirigering).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Frågesträngar och tillfälliga omdirigeringar</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Gamla adresser med frågesträng (/index.php?id=12), en 308 och tillfälliga omdirigeringar via typ (redirect-temporary) och via status (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>En lista med objekt med samma nycklar som CSV-kolumnerna; det första objektet kan namnge schemat exp-url-map/1. Det som exporten skriver och som andra program enklast skapar.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>De enskilda sidorna som en Excel-arbetsbok: första bladet, kolumnnamnen på första raden. Öppna den, ändra adresserna och spara den som .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Samma sak som ett OpenDocument-kalkylark, för LibreOffice och OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache-omskrivningsregler</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>.htaccess från en gammal webbplats som den är: RewriteRule, RewriteCond för en frågesträng, Redirect av en hel sektion (sidan och allt under den) och RedirectMatch som jokertecken.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx-omskrivningsregler</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Server-blocket från en gammal webbplats: location = med return, if ($args) för en frågesträng, rewrite som jokertecken och en map med enskilda sidor.</translation>
+    </message>
 </context>
 </TS>

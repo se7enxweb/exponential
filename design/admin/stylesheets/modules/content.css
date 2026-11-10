@@ -903,3 +903,4 @@ html.a4-js .a4-content-preview-stage .a4-content-preview-device iframe { width: 
 .a4-content-urlmap .a4-content-urlmap-notes { margin: 0; padding-inline-start: var(--a4-space-3); color: var(--a4-muted); font-size: var(--a4-text-s); }
 .a4-content-urlmap .a4-content-urlmap-notes li + li { margin-top: var(--a4-space-1); }
 .a4-content-urlmap .a4-content-urlmap-table td { overflow-wrap: anywhere; }
+.a4-content-urlmap .a4-content-urlmap-table.is-names td:first-child { overflow-wrap: normal; white-space: nowrap; }   /* the column and kind names of Formats and examples */

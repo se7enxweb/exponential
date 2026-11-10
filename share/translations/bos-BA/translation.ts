@@ -86277,5 +86277,181 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>Stare adrese nije bilo moguće testirati.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL mapa navodi svaku staru adresu i stranicu ove web-stranice kojoj sada pripada. Ovo su formati koje uvoz čita, svaki s primjerom za kopiranje: promijenite adrese u svoje, zatim otpremite datoteku ili je zalijepite. Svaki primjer se uvozi u demo web-stranicu takav kakav jeste.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Datoteka %file, %size · pročitano iz %extensions · %rows redova u uvozu</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Preuzmi</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Kopirano u međuspremnik</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Kopiranje nije uspjelo</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopiraj</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Otvori u uvozu</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Kolone</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Prvi red CSV datoteke ili tabele imenuje kolone, bilo kojim redoslijedom; JSON koristi ista imena kao ključeve. Potrebni su samo old_url i new_url. Bez prvog reda s imenima, kolone se uzimaju ovim redoslijedom.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Kolona</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Šta sadrži</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Stara adresa: putanja (/about-us.html), putanja s upitom (/index.php?id=12) ili puna adresa starog hosta. * odgovara bilo kojem dijelu.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Stranica ove web-stranice: njena putanja (/recipes), ID njenog čvora (node:163, koji prati stranicu kada se premjesti) ili puna adresa negdje drugdje. %first, %second preuzimaju ono čemu je * odgovarala.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Šta red postaje, pogledajte vrste. Prazno: trajno preusmjeravanje, zamjenski znak koji preusmjerava kada old_url ima *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Pristup web-stranici za golu putanju; prazno: onaj odabran na stranici uvoza.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Jezik URL aliasa, na primjer eng-GB; prazno: jezik pristupa web-stranici.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Vaša vlastita napomena; čuva se s uvozom.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Status preusmjeravanja: 301 ili 308 (trajno), 302, 303 ili 307 (privremeno); prazno: odlučuje vrsta.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Vrste</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Šta posjetioci dobijaju</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Trajno preusmjeravanje; globalni URL alias koji preusmjerava.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Privremeno preusmjeravanje: pretraživači zadržavaju staru adresu.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Nova stranica na staroj adresi, bez preusmjeravanja; globalni URL alias.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Trajno preusmjeravanje za svaku odgovarajuću adresu; URL zamjenski znak.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Privremeno preusmjeravanje za svaku odgovarajuću adresu.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Nova stranica na svakoj odgovarajućoj adresi, bez preusmjeravanja.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Datoteke do %size. Svi detalji formata su u centru za pomoć: Migracija URL-ova, i primjeri URL mapa.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Pogledajte primjer svakog formata</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Formati i primjeri</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Pojedinačne stranice</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Trajna preusmjeravanja pojedinačnih stranica, cilj po ID-u čvora (node:163) koji prati stranicu kada se premjesti, i alias koji prikazuje stranicu na staroj adresi. Prvi red imenuje kolone; potrebni su samo old_url i new_url. Datoteka .tsv se čita na isti način, s tabulatorima.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* odgovara bilo kojem dijelu adrese, a {1} ga stavlja u novu: odjeljak koji je premješten, * u sredini adrese, privremeni zamjenski znak i direktni (bez preusmjeravanja).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Upiti i privremena preusmjeravanja</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Stare adrese s upitom (/index.php?id=12), 308, i privremena preusmjeravanja po vrsti (redirect-temporary) i po statusu (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Lista objekata s istim ključevima kao CSV kolone; prvi objekat može imenovati shemu exp-url-map/1. Ono što izvoz piše i što drugi programi najlakše prave.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Pojedinačne stranice kao Excel radna sveska: prvi list, imena kolona u prvom redu. Otvorite je, promijenite adrese i sačuvajte je kao .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Isto kao OpenDocument tabela, za LibreOffice i OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache pravila prepisivanja</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>.htaccess stare web-stranice takav kakav jeste: RewriteRule, RewriteCond za upit, Redirect cijelog odjeljka (stranica i sve ispod nje) i RedirectMatch kao zamjenski znak.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx pravila prepisivanja</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Blok server stare web-stranice: location = s return, if ($args) za upit, rewrite kao zamjenski znak i map pojedinačnih stranica.</translation>
+    </message>
 </context>
 </TS>

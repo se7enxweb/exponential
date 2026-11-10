@@ -86277,5 +86277,181 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>Vecās adreses nevarēja pārbaudīt.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL karte uzskaita katru veco adresi un šīs vietnes lapu, kurai tā tagad pieder. Šie ir formāti, ko imports nolasa, katrs ar kopējamu piemēru: nomainiet adreses ar savējām, tad augšupielādējiet failu vai ielīmējiet to. Katrs piemērs tiek importēts demonstrācijas vietnē tāds, kāds tas ir.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Fails %file, %size · nolasīts no %extensions · %rows rindas importā</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Lejupielādēt</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Nokopēts starpliktuvē</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Nevarēja nokopēt</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopēt</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Atvērt importā</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Kolonnas</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV faila vai izklājlapas pirmā rinda nosauc kolonnas jebkurā secībā; JSON izmanto tos pašus nosaukumus kā atslēgas. Vajadzīgi tikai old_url un new_url. Bez pirmās nosaukumu rindas kolonnas tiek ņemtas šādā secībā.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Kolonna</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Ko tā satur</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Vecā adrese: ceļš (/about-us.html), ceļš ar vaicājumu (/index.php?id=12) vai pilna vecā resursdatora adrese. * atbilst jebkurai daļai.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Šīs vietnes lapa: tās ceļš (/recipes), tās mezgla ID (node:163, kas seko lapai, kad tā tiek pārvietota) vai pilna adrese citur. %first, %second saņem to, kam * atbilda.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Par ko rinda kļūst, skatiet veidus. Tukšs: pastāvīga novirzīšana vai novirzoša aizstājējzīme, ja old_url satur *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Vienkārša ceļa vietnes piekļuve; tukšs: importa lapā izvēlētā.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL aizstājvārda valoda, piemēram, eng-GB; tukšs: vietnes piekļuves valoda.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Jūsu pašu piezīme; tā tiek saglabāta kopā ar importu.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Novirzīšanas statuss: 301 vai 308 (pastāvīga), 302, 303 vai 307 (pagaidu); tukšs: izlemj veids.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Veidi</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Ko saņem apmeklētāji</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Pastāvīga novirzīšana; globāls URL aizstājvārds, kas novirza.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Pagaidu novirzīšana: meklētājprogrammas patur veco adresi.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Jaunā lapa vecajā adresē, bez novirzīšanas; globāls URL aizstājvārds.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Pastāvīga novirzīšana katrai atbilstošajai adresei; URL aizstājējzīme.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Pagaidu novirzīšana katrai atbilstošajai adresei.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Jaunā lapa katrā atbilstošajā adresē, bez novirzīšanas.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Faili līdz %size. Visas formātu detaļas ir palīdzības centrā: URL migrēšana un URL kartes piemēri.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Skatīt katra formāta piemēru</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Formāti un piemēri</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Atsevišķas lapas</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Atsevišķu lapu pastāvīgas novirzīšanas, mērķis pēc mezgla ID (node:163), kas seko lapai, kad tā tiek pārvietota, un aizstājvārds, kas parāda lapu vecajā adresē. Pirmā rinda nosauc kolonnas; vajadzīgi tikai old_url un new_url. .tsv fails tiek nolasīts tāpat, ar tabulācijām.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* atbilst jebkurai adreses daļai, un {1} ievieto to jaunajā: pārvietota sadaļa, * adreses vidū, pagaidu aizstājējzīme un tieša (bez novirzīšanas).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Vaicājumi un pagaidu novirzīšanas</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Vecās adreses ar vaicājumu (/index.php?id=12), 308 un pagaidu novirzīšanas pēc veida (redirect-temporary) un pēc statusa (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Objektu saraksts ar tām pašām atslēgām kā CSV kolonnām; pirmais objekts var nosaukt shēmu exp-url-map/1. Tas, ko raksta eksports un ko citas programmas izveido visvieglāk.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Atsevišķās lapas kā Excel darbgrāmata: pirmā lapa, kolonnu nosaukumi pirmajā rindā. Atveriet to, nomainiet adreses un saglabājiet kā .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Tas pats kā OpenDocument izklājlapa, priekš LibreOffice un OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache pārrakstīšanas noteikumi</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Vecas vietnes .htaccess tāds, kāds tas ir: RewriteRule, RewriteCond vaicājumam, Redirect visai sadaļai (lapai un visam zem tās) un RedirectMatch kā aizstājējzīme.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx pārrakstīšanas noteikumi</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Vecas vietnes server bloks: location = ar return, if ($args) vaicājumam, rewrite kā aizstājējzīme un atsevišķu lapu map.</translation>
+    </message>
 </context>
 </TS>

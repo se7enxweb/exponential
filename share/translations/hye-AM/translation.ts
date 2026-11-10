@@ -86247,5 +86247,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>Հին հասցեները չհաջողվեց փորձարկել։</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL քարտեզում նշված է յուրաքանչյուր հին հասցե և այս կայքի այն էջը, որին այն այժմ համապատասխանում է։ Սրանք այն ձևաչափերն են, որոնք կարդում է ներմուծումը, յուրաքանչյուրը՝ պատճենելու համար օրինակով. փոխեք հասցեները ձեր սեփականով, ապա վերբեռնեք ֆայլը կամ տեղադրեք այն։ Յուրաքանչյուր օրինակ ներմուծվում է ցուցադրական կայք այնպես, ինչպես կա։</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Ֆայլ %file, %size · կարդացվում է %extensions-ից · %rows տող ներմուծման մեջ</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Ներբեռնել</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Պատճենվեց սեղմատախտակին</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Հնարավոր չեղավ պատճենել</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Պատճենել</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Բացել ներմուծման մեջ</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Սյունակները</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV ֆայլի կամ աղյուսակի առաջին տողը անվանում է սյունակները՝ ցանկացած հերթականությամբ. JSON-ը նույն անունները օգտագործում է որպես բանալիներ։ Անհրաժեշտ են միայն old_url-ը և new_url-ը։ Առանց անունների առաջին տողի՝ սյունակները վերցվում են այս հերթականությամբ։</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Սյունակ</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Ինչ է պարունակում</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Հին հասցեն՝ ուղի (/about-us.html), հարցումով ուղի (/index.php?id=12) կամ հին հոսթի ամբողջական հասցե։ *-ը համապատասխանում է ցանկացած մասի։</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Այս կայքի էջը՝ դրա ուղին (/recipes), դրա հանգույցի ID-ն (node:163, որը հետևում է էջին, երբ այն տեղափոխվում է) կամ այլ տեղի ամբողջական հասցե։ %first, %second վերցնում են այն, ինչին համապատասխանեց *-ը։</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Ինչ է դառնում տողը, տես տեսակները։ Դատարկ՝ մշտական վերահղում, վերահղող փոխարինող նշան, երբ old_url-ը պարունակում է *։</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Մերկ ուղու կայքի մուտքի կետը. դատարկ՝ ներմուծման էջում ընտրվածը։</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL կեղծանվան լեզուն, օրինակ՝ eng-GB. դատարկ՝ կայքի մուտքի կետի լեզուն։</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Ձեր սեփական նշումը. այն պահվում է ներմուծման հետ։</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Վերահղման կարգավիճակը՝ 301 կամ 308 (մշտական), 302, 303 կամ 307 (ժամանակավոր). դատարկ՝ որոշում է տեսակը։</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Տեսակները</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Ինչ են ստանում այցելուները</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Մշտական վերահղում. ընդհանուր URL կեղծանուն, որը վերահղում է։</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Ժամանակավոր վերահղում. որոնողական համակարգերը պահում են հին հասցեն։</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Նոր էջը հին հասցեով, առանց վերահղման. ընդհանուր URL կեղծանուն։</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Մշտական վերահղում յուրաքանչյուր համապատասխան հասցեի համար. URL փոխարինող նշան։</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Ժամանակավոր վերահղում յուրաքանչյուր համապատասխան հասցեի համար։</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Նոր էջը յուրաքանչյուր համապատասխան հասցեով, առանց վերահղման։</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Ֆայլեր մինչև %size։ Ձևաչափերի բոլոր մանրամասները օգնության կենտրոնում են՝ URL-ների տեղափոխում և URL քարտեզի օրինակներ։</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Տեսնել յուրաքանչյուր ձևաչափի օրինակը</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Ձևաչափեր և օրինակներ</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Առանձին էջեր</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Առանձին էջերի մշտական վերահղումներ, հանգույցի ID-ով (node:163) նպատակակետ, որը հետևում է էջին, երբ այն տեղափոխվում է, և կեղծանուն, որը ցույց է տալիս էջը հին հասցեով։ Առաջին տողը անվանում է սյունակները. անհրաժեշտ են միայն old_url-ը և new_url-ը։ .tsv ֆայլը կարդացվում է նույն կերպ՝ ներդիրներով։</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>*-ը համապատասխանում է հասցեի ցանկացած մասի, իսկ {1}-ը այն տեղադրում է նորի մեջ. տեղափոխված բաժին, * հասցեի մեջտեղում, ժամանակավոր փոխարինող նշան և ուղիղ փոխարինող նշան (առանց վերահղման)։</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Հարցումներ և ժամանակավոր վերահղումներ</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Հարցումով հին հասցեներ (/index.php?id=12), 308, և ժամանակավոր վերահղումներ ըստ տեսակի (redirect-temporary) և ըստ կարգավիճակի (307)։</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Օբյեկտների ցուցակ՝ CSV սյունակների նույն բանալիներով. առաջին օբյեկտը կարող է նշել exp-url-map/1 սխեման։ Այն, ինչ գրում է արտահանումը, և ինչ այլ ծրագրերն ամենահեշտն են ստեղծում։</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Առանձին էջերը որպես Excel աշխատագիրք. առաջին թերթը, սյունակների անունները առաջին տողում։ Բացեք այն, փոխեք հասցեները և պահեք որպես .xlsx։</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Նույնը՝ որպես OpenDocument աղյուսակ, LibreOffice-ի և OpenOffice-ի համար։</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache վերագրման կանոններ</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Հին կայքի .htaccess-ը այնպես, ինչպես կա. RewriteRule, RewriteCond հարցման համար, ամբողջ բաժնի Redirect (էջը և դրա տակ ամեն ինչ) և RedirectMatch՝ որպես փոխարինող նշան։</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx վերագրման կանոններ</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Հին կայքի server բլոկը. location =՝ return-ով, if ($args)՝ հարցման համար, rewrite՝ որպես փոխարինող նշան, և առանձին էջերի map։</translation>
+    </message>
 </context>
 </TS>

@@ -86247,5 +86247,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>די אַלטע אַדרעסן האָבן נישט געקענט ווערן געפּרוּווט.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>אַ URL־מאַפּע רעכנט אויס יעדן אַלטן אַדרעס און דעם בלאַט פֿון דעם וועבזייַטל צו וועלכן ער געהערט איצט. דאָס זענען די פֿאָרמאַטן וואָס דער אימפּאָרט לייענט, יעדער מיט אַ בייַשפּיל צו קאָפּירן: בייַט די אַדרעסן אויף אייערע אייגענע, דערנאָך לאָדט אַרויף די טעקע אָדער לייגט זי אײַן. יעדער בייַשפּיל ווערט אימפּאָרטירט אין דעם דעמאָ־וועבזייַטל ווי ער איז.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>טעקע %file, %size · געלייענט פֿון %extensions · %rows שורות אין דעם אימפּאָרט</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>אַראָפּלאָדן</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>קאָפּירט אין דער קליפּבאָרד</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>האָט נישט געקענט קאָפּירן</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>קאָפּירן</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>עפֿענען אין דעם אימפּאָרט</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>די שפּאַלטן</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>די ערשטע שורה פֿון אַ CSV־טעקע אָדער אַ טאַבעלע גיט נעמען די שפּאַלטן, אין יעדן סדר; JSON ניצט די זעלבע נעמען ווי שליסלען. נאָר old_url און new_url זענען נייטיק. אָן אַן ערשטער שורה מיט נעמען, ווערן די שפּאַלטן גענומען אין דעם סדר.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>שפּאַלט</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>וואָס ער האַלט</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>דער אַלטער אַדרעס: אַ וועג (/about-us.html), אַ וועג מיט אַ פֿראַגע (/index.php?id=12) אָדער אַ פֿולער אַדרעס פֿונעם אַלטן האָסט. אַ * פּאַסט צו יעדן טייל.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>דער בלאַט פֿון דעם וועבזייַטל: זײַן וועג (/recipes), זײַן נאָדע־ID (node:163, וואָס גייט נאָך דעם בלאַט ווען ער ווערט אַריבערגעפֿירט) אָדער אַ פֿולער אַדרעס אַנדערשוווּ. %first, %second נעמען דאָס וואָס דער * האָט געפּאַסט.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>וואָס די שורה ווערט, זעט די מינים. ליידיק: אַ שטענדיקע ווייַטערפֿירונג, אַ ווייַטערפֿירנדיקער וויילדקאַרד ווען old_url האָט אַ *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>דער וועבזייַטל־צוטריט פֿון אַ נאַקעטן וועג; ליידיק: דער וואָס איז אויסגעקליבן אויפֿן אימפּאָרט־בלאַט.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>די שפּראַך פֿונעם URL־אַליאַס, למשל eng-GB; ליידיק: די שפּראַך פֿונעם וועבזייַטל־צוטריט.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>אייער אייגענע נאָטיץ; זי ווערט אָפּגעהיט מיט דעם אימפּאָרט.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>דער סטאַטוס פֿון דער ווייַטערפֿירונג: 301 אָדער 308 (שטענדיק), 302, 303 אָדער 307 (צייַטווייַליק); ליידיק: דער מין באַשליסט.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>די מינים</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>וואָס באַזוכער באַקומען</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>אַ שטענדיקע ווייַטערפֿירונג; אַ גלאָבאַלער URL־אַליאַס וואָס פֿירט ווייַטער.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>אַ צייַטווייַליקע ווייַטערפֿירונג: זוכמאַשינען האַלטן דעם אַלטן אַדרעס.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>דער נייַער בלאַט בייַם אַלטן אַדרעס, אָן ווייַטערפֿירונג; אַ גלאָבאַלער URL־אַליאַס.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>אַ שטענדיקע ווייַטערפֿירונג פֿאַר יעדן פּאַסנדיקן אַדרעס; אַ URL־וויילדקאַרד.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>אַ צייַטווייַליקע ווייַטערפֿירונג פֿאַר יעדן פּאַסנדיקן אַדרעס.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>דער נייַער בלאַט בייַ יעדן פּאַסנדיקן אַדרעס, אָן ווייַטערפֿירונג.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>טעקעס ביז %size. יעדער פּרט פֿון די פֿאָרמאַטן איז אין דעם הילף־צענטער: איבערפֿירן URLs, און די בייַשפּילן פֿון URL־מאַפּעס.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>זעט אַ בייַשפּיל פֿון יעדן פֿאָרמאַט</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>פֿאָרמאַטן און בייַשפּילן</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>איינציקע בלעטער</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>שטענדיקע ווייַטערפֿירונגען פֿון איינציקע בלעטער, אַ ציל לויט נאָדע־ID (node:163) וואָס גייט נאָך דעם בלאַט ווען ער ווערט אַריבערגעפֿירט, און אַן אַליאַס וואָס ווייַזט דעם בלאַט בייַם אַלטן אַדרעס. די ערשטע שורה גיט נעמען די שפּאַלטן; נאָר old_url און new_url זענען נייטיק. אַ .tsv־טעקע ווערט געלייענט אויף דעם זעלבן אופֿן, מיט טאַבס.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>אַ * פּאַסט צו יעדן טייל פֿון אַן אַדרעס און {1} שטעלט אים אַרייַן אין דעם נייַעם: אַ אָפּטייל וואָס איז אַריבער, אַ * אין מיטן פֿון אַן אַדרעס, אַ צייַטווייַליקער וויילדקאַרד און אַ דירעקטער (אָן ווייַטערפֿירונג).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>פֿראַגעס און צייַטווייַליקע ווייַטערפֿירונגען</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>אַלטע אַדרעסן מיט אַ פֿראַגע (/index.php?id=12), אַ 308, און צייַטווייַליקע ווייַטערפֿירונגען לויטן מין (redirect-temporary) און לויטן סטאַטוס (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>אַ רשימה פֿון אָביעקטן מיט די זעלבע שליסלען ווי די CSV־שפּאַלטן; דער ערשטער אָביעקט קען אָנרופֿן די סכעמע exp-url-map/1. דאָס וואָס דער עקספּאָרט שרייבט און וואָס אַנדערע פּראָגראַמען מאַכן דאָס לייַכטסטע.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>די איינציקע בלעטער ווי אַן Excel־בוך: דער ערשטער בויגן, די נעמען פֿון די שפּאַלטן אין דער ערשטער שורה. עפֿנט אים, בייַט די אַדרעסן און היט אים אָפּ ווי .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>דאָס זעלבע ווי אַן OpenDocument־טאַבעלע, פֿאַר LibreOffice און OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache־איבערשרייב־כּללים</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>די .htaccess פֿון אַן אַלטן וועבזייַטל ווי זי איז: RewriteRule, RewriteCond פֿאַר אַ פֿראַגע, Redirect פֿון אַ גאַנצן אָפּטייל (דער בלאַט און אַלץ אונטער אים) און RedirectMatch ווי אַ וויילדקאַרד.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx־איבערשרייב־כּללים</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>דער server־בלאָק פֿון אַן אַלטן וועבזייַטל: location = מיט return, if ($args) פֿאַר אַ פֿראַגע, rewrite ווי אַ וויילדקאַרד און אַ map פֿון איינציקע בלעטער.</translation>
+    </message>
 </context>
 </TS>

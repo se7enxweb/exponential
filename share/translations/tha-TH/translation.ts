@@ -86247,5 +86247,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>ไม่สามารถทดสอบที่อยู่เก่าได้</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>แผนที่ URL แสดงรายการที่อยู่เก่าแต่ละรายการและหน้าของไซต์นี้ที่ที่อยู่นั้นเป็นของในตอนนี้ ต่อไปนี้คือรูปแบบที่การนำเข้าอ่านได้ แต่ละรูปแบบมีตัวอย่างให้คัดลอก: เปลี่ยนที่อยู่เป็นของคุณเอง แล้วอัปโหลดไฟล์หรือวางเนื้อหา ทุกตัวอย่างนำเข้าสู่ไซต์สาธิตได้ตามที่เป็นอยู่</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>ไฟล์ %file, %size · อ่านจาก %extensions · %rows แถวในการนำเข้า</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>ดาวน์โหลด</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>คัดลอกไปยังคลิปบอร์ดแล้ว</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>ไม่สามารถคัดลอกได้</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>คัดลอก</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>เปิดในการนำเข้า</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>คอลัมน์</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>บรรทัดแรกของไฟล์ CSV หรือสเปรดชีตระบุชื่อคอลัมน์ ในลำดับใดก็ได้ JSON ใช้ชื่อเดียวกันเป็นคีย์ ต้องมีเพียง old_url และ new_url หากไม่มีบรรทัดแรกที่เป็นชื่อ คอลัมน์จะถูกอ่านตามลำดับนี้</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>คอลัมน์</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>สิ่งที่เก็บไว้</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>ที่อยู่เก่า: พาธ (/about-us.html) พาธที่มีคิวรี (/index.php?id=12) หรือที่อยู่เต็มของโฮสต์เก่า เครื่องหมาย * ตรงกับส่วนใดก็ได้</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>หน้าของไซต์นี้: พาธของหน้า (/recipes) ID ของโหนด (node:163 ซึ่งตามหน้าไปเมื่อหน้าถูกย้าย) หรือที่อยู่เต็มที่อื่น %first, %second รับส่วนที่ * จับคู่ได้</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>สิ่งที่แถวจะกลายเป็น ดูชนิดต่าง ๆ ว่างไว้: การเปลี่ยนเส้นทางถาวร หรือไวลด์การ์ดที่เปลี่ยนเส้นทางเมื่อ old_url มี *</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>การเข้าถึงไซต์ของพาธเปล่า ว่างไว้: ค่าที่เลือกในหน้าการนำเข้า</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>ภาษาของนามแฝง URL เช่น eng-GB ว่างไว้: ภาษาของการเข้าถึงไซต์</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>บันทึกของคุณเอง จะเก็บไว้พร้อมกับการนำเข้า</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>สถานะการเปลี่ยนเส้นทาง: 301 หรือ 308 (ถาวร), 302, 303 หรือ 307 (ชั่วคราว) ว่างไว้: ชนิดเป็นตัวกำหนด</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>ชนิด</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>สิ่งที่ผู้เยี่ยมชมได้รับ</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>การเปลี่ยนเส้นทางถาวร นามแฝง URL ส่วนกลางที่เปลี่ยนเส้นทาง</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>การเปลี่ยนเส้นทางชั่วคราว: เครื่องมือค้นหาจะเก็บที่อยู่เก่าไว้</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>หน้าใหม่ที่ที่อยู่เก่า โดยไม่มีการเปลี่ยนเส้นทาง นามแฝง URL ส่วนกลาง</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>การเปลี่ยนเส้นทางถาวรสำหรับทุกที่อยู่ที่ตรงกัน ไวลด์การ์ด URL</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>การเปลี่ยนเส้นทางชั่วคราวสำหรับทุกที่อยู่ที่ตรงกัน</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>หน้าใหม่ที่ทุกที่อยู่ที่ตรงกัน โดยไม่มีการเปลี่ยนเส้นทาง</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>ไฟล์ขนาดไม่เกิน %size รายละเอียดทั้งหมดของรูปแบบอยู่ในศูนย์ช่วยเหลือ: การย้าย URL และตัวอย่างแผนที่ URL</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>ดูตัวอย่างของแต่ละรูปแบบ</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>รูปแบบและตัวอย่าง</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>หน้าเดี่ยว</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>การเปลี่ยนเส้นทางถาวรของหน้าเดี่ยว ปลายทางตาม ID ของโหนด (node:163) ที่ตามหน้าไปเมื่อหน้าถูกย้าย และนามแฝงที่แสดงหน้าที่ที่อยู่เก่า บรรทัดแรกระบุชื่อคอลัมน์ ต้องมีเพียง old_url และ new_url ไฟล์ .tsv อ่านด้วยวิธีเดียวกัน โดยใช้แท็บ</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>เครื่องหมาย * ตรงกับส่วนใดก็ได้ของที่อยู่ และ {1} ใส่ส่วนนั้นลงในที่อยู่ใหม่: ส่วนที่ย้ายไป * ที่อยู่กลางที่อยู่ ไวลด์การ์ดชั่วคราว และไวลด์การ์ดโดยตรง (ไม่มีการเปลี่ยนเส้นทาง)</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>คิวรีและการเปลี่ยนเส้นทางชั่วคราว</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>ที่อยู่เก่าที่มีคิวรี (/index.php?id=12) หนึ่ง 308 และการเปลี่ยนเส้นทางชั่วคราวตามชนิด (redirect-temporary) และตามสถานะ (307)</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>รายการออบเจ็กต์ที่มีคีย์เดียวกับคอลัมน์ CSV ออบเจ็กต์แรกอาจระบุสคีมา exp-url-map/1 เป็นสิ่งที่การส่งออกเขียนและโปรแกรมอื่นสร้างได้ง่ายที่สุด</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>หน้าเดี่ยวในรูปแบบเวิร์กบุ๊ก Excel: ชีตแรก ชื่อคอลัมน์ในแถวแรก เปิดไฟล์ เปลี่ยนที่อยู่ แล้วบันทึกเป็น .xlsx</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>เนื้อหาเดียวกันในรูปแบบสเปรดชีต OpenDocument สำหรับ LibreOffice และ OpenOffice</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>กฎการเขียนใหม่ของ Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>.htaccess ของไซต์เก่าตามที่เป็นอยู่: RewriteRule, RewriteCond สำหรับคิวรี, Redirect ของทั้งส่วน (หน้านั้นและทุกอย่างที่อยู่ใต้หน้า) และ RedirectMatch เป็นไวลด์การ์ด</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>กฎการเขียนใหม่ของ nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>บล็อก server ของไซต์เก่า: location = กับ return, if ($args) สำหรับคิวรี, rewrite เป็นไวลด์การ์ด และ map ของหน้าเดี่ยว</translation>
+    </message>
 </context>
 </TS>

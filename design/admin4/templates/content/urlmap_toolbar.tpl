@@ -1,8 +1,8 @@
-{* The links between the URL pages: Import, Export, Import history and Redirects (since 6.0.15), each shown only to
+{* The links between the URL pages: Import, Formats and examples, Export, Import history and Redirects (since 6.0.15), each shown only to
    a user with its policy (content/urltranslator_import for importing and the history, content/urltranslator for the
    rest). Included by content/urlalias_global.tpl, content/urlalias_wildcard.tpl and the URL map pages.
 
-   Parameters: current (translator, wildcards, import, history, export, redirects), all (true: also the URL
+   Parameters: current (translator, wildcards, import, examples, history, export, redirects), all (true: also the URL
    translator and the wildcards, for the URL map pages). The same file is in design/admin and design/admin4. *}
 {def $can_import = fetch( 'user', 'has_access_to', hash( 'module', 'content', 'function', 'urltranslator_import' ) )
      $can_translate = fetch( 'user', 'has_access_to', hash( 'module', 'content', 'function', 'urltranslator' ) )
@@ -11,7 +11,8 @@
     {set $links = $links|append( hash( 'key', 'translator', 'url', 'content/urltranslator', 'text', 'Global URL aliases'|i18n( 'design/admin/content/urlimport' ) ),
                                  hash( 'key', 'wildcards', 'url', 'content/urlwildcards', 'text', 'Wildcards'|i18n( 'design/admin/content/urlimport' ) ) )}
 {/if}
-{if $can_import}{set $links = $links|append( hash( 'key', 'import', 'url', 'content/urlimport', 'text', 'Import'|i18n( 'design/admin/content/urlimport' ) ) )}{/if}
+{if $can_import}{set $links = $links|append( hash( 'key', 'import', 'url', 'content/urlimport', 'text', 'Import'|i18n( 'design/admin/content/urlimport' ) ),
+                                              hash( 'key', 'examples', 'url', 'content/urlimport/(source)/examples', 'text', 'Formats and examples'|i18n( 'design/admin/content/urlimport' ) ) )}{/if}
 {if $can_translate}{set $links = $links|append( hash( 'key', 'export', 'url', 'content/urlexport', 'text', 'Export'|i18n( 'design/admin/content/urlimport' ) ) )}{/if}
 {if $can_import}{set $links = $links|append( hash( 'key', 'history', 'url', 'content/urlimporthistory', 'text', 'Import history'|i18n( 'design/admin/content/urlimport' ) ) )}{/if}
 {if $can_translate}{set $links = $links|append( hash( 'key', 'redirects', 'url', 'content/urlredirects', 'text', 'Redirects'|i18n( 'design/admin/content/urlimport' ) ) )}{/if}

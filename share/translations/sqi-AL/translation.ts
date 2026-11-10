@@ -86277,5 +86277,181 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>The old addresses could not be tested.</source>
         <translation>Adresat e vjetra nuk mund të testoheshin.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Një hartë URL-sh rendit çdo adresë të vjetër dhe faqen e këtij sajti së cilës i përket tani. Këto janë formatet që lexon importi, secili me një shembull për ta kopjuar: zëvendësoni adresat me tuajat, pastaj ngarkoni skedarin ose ngjiteni. Çdo shembull importohet në sajtin demo ashtu siç është.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Skedari %file, %size · lexohet nga %extensions · %rows rreshta në import</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Shkarko</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>U kopjua në kujtesën e fragmenteve</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Nuk u kopjua dot</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopjo</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Hape në import</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Kolonat</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Rreshti i parë i një skedari CSV ose i një flete llogaritëse emërton kolonat, në çfarëdo rendi; JSON përdor të njëjtat emra si çelësa. Nevojiten vetëm old_url dhe new_url. Pa një rresht të parë me emra, kolonat merren në këtë rend.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Kolona</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Çfarë përmban</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Adresa e vjetër: një shteg (/about-us.html), një shteg me pyetësor (/index.php?id=12) ose një adresë e plotë e hostit të vjetër. Një * përputhet me çdo pjesë.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Faqja e këtij sajti: shtegu i saj (/recipes), ID-ja e nyjës së saj (node:163, që e ndjek faqen kur ajo zhvendoset) ose një adresë e plotë diku tjetër. %first, %second marrin atë që përputhi *.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Çfarë bëhet rreshti, shihni llojet. Bosh: një ridrejtim i përhershëm, një karakter i përgjithshëm që ridrejton kur old_url ka një *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Qasja në sajt e një shtegu të thjeshtë; bosh: ajo e zgjedhur në faqen e importit.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Gjuha e pseudonimit URL, për shembull eng-GB; bosh: gjuha e qasjes në sajt.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Shënimi juaj; ruhet bashkë me importin.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Statusi i ridrejtimit: 301 ose 308 (i përhershëm), 302, 303 ose 307 (i përkohshëm); bosh: vendos lloji.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Llojet</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Çfarë marrin vizitorët</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Një ridrejtim i përhershëm; një pseudonim URL global që ridrejton.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Një ridrejtim i përkohshëm: motorët e kërkimit e mbajnë adresën e vjetër.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Faqja e re në adresën e vjetër, pa ridrejtim; një pseudonim URL global.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Një ridrejtim i përhershëm për çdo adresë që përputhet; një karakter i përgjithshëm URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Një ridrejtim i përkohshëm për çdo adresë që përputhet.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Faqja e re në çdo adresë që përputhet, pa ridrejtim.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Skedarë deri në %size. Çdo hollësi e formateve gjendet në qendrën e ndihmës: Migrimi i URL-ve dhe shembujt e hartave të URL-ve.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Shihni një shembull të çdo formati</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Formate dhe shembuj</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Faqe të veçanta</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Ridrejtime të përhershme të faqeve të veçanta, një objektiv me ID nyje (node:163) që e ndjek faqen kur ajo zhvendoset, dhe një pseudonim që e shfaq faqen në adresën e vjetër. Rreshti i parë emërton kolonat; nevojiten vetëm old_url dhe new_url. Një skedar .tsv lexohet në të njëjtën mënyrë, me tabulatorë.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>Një * përputhet me çdo pjesë të një adrese dhe {1} e vendos atë në adresën e re: një seksion që u zhvendos, një * në mes të një adrese, një karakter i përgjithshëm i përkohshëm dhe një i drejtpërdrejtë (pa ridrejtim).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Pyetësorë dhe ridrejtime të përkohshme</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Adresa të vjetra me pyetësor (/index.php?id=12), një 308 dhe ridrejtime të përkohshme sipas llojit (redirect-temporary) dhe sipas statusit (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Një listë objektesh me të njëjtët çelësa si kolonat CSV; objekti i parë mund të emërtojë skemën exp-url-map/1. Atë që shkruan eksporti dhe që programet e tjera e krijojnë më lehtë.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Faqet e veçanta si libër pune Excel: fleta e parë, emrat e kolonave në rreshtin e parë. Hapeni, ndryshoni adresat dhe ruajeni si .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>E njëjta gjë si fletë llogaritëse OpenDocument, për LibreOffice dhe OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Rregulla rishkrimi Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Skedari .htaccess i një sajti të vjetër ashtu siç është: RewriteRule, RewriteCond për një pyetësor, Redirect i një seksioni të tërë (faqja dhe gjithçka nën të) dhe RedirectMatch si karakter i përgjithshëm.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Rregulla rishkrimi nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Blloku server i një sajti të vjetër: location = me return, if ($args) për një pyetësor, rewrite si karakter i përgjithshëm dhe një map faqesh të veçanta.</translation>
+    </message>
 </context>
 </TS>

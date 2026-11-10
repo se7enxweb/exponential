@@ -86247,5 +86247,181 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>Boares čujuhusaid ii sáhttán geahččalit.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL-kárta listu juohke boares čujuhusa ja dán neahttabáikki siiddu masa dat dál gullá. Dát leat hámit maid sisafievrrideapmi lohká, juohkehaččas ovdamearka maid sáhttá máŋget: rievdat čujuhusaid iežat čujuhusaide, ja bija dasto fiilla bajás dahje lasit dan. Juohke ovdamearka sisafievrriduvvo demoneahttabáikái nu go lea.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Fiila %file, %size · lohkkojuvvon dáin: %extensions · %rows ráidu sisafievrrideamis</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Viečča</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Máŋgejuvvon čuohpusgirjái</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Ii sáhttán máŋget</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Máŋge</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Raba sisafievrrideamis</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Čuolddat</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV-fiilla dahje rehkenastinárkka vuosttaš ráidu namuha čuolddaid, makkár ortnegis beare; JSON geavaha seamma namaid čoavdagin. Dušše old_url ja new_url dárbbašuvvojit. Jus vuosttaš ráidu namain váilu, čuolddat váldojuvvojit dán ortnegis.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Čuolda</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Maid dat sisttisdoallá</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Boares čujuhus: geaidnu (/about-us.html), geaidnu jearaldagain (/index.php?id=12) dahje boares guossoheaddji ollislaš čujuhus. * heive vaikko makkár oassái.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Dán neahttabáikki siidu: dan geaidnu (/recipes), dan máddaga ID (node:163, mii čuovvu siiddu go dat sirdojuvvo) dahje ollislaš čujuhus eará sajis. %first, %second váldet dan masa * heivii.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Mii ráidu šaddá, geahča šlájaid. Guoros: bissovaš ođđasitstivren, ođđasitstivrejeaddji buotmearka go old_url sisttisdoallá *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Ovttageardánis geainnu neahttabáikebeassan; guoros: dat mii lea válljejuvvon sisafievrridansiiddus.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL-aliasa giella, ovdamearkka dihte eng-GB; guoros: neahttabáikebeassama giella.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Du iežat mearkkašupmi; dat vurkejuvvo sisafievrrideami fárus.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Ođđasitstivrema stáhtus: 301 dahje 308 (bissovaš), 302, 303 dahje 307 (gaskaboddasaš); guoros: šládja mearrida.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Šlájat</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Maid galledeaddjit ožžot</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Bissovaš ođđasitstivren; globála URL-alias mii ođđasitstivre.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Gaskaboddasaš ođđasitstivren: ohcanmotorat dollet boares čujuhusa.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Ođđa siidu boares čujuhusas, ođđasitstivrema haga; globála URL-alias.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Bissovaš ođđasitstivren juohke heivvolaš čujuhussii; URL-buotmearka.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Gaskaboddasaš ođđasitstivren juohke heivvolaš čujuhussii.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Ođđa siidu juohke heivvolaš čujuhusas, ođđasitstivrema haga.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Fiillat gitta %size rádjái. Buot hámiid bienat leat veahkkeguovddážis: URL-iid sirdin, ja URL-kártta ovdamearkkat.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Geahča ovdamearkka juohke hámis</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Hámit ja ovdamearkkat</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Ovttaskas siiddut</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Ovttaskas siidduid bissovaš ođđasitstivremat, ulbmil máddaga ID:in (node:163) mii čuovvu siiddu go dat sirdojuvvo, ja alias mii čájeha siiddu boares čujuhusas. Vuosttaš ráidu namuha čuolddaid; dušše old_url ja new_url dárbbašuvvojit. .tsv-fiila lohkkojuvvo seamma láhkai, tabulatorain.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* heive čujuhusa vaikko makkár oassái ja {1} bidjá dan ođđa čujuhussii: sirdojuvvon oassi, * čujuhusa gaskkas, gaskaboddasaš buotmearka ja njuolggo buotmearka (ođđasitstivrema haga).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Jearaldagat ja gaskaboddasaš ođđasitstivremat</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Boares čujuhusat jearaldagain (/index.php?id=12), 308, ja gaskaboddasaš ođđasitstivremat šlája mielde (redirect-temporary) ja stáhtusa mielde (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Objeavttaid listu mas leat seamma čoavdagat go CSV-čuolddain; vuosttaš objeakta sáhttá namuhit skovi exp-url-map/1. Dat maid olggosfievrrideapmi čállá ja maid eará prográmmat álkimusat ráhkadit.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Ovttaskas siiddut Excel-bargogirjin: vuosttaš árka, čuolddaid namat vuosttaš ráiddus. Raba dan, rievdat čujuhusaid ja vurke dan .xlsx-fiilan.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Seamma go OpenDocument-rehkenastinárka, LibreOffice ja OpenOffice várás.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache ođđasitčállinnjuolggadusat</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Boares neahttabáikki .htaccess nu go lea: RewriteRule, RewriteCond jearaldahkii, Redirect olles osiide (siidu ja buot dan vuolde) ja RedirectMatch buotmearkan.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx ođđasitčállinnjuolggadusat</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Boares neahttabáikki server-blokka: location = return-bagadusain, if ($args) jearaldahkii, rewrite buotmearkan ja map ovttaskas siidduide.</translation>
+    </message>
 </context>
 </TS>

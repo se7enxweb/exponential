@@ -86247,5 +86247,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>පැරණි ලිපින පරීක්ෂා කළ නොහැකි විය.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL සිතියමක් සෑම පැරණි ලිපිනයක්ම සහ එය දැන් අයත් මෙම අඩවියේ පිටුව ලැයිස්තුගත කරයි. ආයාතය කියවන ආකෘති මේවා වන අතර, එක් එක් ආකෘතියට පිටපත් කිරීමට උදාහරණයක් ඇත: ලිපින ඔබගේම ලිපින වලට වෙනස් කර, පසුව ගොනුව උඩුගත කරන්න හෝ අලවන්න. සෑම උදාහරණයක්ම ආදර්ශන අඩවියට ඇති ආකාරයෙන්ම ආයාත වේ.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>ගොනුව %file, %size · %extensions වෙතින් කියවන ලදී · ආයාතයේ පේළි %rows</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>බාගන්න</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>පසුරු පුවරුවට පිටපත් කළා</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>පිටපත් කළ නොහැකි විය</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>පිටපත් කරන්න</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>ආයාතයේ විවෘත කරන්න</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>තීරු</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV ගොනුවක හෝ පැතුරුම්පතක පළමු පේළිය ඕනෑම අනුපිළිවෙළකින් තීරු නම් කරයි; JSON එම නම්ම යතුරු ලෙස භාවිත කරයි. අවශ්‍ය වන්නේ old_url සහ new_url පමණි. නම් සහිත පළමු පේළියක් නොමැති නම්, තීරු මෙම අනුපිළිවෙළින් ගනු ලැබේ.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>තීරුව</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>එහි අඩංගු දේ</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>පැරණි ලිපිනය: මාර්ගයක් (/about-us.html), විමසුමක් සහිත මාර්ගයක් (/index.php?id=12) හෝ පැරණි සත්කාරකයේ සම්පූර්ණ ලිපිනයක්. * ඕනෑම කොටසකට ගැළපේ.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>මෙම අඩවියේ පිටුව: එහි මාර්ගය (/recipes), එහි නෝඩ ID එක (node:163, පිටුව ගෙන යන විට එය අනුගමනය කරයි) හෝ වෙනත් තැනක සම්පූර්ණ ලිපිනයක්. %first, %second මගින් * ගැළපුණු දේ ගනී.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>පේළිය බවට පත්වන දේ, වර්ග බලන්න. හිස්: ස්ථිර යළි යොමුවක්, old_url හි * ඇති විට යළි යොමු කරන වයිල්ඩ්කාඩ් එකක්.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>සරල මාර්ගයක අඩවි ප්‍රවේශය; හිස්: ආයාත පිටුවේ තෝරාගත් එක.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL අන්වර්ථයේ භාෂාව, උදාහරණයක් ලෙස eng-GB; හිස්: අඩවි ප්‍රවේශයේ භාෂාව.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>ඔබගේම සටහන; එය ආයාතය සමඟ තබා ගනී.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>යළි යොමු තත්ත්වය: 301 හෝ 308 (ස්ථිර), 302, 303 හෝ 307 (තාවකාලික); හිස්: වර්ගය තීරණය කරයි.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>වර්ග</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>අමුත්තන්ට ලැබෙන දේ</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>ස්ථිර යළි යොමුවක්; යළි යොමු කරන ගෝලීය URL අන්වර්ථයක්.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>තාවකාලික යළි යොමුවක්: සෙවුම් යන්ත්‍ර පැරණි ලිපිනය තබා ගනී.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>පැරණි ලිපිනයේ නව පිටුව, යළි යොමුවකින් තොරව; ගෝලීය URL අන්වර්ථයක්.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>ගැළපෙන සෑම ලිපිනයක් සඳහාම ස්ථිර යළි යොමුවක්; URL වයිල්ඩ්කාඩ් එකක්.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>ගැළපෙන සෑම ලිපිනයක් සඳහාම තාවකාලික යළි යොමුවක්.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>ගැළපෙන සෑම ලිපිනයකම නව පිටුව, යළි යොමුවකින් තොරව.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>%size දක්වා ගොනු. ආකෘතිවල සියලු විස්තර උදව් මධ්‍යස්ථානයේ ඇත: URL සංක්‍රමණය, සහ URL සිතියම් උදාහරණ.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>එක් එක් ආකෘතියේ උදාහරණයක් බලන්න</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>ආකෘති සහ උදාහරණ</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>තනි පිටු</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>තනි පිටුවල ස්ථිර යළි යොමු, පිටුව ගෙන යන විට එය අනුගමනය කරන නෝඩ ID (node:163) මගින් ඉලක්කයක්, සහ පැරණි ලිපිනයේ පිටුව පෙන්වන අන්වර්ථයක්. පළමු පේළිය තීරු නම් කරයි; අවශ්‍ය වන්නේ old_url සහ new_url පමණි. .tsv ගොනුවක් ද ටැබ් සමඟ එලෙසම කියවනු ලැබේ.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* ලිපිනයක ඕනෑම කොටසකට ගැළපෙන අතර {1} එය නව ලිපිනයට දමයි: ගෙන ගිය කොටසක්, ලිපිනයක මැද *, තාවකාලික වයිල්ඩ්කාඩ් එකක් සහ සෘජු එකක් (යළි යොමුවකින් තොරව).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>විමසුම් සහ තාවකාලික යළි යොමු</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>විමසුමක් සහිත පැරණි ලිපින (/index.php?id=12), 308 එකක්, සහ වර්ගය අනුව (redirect-temporary) සහ තත්ත්වය අනුව (307) තාවකාලික යළි යොමු.</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>CSV තීරු වලට සමාන යතුරු සහිත වස්තු ලැයිස්තුවක්; පළමු වස්තුවට exp-url-map/1 සැලැස්ම නම් කළ හැක. අපනයනය ලියන දේ සහ වෙනත් වැඩසටහන් වඩාත් පහසුවෙන් සාදන දේ.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>තනි පිටු Excel වැඩපොතක් ලෙස: පළමු පත්‍රය, පළමු පේළියේ තීරු නම්. එය විවෘත කර, ලිපින වෙනස් කර .xlsx ලෙස සුරකින්න.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>එයම OpenDocument පැතුරුම්පතක් ලෙස, LibreOffice සහ OpenOffice සඳහා.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache නැවත ලිවීමේ නීති</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>පැරණි අඩවියක .htaccess ඇති ආකාරයෙන්ම: RewriteRule, විමසුමක් සඳහා RewriteCond, සම්පූර්ණ කොටසක Redirect (පිටුව සහ ඊට පහළ සියල්ල) සහ වයිල්ඩ්කාඩ් ලෙස RedirectMatch.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx නැවත ලිවීමේ නීති</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>පැරණි අඩවියක server කොටස: return සමඟ location =, විමසුමක් සඳහා if ($args), වයිල්ඩ්කාඩ් ලෙස rewrite සහ තනි පිටුවල map එකක්.</translation>
+    </message>
 </context>
 </TS>

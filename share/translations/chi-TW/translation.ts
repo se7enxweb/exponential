@@ -86245,5 +86245,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>無法測試舊位址。</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL 對應表列出每個舊位址，以及它現在所屬的本網站頁面。以下是匯入可讀取的格式，每種都附有可複製的範例：將位址改成您自己的位址，然後上傳檔案或貼上內容。每個範例都可以原樣匯入示範網站。</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>檔案 %file，%size · 讀取自 %extensions · 匯入中有 %rows 列</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>下載</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>已複製到剪貼簿</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>無法複製</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>複製</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>在匯入中開啟</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>欄位</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV 檔案或試算表的第一列為各欄命名，順序不拘；JSON 使用相同名稱作為鍵。只需要 old_url 和 new_url。若沒有名稱列，各欄將依以下順序讀取。</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>欄</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>內容</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>舊位址：路徑（/about-us.html）、帶查詢的路徑（/index.php?id=12）或舊主機的完整位址。* 符合任意部分。</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>本網站的頁面：其路徑（/recipes）、其節點 ID（node:163，頁面移動時會跟著頁面）或其他地方的完整位址。%first、%second 取 * 所符合的內容。</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>該列會變成什麼，請參閱類型。空白：永久重新導向；當 old_url 含有 * 時為重新導向的萬用字元。</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>純路徑的網站存取；空白：使用匯入頁面上選擇的網站存取。</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL 別名的語言，例如 eng-GB；空白：使用網站存取的語言。</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>您自己的備註；會隨匯入一起保存。</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>重新導向狀態：301 或 308（永久），302、303 或 307（暫時）；空白：由類型決定。</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>類型</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>訪客得到的結果</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>永久重新導向；會重新導向的全域 URL 別名。</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>暫時重新導向：搜尋引擎保留舊位址。</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>在舊位址顯示新頁面，不重新導向；全域 URL 別名。</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>對每個符合的位址永久重新導向；URL 萬用字元。</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>對每個符合的位址暫時重新導向。</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>在每個符合的位址顯示新頁面，不重新導向。</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>檔案上限為 %size。格式的所有細節請見說明中心：遷移 URL，以及 URL 對應表範例。</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>查看每種格式的範例</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>格式與範例</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>單一頁面</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>單一頁面的永久重新導向、依節點 ID（node:163）指定且隨頁面移動的目標，以及在舊位址顯示頁面的別名。第一列為各欄命名；只需要 old_url 和 new_url。.tsv 檔案以相同方式讀取，以定位字元分隔。</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* 符合位址的任意部分，{1} 會把它放進新位址：已移動的區段、位址中間的 *、暫時萬用字元與直接萬用字元（不重新導向）。</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>查詢與暫時重新導向</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>帶查詢的舊位址（/index.php?id=12）、308，以及依類型（redirect-temporary）與依狀態（307）的暫時重新導向。</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>物件清單，鍵與 CSV 欄位相同；第一個物件可指定結構描述 exp-url-map/1。這是匯出所寫的格式，也是其他程式最容易產生的格式。</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>以 Excel 活頁簿提供的單一頁面：第一個工作表，第一列為欄位名稱。開啟它、修改位址，然後另存為 .xlsx。</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>相同內容的 OpenDocument 試算表，適用於 LibreOffice 與 OpenOffice。</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache 重寫規則</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>舊網站的 .htaccess 原樣：RewriteRule、用於查詢的 RewriteCond、整個區段（該頁面及其下所有內容）的 Redirect，以及作為萬用字元的 RedirectMatch。</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx 重寫規則</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>舊網站的 server 區塊：搭配 return 的 location =、用於查詢的 if ($args)、作為萬用字元的 rewrite，以及單一頁面的 map。</translation>
+    </message>
 </context>
 </TS>

@@ -86255,5 +86255,181 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>We no fit test di old addresses.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL map dey list each old address and di page for dis site wey e belong to now. Dis na di formats wey di import dey read, each one get example wey you fit copy: change di addresses to your own, then upload di file or paste am. Every example go import inside di demo site as e be.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>File %file, %size · dem read am from %extensions · %rows rows dey di import</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Download am</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>E don enter clipboard</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>E no gree copy</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Copy am</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Open am for di import</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Di columns</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Di first line for CSV file or spreadsheet na im dey name di columns, any order wey you like; JSON dey use di same names as keys. Na only old_url and new_url you need. If no first line of names dey, di columns go follow dis order.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Di column</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Wetin e carry</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Di old address: one path (/about-us.html), one path wey get query (/index.php?id=12) or di full address for di old host. One * dey match any part.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Di page for dis site: im path (/recipes), im node ID (node:163, wey dey follow di page when dem move am) or full address for another place. %first, %second dey carry wetin di * match.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Wetin di row go turn, check di kinds. If e empty: permanent redirect, or redirecting wildcard when old_url get *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Di siteaccess for bare path; if e empty: di one wey you choose for di import page.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Di language of di URL alias, like eng-GB; if e empty: di language of di siteaccess.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Your own note; e go stay with di import.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Di redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); if e empty: di kind go decide.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Di kinds</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Wetin visitors go get</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Permanent redirect; global URL alias wey dey redirect.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Temporary redirect: search engines go keep di old address.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Di new page for di old address, without redirect; global URL alias.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Permanent redirect for every address wey match; URL wildcard.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Temporary redirect for every address wey match.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Di new page for every address wey match, without redirect.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Files wey reach %size. All di details of di formats dey for di help center: How to move URLs, plus di URL map examples.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>See example of each format</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Di formats and examples</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Di single pages</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Permanent redirects for single pages, one target by node ID (node:163) wey dey follow di page when dem move am, and one alias wey dey show di page for di old address. Di first line dey name di columns; na only old_url and new_url you need. Dem dey read .tsv file di same way, with tabs.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>One * dey match any part of address and {1} dey put am inside di new one: section wey don move, * for di middle of address, temporary wildcard and direct one (no redirect).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Di queries and di temporary redirects</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Old addresses wey get query (/index.php?id=12), one 308, and temporary redirects by kind (redirect-temporary) and by status (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>List of objects wey get di same keys as di CSV columns; di first object fit name di schema exp-url-map/1. Na wetin di export dey write and wetin other programs fit make pass.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Di single pages as Excel workbook: di first sheet, di column names for di first row. Open am, change di addresses and save am as .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Di same thing as OpenDocument spreadsheet, for LibreOffice and OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Di Apache rewrite rules</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Di .htaccess of old site as e be: RewriteRule, RewriteCond for query, Redirect of one whole section (di page and everything wey dey under am) and RedirectMatch as wildcard.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Di nginx rewrite rules</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Di server block of old site: location = with return, if ($args) for query, rewrite as wildcard and one map of single pages.</translation>
+    </message>
 </context>
 </TS>

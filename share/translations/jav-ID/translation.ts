@@ -86255,5 +86255,181 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>The old addresses could not be tested.</source>
         <translation>Alamat lawas ora bisa diuji.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Peta URL nyathet saben alamat lawas lan kaca ing situs iki sing saiki dadi papane. Iki format-format sing diwaca impor, saben siji nganggo conto kanggo disalin: ganti alamat-alamate karo alamatmu dhewe, banjur unggah berkas utawa tempel isine. Saben conto bisa diimpor menyang situs demo kaya apa anane.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Berkas %file, %size · diwaca saka %extensions · %rows baris ing impor</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Undhuh</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Wis disalin menyang clipboard</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Ora bisa nyalin</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Salin</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Bukak ing impor</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Kolom-kolome</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Baris kapisan berkas CSV utawa spreadsheet menehi jeneng kolom-kolom, kanthi urutan apa wae; JSON nganggo jeneng sing padha minangka kunci. Mung old_url lan new_url sing dibutuhake. Yen ora ana baris kapisan jeneng, kolom-kolom dijupuk miturut urutan iki.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Kolom</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Isine</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Alamat lawas: path (/about-us.html), path nganggo query (/index.php?id=12) utawa alamat jangkep saka host lawas. * cocog karo bagean apa wae.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Kaca ing situs iki: path-e (/recipes), ID node-ne (node:163, sing ngetutake kaca nalika dipindhah) utawa alamat jangkep ing papan liya. %first, %second njupuk apa sing dicocogake *.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Baris iki dadi apa, delengen jinis-jinise. Kosong: pangalihan permanen, karakter pengganti sing ngalihake yen old_url ngemot *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Akses situs kanggo path polos; kosong: sing dipilih ing kaca impor.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Basa alias URL, contone eng-GB; kosong: basa akses situs.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Cathetanmu dhewe; disimpen bebarengan karo impor.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Status pangalihan: 301 utawa 308 (permanen), 302, 303 utawa 307 (sementara); kosong: jinise sing nemtokake.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Jinis-jinise</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Apa sing ditampa pengunjung</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Pangalihan permanen; alias URL global sing ngalihake.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Pangalihan sementara: mesin telusur tetep nyimpen alamat lawas.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Kaca anyar ing alamat lawas, tanpa pangalihan; alias URL global.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Pangalihan permanen kanggo saben alamat sing cocog; karakter pengganti URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Pangalihan sementara kanggo saben alamat sing cocog.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Kaca anyar ing saben alamat sing cocog, tanpa pangalihan.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Berkas nganti %size. Saben rincian format ana ing pusat pitulung: Mindhah URL, lan conto peta URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Deleng conto saben format</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Format lan conto</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Kaca siji-siji</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Pangalihan permanen kaca siji-siji, tujuan miturut ID node (node:163) sing ngetutake kaca nalika dipindhah, lan alias sing nuduhake kaca ing alamat lawas. Baris kapisan menehi jeneng kolom; mung old_url lan new_url sing dibutuhake. Berkas .tsv diwaca kanthi cara sing padha, nganggo tab.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* cocog karo bagean apa wae saka alamat lan {1} nglebokake menyang alamat anyar: bagean sing dipindhah, * ing tengah alamat, karakter pengganti sementara lan sing langsung (tanpa pangalihan).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Query lan pangalihan sementara</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Alamat lawas nganggo query (/index.php?id=12), siji 308, lan pangalihan sementara miturut jinis (redirect-temporary) lan miturut status (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Dhaptar obyek kanthi kunci sing padha karo kolom CSV; obyek kapisan oleh menehi jeneng skema exp-url-map/1. Iki sing ditulis ekspor lan sing paling gampang digawe program liya.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Kaca siji-siji minangka buku kerja Excel: lembar kapisan, jeneng kolom ing baris kapisan. Bukak, ganti alamat-alamate lan simpen minangka .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Padha, minangka spreadsheet OpenDocument, kanggo LibreOffice lan OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Aturan nulis ulang Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>.htaccess situs lawas kaya apa anane: RewriteRule, RewriteCond kanggo query, Redirect kanggo sakabehe bagean (kaca lan kabeh sing ana ing ngisore) lan RedirectMatch minangka karakter pengganti.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Aturan nulis ulang nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Blok server situs lawas: location = nganggo return, if ($args) kanggo query, rewrite minangka karakter pengganti lan map kanggo kaca siji-siji.</translation>
+    </message>
 </context>
 </TS>

@@ -86247,5 +86247,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>जुने पत्ते तपासूंक जालें ना.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL नकासो दर एक पोरनो पत्तो आनी ताका आतां लागू आशिल्लें ह्या साइटीचें पान दाखयता. हे आयात वाचता ते फॉर्मेट, दरेकाक नक्कल करपाक एक उदाहरण: पत्ते तुमच्या पत्त्यांनी बदलात, मागीर फायल अपलोड करात वा पेस्ट करात. दर एक उदाहरण जशें आसा तशें डेमो साइटींत आयात जाता.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>फायल %file, %size · %extensions वयल्यान वाचलां · आयातींत %rows ओळी</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>डाउनलोड करात</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>क्लिपबोर्डाचेर नक्कल केलें</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>नक्कल करूंक जालें ना</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>नक्कल करात</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>आयातींत उगडात</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>स्तंभ</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV फायलीची वा स्प्रेडशीटाची पयली ओळ स्तंभांक नांवां दिता, खंयच्याय क्रमान; JSON तींच नांवां की म्हूण वापरता. फकत old_url आनी new_url गरजेचे. नांवांची पयली ओळ नासल्यार, स्तंभ ह्या क्रमान घेतात.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>स्तंभ</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>तातूंत कितें आसता</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>पोरनो पत्तो: एक वाट (/about-us.html), प्रस्नासयत वाट (/index.php?id=12) वा पोरन्या होस्टाचो पुराय पत्तो. * खंयच्याय भागाक जुळटा.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>ह्या साइटीचें पान: ताची वाट (/recipes), ताचो नोड ID (node:163, जो पान हालयल्यार ताच्या फाटल्यान वता) वा हेर कडेन पुराय पत्तो. %first, %second हांकां * जुळिल्लें तें मेळटा.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>ओळ कितें जाता, प्रकार पळयात. रितें: कायमचें वळोवप, वा old_url त * आसल्यार वळोवपी वाइल्डकार्ड.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>सादे वाटेचो साइटअॅक्सेस; रितें: आयात पानार वेंचिल्लो.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL उपनांवाची भास, देखीक eng-GB; रितें: साइटअॅक्सेसाची भास.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>तुमची स्वताची टीप; ती आयातीवांगडा दवरतात.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>वळोवपाची स्थिती: 301 वा 308 (कायमचें), 302, 303 वा 307 (तात्पुरतें); रितें: प्रकार थारायता.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>प्रकार</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>भेट दिवपी कितें मेळयतात</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>कायमचें वळोवप; वळोवपी सार्वत्रीक URL उपनांव.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>तात्पुरतें वळोवप: सोदयंत्रां पोरनो पत्तो दवरतात.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>पोरन्या पत्त्यार नवें पान, वळोवपा बगर; सार्वत्रीक URL उपनांव.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>दर एका जुळपी पत्त्याखातीर कायमचें वळोवप; URL वाइल्डकार्ड.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>दर एका जुळपी पत्त्याखातीर तात्पुरतें वळोवप.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>दर एका जुळपी पत्त्यार नवें पान, वळोवपा बगर.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>%size मेरेनच्यो फायली. फॉर्मेटांचो सगळो तपशील आदार केंद्रांत आसा: URL स्थलांतर, आनी URL नकाशाचीं उदाहरणां.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>दर एका फॉर्मेटाचें उदाहरण पळयात</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>फॉर्मेट आनी उदाहरणां</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>एकोडीं पानां</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>एकोड्या पानांचीं कायमचीं वळोवपां, नोड ID (node:163) वरवीं लक्ष्य जें पान हालयल्यार ताच्या फाटल्यान वता, आनी पोरन्या पत्त्यार पान दाखोवपी उपनांव. पयली ओळ स्तंभांक नांवां दिता; फकत old_url आनी new_url गरजेचे. .tsv फायल तशीच, टॅबांसयत वाचतात.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* पत्त्याच्या खंयच्याय भागाक जुळटा आनी {1} तो नव्या पत्त्यांत घालता: हालयल्लो विभाग, पत्त्याच्या मदीं एक *, एक तात्पुरतो वाइल्डकार्ड आनी एक थेट (वळोवपा बगर).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>प्रस्न आनी तात्पुरतीं वळोवपां</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>प्रस्नासयत पोरने पत्ते (/index.php?id=12), एक 308, आनी प्रकारान (redirect-temporary) आनी स्थितीन (307) तात्पुरतीं वळोवपां.</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>CSV स्तंभां सारकिल्या कीं आशिल्ल्या वस्तूंची वळेरी; पयली वस्तू exp-url-map/1 स्कीमा सांगूं येता. निर्यात हेंच बरयता आनी हेर प्रोग्राम हेंच सगळ्यांत सोंपेपणान तयार करतात.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>एकोडीं पानां Excel वर्कबुक म्हूण: पयली शीट, पयल्या ओळींत स्तंभांचीं नांवां. ती उगडात, पत्ते बदलात आनी .xlsx म्हूण सांबाळात.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>तेंच OpenDocument स्प्रेडशीट म्हूण, LibreOffice आनी OpenOffice खातीर.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache पुनर्लेखन नेम</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>पोरन्या साइटीची .htaccess जशी आसा तशी: RewriteRule, प्रस्नाखातीर RewriteCond, पुराय विभागाचें Redirect (पान आनी ताचे सकयल सगळें) आनी वाइल्डकार्ड म्हूण RedirectMatch.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx पुनर्लेखन नेम</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>पोरन्या साइटीचो server ब्लॉक: return वांगडा location =, प्रस्नाखातीर if ($args), वाइल्डकार्ड म्हूण rewrite आनी एकोड्या पानांचो map.</translation>
+    </message>
 </context>
 </TS>

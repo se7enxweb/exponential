@@ -86219,5 +86219,181 @@ Remoambuevaerã nódo klase swap tembiapo rupive.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>Kundahára tujakuéra ndaikatúi ojeha'ã.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Peteĩ URL mapa ohechauka opaite kundaharape tuja ha ko tenda kuatiarogue oñemoĩva hese ko'ágã. Ko'ãva umi formato omoñe'ẽva ñegueru, peteĩteĩ techapyrã ikopiarã ndive: emoambue umi kundaharape nde mba'évape, upéi ehupi marandurenda térã emboja. Opaite techapyrã ojegueru tenda techaukahápe oĩháicha.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Marandurenda %file, %size · oñemoñe'ẽ %extensions-gui · %rows tysỹi ñeguerúpe</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Emboguejy</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Ojekopia portapapeles-pe</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Ndaikatúi ojekopia</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Ekopia</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Embojuruja ñeguerúpe</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Umi columna</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Peteĩ marandurenda CSV térã tabla cálculo tysỹi peteĩha ombohéra umi columna, oimehaichagua ordenpe; JSON oipuru umi téra peteĩchagua clave ramo. Oñeikotevẽ old_url ha new_url añoite. Ndaipóriramo téra tysỹi peteĩha, umi columna ojegueru ko ordenpe.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Columna</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Mba'épa oguereko</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Kundaharape tuja: tape (/about-us.html), tape porandu ndive (/index.php?id=12) térã host tuja kundaharape tuichakue. Peteĩ * ojoja oimehaichagua pehẽngue ndive.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Ko tenda kuatiarogue: hape (/recipes), nódo ID (node:163, omoirũva kuatiarogue oñemomýirõ) térã kundaharape tuichakue ambue hendápe. %first, %second ogueraha upe * ojojáva.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Mba'éicha oiko tysỹi, ehecha umi mba'eichagua. Nandi: ñemondo jey opave'ỹva, comodín omondo jeýva old_url oguerekóramo peteĩ *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Tape año siteaccess; nandi: ojeporavóva ñegueru kuatiaroguépe.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL téra mokõiha ñe'ẽ, techapyrã eng-GB; nandi: siteaccess ñe'ẽ.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Nde jehai; oñeñongatu ñegueru ndive.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Ñemondo jey estado: 301 térã 308 (opave'ỹva), 302, 303 térã 307 (sapy'aitéva); nandi: mba'eichagua odesidi.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Umi mba'eichagua</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Mba'épa ohupyty umi ohóva</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Ñemondo jey opave'ỹva; URL téra mokõiha opavavéva omondo jeýva.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Ñemondo jey sapy'aitéva: umi motor jeheka oñongatu kundaharape tuja.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Kuatiarogue pyahu kundaharape tujápe, ñemondo jey'ỹre; URL téra mokõiha opavavéva.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Ñemondo jey opave'ỹva opaite kundaharape ojojávape g̃uarã; URL comodín.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Ñemondo jey sapy'aitéva opaite kundaharape ojojávape g̃uarã.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Kuatiarogue pyahu opaite kundaharape ojojávape, ñemondo jey'ỹre.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Marandurenda %size peve. Opaite formato mba'emimi oĩ pytyvõ rendápe: URL ñemomýi, ha URL mapa techapyrã.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Ehecha peteĩ techapyrã opaite formato rehegua</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Formato ha techapyrã</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Kuatiarogue peteĩteĩ</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Ñemondo jey opave'ỹva kuatiarogue peteĩteĩ rehegua, peteĩ jehupytyrã nódo ID rupive (node:163) omoirũva kuatiarogue oñemomýirõ, ha peteĩ téra mokõiha ohechaukáva kuatiarogue kundaharape tujápe. Tysỹi peteĩha ombohéra umi columna; oñeikotevẽ old_url ha new_url añoite. Peteĩ marandurenda .tsv oñemoñe'ẽ upéicha avei, tab ndive.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>Peteĩ * ojoja oimehaichagua kundaharape pehẽngue ndive ha {1} omoinge pyahúpe: peteĩ vore oñemomýiva, peteĩ * kundaharape mbytépe, peteĩ comodín sapy'aitéva ha peteĩ directo (ñemondo jey'ỹre).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Porandu ha ñemondo jey sapy'aitéva</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Kundaharape tuja porandu ndive (/index.php?id=12), peteĩ 308, ha ñemondo jey sapy'aitéva mba'eichagua rupive (redirect-temporary) ha estado rupive (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Peteĩ lista mba'ekuéra oguerekóva umi clave peteĩchagua CSV columna ndive; mba'e peteĩha ikatu ombohéra esquema exp-url-map/1. Kóva ohai ñemondo okápe ha ambue programa ojapo hasy'ỹvéva.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Kuatiarogue peteĩteĩ kuatiaryru Excel ramo: hoja peteĩha, columna réra tysỹi peteĩhápe. Embojuruja, emoambue kundaharape ha eñongatu .xlsx ramo.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Upéichagua tabla cálculo OpenDocument ramo, LibreOffice ha OpenOffice-pe g̃uarã.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache rewrite rembiapoukapy</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Tenda tuja .htaccess oĩháicha: RewriteRule, RewriteCond porandúpe g̃uarã, Redirect peteĩ vore tuichakuépe (kuatiarogue ha opaite oĩva iguýpe) ha RedirectMatch comodín ramo.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx rewrite rembiapoukapy</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Tenda tuja server bloque: location = return ndive, if ($args) porandúpe g̃uarã, rewrite comodín ramo ha peteĩ map kuatiarogue peteĩteĩ rehegua.</translation>
+    </message>
 </context>
 </TS>

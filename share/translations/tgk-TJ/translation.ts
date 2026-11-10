@@ -86247,5 +86247,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>Нишониҳои кӯҳнаро озмоиш кардан имкон надошт.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Харитаи URL ҳар як нишонии кӯҳна ва саҳифаи ин сомонаро, ки он ҳоло ба он тааллуқ дорад, нишон медиҳад. Инҳо форматҳое мебошанд, ки воридот мехонад, ҳар кадом бо намунае барои нусхабардорӣ: нишониҳоро ба нишониҳои худ иваз кунед, сипас файлро бор кунед ё гузоред. Ҳар намуна ҳамон тавре ки ҳаст, ба сомонаи намоишӣ ворид мешавад.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Файли %file, %size · аз %extensions хонда мешавад · %rows сатр дар воридот</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Боргирӣ</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Ба буфери мубодила нусха бардошта шуд</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Нусха бардоштан ғайриимкон шуд</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Нусха бардоштан</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Дар воридот кушодан</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Сутунҳо</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Сатри якуми файли CSV ё ҷадвали электронӣ сутунҳоро ном мебарад, бо ҳар тартибе; JSON ҳамон номҳоро ҳамчун калид истифода мебарад. Танҳо old_url ва new_url лозиманд. Бе сатри якуми номҳо сутунҳо бо ҳамин тартиб гирифта мешаванд.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Сутун</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Чӣ дар бар мегирад</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Нишонии кӯҳна: роҳ (/about-us.html), роҳ бо дархост (/index.php?id=12) ё нишонии пурраи мизбони кӯҳна. Аломати * ба ҳар қисм мувофиқ меояд.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Саҳифаи ин сомона: роҳи он (/recipes), ID-и гиреҳи он (node:163, ки ҳангоми кӯчонидани саҳифа аз паи он меравад) ё нишонии пурра дар ҷои дигар. %first, %second он чиро мегиранд, ки * мувофиқ омад.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Сатр ба чӣ табдил меёбад, навъҳоро бинед. Холӣ: такрорҳидояти доимӣ, ифодаи умумии такрорҳидояткунанда, вақте ки old_url * дорад.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Дастрасии сомонаи роҳи оддӣ; холӣ: он ки дар саҳифаи воридот интихоб шудааст.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Забони тахаллуси URL, масалан eng-GB; холӣ: забони дастрасии сомона.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Ёддошти худатон; бо воридот нигоҳ дошта мешавад.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Ҳолати такрорҳидоят: 301 ё 308 (доимӣ), 302, 303 ё 307 (муваққатӣ); холӣ: навъ муайян мекунад.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Навъҳо</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Боздидкунандагон чӣ мегиранд</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Такрорҳидояти доимӣ; тахаллуси умумии URL, ки такрорҳидоят мекунад.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Такрорҳидояти муваққатӣ: низомҳои ҷустуҷӯ нишонии кӯҳнаро нигоҳ медоранд.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Саҳифаи нав дар нишонии кӯҳна, бе такрорҳидоят; тахаллуси умумии URL.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Такрорҳидояти доимӣ барои ҳар нишонии мувофиқ; ифодаи умумии URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Такрорҳидояти муваққатӣ барои ҳар нишонии мувофиқ.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Саҳифаи нав дар ҳар нишонии мувофиқ, бе такрорҳидоят.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Файлҳо то %size. Ҳар ҷузъиёти форматҳо дар маркази кӯмак аст: Кӯчонидани URL-ҳо ва намунаҳои харитаи URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Намунаи ҳар форматро бинед</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Форматҳо ва намунаҳо</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Саҳифаҳои алоҳида</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Такрорҳидоятҳои доимии саҳифаҳои алоҳида, ҳадаф бо ID-и гиреҳ (node:163), ки ҳангоми кӯчонидани саҳифа аз паи он меравад, ва тахаллусе, ки саҳифаро дар нишонии кӯҳна нишон медиҳад. Сатри якум сутунҳоро ном мебарад; танҳо old_url ва new_url лозиманд. Файли .tsv низ ҳамин тавр, бо табуляция хонда мешавад.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>Аломати * ба ҳар қисми нишонӣ мувофиқ меояд ва {1} онро ба нишонии нав мегузорад: бахше, ки кӯчонида шуд, * дар миёнаи нишонӣ, ифодаи умумии муваққатӣ ва ифодаи мустақим (бе такрорҳидоят).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Дархостҳо ва такрорҳидоятҳои муваққатӣ</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Нишониҳои кӯҳна бо дархост (/index.php?id=12), як 308 ва такрорҳидоятҳои муваққатӣ аз рӯи навъ (redirect-temporary) ва аз рӯи ҳолат (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Рӯйхати объектҳо бо ҳамон калидҳое, ки сутунҳои CSV доранд; объекти якум метавонад номи нақшаро нишон диҳад: exp-url-map/1. Он чи содирот менависад ва барномаҳои дигар аз ҳама осонтар месозанд.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Саҳифаҳои алоҳида ҳамчун китоби кории Excel: варақи якум, номҳои сутунҳо дар сатри якум. Онро кушоед, нишониҳоро иваз кунед ва ҳамчун .xlsx захира кунед.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Ҳамин ҳамчун ҷадвали электронии OpenDocument, барои LibreOffice ва OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Қоидаҳои азнавнависии Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Файли .htaccess-и сомонаи кӯҳна ҳамон тавре ки ҳаст: RewriteRule, RewriteCond барои дархост, Redirect-и тамоми бахш (саҳифа ва ҳама чизи зери он) ва RedirectMatch ҳамчун ифодаи умумӣ.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Қоидаҳои азнавнависии nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Блоки server-и сомонаи кӯҳна: location = бо return, if ($args) барои дархост, rewrite ҳамчун ифодаи умумӣ ва map-и саҳифаҳои алоҳида.</translation>
+    </message>
 </context>
 </TS>

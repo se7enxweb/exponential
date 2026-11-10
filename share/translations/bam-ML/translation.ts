@@ -86247,5 +86247,181 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>Adirɛsi kɔrɔw ma se ka sɛgɛsɛgɛ.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL kariti bɛ adarɛsi kɔrɔ kelen-kelen bɛɛ ni nin siti ɲɛ min ta don sisan sɛbɛn. Nin ye cogoyaw ye ladon bɛ minw kalan, misali kelen bɛ kelen-kelen bɛɛ la min bɛ se ka kopi: adarɛsiw yɛlɛma ka kɛ i taw ye, o kɔ dosiye lase walima a nɔrɔ. Misali bɛɛ bɛ ladon demo siti la i n'a fɔ a bɛ cogo min na.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Dosiye %file, %size · kalanna %extensions la · layini %rows ladon kɔnɔ</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Jigin</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Kopira ka taa kilipubɔrdi la</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>A ma se ka kopi</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopi</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>A da wuli ladon kɔnɔ</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Kolɔniw</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV dosiye walima jatebɔ tabali layini fɔlɔ bɛ kolɔniw tɔgɔ fɔ, cogo o cogo; JSON bɛ tɔgɔ kelenw kɛ kilew ye. old_url ni new_url dɔrɔn de wajibiyalen don. Ni tɔgɔw layini fɔlɔ tɛ yen, kolɔniw bɛ ta nin cogo in na.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Kolɔni</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Min bɛ a kɔnɔ</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Adarɛsi kɔrɔ: sira (/about-us.html), sira ni ɲininkali ye (/index.php?id=12) walima host kɔrɔ ka adarɛsi dafalen. * bɛ bɛn yɔrɔ o yɔrɔ ma.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Nin siti ɲɛ: a sira (/recipes), a nɔdi ID (node:163, min bɛ ɲɛ nɔfɛ ni a yɔrɔ yɛlɛmana) walima adarɛsi dafalen yɔrɔ wɛrɛ la. %first, %second bɛ * bɛnna min ma o ta.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Layini bɛ kɛ min ye, suguyaw lajɛ. Lankolon: sirayɛlɛma banbali, jɔkɛri min bɛ sira yɛlɛma ni * bɛ old_url la.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Sira gansan ka siti donda; lankolon: min sugandira ladon ɲɛ kan.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL tɔgɔ wɛrɛ ka kan, misali la eng-GB; lankolon: siti donda ka kan.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>I yɛrɛ ka kunnafoni; a bɛ mara ni ladon ye.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Sirayɛlɛma cogoya: 301 walima 308 (banbali), 302, 303 walima 307 (waati dɔɔnin); lankolon: suguya de bɛ a latigɛ.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Suguyaw</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Bisimilabagaw bɛ min sɔrɔ</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Sirayɛlɛma banbali; URL tɔgɔ wɛrɛ bɛɛ ka min bɛ sira yɛlɛma.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Waati dɔɔnin sirayɛlɛma: ɲinini masinw bɛ adarɛsi kɔrɔ mara.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Ɲɛ kura adarɛsi kɔrɔ la, sirayɛlɛma tɛ; URL tɔgɔ wɛrɛ bɛɛ ka.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Sirayɛlɛma banbali adarɛsi bɛnnen bɛɛ ye; URL jɔkɛri.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Waati dɔɔnin sirayɛlɛma adarɛsi bɛnnen bɛɛ ye.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Ɲɛ kura adarɛsi bɛnnen bɛɛ la, sirayɛlɛma tɛ.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Dosiyew fo ka se %size ma. Cogoyaw kunnafoni bɛɛ bɛ dɛmɛ sɛntɛri la: URLw yɔrɔ yɛlɛmali, ani URL kariti misaliw.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Cogoya kelen-kelen bɛɛ misali lajɛ</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Cogoyaw ni misaliw</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Ɲɛ kelen-kelenw</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Ɲɛ kelen-kelenw ka sirayɛlɛma banbaliw, kuntilenna nɔdi ID fɛ (node:163) min bɛ ɲɛ nɔfɛ ni a yɔrɔ yɛlɛmana, ani tɔgɔ wɛrɛ min bɛ ɲɛ jira adarɛsi kɔrɔ la. Layini fɔlɔ bɛ kolɔniw tɔgɔ fɔ; old_url ni new_url dɔrɔn de wajibiyalen don. .tsv dosiye bɛ kalan o cogo kelen na, ni tabuw ye.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* bɛ bɛn adarɛsi yɔrɔ o yɔrɔ ma ani {1} bɛ o don adarɛsi kura la: tilayɔrɔ min yɔrɔ yɛlɛmana, * adarɛsi cɛmancɛ la, waati dɔɔnin jɔkɛri ani jɔkɛri tilennen (sirayɛlɛma tɛ).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Ɲininkaliw ni waati dɔɔnin sirayɛlɛmaw</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Adarɛsi kɔrɔw ni ɲininkali ye (/index.php?id=12), 308 dɔ, ani waati dɔɔnin sirayɛlɛmaw suguya fɛ (redirect-temporary) ani cogoya fɛ (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Fɛn caman lisi kilew kelenw bɛ minw na i n'a fɔ CSV kolɔniw; fɛn fɔlɔ bɛ se ka schema exp-url-map/1 tɔgɔ fɔ. Labɔli bɛ min sɛbɛn ani porogaramu wɛrɛw bɛ min dilan nɔgɔya la.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Ɲɛ kelen-kelenw i n'a fɔ Excel baarakɛgafe: fɔlɔ ɲɛ, kolɔni tɔgɔw layini fɔlɔ la. A da wuli, adarɛsiw yɛlɛma ani a mara i n'a fɔ .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>O kelen i n'a fɔ OpenDocument jatebɔ tabali, LibreOffice ni OpenOffice ye.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache sɛbɛnni kura sariyaw</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Siti kɔrɔ ka .htaccess i n'a fɔ a bɛ cogo min na: RewriteRule, RewriteCond ɲininkali ye, Redirect tilayɔrɔ dafalen ye (ɲɛ ni fɛn bɛɛ min bɛ a jukɔrɔ) ani RedirectMatch i n'a fɔ jɔkɛri.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx sɛbɛnni kura sariyaw</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Siti kɔrɔ ka server bulɔki: location = ni return ye, if ($args) ɲininkali ye, rewrite i n'a fɔ jɔkɛri ani ɲɛ kelen-kelenw ka map.</translation>
+    </message>
 </context>
 </TS>

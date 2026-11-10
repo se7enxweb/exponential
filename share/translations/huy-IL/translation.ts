@@ -86256,5 +86256,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>לא אפשר הוה למבחן כתובתא עתיקתא.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>פורסא ד URL כתבא כל כתובתא עתיקתא ודפא דאתרא הנא דדילה השתא. אלין פורמאטא דמעלא קרי, כל חד עם דוגמא למעתק: שחלף כתובתא לדילך, ובתר כן מסק פנקיתא או דבק יתה. כל דוגמא מתעליא לאתרא דמחויתא כמא דאיתה.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>פנקיתא %file, %size · מתקריא מן %extensions · %rows שורתא במעלא</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>נחת</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>אתעתק ללוחא דגזירא</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>לא אתעתק</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>עתק</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>פתח במעלא</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>עמודא</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>שורתא קדמיתא דפנקיתא CSV או דגליון חושבנא קריא שמהת עמודא, בכל סדרא; JSON משמש באלין שמהא כמפתחא. בלחוד old_url ו new_url צריכין. בלא שורתא קדמיתא דשמהא, עמודא מתנסבין בסדרא הנא.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>עמודא</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>מא דאית ביה</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>כתובתא עתיקתא: שבילא (/about-us.html), שבילא עם שאילתא (/index.php?id=12) או כתובתא שלמתא דמארחא עתיקא. * מתאים לכל חולקא.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>דפא דאתרא הנא: שבילה (/recipes), מנין קטרא דילה (node:163, דאזל בתר דפא כד מתשני) או כתובתא שלמתא באתר אחרנא. %first, %second נסבין מא ד * אתאים.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>מא דשורתא הויא, חזי גנסיא. ריקנא: מפניא קיימא, אתותא כלניתא דמפניא כד ב old_url אית *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>מעלנא דאתרא דשבילא ערטילאה; ריקנא: דאתבחר בדפא דמעלא.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>לשנא דשמא חלופא ד URL, למשל eng-GB; ריקנא: לשנא דמעלנא דאתרא.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>רשימתא דילך; מתנטרא עם מעלא.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>מצבא דמפניא: 301 או 308 (קיימא), 302, 303 או 307 (לזבנא); ריקנא: גנסא דאין.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>גנסיא</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>מא דמבקרין מקבלין</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>מפניא קיימא; שמא חלופא גלובליא ד URL דמפני.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>מפניא לזבנא: מכונת בחישא נטרין כתובתא עתיקתא.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>דפא חדתא בכתובתא עתיקתא, בלא מפניא; שמא חלופא גלובליא ד URL.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>מפניא קיימא לכל כתובתא דמתאימא; אתותא כלניתא ד URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>מפניא לזבנא לכל כתובתא דמתאימא.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>דפא חדתא בכל כתובתא דמתאימא, בלא מפניא.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>פנקיתא עד %size. כל פרטא דפורמאטא איתוהי בבית עדרנא: שנויא ד URL, ודוגמי פורסא ד URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>חזי דוגמא דכל פורמאט</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>פורמאטא ודוגמי</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>דפא יחידאי</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>מפניא קיימא דדפא יחידאי, נישא במנין קטרא (node:163) דאזל בתר דפא כד מתשני, ושמא חלופא דמחוי דפא בכתובתא עתיקתא. שורתא קדמיתא קריא שמהת עמודא; בלחוד old_url ו new_url צריכין. פנקיתא .tsv מתקריא הכי, עם טאבא.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* מתאים לכל חולקא דכתובתא ו {1} שוי יתיה בחדתא: פלגא דאשתני, * במצעות כתובתא, אתותא כלניתא לזבנא וחדא ישירא (בלא מפניא).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>שאילתא ומפניא לזבנא</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>כתובתא עתיקתא עם שאילתא (/index.php?id=12), 308, ומפניא לזבנא לפום גנסא (redirect-temporary) ולפום מצבא (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>רשימתא דמדעמא עם מפתחא כעמודי CSV; מדעם קדמאה יכיל למקרי לסכימא exp-url-map/1. מא דמפקא כתבא ומא דתוכניתא אחרניתא עבדין בקלילו.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>דפא יחידאי כספר עבודתא Excel: גליונא קדמאה, שמהת עמודא בשורתא קדמיתא. פתח יתיה, שחלף כתובתא ונטר יתיה כ .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>הדא היא כגליון חושבנא OpenDocument, ל LibreOffice ו OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>נמוסי כתיבתא תניתא ד Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>.htaccess דאתרא עתיקא כמא דאיתוהי: RewriteRule, RewriteCond לשאילתא, Redirect דפלגא שלמא (דפא וכל דתחותה) ו RedirectMatch כאתותא כלניתא.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>נמוסי כתיבתא תניתא ד nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>בלוק server דאתרא עתיקא: location = עם return, if ($args) לשאילתא, rewrite כאתותא כלניתא ו map דדפא יחידאי.</translation>
+    </message>
 </context>
 </TS>

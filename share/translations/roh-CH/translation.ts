@@ -86247,5 +86247,181 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>Las veglias adressas n'han betg pudì vegnir testadas.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Ina charta d'URL enumerescha mintga veglia adressa e la pagina da questa website a la quala ella appartegna ussa. Quai èn ils formats che l'import legia, mintgin cun in exempel da copiar: remplazzai las adressas cun las vostras, alura chargiai si la datoteca u l'encollai. Mintga exempel vegn importà en la website da demonstraziun sco ch'el è.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Datoteca %file, %size · legida da %extensions · %rows lingias en l'import</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Chargiar giu</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Copià en l'archiv provisoric</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Betg pussaivel da copiar</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Copiar</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Avrir en l'import</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Las colonnas</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>L'emprima lingia d'ina datoteca CSV u d'in fegl da calculaziun numna las colonnas, en mintga urden; JSON utilisescha ils medems nums sco clavs. Mo old_url e new_url èn necessaris. Senza emprima lingia cun nums vegnan las colonnas prendidas en quest urden.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Colonna</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Tge ch'ella cuntegna</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>La veglia adressa: in percurs (/about-us.html), in percurs cun ina dumonda (/index.php?id=12) u ina adressa cumpleta dal vegl host. In * correspunda a mintga part.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>La pagina da questa website: ses percurs (/recipes), ses ID dal nodi (node:163, che suonda la pagina cur ch'ella vegn spustada) u ina adressa cumpleta en in auter lieu. %first, %second prendan quai che il * ha correspundì.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Tge che la lingia daventa, guardai ils tips. Vid: in renviament permanent, in joker che renviescha cur che old_url cuntegna in *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>L'access a la website d'in percurs simpel; vid: quel tschernì sin la pagina d'import.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>La lingua dal pseudonim URL, per exempel eng-GB; vid: la lingua da l'access a la website.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Vossa atgna notizia; ella vegn tegnida cun l'import.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Il status dal renviament: 301 u 308 (permanent), 302, 303 u 307 (temporar); vid: il tip decida.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Ils tips</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Tge ch'ils visitaders survegnan</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>In renviament permanent; in pseudonim URL global che renviescha.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>In renviament temporar: las maschinas da tschertga tegnan la veglia adressa.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>La nova pagina a la veglia adressa, senza renviament; in pseudonim URL global.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>In renviament permanent per mintga adressa correspundenta; in joker URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>In renviament temporar per mintga adressa correspundenta.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>La nova pagina a mintga adressa correspundenta, senza renviament.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Datotecas fin %size. Tut ils detagls dals formats èn en il center d'agid: Migrar URLs ed ils exempels da chartas d'URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Guardar in exempel da mintga format</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Formats ed exempels</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Paginas singulas</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Renviaments permanents da paginas singulas, ina destinaziun tenor ID dal nodi (node:163) che suonda la pagina cur ch'ella vegn spustada, ed in pseudonim che mussa la pagina a la veglia adressa. L'emprima lingia numna las colonnas; mo old_url e new_url èn necessaris. Ina datoteca .tsv vegn legida medemamain, cun tabulaturs.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>In * correspunda a mintga part d'ina adressa e {1} la metta en la nova: ina secziun spustada, in * en il mez d'ina adressa, in joker temporar ed in direct (senza renviament).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Dumondas e renviaments temporars</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Veglias adressas cun ina dumonda (/index.php?id=12), in 308 e renviaments temporars tenor tip (redirect-temporary) e tenor status (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Ina glista d'objects cun las medemas clavs sco las colonnas CSV; l'emprim object po numnar la schema exp-url-map/1. Quai che l'export scriva e quai che auters programs fan il pli simpel.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Las paginas singulas sco cudesch da lavur Excel: l'emprim fegl, ils nums da las colonnas en l'emprima lingia. Avri el, midai las adressas e memorisai el sco .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Il medem sco fegl da calculaziun OpenDocument, per LibreOffice ed OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Reglas da reformulaziun Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>La .htaccess d'ina veglia website sco ch'ella è: RewriteRule, RewriteCond per ina dumonda, Redirect d'ina secziun entira (la pagina e tut sut ella) e RedirectMatch sco joker.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Reglas da reformulaziun nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Il bloc server d'ina veglia website: location = cun return, if ($args) per ina dumonda, rewrite sco joker ed ina map da paginas singulas.</translation>
+    </message>
 </context>
 </TS>

@@ -444,7 +444,7 @@
 })();
 
 /*
- * admin4: chips with data-a4-copy (the node view's node, object and remote ids) copy their value to the
+ * admin4: chips with data-a4-copy (the node view's node, object and remote ids, the URL map examples) copy their value to the
  * clipboard when clicked, and show a tick for a moment.
  */
 (function () {
@@ -469,9 +469,10 @@
         copy(chip.getAttribute('data-a4-copy')).then(function () {
             chip.classList.add('a4-copied');
             setTimeout(function () { chip.classList.remove('a4-copied'); }, 1400);
-            // the tick is only seen; the toast also tells a screen reader
+            // the tick is only seen; the toast also tells a screen reader. A long value (a whole example file) is
+            // named by data-a4-copy-name instead of shown.
             if (window.a4Toast && chip.getAttribute('data-a4-copied'))
-                window.a4Toast(chip.getAttribute('data-a4-copied') + ': ' + chip.getAttribute('data-a4-copy'), 'ok', chip);
+                window.a4Toast(chip.getAttribute('data-a4-copied') + ': ' + (chip.getAttribute('data-a4-copy-name') || chip.getAttribute('data-a4-copy')), 'ok', chip);
         }, function () {
             // a copy that failed says so instead of doing nothing
             if (window.a4Toast && chip.getAttribute('data-a4-copy-failed'))

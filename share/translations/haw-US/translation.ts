@@ -86247,5 +86247,181 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>The old addresses could not be tested.</source>
         <translation>ʻAʻole hiki ke hoʻāʻo ʻia nā helu wahi kahiko.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Hōʻike ka palapala ʻāina URL i kēlā me kēia helu wahi kahiko a me ka ʻaoʻao o kēia pūnaewele e pili ana iā ia i kēia manawa. ʻO kēia nā ʻano faila e heluhelu ʻia e ka lawe mai, me kahi laʻana e kope ai no kēlā me kēia: e hoʻololi i nā helu wahi i kou mau helu wahi ponoʻī, a laila e hoʻouka i ka faila a i ʻole e hoʻopili iā ia. Lawe ʻia mai kēlā me kēia laʻana i loko o ka pūnaewele hōʻike e like me kona ʻano.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Faila %file, %size · heluhelu ʻia mai %extensions · %rows lālani i ka lawe mai</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Hoʻoiho</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Ua kope ʻia i ka papa kope</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>ʻAʻole hiki ke kope</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kope</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Wehe i ka lawe mai</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Nā kolamu</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Kapa ka laina mua o kekahi faila CSV a i ʻole papa helu i nā kolamu, ma kekahi kaʻina; hoʻohana ʻo JSON i nā inoa like ma ke ʻano he mau kī. Pono wale nō ʻo old_url a me new_url. Inā ʻaʻohe laina mua o nā inoa, lawe ʻia nā kolamu ma kēia kaʻina.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Kolamu</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Ka mea i loko</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Ka helu wahi kahiko: he ala (/about-us.html), he ala me kahi nīnau (/index.php?id=12) a i ʻole he helu wahi piha o ka host kahiko. Kūlike ka * me kekahi ʻāpana.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Ka ʻaoʻao o kēia pūnaewele: kona ala (/recipes), kona ID node (node:163, e hahai ana i ka ʻaoʻao ke neʻe ʻia) a i ʻole he helu wahi piha ma kahi ʻē. Lawe ʻo %first, %second i ka mea i kūlike me ka *.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Ka mea e lilo ai ka lālani, e nānā i nā ʻano. Hakahaka: he hoʻohuli mau, he hōʻailona hoʻololi e hoʻohuli ana inā he * ko old_url.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Ka siteaccess o kahi ala wale; hakahaka: ka mea i koho ʻia ma ka ʻaoʻao lawe mai.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Ka ʻōlelo o ka inoa ʻē URL, e laʻa eng-GB; hakahaka: ka ʻōlelo o ka siteaccess.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Kāu palapala ponoʻī; mālama ʻia me ka lawe mai.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Ke kūlana hoʻohuli: 301 a i ʻole 308 (mau), 302, 303 a i ʻole 307 (kūikawā); hakahaka: na ke ʻano e hoʻoholo.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Nā ʻano</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Ka mea e loaʻa ai i nā malihini</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>He hoʻohuli mau; he inoa ʻē URL ākea e hoʻohuli ana.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>He hoʻohuli kūikawā: mālama nā mīkini ʻimi i ka helu wahi kahiko.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Ka ʻaoʻao hou ma ka helu wahi kahiko, me ka hoʻohuli ʻole; he inoa ʻē URL ākea.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>He hoʻohuli mau no kēlā me kēia helu wahi kūlike; he hōʻailona hoʻololi URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>He hoʻohuli kūikawā no kēlā me kēia helu wahi kūlike.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Ka ʻaoʻao hou ma kēlā me kēia helu wahi kūlike, me ka hoʻohuli ʻole.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Nā faila a hiki i %size. Aia nā kikoʻī a pau o nā ʻano faila ma ke kikowaena kōkua: Hoʻoneʻe i nā URL, a me nā laʻana palapala ʻāina URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>E nānā i kahi laʻana o kēlā me kēia ʻano faila</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Nā ʻano faila a me nā laʻana</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Nā ʻaoʻao hoʻokahi</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Nā hoʻohuli mau o nā ʻaoʻao hoʻokahi, he pahuhopu ma ka ID node (node:163) e hahai ana i ka ʻaoʻao ke neʻe ʻia, a me kahi inoa ʻē e hōʻike ana i ka ʻaoʻao ma ka helu wahi kahiko. Kapa ka laina mua i nā kolamu; pono wale nō ʻo old_url a me new_url. Heluhelu ʻia kekahi faila .tsv ma ke ʻano like, me nā tab.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>Kūlike ka * me kekahi ʻāpana o kahi helu wahi a hoʻokomo ʻo {1} iā ia i loko o ka mea hou: he māhele i neʻe ʻia, he * ma waena o kahi helu wahi, he hōʻailona hoʻololi kūikawā a me kekahi pololei (me ka hoʻohuli ʻole).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Nā nīnau a me nā hoʻohuli kūikawā</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Nā helu wahi kahiko me kahi nīnau (/index.php?id=12), he 308, a me nā hoʻohuli kūikawā ma ke ʻano (redirect-temporary) a ma ke kūlana (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>He papa inoa o nā mea me nā kī like me nā kolamu CSV; hiki i ka mea mua ke kapa i ka schema exp-url-map/1. ʻO ia ka mea e kākau ʻia e ka hoʻokuʻu a maʻalahi loa i nā polokalamu ʻē aʻe ke hana.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Nā ʻaoʻao hoʻokahi ma ke ʻano he puke hana Excel: ka pepa mua, nā inoa kolamu ma ka lālani mua. E wehe iā ia, e hoʻololi i nā helu wahi a e mālama iā ia ma ke ʻano he .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Ka mea like ma ke ʻano he papa helu OpenDocument, no LibreOffice a me OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Nā lula kākau hou Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Ka .htaccess o kahi pūnaewele kahiko e like me kona ʻano: RewriteRule, RewriteCond no kahi nīnau, Redirect o kahi māhele holoʻokoʻa (ka ʻaoʻao a me nā mea a pau ma lalo ona) a me RedirectMatch ma ke ʻano he hōʻailona hoʻololi.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Nā lula kākau hou nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Ka poloka server o kahi pūnaewele kahiko: location = me return, if ($args) no kahi nīnau, rewrite ma ke ʻano he hōʻailona hoʻololi a me kahi map o nā ʻaoʻao hoʻokahi.</translation>
+    </message>
 </context>
 </TS>

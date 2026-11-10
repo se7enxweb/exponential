@@ -86247,5 +86247,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>پراڻا پتا جاچي نه سگهيا.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL نقشو هر پراڻي پتي ۽ هن سائيٽ جي ان صفحي جي فهرست ڏئي ٿو جنهن سان اهو هاڻي لاڳاپيل آهي. هي اهي شڪلون آهن جيڪي درآمد پڙهي ٿي، هر هڪ سان نقل ڪرڻ لاءِ هڪ مثال: پتا پنهنجن سان بدلايو، پوءِ فائل اپلوڊ ڪريو يا پيسٽ ڪريو. هر مثال ڊيمو سائيٽ ۾ جيئن آهي تيئن درآمد ٿئي ٿو.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>فائل %file، %size · %extensions مان پڙهيل · درآمد ۾ %rows قطارون</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>ڊائونلوڊ</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>ڪلپ بورڊ تي نقل ٿي ويو</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>نقل نه ٿي سگهيو</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>نقل ڪريو</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>درآمد ۾ کوليو</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>ڪالم</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV فائل يا اسپريڊشيٽ جي پهرين قطار ڪالمن جا نالا ڏئي ٿي، ڪنهن به ترتيب ۾؛ JSON ساڳيا نالا ڪنجين طور استعمال ڪري ٿو. صرف old_url ۽ new_url ضروري آهن. نالن واري پهرين قطار کان سواءِ، ڪالم هن ترتيب ۾ ورتا وڃن ٿا.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>ڪالم جو نالو</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>ان ۾ ڇا آهي</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>پراڻو پتو: هڪ رستو (/about-us.html)، سوال سان رستو (/index.php?id=12) يا پراڻي هوسٽ جو پورو پتو. هڪ * ڪنهن به حصي سان ملي ٿو.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>هن سائيٽ جو صفحو: ان جو رستو (/recipes)، ان جي نوڊ ID (node:163، جيڪا صفحي جي منتقلي تي ان جي پٺيان هلي ٿي) يا ٻئي هنڌ پورو پتو. %first، %second اهو وٺن ٿا جيڪو * سان مليو.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>قطار ڇا بڻجي ٿي، قسم ڏسو. خالي: مستقل ري ڊائريڪٽ، ۽ جڏهن old_url ۾ * هجي ته ري ڊائريڪٽ ڪندڙ وائلڊ ڪارڊ.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>سادي رستي جي سائيٽ رسائي؛ خالي: درآمد واري صفحي تي چونڊيل.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL عرف جي ٻولي، مثال طور eng-GB؛ خالي: سائيٽ رسائي جي ٻولي.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>توهان جو پنهنجو نوٽ؛ اهو درآمد سان گڏ رکيو وڃي ٿو.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>ري ڊائريڪٽ جي حالت: 301 يا 308 (مستقل)، 302، 303 يا 307 (عارضي)؛ خالي: قسم فيصلو ڪري ٿو.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>قسم</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>گهمڻ وارن کي ڇا ملي ٿو</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>مستقل ري ڊائريڪٽ؛ هڪ عام URL عرف جيڪو ري ڊائريڪٽ ڪري ٿو.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>عارضي ري ڊائريڪٽ: ڳولا انجڻ پراڻو پتو رکن ٿا.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>پراڻي پتي تي نئون صفحو، ري ڊائريڪٽ کان سواءِ؛ هڪ عام URL عرف.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>هر ملندڙ پتي لاءِ مستقل ري ڊائريڪٽ؛ هڪ URL وائلڊ ڪارڊ.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>هر ملندڙ پتي لاءِ عارضي ري ڊائريڪٽ.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>هر ملندڙ پتي تي نئون صفحو، ري ڊائريڪٽ کان سواءِ.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>%size تائين فائلون. شڪلن جو سمورو تفصيل مدد مرڪز ۾ آهي: URL منتقل ڪرڻ، ۽ URL نقشي جا مثال.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>هر شڪل جو مثال ڏسو</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>شڪلون ۽ مثال</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>اڪيلا صفحا</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>اڪيلن صفحن جا مستقل ري ڊائريڪٽ، نوڊ ID (node:163) سان منزل جيڪا صفحي جي منتقلي تي ان جي پٺيان هلي ٿي، ۽ هڪ عرف جيڪو صفحي کي پراڻي پتي تي ڏيکاري ٿو. پهرين قطار ڪالمن جا نالا ڏئي ٿي؛ صرف old_url ۽ new_url ضروري آهن. .tsv فائل به ساڳيءَ طرح پڙهي وڃي ٿي، ٽيبن سان.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>هڪ * پتي جي ڪنهن به حصي سان ملي ٿو ۽ {1} ان کي نئين پتي ۾ رکي ٿو: منتقل ٿيل حصو، پتي جي وچ ۾ هڪ *، هڪ عارضي وائلڊ ڪارڊ ۽ هڪ سڌو (ري ڊائريڪٽ کان سواءِ).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>سوال ۽ عارضي ري ڊائريڪٽ</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>سوال سان پراڻا پتا (/index.php?id=12)، هڪ 308، ۽ قسم (redirect-temporary) ۽ حالت (307) موجب عارضي ري ڊائريڪٽ.</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>شين جي فهرست جن جون ڪنجيون CSV ڪالمن جهڙيون آهن؛ پهرين شيءِ اسڪيما exp-url-map/1 جو نالو ڏئي سگهي ٿي. اهو جيڪو برآمد لکي ٿي ۽ ٻيا پروگرام سڀ کان آسانيءَ سان ٺاهين ٿا.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>اڪيلا صفحا Excel ورڪ بڪ طور: پهرين شيٽ، پهرين قطار ۾ ڪالمن جا نالا. ان کي کوليو، پتا بدلايو ۽ .xlsx طور محفوظ ڪريو.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>ساڳيو OpenDocument اسپريڊشيٽ طور، LibreOffice ۽ OpenOffice لاءِ.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache ٻيهر لکڻ جا قاعدا</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>پراڻي سائيٽ جي .htaccess جيئن آهي: RewriteRule، سوال لاءِ RewriteCond، پوري حصي جو Redirect (صفحو ۽ ان کان هيٺ سڀ ڪجهه) ۽ وائلڊ ڪارڊ طور RedirectMatch.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx ٻيهر لکڻ جا قاعدا</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>پراڻي سائيٽ جو server بلاڪ: return سان location =، سوال لاءِ if ($args)، وائلڊ ڪارڊ طور rewrite ۽ اڪيلن صفحن جو map.</translation>
+    </message>
 </context>
 </TS>

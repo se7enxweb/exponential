@@ -86245,5 +86245,181 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>The old addresses could not be tested.</source>
         <translation>Enweghị ike ịnwale adreesị ochie.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Maapụ URL na-edepụta adreesị ochie ọ bụla na peeji nke saịtị a ọ dịịrị ugbu a. Ndị a bụ usoro mbubata na-agụ, nke ọ bụla nwere ọmụmaatụ ị ga-eṅomi: gbanwee adreesị ndị ahụ ka ha bụrụ nke gị, wee bulite faịlụ ahụ ma ọ bụ mado ya. Ọmụmaatụ ọ bụla na-abanye na saịtị ngosi otú ọ dị.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Faịlụ %file, %size · a na-agụ ya site na %extensions · ahịrị %rows na mbubata</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Budata</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>E depụtaghachiri ya na klipbọọdụ</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Enweghị ike idepụtaghachi</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Depụtaghachi</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Mepee na mbubata</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Kọlụm ndị ahụ</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Ahịrị mbụ nke faịlụ CSV ma ọ bụ mpempe akwụkwọ mgbakọ na-akpọ aha kọlụm ndị ahụ, n'usoro ọ bụla; JSON na-eji otu aha ahụ dị ka igodo. Ọ bụ naanị old_url na new_url ka achọrọ. Ọ bụrụ na enweghị ahịrị mbụ nke aha, a na-ewere kọlụm ndị ahụ n'usoro a.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Kọlụm</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Ihe o nwere</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Adreesị ochie: ụzọ (/about-us.html), ụzọ nwere ajụjụ (/index.php?id=12) ma ọ bụ adreesị zuru ezu nke onye nnabata ochie. * na-adaba na akụkụ ọ bụla.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Peeji nke saịtị a: ụzọ ya (/recipes), ID node ya (node:163, nke na-eso peeji ahụ mgbe a kwagara ya) ma ọ bụ adreesị zuru ezu n'ebe ọzọ. %first, %second na-ewere ihe * dabara na ya.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Ihe ahịrị ahụ ga-aghọ, lee ụdị ndị ahụ. Efu: ntụgharị ụzọ na-adịgide adịgide, kaadị ọhịa na-atụgharị ụzọ mgbe old_url nwere *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Nnweta saịtị nke ụzọ efu; efu: nke a họọrọ na peeji mbubata.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Asụsụ nke aha ọzọ URL, dịka ọmụmaatụ eng-GB; efu: asụsụ nke nnweta saịtị.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Ndetu nke gị; a na-edebe ya na mbubata.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Ọnọdụ ntụgharị ụzọ: 301 ma ọ bụ 308 (na-adịgide adịgide), 302, 303 ma ọ bụ 307 (nwa oge); efu: ụdị na-ekpebi.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Ụdị ndị ahụ</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Ihe ndị ọbịa na-enweta</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Ntụgharị ụzọ na-adịgide adịgide; aha ọzọ URL zuru ụwa ọnụ nke na-atụgharị ụzọ.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Ntụgharị ụzọ nwa oge: igwe nchọta na-edebe adreesị ochie.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Peeji ọhụrụ na adreesị ochie, na-enweghị ntụgharị ụzọ; aha ọzọ URL zuru ụwa ọnụ.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Ntụgharị ụzọ na-adịgide adịgide maka adreesị ọ bụla dabara; kaadị ọhịa URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Ntụgharị ụzọ nwa oge maka adreesị ọ bụla dabara.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Peeji ọhụrụ na adreesị ọ bụla dabara, na-enweghị ntụgharị ụzọ.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Faịlụ ruo %size. Nkọwa ọ bụla nke usoro ndị ahụ dị n'ebe enyemaka: Ịkwaga URL, na ọmụmaatụ maapụ URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Hụ ọmụmaatụ nke usoro ọ bụla</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Usoro na ọmụmaatụ</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Otu peeji</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Ntụgharị ụzọ na-adịgide adịgide nke otu peeji, ebe a na-aga site na ID node (node:163) nke na-eso peeji ahụ mgbe a kwagara ya, na aha ọzọ na-egosi peeji ahụ na adreesị ochie. Ahịrị mbụ na-akpọ aha kọlụm; ọ bụ naanị old_url na new_url ka achọrọ. A na-agụ faịlụ .tsv n'otu ụzọ ahụ, jiri taabụ.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* na-adaba na akụkụ ọ bụla nke adreesị, {1} na-etinye ya n'ime nke ọhụrụ: ngalaba a kwagara, * n'etiti adreesị, kaadị ọhịa nwa oge na nke kpọmkwem (enweghị ntụgharị ụzọ).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Ajụjụ na ntụgharị ụzọ nwa oge</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Adreesị ochie nwere ajụjụ (/index.php?id=12), otu 308, na ntụgharị ụzọ nwa oge site n'ụdị (redirect-temporary) na site n'ọnọdụ (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Ndepụta ihe nwere otu igodo dị ka kọlụm CSV; ihe mbụ nwere ike ịkpọ aha atụmatụ exp-url-map/1. Ihe mbupụ na-ede na ihe mmemme ndị ọzọ na-emepụta n'ụzọ kachasị mfe.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Otu peeji dị ka akwụkwọ ọrụ Excel: mpempe mbụ, aha kọlụm n'ahịrị mbụ. Mepee ya, gbanwee adreesị ndị ahụ ma chekwaa ya dị ka .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Otu ihe ahụ dị ka mpempe akwụkwọ mgbakọ OpenDocument, maka LibreOffice na OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Iwu ndegharị Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>.htaccess nke saịtị ochie otú ọ dị: RewriteRule, RewriteCond maka ajụjụ, Redirect nke ngalaba niile (peeji ahụ na ihe niile dị n'okpuru ya) na RedirectMatch dị ka kaadị ọhịa.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Iwu ndegharị nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Ngọngọ server nke saịtị ochie: location = ya na return, if ($args) maka ajụjụ, rewrite dị ka kaadị ọhịa na map nke otu peeji.</translation>
+    </message>
 </context>
 </TS>

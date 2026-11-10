@@ -86247,5 +86247,181 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>Ñawpa ñankunata mana llamiy atikurqanchu.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL mapaqa sapa ñawpa ñanta, kay web kitiq kunan kaqnin raphintapas sutinchan. Kaykunam apamuy ñawirinan imayna kayninkuna, sapakama huk qhawarichiywan kopyanapaq: ñankunata qampaqwan t'ikray, chaymanta willañiqita churay utaq k'askachiy. Sapa qhawarichiymi demo web kitiman imayna kasqanta apamukun.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Willañiqi %file, %size · %extensions nisqamanta ñawirisqa · apamuypi %rows siq'ikuna</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Uraykachiy</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Kopyasqañam</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Mana kopyayta atikurqanchu</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopyay</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Apamuypi kichay</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Kolumnakuna</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV willañiqipa utaq yupana raphipa ñawpaq siq'inmi kolumnakunata sutinchan, ima ñiqipipas; JSON kikin sutikunata llavekuna hina llamk'achin. old_url, new_url nisqallam necesitakun. Sutikunayuq ñawpaq siq'i mana kaptinqa, kolumnakunata kay ñiqipi hap'ikun.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Kolumna</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Imatataq hap'in</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Ñawpa ñan: huk ñan (/about-us.html), tapuyniyuq ñan (/index.php?id=12) utaq ñawpa hostpa hunt'a ñannin. Huk * ima partetapas tupachin.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Kay web kitiq raphin: ñannin (/recipes), nodo ID-nin (node:163, raphi kuyuptin qatin) utaq huk hunt'a ñan hawapi. %first, %second * tupachisqanta hap'inku.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Siq'i ima tukunan, layakunata qhaway. Ch'usaq: wiñaypaq ñan t'ikray, old_url * nisqayuq kaptinqa ñan t'ikraq URL kumudin.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Ch'uya ñanpa web yaykunan; ch'usaq: apamuy raphipi akllasqa.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL huk sutipa siminqa, kay hina eng-GB; ch'usaq: web yaykunapa siminqa.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Qampa kikin willakuyniyki; apamuywan kuska waqaychakun.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Ñan t'ikraypa kaynin: 301 utaq 308 (wiñaypaq), 302, 303 utaq 307 (pisi pachapaq); ch'usaq: laya akllan.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Layakuna</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Imatataq watukuqkuna chaskinku</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Wiñaypaq ñan t'ikray; ñan t'ikraq llapa URL huk suti.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Pisi pachapaq ñan t'ikray: maskana llamk'anakunaqa ñawpa ñanta waqaychanku.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Musuq raphi ñawpa ñanpi, mana ñan t'ikraywan; llapa URL huk suti.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Sapa tupaq ñanpaq wiñaypaq ñan t'ikray; URL kumudin.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Sapa tupaq ñanpaq pisi pachapaq ñan t'ikray.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Musuq raphi sapa tupaq ñanpi, mana ñan t'ikraywan.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>%size kama willañiqikuna. Imayna kayninkunapa llapa sut'inchaynin yanapana sunqupim kachkan: URL-kunata astay, URL mapa qhawarichiykunapas.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Sapa imayna kayninpa qhawarichiyninta qhaway</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Imayna kayninkuna qhawarichiykunapas</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Sapallan raphikuna</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Sapallan raphikunapa wiñaypaq ñan t'ikraynin, nodo ID-wan (node:163) huk chayana raphi kuyuptin qatiq, ñawpa ñanpi raphita rikuchiq huk sutipas. Ñawpaq siq'im kolumnakunata sutinchan; old_url, new_url nisqallam necesitakun. Huk .tsv willañiqitapas kikillanta ñawirikun, tabulakunawan.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>Huk * ñanpa ima partintapas tupachin, {1} nisqataq musuqman churan: kuyusqa huk raki, ñanpa chawpinpi huk *, pisi pachapaq URL kumudin, chiqan hukpas (mana ñan t'ikraywan).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Tapuykuna pisi pachapaq ñan t'ikraykunapas</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Tapuyniyuq ñawpa ñankuna (/index.php?id=12), huk 308, pisi pachapaq ñan t'ikraykunapas layanman hina (redirect-temporary) kayninman hinapas (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>CSV kolumnakuna hina kikin llavekunayuq objetokunapa sutisiqin; ñawpaq objetoqa exp-url-map/1 esquemata sutinchanmanmi. Hawaman apay qillqasqan, huk programakunapas aswan facilta ruranku.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Sapallan raphikuna Excel libro hina: ñawpaq raphi, ñawpaq siq'ipi kolumnakunapa sutin. Kichay, ñankunata t'ikray, .xlsx hina waqaychay.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Kikillan OpenDocument yupana raphi hina, LibreOffice, OpenOffice nisqapaq.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache musuqmanta qillqana kamachikuykuna</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Ñawpa web kitiq .htaccess imayna kasqan: RewriteRule, tapuypaq RewriteCond, hunt'a rakipa Redirect (raphi, llapan uranpi kaqpas), RedirectMatch URL kumudin hina.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx musuqmanta qillqana kamachikuykuna</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Ñawpa web kitiq server bloquen: location = return nisqawan, tapuypaq if ($args), rewrite URL kumudin hina, sapallan raphikunapa map nisqanpas.</translation>
+    </message>
 </context>
 </TS>

@@ -86245,5 +86245,181 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>The old addresses could not be tested.</source>
         <translation>Ciwaannada hore lama tijaabin karin.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Khariidad URL waxay taxdaa cinwaan kasta oo hore iyo bogga goobtan ee uu hadda ka tirsan yahay. Kuwani waa qaababka soo dhoofintu akhrido, mid kastaana wuxuu leeyahay tusaale aad koobiyeyn karto: cinwaannada ku beddel kuwaaga, kadib soo geli faylka ama dhaji. Tusaale kasta sida uu yahay ayuu u galaa goobta tijaabada.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Fayl %file, %size · laga akhriyay %extensions · %rows saf oo soo dhoofinta ku jira</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Soo deji</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Waxaa lagu koobiyeeyay sabuuradda</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Lama koobiyeyn karin</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Koobiyee</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Ku fur soo dhoofinta</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Tiirarka</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Safka koowaad ee fayl CSV ah ama xaashi xisaabeed ayaa magacaabaya tiirarka, si kasta oo ay u kala horreeyaan; JSON wuxuu isticmaalaa magacyada isku midka ah sida furayaal. Waxaa loo baahan yahay oo keliya old_url iyo new_url. Haddii aanu jirin saf koowaad oo magacyo ah, tiirarka waxaa loo qaataa kala horreyntan.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Tiir</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Waxa uu hayo</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Cinwaanka hore: waddo (/about-us.html), waddo leh weydiin (/index.php?id=12) ama cinwaan buuxa oo martigeliyaha hore ah. Calaamadda * waxay u dhigantaa qayb kasta.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Bogga goobtan: waddadiisa (/recipes), aqoonsiga noodkiisa (node:163, kaas oo raaca bogga marka la raro) ama cinwaan buuxa oo meel kale ah. %first, %second waxay qaataan waxa * u dhigmay.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Waxa safku noqonayo, eeg noocyada. Madhan: dib u jeedin joogto ah, calaamad guud oo dib u jeedisa marka old_url uu leeyahay *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Gelitaanka goobta ee waddo qaawan; madhan: kan lagu doortay bogga soo dhoofinta.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Luqadda magaca kale ee URL, tusaale ahaan eng-GB; madhan: luqadda gelitaanka goobta.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Qoraalkaaga gaarka ah; waxaa lala kaydiyaa soo dhoofinta.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Xaaladda dib u jeedinta: 301 ama 308 (joogto), 302, 303 ama 307 (ku-meel-gaar); madhan: nooca ayaa go'aamiya.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Noocyada</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Waxa booqdayaashu helaan</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Dib u jeedin joogto ah; magac kale oo URL ah oo guud oo dib u jeediya.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Dib u jeedin ku-meel-gaar ah: matoorada raadintu waxay hayaan cinwaanka hore.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Bogga cusub ee cinwaanka hore, dib u jeedin la'aan; magac kale oo URL ah oo guud.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Dib u jeedin joogto ah oo loogu talagalay cinwaan kasta oo u dhigma; calaamad guud oo URL ah.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Dib u jeedin ku-meel-gaar ah oo loogu talagalay cinwaan kasta oo u dhigma.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Bogga cusub ee cinwaan kasta oo u dhigma, dib u jeedin la'aan.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Faylal ilaa %size. Faahfaahin kasta oo qaababka ah waxay ku jirtaa xarunta caawimada: U guurinta URL-yada, iyo tusaalooyinka khariidadda URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Eeg tusaale qaab kasta</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Qaabab iyo tusaalooyin</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Bogag gaar ah</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Dib u jeedinno joogto ah oo bogag gaar ah, bartilmaameed lagu tilmaamay aqoonsiga noodka (node:163) oo raaca bogga marka la raro, iyo magac kale oo bogga ku tusa cinwaanka hore. Safka koowaad wuxuu magacaabaa tiirarka; waxaa loo baahan yahay oo keliya old_url iyo new_url. Fayl .tsv ah sidaas oo kale ayaa loo akhriyaa, iyadoo la isticmaalayo tabab.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>Calaamadda * waxay u dhigantaa qayb kasta oo cinwaan ah, {1}-na waxay gelisaa kan cusub: qayb la raray, * ku dhex jirta cinwaan, calaamad guud oo ku-meel-gaar ah iyo mid toos ah (dib u jeedin la'aan).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Weydiimo iyo dib u jeedinno ku-meel-gaar ah</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Cinwaanno hore oo leh weydiin (/index.php?id=12), 308, iyo dib u jeedinno ku-meel-gaar ah oo nooc ahaan (redirect-temporary) iyo xaalad ahaan (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Liis walxo ah oo leh furayaasha isku midka ah ee tiirarka CSV; walaxda koowaad waxay magacaabi kartaa qorshaha exp-url-map/1. Waa waxa dhoofintu qorto iyo waxa barnaamijyada kale ugu fudud ay sameeyaan.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Bogagga gaarka ah oo ah buug shaqo Excel: xaashida koowaad, magacyada tiirarka safka koowaad. Fur, beddel cinwaannada oo u kaydi sida .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Isla wax la mid ah oo xaashi xisaabeed OpenDocument ah, loogu talagalay LibreOffice iyo OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Xeerarka dib-u-qorista Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>.htaccess-ka goob hore sida uu yahay: RewriteRule, RewriteCond oo loogu talagalay weydiin, Redirect qayb dhan (bogga iyo wax kasta oo ka hooseeya) iyo RedirectMatch oo ah calaamad guud.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Xeerarka dib-u-qorista nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Qaybta server ee goob hore: location = oo leh return, if ($args) oo loogu talagalay weydiin, rewrite oo ah calaamad guud iyo map bogag gaar ah.</translation>
+    </message>
 </context>
 </TS>

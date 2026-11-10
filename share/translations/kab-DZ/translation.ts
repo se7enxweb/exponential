@@ -86247,5 +86247,181 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>The old addresses could not be tested.</source>
         <translation>Tansiwin tiqburin ur zmiren ara ad ttwaɛerḍent.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Takarḍa n URL tbeggen yal tansa taqdimt d usebter n usmel-a i wumi tettwaqqen tura. Ha-tent-a talɣiwin i yettɣeṛ ukter, yal yiwet s umedya ara tneɣleḍ: beddel tansiwin s tid-ik, sakin sali afaylu neɣ senteḍ-it. Yal amedya yettwakter ɣer usmel n uskan akken yella.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Afaylu %file, %size · yettwaɣer seg %extensions · %rows n yizirigen deg ukter</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Sader</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Yettwanɣel ɣer tecfawit</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Ur yezmir ara ad yettwanɣel</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Nɣel</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Ldi deg ukter</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Tigejdiyin</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Izirig amezwaru n ufaylu CSV neɣ n tfelwit n leḥsab yettak ismawen n tgejdiyin, s yal amizzwer; JSON yesseqdac ismawen-nni s yiman-nsen am tsura. Ala old_url d new_url i ilaqen. Mebla izirig amezwaru n yismawen, tigejdiyin ttwaṭṭafent s umizzwer-a.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Tagejdit</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Acu i tegber</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Tansa taqdimt: abrid (/about-us.html), abrid s tuttra (/index.php?id=12) neɣ tansa tummidt n usenneftaɣ aqdim. * yemṣada d yal aḥric.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Asebter n usmel-a: abrid-is (/recipes), asulay n tkerrist-is (node:163, i ittḍafaṛen asebter mi ara yettwasmutti) neɣ tansa tummidt deg wadeg-nniḍen. %first, %second ṭṭfen ayen i yemṣada d *.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Ayen ara yuɣal yizirig, wali tawsitin. D ilem: awellah ameɣlal, ajukar n URL i iwellihen mi ara yili * deg old_url.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Anekcum ɣer usmel n ubrid ilem; d ilem: win yettwafernen deg usebter n ukter.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Tutlayt n yisem-nniḍen n URL, amedya eng-GB; d ilem: tutlayt n unekcum ɣer usmel.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Tazmilt-ik; tettwaḥrez s ukter.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Addad n uwellah: 301 neɣ 308 (ameɣlal), 302, 303 neɣ 307 (akudan); d ilem: tawsit ara yeṭṭfen tagrayt.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Tawsitin</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Ayen ara awin yimerza</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Awellah ameɣlal; isem-nniḍen n URL amatu i iwellihen.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Awellah akudan: imsedɣaren ḥerzen tansa taqdimt.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Asebter amaynut deg tansa taqdimt, mebla awellah; isem-nniḍen n URL amatu.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Awellah ameɣlal i yal tansa yemṣadan; ajukar n URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Awellah akudan i yal tansa yemṣadan.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Asebter amaynut deg yal tansa yemṣadan, mebla awellah.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Ifuyla alamma d %size. Yal talqayt n tlɣiwin tella deg tlemmast n tallalt: Asiweḍ n URL, d yimedyaten n tkarḍiwin n URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Wali amedya n yal talɣa</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Talɣiwin d yimedyaten</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Isebtar yiwen yiwen</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Iwellihen imeɣlalen n yisebtar yiwen yiwen, asaḍas s usulay n tkerrist (node:163) i ittḍafaṛen asebter mi ara yettwasmutti, d yisem-nniḍen i d-yesskanayen asebter deg tansa taqdimt. Izirig amezwaru yettak ismawen n tgejdiyin; ala old_url d new_url i ilaqen. Afaylu .tsv yettwaɣer akken kif kif, s yiccaren.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* yemṣada d yal aḥric n tansa, {1} yesserset-it deg tmaynut: tigezmi yettwasmuttin, * deg tlemmast n tansa, ajukar akudan d yiwen usrid (mebla awellah).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Tuttriwin d yiwellihen ikudanen</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Tansiwin tiqdimin s tuttra (/index.php?id=12), yiwen 308, d yiwellihen ikudanen s tewsit (redirect-temporary) d s waddad (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Tabdart n yiɣawalen s tsura kif kif am tgejdiyin CSV; aɣawal amezwaru yezmer ad d-yini azenziɣ exp-url-map/1. D ayen i yettaru usifeḍ d wayen i xeddmen yiseɣzanen-nniḍen s tsehla.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Isebtar yiwen yiwen am udlis n umahil Excel: afer amezwaru, ismawen n tgejdiyin deg yizirig amezwaru. Ldi-t, beddel tansiwin syen sekles-it am .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>D ayen kan s talɣa n tfelwit n leḥsab OpenDocument, i LibreOffice d OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Ilugan n wallus n tira n Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>.htaccess n usmel aqdim akken yella: RewriteRule, RewriteCond i tuttra, Redirect n tgezmi akk (asebter d kra yellan seddaw-s) d RedirectMatch am ujukar.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Ilugan n wallus n tira n nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Iḥder server n usmel aqdim: location = s return, if ($args) i tuttra, rewrite am ujukar d map n yisebtar yiwen yiwen.</translation>
+    </message>
 </context>
 </TS>

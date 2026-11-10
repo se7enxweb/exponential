@@ -86277,5 +86277,181 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>The old addresses could not be tested.</source>
         <translation>L-indirizzi l-qodma ma setgħux jiġu ttestjati.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Mappa tal-URLs telenka kull indirizz qadim u l-paġna ta' dan is-sit li jappartjeni għaliha issa. Dawn huma l-formati li jaqra l-importazzjoni, kull wieħed b'eżempju biex tikkopjah: biddel l-indirizzi għal tiegħek, imbagħad tella' l-fajl jew waħħlu. Kull eżempju jiġi importat fis-sit demo kif inhu.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Fajl %file, %size · moqri minn %extensions · %rows ringiela fl-importazzjoni</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Niżżel</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Ikkopjat fil-clipboard</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Ma setax jiġi kkopjat</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Ikkopja</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Iftaħ fl-importazzjoni</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Il-kolonni</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>L-ewwel linja ta' fajl CSV jew ta' spreadsheet issemmi l-kolonni, f'kull ordni; JSON juża l-istess ismijiet bħala ċwievet. Huma meħtieġa biss old_url u new_url. Mingħajr l-ewwel linja ta' ismijiet, il-kolonni jittieħdu f'din l-ordni.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Kolonna</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>X'fiha</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>L-indirizz il-qadim: mogħdija (/about-us.html), mogħdija b'mistoqsija (/index.php?id=12) jew indirizz sħiħ tal-host il-qadim. * jaqbel ma' kull parti.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Il-paġna ta' dan is-sit: il-mogħdija tagħha (/recipes), l-ID tan-node tagħha (node:163, li jsegwi l-paġna meta tiġi mċaqalqa) jew indirizz sħiħ x'imkien ieħor. %first, %second jieħdu dak li qabel miegħu l-*.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>X'issir ir-ringiela, ara t-tipi. Vojt: ridirezzjoni permanenti, wildcard li jirridirezzjona meta old_url ikollu *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>L-aċċess għas-sit ta' mogħdija waħedha; vojt: dak magħżul fil-paġna tal-importazzjoni.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Il-lingwa tal-alias tal-URL, pereżempju eng-GB; vojt: il-lingwa tal-aċċess għas-sit.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Nota tiegħek; tinżamm mal-importazzjoni.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>L-istatus tar-ridirezzjoni: 301 jew 308 (permanenti), 302, 303 jew 307 (temporanji); vojt: jiddeċiedi t-tip.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>It-tipi</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>X'jiksbu l-viżitaturi</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Ridirezzjoni permanenti; alias globali tal-URL li jirridirezzjona.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Ridirezzjoni temporanja: il-magni tat-tiftix iżommu l-indirizz il-qadim.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Il-paġna l-ġdida fl-indirizz il-qadim, mingħajr ridirezzjoni; alias globali tal-URL.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Ridirezzjoni permanenti għal kull indirizz li jaqbel; wildcard tal-URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Ridirezzjoni temporanja għal kull indirizz li jaqbel.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Il-paġna l-ġdida f'kull indirizz li jaqbel, mingħajr ridirezzjoni.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Fajls sa %size. Kull dettall tal-formati jinsab fiċ-ċentru tal-għajnuna: Il-migrazzjoni tal-URLs, u l-eżempji tal-mappa tal-URLs.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Ara eżempju ta' kull format</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Formati u eżempji</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Paġni waħedhom</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Ridirezzjonijiet permanenti ta' paġni waħedhom, mira bl-ID tan-node (node:163) li ssegwi l-paġna meta tiġi mċaqalqa, u alias li juri l-paġna fl-indirizz il-qadim. L-ewwel linja ssemmi l-kolonni; huma meħtieġa biss old_url u new_url. Fajl .tsv jinqara bl-istess mod, b'tabs.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* jaqbel ma' kull parti ta' indirizz u {1} ipoġġiha fil-ġdid: taqsima li ċċaqalqet, * f'nofs indirizz, wildcard temporanju u wieħed dirett (mingħajr ridirezzjoni).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Mistoqsijiet u ridirezzjonijiet temporanji</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Indirizzi qodma b'mistoqsija (/index.php?id=12), 308, u ridirezzjonijiet temporanji skont it-tip (redirect-temporary) u skont l-istatus (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Lista ta' oġġetti bl-istess ċwievet bħall-kolonni CSV; l-ewwel oġġett jista' jsemmi l-iskema exp-url-map/1. Dak li tikteb l-esportazzjoni u li programmi oħra jagħmlu l-aktar faċilment.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Il-paġni waħedhom bħala workbook ta' Excel: l-ewwel folja, l-ismijiet tal-kolonni fl-ewwel ringiela. Iftaħha, biddel l-indirizzi u ssejvjaha bħala .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>L-istess bħala spreadsheet OpenDocument, għal LibreOffice u OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Regoli ta' kitba mill-ġdid ta' Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Il-.htaccess ta' sit qadim kif inhu: RewriteRule, RewriteCond għal mistoqsija, Redirect ta' taqsima sħiħa (il-paġna u kulma hemm taħtha) u RedirectMatch bħala wildcard.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Regoli ta' kitba mill-ġdid ta' nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Il-blokk server ta' sit qadim: location = ma' return, if ($args) għal mistoqsija, rewrite bħala wildcard u map ta' paġni waħedhom.</translation>
+    </message>
 </context>
 </TS>

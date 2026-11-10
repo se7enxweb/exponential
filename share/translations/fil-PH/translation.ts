@@ -86247,5 +86247,181 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>The old addresses could not be tested.</source>
         <translation>Hindi nasubukan ang mga lumang address.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Inililista ng isang URL map ang bawat lumang address at ang page ng site na ito kung saan ito nabibilang ngayon. Ito ang mga format na binabasa ng import, bawat isa ay may halimbawang makokopya: palitan ang mga address ng sa iyo, pagkatapos ay i-upload ang file o i-paste ito. Ang bawat halimbawa ay naii-import sa demo site nang walang binabago.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>File %file, %size · binasa mula sa %extensions · %rows hilera sa import</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>I-download</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Nakopya sa clipboard</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Hindi makopya</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopyahin</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Buksan sa import</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Ang mga column</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Pinapangalanan ng unang linya ng isang CSV file o spreadsheet ang mga column, sa anumang pagkakasunod-sunod; ginagamit ng JSON ang parehong mga pangalan bilang mga key. Ang old_url at new_url lamang ang kailangan. Kung walang unang linya ng mga pangalan, kinukuha ang mga column sa ganitong pagkakasunod-sunod.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Hanay</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Ang laman nito</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Ang lumang address: isang path (/about-us.html), isang path na may query (/index.php?id=12) o isang buong address ng lumang host. Tumutugma ang * sa anumang bahagi.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Ang page ng site na ito: ang path nito (/recipes), ang node ID nito (node:163, na sumusunod sa page kapag inilipat ito) o isang buong address sa ibang lugar. Kinukuha ng %first, %second ang tinugmaan ng *.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Kung ano ang magiging hilera, tingnan ang mga uri. Walang laman: isang permanenteng redirect, isang nagre-redirect na wildcard kapag may * ang old_url.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Ang siteaccess ng isang payak na path; walang laman: ang napili sa page ng import.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Ang wika ng URL alias, halimbawa eng-GB; walang laman: ang wika ng siteaccess.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Ang sarili mong tala; itinatago ito kasama ng import.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Ang status ng redirect: 301 o 308 (permanente), 302, 303 o 307 (pansamantala); walang laman: ang uri ang magpapasya.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Ang mga uri</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Ang nakukuha ng mga bisita</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Isang permanenteng redirect; isang global na URL alias na nagre-redirect.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Isang pansamantalang redirect: pinananatili ng mga search engine ang lumang address.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Ang bagong page sa lumang address, nang walang redirect; isang global na URL alias.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Isang permanenteng redirect para sa bawat tumutugmang address; isang URL wildcard.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Isang pansamantalang redirect para sa bawat tumutugmang address.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Ang bagong page sa bawat tumutugmang address, nang walang redirect.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Mga file hanggang %size. Nasa help center ang bawat detalye ng mga format: Paglilipat ng mga URL, at ang mga halimbawa ng URL map.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Tingnan ang halimbawa ng bawat format</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Mga format at halimbawa</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Mga iisang page</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Mga permanenteng redirect ng iisang page, isang target ayon sa node ID (node:163) na sumusunod sa page kapag inilipat ito, at isang alias na nagpapakita ng page sa lumang address. Pinapangalanan ng unang linya ang mga column; ang old_url at new_url lamang ang kailangan. Binabasa sa parehong paraan ang isang .tsv file, gamit ang mga tab.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>Tumutugma ang * sa anumang bahagi ng address at inilalagay ito ng {1} sa bago: isang seksyong inilipat, isang * sa gitna ng address, isang pansamantalang wildcard at isang direktang wildcard (walang redirect).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Mga query at pansamantalang redirect</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Mga lumang address na may query (/index.php?id=12), isang 308, at mga pansamantalang redirect ayon sa uri (redirect-temporary) at ayon sa status (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Isang listahan ng mga object na may parehong mga key gaya ng mga column ng CSV; maaaring pangalanan ng unang object ang schema na exp-url-map/1. Ito ang isinusulat ng export at ang pinakamadaling gawin ng ibang mga program.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Ang mga iisang page bilang Excel workbook: ang unang sheet, ang mga pangalan ng column sa unang hilera. Buksan ito, palitan ang mga address at i-save ito bilang .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Pareho bilang OpenDocument spreadsheet, para sa LibreOffice at OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Mga rewrite rule ng Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>Ang .htaccess ng isang lumang site gaya ng dati: RewriteRule, RewriteCond para sa query, Redirect ng buong seksyon (ang page at lahat ng nasa ilalim nito) at RedirectMatch bilang wildcard.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Mga rewrite rule ng nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>Ang server block ng isang lumang site: location = na may return, if ($args) para sa query, rewrite bilang wildcard at isang map ng iisang page.</translation>
+    </message>
 </context>
 </TS>

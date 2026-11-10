@@ -86277,5 +86277,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>Ekki var hægt að prófa gömlu vistföngin.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>Vefslóðakort telur upp hvert gamalt veffang og þá síðu á þessum vef sem það tilheyrir nú. Þetta eru sniðin sem innflutningurinn les, hvert með dæmi til að afrita: breyttu veffangunum í þín eigin og hladdu svo skránni upp eða límdu hana inn. Hvert dæmi flyst óbreytt inn á sýnivefinn.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>Skrá %file, %size · lesið úr %extensions · %rows línur í innflutningnum</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Sækja</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Afritað á klemmuspjaldið</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>Ekki tókst að afrita</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Afrita</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>Opna í innflutningnum</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>Dálkarnir</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>Fyrsta lína CSV-skrár eða töflureiknis nefnir dálkana, í hvaða röð sem er; JSON notar sömu heiti sem lykla. Aðeins old_url og new_url eru nauðsynleg. Án fyrstu línu með heitum eru dálkarnir teknir í þessari röð.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Dálkur</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>Hvað hann geymir</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>Gamla veffangið: slóð (/about-us.html), slóð með fyrirspurn (/index.php?id=12) eða fullt veffang gamla hýsilsins. * samsvarar hvaða hluta sem er.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>Síðan á þessum vef: slóð hennar (/recipes), hnútsauðkenni hennar (node:163, sem fylgir síðunni þegar hún er færð) eða fullt veffang annars staðar. %first, %second taka það sem * samsvaraði.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>Hvað línan verður, sjá tegundirnar. Autt: varanleg endurbeining, endurbeinandi algildisvefslóð þegar old_url inniheldur *.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>Vefaðgangur berrar slóðar; autt: sá sem valinn er á innflutningssíðunni.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>Tungumál vefslóðarsamnefnisins, til dæmis eng-GB; autt: tungumál vefaðgangsins.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>Þín eigin athugasemd; hún er geymd með innflutningnum.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>Staða endurbeiningar: 301 eða 308 (varanleg), 302, 303 eða 307 (tímabundin); autt: tegundin ræður.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>Tegundirnar</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>Hvað gestir fá</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>Varanleg endurbeining; almennt vefslóðarsamnefni sem endurbeinir.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>Tímabundin endurbeining: leitarvélar halda gamla veffanginu.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>Nýja síðan á gamla veffanginu, án endurbeiningar; almennt vefslóðarsamnefni.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>Varanleg endurbeining fyrir hvert samsvarandi veffang; algildisvefslóð.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>Tímabundin endurbeining fyrir hvert samsvarandi veffang.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>Nýja síðan á hverju samsvarandi veffangi, án endurbeiningar.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>Skrár allt að %size. Öll smáatriði sniðanna eru í hjálparmiðstöðinni: Flutningur vefslóða, og dæmi um vefslóðakort.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>Sjá dæmi um hvert snið</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>Snið og dæmi</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>Stakar síður</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>Varanlegar endurbeiningar stakra síðna, markmið eftir hnútsauðkenni (node:163) sem fylgir síðunni þegar hún er færð, og samnefni sem sýnir síðuna á gamla veffanginu. Fyrsta línan nefnir dálkana; aðeins old_url og new_url eru nauðsynleg. .tsv-skrá er lesin á sama hátt, með dálkstoppum.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* samsvarar hvaða hluta veffangs sem er og {1} setur hann inn í það nýja: hluti sem var færður, * í miðju veffangi, tímabundin algildisvefslóð og bein (án endurbeiningar).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>Fyrirspurnir og tímabundnar endurbeiningar</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>Gömul veffang með fyrirspurn (/index.php?id=12), 308, og tímabundnar endurbeiningar eftir tegund (redirect-temporary) og eftir stöðu (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>Listi af hlutum með sömu lyklum og CSV-dálkarnir; fyrsti hluturinn má nefna skemað exp-url-map/1. Það sem útflutningurinn skrifar og önnur forrit búa auðveldast til.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>Stöku síðurnar sem Excel-vinnubók: fyrsta blaðið, dálkaheitin í fyrstu línu. Opnaðu hana, breyttu veffangunum og vistaðu hana sem .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>Það sama sem OpenDocument-töflureiknir, fyrir LibreOffice og OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Endurritunarreglur Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>.htaccess gamals vefs eins og hún er: RewriteRule, RewriteCond fyrir fyrirspurn, Redirect heils hluta (síðan og allt fyrir neðan hana) og RedirectMatch sem algildisvefslóð.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>Endurritunarreglur nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>server-blokk gamals vefs: location = með return, if ($args) fyrir fyrirspurn, rewrite sem algildisvefslóð og map stakra síðna.</translation>
+    </message>
 </context>
 </TS>

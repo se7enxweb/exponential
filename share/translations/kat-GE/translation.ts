@@ -86247,5 +86247,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>ძველი მისამართების შემოწმება ვერ მოხერხდა.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>URL რუკა ჩამოთვლის თითოეულ ძველ მისამართს და ამ საიტის გვერდს, რომელსაც ის ახლა ეკუთვნის. ეს არის ფორმატები, რომლებსაც იმპორტი კითხულობს, თითოეული კოპირებისთვის განკუთვნილი მაგალითით: შეცვალეთ მისამართები თქვენით, შემდეგ ატვირთეთ ფაილი ან ჩასვით. თითოეული მაგალითი უცვლელად შემოდის სადემონსტრაციო საიტზე.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>ფაილი %file, %size · წაკითხულია %extensions-დან · იმპორტში %rows სტრიქონი</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>ჩამოტვირთვა</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>დაკოპირდა ბუფერში</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>კოპირება ვერ მოხერხდა</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>კოპირება</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>იმპორტში გახსნა</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>სვეტები</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>CSV ფაილის ან ელცხრილის პირველი სტრიქონი ასახელებს სვეტებს ნებისმიერი თანმიმდევრობით; JSON იგივე სახელებს იყენებს გასაღებებად. საჭიროა მხოლოდ old_url და new_url. სახელების პირველი სტრიქონის გარეშე სვეტები ამ თანმიმდევრობით აიღება.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>სვეტი</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>რას შეიცავს</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>ძველი მისამართი: ბილიკი (/about-us.html), ბილიკი მოთხოვნით (/index.php?id=12) ან ძველი ჰოსტის სრული მისამართი. * ემთხვევა ნებისმიერ ნაწილს.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>ამ საიტის გვერდი: მისი ბილიკი (/recipes), მისი კვანძის ID (node:163, რომელიც გვერდს მიჰყვება გადატანისას) ან სრული მისამართი სხვაგან. %first, %second იღებს იმას, რასაც * დაემთხვა.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>რად იქცევა სტრიქონი, იხილეთ სახეები. ცარიელი: მუდმივი გადამისამართება, ან გადამამისამართებელი შაბლონი, როცა old_url შეიცავს *-ს.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>მარტივი ბილიკის საიტზე წვდომა; ცარიელი: იმპორტის გვერდზე არჩეული.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>URL-ის ფსევდონიმის ენა, მაგალითად eng-GB; ცარიელი: საიტზე წვდომის ენა.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>თქვენი შენიშვნა; ის იმპორტთან ერთად ინახება.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>გადამისამართების სტატუსი: 301 ან 308 (მუდმივი), 302, 303 ან 307 (დროებითი); ცარიელი: სახე წყვეტს.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>სახეები</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>რას იღებენ ვიზიტორები</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>მუდმივი გადამისამართება; გლობალური URL-ის ფსევდონიმი, რომელიც გადაამისამართებს.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>დროებითი გადამისამართება: საძიებო სისტემები ძველ მისამართს ინარჩუნებენ.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>ახალი გვერდი ძველ მისამართზე, გადამისამართების გარეშე; გლობალური URL-ის ფსევდონიმი.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>მუდმივი გადამისამართება ყველა შესაბამისი მისამართისთვის; URL-ის შაბლონი.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>დროებითი გადამისამართება ყველა შესაბამისი მისამართისთვის.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>ახალი გვერდი ყველა შესაბამის მისამართზე, გადამისამართების გარეშე.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>ფაილები %size-მდე. ფორმატების ყველა დეტალი დახმარების ცენტრშია: URL-ების მიგრაცია და URL რუკის მაგალითები.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>იხილეთ თითოეული ფორმატის მაგალითი</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>ფორმატები და მაგალითები</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>ცალკეული გვერდები</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>ცალკეული გვერდების მუდმივი გადამისამართებები, სამიზნე კვანძის ID-ით (node:163), რომელიც გვერდს მიჰყვება გადატანისას, და ფსევდონიმი, რომელიც გვერდს ძველ მისამართზე აჩვენებს. პირველი სტრიქონი ასახელებს სვეტებს; საჭიროა მხოლოდ old_url და new_url. .tsv ფაილი იმავენაირად იკითხება, ტაბულაციებით.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* ემთხვევა მისამართის ნებისმიერ ნაწილს და {1} მას ახალში სვამს: გადატანილი განყოფილება, * მისამართის შუაში, დროებითი შაბლონი და პირდაპირი (გადამისამართების გარეშე).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>მოთხოვნები და დროებითი გადამისამართებები</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>ძველი მისამართები მოთხოვნით (/index.php?id=12), 308 და დროებითი გადამისამართებები სახით (redirect-temporary) და სტატუსით (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>ობიექტების სია იმავე გასაღებებით, რაც CSV-ის სვეტებს აქვს; პირველ ობიექტს შეუძლია დაასახელოს სქემა exp-url-map/1. ამას წერს ექსპორტი და ამას ყველაზე მარტივად ქმნიან სხვა პროგრამები.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>ცალკეული გვერდები Excel-ის სამუშაო წიგნად: პირველი ფურცელი, სვეტების სახელები პირველ სტრიქონში. გახსენით, შეცვალეთ მისამართები და შეინახეთ როგორც .xlsx.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>იგივე OpenDocument ელცხრილად, LibreOffice-ისა და OpenOffice-ისთვის.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>Apache-ის გადაწერის წესები</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>ძველი საიტის .htaccess უცვლელად: RewriteRule, RewriteCond მოთხოვნისთვის, Redirect მთელი განყოფილებისთვის (გვერდი და ყველაფერი მის ქვემოთ) და RedirectMatch შაბლონად.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>nginx-ის გადაწერის წესები</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>ძველი საიტის server ბლოკი: location = return-ით, if ($args) მოთხოვნისთვის, rewrite შაბლონად და ცალკეული გვერდების map.</translation>
+    </message>
 </context>
 </TS>

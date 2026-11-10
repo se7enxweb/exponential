@@ -86245,5 +86245,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>አሮጌዎቹ አድራሻዎች ሊሞከሩ አልቻሉም።</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>የዩአርኤል ካርታ እያንዳንዱን የቀድሞ አድራሻ እና አሁን የሚገኝበትን የዚህን ጣቢያ ገጽ ይዘረዝራል። ማስመጣቱ የሚያነባቸው ቅርጸቶች እነዚህ ናቸው፣ እያንዳንዳቸው የሚቀዳ ምሳሌ አላቸው፦ አድራሻዎቹን ወደ የራስዎ ይቀይሩ፣ ከዚያ ፋይሉን ይስቀሉ ወይም ይለጥፉት። እያንዳንዱ ምሳሌ እንዳለ ወደ ማሳያ ጣቢያው ይመጣል።</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>ፋይል %file፣ %size · ከ %extensions የተነበበ · በማስመጣቱ ውስጥ %rows ረድፎች</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>አውርድ</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>ወደ ቅንጥብ ሰሌዳው ተቀድቷል</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>መቅዳት አልተቻለም</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>ቅዳ</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>በማስመጣቱ ውስጥ ክፈት</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>ዓምዶቹ</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>የCSV ፋይል ወይም የተመን ሉህ የመጀመሪያው መስመር ዓምዶቹን በማንኛውም ቅደም ተከተል ይሰይማል፤ JSON ተመሳሳይ ስሞችን እንደ ቁልፎች ይጠቀማል። old_url እና new_url ብቻ ያስፈልጋሉ። የስሞች የመጀመሪያ መስመር ከሌለ ዓምዶቹ በዚህ ቅደም ተከተል ይወሰዳሉ።</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>ዓምድ</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>የሚይዘው</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>የቀድሞው አድራሻ፦ መንገድ (/about-us.html)፣ መጠይቅ ያለው መንገድ (/index.php?id=12) ወይም የቀድሞው አስተናጋጅ ሙሉ አድራሻ። * ማንኛውንም ክፍል ይዛመዳል።</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>የዚህ ጣቢያ ገጽ፦ መንገዱ (/recipes)፣ የመስቀለኛ መንገድ መታወቂያው (node:163፣ ገጹ ሲንቀሳቀስ የሚከተለው) ወይም ሌላ ቦታ ያለ ሙሉ አድራሻ። %first፣ %second * የተዛመደውን ይወስዳሉ።</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>ረድፉ የሚሆነው፣ ዓይነቶቹን ይመልከቱ። ባዶ፦ ቋሚ አቅጣጫ ማስቀየሪያ፣ old_url * ሲኖረው አቅጣጫ የሚያስቀይር ምትክ ምልክት።</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>የባዶ መንገድ የጣቢያ መዳረሻ፤ ባዶ፦ በማስመጫ ገጹ ላይ የተመረጠው።</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>የዩአርኤል ተለዋጭ ስሙ ቋንቋ፣ ለምሳሌ eng-GB፤ ባዶ፦ የጣቢያ መዳረሻው ቋንቋ።</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>የራስዎ ማስታወሻ፤ ከማስመጣቱ ጋር ይቀመጣል።</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>የአቅጣጫ ማስቀየሪያ ሁኔታ፦ 301 ወይም 308 (ቋሚ)፣ 302፣ 303 ወይም 307 (ጊዜያዊ)፤ ባዶ፦ ዓይነቱ ይወስናል።</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>ዓይነቶቹ</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>ጎብኚዎች የሚያገኙት</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>ቋሚ አቅጣጫ ማስቀየሪያ፤ አቅጣጫ የሚያስቀይር ሁለንተናዊ የዩአርኤል ተለዋጭ ስም።</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>ጊዜያዊ አቅጣጫ ማስቀየሪያ፦ የፍለጋ ሞተሮች የቀድሞውን አድራሻ ይይዛሉ።</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>አዲሱ ገጽ በቀድሞው አድራሻ፣ ያለ አቅጣጫ ማስቀየሪያ፤ ሁለንተናዊ የዩአርኤል ተለዋጭ ስም።</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>ለእያንዳንዱ የሚዛመድ አድራሻ ቋሚ አቅጣጫ ማስቀየሪያ፤ የዩአርኤል ምትክ ምልክት።</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>ለእያንዳንዱ የሚዛመድ አድራሻ ጊዜያዊ አቅጣጫ ማስቀየሪያ።</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>አዲሱ ገጽ በእያንዳንዱ የሚዛመድ አድራሻ፣ ያለ አቅጣጫ ማስቀየሪያ።</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>እስከ %size የሆኑ ፋይሎች። የቅርጸቶቹ ዝርዝር በሙሉ በእገዛ ማዕከሉ ውስጥ አለ፦ ዩአርኤሎችን ማዛወር፣ እና የዩአርኤል ካርታ ምሳሌዎች።</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>የእያንዳንዱን ቅርጸት ምሳሌ ይመልከቱ</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>ቅርጸቶች እና ምሳሌዎች</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>ነጠላ ገጾች</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>የነጠላ ገጾች ቋሚ አቅጣጫ ማስቀየሪያዎች፣ ገጹ ሲንቀሳቀስ የሚከተል በመስቀለኛ መንገድ መታወቂያ (node:163) የተገለጸ ዒላማ፣ እና ገጹን በቀድሞው አድራሻ የሚያሳይ ተለዋጭ ስም። የመጀመሪያው መስመር ዓምዶቹን ይሰይማል፤ old_url እና new_url ብቻ ያስፈልጋሉ። የ.tsv ፋይል በተመሳሳይ መንገድ በትሮች ይነበባል።</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* የአድራሻን ማንኛውንም ክፍል ይዛመዳል፣ {1} ደግሞ ወደ አዲሱ ያስገባዋል፦ የተዛወረ ክፍል፣ በአድራሻ መሃል ያለ *፣ ጊዜያዊ ምትክ ምልክት እና ቀጥተኛ (ያለ አቅጣጫ ማስቀየሪያ)።</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>መጠይቆች እና ጊዜያዊ አቅጣጫ ማስቀየሪያዎች</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>መጠይቅ ያላቸው የቀድሞ አድራሻዎች (/index.php?id=12)፣ 308፣ እና በዓይነት (redirect-temporary) እና በሁኔታ (307) የተገለጹ ጊዜያዊ አቅጣጫ ማስቀየሪያዎች።</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>ከCSV ዓምዶቹ ጋር ተመሳሳይ ቁልፎች ያላቸው የነገሮች ዝርዝር፤ የመጀመሪያው ነገር exp-url-map/1 የሚለውን ንድፍ ሊሰይም ይችላል። ላኪው የሚጽፈው እና ሌሎች ፕሮግራሞች በቀላሉ የሚያዘጋጁት።</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>ነጠላ ገጾቹ እንደ Excel የስራ መጽሐፍ፦ የመጀመሪያው ሉህ፣ የዓምድ ስሞቹ በመጀመሪያው ረድፍ። ይክፈቱት፣ አድራሻዎቹን ይቀይሩ እና እንደ .xlsx ያስቀምጡት።</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>ተመሳሳዩ እንደ OpenDocument የተመን ሉህ፣ ለ LibreOffice እና OpenOffice።</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>የApache መልሶ መጻፊያ ደንቦች</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>የቀድሞ ጣቢያ .htaccess እንዳለ፦ RewriteRule፣ ለመጠይቅ RewriteCond፣ የሙሉ ክፍል Redirect (ገጹ እና ከሱ በታች ያለው ሁሉ) እና RedirectMatch እንደ ምትክ ምልክት።</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>የnginx መልሶ መጻፊያ ደንቦች</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>የቀድሞ ጣቢያ የserver ብሎክ፦ location = ከ return ጋር፣ ለመጠይቅ if ($args)፣ rewrite እንደ ምትክ ምልክት እና የነጠላ ገጾች map።</translation>
+    </message>
 </context>
 </TS>

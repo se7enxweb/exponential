@@ -3,7 +3,7 @@ title: URL map examples
 audience: admin, developer
 category: examples
 order: 60
-summary: Small, realistic URL map files in CSV, JSON, Apache and nginx format, with query-string redirects, temporary redirects and wildcards, each checked with exp:url:import --dry-run.
+summary: Small, realistic URL map files in CSV, JSON, Excel, LibreOffice, Apache and nginx format, with query-string redirects, temporary redirects and wildcards, each checked with exp:url:import --dry-run.
 keywords: URL map, example, mapping file, CSV, JSON, htaccess, Apache, nginx, redirect, wildcard, query string, temporary redirect, exp:url:import
 type: example
 ---
@@ -27,6 +27,8 @@ How to use them: [Migrating URLs](../../help/migrating-urls.md). The columns and
 | [`old-site.nginx`](old-site.nginx) | nginx | `location =` with `return`, old addresses with a query (`if ($args = ...)`), `rewrite` as a wildcard, and a `map` of single pages | 7 |
 | [`query-and-temporary.csv`](query-and-temporary.csv) | CSV | Query-string redirects (`/index.php?id=12`), a 308, and temporary redirects by kind (`redirect-temporary`) and by status (307) | 5 |
 | [`wildcards.csv`](wildcards.csv) | CSV | Wildcards: a section that moved, a `*` in the middle of an address, a temporary wildcard, and a direct one (no redirect) | 4 |
+| [`old-site.xlsx`](old-site.xlsx) | Excel | The single pages of `old-site.csv` as an Excel workbook: the column names in the first row of the first sheet | 8 |
+| [`old-site.ods`](old-site.ods) | OpenDocument | The same as a LibreOffice spreadsheet | 8 |
 
 "Rows" is what the import makes of the file: an Apache `Redirect` gives two rows (the page and a wildcard for
 everything below it).
@@ -48,7 +50,9 @@ URL map dry run: doc/eng-us/examples/url-maps/old-site.csv (8 rows)
 
 In a dry run, "Done" counts what the import would do. Leave out `--dry-run` to import, and undo it again with
 `./console exp:url:undo <number>` (the number is printed by the import and listed by `./console exp:url:batches`).
-In the administration, the same files go into **Setup** > **URL translator** > **Import**.
+In the administration, every one of these files is shown under **Setup** > **URL translator** > **Import** >
+**Formats and examples**, with the columns and the kinds: copy it, download it, or open a text one in the import
+with **Open in the import** (an administrator whose interface language is German sees the German files).
 
 After a real import, check that every old address lands where the file says (the base is the site you imported into):
 

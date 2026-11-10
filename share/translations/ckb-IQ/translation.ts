@@ -86247,5 +86247,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The old addresses could not be tested.</source>
         <translation>ناونیشانە کۆنەکان نەتوانرا تاقی بکرێنەوە.</translation>
     </message>
+    <message>
+        <source>A URL map lists each old address and the page of this site it belongs to now. These are the formats the import reads, each with an example to copy: change the addresses to your own, then upload the file or paste it. Every example imports into the demo site as it is.</source>
+        <translation>نەخشەیەکی URL هەموو ناونیشانێکی کۆن و ئەو پەڕەیەی ئەم ماڵپەڕە کە ئێستا سەر بەیەتی ڕیز دەکات. ئەمانە ئەو فۆرماتانەن کە هاوردن دەیانخوێنێتەوە، هەریەکەیان لەگەڵ نموونەیەک بۆ لەبەرگرتنەوە: ناونیشانەکان بە هی خۆت بگۆڕە، پاشان فایلەکە باربکە یان بیلکێنە. هەموو نموونەیەک وەک خۆی بۆ ماڵپەڕی نموونەیی هاوردە دەکرێت.</translation>
+    </message>
+    <message>
+        <source>File %file, %size · read from %extensions · %rows rows in the import</source>
+        <translation>فایل %file، %size · خوێندراوە لە %extensions · %rows ڕیز لە هاوردندا</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>داگرتن</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>لەبەرگیرایەوە بۆ کلیپبۆرد</translation>
+    </message>
+    <message>
+        <source>Could not copy</source>
+        <translation>نەتوانرا لەبەربگیرێتەوە</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>لەبەرگرتنەوە</translation>
+    </message>
+    <message>
+        <source>Open in the import</source>
+        <translation>کردنەوە لە هاوردندا</translation>
+    </message>
+    <message>
+        <source>The columns</source>
+        <translation>ستوونەکان</translation>
+    </message>
+    <message>
+        <source>The first line of a CSV file or a spreadsheet names the columns, in any order; JSON uses the same names as keys. Only old_url and new_url are needed. Without a first line of names, the columns are taken in this order.</source>
+        <translation>یەکەم دێڕی فایلێکی CSV یان خشتەیەکی ئەلیکترۆنی ناوی ستوونەکان دەنووسێت، بە هەر ڕیزبەندییەک؛ JSON هەمان ناوەکان وەک کلیل بەکاردەهێنێت. تەنها old_url و new_url پێویستن. بەبێ یەکەم دێڕی ناوەکان، ستوونەکان بەم ڕیزبەندییە وەردەگیرێن.</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>ستوون</translation>
+    </message>
+    <message>
+        <source>What it holds</source>
+        <translation>چی تێدایە</translation>
+    </message>
+    <message>
+        <source>The old address: a path (/about-us.html), a path with a query (/index.php?id=12) or a full address of the old host. A * matches any part.</source>
+        <translation>ناونیشانی کۆن: ڕێڕەوێک (/about-us.html)، ڕێڕەوێک لەگەڵ پرسیارێک (/index.php?id=12) یان ناونیشانێکی تەواوی خانەخوێی کۆن. * لەگەڵ هەر بەشێک دەگونجێت.</translation>
+    </message>
+    <message>
+        <source>The page of this site: its path (/recipes), its node ID (node:163, which follows the page when it moves) or a full address elsewhere. %first, %second take what the * matched.</source>
+        <translation>پەڕەی ئەم ماڵپەڕە: ڕێڕەوەکەی (/recipes)، ID ی گرێکەی (node:163، کە کاتێک پەڕەکە دەگوازرێتەوە بەدوایدا دەڕوات) یان ناونیشانێکی تەواو لە شوێنێکی تر. %first، %second ئەوە وەردەگرن کە * لەگەڵیدا گونجا.</translation>
+    </message>
+    <message>
+        <source>What the row becomes, see the kinds. Empty: a permanent redirect, a redirecting wildcard when old_url has a *.</source>
+        <translation>ڕیزەکە دەبێتە چی، جۆرەکان ببینە. بەتاڵ: ڕەوانەکردنێکی هەمیشەیی، وایلدکاردێکی ڕەوانەکەر کاتێک old_url * ی تێدایە.</translation>
+    </message>
+    <message>
+        <source>The siteaccess of a bare path; empty: the one chosen on the import page.</source>
+        <translation>دەستگەیشتنی ماڵپەڕی ڕێڕەوێکی ڕووت؛ بەتاڵ: ئەوەی لە پەڕەی هاوردن هەڵبژێردراوە.</translation>
+    </message>
+    <message>
+        <source>The language of the URL alias, for example eng-GB; empty: the language of the siteaccess.</source>
+        <translation>زمانی ناوی جێگرەوەی URL، بۆ نموونە eng-GB؛ بەتاڵ: زمانی دەستگەیشتنی ماڵپەڕ.</translation>
+    </message>
+    <message>
+        <source>Your own note; it is kept with the import.</source>
+        <translation>تێبینی خۆت؛ لەگەڵ هاوردنەکە هەڵدەگیرێت.</translation>
+    </message>
+    <message>
+        <source>The redirect status: 301 or 308 (permanent), 302, 303 or 307 (temporary); empty: the kind decides.</source>
+        <translation>دۆخی ڕەوانەکردن: 301 یان 308 (هەمیشەیی)، 302، 303 یان 307 (کاتی)؛ بەتاڵ: جۆرەکە بڕیار دەدات.</translation>
+    </message>
+    <message>
+        <source>The kinds</source>
+        <translation>جۆرەکان</translation>
+    </message>
+    <message>
+        <source>What visitors get</source>
+        <translation>سەردانکەران چی وەردەگرن</translation>
+    </message>
+    <message>
+        <source>A permanent redirect; a global URL alias that redirects.</source>
+        <translation>ڕەوانەکردنێکی هەمیشەیی؛ ناوێکی جێگرەوەی گشتی URL کە ڕەوانە دەکات.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect: search engines keep the old address.</source>
+        <translation>ڕەوانەکردنێکی کاتی: بزوێنەرەکانی گەڕان ناونیشانە کۆنەکە دەهێڵنەوە.</translation>
+    </message>
+    <message>
+        <source>The new page at the old address, without a redirect; a global URL alias.</source>
+        <translation>پەڕە نوێیەکە لەسەر ناونیشانە کۆنەکە، بەبێ ڕەوانەکردن؛ ناوێکی جێگرەوەی گشتی URL.</translation>
+    </message>
+    <message>
+        <source>A permanent redirect for every matching address; a URL wildcard.</source>
+        <translation>ڕەوانەکردنێکی هەمیشەیی بۆ هەموو ناونیشانێکی گونجاو؛ وایلدکاردێکی URL.</translation>
+    </message>
+    <message>
+        <source>A temporary redirect for every matching address.</source>
+        <translation>ڕەوانەکردنێکی کاتی بۆ هەموو ناونیشانێکی گونجاو.</translation>
+    </message>
+    <message>
+        <source>The new page at every matching address, without a redirect.</source>
+        <translation>پەڕە نوێیەکە لەسەر هەموو ناونیشانێکی گونجاو، بەبێ ڕەوانەکردن.</translation>
+    </message>
+    <message>
+        <source>Files up to %size. Every detail of the formats is in the help center: Migrating URLs, and the URL map examples.</source>
+        <translation>فایل تا %size. هەموو وردەکارییەکی فۆرماتەکان لە ناوەندی یارمەتیدایە: گواستنەوەی URLەکان، و نموونەکانی نەخشەی URL.</translation>
+    </message>
+    <message>
+        <source>See an example of each format</source>
+        <translation>نموونەیەکی هەر فۆرماتێک ببینە</translation>
+    </message>
+    <message>
+        <source>Formats and examples</source>
+        <translation>فۆرمات و نموونەکان</translation>
+    </message>
+    <message>
+        <source>Single pages</source>
+        <translation>پەڕە تاکەکان</translation>
+    </message>
+    <message>
+        <source>Permanent redirects of single pages, a target by node ID (node:163) that follows the page when it moves, and an alias that shows the page at the old address. The first line names the columns; only old_url and new_url are needed. A .tsv file is read the same way, with tabs.</source>
+        <translation>ڕەوانەکردنی هەمیشەیی پەڕە تاکەکان، ئامانجێک بە ID ی گرێ (node:163) کە کاتی گواستنەوەی پەڕەکە بەدوایدا دەڕوات، و ناوێکی جێگرەوە کە پەڕەکە لەسەر ناونیشانە کۆنەکە نیشان دەدات. یەکەم دێڕ ناوی ستوونەکان دەنووسێت؛ تەنها old_url و new_url پێویستن. فایلێکی .tsv بە هەمان شێوە دەخوێنرێتەوە، بە تابەوە.</translation>
+    </message>
+    <message>
+        <source>A * matches any part of an address and {1} puts it into the new one: a section that moved, a * in the middle of an address, a temporary wildcard and a direct one (no redirect).</source>
+        <translation>* لەگەڵ هەر بەشێکی ناونیشانێک دەگونجێت و {1} دەیخاتە ناو نوێیەکەوە: بەشێک کە گوازراوەتەوە، * لە ناوەڕاستی ناونیشانێکدا، وایلدکاردێکی کاتی و یەکێکی ڕاستەوخۆ (بەبێ ڕەوانەکردن).</translation>
+    </message>
+    <message>
+        <source>Queries and temporary redirects</source>
+        <translation>پرسیارەکان و ڕەوانەکردنە کاتییەکان</translation>
+    </message>
+    <message>
+        <source>Old addresses with a query (/index.php?id=12), a 308, and temporary redirects by kind (redirect-temporary) and by status (307).</source>
+        <translation>ناونیشانە کۆنەکان لەگەڵ پرسیارێک (/index.php?id=12)، 308 ێک، و ڕەوانەکردنی کاتی بە جۆر (redirect-temporary) و بە دۆخ (307).</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>A list of objects with the same keys as the CSV columns; the first object may name the schema exp-url-map/1. What the export writes and other programs make most easily.</source>
+        <translation>لیستێک لە ئۆبجێکتەکان بە هەمان کلیلەکانی ستوونەکانی CSV؛ یەکەم ئۆبجێکت دەتوانێت ناوی سکیمای exp-url-map/1 بنووسێت. ئەوەی هەناردەکردن دەینووسێت و بەرنامەکانی تر بە ئاسانترین شێوە دروستی دەکەن.</translation>
+    </message>
+    <message>
+        <source>Excel</source>
+        <translation>Excel</translation>
+    </message>
+    <message>
+        <source>The single pages as an Excel workbook: the first sheet, the column names in the first row. Open it, change the addresses and save it as .xlsx.</source>
+        <translation>پەڕە تاکەکان وەک کتێبی کاری Excel: یەکەم پەڕە، ناوی ستوونەکان لە یەکەم ڕیزدا. بیکەرەوە، ناونیشانەکان بگۆڕە و وەک .xlsx پاشەکەوتی بکە.</translation>
+    </message>
+    <message>
+        <source>LibreOffice</source>
+        <translation>LibreOffice</translation>
+    </message>
+    <message>
+        <source>The same as an OpenDocument spreadsheet, for LibreOffice and OpenOffice.</source>
+        <translation>هەمان شت وەک خشتەیەکی ئەلیکترۆنی OpenDocument، بۆ LibreOffice و OpenOffice.</translation>
+    </message>
+    <message>
+        <source>Apache rewrite rules</source>
+        <translation>یاساکانی دووبارەنووسینی Apache</translation>
+    </message>
+    <message>
+        <source>The .htaccess of an old site as it is: RewriteRule, RewriteCond for a query, Redirect of a whole section (the page and everything below it) and RedirectMatch as a wildcard.</source>
+        <translation>فایلی .htaccess ی ماڵپەڕێکی کۆن وەک خۆی: RewriteRule، RewriteCond بۆ پرسیارێک، Redirect ی بەشێکی تەواو (پەڕەکە و هەموو ئەوەی لە ژێریدایە) و RedirectMatch وەک وایلدکارد.</translation>
+    </message>
+    <message>
+        <source>nginx rewrite rules</source>
+        <translation>یاساکانی دووبارەنووسینی nginx</translation>
+    </message>
+    <message>
+        <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
+        <translation>بلۆکی server ی ماڵپەڕێکی کۆن: location = لەگەڵ return، if ($args) بۆ پرسیارێک، rewrite وەک وایلدکارد و map ێکی پەڕە تاکەکان.</translation>
+    </message>
 </context>
 </TS>
