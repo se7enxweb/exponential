@@ -26117,7 +26117,7 @@ b4e438d889c9b76ff605201076b3775a  kernel/private/classes/cronjobs/contentcheck.p
 924c38cc6aadd95e9f3d62ca23211a36  kernel/private/classes/cronjobs/exphelp.php
 4476dc3a5650433e542687b319543298  kernel/private/classes/cronjobs/explogrotate.php
 6a68ea8fe76d185290d85672363f7d7d  kernel/private/classes/cronjobs/graphqlwebhooks.php
-67f51ff4335866281d7f549e116b9335  kernel/private/classes/cronjobs/hide.php
+92d355ebc5aaebc2bb7288ded4d902b9  kernel/private/classes/cronjobs/hide.php
 7072a4c924167fdaf87d78b378e70f08  kernel/private/classes/cronjobs/httpcache_cleanup.php
 634bc6649976efa4415087975ed4026c  kernel/private/classes/cronjobs/indexcontent.php
 353f5f009dfa16160261b9ad3e6c4380  kernel/private/classes/cronjobs/internal_drafts_cleanup.php
@@ -27322,7 +27322,7 @@ d41d8cd98f00b204e9800998ecf8427e  openspec/specs/.gitkeep
 40c7a22b435e0cc56484e4822baa854b  openspec/specs/admin/search-page/spec.md
 cff22610bddd02e8cf7795f65a6e682f  openspec/specs/admin/search-suggestions/spec.md
 b30a45607707aac28b209398030287b4  phpcs.xml.dist
-080c55fc5da723c850e6f9794c5dd4e1  phpstan-baseline.neon
+4b411bfb881c1e20ffa8380747085912  phpstan-baseline.neon
 d0c444da64532de0fa023226f56bc9d1  phpstan.neon.dist
 82432bde434c2995a71eef86502f9c79  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
@@ -29785,7 +29785,7 @@ d02b3565b60ccbebd922668c4a183089  tests/tests/kernel/classes/rest/ezpRestPrefixF
 c6aa9b2c88d7b8b8659eca50a3eda17d  tests/tests/kernel/classes/runnable/CommandHelpersTest.php
 0082d26b308d1f7877e700c73c54b0b3  tests/tests/kernel/classes/runnable/CronjobPartRunFilterTest.php
 5d604b4c6f8964093b44f1779ad89406  tests/tests/kernel/classes/runnable/ExtractedRunMethodsTest.php
-e2ed6f960d4d0c21a85e7ba4bf04e07a  tests/tests/kernel/classes/runnable/HideCronjobSearchIndexTest.php
+7ef1949f3b60c9b71f01d0a1b39b2f34  tests/tests/kernel/classes/runnable/HideCronjobSearchIndexTest.php
 d75a172653fb0e52cc78a4a25b907e4a  tests/tests/kernel/classes/runnable/InstallPasswordTest.php
 8d5647c0a94e6a8e77c7517375849a3e  tests/tests/kernel/classes/runnable/ModuleViewScopeTest.php
 f308fe4e0cf8e0608cf78a053732e787  tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php

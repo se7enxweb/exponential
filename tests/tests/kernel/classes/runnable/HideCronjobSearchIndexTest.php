@@ -10,6 +10,9 @@
  *          view caches are cleared and the event is sent)
  *  HC-03 - The cronjob ends when the process read ShowHiddenNodes=true before it (an earlier test or cronjob part):
  *          it sets ShowHiddenNodes=false and the fetches follow it, so hidden nodes are not fetched again
+ *  HC-04 - After the cronjob, ShowHiddenNodes and the value showInvisibleNodes() returns are as before it, so the
+ *          cronjob parts after it in the same process see the site's own setting
+ *  HC-05 - A node of RootNodeList that does not exist is skipped with a warning instead of a fatal error
  *
  * Live database, nothing kept: a throwaway folder and one object below it are created inside a database
  * transaction that is rolled back at the end, and the cronjob runs only below that folder (RootNodeList), so no
@@ -78,6 +81,8 @@ class HideCronjobSearchIndexTest extends PHPUnit\Framework\TestCase
             eZDB::instance()->rollback();
             $this->inTransaction = false;
         }
+        // a class dateClass() created inside the transaction is gone; forget it in the class caches too
+        eZContentClass::expireCache();
         foreach ( $this->listeners as $id )
             ezpEvent::getInstance()->detach( 'content/cache', $id );
         $this->listeners = array();
@@ -115,6 +120,14 @@ class HideCronjobSearchIndexTest extends PHPUnit\Framework\TestCase
     private function pushErrorHandlerMarker()
     {
         $this->errorHandlerBefore = self::currentErrorHandler();
+        // eZDebug's own handler on top (the kernel was started before the test, as with a throwaway database): its
+        // switches take off and put back that handler in pairs, so the stack ends as it began. A marker above it
+        // would be taken off in its place and eZDebug's handler pushed a second time, one handler too many.
+        if ( is_array( $this->errorHandlerBefore ) && $this->errorHandlerBefore[0] instanceof eZDebug )
+        {
+            $this->errorHandlerMarker = null;
+            return;
+        }
         $before = $this->errorHandlerBefore;
         $this->errorHandlerMarker = static function () use ( $before ) {
             return is_callable( $before ) ? call_user_func_array( $before, func_get_args() ) : false;
@@ -161,27 +174,53 @@ class HideCronjobSearchIndexTest extends PHPUnit\Framework\TestCase
         $ini->setVariable( $block, $name, $value );
     }
 
-    /** @return array( class identifier, attribute identifier ) of a class with a date or integer attribute */
+    /**
+     * A class with a date or integer attribute. When the database has none (a clean install, as the throwaway
+     * database of a test run), one is created; call it inside the test's transaction, so the rollback removes it.
+     *
+     * @return array( class identifier, attribute identifier )
+     */
     private function dateClass()
     {
+        if ( !eZContentClass::fetchByIdentifier( 'folder' ) )
+            $this->markTestSkipped( 'needs the folder class' );
         $rows = eZDB::instance()->arrayQuery(
             "SELECT c.identifier AS class_identifier, a.identifier AS attribute_identifier
              FROM ezcontentclass c, ezcontentclass_attribute a
              WHERE a.contentclass_id = c.id AND c.version = 0 AND a.version = 0
                AND a.data_type_string IN ( 'ezdatetime', 'ezdate', 'ezinteger' )
              ORDER BY a.data_type_string DESC, c.id", array( 'limit' => 1 ) );
-        if ( !$rows || !eZContentClass::fetchByIdentifier( 'folder' ) )
-            $this->markTestSkipped( 'needs the folder class and a class with a date or integer attribute' );
-        return array( $rows[0]['class_identifier'], $rows[0]['attribute_identifier'] );
+        if ( $rows )
+            return array( $rows[0]['class_identifier'], $rows[0]['attribute_identifier'] );
+
+        $this->assertTrue( $this->inTransaction, 'the class is created inside the test transaction only' );
+        $locale = eZContentObject::defaultLanguage();
+        $class = eZContentClass::create( false, array( 'name' => 'Hide cronjob test item', 'identifier' => 'hide_cronjob_test_item',
+                                                       'contentobject_name' => '<name>' ), $locale );
+        $class->store();
+        $classID = (int)$class->attribute( 'id' );
+        $groups = eZContentClassGroup::fetchList();
+        eZContentClassClassGroup::create( $classID, $class->attribute( 'version' ), $groups[0]->attribute( 'id' ), $groups[0]->attribute( 'name' ) )->store();
+        $attributes = array();
+        foreach ( array( array( 'name', 'ezstring' ), array( 'hide_date', 'ezinteger' ) ) as $i => $def )
+        {
+            $attribute = eZContentClassAttribute::create( $classID, $def[1], array( 'identifier' => $def[0], 'name' => $def[0], 'placement' => $i + 1 ), $locale );
+            $attribute->dataType()->initializeClassAttribute( $attribute );
+            $attribute->store();
+            $attributes[] = $attribute;
+        }
+        $class->storeDefined( $attributes );
+        eZContentClass::expireCache();
+        return array( 'hide_cronjob_test_item', 'hide_date' );
     }
 
-    /** HC-01, HC-02 */
+    /** HC-01, HC-02, HC-03, HC-04 */
     public function testHideUpdatesTheSearchIndexAndSendsObjectIds()
     {
-        list( $classIdentifier, $attributeIdentifier ) = $this->dateClass();
         $db = eZDB::instance();
         $db->begin();
         $this->inTransaction = true;
+        list( $classIdentifier, $attributeIdentifier ) = $this->dateClass();
 
         $folder = eZContentFunctions::createAndPublishObject( array(
             'parent_node_id' => 2, 'class_identifier' => 'folder',
@@ -237,6 +276,10 @@ class HideCronjobSearchIndexTest extends PHPUnit\Framework\TestCase
             $cli->setIsQuiet( $quiet );
         }
 
+        // HC-04: the setting and the cached value are as before the cronjob
+        $this->assertSame( 'true', eZINI::instance()->variable( 'SiteAccessSettings', 'ShowHiddenNodes' ) );
+        $this->assertTrue( eZContentObjectTreeNode::showInvisibleNodes() );
+
         eZContentObject::clearCache();
         $node = eZContentObjectTreeNode::fetch( $itemNodeID );
         $this->assertSame( 1, (int)$node->attribute( 'is_hidden' ) );
@@ -258,5 +301,34 @@ class HideCronjobSearchIndexTest extends PHPUnit\Framework\TestCase
         eZContentObject::clearCache();
         $this->assertNull( eZContentObjectTreeNode::fetch( $folderNodeID ) );
         $this->assertNull( eZContentObject::fetch( $itemObjectID ) );
+    }
+
+    /** HC-05, HC-04 */
+    public function testARemovedRootNodeIsSkippedAndTheSettingIsRestored()
+    {
+        // the class is never looked at: there is no root node to fetch below
+        list( $classIdentifier, $attributeIdentifier ) = array( 'folder', 'name' );
+        $missing = (int)eZDB::instance()->arrayQuery( 'SELECT MAX( node_id ) AS m FROM ezcontentobject_tree' )[0]['m'] + 1000;
+        $this->assertNull( eZContentObjectTreeNode::fetch( $missing ) );
+        $this->setting( 'content.ini', 'HideSettings', 'RootNodeList', array( $missing ) );
+        $this->setting( 'content.ini', 'HideSettings', 'HideDateAttributeList', array( $classIdentifier => $attributeIdentifier ) );
+        $this->setting( 'site.ini', 'SiteAccessSettings', 'ShowHiddenNodes', 'true' );
+        eZContentObjectTreeNode::resetShowInvisibleNodesCache();
+
+        $cli = eZCLI::instance();
+        $quiet = $cli->isQuiet();
+        $cli->setIsQuiet( true );
+        try
+        {
+            $part = \Exponential\Cronjob\Kernel\Hide::create( 'cronjobs/hide.php' );
+            $part->run( array( 'cli' => $cli, 'isQuiet' => true ) );
+        }
+        finally
+        {
+            $cli->setIsQuiet( $quiet );
+        }
+
+        $this->assertSame( 'true', eZINI::instance()->variable( 'SiteAccessSettings', 'ShowHiddenNodes' ) );
+        $this->assertTrue( eZContentObjectTreeNode::showInvisibleNodes() );
     }
 }

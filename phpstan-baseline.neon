@@ -1383,7 +1383,7 @@ parameters:
 		-
 			message: '#^Undefined variable\: \$cli$#'
 			identifier: variable.undefined
-			count: 7
+			count: 1
 			path: kernel/private/classes/cronjobs/hide.php
 
 		-

@@ -38,11 +38,39 @@ class Hide extends \Exponential\Runnable\CronjobPart
 
         $currentDate = time();
 
-        \eZINI::instance()->setVariable( 'SiteAccessSettings', 'ShowHiddenNodes', 'false' );
+        $siteIni = \eZINI::instance();
+        $showHiddenNodesBefore = $siteIni->hasVariable( 'SiteAccessSettings', 'ShowHiddenNodes' )
+                               ? $siteIni->variable( 'SiteAccessSettings', 'ShowHiddenNodes' ) : null;
+        $siteIni->setVariable( 'SiteAccessSettings', 'ShowHiddenNodes', 'false' );
         // The fetches below must leave out what this run has hidden, or the batch loop never ends; the value is
         // cached, so a fetch made earlier in this process (an earlier cronjob part) would keep ShowHiddenNodes=true
         \eZContentObjectTreeNode::resetShowInvisibleNodesCache();
+        try
+        {
+            $this->hideNodes( $cli, $rootNodeIDList, $hideAttributeArray, $currentDate );
+        }
+        finally
+        {
+            // the cronjob parts after this one in the same process see the site's own ShowHiddenNodes again
+            if ( $showHiddenNodesBefore === null )
+                $siteIni->removeSetting( 'SiteAccessSettings', 'ShowHiddenNodes' );
+            else
+                $siteIni->setVariable( 'SiteAccessSettings', 'ShowHiddenNodes', $showHiddenNodesBefore );
+            \eZContentObjectTreeNode::resetShowInvisibleNodesCache();
+        }
+    }
 
+    /**
+     * Hides the nodes below each root node whose date in its class's attribute has passed. Runs with
+     * ShowHiddenNodes=false (see run()).
+     *
+     * @param \eZCLI $cli
+     * @param int[] $rootNodeIDList content.ini [HideSettings] RootNodeList
+     * @param string[] $hideAttributeArray content.ini [HideSettings] HideDateAttributeList, class => attribute
+     * @param int $currentDate
+     */
+    protected function hideNodes( $cli, array $rootNodeIDList, array $hideAttributeArray, $currentDate )
+    {
         $hiddenNodesParams = array(
             'LoadDataMap' => false,
             'Limit' => 50,
@@ -51,6 +79,12 @@ class Hide extends \Exponential\Runnable\CronjobPart
         foreach ( $rootNodeIDList as $nodeID )
         {
             $rootNode = \eZContentObjectTreeNode::fetch( $nodeID );
+            if ( !$rootNode instanceof \eZContentObjectTreeNode )
+            {
+                // a node of RootNodeList that was removed: the other root nodes are still processed
+                $cli->warning( "The node $nodeID of content.ini [HideSettings] RootNodeList does not exist; skipped." );
+                continue;
+            }
             $cli->output( 'Hiding content of node "' . $rootNode->attribute( 'name' ) . '" (' . $nodeID . ')' );
             $cli->output();
 
