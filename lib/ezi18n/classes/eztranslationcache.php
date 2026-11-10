@@ -17,21 +17,41 @@
 
 class eZTranslationCache
 {
-    const CODE_DATE = 1058863428;
+    // raised in 6.0.15 when the cache was split by locale: files written before could hold another locale's
+    // texts, and restoreCache() refuses a file of another code date, so they are rebuilt on first use
+    const CODE_DATE = 1794319185;
 
     /*!
      \static
      \return the locale the cache is kept for: \a $locale, or the RegionalSettings/Locale setting when it is not given.
      A translator passes its own locale, so a translator for another locale than the setting (a second language in
      the same request, a test) neither reads nor writes the cache of the setting's locale.
+     The locale names a directory of PHP files that are included later, so a given one must be a locale code
+     (letters, digits, "-", "_", "@" and ".", starting with a letter or digit, no ".."); any other is refused with a
+     warning and the setting is used.
     */
     static function cacheLocale( $locale = null )
     {
         if ( $locale !== null && $locale !== false && $locale !== '' )
         {
-            return $locale;
+            if ( eZTranslationCache::isLocaleCode( $locale ) )
+            {
+                return $locale;
+            }
+            eZDebug::writeWarning( 'Not a locale code, the translation cache of the Locale setting is used instead: ' . var_export( $locale, true ), __METHOD__ );
         }
         return eZINI::instance()->variable( 'RegionalSettings', 'Locale' );
+    }
+
+    /*!
+     \static
+     eturn true if \a $locale can name a cache directory: a string of letters, digits, "-", "_", "@" and ".",
+     starting with a letter or digit, at most 64 characters and without "..".
+    */
+    static function isLocaleCode( $locale )
+    {
+        return is_string( $locale ) && strlen( $locale ) <= 64 && strpos( $locale, '..' ) === false &&
+               preg_match( '/^[A-Za-z0-9][A-Za-z0-9_@.\-]*$/D', $locale ) === 1;
     }
 
     /*!
@@ -90,11 +110,13 @@ class eZTranslationCache
     /*!
      \static
      \return the cache directory for the translation cache files of locale \a $locale.
+     It is kept per site cache directory as well, so a process that serves several sites (Exponential Velocity)
+     does not write one site's cache into another's.
     */
     static function cacheDirectory( $locale = null )
     {
         $locale = eZTranslationCache::cacheLocale( $locale );
-        $cacheDirectory =& $GLOBALS['eZTranslationCacheDirectory'][$locale];
+        $cacheDirectory =& $GLOBALS['eZTranslationCacheDirectory'][eZSys::cacheDirectory()][$locale];
         if ( !isset( $cacheDirectory ) )
         {
             $rootCacheDirectory = eZTranslationCache::rootCacheDirectory();

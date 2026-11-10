@@ -26998,11 +26998,11 @@ b57fe186bce08e16c7b372a5cc98347c  lib/ezi18n/classes/ezmbstringmapper.php
 24ab9cf55fd681240d5290300d4fd7ff  lib/ezi18n/classes/ezrandomtranslator.php
 e62a3b7533fd805e1bdefc72d829e8bd  lib/ezi18n/classes/ezshuffletranslator.php
 e10e04e1ef27b7c9cdcc355bbf3bc81d  lib/ezi18n/classes/eztextcodec.php
-a2f1989b00732d000d6be107b6196faa  lib/ezi18n/classes/eztranslationcache.php
+4cde755caf3f6779b334f690e85c249e  lib/ezi18n/classes/eztranslationcache.php
 2b8067b922d8e58de0fb8070700dea01  lib/ezi18n/classes/eztranslatorgroup.php
 3e48ca72d4b845cdc42acb6132d5159a  lib/ezi18n/classes/eztranslatorhandler.php
 9ef0b558f9e01d716a561e0f0b664e48  lib/ezi18n/classes/eztranslatormanager.php
-86744e3b5c7d475970e8d5bd3307def1  lib/ezi18n/classes/eztstranslator.php
+d6618ddf930c9d6edeb0dbc18877730c  lib/ezi18n/classes/eztstranslator.php
 2fa3bdd2b425b9762ea7c3505cca2112  lib/ezi18n/classes/ezutf8codec.php
 8221c88da8c0beddf763b149c9b72f61  lib/ezimage/classes/expimagefocalpoint.php
 dae4524fcea813d47cb5e927622299c2  lib/ezimage/classes/expsvgsanitizer.php
@@ -28724,7 +28724,7 @@ ad3ef84f9d21cd4076b60e33034063b0  tests/bootstrap.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 1b7dcb4dde933b1ebf8f8f93f3df7d55  tests/suite.php
-2bf2395655f0d813b6f0caadf097b4bc  tests/test-map.json
+58eaf0bec5af4cb4ed2ee8d4e1dcaf04  tests/test-map.json
 4f2af04e2bf61d9e7bfbba8181fc08c0  tests/tests/bin/CiWorkflowPullRequestTest.php
 b152194c06e5b05fb18f088d0afd219c  tests/tests/bin/ConsoleExtensionAliasTest.php
 cf640022325724fc8a061137bbc5045e  tests/tests/bin/CopyrightNoticeTest.php
@@ -30453,6 +30453,7 @@ bcea3941a9e019f14530f18400c8aeb2  tests/tests/lib/ezi18n/eZCodePageTablesTest.ph
 7e68d669d3179b8da7729ef0127e6c4e  tests/tests/lib/ezi18n/eZTSTranslatorEmptyContextListTest.php
 eb73af1374445e3639be8b82ec10819a  tests/tests/lib/ezi18n/eZTSTranslatorFallbackChainTest.php
 f1cdc07915a0953a96836e5325f21f37  tests/tests/lib/ezi18n/eZTSTranslatorTest.php
+0b5534f47d001fcf8006629f8acf13aa  tests/tests/lib/ezi18n/eZTranslationCacheHardeningTest.php
 9d1ddb3526ec91405a5d4d4d7c510ddb  tests/tests/lib/ezi18n/eZTranslationCacheLocaleTest.php
 afe4663945f0e09518ad0ecd0e7dff52  tests/tests/lib/ezi18n/eZTranslatorHandlersTest.php
 773a64cb1839a3cf2e095a3d3fcbc6f6  tests/tests/lib/ezi18n/expAdminTranslationsRegisteredTest.php

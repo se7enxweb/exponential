@@ -203,7 +203,8 @@ class eZTSTranslator extends eZTranslatorHandler
                             $this->CachedMessages[$contextName] =
                                  eZTranslationCache::contextCache( $contextName, $this->Locale );
 
-                            foreach ( $this->CachedMessages[$contextName] as $key => $msg )
+                            // a context that could not be restored (BuildCache) is null until it is rebuilt
+                            foreach ( (array)$this->CachedMessages[$contextName] as $key => $msg )
                             {
                                 $this->Messages[$key] = $msg;
                             }
@@ -341,7 +342,8 @@ class eZTSTranslator extends eZTranslatorHandler
 
             foreach ( $this->CachedMessages as $contextName => $context )
             {
-                if ( eZTranslationCache::contextCache( $contextName, $this->Locale ) == null )
+                // strictly null, as for the context list: an empty context is cached already
+                if ( eZTranslationCache::contextCache( $contextName, $this->Locale ) === null )
                     eZTranslationCache::setContextCache( $contextName, $context, $this->Locale );
                 eZTranslationCache::storeCache( $contextName, $this->Locale );
             }
