@@ -53,15 +53,25 @@ const EXP_MANIFEST_FILE = expFileConsistencyReport::MANIFEST_FILE;
 $manifestExcludes = expFileConsistencyReport::ROOT_EXCLUDES;
 
 /**
- * Runs a git command and returns its output split by NUL, or false on failure
+ * Runs a git command and returns its output split by NUL, or false on failure.
+ * Success is git's exit code, not its output: an empty output (nothing staged, for
+ * example when only a commit message is amended) is an empty list, not a failure.
  *
  * @param string $arguments
  * @return array|false
  */
 function gitList( $arguments )
 {
-    $output = shell_exec( 'git ' . $arguments . ' 2>/dev/null' );
-    if ( !is_string( $output ) )
+    $process = @proc_open( 'git ' . $arguments, array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes );
+    if ( !is_resource( $process ) )
+    {
+        return false;
+    }
+    $output = stream_get_contents( $pipes[1] );
+    stream_get_contents( $pipes[2] );
+    fclose( $pipes[1] );
+    fclose( $pipes[2] );
+    if ( proc_close( $process ) !== 0 || !is_string( $output ) )
     {
         return false;
     }

@@ -32,6 +32,9 @@
       "tests/tests/kernel/classes/security/expFileModeLimitsTest.php",
       "tests/tests/bin/CopyrightNoticeTest.php"
     ],
+    "bin/php/checkmanifest.php": [
+      "tests/tests/bin/githooks/CheckManifestStagedTest.php"
+    ],
     "bin/php/console": [
       "tests/tests/bin/ConsoleExtensionAliasTest.php",
       "tests/tests/kernel/classes/security/expFileModeLimitsTest.php",
