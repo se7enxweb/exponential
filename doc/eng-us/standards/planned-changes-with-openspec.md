@@ -49,6 +49,7 @@ When the change is merged it moves to `openspec/changes/archive/` and its specs 
 | Change | State |
 |---|---|
 | `add-workflow-definitions`, `add-workflow-runtime`, `add-workflow-jobs-and-timers`, `add-workflow-admin-ui`, `add-workflow-review-options`, `add-workflow-integrations`, `add-workflow-webhooks-and-importers`, `add-workflow-reference-cases` | Planned: the graphical editorial workflows of the extension `expworkflow`; design source `openspec/handoff/expworkflow-16702-spec.md` |
+| `add-workflow-outward-action-safeguards`, `add-channel-posts`, `add-newsletter-welcome-series`, `add-form-destinations`, `add-ai-field-provenance`, `add-newsletter-segments`, `add-share-metadata` | Planned: marketing automation on top of the workflow designer (outward-action safeguards, posts to channels, newsletter welcome series, form destinations, AI field provenance, newsletter segments, share metadata); design source and build guide `openspec/handoff/marketing-automation-16741.md` |
 | `archive/2026-11-02-add-admin-search` | Finished: search suggestions while typing and the search page with its filter bar; specs in `openspec/specs/admin/` |
 
 ## Related pages
