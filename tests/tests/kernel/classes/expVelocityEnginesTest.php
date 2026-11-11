@@ -419,8 +419,9 @@ class expVelocityEnginesTest extends ezpTestCase
         $cwd = getcwd();
         putenv( 'VELOCITY_WARMUP_URLS' );
         $GLOBALS['x1VelocityServerOwn'] = 'kept';
-        // the temporary root has no settings: eZINI finds none of the override directories there, but would store
-        // what it read in the installation's var/cache/ini under the name every process uses, so no INI cache
+        // the temporary root has no settings: eZINI finds none of the override directories there, and what it read
+        // would be stored in the installation's var/cache/ini (under a name of its own since eZINI tells the
+        // directories apart, before that under the name every process uses), so no INI cache
         $iniCache = eZINI::isCacheEnabled();
         eZINI::setIsCacheEnabled( false );
         try
@@ -436,16 +437,46 @@ class expVelocityEnginesTest extends ezpTestCase
             $this->assertArrayHasKey( '_SERVER', $GLOBALS );
             foreach ( array( '__warmupGlobalsBefore', 'root', 'urls', 'kernel', 'clearPrefixes', 'expVelocityWarmup' ) as $name )
                 $this->assertArrayNotHasKey( $name, $GLOBALS, $name );
+            // nothing written next to what the test put there: an INI cache saved during the run logs itself to
+            // var/log/storage.log of the working directory, so this fails as soon as the INI cache is used again
+            $this->assertSame( array( 'autoload.php', 'var/maintenance.json' ), $this->filesBelow( $root ) );
         }
         finally
         {
             chdir( $cwd );
             eZINI::setIsCacheEnabled( $iniCache );
-            @unlink( $root . '/var/maintenance.json' );
-            @unlink( $root . '/autoload.php' );
-            @rmdir( $root . '/var' );
-            @rmdir( $root );
+            // all of it, also what a failed run left: a file left behind kept the temporary root on disk
+            if ( is_dir( $root ) )
+            {
+                $paths = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $root, FilesystemIterator::SKIP_DOTS ), RecursiveIteratorIterator::CHILD_FIRST );
+                foreach ( $paths as $path )
+                {
+                    if ( $path->isDir() )
+                        @rmdir( $path->getPathname() );
+                    else
+                        @unlink( $path->getPathname() );
+                }
+                @rmdir( $root );
+            }
         }
+    }
+
+    /**
+     * The files below $dir, relative to it with "/" as separator, sorted
+     *
+     * @param string $dir
+     * @return string[]
+     */
+    protected function filesBelow( $dir )
+    {
+        $files = array();
+        if ( is_dir( $dir ) )
+        {
+            foreach ( new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $dir, FilesystemIterator::SKIP_DOTS ) ) as $file )
+                $files[] = str_replace( '\\', '/', substr( $file->getPathname(), strlen( $dir ) + 1 ) );
+        }
+        sort( $files );
+        return $files;
     }
 
     /** What the entry script hands over: the snapshot is taken out of $GLOBALS; without a root, the working directory */
