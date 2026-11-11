@@ -3569,7 +3569,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-5813343e4b54f83db609c69977c5d380  doc/changelogs/6.0/6.0.15.md
+b5ec722ff30a7306f164cf3e94d2a087  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3668,7 +3668,7 @@ ded49d230901ad3762b2ceae14619701  doc/changelogs/extensions/twig.md
 af285ac8d63f408a2ebaf23e88716894  doc/changelogs/extensions/xrowextract.md
 bbcfbb1065eefc4a3f53987a1bad5fb1  doc/changelogs/extensions/xrowmetadata.md
 7f3212d2b818141cfb164d47fa2a4d33  doc/eng-us/COMMUNITY.md
-f486b57776a216ca028203e4ff0bb49b  doc/eng-us/CONFIGURING.md
+e6461bcfbb86fd709b54abede0077f11  doc/eng-us/CONFIGURING.md
 aa7617c6f5563d4cd4ff63ed6af720cc  doc/eng-us/DISTRIBUTIONS.md
 8f1308a0bb70a3295a8a8d9c3a214333  doc/eng-us/EXTENDING.md
 ba34fdb46710aeaf4d07089fce9a4354  doc/eng-us/HISTORY.md
@@ -13601,7 +13601,7 @@ d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-eve
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
 76611fd36fc10cf3567344b553f95e76  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
-2c9c088afa250f27572410a15afb2558  doc/ger-de/CONFIGURING.md
+079d9c4550a7d3c74fe8aacc9473ded2  doc/ger-de/CONFIGURING.md
 c541e681abb9f1a0541f1e05e061e1c1  doc/ger-de/DISTRIBUTIONS.md
 d92e7d32e4f6ac50174e4d7f82ca379b  doc/ger-de/EXTENDING.md
 72a6daa6760de22190206de884484e7d  doc/ger-de/HISTORY.md
@@ -27147,7 +27147,7 @@ d7ab655e877ac2a6cb313bba14f33505  lib/ezutils/classes/ezfloatvalidator.php
 81eb2fe2e661f59b7784ce3f58764b8b  lib/ezutils/classes/ezhttpfile.php
 96744a5512d7d89c096150ae2f50183a  lib/ezutils/classes/ezhttppersistence.php
 6fa9bafc7b70c2a6a8b56ce25b25906a  lib/ezutils/classes/ezhttptool.php
-4783b723ac5c2bb2ae972e88d93aef3a  lib/ezutils/classes/ezini.php
+c0648ac2fb8b1b3a837be458b750ed57  lib/ezutils/classes/ezini.php
 0247448f3c1943d07ceb1def3d2dede5  lib/ezutils/classes/ezinputvalidator.php
 10e59a99bb171ef6f813f968db16bf0e  lib/ezutils/classes/ezintegervalidator.php
 d950cf9fbd7d6560d51a52dd8058ce6c  lib/ezutils/classes/ezmail.php
@@ -29387,7 +29387,7 @@ b3e35405788338508640c6f742e2f34d  tests/tests/kernel/classes/expTestLanguageTest
 bdaaa271c81944d3c40e6260fdb8d15a  tests/tests/kernel/classes/expUserLoginIntegrityTest.php
 bb8efd2bccbe4476410227785c655f10  tests/tests/kernel/classes/expVelocityDeployCachePlanTest.php
 d4c04d6dfa83749105f46fecf6edf450  tests/tests/kernel/classes/expVelocityEngineRunArchiveTest.php
-bb53ed943ba8257cd92c080536f0abcb  tests/tests/kernel/classes/expVelocityEnginesTest.php
+06c28ad826e3f9b8515c4de9ec2ed440  tests/tests/kernel/classes/expVelocityEnginesTest.php
 6a84349e203a7224dc32776525aad7dd  tests/tests/kernel/classes/expVelocityMarkersTest.php
 b7e73e410ada81c0c12f146a4cb17d7a  tests/tests/kernel/classes/expVelocityNiceTest.php
 aed8f87df67bf3eb6a2fe7c31de8082c  tests/tests/kernel/classes/expVelocityPhpRefusalTest.php
@@ -30583,6 +30583,7 @@ c76229ca2e378975c46cf645af4b0132  tests/tests/lib/ezutils/eZINIParserAndAccessTe
 49ec641a403ebbc8db435941001f9d8e  tests/tests/lib/ezutils/eZINISaveFilePermissionsTest.php
 3d21f5e13eff2abff30388b53024ddc5  tests/tests/lib/ezutils/eZINISiteAccessIniMemoTest.php
 899e895220fa92d595e6ef35f16c3909  tests/tests/lib/ezutils/eZINITest.php
+11122019c92f41d9d780961e0552ec3d  tests/tests/lib/ezutils/eZINIWorkingDirectoryTest.php
 fb232a7e264499a6133cd810933e5bc7  tests/tests/lib/ezutils/eZMailEzcTest.php
 f9abbf45631e5d5a2cfcdf012b5504f5  tests/tests/lib/ezutils/eZMailTest.php
 ea92bebbfd1c964fa288910bad399530  tests/tests/lib/ezutils/eZMailTransportSendTest.php
