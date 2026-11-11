@@ -24925,8 +24925,8 @@ b6a31653ade7cd2ebcda9412ea3c6c33  kernel/classes/ezcontentbrowsebookmark.php
 7b5e398571e86941fd2161f7503ca395  kernel/classes/ezcontentbrowserecent.php
 dbf94b992b19048b140be82cded6c0d6  kernel/classes/ezcontentcache.php
 35b845bfba29b2609b7c05a032f41644  kernel/classes/ezcontentcachemanager.php
-2633dc93ab25a2bbd2149328a63d5fb9  kernel/classes/ezcontentclass.php
-2ed95de88aaaa0200c4c09e9d5fcfc80  kernel/classes/ezcontentclassattribute.php
+540e8ef4447b3f8508ed353e30b09427  kernel/classes/ezcontentclass.php
+5744bbe609eef2b4495c2f9013b8b923  kernel/classes/ezcontentclassattribute.php
 e07ccc2620b94882101cd839c820a2f8  kernel/classes/ezcontentclassclassgroup.php
 a841e4be7fdf07191eff1ef93dc9d9bf  kernel/classes/ezcontentclassedithandler.php
 acf3a11f6e357c98af87d9ccef127a48  kernel/classes/ezcontentclassgroup.php

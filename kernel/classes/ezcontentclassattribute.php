@@ -1020,9 +1020,14 @@ class eZContentClassAttribute extends eZPersistentObject
      */
     protected static function classAttributeIdentifiersHash()
     {
+        // read from another database than the global one now (a script or a test that switched the global database):
+        // its ids are not this database's
+        if ( self::$identifierHash !== null && eZDB::hasInstance() && self::$identifierHashDatabase !== (string)eZDB::instance()->DB )
+            self::$identifierHash = null;
         if ( self::$identifierHash === null )
         {
             $db = eZDB::instance();
+            self::$identifierHashDatabase = (string)$db->DB;
             $dbName = md5( $db->DB );
 
             $cacheDir = eZSys::cacheDirectory();
@@ -1356,6 +1361,13 @@ class eZContentClassAttribute extends eZPersistentObject
      * In-memory cache for class attributes identifiers / id matching
      */
     private static $identifierHash = null;
+
+    /**
+     * The name of the database $identifierHash was read from
+     *
+     * @var string|null
+     */
+    private static $identifierHashDatabase = null;
 }
 
 ?>
