@@ -632,6 +632,37 @@ class eZINI
         return __DIR__ . "/../../../";
     }
 
+    /**
+     * Where this instance reads its override directories from, when that is not the installation's own
+     * settings directory; false when it is, which is the usual case.
+     *
+     * findInputFiles() reads the base file from the installation root, but the override directories
+     * (settings/override, the siteaccess and extension directories) relative to the working directory, and the
+     * cache is kept below the installation root. A process working elsewhere (a test in a temporary root, a
+     * script started from another directory) read other files under the cache file name every process of the
+     * installation uses: it stored a site.ini without settings/override, and the site, the admin and every
+     * script read that until the INI cache was cleared. A directory that resolves to the installation's own
+     * (a symbolic link to it, a document root made of links) counts as the same.
+     *
+     * @return string|false the real path of the directory read, "missing:<working directory>" when it does not
+     *                      exist, or false when it is the installation's own
+     */
+    protected function workingSettingsDirectory()
+    {
+        $relative = ( $this->RootDir === false || $this->RootDir === '' ) ? '.' : (string)$this->RootDir;
+        // An absolute settings directory is the same from every working directory
+        if ( $relative[0] === '/' || $relative[0] === '\\' || preg_match( '#^[A-Za-z]:[\\\\/]#', $relative ) )
+            return false;
+
+        $here = realpath( $relative );
+        $own = realpath( self::installationRoot() . $relative );
+        if ( $here === $own )
+            return false;
+        if ( $here === false )
+            return 'missing:' . getcwd();
+        return $here;
+    }
+
     function findInputFiles( &$inputFiles, &$iniFile )
     {
         $iniFile = self::installationRoot();
@@ -733,6 +764,13 @@ class eZINI
         if ( !$this->DirectAccess )
         {
             $cacheFileName .= '-' . serialize( $this->overrideDirs() );
+            // Override directories read from somewhere else than the installation's own are other files, so
+            // they get their own cache file. In the usual case the name stays the same as before.
+            $workingSettings = $this->workingSettingsDirectory();
+            if ( $workingSettings !== false )
+            {
+                $cacheFileName .= '-settings:' . $workingSettings;
+            }
         }
         if ( $this->UseTextCodec )
         {

@@ -538,6 +538,7 @@ When the table does not help, [Getting Support](SUPPORT.md) shows where to ask.
 | Symptom | Cause and fix |
 |---|---|
 | A changed setting has no effect | The INI cache still holds the old value: `php bin/php/ezcache.php --clear-tag=ini`. Check with `./console exp:ini where <file>/<block>/<setting>` which file wins: a later layer (often `settings/override/`) may set it again. |
+| A script started from another directory reads other settings, or the site lost its `settings/override/` values after one ran | The override directories (`settings/override/`, the siteaccess and extension directories) are read relative to the working directory, the base files and the INI cache from the installation root. Start scripts in the installation root. Since 6.0.15 a run from elsewhere keeps INI cache files of its own and no longer changes what the site reads; a site that lost its overrides that way before is mended by clearing the INI cache once. |
 | The settings page says **not in effect yet** | The file was changed outside the page and the cache was not cleared. Clear the INI cache (**Setup > Cache management**, INI caches). |
 | A change works on port 443 but not under Velocity | The setting is read only when Velocity starts (**Velocity restart** badge): `./console exp:velocity restart`. |
 | An array lost its default elements | The override starts with `Name[]`, which empties the array. Leave that line out to add to the defaults. |
