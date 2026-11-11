@@ -13,7 +13,9 @@
  *  AU-08 - The report of exp:access:check names the policy and the limitation that refused, and its handler
  *
  * The current user and the other users are stand-ins with the access arrays given to them; a database handler that
- * runs nothing stands in for the real one, so a user that was not given is not found.
+ * runs nothing stands in for the real one, so a user that was not given is not found. The class identifiers and the
+ * content languages the checks look up are empty for the test (that handler has none to give), not what an earlier
+ * test of the process left in memory.
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -53,6 +55,9 @@ class eZContentAccessForAnotherUserTest extends PHPUnit\Framework\TestCase
     private $hadTime;
     private $time;
     private $listenerIDs = array();
+    private $classHash;
+    private $hadLanguages;
+    private $languages;
 
     protected function setUp(): void
     {
@@ -64,6 +69,17 @@ class eZContentAccessForAnotherUserTest extends PHPUnit\Framework\TestCase
         $this->hadTime = array_key_exists( 'REQUEST_TIME_FLOAT', $_SERVER );
         $this->time = $this->hadTime ? $_SERVER['REQUEST_TIME_FLOAT'] : null;
         eZDB::setInstance( new eZContentPermissionSQLTestDB() );
+        // the database handler runs nothing, so the class identifiers and the content languages are empty here:
+        // read from it, they gave "foreach() argument must be of type array|object" warnings, and kept from an
+        // earlier test they were that test's
+        // (the hash names the database it was read from: an empty one of this handler, so it is not read again)
+        $this->classHash = array( ( new ReflectionProperty( 'eZContentClass', 'identifierHash' ) )->getValue(),
+                                  ( new ReflectionProperty( 'eZContentClass', 'identifierHashDatabase' ) )->getValue() );
+        ( new ReflectionProperty( 'eZContentClass', 'identifierHash' ) )->setValue( null, array() );
+        ( new ReflectionProperty( 'eZContentClass', 'identifierHashDatabase' ) )->setValue( null, (string)eZDB::instance()->DB );
+        $this->hadLanguages = array_key_exists( 'eZContentLanguageList', $GLOBALS );
+        $this->languages = $this->hadLanguages ? $GLOBALS['eZContentLanguageList'] : null;
+        $GLOBALS['eZContentLanguageList'] = array();
         $_SERVER['REQUEST_TIME_FLOAT'] = 2000.5;
         eZUser::resetAccessUsers();
         ezpContentLimitation::resetCache();
@@ -87,6 +103,12 @@ class eZContentAccessForAnotherUserTest extends PHPUnit\Framework\TestCase
             $_SERVER['REQUEST_TIME_FLOAT'] = $this->time;
         else
             unset( $_SERVER['REQUEST_TIME_FLOAT'] );
+        ( new ReflectionProperty( 'eZContentClass', 'identifierHash' ) )->setValue( null, $this->classHash[0] );
+        ( new ReflectionProperty( 'eZContentClass', 'identifierHashDatabase' ) )->setValue( null, $this->classHash[1] );
+        if ( $this->hadLanguages )
+            $GLOBALS['eZContentLanguageList'] = $this->languages;
+        else
+            unset( $GLOBALS['eZContentLanguageList'] );
         ezpINIHelper::restoreINISettings();
     }
 

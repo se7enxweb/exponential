@@ -2084,9 +2084,14 @@ You will need to change the class of the node by using the swap functionality.' 
      */
     protected static function classIdentifiersHash()
     {
+        // read from another database than the global one now (a script or a test that switched the global database):
+        // its ids are not this database's
+        if ( self::$identifierHash !== null && eZDB::hasInstance() && self::$identifierHashDatabase !== (string)eZDB::instance()->DB )
+            self::$identifierHash = null;
         if ( self::$identifierHash === null )
         {
             $db = eZDB::instance();
+            self::$identifierHashDatabase = (string)$db->DB;
             $dbName = md5( (string)$db->DB );
 
             $cacheDir = eZSys::cacheDirectory();
@@ -2289,6 +2294,13 @@ You will need to change the class of the node by using the swap functionality.' 
      * In-memory cache for class identifiers / id matching
      */
     private static $identifierHash = null;
+
+    /**
+     * The name of the database $identifierHash was read from
+     *
+     * @var string|null
+     */
+    private static $identifierHashDatabase = null;
 }
 
 ?>
