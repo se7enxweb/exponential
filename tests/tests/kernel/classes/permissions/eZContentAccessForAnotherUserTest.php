@@ -72,8 +72,11 @@ class eZContentAccessForAnotherUserTest extends PHPUnit\Framework\TestCase
         // the database handler runs nothing, so the class identifiers and the content languages are empty here:
         // read from it, they gave "foreach() argument must be of type array|object" warnings, and kept from an
         // earlier test they were that test's
-        $this->classHash = ( new ReflectionProperty( 'eZContentClass', 'identifierHash' ) )->getValue();
+        // (the hash names the database it was read from: an empty one of this handler, so it is not read again)
+        $this->classHash = array( ( new ReflectionProperty( 'eZContentClass', 'identifierHash' ) )->getValue(),
+                                  ( new ReflectionProperty( 'eZContentClass', 'identifierHashDatabase' ) )->getValue() );
         ( new ReflectionProperty( 'eZContentClass', 'identifierHash' ) )->setValue( null, array() );
+        ( new ReflectionProperty( 'eZContentClass', 'identifierHashDatabase' ) )->setValue( null, (string)eZDB::instance()->DB );
         $this->hadLanguages = array_key_exists( 'eZContentLanguageList', $GLOBALS );
         $this->languages = $this->hadLanguages ? $GLOBALS['eZContentLanguageList'] : null;
         $GLOBALS['eZContentLanguageList'] = array();
@@ -100,7 +103,8 @@ class eZContentAccessForAnotherUserTest extends PHPUnit\Framework\TestCase
             $_SERVER['REQUEST_TIME_FLOAT'] = $this->time;
         else
             unset( $_SERVER['REQUEST_TIME_FLOAT'] );
-        ( new ReflectionProperty( 'eZContentClass', 'identifierHash' ) )->setValue( null, $this->classHash );
+        ( new ReflectionProperty( 'eZContentClass', 'identifierHash' ) )->setValue( null, $this->classHash[0] );
+        ( new ReflectionProperty( 'eZContentClass', 'identifierHashDatabase' ) )->setValue( null, $this->classHash[1] );
         if ( $this->hadLanguages )
             $GLOBALS['eZContentLanguageList'] = $this->languages;
         else
