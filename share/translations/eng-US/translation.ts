@@ -15780,6 +15780,14 @@ Note: The packages will not be uninstalled.</translation>
         <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
         <translation>Every datatype of the kernel and the extensions, and how the classes and content use it.</translation>
     </message>
+    <message>
+        <source>Request shield</source>
+        <translation>Request shield</translation>
+    </message>
+    <message>
+        <source>See what the request filter in front of the site decides, its log and its rules.</source>
+        <translation>See what the request filter in front of the site decides, its log and its rules.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>

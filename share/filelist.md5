@@ -27372,7 +27372,7 @@ ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 473463c7f61e8acbcf8e30e022d70c59  settings/logviewer.ini
 f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
 c1f0320332dab25bd13faf6ea46c6a74  settings/membermanagement.ini
-390b79d950c5e5089caa17d3d9235128  settings/menu.ini
+ef7059fc350f520622d79bc9c9a51866  settings/menu.ini
 e3d712d03b9a8b2596ecbe61f2fbd2ad  settings/migration.ini
 71a7ac0296299fca0a6f1ae1b62ae817  settings/mime.ini
 409f9d6ffd0d2b030179c0d01f0a0e00  settings/module.ini
@@ -28449,7 +28449,7 @@ e86a3c0aa2472ad553fe3ffd5be42e3d  share/translations/dut-NL/translation.ts
 27c0828353fe98bea13c97a1d808551c  share/translations/ell-GR/GUIDE.md
 8610eab647486df144631f8b595c7d36  share/translations/ell-GR/translation.ts
 2e7afa9cf0573282852058edeea31e15  share/translations/eng-AU/translation.ts
-ed61535e59268fb00b1b4efcd6037ab4  share/translations/eng-US/translation.ts
+b3a52321d4d6a694cd466216d34e1b56  share/translations/eng-US/translation.ts
 c4aefd9911e5b7b7646f05df605f6902  share/translations/epo-EO/GUIDE.md
 5eef0efc35b07b13f5b763e25f8b5cf8  share/translations/epo-EO/translation.ts
 efca7798a9e1f1f216aa838154d35110  share/translations/esl-ES/GUIDE.md
@@ -28481,7 +28481,7 @@ dbb7dfec95cf245248c9ac4be9d891b1  share/translations/fre-FR/GUIDE.md
 ccf8758ef6ea0b6f639323dd1573c204  share/translations/ger-DE/GUIDE.md
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-54e414ce65309a2aa3ba201acb16c8c9  share/translations/ger-DE/translation.ts
+70e26b5f684f196656311eb7a4e7445a  share/translations/ger-DE/translation.ts
 1663811be417a845709468b796268b8e  share/translations/gla-GB/GUIDE.md
 9209e51cb948d47a443e5941332e0af3  share/translations/gla-GB/translation.ts
 c9c96be6fea59b4e6e70919f636e2de8  share/translations/gle-IE/GUIDE.md

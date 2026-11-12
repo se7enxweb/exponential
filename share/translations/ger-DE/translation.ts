@@ -18190,6 +18190,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
         <translation>Jeder Datentyp des Kerns und der Extensions, und wie Klassen und Inhalte ihn verwenden.</translation>
     </message>
+    <message>
+        <source>Request shield</source>
+        <translation>Request Shield</translation>
+    </message>
+    <message>
+        <source>See what the request filter in front of the site decides, its log and its rules.</source>
+        <translation>Sehen, was der Anfragefilter vor der Website entscheidet, sein Protokoll und seine Regeln.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
