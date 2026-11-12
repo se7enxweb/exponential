@@ -28,7 +28,7 @@ e9a221cfefd482545e28180305af7f54  .htaccess_root_static
 4debf1d8dd6c381fcf99f60409da582b  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-08c1b20400e1fc13e3cf45e08b714e01  autoload/ezp_kernel.php
+7e12a51ac1007a74f83bd6816a6f5a6c  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 c7d5434eac3788fbeb0a44161d7cdda8  benchmarks/classes/ezbenchmarkclirunner.php
@@ -24689,6 +24689,7 @@ f6100ad56b2605115bd6fc6d7f482b25  kernel/classes/contentjob/expcontentjobstatesu
 46d27d5c301edd17acdfa8170b5e864d  kernel/classes/contentjob/expcontentjobtransfer.php
 2a9c346ee6c25e7c07d0c9515e7b2f44  kernel/classes/contentjob/expcontentjobtype.php
 0eef10bf7d08d62bf82a8b7c710b3472  kernel/classes/contentjob/expcontentjobworker.php
+c1eed935627b7c1e67be4e1ff3cfc912  kernel/classes/contentwriter/expcontentwriter.php
 e12509db7c16bfb4c891619dc0a983a2  kernel/classes/datatable/expdataconnection.php
 1f51eb85374c4cb868c25faa24284150  kernel/classes/datatable/expdataconnections.php
 892949e1a6bcf455e601d38633af6b48  kernel/classes/datatable/expdatatablecatalogue.php
@@ -29185,6 +29186,7 @@ fd29759b98e77ffeac8717e40687f591  tests/tests/kernel/classes/contentmodel/eZInfo
 79f9c6be0c20a40c63e85d670dcb7f55  tests/tests/kernel/classes/contentmodel/eZTemplateRoleOperatorLiveTest.php
 a1a088deb14889b07db0525bfff0c037  tests/tests/kernel/classes/contentmodel/eZUserAndRoleLiveTest.php
 1f4c4ea63ecc63b5a944f5904a76eb9f  tests/tests/kernel/classes/contentmodel/expContentModelLiveTestCase.php
+b06ae49ba918ce46f7c63cb988352d9c  tests/tests/kernel/classes/contentwriter/expContentWriterTest.php
 ea60ab13818e3ba8621e975d1f957f95  tests/tests/kernel/classes/datatable/expDataConnectionsTest.php
 d215990aa10a6c2982e5ee97a5fbb7a2  tests/tests/kernel/classes/datatable/expDataSyncTest.php
 6d18a88a1fb993d557318253aa5b7a6f  tests/tests/kernel/classes/datatable/expDataTableCatalogueTest.php

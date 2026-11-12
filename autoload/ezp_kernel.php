@@ -1292,6 +1292,7 @@ return array(
       'expContentSecurityPolicy'                                     => 'kernel/private/classes/expcontentsecuritypolicy.php',
       'expContentSecurityPolicyOperator'                             => 'kernel/common/expcontentsecuritypolicyoperator.php',
       'expContentSecurityPolicyReport'                               => 'kernel/private/classes/expcontentsecuritypolicyreport.php',
+      'expContentWriter'                                             => 'kernel/classes/contentwriter/expcontentwriter.php',
       'expCountryGroups'                                             => 'kernel/classes/datatypes/ezcountry/expcountrygroups.php',
       'expCronjobPause'                                              => 'kernel/classes/expcronjobpause.php',
       'expCronjobRunner'                                             => 'kernel/setup/expcronjobrunner.php',
