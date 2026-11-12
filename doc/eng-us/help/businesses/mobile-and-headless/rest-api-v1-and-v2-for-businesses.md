@@ -45,11 +45,12 @@ From [2. The routes](../../../guides/rest-api-v1-and-v2.md#2-the-routes):
 | Count the children | yes | yes |
 | Create and publish an item | no | yes |
 | Remove an item (with everything below it) | no | yes |
-| Update an item | no | checks the edit permission, then answers "not implemented yet" (501) |
+| Update an item (a new version with the values sent) | no | yes (`ezprestapi` 1.2.9 with Exponential 6.0.15) |
 
 For a business that means: an app that **shows** content works with either version; an app or integration that
-**adds** content (orders imported from a marketplace, entries from a field app) uses v2; changing existing content
-through the REST API is not available yet. For administration tasks beyond content, the remote services offer more
+**adds** or **changes** content (orders imported from a marketplace, entries from a field app) uses v2. Each change
+through the REST API is published as a new version and goes through the site's workflows, as in the administration.
+For administration tasks beyond content, the remote services offer more
 ([Remote services](remote-services.md)).
 
 ## What 6.0.15 changed for existing apps
@@ -82,7 +83,6 @@ may, and a public app should use an account that may only read what the public m
 | Gap | Effect | Workaround from the sources |
 |---|---|---|
 | The Atom list route `listAtom` | Answers 500 at v1 and v2, before and after the change | Use the `list` route, or the site's RSS export ([Feeds and syndication](feeds-and-syndication.md)) |
-| Updating content through REST | Answers 501 after the permission check | Create a new item, or use the administration or the remote services |
 | Apache with FastCGI | The `Authorization` header must reach PHP | A server configuration task ([REST API for applications](../../creators/app-creators/rest-api.md#configuration)) |
 
 ## Questions for your administrator

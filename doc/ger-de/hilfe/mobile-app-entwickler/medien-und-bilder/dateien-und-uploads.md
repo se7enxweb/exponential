@@ -37,8 +37,10 @@ Laufzeit an und speichern Sie ihn nicht.
 
 ## Uploads: was es gibt und was nicht
 
-- **Das Anlegen über REST** nimmt Feldwerte als Formularfelder entgegen und hat keinen dokumentierten Datei-Upload; die
-  Beispiele der Anleitungen setzen nur Textfelder ([Inhalte anlegen und entfernen](../rest-api/inhalte-anlegen-und-entfernen.md)).
+- **Das Anlegen und Aktualisieren über REST** nimmt Feldwerte als Formularfelder oder JSON-Body entgegen und hat keinen
+  Datei-Upload. Ein Dateifeld (`ezimage`, `ezbinaryfile`, `ezmedia`) nimmt eine öffentliche `http(s)`-URL an, optional
+  `<URL>|<Alternativtext oder Dateiname>`, die der Server herunterlädt (kein Serverpfad, keine Adresse in einem privaten
+  Netz, keine Weiterleitungen, höchstens 50 MB; `ezprestapi` 1.2.9) ([Inhalte anlegen und entfernen](../rest-api/inhalte-anlegen-und-entfernen.md)).
 - **expservices** lehnt entfernte Schreibzugriffe auf die Datentypen `ezimage`, `ezbinaryfile`, `ezmedia`, `ezuser`,
   `ezpassword` und `ezflowblock` ab, „whose fromString() reads a local path or URL, or that hold credentials“
   (`expContentBase::$deniedInputTypes`).

@@ -38,7 +38,7 @@ integration project from discovery to handover.
 ## Integrating Exponential in one minute
 
 - **Two HTTP APIs ship with the product.** The REST content API of the `ezprestapi` extension answers below
-  `/api/ezp/v1/` and `/api/ezp/v2/` (reads at both versions, create and delete at v2), and the `expservices`
+  `/api/ezp/v1/` and `/api/ezp/v2/` (reads at both versions, create, update and delete at v2), and the `expservices`
   extension offers about a thousand named services as JSON under `/ezjscore/call/exp<domain>::<method>`
   ([REST API for integrators](rest-api-for-integrators.md), [Remote services with expservices](remote-services-with-expservices.md)).
 - **Three kinds of credentials.** OAuth 2.0 applications registered at Setup > oAuth admin, personal API keys

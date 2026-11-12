@@ -37,8 +37,10 @@ not store it.
 
 ## Uploads: what is and is not there
 
-- **REST create** takes field values as form fields and has no documented file upload; the guides' examples set
-  text fields only ([Creating and removing content](../rest-api/creating-and-removing-content.md)).
+- **REST create and update** take field values as form fields or a JSON body and have no file upload. A file field
+  (`ezimage`, `ezbinaryfile`, `ezmedia`) takes a public `http(s)` URL, optionally `<URL>|<alternative text or file name>`,
+  that the server downloads (no server path, no private network address, no redirects, at most 50 MB; `ezprestapi`
+  1.2.9) ([Creating and removing content](../rest-api/creating-and-removing-content.md)).
 - **expservices** refuses remote writes to the datatypes `ezimage`, `ezbinaryfile`, `ezmedia`, `ezuser`,
   `ezpassword` and `ezflowblock`, "whose fromString() reads a local path or URL, or that hold credentials"
   (`expContentBase::$deniedInputTypes`).

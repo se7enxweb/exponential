@@ -38,7 +38,7 @@ an **ezjscore server function** only when neither has what a screen needs.
 | Image in a screen size | none (original path only) | `expimage::url`, `expimage::urls` | [Image aliases for screen sizes](media-and-images/image-aliases-for-screen-sizes.md) |
 | Item by URL path (deep link) | none | `expnode::getByPath` | [Node ids, remote ids and deep links](content-modeling/node-ids-remote-ids-and-deep-links.md) |
 | Create and publish | `POST /api/ezp/v2/content/node/create` | `expnode::create` | [Creating and removing content](rest-api/creating-and-removing-content.md) |
-| Update | answers `501` after the permission check | `expnode::update` | [Writing through expservices](json-endpoints/writing-through-expservices.md) |
+| Update | `POST` or `PUT /api/ezp/v2/content/node/<id>` (a new version; `ezprestapi` 1.2.9) | `expnode::update` | [Creating and removing content](rest-api/creating-and-removing-content.md), [Writing through expservices](json-endpoints/writing-through-expservices.md) |
 | Remove | `DELETE /api/ezp/v2/content/node/delete/<id>` | `expnode::remove` | [Creating and removing content](rest-api/creating-and-removing-content.md) |
 | Languages of the site | none | `explanguage::prioritized`, `explanguage::languages` | [Multilingual content](content-modeling/multilingual-content.md) |
 

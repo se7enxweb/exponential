@@ -9,9 +9,11 @@ Powercontent", originally by NXC) extends how code creates, updates and removes 
 - a built-in debug function, convenient in command line scripts;
 - **no new version is created** when an object is updated.
 
-In the Exponential 6 period it was extended for the REST extension [ezprestapi](ezprestapi.md), where it provides the
-create and delete calls of REST API v2 (1.1.0, October 2024; update is checked, then answers 501). Since `ezprestapi`
-1.2.6 that one extension serves REST API v1 and v2; see [REST API v1 and v2](../../../guides/rest-api-v1-and-v2.md).
+In the Exponential 6 period it was extended for the REST extension [ezprestapi](ezprestapi.md), where it provided the
+create and delete calls of REST API v2 (1.1.0, October 2024). Since `ezprestapi` 1.2.9 the REST API no longer uses
+it: create, update and delete are written by the kernel's `expContentWriter` (Exponential 6.0.15), and `ezprestapi`
+no longer requires this extension. `nxc_powercontent` stays an optional extension for code that uses it directly; see
+[REST API v1 and v2](../../../guides/rest-api-v1-and-v2.md).
 
 ## List content classes in a template: `class_list`
 

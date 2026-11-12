@@ -65,8 +65,10 @@ values instead of storing them ([The eZDataType API](../extension-development/pa
 
 **Rich text.** `ezxmltext` stores its own XML (`section`, `paragraph`, `header`, `link` ...), not HTML. Convert the
 source's HTML to that XML in your import, keep the set of allowed elements small, and escape text. The
-`nxc_powercontent` extension, used by the REST create route, accepts HTML for `ezxmltext` attributes
-([nxc_powercontent](../../features/6.0/extensions/nxc_powercontent.md)). Extension datatypes such as `eztags` have their
+REST create and update routes accept HTML for `ezxmltext` attributes and convert it with the Online Editor's input
+parser (`ezprestapi` 1.2.9, [REST API v1 and v2](../../guides/rest-api-v1-and-v2.md#21-updating-and-the-values-of-a-write)).
+In PHP code, the [nxc_powercontent](../../features/6.0/extensions/nxc_powercontent.md) extension also accepts HTML for
+them. Extension datatypes such as `eztags` have their
 own formats; read their `fromString()`.
 
 ## Images and files from a DAM

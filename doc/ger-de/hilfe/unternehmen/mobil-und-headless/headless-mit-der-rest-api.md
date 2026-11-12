@@ -87,8 +87,8 @@ Ehrlich gesagt, aus den Quellen:
 
 - Die REST-Route `listAtom` antwortet in v1 und v2 mit `500`; verwenden Sie stattdessen die Route `list` oder den
   RSS-Export der Website ([8. Known issue: listAtom](../../../anleitungen/rest-api-v1-und-v2.md#8-bekanntes-problem-listatom)).
-- Die REST-API kann Inhalte noch nicht ändern (sie antwortet mit 501). Die GraphQL-API des Kernels kann es, mit ihrer
-  Mutation `updateContent`; sie ist aus, bis sie eingeschaltet wird ([Die GraphQL-API](../../../funktionen/6.0/graphql.md)).
+- Die REST-API ändert Inhalte nur mit `ezprestapi` 1.2.9 und Exponential 6.0.15 (jede Änderung ist eine neue Version).
+  Die GraphQL-API des Kernels kann es ebenfalls, mit ihrer Mutation `updateContent`; sie ist aus, bis sie eingeschaltet wird ([Die GraphQL-API](../../../funktionen/6.0/graphql.md)).
 - Die Dokumentation beschreibt keinen Dienst für Push-Benachrichtigungen; Benachrichtigungen an ein Telefon sind das
   eigene Backend Ihrer App.
 - Layouts werden von den Templates der Website gerendert; ein Headless-Frontend rendert sie selbst.

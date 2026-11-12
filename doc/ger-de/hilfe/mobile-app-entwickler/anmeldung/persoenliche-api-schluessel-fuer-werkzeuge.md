@@ -48,7 +48,7 @@ Remote-Diensten, die eigene Tokens haben ([expservices-Tokens in Apps](expservic
 |---|---|---|
 | `read` | `content/read` | jeder `GET`- und `HEAD`-Route |
 | `publish` | `content/create` | `POST /api/ezp/v2/content/node/create` |
-| `edit` | `content/edit` | `POST /api/ezp/v2/content/node/<id>` (die heute mit `501` antwortet) |
+| `edit` | `content/edit` | `POST` oder `PUT /api/ezp/v2/content/node/<id>` (aktualisieren) |
 | `remove` | `content/remove` | `DELETE /api/ezp/v2/content/node/delete/<id>` |
 
 Die Zuordnung steht in `rest.ini [ApiKeySettings] Scopes[]` und `RouteScopes[]`. Ein Test, der nur liest, bekommt nur

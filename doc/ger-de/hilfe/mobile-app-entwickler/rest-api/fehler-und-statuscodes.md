@@ -27,8 +27,10 @@ sollte.
 | Status | Body | Bedeutung |
 |---|---|---|
 | `200` | der Inhalt | ein Lesezugriff oder ein Entfernen war erfolgreich |
+| `200` | `{"message":"Updated","objectId":...,"nodeId":...,"version":...,"languageLocale":...}` | eine Aktualisierung wurde als neue Version veröffentlicht |
 | `201` | `{"message":"Created","objectId":...,"nodeId":...}` | ein angelegtes Element wurde veröffentlicht |
-| `400` | `{"error":"invalid_request","error_message":...}` | ein Feld eines Schreibzugriffs fehlt oder nennt eine Klasse oder Sprache, die nicht existiert |
+| `202` | `{"message":"Waiting for a workflow",...}` | ein Workflow hält die Veröffentlichung einer Aktualisierung zurück |
+| `400` | `{"error":"invalid_request","error_message":...}` | ein Feld eines Schreibzugriffs fehlt oder nennt eine Klasse, ein Attribut oder eine Sprache, die nicht existiert; eine Aktualisierung ohne Werte; ein Wert, der kein Text ist, oder ein Dateiwert, der keine öffentliche `http(s)`-URL ist |
 | `401` | leer, mit `WWW-Authenticate: OAuth realm='Exponential REST'` | beim Server kamen keine Zugangsdaten an |
 | `401` | `{"error":"invalid_token"}` | ein unbekanntes, falsches oder widerrufenes Token oder ein solcher Schlüssel, ein deaktivierter Inhaber oder ein Schlüssel in der URL |
 | `401` | `{"error":"expired_token"}` | ein persönlicher API-Schlüssel nach seinem Ablaufdatum |
@@ -38,7 +40,7 @@ sollte.
 | `405` | mit einem Header `Allow` | keine Route nimmt diese Methode für diesen Pfad an |
 | `429` | `{"error":"rate_limited",...}` mit `Retry-After` | ein persönlicher API-Schlüssel hat in dieser Minute mehr Anfragen gesendet als `RateLimitPerMinute` (standardmäßig 120) |
 | `500` | `{"error":"failed",...}` | ein Anlegen oder Entfernen ist auf dem Server fehlgeschlagen; außerdem jeder Aufruf von `listAtom` (ein bekanntes Problem) |
-| `501` | `{"error":"not_implemented",...}` | die Route zum Aktualisieren, nach der Berechtigungsprüfung |
+| `501` | `{"error":"not_implemented",...}` | ein Anlegen, Aktualisieren oder Entfernen auf einem Server älter als Exponential 6.0.15 |
 
 Das `401` ohne Body wurde auf dem Demonstrationsserver bei einer Anfrage ohne Header `Authorization` beobachtet. Die
 Status mit `error` und `error_message` stammen aus `errorResult()` von `ezp7xRestContentController`.
@@ -66,7 +68,7 @@ und nach dem Status, nie nach dem Text.
 | `400` | die Meldung anzeigen; sie nennt das Feld |
 | `429` | `Retry-After` Sekunden warten |
 | `500`, `502`, `503`, `504`, Zeitüberschreitungen | Lesezugriffe mit Backoff wiederholen; bei Schreibzugriffen zuerst prüfen, ob der Schreibzugriff stattgefunden hat |
-| `501` | eine Funktionslücke: die Route verwenden, die auf [Was die APIs nicht tun](../was-die-apis-nicht-koennen.md) genannt ist |
+| `501` | der Server kann über REST noch nicht schreiben: über expservices schreiben ([Über expservices schreiben](../json-endpunkte/ueber-expservices-schreiben.md)) oder den Administrator um ein Upgrade bitten |
 
 ## Eine Richtlinie für Wiederholungen
 

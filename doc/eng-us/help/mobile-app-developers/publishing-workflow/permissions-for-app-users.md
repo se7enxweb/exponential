@@ -26,7 +26,7 @@ app has. The general guide is [Roles and policies](../../../guides/roles-and-pol
 |---|---|
 | REST read of a node, object, list, count | `content/read` |
 | REST create | `content/create` (Class, ParentClass, Section, Node, Subtree, Language limitations) |
-| REST update (answers `501` after the check) | `content/edit` |
+| REST update (a new version) | `content/edit` in the language written |
 | REST remove | `content/remove` of every location and everything below |
 | Allow an OAuth app on the authorize page | `oauth/authorize` (optionally limited by siteaccess) |
 | Make personal API keys | `apikey/create` (optionally limited by `Scope`) |

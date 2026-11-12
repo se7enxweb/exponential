@@ -3,7 +3,7 @@ title: The REST API for integrators
 audience: integrator, developer
 category: integration
 order: 50
-summary: What the REST content API of ezprestapi offers an integration - the routes at v1 and v2, reading lists page by page, creating and removing content, the status codes to handle, the answer cache and the gaps (no update, listAtom) - with curl and Python examples.
+summary: What the REST content API of ezprestapi offers an integration - the routes at v1 and v2, reading lists page by page, creating, updating and removing content, the status codes to handle, the answer cache and the gaps (listAtom) - with curl and Python examples.
 keywords: REST, API, ezprestapi, /api/ezp/v1, /api/ezp/v2, content/node, list, offset, limit, ResponseGroups, create, delete, 401, 403, 429, rest.ini, integration client
 type: help
 ---
@@ -26,13 +26,14 @@ picks out what an integration needs and adds the client-side advice.
 
 ## What it can and cannot do
 
-| Can | Cannot (as of `ezprestapi` 1.2.6) |
+| Can | Cannot (as of `ezprestapi` 1.2.9) |
 |---|---|
-| Read a node or an object with metadata, locations and fields | Update content: `POST /content/node/<id>` checks `content/edit`, then answers `501` |
+| Read a node or an object with metadata, locations and fields | Find an object by remote id (store the returned `objectId`, see the note below) |
 | List the children of a node, with offset, limit and sort | Search by text or filter by field (use `expservices` or a fetch in your own route) |
 | Count children, read one field | Answer `listAtom` (answers `500`, a known issue; use the site's RSS export) |
 | Create and publish an object below a parent (v2) | Describe itself in OpenAPI |
 | Remove an object with all its locations (v2) | Move, hide or change sections |
+| Update an object with a new published version (v2, since 1.2.9 with Exponential 6.0.15) | – |
 
 Reads answer at `v1` and `v2`, writes at `v2` only. Links inside a v1 answer stay in v1.
 
@@ -48,6 +49,7 @@ All paths are below `/api/ezp/v1` or `/api/ezp/v2` (the prefix `ezpl` is an alia
 | `GET` | `/content/node/<id>/fields`, `/content/node/<id>/field/<identifier>` | yes | yes |
 | `GET` | `/content/object/<id>`, `.../fields`, `.../field/<identifier>` | yes | yes |
 | `POST` | `/content/node/create` | no | yes |
+| `POST` or `PUT` | `/content/node/<id>` (update) | no | yes |
 | `DELETE` or `POST` | `/content/node/delete/<id>` | no | yes |
 
 Query parameters of the reads: `ResponseGroups=Metadata,Locations,Fields` chooses the parts of the answer, and
@@ -86,7 +88,20 @@ curl -s -X DELETE -H "Authorization: Bearer $EXP_API_KEY" https://example.com/ap
 
 The create fields are `parentNodeID`, `classIdentifier`, `languageLocale`, then the attribute identifiers of the
 class. The create is checked as `content/create` of that class below that parent in that language, and the publish
-workflow runs as it does in the administration. The create backend is `nxc_powercontent`.
+workflow runs as it does in the administration. Create, update and delete are written by the kernel's
+`expContentWriter` (`ezprestapi` 1.2.9 with Exponential 6.0.15; before, create went through `nxc_powercontent`).
+
+An update (`POST` or `PUT` on `/content/node/<id>`) publishes a new version with the values sent; attributes left out
+keep their values. Values go as form fields or as a JSON object; rich text as HTML, a file as a public `http(s)` URL
+(optionally `<URL>|<alternative text or file name>`), everything else in its text form. The update is checked as
+`content/edit` in its language (`languageLocale`, by default the object's main language); `202` means a workflow holds
+the publication. Details: [REST API v1 and v2, section 2.1](../../guides/rest-api-v1-and-v2.md#21-updating-and-the-values-of-a-write).
+
+```bash
+curl -s -X PUT -H "Authorization: Bearer $EXP_API_KEY" -H 'Content-Type: application/json' \
+     https://example.com/api/ezp/v2/content/node/<node id> -d '{"name": "From the ERP, renamed"}'
+# {"message":"Updated","objectId":<object id>,"nodeId":<node id>,"version":<version>,"languageLocale":"eng-US"}
+```
 
 > **Note**
 > The REST create has no `remote_id` field (the controller reads `parentNodeID`, `classIdentifier` and

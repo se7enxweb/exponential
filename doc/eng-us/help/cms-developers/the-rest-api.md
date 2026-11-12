@@ -58,7 +58,7 @@ Relative to `/api/ezp/<version>`:
 | `GET` | `/content/node/<id>/fields`, `/field/<identifier>` | yes | yes | all fields, one field |
 | `GET` | `/content/object/<id>` and its `fields`, `field/<identifier>` | yes | yes | the same by object ID |
 | `POST` | `/content/node/create` | no | yes | create and publish below `parentNodeID` |
-| `POST` | `/content/node/<id>` | no | yes | update: answers 501, not implemented yet |
+| `POST`, `PUT` | `/content/node/<id>` | no | yes | update: publish a new version with the values sent (`ezprestapi` 1.2.9) |
 | `DELETE` | `/content/node/delete/<id>` | no | yes | remove the node's object with its locations and subtree |
 
 Query parameters: `ResponseGroups=Metadata,Locations,Fields` chooses what an answer carries; `OutputFormat=xhtml` at
@@ -117,9 +117,11 @@ installation reachable by others.
 
 ## Limits to know
 
-- **No update route yet.** `POST /api/ezp/v2/content/node/<id>` answers 501. Update through the GraphQL mutation
-  `updateContent` ([The GraphQL API](../../features/6.0/graphql.md)), look for an update service in the `expservices`
-  catalog, or run a script on the server ([Content from PHP](content-from-php.md)).
+- **Writes need Exponential 6.0.15.** `ezprestapi` 1.2.9 writes through the kernel's `expContentWriter`; on an older
+  kernel create, update and delete answer 501. An update publishes a new version; values go as form fields or a JSON
+  body, a file as a public `http(s)` URL ([REST API v1 and v2, section 2.1](../../guides/rest-api-v1-and-v2.md#21-updating-and-the-values-of-a-write)).
+  The GraphQL mutation `updateContent` ([The GraphQL API](../../features/6.0/graphql.md)) and a script on the server
+  ([Content from PHP](content-from-php.md)) remain alternatives.
 - **`listAtom` answers 500** at v1 and v2: use the `list` route or the site's RSS export
   ([Known issue: listAtom](../../guides/rest-api-v1-and-v2.md#8-known-issue-listatom)).
 - **This is not the REST API of the Symfony platforms.** Clients written for `/api/ibexa/v2` need changes

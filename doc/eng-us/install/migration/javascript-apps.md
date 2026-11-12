@@ -64,7 +64,7 @@ front end fetches content at build or request time.
 | OAuth2 | an app that acts for signed-in users | the REST guide, section 3.1 |
 | `expservices` | the admin's functions as named HTTP services (content, users, media, tags, layouts ...) | [Remote services and apps](../../guides/remote-services-and-apps.md) |
 
-Writes over REST are limited (create and delete at v2; update answers 501 for now), so bulk imports are done on the
+Writes over REST go one item per request (create, update and delete at v2), so bulk imports are done on the
 server, not from the front end.
 
 ## 4. Addresses and redirects

@@ -46,7 +46,8 @@ tracker. Each item links to the page that explains it.
 
 - [ ] `ezprestapi` 1.2.6 or later is active and `ezprestapiprovider` removed
       ([Questions for your administrator](rest-api-v1-and-v2-for-businesses.md#questions-for-your-administrator)).
-- [ ] The app reads at v1 or v2; writes, if any, at v2; no update through REST is planned (not implemented yet).
+- [ ] The app reads at v1 or v2; writes, if any, at v2; updates through REST need `ezprestapi` 1.2.9 and
+      Exponential 6.0.15.
 - [ ] The right credential per program: OAuth2 for apps whose users sign in, a personal key for one user's script,
       an expservices token for remote services ([Apps and API keys](apps-and-api-keys.md)).
 - [ ] A dedicated integration user per app and partner, with the smallest role and scope.

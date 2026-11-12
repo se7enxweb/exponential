@@ -97,8 +97,8 @@ Layouts, gemeinsame Layouts und ihre Zuordnungsregeln werden als eine ZIP-Datei 
 
 ## Über HTTP
 
-Die REST-Schnittstelle kann ab v2 Knoten anlegen und entfernen (Aktualisierungen antworten mit 501, noch nicht
-implementiert), und `expservices` bietet die Funktionen der Administration als HTTP-Dienste an
+Die REST-Schnittstelle kann ab v2 Knoten anlegen, aktualisieren und entfernen (eine Aktualisierung ist eine neue
+Version; `ezprestapi` 1.2.9), und `expservices` bietet die Funktionen der Administration als HTTP-Dienste an
 ([Die REST-API](die-rest-api.md), [Entfernte Dienste und Apps](../../anleitungen/entfernte-dienste-und-apps.md)). Verwenden Sie
 sie, wenn der Importer auf einem anderen Rechner laufen muss; bei großen Importen ist ein Skript auf dem Server
 schneller.

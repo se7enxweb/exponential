@@ -8,7 +8,8 @@ how to call the API with curl, which settings drive it, and how to move an insta
 It is written for two readers. **Developers** who write clients or extend the API read sections 1 to 5.
 **Site administrators** who install, upgrade or check an installation read sections 5 to 8.
 
-Every statement below was checked on the demonstration server (Apache with PHP-FPM, and Velocity) on 15 October 2026.
+Every statement below was checked on the demonstration server (Apache with PHP-FPM, and Velocity) on 15 October 2026;
+the update and the JSON body of `ezprestapi` 1.2.9 were checked end to end on 12 November 2026.
 Host names, identifiers and secrets are replaced by documentation values (`example.com`, `<client id>`, `expk_...`).
 
 [Guides](README.md) · Related: [Personal API keys](api-keys.md) ·
@@ -22,6 +23,9 @@ Host names, identifiers and secrets are replaced by documentation values (`examp
   `ezp7xRestContentController`.
 - **Reads answer at v1 and v2** (`/api/ezp/v1/...`, `/api/ezp/v2/...`); **writes** (create, update, delete) answer at
   **v2 only**.
+- **Writes** are done by the kernel's `expContentWriter` (`ezprestapi` 1.2.9 with Exponential 6.0.15): an update
+  publishes a new version of the object, and create and update take a JSON body as well as form fields
+  ([section 2.1](#21-updating-and-the-values-of-a-write)). `nxc_powercontent` is no longer needed.
 - **Every read and write checks the user's policies** (`content/read`, `content/create`, `content/edit`,
   `content/remove`), whatever the request was authenticated with. The check is the kernel's
   `expRestContentPermission` and needs Exponential 6.0.15.
@@ -54,7 +58,7 @@ Host names, identifiers and secrets are replaced by documentation values (`examp
 | Auth provider `ezpRestAuthProvider` | the kernel, prefix `auth` | the OAuth2 token endpoint and the authentication routes |
 | Content provider `ezp7xRestApiProvider` | `ezprestapi`, prefixes `ezp` and `ezpl` | the content routes of v1 and v2 |
 | Content controller `ezp7xRestContentController` | `ezprestapi` | every content read and write, with the permission checks |
-| Create and delete backend | [nxc_powercontent](../features/6.0/extensions/nxc_powercontent.md) | creates and removes content for the controller |
+| Content writer `expContentWriter` | the kernel (6.0.15, `kernel/classes/contentwriter/`) | creates, updates and removes content for the controller (since `ezprestapi` 1.2.9; before, create and delete went through [nxc_powercontent](../features/6.0/extensions/nxc_powercontent.md)) |
 | Permission helper `expRestContentPermission` | the kernel (6.0.15) | asks the user's policies the way the content module does |
 | `ezprestapiprovider` 6.0.4 | deprecated shim | `ezpRestApiProvider` and `ezpRestContentController` extend the `ezprestapi` classes; maps `ezp` and `ezpl` to `ezp7xRestApiProvider` |
 
@@ -74,7 +78,7 @@ All paths below are relative to `/api/ezp/<version>` (or `/api/ezpl/<version>`).
 | `GET` | `/content/object/<id>`, `.../fields`, `.../field/<identifier>` | yes | yes | the same by object id |
 | `GET` | `/content/node/<id>/listAtom` | yes | yes | Atom feed of the children; answers 500, see [section 8](#8-known-issue-listatom) |
 | `POST` | `/content/node/create` | no | yes | create and publish below `parentNodeID` |
-| `POST` | `/content/node/<id>` | no | yes | update: checks `content/edit`, then answers 501 (not implemented yet) |
+| `POST` or `PUT` | `/content/node/<id>` | no | yes | update: publishes a new version of the node's object with the values sent, see [section 2.1](#21-updating-and-the-values-of-a-write) |
 | `DELETE` or `POST` | `/content/node/delete/<id>` | no | yes | remove the node's object with all its locations and what is below them |
 
 A write sent to v1 does not exist there and is refused. The links inside a v1 answer stay in v1, so existing clients
@@ -83,8 +87,41 @@ keep following them.
 The answers and the policies each call checks are described in
 [Personal API keys, section 3](api-keys.md#3-using-a-key-with-curl) and
 [Permissions of the REST interface](api-keys.md#32-permissions-of-the-rest-interface). In short: `200`, `201` for a
-create, `400` for a missing or unknown field, `401` without a valid token or key, `403 access_denied` when the user
-may not, `404` for an unknown node.
+create, `202` when a workflow holds an update, `400` for a missing or unknown field, `401` without a valid token or
+key, `403 access_denied` when the user may not, `404` for an unknown node.
+
+### 2.1 Updating and the values of a write
+
+`POST /content/node/<id>`, and `PUT` on the same URL (or `POST` with `_method=PUT`), publish a **new version** of the
+node's object with the attribute values sent; attributes left out keep their values. `languageLocale` is optional and
+defaults to the object's main language; a language the object does not have yet adds that translation. The new
+version goes through the `content/publish` operation, so workflows run as they do in the administration.
+
+| Answer | When |
+|---|---|
+| `200 {"message":"Updated","objectId","nodeId","version","languageLocale"}` | the new version is published |
+| `202 {"message":"Waiting for a workflow",...}` | a workflow holds the publication |
+| `400 invalid_request` | no values, an unknown attribute, a value that is not text, a file value that is not a public `http(s)` URL, or an unknown language |
+| `403 access_denied` | the user has no `content/edit` (in that language) |
+| `404 not_found` | the node does not exist |
+
+A personal API key needs the scope `edit` for an update.
+
+Create and update take the attribute values by identifier, as form fields or as a JSON object
+(`Content-Type: application/json`), always as text:
+
+- **Rich text** (`ezxmltext`): HTML, converted with the input parser of the Online Editor; links and embeds become
+  relations.
+- **Files** (`ezimage`, `ezbinaryfile`, `ezmedia`): `<URL>` or `<URL>|<alternative text or file name>`, an `http` or
+  `https` address. The file is downloaded from a public address only: a server path, `file://`, other schemes,
+  credentials in the URL and addresses that resolve to private, loopback, link-local or reserved networks are
+  refused; redirects are not followed; at most 50 MB.
+- **Every other datatype**: its text form, as the datatype's `fromString()` reads it.
+
+Since `ezprestapi` 1.2.9, create, update and delete are written by the kernel's `expContentWriter` (Exponential
+6.0.15), and the extension no longer requires `nxc_powercontent`. Before, a create went through `nxc_powercontent`,
+which read a file value from a local server path or downloaded any URL; such a value is now refused with `400`. On a
+kernel older than 6.0.15 the write calls (create, update, delete) answer `501 not_implemented`.
 
 ## 3. Authentication
 
@@ -152,6 +189,11 @@ curl -s -H "Authorization: Bearer $EXP_API_KEY" https://example.com/api/ezp/v2/c
 curl -s -H "Authorization: Bearer $EXP_API_KEY" https://example.com/api/ezp/v2/content/node/create \
      -d parentNodeID=<parent node id> -d classIdentifier=folder -d languageLocale=eng-US -d name='From a script'
 # {"message":"Created","objectId":<object id>,"nodeId":<node id>}
+
+# update it with a JSON body: a new version with these values, the other attributes keep theirs (v2 only)
+curl -s -X PUT -H "Authorization: Bearer $EXP_API_KEY" -H 'Content-Type: application/json' \
+     https://example.com/api/ezp/v2/content/node/<node id> -d '{"name": "New title", "intro": "<p>New intro</p>"}'
+# {"message":"Updated","objectId":<object id>,"nodeId":<node id>,"version":<version>,"languageLocale":"eng-US"}
 
 # remove it again (v2 only)
 curl -s -X DELETE -H "Authorization: Bearer $EXP_API_KEY" https://example.com/api/ezp/v2/content/node/delete/<node id>

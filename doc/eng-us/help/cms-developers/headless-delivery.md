@@ -29,7 +29,7 @@ as data next to its pages, or instead of them. This page lists the ways that exi
 
 | Way | Address | Authentication | Best for |
 |---|---|---|---|
-| REST interface (`ezprestapi`) | `/api/ezp/v1/...`, `/api/ezp/v2/...` | personal API key, OAuth2 token | reading nodes, children and fields; creating and removing at v2 |
+| REST interface (`ezprestapi`) | `/api/ezp/v1/...`, `/api/ezp/v2/...` | personal API key, OAuth2 token | reading nodes, children and fields; creating, updating and removing at v2 |
 | `expservices` | `/ezjscore/call/exp<domain>::<method>` | session cookie, or a personal token (`expt_...`) | the administration's functions: content, users, shop, media, layouts and more |
 | ezjscore server functions of your own | `/ezjscore/call/<class>::<function>` | the site's session and policies | small JSON calls for your own front end |
 | A module view that answers JSON | `/<your module>/<view>/...` | the site's session and policies | a custom endpoint with its own shape |
@@ -96,7 +96,8 @@ on a schedule.
 
 ## What is not there
 
-The REST interface has no working update route yet (it answers 501). Exponential 6.0.15 has a GraphQL endpoint of
+The REST interface updates content only with `ezprestapi` 1.2.9 on Exponential 6.0.15 (each update is a new version;
+it answers 501 on an older kernel). Exponential 6.0.15 also has a GraphQL endpoint of
 its own, `/api/graphql`, which reads and changes content and is off until it is switched on
 ([The GraphQL API](../../features/6.0/graphql.md)). Projects that need the Symfony platform's REST v2 and GraphQL use the Exponential Platform line, which can run next to this kernel through the
 legacy bridge ([Coming from eZ Platform or Ibexa](coming-from-ez-platform-or-ibexa.md#two-exponential-destinations),

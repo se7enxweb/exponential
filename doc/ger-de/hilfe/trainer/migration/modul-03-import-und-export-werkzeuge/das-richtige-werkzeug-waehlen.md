@@ -70,7 +70,8 @@ Abschnitte 1, 2 und 5.
 verfügbar, wenn sie installiert und aktiv ist.
 
 **Warum nicht über REST importieren?** Die Werkzeugseite: Für große Importe ist ein Skript auf dem Server schneller
-und einfacher. Aktualisieren über REST antwortet mit 501 (noch nicht implementiert).
+und einfacher. REST (Anlegen, Aktualisieren und Löschen in v2) ist für einen Importer, der auf einem anderen Rechner
+läuft.
 
 **Können Pakete Inhalte aus WordPress transportieren?** Nein. Pakete sind das Werkzeug für den Umzug zwischen
 Exponential-Installationen; sie sind kein Format, das andere Systeme erzeugen.
@@ -143,8 +144,8 @@ Verwenden Sie Ihre eigene Schulungsinstallation. Jeder Befehl in dieser Übung l
    ([Werkzeugseite, Abschnitt 1](../../../../installation/migration/exponential-tools.md#layouts-se7enxwebexplayouts)).
 4. **Falsch.** Pakete übertragen Inhalte zwischen Exponential-Installationen; andere Systeme erzeugen sie nicht
    (Werkzeugseite, Abschnitt 1).
-5. Es ist schneller und einfacher, und Aktualisierungen über REST antworten mit 501 (Werkzeugseite, Abschnitt 1, „The
-   REST API and expservices“).
+5. Es ist schneller und einfacher; REST ist für einen Importer auf einem anderen Rechner (Werkzeugseite, Abschnitt 1,
+   „The REST API and expservices“).
 
 </details>
 

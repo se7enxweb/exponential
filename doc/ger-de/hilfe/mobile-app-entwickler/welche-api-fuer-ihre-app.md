@@ -39,7 +39,7 @@ ein Bildschirm braucht.
 | Bild in einer Bildschirmgröße | keine (nur der Originalpfad) | `expimage::url`, `expimage::urls` | [Bildaliase für Bildschirmgrößen](medien-und-bilder/bildaliase-fuer-bildschirmgroessen.md) |
 | Element über den URL-Pfad (Deep Link) | keine | `expnode::getByPath` | [Knoten-IDs, Remote-IDs und Deep Links](inhaltsmodellierung/knoten-ids-remote-ids-und-deep-links.md) |
 | Anlegen und veröffentlichen | `POST /api/ezp/v2/content/node/create` | `expnode::create` | [Inhalte anlegen und entfernen](rest-api/inhalte-anlegen-und-entfernen.md) |
-| Aktualisieren | antwortet nach der Berechtigungsprüfung mit `501` | `expnode::update` | [Über expservices schreiben](json-endpunkte/ueber-expservices-schreiben.md) |
+| Aktualisieren | `POST` oder `PUT /api/ezp/v2/content/node/<id>` (eine neue Version; `ezprestapi` 1.2.9) | `expnode::update` | [Inhalte anlegen und entfernen](rest-api/inhalte-anlegen-und-entfernen.md), [Über expservices schreiben](json-endpunkte/ueber-expservices-schreiben.md) |
 | Entfernen | `DELETE /api/ezp/v2/content/node/delete/<id>` | `expnode::remove` | [Inhalte anlegen und entfernen](rest-api/inhalte-anlegen-und-entfernen.md) |
 | Sprachen der Website | keine | `explanguage::prioritized`, `explanguage::languages` | [Mehrsprachige Inhalte](inhaltsmodellierung/mehrsprachige-inhalte.md) |
 

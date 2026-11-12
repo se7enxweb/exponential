@@ -190,7 +190,7 @@ are in [REST API v1 and v2: one extension](rest-api-v1-and-v2.md).
 | `GET` | `/content/node/<id>/childrenCount`, `.../fields`, `.../field/<identifier>`, `.../listAtom` | counts, fields, Atom (`listAtom` answers 500, a [known issue](rest-api-v1-and-v2.md#8-known-issue-listatom)) |
 | `POST` | `/content/node/create` (v2) | create and publish below `parentNodeID` |
 | `DELETE` or `POST` | `/content/node/delete/<id>` (v2) | remove the node's object with all its locations and what is below them |
-| `POST` | `/content/node/<id>` (v2) | update: checks content/edit, then answers 501, updating is not implemented yet |
+| `POST` or `PUT` | `/content/node/<id>` (v2) | update: publishes a new version of the node's object with the values sent, as form fields or a JSON body (`ezprestapi` 1.2.9, see [section 2.1 of the REST guide](rest-api-v1-and-v2.md#21-updating-and-the-values-of-a-write)) |
 
 ```bash
 # create a folder below node 1234 (fields: parentNodeID, classIdentifier, languageLocale, then the attributes)

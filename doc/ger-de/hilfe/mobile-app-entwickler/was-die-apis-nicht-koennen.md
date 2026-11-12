@@ -3,8 +3,8 @@ title: Was die APIs nicht können
 audience: mobile-app-developer, app-creator, developer, project-manager
 category: mobile-apps
 order: 12
-summary: Die bekannten Lücken der HTTP-Schnittstellen von Exponential für App-Entwickler, jede im Code geprüft - kein SDK, keine Aktualisierungs- oder Suchroute in REST, keine Bildaliase oder Uploads in REST-Antworten, kein PKCE und keine öffentlichen OAuth-Clients, kein zurückgegebener state-Parameter, keine CORS-Header, keine Push-Benachrichtigungen, listAtom antwortet mit 500 - mit dem Umweg für jede.
-keywords: Einschränkungen, Lücken, bekannte Probleme, nicht implementiert, 501, listAtom, PKCE, state, Client-Secret, CORS, Push-Benachrichtigungen, SDK, Upload, Bildalias, Suche, Mobile App, limitations, gaps, known issues, not implemented, client secret, push notifications, image alias, search, mobile app
+summary: Die bekannten Lücken der HTTP-Schnittstellen von Exponential für App-Entwickler, jede im Code geprüft - kein SDK, keine Suchroute in REST, keine Bildaliase oder Uploads in REST-Antworten, kein PKCE und keine öffentlichen OAuth-Clients, kein zurückgegebener state-Parameter, keine CORS-Header, keine Push-Benachrichtigungen, listAtom antwortet mit 500 - mit dem Umweg für jede.
+keywords: Einschränkungen, Lücken, bekannte Probleme, nicht implementiert, listAtom, PKCE, state, Client-Secret, CORS, Push-Benachrichtigungen, SDK, Upload, Bildalias, Suche, Mobile App, limitations, gaps, known issues, not implemented, client secret, push notifications, image alias, search, mobile app
 type: help
 ---
 # Was die APIs nicht können
@@ -26,7 +26,6 @@ Sprint zu entdecken.
 
 | Lücke | Beleg | Umweg |
 |---|---|---|
-| Das Aktualisieren von Inhalten antwortet mit `501` | `doUpdateContentNode()` prüft `content/edit` und antwortet dann mit `not_implemented` | `expnode::update` von expservices ([Über expservices schreiben](json-endpunkte/ueber-expservices-schreiben.md)) |
 | Keine Suchroute | die Routentabelle von `ezp7xRestApiProvider` enthält keine | `expsearch::search` ([Inhalte suchen](json-endpunkte/inhalte-suchen.md)) |
 | Bilder kommen nur als Pfad der Originaldatei | `attributeOutputData()` schneidet die `ezimage`-Zeichenkette bei `\|` ab | `expimage::url` für einen Alias ([Bilder in REST-Antworten](medien-und-bilder/bilder-in-rest-antworten.md)) |
 | Rich Text kommt als reiner Text | `ezxmltext`-Werte laufen durch `strip_tags()` | `OutputFormat=xhtml` mit einem Template der Website oder ein eigener Endpunkt ([Rich Text in Apps](inhaltsmodellierung/rich-text-in-apps.md)) |
@@ -64,7 +63,8 @@ Native Apps sind keine Browser und von CORS nicht betroffen.
   können Ihren Push-Dienst über ein Workflow-Ereignis oder einen Listener aufrufen, den ein Anwendungsentwickler
   schreibt ([Workflows, Trigger und Ereignisse](../ersteller/anwendungsentwickler/workflows-und-ereignisse.md)).
 - **Keine Uploads.** Weder REST noch expservices dokumentieren einen Weg, ein Bild oder eine Datei von einem Gerät zu
-  senden. expservices lehnt entfernte Schreibzugriffe auf Felder vom Typ `ezimage`, `ezbinaryfile`, `ezmedia`,
+  senden. REST nimmt einen Dateiwert nur als öffentliche `http(s)`-URL an, die der Server herunterlädt (`ezprestapi`
+  1.2.9). expservices lehnt entfernte Schreibzugriffe auf Felder vom Typ `ezimage`, `ezbinaryfile`, `ezmedia`,
   `ezuser`, `ezpassword` und `ezflowblock` ab ([Dateien und Uploads](medien-und-bilder/dateien-und-uploads.md)).
 - **Kein Änderungs-Feed.** Es gibt keine Route „alles, was sich seit ... geändert hat“ für den ganzen Baum; was es
   gibt, steht in [Synchronisation und Offline-Lesen](offline-und-leistung/synchronisation-und-offline-lesen.md).

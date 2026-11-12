@@ -38,7 +38,7 @@ wie Sie ein Integrationsprojekt von der Analyse bis zur Übergabe durchführen.
 ## Exponential integrieren, in einer Minute
 
 - **Zwei HTTP-APIs werden mit dem Produkt ausgeliefert.** Die REST-Inhalts-API der Erweiterung `ezprestapi` antwortet
-  unter `/api/ezp/v1/` und `/api/ezp/v2/` (Lesen in beiden Versionen, Anlegen und Löschen in v2), und die Erweiterung
+  unter `/api/ezp/v1/` und `/api/ezp/v2/` (Lesen in beiden Versionen, Anlegen, Aktualisieren und Löschen in v2), und die Erweiterung
   `expservices` bietet etwa tausend benannte Dienste als JSON unter `/ezjscore/call/exp<domain>::<method>` an
   ([REST-API für Integratoren](rest-api-fuer-integratoren.md), [Remote-Dienste mit expservices](entfernte-dienste-mit-expservices.md)).
 - **Drei Arten von Zugangsdaten.** OAuth-2.0-Anwendungen, registriert unter Setup > oAuth-Verwaltung, persönliche

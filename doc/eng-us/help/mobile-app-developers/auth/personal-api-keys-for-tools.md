@@ -45,7 +45,7 @@ services, which have tokens of their own ([expservices tokens in apps](expservic
 |---|---|---|
 | `read` | `content/read` | every `GET` and `HEAD` route |
 | `publish` | `content/create` | `POST /api/ezp/v2/content/node/create` |
-| `edit` | `content/edit` | `POST /api/ezp/v2/content/node/<id>` (which answers `501` today) |
+| `edit` | `content/edit` | `POST` or `PUT /api/ezp/v2/content/node/<id>` (update) |
 | `remove` | `content/remove` | `DELETE /api/ezp/v2/content/node/delete/<id>` |
 
 The mapping is `rest.ini [ApiKeySettings] Scopes[]` and `RouteScopes[]`. A test that only reads gets only `read`.

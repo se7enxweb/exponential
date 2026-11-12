@@ -27,7 +27,7 @@ can run. An MCP server is not part of Exponential today, so an agent uses one of
 | | REST API | expservices | ezjscore function of your own | Console on the server |
 |---|---|---|---|---|
 | Ships with the root repository | Yes (kernel) | Yes (default distribution) | Yes (ezjscore) | Yes (kernel) |
-| Reaches | Nodes, children, fields, objects; create and remove in v2 | Over a thousand named services of the administration | What you write | Settings with their source files, access checks, logs, the audit trail, the help |
+| Reaches | Nodes, children, fields, objects; create, update and remove in v2 | Over a thousand named services of the administration | What you write | Settings with their source files, access checks, logs, the audit trail, the help |
 | Authenticates | OAuth2 token or personal API key with scopes | Session, or a personal token `expt_...` | Session; your own policy check | The system user that runs the command |
 | Writes | As the key's owner, limited by scope | As the token's user; POST | As you define | Avoid: give a coding agent read commands only |
 | Runs where | Anywhere over HTTPS | Anywhere over HTTPS | Usually the browser | On the server, or a development copy |

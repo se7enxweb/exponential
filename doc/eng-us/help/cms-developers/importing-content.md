@@ -94,7 +94,7 @@ Layouts, shared layouts and their mapping rules travel as one ZIP file
 
 ## Over HTTP
 
-The REST interface can create and remove nodes at v2 (updates answer 501, not implemented yet), and `expservices`
+The REST interface can create, update and remove nodes at v2 (an update is a new version; `ezprestapi` 1.2.9), and `expservices`
 offers the administration's functions as HTTP services ([The REST API](the-rest-api.md),
 [Remote services and apps](../../guides/remote-services-and-apps.md)). Use them when the importer must run on another
 machine; for large imports a script on the server is faster.

@@ -200,7 +200,7 @@ Konfiguration stehen in [REST-API v1 und v2: eine Extension](rest-api-v1-und-v2.
 | `GET` | `/content/node/<id>/childrenCount`, `.../fields`, `.../field/<identifier>`, `.../listAtom` | Anzahlen, Felder, Atom (`listAtom` antwortet mit 500, ein [bekanntes Problem](rest-api-v1-und-v2.md#8-bekanntes-problem-listatom)) |
 | `POST` | `/content/node/create` (v2) | unter `parentNodeID` anlegen und veröffentlichen |
 | `DELETE` oder `POST` | `/content/node/delete/<id>` (v2) | das Objekt des Knotens mit allen seinen Orten und allem darunter entfernen |
-| `POST` | `/content/node/<id>` (v2) | aktualisieren: prüft content/edit und antwortet dann mit 501, Aktualisieren ist noch nicht implementiert |
+| `POST` oder `PUT` | `/content/node/<id>` (v2) | aktualisieren: veröffentlicht eine neue Version des Objekts des Knotens mit den gesendeten Werten, als Formularfelder oder JSON-Body (`ezprestapi` 1.2.9, siehe [Abschnitt 2.1 der REST-Anleitung](rest-api-v1-und-v2.md#21-ändern-und-die-werte-eines-schreibzugriffs)) |
 
 ```bash
 # create a folder below node 1234 (fields: parentNodeID, classIdentifier, languageLocale, then the attributes)

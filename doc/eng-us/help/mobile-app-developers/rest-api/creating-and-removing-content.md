@@ -3,14 +3,16 @@ title: Creating and removing content
 audience: mobile-app-developer, app-creator, developer
 category: mobile-apps
 order: 180
-summary: Write content from an app through the REST API at v2 - create and publish with parentNodeID, classIdentifier, languageLocale and the field values as form fields, the 201 answer, removing with DELETE, the permission checks, scopes for API keys, the _method override, and what update does today.
-keywords: create, publish, POST, content/node/create, parentNodeID, classIdentifier, languageLocale, form fields, 201, delete, remove, DELETE, _method, update, 501, nxc_powercontent, content/create, content/remove, REST, mobile app
+summary: Write content from an app through the REST API at v2 - create and publish with parentNodeID, classIdentifier, languageLocale and the field values as form fields or JSON, the 201 answer, updating with POST or PUT as a new version, removing with DELETE, the permission checks, scopes for API keys and the _method override.
+keywords: create, publish, POST, PUT, content/node/create, parentNodeID, classIdentifier, languageLocale, form fields, JSON, 201, delete, remove, DELETE, _method, update, new version, expContentWriter, content/create, content/edit, content/remove, REST, mobile app
 type: help
 ---
 # Creating and removing content
 
-This page is for app developers whose app adds content: a report from the field, a user submission, an entry
-imported from a device. It explains the two write routes of the REST API, which answer at v2 only.
+This page is for app developers whose app adds or changes content: a report from the field, a user submission, an
+entry imported from a device. It explains the write routes of the REST API (create, update, remove), which answer at
+v2 only. Update needs `ezprestapi` 1.2.9, which writes through the kernel of Exponential 6.0.15; on an older kernel
+its write routes answer `501`.
 
 ## Contents
 
@@ -40,18 +42,21 @@ curl -s -H "Authorization: Bearer $EXP_API_KEY" https://example.com/api/ezp/v2/c
 | any field identifier of the class | as the class needs | the value of that field, for example `name` for a folder or `title` for an article |
 
 The answer is `201` with `objectId` and `nodeId` (the new main node). The item is published at once: the controller
-creates it through `nxc_powercontent` with visibility on, and "a create publishes when `content/create` allows it, and
+creates it through the kernel's `expContentWriter`, and "a create publishes when `content/create` allows it, and
 the publish workflow runs as for the content module" ([Permissions of the REST interface](../../../guides/api-keys.md#32-permissions-of-the-rest-interface)).
 
 Field values are strings. A rich text field is parsed by the online editor's input parser, so it takes simple HTML
-such as `<p>Text</p>`. Do not send image or file fields from an app: no documented route takes a file from a device
-([Files and uploads](../media-and-images/files-and-uploads.md)).
+such as `<p>Text</p>`; links and embeds become relations. An image or file field (`ezimage`, `ezbinaryfile`,
+`ezmedia`) takes a public `http(s)` URL, or `<URL>|<alternative text or file name>`, which the server downloads: a
+server path, `file://`, credentials in the URL and addresses in private, loopback, link-local or reserved networks are
+refused, redirects are not followed, and a file may be at most 50 MB. No route takes a file from the device itself
+([Files and uploads](../media-and-images/files-and-uploads.md)). Every other field takes its text form.
 
 ## How to send the body
 
-The controller reads the fields from PHP's `$_POST`, so send them **form encoded**
-(`application/x-www-form-urlencoded`, which `curl -d` does, or `multipart/form-data`). A JSON body is not read by
-this route. In app code:
+Send the fields **form encoded** (`application/x-www-form-urlencoded`, which `curl -d` does, or
+`multipart/form-data`), or as a **JSON object** with `Content-Type: application/json` (`ezprestapi` 1.2.9). Create and
+update read both. In app code:
 
 ```kotlin
 // Kotlin, OkHttp
@@ -87,10 +92,24 @@ clients that cannot send one. Ask the user to confirm in the app; there is no un
 
 ## Update
 
-`POST /api/ezp/v2/content/node/<id>` checks `content/edit` for the node in the posted `languageLocale` and then
-answers `501` with `not_implemented`: "Updating content over REST is not implemented yet". To change an existing
-item from an app, use `expnode::update` of the remote services
-([Writing through expservices](../json-endpoints/writing-through-expservices.md)).
+```bash
+curl -s -X PUT -H "Authorization: Bearer $EXP_API_KEY" -H 'Content-Type: application/json' \
+     https://example.com/api/ezp/v2/content/node/<node id> -d '{"name": "New title", "intro": "<p>New intro</p>"}'
+```
+
+```json
+{"message":"Updated","objectId":<object id>,"nodeId":<node id>,"version":<version>,"languageLocale":"eng-US"}
+```
+
+`POST` or `PUT` on `/api/ezp/v2/content/node/<id>` (or a `POST` with `_method=PUT`) publishes a **new version** of the
+node's object with the fields sent; fields left out keep their values. `languageLocale` is optional and defaults to
+the object's main language; a language the object does not have yet adds that translation. The new version goes
+through the publish operation, so workflows run: when one holds the publication, the answer is `202` with
+"Waiting for a workflow". The values follow the same rules as for a create. A `400` means no values, an unknown
+field, a value that is not text, a file value that is not a public `http(s)` URL, or an unknown language.
+
+On a server older than Exponential 6.0.15 the route answers `501` with `not_implemented`; there, change an item with
+`expnode::update` of the remote services ([Writing through expservices](../json-endpoints/writing-through-expservices.md)).
 
 ## Permissions and scopes
 
@@ -98,7 +117,7 @@ item from an app, use `expnode::update` of the remote services
 |---|---|---|
 | create | `content/create` of the class below the parent, in the language (Class, ParentClass, Section, Node, Subtree and Language limitations) | `publish` |
 | remove | `content/remove` of every location and of everything below them | `remove` |
-| update | `content/edit` of the node (and `user/selfedit` for one's own user) | `edit` |
+| update | `content/edit` of the node in the language written (and `user/selfedit` for one's own user) | `edit` |
 
 A refusal answers `403` with `access_denied` and a message such as "You may not create 'article' below node 60 in
 eng-US (content/create)." and changes nothing ([api-keys guide, 3.2](../../../guides/api-keys.md#32-permissions-of-the-rest-interface)).

@@ -1,7 +1,7 @@
 # ezprestapi: a REST content provider for remote updates
 
 This page is for developers who publish content into Exponential from scripts and other services. `ezprestapi` is a
-REST API provider (versions 1 and 2 of the `ezp` API) for **updating content remotely**: other systems list, read, create and
+REST API provider (versions 1 and 2 of the `ezp` API) for **updating content remotely**: other systems list, read, create, update and
 delete nodes over HTTP with an OAuth token. It is a registered provider of the kernel's REST framework.
 
 Since 1.2.6 it serves REST API v1 and v2 as **one** extension: one activation (`ActiveExtensions[]=ezprestapi`), one
@@ -37,7 +37,12 @@ The template of `OutputFormat=xhtml` is set for this extension's controller (1.2
 Template=rest_pagelayout.tpl
 ```
 
-The create and delete calls are backed by [nxc_powercontent](nxc_powercontent.md) (an update is checked, then answers 501). Authentication is the REST
+Since 1.2.9 the create, update and delete calls are written by the kernel's `expContentWriter`
+(`kernel/classes/contentwriter/expcontentwriter.php`, Exponential 6.0.15); the extension no longer requires
+[nxc_powercontent](nxc_powercontent.md). An update publishes a new version of the node's object with the values sent
+([Writing content](#writing-content)). On a kernel older than 6.0.15 the write calls answer `501 not_implemented`.
+
+Authentication is the REST
 framework's OAuth2: obtain a token at `POST /api/auth/v1/oauth/token` (grants `authorization_code` and
 `refresh_token`) and send it in the `Authorization: Bearer` (or `OAuth`) header; the `oauth_token` parameter is read
 from a POST form body, and from the query string only with `rest.ini [OAuthSettings] AllowTokenInQuery=enabled`
@@ -51,7 +56,7 @@ A user can also make a [personal API key](../../../guides/api-keys.md) on the si
 Since 1.2.5 the controller checks the current user's policies before every call, whatever the request was
 authenticated with, the way the content module checks them: `content/read` for reads (a list or count also of its
 parent node), `content/create` of the class below `parentNodeID` in `languageLocale` (with every limitation),
-`content/edit` for an update, `content/remove` of every location of the object and everything below them for a
+`content/edit` for an update (in its language), `content/remove` of every location of the object and everything below them for a
 removal. A refusal answers `403 {"error":"access_denied","error_message":...}` and writes nothing. Before 1.2.5 the
 writes asked nothing: an OAuth token could create and remove where its user had no right to. The check is the kernel's
 `expRestContentPermission` (Exponential 6.0.15); on an older kernel the extension refuses every write with 403
@@ -61,12 +66,31 @@ rather than run it unchecked. The details are in the guide:
 | Answer | When |
 |---|---|
 | `201 {"message":"Created","objectId","nodeId"}` | a create was published |
+| `200 {"message":"Updated","objectId","nodeId","version","languageLocale"}` | an update was published as a new version |
+| `202 {"message":"Waiting for a workflow",...}` | a workflow holds the publication of an update |
 | `200 {"message":"Removed","nodeId","objectId"}` | a removal is done |
-| `400 invalid_request` | `parentNodeID`, `classIdentifier` or `languageLocale` is missing, or names a class or language that does not exist |
+| `400 invalid_request` | `parentNodeID`, `classIdentifier` or `languageLocale` is missing, or names a class or language that does not exist; an update without values; an unknown attribute, a value that is not text, or a file value that is not a public `http(s)` URL |
 | `403 access_denied` | the user may not do it |
 | `404 not_found` | the node does not exist |
-| `501 not_implemented` | an allowed update: updating the attribute values is not implemented yet, nothing changes |
+| `501 not_implemented` | a write on a kernel older than 6.0.15 (no `expContentWriter`) |
 | `401` | no or an invalid token or key (a `POST` or `DELETE` too; before 6.0.15 they answered 405) |
+
+## Writing content
+
+`POST /content/node/<id>` and `PUT` on the same URL (or `POST` with `_method=PUT`) publish a new version of the node's
+object; attributes left out keep their values. `languageLocale` is optional (default: the object's main language); a
+language the object does not have yet adds that translation. The new version goes through the `content/publish`
+operation, so workflows run. A personal API key needs the `edit` scope
+(`RouteScopes[ezp7xRestContentController_UpdateContentNode]=edit`).
+
+Create and update accept the values as form fields or as a JSON object (`Content-Type: application/json`), by
+attribute identifier and as text: rich text (`ezxmltext`) as HTML, converted with the Online Editor's input parser
+(links and embeds become relations); files (`ezimage`, `ezbinaryfile`, `ezmedia`) as `<http(s) URL>` or
+`<URL>|<alternative text or file name>`, downloaded from a public address only (no server path, `file://`, other
+scheme, credentials in the URL, or address in a private, loopback, link-local or reserved network; no redirects; at
+most 50 MB); every other datatype in its text form (`fromString()`). Before 1.2.9 a create read a file value from a
+local server path or downloaded any URL through `nxc_powercontent`. The guide has the details and a curl example:
+[Updating and the values of a write](../../../guides/rest-api-v1-and-v2.md#21-updating-and-the-values-of-a-write).
 
 ## Routes
 
@@ -82,7 +106,7 @@ Registered by `ezp7xRestApiProvider` (`classes/rest_provider.php`); all but the 
 | `GET /content/node/:nodeId/listAtom` (`ezpRestAtomController`) | v1, v2 | Atom feed (answers 500: [known issue](../../../guides/rest-api-v1-and-v2.md#8-known-issue-listatom)) |
 | `POST /content/node/create` | v2 | Create and publish content |
 | `DELETE` or `POST /content/node/delete/:nodeId` | v2 | Remove the node's object |
-| `POST /content/node/:nodeId` | v2 | Update (checked, then 501: not implemented yet) |
+| `POST` or `PUT /content/node/:nodeId` | v2 | Update: publish a new version with the values sent |
 
 | Before 1.2.5 and 6.0.15 | Since |
 |---|---|
@@ -122,6 +146,7 @@ credentials or tokens in a script, or in shell history on shared machines.
 | 1.2.1 to 1.2.4 | 27 September to 2 October 2026 | Version, license and website; description; 7x and Exponential Foundation headers on the entry point files; commands and cronjob parts are classes the files call and start through the shared helpers. |
 | 1.2.5 | 6 October 2026 | Every read and write checks the current user's policies for every kind of authentication; reads answer at v1 again; delete takes `DELETE`; create and delete answer 201 and 200 with the ids. Needs Exponential 6.0.15 for the checks and v1. |
 | 1.2.6 | 15 October 2026 | `OutputFormat=xhtml` renders again (`[ezp7xRestContentController_viewContent_OutputSettings] Template=rest_pagelayout.tpl`; it answered an empty `renderedOutput`); name, description and README say the extension serves REST API v1 and v2 and replaces ezprestapiprovider; the model tests moved in from ezprestapiprovider. |
+| 1.2.9 | 12 November 2026 | REST v2 updates content (`POST` or `PUT /content/node/<id>` publishes a new version); create and update accept a JSON body; create, update and delete are written by the kernel's `expContentWriter`, so `nxc_powercontent` is no longer required; file values are downloaded from public `http(s)` addresses only. Needs Exponential 6.0.15 for the writes. |
 
 [ezprestapiprovider](ezprestapiprovider.md) is deprecated; its final release, 6.0.4, is a compatibility shim that
 extends this extension's provider and controller. See the

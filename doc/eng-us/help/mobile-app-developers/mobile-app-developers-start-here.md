@@ -44,7 +44,7 @@ explains it with real answers.
 
 | Interface | URL pattern | Best for | Read |
 |---|---|---|---|
-| REST content API (`ezprestapi`) | `/api/ezp/v1/...` and `/api/ezp/v2/...` | reading nodes, children and fields; creating and removing content (v2) | [REST API](rest-api/README.md) |
+| REST content API (`ezprestapi`) | `/api/ezp/v1/...` and `/api/ezp/v2/...` | reading nodes, children and fields; creating, updating and removing content (v2) | [REST API](rest-api/README.md) |
 | Remote services (`expservices`) | `/ezjscore/call/exp<domain>::<method>` | search, image alias URLs, URL aliases, languages, updates; over a thousand services | [JSON endpoints](json-endpoints/README.md) |
 | ezjscore server functions | `/ezjscore/call/<name>::<function>` | a small JSON endpoint written for your app by a PHP developer | [ezjscore server functions for your app](json-endpoints/ezjscore-server-functions-for-your-app.md) |
 

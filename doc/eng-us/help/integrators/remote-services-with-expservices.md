@@ -32,7 +32,7 @@ interface at `/ezjscore/call/exp<domain>::<method>`. The tutorial with the shipp
 |---|---|---|
 | Read a node, its children, fields | yes | yes (`expnode::get`, `expnode::children`, `expobject::dataMap`) |
 | Create and publish | yes (no `remote_id`) | yes, with `remote_id` (`expobject::create`) |
-| Update an object with a new published version | no (`501`) | yes (`expobject::update`) |
+| Update an object with a new published version | yes (`ezprestapi` 1.2.9, by node id) | yes (`expobject::update`) |
 | Find an object by remote id | no | yes (`expobject::getByRemoteId`) |
 | Search | no | yes (`expsearch::search`, `count`, `facets`) |
 | Move, hide, copy, state, section on a subtree | no | yes, as content jobs (`expcontentjob::*`) |

@@ -82,7 +82,6 @@ Plan the following as custom work, or choose another approach:
 | XML-RPC | Not implemented; use REST or SOAP |
 | SAML or an OpenID Connect provider | Write a login or SSO handler, or put an identity-aware proxy in front ([Single sign-on](single-sign-on-and-social-login.md)) |
 | Content webhooks without GraphQL | The GraphQL webhooks above need the GraphQL end point switched on; otherwise use the audit webhook sink with `content.object.publish` switched on ([Audit webhooks](outgoing-webhooks-from-the-audit-trail.md)), or a workflow event or event listener of your own |
-| Updating content through REST | `POST /api/ezp/v2/content/node/<id>` checks `content/edit` and answers 501; update through the GraphQL mutation `updateContent`, from PHP, or through `expservices` |
 | A message broker connector (AMQP, Kafka) | Publish from a workflow event or a cronjob through a PHP client library you add to your extension |
 | An MCP server in the kernel | The kernel repository ships none ([AI, job queue and MCP](ai-job-queue-and-mcp.md)) |
 

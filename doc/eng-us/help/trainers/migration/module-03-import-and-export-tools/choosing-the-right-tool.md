@@ -69,7 +69,7 @@ and 5.
 the other extensions the tools page names. Tools of an extension are available when it is installed and active.
 
 **Why not import through REST?** The tools page: for large imports a script on the server is faster and simpler.
-Updating through REST answers 501 (not implemented yet).
+REST (create, update and delete at v2) is for an importer that runs on another machine.
 
 **Can packages carry content from WordPress?** No. Packages are the tool for moving between Exponential
 installations; they are not a format other systems produce.
@@ -137,7 +137,8 @@ Use your own training installation. Every command in this exercise only reads.
    ([tools page, section 1](../../../../install/migration/exponential-tools.md#layouts-se7enxwebexplayouts)).
 4. **False.** Packages move content between Exponential installations; other systems do not produce them (tools page,
    section 1).
-5. It is faster and simpler, and REST updates answer 501 (tools page, section 1, "The REST API and expservices").
+5. It is faster and simpler; REST is for an importer on another machine (tools page, section 1, "The REST API and
+   expservices").
 
 </details>
 

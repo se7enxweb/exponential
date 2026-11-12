@@ -3,15 +3,17 @@ title: Inhalte anlegen und entfernen
 audience: mobile-app-developer, app-creator, developer
 category: mobile-apps
 order: 180
-summary: Inhalte aus einer App über die REST-API unter v2 schreiben - anlegen und veröffentlichen mit parentNodeID, classIdentifier, languageLocale und den Feldwerten als Formularfelder, die Antwort 201, Entfernen mit DELETE, die Berechtigungsprüfungen, Scopes für API-Schlüssel, die Überschreibung mit _method und was das Aktualisieren heute tut.
-keywords: anlegen, veröffentlichen, POST, content/node/create, parentNodeID, classIdentifier, languageLocale, Formularfelder, 201, löschen, entfernen, DELETE, _method, aktualisieren, 501, nxc_powercontent, content/create, content/remove, REST, Mobile App, create, publish, form fields, delete, remove, update, mobile app
+summary: Inhalte aus einer App über die REST-API unter v2 schreiben - anlegen und veröffentlichen mit parentNodeID, classIdentifier, languageLocale und den Feldwerten als Formularfelder oder JSON, die Antwort 201, Aktualisieren mit POST oder PUT als neue Version, Entfernen mit DELETE, die Berechtigungsprüfungen, Scopes für API-Schlüssel und die Überschreibung mit _method.
+keywords: anlegen, veröffentlichen, POST, PUT, content/node/create, parentNodeID, classIdentifier, languageLocale, Formularfelder, JSON, 201, löschen, entfernen, DELETE, _method, aktualisieren, neue Version, expContentWriter, content/create, content/edit, content/remove, REST, Mobile App, create, publish, form fields, delete, remove, update, new version, mobile app
 type: help
 ---
 # Inhalte anlegen und entfernen
 
-Diese Seite richtet sich an App-Entwickler, deren App Inhalte hinzufügt: einen Bericht aus dem Außeneinsatz, eine
-Einsendung eines Benutzers, einen von einem Gerät importierten Eintrag. Sie erklärt die beiden Schreibrouten der
-REST-API, die nur unter v2 antworten.
+Diese Seite richtet sich an App-Entwickler, deren App Inhalte hinzufügt oder ändert: einen Bericht aus dem
+Außeneinsatz, eine Einsendung eines Benutzers, einen von einem Gerät importierten Eintrag. Sie erklärt die
+Schreibrouten der REST-API (Anlegen, Aktualisieren, Entfernen), die nur unter v2 antworten. Das Aktualisieren braucht
+`ezprestapi` 1.2.9, das über den Kernel von Exponential 6.0.15 schreibt; auf einem älteren Kernel antworten seine
+Schreibrouten mit `501`.
 
 ## Inhalt
 
@@ -41,19 +43,23 @@ curl -s -H "Authorization: Bearer $EXP_API_KEY" https://example.com/api/ezp/v2/c
 | jeder Feldbezeichner der Klasse | soweit die Klasse es verlangt | der Wert dieses Feldes, zum Beispiel `name` bei einem Ordner oder `title` bei einem Artikel |
 
 Die Antwort ist `201` mit `objectId` und `nodeId` (dem neuen Hauptknoten). Das Element wird sofort veröffentlicht:
-Der Controller legt es über `nxc_powercontent` sichtbar an, und „ein Anlegen veröffentlicht, wenn `content/create`
+Der Controller legt es über `expContentWriter` aus dem Kernel an, und „ein Anlegen veröffentlicht, wenn `content/create`
 es erlaubt, und der Veröffentlichungs-Workflow läuft wie beim Content-Modul“
 ([Berechtigungen der REST-Schnittstelle](../../../anleitungen/api-schluessel.md#32-berechtigungen-der-rest-schnittstelle)).
 
 Feldwerte sind Zeichenketten. Ein Rich-Text-Feld wird vom Eingabeparser des Online-Editors verarbeitet und nimmt
-daher einfaches HTML wie `<p>Text</p>` an. Senden Sie aus einer App keine Bild- oder Dateifelder: Keine
-dokumentierte Route nimmt eine Datei von einem Gerät entgegen ([Dateien und Uploads](../medien-und-bilder/dateien-und-uploads.md)).
+daher einfaches HTML wie `<p>Text</p>` an; Links und Einbettungen werden zu Beziehungen. Ein Bild- oder Dateifeld
+(`ezimage`, `ezbinaryfile`, `ezmedia`) nimmt eine öffentliche `http(s)`-URL oder `<URL>|<Alternativtext oder Dateiname>`
+an, die der Server herunterlädt: Ein Serverpfad, `file://`, Zugangsdaten in der URL und Adressen in privaten,
+Loopback-, Link-Local- oder reservierten Netzen werden abgewiesen, Weiterleitungen werden nicht verfolgt, und eine
+Datei darf höchstens 50 MB groß sein. Keine Route nimmt eine Datei direkt vom Gerät entgegen
+([Dateien und Uploads](../medien-und-bilder/dateien-und-uploads.md)). Jedes andere Feld nimmt seine Textform an.
 
 ## Wie Sie den Body senden
 
-Der Controller liest die Felder aus `$_POST` von PHP; senden Sie sie daher **formularkodiert**
-(`application/x-www-form-urlencoded`, wie es `curl -d` tut, oder `multipart/form-data`). Einen JSON-Body liest diese
-Route nicht. Im App-Code:
+Senden Sie die Felder **formularkodiert** (`application/x-www-form-urlencoded`, wie es `curl -d` tut, oder
+`multipart/form-data`) oder als **JSON-Objekt** mit `Content-Type: application/json` (`ezprestapi` 1.2.9). Anlegen und
+Aktualisieren lesen beides. Im App-Code:
 
 ```kotlin
 // Kotlin, OkHttp
@@ -90,11 +96,25 @@ App bestätigen; es gibt keine Route zum Rückgängigmachen.
 
 ## Aktualisieren
 
-`POST /api/ezp/v2/content/node/<id>` prüft `content/edit` für den Knoten in der gesendeten `languageLocale` und
-antwortet dann mit `501` und `not_implemented`: „Updating content over REST is not implemented yet“ (das
-Aktualisieren von Inhalten über REST ist noch nicht implementiert). Um ein bestehendes Element aus einer App zu
-ändern, verwenden Sie `expnode::update` der Remote-Dienste
-([Über expservices schreiben](../json-endpunkte/ueber-expservices-schreiben.md)).
+```bash
+curl -s -X PUT -H "Authorization: Bearer $EXP_API_KEY" -H 'Content-Type: application/json' \
+     https://example.com/api/ezp/v2/content/node/<node id> -d '{"name": "New title", "intro": "<p>New intro</p>"}'
+```
+
+```json
+{"message":"Updated","objectId":<object id>,"nodeId":<node id>,"version":<version>,"languageLocale":"eng-US"}
+```
+
+`POST` oder `PUT` auf `/api/ezp/v2/content/node/<id>` (oder ein `POST` mit `_method=PUT`) veröffentlicht eine **neue
+Version** des Objekts des Knotens mit den gesendeten Feldern; nicht gesendete Felder behalten ihre Werte.
+`languageLocale` ist optional, Standard ist die Hauptsprache des Objekts; eine Sprache, die das Objekt noch nicht hat,
+fügt diese Übersetzung hinzu. Die neue Version durchläuft die Veröffentlichungsoperation, Workflows laufen also: Hält
+einer die Veröffentlichung zurück, lautet die Antwort `202` mit „Waiting for a workflow“. Für die Werte gelten
+dieselben Regeln wie beim Anlegen. Ein `400` bedeutet keine Werte, ein unbekanntes Feld, einen Wert, der kein Text
+ist, einen Dateiwert, der keine öffentliche `http(s)`-URL ist, oder eine unbekannte Sprache.
+
+Auf einem Server älter als Exponential 6.0.15 antwortet die Route mit `501` und `not_implemented`; ändern Sie ein
+Element dort mit `expnode::update` der Remote-Dienste ([Über expservices schreiben](../json-endpunkte/ueber-expservices-schreiben.md)).
 
 ## Berechtigungen und Scopes
 
@@ -102,7 +122,7 @@ Aktualisieren von Inhalten über REST ist noch nicht implementiert). Um ein best
 |---|---|---|
 | Anlegen | `content/create` der Klasse unterhalb des Elternknotens, in der Sprache (Einschränkungen Class, ParentClass, Section, Node, Subtree und Language) | `publish` |
 | Entfernen | `content/remove` jeder Platzierung und von allem darunter | `remove` |
-| Aktualisieren | `content/edit` des Knotens (und `user/selfedit` für den eigenen Benutzer) | `edit` |
+| Aktualisieren | `content/edit` des Knotens in der geschriebenen Sprache (und `user/selfedit` für den eigenen Benutzer) | `edit` |
 
 Eine Ablehnung antwortet mit `403` und `access_denied` sowie einer Meldung wie „You may not create 'article' below
 node 60 in eng-US (content/create).“ und ändert nichts ([Leitfaden zu API-Schlüsseln, 3.2](../../../anleitungen/api-schluessel.md#32-berechtigungen-der-rest-schnittstelle)).

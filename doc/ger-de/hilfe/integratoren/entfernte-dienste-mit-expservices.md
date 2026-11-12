@@ -32,7 +32,7 @@ Entwickler ist [expservices](../erweiterungsentwicklung/teil-8-referenz/expservi
 |---|---|---|
 | Einen Knoten, seine Kinder, Felder lesen | ja | ja (`expnode::get`, `expnode::children`, `expobject::dataMap`) |
 | Anlegen und veröffentlichen | ja (ohne `remote_id`) | ja, mit `remote_id` (`expobject::create`) |
-| Ein Objekt mit einer neuen veröffentlichten Version aktualisieren | nein (`501`) | ja (`expobject::update`) |
+| Ein Objekt mit einer neuen veröffentlichten Version aktualisieren | ja (`ezprestapi` 1.2.9, über die Knoten-ID) | ja (`expobject::update`) |
 | Ein Objekt über die Remote-ID finden | nein | ja (`expobject::getByRemoteId`) |
 | Suchen | nein | ja (`expsearch::search`, `count`, `facets`) |
 | Verschieben, Verbergen, Kopieren, Status, Sektion auf einem Teilbaum | nein | ja, als Inhaltsjobs (`expcontentjob::*`) |

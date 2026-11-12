@@ -3,8 +3,8 @@ title: What the APIs do not do
 audience: mobile-app-developer, app-creator, developer, project-manager
 category: mobile-apps
 order: 12
-summary: The known gaps of Exponential's HTTP interfaces for app developers, each checked in the code - no SDK, no update or search route in REST, no image aliases or uploads in REST answers, no PKCE or public OAuth clients, no state parameter returned, no CORS headers, no push notifications, listAtom answering 500 - with the way around each one.
-keywords: limitations, gaps, known issues, not implemented, 501, listAtom, PKCE, state, client secret, CORS, push notifications, SDK, upload, image alias, search, mobile app
+summary: The known gaps of Exponential's HTTP interfaces for app developers, each checked in the code - no SDK, no search route in REST, no image aliases or uploads in REST answers, no PKCE or public OAuth clients, no state parameter returned, no CORS headers, no push notifications, listAtom answering 500 - with the way around each one.
+keywords: limitations, gaps, known issues, not implemented, listAtom, PKCE, state, client secret, CORS, push notifications, SDK, upload, image alias, search, mobile app
 type: help
 ---
 # What the APIs do not do
@@ -25,7 +25,6 @@ build an app; it is a list of things to plan instead of discovering them in the 
 
 | Gap | Evidence | Way around it |
 |---|---|---|
-| Updating content answers `501` | `doUpdateContentNode()` checks `content/edit`, then answers `not_implemented` | `expnode::update` of expservices ([Writing through expservices](json-endpoints/writing-through-expservices.md)) |
 | No search route | the route table of `ezp7xRestApiProvider` has none | `expsearch::search` ([Searching content](json-endpoints/searching-content.md)) |
 | Images come as the original file path only | `attributeOutputData()` cuts the `ezimage` string at `\|` | `expimage::url` for an alias ([Images in REST answers](media-and-images/images-in-rest-answers.md)) |
 | Rich text comes as plain text | `ezxmltext` values pass through `strip_tags()` | `OutputFormat=xhtml` with a site template, or your own endpoint ([Rich text in apps](content-modeling/rich-text-in-apps.md)) |
@@ -61,7 +60,8 @@ Native apps are not browsers and are not affected by CORS.
 - **No push notifications.** Nothing in the APIs sends messages to devices. Content events on the server can call
   your push service through a workflow event or a listener written by an application creator
   ([Workflows, triggers and events](../creators/app-creators/workflows-and-events.md)).
-- **No uploads.** Neither REST nor expservices documents a way to send an image or file from a device. expservices
+- **No uploads.** Neither REST nor expservices documents a way to send an image or file from a device. REST takes a
+  file value only as a public `http(s)` URL that the server downloads (`ezprestapi` 1.2.9). expservices
   refuses remote writes to `ezimage`, `ezbinaryfile`, `ezmedia`, `ezuser`, `ezpassword` and `ezflowblock` fields
   ([Files and uploads](media-and-images/files-and-uploads.md)).
 - **No change feed.** There is no "everything changed since" route for the whole tree; see

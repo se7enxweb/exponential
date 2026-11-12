@@ -78,7 +78,10 @@ Rich-Text-Felder werden in REST-Antworten als reiner Text geliefert. Siehe [Rich
 ## Inhalte schreiben
 
 **Kann die App ein vorhandenes Element über REST aktualisieren?**
-Noch nicht: Die Aktualisierungsroute prüft `content/edit` und antwortet dann mit `501`. Verwenden Sie `expnode::update`
+Ja, mit `ezprestapi` 1.2.9 und Exponential 6.0.15: `POST` oder `PUT` auf `/api/ezp/v2/content/node/<id>`
+veröffentlicht eine neue Version mit den gesendeten Werten, als Formularfelder oder JSON-Body; der Benutzer braucht
+`content/edit` in dieser Sprache ([Inhalte anlegen und entfernen](rest-api/inhalte-anlegen-und-entfernen.md)). Auf
+einer älteren Installation antwortet die Route mit `501`; verwenden Sie dort `expnode::update`
 ([Über expservices schreiben](json-endpunkte/ueber-expservices-schreiben.md)).
 
 **Mein Anlegen antwortet mit 400.**

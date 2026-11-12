@@ -24,10 +24,12 @@ Erweiterungen geprüft, die die `composer.json` im Wurzelverzeichnis voraussetzt
 ## APIs
 
 **Gibt es eine REST-API?** Ja: Die Erweiterung `ezprestapi` liefert Lesezugriffe auf Inhalte unter `/api/ezp/v1/...`
-und `/api/ezp/v2/...` sowie Anlegen und Löschen in v2 ([REST-API für Integratoren](rest-api-fuer-integratoren.md)).
+und `/api/ezp/v2/...` sowie Anlegen, Aktualisieren und Löschen in v2 ([REST-API für Integratoren](rest-api-fuer-integratoren.md)).
 
-**Kann ich Inhalte über REST aktualisieren?** Nicht über `ezprestapi`: Die Route zum Aktualisieren antwortet mit
-`501`. Verwenden Sie `expobject::update` von `expservices` oder PHP auf dem Server ([Remote-Dienste mit expservices](entfernte-dienste-mit-expservices.md)).
+**Kann ich Inhalte über REST aktualisieren?** Ja, mit `ezprestapi` 1.2.9 und Exponential 6.0.15: `POST` oder `PUT`
+auf `/api/ezp/v2/content/node/<id>` veröffentlicht eine neue Version mit den gesendeten Werten ([REST-API für Integratoren](rest-api-fuer-integratoren.md)).
+Um das Objekt zuerst über seine Remote-ID zu finden, verwenden Sie `expobject::update` von `expservices` oder PHP auf
+dem Server ([Remote-Dienste mit expservices](entfernte-dienste-mit-expservices.md)).
 
 **Gibt es GraphQL oder eine OpenAPI-Beschreibung?** Nein. Velocity veröffentlicht `/.well-known/openapi.json` für seine
 eigenen Handler, nicht für die Inhalts-API ([Integrationsschnittstellen auf einen Blick](integrationsschnittstellen-auf-einen-blick.md#was-nicht-angeboten-wird)).

@@ -135,8 +135,9 @@ Exponential-Installationen (`extension/explayouts_ui/bin/php/layouts.php`):
 ### Die REST-API und `expservices`
 
 - **REST** (`se7enxweb/ezprestapi`): Lesen unter `/api/ezp/v1/...` und `/api/ezp/v2/...`; einen Knoten anlegen ist
-  `POST /api/ezp/v2/content/node/create`, löschen `.../content/node/delete/<id>`; Aktualisieren antwortet mit 501
-  (noch nicht implementiert). Authentifizierung mit einem OAuth2-Token oder einem persönlichen API-Schlüssel. Details:
+  `POST /api/ezp/v2/content/node/create`, löschen `.../content/node/delete/<id>`; aktualisieren ist `POST` oder
+  `PUT` auf `.../content/node/<id>` (eine neue Version; `ezprestapi` 1.2.9). Werte gehen als Formularfelder oder als
+  JSON-Body; ein Dateiwert ist eine öffentliche `http(s)`-URL. Authentifizierung mit einem OAuth2-Token oder einem persönlichen API-Schlüssel. Details:
   [REST-API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md).
 - **`expservices`** (im Verzeichnis `extension/` des Kernels): die Funktionen der Administration als benannte
   HTTP-Dienste, mit einem Shell-Client und Python-Beispielen ([Entfernte Dienste und Apps](../../anleitungen/entfernte-dienste-und-apps.md)).

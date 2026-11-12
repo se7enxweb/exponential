@@ -59,7 +59,7 @@ Relativ zu `/api/ezp/<version>`:
 | `GET` | `/content/node/<id>/fields`, `/field/<identifier>` | ja | ja | alle Felder, ein Feld |
 | `GET` | `/content/object/<id>` und seine `fields`, `field/<identifier>` | ja | ja | dasselbe über die Objekt-ID |
 | `POST` | `/content/node/create` | nein | ja | unter `parentNodeID` anlegen und veröffentlichen |
-| `POST` | `/content/node/<id>` | nein | ja | aktualisieren: antwortet mit 501, noch nicht implementiert |
+| `POST`, `PUT` | `/content/node/<id>` | nein | ja | aktualisieren: eine neue Version mit den gesendeten Werten veröffentlichen (`ezprestapi` 1.2.9) |
 | `DELETE` | `/content/node/delete/<id>` | nein | ja | das Objekt des Knotens mit seinen Platzierungen und seinem Teilbaum entfernen |
 
 Abfrageparameter: `ResponseGroups=Metadata,Locations,Fields` wählt, was eine Antwort enthält; `OutputFormat=xhtml`
@@ -120,10 +120,12 @@ Lesen Sie sie so, wie die Website sie sieht: `./console exp:ini list rest.ini/Au
 
 ## Grenzen, die Sie kennen sollten
 
-- **Noch keine Route zum Aktualisieren.** `POST /api/ezp/v2/content/node/<id>` antwortet mit 501. Ändern Sie über die
-  GraphQL-Mutation `updateContent` ([Die GraphQL-API](../../funktionen/6.0/graphql.md)), suchen Sie im Katalog von
-  `expservices` nach einem Aktualisierungsdienst, oder führen Sie ein Skript auf dem Server aus
-  ([Inhalte aus PHP](inhalte-aus-php.md)).
+- **Schreibzugriffe brauchen Exponential 6.0.15.** `ezprestapi` 1.2.9 schreibt über `expContentWriter` aus dem
+  Kernel; auf einem älteren Kernel antworten Anlegen, Aktualisieren und Löschen mit 501. Ein Aktualisieren
+  veröffentlicht eine neue Version; Werte gehen als Formularfelder oder JSON-Body, eine Datei als öffentliche
+  `http(s)`-URL ([REST-API v1 und v2, Abschnitt 2.1](../../anleitungen/rest-api-v1-und-v2.md#21-ändern-und-die-werte-eines-schreibzugriffs)).
+  Die GraphQL-Mutation `updateContent` ([Die GraphQL-API](../../funktionen/6.0/graphql.md)) und ein Skript auf dem
+  Server ([Inhalte aus PHP](inhalte-aus-php.md)) bleiben Alternativen.
 - **`listAtom` antwortet mit 500** in v1 und v2: Verwenden Sie die Route `list` oder den RSS-Export der Website
   ([Bekanntes Problem: listAtom](../../anleitungen/rest-api-v1-und-v2.md#8-bekanntes-problem-listatom)).
 - **Das ist nicht die REST-API der Symfony-Plattformen.** Clients, die für `/api/ibexa/v2` geschrieben wurden, brauchen

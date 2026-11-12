@@ -26,7 +26,7 @@ of `ezp7xRestApiProvider::getRoutes()` in `extension/ezprestapi/classes/rest_pro
 | Route name | Method | Path | v1 | v2 | Controller action |
 |---|---|---|---|---|---|
 | `ezpNode` | `GET` | `/content/node/<id>` | yes | yes | `viewContent` |
-| `ezpNodeUpdate` | `POST` | `/content/node/<id>` | no | yes | `UpdateContentNode` (answers `501` after the permission check) |
+| `ezpNodeUpdate` | `POST`, `PUT` | `/content/node/<id>` | no | yes | `UpdateContentNode` (publishes a new version; `501` on a kernel older than 6.0.15) |
 | `ezpList` | `GET` | `/content/node/<id>/list(/offset/<n>)(/limit/<n>)(/sort/<key>(/asc\|desc))` | yes | yes | `list` |
 | `ezpChildrenCount` | `GET` | `/content/node/<id>/childrenCount` | yes | yes | `countChildren` |
 | `ezpFieldsByNode` | `GET` | `/content/node/<id>/fields` | yes | yes | `viewFields` |

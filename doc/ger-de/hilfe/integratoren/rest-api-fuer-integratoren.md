@@ -3,7 +3,7 @@ title: Die REST-API für Integratoren
 audience: integrator, developer
 category: integration
 order: 50
-summary: Was die REST-Inhalts-API von ezprestapi einer Integration bietet - die Routen unter v1 und v2, Listen seitenweise lesen, Inhalte anlegen und entfernen, die zu behandelnden Statuscodes, der Antwort-Cache und die Lücken (kein Update, listAtom) - mit Beispielen in curl und Python.
+summary: Was die REST-Inhalts-API von ezprestapi einer Integration bietet - die Routen unter v1 und v2, Listen seitenweise lesen, Inhalte anlegen, aktualisieren und entfernen, die zu behandelnden Statuscodes, der Antwort-Cache und die Lücken (listAtom) - mit Beispielen in curl und Python.
 keywords: REST, API, Integrations-Client, Statuscodes, seitenweise lesen, anlegen, entfernen, ezprestapi, /api/ezp/v1, /api/ezp/v2, content/node, list, offset, limit, ResponseGroups, create, delete, 401, 403, 429, rest.ini, integration client
 type: help
 ---
@@ -27,13 +27,14 @@ ergänzt Ratschläge für die Client-Seite.
 
 ## Was sie kann und was nicht
 
-| Kann | Kann nicht (Stand `ezprestapi` 1.2.6) |
+| Kann | Kann nicht (Stand `ezprestapi` 1.2.9) |
 |---|---|
-| Einen Knoten oder ein Objekt mit Metadaten, Orten und Feldern lesen | Inhalte aktualisieren: `POST /content/node/<id>` prüft `content/edit` und antwortet dann mit `501` |
+| Einen Knoten oder ein Objekt mit Metadaten, Orten und Feldern lesen | Ein Objekt über die Remote-ID finden (speichern Sie die zurückgegebene `objectId`, siehe den Hinweis unten) |
 | Die Kinder eines Knotens auflisten, mit Offset, Limit und Sortierung | Nach Text suchen oder nach Feld filtern (verwenden Sie `expservices` oder ein Fetch in einer eigenen Route) |
 | Kinder zählen, ein Feld lesen | `listAtom` beantworten (antwortet mit `500`, ein bekanntes Problem; verwenden Sie den RSS-Export der Website) |
 | Ein Objekt unterhalb eines Elternknotens anlegen und veröffentlichen (v2) | Sich selbst in OpenAPI beschreiben |
 | Ein Objekt mit allen seinen Orten entfernen (v2) | Verschieben, verbergen oder Sektionen ändern |
+| Ein Objekt mit einer neuen veröffentlichten Version aktualisieren (v2, seit 1.2.9 mit Exponential 6.0.15) | – |
 
 Lesende Aufrufe antworten unter `v1` und `v2`, schreibende nur unter `v2`. Links in einer v1-Antwort bleiben in v1.
 
@@ -49,6 +50,7 @@ Alle Pfade liegen unterhalb von `/api/ezp/v1` oder `/api/ezp/v2` (das Präfix `e
 | `GET` | `/content/node/<id>/fields`, `/content/node/<id>/field/<identifier>` | ja | ja |
 | `GET` | `/content/object/<id>`, `.../fields`, `.../field/<identifier>` | ja | ja |
 | `POST` | `/content/node/create` | nein | ja |
+| `POST` oder `PUT` | `/content/node/<id>` (aktualisieren) | nein | ja |
 | `DELETE` oder `POST` | `/content/node/delete/<id>` | nein | ja |
 
 Abfrageparameter der lesenden Aufrufe: `ResponseGroups=Metadata,Locations,Fields` wählt die Teile der Antwort, und
@@ -88,8 +90,22 @@ curl -s -X DELETE -H "Authorization: Bearer $EXP_API_KEY" https://example.com/ap
 
 Die Felder zum Anlegen sind `parentNodeID`, `classIdentifier`, `languageLocale` und dann die Attributbezeichner der
 Klasse. Das Anlegen wird als `content/create` dieser Klasse unterhalb dieses Elternknotens in dieser Sprache geprüft,
-und der Workflow für das Veröffentlichen läuft wie in der Administration. Das Backend für das Anlegen ist
-`nxc_powercontent`.
+und der Workflow für das Veröffentlichen läuft wie in der Administration. Anlegen, Aktualisieren und Löschen schreibt
+`expContentWriter` aus dem Kernel (`ezprestapi` 1.2.9 mit Exponential 6.0.15; vorher lief das Anlegen über
+`nxc_powercontent`).
+
+Ein Aktualisieren (`POST` oder `PUT` auf `/content/node/<id>`) veröffentlicht eine neue Version mit den gesendeten
+Werten; nicht gesendete Attribute behalten ihre Werte. Die Werte gehen als Formularfelder oder als JSON-Objekt; Rich
+Text als HTML, eine Datei als öffentliche `http(s)`-URL (optional `<URL>|<Alternativtext oder Dateiname>`), alles
+andere in seiner Textform. Das Aktualisieren wird als `content/edit` in seiner Sprache geprüft (`languageLocale`,
+standardmäßig die Hauptsprache des Objekts); `202` bedeutet, dass ein Workflow die Veröffentlichung zurückhält.
+Einzelheiten: [REST-API v1 und v2, Abschnitt 2.1](../../anleitungen/rest-api-v1-und-v2.md#21-ändern-und-die-werte-eines-schreibzugriffs).
+
+```bash
+curl -s -X PUT -H "Authorization: Bearer $EXP_API_KEY" -H 'Content-Type: application/json' \
+     https://example.com/api/ezp/v2/content/node/<node id> -d '{"name": "From the ERP, renamed"}'
+# {"message":"Updated","objectId":<object id>,"nodeId":<node id>,"version":<version>,"languageLocale":"eng-US"}
+```
 
 > **Hinweis**
 > Das Anlegen per REST hat kein Feld `remote_id` (der Controller liest `parentNodeID`, `classIdentifier` und

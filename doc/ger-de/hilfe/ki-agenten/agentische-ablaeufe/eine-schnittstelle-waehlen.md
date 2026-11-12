@@ -28,7 +28,7 @@ unten.
 | | REST-API | expservices | Eigene ezjscore-Funktion | Konsole auf dem Server |
 |---|---|---|---|---|
 | Mit dem Hauptrepository ausgeliefert | Ja (Kernel) | Ja (Standarddistribution) | Ja (ezjscore) | Ja (Kernel) |
-| Erreicht | Knoten, Kinder, Felder, Objekte; Anlegen und Entfernen in v2 | Über tausend benannte Dienste der Administration | Was Sie schreiben | Einstellungen mit ihren Quelldateien, Zugriffsprüfungen, Logs, den Audit-Trail, die Hilfe |
+| Erreicht | Knoten, Kinder, Felder, Objekte; Anlegen, Aktualisieren und Entfernen in v2 | Über tausend benannte Dienste der Administration | Was Sie schreiben | Einstellungen mit ihren Quelldateien, Zugriffsprüfungen, Logs, den Audit-Trail, die Hilfe |
 | Authentifiziert | OAuth2-Token oder persönlicher API-Schlüssel mit Geltungsbereichen | Session oder ein persönliches Token `expt_...` | Session; Ihre eigene Richtlinienprüfung | Der Systembenutzer, der den Befehl ausführt |
 | Schreibt | Als Eigentümer des Schlüssels, durch Geltungsbereich begrenzt | Als Benutzer des Tokens; POST | Wie Sie es festlegen | Vermeiden: Geben Sie einem Coding-Agenten nur lesende Befehle |
 | Läuft wo | Überall über HTTPS | Überall über HTTPS | Meist im Browser | Auf dem Server oder einer Entwicklungskopie |

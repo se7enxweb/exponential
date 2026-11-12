@@ -49,8 +49,8 @@ zutreffenden Teile in Ihr Werkzeug zur Projektverfolgung. Jeder Punkt verlinkt d
 
 - [ ] `ezprestapi` 1.2.6 oder neuer ist aktiv und `ezprestapiprovider` entfernt
       ([Fragen an Ihren Administrator](rest-api-v1-und-v2-fuer-unternehmen.md#fragen-an-ihren-administrator)).
-- [ ] Die App liest in v1 oder v2; Schreibzugriffe, falls vorhanden, in v2; keine Aktualisierung über REST geplant
-      (noch nicht umgesetzt).
+- [ ] Die App liest in v1 oder v2; Schreibzugriffe, falls vorhanden, in v2; Aktualisierungen über REST brauchen
+      `ezprestapi` 1.2.9 und Exponential 6.0.15.
 - [ ] Die richtigen Zugangsdaten pro Programm: OAuth2 für Apps, bei denen sich Benutzer anmelden, ein persönlicher
       Schlüssel für das Skript eines Benutzers, ein Token für expservices für Remote-Dienste
       ([Apps und API-Schlüssel](apps-und-api-schluessel.md)).

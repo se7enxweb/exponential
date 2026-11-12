@@ -83,8 +83,9 @@ Templates for every page of a class; Layouts for pages editors compose. They com
 [Content from PHP](content-from-php.md).
 
 **Is there a REST API?**
-Yes: the `ezprestapi` extension serves v1 and v2 routes for nodes, children and fields, with creates and removals at
-v2; authentication by personal API key or OAuth2. Updates answer 501 for now. [The REST API](the-rest-api.md).
+Yes: the `ezprestapi` extension serves v1 and v2 routes for nodes, children and fields, with creates, updates and
+removals at v2; authentication by personal API key or OAuth2. Updates need `ezprestapi` 1.2.9 and Exponential 6.0.15.
+[The REST API](the-rest-api.md).
 
 **Is there GraphQL?**
 Not in Exponential 6. The Exponential Platform line, on the Symfony stack, has it.

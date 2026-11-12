@@ -76,8 +76,10 @@ Rich text fields are given as plain text in REST answers. See [Rich text in apps
 ## Writing content
 
 **Can the app update an existing item through REST?**
-Not yet: the update route checks `content/edit` and then answers `501`. Use `expnode::update`
-([Writing through expservices](json-endpoints/writing-through-expservices.md)).
+Yes, with `ezprestapi` 1.2.9 and Exponential 6.0.15: `POST` or `PUT` on `/api/ezp/v2/content/node/<id>` publishes a
+new version with the values sent, as form fields or a JSON body; the user needs `content/edit` in that language
+([Creating and removing content](rest-api/creating-and-removing-content.md)). On an older installation the route
+answers `501`; use `expnode::update` there ([Writing through expservices](json-endpoints/writing-through-expservices.md)).
 
 **My create answers 400.**
 `languageLocale` is missing, or `parentNodeID` or `classIdentifier` is missing or unknown

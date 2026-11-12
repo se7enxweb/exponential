@@ -130,8 +130,9 @@ Layouts, shared layouts and their mapping rules move between Exponential install
 ### The REST API and `expservices`
 
 - **REST** (`se7enxweb/ezprestapi`): reads at `/api/ezp/v1/...` and `/api/ezp/v2/...`; creating a node is
-  `POST /api/ezp/v2/content/node/create`, deleting `.../content/node/delete/<id>`; updating answers 501 (not
-  implemented yet). Authentication with an OAuth2 token or a personal API key. Details:
+  `POST /api/ezp/v2/content/node/create`, deleting `.../content/node/delete/<id>`; updating is `POST` or
+  `PUT` on `.../content/node/<id>` (a new version; `ezprestapi` 1.2.9). Values go as form fields or a JSON body; a file
+  value is a public `http(s)` URL. Authentication with an OAuth2 token or a personal API key. Details:
   [REST API v1 and v2](../../guides/rest-api-v1-and-v2.md).
 - **`expservices`** (in the kernel's `extension/` directory): the admin's functions as named HTTP services, with a
   shell client and Python examples ([Remote services and apps](../../guides/remote-services-and-apps.md)).

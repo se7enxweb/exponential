@@ -99,9 +99,10 @@ ist Erweitern statt Integrieren: siehe [Exponential 6.0 erweitern](../eng-us/EXT
 Die Extension `ezprestapi` liefert die Inhalts-API über `index_rest.php` aus, unterhalb von `/api/`:
 
 - **Lesen** antwortet in Version 1 und Version 2: `/api/ezp/v1/...` und `/api/ezp/v2/...`.
-- **Schreiben** antwortet nur in Version 2: Anlegen und Löschen funktionieren; die Route zum Ändern prüft
-  `content/edit` und antwortet vorerst mit 501, ändern Sie Inhalte deshalb über `updateContent` in GraphQL
-  ([Abschnitt 5](#5-graphql)).
+- **Schreiben** antwortet nur in Version 2: Anlegen, Ändern und Löschen funktionieren. Ein Ändern (`POST` oder `PUT`
+  auf `/api/ezp/v2/content/node/<id>`) veröffentlicht eine neue Version des Objekts mit den gesendeten Werten, als
+  Formularfelder oder als JSON-Body (`ezprestapi` 1.2.9 mit Exponential 6.0.15). `updateContent` in GraphQL
+  ([Abschnitt 5](#5-graphql)) bleibt eine Alternative.
 - **Jedes Lesen und Schreiben prüft die Richtlinien des Benutzers** (`content/read`, `content/create`,
   `content/edit`, `content/remove`), womit auch immer die Anfrage angemeldet wurde.
 

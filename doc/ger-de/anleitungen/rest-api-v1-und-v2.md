@@ -8,7 +8,8 @@ Extension `ezprestapiprovider` lösen.
 Sie ist für zwei Lesergruppen geschrieben. **Entwickler**, die Clients schreiben oder die API erweitern, lesen die Abschnitte 1 bis 5.
 **Site-Administratoren**, die eine Installation einrichten, aktualisieren oder prüfen, lesen die Abschnitte 5 bis 8.
 
-Jede Aussage unten wurde am 15. Oktober 2026 auf dem Demonstrationsserver (Apache mit PHP-FPM sowie Velocity) geprüft.
+Jede Aussage unten wurde am 15. Oktober 2026 auf dem Demonstrationsserver (Apache mit PHP-FPM sowie Velocity) geprüft;
+das Ändern und der JSON-Body von `ezprestapi` 1.2.9 wurden am 12. November 2026 durchgehend geprüft.
 Hostnamen, Kennungen und Geheimnisse sind durch Dokumentationswerte ersetzt (`example.com`, `<client id>`, `expk_...`).
 
 [Anleitungen](README.md) · Siehe auch: [API-Schlüssel](api-schluessel.md) ·
@@ -22,6 +23,10 @@ Hostnamen, Kennungen und Geheimnisse sind durch Dokumentationswerte ersetzt (`ex
   `ezp7xRestContentController`.
 - **Lesezugriffe antworten in v1 und v2** (`/api/ezp/v1/...`, `/api/ezp/v2/...`); **Schreibzugriffe** (Anlegen, Ändern, Löschen) antworten
   **nur in v2**.
+- **Schreibzugriffe** übernimmt `expContentWriter` aus dem Kernel (`ezprestapi` 1.2.9 mit Exponential 6.0.15): Ein
+  Ändern veröffentlicht eine neue Version des Objekts, und Anlegen und Ändern nehmen neben Formularfeldern auch einen
+  JSON-Body an ([Abschnitt 2.1](#21-ändern-und-die-werte-eines-schreibzugriffs)). `nxc_powercontent` wird nicht mehr
+  benötigt.
 - **Jeder Lese- und Schreibzugriff prüft die Richtlinien des Benutzers** (`content/read`, `content/create`, `content/edit`,
   `content/remove`), gleich womit die Anfrage authentifiziert wurde. Die Prüfung übernimmt `expRestContentPermission` aus dem Kernel,
   sie erfordert Exponential 6.0.15.
@@ -54,7 +59,7 @@ Hostnamen, Kennungen und Geheimnisse sind durch Dokumentationswerte ersetzt (`ex
 | Auth-Provider `ezpRestAuthProvider` | der Kernel, Präfix `auth` | der OAuth2-Token-Endpunkt und die Authentifizierungsrouten |
 | Inhalts-Provider `ezp7xRestApiProvider` | `ezprestapi`, Präfixe `ezp` und `ezpl` | die Inhaltsrouten von v1 und v2 |
 | Inhalts-Controller `ezp7xRestContentController` | `ezprestapi` | jeder Lese- und Schreibzugriff auf Inhalte, mit den Berechtigungsprüfungen |
-| Backend für Anlegen und Löschen | [nxc_powercontent](../funktionen/6.0/erweiterungen/nxc_powercontent.md) | legt Inhalte für den Controller an und entfernt sie |
+| Inhaltsschreiber `expContentWriter` | der Kernel (6.0.15, `kernel/classes/contentwriter/`) | legt Inhalte für den Controller an, ändert und entfernt sie (seit `ezprestapi` 1.2.9; vorher liefen Anlegen und Löschen über [nxc_powercontent](../funktionen/6.0/erweiterungen/nxc_powercontent.md)) |
 | Berechtigungshelfer `expRestContentPermission` | der Kernel (6.0.15) | fragt die Richtlinien des Benutzers so ab, wie es das Modul content tut |
 | `ezprestapiprovider` 6.0.4 | veraltete Kompatibilitätsschicht | `ezpRestApiProvider` und `ezpRestContentController` erweitern die Klassen von `ezprestapi`; ordnet `ezp` und `ezpl` `ezp7xRestApiProvider` zu |
 
@@ -74,7 +79,7 @@ Alle Pfade unten sind relativ zu `/api/ezp/<version>` (oder `/api/ezpl/<version>
 | `GET` | `/content/object/<id>`, `.../fields`, `.../field/<identifier>` | ja | ja | dasselbe über die Objekt-ID |
 | `GET` | `/content/node/<id>/listAtom` | ja | ja | Atom-Feed der Kinder; antwortet mit 500, siehe [Abschnitt 8](#8-bekanntes-problem-listatom) |
 | `POST` | `/content/node/create` | nein | ja | unterhalb von `parentNodeID` anlegen und veröffentlichen |
-| `POST` | `/content/node/<id>` | nein | ja | ändern: prüft `content/edit` und antwortet dann mit 501 (noch nicht implementiert) |
+| `POST` oder `PUT` | `/content/node/<id>` | nein | ja | ändern: veröffentlicht eine neue Version des Objekts des Knotens mit den gesendeten Werten, siehe [Abschnitt 2.1](#21-ändern-und-die-werte-eines-schreibzugriffs) |
 | `DELETE` oder `POST` | `/content/node/delete/<id>` | nein | ja | das Objekt des Knotens mit allen seinen Orten und allem darunter entfernen |
 
 Ein an v1 gesendeter Schreibzugriff existiert dort nicht und wird abgewiesen. Die Links innerhalb einer v1-Antwort bleiben in v1, sodass bestehende Clients
@@ -83,8 +88,44 @@ ihnen weiterhin folgen.
 Die Antworten und die Richtlinien, die jeder Aufruf prüft, sind beschrieben in
 [API-Schlüssel, Abschnitt 3](api-schluessel.md#3-einen-schlüssel-mit-curl-benutzen) und
 [Berechtigungen der REST-Schnittstelle](api-schluessel.md#32-berechtigungen-der-rest-schnittstelle). Kurz: `200`, `201` für ein
-Anlegen, `400` für ein fehlendes oder unbekanntes Feld, `401` ohne gültiges Token oder gültigen Schlüssel, `403 access_denied`, wenn der Benutzer
-es nicht darf, `404` für einen unbekannten Knoten.
+Anlegen, `202`, wenn ein Workflow ein Ändern zurückhält, `400` für ein fehlendes oder unbekanntes Feld, `401` ohne
+gültiges Token oder gültigen Schlüssel, `403 access_denied`, wenn der Benutzer es nicht darf, `404` für einen
+unbekannten Knoten.
+
+### 2.1 Ändern und die Werte eines Schreibzugriffs
+
+`POST /content/node/<id>` sowie `PUT` auf dieselbe URL (oder `POST` mit `_method=PUT`) veröffentlichen eine **neue
+Version** des Objekts des Knotens mit den gesendeten Attributwerten; nicht gesendete Attribute behalten ihre Werte.
+`languageLocale` ist optional, Standard ist die Hauptsprache des Objekts; eine Sprache, die das Objekt noch nicht hat,
+fügt diese Übersetzung hinzu. Die neue Version durchläuft die Operation `content/publish`, Workflows laufen also wie in
+der Administration.
+
+| Antwort | Wann |
+|---|---|
+| `200 {"message":"Updated","objectId","nodeId","version","languageLocale"}` | die neue Version ist veröffentlicht |
+| `202 {"message":"Waiting for a workflow",...}` | ein Workflow hält die Veröffentlichung zurück |
+| `400 invalid_request` | keine Werte, ein unbekanntes Attribut, ein Wert, der kein Text ist, ein Dateiwert, der keine öffentliche `http(s)`-URL ist, oder eine unbekannte Sprache |
+| `403 access_denied` | der Benutzer hat kein `content/edit` (in dieser Sprache) |
+| `404 not_found` | der Knoten existiert nicht |
+
+Ein persönlicher API-Schlüssel braucht für ein Ändern den Scope `edit`.
+
+Anlegen und Ändern nehmen die Attributwerte nach Bezeichner als Formularfelder oder als JSON-Objekt
+(`Content-Type: application/json`) an, immer als Text:
+
+- **Rich Text** (`ezxmltext`): HTML, umgewandelt mit dem Eingabeparser des Online Editors; Links und Einbettungen
+  werden zu Beziehungen.
+- **Dateien** (`ezimage`, `ezbinaryfile`, `ezmedia`): `<URL>` oder `<URL>|<Alternativtext oder Dateiname>`, eine
+  `http`- oder `https`-Adresse. Die Datei wird nur von einer öffentlichen Adresse geladen: Ein Serverpfad, `file://`,
+  andere Schemata, Zugangsdaten in der URL und Adressen, die in private, Loopback-, Link-Local- oder reservierte Netze
+  auflösen, werden abgewiesen; Weiterleitungen werden nicht verfolgt; höchstens 50 MB.
+- **Jeder andere Datentyp**: seine Textform, so wie `fromString()` des Datentyps sie liest.
+
+Seit `ezprestapi` 1.2.9 schreibt `expContentWriter` aus dem Kernel (Exponential 6.0.15) Anlegen, Ändern und Löschen,
+und die Extension setzt `nxc_powercontent` nicht mehr voraus. Vorher lief ein Anlegen über `nxc_powercontent`, das
+einen Dateiwert aus einem lokalen Serverpfad las oder jede URL herunterlud; ein solcher Wert wird jetzt mit `400`
+abgewiesen. Auf einem Kernel älter als 6.0.15 antworten die schreibenden Aufrufe (Anlegen, Ändern, Löschen) mit
+`501 not_implemented`.
 
 ## 3. Authentifizierung
 
@@ -154,6 +195,11 @@ curl -s -H "Authorization: Bearer $EXP_API_KEY" https://example.com/api/ezp/v2/c
 curl -s -H "Authorization: Bearer $EXP_API_KEY" https://example.com/api/ezp/v2/content/node/create \
      -d parentNodeID=<parent node id> -d classIdentifier=folder -d languageLocale=eng-US -d name='From a script'
 # {"message":"Created","objectId":<object id>,"nodeId":<node id>}
+
+# update it with a JSON body: a new version with these values, the other attributes keep theirs (v2 only)
+curl -s -X PUT -H "Authorization: Bearer $EXP_API_KEY" -H 'Content-Type: application/json' \
+     https://example.com/api/ezp/v2/content/node/<node id> -d '{"name": "New title", "intro": "<p>New intro</p>"}'
+# {"message":"Updated","objectId":<object id>,"nodeId":<node id>,"version":<version>,"languageLocale":"eng-US"}
 
 # remove it again (v2 only)
 curl -s -X DELETE -H "Authorization: Bearer $EXP_API_KEY" https://example.com/api/ezp/v2/content/node/delete/<node id>

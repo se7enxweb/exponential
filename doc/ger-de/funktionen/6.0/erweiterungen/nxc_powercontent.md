@@ -10,9 +10,10 @@ Powercontent“, ursprünglich von NXC) erweitert, wie Code Inhalte anlegt, aktu
 - **beim Aktualisieren eines Objekts wird keine neue Version angelegt**.
 
 In der Zeit von Exponential 6 wurde sie für die REST-Extension [ezprestapi](ezprestapi.md) erweitert, für die sie die
-Aufrufe zum Anlegen und Löschen der REST API v2 bereitstellt (1.1.0, Oktober 2024; Aktualisieren wird geprüft und
-antwortet dann mit 501). Seit `ezprestapi` 1.2.6 bedient diese eine Extension REST API v1 und v2; siehe
-[REST API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md).
+Aufrufe zum Anlegen und Löschen der REST API v2 bereitstellte (1.1.0, Oktober 2024). Seit `ezprestapi` 1.2.9 verwendet
+die REST-API sie nicht mehr: Anlegen, Aktualisieren und Löschen schreibt `expContentWriter` aus dem Kernel
+(Exponential 6.0.15), und `ezprestapi` setzt diese Extension nicht mehr voraus. `nxc_powercontent` bleibt eine
+optionale Extension für Code, der sie direkt verwendet; siehe [REST API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md).
 
 ## Inhaltsklassen in einem Template auflisten: `class_list`
 

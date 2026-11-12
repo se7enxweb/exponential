@@ -47,11 +47,12 @@ Aus [2. Die Routen](../../../anleitungen/rest-api-v1-und-v2.md#2-die-routen):
 | Die Unterelemente zählen | ja | ja |
 | Einen Eintrag anlegen und veröffentlichen | nein | ja |
 | Einen Eintrag entfernen (mit allem darunter) | nein | ja |
-| Einen Eintrag aktualisieren | nein | prüft die Bearbeitungsberechtigung und antwortet dann „not implemented yet“ (501) |
+| Einen Eintrag aktualisieren (eine neue Version mit den gesendeten Werten) | nein | ja (`ezprestapi` 1.2.9 mit Exponential 6.0.15) |
 
 Für ein Unternehmen bedeutet das: Eine App, die Inhalte **zeigt**, funktioniert mit beiden Versionen; eine App oder
-Integration, die Inhalte **hinzufügt** (aus einem Marktplatz importierte Bestellungen, Einträge aus einer App für den
-Außendienst), verwendet v2; vorhandene Inhalte über die REST API zu ändern, ist noch nicht möglich. Für Aufgaben der
+Integration, die Inhalte **hinzufügt** oder **ändert** (aus einem Marktplatz importierte Bestellungen, Einträge aus
+einer App für den Außendienst), verwendet v2. Jede Änderung über die REST API wird als neue Version veröffentlicht und
+durchläuft die Workflows der Website, wie in der Administration. Für Aufgaben der
 Administration über Inhalte hinaus bieten die Remote-Dienste mehr ([Entfernte Dienste](entfernte-dienste.md)).
 
 ## Was 6.0.15 für bestehende Apps geändert hat
@@ -89,7 +90,6 @@ Benutzerkonto dahinter darf, und eine öffentliche App sollte ein Konto verwende
 | Lücke | Wirkung | Ausweg aus den Quellen |
 |---|---|---|
 | Die Atom-Listenroute `listAtom` | Antwortet in v1 und v2 mit 500, vor und nach der Änderung | Verwenden Sie die Route `list` oder den RSS-Export der Website ([Feeds und Syndication](feeds-und-syndication.md)) |
-| Inhalte über REST aktualisieren | Antwortet nach der Berechtigungsprüfung mit 501 | Legen Sie einen neuen Eintrag an, oder verwenden Sie die Administration oder die Remote-Dienste |
 | Apache mit FastCGI | Der Header `Authorization` muss PHP erreichen | Eine Aufgabe der Serverkonfiguration ([REST API für Anwendungen](../../ersteller/anwendungsentwickler/rest-api.md#konfiguration)) |
 
 ## Fragen an Ihren Administrator

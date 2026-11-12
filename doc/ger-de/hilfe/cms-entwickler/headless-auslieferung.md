@@ -30,7 +30,7 @@ vorhandenen Wege auf und wie Sie wählen.
 
 | Weg | Adresse | Authentifizierung | Am besten für |
 |---|---|---|---|
-| REST-Schnittstelle (`ezprestapi`) | `/api/ezp/v1/...`, `/api/ezp/v2/...` | persönlicher API-Schlüssel, OAuth2-Token | Lesen von Knoten, Unterelementen und Feldern; Anlegen und Entfernen in v2 |
+| REST-Schnittstelle (`ezprestapi`) | `/api/ezp/v1/...`, `/api/ezp/v2/...` | persönlicher API-Schlüssel, OAuth2-Token | Lesen von Knoten, Unterelementen und Feldern; Anlegen, Aktualisieren und Entfernen in v2 |
 | `expservices` | `/ezjscore/call/exp<domain>::<method>` | Session-Cookie oder ein persönliches Token (`expt_...`) | die Funktionen der Administration: Inhalte, Benutzer, Shop, Medien, Layouts und mehr |
 | Eigene Serverfunktionen von ezjscore | `/ezjscore/call/<class>::<function>` | Session und Richtlinien der Website | kleine JSON-Aufrufe für Ihr eigenes Frontend |
 | Eine Modul-View, die JSON antwortet | `/<your module>/<view>/...` | Session und Richtlinien der Website | ein eigener Endpunkt mit eigener Form |
@@ -104,8 +104,8 @@ News-Listen, die andere Systeme nach Zeitplan abholen.
 
 ## Was es nicht gibt
 
-Die REST-Schnittstelle hat noch keine funktionierende Route zum Aktualisieren (sie antwortet mit 501). Exponential
-6.0.15 hat einen eigenen GraphQL-Endpunkt, `/api/graphql`, der Inhalte liest und ändert und aus ist, bis er
+Die REST-Schnittstelle ändert Inhalte nur mit `ezprestapi` 1.2.9 auf Exponential 6.0.15 (jede Änderung ist eine neue
+Version; auf einem älteren Kernel antwortet sie mit 501). Exponential 6.0.15 hat außerdem einen eigenen GraphQL-Endpunkt, `/api/graphql`, der Inhalte liest und ändert und aus ist, bis er
 eingeschaltet wird ([Die GraphQL-API](../../funktionen/6.0/graphql.md)). Projekte, die REST v2 und GraphQL der Symfony-Plattform brauchen, verwenden die Linie Exponential Platform, die über die Legacy
 Bridge neben diesem Kernel laufen kann
 ([Umstieg von eZ Platform oder Ibexa](umstieg-von-ez-platform-oder-ibexa.md#zwei-ziele-in-exponential),

@@ -64,7 +64,7 @@ Administration von Exponential, das Frontend holt die Inhalte zur Build- oder An
 | OAuth2 | eine App, die für angemeldete Benutzer handelt | die REST-Anleitung, Abschnitt 3.1 |
 | `expservices` | die Funktionen der Administration als benannte HTTP-Dienste (Inhalte, Benutzer, Medien, Tags, Layouts ...) | [Remote-Dienste und Apps](../../anleitungen/entfernte-dienste-und-apps.md) |
 
-Schreibzugriffe über REST sind eingeschränkt (Anlegen und Löschen ab v2; Aktualisieren antwortet derzeit mit 501), deshalb werden
+Schreibzugriffe über REST erfolgen ein Element pro Anfrage (Anlegen, Aktualisieren und Löschen ab v2), deshalb werden
 Massenimporte auf dem Server ausgeführt, nicht vom Frontend aus.
 
 ## 4. Adressen und Weiterleitungen

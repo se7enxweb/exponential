@@ -83,7 +83,6 @@ Planen Sie Folgendes als individuelle Arbeit ein, oder wählen Sie einen anderen
 | XML-RPC | nicht umgesetzt; REST oder SOAP verwenden |
 | SAML oder ein OpenID-Connect-Provider | einen Login- oder SSO-Handler schreiben oder einen identitätsbewussten Proxy vorschalten ([Single Sign-on](single-sign-on-und-social-login.md)) |
 | Inhalts-Webhooks ohne GraphQL | die GraphQL-Webhooks oben brauchen den eingeschalteten GraphQL-Endpunkt; sonst die Webhook-Senke des Audit-Trails mit eingeschaltetem `content.object.publish` ([Audit-Webhooks](ausgehende-webhooks-aus-dem-audit-trail.md)) oder ein eigenes Workflow-Ereignis oder ein eigener Event-Listener |
-| Inhalte über REST aktualisieren | `POST /api/ezp/v2/content/node/<id>` prüft `content/edit` und antwortet mit 501; über die GraphQL-Mutation `updateContent`, aus PHP oder über `expservices` aktualisieren |
 | Ein Connector für Message Broker (AMQP, Kafka) | aus einem Workflow-Ereignis oder einem Cronjob über eine PHP-Client-Bibliothek veröffentlichen, die Sie Ihrer Erweiterung hinzufügen |
 | Ein MCP-Server im Kernel | das Kernel-Repository liefert keinen mit ([KI, Job-Warteschlange und MCP](ki-jobwarteschlange-und-mcp.md)) |
 

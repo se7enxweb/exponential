@@ -86,9 +86,9 @@ Template-Blöcke. [Layouts für CMS-Entwickler](layouts-fuer-cms-entwickler.md#l
 [Inhalte aus PHP](inhalte-aus-php.md).
 
 **Gibt es eine REST-API?**
-Ja: Die Erweiterung `ezprestapi` bedient Routen v1 und v2 für Knoten, Unterelemente und Felder, mit Anlegen und
-Entfernen in v2; Authentifizierung über persönlichen API-Schlüssel oder OAuth2. Aktualisierungen antworten vorerst mit
-501. [Die REST-API](die-rest-api.md).
+Ja: Die Erweiterung `ezprestapi` bedient Routen v1 und v2 für Knoten, Unterelemente und Felder, mit Anlegen,
+Aktualisieren und Entfernen in v2; Authentifizierung über persönlichen API-Schlüssel oder OAuth2. Aktualisierungen
+brauchen `ezprestapi` 1.2.9 und Exponential 6.0.15. [Die REST-API](die-rest-api.md).
 
 **Gibt es GraphQL?**
 Nicht in Exponential 6. Die Linie Exponential Platform auf dem Symfony-Stack hat es.

@@ -66,8 +66,11 @@ sie ungültige Werte abweisen, statt sie zu speichern ([Die API von eZDataType](
 
 **Rich Text.** `ezxmltext` speichert sein eigenes XML (`section`, `paragraph`, `header`, `link` ...), kein HTML.
 Wandeln Sie das HTML der Quelle in Ihrem Import in dieses XML um, halten Sie die Menge der erlaubten Elemente klein,
-und maskieren Sie Text. Die Erweiterung `nxc_powercontent`, die von der REST-Route zum Anlegen verwendet wird,
-akzeptiert HTML für Attribute vom Typ `ezxmltext` ([nxc_powercontent](../../funktionen/6.0/erweiterungen/nxc_powercontent.md)).
+und maskieren Sie Text. Die REST-Routen zum Anlegen und Aktualisieren
+akzeptieren HTML für Attribute vom Typ `ezxmltext` und wandeln es mit dem Eingabeparser des Online Editors um
+(`ezprestapi` 1.2.9, [REST-API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md#21-ändern-und-die-werte-eines-schreibzugriffs)).
+In PHP-Code akzeptiert auch die Erweiterung [nxc_powercontent](../../funktionen/6.0/erweiterungen/nxc_powercontent.md)
+HTML für sie.
 Datentypen aus Erweiterungen wie `eztags` haben eigene Formate; lesen Sie deren `fromString()`.
 
 ## Bilder und Dateien aus einem DAM

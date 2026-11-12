@@ -26,8 +26,10 @@ guide, with what the app should do.
 | Status | Body | Meaning |
 |---|---|---|
 | `200` | the content | a read or a remove succeeded |
+| `200` | `{"message":"Updated","objectId":...,"nodeId":...,"version":...,"languageLocale":...}` | an update was published as a new version |
 | `201` | `{"message":"Created","objectId":...,"nodeId":...}` | a create was published |
-| `400` | `{"error":"invalid_request","error_message":...}` | a write field is missing, or names a class or language that does not exist |
+| `202` | `{"message":"Waiting for a workflow",...}` | a workflow holds the publication of an update |
+| `400` | `{"error":"invalid_request","error_message":...}` | a write field is missing, or names a class, attribute or language that does not exist; an update without values; a value that is not text, or a file value that is not a public `http(s)` URL |
 | `401` | empty, with `WWW-Authenticate: OAuth realm='Exponential REST'` | no credential reached the server |
 | `401` | `{"error":"invalid_token"}` | an unknown, wrong or revoked token or key, a disabled owner, or a key sent in the URL |
 | `401` | `{"error":"expired_token"}` | a personal API key past its end date |
@@ -37,7 +39,7 @@ guide, with what the app should do.
 | `405` | with an `Allow` header | no route takes this method for this path |
 | `429` | `{"error":"rate_limited",...}` with `Retry-After` | a personal API key sent more requests this minute than `RateLimitPerMinute` (120 by default) |
 | `500` | `{"error":"failed",...}` | a create or remove failed on the server; also every `listAtom` call (a known issue) |
-| `501` | `{"error":"not_implemented",...}` | the update route, after the permission check |
+| `501` | `{"error":"not_implemented",...}` | a create, update or remove on a server older than Exponential 6.0.15 |
 
 The `401` without a body was observed on the demonstration server for a request with no `Authorization` header. The
 statuses with `error` and `error_message` come from `errorResult()` of `ezp7xRestContentController`.
@@ -65,7 +67,7 @@ status, never on the text.
 | `400` | show the message; it names the field |
 | `429` | wait for `Retry-After` seconds |
 | `500`, `502`, `503`, `504`, timeouts | retry with backoff for reads; for writes, check first whether the write happened |
-| `501` | a feature gap: use the route named on [What the APIs do not do](../what-the-apis-do-not-do.md) |
+| `501` | the server cannot write over REST yet: write through expservices ([Writing through expservices](../json-endpoints/writing-through-expservices.md)), or ask the administrator to upgrade |
 
 ## A retry policy
 

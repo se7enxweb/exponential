@@ -2,7 +2,7 @@
 
 Diese Seite richtet sich an Entwickler, die Inhalte aus Skripten und anderen Diensten in Exponential veröffentlichen.
 `ezprestapi` ist ein REST-API-Provider (Versionen 1 und 2 der `ezp`-API) zum **entfernten Aktualisieren von Inhalten**:
-Andere Systeme listen, lesen, erstellen und löschen Knoten über HTTP mit einem OAuth-Token. Er ist ein registrierter
+Andere Systeme listen, lesen, erstellen, aktualisieren und löschen Knoten über HTTP mit einem OAuth-Token. Er ist ein registrierter
 Provider des REST-Frameworks des Kernels.
 
 Seit 1.2.6 bedient er REST API v1 und v2 als **eine** Extension: eine Aktivierung (`ActiveExtensions[]=ezprestapi`),
@@ -39,8 +39,13 @@ Das Template für `OutputFormat=xhtml` ist für den Controller dieser Extension 
 Template=rest_pagelayout.tpl
 ```
 
-Die Aufrufe zum Erstellen und Löschen stützen sich auf [nxc_powercontent](nxc_powercontent.md) (eine Aktualisierung wird
-geprüft und antwortet dann mit 501). Die Authentifizierung ist das OAuth2 des REST-Frameworks: Holen Sie ein Token unter
+Seit 1.2.9 schreibt `expContentWriter` aus dem Kernel (`kernel/classes/contentwriter/expcontentwriter.php`,
+Exponential 6.0.15) die Aufrufe zum Erstellen, Aktualisieren und Löschen; die Extension setzt
+[nxc_powercontent](nxc_powercontent.md) nicht mehr voraus. Eine Aktualisierung veröffentlicht eine neue Version des
+Objekts des Knotens mit den gesendeten Werten ([Inhalte schreiben](#inhalte-schreiben)). Auf einem Kernel älter als
+6.0.15 antworten die schreibenden Aufrufe mit `501 not_implemented`.
+
+Die Authentifizierung ist das OAuth2 des REST-Frameworks: Holen Sie ein Token unter
 `POST /api/auth/v1/oauth/token` (Grants `authorization_code` und `refresh_token`) und senden Sie es im Header
 `Authorization: Bearer` (oder `OAuth`); den Parameter `oauth_token` liest die API aus einem POST-Formular und aus dem
 Query-String nur bei `rest.ini [OAuthSettings] AllowTokenInQuery=enabled`
@@ -54,7 +59,7 @@ den Scope `publish`, `edit` oder `remove` des Schlüssels (`rest.ini [ApiKeySett
 Seit 1.2.5 prüft der Controller vor jedem Aufruf die Richtlinien des aktuellen Benutzers, unabhängig davon, womit die
 Anfrage authentifiziert wurde, so wie das Modul content sie prüft: `content/read` für lesende Aufrufe (bei einer Liste
 oder Zählung auch für den Elternknoten), `content/create` der Klasse unterhalb von `parentNodeID` in `languageLocale`
-(mit jeder Einschränkung), `content/edit` für eine Aktualisierung, `content/remove` für jeden Platz des Objekts und
+(mit jeder Einschränkung), `content/edit` für eine Aktualisierung (in ihrer Sprache), `content/remove` für jeden Platz des Objekts und
 alles darunter bei einer Entfernung. Eine Ablehnung antwortet mit `403 {"error":"access_denied","error_message":...}`
 und schreibt nichts. Vor 1.2.5 fragten die schreibenden Aufrufe nichts ab: Ein OAuth-Token konnte erstellen und
 entfernen, wo sein Benutzer kein Recht dazu hatte. Die Prüfung ist `expRestContentPermission` des Kernels
@@ -65,12 +70,32 @@ ungeprüft auszuführen. Die Einzelheiten stehen im Leitfaden:
 | Antwort | Wann |
 |---|---|
 | `201 {"message":"Created","objectId","nodeId"}` | ein erstelltes Objekt wurde veröffentlicht |
+| `200 {"message":"Updated","objectId","nodeId","version","languageLocale"}` | eine Aktualisierung wurde als neue Version veröffentlicht |
+| `202 {"message":"Waiting for a workflow",...}` | ein Workflow hält die Veröffentlichung einer Aktualisierung zurück |
 | `200 {"message":"Removed","nodeId","objectId"}` | eine Entfernung ist erfolgt |
-| `400 invalid_request` | `parentNodeID`, `classIdentifier` oder `languageLocale` fehlt oder nennt eine Klasse oder Sprache, die es nicht gibt |
+| `400 invalid_request` | `parentNodeID`, `classIdentifier` oder `languageLocale` fehlt oder nennt eine Klasse oder Sprache, die es nicht gibt; eine Aktualisierung ohne Werte; ein unbekanntes Attribut, ein Wert, der kein Text ist, oder ein Dateiwert, der keine öffentliche `http(s)`-URL ist |
 | `403 access_denied` | der Benutzer darf es nicht |
 | `404 not_found` | der Knoten existiert nicht |
-| `501 not_implemented` | eine erlaubte Aktualisierung: Das Aktualisieren der Attributwerte ist noch nicht implementiert, nichts ändert sich |
+| `501 not_implemented` | ein schreibender Aufruf auf einem Kernel älter als 6.0.15 (ohne `expContentWriter`) |
 | `401` | kein oder ein ungültiges Token bzw. ein ungültiger Schlüssel (auch bei `POST` oder `DELETE`; vor 6.0.15 antworteten sie mit 405) |
+
+## Inhalte schreiben
+
+`POST /content/node/<id>` sowie `PUT` auf dieselbe URL (oder `POST` mit `_method=PUT`) veröffentlichen eine neue
+Version des Objekts des Knotens; nicht gesendete Attribute behalten ihre Werte. `languageLocale` ist optional
+(Standard: die Hauptsprache des Objekts); eine Sprache, die das Objekt noch nicht hat, fügt diese Übersetzung hinzu.
+Die neue Version durchläuft die Operation `content/publish`, Workflows laufen also. Ein persönlicher API-Schlüssel
+braucht den Scope `edit` (`RouteScopes[ezp7xRestContentController_UpdateContentNode]=edit`).
+
+Erstellen und Aktualisieren nehmen die Werte als Formularfelder oder als JSON-Objekt (`Content-Type: application/json`)
+an, nach Attributbezeichner und als Text: Rich Text (`ezxmltext`) als HTML, umgewandelt mit dem Eingabeparser des
+Online Editors (Links und Einbettungen werden zu Beziehungen); Dateien (`ezimage`, `ezbinaryfile`, `ezmedia`) als
+`<http(s)-URL>` oder `<URL>|<Alternativtext oder Dateiname>`, nur von einer öffentlichen Adresse geladen (kein
+Serverpfad, kein `file://`, kein anderes Schema, keine Zugangsdaten in der URL, keine Adresse in einem privaten,
+Loopback-, Link-Local- oder reservierten Netz; keine Weiterleitungen; höchstens 50 MB); jeder andere Datentyp in seiner
+Textform (`fromString()`). Vor 1.2.9 las ein Erstellen über `nxc_powercontent` einen Dateiwert aus einem lokalen
+Serverpfad oder lud jede URL herunter. Die Anleitung enthält die Einzelheiten und ein curl-Beispiel:
+[Ändern und die Werte eines Schreibzugriffs](../../../anleitungen/rest-api-v1-und-v2.md#21-ändern-und-die-werte-eines-schreibzugriffs).
 
 ## Routen
 
@@ -86,7 +111,7 @@ Registriert von `ezp7xRestApiProvider` (`classes/rest_provider.php`); alle auße
 | `GET /content/node/:nodeId/listAtom` (`ezpRestAtomController`) | v1, v2 | Atom-Feed (antwortet mit 500: [bekanntes Problem](../../../anleitungen/rest-api-v1-und-v2.md#8-bekanntes-problem-listatom)) |
 | `POST /content/node/create` | v2 | Inhalt erstellen und veröffentlichen |
 | `DELETE` oder `POST /content/node/delete/:nodeId` | v2 | Das Objekt des Knotens entfernen |
-| `POST /content/node/:nodeId` | v2 | Aktualisieren (geprüft, dann 501: noch nicht implementiert) |
+| `POST` oder `PUT /content/node/:nodeId` | v2 | Aktualisieren: eine neue Version mit den gesendeten Werten veröffentlichen |
 
 | Vor 1.2.5 und 6.0.15 | Seitdem |
 |---|---|
@@ -128,6 +153,7 @@ genutzten Rechnern auf.
 | 1.2.1 bis 1.2.4 | 27. September bis 2. Oktober 2026 | Version, Lizenz und Website; Beschreibung; Header von 7x und Exponential Foundation in den Einstiegsdateien; Befehle und Cronjob-Teile sind Klassen, die die Dateien aufrufen und über die gemeinsamen Hilfsfunktionen starten. |
 | 1.2.5 | 6. Oktober 2026 | Jeder lesende und schreibende Aufruf prüft die Richtlinien des aktuellen Benutzers bei jeder Art der Authentifizierung; lesende Routen antworten wieder unter v1; Löschen akzeptiert `DELETE`; Erstellen und Löschen antworten mit 201 und 200 und den IDs. Benötigt Exponential 6.0.15 für die Prüfungen und v1. |
 | 1.2.6 | 15. Oktober 2026 | `OutputFormat=xhtml` wird wieder gerendert (`[ezp7xRestContentController_viewContent_OutputSettings] Template=rest_pagelayout.tpl`; es antwortete mit einem leeren `renderedOutput`); Name, Beschreibung und README sagen, dass die Extension REST API v1 und v2 bedient und ezprestapiprovider ersetzt; die Modelltests wurden aus ezprestapiprovider übernommen. |
+| 1.2.9 | 12. November 2026 | REST v2 aktualisiert Inhalte (`POST` oder `PUT /content/node/<id>` veröffentlicht eine neue Version); Erstellen und Aktualisieren nehmen einen JSON-Body an; Erstellen, Aktualisieren und Löschen schreibt `expContentWriter` aus dem Kernel, sodass `nxc_powercontent` nicht mehr vorausgesetzt wird; Dateiwerte werden nur von öffentlichen `http(s)`-Adressen geladen. Benötigt Exponential 6.0.15 für die schreibenden Aufrufe. |
 
 [ezprestapiprovider](ezprestapiprovider.md) ist veraltet; sein letztes Release, 6.0.4, ist eine Kompatibilitätsschicht,
 die Provider und Controller dieser Extension erweitert. Siehe die

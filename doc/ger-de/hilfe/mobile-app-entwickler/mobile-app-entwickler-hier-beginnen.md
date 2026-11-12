@@ -47,7 +47,7 @@ erklärt es mit echten Antworten.
 
 | Schnittstelle | URL-Muster | Am besten für | Lesen |
 |---|---|---|---|
-| REST-Inhalts-API (`ezprestapi`) | `/api/ezp/v1/...` und `/api/ezp/v2/...` | Knoten, Unterknoten und Felder lesen; Inhalte anlegen und entfernen (v2) | [REST-API](rest-api/README.md) |
+| REST-Inhalts-API (`ezprestapi`) | `/api/ezp/v1/...` und `/api/ezp/v2/...` | Knoten, Unterknoten und Felder lesen; Inhalte anlegen, aktualisieren und entfernen (v2) | [REST-API](rest-api/README.md) |
 | Remote-Dienste (`expservices`) | `/ezjscore/call/exp<domain>::<method>` | Suche, Bildalias-URLs, URL-Aliase, Sprachen, Aktualisierungen; über tausend Dienste | [JSON-Endpunkte](json-endpunkte/README.md) |
 | Serverfunktionen von ezjscore | `/ezjscore/call/<name>::<function>` | ein kleiner JSON-Endpunkt, den ein PHP-Entwickler für Ihre App schreibt | [ezjscore-Serverfunktionen für Ihre App](json-endpunkte/ezjscore-serverfunktionen-fuer-ihre-app.md) |
 

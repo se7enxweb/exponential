@@ -27,7 +27,7 @@ Rollen richtig einzustellen ist die wirksamste Sicherheitsmaßnahme, die eine Ap
 |---|---|
 | REST-Lesezugriff auf einen Knoten, ein Objekt, eine Liste, eine Anzahl | `content/read` |
 | Anlegen über REST | `content/create` (Einschränkungen Class, ParentClass, Section, Node, Subtree, Language) |
-| Aktualisieren über REST (antwortet nach der Prüfung mit `501`) | `content/edit` |
+| Aktualisieren über REST (eine neue Version) | `content/edit` in der geschriebenen Sprache |
 | Entfernen über REST | `content/remove` für jede Platzierung und alles darunter |
 | Eine OAuth-App auf der Autorisierungsseite zulassen | `oauth/authorize` (optional auf einen Siteaccess beschränkt) |
 | Persönliche API-Schlüssel erstellen | `apikey/create` (optional durch `Scope` beschränkt) |

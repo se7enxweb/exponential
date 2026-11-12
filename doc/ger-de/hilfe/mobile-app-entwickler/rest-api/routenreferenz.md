@@ -27,7 +27,7 @@ aus `settings/rest.ini`. Alle Inhaltspfade sind relativ zu `/api/ezp/<version>` 
 | Routenname | Methode | Pfad | v1 | v2 | Controller-Aktion |
 |---|---|---|---|---|---|
 | `ezpNode` | `GET` | `/content/node/<id>` | ja | ja | `viewContent` |
-| `ezpNodeUpdate` | `POST` | `/content/node/<id>` | nein | ja | `UpdateContentNode` (antwortet nach der Berechtigungsprüfung mit `501`) |
+| `ezpNodeUpdate` | `POST`, `PUT` | `/content/node/<id>` | nein | ja | `UpdateContentNode` (veröffentlicht eine neue Version; `501` auf einem Kernel älter als 6.0.15) |
 | `ezpList` | `GET` | `/content/node/<id>/list(/offset/<n>)(/limit/<n>)(/sort/<key>(/asc\|desc))` | ja | ja | `list` |
 | `ezpChildrenCount` | `GET` | `/content/node/<id>/childrenCount` | ja | ja | `countChildren` |
 | `ezpFieldsByNode` | `GET` | `/content/node/<id>/fields` | ja | ja | `viewFields` |
