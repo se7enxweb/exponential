@@ -97,7 +97,20 @@ class ezpRestRouter extends ezcMvcRouter
      */
     protected function doCreateRoutes()
     {
-        $providerRoutes = ezpRestProvider::getProvider( ezpRestPrefixFilterInterface::getApiProviderName() )->getRoutes();
+        $providerName = ezpRestPrefixFilterInterface::getApiProviderName();
+        try
+        {
+            $providerRoutes = ezpRestProvider::getProvider( $providerName )->getRoutes();
+        }
+        catch ( ezpRestProviderNotFoundException $e )
+        {
+            // An address that names no provider uses the default one (ezp, from the optional ezprestapi extension).
+            // Without it, such an address still has the error page: the internal redirect to /fatal that answers a
+            // 404 or an error otherwise failed the same way again and ended as a fatal error loop and a 500.
+            if ( !empty( $providerName ) )
+                throw $e;
+            $providerRoutes = array();
+        }
         // the error page is reached by internal redirects that may keep the method of the failed request
         $providerRoutes['fatal'] = new ezpMvcRailsRoute( '/fatal', 'ezpRestErrorController', ezpMvcRailsRoute::anyMethod( 'show' ) );
 
