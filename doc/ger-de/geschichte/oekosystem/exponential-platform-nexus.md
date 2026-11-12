@@ -8,7 +8,7 @@ Exponential Platform Nexus: Exponential Layouts + Media Site + Tags + Plattform 
 
 ## Wie es mit Exponential zusammenhängt
 
-Die fertige Website-Distribution, die das Design der Media-Site darstellt; Linien 1.x und 2.5.x.
+Die fertige Website-Distribution, die das Design der Media-Site darstellt; die Linien 1.0.0.x bis 1.3.0.x, davon ist 1.3.0.x die aktuelle. Die Tags `v2.5.0.x` auf `master` sind keine Nexus-Linie.
 
 ## Was Anwender davon haben
 

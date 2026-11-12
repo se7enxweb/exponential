@@ -8,7 +8,7 @@ Fork of the Symfony 3.4 framework split into se7enxweb/symfony.
 
 ## How it relates to Exponential
 
-Keeps Symfony 3.4 based Nexus 1.x installs running on PHP 8.2 to 8.5.
+Keeps Symfony 3.4 based Nexus 1.0.0.x installs running on PHP 8.2 to 8.5.
 
 ## What a user gets
 

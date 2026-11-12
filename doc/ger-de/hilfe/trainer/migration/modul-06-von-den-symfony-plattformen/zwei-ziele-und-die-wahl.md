@@ -100,7 +100,7 @@ Eine Entscheidungsübung zu zweit, mit geöffnetem Kapitel 16.
 ## Erwartetes Ergebnis
 
 - Schritt 2: eZ Platform 2.5 (`ezpublish:`); Ibexa 4.6 (`ibexa:`); eZ Platform 3.x oder Ibexa 3.3 (`ezplatform:`).
-- Schritt 3: Nexus `1.0.0.x` oder `v2.5.0.x` mit Platform Legacy `v2.5.0.x`; Nexus `1.2.0.x` mit Platform Legacy
+- Schritt 3: Nexus `1.0.0.x` mit Platform Legacy `v2.5.0.x`; Nexus `1.2.0.x` mit Platform Legacy
   `v4.6.23.x`; Nexus `1.1.0.x` mit Platform Legacy `v3.3.44.x`.
 - Schritt 4: Weg A (Nexus `1.2.0.x`, dieselbe Generation) für die 4.6-Website.
 - Schritt 5: Weg B ist für die 2.5-Website eine vernünftige Wahl; das Paar nennt die Arbeit, die das bedeutet

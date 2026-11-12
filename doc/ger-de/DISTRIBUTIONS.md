@@ -55,7 +55,7 @@ mit zwei Befehlen auf SQLite und läuft auf jeder Datenbank, die Exponential unt
 |---|---|---|---|---|---|---|---|
 | Exponential 6 | `se7enxweb/exponential` (`ezpublish-legacy`) | Exponential 6 | keins | 8.0 bis 8.5; 7.4 nutzbar ohne Support | ja | über die Site-Pakete | `v6.0.14` (7. Juni 2026); 6.0.15 in Entwicklung |
 | Exponential Platform Legacy | `se7enxweb/exponential-platform-legacy` (`project`) | Symfony-Plattform + Exponential 6 | 3.4, 5.4 oder 7.4 je nach Linie | je nach Linie, 7.4 bis 8.5 | auf den Linien 4.6 und 5.0 | Installer der Plattform | `v2.5.0.10`, `v3.3.44.14`, `v4.6.23.9`, `v5.0.3.7` |
-| Exponential Platform Nexus | `se7enxweb/exponential-platform-nexus` (`project`) | Symfony-Plattform, auf den älteren Linien + Exponential 6 | 3.4, 5.4 oder 7.4 je nach Linie | je nach Linie, 8.0 bis 8.5 | ja | ja (Media-Site) | `v2.5.0.9`, `1.0.0.11`, `v1.1.0.14`, `v1.2.0.5`, `1.3.0.11` |
+| Exponential Platform Nexus | `se7enxweb/exponential-platform-nexus` (`project`) | Symfony-Plattform, auf den älteren Linien + Exponential 6 | 3.4, 5.4 oder 7.4 je nach Linie | je nach Linie, 8.0 bis 8.5 | ja | ja (Media-Site) | `1.0.0.11`, `v1.1.0.14`, `v1.2.0.5`, `1.3.0.11` |
 | CJW Exponential Platform Nexus | `se7enxweb/cjw-exponential-platform-nexus` (`project`) | wie Nexus 1.0.0.x | 3.4 | wie Nexus 1.0.0.x | ja | ja (CJW) | `1.0.0.16` |
 | Exponential Platform DXP | `se7enxweb/exponential-platform-dxp-skeleton` (`project`) auf dem Metapaket `se7enxweb/exponential-platform-dxp` | Symfony-Plattform v5 | 7.4 | 8.3 oder neuer | kein Editor | Installer der Plattform | Skeleton `v2.0.0.4`, Metapaket `v0.0.0.4` |
 | Exponential Platform 3.2.9 | `se7enxweb/exponential-platform` (`project`) | Kernel von eZ Platform 3.2 | 5.x | 7.3, 8.1 bis 8.4 | nein | Installer der Plattform | `v3.2.9` (28. September 2025) |
@@ -143,16 +143,19 @@ Administration wollen und sie dann zu ihrer eigenen umbauen.
 
 | Linie | Plattform-Generation | Symfony | PHP | Kernel von Exponential 6 | Neuester Tag |
 |---|---|---|---|---|---|
-| 2.5 (`master`) und 1.0.0.x | eZ Platform 2.5 | 3.4 | in der Praxis 8.1 oder neuer (das Minimum des Kernels); Composer mit `--ignore-platform-req=php+` | ja | `v2.5.0.9`, `1.0.0.11` |
+| 1.0.0.x | eZ Platform 2.5 | 3.4 | in der Praxis 8.1 oder neuer (das Minimum des Kernels); Composer mit `--ignore-platform-req=php+` | ja | `1.0.0.11` |
 | 1.1.0.x | eZ Platform 3.3 | 5.4 | 8.0 oder neuer, 8.5 empfohlen | ja | `v1.1.0.14` |
 | 1.2.0.x | Ibexa Open Source 4.6 | 5.4 | 8.2 oder neuer, 8.5 empfohlen | ja | `v1.2.0.5` |
-| 1.3.0.x | Plattform v5 | 7.4 | 8.4 oder neuer | nein | `1.3.0.11` |
+| 1.3.0.x (aktuell) | Plattform v5 (DXP 5 OSS) mit Exponential Layouts 2, SQLite als Standard ohne Konfiguration | 7.4 | 8.4 oder neuer | nein | `1.3.0.11` |
+
+Der Standard-Branch `master` trägt Tags `v2.5.0.x` im Upstream-Stil (bis `v2.5.0.9`); er ist keine Nexus-Linie und
+nicht der Branch `1.0.0.x`, installieren Sie also nie von ihm. Neue Projekte beginnen auf 1.3.0.x.
 
 - **Datenbanken** (das Buch, Kapitel 2): MySQL 8.0+, MariaDB 10.3+, PostgreSQL 14+ oder SQLite 3.35+ auf 1.1.0.x bis
-  1.3.0.x; MySQL 5.7+ oder MariaDB 10.2+ und PostgreSQL auf der Generation 2.5, SQLite auf 1.0.0.x.
+  1.3.0.x; MySQL 5.7+ oder MariaDB 10.2+, PostgreSQL und SQLite auf 1.0.0.x (der Generation eZ Platform 2.5).
 - **Installieren.** Klonen Sie den Branch und checken Sie den neuesten Tag der Linie aus, oder verwenden Sie
   `composer create-project` und **geben Sie immer eine Version an** (zum Beispiel
-  `se7enxweb/exponential-platform-nexus:1.3.0.6`): Ohne Version installiert Composer die Upstream-Media-Site von
+  `se7enxweb/exponential-platform-nexus:1.3.0.11`): Ohne Version installiert Composer die Upstream-Media-Site von
   Netgen, die Packagist unter demselben Namen führt.
 - **Varianten.**
   - **CJW Exponential Platform Nexus** ([se7enxweb/cjw-exponential-platform-nexus](https://github.com/se7enxweb/cjw-exponential-platform-nexus),
@@ -270,7 +273,7 @@ Ein Wechsel geschieht nie von selbst: Sichern Sie zuerst die Datenbank und `var/
 | Frage oder Symptom | Antwort |
 |---|---|
 | Hat Exponential Platform DXP einen Layout-Editor? | Nein. Es bringt keinen Layout-Editor, keinen Freigabe-Workflow, keinen Zeitplaner und keinen Kernel von Exponential 6 mit. Wählen Sie für Exponential Layouts Nexus oder Legacy 4.6 bzw. 5.0. |
-| `composer create-project se7enxweb/exponential-platform-nexus` hat ein Projekt namens `netgen/media-site` angelegt | Es lief ohne Version und hat die Upstream-Media-Site installiert. Beginnen Sie neu mit einer Version, zum Beispiel `:1.3.0.6`. |
+| `composer create-project se7enxweb/exponential-platform-nexus` hat ein Projekt namens `netgen/media-site` angelegt | Es lief ohne Version und hat die Upstream-Media-Site installiert. Beginnen Sie neu mit einer Version, zum Beispiel `:1.3.0.11`. |
 | Composer lehnt die Generation 2.5 auf aktuellem PHP ab | Verwenden Sie `--ignore-platform-req=php+`, wie die README sagt; schalten Sie die Sicherheitssperre von Composer nie ab. |
 | Ein Tag von Nexus oder Legacy fehlt auf Packagist | Fünfteilige Tags (`v1.0.0.0.3`, `1.3.0.0.0`) gibt es nur in Git. Installieren Sie sie aus einem Klon. |
 | Exponential Layouts fehlt auf Legacy 5.0 | Es wird nur ab PHP 8.4 hinzugefügt, und nicht, wenn `EXP_WITHOUT_NETGEN_LAYOUTS=1` gesetzt ist. |

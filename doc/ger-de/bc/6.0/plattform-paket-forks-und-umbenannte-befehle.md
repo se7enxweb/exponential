@@ -74,12 +74,12 @@ einen Alias eines Entwicklungs-Branches. Verlangen Sie ein getaggtes Release, od
 | Platform v5 (`exponential-platform-dxp`, Skeleton) | 8.3 oder neuer; der Nexus-v5-Starter 8.4 oder neuer | 20 (Anleitung zum DXP-Skeleton), 22 (Nexus-v5-Starter) |
 | Platform-4.6.x-Skeleton | 7.4 bis 8.5 | 20 |
 | Platform-3.x-Forks (`ezplatform-*`) | 7.3 bis 8.5 (Bedingung am 2026-03-25 auf `^8.5` erweitert) | je nach Projekt |
-| Nexus 1.x / 2.5 | 7.1 bis 8.5 | 20 (die `cjw`-Nexus wechselte am 2026-02-12 von 14 auf 20) |
+| Nexus 1.0.0.x (Platform 2.5) | 7.1 bis 8.5 | 20 (die `cjw`-Nexus wechselte am 2026-02-12 von 14 auf 20) |
 
 - Unter PHP 8.4 oder 8.5 braucht ein älterer Stack die [Framework-Forks](../../funktionen/6.0/plattform-php85-framework-forks.md).
 - Unter PHP 8.4 braucht der Stack von Layouts 2.0 den [Fork von layouts-core](../../funktionen/6.0/plattform-layouts-core-fork.md).
-- Nur für die Linie 1.x überspringt Composer die Plattformprüfung mit `--ignore-platform-reqs` (die
-  Installationsanleitung von Nexus 1.x sagt das). Verwenden Sie diese Option bei anderen Linien nicht.
+- Nur für die Nexus-Linie 1.0.0.x überspringt Composer die Plattformprüfung mit `--ignore-platform-reqs` (die
+  Installationsanleitung von Nexus 1.0.0.x sagt das). Verwenden Sie diese Option bei anderen Linien nicht.
 
 ## Schritt 4: Namen der Konsolenbefehle
 
@@ -136,12 +136,12 @@ Lizenzberichte erzeugen, erwarten Sie den neuen Wert.
 Eigene Klassen, die Klassen der Bridge erweitern, brauchen dieselben Signaturen. Siehe
 [die Anleitung zur Legacy Bridge](../../funktionen/6.0/legacy-bridge.md).
 
-## Schritt 8: Nexus 1.x, wo Assets und gespeicherte Dateien liegen
+## Schritt 8: Nexus 1.0.0.x, wo Assets und gespeicherte Dateien liegen
 
-Die Installation von Nexus 1.x ersetzt das Legacy-Verzeichnis, wenn Composer `se7enxweb/exponential` aktualisiert.
+Die Installation von Nexus 1.0.0.x ersetzt das Legacy-Verzeichnis, wenn Composer `se7enxweb/exponential` aktualisiert.
 Der Inhaltsspeicher und die Erweiterung `app` liegen daher in `src/AppBundle/ezpublish_legacy` und werden mit den
 symbolischen Links der Installationsanleitung eingebunden
-([Nexus-Starter](../../funktionen/6.0/plattform-nexus-starter.md#nexus-100x-installieren-die-linie-25)). Halten Sie
+([Nexus-Starter](../../funktionen/6.0/plattform-nexus-starter.md#nexus-100x-installieren-der-ez-platform-25-stack)). Halten Sie
 hochgeladene Dateien nie nur innerhalb von `ezpublish_legacy/var`.
 
 ## Schritt 9: Legacy-Kernel, Datenbank-Update von 5.4 auf 6.0

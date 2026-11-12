@@ -31,7 +31,7 @@ die Nexus-Linien aus [Exponential Platform Nexus: eine fertige Website in Minute
 |---|---|---|
 | Exponential Platform 3.2.9 | "CMS / DXP based on the last free versions of eZ Platform. Symfony / New Stack Only" | Nein ("No Exponential 6.x Legacy Support") |
 | Exponential Platform Legacy | Eine Distribution von Exponential Platform "with Exponential (Legacy) Included"; "Dual Kernel" | Ja |
-| Exponential Platform Nexus | Platform plus Exponential 6, Netgen Media Site und Exponential Layouts, eine Linie pro Platform-Generation | In den Linien 1.0.0.x bis 1.2.0.x und 2.5; nicht in 1.3.0.x (Platform v5) |
+| Exponential Platform Nexus | Platform plus Exponential 6, Netgen Media Site und Exponential Layouts, eine Linie pro Platform-Generation | In den Linien 1.0.0.x bis 1.2.0.x; nicht in 1.3.0.x (Platform v5, die aktuelle Linie) |
 | Nexus-Starter | Die v5-Nexus-Website als eigenes Repository, laut Beschreibung "Currently In Public Beta" | Nein |
 | Exponential Platform DXP | "a free, open-source Digital Experience Platform built on the Symfony framework" | Nein |
 

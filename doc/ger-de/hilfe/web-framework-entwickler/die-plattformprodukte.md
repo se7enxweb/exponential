@@ -29,7 +29,7 @@ zusammengefasst.
 |---|---|---|
 | **Exponential Platform 3.2.9** | ein CMS auf den letzten freien Versionen von eZ Platform, „Symfony / New Stack Only“ | Nein |
 | **Exponential Platform Legacy** | die Symfony-Plattform plus Legacy Bridge und `se7enxweb/exponential` („zwei Kernel“) | Ja |
-| **Exponential Platform Nexus** | Plattform, Exponential 6, Netgen Media Site und Exponential Layouts, mit Demo-Inhalten | die Linien 1.0.0.x bis 1.2.0.x und Nexus 2.5 ja; 1.3.0.x (Platform v5) nein |
+| **Exponential Platform Nexus** | Plattform, Exponential 6, Netgen Media Site und Exponential Layouts, mit Demo-Inhalten | die Linien 1.0.0.x bis 1.2.0.x ja; 1.3.0.x (Platform v5, die aktuelle Linie) nein |
 | **Nexus Starter** | die Nexus-Site von Platform v5 als eigenes Repository | Nein |
 | **Exponential Platform DXP** | eine reine Symfony-Plattform für digitale Erlebnisse, die Fortsetzung der Linie Ibexa DXP OSS | Nein |
 

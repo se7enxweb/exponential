@@ -42,8 +42,7 @@ Aus der `composer.json` und der `composer.lock` jedes Branches und Tags
 | 1.0.0.x | Stack von eZ Platform 2.5, Symfony 3.4, PHP 7.1.3 bis 8.5 | ja |
 | 1.1.0.x | Generation 3.3, Symfony 5.4, PHP `^8.0` | ja |
 | 1.2.0.x | Generation 4.6, Symfony 5.4, PHP 8.2 oder neuer | ja |
-| 1.3.0.x und der v5-Starter | Platform v5, Symfony 7.4, PHP 8.4 oder neuer | **nein** |
-| 2.5 (`v2.5.0.0` bis `v2.5.0.6`) | die Legacy-2.5-Distribution, als Nexus paketiert | ja |
+| 1.3.0.x (aktuell) und der v5-Starter | Platform v5 (DXP 5 OSS), Exponential Layouts 2, SQLite als Standard, Symfony 7.4, PHP 8.4 oder neuer | **nein** |
 
 Ein Bundle, das "Exponential 6 inklusive" verspricht, darf nicht auf 1.3.0.x oder dem v5-Starter gebaut werden.
 
@@ -52,7 +51,8 @@ Ein Bundle, das "Exponential 6 inklusive" verspricht, darf nicht auf 1.3.0.x ode
 - **Fünfteilige Tags gibt es nicht auf Packagist.** `v1.0.0.0.1` bis `v1.0.0.0.3` und `1.3.0.0.0` "existieren nur
   als Git-Tags".
 - **Nennen Sie immer eine Version.** `composer create-project se7enxweb/exponential-platform-nexus` ohne Version
-  wählt `3.1.6`, die Upstream-Media-Site, "kein Nexus-Release". Der Standard-Branch, `master`, ist die Linie 2.5.
+  wählt `3.1.6`, die Upstream-Media-Site, "kein Nexus-Release". Der Standard-Branch, `master`, trägt Tags `v2.5.0.x` im
+  Upstream-Stil und ist keine Nexus-Linie; bauen Sie auf einem Tag von `1.0.0.x` bis `1.3.0.x` auf.
 - **Legen Sie in Ihrem Bundle einen Tag fest**, nie einen Branch. Es gilt dieselbe Regel wie für den Kernel: Ein
   veröffentlichtes Release ist dauerhaft ([Versionen, Tags und Pinning](versionen-tags-und-pinning.md)).
 
@@ -63,7 +63,7 @@ Die dokumentierten Befehle für den v5-Starter enden mit `php bin/console expone
 exponential-media`) auf ihrer eigenen Generation". `php bin/console help exponential:install` zeigt die
 Installationstypen Ihres Checkouts. Die Linie 1.0.0.x installiert aus SQL-Dumps und braucht zusätzliche symbolische
 Links; die Schritte stehen unter
-[Nexus 1.0.0.x installieren](../../funktionen/6.0/plattform-nexus-starter.md#nexus-100x-installieren-die-linie-25).
+[Nexus 1.0.0.x installieren](../../funktionen/6.0/plattform-nexus-starter.md#nexus-100x-installieren-der-ez-platform-25-stack).
 
 Führen Sie diese Schritte für ein Bundle zur Build-Zeit oder beim ersten Start genau so aus, wie die README Ihrer
 Linie sie angibt, und behandeln Sie das Ergebnis dann wie jedes andere Bundle: Rechte, Caches, das Demokonto, die

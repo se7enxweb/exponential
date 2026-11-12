@@ -3669,7 +3669,7 @@ af285ac8d63f408a2ebaf23e88716894  doc/changelogs/extensions/xrowextract.md
 bbcfbb1065eefc4a3f53987a1bad5fb1  doc/changelogs/extensions/xrowmetadata.md
 7f3212d2b818141cfb164d47fa2a4d33  doc/eng-us/COMMUNITY.md
 e6461bcfbb86fd709b54abede0077f11  doc/eng-us/CONFIGURING.md
-aa7617c6f5563d4cd4ff63ed6af720cc  doc/eng-us/DISTRIBUTIONS.md
+5cc714dd0cc76c55945c22c9cd2200fd  doc/eng-us/DISTRIBUTIONS.md
 8f1308a0bb70a3295a8a8d9c3a214333  doc/eng-us/EXTENDING.md
 ba34fdb46710aeaf4d07089fce9a4354  doc/eng-us/HISTORY.md
 6733f68f85b46cc94bd6c0c6594a57c0  doc/eng-us/INSTALL.md
@@ -3784,7 +3784,7 @@ fe76752d44638f44f345857617e38f5f  doc/eng-us/bc/6.0/php8.md
 0e7cc4085f0e579c974891565171ad0a  doc/eng-us/bc/6.0/phpunitv10.md
 8e07e4fc6a0cf3199934b29b0e5fca91  doc/eng-us/bc/6.0/phpunitv13.md
 85b860e5a60e498f119c2ea570eb6b9e  doc/eng-us/bc/6.0/phpunitv13forPHP841.md
-078f9ef73fdfe3a0a79ba7d9aecd40c1  doc/eng-us/bc/6.0/platform-package-forks-and-command-renames.md
+ae53647ff6144d8baa4ae624a1199562  doc/eng-us/bc/6.0/platform-package-forks-and-command-renames.md
 06d671c6584a989b477f9332224dd1db  doc/eng-us/bc/6.0/preload.md
 376308514a9856f7e8be3e6e0e49ae14  doc/eng-us/bc/6.0/rad-extension-points.md
 ce738886977278be943451e45fd98a94  doc/eng-us/bc/6.0/rad-extension-surface.md
@@ -3820,7 +3820,7 @@ e37c2dcbaa794657ef0b6ade79057808  doc/eng-us/bc/6.0/velocity-engine-upgrade-note
 47fd2bff5c237dc0a50c3deb40ab5f34  doc/eng-us/bc/6.0/weak-passwords-and-reset-key-lifetime.md
 c99118cb6b0537f2ca6d975c9ef3918f  doc/eng-us/bc/6.0/webdav-entry-script-index-webdav.md
 67f18c68d2630fcc6c26ac4ee6fe0ab5  doc/eng-us/bc/6.0/yui-removal.md
-dbf786531ebcae285be530cca616cd1d  doc/eng-us/branch-overview.md
+02fa53d4ac2cbcf35a50b4797dbb820b  doc/eng-us/branch-overview.md
 8566bfdb32f70164cab22837547ad58d  doc/eng-us/competition/README.md
 72f2529b607a975cf18a36c85724fb46  doc/eng-us/competition/other-languages.md
 f80660723359bd447cf490c056530f56  doc/eng-us/competition/php-cms-and-frameworks.md
@@ -7073,8 +7073,8 @@ e14272d00b63fa9eb5ae016d2fe21511  doc/eng-us/features/6.0/password-change-at-nex
 7b116c074d8bb99c35b82b78674ac1ad  doc/eng-us/features/6.0/platform-admin-ui-fork.md
 53b5f5f241ade899fa8542ad929eecee  doc/eng-us/features/6.0/platform-dxp-skeleton.md
 e72286bc83884f1eb24b2ee9034f6481  doc/eng-us/features/6.0/platform-layouts-core-fork.md
-e54d839d749275e4441b6479fe6df5d3  doc/eng-us/features/6.0/platform-nexus-starter.md
-4f3713f599d9faf76a0bf1ea2f52f48f  doc/eng-us/features/6.0/platform-php85-framework-forks.md
+75afceffce13613cf4c7e77e5e460e13  doc/eng-us/features/6.0/platform-nexus-starter.md
+9883032b2ce992bfc3a26c0f0a92cc74  doc/eng-us/features/6.0/platform-php85-framework-forks.md
 cb0153220c0728b0df4f98f3577ff7cf  doc/eng-us/features/6.0/platform-site-bundles.md
 2e6216a45844e2f3da0b09fbbea87102  doc/eng-us/features/6.0/platform-sqlite-install.md
 90c5f27d343a57526bf016d4e13900ef  doc/eng-us/features/6.0/preload-sites-view.md
@@ -7891,7 +7891,7 @@ fd0e3ac122fef2b1bf0b81d14cb085d0  doc/eng-us/help/bundlers/gpl-obligations-when-
 1aee53222ee33420c6c0ebd7d68c4bfb  doc/eng-us/help/bundlers/naming-and-branding-a-bundle.md
 f3c1fa6465ab1d1a012288de2883872a  doc/eng-us/help/bundlers/oem-and-the-partner-program-for-bundlers.md
 06797ba8cdb01539785520a058852385  doc/eng-us/help/bundlers/offline-bundles.md
-48429129aa0de25857261b5284687b35  doc/eng-us/help/bundlers/platform-distributions-as-a-base.md
+fe8344a5b77cb27566051e75bcb2d680  doc/eng-us/help/bundlers/platform-distributions-as-a-base.md
 ed80167478e84b75cc662d4d38265672  doc/eng-us/help/bundlers/publishing-extensions-from-a-bundle.md
 c2cab5167219c5b6786bc6d1b50c8bc0  doc/eng-us/help/bundlers/security-defaults-of-a-bundle.md
 2115ed90d5e5204c650d205a4bacc86a  doc/eng-us/help/bundlers/server-and-virtual-machine-images.md
@@ -8879,7 +8879,7 @@ b2a39a02ab74adc16ef0d4cbd602c3fc  doc/eng-us/help/designers/theme-design/what-a-
 57ccfcd1b59dd2d2988f7501f815500f  doc/eng-us/help/develop-with-git.md
 7d0735ca1168bb24f36f9b162e59d291  doc/eng-us/help/dxp-developers/application-cache-and-redis.md
 3c4da8b43248e99c08e44477f5c67e02  doc/eng-us/help/dxp-developers/building-assets-with-yarn-and-encore.md
-baf18ee074b0a532a54d33356ce5afff  doc/eng-us/help/dxp-developers/choosing-dxp-legacy-nexus-or-exponential-6.md
+713fff8ea1af43a9d13554e5041cab33  doc/eng-us/help/dxp-developers/choosing-dxp-legacy-nexus-or-exponential-6.md
 55f7674c6b24ca59fe30b827f1e64d58  doc/eng-us/help/dxp-developers/claims-to-avoid.md
 4acef91511eec315c2cb9ebf68e9456d  doc/eng-us/help/dxp-developers/coming-from-exponential-6.md
 1309d39bbb133f098d146db5508453aa  doc/eng-us/help/dxp-developers/coming-from-ibexa-oss-or-ez-platform.md
@@ -9025,7 +9025,7 @@ c6b54be5dc15b740611cf2d4531308ca  doc/eng-us/help/ecosystem/products/exponential
 a782657583c2eefbeb994aad271866de  doc/eng-us/help/ecosystem/products/exponential-layouts.md
 ded36e07c2a5f292b535e32d022009d8  doc/eng-us/help/ecosystem/products/exponential-velocity.md
 49a15b43223b696ada7b448d6204cc44  doc/eng-us/help/ecosystem/products/platform-dxp.md
-9a6c8c3976e3a6c8cc8bae1ddcdd8fe5  doc/eng-us/help/ecosystem/products/the-platform-line.md
+19a6bc57fd6fdbfebd28c892691987bb  doc/eng-us/help/ecosystem/products/the-platform-line.md
 8bf4e8c5a7f1d6b2cbffa80078d3d011  doc/eng-us/help/ecosystem/what-the-ecosystem-is.md
 df5716c4c652a9bae4b149c996357e7c  doc/eng-us/help/editing-content.md
 10ed514dfe3b09481ebf5338ef67084b  doc/eng-us/help/extension-development/README.md
@@ -11643,7 +11643,7 @@ e660e0aa4ca9597daeeb54caf7378af4  doc/eng-us/help/press/comparisons-done-fairly.
 bcefd947700da9cdfdd0423d2d054961  doc/eng-us/help/press/covering-6-0-15-while-in-development.md
 2358640cef0b5b7d30abce0093977a18  doc/eng-us/help/press/covering-a-release.md
 71e5d33144d88c66dc905dbdb7782865  doc/eng-us/help/press/covering-an-extension-release.md
-f1b975c35ae895255957203a5fe634d5  doc/eng-us/help/press/covering-platform-releases.md
+282f858fb08b0acd44c47b4b49c9c76b  doc/eng-us/help/press/covering-platform-releases.md
 48b117c1283b2227aa301a919275fa2b  doc/eng-us/help/press/covering-security-fixes.md
 9e39a406a7e35dbfe7349f96c4a0541a  doc/eng-us/help/press/covering-velocity-releases.md
 91a5ff4da5d72e78f3b3d4fed9f4e5a6  doc/eng-us/help/press/creator-checklist.md
@@ -12521,7 +12521,7 @@ aceb11d7289f29636d850665e84cddf4  doc/eng-us/help/trainers/migration/module-05-f
 55f9f5b1c0c3ffe3267f12f99ac4acf2  doc/eng-us/help/trainers/migration/module-06-from-the-symfony-platforms/README.md
 3a5427b0ad2cce6f353e2c3413855e2c  doc/eng-us/help/trainers/migration/module-06-from-the-symfony-platforms/path-a-to-nexus.md
 f66514c81be54789529ee736054392e2  doc/eng-us/help/trainers/migration/module-06-from-the-symfony-platforms/path-b-down-to-the-legacy-kernel.md
-d53eebbb58846b708ab46139552070ec  doc/eng-us/help/trainers/migration/module-06-from-the-symfony-platforms/two-destinations-and-choosing.md
+579bdb3f34480d140eff4606d2480adc  doc/eng-us/help/trainers/migration/module-06-from-the-symfony-platforms/two-destinations-and-choosing.md
 d1b59a013bc1fef801840b4dc3f69eaa  doc/eng-us/help/trainers/migration/module-07-from-other-systems/README.md
 003320f1bd20386aead38cbb71f02659  doc/eng-us/help/trainers/migration/module-07-from-other-systems/from-drupal-and-joomla.md
 48c18e5db41317248c4c49174f2bbae6  doc/eng-us/help/trainers/migration/module-07-from-other-systems/from-static-html.md
@@ -12852,7 +12852,7 @@ e491e2f38dd47b324bd54cf9f1c10772  doc/eng-us/help/web-framework-developers/templ
 5068b7700514b2c57d8c44fedb5c32bc  doc/eng-us/help/web-framework-developers/templates-vs-twig-and-blade.md
 6e04898f5d55af4d6287866d2c712aef  doc/eng-us/help/web-framework-developers/testing.md
 3a3e4acbc66c137dc104f3bab0ad7dbe  doc/eng-us/help/web-framework-developers/the-content-model-for-orm-users.md
-4b45944eade2e59bb77202b4af10ce9c  doc/eng-us/help/web-framework-developers/the-platform-products.md
+91e9e8b7a4991453b5a09314eec45c55  doc/eng-us/help/web-framework-developers/the-platform-products.md
 ca1e0396c428896e41867c914a245e87  doc/eng-us/help/web-framework-developers/the-request-lifecycle.md
 b2d5d75778dd42e9008b5bbb1d929515  doc/eng-us/help/web-framework-developers/url-aliases-and-wildcards.md
 236f2e2d69e1b8e68398b11513bc9142  doc/eng-us/help/web-framework-developers/validation.md
@@ -12924,7 +12924,7 @@ ec8bc925001705a3d7ddc5807243b458  doc/eng-us/history/ecosystem/exponential-legac
 fd62cecb1f6be805117a4a61aba7de16  doc/eng-us/history/ecosystem/exponential-platform-dxp.md
 ae7e469f8b2e10dc4a07beb868483895  doc/eng-us/history/ecosystem/exponential-platform-legacy.md
 3b905c707dff3c3a4b68cd568e4511ce  doc/eng-us/history/ecosystem/exponential-platform-nexus-starter.md
-874acc25e928546b5b5ac4489b56946e  doc/eng-us/history/ecosystem/exponential-platform-nexus.md
+edf3c29899fead4c19bc53e9e0481756  doc/eng-us/history/ecosystem/exponential-platform-nexus.md
 f7acb151281d5c8e7853f52208352813  doc/eng-us/history/ecosystem/exponential-platform-v4x-dxp-skeleton.md
 2159c20cfd900eea133e9bc8a18e5bad  doc/eng-us/history/ecosystem/exponential-platform.md
 b4d115c713b6e5f08fc7cda2c6b9830a  doc/eng-us/history/ecosystem/exponential.md
@@ -12946,7 +12946,7 @@ c0d91f7a435a4aae61182656a02009b8  doc/eng-us/history/ecosystem/ezplatform-solr-s
 66af5ba018f4b6fb6fb5f511dcd7b215  doc/eng-us/history/ecosystem/ezplatform-standard-design.md
 45a5779fd1437ee4190249b48aa1a034  doc/eng-us/history/ecosystem/ezplatform-user.md
 2418f8243505136e5ba905a6082ac7e1  doc/eng-us/history/ecosystem/ezplatform-xmltext-fieldtype.md
-a37613dec1de347398a31eb29fa9a3a3  doc/eng-us/history/ecosystem/ezpublish-kernel.md
+0ae499d4c639d6227b817176f36a11e0  doc/eng-us/history/ecosystem/ezpublish-kernel.md
 1e76a2a113c25f59b2ff43cf0de7a111  doc/eng-us/history/ecosystem/fieldtype-richtext-ibexa.md
 2c4b1045ae1fb4f4032624c136d45898  doc/eng-us/history/ecosystem/ibexa-legacy-bridge---7x.md
 1edc970fe6b2678656118355e5502c57  doc/eng-us/history/ecosystem/ibexa-recipes.md
@@ -13015,7 +13015,7 @@ be16058a31c5e87fb8551e10f2ea2bf6  doc/eng-us/history/ecosystem/oss-skeleton.md
 39a5fdc54bb2335bce1d8edfcbbbe5fd  doc/eng-us/history/ecosystem/oss.md
 23361db0f092f3e9cb7e6faacc7c1be1  doc/eng-us/history/ecosystem/site-bundle.md
 e672011d96b7f9f09c1b81e2c05b621c  doc/eng-us/history/ecosystem/site-legacy-bundle.md
-1873fb73542da61aa346113d106104a4  doc/eng-us/history/ecosystem/symfony.md
+9e6c01a036a2b24865859e3ea39b171c  doc/eng-us/history/ecosystem/symfony.md
 144388a61cdf1349500c1cc69cf9d675  doc/eng-us/history/ecosystem/twig.md
 42e604ac2bd9ff655007ed7d86502d75  doc/eng-us/history/extensions/AdminAid.md
 babfc33b9ef174de03c20ff65728b802  doc/eng-us/history/extensions/README.md
@@ -13222,10 +13222,10 @@ d3248ba618a795e355b992750019bb49  doc/eng-us/install/04-choosing-an-install-meth
 e0ed3f1b2800db174a22fcca4f43b5d0  doc/eng-us/install/13-security-hardening.md
 a44e8b7abf94d51ef6660523668e4f07  doc/eng-us/install/14-migrating-from-4x.md
 7f1291f003a7e01f24f54b60d3fc8d36  doc/eng-us/install/15-migrating-from-5x-legacy.md
-2ed57b0427c09ffc2775582fba0253ba  doc/eng-us/install/16-migrating-from-ez-platform-and-ibexa.md
+954a4c3d426560b231bb2a36c706ad7e  doc/eng-us/install/16-migrating-from-ez-platform-and-ibexa.md
 f4f61411d56974243d579817c577be03  doc/eng-us/install/17-migration-reference.md
 843d72d1acd16d92495b2c078e07cb21  doc/eng-us/install/README.md
-27b0786f3a1cc96e012883e05ee4d393  doc/eng-us/install/migration/README.md
+37399e52733b33783930e0314d52e944  doc/eng-us/install/migration/README.md
 03d6bc80a686bcf304b966e92a13eb73  doc/eng-us/install/migration/adobe-aem.md
 ea7890fc80862b2d326622eefcf6d8c6  doc/eng-us/install/migration/checklist.md
 08d551014b3d2f4cf6ec2ea94211a90f  doc/eng-us/install/migration/coldfusion-apps.md
@@ -13235,7 +13235,7 @@ ea7890fc80862b2d326622eefcf6d8c6  doc/eng-us/install/migration/checklist.md
 3e7b852c0ab395ae612648a92b7a316e  doc/eng-us/install/migration/exponential-basic.md
 92e584893502336a8c238b63092ba2d1  doc/eng-us/install/migration/exponential-platform-dxp.md
 5b3cd001bcfe33c48d3ab289d40a71c8  doc/eng-us/install/migration/exponential-platform-legacy.md
-d718063766a1c0ef9d97046864828654  doc/eng-us/install/migration/exponential-platform-nexus.md
+fe590df3032d419351d1b5b73affad28  doc/eng-us/install/migration/exponential-platform-nexus.md
 18ab62014b3a3139064172bbb423311e  doc/eng-us/install/migration/exponential-platform.md
 c1ff5e60d72d32a3c3cf590a30af0aa6  doc/eng-us/install/migration/exponential-tools.md
 d76e186cd56286b6af23627f5075c9b8  doc/eng-us/install/migration/javascript-apps.md
@@ -13314,7 +13314,7 @@ e7a1404e85e6c543bfec4582f5839893  doc/eng-us/specifications/6.0/notifications-cl
 e7befd5e293bc2d00f3136d0e99c245b  doc/eng-us/specifications/6.0/notifications-ini.md
 9402c8e658bd026b0a6af832bd3ac1a2  doc/eng-us/specifications/6.0/notifications.md
 f05e686d93651677d7909d9a043f684b  doc/eng-us/specifications/6.0/platform-console-commands.md
-ae360783d46830e044f01e061dd7d3e1  doc/eng-us/specifications/6.0/platform-package-map.md
+54f698b6c5ae86ae2b593691beefebdf  doc/eng-us/specifications/6.0/platform-package-map.md
 9fe14a3b13d6da50b9dffc8c3858c342  doc/eng-us/specifications/6.0/platform-sqlite-installer.md
 acf80981b12ccd8ca2d672ee2d1c1ec0  doc/eng-us/specifications/6.0/runnable-commands-cronjobs-views.md
 68c7ab1fd35cdcc4ced2bf0ce5acf477  doc/eng-us/specifications/6.0/security-defaults-2026-09.md
@@ -13602,7 +13602,7 @@ d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-eve
 76611fd36fc10cf3567344b553f95e76  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
 079d9c4550a7d3c74fe8aacc9473ded2  doc/ger-de/CONFIGURING.md
-c541e681abb9f1a0541f1e05e061e1c1  doc/ger-de/DISTRIBUTIONS.md
+25d910b62226fc69ff96814718b5979d  doc/ger-de/DISTRIBUTIONS.md
 d92e7d32e4f6ac50174e4d7f82ca379b  doc/ger-de/EXTENDING.md
 72a6daa6760de22190206de884484e7d  doc/ger-de/HISTORY.md
 f5ef132376a6332d10b750bc7cca0f7f  doc/ger-de/INSTALL.md
@@ -13880,7 +13880,7 @@ bcd2a449f53cf48cacf8997abcfd49e2  doc/ger-de/bc/6.0/php8.md
 b5ce40f64f0e65c50f1e790a4398f3f6  doc/ger-de/bc/6.0/phpunitv10.md
 d2f8403906212d10b165b1b9653b9193  doc/ger-de/bc/6.0/phpunitv13-fuer-php841.md
 813e73f951bc569481f43b5ab5d181b4  doc/ger-de/bc/6.0/phpunitv13.md
-612be239edbb585b8d0052eda126c84c  doc/ger-de/bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md
+c256f444a3123ccbf124ebbe90adb8d9  doc/ger-de/bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md
 6185d5f20eeac76275fe2ffee80602cf  doc/ger-de/bc/6.0/preload.md
 9e473aad59a3bf695c0f619d993960b6  doc/ger-de/bc/6.0/rad-erweiterungsoberflaeche.md
 a87249b7de03c3604d96098437fbb7b9  doc/ger-de/bc/6.0/rad-erweiterungspunkte.md
@@ -16790,7 +16790,7 @@ a437b6de2cfeb8157ec0bd620cfe6f82  doc/ger-de/beispiele/workflow-ereignisse/ezfin
 65dddf148faeeed5b008171d5ecc92c8  doc/ger-de/beispiele/workflow-ereignisse/ezwaituntildate.md
 7bb1b4550c0b752f61d29753d8b8061f  doc/ger-de/bilder/sprachen/abdeckungskarte.svg
 800b87bb88f68ebbb35579602e7f762c  doc/ger-de/bilder/sprachen/abdeckungskarte.webp
-c8f823d883c4ef52e169e1729393f510  doc/ger-de/branch-uebersicht.md
+d987e99081610efb6f6d75822bc7158b  doc/ger-de/branch-uebersicht.md
 5c1300ec13825a45839a835e74c558e0  doc/ger-de/funktionen/3.10/berechtigung-sektion-zuweisen.txt
 b514de4f1454d62ac50e3695adbffcb4  doc/ger-de/funktionen/3.10/mehrsprachige-url-aliase.txt
 e0dffdec5d5d7e60e1651602bc20176e  doc/ger-de/funktionen/3.10/override-bedingungen-fuer-weiterempfehlen.txt
@@ -17152,8 +17152,8 @@ bafcae9114374a449576328c71f01bfc  doc/ger-de/funktionen/6.0/papierkorb-wer-und-w
 5dc104b6425177bdf60bda72fcebef67  doc/ger-de/funktionen/6.0/plattform-admin-ui-fork.md
 94ebd3597671fdbc3a7f117db3f767b5  doc/ger-de/funktionen/6.0/plattform-dxp-skeleton.md
 a71dc4c71454c10363dce98466959717  doc/ger-de/funktionen/6.0/plattform-layouts-core-fork.md
-47281f598909eb1f5f4414cb90430a68  doc/ger-de/funktionen/6.0/plattform-nexus-starter.md
-8256605154c042f1e0524cf85f405370  doc/ger-de/funktionen/6.0/plattform-php85-framework-forks.md
+fe5869bd6e0ab614f9de91892d6c9895  doc/ger-de/funktionen/6.0/plattform-nexus-starter.md
+6ded0e62de5d948d8a4f97fac3b2e8e8  doc/ger-de/funktionen/6.0/plattform-php85-framework-forks.md
 393ffffcd603e012a44013ce86323f2b  doc/ger-de/funktionen/6.0/plattform-site-bundles.md
 04a57e6e4790f4c646e57c18412a6b61  doc/ger-de/funktionen/6.0/plattform-sqlite-installation.md
 566dbc8ab28ae074d810044f0c1b0bc8  doc/ger-de/funktionen/6.0/pruefprotokoll.md
@@ -17455,7 +17455,7 @@ b6523bfc357d23ca6df39aee6ccf57a4  doc/ger-de/geschichte/oekosystem/exponential-l
 c5e58013c845af3dd40a64c5a670c3b6  doc/ger-de/geschichte/oekosystem/exponential-platform-dxp.md
 78a348259580c56992022f6cd0af2434  doc/ger-de/geschichte/oekosystem/exponential-platform-legacy.md
 974dd1314ff1e37b10766ce5f34d08ae  doc/ger-de/geschichte/oekosystem/exponential-platform-nexus-starter.md
-84009cf79215076a9563829fa0c5b182  doc/ger-de/geschichte/oekosystem/exponential-platform-nexus.md
+9383a7aacfe24b620e6a92df07d6b1aa  doc/ger-de/geschichte/oekosystem/exponential-platform-nexus.md
 a1fb00a070e6ad19bfea3b24b4da1bec  doc/ger-de/geschichte/oekosystem/exponential-platform-v4x-dxp-skeleton.md
 b67f20f2ce5800b15f0b3c966d11d7ec  doc/ger-de/geschichte/oekosystem/exponential-platform.md
 4433d9cea1f5600764ba7083ff4ca0f4  doc/ger-de/geschichte/oekosystem/exponential.md
@@ -17477,7 +17477,7 @@ b797e285fef2525b55f6bf580041950f  doc/ger-de/geschichte/oekosystem/ezplatform-se
 2d26166883727cd0dfdb4f94ce76f327  doc/ger-de/geschichte/oekosystem/ezplatform-standard-design.md
 7655db91438ef273b45a6de3aa9ce104  doc/ger-de/geschichte/oekosystem/ezplatform-user.md
 759418d0a4a59aac81ac9efd47b15b59  doc/ger-de/geschichte/oekosystem/ezplatform-xmltext-fieldtype.md
-ac1f096baec42a56617ae31e3e080544  doc/ger-de/geschichte/oekosystem/ezpublish-kernel.md
+a9857ebe94951f2793fb19d92b489e1e  doc/ger-de/geschichte/oekosystem/ezpublish-kernel.md
 e8a702a7a45611770877baf3886fa2ff  doc/ger-de/geschichte/oekosystem/fieldtype-richtext-ibexa.md
 557b3f24b5ffb74f75f411f04bd34edc  doc/ger-de/geschichte/oekosystem/ibexa-legacy-bridge---7x.md
 76de61381f4967f34086097f2a7d7f93  doc/ger-de/geschichte/oekosystem/ibexa-recipes.md
@@ -17546,7 +17546,7 @@ f3879c0421558d4a463e86f28e4e6851  doc/ger-de/geschichte/oekosystem/oss-skeleton.
 477327dae4d21e2634d83556d5ab2986  doc/ger-de/geschichte/oekosystem/oss.md
 fa86eaaa980fc454e59025a46be4e832  doc/ger-de/geschichte/oekosystem/site-bundle.md
 620f47f2396ab8eb26205b9a4ba6dbd8  doc/ger-de/geschichte/oekosystem/site-legacy-bundle.md
-f6e1a1739895ddcb9d1dee0bf3c6c180  doc/ger-de/geschichte/oekosystem/symfony.md
+600211dc780d77ca52629a42d4365108  doc/ger-de/geschichte/oekosystem/symfony.md
 705ff032ecfd2c4c35e9cf5f497cbc6b  doc/ger-de/geschichte/oekosystem/twig.md
 f90bfc2737baffd3c67b2bde58ef1ae6  doc/ger-de/geschichte/velocity/2026-07.md
 2313c12afab207e71bf6a7e007549304  doc/ger-de/geschichte/velocity/2026-08.md
@@ -18287,7 +18287,7 @@ dfcd31a3a96d14ad5764fc4d8cdbb987  doc/ger-de/hilfe/buendler/mitzuliefernde-lizen
 46b2189efff1a9b4d1005123e365e966  doc/ger-de/hilfe/buendler/oem-und-das-partnerprogramm-fuer-buendler.md
 97acac8d3c8a5164e9a3663d495a8ed6  doc/ger-de/hilfe/buendler/offline-bundles.md
 c7ba760fe6736d47cc459c14f6a62dd7  doc/ger-de/hilfe/buendler/pakete-fuer-linux-distributionen.md
-2d7be6107877db788158137519663c7a  doc/ger-de/hilfe/buendler/platform-distributionen-als-basis.md
+edec633c6033a57e421733b3c2243fc0  doc/ger-de/hilfe/buendler/platform-distributionen-als-basis.md
 82b85a10723d972e4dbbc611349b23da  doc/ger-de/hilfe/buendler/seitenpakete-in-einem-bundle.md
 b0787926e16a405d666a276c2d1c4ec1  doc/ger-de/hilfe/buendler/server-und-vm-images.md
 ef214a32ed82a52622eed43bb5ecaee8  doc/ger-de/hilfe/buendler/sicherheitsvorgaben-eines-bundles.md
@@ -18743,7 +18743,7 @@ c91d49ef4f11d7f2180299e85c97397b  doc/ger-de/hilfe/dxp-entwickler/die-se7enxweb-
 f821d9da0a1d752917306ffdc09458e5  doc/ger-de/hilfe/dxp-entwickler/dxp-aktualisieren.md
 93e2ad5b29a8d03332b6ae319de7f2cb  doc/ger-de/hilfe/dxp-entwickler/dxp-bereitstellen.md
 940509e6ebee2bd243b39e2c6519ad5f  doc/ger-de/hilfe/dxp-entwickler/dxp-entwickler-hier-beginnen.md
-80a56259183be1f5f87c6f7dc6714bdf  doc/ger-de/hilfe/dxp-entwickler/dxp-legacy-nexus-oder-exponential-6-waehlen.md
+7b404b313d8ae8158271494b56242c17  doc/ger-de/hilfe/dxp-entwickler/dxp-legacy-nexus-oder-exponential-6-waehlen.md
 9547c2ba090af2ee75815c62cfb1f6bb  doc/ger-de/hilfe/dxp-entwickler/exponential-migrationen-fuer-doctrine-nutzer.md
 d19815effd90d2a6ae45a1549f2796f5  doc/ger-de/hilfe/dxp-entwickler/faq-fuer-dxp-entwickler.md
 2c0b564dad8e5250452c77a242c305e9  doc/ger-de/hilfe/dxp-entwickler/fehlersuche-in-der-dxp.md
@@ -20294,7 +20294,7 @@ cabc5917d8b58d15c0d9d1efbb3818bc  doc/ger-de/hilfe/oekosystem/php-stack/standard
 a4f6f193326f8883408271f35d1178cb  doc/ger-de/hilfe/oekosystem/php-stack/webserver-und-engines.md
 396d98b476646bd1243ba35195d90ee9  doc/ger-de/hilfe/oekosystem/produkte/README.md
 bf70ac28ece94e91801af516dddafedb  doc/ger-de/hilfe/oekosystem/produkte/adminui-und-admin-designs.md
-ee728d12aaf000c572f358447809d99f  doc/ger-de/hilfe/oekosystem/produkte/die-platform-linie.md
+a04e07437feafe2a580f9696cca77acc  doc/ger-de/hilfe/oekosystem/produkte/die-platform-linie.md
 deb255c79ec409b887ea15cdd8d450c9  doc/ger-de/hilfe/oekosystem/produkte/ein-produkt-auswaehlen.md
 1da251bd4fbdeb8d12a413e35ceb18a3  doc/ger-de/hilfe/oekosystem/produkte/exponential-6-kernel.md
 41f4b38b0a942fec3e9448ebce586ae7  doc/ger-de/hilfe/oekosystem/produkte/exponential-basic.md
@@ -20616,7 +20616,7 @@ c3d9b2a1ce36d60f6031b1339612f8d4  doc/ger-de/hilfe/presse/ueber-ein-erweiterungs
 032ba9015ab740a123596003dbbf0947  doc/ger-de/hilfe/presse/ueber-ein-release-berichten.md
 326074303d10058fcd2084cf147c706e  doc/ger-de/hilfe/presse/ueber-finanzierung-und-sponsoren-schreiben.md
 ec184360e3743f19484fa4340fc506f1  doc/ger-de/hilfe/presse/ueber-kostenlose-statische-websites-mit-exponential-sprechen.md
-35ad7cfa4bb007234063cbba122e4861  doc/ger-de/hilfe/presse/ueber-platform-releases-berichten.md
+57b286066463368eeaa936ad4090da26  doc/ger-de/hilfe/presse/ueber-platform-releases-berichten.md
 a86ff81ec545687850602abdd7126b36  doc/ger-de/hilfe/presse/ueber-sicherheitskorrekturen-berichten.md
 b203fb4ef6c56777b54750aa6f0d790c  doc/ger-de/hilfe/presse/ueber-velocity-releases-berichten.md
 7877e894d409f18b32eb9f1ad32a9962  doc/ger-de/hilfe/presse/ueberschriften-was-geht-und-was-nicht.md
@@ -21201,7 +21201,7 @@ af5c695c184dda4b417107adc90a5dcb  doc/ger-de/hilfe/trainer/migration/modul-05-vo
 577df454ced333f1fc47e4e045e7921b  doc/ger-de/hilfe/trainer/migration/modul-06-von-den-symfony-plattformen/README.md
 545b2a48afd4745232ba01317814e5c0  doc/ger-de/hilfe/trainer/migration/modul-06-von-den-symfony-plattformen/weg-a-zu-nexus.md
 89a40dd3e6bca9534059e364285887b4  doc/ger-de/hilfe/trainer/migration/modul-06-von-den-symfony-plattformen/weg-b-hinunter-zum-legacy-kernel.md
-2c4c7529b32409012ec376a6052ef9b3  doc/ger-de/hilfe/trainer/migration/modul-06-von-den-symfony-plattformen/zwei-ziele-und-die-wahl.md
+96c6c9300194d9ee864c6e0bc6f2b08b  doc/ger-de/hilfe/trainer/migration/modul-06-von-den-symfony-plattformen/zwei-ziele-und-die-wahl.md
 045f34c14cb03132b9eb71a2f9568f7e  doc/ger-de/hilfe/trainer/migration/modul-07-von-anderen-systemen/README.md
 eb8eaa1df44f389ce923894e6a597a04  doc/ger-de/hilfe/trainer/migration/modul-07-von-anderen-systemen/von-drupal-und-joomla.md
 105f03635e5b95c2cd8005f5eff51aa6  doc/ger-de/hilfe/trainer/migration/modul-07-von-anderen-systemen/von-statischem-html.md
@@ -22692,7 +22692,7 @@ e7e050cdb500fb151dabab4957c38c65  doc/ger-de/hilfe/web-framework-entwickler/das-
 ad9793c4dc8e006962d559abb2dfa0bb  doc/ger-de/hilfe/web-framework-entwickler/debugging-logging-und-fehler.md
 fe6fb6b6e6acbb4e4880b213789b1e4e  doc/ger-de/hilfe/web-framework-entwickler/dependency-injection-und-dienste.md
 a847412b065762f6e677baf255787336  doc/ger-de/hilfe/web-framework-entwickler/der-request-lebenszyklus.md
-c8dab471c7d081a73719bb9c9ec791cf  doc/ger-de/hilfe/web-framework-entwickler/die-plattformprodukte.md
+26c5d95b77c56cf86f3adc7b636033ee  doc/ger-de/hilfe/web-framework-entwickler/die-plattformprodukte.md
 6bc03e0e1de5b5166b2dfabbfff89b29  doc/ger-de/hilfe/web-framework-entwickler/ereignisse-und-listener.md
 99373867b4d922d559ee6d9f29b6a49d  doc/ger-de/hilfe/web-framework-entwickler/erweiterungspunkte-und-handler.md
 054819a6d1d77dff0ed852a492d384a7  doc/ger-de/hilfe/web-framework-entwickler/exponential-fuer-framework-entwickler.md
@@ -23093,10 +23093,10 @@ b8d795ebb1ea91d94d2d59204e2bc9de  doc/ger-de/installation/11-aktualisieren.md
 cdebe1d97bb3bc6c64aeee618b8d897a  doc/ger-de/installation/13-sicherheitshaertung.md
 321107c2268e0c6b8a79d85ed91896a0  doc/ger-de/installation/14-migration-von-4x.md
 f269570dcd2e57c0d7fe7d9c35ccf859  doc/ger-de/installation/15-migration-von-5x-legacy.md
-24ac8d39da2d1c8535535eafc33b5e59  doc/ger-de/installation/16-migration-von-ez-platform-und-ibexa.md
+2bdcff8ef9f269cfb2e817067fdf8eba  doc/ger-de/installation/16-migration-von-ez-platform-und-ibexa.md
 a32d85f575555446b5bca6fdfb55f340  doc/ger-de/installation/17-migrationsreferenz.md
 1b4ed825959990f7b71ced3f54021a2f  doc/ger-de/installation/README.md
-7a5183c59141ca1b8e35f8141837af8e  doc/ger-de/installation/migration/README.md
+1357d0058ccd83a7b7578c420a8244d1  doc/ger-de/installation/migration/README.md
 6eb05ceb29e5bc7a065373ed6dffdc5b  doc/ger-de/installation/migration/adobe-aem.md
 addc49ce28f9028936edeb8522fc3f99  doc/ger-de/installation/migration/aeltere-versionen.md
 8fdd7b46a501e791cf40f46a9ddfafe4  doc/ger-de/installation/migration/andere-anwendungen.md
@@ -23107,7 +23107,7 @@ addc49ce28f9028936edeb8522fc3f99  doc/ger-de/installation/migration/aeltere-vers
 b64bd024620a1984554340fc875bc14e  doc/ger-de/installation/migration/exponential-basic.md
 ecc558e76900ec0377bce66899ebd190  doc/ger-de/installation/migration/exponential-platform-dxp.md
 9b60b2a7e07e2c9544cd2e2ba5720981  doc/ger-de/installation/migration/exponential-platform-legacy.md
-5c38f041906f9200bb651d52bb80e864  doc/ger-de/installation/migration/exponential-platform-nexus.md
+a5a10dcf9c2e05bb96ef0fb561d225bc  doc/ger-de/installation/migration/exponential-platform-nexus.md
 3103914a09ee6b76bfd17cd2bc9bc937  doc/ger-de/installation/migration/exponential-platform.md
 2be2ab584629412f00594595723d9dca  doc/ger-de/installation/migration/exponential-tools.md
 3f0d466ccc3d6c5868f940377bdd0f6a  doc/ger-de/installation/migration/exponential-verlassen.md
@@ -23163,7 +23163,7 @@ da71ae2edb8e08a7c2003f78957321a1  doc/ger-de/spezifikationen/6.0/mail-einstellun
 7f5e2479c3ac6ace6b1fe48698af7bb9  doc/ger-de/spezifikationen/6.0/mail-einstellungen.md
 93fbe6c3cc5427926145c1129ebb5cc0  doc/ger-de/spezifikationen/6.0/migrationsdateiformat.md
 48bdb3cbf182b10c664586e25c053831  doc/ger-de/spezifikationen/6.0/platform-konsolenbefehle.md
-263d51a58c1dd3f587cd4308e7c3a75b  doc/ger-de/spezifikationen/6.0/platform-paketzuordnung.md
+e8cef2346e3462a2ff5d7e4798e2f1f2  doc/ger-de/spezifikationen/6.0/platform-paketzuordnung.md
 094d02d390f2d960c5c9af9214a29dd7  doc/ger-de/spezifikationen/6.0/platform-sqlite-installer.md
 4ec8f48910c797a51ab989445815067c  doc/ger-de/spezifikationen/6.0/sicherheitshaertung-2026-08.md
 c83d971494616e6050d2ac9fad29ff2f  doc/ger-de/spezifikationen/6.0/sicherheitshaertung-6.0.13.md

@@ -8,7 +8,7 @@ Fork des Kernels aus der Zeit von 2014.11, den der Symfony-Stack verwendet, der 
 
 ## Wie es mit Exponential zusammenhängt
 
-Bleibt auf aktuellem PHP installierbar, damit sich Exponential Platform Nexus 1.x und Exponential Platform Legacy weiter bauen lassen.
+Bleibt auf aktuellem PHP installierbar, damit sich Exponential Platform Nexus 1.0.0.x und Exponential Platform Legacy weiter bauen lassen.
 
 ## Was Anwender davon haben
 

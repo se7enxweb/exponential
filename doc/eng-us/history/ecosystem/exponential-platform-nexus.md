@@ -8,7 +8,7 @@ Exponential Platform Nexus: Exponential Layouts + Media Site + tags + platform a
 
 ## How it relates to Exponential
 
-The ready site distribution that renders the media site design; 1.x and 2.5.x lines.
+The ready site distribution that renders the media site design; the lines 1.0.0.x to 1.3.0.x, with 1.3.0.x the current one. The `v2.5.0.x` tags on `master` are not a Nexus line.
 
 ## What a user gets
 

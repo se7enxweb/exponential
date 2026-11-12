@@ -1,6 +1,6 @@
 # PHP 8.4 und 8.5 für den älteren Symfony-Stack: die Framework-Forks
 
-Diese Seite ist für Teams, die ein Projekt mit Exponential Platform 1.x / 2.5 oder Nexus 1.x auf einem aktuellen PHP
+Diese Seite ist für Teams, die ein Projekt mit Exponential Platform 1.x / 2.5 oder Nexus 1.0.0.x auf einem aktuellen PHP
 am Leben halten. Für den Kernel von Exponential 6 selbst siehe
 [Unterstützung für PHP 8 im Kernel von Exponential 6](../../bc/6.0/php8.md).
 
@@ -11,7 +11,7 @@ PHP-Bedingungen erhielten.
 
 ## Was es ist
 
-Exponential Platform 1.x / 2.5 und Nexus 1.x laufen auf der Generation Symfony 3.4 des Frameworks. Upstream hörte lange vor dem Erscheinen von PHP 8.4 und 8.5 auf, sie zu pflegen, sodass diese Stacks auf einem aktuellen PHP mit fatalen Fehlern abbrechen oder das Protokoll mit Deprecations fluten. Die hier aufgeführten Forks sind kleine, gezielte Patches, die den alten Stack auf PHP 8.2 bis 8.5 lauffähig machen. Sie werden automatisch installiert: Jeder Fork deklariert das Upstream-Paket unter `replace`, sodass Composer den Fork überall verwendet, wo der Upstream-Name verlangt wird.
+Exponential Platform 1.x / 2.5 und Nexus 1.0.0.x laufen auf der Generation Symfony 3.4 des Frameworks. Upstream hörte lange vor dem Erscheinen von PHP 8.4 und 8.5 auf, sie zu pflegen, sodass diese Stacks auf einem aktuellen PHP mit fatalen Fehlern abbrechen oder das Protokoll mit Deprecations fluten. Die hier aufgeführten Forks sind kleine, gezielte Patches, die den alten Stack auf PHP 8.2 bis 8.5 lauffähig machen. Sie werden automatisch installiert: Jeder Fork deklariert das Upstream-Paket unter `replace`, sodass Composer den Fork überall verwendet, wo der Upstream-Name verlangt wird.
 
 ## Warum es hilft
 

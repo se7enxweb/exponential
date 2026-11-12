@@ -71,11 +71,11 @@ release, or `dev-main` knowingly.
 | Platform v5 (`exponential-platform-dxp`, skeleton) | 8.3 or newer; the Nexus v5 starter 8.4 or newer | 20 (DXP skeleton guide), 22 (Nexus v5 starter) |
 | Platform 4.6.x skeleton | 7.4 to 8.5 | 20 |
 | Platform 3.x forks (`ezplatform-*`) | 7.3 to 8.5 (constraint extended to `^8.5` on 2026-03-25) | per project |
-| Nexus 1.x / 2.5 | 7.1 to 8.5 | 20 (the `cjw` Nexus moved from 14 to 20 on 2026-02-12) |
+| Nexus 1.0.0.x (Platform 2.5) | 7.1 to 8.5 | 20 (the `cjw` Nexus moved from 14 to 20 on 2026-02-12) |
 
 - On PHP 8.4 or 8.5 an older stack needs the [framework forks](../../features/6.0/platform-php85-framework-forks.md).
 - On PHP 8.4 the Layouts 2.0 stack needs the [layouts-core fork](../../features/6.0/platform-layouts-core-fork.md).
-- For the 1.x line only, Composer skips the platform check with `--ignore-platform-reqs` (the Nexus 1.x install guide
+- For the Nexus 1.0.0.x line only, Composer skips the platform check with `--ignore-platform-reqs` (the Nexus 1.0.0.x install guide
   says so). Do not use that flag on other lines.
 
 ## Step 4: console command names
@@ -130,11 +130,11 @@ Changes in the `3.x` branch you may notice in your own code:
 
 Custom classes that extend bridge classes need the same signatures. See [the legacy bridge guide](../../features/6.0/legacy-bridge.md).
 
-## Step 8: Nexus 1.x, where assets and stored files live
+## Step 8: Nexus 1.0.0.x, where assets and stored files live
 
-The Nexus 1.x install replaces the legacy directory when Composer updates `se7enxweb/exponential`. Content storage and
+The Nexus 1.0.0.x install replaces the legacy directory when Composer updates `se7enxweb/exponential`. Content storage and
 the `app` extension therefore live in `src/AppBundle/ezpublish_legacy` and are linked in with the symlinks of the
-install guide ([Nexus starter](../../features/6.0/platform-nexus-starter.md#install-nexus-100x-the-25-line)). Never keep uploaded
+install guide ([Nexus starter](../../features/6.0/platform-nexus-starter.md#install-nexus-100x-the-ez-platform-25-stack)). Never keep uploaded
 files only inside `ezpublish_legacy/var`.
 
 ## Step 9: legacy kernel, database update from 5.4 to 6.0

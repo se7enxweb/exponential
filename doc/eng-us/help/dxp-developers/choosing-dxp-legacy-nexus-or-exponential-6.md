@@ -33,7 +33,7 @@ four candidates on facts read from their packages and documentation, and gives t
 
 | | Exponential Platform DXP | Exponential Platform Legacy | Exponential Platform Nexus | Exponential 6 |
 |---|---|---|---|---|
-| Kernel | Platform v5 | Platform plus the Exponential 6 kernel | Platform; the 1.0 to 1.2 and 2.5 lines also the Exponential 6 kernel | Exponential 6 |
+| Kernel | Platform v5 | Platform plus the Exponential 6 kernel | Platform; the 1.0.0.x to 1.2.0.x lines also the Exponential 6 kernel; the current 1.3.0.x line is DXP 5 with Exponential Layouts 2 and SQLite as the default, without it | Exponential 6 |
 | Framework | Symfony 7.4 | Symfony (per line) | Symfony (per line; 7.4 for 1.3 and the v5 starter) | none |
 | PHP | 8.3 or newer | per line | 8.4 or newer for 1.3 and the v5 starter | see [Getting started](../getting-started.md) |
 | Templates | Twig | Twig and `.tpl` | Twig (and `.tpl` on the dual-kernel lines) | `.tpl` |
@@ -59,12 +59,15 @@ Sources: the metapackage requirements, [Exponential Platform Nexus: a finished s
 ## Traps
 
 - **"Nexus means legacy."** Not on v5: Nexus 1.3.0.x and the v5 starter run on Platform v5 with no legacy kernel. Only
-  the 1.0, 1.1, 1.2 and 2.5 lines include it ([Nexus starter](../../features/6.0/platform-nexus-starter.md#what-it-is)).
+  the 1.0.0.x, 1.1.0.x and 1.2.0.x lines include it ([Nexus starter](../../features/6.0/platform-nexus-starter.md#what-it-is)).
 - **"The DXP has a layouts editor."** It does not. `se7enxweb/layouts-core` is the model and rendering core
   ([Layouts core in the DXP](layouts-core-in-dxp.md)).
 - **"Legacy means old."** "Legacy" is the Exponential 6 kernel running beside a Symfony platform; Exponential 6 itself
   is the maintained line ([Knowing the product family](../advocates/knowing-the-product-family.md#common-mix-ups)).
-- **Version numbers.** Always name a version when you create a Nexus project; without one, Composer can pick an
+- **Version numbers.** Nexus has four lines, `1.0.0.x` to `1.3.0.x`; `1.3.0.x` (newest `1.3.0.11`) is the current
+  one and the place to start. The `v2.5.0.x` tags GitHub shows as "Latest" belong to `master`, which is not a Nexus
+  line. Always name a version when you create a Nexus project
+  (`composer create-project se7enxweb/exponential-platform-nexus:1.3.0.11 nexus`); without one, Composer can pick an
   upstream tag ([Nexus starter](../../features/6.0/platform-nexus-starter.md#what-it-is)).
 
 ## Changing your mind later

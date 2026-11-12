@@ -30,7 +30,7 @@ the Nexus lines from [Exponential Platform Nexus: a finished site in minutes](..
 |---|---|---|
 | Exponential Platform 3.2.9 | "CMS / DXP based on the last free versions of eZ Platform. Symfony / New Stack Only" | No ("No Exponential 6.x Legacy Support") |
 | Exponential Platform Legacy | A distribution of Exponential Platform "with Exponential (Legacy) Included"; "Dual Kernel" | Yes |
-| Exponential Platform Nexus | Platform plus Exponential 6, Netgen Media Site and Exponential Layouts, one line per platform generation | In the lines 1.0.0.x to 1.2.0.x and 2.5; not in 1.3.0.x (Platform v5) |
+| Exponential Platform Nexus | Platform plus Exponential 6, Netgen Media Site and Exponential Layouts, one line per platform generation | In the lines 1.0.0.x to 1.2.0.x; not in 1.3.0.x (Platform v5, the current line) |
 | Nexus starter | The v5 Nexus site as a separate repository, "Currently In Public Beta" in its description | No |
 | Exponential Platform DXP | "a free, open-source Digital Experience Platform built on the Symfony framework" | No |
 

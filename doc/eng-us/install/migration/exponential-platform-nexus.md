@@ -3,8 +3,8 @@ title: Exponential 6 and Exponential Platform Nexus
 audience: admin, developer, project-manager
 category: install-upgrade
 order: 21
-summary: Moving an Exponential 6 site into Exponential Platform Nexus (lines 1.0.0.x and v2.5.0.x on Platform 2.5, 1.1.0.x on 3.3, 1.2.0.x on 4.6, 1.3.0.x on v5) and back - which line, the database, the demo site you do not want, Exponential Layouts on Nexus against the legacy kernel, verification, rollback and checklist.
-keywords: Exponential Platform Nexus, Nexus, media site, site bundle, 1.0.0.x, 1.1.0.x, 1.2.0.x, 1.3.0.x, v2.5.0.x, CJW Nexus, Exponential Layouts, nglayouts:export, exp:layouts, migration
+summary: Moving an Exponential 6 site into Exponential Platform Nexus (lines 1.0.0.x on Platform 2.5, 1.1.0.x on 3.3, 1.2.0.x on 4.6, 1.3.0.x on v5, the current line) and back - which line, the database, the demo site you do not want, Exponential Layouts on Nexus against the legacy kernel, verification, rollback and checklist.
+keywords: Exponential Platform Nexus, Nexus, media site, site bundle, 1.0.0.x, 1.1.0.x, 1.2.0.x, 1.3.0.x, CJW Nexus, Exponential Layouts, nglayouts:export, exp:layouts, migration
 type: install
 ---
 # Exponential 6 and Exponential Platform Nexus
@@ -30,16 +30,17 @@ generation per release line. Its legacy-capable lines also run the Exponential 6
 
 ## 1. The release lines
 
-"Nexus 2.5", "Nexus 4.x" and "Nexus 5.x" are the platform generations inside Nexus, not its version numbers. Read
-from the release tags' `composer.json` on 2026-10-18:
+Nexus has four 7x lines, `1.0.0.x` to `1.3.0.x`; `1.3.0.x` is the current one. The platform generations they run on
+(2.5, 3.3, 4.6, v5) are not Nexus version numbers. The default branch `master` carries upstream-style `v2.5.0.x` tags;
+it is not a Nexus line and not the `1.0.0.x` branch. Read from the release tags' `composer.json` on 2026-10-18, newest
+releases checked on 2026-11-12:
 
 | Nexus line | Latest release | Generation | Symfony | PHP | Legacy kernel |
 |---|---|---|---|---|---|
 | `1.0.0.x` | `1.0.0.11` | eZ Platform 2.5 kernel fork (`~7.5.40`) | 3.4 | `^7.1.3` to `^8.6` | yes: `se7enxweb/exponential ^6.0.12`, `legacy-bridge ^2.1` |
-| `v2.5.0.x` (branch `master`) | `v2.5.0.7` | 2.5 | 3.4 | as 1.0.0.x | yes |
-| `1.1.0.x` | `v1.1.0.8` | 3.3 (`se7enxweb/oss ~3.3.0`) | 5.4 | `^8.0` | yes: `legacy-bridge ^3.0`, `site-legacy-bundle ^2.0` |
-| `1.2.0.x` | `v1.2.0.1` | 4.6 (`se7enxweb/oss ~4.6.0`) | 5.4 | `>=8.2` | yes: `site-legacy-bundle v2.0.0` with the legacy installer |
-| `1.3.0.x` | `1.3.0.6` | v5 (`exponential-platform-dxp dev-master`) | 7.4 | `>=8.4` | **no** |
+| `1.1.0.x` | `v1.1.0.14` | 3.3 (`se7enxweb/oss ~3.3.0`) | 5.4 | `^8.0` | yes: `legacy-bridge ^3.0`, `site-legacy-bundle ^2.0` |
+| `1.2.0.x` | `v1.2.0.5` | 4.6 (`se7enxweb/oss ~4.6.0`) | 5.4 | `>=8.2` | yes: `site-legacy-bundle v2.0.0` with the legacy installer |
+| `1.3.0.x` (current) | `1.3.0.11` | v5 (`exponential-platform-dxp dev-master`), DXP 5 OSS with Exponential Layouts 2 and SQLite as the default | 7.4 | `>=8.4` | **no** |
 
 Related products: **CJW Exponential Platform Nexus** (`se7enxweb/cjw-exponential-platform-nexus`, `1.0.0.12`, the 2.5
 generation with Exponential 6 and vendor files included), its starter (`1.0.0.3`), and the **Nexus Starter**

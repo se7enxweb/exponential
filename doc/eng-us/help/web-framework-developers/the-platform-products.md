@@ -28,7 +28,7 @@ descriptions below come from each distribution's own documentation and `composer
 |---|---|---|
 | **Exponential Platform 3.2.9** | a CMS on the last free eZ Platform versions, "Symfony / New Stack Only" | No |
 | **Exponential Platform Legacy** | the Symfony platform plus the legacy bridge and `se7enxweb/exponential` ("dual kernel") | Yes |
-| **Exponential Platform Nexus** | platform, Exponential 6, Netgen Media Site and Exponential Layouts, with demo content | the 1.0.0.x to 1.2.0.x lines and Nexus 2.5 yes; 1.3.0.x (Platform v5) no |
+| **Exponential Platform Nexus** | platform, Exponential 6, Netgen Media Site and Exponential Layouts, with demo content | the 1.0.0.x to 1.2.0.x lines yes; 1.3.0.x (Platform v5, the current line) no |
 | **Nexus starter** | the Platform v5 Nexus site as its own repository | No |
 | **Exponential Platform DXP** | a Symfony-only digital experience platform, the continuation of the Ibexa DXP OSS line | No |
 

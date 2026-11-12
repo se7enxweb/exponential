@@ -95,7 +95,7 @@ A decision exercise in pairs, with chapter 16 open.
 ## Expected result
 
 - Step 2: eZ Platform 2.5 (`ezpublish:`); Ibexa 4.6 (`ibexa:`); eZ Platform 3.x or Ibexa 3.3 (`ezplatform:`).
-- Step 3: Nexus `1.0.0.x` or `v2.5.0.x` with Platform Legacy `v2.5.0.x`; Nexus `1.2.0.x` with Platform Legacy
+- Step 3: Nexus `1.0.0.x` with Platform Legacy `v2.5.0.x`; Nexus `1.2.0.x` with Platform Legacy
   `v4.6.23.x`; Nexus `1.1.0.x` with Platform Legacy `v3.3.44.x`.
 - Step 4: path A (Nexus `1.2.0.x`, same generation) for the 4.6 site.
 - Step 5: path B is a reasonable choice for the 2.5 site; the pair names the work it means (templates and bundles

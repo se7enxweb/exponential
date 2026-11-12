@@ -54,7 +54,7 @@ Where a fact could not be verified it says so.
 | **Exponential Platform DXP 2.x** (skeleton, Platform v5) | `se7enxweb/exponential-platform-dxp-skeleton` | A project skeleton: `se7enxweb/exponential-platform-dxp dev-master`, PHP `>=8.3`. Its description: "Provides Ibexa DXP OSS 5.0.6" | `v2.0.0.0` to `v2.0.0.2` (2026-04-11); before that `0.0.0.1`, `0.0.0.2` | No |
 | **Exponential Platform DXP 1.x** (skeleton, Platform v4) | `se7enxweb/exponential-platform-v4x-dxp-skeleton` | A project skeleton: `se7enxweb/exponential-platform-dxp 4.6.x-dev`, PHP `^7.4` to `^8.5`. Its description: "Provides Ibexa DXP OSS v4.6.x" | `v1.0.0.0` to `v1.0.0.2` (2026-04-11) | No |
 | **Exponential Platform DXP Starter** | `se7enxweb/exponential-platform-dxp-starter` (package name in its `composer.json`: `se7enxweb/exponential-platform-dxp-skeleton`) | The DXP 2.x skeleton ready to run, vendor directory included, SQLite | `1.0.0.0` (2026-04-26) | No |
-| **Exponential Platform Nexus** | `se7enxweb/exponential-platform-nexus` (default branch `master`) | A complete site distribution: Exponential Layouts, the Netgen media site, Tags, Site API and an admin on an Exponential Platform generation. One release line per generation, see [1.2](#12-the-release-lines-of-nexus-and-platform-legacy) | `1.3.0.6` (marked Latest), `v1.2.0.1`, `v1.1.0.8`, `1.0.0.11`, `v2.5.0.7` (all 2026-10-06) | Lines `1.0.0.x`, `v2.5.0.x`, `1.1.0.x`, `1.2.0.x`: yes. Line `1.3.0.x`: no |
+| **Exponential Platform Nexus** | `se7enxweb/exponential-platform-nexus` (default branch `master`) | A complete site distribution: Exponential Layouts, the Netgen media site, Tags, Site API and an admin on an Exponential Platform generation. One release line per generation, see [1.2](#12-the-release-lines-of-nexus-and-platform-legacy) | `1.3.0.11` (current line, 2026-10-25), `v1.2.0.5` (2026-10-25), `v1.1.0.14` (2026-10-31), `1.0.0.11` (2026-10-05). The `v2.5.0.x` tags on `master` (GitHub's "Latest") are upstream-style tags, not a Nexus line | Lines `1.0.0.x`, `1.1.0.x`, `1.2.0.x`: yes. Line `1.3.0.x`: no |
 | **Exponential Platform Nexus Starter** | `se7enxweb/exponential-platform-nexus-starter` | Nexus on Platform v5 ready to run: `se7enxweb/exponential-platform-dxp dev-master`, Symfony 7.4, PHP `>=8.4` (its description says "Exponential 6.0.13"; its `composer.json` has no legacy kernel) | `1.0.0.0` (2026-04-26) | No, by its `composer.json` |
 | **CJW Exponential Platform Nexus** | `se7enxweb/cjw-exponential-platform-nexus` | The CJW variant of Nexus on the 2.5 generation: `se7enxweb/exponential ^6.0.12`, `se7enxweb/legacy-bridge ^2.1`, Exponential Layouts 1.4, vendor files included | `1.0.0.6` to `1.0.0.12` (2026-10-06) | Yes |
 | **CJW Exponential Platform Nexus Starter** | `se7enxweb/cjw-exponential-platform-nexus-starter` (package name `se7enxweb/cjw-exponential-platform-nexus`) | The CJW Nexus ready to run, SQLite | `1.0.0.0` to `1.0.0.3` (2026-07-04) | Yes |
@@ -69,7 +69,7 @@ The names you may have heard and what they mean:
 
 | You heard | It is |
 |---|---|
-| "Nexus 2.5", "Nexus 4.x", "Nexus 5.x" | Platform **generations** inside Nexus, not Nexus version numbers. The Nexus versions are `1.0.0.x` and `v2.5.0.x` (generation 2.5), `1.1.0.x` (3.3), `1.2.0.x` (4.6) and `1.3.0.x` (v5) |
+| "Nexus 2.5", "Nexus 4.x", "Nexus 5.x" | Platform **generations** inside Nexus, not Nexus version numbers. The Nexus versions are the four 7x lines `1.0.0.x` (generation 2.5), `1.1.0.x` (3.3), `1.2.0.x` (4.6) and `1.3.0.x` (v5, the current line). The `v2.5.0.x` tags on `master` are not a Nexus line |
 | "Platform Legacy 2.5 / 4.x / 5.x" | Correct: its versions carry the generation: `v2.5.0.x`, `v3.3.44.x` (earlier `v3.0.0.x`), `v4.6.23.x`, `v5.0.x` |
 | "DXP 1.x / 2.x" | The two DXP **skeletons**: `v1.0.0.x` is `exponential-platform-v4x-dxp-skeleton` (generation 4.6), `v2.0.0.x` is `exponential-platform-dxp-skeleton` (generation v5) |
 | "Exponential Platform" without a suffix | `se7enxweb/exponential-platform` `v3.2.9`, the Symfony-only distribution |
@@ -82,10 +82,9 @@ Read from the `composer.json` of each release tag:
 | Product and line | Latest release | Platform generation | Symfony | PHP | Legacy kernel and bridge |
 |---|---|---|---|---|---|
 | Nexus `1.0.0.x` | `1.0.0.11` | eZ Platform 2.5 (`se7enxweb/ezpublish-kernel ~7.5.40`) | 3.4 | `^7.1.3` to `^8.6` | `se7enxweb/exponential ^6.0.12`, `legacy-bridge ^2.1` |
-| Nexus `v2.5.0.x` (from `master`) | `v2.5.0.7` | eZ Platform 2.5 (`~7.5.40`) | 3.4 | as above | as above |
-| Nexus `1.1.0.x` | `v1.1.0.8` | 3.3 (`se7enxweb/oss ~3.3.0`) | 5.4 | `^8.0` | `legacy-bridge ^3.0`, `site-legacy-bundle ^2.0` |
-| Nexus `1.2.0.x` | `v1.2.0.1` | 4.6 (`se7enxweb/oss ~4.6.0`) | 5.4 | `>=8.2` | `site-legacy-bundle v2.0.0` with the legacy installer (`ezpublish_legacy/`) |
-| Nexus `1.3.0.x` | `1.3.0.6` | v5 (`se7enxweb/exponential-platform-dxp dev-master`) | 7.4 | `>=8.4` | none in `composer.json` |
+| Nexus `1.1.0.x` | `v1.1.0.14` | 3.3 (`se7enxweb/oss ~3.3.0`) | 5.4 | `^8.0` | `legacy-bridge ^3.0`, `site-legacy-bundle ^2.0` |
+| Nexus `1.2.0.x` | `v1.2.0.5` | 4.6 (`se7enxweb/oss ~4.6.0`) | 5.4 | `>=8.2` | `site-legacy-bundle v2.0.0` with the legacy installer (`ezpublish_legacy/`) |
+| Nexus `1.3.0.x` (current) | `1.3.0.11` | v5 (`se7enxweb/exponential-platform-dxp dev-master`), DXP 5 OSS with Exponential Layouts 2 and SQLite as the default | 7.4 | `>=8.4` | none in `composer.json` |
 | Platform Legacy `v2.5.0.x` | `v2.5.0.4` | eZ Platform 2.5 (`~7.5.33`) | 3.4 | `^7.1.3 \|\| ^8.1 \|\| ^8.2` | `se7enxweb/exponential ^6.0.12`, `legacy-bridge ^2.1` |
 | Platform Legacy `v3.3.44.x` | `v3.3.44.8` | 3.3 (`se7enxweb/oss ~3.3.0.0`, `ezplatform-kernel ~1.3.43`) | 5.4 | `^8.0` | `legacy-bridge ^3.0.0.35` |
 | Platform Legacy `v4.6.23.x` | `v4.6.23.3` | 4.6 (`exponential-platform-dxp 4.6.x-LB-dev`) | 5.4 | `^7.4` to `^8.5` | `legacy-bridge ^4.0.0.0` |

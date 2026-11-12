@@ -1,6 +1,6 @@
 # PHP 8.4 and 8.5 for the older Symfony stack: the framework forks
 
-This page is for teams that keep an Exponential Platform 1.x / 2.5 or Nexus 1.x project alive on a current PHP. For
+This page is for teams that keep an Exponential Platform 1.x / 2.5 or Nexus 1.0.0.x project alive on a current PHP. For
 the Exponential 6 kernel itself, see [PHP 8 support of the Exponential 6 kernel](../../bc/6.0/php8.md).
 
 **Repositories:** `se7enxweb/symfony`, `se7enxweb/twig`, `se7enxweb/doctrine-bundle` (repository `DoctrineBundle`),
@@ -10,7 +10,7 @@ received PHP constraints.
 
 ## What it is
 
-Exponential Platform 1.x / 2.5 and Nexus 1.x run on the Symfony 3.4 generation of the framework. Upstream stopped maintaining it long before PHP 8.4 and 8.5 appeared, so these stacks stop with fatal errors or flood the log with deprecations on a current PHP. The forks listed here are small, targeted patches that make the old stack work on PHP 8.2 to 8.5. They are installed automatically: each fork declares the upstream package under `replace`, so Composer uses the fork wherever the upstream name is required.
+Exponential Platform 1.x / 2.5 and Nexus 1.0.0.x run on the Symfony 3.4 generation of the framework. Upstream stopped maintaining it long before PHP 8.4 and 8.5 appeared, so these stacks stop with fatal errors or flood the log with deprecations on a current PHP. The forks listed here are small, targeted patches that make the old stack work on PHP 8.2 to 8.5. They are installed automatically: each fork declares the upstream package under `replace`, so Composer uses the fork wherever the upstream name is required.
 
 ## Why it helps
 

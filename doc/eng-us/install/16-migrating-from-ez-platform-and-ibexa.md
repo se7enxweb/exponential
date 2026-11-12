@@ -61,18 +61,17 @@ series; read from the `composer.json` of each release tag:
 
 | Nexus line (tags) | Platform generation | Symfony | PHP (`composer.json`) | Legacy kernel included |
 |---|---|---|---|---|
-| `1.0.0.x` (`v1.0.0.0.1` to `1.0.0.10`) | eZ Platform 2.5 (`se7enxweb/ezpublish-kernel ~7.5.40`) | 3.4 (`se7enxweb/symfony v3.4.55`) | `^7.1.3 \|\| ... \|\| ^8.6` | yes: `se7enxweb/exponential ^6.0.12`, `se7enxweb/legacy-bridge ^2.1` |
-| `1.1.0.x` (`v1.1.0.0` to `v1.1.0.7`) | eZ Platform 3.3 (`se7enxweb/oss ~3.3.0`) | 5.4 | `^8.0` | yes: `se7enxweb/legacy-bridge ^3.0`, `se7enxweb/site-legacy-bundle ^2.0` |
-| `1.2.0.x` (`v1.2.0.0`, "Ibexa 4.6 / v4 first release") | Ibexa OSS 4.6 (`se7enxweb/oss ~4.6.0`) | 5.4 | `>=8.2` | yes: `se7enxweb/site-legacy-bundle v2.0.0` pulls in `se7enxweb/ibexa-legacy-bridge` 4.x and `se7enxweb/exponential` (`dev-main` in the lock) |
-| `1.3.0.x` (`1.3.0.0.0`, `1.3.0.1` to `1.3.0.5`, the newest release) | Platform v5 (`se7enxweb/exponential-platform-dxp`, core `v5.0.7` in the lock) | 7.4 | `>=8.4` | no |
-| `v2.5.0.x` (Nexus repository tags `v2.5.0.0` to `v2.5.0.6`; `v2.5.0.0` and `v2.5.0.1` still name the package `se7enxweb/exponential-platform-legacy`) | the 2.5 line of Exponential Platform Legacy (whose own 2.5 tags are `v2.5.0.0` to `v2.5.0.3`), packaged as Nexus | 3.4 | as 1.0.0.x | yes |
+| `1.0.0.x` (`v1.0.0.0.1` to `1.0.0.11`) | eZ Platform 2.5 (`se7enxweb/ezpublish-kernel ~7.5.40`) | 3.4 (`se7enxweb/symfony v3.4.55`) | `^7.1.3 \|\| ... \|\| ^8.6` | yes: `se7enxweb/exponential ^6.0.12`, `se7enxweb/legacy-bridge ^2.1` |
+| `1.1.0.x` (`v1.1.0.0` to `v1.1.0.14`) | eZ Platform 3.3 (`se7enxweb/oss ~3.3.0`) | 5.4 | `^8.0` | yes: `se7enxweb/legacy-bridge ^3.0`, `se7enxweb/site-legacy-bundle ^2.0` |
+| `1.2.0.x` (`v1.2.0.0` to `v1.2.0.5`) | Ibexa OSS 4.6 (`se7enxweb/oss ~4.6.0`) | 5.4 | `>=8.2` | yes: `se7enxweb/site-legacy-bundle v2.0.0` pulls in `se7enxweb/ibexa-legacy-bridge` 4.x and `se7enxweb/exponential` (`dev-main` in the lock) |
+| `1.3.0.x`, the current line (`1.3.0.0.0`, `1.3.0.1` to `1.3.0.11`) | Platform v5, DXP 5 OSS (`se7enxweb/exponential-platform-dxp`, core `v5.1.0` in the lock of `1.3.0.11`), Exponential Layouts 2.0, SQLite as the zero-configuration default | 7.4 | `>=8.4` | no |
 
 Two traps when you install a Nexus line with Composer. **Five-part tags are not on Packagist**: `v1.0.0.0.1` to
-`v1.0.0.0.3` and `1.3.0.0.0` exist only in git, so ask for `1.0.0.10`, `v1.1.0.7`, `v1.2.0.0` or `1.3.0.5`. And
+`v1.0.0.0.3` and `1.3.0.0.0` exist only in git, so ask for `1.0.0.11`, `v1.1.0.14`, `v1.2.0.5` or `1.3.0.11`. And
 **always name a version**: the repository is a fork of the Netgen media site and keeps its tags, which Packagist lists
 under the Nexus name, so `composer create-project se7enxweb/exponential-platform-nexus` without one installs `3.1.6`,
-the upstream `netgen/media-site`. The default branch `master` is the 2.5 line; clone with `--branch 1.3.0.x` (or
-the line you want).
+the upstream `netgen/media-site`. The default branch `master` is not a Nexus line: it carries upstream-style
+`v2.5.0.x` tags and is not the `1.0.0.x` branch. Clone with `--branch 1.3.0.x` (or the line you want).
 
 The Nexus 5 line also exists as a separate starter, `se7enxweb/exponential-platform-nexus-starter`, which is what the
 reference installation behind this book runs (SQLite, Symfony 7.4, `se7enxweb/exponential-platform-dxp-core v5.0.7`).
@@ -316,14 +315,14 @@ On the same generation the swap is a Composer change. Before, a 4.6 open source 
 }
 ```
 
-After, as Nexus `v1.2.0.0` requires it:
+After, as Nexus `v1.2.0.5` requires it:
 
 ```json
 {
     "require": {
         "php": ">=8.2",
         "se7enxweb/oss": "~4.6.0",
-        "se7enxweb/site-legacy-bundle": "v2.0.0",
+        "se7enxweb/site-legacy-bundle": "v2.0.0-p1",
         "netgen/layouts-ibexa": "~1.4.0"
     }
 }

@@ -27,7 +27,7 @@ nine different distributions" (`README.md`, "What is Exponential Platform?"). Th
 |---|---|
 | Exponential Platform Legacy 5.0.x, 4.6.x, 3.3.x, 2.5.x | "Dual Kernel Symfony CMS which also includes a full copy of Exponential 6" |
 | Exponential Platform 3.2.9 | "Symfony only CMS" |
-| Exponential Platform Nexus 1.3.0.x | "Platform v5.x Dual Kernel Symfony 7.4+ CMS which also includes a full copy of Exponential 6.x+" |
+| Exponential Platform Nexus 1.3.0.x | The current Nexus line: Platform v5 (DXP 5 OSS) on Symfony 7.4 with Exponential Layouts 2 and SQLite as the zero-configuration default; it does not include the Exponential 6 kernel |
 | Exponential Platform Nexus 1.2.0.x, 1.1.0.x, 1.0.0.x | Platform v4.x, v3.x and v2.5.x dual kernel lines, each with a full copy of Exponential 6 |
 
 ## Dual kernel: Legacy and Nexus

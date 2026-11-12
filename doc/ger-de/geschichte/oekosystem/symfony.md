@@ -8,7 +8,7 @@ Fork des Frameworks Symfony 3.4, aufgeteilt in se7enxweb/symfony.
 
 ## Wie es mit Exponential zusammenhängt
 
-Hält Installationen von Nexus 1.x auf Basis von Symfony 3.4 unter PHP 8.2 bis 8.5 lauffähig.
+Hält Installationen von Nexus 1.0.0.x auf Basis von Symfony 3.4 unter PHP 8.2 bis 8.5 lauffähig.
 
 ## Was Anwender davon haben
 

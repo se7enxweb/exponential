@@ -62,18 +62,18 @@ Branch mit einer eigenen Tag-Serie; abgelesen aus der `composer.json` jedes Rele
 
 | Nexus-Linie (Tags) | Plattformgeneration | Symfony | PHP (`composer.json`) | Legacy-Kernel enthalten |
 |---|---|---|---|---|
-| `1.0.0.x` (`v1.0.0.0.1` bis `1.0.0.10`) | eZ Platform 2.5 (`se7enxweb/ezpublish-kernel ~7.5.40`) | 3.4 (`se7enxweb/symfony v3.4.55`) | `^7.1.3 \|\| ... \|\| ^8.6` | ja: `se7enxweb/exponential ^6.0.12`, `se7enxweb/legacy-bridge ^2.1` |
-| `1.1.0.x` (`v1.1.0.0` bis `v1.1.0.7`) | eZ Platform 3.3 (`se7enxweb/oss ~3.3.0`) | 5.4 | `^8.0` | ja: `se7enxweb/legacy-bridge ^3.0`, `se7enxweb/site-legacy-bundle ^2.0` |
-| `1.2.0.x` (`v1.2.0.0`, „Ibexa 4.6 / v4 first release“) | Ibexa OSS 4.6 (`se7enxweb/oss ~4.6.0`) | 5.4 | `>=8.2` | ja: `se7enxweb/site-legacy-bundle v2.0.0` zieht `se7enxweb/ibexa-legacy-bridge` 4.x und `se7enxweb/exponential` nach (`dev-main` im Lock) |
-| `1.3.0.x` (`1.3.0.0.0`, `1.3.0.1` bis `1.3.0.5`, die neueste Release) | Platform v5 (`se7enxweb/exponential-platform-dxp`, Core `v5.0.7` im Lock) | 7.4 | `>=8.4` | nein |
-| `v2.5.0.x` (Tags `v2.5.0.0` bis `v2.5.0.6` des Nexus-Repositorys; `v2.5.0.0` und `v2.5.0.1` nennen das Paket noch `se7enxweb/exponential-platform-legacy`) | die 2.5-Linie von Exponential Platform Legacy (deren eigene 2.5-Tags `v2.5.0.0` bis `v2.5.0.3` sind), als Nexus verpackt | 3.4 | wie 1.0.0.x | ja |
+| `1.0.0.x` (`v1.0.0.0.1` bis `1.0.0.11`) | eZ Platform 2.5 (`se7enxweb/ezpublish-kernel ~7.5.40`) | 3.4 (`se7enxweb/symfony v3.4.55`) | `^7.1.3 \|\| ... \|\| ^8.6` | ja: `se7enxweb/exponential ^6.0.12`, `se7enxweb/legacy-bridge ^2.1` |
+| `1.1.0.x` (`v1.1.0.0` bis `v1.1.0.14`) | eZ Platform 3.3 (`se7enxweb/oss ~3.3.0`) | 5.4 | `^8.0` | ja: `se7enxweb/legacy-bridge ^3.0`, `se7enxweb/site-legacy-bundle ^2.0` |
+| `1.2.0.x` (`v1.2.0.0` bis `v1.2.0.5`) | Ibexa OSS 4.6 (`se7enxweb/oss ~4.6.0`) | 5.4 | `>=8.2` | ja: `se7enxweb/site-legacy-bundle v2.0.0` zieht `se7enxweb/ibexa-legacy-bridge` 4.x und `se7enxweb/exponential` nach (`dev-main` im Lock) |
+| `1.3.0.x`, die aktuelle Linie (`1.3.0.0.0`, `1.3.0.1` bis `1.3.0.11`) | Platform v5, DXP 5 OSS (`se7enxweb/exponential-platform-dxp`, Core `v5.1.0` im Lock von `1.3.0.11`), Exponential Layouts 2.0, SQLite als Standard ohne Konfiguration | 7.4 | `>=8.4` | nein |
 
 Zwei Fallen, wenn Sie eine Nexus-Linie mit Composer installieren. **Fünfteilige Tags sind nicht auf Packagist**:
-`v1.0.0.0.1` bis `v1.0.0.0.3` und `1.3.0.0.0` gibt es nur in git; verlangen Sie also `1.0.0.10`, `v1.1.0.7`, `v1.2.0.0`
-oder `1.3.0.5`. Und **nennen Sie immer eine Version**: Das Repository ist ein Fork der Netgen Media Site und behält
+`v1.0.0.0.1` bis `v1.0.0.0.3` und `1.3.0.0.0` gibt es nur in git; verlangen Sie also `1.0.0.11`, `v1.1.0.14`, `v1.2.0.5`
+oder `1.3.0.11`. Und **nennen Sie immer eine Version**: Das Repository ist ein Fork der Netgen Media Site und behält
 deren Tags, die Packagist unter dem Nexus-Namen aufführt; `composer create-project se7enxweb/exponential-platform-nexus`
-ohne Version installiert daher `3.1.6`, die Upstream-`netgen/media-site`. Der Standard-Branch `master` ist die
-2.5-Linie; klonen Sie mit `--branch 1.3.0.x` (oder der gewünschten Linie).
+ohne Version installiert daher `3.1.6`, die Upstream-`netgen/media-site`. Der Standard-Branch `master` ist keine
+Nexus-Linie: Er trägt Tags `v2.5.0.x` im Upstream-Stil und ist nicht der Branch `1.0.0.x`. Klonen Sie mit
+`--branch 1.3.0.x` (oder der gewünschten Linie).
 
 Die Nexus-5-Linie gibt es auch als eigenen Starter, `se7enxweb/exponential-platform-nexus-starter`; diesen betreibt die
 Referenzinstallation hinter diesem Handbuch (SQLite, Symfony 7.4, `se7enxweb/exponential-platform-dxp-core v5.0.7`).
@@ -325,14 +325,14 @@ Innerhalb derselben Generation ist der Austausch eine Änderung in Composer. Vor
 }
 ```
 
-Nachher, wie Nexus `v1.2.0.0` es verlangt:
+Nachher, wie Nexus `v1.2.0.5` es verlangt:
 
 ```json
 {
     "require": {
         "php": ">=8.2",
         "se7enxweb/oss": "~4.6.0",
-        "se7enxweb/site-legacy-bundle": "v2.0.0",
+        "se7enxweb/site-legacy-bundle": "v2.0.0-p1",
         "netgen/layouts-ibexa": "~1.4.0"
     }
 }

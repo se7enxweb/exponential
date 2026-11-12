@@ -3,8 +3,8 @@
 This page is for developers and agencies who want a complete demo website on Exponential Platform, the Symfony based
 sibling of Exponential 6, and then shape it into their own site. It is not part of the legacy kernel.
 
-**Repositories:** `se7enxweb/exponential-platform-nexus` (one branch per platform generation, `1.0.0.x` to `1.3.0.x`,
-plus the `v2.5.0.x` tags), `se7enxweb/exponential-platform-nexus-starter` (Platform v5), `se7enxweb/cjw-exponential-platform-nexus`
+**Repositories:** `se7enxweb/exponential-platform-nexus` (one branch per platform generation, `1.0.0.x` to `1.3.0.x`;
+`1.3.0.x` is the current line), `se7enxweb/exponential-platform-nexus-starter` (Platform v5), `se7enxweb/cjw-exponential-platform-nexus`
 (CJW flavour).
 
 ## What it is
@@ -16,23 +16,25 @@ There is one line per platform generation, and you pick by the platform you want
 
 | Line | Repository, branch and tags | Runs on | Legacy kernel | Use it when |
 |---|---|---|---|---|
-| Nexus 1.0.0.x | `exponential-platform-nexus` branch `1.0.0.x` (also `master`), tags `v1.0.0.0.1` to `1.0.0.10` | eZ Platform 2.5 (`se7enxweb/ezpublish-kernel ~7.5.40`), Symfony 3.4 (`se7enxweb/symfony`), PHP 7.1.3 to 8.5 | yes: `se7enxweb/exponential ^6.0.12`, `se7enxweb/legacy-bridge ^2.1` | You keep a legacy site and its legacy admin on the 2.5 stack. |
-| Nexus 1.1.0.x | branch `1.1.0.x`, tags `v1.1.0.0` to `v1.1.0.7` | eZ Platform 3.3 (`se7enxweb/oss ~3.3.0`), Symfony 5.4, PHP `^8.0` | yes: `se7enxweb/legacy-bridge ^3.0`, `se7enxweb/site-legacy-bundle ^2.0` | 3.3 generation. |
-| Nexus 1.2.0.x | branch `1.2.0.x`, tag `v1.2.0.0` | Ibexa OSS 4.6 (`se7enxweb/oss ~4.6.0`), Symfony 5.4, PHP 8.2 or newer | yes: `se7enxweb/site-legacy-bundle v2.0.0` pulls in `se7enxweb/ibexa-legacy-bridge` 4.x and `se7enxweb/exponential` (dev-main in the lock) | 4.6 generation. |
-| Nexus 1.3.0.x | branch `1.3.0.x`, tags `1.3.0.0.0`, `1.3.0.1` to `1.3.0.5` | Platform v5 (`se7enxweb/exponential-platform-dxp-core v5.0.7` in the lock), Symfony 7.4, PHP 8.4 or newer | no | You start a new project on v5. |
+| Nexus 1.0.0.x | `exponential-platform-nexus` branch `1.0.0.x`, tags `v1.0.0.0.1` to `1.0.0.11` | eZ Platform 2.5 (`se7enxweb/ezpublish-kernel ~7.5.40`), Symfony 3.4 (`se7enxweb/symfony`), PHP 7.1.3 to 8.5 | yes: `se7enxweb/exponential ^6.0.12`, `se7enxweb/legacy-bridge ^2.1` | You keep a legacy site and its legacy admin on the 2.5 stack. |
+| Nexus 1.1.0.x | branch `1.1.0.x`, tags `v1.1.0.0` to `v1.1.0.14` | eZ Platform 3.3 (`se7enxweb/oss ~3.3.0`), Symfony 5.4, PHP `^8.0` | yes: `se7enxweb/legacy-bridge ^3.0`, `se7enxweb/site-legacy-bundle ^2.0` | 3.3 generation. |
+| Nexus 1.2.0.x | branch `1.2.0.x`, tags `v1.2.0.0` to `v1.2.0.5` | Ibexa OSS 4.6 (`se7enxweb/oss ~4.6.0`), Symfony 5.4, PHP 8.2 or newer | yes: `se7enxweb/site-legacy-bundle v2.0.0` pulls in `se7enxweb/ibexa-legacy-bridge` 4.x and `se7enxweb/exponential` (dev-main in the lock) | 4.6 generation. |
+| Nexus 1.3.0.x (current) | branch `1.3.0.x`, tags `1.3.0.0.0`, `1.3.0.1` to `1.3.0.11` | Platform v5, Exponential Platform DXP 5 OSS (`se7enxweb/exponential-platform-dxp-core v5.1.0` in the lock of `1.3.0.11`), Exponential Layouts 2.0, Symfony 7.4 LTS, PHP 8.4 or newer (8.5 tested); SQLite as the zero-configuration default, also MySQL 8.0+, MariaDB 10.3+, PostgreSQL 14+ | no | You start a new project. This is the line to start with. |
 | Nexus v5 starter | `exponential-platform-nexus-starter` | as 1.3.0.x: Symfony 7.4 LTS, PHP 8.4+ (8.5 recommended), Node.js 22; SQLite (development default), MySQL 8.0+, MariaDB 10.3+, PostgreSQL 14+ | no | The same v5 site as a separate repository. |
-| Nexus 2.5 | tags `v2.5.0.0` to `v2.5.0.6` | the Exponential Platform Legacy 2.5 distribution packaged as Nexus | yes | You follow the 2.5 long-term line. |
 | CJW Nexus | `cjw-exponential-platform-nexus` tag `1.0.0.6` | as Nexus 1.0.0.x | yes | You want the CJW starter content. |
 
 Two things about versions to know before you install:
 
 - **Five-part tags are not on Packagist.** `v1.0.0.0.1` to `v1.0.0.0.3` and `1.3.0.0.0` exist only as git tags; Composer
-  finds `1.0.0.4` to `1.0.0.10`, `v1.1.0.0` to `v1.1.0.7`, `v1.2.0.0`, `1.3.0.1` to `1.3.0.5` and `v2.5.0.0` to
-  `v2.5.0.6`.
+  finds `1.0.0.4` to `1.0.0.11`, `v1.1.0.0` to `v1.1.0.14`, `v1.2.0.0` to `v1.2.0.5` and `1.3.0.1` to
+  `1.3.0.11`, for example `composer create-project se7enxweb/exponential-platform-nexus:1.3.0.11 nexus`.
 - **Always name a version.** The repository is a fork of the Netgen media site and carries its tags too; Packagist
   lists them under the Nexus name. `composer create-project se7enxweb/exponential-platform-nexus` without a version
-  picks the highest of them, `3.1.6`, which is the upstream `netgen/media-site`, not a Nexus release. The default
-  branch, `master`, is the 2.5 line.
+  picks the highest of them, `3.1.6`, which is the upstream `netgen/media-site`, not a Nexus release.
+- **`master` is not a Nexus line.** The default branch carries upstream-style `v2.5.0.x` tags (GitHub shows
+  `v2.5.0.9` as "Latest"); they are not one of the four 7x lines, and `master` is not the `1.0.0.x` branch either. The
+  old upstream branches `1.7` to `1.13`, `2.0`, `2.2`, `2.5.0.0` and `2.5.0.1` are not Nexus lines. Always clone with
+  `--branch 1.3.0.x` (or another line or tag) and install a named version.
 
 ## What you get in the v5 starter
 
@@ -53,7 +55,7 @@ The three se7enxweb forks the starter depends on exist because upstream packages
 Requirements: PHP 8.4 or newer with `gd`, `curl`, `json`, `xsl`, `xml`, `intl`, `mbstring`, `ctype`, `iconv` and one of `pdo_sqlite`, `pdo_mysql`, `pdo_pgsql`; Composer 2; Node.js 22 with Yarn 1.22 (the project's `package.json` does not build on Node 20 or earlier); a web server (Apache 2.4, Nginx 1.18 or the Symfony CLI for development).
 
 ```bash
-git clone --branch 1.3.0.x git@github.com:se7enxweb/exponential-platform-nexus.git   # without --branch: master, the 2.5 line
+git clone --branch 1.3.0.x git@github.com:se7enxweb/exponential-platform-nexus.git   # always name the line or a tag; master is not a Nexus line
 cd exponential-platform-nexus
 COMPOSER_ALLOW_SUPERUSER=1 composer install
 cp .env .env.local                      # set APP_SECRET; keep the SQLite DATABASE_URL or change it
@@ -97,13 +99,13 @@ After the install these addresses answer:
 
 The complete step by step guide (web server configuration, permissions, production checklist, cron, Solr, Varnish, troubleshooting, database conversion) is `doc/sevenx/INSTALL.md` inside the starter repository.
 
-## Install Nexus 1.0.0.x (the 2.5 line)
+## Install Nexus 1.0.0.x (the eZ Platform 2.5 stack)
 
 The 1.0.0.x line installs with Composer and the SQL dumps that ship in the project:
 
 ```bash
 cd /var/www
-composer create-project se7enxweb/exponential-platform-nexus:1.0.0.10 --ignore-platform-reqs
+composer create-project se7enxweb/exponential-platform-nexus:1.0.0.11 --ignore-platform-reqs
 ```
 
 `--ignore-platform-reqs` is needed because the package definitions of the old stack still declare older PHP limits; the 1.0.0.x README says this requirement will go away as the packages are updated.

@@ -3,8 +3,8 @@ title: Exponential 6 und Exponential Platform Nexus
 audience: admin, developer, project-manager
 category: install-upgrade
 order: 21
-summary: Eine Exponential-6-Site in Exponential Platform Nexus überführen (Linien 1.0.0.x und v2.5.0.x auf Platform 2.5, 1.1.0.x auf 3.3, 1.2.0.x auf 4.6, 1.3.0.x auf v5) und zurück – welche Linie, die Datenbank, die Demo-Site, die Sie nicht wollen, Exponential Layouts auf Nexus im Vergleich zum Legacy-Kernel, Prüfung, Rückweg und Checkliste.
-keywords: Exponential Platform Nexus, Nexus, Media-Site, Site-Bundle, Migration, media site, site bundle, 1.0.0.x, 1.1.0.x, 1.2.0.x, 1.3.0.x, v2.5.0.x, CJW Nexus, Exponential Layouts, nglayouts:export, exp:layouts, migration
+summary: Eine Exponential-6-Site in Exponential Platform Nexus überführen (Linien 1.0.0.x auf Platform 2.5, 1.1.0.x auf 3.3, 1.2.0.x auf 4.6, 1.3.0.x auf v5, die aktuelle Linie) und zurück – welche Linie, die Datenbank, die Demo-Site, die Sie nicht wollen, Exponential Layouts auf Nexus im Vergleich zum Legacy-Kernel, Prüfung, Rückweg und Checkliste.
+keywords: Exponential Platform Nexus, Nexus, Media-Site, Site-Bundle, Migration, media site, site bundle, 1.0.0.x, 1.1.0.x, 1.2.0.x, 1.3.0.x, CJW Nexus, Exponential Layouts, nglayouts:export, exp:layouts, migration
 type: install
 ---
 # Exponential 6 und Exponential Platform Nexus
@@ -31,16 +31,17 @@ außerdem den Kernel von Exponential 6.
 
 ## 1. Die Release-Linien
 
-„Nexus 2.5“, „Nexus 4.x“ und „Nexus 5.x“ sind die Plattform-Generationen innerhalb von Nexus, nicht seine
-Versionsnummern. Ausgelesen aus der `composer.json` der Release-Tags am 2026-10-18:
+Nexus hat vier 7x-Linien, `1.0.0.x` bis `1.3.0.x`; `1.3.0.x` ist die aktuelle. Die Plattform-Generationen, auf denen
+sie laufen (2.5, 3.3, 4.6, v5), sind keine Versionsnummern von Nexus. Der Standard-Branch `master` trägt Tags
+`v2.5.0.x` im Upstream-Stil; er ist keine Nexus-Linie und nicht der Branch `1.0.0.x`. Ausgelesen aus der
+`composer.json` der Release-Tags am 2026-10-18, neueste Releases geprüft am 2026-11-12:
 
 | Nexus-Linie | Neuestes Release | Generation | Symfony | PHP | Legacy-Kernel |
 |---|---|---|---|---|---|
 | `1.0.0.x` | `1.0.0.11` | Fork des Kernels von eZ Platform 2.5 (`~7.5.40`) | 3.4 | `^7.1.3` bis `^8.6` | ja: `se7enxweb/exponential ^6.0.12`, `legacy-bridge ^2.1` |
-| `v2.5.0.x` (Branch `master`) | `v2.5.0.7` | 2.5 | 3.4 | wie 1.0.0.x | ja |
-| `1.1.0.x` | `v1.1.0.8` | 3.3 (`se7enxweb/oss ~3.3.0`) | 5.4 | `^8.0` | ja: `legacy-bridge ^3.0`, `site-legacy-bundle ^2.0` |
-| `1.2.0.x` | `v1.2.0.1` | 4.6 (`se7enxweb/oss ~4.6.0`) | 5.4 | `>=8.2` | ja: `site-legacy-bundle v2.0.0` mit dem Legacy-Installer |
-| `1.3.0.x` | `1.3.0.6` | v5 (`exponential-platform-dxp dev-master`) | 7.4 | `>=8.4` | **nein** |
+| `1.1.0.x` | `v1.1.0.14` | 3.3 (`se7enxweb/oss ~3.3.0`) | 5.4 | `^8.0` | ja: `legacy-bridge ^3.0`, `site-legacy-bundle ^2.0` |
+| `1.2.0.x` | `v1.2.0.5` | 4.6 (`se7enxweb/oss ~4.6.0`) | 5.4 | `>=8.2` | ja: `site-legacy-bundle v2.0.0` mit dem Legacy-Installer |
+| `1.3.0.x` (aktuell) | `1.3.0.11` | v5 (`exponential-platform-dxp dev-master`), DXP 5 OSS mit Exponential Layouts 2 und SQLite als Standard | 7.4 | `>=8.4` | **nein** |
 
 Verwandte Produkte: **CJW Exponential Platform Nexus** (`se7enxweb/cjw-exponential-platform-nexus`, `1.0.0.12`, die
 Generation 2.5 mit Exponential 6 und mitgelieferten Vendor-Dateien), dessen Starter (`1.0.0.3`) und der **Nexus Starter**
