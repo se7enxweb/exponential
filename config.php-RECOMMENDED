@@ -322,15 +322,33 @@
    every request, after the settings and before the kernel. Under a persistent
    application server such as Exponential Velocity this file (config.php) runs
    once per worker, so code here cannot act on each request; that file can.
-   It is the place for a request filter in front of the site, for example
-   request-shield (https://github.com/cjw-network/request-shield). Name a file
+   It is the place for a request filter in front of the site. Name a file
    only from here, never one the web server may write. Without the constant
    nothing runs. Changing it needs a restart of a persistent server.
-   Example: request-shield under Velocity only (PHP_SAPI cli with its
-   Q_WebServer class), while its integration file exists:
+   The request shield below names its own file here under Velocity. Example
+   of another file, under Velocity only (PHP_SAPI cli with its Q_WebServer
+   class):
 */
-//if ( PHP_SAPI === 'cli' && class_exists( 'Q_WebServer', false ) && is_file( __DIR__ . '/var/request-shield/velocity-prepend.php' ) && !defined( 'EXP_REQUEST_PREPEND_FILE' ) )
-//    define( 'EXP_REQUEST_PREPEND_FILE', __DIR__ . '/var/request-shield/velocity-prepend.php' );
+//if ( PHP_SAPI === 'cli' && class_exists( 'Q_WebServer', false ) && !defined( 'EXP_REQUEST_PREPEND_FILE' ) )
+//    define( 'EXP_REQUEST_PREPEND_FILE', __DIR__ . '/settings/request-prepend.php' );
+
+/*
+   REQUEST SHIELD
+   --------------
+   exp_request_shield (request-shield, a mini web application firewall)
+   decides every request before the kernel: with PHP-FPM right here, under
+   Exponential Velocity through EXP_REQUEST_PREPEND_FILE, which the hook
+   names. On by default and enforcing; before the HTTP cache's early exit
+   below, so cached pages are protected too. The site's rules:
+   settings/request-shield/request-shield.rules (else the extension's own).
+   Switch it off at once: create var/request-shield/PAUSED. Constants that
+   change its paths go above this line:
+   extension/exp_request_shield/doc/configuration.md.
+*/
+// define( 'EXP_REQUEST_SHIELD_RULES', __DIR__ . '/settings/request-shield/request-shield.rules' );
+// define( 'EXP_REQUEST_SHIELD_DISABLED', true );
+if ( is_file( __DIR__ . '/extension/exp_request_shield/bootstrap/hook.php' ) )
+    require __DIR__ . '/extension/exp_request_shield/bootstrap/hook.php';
 
 /*
    ROLE-AWARE HTTP CACHE

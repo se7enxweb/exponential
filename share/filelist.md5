@@ -303,10 +303,10 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-ecf861682ab2825155604ba87baf69e2  composer.json
+5401c8538d087c7c7484f38f1da741ae  composer.json
 a180ccab56cfc079f1e8da6819229745  composer.json.dist
 493b236b88d569268b7381a695b9b22a  config.env.php.example
-b226014797143b612684b0aacc22d64c  config.php-RECOMMENDED
+b8bdf80e44d3bc8d0e29e17fcd30f62a  config.php-RECOMMENDED
 3be3d7ac52263ec84d8a70dfa1f7821e  cronjobs/audit.php
 ca0e2a9e9d65e9821996ebd9d993bb90  cronjobs/basket_cleanup.php
 b7378e3691dbdd173f08422eb2108b95  cronjobs/cachecleanup.php
