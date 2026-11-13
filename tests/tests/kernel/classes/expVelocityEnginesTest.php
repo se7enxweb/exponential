@@ -667,9 +667,11 @@ class expVelocityEnginesTest extends ezpTestCase
     {
         $velocity = expVelocity::create( 'velocity.ini', 'qbix' );
         $webserver = $this->qbixWebserverConfig( $velocity );
-        $this->assertSame( array( '/index.php', '/index_rest.php', '/index_treemenu.php' ), $webserver['scripts'] ?? null );
+        $this->assertSame( array( '/index.php', '/index_rest.php', '/index_treemenu.php', '/index_image.php' ), $webserver['scripts'] ?? null );
         $this->assertSame( 'index_rest.php', $webserver['frontControllers']['^/(api/|index_rest\\.php)'] ?? null );
         $this->assertSame( 'index_treemenu.php', $webserver['frontControllers']['^/([^/]+/)?content/treemenu'] ?? null );
+        $this->assertSame( 'index_image.php', $webserver['frontControllers']['^/var/([^/]+/)?storage/images(-versioned)?/'] ?? null );
+        $this->assertSame( 'index_image.php', $webserver['frontControllers']['^/([^/]+/)?content/image/'] ?? null );
 
         $write = new ReflectionMethod( $velocity, 'writeServerConfig' );
         $config = json_decode( file_get_contents( $write->invoke( $velocity ) ), true );
@@ -679,6 +681,8 @@ class expVelocityEnginesTest extends ezpTestCase
         $caddy = expVelocity::create( 'velocity.ini', 'frankenphp' )->caddyfileText();
         $this->assertStringContainsString( '^/(api/|index_rest\\.php)', $caddy );
         $this->assertStringContainsString( '^/([^/]+/)?content/treemenu', $caddy );
+        $this->assertStringContainsString( 'rewrite @image /index_image.php', $caddy );
+        $this->assertStringContainsString( 'rewrite @imageview /index_image.php', $caddy );
     }
 
     /**

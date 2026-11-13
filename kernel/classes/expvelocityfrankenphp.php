@@ -594,7 +594,8 @@ class expVelocityFrankenPHP extends expVelocity
      *
      * The routing is exponential's .htaccess_root: the paths in
      * STATIC_PATHS are files, api/ goes to index_rest.php, the tree menu to
-     * index_treemenu.php, and everything else to index.php. It is spelled out
+     * index_treemenu.php, a storage image with no file and content/image to
+     * index_image.php, and everything else to index.php. It is spelled out
      * rather than left to php_server, whose default is to serve any file that
      * exists -- settings/site.ini, the SQLite database, the kernel's sources.
      *
@@ -671,6 +672,16 @@ class expVelocityFrankenPHP extends expVelocity
         // file server would send a .php file's source (var/storage/packages
         // holds package settings as PHP), and .htaccess, .git or .cache are
         // not the site's to serve. Both fall through to index.php.
+        // A storage image with no file (an image alias not made yet, settings/image.ini [AliasSettings]) goes to
+        // index_image.php, which makes it or answers the placeholder, before the file server would answer 404;
+        // content/image too, without the page kernel. As .htaccess_root and Velocity's front controllers route them.
+        $lines[] = "\t\t@image {";
+        $lines[] = "\t\t\tpath_regexp image ^/var/([^/]+/)?storage/images(-versioned)?/";
+        $lines[] = "\t\t\tnot file";
+        $lines[] = "\t\t}";
+        $lines[] = "\t\trewrite @image /index_image.php";
+        $lines[] = "\t\t@imageview path_regexp imageview ^/([^/]+/)?content/image/";
+        $lines[] = "\t\trewrite @imageview /index_image.php";
         $lines[] = "\t\t@static {";
         $lines[] = "\t\t\tpath_regexp static " . self::staticPaths();
         $lines[] = "\t\t\tnot path_regexp " . self::NEVER_STATIC;
@@ -682,7 +693,7 @@ class expVelocityFrankenPHP extends expVelocity
         $lines[] = "\t\trewrite @rest /index_rest.php";
         $lines[] = "\t\t@treemenu path_regexp treemenu ^/([^/]+/)?content/treemenu";
         $lines[] = "\t\trewrite @treemenu /index_treemenu.php";
-        $lines[] = "\t\t@front not path /index_rest.php /index_treemenu.php";
+        $lines[] = "\t\t@front not path /index_rest.php /index_treemenu.php /index_image.php";
         $lines[] = "\t\trewrite @front /index.php";
         $lines[] = "\t\tphp {";
         // Who serves the page, for Setup > System information: FrankenPHP says
