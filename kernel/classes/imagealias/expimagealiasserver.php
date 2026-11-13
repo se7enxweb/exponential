@@ -108,6 +108,14 @@ class expImageAliasServer
 
         $aliasNames = array_keys( eZImageManager::factory()->aliasList() );
         $parsed = expImageAliasUrl::parseStoragePath( $path, $aliasNames );
+        // Staging: the original of a published image is fetched from the source installation
+        if ( $parsed !== null && !$parsed['versioned'] )
+        {
+            $stager = expImageAliasStager::forRequest();
+            $staged = $stager !== null ? $this->stageOriginal( $stager, $parsed, $path ) : null;
+            if ( $staged !== null )
+                return $staged;
+        }
         if ( $parsed === null || !$parsed['candidates'] || $parsed['versioned'] )
             return $this->placeholder( null, null, 404, $parsed !== null && $parsed['versioned'] ? 'versioned' : 'unknown' );
 
@@ -320,15 +328,34 @@ class expImageAliasServer
         $handler = $attribute->attribute( 'content' );
         if ( !$handler instanceof eZImageAliasHandler || !eZImageManager::factory()->hasAlias( $aliasName ) )
             return 'failed';
+        // Staging: the alias from the source installation, else its original (the alias is then made here)
+        $adopt = false;
+        $stager = self::exists( $target ) ? null : expImageAliasStager::forRequest();
+        if ( $stager !== null )
+        {
+            $aliasList = $handler->aliasList();
+            $originalPath = isset( $aliasList['original']['url'] ) ? (string)$aliasList['original']['url'] : '';
+            $staged = $stager->stageAlias( $target, $originalPath, max( 0.0, expImageAliasSettings::maxWait() - ( microtime( true ) - $this->start ) ) );
+            if ( $staged === 'pending' )
+                return 'timeout';
+            if ( $staged === 'missing' )
+                return 'failed';
+            $adopt = $staged === 'alias';
+        }
         $left = max( 0.0, expImageAliasSettings::maxWait() - ( microtime( true ) - $this->start ) );
         $before = expImageAliasLock::setWaitLimit( $left );
         $started = microtime( true );
         $timedOut = false;
         try
         {
-            $alias = expImageAliasSettings::withRender( function () use ( $handler, $aliasName ) {
+            $alias = expImageAliasSettings::withRender( function () use ( $handler, $aliasName, $adopt, $target ) {
                 // An entry whose file is gone is made again (the XML entry is replaced)
                 $handler->forgetMissingAliasFile( $aliasName );
+                // A file fetched from the source is recorded as render mode records an alias it made
+                if ( $adopt )
+                    return expImageAliasStager::adopting( $aliasName, $target, function () use ( $handler, $aliasName ) {
+                        return $handler->imageAlias( $aliasName );
+                    } );
                 return $handler->imageAlias( $aliasName );
             } );
         }
@@ -348,6 +375,32 @@ class expImageAliasServer
         expImageAliasLog::write( $ok ? 'generate' : 'fail', array( 'result' => $ok ? 'ok' : ( $timedOut ? 'timeout' : 'failed' ), 'ms' => $ms,
                                                                     'alias' => $aliasName, 'path' => $target ) );
         return $ok ? 'ok' : ( $timedOut ? 'timeout' : 'failed' );
+    }
+
+    /**
+     * Staging: a storage path that the stored image data of a published image names (its original, or an alias that
+     * is not configured here any more), fetched as it is from the source installation within what is left of MaxWait.
+     * Null for any other path, and for a configured alias, which generate() stages (the alias, else its original).
+     *
+     * @param expImageAliasStager $stager
+     * @param array $parsed expImageAliasUrl::parseStoragePath() of $path
+     * @param string $path
+     * @return array|null the response
+     */
+    protected function stageOriginal( expImageAliasStager $stager, array $parsed, $path )
+    {
+        $attribute = $this->publishedImageAttribute( $parsed['attribute'], $parsed['version'], $parsed['language'] );
+        if ( $attribute === null )
+            return null;
+        $name = array_search( $path, expImageAliasStager::filesOfXml( (string)$attribute->attribute( 'data_text' ) ), true );
+        if ( $name === false || ( $name !== 'original' && eZImageManager::factory()->hasAlias( $name ) ) )
+            return null;
+        $staged = $stager->stageFile( $path, max( 0.0, expImageAliasSettings::maxWait() - ( microtime( true ) - $this->start ) ) );
+        if ( $staged === 'ok' && self::exists( $path ) )
+            return $this->deliver( $path, null );
+        if ( $staged === 'pending' )
+            return $this->placeholder( null, null, 200, 'staging', $name, $path );
+        return $this->placeholder( null, null, 404, 'not-at-source', $name, $path );
     }
 
     // ------------------------------------------------------------------------------------------------ formats

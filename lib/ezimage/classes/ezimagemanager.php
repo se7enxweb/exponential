@@ -840,6 +840,18 @@ class eZImageManager
             $context .= '. ';
         }
 
+        // Staging (expImageAliasStager): an alias file fetched from the source installation is recorded as one
+        // made here; neither the original nor the reference alias needs to be here for it
+        $adoptedPath = class_exists( 'expImageAliasStager' ) ? expImageAliasStager::adoptedFile( $aliasName ) : null;
+        if ( $adoptedPath !== null )
+        {
+            $alternativeText = isset( $existingAliasList['original']['alternative_text'] ) ? $existingAliasList['original']['alternative_text'] : '';
+            $existingAliasList[$aliasName] = $this->madeAliasData( eZMimeType::findByURL( $adoptedPath ), $aliasName, $alternativeText,
+                                                                   $currentAliasInfo['alias_key'] );
+            ezpEvent::getInstance()->notify( 'image/alias', array( $adoptedPath, $aliasName ) );
+            return true;
+        }
+
         // generate the reference alias if it hasn't been generated yet
         $hasReference = false;
         if ( array_key_exists( $referenceAlias, $existingAliasList ) )
@@ -951,59 +963,7 @@ class eZImageManager
              * At this point, we consider that the image exists and destinationMimeData
              * has been filled with the proper information
              */
-            $currentAliasData = array( 'url' => $destinationMimeData['url'],
-                                       'dirpath' => $destinationMimeData['dirpath'],
-                                       'filename' => $destinationMimeData['filename'],
-                                       'suffix' => $destinationMimeData['suffix'],
-                                       'basename' => $destinationMimeData['basename'],
-                                       'alternative_text' => $aliasInfo['alternative_text'],
-                                       'name' => $aliasName,
-                                       'sub_type' => false,
-                                       'timestamp' => time(),
-                                       'alias_key' => $aliasKey,
-                                       'mime_type' => $destinationMimeData['name'],
-                                       'override_mime_type' => false,
-                                       'info' => false,
-                                       'width' => false,
-                                       'height' => false,
-                                       'is_valid' => true,
-                                       'is_new' => true );
-
-            if ( isset( $destinationMimeData['override_mime_type'] ) )
-                $currentAliasData['override_mime_type'] = $destinationMimeData['override_mime_type'];
-            if ( isset( $destinationMimeData['info'] ) )
-                $currentAliasData['info'] = $destinationMimeData['info'];
-            $currentAliasData['full_path'] = $currentAliasData['url'];
-
-            if ( function_exists( 'getimagesize' ) )
-            {
-                /**
-                 * we may want to fetch a unique name here, since we won't use
-                 * the data for anything else
-                 */
-                $fileHandler = eZClusterFileHandler::instance( $destinationMimeData['url'] );
-                if ( $tempPath = $fileHandler->fetchUnique() )
-                {
-                    $info = getimagesize( $tempPath );
-                    if ( $info )
-                    {
-                        list( $currentAliasData['width'], $currentAliasData['height'] ) = $info;
-                    }
-                    else
-                    {
-                        eZDebug::writeError("The size of the generated image {$destinationMimeData['url']} could not be read by getimagesize()", __METHOD__ );
-                    }
-                    $fileHandler->fileDeleteLocal( $tempPath );
-                }
-                else
-                {
-                    eZDebug::writeError( "The destination image {$destinationMimeData['url']} does not exist, cannot figure out image size", __METHOD__ );
-                }
-            }
-            else
-            {
-                eZDebug::writeError( "Unknown function 'getimagesize', cannot get image size", __METHOD__ );
-            }
+            $currentAliasData = $this->madeAliasData( $destinationMimeData, $aliasName, $aliasInfo['alternative_text'], $aliasKey );
             $existingAliasList[$aliasName] = $currentAliasData;
 
             $lock->release();
@@ -1025,6 +985,75 @@ class eZImageManager
         eZDebug::writeError( "Failed converting $sourceFile to alias '$aliasName' in directory '$destinationDir'", __METHOD__ );
         $lock->release();
         return false;
+    }
+
+    /**
+     * The alias list entry of an alias file that exists now (converted by createImageAlias(), or fetched from a
+     * source installation by expImageAliasStager): its name, MIME type and the size read from the file.
+     *
+     * @param array $destinationMimeData the MIME data of the alias file (url, dirpath, filename, suffix, basename,
+     *                                   name, optional override_mime_type and info)
+     * @param string $aliasName
+     * @param string $alternativeText
+     * @param int|string $aliasKey
+     * @return array
+     */
+    protected function madeAliasData( $destinationMimeData, $aliasName, $alternativeText, $aliasKey )
+    {
+        $currentAliasData = array( 'url' => $destinationMimeData['url'],
+                                   'dirpath' => $destinationMimeData['dirpath'],
+                                   'filename' => $destinationMimeData['filename'],
+                                   'suffix' => $destinationMimeData['suffix'],
+                                   'basename' => $destinationMimeData['basename'],
+                                   'alternative_text' => $alternativeText,
+                                   'name' => $aliasName,
+                                   'sub_type' => false,
+                                   'timestamp' => time(),
+                                   'alias_key' => $aliasKey,
+                                   'mime_type' => $destinationMimeData['name'],
+                                   'override_mime_type' => false,
+                                   'info' => false,
+                                   'width' => false,
+                                   'height' => false,
+                                   'is_valid' => true,
+                                   'is_new' => true );
+
+        if ( isset( $destinationMimeData['override_mime_type'] ) )
+            $currentAliasData['override_mime_type'] = $destinationMimeData['override_mime_type'];
+        if ( isset( $destinationMimeData['info'] ) )
+            $currentAliasData['info'] = $destinationMimeData['info'];
+        $currentAliasData['full_path'] = $currentAliasData['url'];
+
+        if ( function_exists( 'getimagesize' ) )
+        {
+            /**
+             * we may want to fetch a unique name here, since we won't use
+             * the data for anything else
+             */
+            $fileHandler = eZClusterFileHandler::instance( $destinationMimeData['url'] );
+            if ( $tempPath = $fileHandler->fetchUnique() )
+            {
+                $info = getimagesize( $tempPath );
+                if ( $info )
+                {
+                    list( $currentAliasData['width'], $currentAliasData['height'] ) = $info;
+                }
+                else
+                {
+                    eZDebug::writeError("The size of the generated image {$destinationMimeData['url']} could not be read by getimagesize()", __METHOD__ );
+                }
+                $fileHandler->fileDeleteLocal( $tempPath );
+            }
+            else
+            {
+                eZDebug::writeError( "The destination image {$destinationMimeData['url']} does not exist, cannot figure out image size", __METHOD__ );
+            }
+        }
+        else
+        {
+            eZDebug::writeError( "Unknown function 'getimagesize', cannot get image size", __METHOD__ );
+        }
+        return $currentAliasData;
     }
 
     /**
