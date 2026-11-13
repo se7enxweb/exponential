@@ -957,7 +957,28 @@ class eZImageManager
                 $reused = true;
             }
         }
-        if ( $reused || $this->convert( $sourceMimeData, $destinationMimeData, $aliasName, $parameters ) )
+        /**
+         * Throttling: a conversion runs only in one of the [AliasSettings] MaxParallel slots of this server
+         * (expImageAliasThrottle, on-demand mode), waited for as long as the lock above. None in time: no alias
+         * is made by this call (a request answers the placeholder and queues the work).
+         */
+        $slot = !$reused && class_exists( 'expImageAliasThrottle' );
+        if ( $slot && !expImageAliasThrottle::acquire() )
+        {
+            eZDebug::writeWarning( "No image conversion slot came free in time for the alias '$aliasName' of $aliasFilePath, the alias is not made now", __METHOD__ );
+            $lock->release();
+            return false;
+        }
+        try
+        {
+            $converted = $reused || $this->convert( $sourceMimeData, $destinationMimeData, $aliasName, $parameters );
+        }
+        finally
+        {
+            if ( $slot )
+                expImageAliasThrottle::release();
+        }
+        if ( $converted )
         {
             /**
              * At this point, we consider that the image exists and destinationMimeData

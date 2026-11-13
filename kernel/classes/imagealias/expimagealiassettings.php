@@ -162,11 +162,19 @@ class expImageAliasSettings
     }
 
     /**
-     * @return int conversions at once per server for bulk work
+     * @return int conversions at once per server, every process counted (expImageAliasThrottle)
      */
     public static function maxParallel()
     {
         return (int)self::number( 'AliasSettings', 'MaxParallel', 2, 1, 64 );
+    }
+
+    /**
+     * @return int the nice value bulk runs lower their worker to (0 = unchanged)
+     */
+    public static function bulkNice()
+    {
+        return (int)self::number( 'AliasSettings', 'BulkNice', 10, 0, 19 );
     }
 
     /** @return bool */
@@ -285,6 +293,120 @@ class expImageAliasSettings
         $block = 'AliasSource_' . preg_replace( '/[^a-z]/', '', strtolower( (string)$environment ) );
         return array( 'base_url' => rtrim( trim( (string)self::value( $block, 'BaseURL', '' ) ), '/' ),
                       'credential' => trim( (string)self::value( $block, 'Credential', '' ) ) );
+    }
+
+    // ------------------------------------------------------------------------------------------------ siteaccesses
+
+    /**
+     * The siteaccesses whose aliases pre-generation covers: the current one first, then site.ini
+     * [SiteAccessSettings] RelatedSiteAccessList[] (the siteaccesses that share this database), each once.
+     *
+     * @return string[]
+     */
+    public static function relatedSiteAccesses()
+    {
+        $out = array();
+        $current = self::currentSiteAccess();
+        if ( $current !== '' )
+            $out[] = $current;
+        $site = eZINI::instance( 'site.ini' );
+        $related = $site->hasVariable( 'SiteAccessSettings', 'RelatedSiteAccessList' ) ? (array)$site->variable( 'SiteAccessSettings', 'RelatedSiteAccessList' ) : array();
+        foreach ( $related as $name )
+        {
+            $name = trim( (string)$name );
+            if ( preg_match( '/^[A-Za-z0-9_-]{1,100}$/', $name ) && !in_array( $name, $out, true ) )
+                $out[] = $name;
+        }
+        return $out;
+    }
+
+    /**
+     * @return string the name of the current siteaccess, '' when none is loaded
+     */
+    public static function currentSiteAccess()
+    {
+        return isset( $GLOBALS['eZCurrentAccess']['name'] ) && is_string( $GLOBALS['eZCurrentAccess']['name'] ) ? $GLOBALS['eZCurrentAccess']['name'] : '';
+    }
+
+    /**
+     * The union of the aliases of several siteaccesses, each alias with the siteaccess whose image.ini makes it: the
+     * first one in the order given that lists it in AliasList[]. 'original' is never in it (it is the upload).
+     *
+     * @param array $aliasLists siteaccess => its AliasList[], in order of preference
+     * @return array siteaccess => alias names, in order; siteaccesses without an alias of their own are left out
+     */
+    public static function aliasUnion( array $aliasLists )
+    {
+        $seen = array();
+        $plan = array();
+        foreach ( $aliasLists as $siteAccess => $aliases )
+        {
+            foreach ( (array)$aliases as $alias )
+            {
+                $alias = trim( (string)$alias );
+                if ( $alias === '' || $alias === 'original' || isset( $seen[$alias] ) || !expImageAliasUrl::validAliasName( $alias ) )
+                    continue;
+                $seen[$alias] = true;
+                $plan[(string)$siteAccess][] = $alias;
+            }
+        }
+        return $plan;
+    }
+
+    /**
+     * The aliases pre-generation makes for a published image: aliasUnion() of the AliasList[] of
+     * relatedSiteAccesses(), each read through the INI system of that siteaccess (its overrides and extensions).
+     * Kept for the process.
+     *
+     * @return array siteaccess => alias names
+     */
+    public static function siteAccessAliasPlan()
+    {
+        static $plans = array();
+        $siteAccesses = self::relatedSiteAccesses();
+        $key = implode( ',', $siteAccesses );
+        if ( isset( $plans[$key] ) )
+            return $plans[$key];
+        $lists = array();
+        $current = self::currentSiteAccess();
+        foreach ( $siteAccesses as $siteAccess )
+        {
+            $ini = $siteAccess === $current ? eZINI::instance( 'image.ini' ) : eZSiteAccess::getIni( $siteAccess, 'image.ini' );
+            $lists[$siteAccess] = $ini->hasVariable( 'AliasSettings', 'AliasList' ) ? (array)$ini->variable( 'AliasSettings', 'AliasList' ) : array();
+        }
+        if ( !$siteAccesses )
+            $lists[''] = (array)self::value( 'AliasSettings', 'AliasList', array() );
+        return $plans[$key] = self::aliasUnion( $lists );
+    }
+
+    /**
+     * Runs $callback with the image.ini of the siteaccess $siteAccess in place of this one's, so eZImageManager makes
+     * the aliases that siteaccess defines, exactly as it would (a queue worker making the aliases of a site it does
+     * not run as). The current siteaccess or '' runs $callback as it is.
+     *
+     * @param string $siteAccess
+     * @param callable $callback
+     * @return mixed what $callback returns
+     */
+    public static function withSiteAccess( $siteAccess, $callback )
+    {
+        $siteAccess = (string)$siteAccess;
+        if ( $siteAccess === '' || $siteAccess === self::currentSiteAccess() || !preg_match( '/^[A-Za-z0-9_-]{1,100}$/', $siteAccess ) )
+            return call_user_func( $callback );
+        $own = eZINI::instance( 'image.ini' );
+        $other = eZSiteAccess::getIni( $siteAccess, 'image.ini' );
+        $saved = $own->BlockValues;
+        $own->BlockValues = $other->BlockValues;
+        eZImageManager::resetInstance();
+        try
+        {
+            return call_user_func( $callback );
+        }
+        finally
+        {
+            $own->BlockValues = $saved;
+            eZImageManager::resetInstance();
+        }
     }
 
     // ------------------------------------------------------------------------------------------------ helpers

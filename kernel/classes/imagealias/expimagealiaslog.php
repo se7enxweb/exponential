@@ -14,7 +14,8 @@
  *
  *   [ Nov 13 2026 09:12:01 ][ site ][ <request> ] event=generate result=ok ms=84 alias=small run=- path=var/site/storage/...
  *
- * Events: generate, serve, stage, placeholder, fail, run-start, run-end. read() gives the newest lines back parsed,
+ * Events: generate, serve, stage, placeholder, fail, run-start, run-end, queue (work handed to the job queue), pause
+ * and resume (of bulk runs). read() gives the newest lines back parsed,
  * for the administration (setup/aliases).
  *
  * @since 6.0.15
@@ -25,7 +26,7 @@ class expImageAliasLog
     const FILE = 'imagealias.log';
 
     /** The events a line can carry */
-    const EVENTS = array( 'generate', 'serve', 'stage', 'placeholder', 'fail', 'run-start', 'run-end' );
+    const EVENTS = array( 'generate', 'serve', 'stage', 'placeholder', 'fail', 'run-start', 'run-end', 'queue', 'pause', 'resume' );
 
     /** @var string|null a log directory for this process (tests) */
     protected static $directory = null;
