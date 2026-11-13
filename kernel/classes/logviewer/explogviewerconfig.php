@@ -105,6 +105,15 @@ class expLogViewerConfig
         $this->values = $merged;
         $root = rtrim( str_replace( '\\', '/', (string)$root ), '/' );
         $real = $root !== '' ? realpath( $root ) : false;
+        // A document root made of symbolic links to an installation (a second host such as edit.<site> served from
+        // its own folder whose index.php, kernel/ and var/ link to the real one): the installation is the folder
+        // of the index.php that runs, so its var/log counts as inside -- still never a link out of it.
+        if ( $real !== false && is_link( $root . '/index.php' ) )
+        {
+            $index = realpath( $root . '/index.php' );
+            if ( $index !== false )
+                $real = dirname( $index );
+        }
         $this->root = $real !== false ? rtrim( str_replace( '\\', '/', $real ), '/' ) : $root;
     }
 
