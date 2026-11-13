@@ -225,7 +225,7 @@ Do not use `self-update` on the bundled files; update the extension instead.
 
 | Part | License |
 |---|---|
-| The extension: bootstrap, classes, admin module, templates, stylesheet, settings, command line wrappers, the default `rules/request-shield.rules`, documentation, translations | GNU General Public License v2.0 or any later version (GPL-2.0-or-later), Copyright (C) 1998 - 2026 Exponential Foundation and 7x |
+| The extension: bootstrap, classes, admin module, templates, stylesheet, settings, command line wrappers, the default `rules/request-shield.rules`, documentation, translations | GNU General Public License v2.0 or any later version (GPL-2.0-or-later); Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved. |
 | `lib/requestshield/*.php`, `lib/requestshield/php74/*.php` | MIT License, Copyright (c) 2026 JAC Systeme GmbH (CJW Network) |
 | `rules/exponential.rules`, `rules/exponential-admin-uri.rules`, `rules/exponential-admin-host.rules` | MIT License, copied unchanged from request-shield's `examples/exponential/` |
 

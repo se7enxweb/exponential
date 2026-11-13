@@ -7092,7 +7092,7 @@ f7a865c242f17225cb98ff1463606013  doc/eng-us/features/6.0/rebranding-to-exponent
 c33ebb6920a1cdd3401d68c3439e4253  doc/eng-us/features/6.0/repair-from-the-browser.md
 7db052d574332eb87658f03b864558fc  doc/eng-us/features/6.0/request-logs.md
 cb7cc5398c087e0e65890983dd173f8a  doc/eng-us/features/6.0/request-rules.md
-ecd6694a310f93701fa708b998c2d0f4  doc/eng-us/features/6.0/request-shield.md
+8f3a96555c4a4865b65240d446a42a0b  doc/eng-us/features/6.0/request-shield.md
 3d9244162b4071c4b61c40bdaf12e21b  doc/eng-us/features/6.0/reset-user-password.md
 b9891e0910d2e3feb530a7bd60a621bf  doc/eng-us/features/6.0/reverse-relation-check.md
 55868c8f138af3ffeff0d3804c765698  doc/eng-us/features/6.0/review-hold.md
@@ -17185,7 +17185,7 @@ d6dce0754b23a5d686de2f906e7e3477  doc/ger-de/funktionen/6.0/rechts-nach-links.md
 5bfc5fe179d133dd360031bc27435eb4  doc/ger-de/funktionen/6.0/reihenfolge-der-richtlinien-einer-rolle.md
 b04439239c50f0fac78549e43d94f86e  doc/ger-de/funktionen/6.0/reihenfolge-der-template-ueberschreibungen.md
 a122c0f92debf2b7f464a9ea1e43452f  doc/ger-de/funktionen/6.0/reparatur-im-browser.md
-e5ba062aa807381307b11bf8aea321bd  doc/ger-de/funktionen/6.0/request-shield.md
+bbd5462bf51d662a2aa8e9eae40c29c9  doc/ger-de/funktionen/6.0/request-shield.md
 04d1254458ba27f7737c3745dd9e73b8  doc/ger-de/funktionen/6.0/rich-text-zusatzzeichen-und-tex-quelltext.md
 3edc24ba4d8b0938ed6365dfb2dfd1a7  doc/ger-de/funktionen/6.0/robots-txt.md
 a59b03c5f1bb37e29dd5e6528d455d6d  doc/ger-de/funktionen/6.0/rss-podcast-und-feed-liste.md

@@ -241,7 +241,7 @@ Extension.
 
 | Teil | Lizenz |
 |---|---|
-| Die Extension: Bootstrap, Klassen, Admin-Modul, Templates, Stylesheet, Einstellungen, Kommandozeilen-Wrapper, die vorgegebene `rules/request-shield.rules`, Dokumentation, Übersetzungen | GNU General Public License v2.0 oder jede spätere Version (GPL-2.0-or-later), Copyright (C) 1998 - 2026 Exponential Foundation und 7x |
+| Die Extension: Bootstrap, Klassen, Admin-Modul, Templates, Stylesheet, Einstellungen, Kommandozeilen-Wrapper, die vorgegebene `rules/request-shield.rules`, Dokumentation, Übersetzungen | GNU General Public License v2.0 oder jede spätere Version (GPL-2.0-or-later); Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved. |
 | `lib/requestshield/*.php`, `lib/requestshield/php74/*.php` | MIT-Lizenz, Copyright (c) 2026 JAC Systeme GmbH (CJW Network) |
 | `rules/exponential.rules`, `rules/exponential-admin-uri.rules`, `rules/exponential-admin-host.rules` | MIT-Lizenz, unverändert aus `examples/exponential/` von request-shield kopiert |
 
