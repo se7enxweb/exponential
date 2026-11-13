@@ -34,6 +34,25 @@ class eZImageShellHandler extends eZImageHandler
         $this->FrameRangeParameters = false;
     }
 
+    /**
+     * The size the filter $filter gives an image of $width x $height pixels, computed as ImageMagick computes the
+     * geometry options of image.ini [ImageMagick] Filters[] (rounded to the nearest pixel), without an image: for the
+     * aliases of on-demand mode (expImageAliasUrl). Null when the size is not known.
+     *
+     * @param array $filter name, data
+     * @param int $width
+     * @param int $height
+     * @return array|null array( width, height )
+     * @since 6.0.15
+     */
+    public function filterResultSize( array $filter, $width, $height )
+    {
+        $plan = expImageFocalPoint::plan( array( $filter ), $width, $height, null, null );
+        if ( $plan['width'] === false || $plan['height'] === false )
+            return null;
+        return array( (int)$plan['width'], (int)$plan['height'] );
+    }
+
     /*!
      Creates the shell string and runs the executable.
     */

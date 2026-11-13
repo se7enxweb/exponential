@@ -470,6 +470,14 @@ class eZImageAliasHandler
         // original that never stored a file (url=""), there is nothing to scale.
         else if ( isset( $aliasList['original'] ) && (string)( $aliasList['original']['url'] ?? '' ) !== '' )
         {
+            // On-demand mode (image.ini [AliasSettings] AliasGeneration): the alias as it will be, without
+            // converting; it is made when the browser asks for it (content/image, index_image.php)
+            if ( class_exists( 'expImageAliasSettings' ) && expImageAliasSettings::isOnDemand() )
+            {
+                $computedAlias = $this->computedImageAlias( $aliasName, $aliasList );
+                if ( $computedAlias !== null )
+                    return $computedAlias;
+            }
             $original = $aliasList['original'];
             $basename = $original['basename'];
             $parameters = array( 'basename' => $basename,
@@ -510,6 +518,73 @@ class eZImageAliasHandler
         }
 
         return null;
+    }
+
+    /**
+     * The alias $aliasName as it will be made, computed without converting (on-demand mode, see expImageAliasUrl):
+     * its URL in the configured form, file name, MIME type and size. Kept for the request; never written to the
+     * XML. Null when it cannot be computed (the alias is then made at once, as in render mode).
+     *
+     * @param string $aliasName
+     * @param array $aliasList the current alias list
+     * @return array|null
+     */
+    protected function computedImageAlias( $aliasName, array $aliasList )
+    {
+        $custom =& $this->ContentObjectAttributeData['DataTypeCustom'];
+        if ( isset( $custom['on_demand_alias'][$aliasName] ) )
+            return $custom['on_demand_alias'][$aliasName];
+        $attribute = array( 'id' => $this->ContentObjectAttributeData['id'],
+                            'version' => $this->ContentObjectAttributeData['version'],
+                            'language_code' => $this->ContentObjectAttributeData['language_code'],
+                            'contentobject_id' => $this->ContentObjectAttributeData['contentobject_id'] );
+        $options = array();
+        // An outdated file (the XML has the alias, made with other settings): the URL asks for it to be made again;
+        // the unsigned forms (storage, ids, node) would show the old file, so that alias is made now, as in render mode
+        if ( isset( $custom['outdated_aliases'] ) && in_array( $aliasName, $custom['outdated_aliases'], true ) )
+        {
+            if ( !in_array( expImageAliasSettings::urlForm(), array( 'token', 'ids-token' ), true ) )
+                return null;
+            $options['outdated'] = true;
+        }
+        if ( expImageAliasSettings::urlForm() === 'node' )
+        {
+            // The node form names the node and the attribute identifier (two lookups; the other forms need none)
+            $object = eZContentObject::fetch( (int)$attribute['contentobject_id'] );
+            $objectAttribute = eZContentObjectAttribute::fetch( (int)$attribute['id'], (int)$attribute['version'] );
+            if ( $object instanceof eZContentObject && $objectAttribute instanceof eZContentObjectAttribute )
+            {
+                $options['node'] = (int)$object->attribute( 'main_node_id' );
+                $attribute['contentclass_attribute_identifier'] = $objectAttribute->attribute( 'contentclass_attribute_identifier' );
+            }
+        }
+        $entry = expImageAliasUrl::computedEntry( $aliasName, $aliasList, $this->focalData(), $attribute, $options );
+        if ( $entry === null )
+            return null;
+        $custom['on_demand_alias'][$aliasName] = $entry;
+        return $entry;
+    }
+
+    /**
+     * Forgets the entry of the alias $aliasName for this request when the XML names it but its file is gone (aliases
+     * deleted on disk, a staging site without the files): imageAlias() then makes it again, and the new entry replaces
+     * the old one in the XML. Used by content/image and index_image.php (expImageAliasServer).
+     *
+     * @param string $aliasName
+     * @return bool true when an entry was forgotten
+     */
+    public function forgetMissingAliasFile( $aliasName )
+    {
+        if ( $aliasName === 'original' )
+            return false;
+        $aliasList = $this->aliasList();
+        if ( !isset( $aliasList[$aliasName] ) || (string)( $aliasList[$aliasName]['url'] ?? '' ) === '' )
+            return false;
+        if ( eZClusterFileHandler::instance( $aliasList[$aliasName]['url'] )->exists() )
+            return false;
+        unset( $aliasList[$aliasName] );
+        $this->setAliasList( $aliasList );
+        return true;
     }
 
     /*!
@@ -560,6 +635,11 @@ class eZImageAliasHandler
         }
 
         eZDebug::accumulatorStart('imageparse', 'XML', 'Image XML parsing' );
+
+        // On-demand mode: no cluster lookup per alias while rendering (one database query each on a cluster); a
+        // missing file is made when it is asked for, the file size is not known (false)
+        $onDemand = class_exists( 'expImageAliasSettings' ) && expImageAliasSettings::isOnDemand();
+        $outdatedAliases = array();
 
         $domTree = new DOMDocument( '1.0', 'utf-8' );
 
@@ -647,7 +727,7 @@ class eZImageAliasHandler
         $aliasEntry['is_new'] = false;
         $aliasEntry['filesize'] = false;
 
-        if ( $aliasEntry['url'] )
+        if ( $aliasEntry['url'] && !$onDemand )
         {
             $aliasFile = eZClusterFileHandler::instance( $aliasEntry['url'] );
 
@@ -696,7 +776,7 @@ class eZImageAliasHandler
                 $aliasEntry['is_new'] = false;
                 $aliasEntry['info'] = $imageInformation;
 
-                if ( $aliasEntry['url'] )
+                if ( $aliasEntry['url'] && !$onDemand )
                 {
                     $aliasFile = eZClusterFileHandler::instance( $aliasEntry['url'] );
 
@@ -708,8 +788,15 @@ class eZImageAliasHandler
                 {
                     $aliasList[$aliasEntry['name']] = $aliasEntry;
                 }
+                else if ( $onDemand )
+                {
+                    // Its file is outdated (other alias settings, aliases cleared): content/image makes it again
+                    $outdatedAliases[] = $aliasEntry['name'];
+                }
             }
         }
+        if ( $onDemand && $checkValidity )
+            $this->ContentObjectAttributeData['DataTypeCustom']['outdated_aliases'] = $outdatedAliases;
         if ( $checkValidity )
             $this->setAliasList( $aliasList );
         eZDebug::accumulatorStop( 'imageparse' );

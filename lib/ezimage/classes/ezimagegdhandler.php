@@ -408,6 +408,73 @@ class eZImageGDHandler extends eZImageHandler
         return $imageObject;
     }
 
+    /**
+     * The size the filter $filter gives an image of $width x $height pixels, computed exactly as the filter
+     * functions of this handler compute it (without an image): for the aliases of on-demand mode, which know their
+     * size before they are made (expImageAliasUrl). Null when the size is not known (a filter that is not a geometry
+     * filter and may change the size).
+     *
+     * @param array $filter name, data
+     * @param int $width
+     * @param int $height
+     * @return array|null array( width, height )
+     * @since 6.0.15
+     */
+    public function filterResultSize( array $filter, $width, $height )
+    {
+        $name = isset( $filter['name'] ) ? $filter['name'] : '';
+        $data = isset( $filter['data'] ) && is_array( $filter['data'] ) ? array_values( $filter['data'] ) : array();
+        $a = isset( $data[0] ) && is_numeric( $data[0] ) ? $data[0] + 0 : null;
+        $b = isset( $data[1] ) && is_numeric( $data[1] ) ? $data[1] + 0 : null;
+        $geometry = null;
+        switch ( $name )
+        {
+            case 'geometry/scale':
+            case 'geometry/scaledownonly':
+                if ( !$a || !$b )
+                    return null;
+                $geometry = $this->calculateScaledAspectGeometry( $width, $height, $a, $b, $name === 'geometry/scale' );
+                break;
+            case 'geometry/scalewidth':
+            case 'geometry/scalewidthdownonly':
+                if ( !$a )
+                    return null;
+                $geometry = $this->calculateFixedWidthAspectGeometry( $width, $height, $a, $name === 'geometry/scalewidth' );
+                break;
+            case 'geometry/scaleheight':
+            case 'geometry/scaleheightdownonly':
+                if ( !$a )
+                    return null;
+                $geometry = $this->calculateFixedHeightAspectGeometry( $width, $height, $a, $name === 'geometry/scaleheight' );
+                break;
+            case 'geometry/scaleexact':
+                if ( $a === null || $b === null )
+                    return null;
+                $geometry = $this->createGeometry( $a, $b );
+                break;
+            case 'geometry/scalepercent':
+                if ( !$a || !$b )
+                    return null;
+                $geometry = $this->calculateScaledPercentAspectGeometry( $width, $height, $a / 100.0, $b / 100.0, true );
+                break;
+            case 'geometry/crop':
+                if ( $a === null || $b === null || !isset( $data[2] ) || !isset( $data[3] ) )
+                    return null;
+                return array( (int)max( min( $a, $width - $data[2] ), 0 ), (int)max( min( $b, $height - $data[3] ), 0 ) );
+            case 'colorspace/gray':
+            case 'luminance':
+            case 'luminance/gray':
+            case 'luminance/sepia':
+            case 'color/monochrome':
+            case 'border/color':
+            case 'border/width':
+                return array( (int)$width, (int)$height );
+            default:
+                return null;
+        }
+        return array( (int)$geometry['width'], (int)$geometry['height'] );
+    }
+
     /*!
       Crops a portion of the image from the filter parameters.
     */
