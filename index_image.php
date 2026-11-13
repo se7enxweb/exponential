@@ -1,6 +1,7 @@
 <?php
 /**
- * The entry script for an image the web server did not find in the storage (var/<site>/storage/images...): an
+ * The entry script for an image the web server did not find in the storage (var/<site>/storage/images...), and for
+ * content/image where the web server routes it here (Velocity, FrankenPHP, .htaccess_root): an
  * image alias that is not made yet is made and served, anything else gets the placeholder with 404
  * (expImageAliasServer::handleStoragePath()). Light: no session, no module, no template. The rewrite rule that sends
  * missing storage images here is in .htaccess_root.
@@ -24,5 +25,12 @@ if ( expMaintenance::check( __DIR__ ) )
     return;
 
 require 'autoload.php';
+
+// The request filter config.php names (EXP_REQUEST_PREPEND_FILE), as index.php runs it: in a persistent worker
+// (Velocity), where config.php ran only once, this is where the request shield sees the request
+if ( defined( 'EXP_REQUEST_PREPEND_FILE' ) && is_file( EXP_REQUEST_PREPEND_FILE ) )
+{
+    require EXP_REQUEST_PREPEND_FILE;
+}
 
 expImageAliasServer::runEntryScript();

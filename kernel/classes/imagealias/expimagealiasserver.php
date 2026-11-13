@@ -484,11 +484,45 @@ class expImageAliasServer
     // ------------------------------------------------------------------------------------------------ index_image.php
 
     /**
-     * index_image.php: the light entry script for storage paths the web server did not find. No session, no module,
-     * no template: the settings, the siteaccess (for its image.ini and database), then handleStoragePath().
+     * What index_image.php answers for the path elements left after the siteaccess was matched: content/image with
+     * its view parameters (handleParams()), or a storage path (handleStoragePath()).
+     *
+     * content/image reaches this script where a web server sends it here (Velocity, FrankenPHP, the rules of
+     * .htaccess_root): the same answer as the view, without the module, the template engine and the page kernel.
+     * More parts than any URL form has are no form, as in the view.
+     *
+     * @param string[] $elements the path elements after the siteaccess
+     * @return array array( 'params', string[] ) or array( 'storage', null )
+     */
+    public static function entryRoute( array $elements )
+    {
+        $elements = array_values( array_filter( array_map( 'strval', $elements ), 'strlen' ) );
+        if ( count( $elements ) >= 2 && $elements[0] === 'content' && $elements[1] === 'image' )
+        {
+            $parts = array_slice( $elements, 2 );
+            return array( 'params', count( $parts ) > 6 ? array() : $parts );
+        }
+        return array( 'storage', null );
+    }
+
+    /**
+     * index_image.php: the light entry script for storage paths the web server did not find, and for content/image
+     * where the web server routes it here. No session, no module, no template: the settings, the siteaccess (for its
+     * image.ini and database), then handleStoragePath() or handleParams().
+     *
+     * Also run by a persistent worker (Velocity, FrankenPHP worker mode), between page requests of any siteaccess:
+     * the kernel's per-request resets run first, as ezpKernelWeb runs them, and every setting is read for this
+     * request's siteaccess. Also included by the cluster gateway (index_cluster.php) for an image the cluster does
+     * not have yet (ezpClusterGateway::retrieve()).
      */
     public static function runEntryScript()
     {
+        // The request scope: the query cache's memo, a transaction a request before left open, the reset hooks
+        // (a persistent worker that served a page before)
+        if ( !class_exists( 'expKernelServiceScope' ) )
+            require_once __DIR__ . '/../expkernelservicescope.php';
+        expKernelServiceScope::resetRequest();
+
         // eZUpdateDebugSettings(), which the siteaccess change calls; this script leaves eZDebug alone
         require_once __DIR__ . '/../../private/classes/debug_settings_functions.php';
         eZDebugSettingsMode( 'none' );
@@ -498,11 +532,11 @@ class expImageAliasServer
         } );
         eZDebug::setHandleType( eZDebug::HANDLE_FROM_PHP );
 
-        // eZSys works with index.php while the request came for index_image.php
+        // eZSys works with index.php while the request came for index_image.php (or index_cluster.php)
         foreach ( array( 'SCRIPT_FILENAME', 'PHP_SELF', 'SCRIPT_NAME' ) as $name )
         {
             if ( isset( $_SERVER[$name] ) )
-                $_SERVER[$name] = str_replace( '/index_image.php', '/index.php', $_SERVER[$name] );
+                $_SERVER[$name] = str_replace( array( '/index_image.php', '/index_cluster.php' ), '/index.php', $_SERVER[$name] );
         }
         $ini = eZINI::instance();
         $timezone = $ini->variable( 'TimeZoneSettings', 'TimeZone' );
@@ -511,15 +545,24 @@ class expImageAliasServer
         $requestURI = eZSys::serverVariable( 'REQUEST_URI' );
         $GLOBALS['eZGlobalRequestURI'] = $requestURI;
         eZSys::init( 'index.php', $ini->variable( 'SiteAccessSettings', 'ForceVirtualHost' ) === 'true' );
+        unset( $GLOBALS['eZURIRequestInstance'] );
         $uri = eZURI::instance( eZSys::requestURI() );
         $GLOBALS['eZRequestedURI'] = $uri;
         eZExtension::activateExtensions( 'default' );
-        $access = eZSiteAccess::match( $uri, eZSys::hostname(), eZSys::serverPort(), eZSys::indexFile() );
+        // The host without the port, as ezpKernelWeb matches it (HostMatchMapItems name hosts, not ports: on
+        // Velocity's :8080 the host carries the port)
+        $access = eZSiteAccess::match( $uri, preg_replace( '/:\d+$/', '', (string)eZSys::hostname() ), eZSys::serverPort(), eZSys::indexFile() );
         eZSiteAccess::change( $access );
         eZExtension::activateExtensions( 'access' );
+        // The settings of this siteaccess, not those a request before left in a persistent worker
+        eZINI::resetAllInstances( false );
 
         $server = new self();
-        self::emit( $server->handleStoragePath( (string)$requestURI ) );
+        list( $route, $parts ) = self::entryRoute( $uri->elements( false ) );
+        if ( $route === 'params' )
+            self::emit( $server->handleParams( $parts ) );
+        else
+            self::emit( $server->handleStoragePath( (string)$requestURI ) );
 
         eZExecution::cleanup();
         eZExecution::setCleanExit();
