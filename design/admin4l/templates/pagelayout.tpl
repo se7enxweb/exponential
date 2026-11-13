@@ -48,22 +48,28 @@
          $admin_layout_type = ''
          $admin_mp          = module_params()
          $zone_html         = ''}
-    {if fetch( 'explayouts', 'admin_layouts_enabled' )}
-        {set $admin_layout = fetch( 'explayouts', 'resolve_admin_layout', hash( 'module', first_set( $admin_mp.module_name, '' ), 'view', first_set( $admin_mp.function_name, '' ) ) )}
-        {if and( is_array( $admin_layout ), is_set( $admin_layout.block_count ), $admin_layout.block_count|gt( 0 ) )}
-            {set $admin_layout_id   = concat( $admin_layout.id, '-', fetch( 'explayouts', 'admin_layout_cache_key', hash( 'module', first_set( $admin_mp.module_name, '' ), 'view', first_set( $admin_mp.function_name, '' ) ) )|implode( '-' ) )
-                 $admin_layout_type = $admin_layout.layout_type}
-            {* the layout type decides which side columns the page has *}
-            {if $admin_layout_type|eq( 'admin_full' )}
-                {set $hide_left_menu = true()
-                     $hide_right_menu = true()}
-            {elseif $admin_layout_type|eq( 'admin_2col' )}
-                {set $hide_right_menu = true()}
+    {* Only where Exponential Layouts is active: elsewhere every admin page logged that the explayouts module is
+       missing. The module name is a variable, so the template compiler does not resolve the fetch either. *}
+    {def $layouts_module = 'explayouts'}
+    {if ezini( 'ExtensionSettings', 'ActiveExtensions', 'site.ini' )|contains( $layouts_module )}
+        {if fetch( $layouts_module, 'admin_layouts_enabled' )}
+            {set $admin_layout = fetch( $layouts_module, 'resolve_admin_layout', hash( 'module', first_set( $admin_mp.module_name, '' ), 'view', first_set( $admin_mp.function_name, '' ) ) )}
+            {if and( is_array( $admin_layout ), is_set( $admin_layout.block_count ), $admin_layout.block_count|gt( 0 ) )}
+                {set $admin_layout_id   = concat( $admin_layout.id, '-', fetch( $layouts_module, 'admin_layout_cache_key', hash( 'module', first_set( $admin_mp.module_name, '' ), 'view', first_set( $admin_mp.function_name, '' ) ) )|implode( '-' ) )
+                     $admin_layout_type = $admin_layout.layout_type}
+                {* the layout type decides which side columns the page has *}
+                {if $admin_layout_type|eq( 'admin_full' )}
+                    {set $hide_left_menu = true()
+                         $hide_right_menu = true()}
+                {elseif $admin_layout_type|eq( 'admin_2col' )}
+                    {set $hide_right_menu = true()}
+                {/if}
+            {else}
+                {set $admin_layout = false()}
             {/if}
-        {else}
-            {set $admin_layout = false()}
         {/if}
     {/if}
+    {undef $layouts_module}
     {* The main landmark: #maincontent of the frame, or of the edit-type page that draws its own columns. A page
        without the left column whose template brings no #maincontent (remove, copy, move ...) is wrapped in #a4-main,
        a landmark without styles, so its layout stays as it was. After the admin layout: admin_full hides the left

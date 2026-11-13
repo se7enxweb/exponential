@@ -174,7 +174,24 @@ class Admin4lReviewTest extends PHPUnit\Framework\TestCase
     public function testThePageReadsTheSafetySwitchThroughTheFetchFunction()
     {
         $page = self::read( 'design/admin4l/templates/pagelayout.tpl' );
-        $this->assertStringContainsString( "{if fetch( 'explayouts', 'admin_layouts_enabled' )}", $page );
+        $this->assertStringContainsString( "{if fetch( \$layouts_module, 'admin_layouts_enabled' )}", $page );
         $this->assertStringNotContainsString( "ezini( 'AdminLayoutSettings', 'Enabled'", $page );
+    }
+
+    /**
+     * Without the explayouts extension (a site without Exponential Layouts) the page asks nothing of it: the lookup
+     * runs only when explayouts is active, and no fetch names the module literally -- the template compiler resolves
+     * such a fetch when it compiles and logged "Cannot execute module 'explayouts', no module found" every time.
+     */
+    public function testTheLayoutLookupRunsOnlyWhereExplayoutsIsActive()
+    {
+        $page = self::read( 'design/admin4l/templates/pagelayout.tpl' );
+        $this->assertStringContainsString( "{def \$layouts_module = 'explayouts'}", $page );
+        $this->assertStringContainsString( "{if ezini( 'ExtensionSettings', 'ActiveExtensions', 'site.ini' )|contains( \$layouts_module )}", $page );
+        $this->assertStringNotContainsString( "fetch( 'explayouts'", $page );
+        $guard = strpos( $page, "|contains( \$layouts_module )}" );
+        $this->assertNotFalse( $guard );
+        foreach ( array( "'admin_layouts_enabled'", "'resolve_admin_layout'", "'admin_layout_cache_key'" ) as $function )
+            $this->assertGreaterThan( $guard, strpos( $page, "fetch( \$layouts_module, $function" ), "$function is fetched inside the guard" );
     }
 }
