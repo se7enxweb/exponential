@@ -27032,7 +27032,7 @@ cb6cdc59c329525a50d22e7ca6fcd7c4  lib/ezi18n/classes/expi18nfallbacksamelanguage
 2f002796b90991f5c96e3ef01f3d086b  lib/ezi18n/classes/ez1337translator.php
 0310f4c565bc383d46c9994aa33deef1  lib/ezi18n/classes/ezborktranslator.php
 04dd01dc461c97c5971bfb7b3d4015af  lib/ezi18n/classes/ezcharsetinfo.php
-ef099111c8e9d96ee802158105b38879  lib/ezi18n/classes/ezchartransform.php
+0971b165c855c4402d83d38894cf753f  lib/ezi18n/classes/ezchartransform.php
 cfb80834e9fae3f82a86924f058c1e1b  lib/ezi18n/classes/ezcodemapper.php
 2bcc767ddb147bb85838489633c24392  lib/ezi18n/classes/ezcodepage.php
 c10adf68bb5a67ae32e1074c3fe84a35  lib/ezi18n/classes/ezcodepagecodec.php
@@ -27425,7 +27425,7 @@ f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 3d58b3c9abd483644a07965e143cb05f  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-6434dd111045159f05fa5c39b1b893d2  settings/site.ini
+d70d472153eb1e06b91f918b986acc87  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -30519,6 +30519,7 @@ b732befbca90972de9a4906e9972935a  tests/tests/lib/ezfile/expLogRotatorTest.php
 70e8c168c106de060f2aff3eeed822ae  tests/tests/lib/ezfile/ezfiledownload_test.php
 32c6389a9f65d45861ad84542235a64d  tests/tests/lib/ezfile/ezfilerename_test.php
 38cc13d37d0e590314c5db8e3c19c485  tests/tests/lib/ezfile/suite.php
+6c406a06beb2ea1d10a96d8b06c50739  tests/tests/lib/ezi18n/eZCharTransformCompatWordSeparatorTest.php
 c7a336b4729396fea2092dc8e335a6e7  tests/tests/lib/ezi18n/eZCharTransformTrailingCleanupTest.php
 018df7af297c05ac446e75e6d5b76e9a  tests/tests/lib/ezi18n/eZCharsetAndTransformTest.php
 bcea3941a9e019f14530f18400c8aeb2  tests/tests/lib/ezi18n/eZCodePageTablesTest.php

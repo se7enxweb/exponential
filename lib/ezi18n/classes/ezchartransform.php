@@ -377,14 +377,30 @@ class eZCharTransform
 
     static function commandUrlCleanupCompat( $text, $charsetName )
     {
-        // Old style of url alias with lowercase only and underscores for separators
+        // Old style of url alias with lowercase only: underscores for separators, or the separator
+        // [URLTranslator] CompatWordSeparator names (dash: lowercase url aliases with dashes)
+        $sep = eZCharTransform::compatWordSeparator();
+        $quoted = preg_quote( $sep, '#' );
         $text = strtolower( $text );
         $text = preg_replace( array( "#[^a-z0-9]+#",
-                                     "#^_+|_+$#" ),
-                              array( "_",
+                                     "#^{$quoted}+|{$quoted}+$#" ),
+                              array( $sep,
                                      "" ),
                               $text );
         return $text;
+    }
+
+    /**
+     * The separator of url_cleanup_compat: site.ini [URLTranslator] CompatWordSeparator, underscore (the default, the
+     * old style) or dash. A site that wants lowercase url aliases with dashes sets it, instead of overriding this class.
+     *
+     * @return string
+     */
+    static function compatWordSeparator()
+    {
+        $ini = eZINI::instance();
+        $name = $ini->hasVariable( 'URLTranslator', 'CompatWordSeparator' ) ? $ini->variable( 'URLTranslator', 'CompatWordSeparator' ) : 'underscore';
+        return $name === 'dash' ? '-' : '_';
     }
 
     static function commandUrlCleanup( $text, $charsetName )
