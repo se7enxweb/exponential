@@ -25,6 +25,12 @@ RewriteRule ^([^/]+/)?content/treemenu.* index_treemenu.php [L]
 # every request to index_webdav.php. webdav.php, its old name, only forwards to it
 # and will be removed in a later major version: name index_webdav.php in new rules.
 #RewriteRule ^index_webdav\.php - [L]
+# An image of the storage that is not there (an image alias not made yet, see
+# settings/image.ini [AliasSettings]) goes to index_image.php, which makes the
+# alias or answers a placeholder; the files that exist are served as they are.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* index_image.php [L]
+RewriteRule ^index_image\.php - [L]
 RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* - [L]
 # SVG images are sanitized on upload; served from the storage they also run
 # nothing and load nothing when opened directly (needs mod_headers).

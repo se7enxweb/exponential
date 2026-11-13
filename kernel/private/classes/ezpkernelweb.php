@@ -1777,6 +1777,14 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             eZTranslatorManager::enableDynamicTranslations();
         }
 
+        // An image alias made on demand (content/image) never needs the visitor's session: a page with hundreds of
+        // images would read the session (a database query each) once per image. Its signed URL is the permission.
+        if ( $this->siteBasics['session-required'] && strtolower( (string)$this->uri->element( 0 ) ) === 'content'
+             && strtolower( (string)$this->uri->element( 1 ) ) === 'image' )
+        {
+            $this->siteBasics['session-required'] = false;
+        }
+
         if ( $this->siteBasics['session-required'] )
         {
             // Don't initialize session on /login GET requests (unauthenticated entry point)

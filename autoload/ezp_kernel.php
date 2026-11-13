@@ -311,6 +311,7 @@ return array(
       'Exponential\\View\\Kernel\\Content\\Edit'                     => 'kernel/private/classes/views/content/edit.php',
       'Exponential\\View\\Kernel\\Content\\Hide'                     => 'kernel/private/classes/views/content/hide.php',
       'Exponential\\View\\Kernel\\Content\\History'                  => 'kernel/private/classes/views/content/history.php',
+      'Exponential\\View\\Kernel\\Content\\Image'                    => 'kernel/private/classes/views/content/image.php',
       'Exponential\\View\\Kernel\\Content\\Job'                      => 'kernel/private/classes/views/content/job.php',
       'Exponential\\View\\Kernel\\Content\\Jobs'                     => 'kernel/private/classes/views/content/jobs.php',
       'Exponential\\View\\Kernel\\Content\\Keyword'                  => 'kernel/private/classes/views/content/keyword.php',

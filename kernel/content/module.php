@@ -348,6 +348,15 @@ $ViewList['download'] = array(
     'params' => array( 'ContentObjectID', 'ContentObjectAttributeID' ),
     'unordered_params' => array( 'version' => 'Version' ) );
 
+// An image alias made on demand (image.ini [AliasSettings] AliasGeneration=on-demand): the URL forms of
+// expImageAliasUrl, as module view parameters only. A signed URL is the permission (site.ini PolicyOmitList[] and
+// AnonymousAccessList[] list content/image); no session is started for it.
+$ViewList['image'] = array(
+    'functions' => array( 'read' ),
+    'default_navigation_part' => 'ezcontentnavigationpart',
+    'script' => 'image.php',
+    'params' => array( 'Part1', 'Part2', 'Part3', 'Part4', 'Part5', 'Part6' ) );
+
 $ViewList['action'] = array(
     'functions' => array( 'read' ),
     'default_navigation_part' => 'ezcontentnavigationpart',
