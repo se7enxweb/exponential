@@ -167,6 +167,10 @@ abstract class ezpClusterGateway
         }
         if ( $metaData === false || $metaData['mtime'] < 0 )
         {
+            // An image of the storage the cluster does not have (an image alias not made yet): made by
+            // index_image.php instead of the 404
+            if ( $this->handOverMissingImage( $filename ) )
+                return;
             $this->interrupt( '', 404, $filename );
         }
 
@@ -270,6 +274,63 @@ abstract class ezpClusterGateway
         }
 
         $this->close();
+    }
+
+    /**
+     * Whether a file the cluster has no metadata for goes to index_image.php instead of the 404: an image of the
+     * storage (var/<site>/storage/images or images-versioned, no dot segment), while the config constant
+     * CLUSTER_IMAGE_ALIAS_ON_DEMAND is not false and index_image.php is there. index_image.php decides what it is:
+     * an image alias it may make (settings/image.ini [AliasSettings]), or the placeholder with 404.
+     *
+     * @param string $filename the storage path, without the leading slash
+     * @param string|null $script the entry script (index_image.php in the document root when null)
+     * @return bool
+     */
+    public static function handsOverMissingImage( $filename, $script = null )
+    {
+        if ( defined( 'CLUSTER_IMAGE_ALIAS_ON_DEMAND' ) && !CLUSTER_IMAGE_ALIAS_ON_DEMAND )
+            return false;
+        $filename = (string)$filename;
+        if ( !preg_match( '#^var/([^/]+/)?storage/images(-versioned)?/[^\x00]+$#', $filename )
+             || preg_match( '#(^|/)\.\.?(/|$)#', $filename ) )
+            return false;
+        return is_file( $script === null ? self::imageEntryScript() : $script );
+    }
+
+    /**
+     * @return string index_image.php in the document root
+     */
+    protected static function imageEntryScript()
+    {
+        return dirname( __DIR__, 2 ) . '/index_image.php';
+    }
+
+    /**
+     * Hands a storage image the cluster does not have to index_image.php (see handsOverMissingImage()): the
+     * connection of the gateway is closed first, then the script runs in this request, with the request as it
+     * came (REQUEST_URI names the image).
+     *
+     * @param string $filename
+     * @return bool true when index_image.php answered the request
+     */
+    protected function handOverMissingImage( $filename )
+    {
+        if ( !self::handsOverMissingImage( $filename ) )
+            return false;
+        $this->close();
+        $this->runImageEntryScript( self::imageEntryScript() );
+        return true;
+    }
+
+    /**
+     * Runs index_image.php (a method of its own, so a test can see the hand-over without running it).
+     *
+     * @param string $script
+     */
+    protected function runImageEntryScript( $script )
+    {
+        // index_image.php loads autoload.php relative to the document root, as index_cluster.php runs there
+        require $script;
     }
 
     /**
