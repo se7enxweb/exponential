@@ -16,8 +16,8 @@ ae7e2ed631182f7180278f4953795ccb  .github/workflows/performance.yml
 3d1a8a27909923838d941600b44ddd29  .github/workflows/phpunit.yml
 3a78993c3989bbdf75b2fd1e608397f7  .github/workflows/quality.yml
 1378291033e16daa1ef6e265447a2201  .gitignore
-a273284de292f9ec2e00beb060999aef  .htaccess_root
-57dccd001d5561473bd49ad47e4942fe  .htaccess_root_static
+17b90ed5c744228be1d94d43d0114baa  .htaccess_root
+d0ea6e68da34ee6bc62ad24395d51bea  .htaccess_root_static
 6f1b96d8c290abdef88145a2d5c34a83  .travis.yml
 0885554911d27ce3062e28ef667da050  CODE_OF_CONDUCT.md
 5bd9b2866fc162be39e6047ade803979  CONTRIBUTING.md
