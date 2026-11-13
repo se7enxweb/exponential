@@ -939,6 +939,43 @@ class eZImageAliasHandler
     }
 
     /**
+     * Removes the files of the aliases $aliasNames of this image and their entries in the XML, as purgeAllAliases()
+     * does for all of them (the bulk purge of image aliases, expImageAliasJob). The original is never removed.
+     *
+     * @param string[] $aliasNames
+     * @return int how many entries were removed
+     */
+    public function purgeAliases( array $aliasNames )
+    {
+        $aliasList = $this->aliasList( false );
+        if ( !isset( $aliasList['original'] ) )
+            return 0;
+        $doc = $this->ContentObjectAttributeData['DataTypeCustom']['dom_tree'] ?? null;
+        $removed = 0;
+        foreach ( $aliasNames as $aliasName )
+        {
+            $aliasName = (string)$aliasName;
+            if ( $aliasName === 'original' || !isset( $aliasList[$aliasName] ) )
+                continue;
+            $alias = $aliasList[$aliasName];
+            if ( $alias['is_valid'] && !empty( $alias['url'] ) && $alias['url'] !== $aliasList['original']['url'] )
+                $this->removeAliasFile( $alias['url'] );
+            if ( $doc instanceof DOMDocument )
+            {
+                foreach ( iterator_to_array( $doc->getElementsByTagName( 'alias' ) ) as $aliasNode )
+                {
+                    if ( $aliasNode->getAttribute( 'name' ) === $aliasName )
+                        $aliasNode->parentNode->removeChild( $aliasNode );
+                }
+            }
+            $removed++;
+        }
+        if ( $removed && $doc instanceof DOMDocument )
+            $this->storeDOMTree( $doc, true, false );
+        return $removed;
+    }
+
+    /**
      * Removes aliases from the attribute.
      *
      * Files, as well as their references in ezimagefile, are only removed if this attribute/version was
@@ -946,7 +983,9 @@ class eZImageAliasHandler
      */
     function removeAliases()
     {
-        $aliasList = $this->aliasList();
+        // Every alias the XML names, also one this siteaccess does not configure (made for a related siteaccess:
+        // pre-generation, a page of another site) or made with other settings: otherwise its file stays behind
+        $aliasList = $this->aliasList( false );
         $removed = array();
         foreach ( $aliasList as $alias )
         {
@@ -2002,8 +2041,49 @@ class eZImageAliasHandler
                                      __METHOD__ );
                 return;
             }
+            else
+            {
+                // Aliases of the same image made by other processes since this one read the row (parallel requests for
+                // the aliases of one image, a queue worker) are kept: writing the in-memory document alone would drop them
+                self::mergeStoredAliases( (string)$attr->attribute( 'data_text' ), $domTree );
+            }
         }
         $this->storeDOMTree( $domTree, true, $attr );
+    }
+
+    /**
+     * Copies into $domTree the <alias> entries of the stored XML that it has no entry of the same name for (aliases
+     * another process made and stored after this document was read). Entries it has are left as they are.
+     *
+     * @param string $storedXML current data_text as stored in the database
+     * @param DOMDocument $domTree in-memory document about to be written back
+     * @return int how many entries were copied
+     */
+    public static function mergeStoredAliases( $storedXML, $domTree )
+    {
+        if ( (string)$storedXML === '' || !$domTree instanceof DOMDocument || !$domTree->documentElement instanceof DOMElement )
+            return 0;
+        $storedDocument = new DOMDocument( '1.0', 'utf-8' );
+        $previousErrorMode = libxml_use_internal_errors( true );
+        $loaded = $storedDocument->loadXML( (string)$storedXML );
+        libxml_clear_errors();
+        libxml_use_internal_errors( $previousErrorMode );
+        if ( !$loaded || !$storedDocument->documentElement instanceof DOMElement || $storedDocument->documentElement->tagName !== 'ezimage' )
+            return 0;
+        $known = array();
+        foreach ( $domTree->getElementsByTagName( 'alias' ) as $aliasNode )
+            $known[$aliasNode->getAttribute( 'name' )] = true;
+        $copied = 0;
+        foreach ( iterator_to_array( $storedDocument->getElementsByTagName( 'alias' ) ) as $aliasNode )
+        {
+            $name = $aliasNode->getAttribute( 'name' );
+            if ( $name === '' || isset( $known[$name] ) )
+                continue;
+            $domTree->documentElement->appendChild( $domTree->importNode( $aliasNode, true ) );
+            $known[$name] = true;
+            $copied++;
+        }
+        return $copied;
     }
 
     /**
