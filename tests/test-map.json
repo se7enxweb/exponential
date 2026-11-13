@@ -201,10 +201,12 @@
     "kernel/classes/imagealias/*": [
       "tests/tests/kernel/classes/imagealias/expImageAliasUrlTest.php",
       "tests/tests/kernel/classes/imagealias/expImageAliasComputedTest.php",
-      "tests/tests/kernel/classes/imagealias/expImageAliasServerTest.php"
+      "tests/tests/kernel/classes/imagealias/expImageAliasServerTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasWebServersTest.php"
     ],
     "index_image.php": [
-      "tests/tests/kernel/classes/imagealias/expImageAliasServerTest.php"
+      "tests/tests/kernel/classes/imagealias/expImageAliasServerTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasWebServersTest.php"
     ],
     "kernel/content/image.php": [
       "tests/tests/kernel/classes/imagealias/expImageAliasServerTest.php"
@@ -2461,7 +2463,8 @@
       "tests/tests/kernel/classes/expKernelServiceScopeMemoTest.php"
     ],
     "kernel/classes/expvelocity.php": [
-      "tests/tests/kernel/classes/expVelocityEngineRunArchiveTest.php"
+      "tests/tests/kernel/classes/expVelocityEngineRunArchiveTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasWebServersTest.php"
     ],
     "kernel/private/classes/httpcache/exprenderswitch.php": [
       "tests/tests/kernel/classes/httpcache/ezpHttpCacheDebugViewerTest.php"
@@ -3169,6 +3172,24 @@
       "tests/tests/design/AdminStylingRulesTest.php",
       "tests/tests/design/AdminViewParametersOnlyTest.php",
       "tests/tests/design/TranslationFilesValidTest.php"
+    ],
+    "kernel/classes/expvelocityfrankenphp.php": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasWebServersTest.php"
+    ],
+    "kernel/private/classes/commands/velocity-router.php": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasWebServersTest.php"
+    ],
+    "bin/php/velocity-router.php": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasWebServersTest.php"
+    ],
+    "kernel/clustering/gateway.php": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasWebServersTest.php"
+    ],
+    ".htaccess_root": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasWebServersTest.php"
+    ],
+    ".htaccess_root_static": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasWebServersTest.php"
     ]
   },
   "generated": {
