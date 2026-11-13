@@ -68,7 +68,7 @@ class expImageAliasServer
      */
     public static function forJob()
     {
-        $server = new static();
+        $server = new self();
         $server->job = true;
         return $server;
     }
