@@ -90,8 +90,7 @@ Die Standardregeln behandeln auch jede andere Administration, die über einen Pf
 `/adminui`, `/editor`, `/admin2` bis `/admin4l` und `/admintest_*` behalten ihre System-URLs, Module und Formulare
 (seit 0.0.1.1). Für eine Administration mit eigenem Host bindet die Hauptdatei der Website zuerst `exponential.rules`
 ein, danach ihre eigenen Einstellungen (sie gewinnen) und zuletzt die Kopie von `exponential-admin-host.rules`, mit
-den Admin-Hostnamen der Website in ihrer `site`-Zeile und ohne ihr eigenes `include exponential.rules`; geben Sie
-`store-dir` und `log` dort als absolute Pfade an
+den Admin-Hostnamen der Website in ihrer `site`-Zeile und ohne ihr eigenes `include exponential.rules`
 ([Konfiguration](https://github.com/se7enxweb/exp_request_shield/blob/main/doc/configuration.md)). Die eigene
 JSON-API des Shields bleibt standardmäßig aus.
 

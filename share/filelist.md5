@@ -10280,7 +10280,7 @@ b7291490aaaac4f2733f63a40a57b0ac  doc/eng-us/help/hosting/security/hardening-for
 5494dc5fc6e294d322e97946c9d0616a  doc/eng-us/help/hosting/security/log-and-data-retention.md
 4717a1f7dee918f111c379ed9b1680bc  doc/eng-us/help/hosting/security/multi-tenant-isolation.md
 bdd0d262ac685456bb77b4de83c386ec  doc/eng-us/help/hosting/security/per-customer-users-and-pools.md
-b6535c7512cd5669f27f37a88f78a273  doc/eng-us/help/hosting/security/request-shield-and-request-rules.md
+b0b773843ee086426434158829dd6901  doc/eng-us/help/hosting/security/request-shield-and-request-rules.md
 d2fd608f44232cf666df54210acc93a0  doc/eng-us/help/hosting/security/restricting-the-administration.md
 cff36177e3eda543d3d896dc104b4eb9  doc/eng-us/help/hosting/security/security-updates-and-disclosure.md
 e51fa5ca7320486e6b10cc1837333e9a  doc/eng-us/help/hosting/security/tls-and-https.md
@@ -19643,7 +19643,7 @@ ee648c450770470300ea2cf6d21f52d8  doc/ger-de/hilfe/hosting/sicherheit/content-se
 57ae8730f8b6e1b124b7b800cf7b470d  doc/ger-de/hilfe/hosting/sicherheit/erste-anmeldung-und-standardpasswoerter.md
 7f898bb9a6c3a49c59ed024c26d11d84  doc/ger-de/hilfe/hosting/sicherheit/haertung-fuer-hoster.md
 955b99cdc249245a0af835f263c45ebd  doc/ger-de/hilfe/hosting/sicherheit/pruefprotokoll.md
-eb4f999d3dc389957635ee0cca04e6b8  doc/ger-de/hilfe/hosting/sicherheit/request-shield-und-request-regeln.md
+ebaaa7730cea7093a9e8d153bd8b7335  doc/ger-de/hilfe/hosting/sicherheit/request-shield-und-request-regeln.md
 d021a4f15c9c9a12cf7513455e8bb896  doc/ger-de/hilfe/hosting/sicherheit/sicherheitsupdates-und-offenlegung.md
 773ccaaa6454d632c683fd475ede31dd  doc/ger-de/hilfe/hosting/sicherheit/tls-und-https.md
 89600dda8a132d475ce027d3fb9ac5a5  doc/ger-de/hilfe/hosting/sicherheit/trennung-von-mandanten.md
