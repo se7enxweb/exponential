@@ -237,8 +237,9 @@ class expImageAliasFormatsTest extends PHPUnit\Framework\TestCase
 
         // A placeholder of such an alias varies too (another browser may get a file)
         ezpINIHelper::setINISetting( 'image.ini', 'AliasSettings', 'Negotiate', 'enabled' );
-        expImageAliasUrl::setKeys( str_repeat( 'x', 64 ) );
+        // Signed with "s", checked against "x": a wrong signature, so nothing is made and no database is asked
         $missing = expImageAliasUrl::token( $this->payload( 'andernach_small2.jpg' ) );
+        expImageAliasUrl::setKeys( str_repeat( 'x', 64 ) );
         $response = $this->server( 'redirect', self::CHROME )->handleParams( array( $missing, 'andernach_small2.jpg' ) );
         $this->assertSame( 404, $response['status'] );
         $this->assertSame( 'Accept', $response['headers']['Vary'] );
