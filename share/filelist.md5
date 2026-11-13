@@ -28808,7 +28808,7 @@ ad3ef84f9d21cd4076b60e33034063b0  tests/bootstrap.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 1b7dcb4dde933b1ebf8f8f93f3df7d55  tests/suite.php
-e95839c0f8d7bbf647c60a61130aaf1c  tests/test-map.json
+6202d30b891fc2274230a33164f1139a  tests/test-map.json
 4f2af04e2bf61d9e7bfbba8181fc08c0  tests/tests/bin/CiWorkflowPullRequestTest.php
 b152194c06e5b05fb18f088d0afd219c  tests/tests/bin/ConsoleExtensionAliasTest.php
 cf640022325724fc8a061137bbc5045e  tests/tests/bin/CopyrightNoticeTest.php
@@ -29600,6 +29600,7 @@ ed696e81ec63f5233642450e14ddf65b  tests/tests/kernel/classes/i18n/expI18nFallbac
 06dc2c7240fe4c67b6fa5ea1ea729cc1  tests/tests/kernel/classes/i18n/expI18nTranslationWavesTest.php
 446f2cf11f2cf986bacb68873ca5516f  tests/tests/kernel/classes/imagealias/expImageAliasComputedTest.php
 93e08e4607a8cfe699e99b7cfe57ec3e  tests/tests/kernel/classes/imagealias/expImageAliasFormatsTest.php
+a299e1253c187e91fdf7af15ab12af39  tests/tests/kernel/classes/imagealias/expImageAliasQueueTest.php
 006510400a3ed9bf1ade5f007858e226  tests/tests/kernel/classes/imagealias/expImageAliasServerTest.php
 a3c9979daf150dbbe602afae8748d0c6  tests/tests/kernel/classes/imagealias/expImageAliasStagerTest.php
 bdbce58ebf8731a406eea6c575a92ed5  tests/tests/kernel/classes/imagealias/expImageAliasUrlTest.php
