@@ -2413,13 +2413,13 @@ html:has(body.a4-login-page) { background: var(--a4-surface); }
 .a4-login-forgot-row { margin: var(--a4-space-3) 0 0; text-align: center; }
 .a4-login-forgot { font-size: var(--a4-text-s); color: var(--a4-accent-text); text-decoration: none; }
 .a4-login-forgot:hover { text-decoration: underline; }
-.a4-login-form #logintext, .a4-login-form #passwordtext {   /* by id, so the rule wins over the global field rules */
+.a4-login-form #logintext, .a4-login-form #passwordtext, .a4-login-form #email {   /* by id, so the rule wins over the global field rules */
   box-shadow: none; outline: none;
   box-sizing: border-box; width: 100%; height: 46px; margin: 0; padding: 0 var(--a4-space-3);
   border: 1px solid var(--a4-field-line); border-radius: var(--a4-radius-s); background-color: var(--a4-field); color: var(--a4-ink);
   font: var(--a4-text-l)/var(--a4-leading-tight) var(--a4-font); transition: border-color var(--a4-duration) ease, box-shadow var(--a4-duration) ease;
 }
-.a4-login-form #logintext:focus, .a4-login-form #passwordtext:focus { outline: 2px solid transparent; border-color: var(--a4-accent); box-shadow: 0 0 0 3px var(--a4-ring); }
+.a4-login-form #logintext:focus, .a4-login-form #passwordtext:focus, .a4-login-form #email:focus { outline: 2px solid transparent; border-color: var(--a4-accent); box-shadow: 0 0 0 3px var(--a4-ring); }
 .a4-field-wrap { position: relative; }
 .a4-field-wrap #passwordtext { padding-inline-end: var(--a4-space-7); }
 .a4-reveal {
@@ -2435,15 +2435,23 @@ html:has(body.a4-login-page) { background: var(--a4-surface); }
 .a4-login-form .a4-check { display: flex; align-items: center; gap: var(--a4-space-3); margin: var(--a4-space-4) 0 0; font-size: var(--a4-text-m); font-weight: var(--a4-weight-medium); color: var(--a4-ink); cursor: pointer; }
 .a4-login-form .a4-check input { width: 18px; height: 18px; margin: 0; accent-color: var(--a4-accent-strong); }
 .a4-login-note { margin: var(--a4-space-3) 0 0; font-size: var(--a4-text-s); color: var(--a4-muted); }
-.a4-login-form #loginbutton {
+.a4-login-form #loginbutton, .a4-login-box .a4-login-submit {
   box-sizing: border-box; width: 100%; height: 48px; margin: var(--a4-space-5) 0 0; padding: 0 var(--a4-space-4);
   border: 0; border-radius: var(--a4-radius-s); background-color: var(--a4-accent-strong); color: var(--a4-on-accent);
   font: var(--a4-weight-strong) var(--a4-text-l)/var(--a4-leading-none) var(--a4-font); cursor: pointer; box-shadow: 0 6px 16px var(--a4-accent-soft);
   transition: background-color var(--a4-duration) ease, box-shadow var(--a4-duration) ease;
 }
-.a4-login-form #loginbutton:hover { background-color: var(--a4-accent-press); color: var(--a4-on-accent-hover); }
-.a4-login-form #loginbutton:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
-.a4-login-form #loginbutton.a4-busy { opacity: .75; cursor: progress; pointer-events: none; }
+.a4-login-form #loginbutton:hover, .a4-login-box .a4-login-submit:hover { background-color: var(--a4-accent-press); color: var(--a4-on-accent-hover); }
+.a4-login-form #loginbutton:focus-visible, .a4-login-box .a4-login-submit:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.a4-login-form #loginbutton.a4-busy, .a4-login-box .a4-login-submit.a4-busy { opacity: .75; cursor: progress; pointer-events: none; }
+/* The other steps of signing in share the frame (user/forgotpassword.tpl, user/success.tpl, user/activate.tpl): a
+   next step that is a link ("Sign in") looks like the sign-in button, a result is an .a4-notice under the title, an
+   address the kernel refused marks the field */
+a.a4-login-submit { display: flex; align-items: center; justify-content: center; text-decoration: none; }
+a.a4-login-submit:hover { text-decoration: none; }
+.a4-login-box .a4-notice { margin: var(--a4-space-3) 0 0; }
+.a4-login-box .a4-notice p + p { margin-top: var(--a4-space-2); }
+.a4-login-form #email[aria-invalid="true"] { border-color: var(--a4-bad); }
 /* "Sign in with a passkey" (doc/eng-us/guides/passkeys.md): the second way in, as wide as the first, outlined */
 .a4-login-form #passkeybutton {
   display: inline-flex; align-items: center; justify-content: center; gap: var(--a4-space-2);
@@ -2480,7 +2488,7 @@ html:has(body.a4-login-page) { background: var(--a4-surface); }
   .a4-login-side { padding: var(--a4-space-4) var(--a4-space-4) calc(var(--a4-space-4) + env(safe-area-inset-bottom)); }
   .a4-login-box { justify-content: flex-start; padding: var(--a4-space-5) 0 var(--a4-space-5); max-width: 420px; }
   .a4-login-title { font-size: var(--a4-text-xl); }
-  .a4-login-form #logintext, .a4-login-form #passwordtext { height: 48px; }
+  .a4-login-form #logintext, .a4-login-form #passwordtext, .a4-login-form #email { height: 48px; }
 }
 
 /* ---- Edit-type pages (content/edit, history, version view ...) ------------------------------------------------

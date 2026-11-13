@@ -478,7 +478,7 @@ c20144b49f9eaa6bc589e15490a657de  design/admin/stylesheets/modules/setup.css
 870f0f020eb45e6b5b306b731e3371bf  design/admin/stylesheets/modules/structure.css
 3f6cb52db7363b1107114a1554b38a99  design/admin/stylesheets/modules/workflow.css
 f6736900d8e33587c384e14e7705af9d  design/admin/stylesheets/packagecompare.css
-a43cb038676569a3bf87c8c4f510465e  design/admin/stylesheets/pagelayout.css
+596ea8094fdf5e7808a6abab819fa056  design/admin/stylesheets/pagelayout.css
 16a7507cc5aa5b20a16c0e1b99e13dad  design/admin/stylesheets/theme/admin_datatable.css
 20aaaea53851cd5adb476efc4ae92242  design/admin/stylesheets/theme/modalwindow.css
 0ddd5cc6d88efa3efb96baccbdb29e61  design/admin/stylesheets/theme/rounded.css
@@ -1002,12 +1002,13 @@ b0074ff5c1cbb956a8578656bb507c29  design/admin/templates/toolbar/full/admin_book
 e80df129f54dd091607755b00518d11e  design/admin/templates/url/edit.tpl
 2a77e40017d48d8bead6ec48b1710fec  design/admin/templates/url/list.tpl
 544c98b0e3f60c4a1240b1c1347d40f6  design/admin/templates/url/view.tpl
-a07da19bad529539a8ac821a99668b25  design/admin/templates/user/activate.tpl
+dd1ebe906ccfd73e00afb3d4ddccaa4d  design/admin/templates/user/activate.tpl
 92640db0ad2519d57ca4594778ea5941  design/admin/templates/user/audit.tpl
 5a3280528f18120fe178cf6e91aea186  design/admin/templates/user/deactivate.tpl
 7273b6e67d22b2945f983cadfa7dd712  design/admin/templates/user/edit.tpl
+48e52f6db261ef2e14d2812b3c1a2616  design/admin/templates/user/forgotpassword.tpl
 307944d9bab08d353dce7fbfd148e7b1  design/admin/templates/user/hygiene.tpl
-1ee23bb4f1233e281d53c5b7dcd0818d  design/admin/templates/user/login.tpl
+0df8ddde151b87b4180c9ea6f4a69d36  design/admin/templates/user/login.tpl
 7a14f4dd87e1707f1eb6c82542e74094  design/admin/templates/user/passkeys.tpl
 d4fd04ff2e30c797b228adfc4f1486d8  design/admin/templates/user/password.tpl
 334a71e0270b253897c94e074acd0559  design/admin/templates/user/preferences_confirm.tpl
@@ -1017,7 +1018,7 @@ d8ec449004bb5e219a602cf6ffa540f7  design/admin/templates/user/register.tpl
 b5aacddf98705ecafa00c7a56f14bc36  design/admin/templates/user/sessionreport.tpl
 3badcf2678c549bee0543bfed0a7400a  design/admin/templates/user/sessions.tpl
 bd1b035ba64fbf2073d452b0f16c0c72  design/admin/templates/user/setting.tpl
-201d4d8ba785302b4e8abb1d2dc5275c  design/admin/templates/user/success.tpl
+f255a484e22d05dd6023ad45341adaeb  design/admin/templates/user/success.tpl
 303268b9d53d1effddade2a3b45f8387  design/admin/templates/user/unactivated.tpl
 492847215cd771daab2c0c12c0a2a1d7  design/admin/templates/visual/menuconfig.tpl
 ecca0e500ca59994386c7e2ad4ddc06c  design/admin/templates/visual/menuconfig_siteaccess.tpl
@@ -1296,7 +1297,7 @@ b85be7774f406553186dbc720d2914a9  design/admin4/override/templates/embed_image.t
 03505c55345b654eeb275f3b614a92bf  design/admin4/override/templates/thumbnail/image.tpl
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
-5ff591f778350cdfe0b61b548658913e  design/admin4/stylesheets/admin4.css
+e38038573cc7523a0b372f0006beb863  design/admin4/stylesheets/admin4.css
 60043ca1b3b05084022afe6127dc974f  design/admin4/stylesheets/base.css
 8daa02b3c835045a509d16cba4c64748  design/admin4/stylesheets/components.css
 005d3f98e2671b2f9ea348032aaae860  design/admin4/stylesheets/core.css
@@ -1882,10 +1883,11 @@ c9cd902655ee90497ef426f81ff48a2d  design/admin4/templates/translations.tpl
 a2bc217453a8c32404c1b0d86e7d3906  design/admin4/templates/url/edit.tpl
 c026e4380b0c4c87f6bf9cef5bfe4e7d  design/admin4/templates/url/list.tpl
 fb0873e26a274c1e365ec85f5bbe30b7  design/admin4/templates/url/view.tpl
-a07da19bad529539a8ac821a99668b25  design/admin4/templates/user/activate.tpl
+f315d26c785b720b1f502f570f7d09f6  design/admin4/templates/user/activate.tpl
 92640db0ad2519d57ca4594778ea5941  design/admin4/templates/user/audit.tpl
 5a3280528f18120fe178cf6e91aea186  design/admin4/templates/user/deactivate.tpl
 d1fffd0c49056ac1aa8d266284eed3ec  design/admin4/templates/user/edit.tpl
+6747d5f88602fe1b237eace05d68ccd7  design/admin4/templates/user/forgotpassword.tpl
 307944d9bab08d353dce7fbfd148e7b1  design/admin4/templates/user/hygiene.tpl
 90be8807740cc50682905438459f1464  design/admin4/templates/user/login.tpl
 7483e615f780df44798ae53acd67664b  design/admin4/templates/user/megamenu.tpl
@@ -1898,7 +1900,7 @@ d8ec449004bb5e219a602cf6ffa540f7  design/admin4/templates/user/register.tpl
 b5aacddf98705ecafa00c7a56f14bc36  design/admin4/templates/user/sessionreport.tpl
 3badcf2678c549bee0543bfed0a7400a  design/admin4/templates/user/sessions.tpl
 08301adf55d7ea9d5985d6d76e3c4d62  design/admin4/templates/user/setting.tpl
-201d4d8ba785302b4e8abb1d2dc5275c  design/admin4/templates/user/success.tpl
+9b039cc04e270aaf921690a00e959646  design/admin4/templates/user/success.tpl
 2dab3ea9d895ee02b344f1edd2d92d12  design/admin4/templates/user/unactivated.tpl
 5c71b6901c698e20631c648edcaa684e  design/admin4/templates/visual/menuconfig.tpl
 ecca0e500ca59994386c7e2ad4ddc06c  design/admin4/templates/visual/menuconfig_siteaccess.tpl

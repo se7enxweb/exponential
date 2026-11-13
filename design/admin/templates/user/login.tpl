@@ -89,6 +89,13 @@
     </div>
     <p class="a4-notice is-info" data-exp-passkey-status="1" role="status" aria-live="polite" hidden="hidden"></p>
     {/if}
+    {* the forgot-password link only where the view exists and this visitor may open it (the policy omit list or the
+       user/password policy), as in admin4's sign-in form *}
+    {if and( ezmodule( 'user/forgotpassword' ), fetch( 'user', 'can_open', hash( 'uri', 'user/forgotpassword' ) ) )}
+        <div class="login-text-wrapper">
+            <a href={'/user/forgotpassword'|ezurl}>{'Forgot your password?'|i18n( 'design/admin/user/login' )}</a>
+        </div>
+    {/if}
     {* the register link only for a user who may register: user/register in the policy omit list or the policy *}
     {if and( ezmodule( 'user/register' ), fetch( 'user', 'can_open', hash( 'uri', 'user/register' ) ) )}
         <div class="login-text-wrapper">

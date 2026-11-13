@@ -1262,6 +1262,27 @@ input:-moz-placeholder {
     text-align: center;
 }
 
+/* The other steps of signing in (user/forgotpassword.tpl, user/success.tpl, user/activate.tpl) on the card the
+   registration page has (theme/rounded.css .ezusernavigationpart #maincontent), so their text is not black on the
+   dark frame of the sign-in page. design/admin is light only (data-a4-modes="light"). */
+.loginpage .login-card
+{
+    margin: 20px auto;
+    padding: var(--a4-space-3) var(--a4-space-4);
+    background: var(--a4-card);
+    color: var(--a4-ink);
+    border-radius: var(--a4-radius-s);
+    box-shadow: var(--a4-shadow-m);
+}
+.loginpage .login-card a { color: var(--a4-accent-text); }
+.loginpage .login-card a:hover { color: var(--a4-accent-text) !important; }   /* theme/rounded.css lightens every link of the frame with !important */
+.loginpage .login-card .login-card-back { margin: var(--a4-space-3) 0 0; }
+/* The text of the sign-in page's dark frame (theme/rounded.css #page: images/3/dark_back.png, on average #535856):
+   #b7b7b7 ("Remember me", "or") was 3.6:1 on it, the links' #6dcff6 4.1:1 and the footer's #aaa 3.1:1; these are
+   above 5.4:1 (WCAG 1.4.3). The hover colour stays theme/rounded.css's #ffe9bd. */
+.loginpage .login-text-wrapper, .loginpage #footer-design { color: #e3e3e3; }
+.loginpage .login-text-wrapper a, .loginpage #footer-design a { color: #b9ecfb; }
+
 .login-text-wrapper a
 {
     display: inline-block;
