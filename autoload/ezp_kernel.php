@@ -1459,6 +1459,7 @@ return array(
       'expImageAliasJob'                                             => 'kernel/classes/imagealias/expimagealiasjob.php',
       'expImageAliasLock'                                            => 'kernel/classes/imagealias/expimagealiaslock.php',
       'expImageAliasLog'                                             => 'kernel/classes/imagealias/expimagealiaslog.php',
+      'expImageAliasPublish'                                         => 'kernel/classes/imagealias/expimagealiaspublish.php',
       'expImageAliasQueueHandler'                                    => 'kernel/classes/imagealias/expimagealiasqueuehandler.php',
       'expImageAliasServer'                                          => 'kernel/classes/imagealias/expimagealiasserver.php',
       'expImageAliasSettings'                                        => 'kernel/classes/imagealias/expimagealiassettings.php',

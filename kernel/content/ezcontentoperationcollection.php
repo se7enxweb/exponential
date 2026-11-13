@@ -352,6 +352,10 @@ class eZContentOperationCollection
         // the GraphQL event journal (webhooks, subscriptions), written at the end of the request
         if ( class_exists( 'expGraphQLEventListener' ) )
             expGraphQLEventListener::published( (int)$objectID, (int)$versionNum, $wasPublished );
+        // image aliases made in the background (image.ini [AliasSettings] PreGenerate, on-demand mode): queued, never
+        // converted here
+        if ( class_exists( 'expImageAliasPublish' ) )
+            expImageAliasPublish::published( (int)$objectID, (int)$versionNum );
     }
 
     /**
