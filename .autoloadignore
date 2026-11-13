@@ -35,3 +35,10 @@ extension/nxc_powercontent/modules
 # sevenx_smarty was the Smarty extension; its classes are lib/smarty now (same names), so the generator must not
 # map its copies. The directory stays until it is deleted.
 extension/sevenx_smarty
+
+# exp_request_shield (in the default installation) bundles request-shield as single files in lib/requestshield/,
+# once for PHP 8 and once downgraded for PHP 7.4 (php74/): both declare the same classes, so walking them maps every
+# class twice, to whichever build is found last. The extension loads the right build itself
+# (expRequestShield::loadLibrary()). The files keep the .php suffix on purpose: Exponential Velocity turns exit() into
+# its exit signal only in included *.php files.
+extension/exp_request_shield/lib
