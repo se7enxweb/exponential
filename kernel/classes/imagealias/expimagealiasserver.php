@@ -45,10 +45,52 @@ class expImageAliasServer
     /** @var bool the answer depends on the Accept header (the alias has formats to negotiate): Vary: Accept */
     protected $vary = false;
 
+    /** @var bool a queue job or script completes the work (no MaxWait, nothing queued): forJob() */
+    protected $job = false;
+
+    /** @var array|null attribute, version, language of the image this request is about (for queueing a miss) */
+    protected $miss = null;
+
+    /** @var int[] ids of the jobs this request queued (tests, the log) */
+    protected $queued = array();
+
     public function __construct()
     {
         $this->start = microtime( true );
         $this->accept = isset( $_SERVER['HTTP_ACCEPT'] ) ? (string)$_SERVER['HTTP_ACCEPT'] : '';
+    }
+
+    /**
+     * A server for background work (expImageAliasJob): it waits for locks and conversion slots as long as
+     * [ImageConverterSettings] LockTimeout, not MaxWait, and queues nothing.
+     *
+     * @return expImageAliasServer
+     */
+    public static function forJob()
+    {
+        $server = new static();
+        $server->job = true;
+        return $server;
+    }
+
+    /**
+     * Seconds this request may still spend making or fetching (what is left of MaxWait; a job: LockTimeout).
+     *
+     * @return float
+     */
+    protected function left()
+    {
+        if ( $this->job )
+            return expImageAliasSettings::lockTimeout();
+        return max( 0.0, expImageAliasSettings::maxWait() - ( microtime( true ) - $this->start ) );
+    }
+
+    /**
+     * @return int[] ids of the jobs this server queued
+     */
+    public function queuedJobs()
+    {
+        return $this->queued;
     }
 
     /**
@@ -127,6 +169,8 @@ class expImageAliasServer
         $original = isset( $aliasList['original'] ) ? $aliasList['original'] : null;
         if ( !$original || (string)$original['url'] === '' || dirname( (string)$original['url'] ) !== $parsed['directory'] )
             return $this->placeholder( null, null, 404, 'other-image' );
+        $this->miss = array( 'attribute' => (int)$attribute->attribute( 'id' ), 'version' => (int)$attribute->attribute( 'version' ),
+                             'language' => (string)$attribute->attribute( 'language_code' ) );
         foreach ( $parsed['candidates'] as $candidate )
         {
             if ( $candidate['basename'] !== (string)$original['basename'] )
@@ -135,7 +179,10 @@ class expImageAliasServer
             if ( self::exists( $path ) )
                 return $this->deliver( $path, null );
             if ( $made === 'timeout' )
+            {
+                $this->queueCompletion( $candidate['alias'], array(), $path );
                 return $this->placeholder( null, null, 200, 'pending', $candidate['alias'], $path );
+            }
         }
         return $this->placeholder( null, null, 404, 'not-made', null, $path );
     }
@@ -169,6 +216,7 @@ class expImageAliasServer
         if ( $aliasName === null || !expImageFormatConverter::variantApplies( $aliasMime['name'], $format )
              || !expImageFormatConverter::canWrite( $format ) )
             return $this->placeholder( null, null, 404, 'no-format', $aliasName, $path );
+        $this->miss = array( 'attribute' => (int)$parsed['attribute'], 'version' => (int)$parsed['version'], 'language' => (string)$parsed['language'] );
         if ( !self::exists( $aliasPath ) )
         {
             $alias = $this->handleStoragePath( $aliasPath );
@@ -202,6 +250,8 @@ class expImageAliasServer
             return $this->placeholder( $width, $height, 404, 'mismatch' );
 
         $target = expImageAliasUrl::targetPath( $payload );
+        if ( $check['valid'] )
+            $this->miss = array( 'attribute' => (int)$payload['a'], 'version' => (int)$payload['v'], 'language' => (string)$payload['l'] );
         $mime = isset( $payload['m'] ) ? (string)$payload['m'] : null;
         // The formats the browser may get instead (Formats[] of the alias, Negotiate): the answer varies by Accept
         $format = $this->negotiateFor( (string)$payload['n'], $mime !== null ? $mime : eZMimeType::findByURL( $target )['name'] );
@@ -220,9 +270,13 @@ class expImageAliasServer
         $made = $this->generate( $attribute, (string)$payload['n'], $target );
         if ( self::exists( $target ) && ( $made === 'ok' || $outdatedBefore === 0 || self::modified( $target ) >= $outdatedBefore ) )
             return $this->deliverAlias( $target, $mime, $format, (string)$payload['n'], true );
-        // Still being made by another process: the browser asks again (swap script)
+        // Not done in time (another process makes it, no conversion slot came free): the browser asks again (swap
+        // script), and a job finishes it meanwhile
         if ( $made === 'timeout' )
+        {
+            $this->queueCompletion( (string)$payload['n'], $format !== null ? array( $format ) : array(), $target );
             return $this->placeholder( $width, $height, 200, 'pending', (string)$payload['n'], $target );
+        }
         return $this->placeholder( $width, $height, 404, 'not-made', (string)$payload['n'], $target );
     }
 
@@ -296,7 +350,7 @@ class expImageAliasServer
      * @param string $language
      * @return eZContentObjectAttribute|null
      */
-    protected function publishedImageAttribute( $attributeID, $version, $language )
+    public function publishedImageAttribute( $attributeID, $version, $language )
     {
         $named = eZContentObjectAttribute::fetch( (int)$attributeID, (int)$version );
         if ( !$named instanceof eZContentObjectAttribute || $named->attribute( 'language_code' ) !== $language
@@ -315,12 +369,12 @@ class expImageAliasServer
     // ------------------------------------------------------------------------------------------------ making
 
     /**
-     * Makes the alias $aliasName of $attribute as render mode does, waiting at most what is left of MaxWait for
-     * another process making it.
+     * Makes the alias $aliasName of $attribute as render mode does, waiting at most what is left of MaxWait (a job:
+     * LockTimeout) for another process making it and for a conversion slot (expImageAliasThrottle).
      *
      * @param eZContentObjectAttribute $attribute
      * @param string $aliasName
-     * @param string $target the file expected (for the log)
+     * @param string|null $target the file expected (staging, the log); null: not known (a job)
      * @return string ok|timeout|failed
      */
     protected function generate( $attribute, $aliasName, $target )
@@ -330,20 +384,24 @@ class expImageAliasServer
             return 'failed';
         // Staging: the alias from the source installation, else its original (the alias is then made here)
         $adopt = false;
-        $stager = self::exists( $target ) ? null : expImageAliasStager::forRequest();
+        $stager = $target === null || self::exists( $target ) ? null : expImageAliasStager::forRequest();
         if ( $stager !== null )
         {
             $aliasList = $handler->aliasList();
             $originalPath = isset( $aliasList['original']['url'] ) ? (string)$aliasList['original']['url'] : '';
-            $staged = $stager->stageAlias( $target, $originalPath, max( 0.0, expImageAliasSettings::maxWait() - ( microtime( true ) - $this->start ) ) );
+            $staged = $stager->stageAlias( $target, $originalPath, $this->left() );
             if ( $staged === 'pending' )
                 return 'timeout';
             if ( $staged === 'missing' )
                 return 'failed';
             $adopt = $staged === 'alias';
         }
-        $left = max( 0.0, expImageAliasSettings::maxWait() - ( microtime( true ) - $this->start ) );
+        $left = $this->left();
         $before = expImageAliasLock::setWaitLimit( $left );
+        // A request starts no conversion after its MaxWait (a reference alias made on the way to this one included);
+        // a conversion that has started is finished (it cannot be stopped half way without losing the work)
+        $deadlineBefore = expImageAliasThrottle::setDeadline( $this->job ? null : $this->start + expImageAliasSettings::maxWait() );
+        expImageAliasThrottle::forgetLastHold();
         $started = microtime( true );
         $timedOut = false;
         try
@@ -367,14 +425,114 @@ class expImageAliasServer
         finally
         {
             expImageAliasLock::setWaitLimit( $before );
+            expImageAliasThrottle::setDeadline( $deadlineBefore );
         }
         $ms = (int)round( ( microtime( true ) - $started ) * 1000 );
         $ok = is_array( $alias ) && (string)( $alias['url'] ?? '' ) !== '';
-        if ( !$ok && $ms >= (int)( $left * 1000 ) )
+        // No slot in time, or the wait for another process's lock ran out
+        if ( !$ok && ( expImageAliasThrottle::timedOut() || $ms >= (int)( $left * 1000 ) ) )
             $timedOut = true;
-        expImageAliasLog::write( $ok ? 'generate' : 'fail', array( 'result' => $ok ? 'ok' : ( $timedOut ? 'timeout' : 'failed' ), 'ms' => $ms,
-                                                                    'alias' => $aliasName, 'path' => $target ) );
+        $fields = array( 'result' => $ok ? 'ok' : ( $timedOut ? 'timeout' : 'failed' ), 'ms' => $ms, 'alias' => $aliasName );
+        $fields += self::holdFields();
+        if ( $this->job )
+            $fields['by'] = 'job';
+        $fields['path'] = $target !== null ? $target : ( $ok ? (string)$alias['url'] : '-' );
+        expImageAliasLog::write( $ok ? 'generate' : 'fail', $fields );
         return $ok ? 'ok' : ( $timedOut ? 'timeout' : 'failed' );
+    }
+
+    /**
+     * The log fields of the conversion slot the last piece of work held: slot, held_at (start, seconds with
+     * milliseconds), held_ms, slot_wait_ms. None when it took no slot (another process had made the file, render mode).
+     *
+     * @return array
+     */
+    protected static function holdFields()
+    {
+        $hold = expImageAliasThrottle::lastHold();
+        if ( $hold === null )
+            return array();
+        $until = $hold['until'] !== null ? $hold['until'] : microtime( true );
+        return array( 'slot' => (int)$hold['slot'], 'held_at' => sprintf( '%.3f', $hold['from'] ),
+                      'held_ms' => (int)round( ( $until - $hold['from'] ) * 1000 ), 'slot_wait_ms' => (int)$hold['wait_ms'] );
+    }
+
+    // ------------------------------------------------------------------------------------------------ background work
+
+    /**
+     * Completes the alias $aliasName of $attribute and its variants in $formats (a queue job, the synchronous
+     * fallback, a script): what is there and current is left alone; the rest is made exactly as a request makes it
+     * (the same per-alias lock, shared by every web node on a cluster, and the same conversion slots), waiting as
+     * long as LockTimeout. Use a server from forJob().
+     *
+     * @param eZContentObjectAttribute $attribute
+     * @param string $aliasName
+     * @param string[] $formats variants to make when the alias lists them (Formats[]) and a converter writes them
+     * @return array alias => present|ok|timeout|failed|unknown|no-image, variants => format => present|ok|timeout|failed
+     */
+    public function complete( $attribute, $aliasName, array $formats = array() )
+    {
+        $out = array( 'alias' => 'failed', 'variants' => array() );
+        $handler = $attribute->attribute( 'content' );
+        if ( !$handler instanceof eZImageAliasHandler )
+            return $out;
+        if ( !eZImageManager::factory()->hasAlias( $aliasName ) )
+        {
+            $out['alias'] = 'unknown';
+            return $out;
+        }
+        $aliasList = $handler->aliasList();
+        if ( !isset( $aliasList['original']['url'] ) || (string)$aliasList['original']['url'] === '' )
+        {
+            $out['alias'] = 'no-image';
+            return $out;
+        }
+        $entry = isset( $aliasList[$aliasName] ) ? $aliasList[$aliasName] : null;
+        $current = $entry !== null && (string)( $entry['url'] ?? '' ) !== '' && !empty( $entry['is_valid'] ) && self::exists( (string)$entry['url'] )
+                   && ( !isset( $entry['alias_key'] ) || (int)$entry['alias_key'] === (int)eZImageManager::factory()->createImageAliasKey( eZImageManager::factory()->alias( $aliasName ) ) );
+        if ( $current )
+            $out['alias'] = 'present';
+        else
+        {
+            $out['alias'] = $this->generate( $attribute, $aliasName, null );
+            $aliasList = $handler->aliasList();
+            $entry = isset( $aliasList[$aliasName] ) ? $aliasList[$aliasName] : null;
+        }
+        if ( !in_array( $out['alias'], array( 'present', 'ok' ), true ) || $entry === null )
+            return $out;
+        $aliasPath = (string)$entry['url'];
+        $aliasMime = isset( $entry['mime_type'] ) ? (string)$entry['mime_type'] : eZMimeType::findByURL( $aliasPath )['name'];
+        foreach ( array_intersect( expImageAliasSettings::aliasFormats( $aliasName ), $formats ) as $format )
+        {
+            if ( !expImageFormatConverter::variantApplies( $aliasMime, $format ) || !expImageFormatConverter::canWrite( $format ) )
+                continue;
+            $path = expImageFormatConverter::variantPath( $aliasPath, $format );
+            if ( self::exists( $path ) && self::modified( $path ) >= self::modified( $aliasPath ) )
+            {
+                $out['variants'][$format] = 'present';
+                continue;
+            }
+            $out['variants'][$format] = $this->variant( $aliasPath, $format, $aliasName, true ) !== null ? 'ok' : ( expImageAliasThrottle::timedOut() ? 'timeout' : 'failed' );
+        }
+        return $out;
+    }
+
+    /**
+     * A request that answers the placeholder because the work did not finish in time hands it to the job queue at
+     * the visitors' priority (expImageAliasJob::queueMiss()). Not for a job, a draft, or an image this request does
+     * not know.
+     *
+     * @param string $aliasName
+     * @param string[] $formats variants to make as well
+     * @param string|null $target the file expected
+     */
+    protected function queueCompletion( $aliasName, array $formats, $target )
+    {
+        if ( $this->job || $this->miss === null || ( $target !== null && expImageAliasUrl::isVersionedPath( $target ) ) )
+            return;
+        $job = expImageAliasJob::queueMiss( $this->miss['attribute'], $this->miss['version'], $this->miss['language'], $aliasName, $formats, $target );
+        if ( $job !== null )
+            $this->queued[] = $job;
     }
 
     /**
@@ -395,7 +553,7 @@ class expImageAliasServer
         $name = array_search( $path, expImageAliasStager::filesOfXml( (string)$attribute->attribute( 'data_text' ) ), true );
         if ( $name === false || ( $name !== 'original' && eZImageManager::factory()->hasAlias( $name ) ) )
             return null;
-        $staged = $stager->stageFile( $path, max( 0.0, expImageAliasSettings::maxWait() - ( microtime( true ) - $this->start ) ) );
+        $staged = $stager->stageFile( $path, $this->left() );
         if ( $staged === 'ok' && self::exists( $path ) )
             return $this->deliver( $path, null );
         if ( $staged === 'pending' )
@@ -506,11 +664,14 @@ class expImageAliasServer
             return $path;
         if ( !$mayMake || !expImageFormatConverter::canWrite( $format ) )
             return null;
-        $left = max( 0.0, expImageAliasSettings::maxWait() - ( microtime( true ) - $this->start ) );
+        $left = $this->left();
         $before = expImageAliasLock::setWaitLimit( $left );
+        $deadlineBefore = expImageAliasThrottle::setDeadline( $this->job ? null : $this->start + expImageAliasSettings::maxWait() );
+        expImageAliasThrottle::forgetLastHold();
         $started = microtime( true );
         $lock = new expImageAliasLock( $path );
         $local = null;
+        $slot = false;
         $result = 'failed';
         try
         {
@@ -518,6 +679,9 @@ class expImageAliasServer
                 $result = 'timeout';
             elseif ( $lock->waited() && self::exists( $path ) && self::modified( $path ) >= self::modified( $aliasPath ) )
                 $result = 'ok';
+            elseif ( !( $slot = expImageAliasThrottle::acquire() ) )
+                // No conversion slot in time (or MaxWait is used up): not made now
+                $result = 'timeout';
             else
             {
                 // On a database cluster the alias is fetched to a local file first, and the variant stored after
@@ -541,14 +705,24 @@ class expImageAliasServer
         }
         finally
         {
+            if ( $slot )
+                expImageAliasThrottle::release();
             $lock->release();
             expImageAliasLock::setWaitLimit( $before );
+            expImageAliasThrottle::setDeadline( $deadlineBefore );
             if ( is_string( $local ) && $local !== '' )
                 eZClusterFileHandler::instance( $aliasPath )->fileDeleteLocal( $local );
         }
-        expImageAliasLog::write( $result === 'ok' ? 'generate' : 'fail', array(
-            'result' => $result, 'ms' => (int)round( ( microtime( true ) - $started ) * 1000 ), 'alias' => $aliasName . '.' . $format,
-            'path' => $path, 'converter' => (string)expImageFormatConverter::lastConverter() ) );
+        $fields = array( 'result' => $result, 'ms' => (int)round( ( microtime( true ) - $started ) * 1000 ), 'alias' => $aliasName . '.' . $format,
+                         'converter' => (string)expImageFormatConverter::lastConverter() );
+        $fields += $slot ? self::holdFields() : array();
+        if ( $this->job )
+            $fields['by'] = 'job';
+        $fields['path'] = $path;
+        expImageAliasLog::write( $result === 'ok' ? 'generate' : 'fail', $fields );
+        // The browser gets the alias in its own format now; a job makes the variant for the next visit
+        if ( $result === 'timeout' )
+            $this->queueCompletion( $aliasName, array( $format ), $aliasPath );
         return $result === 'ok' && self::exists( $path ) ? $path : null;
     }
 

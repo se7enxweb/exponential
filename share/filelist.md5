@@ -25180,11 +25180,11 @@ e1bdecb7646263f37e01d3a77e405877  kernel/classes/help/exphelpsearch.php
 fc2445e067d0d990f5e78b1618e0fd7f  kernel/classes/i18n/expi18ncoveragemap.php
 02f2fc6237ffcafc3eac8b3c56f347a2  kernel/classes/i18n/expi18nfallbackreport.php
 c83e6d6bd9bc17926c942d41275fa1ed  kernel/classes/i18n/expi18ntranslationwaves.php
-3320d3048259d532f9d4284ed6b48644  kernel/classes/imagealias/expimagealiasjob.php
+da8030027eddb79c7a830f61174bac44  kernel/classes/imagealias/expimagealiasjob.php
 fc37d23ce955592a9c1828b20b7650dd  kernel/classes/imagealias/expimagealiaslock.php
 8915accdce597f5e83fba7e6098ee7be  kernel/classes/imagealias/expimagealiaslog.php
-4721d4dbc54db4eac8098a9126a4f8d0  kernel/classes/imagealias/expimagealiasqueuehandler.php
-5402d9150fd315ccf830bcc2c6c4eee5  kernel/classes/imagealias/expimagealiasserver.php
+2a4164e69ceffc8ee285f950debb865d  kernel/classes/imagealias/expimagealiasqueuehandler.php
+f175c0407a6b43b379d16ae2509d84b9  kernel/classes/imagealias/expimagealiasserver.php
 d0a445fa2da1da80529229120f3e5480  kernel/classes/imagealias/expimagealiassettings.php
 c0f6aa3cb52700b5f86f99cd73b0ec98  kernel/classes/imagealias/expimagealiasstager.php
 4bb1f8df503be60334e1a7693fc424b5  kernel/classes/imagealias/expimagealiasthrottle.php
@@ -27405,6 +27405,7 @@ db2bae948264a3a4af9be5be6760321b  settings/debugbar.ini
 b244336d7be89b1697f8232f4f0fe201  settings/editorpolicies.ini
 ab00f79238eebe7e595134867213df63  settings/error.ini
 7150b7652f4001a2e812bfb5099136c9  settings/exphelp.ini
+373e2882d1581371eb4f16c2703212a0  settings/expqueue.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
