@@ -9,7 +9,8 @@
 
 /**
  * The signed-in sessions of the users, "Your devices" (expuser_session), as
- * update/common/scripts/6.0/createusersessiontable.php.
+ * update/common/scripts/6.0/createusersessiontable.php, and what is known of each session's device
+ * (expuser_session_info), which the step left out before.
  *
  * @since 6.0.15
  * @package kernel
@@ -23,11 +24,11 @@ class expUpgradeStepUserSessionTable extends expUpgradeSchemaStep
 
     public function description()
     {
-        return 'The signed-in sessions of the users, Your devices (table expuser_session)';
+        return 'The signed-in sessions of the users, Your devices (tables expuser_session, expuser_session_info)';
     }
 
     public function tables()
     {
-        return array( expUserSession::TABLE );
+        return array( expUserSession::TABLE, expUserSessionInfo::TABLE );
     }
 }

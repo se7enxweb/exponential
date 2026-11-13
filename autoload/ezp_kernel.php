@@ -1939,6 +1939,7 @@ return array(
       'expUpgradeStepHelpClassMetaData'                              => 'kernel/classes/upgrade/steps/expupgradestephelpclassmetadata.php',
       'expUpgradeStepHelpContentTables'                              => 'kernel/classes/upgrade/steps/expupgradestephelpcontenttables.php',
       'expUpgradeStepHelpReadPolicy'                                 => 'kernel/classes/upgrade/steps/expupgradestephelpreadpolicy.php',
+      'expUpgradeStepKernelTables'                                   => 'kernel/classes/upgrade/steps/expupgradestepkerneltables.php',
       'expUpgradeStepLibrariesInstall'                               => 'kernel/classes/upgrade/steps/expupgradesteplibrariesinstall.php',
       'expUpgradeStepLibrariesUpdate'                                => 'kernel/classes/upgrade/steps/expupgradesteplibrariesupdate.php',
       'expUpgradeStepMailPreferenceTables'                           => 'kernel/classes/upgrade/steps/expupgradestepmailpreferencetables.php',

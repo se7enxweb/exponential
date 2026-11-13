@@ -387,7 +387,7 @@ version), the backup, every stage with every step (`id`, `stage`, `version`, `st
 | `6.0.15-api-key-table` | database | `createapikeytable.php` |
 | `6.0.15-transfer-run-table` | database | `createtransferruntable.php` |
 | `6.0.15-data-table-tables` | database | `exp_data_connection`, `exp_secret`, `exp_data_sync*` |
-| `6.0.15-user-session-table` | database | `createusersessiontable.php` |
+| `6.0.15-user-session-table` | database | `createusersessiontable.php`; also `expuser_session_info`, the devices of the sessions |
 | `6.0.15-oauth-pkce-columns` | database | `ezprest_authcode.code_challenge`, `code_challenge_method` |
 | `6.0.15-passkey-table` | database | `createpasskeytable.php` |
 | `6.0.15-help-content-tables` | database | `exphelp_help_id`, `exphelp_feedback` |
@@ -398,6 +398,7 @@ version), the backup, every stage with every step (`id`, `stage`, `version`, `st
 | `6.0.15-static-publish-tables` | database | `exp_static_run`, `exp_static_page` (static publishing) |
 | `6.0.15-url-map` | database | `exp_url_redirect`, `exp_urlmap_batch`, `exp_urlmap_batch_item` (URL map import: [the BC note](../bc/6.0/url-map-import.md)) |
 | `6.0.15-migration-deploy-tables` | database | `exp_migration_deploy`, `exp_migration_deploy_host` (deploys of migrations to remotes) |
+| `6.0.15-kernel-tables` | database | (new) every other table of the kernel schema (`share/db_schema.dba`) the database lacks, created empty: a database upgraded across many releases can miss an old one (`ezapprove_items` where the approve workflow event never ran), and the scripts stage relies on them |
 | `6.0.15-active-extension-tables` | database | (new) the tables of every active extension that ships a `share/db_schema.dba` (ezstarrating, ezgmaplocation, eztags ...), where missing; no data loaded |
 | `6.0.15-site-version` | database | `ezsite_data` `ezpublish-version` set to 6.0.15 |
 | `6.0.15-missing-user-settings` | scripts | `createmissingusersettings.php` |

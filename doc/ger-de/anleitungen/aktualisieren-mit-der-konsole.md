@@ -411,7 +411,7 @@ Code-Version), die Sicherung, jede Stufe mit jedem Schritt (`id`, `stage`, `vers
 | `6.0.15-api-key-table` | database | `createapikeytable.php` |
 | `6.0.15-transfer-run-table` | database | `createtransferruntable.php` |
 | `6.0.15-data-table-tables` | database | `exp_data_connection`, `exp_secret`, `exp_data_sync*` |
-| `6.0.15-user-session-table` | database | `createusersessiontable.php` |
+| `6.0.15-user-session-table` | database | `createusersessiontable.php`; auch `expuser_session_info`, die Geräte der Sitzungen |
 | `6.0.15-oauth-pkce-columns` | database | `ezprest_authcode.code_challenge`, `code_challenge_method` |
 | `6.0.15-passkey-table` | database | `createpasskeytable.php` |
 | `6.0.15-help-content-tables` | database | `exphelp_help_id`, `exphelp_feedback` |
@@ -422,6 +422,7 @@ Code-Version), die Sicherung, jede Stufe mit jedem Schritt (`id`, `stage`, `vers
 | `6.0.15-static-publish-tables` | database | `exp_static_run`, `exp_static_page` (statisches Veröffentlichen) |
 | `6.0.15-url-map` | database | `exp_url_redirect`, `exp_urlmap_batch`, `exp_urlmap_batch_item` (Import von URL-Zuordnungen: [der BC-Hinweis](../bc/6.0/url-zuordnungen-importieren.md)) |
 | `6.0.15-migration-deploy-tables` | database | `exp_migration_deploy`, `exp_migration_deploy_host` (Auslieferungen von Migrationen an Gegenstellen) |
+| `6.0.15-kernel-tables` | database | (neu) jede weitere Tabelle des Kernel-Schemas (`share/db_schema.dba`), die der Datenbank fehlt, leer angelegt: einer über viele Versionen aktualisierten Datenbank kann eine alte fehlen (`ezapprove_items`, wo das Genehmigungs-Workflow-Ereignis nie lief), und die Stufe scripts braucht sie |
 | `6.0.15-active-extension-tables` | database | (neu) die Tabellen jeder aktiven Erweiterung mit einer `share/db_schema.dba` (ezstarrating, ezgmaplocation, eztags ...), wo sie fehlen; keine Daten geladen |
 | `6.0.15-site-version` | database | `ezsite_data` `ezpublish-version` auf 6.0.15 gesetzt |
 | `6.0.15-missing-user-settings` | scripts | `createmissingusersettings.php` |
