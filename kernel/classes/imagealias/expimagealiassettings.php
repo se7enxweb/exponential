@@ -250,14 +250,15 @@ class expImageAliasSettings
     }
 
     /**
-     * The staging settings ([AliasStaging]) as one array; read by the staging (from WP4 on).
+     * The staging settings ([AliasStaging]) as one array, read by expImageAliasStager. An unknown Environment is pro
+     * (no staging), an unknown SyncFrom is none.
      *
      * @return array environment, sync_from, path_map, timeout, failures_before_pause, pause_seconds, alert_email,
-     *               alert_recipients
+     *               alert_recipients, max_file_size
      */
     public static function staging()
     {
-        $environments = array( 'alpha', 'dev', 'beta', 'stage', 'pro', 'post', 'arc' );
+        $environments = expImageAliasStager::ENVIRONMENTS;
         $environment = strtolower( trim( (string)self::value( 'AliasStaging', 'Environment', 'pro' ) ) );
         $syncFrom = strtolower( trim( (string)self::value( 'AliasStaging', 'SyncFrom', '' ) ) );
         return array(
@@ -269,6 +270,7 @@ class expImageAliasSettings
             'pause_seconds' => (int)self::number( 'AliasStaging', 'PauseSeconds', 300, 0, 86400 ),
             'alert_email' => self::enabled( 'AliasStaging', 'AlertEmail', true ),
             'alert_recipients' => array_values( array_filter( (array)self::value( 'AliasStaging', 'AlertRecipients', array() ), 'strlen' ) ),
+            'max_file_size' => (int)self::number( 'AliasStaging', 'MaxFileSize', 67108864, 1024, 2147483647 ),
         );
     }
 

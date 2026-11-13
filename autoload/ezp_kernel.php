@@ -1460,6 +1460,7 @@ return array(
       'expImageAliasLog'                                             => 'kernel/classes/imagealias/expimagealiaslog.php',
       'expImageAliasServer'                                          => 'kernel/classes/imagealias/expimagealiasserver.php',
       'expImageAliasSettings'                                        => 'kernel/classes/imagealias/expimagealiassettings.php',
+      'expImageAliasStager'                                          => 'kernel/classes/imagealias/expimagealiasstager.php',
       'expImageAliasUrl'                                             => 'kernel/classes/imagealias/expimagealiasurl.php',
       'expImageCopy'                                                 => 'kernel/classes/datatypes/ezimage/expimagecopy.php',
       'expImageFocalPoint'                                           => 'lib/ezimage/classes/expimagefocalpoint.php',
