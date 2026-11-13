@@ -1463,6 +1463,7 @@ return array(
       'expImageAliasUrl'                                             => 'kernel/classes/imagealias/expimagealiasurl.php',
       'expImageCopy'                                                 => 'kernel/classes/datatypes/ezimage/expimagecopy.php',
       'expImageFocalPoint'                                           => 'lib/ezimage/classes/expimagefocalpoint.php',
+      'expImageFormatConverter'                                      => 'kernel/classes/imagealias/expimageformatconverter.php',
       'expImagePlaceholder'                                          => 'kernel/classes/imagealias/expimageplaceholder.php',
       'expImageUploadValidator'                                      => 'kernel/classes/expimageuploadvalidator.php',
       'expInfo'                                                      => 'lib/ezutils/classes/expinfo.php',

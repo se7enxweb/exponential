@@ -20,6 +20,10 @@
  * 3. Answer: the file (a redirect to the storage URL, or the file itself; [AliasSettings] Delivery) with long-lived
  *    cache headers, or the placeholder (expImagePlaceholder) with no-store: 200 while a signed image is still being
  *    made, 404 for a refused or unknown one.
+ * 4. Formats: an alias whose block lists Formats[]=webp / avif is answered as that variant (expImageFormatConverter,
+ *    "<alias file>.webp" next to the alias) to a browser whose Accept header names the type, while [AliasSettings]
+ *    Negotiate is enabled; every answer for such an alias carries Vary: Accept. A storage path of a variant is made as
+ *    the alias is (index_image.php).
  *
  * The decisions return a response array (status, headers, body or file) and emit() sends it, so they can be tested
  * without a web server.
@@ -35,9 +39,26 @@ class expImageAliasServer
     /** @var bool the request came for a storage path (index_image.php): never answered with a redirect to itself */
     protected $storageRequest = false;
 
+    /** @var string the request's Accept header (format negotiation) */
+    protected $accept = '';
+
+    /** @var bool the answer depends on the Accept header (the alias has formats to negotiate): Vary: Accept */
+    protected $vary = false;
+
     public function __construct()
     {
         $this->start = microtime( true );
+        $this->accept = isset( $_SERVER['HTTP_ACCEPT'] ) ? (string)$_SERVER['HTTP_ACCEPT'] : '';
+    }
+
+    /**
+     * Sets the Accept header the answer is negotiated for (tests; a worker serving another request).
+     *
+     * @param string $accept
+     */
+    public function setAccept( $accept )
+    {
+        $this->accept = (string)$accept;
     }
 
     // ------------------------------------------------------------------------------------------------ entry points
@@ -79,6 +100,9 @@ class expImageAliasServer
         $path = self::normalizeRequestPath( $path );
         if ( !expImageAliasUrl::validStoragePath( $path ) )
             return $this->placeholder( null, null, 404, 'not-storage' );
+        $variant = expImageFormatConverter::splitVariant( $path );
+        if ( $variant !== null )
+            return $this->handleStorageVariant( $path, $variant[0], $variant[1] );
         if ( self::exists( $path ) )
             return $this->deliver( $path, null );
 
@@ -108,6 +132,47 @@ class expImageAliasServer
         return $this->placeholder( null, null, 404, 'not-made', null, $path );
     }
 
+    /**
+     * A variant asked for by its storage path (<alias file>.webp, .avif) that the web server did not find: made from
+     * its alias (made first when missing, as handleStoragePath() makes it) when an alias the file name can be lists
+     * the format in Formats[]; else the placeholder with 404.
+     *
+     * @param string $path the variant
+     * @param string $aliasPath its alias file
+     * @param string $format
+     * @return array the response
+     */
+    protected function handleStorageVariant( $path, $aliasPath, $format )
+    {
+        $aliasNames = array_keys( eZImageManager::factory()->aliasList() );
+        $parsed = expImageAliasUrl::parseStoragePath( $aliasPath, $aliasNames );
+        if ( $parsed === null || $parsed['versioned'] )
+            return $this->placeholder( null, null, 404, 'unknown', null, $path );
+        $aliasName = null;
+        foreach ( $parsed['candidates'] as $candidate )
+        {
+            if ( in_array( $format, expImageAliasSettings::aliasFormats( $candidate['alias'] ), true ) )
+            {
+                $aliasName = $candidate['alias'];
+                break;
+            }
+        }
+        $aliasMime = eZMimeType::findByURL( $aliasPath );
+        if ( $aliasName === null || !expImageFormatConverter::variantApplies( $aliasMime['name'], $format )
+             || !expImageFormatConverter::canWrite( $format ) )
+            return $this->placeholder( null, null, 404, 'no-format', $aliasName, $path );
+        if ( !self::exists( $aliasPath ) )
+        {
+            $alias = $this->handleStoragePath( $aliasPath );
+            if ( (int)$alias['status'] !== 200 || isset( $alias['headers']['X-Image-Placeholder'] ) || !self::exists( $aliasPath ) )
+                return $alias;
+        }
+        $made = $this->variant( $aliasPath, $format, $aliasName, true );
+        if ( $made !== null )
+            return $this->deliver( $made, expImageFormatConverter::mimeType( $format ) );
+        return $this->placeholder( null, null, 404, 'not-made', $aliasName, $path );
+    }
+
     // ------------------------------------------------------------------------------------------------ forms
 
     /**
@@ -130,11 +195,13 @@ class expImageAliasServer
 
         $target = expImageAliasUrl::targetPath( $payload );
         $mime = isset( $payload['m'] ) ? (string)$payload['m'] : null;
+        // The formats the browser may get instead (Formats[] of the alias, Negotiate): the answer varies by Accept
+        $format = $this->negotiateFor( (string)$payload['n'], $mime !== null ? $mime : eZMimeType::findByURL( $target )['name'] );
         // r: the file there was outdated when the page was made (other alias settings); a valid URL makes it again
         // unless it was made since
         $outdatedBefore = isset( $payload['r'] ) ? (int)$payload['r'] : 0;
         if ( self::exists( $target ) && ( !$check['valid'] || $outdatedBefore === 0 || self::modified( $target ) >= $outdatedBefore ) )
-            return $this->deliver( $target, $mime );
+            return $this->deliverAlias( $target, $mime, $format, (string)$payload['n'], $check['valid'] );
         if ( !$check['valid'] )
             return $this->placeholder( $width, $height, 404, $check['reason'], (string)$payload['n'], $target );
 
@@ -144,7 +211,7 @@ class expImageAliasServer
             return $this->placeholder( $width, $height, 404, 'gone', (string)$payload['n'], $target );
         $made = $this->generate( $attribute, (string)$payload['n'], $target );
         if ( self::exists( $target ) && ( $made === 'ok' || $outdatedBefore === 0 || self::modified( $target ) >= $outdatedBefore ) )
-            return $this->deliver( $target, $mime );
+            return $this->deliverAlias( $target, $mime, $format, (string)$payload['n'], true );
         // Still being made by another process: the browser asks again (swap script)
         if ( $made === 'timeout' )
             return $this->placeholder( $width, $height, 200, 'pending', (string)$payload['n'], $target );
@@ -203,9 +270,12 @@ class expImageAliasServer
              || ( $file !== null && basename( (string)$aliasList[$aliasName]['url'] ) !== $file ) )
             return $this->placeholder( null, null, 404, 'unsigned-missing' );
         $path = (string)$aliasList[$aliasName]['url'];
+        $mime = (string)$aliasList[$aliasName]['mime_type'];
+        // Unsigned: a variant that exists is served, none is made
+        $format = $this->negotiateFor( $aliasName, $mime );
         if ( !self::exists( $path ) )
             return $this->placeholder( $aliasList[$aliasName]['width'] ?? null, $aliasList[$aliasName]['height'] ?? null, 404, 'unsigned-missing' );
-        return $this->deliver( $path, (string)$aliasList[$aliasName]['mime_type'] );
+        return $this->deliverAlias( $path, $mime, $format, $aliasName, false );
     }
 
     /**
@@ -280,6 +350,155 @@ class expImageAliasServer
         return $ok ? 'ok' : ( $timedOut ? 'timeout' : 'failed' );
     }
 
+    // ------------------------------------------------------------------------------------------------ formats
+
+    /**
+     * The format this request gets the alias $aliasName in instead of its own, or null for its own. Sets $vary when
+     * the alias has formats to negotiate at all (then every answer for its URL carries Vary: Accept).
+     *
+     * @param string $aliasName
+     * @param string|null $aliasMime the MIME type of the alias file
+     * @return string|null webp|avif
+     */
+    protected function negotiateFor( $aliasName, $aliasMime )
+    {
+        $formats = array();
+        foreach ( expImageAliasSettings::negotiatedFormats( $aliasName ) as $format )
+        {
+            if ( expImageFormatConverter::variantApplies( (string)$aliasMime, $format ) )
+                $formats[] = $format;
+        }
+        if ( !$formats )
+            return null;
+        $this->vary = true;
+        return self::negotiate( $formats, $this->accept );
+    }
+
+    /**
+     * The format of $formats the Accept header asks for most: only a type named explicitly counts (image/webp,
+     * image/avif), never image/* or *\/*, which every browser sends, also those that cannot show the format. The
+     * highest quality value wins; between equal ones the order of $formats (the alias block's Formats[]).
+     *
+     * @param string[] $formats
+     * @param string $accept
+     * @return string|null
+     */
+    public static function negotiate( array $formats, $accept )
+    {
+        $weights = array();
+        foreach ( explode( ',', strtolower( (string)$accept ) ) as $range )
+        {
+            $parts = array_map( 'trim', explode( ';', $range ) );
+            $type = array_shift( $parts );
+            $q = 1.0;
+            foreach ( $parts as $parameter )
+            {
+                if ( strpos( $parameter, 'q=' ) === 0 && is_numeric( substr( $parameter, 2 ) ) )
+                    $q = (float)substr( $parameter, 2 );
+            }
+            if ( strpos( $type, 'image/' ) === 0 )
+                $weights[substr( $type, 6 )] = max( $q, $weights[substr( $type, 6 )] ?? 0.0 );
+        }
+        $best = null;
+        $bestWeight = 0.0;
+        foreach ( $formats as $format )
+        {
+            $weight = $weights[$format] ?? 0.0;
+            if ( $weight > $bestWeight )
+            {
+                $best = $format;
+                $bestWeight = $weight;
+            }
+        }
+        return $best;
+    }
+
+    /**
+     * The answer with an existing alias, or with its variant in $format: the variant when it is there and not older
+     * than the alias, else made now when $mayMake (a signed URL, a storage path) and some converter writes the format;
+     * the alias itself otherwise.
+     *
+     * @param string $aliasPath
+     * @param string|null $mime of the alias
+     * @param string|null $format
+     * @param string $aliasName
+     * @param bool $mayMake
+     * @return array
+     */
+    protected function deliverAlias( $aliasPath, $mime, $format, $aliasName, $mayMake )
+    {
+        if ( $format !== null )
+        {
+            $variant = $this->variant( $aliasPath, $format, $aliasName, $mayMake );
+            if ( $variant !== null )
+                return $this->deliver( $variant, expImageFormatConverter::mimeType( $format ) );
+        }
+        return $this->deliver( $aliasPath, $mime );
+    }
+
+    /**
+     * The variant $format of an existing alias file: there and current, or made within what is left of MaxWait
+     * (one lock per variant file, as for an alias).
+     *
+     * @param string $aliasPath
+     * @param string $format
+     * @param string $aliasName
+     * @param bool $mayMake
+     * @return string|null its storage path, null when it is not there
+     */
+    protected function variant( $aliasPath, $format, $aliasName, $mayMake )
+    {
+        $path = expImageFormatConverter::variantPath( $aliasPath, $format );
+        if ( self::exists( $path ) && self::modified( $path ) >= self::modified( $aliasPath ) )
+            return $path;
+        if ( !$mayMake || !expImageFormatConverter::canWrite( $format ) )
+            return null;
+        $left = max( 0.0, expImageAliasSettings::maxWait() - ( microtime( true ) - $this->start ) );
+        $before = expImageAliasLock::setWaitLimit( $left );
+        $started = microtime( true );
+        $lock = new expImageAliasLock( $path );
+        $local = null;
+        $result = 'failed';
+        try
+        {
+            if ( !$lock->acquire() )
+                $result = 'timeout';
+            elseif ( $lock->waited() && self::exists( $path ) && self::modified( $path ) >= self::modified( $aliasPath ) )
+                $result = 'ok';
+            else
+            {
+                // On a database cluster the alias is fetched to a local file first, and the variant stored after
+                $source = $aliasPath;
+                if ( !is_file( $aliasPath ) )
+                {
+                    $local = eZClusterFileHandler::instance( $aliasPath )->fetchUnique();
+                    $source = is_string( $local ) && $local !== '' ? $local : null;
+                }
+                if ( $source !== null && expImageFormatConverter::convert( $source, $path, $format,
+                                                                         expImageAliasSettings::formatQuality( $aliasName, $format ) ) )
+                {
+                    eZClusterFileHandler::instance()->fileStore( $path, 'image', true, expImageFormatConverter::mimeType( $format ) );
+                    $result = 'ok';
+                }
+            }
+        }
+        catch ( Throwable $e )
+        {
+            eZDebug::writeError( "Making the $format variant of $aliasPath failed: " . $e->getMessage(), __METHOD__ );
+        }
+        finally
+        {
+            $lock->release();
+            expImageAliasLock::setWaitLimit( $before );
+            if ( is_string( $local ) && $local !== '' )
+                eZClusterFileHandler::instance( $aliasPath )->fileDeleteLocal( $local );
+        }
+        expImageAliasLog::write( $result === 'ok' ? 'generate' : 'fail', array(
+            'result' => $result, 'ms' => (int)round( ( microtime( true ) - $started ) * 1000 ), 'alias' => $aliasName . '.' . $format,
+            'path' => $path, 'converter' => (string)expImageFormatConverter::lastConverter() ) );
+        return $result === 'ok' && self::exists( $path ) ? $path : null;
+    }
+
     // ------------------------------------------------------------------------------------------------ answers
 
     /**
@@ -299,12 +518,21 @@ class expImageAliasServer
         $cacheControl = 'public, max-age=' . expImageAliasSettings::cacheMaxAge();
         if ( !$this->storageRequest && $this->deliveryMethod( $path ) === 'redirect' )
         {
-            return array( 'status' => 302, 'body' => '', 'file' => null,
-                          'headers' => array( 'Location' => rtrim( (string)eZSys::wwwDir(), '/' ) . '/' . self::encodePath( $path ),
-                                              'Cache-Control' => $cacheControl, 'Content-Length' => '0' ) );
+            $headers = array( 'Location' => rtrim( (string)eZSys::wwwDir(), '/' ) . '/' . self::encodePath( $path ),
+                              'Cache-Control' => $cacheControl, 'Content-Length' => '0' );
+            // The redirect differs by Accept; response caches keep no redirects (Velocity's keeps 200 and 404 only)
+            if ( $this->vary )
+                $headers['Vary'] = 'Accept';
+            return array( 'status' => 302, 'body' => '', 'file' => null, 'headers' => $headers );
         }
+        // A negotiated file under one URL: private, since a response cache that keys by URL alone (Velocity's
+        // response cache does; it reads no Vary but Accept-Encoding) would hand one browser's format to the next
+        if ( $this->vary )
+            $cacheControl = 'private, max-age=' . expImageAliasSettings::cacheMaxAge();
         $headers = array( 'Content-Type' => $mime, 'Cache-Control' => $cacheControl . ', immutable',
                           'X-Content-Type-Options' => 'nosniff' );
+        if ( $this->vary )
+            $headers['Vary'] = 'Accept';
         if ( $mime === 'image/svg+xml' )
             $headers['Content-Security-Policy'] = "sandbox; default-src 'none'; style-src 'unsafe-inline'";
         if ( is_file( $path ) )
@@ -364,12 +592,16 @@ class expImageAliasServer
                                                        'path' => $path === null ? '-' : $path ) );
         if ( !expImageAliasSettings::placeholderEnabled() )
         {
-            return array( 'status' => (int)$status, 'body' => '', 'file' => null,
-                          'headers' => array( 'Cache-Control' => 'no-store, max-age=0', 'Content-Length' => '0', 'X-Image-Placeholder' => '1' ) );
+            $headers = array( 'Cache-Control' => 'no-store, max-age=0', 'Content-Length' => '0', 'X-Image-Placeholder' => '1' );
         }
-        $body = expImagePlaceholder::svg( $width, $height );
-        return array( 'status' => (int)$status, 'body' => $body, 'file' => null,
-                      'headers' => expImagePlaceholder::headers( $body, $status === 200 && expImageAliasSettings::swapScriptEnabled() ) );
+        else
+        {
+            $body = expImagePlaceholder::svg( $width, $height );
+            $headers = expImagePlaceholder::headers( $body, $status === 200 && expImageAliasSettings::swapScriptEnabled() );
+        }
+        if ( $this->vary )
+            $headers['Vary'] = 'Accept';
+        return array( 'status' => (int)$status, 'body' => isset( $body ) ? $body : '', 'file' => null, 'headers' => $headers );
     }
 
     /**

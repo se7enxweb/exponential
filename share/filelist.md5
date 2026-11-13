@@ -28,7 +28,7 @@ d0ea6e68da34ee6bc62ad24395d51bea  .htaccess_root_static
 4debf1d8dd6c381fcf99f60409da582b  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-dca2b3ca6247a85075da998d493dfc15  autoload/ezp_kernel.php
+6f6918719fe97384636afd5445af6e74  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 c7d5434eac3788fbeb0a44161d7cdda8  benchmarks/classes/ezbenchmarkclirunner.php
@@ -25182,9 +25182,10 @@ fc2445e067d0d990f5e78b1618e0fd7f  kernel/classes/i18n/expi18ncoveragemap.php
 c83e6d6bd9bc17926c942d41275fa1ed  kernel/classes/i18n/expi18ntranslationwaves.php
 fc37d23ce955592a9c1828b20b7650dd  kernel/classes/imagealias/expimagealiaslock.php
 3a0b5953d105db56ddc607d8a55b6867  kernel/classes/imagealias/expimagealiaslog.php
-3445641304c7eaa7663c7a3c9905ff3f  kernel/classes/imagealias/expimagealiasserver.php
-d43ec7c2e1d23745a7dd23777543c904  kernel/classes/imagealias/expimagealiassettings.php
+72264aaf32bb862ca2ee918002ed12a0  kernel/classes/imagealias/expimagealiasserver.php
+1684edb8a4d112d4d161939d1e5773d0  kernel/classes/imagealias/expimagealiassettings.php
 44b8178c4cad1b23155b5560c376b669  kernel/classes/imagealias/expimagealiasurl.php
+065ccec0e47b3c455dcf3d95d06c0a47  kernel/classes/imagealias/expimageformatconverter.php
 093a8eea5549294bd19dd23c664e830e  kernel/classes/imagealias/expimageplaceholder.php
 c4528e9636408f4649bcb8ca284134df  kernel/classes/ini/actions/expiniaction.php
 6f5d9622f50119bb1e67169589a3dbca  kernel/classes/ini/actions/expiniactionactions.php
@@ -27408,7 +27409,7 @@ d499e1cc92fe60e211f354626835e624  settings/file.ini
 d67b9d8070da89d40e422a18fd8d5142  settings/httpcache.ini
 7950720aa3badcf77219100657347b45  settings/i18n.ini
 23933bf2a339997bfa0b5571b5bcc123  settings/icon.ini
-49b4a8f93b689fc0cd006029f4b3d07b  settings/image.ini
+c17765bc45309dba9841697309b588ff  settings/image.ini
 4a4a4433b13da984646838763e782bad  settings/ini.ini
 84963915c9c37378e037c332dc8f57f3  settings/kernelservices.ini
 ba31587f56f91488816b2dcd90470594  settings/layout.ini

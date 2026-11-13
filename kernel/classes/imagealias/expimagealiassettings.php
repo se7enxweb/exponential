@@ -213,6 +213,43 @@ class expImageAliasSettings
     }
 
     /**
+     * The formats content/image may answer the alias $aliasName in, for the browsers that accept them: its Formats[]
+     * while Negotiate is enabled, else none. Never for the original.
+     *
+     * @param string $aliasName
+     * @return string[]
+     */
+    public static function negotiatedFormats( $aliasName )
+    {
+        if ( $aliasName === 'original' || !self::negotiateEnabled() )
+            return array();
+        return self::aliasFormats( $aliasName );
+    }
+
+    /**
+     * The quality (1..100) of the variant $format of the alias $aliasName: the alias block's Quality[]=<MIME>;<value>,
+     * else [MIMETypeSettings] Quality[]=<MIME>;<value>, else 80 for WebP and 60 for AVIF.
+     *
+     * @param string $aliasName
+     * @param string $format webp|avif
+     * @return int
+     */
+    public static function formatQuality( $aliasName, $format )
+    {
+        $mime = $format === 'avif' ? 'image/avif' : 'image/webp';
+        foreach ( array( array( (string)$aliasName, 'Quality' ), array( 'MIMETypeSettings', 'Quality' ) ) as $setting )
+        {
+            foreach ( (array)self::value( $setting[0], $setting[1], array() ) as $line )
+            {
+                $parts = explode( ';', (string)$line );
+                if ( count( $parts ) >= 2 && trim( $parts[0] ) === $mime && is_numeric( trim( $parts[1] ) ) )
+                    return max( 1, min( 100, (int)trim( $parts[1] ) ) );
+            }
+        }
+        return $format === 'avif' ? 60 : 80;
+    }
+
+    /**
      * The staging settings ([AliasStaging]) as one array; read by the staging (from WP4 on).
      *
      * @return array environment, sync_from, path_map, timeout, failures_before_pause, pause_seconds, alert_email,
