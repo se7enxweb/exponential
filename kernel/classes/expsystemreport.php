@@ -804,6 +804,21 @@ class expSystemReport
                 $facts['part'] = isset( $runs[0]['part'] ) ? (string)$runs[0]['part'] : '';
             }
         }
+        // The run record runcronjobs.php keeps itself (var/log/cronjob-lastrun.json, expCrontabSetup::recordRun()):
+        // every part it started, also when the crontab line sends its output nowhere or to an empty log (-q)
+        if ( class_exists( 'expCrontabSetup' ) )
+        {
+            foreach ( expCrontabSetup::lastRuns( $root ) as $part => $run )
+            {
+                $started = is_array( $run ) && isset( $run['started'] ) ? (int)$run['started'] : 0;
+                if ( $started > 0 && ( $facts['last'] === null || $started > $facts['last'] ) )
+                {
+                    $facts['last'] = $started;
+                    $facts['source'] = 'record';
+                    $facts['part'] = (string)$part;
+                }
+            }
+        }
         // Runs from a crontab write their output to a log of their own
         // (var/log, and the log directory of the site: site.ini [FileSettings] LogDir, LogVarDir)
         $siteLog = class_exists( 'eZSys' ) ? rtrim( (string)eZSys::logDirectory(), '/' ) : $var . '/log';
