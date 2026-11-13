@@ -414,15 +414,22 @@ class expVelocity
     const ENGINE_PACKAGE_DIR = 'vendor/se7enxweb/exponential-velocity';
     const ENGINE_PACKAGE_DIR_OLD = 'vendor/se7enxweb/qbix-webserver';
 
-    const ENTRY_SCRIPTS = array( '/index.php', '/index_rest.php', '/index_treemenu.php' );
+    const ENTRY_SCRIPTS = array( '/index.php', '/index_rest.php', '/index_treemenu.php', '/index_image.php' );
 
     /**
      * URLs that go to a script other than index.php, in order: the REST API
-     * and the admin tree menu, as .htaccess_root routes them.
+     * and the admin tree menu, as .htaccess_root routes them; and the image
+     * aliases made on demand (settings/image.ini [AliasSettings]): a storage
+     * image the server found no file for, and content/image, go to
+     * index_image.php, which the persistent worker runs without the page
+     * kernel (expImageAliasServer::runEntryScript()). A storage image that
+     * exists is a static file (STATIC_PATHS) and never reaches a script.
      */
     const FRONT_CONTROLLERS = array(
         '^/(api/|index_rest\\.php)' => 'index_rest.php',
         '^/([^/]+/)?content/treemenu' => 'index_treemenu.php',
+        '^/var/([^/]+/)?storage/images(-versioned)?/' => 'index_image.php',
+        '^/([^/]+/)?content/image/' => 'index_image.php',
     );
 
     /** @var array names added for this run, from --keep-global */

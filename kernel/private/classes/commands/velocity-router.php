@@ -24,7 +24,8 @@
  * The built-in server reads no .htaccess, so this does what .htaccess_root
  * does, in the same order: the paths expVelocity::STATIC_PATHS lists are
  * served as files, api/ goes to index_rest.php, the tree menu to
- * index_treemenu.php, and everything else to index.php. Nothing outside that
+ * index_treemenu.php, a storage image with no file and content/image to
+ * index_image.php, and everything else to index.php. Nothing outside that
  * list is ever handed out as a file -- the server's own default would serve
  * settings/site.ini, the SQLite database and every kernel source, and run any
  * .php file it finds.
@@ -94,19 +95,26 @@ class VelocityRouter
                  && !preg_match( '~(^|/)\.\.?(/|$)~', $velocityPath ) )
                 $velocityRelative = $velocityPath;
 
-            if ( $velocityRelative === false || !is_file( $velocityReal )
-                 || !preg_match( '~' . $velocityStatic . '~', $velocityRelative )
-                 || preg_match( '/\.(php\d?|phtml|phar)$/i', $velocityRelative )
-                 || ( is_string( $velocityNever ) && $velocityNever !== '' && preg_match( '~' . $velocityNever . '~', $velocityRelative ) ) )
+            // A storage image with no file (an image alias not made yet, settings/image.ini [AliasSettings]): to
+            // index_image.php, as .htaccess_root sends it, which makes it or answers the placeholder
+            $velocityImageMiss = $velocityReal === false && self::isStorageImagePath( $velocityPath );
+            if ( !$velocityImageMiss
+                 && ( $velocityRelative === false || !is_file( $velocityReal )
+                      || !preg_match( '~' . $velocityStatic . '~', $velocityRelative )
+                      || preg_match( '/\.(php\d?|phtml|phar)$/i', $velocityRelative )
+                      || ( is_string( $velocityNever ) && $velocityNever !== '' && preg_match( '~' . $velocityNever . '~', $velocityRelative ) ) ) )
             {
                 http_response_code( 404 );
                 return true;
             }
-            return false;
+            if ( !$velocityImageMiss )
+                return false;
         }
 
         if ( preg_match( '~^/(api/|index_rest\.php)~', $velocityPath ) )
             $velocityScript = 'index_rest.php';
+        elseif ( self::isStorageImagePath( $velocityPath ) || preg_match( '~^/([^/]+/)?content/image/~', $velocityPath ) )
+            $velocityScript = 'index_image.php';
         elseif ( preg_match( '~^/([^/]+/)?content/treemenu~', $velocityPath ) )
             $velocityScript = 'index_treemenu.php';
         else
@@ -120,5 +128,18 @@ class VelocityRouter
 
         chdir( $velocityRoot );
         return $velocityRoot . '/' . $velocityScript;
+    }
+
+    /**
+     * Whether a decoded request path names an image of the storage (var/<site>/storage/images or images-versioned),
+     * with no dot segment.
+     *
+     * @param string $path
+     * @return bool
+     */
+    public static function isStorageImagePath( $path )
+    {
+        return (bool)preg_match( '~^/var/([^/]+/)?storage/images(-versioned)?/~', (string)$path )
+            && !preg_match( '~(^|/)\.\.?(/|$)~', (string)$path );
     }
 }

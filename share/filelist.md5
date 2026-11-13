@@ -24923,7 +24923,7 @@ da168d06fb1251eb63272b29ccc5c3fa  kernel/classes/expsystemreport.php
 004f61c2ffe717623433b8cf4bcf206c  kernel/classes/expsystemreportmask.php
 163a7c4dd2536cd2b37fdf0296d3ebe7  kernel/classes/exptestlanguage.php
 720f1d6c03631c707711655967633b24  kernel/classes/expuserloginintegrity.php
-dbfecd4eef50c01d40d60cb79f865a9f  kernel/classes/expvelocity.php
+64df48f87628785605665f14e1e6a440  kernel/classes/expvelocity.php
 db86d785d5355ddc034913715fa846de  kernel/classes/expvelocityconfig.php
 22a42e255746f53ad48eee794363d589  kernel/classes/expvelocityconfiglayout.php
 f8c8ff7ea38147edf2ebb67020bcafd8  kernel/classes/expvelocitydeploy.php
@@ -26145,7 +26145,7 @@ d6366db4ab6f52e8c49adf188126a999  kernel/private/classes/commands/upgradesteps.p
 64b3a43d6994a399dd2c663798aeabbb  kernel/private/classes/commands/upgradeverify.php
 833da3d5c1006e8d72ad4c5ed57682b2  kernel/private/classes/commands/userlogincheck.php
 0829f44fc35b683e221856e5d2110c4f  kernel/private/classes/commands/userpasswordchangerequired.php
-79db0d6d319c0c3253329202b8d49173  kernel/private/classes/commands/velocity-router.php
+b4ebd4dc59a37ffb118c10be27b72005  kernel/private/classes/commands/velocity-router.php
 e1e0e881bb7f10985bec30c5f4c3c00b  kernel/private/classes/commands/velocity-warmup.php
 67ecd1bfd8c93f56ff6ee2200db3771a  kernel/private/classes/commands/velocity.php
 459ade5685b7da3718f61d04bfc8f83a  kernel/private/classes/commands/verify_aliases.php
