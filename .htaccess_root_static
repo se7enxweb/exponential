@@ -70,6 +70,13 @@ RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* index_image.php [L]
 RewriteRule ^([^/]+/)?content/image/ index_image.php [L]
 RewriteRule ^index_image\.php - [L]
 RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* - [L]
+# The WebP and AVIF variants of image aliases (settings/image.ini Formats[]) are
+# named after their alias, foo_large.jpg.avif: a server that does not know .avif
+# would send such a file as image/jpeg, after its inner .jpg.
+<IfModule mod_mime.c>
+    AddType image/webp .webp
+    AddType image/avif .avif
+</IfModule>
 # Of the originals only the images (SVG images are shown from there);
 # other uploads stay behind content/download and its permissions.
 RewriteRule ^var/([^/]+/)?storage/original/image/.+\.(png|jpe?g|gif|webp|svg)$ - [L]
