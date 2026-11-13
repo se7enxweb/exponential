@@ -31,12 +31,17 @@ Seit Exponential 6.0.15 ist es Teil der Standardinstallation und schützt eine n
 - Die Bibliothek request-shield 0.4.0 der JAC Systeme GmbH (CJW Network), MIT-Lizenz,
   <https://github.com/cjw-network/request-shield>. Sie bleibt ein Projekt des CJW Network.
 - **Seit 6.0.15 Teil der Standardinstallation**: Die `composer.json` im Wurzelverzeichnis verlangt die Erweiterung
-  `exp_request_shield` (`se7enxweb/exp_request_shield` 0.0.1.0, GPL-2.0-or-later). Sie enthält die Bibliothek (und
+  `exp_request_shield` (`se7enxweb/exp_request_shield` 0.0.1.1, GPL-2.0-or-later). Sie enthält die Bibliothek (und
   einen Build für PHP 7.4; PHP 7.4 bis 8.5) und führt sie über eine Hook-Zeile in `config.php` aus. Eine neue
   Installation erhält diese Zeile aus `config.php-RECOMMENDED`; eine aktualisierte Installation ergänzt sie selbst,
   denn `config.php` wird nie überschrieben ([Umstieg auf Request Shield](../../../bc/6.0/request-shield.md)).
 - Es **setzt durch, wie installiert**: Scanner, Fluten, verirrte Formularsendungen und System-URLs werden abgewiesen,
-  und die Anmeldung und die Formulare der Administration verlangen die Browserprüfung.
+  und die Anmeldung und die Formulare der Administration verlangen die Browserprüfung. Jede Administration, die über
+  einen Pfad erreicht wird (`/admin`, `/adminui`, `/editor` und die älteren Admin-Designs), behält ihre System-URLs,
+  Module und Formulare; eine Administration mit eigenem Host wird in der eigenen Regeldatei der Website eingerichtet
+  ([Konfiguration](https://github.com/se7enxweb/exp_request_shield/blob/main/doc/configuration.md)).
+- Die eigene JSON-API des Shields bleibt aus, und seine Statistikseiten sind für alle außer dem Server geschlossen,
+  solange die Website ihnen keine Anmeldung gibt.
 - Es läuft vor dem frühen Ausstieg des HTTP-Caches, sodass auch zwischengespeicherte Seiten geschützt sind, und PHP-FPM
   und Exponential Velocity geben dieselben Antworten.
 - Es kann ein richtiges Passwort nicht von einem falschen unterscheiden: Kontosperre und zweistufige Anmeldung bleiben

@@ -86,6 +86,15 @@ keine eigene hat. Wählen Sie dort die Datei für die Administration:
 | `exponential-admin-uri.rules` | die Administration ist der Siteaccess `/admin` auf demselben Host |
 | `exponential-admin-host.rules` | die Administration hat einen eigenen Host |
 
+Die Standardregeln behandeln auch jede andere Administration, die über einen Pfad erreicht wird, wie `/admin`:
+`/adminui`, `/editor`, `/admin2` bis `/admin4l` und `/admintest_*` behalten ihre System-URLs, Module und Formulare
+(seit 0.0.1.1). Für eine Administration mit eigenem Host bindet die Hauptdatei der Website zuerst `exponential.rules`
+ein, danach ihre eigenen Einstellungen (sie gewinnen) und zuletzt die Kopie von `exponential-admin-host.rules`, mit
+den Admin-Hostnamen der Website in ihrer `site`-Zeile und ohne ihr eigenes `include exponential.rules`; geben Sie
+`store-dir` und `log` dort als absolute Pfade an
+([Konfiguration](https://github.com/se7enxweb/exp_request_shield/blob/main/doc/configuration.md)). Die eigene
+JSON-API des Shields bleibt standardmäßig aus.
+
 1. Die Regeln **setzen wie installiert durch** (`enforce`). Wechseln Sie bei einer Website mit ungewöhnlichen
    Adressen (Seiten-Aliase, die mit einem Modulnamen beginnen, Formulare eigener Erweiterungen) zu `set mode monitor`,
    während Sie das Log lesen, und dann zurück zu `enforce`.

@@ -30,12 +30,17 @@ Exponential 6.0.15 it is part of the default installation and protects a new sit
 - The library request-shield 0.4.0 by JAC Systeme GmbH (CJW Network), MIT license,
   <https://github.com/cjw-network/request-shield>. It stays a CJW Network project.
 - **Part of the default installation since 6.0.15**: the root `composer.json` requires the extension
-  `exp_request_shield` (`se7enxweb/exp_request_shield` 0.0.1.0, GPL-2.0-or-later), which bundles the library (and a
+  `exp_request_shield` (`se7enxweb/exp_request_shield` 0.0.1.1, GPL-2.0-or-later), which bundles the library (and a
   PHP 7.4 build of it; PHP 7.4 to 8.5) and runs it from one hook line in `config.php`. A new installation gets that
   line from `config.php-RECOMMENDED`; an upgraded installation adds it itself, because `config.php` is never
   overwritten ([Upgrading to the request shield](../../../bc/6.0/request-shield.md)).
 - It **enforces as installed**: scanners, floods, stray form posts and system URLs are refused, and the sign-in and
-  the administration's forms ask for the browser check.
+  the administration's forms ask for the browser check. Every administration reached by a path (`/admin`,
+  `/adminui`, `/editor` and the older admin designs) keeps its system URLs, modules and forms; an administration on a
+  host of its own is set up in the site's own rule file
+  ([configuration](https://github.com/se7enxweb/exp_request_shield/blob/main/doc/configuration.md)).
+- The shield's own JSON API stays off, and its statistics pages are closed to everyone but the server unless the site
+  gives them a login.
 - It runs before the HTTP cache's early exit, so cached pages are protected too, and PHP-FPM and Exponential Velocity
   give identical answers.
 - It cannot tell a right password from a wrong one: account lockout and two-step sign-in stay Exponential's job.

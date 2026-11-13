@@ -18,7 +18,7 @@ An answer to your question, or a link to the page that has it.
 **What is the request shield?** A filter in front of the site that decides every request before Exponential starts:
 it lets real visitors through and turns away scanners, floods, stray form posts and requests for internal files.
 It is the library [request-shield](https://github.com/cjw-network/request-shield) 0.4.0 by JAC Systeme GmbH (CJW
-Network), packaged for Exponential as the extension `exp_request_shield` 0.0.1.0.
+Network), packaged for Exponential as the extension `exp_request_shield` 0.0.1.1.
 
 **Does it replace a network firewall or a CDN?** No. It works at the level of web requests, inside PHP, and knows
 Exponential's addresses. A network firewall, a CDN or the web server's own limits still have their place in front of

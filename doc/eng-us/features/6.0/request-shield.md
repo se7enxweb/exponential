@@ -19,7 +19,7 @@ Related: [Setting up the request shield](../../guides/request-shield.md) (guide)
   (CJW Network), MIT License. The extension bundles **request-shield 0.4.0** as single PHP files, plus a build of the
   same files for PHP 7.4. Nothing else to install, no Composer autoloader needed.
 - Package: [`se7enxweb/exp_request_shield`](https://packagist.org/packages/se7enxweb/exp_request_shield) on
-  Packagist, version **0.0.1.0**. Supports **PHP 7.4 to 8.5**. The extension is licensed **GPL-2.0-or-later**; the
+  Packagist, version **0.0.1.1**. Supports **PHP 7.4 to 8.5**. The extension is licensed **GPL-2.0-or-later**; the
   bundled library and the three Exponential rule files copied from it stay under their **MIT** License.
 - **One line in `config.php`** switches it on, above the HTTP cache's early exit, so cached pages are protected too.
   It runs under Apache or nginx with **PHP-FPM** and under **Exponential Velocity**, with identical answers.

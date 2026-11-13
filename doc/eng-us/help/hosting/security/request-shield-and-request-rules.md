@@ -85,6 +85,14 @@ own. Choose the administration's file there:
 | `exponential-admin-uri.rules` | the administration is the siteaccess `/admin` on the same host |
 | `exponential-admin-host.rules` | the administration has a host of its own |
 
+The default rules also treat every other administration reached by a path like `/admin`: `/adminui`, `/editor`,
+`/admin2` to `/admin4l` and `/admintest_*` keep their system URLs, modules and forms (since 0.0.1.1). For an
+administration on a host of its own, the site's main file includes `exponential.rules` first, its own settings after
+it (they win), and the copy of `exponential-admin-host.rules` last, with the site's admin host names in its `site`
+line and without its own `include exponential.rules`; give `store-dir` and `log` as absolute paths there
+([configuration](https://github.com/se7enxweb/exp_request_shield/blob/main/doc/configuration.md)). The shield's own
+JSON API stays off by default.
+
 1. The rules **enforce as installed**. For a site with unusual addresses (page aliases that start with a module name,
    forms of its own extensions), switch to `set mode monitor` while you read the log, then back to `enforce`.
 2. Adapt the site-specific lines: URI siteaccesses (`EXP-MODULES`), extension modules that take forms (`EXP-POST`),

@@ -18,7 +18,7 @@ Eine Antwort auf Ihre Frage oder einen Link auf die Seite, die sie hat.
 **Was ist der Request Shield?** Ein Filter vor der Website, der jede Anfrage entscheidet, bevor Exponential startet:
 Er lässt echte Besucher durch und weist Scanner, Anfragefluten, verirrte Formularsendungen und Anfragen nach internen
 Dateien ab. Es ist die Bibliothek [request-shield](https://github.com/cjw-network/request-shield) 0.4.0 von JAC
-Systeme GmbH (CJW Network), für Exponential verpackt als Extension `exp_request_shield` 0.0.1.0.
+Systeme GmbH (CJW Network), für Exponential verpackt als Extension `exp_request_shield` 0.0.1.1.
 
 **Ersetzt er eine Netzwerk-Firewall oder ein CDN?** Nein. Er arbeitet auf der Ebene der Web-Anfragen, in PHP, und
 kennt die Adressen von Exponential. Eine Netzwerk-Firewall, ein CDN oder die eigenen Limits des Webservers haben vor

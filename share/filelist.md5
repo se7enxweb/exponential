@@ -6978,7 +6978,7 @@ d9177e42ef957029c160b94a0b7e6363  doc/eng-us/features/6.0/exp-ini-command.md
 ac55ec9c4caa5425b7c20230440f9026  doc/eng-us/features/6.0/extension-list-and-downloads.md
 b35cf8140a2f26d5e3488661f148506d  doc/eng-us/features/6.0/extension-loading-order.md
 9ba1fccc9070cac52fac658d50975120  doc/eng-us/features/6.0/extension-module-override.md
-d9d5aec695eeea84abdb77d6a0e44ad8  doc/eng-us/features/6.0/extensions-of-a-new-installation.md
+8ecff96a8041048030d4d5e6c37365e7  doc/eng-us/features/6.0/extensions-of-a-new-installation.md
 cb7b4a785e49764ddfc2a91a2295decb  doc/eng-us/features/6.0/extensions/AdminAid.md
 111f2126e3a9582446a09dfcb7781d6e  doc/eng-us/features/6.0/extensions/README.md
 5409537e822b55c82dc6953a412d57d6  doc/eng-us/features/6.0/extensions/bccie.md
@@ -7094,7 +7094,7 @@ f7a865c242f17225cb98ff1463606013  doc/eng-us/features/6.0/rebranding-to-exponent
 c33ebb6920a1cdd3401d68c3439e4253  doc/eng-us/features/6.0/repair-from-the-browser.md
 7db052d574332eb87658f03b864558fc  doc/eng-us/features/6.0/request-logs.md
 cb7cc5398c087e0e65890983dd173f8a  doc/eng-us/features/6.0/request-rules.md
-8f3a96555c4a4865b65240d446a42a0b  doc/eng-us/features/6.0/request-shield.md
+ce44aba4af74e91341d500cc99f433e5  doc/eng-us/features/6.0/request-shield.md
 3d9244162b4071c4b61c40bdaf12e21b  doc/eng-us/features/6.0/reset-user-password.md
 b9891e0910d2e3feb530a7bd60a621bf  doc/eng-us/features/6.0/reverse-relation-check.md
 55868c8f138af3ffeff0d3804c765698  doc/eng-us/features/6.0/review-hold.md
@@ -9854,7 +9854,7 @@ af5e50cd5a97cd23c599c8bf4a655402  doc/eng-us/help/government/security/nist-csf-f
 21b252ee7cf40b668f709594dfb89596  doc/eng-us/help/government/security/penetration-tests.md
 6454fd69ec392317e769082d3b4dc2ad  doc/eng-us/help/government/security/proxies-and-trusted-headers.md
 aa4fa3007e1f53479d2f1943b2283f79  doc/eng-us/help/government/security/request-logs-and-the-security-log.md
-11467ede58232dec98bb5def7ba642ac  doc/eng-us/help/government/security/request-shield.md
+d9cc328443a1e3425b0223bcb2fb7b51  doc/eng-us/help/government/security/request-shield.md
 847415a9af519728621f284a01585805  doc/eng-us/help/government/security/roles-and-least-privilege.md
 93563ce8643ff196731fb7838609159e  doc/eng-us/help/government/security/secrets-in-settings-override.md
 1bede042c2a9f5b05a14ef792e9a0ec5  doc/eng-us/help/government/security/security-headers.md
@@ -10280,7 +10280,7 @@ b7291490aaaac4f2733f63a40a57b0ac  doc/eng-us/help/hosting/security/hardening-for
 5494dc5fc6e294d322e97946c9d0616a  doc/eng-us/help/hosting/security/log-and-data-retention.md
 4717a1f7dee918f111c379ed9b1680bc  doc/eng-us/help/hosting/security/multi-tenant-isolation.md
 bdd0d262ac685456bb77b4de83c386ec  doc/eng-us/help/hosting/security/per-customer-users-and-pools.md
-15fadcc781bb58dd46fbb5423753fdbe  doc/eng-us/help/hosting/security/request-shield-and-request-rules.md
+b6535c7512cd5669f27f37a88f78a273  doc/eng-us/help/hosting/security/request-shield-and-request-rules.md
 d2fd608f44232cf666df54210acc93a0  doc/eng-us/help/hosting/security/restricting-the-administration.md
 cff36177e3eda543d3d896dc104b4eb9  doc/eng-us/help/hosting/security/security-updates-and-disclosure.md
 e51fa5ca7320486e6b10cc1837333e9a  doc/eng-us/help/hosting/security/tls-and-https.md
@@ -11803,7 +11803,7 @@ de39c4f274d37931f273bf3f60b1fc33  doc/eng-us/help/project/roadmap.md
 ee8324e3a7d49e9cbaee6af76f0bd1d9  doc/eng-us/help/reading-help-in-other-languages.md
 d356559ff2554ed49492dc64d9514775  doc/eng-us/help/recent-content.md
 75952269dc54d3a47eb2109d2a4f354d  doc/eng-us/help/request-shield/README.md
-47e8970dcd101152987fba05ee1f5b2d  doc/eng-us/help/request-shield/faq.md
+9cf2b3b4c924ee738b7288d7bba4f45b  doc/eng-us/help/request-shield/faq.md
 a38d47d95083047dc5841228a49dd880  doc/eng-us/help/request-shield/monitor-and-enforce.md
 a9aa303ddfe5e211c9d2c6c766e9baef  doc/eng-us/help/request-shield/the-dashboard-and-its-chart.md
 61a80d27839b7ef05cbbc9f27499e563  doc/eng-us/help/request-shield/the-log.md
@@ -19643,7 +19643,7 @@ ee648c450770470300ea2cf6d21f52d8  doc/ger-de/hilfe/hosting/sicherheit/content-se
 57ae8730f8b6e1b124b7b800cf7b470d  doc/ger-de/hilfe/hosting/sicherheit/erste-anmeldung-und-standardpasswoerter.md
 7f898bb9a6c3a49c59ed024c26d11d84  doc/ger-de/hilfe/hosting/sicherheit/haertung-fuer-hoster.md
 955b99cdc249245a0af835f263c45ebd  doc/ger-de/hilfe/hosting/sicherheit/pruefprotokoll.md
-b5ac73db6f176d09cf8c4b8d10b34ac2  doc/ger-de/hilfe/hosting/sicherheit/request-shield-und-request-regeln.md
+eb4f999d3dc389957635ee0cca04e6b8  doc/ger-de/hilfe/hosting/sicherheit/request-shield-und-request-regeln.md
 d021a4f15c9c9a12cf7513455e8bb896  doc/ger-de/hilfe/hosting/sicherheit/sicherheitsupdates-und-offenlegung.md
 773ccaaa6454d632c683fd475ede31dd  doc/ger-de/hilfe/hosting/sicherheit/tls-und-https.md
 89600dda8a132d475ce027d3fb9ac5a5  doc/ger-de/hilfe/hosting/sicherheit/trennung-von-mandanten.md
@@ -20734,7 +20734,7 @@ ea1b36ddb2fe3898722bb07789efad8e  doc/ger-de/hilfe/request-shield/das-log.md
 1bd88178386fed07b539f10230ad3573  doc/ger-de/hilfe/request-shield/die-regeln.md
 60c8e8389e469ef8dd89d0ecc8c1a824  doc/ger-de/hilfe/request-shield/die-schalter.md
 59adad706e460abe5851e5595ee89fda  doc/ger-de/hilfe/request-shield/die-uebersicht-und-ihr-diagramm.md
-27b73fb772a03d5b0a4b22e08e5e7289  doc/ger-de/hilfe/request-shield/faq.md
+c0641c8f04ac18dda00c490f6bc94858  doc/ger-de/hilfe/request-shield/faq.md
 1a0486a5cef23e9d8bbfa62f9ee12c58  doc/ger-de/hilfe/request-shield/fehlersuche.md
 07e834f09d45eb0efb407c777cf4e3ba  doc/ger-de/hilfe/request-shield/unter-velocity.md
 364a5760522de955d4481e682e446fe7  doc/ger-de/hilfe/rundgang-durch-die-administration.md
@@ -22624,7 +22624,7 @@ f50bc7456ea9ed860a514950d3bb3e98  doc/ger-de/hilfe/verwaltung/sicherheit/patch-r
 af3e05c04090fbad883ca3dc48c70f79  doc/ger-de/hilfe/verwaltung/sicherheit/penetrationstests.md
 469bc6991018d2e9a3c60440de6516ae  doc/ger-de/hilfe/verwaltung/sicherheit/proxys-und-vertrauenswuerdige-header.md
 840d50f63762750727a79815172f9c80  doc/ger-de/hilfe/verwaltung/sicherheit/reaktion-auf-sicherheitsvorfaelle.md
-b1d4efb0243651c65dd9815bda28f562  doc/ger-de/hilfe/verwaltung/sicherheit/request-shield.md
+f5292baf5d3d8e72aaadf26749913b06  doc/ger-de/hilfe/verwaltung/sicherheit/request-shield.md
 d83b99ec8eab1541c5bb95c7b5b8c93b  doc/ger-de/hilfe/verwaltung/sicherheit/rollen-und-minimale-rechte.md
 ef322b542f2b09d588d89327f6c852bc  doc/ger-de/hilfe/verwaltung/sicherheit/routine-zur-protokollpruefung.md
 5d68d57b0a57515e277e538b2319e166  doc/ger-de/hilfe/verwaltung/sicherheit/security-txt-hinzufuegen.md

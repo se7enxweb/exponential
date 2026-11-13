@@ -108,7 +108,7 @@ is set.
 
 ## exp_request_shield
 
-`exp_request_shield` (`se7enxweb/exp_request_shield` 0.0.1.0) bundles request-shield 0.4.0, the request filter of
+`exp_request_shield` (`se7enxweb/exp_request_shield` 0.0.1.1) bundles request-shield 0.4.0, the request filter of
 JAC Systeme GmbH / CJW Network, and runs it before the kernel. It works in two halves. The filter is started by a hook
 line in `config.php`, which `config.php-RECOMMENDED` carries, so every new installation is filtered in enforce mode
 from its first request, whatever the site package, and whether or not the extension is activated. Activating the
