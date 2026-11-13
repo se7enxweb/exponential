@@ -115,6 +115,24 @@ class expLogViewerConfig
                 $real = dirname( $index );
         }
         $this->root = $real !== false ? rtrim( str_replace( '\\', '/', $real ), '/' ) : $root;
+        // The installation's own var directory may be a link to another volume (var -> ../../arc/state/var): its
+        // logs are the installation's, so that one directory counts as inside too -- no other link out.
+        $var = $this->root . '/var';
+        $varReal = is_link( $var ) ? realpath( $var ) : false;
+        $this->varRoot = $varReal !== false && is_dir( $varReal ) ? rtrim( str_replace( '\\', '/', $varReal ), '/' ) : null;
+    }
+
+    /** @var string|null where the installation's var directory really is, when var is a link; else null */
+    private $varRoot = null;
+
+    /**
+     * Where the installation's var directory really is when var is a symbolic link (var on another volume), else null.
+     *
+     * @return string|null
+     */
+    public function varRoot()
+    {
+        return $this->varRoot;
     }
 
     /**

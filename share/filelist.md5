@@ -25213,7 +25213,7 @@ b48e249e8d3523a4870af2143d0aef9b  kernel/classes/ini/expsettingstarget.php
 ada548b795f4f62e8c7ffab369ddbdeb  kernel/classes/logviewer/explogactions.php
 7f226861662552bd151923a95c4a2b6b  kernel/classes/logviewer/explogbundle.php
 ab29314bbb7f90c6462ee627f2086556  kernel/classes/logviewer/explogdigest.php
-b92aa41da1b9228e3e4f8a40f72fdddf  kernel/classes/logviewer/explogfilelocator.php
+42c3fb0083053e57b635d692a5c01e7b  kernel/classes/logviewer/explogfilelocator.php
 af0f193ff8cf493066a21fced655482a  kernel/classes/logviewer/explogfilestats.php
 9735b11465cf93f8692e7c311d1fd8b0  kernel/classes/logviewer/exploghealth.php
 4297bfcf2b8df0dbab32e357756c2cda  kernel/classes/logviewer/explogmanager.php
@@ -25227,7 +25227,7 @@ d31774b82ddca071a196136a4d1e4297  kernel/classes/logviewer/explogredactor.php
 17048a70cf25e7d15f2480371d9a0ea2  kernel/classes/logviewer/explogsearch.php
 f12b0b16b68d340d908d4933a40af99f  kernel/classes/logviewer/explogtail.php
 02a779e5ee2894dab9a48c54ea7f7b35  kernel/classes/logviewer/explogviewer.php
-e71c6b2ea47317b4020f566e6fc42284  kernel/classes/logviewer/explogviewerconfig.php
+8c15a25a6ecf294a399249ce6a503fac  kernel/classes/logviewer/explogviewerconfig.php
 2a4cb41b731df7e870d97326cf9c224f  kernel/classes/mail/expmailtemplatebody.php
 96419fd40b3f99a21ca3bf8465b2707e  kernel/classes/mailpreferences/expconsentcontext.php
 c34859584019ed0d0e0a9e6784eb4a36  kernel/classes/mailpreferences/expconsentlog.php
@@ -30167,7 +30167,7 @@ ba6f88f58be0c0058da9dce104973a8a  tests/tests/kernel/logviewer/expLogParserTest.
 3f261b359d9607a6b7ec55002dcc2d7d  tests/tests/kernel/logviewer/expLogRequestLogsTest.php
 62d7449c54030900a07f17d7c60ca400  tests/tests/kernel/logviewer/expLogSearchTest.php
 d6989b4f6b8678951725159ba39e8f7f  tests/tests/kernel/logviewer/expLogTailTest.php
-8b1d41ae66d65000cb4d1a0ea850103d  tests/tests/kernel/logviewer/expLogViewerSymlinkedRootTest.php
+f3542a79ba89859e45d5ac9a6251e0d8  tests/tests/kernel/logviewer/expLogViewerSymlinkedRootTest.php
 e9d17335220078c6c4637e2f0a0c2bd8  tests/tests/kernel/logviewer/expLogViewerTest.php
 6c3f0969f97c3512ec77552b2293814d  tests/tests/kernel/logviewer/expLogViewerTestFixtures.php
 e362f9c65d9451ee027b70c915603b9a  tests/tests/kernel/logviewer/expLogWebServerFormatsTest.php

@@ -102,9 +102,12 @@ class expLogFileLocator
                 if ( $real === false || !is_dir( $real ) )
                     continue;
                 $real = str_replace( '\\', '/', $real );
-                if ( !self::inside( $real, $root ) )
-                    continue;
-                $out[$real] = ltrim( substr( $real, strlen( $root ) ), '/' );
+                $varRoot = $this->config->varRoot();
+                if ( self::inside( $real, $root ) )
+                    $out[$real] = ltrim( substr( $real, strlen( $root ) ), '/' );
+                // the installation's var linked to another volume: its directories keep their var/... ids
+                else if ( $varRoot !== null && self::inside( $real, $varRoot ) )
+                    $out[$real] = rtrim( 'var/' . ltrim( substr( $real, strlen( $varRoot ) ), '/' ), '/' );
             }
         }
         ksort( $out );

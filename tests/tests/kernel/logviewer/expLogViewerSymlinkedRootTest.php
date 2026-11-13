@@ -58,6 +58,33 @@ class expLogViewerSymlinkedRootTest extends ezpTestCase
         $this->assertSame( array( realpath( $this->base . '/real/var/log' ) => 'var/log' ), $locator->directories() );
     }
 
+    /** LV-SYM-04: the installation's own var linked to another volume: its logs are found under their var/ ids */
+    public function testAVarLinkedToAnotherVolumeIsTheInstallations()
+    {
+        @mkdir( $this->base . '/volume/var/log', 0700, true );
+        file_put_contents( $this->base . '/volume/var/log/error.log', "[ Nov 12 2026 12:00:00 ] [127.0.0.1] elsewhere\n" );
+        @mkdir( $this->base . '/site', 0700, true );
+        file_put_contents( $this->base . '/site/index.php', "<?php\n" );
+        @symlink( '../volume/var', $this->base . '/site/var' );
+        @symlink( '../../elsewhere/log', $this->base . '/volume/var/other' );
+        $config = expLogViewerConfig::fromArray( array( 'LogViewerSettings' => array( 'Directories' => array( 'var/log', 'var/other' ) ) ), $this->base . '/site' );
+        $this->assertSame( realpath( $this->base . '/volume/var' ), $config->varRoot() );
+        $locator = new expLogFileLocator( $config, 'var/log' );
+        $found = $locator->directories();
+        $file = $locator->resolve( 'var/log/error.log' );
+        $logDir = realpath( $this->base . '/volume/var/log' );
+        @unlink( $this->base . '/volume/var/other' );
+        @unlink( $this->base . '/site/var' );
+        @unlink( $this->base . '/site/index.php' );
+        @rmdir( $this->base . '/site' );
+        @unlink( $this->base . '/volume/var/log/error.log' );
+        foreach ( array( '/volume/var/log', '/volume/var', '/volume' ) as $dir )
+            @rmdir( $this->base . $dir );
+        $this->assertSame( array( $logDir => 'var/log' ), $found, 'var/log found; var/other leads out of var and stays out' );
+        $this->assertIsArray( $file, 'the log resolves by its var/ id' );
+        $this->assertSame( $logDir . '/error.log', $file['path'] );
+    }
+
     /** LV-SYM-03: a log directory that links out of the installation is still left out */
     public function testALinkOutOfTheInstallationIsStillNotFollowed()
     {
