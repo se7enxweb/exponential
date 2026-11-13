@@ -182,15 +182,44 @@
     "kernel/classes/datatypes/ezimage/ezimagealiashandler.php": [
       "tests/tests/kernel/datatypes/ezimage/expImageSvgTest.php",
       "tests/tests/kernel/datatypes/ezimage/eZImageAliasHandlerGuardsTest.php",
-      "tests/tests/lib/ezimage/expImageFocalPointTest.php"
+      "tests/tests/lib/ezimage/expImageFocalPointTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasComputedTest.php"
     ],
     "lib/ezimage/classes/ezimagemanager.php": [
       "tests/tests/kernel/datatypes/ezimage/expImageSvgTest.php",
-      "tests/tests/lib/ezimage/expImageFocalPointTest.php"
+      "tests/tests/lib/ezimage/expImageFocalPointTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasComputedTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasServerTest.php"
+    ],
+    "lib/ezimage/classes/ezimagegdhandler.php": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasComputedTest.php"
+    ],
+    "lib/ezimage/classes/ezimageshellhandler.php": [
+      "tests/tests/lib/ezimage/eZImageShellHandlerTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasComputedTest.php"
+    ],
+    "kernel/classes/imagealias/*": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasUrlTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasComputedTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasServerTest.php"
+    ],
+    "index_image.php": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasServerTest.php"
+    ],
+    "kernel/content/image.php": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasServerTest.php"
+    ],
+    "kernel/private/classes/views/content/image.php": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasServerTest.php"
+    ],
+    "design/standard/javascript/exp_image_swap.js": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasServerTest.php"
     ],
     "settings/image.ini": [
       "tests/tests/lib/ezimage/expImageFocalPointTest.php",
-      "tests/tests/lib/ezimage/eZImageShellHandlerTest.php"
+      "tests/tests/lib/ezimage/eZImageShellHandlerTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasComputedTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasServerTest.php"
     ],
     "lib/ezimage/classes/expimagefocalpoint.php": [
       "tests/tests/lib/ezimage/expImageFocalPointTest.php"
