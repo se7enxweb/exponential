@@ -464,6 +464,15 @@ class eZImageAliasHandler
         }
         if ( array_key_exists( $aliasName, $aliasList ) )
         {
+            // On-demand mode, an alias with formats to negotiate (Formats[]=webp): its signed content/image URL, which
+            // answers each browser in the format it accepts
+            if ( class_exists( 'expImageAliasSettings' ) && expImageAliasSettings::isOnDemand()
+                 && expImageAliasSettings::negotiatedFormats( $aliasName ) )
+            {
+                $negotiatedAlias = $this->negotiatedImageAlias( $aliasName, $aliasList );
+                if ( $negotiatedAlias !== null )
+                    return $negotiatedAlias;
+            }
             return $aliasList[$aliasName];
         }
         // Without an original (XML without an <ezimage> element), or with an
@@ -563,6 +572,60 @@ class eZImageAliasHandler
             return null;
         $custom['on_demand_alias'][$aliasName] = $entry;
         return $entry;
+    }
+
+    /**
+     * An alias that exists, with formats to negotiate (on-demand mode, see expImageAliasUrl::negotiatedEntry()): the
+     * entry with its signed content/image URL. Kept for the request; never written to the XML. Null when the entry
+     * stays as it is (an alias of another format already, an SVG or GIF, an unsigned URL form).
+     *
+     * @param string $aliasName
+     * @param array $aliasList
+     * @return array|null
+     */
+    protected function negotiatedImageAlias( $aliasName, array $aliasList )
+    {
+        $custom =& $this->ContentObjectAttributeData['DataTypeCustom'];
+        if ( isset( $custom['negotiated_alias'] ) && array_key_exists( $aliasName, $custom['negotiated_alias'] ) )
+            return $custom['negotiated_alias'][$aliasName];
+        $entry = null;
+        if ( isset( $aliasList['original'] ) && is_array( $aliasList[$aliasName] ) )
+        {
+            $applies = false;
+            foreach ( expImageAliasSettings::negotiatedFormats( $aliasName ) as $format )
+            {
+                if ( expImageFormatConverter::variantApplies( (string)( $aliasList[$aliasName]['mime_type'] ?? '' ), $format ) )
+                    $applies = true;
+            }
+            if ( $applies )
+            {
+                $attribute = array( 'id' => $this->ContentObjectAttributeData['id'],
+                                    'version' => $this->ContentObjectAttributeData['version'],
+                                    'language_code' => $this->ContentObjectAttributeData['language_code'] );
+                $entry = expImageAliasUrl::negotiatedEntry( $aliasList[$aliasName] + array( 'name' => $aliasName ), $aliasList['original'], $attribute );
+            }
+        }
+        $custom['negotiated_alias'][$aliasName] = $entry;
+        return $entry;
+    }
+
+    /**
+     * Removes the format variants (WebP, AVIF: "<alias file>.webp", see expImageFormatConverter) of an alias file.
+     * They are named neither in the XML nor in ezimagefile and go with their alias: when it is removed, purged or
+     * moved; a variant older than its alias is never served, so they are made again from the new file.
+     *
+     * @param string $aliasFile
+     */
+    public static function removeAliasVariants( $aliasFile )
+    {
+        if ( !class_exists( 'expImageFormatConverter' ) || !self::isStorageFilePath( $aliasFile ) )
+            return;
+        foreach ( array_keys( expImageFormatConverter::FORMATS ) as $format )
+        {
+            $variant = eZClusterFileHandler::instance( expImageFormatConverter::variantPath( $aliasFile, $format ) );
+            if ( $variant->exists() )
+                $variant->delete();
+        }
     }
 
     /**
@@ -827,6 +890,7 @@ class eZImageAliasHandler
         {
             if ( !self::isStorageFilePath( $filepath ) )
                 continue;
+            self::removeAliasVariants( $filepath );
             $file = eZClusterFileHandler::instance( $filepath );
             if ( $file->exists() )
             {
@@ -973,6 +1037,9 @@ class eZImageAliasHandler
             return;
         }
 
+        // Its WebP/AVIF variants go with it
+        self::removeAliasVariants( $aliasFile );
+
         // finally, remove file if applicable
         $file = eZClusterFileHandler::instance( $aliasFile );
         if ( !$file->exists() )
@@ -1046,6 +1113,8 @@ class eZImageAliasHandler
 
                     $fileHandler = eZClusterFileHandler::instance();
                     $fileHandler->fileMove( $oldURL, $alias['url'] );
+                    // The variants are not moved: made again under the new name when asked for
+                    self::removeAliasVariants( $oldURL );
 
                     eZDir::cleanupEmptyDirectories( $oldDirpath );
                     eZImageFile::moveFilepath( $this->ContentObjectAttributeData['id'], $oldURL, $alias['url'] );

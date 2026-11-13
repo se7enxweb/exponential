@@ -489,6 +489,52 @@ class expImageAliasUrl
     }
 
     /**
+     * An alias that exists, as a template gets it in on-demand mode when its block lists formats to negotiate
+     * (Formats[], Negotiate): the entry as it is, with the signed content/image URL in place of the storage URL, so
+     * the browser is answered in the format it accepts. full_path and storage_url keep the file.
+     *
+     * Only the signed forms (token, ids-token) negotiate: the unsigned ones never make a variant, and the storage form
+     * is the web server's.
+     *
+     * @param array $entry the alias's entry of the alias list
+     * @param array $original the original's entry
+     * @param array $attribute id, version, language_code
+     * @param array $options form => URL form (default: the setting), prefix => access path, now => time
+     * @return array|null null when the entry stays as it is
+     */
+    public static function negotiatedEntry( array $entry, array $original, array $attribute, array $options = array() )
+    {
+        $form = isset( $options['form'] ) ? $options['form'] : expImageAliasSettings::urlForm();
+        if ( !in_array( $form, array( 'token', 'ids-token' ), true ) )
+            return null;
+        $path = (string)( $entry['url'] ?? '' );
+        $name = (string)( $entry['name'] ?? '' );
+        if ( $path === '' || $name === '' || $name === 'original' || empty( $entry['is_valid'] ) || !self::validStoragePath( $path )
+             || dirname( $path ) !== dirname( (string)( $original['url'] ?? '' ) ) || !self::validFileName( basename( $path ) ) )
+            return null;
+        $payload = array( 'a' => (int)$attribute['id'], 'v' => (int)$attribute['version'], 'l' => (string)$attribute['language_code'],
+                          'n' => $name, 'o' => (string)$original['url'], 'u' => basename( $path ) );
+        if ( !empty( $entry['width'] ) && !empty( $entry['height'] ) )
+        {
+            $payload['w'] = (int)$entry['width'];
+            $payload['h'] = (int)$entry['height'];
+        }
+        if ( (string)( $entry['mime_type'] ?? '' ) !== '' )
+            $payload['m'] = (string)$entry['mime_type'];
+        if ( self::isVersionedPath( $path ) )
+            $payload['x'] = ( isset( $options['now'] ) ? (int)$options['now'] : time() ) + expImageAliasSettings::draftTokenLifetime();
+        $buildOptions = array_key_exists( 'prefix', $options ) ? array( 'prefix' => $options['prefix'] ) : array();
+        $url = self::build( $payload, $form, $buildOptions );
+        if ( $url === null )
+            return null;
+        $entry['url'] = $url;
+        $entry['full_path'] = $path;
+        $entry['storage_url'] = $path;
+        $entry['negotiated'] = true;
+        return $entry;
+    }
+
+    /**
      * The alias file $aliasName will be made as, and its size, through the aliases it is made from.
      *
      * @param string $aliasName
