@@ -123,6 +123,10 @@ Since `ezprestapi` 1.2.9, create, update and delete are written by the kernel's 
 which read a file value from a local server path or downloaded any URL; such a value is now refused with `400`. On a
 kernel older than 6.0.15 the write calls (create, update, delete) answer `501 not_implemented`.
 
+The same writer is available to your own PHP code: [Writing content from PHP with expContentWriter](writing-content-from-php.md).
+What changed in each `ezprestapi` 1.2.x release: [New in 6.0.15: the REST API updates content](../help/whats-new-in-6-0-15-rest-api.md);
+what to check when you upgrade: [Upgrade notes: the REST writes through the kernel](../bc/6.0/content-writer-and-rest-writes.md).
+
 ## 3. Authentication
 
 `rest.ini [Authentication] RequireAuthentication=enabled` is the default: every content route needs a user. Two
@@ -379,7 +383,7 @@ curl -s -H "Authorization: Bearer expk_..." "https://www.example.com/api/migrati
 - [Personal API keys](api-keys.md): making, using and revoking a key; the permission table of the REST interface
 - [ezprestapi](../features/6.0/extensions/ezprestapi.md) and its [release notes](../../changelogs/extensions/ezprestapi.md)
 - [ezprestapiprovider](../features/6.0/extensions/ezprestapiprovider.md) and its [release notes](../../changelogs/extensions/ezprestapiprovider.md)
-- [nxc_powercontent](../features/6.0/extensions/nxc_powercontent.md)
+- [nxc_powercontent](../features/6.0/extensions/nxc_powercontent.md) (no longer needed by the REST API) and [expContentWriter](../features/6.0/content-writer.md)
 - [Behavior changes of the extensions](../bc/6.0/extensions-behaviour-changes.md)
 - [Remote services and apps](remote-services-and-apps.md)
 

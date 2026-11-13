@@ -192,6 +192,11 @@ final class SeedNewsContent20261101170000 extends \expMigrationPhp
 - Für Startinhalte, die nur Entwicklungs- und Testkopien erreichen sollen (Demo-Benutzer, Beispielbestellungen),
   geben Sie den Kopf `environments: development, test`; siehe [Migrationen je Umgebung](migrationen-je-umgebung.md).
 - Halten Sie personenbezogene Daten aus Start-Migrationen heraus: Sie werden in Git committet und gepusht.
+- Mit Exponential 6.0.15 können die Artikel auch mit `\expContentWriter::create()` geschrieben werden: Die Methode nimmt
+  den Text als HTML statt als gespeichertes XML an und antwortet bei einem falschen Attributbezeichner mit `invalid`
+  und dem Grund; werfen Sie eine Ausnahme, wenn ihr `status` nicht `published` ist. Sie kennt keinen Schalter für
+  Benachrichtigungen; behalten Sie daher `eZContentFunctions` mit `false`, wenn Abonnenten nichts erfahren sollen
+  ([Inhalte aus PHP schreiben mit expContentWriter](../../../anleitungen/inhalte-aus-php-schreiben.md)).
 
 ## Prüfen
 

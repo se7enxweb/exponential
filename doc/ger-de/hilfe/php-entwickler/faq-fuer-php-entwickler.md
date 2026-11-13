@@ -104,6 +104,12 @@ Niemals. Es sind echte Bezeichner, die jede Erweiterung verwendet; neuer Code ve
 Leiten Sie von ihrer Klasse ab und registrieren Sie die Unterklasse in `site.ini [RunnableSettings] Implementation[]`
 ([Modul-Views als Klassen](modul-views-als-klassen.md#eine-kernel-view-neu-implementieren)).
 
+**Wie lege ich Inhalte aus PHP in wenigen Zeilen an oder ändere sie?**
+`expContentWriter::create()`, `update()` und `remove()` (6.0.15): Werte je Attributbezeichner als Text, Rich Text als
+HTML, Dateien als öffentliche `https`-Adressen, eine Antwort mit `status` und `message`. Die Klasse veröffentlicht über
+dieselbe Operation wie die Administration und überlässt die Rechteprüfung Ihnen
+([Inhalte aus PHP schreiben mit expContentWriter](../../anleitungen/inhalte-aus-php-schreiben.md)).
+
 ## Velocity und Deployments
 
 **Meine Änderung an einer PHP-Datei bewirkt nichts.**

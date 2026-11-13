@@ -225,6 +225,24 @@ change `ProviderClass[ezp]=ezpRestApiProvider` to `ezp7xRestApiProvider`; then
 PHP-FPM and restart Velocity. Nothing changes for OAuth clients, tokens, personal API keys or v1 URLs. The steps and
 the before and since table are in [REST API v1 and v2: one extension](../../guides/rest-api-v1-and-v2.md).
 
+## 12. The REST writes go through the kernel; nxc_powercontent is no longer required
+
+**What changed (12 November 2026).** `ezprestapi` 1.2.9 writes create, update and delete through the kernel's
+`expContentWriter` (Exponential 6.0.15) instead of `nxc_powercontent`, and no longer requires that extension. REST
+v2 updates content (`POST` or `PUT /api/ezp/v2/content/node/<id>` publishes a new version), and create and update
+take a JSON body. A file value must be a public `http(s)` address (a server path is refused), and a field that is not
+an attribute of the class is refused with `400` instead of ignored. On a kernel older than 6.0.15 the writes answer
+`501`.
+
+**How to check.** `composer why se7enxweb/nxc_powercontent` shows whether anything else still requires it;
+`grep -rn "nxc_powercontent\|nxcPowerContent" settings/ extension/*/classes extension/*/modules` finds an activation
+and code that uses it.
+
+**How to fix.** Update the kernel and `ezprestapi` together. When nothing of yours uses `nxc_powercontent`, let
+Composer remove it, take it out of `ActiveExtensions[]`, then `php bin/php/ezpgenerateautoloads.php -e -o`, clear the
+INI cache and reload PHP. Check REST clients that send server paths or extra fields. The steps:
+[Upgrade notes: the REST writes through the kernel, nxc_powercontent no longer needed](content-writer-and-rest-writes.md).
+
 ## Related pages
 
 - [REST API v1 and v2: one extension](../../guides/rest-api-v1-and-v2.md)

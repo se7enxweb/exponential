@@ -15,6 +15,11 @@ it: create, update and delete are written by the kernel's `expContentWriter` (Ex
 no longer requires this extension. `nxc_powercontent` stays an optional extension for code that uses it directly; see
 [REST API v1 and v2](../../../guides/rest-api-v1-and-v2.md).
 
+New code does not need it: the kernel's [expContentWriter](../content-writer.md) creates, updates and removes content
+from plain values (rich text as HTML, files from public addresses) and publishes every update as a new version, so the
+history is kept. How to find out whether an installation still uses this extension, how to remove it and how to move
+code over: [Upgrade notes: the REST writes through the kernel, nxc_powercontent no longer needed](../../../bc/6.0/content-writer-and-rest-writes.md).
+
 ## List content classes in a template: `class_list`
 
 Since 1.3.0 (12 July 2026) the `content` fetch function `class_list` lists content classes without custom PHP. It
@@ -64,6 +69,7 @@ See [Subitems "More actions" menu](../../../bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_ME
 ## Related pages
 
 - [ezprestapi](ezprestapi.md) and [REST API v1 and v2](../../../guides/rest-api-v1-and-v2.md)
+- [Content from plain values: expContentWriter](../content-writer.md) and [Writing content from PHP with expContentWriter](../../../guides/writing-content-from-php.md)
 - [Copy selected sub-items](../subitems-copy-selected.md)
 - [Velocity engines](../../../bc/6.0/velocity-engines.md)
 - [Chronicle](../../../history/extensions/nxc_powercontent.md) and [release notes](../../../../changelogs/extensions/nxc_powercontent.md)

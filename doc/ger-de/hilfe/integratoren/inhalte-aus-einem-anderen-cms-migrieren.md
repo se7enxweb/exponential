@@ -52,7 +52,7 @@ Statistiken. Jedes ausgelassene Element spart Zeit in jeder Probe.
 | Menge und Form | Ansatz |
 |---|---|
 | Ein paar hundert Seiten, einfache Felder | Import mit `xrowextract` aus CSV oder JSON mit Spaltenzuordnung und Vorschau ([Seite](massendatenaustausch-mit-xrowextract.md)) oder `php bin/php/ezcsvimport.php` |
-| Tausende Elemente, Rich Text, Beziehungen | ein eigener Importbefehl mit `eZContentFunctions` ([Ein Importskript schreiben](ein-importskript-schreiben.md)) |
+| Tausende Elemente, Rich Text, Beziehungen | ein eigener Importbefehl mit `eZContentFunctions` oder, ab 6.0.15, `expContentWriter`, der das HTML und die öffentlichen Dateiadressen des alten Systems so annimmt, wie sie sind ([Ein Importskript schreiben](ein-importskript-schreiben.md), [Inhalte aus PHP schreiben](../../anleitungen/inhalte-aus-php-schreiben.md)) |
 | Ein von einem Werkzeug offline vorbereiteter Baum | ein JSON-Paket, installiert mit `ezpm.php` (`install --as-drafts` zur Prüfung) ([Seite](pakete-importieren-und-exportieren.md)) |
 
 Importieren Sie in der Reihenfolge der Abhängigkeiten: Ordner und Kategorien, dann Medien, dann Inhalte, die auf sie

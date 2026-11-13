@@ -34,6 +34,7 @@ Relativ zu `/api/ezp/<version>`:
 | `GET` | `/content/node/<id>/fields`, `/field/<identifier>` | ja | ja | Felder |
 | `GET` | `/content/object/<id>` und seine Felder | ja | ja | Nach Objekt-ID |
 | `POST` | `/content/node/create` | nein | ja | Anlegen und veröffentlichen |
+| `POST` oder `PUT` | `/content/node/<id>` | nein | ja | Ändern: eine neue Version mit den gesendeten Werten veröffentlichen |
 | `DELETE` | `/content/node/delete/<id>` | nein | ja | Entfernen |
 
 Ein nur lesender Agent braucht nur die `GET`-Routen.
@@ -88,6 +89,14 @@ Ein `POST` an `/api/ezp/v2/content/node/create` **legt an und veröffentlicht**.
 zuerst prüfen muss, legen Sie sie in einer Sektion an, die Besucher nicht sehen und die ein Freigabe-Workflow abdeckt, oder
 verwenden Sie Exponential Intelligence, das Entwürfe schreibt. Testen Sie jeden schreibenden Ablauf auf einer Testinstallation und
 lesen Sie danach den Audit-Trail ([Ein Ablauf für den Inhaltsimport](ablauf-inhaltsimport.md)).
+
+Seit Exponential 6.0.15 mit `ezprestapi` 1.2.9 **ändert** ein `POST` oder `PUT` an `/api/ezp/v2/content/node/<id>`:
+Er veröffentlicht eine neue Version mit den gesendeten Werten und behält die alte in der Versionsgeschichte, wo eine
+Redakteurin oder ein Redakteur sie vergleichen und wiederherstellen kann. Der Schlüssel braucht den Scope `edit`.
+Werte sind Text: Rich Text als HTML, eine Datei als öffentliche `https`-Adresse; ein unbekanntes Attribut wird mit
+`400` abgewiesen, was ein Agent dem Modell als korrigierbaren Fehler zeigen kann. Die Antwort `202` bedeutet, dass ein
+Workflow die Version hält, zum Beispiel für eine Freigabe
+([Ändern und die Werte eines Schreibzugriffs](../../../anleitungen/rest-api-v1-und-v2.md#21-ändern-und-die-werte-eines-schreibzugriffs)).
 
 ## Verwandte Seiten
 

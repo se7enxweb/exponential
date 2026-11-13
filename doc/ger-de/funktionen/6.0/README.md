@@ -80,6 +80,7 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Inhalts- und INI-Cache in Redis oder Valkey halten](valkey-cache-hooks.md)
 - [Generator für den statischen Cache](generator-fuer-den-statischen-cache.md)
 - [Statisches Veröffentlichen: eine statische Kopie einer Website für GitHub Pages und jeden statischen Host](statisches-veroeffentlichen.md)
+- [Request Shield: eine Web Application Firewall vor jeder Anfrage](request-shield.md)
 - [Cronjob-Konsole](cronjobs-in-der-konsole.md), [Cronjob-Teile pausieren](cronjobs-pausieren.md),
   [Einen Cronjob-Teil auslassen](filter-fuer-cronjob-teile.md)
 - [Rotation und Bereinigung der Logs](log-rotation.md), [Der Log-Viewer](log-betrachter.md),
@@ -108,6 +109,8 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Die Website-Seitenleiste (expwt) anstelle der Website-Toolbar (ezwt)](website-seitenleiste.md): der Wechsel mit
   `exp:wt:migrate-from-ezwt` und dem Upgrade-Schritt 6.0.15-expwt-enable
 - [Pagelayout-Hooks: eine Stelle am Ende jeder Seite für Erweiterungen](seitenlayout-hooks.md)
+- [Inhalte aus einfachen Werten: expContentWriter](inhalte-schreiben.md): Der Kernel legt Inhalte aus Textwerten in
+  wenigen Zeilen an, ändert und entfernt sie, für Skripte, Importe, Migrationen, Integrationen und die REST API
 - [Entfernte Dienste: die ganze Administration als HTTP-API (expservices)](entfernte-dienste-expservices.md)
 - [Die GraphQL-API: genau die Felder abfragen, die eine Seite braucht](graphql.md): `/api/graphql`, ein aus den
   Inhaltsklassen erzeugtes Schema, Richtlinien gelten immer, Setup > GraphQL mit einem Playground,

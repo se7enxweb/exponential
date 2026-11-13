@@ -101,6 +101,10 @@ The extension `ezprestapi` serves the content API through `index_rest.php`, belo
 - **Every read and write checks the user's policies** (`content/read`, `content/create`, `content/edit`,
   `content/remove`), whatever the request was signed in with.
 
+The writes go through the kernel's `expContentWriter`, which your own PHP code can call as well
+([Writing content from PHP with expContentWriter](guides/writing-content-from-php.md)); `nxc_powercontent` is no longer
+needed ([New in 6.0.15: the REST API updates content](help/whats-new-in-6-0-15-rest-api.md)).
+
 Activate it with `ActiveExtensions[]=ezprestapi` ([Configuring Exponential 6.0, section 8](CONFIGURING.md#8-extensions)).
 The older `ezprestapiprovider` is deprecated: its last release is a compatibility layer on top of `ezprestapi`, so
 remove it from `ActiveExtensions[]` once `ezprestapi` is active.

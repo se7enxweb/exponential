@@ -21,7 +21,8 @@ Dateilinks direkt lesen. Exponential stellt aus einer Erweiterung, `ezprestapi`,
 3. [Für anonyme Leser öffnen](#für-anonyme-leser-öffnen)
 4. [Aufrufe, die ein Datenclient macht](#aufrufe-die-ein-datenclient-macht)
 5. [Was sie nicht ist](#was-sie-nicht-ist)
-6. [Bevor Sie sie ankündigen](#bevor-sie-sie-ankündigen)
+6. [Datensätze aus einem anderen System aktuell halten](#datensätze-aus-einem-anderen-system-aktuell-halten)
+7. [Bevor Sie sie ankündigen](#bevor-sie-sie-ankündigen)
 
 ## Was sie liefert
 
@@ -85,6 +86,26 @@ Fügen Sie `-H "Authorization: Bearer expk_..."` hinzu, solange eine Authentifiz
 - **Die Atom-Route `listAtom` antwortet mit 500** (bekanntes Problem, Abschnitt 8 der Anleitung); verwenden Sie für
   Feeds **Setup > RSS**.
 
+## Datensätze aus einem anderen System aktuell halten
+
+Kommen die Metadaten eines Datensatzes oder seine aktuelle Datei aus einem anderen System (einer Statistikdatenbank,
+einem Register), kann dieses System die Seite des Datensatzes über dieselbe API aktuell halten. Seit Exponential 6.0.15
+mit `ezprestapi` 1.2.9 veröffentlicht ein `PUT /api/ezp/v2/content/node/<Knoten-ID des Datensatzes>` eine **neue
+Version** des Datensatzes mit den gesendeten Werten, sodass die Versionsgeschichte jede Änderung zeigt, wie es die
+[Seite zur Versionierung](datensaetze-versionieren-und-aktualisieren.md) verlangt. Eine Datei wird als öffentliche
+`https`-Adresse angegeben, die der Server herunterlädt:
+
+```bash
+curl -s -X PUT -H "Authorization: Bearer $EXP_API_KEY" -H "Content-Type: application/json" \
+     -d '{"modified":"1767225600","file":"https://stats.example.gov/exports/2026-12.csv|population-2026-12.csv"}' \
+     "https://www.example.gov/api/ezp/v2/content/node/<dataset node id>"
+```
+
+Die Attributbezeichner sind die Ihrer Datensatzklasse. Geben Sie dem System ein eigenes Konto mit `content/edit` nur
+für den Katalog und einen Schlüssel mit dem Scope `edit`; eine Version, die ein Freigabe-Workflow hält, wird mit `202`
+beantwortet. Innerhalb der Installation leistet ein zeitgesteuertes Skript dasselbe mit `expContentWriter` aus dem
+Kernel ([Inhalte aus PHP schreiben](../../../anleitungen/inhalte-aus-php-schreiben.md)).
+
 ## Bevor Sie sie ankündigen
 
 - [ ] Entscheiden Sie zwischen authentifiziert und anonym, und dokumentieren Sie, wie Clients einen Schlüssel
@@ -96,6 +117,7 @@ Fügen Sie `-H "Authorization: Bearer expk_..."` hinzu, solange eine Authentifiz
 ## Verwandte Seiten
 
 - [REST-API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md)
+- [Neu in 6.0.15: Die REST-API ändert Inhalte](../../neu-in-6-0-15-rest-api.md)
 - [Persönliche API-Schlüssel](../../../anleitungen/api-schluessel.md)
 - [Entfernte Dienste und Apps](../../../anleitungen/entfernte-dienste-und-apps.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

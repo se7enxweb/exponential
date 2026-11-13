@@ -72,7 +72,7 @@ Installation](../erweiterungen-einer-neuen-installation.md).
 | [ezprestapi](ezprestapi.md) | REST API v1 und v2 |
 | [ezprestapiprovider](ezprestapiprovider.md) | veraltete Kompatibilitätsschicht, verwenden Sie ezprestapi |
 | [ezxmlexport](ezxmlexport.md) | XML-Export |
-| [nxc_powercontent](nxc_powercontent.md) | Inhalte aus Code und REST |
+| [nxc_powercontent](nxc_powercontent.md) | Inhalte aus Code; die REST-API braucht sie nicht mehr (ezprestapi 1.2.9), dasselbe leistet [expContentWriter](../inhalte-schreiben.md) aus dem Kernel |
 | [syndication](syndication.md) | Syndikation von Inhalten |
 | [xrowextract](xrowextract.md) | Export und Import |
 

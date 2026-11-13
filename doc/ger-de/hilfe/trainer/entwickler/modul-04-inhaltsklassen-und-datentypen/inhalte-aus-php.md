@@ -59,6 +59,12 @@ Quelle: die Dokumentationskommentare in `kernel/classes/ezcontentfunctions.php`.
 5. **`remote_id`** (2 Minuten). Ein eindeutiger String, den Sie wählen. `eZContentObject::fetchByRemoteID()` findet
    das Objekt wieder, sodass ein Import aktualisieren kann, statt zu duplizieren.
 
+6. **`expContentWriter`** (3 Minuten, Exponential 6.0.15). Zeigen Sie dasselbe Anlegen mit
+   `expContentWriter::create( array( 'parentNodeID' => ..., 'classIdentifier' => 'note', 'languageLocale' => 'eng-US',
+   'attributes' => array( ... ) ) )`: Rich Text wird als HTML übergeben, eine Datei als öffentliche `https`-Adresse, und
+   die Antwort ist ein Array mit `status` (`published`, `pending`, `invalid`, `failed`) und `message` statt `false`.
+   Teilnehmende, die früher fertig sind, wiederholen Schritt 3 der Übung damit.
+
 ### Häufige Fragen
 
 **Welcher Benutzer veröffentlicht?** Die angegebene `creator_id` (die Inhaltsobjekt-ID eines Benutzers), sonst der
@@ -67,7 +73,7 @@ oder Administrators an.
 
 **Wie schreibe ich Rich Text?** Als das XML, das der Rich-Text-Datentyp speichert; das Beispiel im Kommentar von
 `updateAndPublishObject()` zeigt eine `<section>` mit `<paragraph>`. Einfache Textattribute (`ezstring`, `eztext`)
-nehmen einfache Strings an.
+nehmen einfache Strings an. Mit `expContentWriter` (6.0.15) wird Rich Text stattdessen als HTML übergeben.
 
 **Werden Berechtigungen geprüft?** Die API veröffentlicht, was Sie ihr geben; das Skript ist vertrauenswürdiger Code.
 Prüfen Sie Berechtigungen selbst, wenn ein Skript für einen Benutzer handelt.
@@ -170,6 +176,8 @@ Ihres Kursordners (in der Administration angezeigt).
 - [Inhaltsjobs](../../../../funktionen/6.0/inhaltsauftraege.md): große Operationen in Stapeln.
 - [Ohne Benachrichtigung veröffentlichen](../../../../funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md): das Argument
   `$notify`.
+- [Inhalte aus PHP schreiben mit expContentWriter](../../../../anleitungen/inhalte-aus-php-schreiben.md): dieselben Aufgaben
+  aus einfachen Werten.
 
 ## Verwandte Seiten
 

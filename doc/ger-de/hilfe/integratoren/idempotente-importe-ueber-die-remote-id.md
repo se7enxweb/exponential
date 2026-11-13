@@ -111,6 +111,10 @@ Hinweise:
   Workflows, Caches, der Suchindex und das Audit-Protokoll im Gleichschritt bleiben. Schreiben Sie nie direkt in
   Inhaltstabellen.
 - Bei einem Probelauf meldet die Funktion, was sie tun würde; zählen Sie die Ergebnisse und geben Sie sie am Ende aus.
+- Mit `expContentWriter` (Exponential 6.0.15) kann ein zweites Anlegen nichts verdoppeln: `create()` mit einer
+  `remoteID`, die es schon gibt, antwortet `invalid` und schreibt nichts. Übergeben Sie `update()` nur die geänderten
+  Werte; ohne Werte antwortet es `invalid` und legt keine neue Version an
+  ([Inhalte aus PHP schreiben mit expContentWriter](../../anleitungen/inhalte-aus-php-schreiben.md)).
 
 ## An der Quelle entfernte Datensätze
 
@@ -150,6 +154,7 @@ stattdessen an und alarmieren Sie.
 ## Verwandte Seiten
 
 - [Inhalte aus PHP anlegen, veröffentlichen und ändern](../erweiterungsentwicklung/teil-8-referenz/inhaltsfunktionen-aus-php.md)
+- [Inhalte aus PHP schreiben mit expContentWriter](../../anleitungen/inhalte-aus-php-schreiben.md)
 - [Ein Importskript schreiben](ein-importskript-schreiben.md)
 - [Inhaltsklassen externen Daten zuordnen](inhaltsklassen-auf-externe-daten-abbilden.md)
 - [eZContentObject](../erweiterungsentwicklung/teil-8-referenz/ezcontentobject.md)

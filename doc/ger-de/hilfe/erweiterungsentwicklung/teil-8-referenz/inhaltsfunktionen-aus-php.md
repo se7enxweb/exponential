@@ -105,6 +105,28 @@ if ( $user instanceof eZUser )
 }
 ```
 
+## Aus einfachen Werten: expContentWriter (6.0.15)
+
+`expContentWriter` (`kernel/classes/contentwriter/expcontentwriter.php`) schreibt dasselbe aus den Werten, die ein
+Mensch oder ein anderes System hat: Rich Text als HTML (umgewandelt vom Eingabeparser des Online Editors, Links und
+Einbettungen werden Relationen), Dateien als öffentliche `http(s)`-Adressen (heruntergeladen, nie von einem Serverpfad
+oder aus einem privaten Netz), jeden anderen Datentyp in seiner Form für `fromString()`.
+
+| | `eZContentFunctions` | `expContentWriter` |
+|---|---|---|
+| Anlegen | `createAndPublishObject( $params, $notify )` | `create( array( 'parentNodeID', 'classIdentifier', 'languageLocale', 'attributes', 'remoteID', 'ownerID', 'sectionID' ) )` |
+| Ändern | `updateAndPublishObject( $object, $params, $notify )` | `update( $object, $values, $languageCode )` |
+| Entfernen | (die Knotenoperationen oben) | `remove( $object, $moveToTrash = false )` |
+| Rich Text | das gespeicherte XML | HTML |
+| Dateien | ein Serverpfad, mit `storage_dir` | eine öffentliche `http(s)`-Adresse, höchstens 50 MB |
+| Unbekanntes Attribut | ignoriert | abgewiesen, bevor etwas geschrieben wird |
+| Antwort | das Objekt oder `false`; `true` oder `false` | `status` (`published`, `pending`, `invalid`, `failed`), `message`, `object`, `version` |
+| Ein Workflow hält die Version | nicht unterschieden | `pending` |
+| Ohne Benachrichtigung veröffentlichen | `$notify = false` | nicht angeboten |
+
+Beide veröffentlichen über die Operation `content/publish` und überlassen die Rechteprüfung dem Aufrufer. Beispiele:
+[Inhalte aus PHP schreiben mit expContentWriter](../../../anleitungen/inhalte-aus-php-schreiben.md).
+
 ## In Transaktionen und Schleifen
 
 `createAndPublishObject()` verwaltet seine eigene Transaktion. In einer Schleife über viele Elemente:
@@ -120,6 +142,7 @@ if ( $user instanceof eZUser )
 - Weiter: [Referenz der ezjscore-Serverfunktionen](ezjscore-serverfunktionen-referenz.md)
 - [eZContentObject](ezcontentobject.md), [eZContentObjectTreeNode](ezcontentobjecttreenode.md)
 - [Inhaltsaufträge](../../../bc/6.0/inhaltsjobs.md)
+- [Inhalte aus einfachen Werten: expContentWriter](../../../funktionen/6.0/inhalte-schreiben.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -21,7 +21,8 @@ directly. Exponential serves a REST content API from one extension, `ezprestapi`
 3. [Opening it to anonymous readers](#opening-it-to-anonymous-readers)
 4. [Calls a data client makes](#calls-a-data-client-makes)
 5. [What it is not](#what-it-is-not)
-6. [Before you announce it](#before-you-announce-it)
+6. [Keeping datasets current from another system](#keeping-datasets-current-from-another-system)
+7. [Before you announce it](#before-you-announce-it)
 
 ## What it returns
 
@@ -83,6 +84,25 @@ Add `-H "Authorization: Bearer expk_..."` while authentication is required.
 - **Not DCAT.** The JSON follows the API's own structure, not a catalog vocabulary.
 - **The Atom route `listAtom` answers 500** (known issue, section 8 of the guide); use **Setup > RSS** for feeds.
 
+## Keeping datasets current from another system
+
+When a dataset's metadata or its current file comes from another system (a statistics database, a registry), that
+system can keep the dataset page current over the same API. Since Exponential 6.0.15 with `ezprestapi` 1.2.9, a
+`PUT /api/ezp/v2/content/node/<dataset node id>` publishes a **new version** of the dataset with the values sent, so
+the version history shows every change, as the [versioning page](versioning-and-updating-datasets.md) asks for. A file
+is given as a public `https` address that the server downloads:
+
+```bash
+curl -s -X PUT -H "Authorization: Bearer $EXP_API_KEY" -H "Content-Type: application/json" \
+     -d '{"modified":"1767225600","file":"https://stats.example.gov/exports/2026-12.csv|population-2026-12.csv"}' \
+     "https://www.example.gov/api/ezp/v2/content/node/<dataset node id>"
+```
+
+The attribute identifiers are those of your dataset class. Give the system its own account with `content/edit` on the
+catalog only and a key with the `edit` scope; a version that an approval workflow holds is answered with `202`.
+Inside the installation, a scheduled script does the same with the kernel's `expContentWriter`
+([Writing content from PHP](../../../guides/writing-content-from-php.md)).
+
 ## Before you announce it
 
 - [ ] Decide authenticated or anonymous, and document how clients get a key.
@@ -93,6 +113,7 @@ Add `-H "Authorization: Bearer expk_..."` while authentication is required.
 ## Related pages
 
 - [REST API v1 and v2](../../../guides/rest-api-v1-and-v2.md)
+- [New in 6.0.15: the REST API updates content](../../whats-new-in-6-0-15-rest-api.md)
 - [Personal API keys](../../../guides/api-keys.md)
 - [Remote services and apps](../../../guides/remote-services-and-apps.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

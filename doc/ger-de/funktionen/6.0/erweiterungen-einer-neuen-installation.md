@@ -50,6 +50,7 @@ Pakets wurde früher über die Kopie von Composer geschrieben.
 | ezautosave | automatisches Speichern von Entwürfen | composer.json | Kernel | |
 | ezownerchange | den Besitzer von Inhalten ändern | php-floor | Kernel | |
 | sevenx_authentication_2fa | Anmeldung in zwei Schritten | php-floor | Kernel | |
+| exp_request_shield | Request Shield vor der Site und **Setup** > **Request Shield** (siehe unten) | composer.json | MS, CJW; sein Filter läuft auf jeder Installation, deren `config.php` den Hook lädt | |
 | ezoracle | der Oracle-Datenbanktreiber | composer.json | Kernel, nur auf Oracle; MS, CJW, SITE | |
 | sqliimport | Inhaltsimporte | php-floor | Kernel: Admin (Zugriff) | ja |
 | expui | die jQuery-4-Oberflächen-API der Designs | composer.json | MS, CJW, SITE; Kernel: Admin (Zugriff), wo sie nicht global ist | |
@@ -91,6 +92,10 @@ Pakets wurde früher über die Kopie von Composer geschrieben.
 
 „Tabellen“ heißt, dass die Erweiterung eine `share/db_schema.dba` mitbringt.
 
+`nxc_powercontent` steht nicht in der Liste: Bis `ezprestapi` 1.2.8 kam sie als Voraussetzung von `ezprestapi` auf die
+Platte, und seit 1.2.9 laufen die REST-Schreibzugriffe über [expContentWriter](inhalte-schreiben.md) aus dem Kernel,
+sodass eine neue Installation sie nicht mehr erhält ([Hinweise zum Aktualisieren](../../bc/6.0/rest-schreibzugriffe-ueber-den-kernel.md)).
+
 ## ezwt und expwt
 
 expwt, die Website-Seitenleiste, ersetzt ezwt, die Website-Werkzeugleiste. Die Installer der Site-Pakete von 6.0.15
@@ -102,6 +107,17 @@ auf dem Paketserver veröffentlicht. Bis dahin aktivieren die veröffentlichten 
 `./console exp:wt:migrate-from-ezwt --apply` um oder mit dem Upgrade-Schritt `6.0.15-expwt-enable` (siehe [Die
 Website-Seitenleiste](website-seitenleiste.md)). Der eigene Standard von expwt ist `Enabled=disabled` in `expwt.ini`
 bis expwt 1.0, die Seitenleiste erscheint also nur, wo `[ExpwtSettings] Enabled=enabled` gesetzt ist.
+
+## exp_request_shield
+
+`exp_request_shield` (`se7enxweb/exp_request_shield` 0.0.1.0) bringt request-shield 0.4.0 mit, den Anfragefilter der
+JAC Systeme GmbH / des CJW Network, und führt ihn vor dem Kernel aus. Sie arbeitet in zwei Hälften. Den Filter startet
+eine Hook-Zeile in `config.php`, die `config.php-RECOMMENDED` enthält; so wird jede neue Installation ab ihrer ersten
+Anfrage im Durchsetzungsmodus gefiltert, unabhängig vom Site-Paket und davon, ob die Erweiterung aktiviert ist. Die
+aktivierte Erweiterung bringt die Admin-Seiten, **Setup** > **Request Shield**; `sevenx_multisite` und `cjw_multisite`
+aktivieren sie. Eine bestehende Installation, die aktualisiert wird, erhält das Paket, aber nicht den Hook, denn
+`config.php` wird nie überschrieben: Fügen Sie die Zeile selbst ein ([Request Shield (BC)](../../bc/6.0/request-shield.md),
+[Request Shield](request-shield.md)).
 
 ## Woher die Tabellen kommen
 

@@ -13,6 +13,10 @@ This page is for application creators who write content from code: imports, sync
 objects, migrations. The kernel's `eZContentFunctions` (`kernel/classes/ezcontentfunctions.php`) creates and publishes in
 one call, with the same operation (and triggers) as the editor.
 
+Since Exponential 6.0.15 there is a second way that is often simpler: `expContentWriter` takes rich text as HTML and
+files as public web addresses, and tells you whether the content was published, is waiting for a workflow or was
+refused and why ([From plain values: expContentWriter](#from-plain-values-expcontentwriter)).
+
 ## Contents
 
 1. [Creating and publishing](#creating-and-publishing)
@@ -21,6 +25,7 @@ one call, with the same operation (and triggers) as the editor.
 4. [Idempotent imports with remote IDs](#idempotent-imports-with-remote-ids)
 5. [Moving, hiding, removing](#moving-hiding-removing)
 6. [Large operations](#large-operations)
+7. [From plain values: expContentWriter](#from-plain-values-expcontentwriter)
 
 ## Creating and publishing
 
@@ -94,9 +99,38 @@ Thousands of objects belong in a background process: a command run from cron, a 
 subtrees ([Content jobs](content-jobs.md)). Commit in batches, clear `eZContentObject::clearCache()` between batches,
 and log progress.
 
+## From plain values: expContentWriter
+
+```php
+<?php
+$result = expContentWriter::create( array(
+    'parentNodeID'    => $parentNodeID,
+    'classIdentifier' => 'article',
+    'languageLocale'  => 'eng-US',
+    'remoteID'        => 'myapp-article-' . $externalID,
+    'attributes'      => array(
+        'title' => $title,
+        'intro' => '<p>' . htmlspecialchars( $teaser ) . '</p>',            // rich text as HTML
+        'image' => 'https://cdn.example.org/a/' . $externalID . '.jpg|' . $title, // downloaded, with its alternative text
+    ),
+) );
+if ( $result['status'] === 'invalid' || $result['status'] === 'failed' )
+    eZDebug::writeError( $result['message'], 'myapp import' );
+
+if ( $result['object'] instanceof eZContentObject )
+    $result = expContentWriter::update( $result['object'], array( 'title' => $newTitle ), 'eng-US' ); // a new version
+```
+
+`update()` changes only the attributes given and publishes a new version; a language the object does not have yet
+adds a translation. `remove( $object, true )` moves the object to the trash. The writer does not check permissions; check
+them first when the code acts for a user. Everything about it: [Writing content from PHP with expContentWriter](../../../guides/writing-content-from-php.md).
+The REST API uses the same writer, so an app can update content over HTTP
+([REST API v1 and v2 for applications](rest-api.md)).
+
 ## Related pages
 
 - [The content API in PHP](the-content-api.md)
+- [Content from plain values: expContentWriter](../../../features/6.0/content-writer.md)
 - [CLI scripts with eZScript](cli-scripts.md)
 - [Workflows, triggers and events](workflows-and-events.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

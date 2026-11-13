@@ -56,6 +56,12 @@ Source: the documentation comments of `kernel/classes/ezcontentfunctions.php`.
 5. **`remote_id`** (2 minutes). A unique string you choose. `eZContentObject::fetchByRemoteID()` finds the object
    again, so an import can update instead of duplicating.
 
+6. **`expContentWriter`** (3 minutes, Exponential 6.0.15). Show the same create with
+   `expContentWriter::create( array( 'parentNodeID' => ..., 'classIdentifier' => 'note', 'languageLocale' => 'eng-US',
+   'attributes' => array( ... ) ) )`: rich text goes in as HTML, a file as a public `https` address, and the answer is an
+   array with `status` (`published`, `pending`, `invalid`, `failed`) and `message` instead of `false`. Learners who
+   finish early redo step 3 of the exercise with it.
+
 ### Common questions
 
 **Which user publishes?** The `creator_id` you give (the content object ID of a user), otherwise the current user.
@@ -63,7 +69,7 @@ In a script the current user is anonymous; give an editor's or administrator's I
 
 **How do I write rich text?** As the XML the rich text datatype stores; the example in the comment of
 `updateAndPublishObject()` shows a `<section>` with `<paragraph>`. Plain text attributes (`ezstring`, `eztext`)
-take plain strings.
+take plain strings. With `expContentWriter` (6.0.15) rich text is given as HTML instead.
 
 **Are permissions checked?** The API publishes what you give it; the script is trusted code. Check permissions
 yourself when a script acts for a user.
@@ -163,6 +169,7 @@ your course folder (shown in the administration).
 - [The content model and editing content](../../../../guides/content-model-and-editing.md): versions and drafts.
 - [Content jobs](../../../../features/6.0/content-jobs.md): large operations in batches.
 - [Publish without notification](../../../../features/6.0/publish-without-notification.md): the `$notify` argument.
+- [Writing content from PHP with expContentWriter](../../../../guides/writing-content-from-php.md): the same tasks from plain values.
 
 ## Related pages
 

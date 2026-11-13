@@ -48,6 +48,7 @@ copy used to be written over the Composer copy.
 | ezautosave | automatic saving of drafts | root composer.json | kernel | |
 | ezownerchange | change the owner of content | php-floor | kernel | |
 | sevenx_authentication_2fa | two-step sign-in | php-floor | kernel | |
+| exp_request_shield | request-shield in front of the site, and **Setup** > **Request shield** (see below) | root composer.json | MS, CJW; its filter runs on every installation whose `config.php` loads the hook | |
 | ezoracle | the Oracle database driver | root composer.json | kernel, only on Oracle; MS, CJW, SITE | |
 | sqliimport | content imports | php-floor | kernel: admin (access) | yes |
 | expui | the jQuery 4 interface API of the designs | root composer.json | MS, CJW, SITE; kernel: admin (access) where it is not global | |
@@ -89,6 +90,10 @@ copy used to be written over the Composer copy.
 
 "Tables" means that the extension ships a `share/db_schema.dba`.
 
+`nxc_powercontent` is not on the list: up to `ezprestapi` 1.2.8 it came on disk as a requirement of `ezprestapi`, and
+since 1.2.9 the REST writes go through the kernel's [expContentWriter](content-writer.md), so a new installation no
+longer gets it ([Upgrade notes](../../bc/6.0/content-writer-and-rest-writes.md)).
+
 ## ezwt and expwt
 
 expwt, the website sidebar, replaces ezwt, the website toolbar. The site package installers of 6.0.15 put `expwt` in
@@ -100,6 +105,16 @@ until expwt is installed by Composer. expwt's package replaces ezwt (Composer `r
 or the upgrade step `6.0.15-expwt-enable` (see [The website sidebar](website-sidebar.md)). expwt's own default is
 `Enabled=disabled` in `expwt.ini` until expwt 1.0, so the sidebar is shown only where `[ExpwtSettings] Enabled=enabled`
 is set.
+
+## exp_request_shield
+
+`exp_request_shield` (`se7enxweb/exp_request_shield` 0.0.1.0) bundles request-shield 0.4.0, the request filter of
+JAC Systeme GmbH / CJW Network, and runs it before the kernel. It works in two halves. The filter is started by a hook
+line in `config.php`, which `config.php-RECOMMENDED` carries, so every new installation is filtered in enforce mode
+from its first request, whatever the site package, and whether or not the extension is activated. Activating the
+extension adds the admin pages, **Setup** > **Request shield**; `sevenx_multisite` and `cjw_multisite` do that. An
+existing installation that upgrades gets the package but not the hook, because `config.php` is never overwritten: add
+the line yourself ([Request shield (BC)](../../bc/6.0/request-shield.md), [Request shield](request-shield.md)).
 
 ## Where the tables come from
 

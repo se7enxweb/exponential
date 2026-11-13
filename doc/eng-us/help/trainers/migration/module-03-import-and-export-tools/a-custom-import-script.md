@@ -134,6 +134,9 @@ Developers, on their own training installation. The script creates three folders
 - [Mapping content to Exponential](../../../../install/migration/content-model-mapping.md): what the script maps to.
 - [Chapter 17.6: PHP API](../../../../install/17-migration-reference.md#176-php-api-legacy-classes-and-public-api-services):
   the legacy classes next to their platform equivalents.
+- [Writing content from PHP with expContentWriter](../../../../guides/writing-content-from-php.md): on Exponential 6.0.15
+  the same import with rich text as HTML and files from public addresses, without your own HTML conversion
+  (`eZSimplifiedXMLInputParser`) or download step.
 
 ## Related pages
 

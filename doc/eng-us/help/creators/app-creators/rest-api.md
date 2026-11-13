@@ -34,7 +34,11 @@ Relative to `/api/ezp/<version>`:
 | `GET` | `/content/node/<id>/fields`, `/field/<identifier>` | yes | yes | fields |
 | `GET` | `/content/object/<id>`, `.../fields`, `.../field/<identifier>` | yes | yes | by object id |
 | `POST` | `/content/node/create` | no | yes | create and publish |
+| `POST` or `PUT` | `/content/node/<id>` | no | yes | update: publish a new version with the values sent (Exponential 6.0.15, `ezprestapi` 1.2.9) |
 | `DELETE` | `/content/node/delete/<id>` | no | yes | remove |
+
+Writes take form fields or a JSON object; rich text as HTML, a file as a public `https` address. The answers and the
+values: [Updating and the values of a write](../../../guides/rest-api-v1-and-v2.md#21-updating-and-the-values-of-a-write).
 
 ## Authentication
 

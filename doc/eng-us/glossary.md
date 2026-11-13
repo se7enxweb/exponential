@@ -39,6 +39,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **benchmark**: measuring an installation: page timings over HTTP, two servers back to back, the kernel in-process, and a comparison with a saved run (`exp:benchmark`). [Benchmark](features/6.0/benchmark.md).
 - **block (layout)**: a unit of content placed in a **zone** of a **layout**. [Exponential Layouts](bc/6.0/LAYOUTS.md).
 - **bridge**: see **legacy bridge**.
+- **browser check**: a short task a browser solves by itself in a fraction of a second, without a puzzle, before the **request shield** lets a suspicious client, the login or the administration through; the browser then holds a pass cookie. [The request shield](features/6.0/request-shield.md#what-it-decides), [the library's explanation](https://github.com/cjw-network/request-shield/blob/main/docs/explained/browser-check.md).
 
 ## C
 
@@ -89,6 +90,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 ## E
 
 - **e-mail preferences**: the page where each person turns each optional kind of e-mail on or off, sees the history and downloads the data (`/mailpreferences/settings`). [User's guide](features/6.0/mail-preferences.md), [administrator's guide](guides/mail-preferences-administrator.md), [law checklist](specifications/6.0/mail-preferences-compliance.md).
+- **enforce mode**: the mode in which the **request shield** carries out its decisions (refuse, browser check); the shipped rules enforce as installed. See also **monitor mode**. [Monitor and enforce](help/request-shield/monitor-and-enforce.md).
 - **engine (web server engine)**: the program that serves the site: `php` (built-in server), `qbix` (**Velocity**) or `frankenphp`. [Velocity engines](bc/6.0/velocity-engines.md).
 - **engine.phar**: the archive of `kernel/`, `lib/` and `autoload/` that Velocity can load. [Engine archive](bc/6.0/phar.md).
 - **environment (migration)**: the name of an installation's stage (`development`, `test`, `staging`, `production`) from `site.ini [AdminEnvironment] Level` or `EXP_ENV`; a **migration**'s header line `environments:` limits it to some. [Per-environment migrations](help/migrations/recipes/per-environment-migrations.md).
@@ -103,6 +105,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **exp:user**: the console commands that manage user accounts, groups, roles, sessions and two-step sign-in, as the administration does. [User management from the console](help/user-management-from-the-console/README.md).
 - **exp_enhanced_link**: the extension that provides the enhanced link field type. [exp_enhanced_link](features/6.0/extensions/exp_enhanced_link.md).
 - **expcomponents** (Exponential Components): Exponential's fork of the **Zeta Components**, the PHP libraries the kernel is built on (`ezcMail`, `ezcArchive`, `ezcWebdavServer` ...), one Composer package each (`se7enxweb/expcomponents-<name>`), Apache License 2.0, required by the kernel since 6.0.15; each fork replaces its `zetacomponents/<name>` package and keeps the class names. [expcomponents](features/6.0/expcomponents.md), [upgrade notes](bc/6.0/expcomponents.md), [packages](specifications/6.0/expcomponents-packages.md), [contributing](guides/contributing-to-expcomponents.md).
+- **expContentWriter**: the kernel class (6.0.15) that creates, updates and removes content from plain values (rich text as HTML, files as public web addresses, everything else as text) and publishes through the content/publish operation; the REST API writes through it. [expContentWriter](features/6.0/content-writer.md), [Writing content from PHP](guides/writing-content-from-php.md).
 - **explayouts**: the extensions that bring layouts, blocks, zones and rules to the admin. [Exponential Layouts](bc/6.0/LAYOUTS.md), [explayouts_ui](features/6.0/extensions/explayouts_ui.md), [API specification](specifications/6.0/explayouts-ui-api.md).
 - **Exponential Intelligence** (expai): the writing assistant of the administration interface; it writes drafts as the editor, with the editor's permissions, and never publishes on its own. [expai](features/6.0/extensions/expai.md), [README](../README.md#exponential-intelligence-new).
 - **Exponential Platform**: the Symfony based product line (`bin/console`, `exponential:*` commands) that can run Exponential 6 through the **legacy bridge**. [Platform package map](specifications/6.0/platform-package-map.md), [command names](specifications/6.0/platform-console-commands.md).
@@ -126,7 +129,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **ezpaypal**: the PayPal payment gateway. [ezpaypal](features/6.0/extensions/ezpaypal.md).
 - **ezpkg**: the package archive format (`.ezpkg`) holding content, classes, templates and files. [ezpm](features/6.0/ezpm-package-manager-cli.md), [Package compare and import](features/6.0/package-compare-and-import.md).
 - **ezpm** (command): the package manager on the command line (`ezpm.php`). [ezpm](features/6.0/ezpm-package-manager-cli.md). Not to be confused with the **ezpm extension**, which provides private messages: [ezpm extension](features/6.0/extensions/ezpm.md).
-- **ezprestapi**: the REST API extension that serves REST API v1 and v2 (reads at both, writes at v2) for remote content updates; it replaces the deprecated **ezprestapiprovider**. [ezprestapi](features/6.0/extensions/ezprestapi.md), [REST API v1 and v2](guides/rest-api-v1-and-v2.md).
+- **ezprestapi**: the REST API extension that serves REST API v1 and v2 (reads at both; create, update and delete at v2, through the kernel's **expContentWriter** since 1.2.9) for remote content updates; it replaces the deprecated **ezprestapiprovider**. [ezprestapi](features/6.0/extensions/ezprestapi.md), [REST API v1 and v2](guides/rest-api-v1-and-v2.md).
 - **ezstarrating**: a star rating datatype. [ezstarrating](features/6.0/extensions/ezstarrating.md).
 - **eztags**: a tag datatype with a managed tag tree. [eztags](features/6.0/extensions/eztags.md).
 - **ezupdate**: the package and update checker of an installation. [ezupdate](features/6.0/extensions/ezupdate.md).
@@ -193,6 +196,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **migrations repository**: the git repository (the site's own, or a separate one) a **migration run** commits its status file and run log to, tags and pushes. [The migrations repository](guides/migrations-repositories.md).
 - **module**: a set of **views** behind a URL such as `content/view`; extensions can add or override modules. [Extension module override](features/6.0/extension-module-override.md).
 - **MongoDB**: a supported database. [MongoDB](features/6.0/mongodb-database-support.md).
+- **monitor mode**: the mode in which the **request shield** logs every decision as it would be taken (`monitor-reject`, `monitor-challenge`) and refuses nobody; for watching a site with unusual addresses before **enforce mode**. [Monitor and enforce](help/request-shield/monitor-and-enforce.md).
 - **multi-node edit**: editing several items in one form. [Editing several items at once](bc/6.0/multi-node-edit.md).
 - **multisite package**: the site package that `exp:install` installs by default (`sevenx_multisite`). [Install in one command](features/6.0/install-in-one-command.md).
 
@@ -203,7 +207,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **ngsymfonytools**: lets legacy templates include Twig templates and run Symfony code. [ngsymfonytools](features/6.0/extensions/ngsymfonytools.md).
 - **node**: one place of a **content object** in the **content tree**; has an id, a parent, a sort order and a visibility. [Content model](guides/content-model-and-editing.md).
 - **notification**: an e-mail that tells a user that followed content changed or that a collaboration item needs attention; made from an event by a handler when the notification cronjob runs. [Notifications](features/6.0/notifications.md), [administrator's guide](guides/notifications-administrator.md), [specification](specifications/6.0/notifications.md).
-- **nxc_powercontent**: an extension that extends how code creates, updates and removes content. [nxc_powercontent](features/6.0/extensions/nxc_powercontent.md).
+- **nxc_powercontent**: an extension that extends how code creates, updates and removes content; the REST API no longer needs it since ezprestapi 1.2.9, the kernel's **expContentWriter** does these writes. [nxc_powercontent](features/6.0/extensions/nxc_powercontent.md), [upgrade notes](bc/6.0/content-writer-and-rest-writes.md).
 
 ## O
 
@@ -245,11 +249,13 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **registry (rad.ini)**: a list an extension reads from its own settings or code (event listeners, cronjob parts, audit sources, editor engines), declared in `rad.ini` so Setup > RAD counts and checks its entries. [RAD extension surface](bc/6.0/rad-extension-surface.md).
 - **repair page**: the page that explains missing libraries and lets an administrator repair them. [Repair from the browser](features/6.0/repair-from-the-browser.md), [Repair](bc/6.0/repair.md).
 - **request rule**: a rule in `requestrules.ini` that allows or refuses a request by module, view and URL. [Request rules](features/6.0/request-rules.md), [securing content/view/full](bc/6.0/view_full_security.md).
+- **request shield** (exp_request_shield): a small web application firewall in front of the site that decides every request before the kernel starts, under PHP-FPM and Velocity alike: it refuses scanners, floods, stray form posts and system URLs and asks for a **browser check**; Setup > Request shield shows it. The library request-shield 0.4.0 (MIT) bundled in an extension under GPL-2.0-or-later. [The request shield](features/6.0/request-shield.md), [guide](guides/request-shield.md).
 - **requires (migration)**: the header line of a **migration** that names the migrations, upgrade steps or `extension:<name>` it must run after. [Team workflow with git](help/migrations/recipes/team-workflow-with-git.md), [the file format](specifications/6.0/migration-file-format.md#the-header).
 - **response cache (Velocity)**: the server's cache of rendered pages. [Response cache](features/6.0/velocity-response-cache.md).
 - **role**: a named set of **policies** assigned to users and groups. [Roles and policies in order](features/6.0/role-policy-order.md); its users and groups: [role assignment paging](features/6.0/role-assignment-paging.md).
 - **rollback (migration)**: taking migrations back: a run by restoring its pre **caption**, one migration with its `down()`, or any caption for experts (`exp:migration:rollback`). [Rollback and captions](guides/migrations-rollback-and-captions.md).
 - **RSS**: feeds exported and imported by the RSS module; see also **syndication**. [RSS, podcast and feed list](features/6.0/rss-podcast-and-feed-list.md).
+- **rule file**: a plain text file that configures the **request shield**: rules with IDs, settings (`set mode`, `set log`), host names and `expect` examples; the site's main file is `settings/request-shield/request-shield.rules`. [The rules](help/request-shield/the-rules.md), [the library's reference](https://github.com/cjw-network/request-shield/blob/main/docs/reference/rule-files.md).
 - **run log (migration)**: `migrations/runs/<run-id>.log`, one line per event of a **migration run**, cleaned of secrets and e-mail addresses, committed to the **migrations repository**. [The audit trail of runs](help/migrations/recipes/the-audit-trail-of-runs.md).
 - **run (migration run)**: one call of `exp:migration:migrate --apply`, with its own run id (`YYYYMMDD-HHMMSS-<6 hex>`), captions, log, commit and tag; recorded in `exp_migration_run`. [Migrations](guides/migrations.md#the-record).
 - **run lock**: the installation lock `var/<site>/upgrade.lock` that `exp:upgrade` and every **migration run** hold while they write, so only one writes at a time. [Migrations](guides/migrations.md#the-run-lock-and-the-user).

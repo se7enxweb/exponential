@@ -255,6 +255,12 @@ when the summary line is missing ([Monitoring integrations](monitoring-integrati
 
 - **Languages**: pass `'language' => 'ger-DE'` to the content functions for each further language.
 - **Images**: download to `var/import/` first and give the path; compare a checksum before downloading again.
+- **HTML and public file addresses** (Exponential 6.0.15): when the source has rich text as HTML and its images and
+  files at public `https` addresses, write through `expContentWriter` instead of `eZContentFunctions`. It converts the
+  HTML, downloads the files itself (never from a server path or a private network), refuses unknown attributes before
+  it writes, and answers `published`, `pending`, `invalid` or `failed` with a message for the summary line. Keep
+  `eZContentFunctions` where you need `$notify = false` or files from `var/import/`
+  ([Writing content from PHP with expContentWriter](../../guides/writing-content-from-php.md#an-import-that-can-run-again)).
 - **Very large files**: stream rows instead of reading them all, and keep the seen remote ids in a table of your own.
 - **Queue per record**: queue one `expqueue` job per changed record when each needs remote calls
   ([AI providers, the job queue and MCP](ai-job-queue-and-mcp.md#expqueue-a-job-queue-for-integrations)).
@@ -262,6 +268,7 @@ when the summary line is missing ([Monitoring integrations](monitoring-integrati
 ## Related pages
 
 - [Idempotent imports keyed by remote_id](idempotent-imports-keyed-by-remote-id.md)
+- [Writing content from PHP with expContentWriter](../../guides/writing-content-from-php.md)
 - [Mapping content classes to external data](mapping-content-classes-to-external-data.md)
 - [Creating content in code for app creators](../creators/app-creators/creating-content-in-code.md)
 - [Testing integrations](testing-integrations.md)

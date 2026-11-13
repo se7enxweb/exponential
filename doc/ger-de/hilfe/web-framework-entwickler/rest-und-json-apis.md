@@ -42,7 +42,12 @@ Relativ zu `/api/ezp/<version>` ([REST-API v1 und v2 für Anwendungen](../erstel
 | `GET` | `/content/node/<id>/list(/offset/<n>)(/limit/<n>)` | ja | ja |
 | `GET` | `/content/object/<id>`, `.../fields`, `.../field/<identifier>` | ja | ja |
 | `POST` | `/content/node/create` | nein | ja |
+| `POST` oder `PUT` | `/content/node/<id>` (ändern: eine neue Version) | nein | ja |
 | `DELETE` | `/content/node/delete/<id>` | nein | ja |
+
+Die schreibenden Aufrufe laufen über [expContentWriter](../../funktionen/6.0/inhalte-schreiben.md) aus dem Kernel
+(Exponential 6.0.15, `ezprestapi` 1.2.9); Ihre eigenen Controller und Befehle können die Klasse genauso aufrufen
+([Inhalte aus PHP schreiben](../../anleitungen/inhalte-aus-php-schreiben.md)).
 
 ```bash
 curl -s -H "Authorization: Bearer $EXP_API_KEY" https://example.com/api/ezp/v1/content/node/2

@@ -67,8 +67,10 @@ values instead of storing them ([The eZDataType API](../extension-development/pa
 source's HTML to that XML in your import, keep the set of allowed elements small, and escape text. The
 REST create and update routes accept HTML for `ezxmltext` attributes and convert it with the Online Editor's input
 parser (`ezprestapi` 1.2.9, [REST API v1 and v2](../../guides/rest-api-v1-and-v2.md#21-updating-and-the-values-of-a-write)).
-In PHP code, the [nxc_powercontent](../../features/6.0/extensions/nxc_powercontent.md) extension also accepts HTML for
-them. Extension datatypes such as `eztags` have their
+In PHP code the same conversion is the kernel's: `expContentWriter` (Exponential 6.0.15) takes HTML for `ezxmltext`
+and, for `ezimage`, `ezbinaryfile` and `ezmedia`, a public `https` address that it downloads
+([Writing content from PHP with expContentWriter](../../guides/writing-content-from-php.md#rich-text-files-and-other-values));
+the [nxc_powercontent](../../features/6.0/extensions/nxc_powercontent.md) extension is no longer needed for it. Extension datatypes such as `eztags` have their
 own formats; read their `fromString()`.
 
 ## Images and files from a DAM

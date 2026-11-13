@@ -39,6 +39,8 @@ authenticated with“. Clients authentifizieren sich mit einem OAuth2-Token oder
 | OAuth2-Token oder persönliche API-Schlüssel | ebenda; [Persönliche API-Schlüssel](../../anleitungen/api-schluessel.md) |
 | Die alte Erweiterung `ezprestapiprovider` ist veraltet; Clients merken keinen Unterschied | ebenda |
 | Die Aussagen der Anleitung wurden am 15. Oktober 2026 auf dem Vorführserver geprüft | [REST API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md) |
+| Seit 6.0.15 (`ezprestapi` 1.2.9, 12. November 2026) ändert die API Inhalte: Jede Änderung ist eine neue Version in der Versionsgeschichte | [Neu in 6.0.15: Die REST-API ändert Inhalte](../neu-in-6-0-15-rest-api.md) |
+| Der Kernel selbst schreibt die Inhalte (`expContentWriter`); die Drittanbieter-Erweiterung `nxc_powercontent` wird nicht mehr gebraucht | [Inhalte aus einfachen Werten: expContentWriter](../../funktionen/6.0/inhalte-schreiben.md) |
 
 ## Was Sie nicht behaupten sollten
 
@@ -46,12 +48,14 @@ authenticated with“. Clients authentifizieren sich mit einem OAuth2-Token oder
 |---|---|
 | „GraphQL in Exponential 6“ | GraphQL gehört zur Symfony-Linie (Exponential Platform DXP) ([Thema: Exponential Platform DXP](thema-exponential-platform-dxp.md)) |
 | „Jeder kann über die API schreiben“ | Schreiben erfordert Authentifizierung und die Rechte des Benutzers |
-| „Die API ist neu“ | Die API gibt es seit Jahren; 6.0.15 vereinheitlicht die Versionen und ergänzt Prüfungen |
+| „Die API ist neu“ | Die API gibt es seit Jahren; 6.0.15 vereinheitlicht die Versionen, ergänzt Prüfungen und ergänzt das Ändern |
+| „Exponential hat die REST-API ersetzt“ | Routen und Antworten bleiben gleich; die Schreibzugriffe laufen jetzt über den Kernel |
 
 ## Blickwinkel und Ideen für Überschriften
 
 - „Headless mit Rechten: Jeder API-Aufruf prüft die Rechte des Benutzers.“
 - „Eine API-Erweiterung, zwei Versionen, kein Bruch.“
+- „Der Kern schreibt die Inhalte: eine Erweiterung weniger, und die API kann endlich ändern.“
 
 ## Verwandte Seiten
 

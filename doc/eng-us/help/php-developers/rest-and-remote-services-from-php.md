@@ -103,7 +103,8 @@ valid credentials, `403` when the user may not, `404` for an unknown node. Do th
 | Need | Layer |
 |---|---|
 | a third party integrates with your content, with OAuth consent | REST |
-| a mobile app reads and creates content | REST (content API) |
+| a mobile app reads, creates and updates content | REST (content API) |
+| your own controller, command or cronjob writes content from values | `expContentWriter`, the class the content API writes through ([Writing content from PHP](../../guides/writing-content-from-php.md)) |
 | a script automates administration tasks | expservices with an API token |
 | your page's JavaScript needs a small answer | ezjscore server function |
 | another Exponential installation syncs content | the `syndication` extension, when installed |

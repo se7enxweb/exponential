@@ -76,7 +76,7 @@ und schreiben Sie `up()` so, dass es einen halb erledigten Zustand verträgt.
 |---|---|
 | eine eigene Tabelle | `\expKernelTableSchema::install( array( $table ), $context->db(), $schema, $messages )`, `::exists()` |
 | eine Spalte oder ein Index | `\expUpgradeCatalog::hasColumn()`, `::hasIndex()`, `::execute()` mit SQL vom Schema-Handler der Engine |
-| Inhalte | `\eZContentFunctions::createAndPublishObject()`, `::updateAndPublishObject()`, `\eZContentObject::fetchByRemoteID()` |
+| Inhalte | `\eZContentFunctions::createAndPublishObject()`, `::updateAndPublishObject()`, `\eZContentObject::fetchByRemoteID()`; aus HTML und öffentlichen Dateiadressen `\expContentWriter::create()`, `::update()`, `::remove()` (6.0.15, [Inhalte aus PHP schreiben](../../anleitungen/inhalte-aus-php-schreiben.md)) |
 | eine Inhaltsklasse | `\eZContentClass::create()`, `\eZContentClassAttribute::create()`, `\eZContentClassClassGroup::create()` |
 | Rollen und Richtlinien | `\eZRole::fetchByName()`, `::create()`, `appendPolicy()`, `assignToUser()`, `\eZRole::expireCache()` |
 | Einstellungen | `\eZINI::instance( '<datei>.ini.append.php', 'settings/override', null, false, null, true )`, `setVariable()`, `save()` |

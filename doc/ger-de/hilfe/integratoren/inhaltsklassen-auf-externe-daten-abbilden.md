@@ -69,8 +69,10 @@ Wandeln Sie das HTML der Quelle in Ihrem Import in dieses XML um, halten Sie die
 und maskieren Sie Text. Die REST-Routen zum Anlegen und Aktualisieren
 akzeptieren HTML für Attribute vom Typ `ezxmltext` und wandeln es mit dem Eingabeparser des Online Editors um
 (`ezprestapi` 1.2.9, [REST-API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md#21-ändern-und-die-werte-eines-schreibzugriffs)).
-In PHP-Code akzeptiert auch die Erweiterung [nxc_powercontent](../../funktionen/6.0/erweiterungen/nxc_powercontent.md)
-HTML für sie.
+In PHP-Code übernimmt der Kernel dieselbe Umwandlung: `expContentWriter` (Exponential 6.0.15) nimmt HTML für
+`ezxmltext` an und für `ezimage`, `ezbinaryfile` und `ezmedia` eine öffentliche `https`-Adresse, die er herunterlädt
+([Inhalte aus PHP schreiben mit expContentWriter](../../anleitungen/inhalte-aus-php-schreiben.md)); die Erweiterung
+[nxc_powercontent](../../funktionen/6.0/erweiterungen/nxc_powercontent.md) wird dafür nicht mehr gebraucht.
 Datentypen aus Erweiterungen wie `eztags` haben eigene Formate; lesen Sie deren `fromString()`.
 
 ## Bilder und Dateien aus einem DAM

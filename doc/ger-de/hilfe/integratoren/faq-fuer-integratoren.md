@@ -65,8 +65,13 @@ individuelle Arbeit ([Single Sign-on](single-sign-on-und-social-login.md)).
 **Wie vermeide ich Duplikate?** Geben Sie jedem importierten Objekt eine `remote_id` nach einem Schlüsselschema, und
 suchen Sie es vor dem Anlegen mit `eZContentObject::fetchByRemoteID()` ([Idempotente Importe](idempotente-importe-ueber-die-remote-id.md)).
 
-**Kann ich direkt in die Datenbanktabellen schreiben?** Nein. Verwenden Sie `eZContentFunctions`; direkte
+**Kann ich direkt in die Datenbanktabellen schreiben?** Nein. Verwenden Sie `eZContentFunctions` oder seit 6.0.15
+`expContentWriter` ([Inhalte aus PHP schreiben](../../anleitungen/inhalte-aus-php-schreiben.md)); direkte
 Schreibzugriffe umgehen Versionen, Workflows, Caches, den Suchindex und das Audit.
+
+**Brauche ich nxc_powercontent, um Inhalte zu schreiben?** Nein. Seit Exponential 6.0.15 schreibt der Kernel Inhalte
+aus einfachen Werten selbst (`expContentWriter`), und die REST-API (`ezprestapi` 1.2.9) verwendet ihn zum Anlegen,
+Ändern und Löschen ([Hinweise zum Aktualisieren](../../bc/6.0/rest-schreibzugriffe-ueber-den-kernel.md)).
 
 **Verschickt ein Import Tausende Benachrichtigungs-E-Mails?** Nicht, wenn Sie den Inhaltsfunktionen `$notify = false`
 übergeben ([E-Mail und Benachrichtigungen](integration-von-e-mail-und-benachrichtigungen.md#importe-und-benachrichtigungen)).

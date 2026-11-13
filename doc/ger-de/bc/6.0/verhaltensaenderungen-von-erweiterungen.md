@@ -240,6 +240,25 @@ erweitert.
 Tokens, persönliche API-Schlüssel oder URLs von v1 ändert sich nichts. Die Schritte und die Tabelle vorher und seitdem
 stehen in [REST API v1 und v2: eine Erweiterung](../../anleitungen/rest-api-v1-und-v2.md).
 
+## 12. Die REST-Schreibzugriffe laufen über den Kernel; nxc_powercontent wird nicht mehr vorausgesetzt
+
+**Was sich geändert hat (12. November 2026).** `ezprestapi` 1.2.9 schreibt Anlegen, Ändern und Löschen über
+`expContentWriter` aus dem Kernel (Exponential 6.0.15) statt über `nxc_powercontent` und setzt diese Erweiterung nicht
+mehr voraus. REST v2 ändert Inhalte (`POST` oder `PUT /api/ezp/v2/content/node/<id>` veröffentlicht eine neue
+Version), und Anlegen und Ändern nehmen einen JSON-Body an. Ein Dateiwert muss eine öffentliche `http(s)`-Adresse sein
+(ein Serverpfad wird abgewiesen), und ein Feld, das kein Attribut der Klasse ist, wird mit `400` abgewiesen statt
+ignoriert. Auf einem Kernel älter als 6.0.15 antworten die schreibenden Aufrufe mit `501`.
+
+**So prüfen Sie es.** `composer why se7enxweb/nxc_powercontent` zeigt, ob noch etwas anderes die Erweiterung verlangt;
+`grep -rn "nxc_powercontent\|nxcPowerContent" settings/ extension/*/classes extension/*/modules` findet eine
+Aktivierung und Code, der sie verwendet.
+
+**So beheben Sie es.** Aktualisieren Sie Kernel und `ezprestapi` gemeinsam. Verwendet nichts von Ihnen
+`nxc_powercontent`, lassen Sie Composer die Erweiterung entfernen, nehmen Sie sie aus `ActiveExtensions[]`, führen Sie
+dann `php bin/php/ezpgenerateautoloads.php -e -o` aus, leeren Sie den INI-Cache und laden Sie PHP neu. Prüfen Sie
+REST-Clients, die Serverpfade oder zusätzliche Felder senden. Die Schritte:
+[Hinweise zum Aktualisieren: Die REST-Schreibzugriffe über den Kernel, nxc_powercontent wird nicht mehr gebraucht](rest-schreibzugriffe-ueber-den-kernel.md).
+
 ## Verwandte Seiten
 
 - [REST API v1 und v2: eine Erweiterung](../../anleitungen/rest-api-v1-und-v2.md)

@@ -107,7 +107,8 @@ unbekannten Knoten. Tun Sie in Ihren Aktionen dasselbe, mit `eZUser::currentUser
 | Bedarf | Schicht |
 |---|---|
 | ein Dritter integriert sich mit Ihren Inhalten, mit OAuth-Zustimmung | REST |
-| eine mobile App liest und erstellt Inhalte | REST (Content-API) |
+| eine mobile App liest, erstellt und ändert Inhalte | REST (Content-API) |
+| Ihr eigener Controller, Befehl oder Cronjob schreibt Inhalte aus Werten | `expContentWriter`, die Klasse, über die die Content-API schreibt ([Inhalte aus PHP schreiben](../../anleitungen/inhalte-aus-php-schreiben.md)) |
 | ein Skript automatisiert Administrationsaufgaben | expservices mit einem API-Token |
 | das JavaScript Ihrer Seite braucht eine kleine Antwort | ezjscore-Serverfunktion |
 | eine andere Exponential-Installation synchronisiert Inhalte | die Erweiterung `syndication`, falls installiert |

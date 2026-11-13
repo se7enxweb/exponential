@@ -127,6 +127,10 @@ einen Dateiwert aus einem lokalen Serverpfad las oder jede URL herunterlud; ein 
 abgewiesen. Auf einem Kernel älter als 6.0.15 antworten die schreibenden Aufrufe (Anlegen, Ändern, Löschen) mit
 `501 not_implemented`.
 
+Dieselbe Klasse steht Ihrem eigenen PHP-Code zur Verfügung: [Inhalte aus PHP schreiben mit expContentWriter](inhalte-aus-php-schreiben.md).
+Was sich in jedem Release `ezprestapi` 1.2.x geändert hat: [Neu in 6.0.15: Die REST-API ändert Inhalte](../hilfe/neu-in-6-0-15-rest-api.md);
+was Sie beim Aktualisieren prüfen: [Hinweise zum Aktualisieren: Die REST-Schreibzugriffe über den Kernel](../bc/6.0/rest-schreibzugriffe-ueber-den-kernel.md).
+
 ## 3. Authentifizierung
 
 `rest.ini [Authentication] RequireAuthentication=enabled` ist der Standard: Jede Inhaltsroute benötigt einen Benutzer. Zwei
@@ -386,7 +390,7 @@ curl -s -H "Authorization: Bearer expk_..." "https://www.example.com/api/migrati
 - [API-Schlüssel](api-schluessel.md): einen Schlüssel erstellen, verwenden und widerrufen; die Berechtigungstabelle der REST-Schnittstelle
 - [ezprestapi](../funktionen/6.0/erweiterungen/ezprestapi.md) und seine [Release Notes](../../changelogs/extensions/ezprestapi.md)
 - [ezprestapiprovider](../funktionen/6.0/erweiterungen/ezprestapiprovider.md) und seine [Release Notes](../../changelogs/extensions/ezprestapiprovider.md)
-- [nxc_powercontent](../funktionen/6.0/erweiterungen/nxc_powercontent.md)
+- [nxc_powercontent](../funktionen/6.0/erweiterungen/nxc_powercontent.md) (von der REST-API nicht mehr gebraucht) und [expContentWriter](../funktionen/6.0/inhalte-schreiben.md)
 - [Verhaltensänderungen der Extensions](../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)
 - [Remote-Dienste und Apps](entfernte-dienste-und-apps.md)
 

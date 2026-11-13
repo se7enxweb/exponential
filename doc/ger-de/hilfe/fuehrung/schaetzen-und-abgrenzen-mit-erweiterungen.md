@@ -52,7 +52,7 @@ Anforderung, ob eine Erweiterung sie abdeckt.
 | Bearbeiten und Seitenbau | `expai`, die Suite `explayouts`, `ezautosave`, `ezflow`, `ezie`, `ezmultiupload`, `ezodf`, `ezoe`, `ezwt` | Schreibassistent, Layouts, automatisches Speichern, Seitenabläufe, Bildeditor, Mehrfach-Upload, Import und Export von OpenDocument, der Online-Editor, Website-Toolbar |
 | Designs und Themes | `ezdemo`, `ezwebin`, `ezwebin-ezpackage`, `sevenx_themes_admin_classic`, `sevenx_themes_simple` | Demo- und Website-Designs, das Theme simple |
 | Shop, Newsletter und Besucher | `bccie`, `bcgooglesitemaps`, `bcwebsitestatistics`, `cjw_newsletter`, `ezpaypal`, `ezpm` | Export gesammelter Informationen, Sitemaps, Statistiken, Newsletter, PayPal, private Nachrichten |
-| Datenaustausch und APIs | `ezprestapi`, `ezxmlexport`, `nxc_powercontent`, `syndication`, `xrowextract` | REST-API v1 und v2, XML-Export, Inhalte aus Code, Syndizierung, Export und Import |
+| Datenaustausch und APIs | `ezprestapi`, `ezxmlexport`, `nxc_powercontent`, `syndication`, `xrowextract` | REST-API v1 und v2, XML-Export, Inhalte aus Code (seit 6.0.15 auch im Kernel: `expContentWriter`, sodass die REST-API `nxc_powercontent` nicht mehr braucht), Syndizierung, Export und Import |
 | Administration, Sicherheit und Betrieb | `AdminAid`, `ezjscore`, `ezmbpaex`, `expqueue`, `ezupdate`, `git_manager`, `sevenx_authentication_2fa`, `sevenx_dse`, `sevenx_valkey_cache` | Hilfen für die Administration, Ablauf von Passwörtern, Job-Warteschlange, Updates, Git-Dashboard und Backups, Zwei-Faktor-Anmeldung, Editor für Datenbankquellen, Cache mit Redis und Valkey |
 | Template-Helfer | `owsimpleoperator`, `swark` | Zusätzliche Template-Operatoren und Workflow-Ereignisse |
 

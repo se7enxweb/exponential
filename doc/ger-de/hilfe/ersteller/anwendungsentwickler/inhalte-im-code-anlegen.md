@@ -13,6 +13,10 @@ Diese Seite ist für Anwendungsentwickler, die Inhalte aus Code schreiben: Impor
 Objekte anlegen, Migrationen. `eZContentFunctions` des Kernels (`kernel/classes/ezcontentfunctions.php`) legt in einem
 Aufruf an und veröffentlicht, mit derselben Operation (und denselben Triggern) wie der Editor.
 
+Seit Exponential 6.0.15 gibt es einen zweiten Weg, der oft einfacher ist: `expContentWriter` nimmt Rich Text als HTML
+und Dateien als öffentliche Webadressen an und sagt Ihnen, ob der Inhalt veröffentlicht wurde, auf einen Workflow
+wartet oder abgewiesen wurde und warum ([Aus einfachen Werten: expContentWriter](#aus-einfachen-werten-expcontentwriter)).
+
 ## Inhalt
 
 1. [Anlegen und veröffentlichen](#anlegen-und-veröffentlichen)
@@ -21,6 +25,7 @@ Aufruf an und veröffentlicht, mit derselben Operation (und denselben Triggern) 
 4. [Idempotente Importe mit Remote-IDs](#idempotente-importe-mit-remote-ids)
 5. [Verschieben, verbergen, entfernen](#verschieben-verbergen-entfernen)
 6. [Große Operationen](#große-operationen)
+7. [Aus einfachen Werten: expContentWriter](#aus-einfachen-werten-expcontentwriter)
 
 ## Anlegen und veröffentlichen
 
@@ -97,9 +102,39 @@ Tausende Objekte gehören in einen Hintergrundprozess: einen Befehl, der aus Cro
 und Verschieben großer Teilbäume ([Inhalts-Jobs](inhalts-jobs.md)). Committen Sie in Stapeln, leeren Sie zwischen den
 Stapeln mit `eZContentObject::clearCache()` und protokollieren Sie den Fortschritt.
 
+## Aus einfachen Werten: expContentWriter
+
+```php
+<?php
+$result = expContentWriter::create( array(
+    'parentNodeID'    => $parentNodeID,
+    'classIdentifier' => 'article',
+    'languageLocale'  => 'eng-US',
+    'remoteID'        => 'myapp-article-' . $externalID,
+    'attributes'      => array(
+        'title' => $title,
+        'intro' => '<p>' . htmlspecialchars( $teaser ) . '</p>',            // Rich Text als HTML
+        'image' => 'https://cdn.example.org/a/' . $externalID . '.jpg|' . $title, // heruntergeladen, mit Alternativtext
+    ),
+) );
+if ( $result['status'] === 'invalid' || $result['status'] === 'failed' )
+    eZDebug::writeError( $result['message'], 'myapp import' );
+
+if ( $result['object'] instanceof eZContentObject )
+    $result = expContentWriter::update( $result['object'], array( 'title' => $newTitle ), 'eng-US' ); // eine neue Version
+```
+
+`update()` ändert nur die übergebenen Attribute und veröffentlicht eine neue Version; eine Sprache, die das Objekt noch
+nicht hat, fügt eine Übersetzung hinzu. `remove( $object, true )` verschiebt das Objekt in den Papierkorb. Die Klasse
+prüft keine Berechtigungen; prüfen Sie sie vorher, wenn der Code für einen Benutzer handelt. Alles dazu:
+[Inhalte aus PHP schreiben mit expContentWriter](../../../anleitungen/inhalte-aus-php-schreiben.md).
+Die REST-API verwendet dieselbe Klasse, sodass eine App Inhalte über HTTP ändern kann
+([REST API v1 und v2 für Anwendungen](rest-api.md)).
+
 ## Verwandte Seiten
 
 - [Die Content-API in PHP](die-content-api.md)
+- [Inhalte aus einfachen Werten: expContentWriter](../../../funktionen/6.0/inhalte-schreiben.md)
 - [CLI-Skripte mit eZScript](cli-skripte.md)
 - [Workflows, Trigger und Ereignisse](workflows-und-ereignisse.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

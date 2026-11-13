@@ -56,6 +56,10 @@ own addresses; the dataset page lists all of them. This suits statistics that ar
 In both cases update the dataset's "Last changed" date, and, if your catalog has one, its feed picks up a change
 notice (see "Feeds for new and changed datasets").
 
+When the data comes from another system, that system can do the update itself: since Exponential 6.0.15 the REST API
+publishes a new version of a dataset page with the values and the file address it sends, and the history keeps every
+version ([Keeping datasets current from another system](the-rest-api-as-a-data-interface.md#keeping-datasets-current-from-another-system)).
+
 ## Correcting an error
 
 1. Edit the distribution, replace the file, publish.

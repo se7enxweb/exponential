@@ -52,7 +52,7 @@ requirement, whether an extension covers it.
 | Editing and page building | `expai`, the `explayouts` suite, `ezautosave`, `ezflow`, `ezie`, `ezmultiupload`, `ezodf`, `ezoe`, `ezwt` | Writing assistant, layouts, autosave, page flows, image editor, multiple upload, OpenDocument import and export, the online editor, website toolbar |
 | Designs and themes | `ezdemo`, `ezwebin`, `ezwebin-ezpackage`, `sevenx_themes_admin_classic`, `sevenx_themes_simple` | Demo and website designs, the simple theme |
 | Shop, newsletter and visitors | `bccie`, `bcgooglesitemaps`, `bcwebsitestatistics`, `cjw_newsletter`, `ezpaypal`, `ezpm` | Collected information export, sitemaps, statistics, newsletter, PayPal, private messages |
-| Data exchange and APIs | `ezprestapi`, `ezxmlexport`, `nxc_powercontent`, `syndication`, `xrowextract` | REST API v1 and v2, XML export, content from code, syndication, export and import |
+| Data exchange and APIs | `ezprestapi`, `ezxmlexport`, `nxc_powercontent`, `syndication`, `xrowextract` | REST API v1 and v2, XML export, content from code (since 6.0.15 also in the kernel: `expContentWriter`, so the REST API no longer needs `nxc_powercontent`), syndication, export and import |
 | Administration, security and operations | `AdminAid`, `ezjscore`, `ezmbpaex`, `expqueue`, `ezupdate`, `git_manager`, `sevenx_authentication_2fa`, `sevenx_dse`, `sevenx_valkey_cache` | Admin helpers, password expiry, job queue, updates, Git dashboard and backups, two-factor login, database source editor, Redis and Valkey cache |
 | Template helpers | `owsimpleoperator`, `swark` | Extra template operators and workflow events |
 

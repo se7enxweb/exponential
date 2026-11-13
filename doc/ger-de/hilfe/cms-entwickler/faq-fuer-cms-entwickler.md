@@ -83,7 +83,9 @@ Template-Blöcke. [Layouts für CMS-Entwickler](layouts-fuer-cms-entwickler.md#l
 
 **Wie lege ich Inhalte aus Code an?**
 `eZContentFunctions::createAndPublishObject()` und `updateAndPublishObject()`, mit einer Remote-ID je Objekt.
-[Inhalte aus PHP](inhalte-aus-php.md).
+[Inhalte aus PHP](inhalte-aus-php.md). Seit 6.0.15 auch `expContentWriter::create()`, `update()` und `remove()`,
+die Rich Text als HTML und Dateien als öffentliche Webadressen annehmen und mit einem Status und einer Meldung
+antworten ([Inhalte aus PHP schreiben mit expContentWriter](../../anleitungen/inhalte-aus-php-schreiben.md)).
 
 **Gibt es eine REST-API?**
 Ja: Die Erweiterung `ezprestapi` bedient Routen v1 und v2 für Knoten, Unterelemente und Felder, mit Anlegen,

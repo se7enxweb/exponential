@@ -34,6 +34,7 @@ Relative to `/api/ezp/<version>`:
 | `GET` | `/content/node/<id>/fields`, `/field/<identifier>` | yes | yes | Fields |
 | `GET` | `/content/object/<id>` and its fields | yes | yes | By object id |
 | `POST` | `/content/node/create` | no | yes | Create and publish |
+| `POST` or `PUT` | `/content/node/<id>` | no | yes | Update: publish a new version with the values sent |
 | `DELETE` | `/content/node/delete/<id>` | no | yes | Remove |
 
 A read-only agent needs only the `GET` routes.
@@ -86,6 +87,13 @@ A `POST` to `/api/ezp/v2/content/node/create` **creates and publishes**. For age
 review first, create into a section that visitors cannot see and that an approval workflow covers, or use Exponential
 Intelligence, which writes drafts. Test every write workflow on a test installation, and read the audit trail
 afterwards ([A content import workflow](workflow-content-import.md)).
+
+Since Exponential 6.0.15 with `ezprestapi` 1.2.9, a `POST` or `PUT` to `/api/ezp/v2/content/node/<id>` **updates**:
+it publishes a new version with the values sent and keeps the old one in the history, where an editor can compare
+and restore it. The key needs the `edit` scope. Values are text: rich text as HTML, a file as a public `https`
+address; an unknown attribute is refused with `400`, which an agent can show to the model as a correctable error. A
+`202` answer means a workflow holds the version, for example for an approval
+([Updating and the values of a write](../../../guides/rest-api-v1-and-v2.md#21-updating-and-the-values-of-a-write)).
 
 ## Related pages
 

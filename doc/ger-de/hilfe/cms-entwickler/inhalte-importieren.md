@@ -110,6 +110,11 @@ legen Sie es dann über `eZContentFunctions` mit einer Remote-ID je Element an o
 wiederholt werden können ([Inhalte aus PHP](inhalte-aus-php.md) und das Gerüst unter
 [Ein eigenes Importskript](../../installation/migration/exponential-tools.md#4-ein-eigenes-importskript-das-grundgerüst)).
 
+Seit Exponential 6.0.15 ist `expContentWriter` aus dem Kernel oft der kürzere Weg: Die Klasse nimmt Rich Text als HTML
+und Dateien als öffentliche Webadressen an, also in der Form, in der die meisten Quellen sie haben, und antwortet für
+jedes Element, was sie getan hat. Die REST-API schreibt über dieselbe Klasse. Siehe
+[Inhalte aus PHP schreiben mit expContentWriter](../../anleitungen/inhalte-aus-php-schreiben.md).
+
 ## Regeln für jeden Import
 
 1. **Zuerst das Modell.** Legen Sie die Klassen und den Ordnerbaum vor dem Import an

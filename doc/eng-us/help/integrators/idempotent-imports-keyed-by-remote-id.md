@@ -106,6 +106,10 @@ Notes:
 - `createAndPublishObject()` manages its own transaction and runs the publish operation, so workflows, caches, the
   search index and the audit trail stay in step. Write to content tables directly never.
 - With a dry run the function reports what it would do; count the results and print them at the end.
+- With `expContentWriter` (Exponential 6.0.15) a second create cannot duplicate: `create()` with a `remoteID` that
+  exists already answers `invalid` and writes nothing. Pass `update()` only the values that changed; with none it
+  answers `invalid` and makes no new version
+  ([Writing content from PHP with expContentWriter](../../guides/writing-content-from-php.md#an-import-that-can-run-again)).
 
 ## Records removed at the source
 
@@ -143,6 +147,7 @@ when the source file is empty or much smaller than usual; stop and alert instead
 ## Related pages
 
 - [Creating, publishing and changing content from PHP](../extension-development/part-8-reference/content-functions-from-php.md)
+- [Writing content from PHP with expContentWriter](../../guides/writing-content-from-php.md)
 - [Writing an import script](writing-an-import-script.md)
 - [Mapping content classes to external data](mapping-content-classes-to-external-data.md)
 - [eZContentObject](../extension-development/part-8-reference/ezcontentobject.md)

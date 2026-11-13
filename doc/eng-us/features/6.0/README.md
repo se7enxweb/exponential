@@ -74,6 +74,7 @@ nginx with PHP-FPM keep working as before.
 - [Keep the content and INI caches in Redis or Valkey](valkey-cache-hooks.md)
 - [Static cache generator](static-cache-generator.md)
 - [Static publishing: a static copy of a site for GitHub Pages and any static host](static-publishing.md)
+- [Request shield: a web application firewall in front of every request](request-shield.md)
 - [Cronjobs console](cronjobs-console.md), [Pausing cronjob parts](cronjob-pause.md),
   [Leaving out a cronjob part](cronjob-part-filter.md)
 - [Log rotation and pruning](log-rotation.md), [The log viewer](log-viewer.md),
@@ -102,6 +103,8 @@ nginx with PHP-FPM keep working as before.
 - [The website sidebar (expwt) in place of the website toolbar (ezwt)](website-sidebar.md): the move with
   `exp:wt:migrate-from-ezwt` and the upgrade step 6.0.15-expwt-enable
 - [Pagelayout hooks: one place at the end of every page for extensions](pagelayout-hooks.md)
+- [Content from plain values: expContentWriter](content-writer.md): the kernel creates, updates and removes content
+  from text values in a few lines, for scripts, imports, migrations, integrations and the REST API
 - [Remote services: the whole admin as an HTTP API (expservices)](remote-services-expservices.md)
 - [The GraphQL API: ask the content for exactly the fields a page needs](graphql.md): `/api/graphql`, a schema
   generated from the content classes, policies always applied, Setup > GraphQL with a playground,

@@ -146,6 +146,8 @@ credentials or tokens in a script, or in shell history on shared machines.
 | 1.2.1 to 1.2.4 | 27 September to 2 October 2026 | Version, license and website; description; 7x and Exponential Foundation headers on the entry point files; commands and cronjob parts are classes the files call and start through the shared helpers. |
 | 1.2.5 | 6 October 2026 | Every read and write checks the current user's policies for every kind of authentication; reads answer at v1 again; delete takes `DELETE`; create and delete answer 201 and 200 with the ids. Needs Exponential 6.0.15 for the checks and v1. |
 | 1.2.6 | 15 October 2026 | `OutputFormat=xhtml` renders again (`[ezp7xRestContentController_viewContent_OutputSettings] Template=rest_pagelayout.tpl`; it answered an empty `renderedOutput`); name, description and README say the extension serves REST API v1 and v2 and replaces ezprestapiprovider; the model tests moved in from ezprestapiprovider. |
+| 1.2.7 | 21 October 2026 | The children list (`/content/node/<id>/list/...`) answers again without the `ezprestapiprovider` extension, which every new installation lacks; it answered 500 (`Class "ezpRestContentController" not found`). A model test covers it. |
+| 1.2.8 | 29 October 2026 | One copyright notice, Exponential Foundation and 7x. |
 | 1.2.9 | 12 November 2026 | REST v2 updates content (`POST` or `PUT /content/node/<id>` publishes a new version); create and update accept a JSON body; create, update and delete are written by the kernel's `expContentWriter`, so `nxc_powercontent` is no longer required; file values are downloaded from public `http(s)` addresses only. Needs Exponential 6.0.15 for the writes. |
 
 [ezprestapiprovider](ezprestapiprovider.md) is deprecated; its final release, 6.0.4, is a compatibility shim that
@@ -155,6 +157,9 @@ extends this extension's provider and controller. See the
 ## Related pages
 
 - [REST API v1 and v2: one extension](../../../guides/rest-api-v1-and-v2.md)
+- [New in 6.0.15: the REST API updates content](../../../help/whats-new-in-6-0-15-rest-api.md): every 1.2.x release in one table
+- [Content from plain values: expContentWriter](../content-writer.md), the kernel class the writes go through, and
+  [Upgrade notes: the REST writes through the kernel](../../../bc/6.0/content-writer-and-rest-writes.md)
 - [nxc_powercontent](nxc_powercontent.md), [ezprestapiprovider](ezprestapiprovider.md) (deprecated)
 - [Remote services (expservices)](../remote-services-expservices.md)
 - [Personal API keys](../../../guides/api-keys.md): REST requests with a key of the user

@@ -147,6 +147,9 @@ Für Entwickler, auf ihrer eigenen Schulungsinstallation. Das Skript legt drei O
   abbildet.
 - [Kapitel 17.6: PHP-API](../../../../installation/17-migrationsreferenz.md#176-php-api-legacy-klassen-und-dienste-der-public-api):
   die Legacy-Klassen neben ihren Entsprechungen in der Plattform.
+- [Inhalte aus PHP schreiben mit expContentWriter](../../../../anleitungen/inhalte-aus-php-schreiben.md): mit Exponential
+  6.0.15 derselbe Import mit Rich Text als HTML und Dateien von öffentlichen Adressen, ohne eigene HTML-Umwandlung
+  (`eZSimplifiedXMLInputParser`) und ohne eigenen Download-Schritt.
 
 ## Verwandte Seiten
 

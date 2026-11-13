@@ -58,6 +58,11 @@ zitiert werden.
 In beiden Fällen aktualisieren Sie das Datum „Zuletzt geändert“ des Datensatzes, und, wenn Ihr Katalog einen hat,
 nimmt sein Feed einen Änderungshinweis auf (siehe „Feeds für neue und geänderte Datensätze“).
 
+Kommen die Daten aus einem anderen System, kann dieses System die Aktualisierung selbst vornehmen: Seit Exponential
+6.0.15 veröffentlicht die REST-API eine neue Version einer Datensatzseite mit den Werten und der Dateiadresse, die es
+sendet, und die Versionsgeschichte behält jede Version
+([Datensätze aus einem anderen System aktuell halten](die-rest-api-als-datenschnittstelle.md#datensätze-aus-einem-anderen-system-aktuell-halten)).
+
 ## Einen Fehler berichtigen
 
 1. Bearbeiten Sie die Distribution, ersetzen Sie die Datei, veröffentlichen Sie.

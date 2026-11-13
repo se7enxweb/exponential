@@ -259,6 +259,12 @@ Protokoll und einen Alarm, wenn die Zusammenfassungszeile fehlt
 - **Sprachen**: Übergeben Sie den Inhaltsfunktionen für jede weitere Sprache `'language' => 'ger-DE'`.
 - **Bilder**: Laden Sie sie zuerst nach `var/import/` herunter und geben Sie den Pfad an; vergleichen Sie vor einem
   erneuten Herunterladen eine Prüfsumme.
+- **HTML und öffentliche Dateiadressen** (Exponential 6.0.15): Hat die Quelle Rich Text als HTML und ihre Bilder und
+  Dateien unter öffentlichen `https`-Adressen, schreiben Sie über `expContentWriter` statt über `eZContentFunctions`.
+  Die Klasse wandelt das HTML um, lädt die Dateien selbst herunter (nie von einem Serverpfad oder aus einem privaten
+  Netz), weist unbekannte Attribute ab, bevor sie schreibt, und antwortet mit `published`, `pending`, `invalid` oder
+  `failed` und einer Meldung für die Zusammenfassung. Behalten Sie `eZContentFunctions`, wo Sie `$notify = false` oder
+  Dateien aus `var/import/` brauchen ([Inhalte aus PHP schreiben mit expContentWriter](../../anleitungen/inhalte-aus-php-schreiben.md)).
 - **Sehr große Dateien**: Lesen Sie Zeilen als Datenstrom statt alle auf einmal, und halten Sie die gesehenen
   Remote-IDs in einer eigenen Tabelle.
 - **Warteschlange je Datensatz**: Reihen Sie je geändertem Datensatz einen `expqueue`-Job ein, wenn jeder entfernte
@@ -268,6 +274,7 @@ Protokoll und einen Alarm, wenn die Zusammenfassungszeile fehlt
 ## Verwandte Seiten
 
 - [Idempotente Importe, geschlüsselt nach remote_id](idempotente-importe-ueber-die-remote-id.md)
+- [Inhalte aus PHP schreiben mit expContentWriter](../../anleitungen/inhalte-aus-php-schreiben.md)
 - [Inhaltsklassen externen Daten zuordnen](inhaltsklassen-auf-externe-daten-abbilden.md)
 - [Inhalte im Code anlegen, für App-Ersteller](../ersteller/anwendungsentwickler/inhalte-im-code-anlegen.md)
 - [Integrationen testen](integrationen-testen.md)

@@ -21,9 +21,10 @@ search and caches right. Never write to the content tables directly.
 4. [Reading attribute values](#reading-attribute-values)
 5. [Creating content](#creating-content)
 6. [Updating content](#updating-content)
-7. [The user a script runs as](#the-user-a-script-runs-as)
-8. [Moving, hiding and removing](#moving-hiding-and-removing)
-9. [Large runs](#large-runs)
+7. [From plain values: expContentWriter](#from-plain-values-expcontentwriter)
+8. [The user a script runs as](#the-user-a-script-runs-as)
+9. [Moving, hiding and removing](#moving-hiding-and-removing)
+10. [Large runs](#large-runs)
 
 ## Running a script with the kernel loaded
 
@@ -142,6 +143,33 @@ Only the attributes you pass change. `language` adds or updates a translation of
 publishes a new version, with its workflows and notifications; pass `false` as the third argument to publish without
 notification events.
 
+## From plain values: expContentWriter
+
+Since Exponential 6.0.15 the kernel also has `expContentWriter` (`kernel/classes/contentwriter/expcontentwriter.php`),
+which takes the values the way a person or another system has them: rich text as HTML, an image or file as a public
+`https` address, everything else in its text form. It refuses unknown attributes and bad values before it writes
+anything, and it answers with a status instead of `false`:
+
+```php
+<?php
+$result = expContentWriter::create( array(
+    'parentNodeID'    => $eventsFolderNodeID,
+    'classIdentifier' => 'exp_event',
+    'languageLocale'  => 'eng-US',
+    'remoteID'        => 'exp-import-event-42',
+    'attributes'      => array( 'title' => 'Opening of the new hall', 'intro' => '<p>Doors open at <b>ten</b>.</p>' ),
+) );
+// $result['status']: published, pending (a workflow holds it), invalid (nothing written), failed (rolled back)
+
+$object = eZContentObject::fetchByRemoteID( 'exp-import-event-42' );
+$result = expContentWriter::update( $object, array( 'intro' => '<p>Doors open at eleven.</p>' ), 'eng-US' );
+$result = expContentWriter::remove( $object, true ); // true: to the trash
+```
+
+The REST API writes through it too. Use `eZContentFunctions` when you need to publish without notifications or to
+read files from paths on the server. The guide has an import, a migration and an integration built on it:
+[Writing content from PHP with expContentWriter](../../guides/writing-content-from-php.md).
+
 ## The user a script runs as
 
 A command-line script runs as the anonymous user unless it sets one, and the anonymous user usually may not create
@@ -179,6 +207,7 @@ The created objects get this user as owner.
 ## Related pages
 
 - [Lesson 4.3: Reading and writing content from PHP](../trainers/developers/module-04-content-classes-and-datatypes/content-from-php.md)
+- [Content from plain values: expContentWriter](../../features/6.0/content-writer.md)
 - [eZContentObject](../extension-development/part-8-reference/ezcontentobject.md)
 - [Fetching content in templates](fetching-content-in-templates.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

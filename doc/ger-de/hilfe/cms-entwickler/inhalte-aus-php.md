@@ -21,9 +21,10 @@ zu verwenden hält Versionen, Workflows, Suche und Caches korrekt. Schreiben Sie
 4. [Attributwerte lesen](#attributwerte-lesen)
 5. [Inhalte anlegen](#inhalte-anlegen)
 6. [Inhalte aktualisieren](#inhalte-aktualisieren)
-7. [Der Benutzer, unter dem ein Skript läuft](#der-benutzer-unter-dem-ein-skript-läuft)
-8. [Verschieben, Verbergen und Entfernen](#verschieben-verbergen-und-entfernen)
-9. [Große Läufe](#große-läufe)
+7. [Aus einfachen Werten: expContentWriter](#aus-einfachen-werten-expcontentwriter)
+8. [Der Benutzer, unter dem ein Skript läuft](#der-benutzer-unter-dem-ein-skript-läuft)
+9. [Verschieben, Verbergen und Entfernen](#verschieben-verbergen-und-entfernen)
+10. [Große Läufe](#große-läufe)
 
 ## Ein Skript mit geladenem Kernel ausführen
 
@@ -143,6 +144,34 @@ aktualisiert sie ([Übersetzungen und Sprachen](uebersetzungen-und-sprachen.md#�
 legt eine neue Version an und veröffentlicht sie, mit ihren Workflows und Benachrichtigungen; übergeben Sie `false` als
 drittes Argument, um ohne Benachrichtigungs-Events zu veröffentlichen.
 
+## Aus einfachen Werten: expContentWriter
+
+Seit Exponential 6.0.15 hat der Kernel außerdem `expContentWriter` (`kernel/classes/contentwriter/expcontentwriter.php`),
+der die Werte so annimmt, wie ein Mensch oder ein anderes System sie hat: Rich Text als HTML, ein Bild oder eine Datei
+als öffentliche `https`-Adresse, alles andere in seiner Textform. Er weist unbekannte Attribute und ungültige Werte ab,
+bevor er etwas schreibt, und antwortet mit einem Status statt mit `false`:
+
+```php
+<?php
+$result = expContentWriter::create( array(
+    'parentNodeID'    => $eventsFolderNodeID,
+    'classIdentifier' => 'exp_event',
+    'languageLocale'  => 'eng-US',
+    'remoteID'        => 'exp-import-event-42',
+    'attributes'      => array( 'title' => 'Eröffnung der neuen Halle', 'intro' => '<p>Einlass ab <b>zehn</b> Uhr.</p>' ),
+) );
+// $result['status']: published, pending (ein Workflow hält sie), invalid (nichts geschrieben), failed (zurückgerollt)
+
+$object = eZContentObject::fetchByRemoteID( 'exp-import-event-42' );
+$result = expContentWriter::update( $object, array( 'intro' => '<p>Einlass ab elf Uhr.</p>' ), 'eng-US' );
+$result = expContentWriter::remove( $object, true ); // true: in den Papierkorb
+```
+
+Auch die REST-API schreibt über diese Klasse. Verwenden Sie `eZContentFunctions`, wenn Sie ohne Benachrichtigungen
+veröffentlichen oder Dateien aus Pfaden auf dem Server lesen müssen. Die Anleitung enthält einen Import, eine Migration
+und eine Integration auf dieser Grundlage:
+[Inhalte aus PHP schreiben mit expContentWriter](../../anleitungen/inhalte-aus-php-schreiben.md).
+
 ## Der Benutzer, unter dem ein Skript läuft
 
 Ein Kommandozeilenskript läuft als anonymer Benutzer, sofern es keinen setzt, und der anonyme Benutzer darf meist keine
@@ -182,6 +211,7 @@ Die angelegten Objekte erhalten diesen Benutzer als Eigentümer.
 ## Verwandte Seiten
 
 - [Lektion 4.3: Inhalte aus PHP lesen und schreiben](../trainer/entwickler/modul-04-inhaltsklassen-und-datentypen/inhalte-aus-php.md)
+- [Inhalte aus einfachen Werten: expContentWriter](../../funktionen/6.0/inhalte-schreiben.md)
 - [eZContentObject](../erweiterungsentwicklung/teil-8-referenz/ezcontentobject.md)
 - [Inhalte in Templates abrufen](inhalte-in-templates-abrufen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

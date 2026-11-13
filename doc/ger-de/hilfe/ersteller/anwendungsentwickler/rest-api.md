@@ -34,7 +34,12 @@ Relativ zu `/api/ezp/<version>`:
 | `GET` | `/content/node/<id>/fields`, `/field/<identifier>` | ja | ja | Felder |
 | `GET` | `/content/object/<id>`, `.../fields`, `.../field/<identifier>` | ja | ja | nach Objekt-ID |
 | `POST` | `/content/node/create` | nein | ja | anlegen und veröffentlichen |
+| `POST` oder `PUT` | `/content/node/<id>` | nein | ja | ändern: eine neue Version mit den gesendeten Werten veröffentlichen (Exponential 6.0.15, `ezprestapi` 1.2.9) |
 | `DELETE` | `/content/node/delete/<id>` | nein | ja | entfernen |
+
+Schreibende Aufrufe nehmen Formularfelder oder ein JSON-Objekt an; Rich Text als HTML, eine Datei als öffentliche
+`https`-Adresse. Die Antworten und die Werte:
+[Ändern und die Werte eines Schreibzugriffs](../../../anleitungen/rest-api-v1-und-v2.md#21-ändern-und-die-werte-eines-schreibzugriffs).
 
 ## Authentifizierung
 

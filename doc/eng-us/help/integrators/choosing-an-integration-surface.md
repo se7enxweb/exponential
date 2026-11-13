@@ -37,8 +37,8 @@ than one. Four questions narrow the choice quickly.
 
 | Your situation | First choice | Also possible | Avoid |
 |---|---|---|---|
-| Import many records on a schedule, code may run on the server | Cronjob part or CLI script with `eZContentFunctions` and `remote_id` | `xrowextract` scheduled import | Many single REST creates |
-| Another system creates a few items now and then, cannot run code on the server | REST `POST /api/ezp/v2/content/node/create` with an API key | `expservices` write services | Writing to database tables directly |
+| Import many records on a schedule, code may run on the server | Cronjob part or CLI script with `eZContentFunctions` or `expContentWriter` (6.0.15) and `remote_id` | `xrowextract` scheduled import | Many single REST creates |
+| Another system creates or changes a few items now and then, cannot run code on the server | REST `POST /api/ezp/v2/content/node/create`, and `PUT /api/ezp/v2/content/node/<id>` to update (6.0.15, `ezprestapi` 1.2.9), with an API key | `expservices` write services | Writing to database tables directly |
 | An app reads content | REST reads (`/api/ezp/v1/...` or `/v2/...`) | `expservices` reads, RSS or Atom feeds | Scraping HTML pages |
 | Another system must know at once when something is published | A workflow event on `content / publish / after` | Audit webhook sink with `content.object.publish` switched on | Polling the REST API every minute for everything |
 | Another system must approve or reject a publication | A workflow event on `content / publish / before` that returns accepted or rejected, or defers to the cronjob | The *Approve* event for human approval | Checking after publishing |

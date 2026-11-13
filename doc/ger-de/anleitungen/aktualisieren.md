@@ -370,6 +370,20 @@ einem Sicherungspunkt vor jedem Lauf. Die Upgrade-Schritte des Kernels sind daru
 [Migrationen](../hilfe/migrationen/README.md); das Wort meint etwas anderes als das Upgrade einer Site:
 [Migrationen oder Umzug einer Site](../hilfe/migrationen/migrationen-oder-umzug-einer-site.md).
 
+**Request Shield (6.0.15).** `composer.json` bringt jetzt `exp_request_shield` mit, das request-shield vor die Site
+stellt (Scanner, Fluten, verirrte Formular-POSTs und System-URLs werden abgewiesen, bevor der Kernel startet). Ihre
+`config.php` wird nie überschrieben; fügen Sie seine Hook-Zeile deshalb selbst ein, oberhalb des frühen Ausstiegs des
+HTTP-Caches, wie `config.php-RECOMMENDED` es zeigt; unter Velocity starten Sie danach neu. Aktivieren Sie die
+Erweiterung für **Setup** > **Request Shield** und lesen Sie in den ersten Tagen sein Log.
+[Request Shield (BC)](../bc/6.0/request-shield.md), [Request Shield](request-shield.md).
+
+**REST-Schreibzugriffe und nxc_powercontent (6.0.15).** `ezprestapi` 1.2.9 schreibt Inhalte über `expContentWriter`
+aus dem Kernel und ändert Inhalte über REST v2; es setzt `nxc_powercontent` nicht mehr voraus, und Composer entfernt
+diese Erweiterung beim Aktualisieren, wenn nichts anderes sie verlangt. Aktualisieren Sie Kernel und `ezprestapi`
+gemeinsam, nehmen Sie `nxc_powercontent` aus `ActiveExtensions[]`, falls es dort stand, erzeugen Sie die Autoloads neu
+und prüfen Sie REST-Clients, die Serverpfade als Dateiwerte oder Felder senden, die keine Attribute sind.
+[Hinweise zum Aktualisieren: Die REST-Schreibzugriffe über den Kernel](../bc/6.0/rest-schreibzugriffe-ueber-den-kernel.md).
+
 **Demo-Modus (6.0.15).** Die Umgebungsvariable `EXP_DEMO_MODE=1` kennzeichnet eine öffentliche Demo; ohne sie ändert sich nichts. Upgrade einer Demo: Behalten Sie die Variable für den Webserver, Cron und die Konsole bei, und prüfen Sie danach das Banner. Upgrade einer echten Site: Stellen Sie sicher, dass die Variable für keinen ihrer Prozesse gesetzt ist. [Demo-Modus](../bc/6.0/demomodus.md).
 
 ## Siehe auch

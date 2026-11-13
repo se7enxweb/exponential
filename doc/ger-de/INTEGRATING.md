@@ -106,6 +106,10 @@ Die Extension `ezprestapi` liefert die Inhalts-API über `index_rest.php` aus, u
 - **Jedes Lesen und Schreiben prüft die Richtlinien des Benutzers** (`content/read`, `content/create`,
   `content/edit`, `content/remove`), womit auch immer die Anfrage angemeldet wurde.
 
+Die Schreibzugriffe laufen über `expContentWriter` aus dem Kernel, den auch Ihr eigener PHP-Code aufrufen kann
+([Inhalte aus PHP schreiben mit expContentWriter](anleitungen/inhalte-aus-php-schreiben.md)); `nxc_powercontent` wird
+nicht mehr gebraucht ([Neu in 6.0.15: Die REST-API ändert Inhalte](hilfe/neu-in-6-0-15-rest-api.md)).
+
 Aktivieren Sie sie mit `ActiveExtensions[]=ezprestapi`
 ([Exponential 6.0 konfigurieren, Abschnitt 8](CONFIGURING.md#8-extensions)). Das ältere `ezprestapiprovider` ist
 veraltet: Seine letzte Version ist eine Kompatibilitätsschicht über `ezprestapi`. Entfernen Sie es deshalb aus

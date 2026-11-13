@@ -80,7 +80,9 @@ Templates for every page of a class; Layouts for pages editors compose. They com
 
 **How do I create content from code?**
 `eZContentFunctions::createAndPublishObject()` and `updateAndPublishObject()`, with a remote ID per object.
-[Content from PHP](content-from-php.md).
+[Content from PHP](content-from-php.md). Since 6.0.15 also `expContentWriter::create()`, `update()` and `remove()`,
+which take rich text as HTML and files as public web addresses and answer with a status and a message
+([Writing content from PHP with expContentWriter](../../guides/writing-content-from-php.md)).
 
 **Is there a REST API?**
 Yes: the `ezprestapi` extension serves v1 and v2 routes for nodes, children and fields, with creates, updates and

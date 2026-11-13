@@ -51,7 +51,7 @@ left out saves time in every rehearsal.
 | Volume and shape | Approach |
 |---|---|
 | A few hundred pages, simple fields | `xrowextract` import from CSV or JSON with a column mapping and a preview ([page](bulk-data-exchange-with-xrowextract.md)), or `php bin/php/ezcsvimport.php` |
-| Thousands of items, rich text, relations | An import command of your own with `eZContentFunctions` ([Writing an import script](writing-an-import-script.md)) |
+| Thousands of items, rich text, relations | An import command of your own with `eZContentFunctions`, or on 6.0.15 `expContentWriter`, which takes the old system's HTML and public file addresses as they are ([Writing an import script](writing-an-import-script.md), [Writing content from PHP](../../guides/writing-content-from-php.md)) |
 | A tree prepared offline by a tool | A JSON package, installed with `ezpm.php` (`install --as-drafts` for review) ([page](packages-import-and-export.md)) |
 
 Import in dependency order: folders and categories, then media, then content that refers to them, then relations in a

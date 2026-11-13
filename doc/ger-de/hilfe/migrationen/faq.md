@@ -59,8 +59,9 @@ Ja: `.yml`-Dateien mit Schritten, `.sql`-Dateien (eine portable Datei oder eine 
 `.mongodb.json`) und `.ini`-Dateien für Einstellungen. [Migrationen: SQL und Einstellungen](../../anleitungen/migrationen-sql-und-einstellungen.md).
 
 **Kann ich die PHP-API des Kernels in einer Migration nutzen?**
-Ja: `eZContentFunctions`, `eZContentClass`, `eZRole`, `eZINI`, `expKernelTableSchema` und der Rest, immer mit
-`$context->db()` für die Datenbank. [Migrationen in PHP schreiben](../php-entwickler/migrationen-in-php-schreiben.md).
+Ja: `eZContentFunctions`, `expContentWriter` (6.0.15), `eZContentClass`, `eZRole`, `eZINI`, `expKernelTableSchema` und der Rest, immer mit
+`$context->db()` für die Datenbank. [Migrationen in PHP schreiben](../php-entwickler/migrationen-in-php-schreiben.md),
+[Inhalte aus PHP schreiben](../../anleitungen/inhalte-aus-php-schreiben.md).
 
 **Darf ich eine Migration ändern, nachdem sie gelaufen ist?**
 Nein. Ein Lauf lehnt eine Migration ab, deren Datei sich nach dem Anwenden geändert hat. Schreiben Sie eine neue

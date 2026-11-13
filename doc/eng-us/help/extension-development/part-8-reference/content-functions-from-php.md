@@ -103,6 +103,28 @@ if ( $user instanceof eZUser )
 }
 ```
 
+## From plain values: expContentWriter (6.0.15)
+
+`expContentWriter` (`kernel/classes/contentwriter/expcontentwriter.php`) does the same writes from the values a person
+or another system has: rich text as HTML (converted by the Online Editor's input parser, links and embeds become
+relations), files as public `http(s)` addresses (downloaded, never from a server path or a private network), every
+other datatype in its `fromString()` form.
+
+| | `eZContentFunctions` | `expContentWriter` |
+|---|---|---|
+| Create | `createAndPublishObject( $params, $notify )` | `create( array( 'parentNodeID', 'classIdentifier', 'languageLocale', 'attributes', 'remoteID', 'ownerID', 'sectionID' ) )` |
+| Update | `updateAndPublishObject( $object, $params, $notify )` | `update( $object, $values, $languageCode )` |
+| Remove | (the node operations above) | `remove( $object, $moveToTrash = false )` |
+| Rich text | the stored XML | HTML |
+| Files | a server path, with `storage_dir` | a public `http(s)` address, at most 50 MB |
+| Unknown attribute | ignored | refused before anything is written |
+| Answer | the object or `false`; `true` or `false` | `status` (`published`, `pending`, `invalid`, `failed`), `message`, `object`, `version` |
+| A workflow holds the version | not told apart | `pending` |
+| Publish without notification | `$notify = false` | not offered |
+
+Both publish through the `content/publish` operation and leave the permission checks to the caller. Examples:
+[Writing content from PHP with expContentWriter](../../../guides/writing-content-from-php.md).
+
 ## In transactions and loops
 
 `createAndPublishObject()` manages its own transaction. In a loop over many items:
@@ -117,6 +139,7 @@ if ( $user instanceof eZUser )
 - Next: [ezjscore server functions reference](ezjscore-server-functions-reference.md)
 - [eZContentObject](ezcontentobject.md), [eZContentObjectTreeNode](ezcontentobjecttreenode.md)
 - [Content jobs](../../../bc/6.0/content-jobs.md)
+- [Content from plain values: expContentWriter](../../../features/6.0/content-writer.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

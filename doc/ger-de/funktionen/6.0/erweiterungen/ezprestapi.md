@@ -153,6 +153,8 @@ genutzten Rechnern auf.
 | 1.2.1 bis 1.2.4 | 27. September bis 2. Oktober 2026 | Version, Lizenz und Website; Beschreibung; Header von 7x und Exponential Foundation in den Einstiegsdateien; Befehle und Cronjob-Teile sind Klassen, die die Dateien aufrufen und über die gemeinsamen Hilfsfunktionen starten. |
 | 1.2.5 | 6. Oktober 2026 | Jeder lesende und schreibende Aufruf prüft die Richtlinien des aktuellen Benutzers bei jeder Art der Authentifizierung; lesende Routen antworten wieder unter v1; Löschen akzeptiert `DELETE`; Erstellen und Löschen antworten mit 201 und 200 und den IDs. Benötigt Exponential 6.0.15 für die Prüfungen und v1. |
 | 1.2.6 | 15. Oktober 2026 | `OutputFormat=xhtml` wird wieder gerendert (`[ezp7xRestContentController_viewContent_OutputSettings] Template=rest_pagelayout.tpl`; es antwortete mit einem leeren `renderedOutput`); Name, Beschreibung und README sagen, dass die Extension REST API v1 und v2 bedient und ezprestapiprovider ersetzt; die Modelltests wurden aus ezprestapiprovider übernommen. |
+| 1.2.7 | 21. Oktober 2026 | Die Liste der Kinder (`/content/node/<id>/list/...`) antwortet wieder ohne die Extension `ezprestapiprovider`, die jeder neuen Installation fehlt; sie antwortete mit 500 (`Class "ezpRestContentController" not found`). Ein Modelltest deckt das ab. |
+| 1.2.8 | 29. Oktober 2026 | Ein einziger Copyright-Hinweis, Exponential Foundation und 7x. |
 | 1.2.9 | 12. November 2026 | REST v2 aktualisiert Inhalte (`POST` oder `PUT /content/node/<id>` veröffentlicht eine neue Version); Erstellen und Aktualisieren nehmen einen JSON-Body an; Erstellen, Aktualisieren und Löschen schreibt `expContentWriter` aus dem Kernel, sodass `nxc_powercontent` nicht mehr vorausgesetzt wird; Dateiwerte werden nur von öffentlichen `http(s)`-Adressen geladen. Benötigt Exponential 6.0.15 für die schreibenden Aufrufe. |
 
 [ezprestapiprovider](ezprestapiprovider.md) ist veraltet; sein letztes Release, 6.0.4, ist eine Kompatibilitätsschicht,
@@ -162,6 +164,9 @@ die Provider und Controller dieser Extension erweitert. Siehe die
 ## Verwandte Seiten
 
 - [REST API v1 und v2: eine Extension](../../../anleitungen/rest-api-v1-und-v2.md)
+- [Neu in 6.0.15: Die REST-API ändert Inhalte](../../../hilfe/neu-in-6-0-15-rest-api.md): jedes 1.2.x-Release in einer Tabelle
+- [Inhalte aus einfachen Werten: expContentWriter](../inhalte-schreiben.md), die Kernel-Klasse, über die geschrieben wird, und
+  [Hinweise zum Aktualisieren: Die REST-Schreibzugriffe über den Kernel](../../../bc/6.0/rest-schreibzugriffe-ueber-den-kernel.md)
 - [nxc_powercontent](nxc_powercontent.md), [ezprestapiprovider](ezprestapiprovider.md) (veraltet)
 - [Entfernte Dienste (expservices)](../entfernte-dienste-expservices.md)
 - [Persönliche API-Schlüssel](../../../anleitungen/api-schluessel.md): REST-Anfragen mit einem Schlüssel des Benutzers

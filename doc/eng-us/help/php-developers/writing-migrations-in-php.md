@@ -73,7 +73,7 @@ it can meet a half-done state.
 |---|---|
 | a table of your own | `\expKernelTableSchema::install( array( $table ), $context->db(), $schema, $messages )`, `::exists()` |
 | a column or an index | `\expUpgradeCatalog::hasColumn()`, `::hasIndex()`, `::execute()` with SQL from the engine's schema handler |
-| content | `\eZContentFunctions::createAndPublishObject()`, `::updateAndPublishObject()`, `\eZContentObject::fetchByRemoteID()` |
+| content | `\eZContentFunctions::createAndPublishObject()`, `::updateAndPublishObject()`, `\eZContentObject::fetchByRemoteID()`; from HTML and public file addresses `\expContentWriter::create()`, `::update()`, `::remove()` (6.0.15, [Content in a migration](../../guides/writing-content-from-php.md#content-in-a-migration)) |
 | a content class | `\eZContentClass::create()`, `\eZContentClassAttribute::create()`, `\eZContentClassClassGroup::create()` |
 | roles and policies | `\eZRole::fetchByName()`, `::create()`, `appendPolicy()`, `assignToUser()`, `\eZRole::expireCache()` |
 | settings | `\eZINI::instance( '<file>.ini.append.php', 'settings/override', null, false, null, true )`, `setVariable()`, `save()` |

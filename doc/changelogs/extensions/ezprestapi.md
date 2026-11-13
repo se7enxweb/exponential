@@ -4,6 +4,34 @@ Read this page before you install or update `ezprestapi`, or to find out which r
 
 What each release of `ezprestapi` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../eng-us/features/6.0/extensions/ezprestapi.md); the story is in the [chronicle](../../eng-us/history/extensions/ezprestapi.md).
 
+## v1.2.9 (2026-11-12)
+
+**Updated**
+
+- REST v2 updates content, and every write goes through the kernel ([`e52cf71`](https://github.com/se7enxweb/ezprestapi/commit/e52cf71))
+
+**Removed**
+
+- The requirement of nxc_powercontent ([`038cdbb`](https://github.com/se7enxweb/ezprestapi/commit/038cdbb))
+
+1 version, merge or metadata commit not listed ([`36326e0`](https://github.com/se7enxweb/ezprestapi/commit/36326e0)). Needs Exponential 6.0.15 for the writes. See [New in 6.0.15: the REST API updates content](../../eng-us/help/whats-new-in-6-0-15-rest-api.md).
+
+## v1.2.8 (2026-10-29)
+
+**Updated**
+
+- One copyright notice, Exponential Foundation and 7x ([`6509114`](https://github.com/se7enxweb/ezprestapi/commit/6509114))
+
+1 version, merge or metadata commit not listed ([`5ab11b2`](https://github.com/se7enxweb/ezprestapi/commit/5ab11b2)).
+
+## v1.2.7 (2026-10-21)
+
+**Updated**
+
+- Fixed: The children list of a node answers again without the ezprestapiprovider extension ([`604ab19`](https://github.com/se7enxweb/ezprestapi/commit/604ab19))
+
+1 version, merge or metadata commit not listed ([`d7dc92f`](https://github.com/se7enxweb/ezprestapi/commit/d7dc92f)).
+
 ## v1.2.6 (2026-10-15)
 
 **Added**

@@ -37,6 +37,8 @@ REST v2 with write support was the headline of 6.0.9 in a 7x press release of 20
 | OAuth2 tokens or personal API keys | same; [Personal API keys](../../guides/api-keys.md) |
 | The old `ezprestapiprovider` extension is deprecated; clients see no change | same |
 | The guide's statements were checked on the demonstration server on 15 October 2026 | [REST API v1 and v2](../../guides/rest-api-v1-and-v2.md) |
+| Since 6.0.15 (`ezprestapi` 1.2.9, 12 November 2026) the API updates content: each update is a new version in the history | [New in 6.0.15: the REST API updates content](../whats-new-in-6-0-15-rest-api.md) |
+| The kernel itself writes the content (`expContentWriter`); the third-party extension `nxc_powercontent` is no longer needed | [Content from plain values: expContentWriter](../../features/6.0/content-writer.md) |
 
 ## What not to claim
 
@@ -44,12 +46,14 @@ REST v2 with write support was the headline of 6.0.9 in a 7x press release of 20
 |---|---|
 | "GraphQL in Exponential 6" | GraphQL belongs to the Symfony line (Exponential Platform DXP) ([Story: Exponential Platform DXP](story-exponential-platform-dxp.md)) |
 | "Anyone can write through the API" | Writes need authentication and the user's permissions |
-| "The API is new" | The API has existed for years; 6.0.15 unifies the versions and adds checks |
+| "The API is new" | The API has existed for years; 6.0.15 unifies the versions, adds checks and adds updates |
+| "Exponential replaced the REST API" | The routes and answers stay the same; the writes now go through the kernel |
 
 ## Angles and headline ideas
 
 - "Headless with permissions: every API call checks the user's rights."
 - "One API extension, two versions, no breaking change."
+- "The core writes the content: one extension fewer, and the API can finally update."
 
 ## Related pages
 

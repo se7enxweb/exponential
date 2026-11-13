@@ -64,8 +64,13 @@ connection ([Login handlers](login-handlers-ldap-and-textfile.md)).
 **How do I avoid duplicates?** Give every imported object a `remote_id` from a key scheme and find it with
 `eZContentObject::fetchByRemoteID()` before creating ([Idempotent imports](idempotent-imports-keyed-by-remote-id.md)).
 
-**Can I write to the database tables directly?** No. Use `eZContentFunctions`; direct writes skip versions, workflows,
+**Can I write to the database tables directly?** No. Use `eZContentFunctions`, or since 6.0.15 `expContentWriter`
+([Writing content from PHP](../../guides/writing-content-from-php.md)); direct writes skip versions, workflows,
 caches, the search index and the audit.
+
+**Do I need nxc_powercontent to write content?** No. Since Exponential 6.0.15 the kernel writes content from plain
+values itself (`expContentWriter`), and the REST API (`ezprestapi` 1.2.9) uses it for create, update and delete
+([Upgrade notes](../../bc/6.0/content-writer-and-rest-writes.md)).
 
 **Will an import send thousands of notification mails?** Not if you pass `$notify = false` to the content functions
 ([Mail and notifications](mail-and-notifications-integration.md#imports-and-notifications)).

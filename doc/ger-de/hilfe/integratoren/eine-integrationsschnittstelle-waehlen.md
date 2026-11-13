@@ -37,8 +37,8 @@ lassen sich auf mehr als eine Art bauen. Vier Fragen grenzen die Wahl schnell ei
 
 | Ihre Lage | Erste Wahl | Ebenfalls möglich | Vermeiden |
 |---|---|---|---|
-| Viele Datensätze nach Zeitplan importieren, Code darf auf dem Server laufen | Cronjob-Teil oder CLI-Skript mit `eZContentFunctions` und `remote_id` | Zeitgesteuerter Import mit `xrowextract` | Viele einzelne REST-Anlagevorgänge |
-| Ein anderes System legt ab und zu ein paar Elemente an und kann keinen Code auf dem Server ausführen | REST `POST /api/ezp/v2/content/node/create` mit einem API-Schlüssel | Schreibdienste von `expservices` | Direktes Schreiben in Datenbanktabellen |
+| Viele Datensätze nach Zeitplan importieren, Code darf auf dem Server laufen | Cronjob-Teil oder CLI-Skript mit `eZContentFunctions` oder `expContentWriter` (6.0.15) und `remote_id` | Zeitgesteuerter Import mit `xrowextract` | Viele einzelne REST-Anlagevorgänge |
+| Ein anderes System legt ab und zu ein paar Elemente an oder ändert sie und kann keinen Code auf dem Server ausführen | REST `POST /api/ezp/v2/content/node/create` und zum Ändern `PUT /api/ezp/v2/content/node/<id>` (6.0.15, `ezprestapi` 1.2.9) mit einem API-Schlüssel | Schreibdienste von `expservices` | Direktes Schreiben in Datenbanktabellen |
 | Eine App liest Inhalte | REST-Lesezugriffe (`/api/ezp/v1/...` oder `/v2/...`) | Lesezugriffe über `expservices`, RSS- oder Atom-Feeds | HTML-Seiten auslesen (Scraping) |
 | Ein anderes System muss sofort wissen, wenn etwas veröffentlicht wird | Ein Workflow-Ereignis auf `content / publish / after` | Audit-Webhook-Senke mit eingeschaltetem `content.object.publish` | Jede Minute die REST-API nach allem abfragen |
 | Ein anderes System muss eine Veröffentlichung freigeben oder ablehnen | Ein Workflow-Ereignis auf `content / publish / before`, das angenommen oder abgelehnt zurückgibt oder an den Cronjob abgibt | Das Ereignis *Approve* für eine Freigabe durch Menschen | Nach dem Veröffentlichen prüfen |

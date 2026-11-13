@@ -101,6 +101,12 @@ Never. They are real identifiers that every extension uses; new code uses `exp` 
 Subclass its class and register the subclass in `site.ini [RunnableSettings] Implementation[]`
 ([Module views as classes](module-views-as-classes.md#re-implementing-a-kernel-view)).
 
+**How do I create or update content from PHP in a few lines?**
+`expContentWriter::create()`, `update()` and `remove()` (6.0.15): values by attribute identifier as text, rich text as
+HTML, files as public `https` addresses, an answer with `status` and `message`. It publishes through the same
+operation as the administration and leaves the permission check to you
+([Writing content from PHP with expContentWriter](../../guides/writing-content-from-php.md)).
+
 ## Velocity and deploys
 
 **My edit to a PHP file does nothing.**

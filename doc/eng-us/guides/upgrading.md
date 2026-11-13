@@ -344,6 +344,18 @@ applies in the same order with `./console exp:migration:migrate --apply`, with a
 kernel's upgrade steps are listed among them. Start with [Migrations](../help/migrations/README.md); the word means
 something else than upgrading a site: [Migrations versus migrating a site](../help/migrations/migrations-versus-migrating-a-site.md).
 
+**Request shield (6.0.15).** `composer.json` now brings `exp_request_shield`, which puts request-shield in front of
+the site (scanners, floods, stray form posts and system URLs refused before the kernel starts). Your `config.php` is
+never overwritten, so add its hook line yourself, above the HTTP cache's early exit, as `config.php-RECOMMENDED`
+shows; under Velocity, restart afterwards. Activate the extension for **Setup** > **Request shield** and read its log
+in the first days. [Request shield (BC)](../bc/6.0/request-shield.md), [Request shield](request-shield.md).
+
+**REST writes and nxc_powercontent (6.0.15).** `ezprestapi` 1.2.9 writes content through the kernel's `expContentWriter`
+and updates content over REST v2; it no longer requires `nxc_powercontent`, which Composer removes on the update when
+nothing else requires it. Update the kernel and `ezprestapi` together, take `nxc_powercontent` out of
+`ActiveExtensions[]` if it was there, regenerate the autoloads, and check REST clients that send server paths as file
+values or fields that are not attributes. [Upgrade notes: the REST writes through the kernel](../bc/6.0/content-writer-and-rest-writes.md).
+
 **Demo mode (6.0.15).** The environment variable `EXP_DEMO_MODE=1` marks a public demo; without it nothing changes. Upgrading a demo: keep the variable for the web server, cron and console, and check the banner afterwards. Upgrading a real site: make sure the variable is set for none of its processes. [Demo mode](../bc/6.0/demo-mode.md).
 
 **VAT rules (6.0.15).** Nothing changes in how VAT is charged. VAT rules are applied only when

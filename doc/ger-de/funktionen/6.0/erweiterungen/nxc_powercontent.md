@@ -15,6 +15,12 @@ die REST-API sie nicht mehr: Anlegen, Aktualisieren und Löschen schreibt `expCo
 (Exponential 6.0.15), und `ezprestapi` setzt diese Extension nicht mehr voraus. `nxc_powercontent` bleibt eine
 optionale Extension für Code, der sie direkt verwendet; siehe [REST API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md).
 
+Neuer Code braucht sie nicht: [expContentWriter](../inhalte-schreiben.md) aus dem Kernel legt Inhalte aus einfachen
+Werten an, ändert und entfernt sie (Rich Text als HTML, Dateien von öffentlichen Adressen) und veröffentlicht jede
+Änderung als neue Version, sodass die Versionsgeschichte erhalten bleibt. Wie Sie herausfinden, ob eine Installation
+diese Extension noch verwendet, wie Sie sie entfernen und wie Sie Code umstellen:
+[Hinweise zum Aktualisieren: Die REST-Schreibzugriffe über den Kernel, nxc_powercontent wird nicht mehr gebraucht](../../../bc/6.0/rest-schreibzugriffe-ueber-den-kernel.md).
+
 ## Inhaltsklassen in einem Template auflisten: `class_list`
 
 Seit 1.3.0 (12. Juli 2026) listet die Fetch-Funktion `class_list` von `content` Inhaltsklassen ohne eigenes PHP auf. Sie
@@ -65,6 +71,7 @@ Siehe [Menü „Weitere Aktionen“ der Unterelemente](../../../bc/6.0/unterelem
 ## Verwandte Seiten
 
 - [ezprestapi](ezprestapi.md) und [REST API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md)
+- [Inhalte aus einfachen Werten: expContentWriter](../inhalte-schreiben.md) und [Inhalte aus PHP schreiben mit expContentWriter](../../../anleitungen/inhalte-aus-php-schreiben.md)
 - [Ausgewählte Unterelemente kopieren](../unterelemente-auswahl-kopieren.md)
 - [Velocity-Engines](../../../bc/6.0/velocity-engines.md)
 - [Chronik](../../../geschichte/erweiterungen/nxc_powercontent.md) und [Versionshinweise](../../../../changelogs/extensions/nxc_powercontent.md)

@@ -57,8 +57,9 @@ Yes: `.yml` files of steps, `.sql` files (one portable file, or a file per engin
 files for settings. [Migrations: SQL and settings](../../guides/migrations-sql-and-settings.md).
 
 **Can I use the kernel's PHP API in a migration?**
-Yes: `eZContentFunctions`, `eZContentClass`, `eZRole`, `eZINI`, `expKernelTableSchema` and the rest, always with
-`$context->db()` for the database. [Writing migrations in PHP](../php-developers/writing-migrations-in-php.md).
+Yes: `eZContentFunctions`, `expContentWriter` (6.0.15), `eZContentClass`, `eZRole`, `eZINI`, `expKernelTableSchema` and the rest, always with
+`$context->db()` for the database. [Writing migrations in PHP](../php-developers/writing-migrations-in-php.md),
+[Content in a migration](../../guides/writing-content-from-php.md#content-in-a-migration).
 
 **May I edit a migration after it ran?**
 No. A run refuses a migration whose file changed after it was applied. Write a new migration for the new change;

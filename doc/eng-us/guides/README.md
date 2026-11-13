@@ -116,6 +116,7 @@ Read them in this order the first time. Each one also stands on its own.
 | [Benchmarking](benchmarking.md) | Pages measured cached and rendered, Apache against Velocity, a code change and a deploy checked for regressions, the CI performance check understood | 30 minutes |
 | [Cronjobs](cronjobs.md) | Every part and script seen, a part and one script run and followed from the browser, the crontab lines installed, the logs read, the usual problems solved | 30 minutes |
 | [Preloading caches](preloading-caches.md) | A site warmed from Setup > Preload and from the shell, a dry run read, a run followed and its broken links and image aliases read, the cron line installed, the address of a siteaccess checked | 15 minutes |
+| [The request shield](request-shield.md) | request-shield on an existing site: the site's own rules, check, test and trace, monitor or enforce, an exception, a pause, the library updated | 20 minutes |
 | [Host static sites on GitHub Pages with Exponential 6.0.15+](host-static-sites-on-github-pages.md) | A free public copy of a site: a target set up, a build, a dry run, a preview below the repository's path, the link check, the push to a Pages branch, the commands in CI | 20 minutes |
 | [Static publishing: repositories and credentials](static-publishing-targets-and-credentials.md) | The target's folder as its git repository, one commit and tag per publish, a token or deploy key that never reaches a command line or log, waiting pushes sent again | 20 minutes |
 | [Static publishing: history and rollback](static-publishing-history-and-rollback.md) | The publishes of a target, and an earlier one back online as a new commit and tag, the history kept | 10 minutes |
@@ -173,6 +174,7 @@ Read them in this order the first time. Each one also stands on its own.
 | [A front end on the GraphQL API, step by step](graphql-walkthrough.md) | The GraphQL API switched on in one command, a key for a front end, a Next.js, Nuxt, Astro, HTML or Expo project generated from the site's schema, its queries stored and cached, the mutations switched on | 20 minutes |
 | [GraphQL recipes](graphql-recipes.md) | A blog or news front end, a mobile app, a static build and an AI agent on the GraphQL API, with queries proven on the demo content | 15 minutes |
 | [REST API v1 and v2: one extension](rest-api-v1-and-v2.md) | Which URL answers at v1 and v2 from the one `ezprestapi` extension, a client authenticated with OAuth2 or a key, the API called with curl, `rest.ini` read, an installation moved off the deprecated `ezprestapiprovider` | 20 minutes |
+| [Writing content from PHP with expContentWriter](writing-content-from-php.md) | Content created, updated, translated and removed from a script in a few lines each, the answer read, an import that can run again, content in a migration, an integration, permissions checked in your own code | 30 minutes |
 | [Upgrading](upgrading.md) | An installation of 4.x, 5.x or an earlier 6.0.x moved to the current 6.0 line, and checked | 20 minutes for a small site |
 | [Upgrading with the console](upgrading-with-the-console.md) | The state of every upgrade step read, a dry run, the upgrade applied with a backup in one call, a failure resumed, drift found, the same from a pipeline | 15 minutes |
 | [Contributing to expcomponents](contributing-to-expcomponents.md) | A fix to one of the kernel's libraries (the fork of the Zeta Components) cloned, tested on every supported PHP version, committed with its ChangeLog entry and offered as a pull request; how releases, versions and upstream syncs work | 30 minutes, then the fix |
@@ -250,6 +252,7 @@ You write extensions, templates with logic, commands and integrations.
 6. Tests and compatibility: [Continuous integration](../specifications/6.0/continuous-integration.md), [PHP 8 support](../bc/6.0/php8.md).
    The kernel's libraries (`ezc*` classes): [Exponential Components](../features/6.0/expcomponents.md) and
    [Contributing to expcomponents](contributing-to-expcomponents.md).
+   Content from your own PHP code (scripts, imports, integrations): [Writing content from PHP with expContentWriter](writing-content-from-php.md).
    Changes to a site's database and content in code: [Migrations](migrations.md), starting with [the tutorial](migrations-tutorial.md), then [PHP migrations](migrations-php.md) and [the file format](../specifications/6.0/migration-file-format.md).
 7. Bridges to the Symfony platform: [Legacy bridge](../features/6.0/legacy-bridge.md), [the platform repositories](../history/ecosystem.md).
 

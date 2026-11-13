@@ -189,6 +189,10 @@ final class SeedNewsContent20261101170000 extends \expMigrationPhp
 - For a seed that must only reach development and test copies (demo users, sample orders), give the header
   `environments: development, test`; see [Per-environment migrations](per-environment-migrations.md).
 - Keep personal data out of seed migrations: they are committed to git and pushed.
+- On Exponential 6.0.15 the articles can also be written with `\expContentWriter::create()`, which takes the body as
+  HTML instead of the stored XML and answers `invalid` with the reason for a wrong attribute identifier; throw when its
+  `status` is not `published`. It has no switch for notifications, so keep `eZContentFunctions` with `false` when
+  subscribers must not be told ([Content in a migration](../../../guides/writing-content-from-php.md#content-in-a-migration)).
 
 ## Check it
 

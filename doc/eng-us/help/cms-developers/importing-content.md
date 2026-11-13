@@ -106,6 +106,11 @@ When no tool fits, write a script with the kernel API: read the source, map each
 ([Content from PHP](content-from-php.md), and the skeleton in
 [A custom import script](../../install/migration/exponential-tools.md#4-a-custom-import-script-the-skeleton)).
 
+Since Exponential 6.0.15 the kernel's `expContentWriter` is often the shorter way: it takes rich text as HTML and
+files as public web addresses, the form most sources have them in, and answers what it did with each item. The REST
+API writes through the same class. See
+[Writing content from PHP with expContentWriter](../../guides/writing-content-from-php.md#an-import-that-can-run-again).
+
 ## Rules for every import
 
 1. **Model first.** Create the classes and the folder tree before importing ([Designing a content model](designing-a-content-model.md)).

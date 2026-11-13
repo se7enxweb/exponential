@@ -70,7 +70,7 @@ their tables come from: [Extensions of a new installation](../extensions-of-a-ne
 | [ezprestapi](ezprestapi.md) | REST API v1 and v2 |
 | [ezprestapiprovider](ezprestapiprovider.md) | deprecated shim, use ezprestapi |
 | [ezxmlexport](ezxmlexport.md) | XML export |
-| [nxc_powercontent](nxc_powercontent.md) | content from code and REST |
+| [nxc_powercontent](nxc_powercontent.md) | content from code; the REST API no longer needs it (ezprestapi 1.2.9), the kernel's [expContentWriter](../content-writer.md) does the same |
 | [syndication](syndication.md) | content syndication |
 | [xrowextract](xrowextract.md) | export and import |
 
