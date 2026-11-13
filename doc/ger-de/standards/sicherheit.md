@@ -61,7 +61,8 @@ externe Bewertung, die nicht durchgeführt wurde.
 
 - **Die Kontosperre ist standardmäßig aus**: `settings/site.ini [UserSettings] MaxNumberOfFailedLogin=0`. Brute-Force-
   Versuche werden von den Alarmregeln des Audits erkannt, aber vom Kernel nicht gedrosselt. Die Ratenbegrenzung bleibt
-  dem Webserver oder einem Anfragefilter wie request-shield überlassen
+  dem Webserver und dem Anfragefilter Request Shield überlassen, den die Standardinstallation seit 6.0.15 vor dem
+  Kernel ausführt
   ([Sicherheitshärtung](../hilfe/sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield)).
 - **Die Zwei-Faktor-Anmeldung muss eingeschaltet werden** (eine Extension und ein Login-Handler sind zu konfigurieren).
 - **Keine Prepared Statements** in der Datenbankschicht: `lib/ezdb/classes/` maskiert Werte (`escapeString()`), statt

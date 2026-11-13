@@ -158,6 +158,21 @@ Einstellungen, die Sie hatten, behalten ihre Werte. Verwenden Sie `--static` mit
 Website den statischen Cache ausliefert. Siehe
 [.htaccess und config.php von der Konsole aus einrichten](anleitungen/setup-dateien-von-der-konsole.md).
 
+**Aktualisierung auf 6.0.15 oder später: den Hook von Request Shield einfügen.** Seit 6.0.15 bringt `composer.json` die
+Erweiterung `exp_request_shield` mit, die request-shield vor die Site stellt, und `config.php-RECOMMENDED` lädt ihren
+Hook. Ihre `config.php` wird nie überschrieben; fügen Sie die zwei Zeilen deshalb selbst ein, **oberhalb** des frühen
+Ausstiegs des HTTP-Caches (`ezphttpcacheearlyexit.php`):
+
+```php
+if ( is_file( __DIR__ . '/extension/exp_request_shield/bootstrap/hook.php' ) )
+    require __DIR__ . '/extension/exp_request_shield/bootstrap/hook.php';
+```
+
+Der Schutzschild setzt dann ab der nächsten Anfrage durch (unter Velocity nach dessen Neustart in Schritt 6). Ergänzen
+Sie `ActiveExtensions[]=exp_request_shield` für **Setup** > **Request Shield**, und lesen Sie in den ersten Tagen sein
+Log. Eine Site mit ungewöhnlichen Adressen kann im Monitor-Modus beginnen. Siehe
+[Request Shield (BC)](bc/6.0/request-shield.md) und die [Anleitung Request Shield](anleitungen/request-shield.md).
+
 ## 5. Die Datenbank aktualisieren
 
 Die Dateien der Datenbankaktualisierung liegen in `update/database/<engine>/6.0/`:

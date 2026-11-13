@@ -775,6 +775,13 @@ More: [SQLite database support](features/6.0/sqlite-database.md),
 
    What they do and every further step: [Exponential Intelligence](features/6.0/extensions/expai.md) and
    [the job queue](features/6.0/extensions/expqueue.md).
+9. **Look at the request shield.** A new installation is protected by request-shield (the extension
+   `exp_request_shield`) from its first request: `config.php` loads its hook, and it refuses scanners, floods, stray
+   form posts and system URLs before the kernel starts, in enforce mode. Open **Setup** > **Request shield** (with
+   `sevenx_multisite` and `cjw_multisite` the extension is active; otherwise add `ActiveExtensions[]=exp_request_shield`):
+   the dashboard says whether the shield ran and what it decided. Name your host names in its rules and read its log in
+   the first days; when a real visitor or editor was refused, add an exception. To switch it off at once, create
+   `var/request-shield/PAUSED`. See the [Request shield guide](guides/request-shield.md).
 
 Then continue with the guides:
 
@@ -800,7 +807,9 @@ Do not run the installer over an existing site. Follow [Upgrading](guides/upgrad
 earlier 6.0.x to the current line, with the database update and the checklists per release. A 6.0 installation is
 brought up to date with the short procedure of [Updating Exponential 6.0](UPDATE.md). After any upgrade, compare
 `.htaccess` and `config.php` with the new templates: `./console exp:setup:status`, `./console exp:setup:htaccess`
-(the diff) and `./console exp:config:list` (settings new in `config.php-RECOMMENDED` show up as `(not set)`). To move a site elsewhere or
+(the diff) and `./console exp:config:list` (settings new in `config.php-RECOMMENDED` show up as `(not set)`). Upgrading
+to 6.0.15 or later, add the request shield's hook line to `config.php` yourself, above the HTTP cache's early exit
+([Request shield (BC)](bc/6.0/request-shield.md)). To move a site elsewhere or
 remove it, export everything first with [Uninstalling Exponential 6.0](UNINSTALL.md).
 
 The online manual has further installation notes:

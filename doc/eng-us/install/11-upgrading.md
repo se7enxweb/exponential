@@ -354,6 +354,17 @@ php bin/php/console exp:config:list                      # settings new in confi
 Set the new settings you want with `exp:config:set <NAME> <value> --apply`; the settings you had keep their values.
 See [Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md#12-after-an-upgrade).
 
+**The request shield (6.0.15).** `config.php-RECOMMENDED` now loads the hook of `exp_request_shield`, which runs
+request-shield before the kernel. Add the two lines to your `config.php`, above the HTTP cache's early exit:
+
+```php
+if ( is_file( __DIR__ . '/extension/exp_request_shield/bootstrap/hook.php' ) )
+    require __DIR__ . '/extension/exp_request_shield/bootstrap/hook.php';
+```
+
+It enforces from the next request (under Velocity after a restart). See
+[Request shield (BC)](../bc/6.0/request-shield.md).
+
 ### Step 2: apply the database update
 
 The file for the line is `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql`, for MySQL, PostgreSQL and SQLite.

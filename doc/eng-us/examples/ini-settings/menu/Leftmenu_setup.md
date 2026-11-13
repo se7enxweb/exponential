@@ -257,7 +257,7 @@ GroupLinks_data[]=data_syncs
 
 > extensions: expqueue (the job queue, also shipped with expai), sevenx\_dse (the database editor)  
 
-Default: a list of 14: `cache`, `static_publishing`, `system_information`, `help_center`, `upgrade_check`, `migrations`, `maintenance`, `cronjobs`, `logs`, `extensions`, `ini`, `sitedata` ....
+Default: a list of 15: `cache`, `static_publishing`, `system_information`, `help_center`, `upgrade_check`, `migrations`, `maintenance`, `cronjobs`, `logs`, `request_shield`, `extensions`, `ini` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -274,6 +274,7 @@ GroupLinks_system[]=migrations
 GroupLinks_system[]=maintenance
 GroupLinks_system[]=cronjobs
 GroupLinks_system[]=logs
+GroupLinks_system[]=request_shield
 GroupLinks_system[]=extensions
 GroupLinks_system[]=ini
 GroupLinks_system[]=sitedata
@@ -388,7 +389,7 @@ MegaMenuLinks[]=git_manager
 >                                   figure\_key=<key> for a shown tile only; empty or not design: draws none  
 > An extension sets them for its own link in its menu.ini.append.php (doc/eng-us/features/6.0/admin4-design.md).  
 
-Default: a hash of 61: `audit=journal-check`, `broken_relations=exclamation-diamond`, `storage_files=files`, `cache=arrow-clockwise`, `classes=diagram-3`, `datatypes=ui-radios`, `collected=inbox`, `contentfinder=search`, `cronjobs=clock`, `design_node=brush`, `dse=database`, `expai_budgets=piggy-bank` ....
+Default: a hash of 62: `audit=journal-check`, `broken_relations=exclamation-diamond`, `storage_files=files`, `cache=arrow-clockwise`, `classes=diagram-3`, `datatypes=ui-radios`, `collected=inbox`, `contentfinder=search`, `cronjobs=clock`, `design_node=brush`, `dse=database`, `expai_budgets=piggy-bank` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -416,13 +417,13 @@ LinkIcons[ezupdate]=cloud-arrow-down
 LinkIcons[git_manager]=git
 LinkIcons[git_manager_backup]=archive
 LinkIcons[global_setting]=globe
-# ... 41 more in the shipped file
+# ... 42 more in the shipped file
 */ ?>
 ```
 
 ## LinkDescriptions
 
-Default: a hash of 61: `audit=Who changed what: the audit settings and archives.`, `broken_relations=Visible content that links to deleted, hidden or trashed content.`, `storage_files=Files in the storage that nothing uses, and files with the wrong owner or mode.`, `cache=Clear or regenerate the caches.`, `classes=The content classes and their attributes.`, `datatypes=Every datatype of the kernel and the extensions, and how the classes and content use it.`, `collected=What visitors sent through forms.`, `contentfinder=Find content by its id, remote id or path.`, `cronjobs=The cronjob parts, their scripts and last runs.`, `design_node=The design's top node and the objects below it.`, `dse=Browse and query the database directly.`, `expai_budgets=AI budgets, queued requests and what they cost.` ....
+Default: a hash of 62: `audit=Who changed what: the audit settings and archives.`, `broken_relations=Visible content that links to deleted, hidden or trashed content.`, `storage_files=Files in the storage that nothing uses, and files with the wrong owner or mode.`, `cache=Clear or regenerate the caches.`, `classes=The content classes and their attributes.`, `datatypes=Every datatype of the kernel and the extensions, and how the classes and content use it.`, `collected=What visitors sent through forms.`, `contentfinder=Find content by its id, remote id or path.`, `cronjobs=The cronjob parts, their scripts and last runs.`, `design_node=The design's top node and the objects below it.`, `dse=Browse and query the database directly.`, `expai_budgets=AI budgets, queued requests and what they cost.` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -450,7 +451,7 @@ LinkDescriptions[ezupdate]=Packages with a newer release, and their updates.
 LinkDescriptions[git_manager]=The Git checkout of the installation and its updates.
 LinkDescriptions[git_manager_backup]=Make, download and remove backups.
 LinkDescriptions[global_setting]=The settings of the whole site.
-# ... 41 more in the shipped file
+# ... 42 more in the shipped file
 */ ?>
 ```
 
@@ -489,6 +490,10 @@ LinkFigureTemplates[cronjobs]=design:setup/setupmenu_figure.tpl
 > Migrations (module migration): the migrations of the site and its extensions, their runs, a run or a rollback in  
 > the background, the log of each run  
 > The log viewer (doc/eng-us/features/6.0/log-viewer.md): follow, search and cross-reference the log files, only with setup/logs  
+> Request shield (exp\_request\_shield, part of the default packages): the filter in front of the site, right after the  
+> log files. Named here so it has this place; without the extension its module does not exist and the link is left  
+> out (\[MenuAccessSettings\] CheckViewAccess). The extension's own menu.ini.append.php names it too, for older kernels,  
+> and adds its policy (PolicyList\_request\_shield\[\]=requestshield/read): a kernel menu names kernel modules' policies only.  
 > The Design tab's page (its URL\[default\]), in the group that stands for the tab (GroupTabs\[design\]): shown only  
 > while the tab is not in the top menu  
 > Removed from 4.3. Enable if you have special requirements.  
@@ -521,7 +526,7 @@ LinkFigureTemplates[cronjobs]=design:setup/setupmenu_figure.tpl
 > PolicyList\_toolbar\_management\[\]=visual/\*  
 > RAD closes the group "Site and URLs"  
 
-Default: a hash of 48: `overview=setup/menu`, `cache=setup/cache`, `static_publishing=staticpublish/dashboard`, `audit=audit/settings`, `classes=class/grouplist`, `datatypes=class/datatype/list`, `collected=infocollector/overview`, `contentfinder=contentfinder/search`, `unreferenced_objects=contentcheck/unreferenced`, `broken_relations=contentcheck/brokenrelations`, `storage_files=contentcheck/storage`, `maintenance=setup/maintenance` ....
+Default: a hash of 49: `overview=setup/menu`, `cache=setup/cache`, `static_publishing=staticpublish/dashboard`, `audit=audit/settings`, `classes=class/grouplist`, `datatypes=class/datatype/list`, `collected=infocollector/overview`, `contentfinder=contentfinder/search`, `unreferenced_objects=contentcheck/unreferenced`, `broken_relations=contentcheck/brokenrelations`, `storage_files=contentcheck/storage`, `maintenance=setup/maintenance` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -544,18 +549,18 @@ Links[maintenance]=setup/maintenance
 Links[migrations]=migration/status
 Links[cronjobs]=setup/cronjobs
 Links[logs]=setup/logs
+Links[request_shield]=requestshield/dashboard
 Links[extensions]=setup/extensions
 Links[design_node]=content/view/full/58
 Links[ini]=settings/view
 Links[languages]=content/translations
-Links[interface_languages]=setup/languages
-# ... 28 more in the shipped file
+# ... 29 more in the shipped file
 */ ?>
 ```
 
 ## LinkNames
 
-Default: a hash of 22: `static_publishing=Static publishing`, `audit=Audit`, `datatypes=Datatypes`, `contentfinder=Content finder`, `unreferenced_objects=Unreferenced objects`, `broken_relations=Broken relations`, `storage_files=Storage files`, `maintenance=Maintenance`, `migrations=Migrations`, `cronjobs=Cronjobs`, `logs=Log files`, `design_node=Design content` ....
+Default: a hash of 23: `static_publishing=Static publishing`, `audit=Audit`, `datatypes=Datatypes`, `contentfinder=Content finder`, `unreferenced_objects=Unreferenced objects`, `broken_relations=Broken relations`, `storage_files=Storage files`, `maintenance=Maintenance`, `migrations=Migrations`, `cronjobs=Cronjobs`, `logs=Log files`, `request_shield=Request shield` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -574,6 +579,7 @@ LinkNames[maintenance]=Maintenance
 LinkNames[migrations]=Migrations
 LinkNames[cronjobs]=Cronjobs
 LinkNames[logs]=Log files
+LinkNames[request_shield]=Request shield
 LinkNames[design_node]=Design content
 LinkNames[interface_languages]=Interface languages
 LinkNames[preload]=Preload Sites
@@ -582,8 +588,7 @@ LinkNames[datatables]=Data tables
 LinkNames[data_connections]=Connections
 LinkNames[secrets]=Secrets
 LinkNames[graphql]=GraphQL
-LinkNames[data_syncs]=Synchronisations
-# ... 2 more in the shipped file
+# ... 3 more in the shipped file
 */ ?>
 ```
 

@@ -88,9 +88,10 @@ zusätzlich rotiert.
 
 ## Protokolle außerhalb von Exponential
 
-Die Protokolle des Webservers und von PHP-FPM, die Protokolle von Velocity, das Protokoll von request-shield und die
-Protokolle des Mailservers werden von ihren eigenen Programmen rotiert; legen Sie ihre Aufbewahrung dort fest oder
-fragen Sie Ihren Hoster.
+Die Protokolle des Webservers und von PHP-FPM, die Protokolle von Velocity und die Protokolle des Mailservers werden
+von ihren eigenen Programmen rotiert; legen Sie ihre Aufbewahrung dort fest oder fragen Sie Ihren Hoster. Das
+Protokoll von Request Shield (`var/request-shield/log/shield.log`) rotiert der Schutz selbst bei der Größe, die seine
+Regeldatei festlegt (`log-max-size`).
 
 ## Verwandte Seiten
 

@@ -49,7 +49,7 @@ Authenticator-App oder per E-Mail ([Zweistufige Anmeldung](../../../anleitungen/
 
 Nicht standardmäßig: `MaxNumberOfFailedLogin=0`. Sie können eine Grenze setzen, mit einer Liste vertrauenswürdiger
 Adressen. Brute-Force-Versuche werden von den Alarmregeln des Audits erkannt, und die Ratenbegrenzung bleibt dem
-Webserver oder einem Anfragefilter wie request-shield überlassen
+Webserver oder Request Shield vor dem Kernel überlassen (seit 6.0.15 Teil der Standardinstallation)
 ([Sicherheitsstandards](../../../standards/sicherheit.md#bekannte-lücken),
 [Sicherheitshärtung](../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield)).
 
@@ -79,7 +79,7 @@ Wie Sie das einplanen:
 ## Was müssen wir selbst härten?
 
 HTTPS und HSTS, die Entscheidung zur Kontosperre, die Passwortlänge, die zweistufige Anmeldung, das Erzwingen der CSP,
-die Einschränkung der Administration, einen Anfragefilter, Prüfungen der Abhängigkeiten mit `composer audit` (in der
+die Einschränkung der Administration, die Regeln und den Modus von Request Shield, Prüfungen der Abhängigkeiten mit `composer audit` (in der
 CI des Projekts nicht ausgeführt) und die Härtung des Servers. Die Anleitungen:
 [Sicherheitshärtung](../../sicherheitshaertung.md),
 [13. Sicherheitshärtung für den Produktivbetrieb](../../../installation/13-sicherheitshaertung.md),

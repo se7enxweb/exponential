@@ -59,7 +59,7 @@ Kontaktweg an (E-Mail, Telefon). Der Bereich Barrierefreiheit dieser Hilfe behan
 |---|---|---|---|
 | Nur das Formular-Token (`ezformtoken`, standardmäßig aktiv) | nichts verlässt die Website | keine Barriere | stoppt gefälschte websiteübergreifende Einsendungen, nicht aber entschlossene Bots |
 | Formular-Token plus eigene serverseitige Prüfungen | nichts verlässt die Website | keine Barriere | mittel |
-| request-shield davor, mit seiner Browserprüfung für Formularseiten | nichts verlässt die Website (eigene Bibliothek) | unsichtbare Prüfung | gut gegen Anfragefluten |
+| request-shield davor, mit seiner Browserprüfung für Formularseiten | nichts verlässt die Website (seit 6.0.15 Teil der Standardinstallation) | unsichtbare Prüfung | gut gegen Anfragefluten |
 | hCaptcha oder reCAPTCHA | Drittanbieter | mögliche Barriere | stark |
 
 Beginnen Sie mit den Möglichkeiten, die die Daten auf Ihrer Website halten; fügen Sie ein CAPTCHA nur bei Formularen

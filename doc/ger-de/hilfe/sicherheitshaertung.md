@@ -111,8 +111,8 @@ Liste, die Angreifer zuerst probieren), und ein Link aus **Passwort vergessen?**
 - Sperren Sie Konten optional nach Fehlversuchen (`[UserSettings] MaxNumberOfFailedLogin=10`) und tragen Sie Ihr
   eigenes Netzwerk in `TrustedIPList[]` ein; bedenken Sie, dass eine Sperre es auch jedem erlaubt, ein bekanntes Konto
   zu sperren.
-- Beschränken Sie die Administration auf Ihr Netzwerk oder ein VPN, oder setzen Sie mit
-  [request-shield](#ein-vorgeschalteter-schutzschild-request-shield) eine Browserprüfung vor ihre Anmeldung. Hinter einem Proxy
+- Beschränken Sie die Administration auf Ihr Netzwerk oder ein VPN. Die Browserprüfung vor ihrer Anmeldung bringt
+  [Request Shield](#ein-vorgeschalteter-schutzschild-request-shield) mit, seit 6.0.15 standardmäßig eingeschaltet. Hinter einem Proxy
   konfigurieren Sie zuerst `TrustedProxies[]`, sonst hat jeder Besucher die Adresse des Proxys
   ([13.10](../installation/13-sicherheitshaertung.md#1310-hinter-einem-proxy-vertrauenswürdige-header)).
 
@@ -253,8 +253,8 @@ Site-Code, die SQL aus Anfragedaten zusammensetzen.
 
 **Eingebaut.** Die eigenen Muster des Kernels wurden in der Härtung von 6.0.13 geprüft und korrigiert; Erweiterungen,
 die von den RAD-Assistenten erzeugt werden, enthalten seit deren Korrektur sicheren Code; der Request-Klassifizierer
-protokolliert Injection-Muster in URLs (Regelsatz `injection`), und die `@attacks`-Regeln von request-shield können sie
-abweisen, bevor PHP läuft.
+protokolliert Injection-Muster in URLs (Regelsatz `injection`), und die `@attacks`-Regeln von request-shield weisen sie
+ab, bevor der Kernel startet.
 
 **Härten (Entwickler).** Verwenden Sie `eZPersistentObject` und die Content-API; wenn SQL unvermeidlich ist,
 `$db->escapeString()` für jede Zeichenkette und `(int)` für jede Zahl; übergeben Sie Anfragedaten nie ohne
@@ -364,8 +364,15 @@ MIT-Lizenz) ist eine kleine Web Application Firewall für PHP vom CJW Network. S
 Exponential-Kernel startet**: Echte Besucher passieren in Mikrosekunden, Scanner und fehlerhafte Anfragen werden
 abgewiesen, Fluten werden gebremst, verdächtige Clients beweisen mit einer unsichtbaren Prüfung, dass sie ein Browser
 sind, und die Administration kann auf ein Netzwerk beschränkt oder hinter diese Prüfung gestellt werden. Jede
-Entscheidung nennt die Regel, die sie getroffen hat, und die Regeln sind reiner Text, eine pro Zeile. Sie wird für jede
-aus dem Internet erreichbare Exponential-Site empfohlen.
+Entscheidung nennt die Regel, die sie getroffen hat, und die Regeln sind reiner Text, eine pro Zeile.
+
+**Seit Exponential 6.0.15 gehört sie zur Standardinstallation.** Die `composer.json` im Wurzelverzeichnis verlangt die
+Erweiterung `exp_request_shield` (`se7enxweb/exp_request_shield`), die request-shield 0.4.0 zusammen mit einem PHP-7.4-Build
+derselben Dateien (PHP 7.4 bis 8.5), die Exponential-Regeln und **Setup** > **Request Shield** in der Administration
+mitbringt. Neue Installationen setzen sie ab der ersten Anfrage durch. Die Bibliothek bleibt ein Projekt der JAC Systeme
+GmbH / des CJW Network unter der MIT-Lizenz; die Erweiterung steht unter GPL-2.0-or-later. Was sie tut, Seite für
+Seite: [Request Shield](../funktionen/6.0/request-shield.md); die Abläufe: [Anleitung Request Shield](../anleitungen/request-shield.md);
+was sich für bestehende Installationen ändert: [Request Shield (BC)](../bc/6.0/request-shield.md).
 
 ### Wie sie den Request-Klassifizierer ergänzt
 
@@ -387,50 +394,78 @@ Einzelheiten: [Request-Logs: request-shield und der Klassifizierer](../funktione
 
 ### Installation
 
-request-shield ist **nicht** Teil der `composer.json` von Exponential; Sie fügen es Ihrer Installation hinzu. Zwei Wege:
+Auf einer neuen Installation ist nichts zu installieren: `composer install` legt `exp_request_shield` in `extension/` ab,
+und `config.php-RECOMMENDED`, aus der die `config.php` einer neuen Installation entsteht, lädt seinen Hook. Die
+Site-Pakete `sevenx_multisite` und `cjw_multisite` aktivieren die Erweiterung außerdem, für **Setup** > **Request
+Shield**. Ohne aktivierte Erweiterung filtert der Hook trotzdem; es fehlen nur die Admin-Seiten.
 
-- **Mit Composer**: `composer require cjw-network/request-shield`.
-- **Ohne Composer**: ein Checkout oder Release der Bibliothek in einem Verzeichnis **außerhalb** des Document Root.
+**Eine bestehende Installation, die aktualisiert wird**, erhält das Paket mit `composer update`, ihre `config.php` wird
+aber nie überschrieben. Fügen Sie den Hook deshalb selbst ein, **oberhalb** des frühen Ausstiegs des HTTP-Caches
+(`ezphttpcacheearlyexit.php`), damit auch zwischengespeicherte Seiten geschützt sind:
 
-Kopieren Sie dann die Exponential-Beispielregeln aus dem Verzeichnis `examples/exponential/` der Bibliothek in ein
-Verzeichnis, das der Webserver nie ausliefert (die Bibliothek schlägt `settings/request-shield/` vor), und wählen Sie die
-Hauptdatei für Ihre Administration:
+```php
+if ( is_file( __DIR__ . '/extension/exp_request_shield/bootstrap/hook.php' ) )
+    require __DIR__ . '/extension/exp_request_shield/bootstrap/hook.php';
+```
 
-| Datei | Wann |
+`config.php-RECOMMENDED` zeigt die Zeile an ihrem Platz, unter "REQUEST SHIELD". Aktivieren Sie die
+Erweiterung (`ActiveExtensions[]=exp_request_shield`), erzeugen Sie die Autoloads neu und leeren Sie die Caches, oder
+führen Sie `./console exp:velocity deploy` aus. Das Vorgehen Schritt für Schritt:
+[Anleitung Request Shield](../anleitungen/request-shield.md).
+
+Die Regeln kommen mit der Erweiterung, in `extension/exp_request_shield/rules/`:
+
+| Datei | Was sie ist |
 |---|---|
+| `request-shield.rules` | die Hauptdatei: bindet die Exponential-Regeln ein, Durchsetzungsmodus, Speicher und Log unter `var/request-shield/`, die eigenen Seiten der Bibliothek unter `/rs` für alle außer dem Server gesperrt |
 | `exponential.rules` | die Frontend-Regeln; von einer der beiden folgenden eingebunden, nicht allein geladen |
 | `exponential-admin-uri.rules` | die Administration ist der Siteaccess `/admin` auf demselben Host |
 | `exponential-admin-host.rules` | die Administration hat einen eigenen Host (`admin.example.org`) |
 
+Geben Sie der Site eine eigene Kopie in `settings/request-shield/`, denn ein Update der Erweiterung ersetzt deren
+Dateien. Der erste Moduswechsel in **Setup** > **Request Shield** erledigt das für Sie; von Hand kopieren Sie
+`request-shield.rules` und die drei `exponential*.rules` dorthin und korrigieren die Pfade in der Kopie. Der Schutzschild
+verwendet die erste vorhandene Datei: die in der Konstanten `EXP_REQUEST_SHIELD_RULES` genannte,
+`settings/request-shield/request-shield.rules`, den Standard der Erweiterung.
+
 ### Einschalten
 
-Der Schutzschild muss zu Beginn **jeder** Anfrage laufen.
+Der Schutzschild muss zu Beginn **jeder** Anfrage laufen, und dafür sorgt der Hook auf jeder Engine:
 
-- **Apache oder nginx mit PHP-FPM**: `config.php` läuft bei jeder Anfrage, daher funktioniert das Beispiel der
-  Bibliothek, ein Aufruf von `Shield::protectFile()` am Anfang von `config.php`; ebenso PHPs `auto_prepend_file` mit
-  Verweis auf die `bootstrap.php` der Bibliothek.
-- **Exponential Velocity**: `config.php` läuft einmal pro Worker, nicht pro Anfrage. Seit 6.0.15 führt `index.php` zu
-  Beginn jeder Anfrage die Datei aus, die `config.php` in der Konstanten `EXP_REQUEST_PREPEND_FILE` nennt; diese Datei
-  lädt die Bibliothek und ruft `Shield::protectFile()` auf. `config.php-RECOMMENDED` zeigt das Muster (eine Bedingung,
-  die nur in einem Velocity-Worker wahr ist, und ein Dateiname, den nur `config.php` setzen kann, nie einer, den der
-  Webserver schreiben kann). Velocity beantwortet Seiten aus seinem eigenen Antwort-Cache, bevor ein Worker startet;
-  der Schutzschild sieht also nur, was einen Worker erreicht.
+- **Apache oder nginx mit PHP-FPM**: `config.php` läuft bei jeder Anfrage, daher führt der Hook den Schutzschild genau
+  dort aus, vor dem frühen Ausstieg des HTTP-Caches, dem Autoloader, den INI-Dateien und der Datenbank.
+- **Exponential Velocity**: `config.php` läuft einmal pro Worker, nicht pro Anfrage. Der Hook nennt deshalb die Datei
+  `bootstrap/prepend.php` der Erweiterung in der Konstanten `EXP_REQUEST_PREPEND_FILE`, und `index.php` führt diese Datei
+  zu Beginn jeder Anfrage aus. Eine selbst geschriebene Einbindungsdatei ist nicht nötig; starten Sie Velocity nach dem
+  Einfügen des Hooks einmal neu (`./console exp:velocity restart`). PHP-FPM und Velocity geben dieselben Antworten,
+  Header und Logzeilen. Velocity beantwortet Seiten aus seinem eigenen Antwort-Cache, bevor ein Worker startet; der
+  Schutzschild sieht also nur, was einen Worker erreicht.
 
 Dann:
 
-1. **Beginnen Sie im Monitor-Modus.** Die Beispiele werden mit `set mode monitor` ausgeliefert: Jede Entscheidung wird
-   protokolliert, als ob sie getroffen würde, und niemand wird abgewiesen. Lesen Sie einige Tage lang das Log (oder die
-   Live-Ansicht), während Redakteure arbeiten.
-2. Passen Sie die wenigen site-spezifischen Zeilen an: die URI-Siteaccesses, die vorn stehen dürfen (`EXP-MODULES`), die
+1. **Er setzt wie installiert durch.** Scanner, Fluten, verirrte Formular-POSTs und System-URLs werden abgewiesen; die
+   Anmeldung und die Formulare der Administration verlangen die Browserprüfung. `EXP-BAN` und `EXP-STRICT` werden
+   beobachtet ausgeliefert (`monitor` davor).
+2. **Lesen Sie in den ersten Tagen das Log**: **Setup** > **Request Shield** > **Log**. Wurde ein echter Besucher oder
+   Redakteur abgewiesen (ein Seitenalias, der mit einem Modulnamen beginnt, ein Formular Ihrer eigenen Erweiterung),
+   ergänzen Sie in der Hauptregeldatei der Site eine Ausnahme und ein `expect`-Beispiel dafür. Eine Site mit vielen
+   ungewöhnlichen Adressen kann in den Monitor-Modus wechseln (die Schaltfläche **Monitor** oder `set mode monitor`),
+   solange Sie hinsehen: Jede Entscheidung wird dann nur protokolliert.
+3. Passen Sie die wenigen site-spezifischen Zeilen an: die URI-Siteaccesses, die vorn stehen dürfen (`EXP-MODULES`), die
    Module Ihrer Erweiterungen, die Formulare annehmen (`EXP-POST`), die Hostnamen der Site und den Load Balancer
    (`host`, `trust`).
-3. Prüfen und testen Sie die Regeln nach jeder Änderung: `bin/request-shield check <main file>` nennt Fehler nach Datei
-   und Zeile, `bin/request-shield test <main file>` führt die neben jeder Regel geschriebenen Beispiele aus, und
-   `bin/request-shield trace <main file> "GET https://www.example.org/..."` zeigt, wie eine Anfrage entschieden würde.
-4. Wechseln Sie zu `set mode enforce`. Beobachten Sie `EXP-BAN` und `EXP-STRICT` weiter (`monitor` davor), bis ihre
-   Logzeilen sauber sind.
-5. Zum Ausschalten verwenden Sie `set mode off`, statt die Einbindung zu entfernen; unter Velocity würde ein
-   persistenter Worker sonst die Markierungen der letzten Anfrage behalten.
+4. Prüfen und testen Sie die Regeln nach jeder Änderung, als der Benutzer, unter dem das PHP der Site läuft:
+   `php extension/exp_request_shield/bin/request-shield check <main file>` nennt Fehler nach Datei und Zeile, `test`
+   führt die neben jeder Regel geschriebenen Beispiele aus, und `trace <main file> "GET https://www.example.org/..."`
+   zeigt, wie eine Anfrage entschieden würde. Eine geänderte Regeldatei wird innerhalb ihrer `recheck`-Sekunden neu
+   gelesen; kein Neustart.
+5. **Zum sofortigen Ausschalten** verwenden Sie **Pause** in **Setup** > **Request Shield**, oder legen Sie
+   `var/request-shield/PAUSED` an (entfernen Sie die Datei, um den Schutzschild wieder einzuschalten). `set mode off`
+   bewirkt dasselbe in den Regeln. Ziehen Sie das dem Entfernen des Hooks vor; unter Velocity braucht ein entfernter Hook
+   einen Neustart.
+
+Die Admin-Seiten brauchen die Policies `requestshield/read` (Dashboard, Log, Regeln) und `requestshield/manage` (die
+Schalter); in einer neuen Installation hat sie nur die Rolle Administrator.
 
 ### Was die Exponential-Beispielregeln tun
 
@@ -473,7 +508,7 @@ Härtung ohne Beobachtung verzögert nur den Moment, in dem Sie von einem Angrif
 | `var/log/auth.log` | jeden Schritt der Zwei-Faktor-Anmeldung (nie einen Code oder ein Geheimnis) | **Setup** > **Logs** |
 | `var/log/csp.log` | Verstöße gegen die Content Security Policy | **CSP reports** (`csp/report`) |
 | `error.log`, die Logs des Webservers | Fehler mit einer Referenz-ID | **Setup** > **Logs** ([Log-Anzeige](../funktionen/6.0/log-betrachter.md)) |
-| das Log von request-shield | seine Entscheidungen | seine Live-Ansicht unter `/rs/` |
+| `var/request-shield/log/shield.log` | die Entscheidungen von Request Shield | **Setup** > **Request Shield** (Dashboard und Log) |
 
 Tun Sie mindestens Folgendes:
 
@@ -505,7 +540,8 @@ vorgeschalteten Schutzschilds, des Webservers oder eines Listeners, den Sie in
 - [ ] Debug-Ausgabe aus; PHP `display_errors=Off`.
 - [ ] HTTPS überall, HSTS, `CookieSecure=true`.
 - [ ] Code für den Benutzer der Site schreibgeschützt; Worker und Cronjobs nie als root.
-- [ ] request-shield vorgeschaltet, zuerst im Monitor-Modus, dann durchgesetzt.
+- [ ] Request Shield vorgeschaltet: der Hook in `config.php` (eine aktualisierte Installation fügt ihn selbst ein),
+      **Setup** > **Request Shield** meldet, dass er lief, Durchsetzungsmodus, sein Log in den ersten Tagen gelesen.
 - [ ] Audit-Alarme gehen an eine Person, das Protokoll wird von der Maschine weggeleitet; Logs wöchentlich gelesen.
 - [ ] Sicherungen außerhalb der Maschine, Wiederherstellung getestet; Updates verfolgt und getestet; `composer audit` sauber.
 

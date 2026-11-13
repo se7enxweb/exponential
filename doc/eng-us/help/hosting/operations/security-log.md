@@ -36,7 +36,7 @@ and [Security hardening: watching](../../security-hardening.md#watching-logs-the
 | `var/log/auth.log` | every step of two-step sign-in (never a code or a secret) | **Setup > Log files** |
 | `var/log/csp.log` | Content Security Policy violation reports | **Setup > Log files** |
 | `error.log`, the web server's logs | errors with a reference id | **Setup > Log files** |
-| request-shield's log | its decisions, when the shield is installed | its own live view |
+| `var/request-shield/log/shield.log` | request-shield's decisions (part of the default installation since 6.0.15) | **Setup > Request shield** |
 
 Source: [Security hardening](../../security-hardening.md#watching-logs-the-request-classifier-and-the-audit-trail).
 

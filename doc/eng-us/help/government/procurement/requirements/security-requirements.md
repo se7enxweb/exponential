@@ -54,7 +54,7 @@ From [Security standards](../../../../standards/security.md):
 |---|---|---|
 | SEC-01 | Two-step sign-in with the `sevenx_authentication_2fa` extension ([Two-step sign-in](../../../../guides/two-factor-login.md)) | Opt-in: an extension and a login handler to configure |
 | SEC-02 | `password_hash()` (bcrypt today), rehash at sign-in; minimum length 10 (`MinPasswordLength`) | Below ASVS 4.0.3 V2.1.1 (12) unless raised |
-| SEC-03 | Brute force detected by audit alert rules; lockout with `MaxNumberOfFailedLogin` | **Lockout off by default** (`MaxNumberOfFailedLogin=0`); rate limiting left to the web server or request-shield ([Security hardening](../../../security-hardening.md#a-shield-in-front-request-shield)) |
+| SEC-03 | Brute force detected by audit alert rules; lockout with `MaxNumberOfFailedLogin` | **Lockout off by default** (`MaxNumberOfFailedLogin=0`); rate limiting by the request shield, part of the default installation since 6.0.15, or the web server ([Security hardening](../../../security-hardening.md#a-shield-in-front-request-shield)) |
 | SEC-04 | Roles and policies checked for every module view ([Roles and policies](../../../../guides/roles-and-policies.md)) | OWASP A01 **Partly complies** |
 | SEC-05 | Form tokens (`ezformtoken`), `wash` escaping, upload checks, SVG sanitizer | Escaping is not automatic in templates; no prepared statements in the database layer |
 | SEC-06 | Security headers on every page; CSP with nonces and reporting ([Content Security Policy](../../../../features/6.0/content-security-policy.md)) | CSP **report-only on the administration, off on public sites** by default; HSTS empty until the operator sets it |

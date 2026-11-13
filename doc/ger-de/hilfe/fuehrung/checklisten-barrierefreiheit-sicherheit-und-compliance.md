@@ -150,8 +150,9 @@ achten, dass jede Zeile einen Verantwortlichen, ein Datum und einen Nachweis hat
 - [ ] Backups außerhalb der Maschine, Wiederherstellung getestet.
 - [ ] Eine Update-Routine: Wer verfolgt die Releases, wie werden Updates getestet, wer empfängt Sicherheitsmeldungen?
 
-Ein Schutzschild vor der Site, request-shield (ein Projekt von CJW Network), ist als Option dokumentiert, zuerst im
-Beobachtungsmodus, dann erzwungen ([Sicherheitshärtung](../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield)).
+Ein Schutzschild vor der Site, request-shield (ein Projekt von CJW Network), ist seit 6.0.15 Teil der
+Standardinstallation (die Erweiterung `exp_request_shield`) und setzt wie installiert durch; eine aktualisierte
+Installation trägt seine Hook-Zeile in `config.php` ein ([Sicherheitshärtung](../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield)).
 
 ## Konten und Zugriff
 

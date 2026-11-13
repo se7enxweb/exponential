@@ -51,7 +51,8 @@ Quellen: [Audit-Leitfaden 4.3](../../../bc/6.0/audit.md#43-aufbewahrung), [Proto
 | Suchstatistiken | unter Setup > Suchstatistiken zurücksetzen |
 | Papierkorb | nach Plan leeren (`content/trash`) |
 | Exporte (CSV, JSON), die Menschen heruntergeladen haben | nach der Aufgabe löschen |
-| Protokolle von Webserver, Velocity und request-shield | in diesen Programmen konfigurieren |
+| Protokolle von Webserver und Velocity | in diesen Programmen konfigurieren |
+| Protokoll von Request Shield | seine Regeldatei (`log-max-size`) |
 | Datensicherungen | Ihre Sicherungsrotation |
 
 ## Vom Aufbewahrungsplan zu den Einstellungen

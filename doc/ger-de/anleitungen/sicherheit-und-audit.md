@@ -81,6 +81,14 @@ php bin/php/resetuserpassword.php --allow-root-user -u admin -g
 
 `-g` erzeugt ein zufälliges Passwort und gibt es aus. Details: [ein Benutzerpasswort zurücksetzen](../funktionen/6.0/benutzerpasswort-zuruecksetzen.md).
 
+**Request Shield vor der Site.** Seit 6.0.15 entscheidet request-shield (die Erweiterung `exp_request_shield`) über jede Anfrage, bevor der Kernel startet: Scanner, Fluten, verirrte Formular-POSTs und System-URLs werden abgewiesen, und die Anmeldung und die Formulare der Administration verlangen eine Browserprüfung. Er ist wie installiert eingeschaltet, im Durchsetzungsmodus, über die Hook-Zeile in `config.php`; eine Installation, die von einer früheren Version aktualisiert wurde, fügt diese Zeile selbst ein ([Request Shield (BC)](../bc/6.0/request-shield.md)). Prüfen Sie, dass er läuft: **Setup** > **Request Shield** sagt, ob der Schutzschild für diese Seite lief, in welchem Modus und aus welcher Regeldatei, und was er in den letzten 24 Stunden entschieden hat. Von außen:
+
+```bash
+curl -sI https://<site>/settings/site.ini      # 404, vom Schutzschild im Durchsetzungsmodus
+```
+
+Lesen Sie in den ersten Tagen sein Log und ergänzen Sie eine Ausnahme für alles, was ein echter Besucher oder Redakteur getan hat. Zum sofortigen Ausschalten legen Sie `var/request-shield/PAUSED` an. Schritt für Schritt: [Request Shield](request-shield.md).
+
 Vertiefung: [Sicherheitsvoreinstellungen vom September 2026](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md), [Härtung von Datentypen und Eingaben](../spezifikationen/6.0/datentyp-eingabehaertung.md), [Härtung in 6.0.13](../spezifikationen/6.0/sicherheitshaertung-6.0.13.md).
 
 ## 2. Nur den Zugriff vergeben, den Personen brauchen (10 Minuten)
@@ -302,6 +310,7 @@ Die Idee und die Behandlung der Entwürfe stammen aus LoveStack (Mugo Web, Commi
 ## Checkliste
 
 - [ ] Fünf Sicherheits-Header vorhanden, Punktdateien und PHP-Dateien antworten mit 404
+- [ ] **Setup** > **Request Shield** zeigt, dass der Schutzschild lief, im Durchsetzungsmodus; sein Log in den ersten Tagen gelesen
 - [ ] `config.php` mit Modus `0640`, nicht committet; alte Sicherungen in `var/backup/` entfernt
 - [ ] Erstes Administrator-Passwort geändert
 - [ ] Rollen enthalten nur, was Personen brauchen; wenige Administratoren
@@ -314,7 +323,7 @@ Die Idee und die Behandlung der Entwürfe stammen aus LoveStack (Mugo Web, Commi
 
 ## Siehe auch
 
-- Die Bedrohungen einzeln, und request-shield davor: [Sicherheitshärtung](../hilfe/sicherheitshaertung.md); das Administratorkonto: [Das Administrator-Passwort ändern](../hilfe/administratorpasswort-aendern.md), [Das Standard-Administrator-Passwort](../hilfe/standard-administratorpasswort.md).
+- Die Bedrohungen einzeln, und request-shield davor: [Sicherheitshärtung](../hilfe/sicherheitshaertung.md), [Request Shield](request-shield.md); das Administratorkonto: [Das Administrator-Passwort ändern](../hilfe/administratorpasswort-aendern.md), [Das Standard-Administrator-Passwort](../hilfe/standard-administratorpasswort.md).
 - Eine Site mit Tokens aus Skripten und Apps steuern: [Remote-Dienste und Apps](entfernte-dienste-und-apps.md).
 - `.htaccess` und `config.php` von der Konsole, mit maskierten Geheimnissen und Sicherungen: [.htaccess und config.php von der Konsole einrichten](setup-dateien-von-der-konsole.md).
 - Auswirkungen der Sicherheitsänderungen auf ein Upgrade: [Verhaltensänderungen vom 1. und 2. Oktober 2026](../bc/6.0/verhaltensaenderungen-2026-10.md), [Sicherheitshärtung vom August 2026](../spezifikationen/6.0/sicherheitshaertung-2026-08.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md).

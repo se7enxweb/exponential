@@ -378,6 +378,18 @@ Setzen Sie die neuen Einstellungen, die Sie möchten, mit `exp:config:set <NAME>
 die Sie hatten, behalten ihre Werte. Siehe
 [.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md).
 
+**Request Shield (6.0.15).** `config.php-RECOMMENDED` lädt jetzt den Hook von `exp_request_shield`, der request-shield
+vor dem Kernel ausführt. Fügen Sie die zwei Zeilen in Ihre `config.php` ein, oberhalb des frühen Ausstiegs des
+HTTP-Caches:
+
+```php
+if ( is_file( __DIR__ . '/extension/exp_request_shield/bootstrap/hook.php' ) )
+    require __DIR__ . '/extension/exp_request_shield/bootstrap/hook.php';
+```
+
+Er setzt ab der nächsten Anfrage durch (unter Velocity nach einem Neustart). Siehe
+[Request Shield (BC)](../bc/6.0/request-shield.md).
+
 ### Schritt 2: das Datenbank-Update anwenden
 
 Die Datei für die Linie ist `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql`, für MySQL, PostgreSQL und

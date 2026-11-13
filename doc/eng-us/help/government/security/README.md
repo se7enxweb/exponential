@@ -48,7 +48,7 @@ and off on sites, HSTS empty by default, no `security.txt` shipped, no dependenc
 | [Two-step sign-in for public staff](two-step-sign-in.md) | turning on, requiring, rolling out, lost phones |
 | [Content Security Policy for public sites](content-security-policy.md) | how it ships, settings, reports |
 | [From report-only to an enforced CSP](csp-from-report-only-to-enforce.md) | a staged plan with rollback |
-| [request-shield in front of a public site](request-shield.md) | a separate firewall; monitor first |
+| [request-shield in front of a public site](request-shield.md) | the firewall in front of the kernel, part of the default installation since 6.0.15 |
 | [Request logs and the security log](request-logs-and-the-security-log.md) | `404.log`, `security.log`, masking, retention |
 | [Security headers](security-headers.md) | the five defaults; checking and changing |
 | [HTTPS and HSTS](https-and-hsts.md) | steps, settings, raising HSTS safely |

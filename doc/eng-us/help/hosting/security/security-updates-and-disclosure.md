@@ -107,7 +107,9 @@ A modified kernel file nobody changed deserves a look; see [Compromised site](..
   shell commands without `escapeshellarg()`, output without escaping), and regenerate extensions made by the RAD
   wizards before their fix ([RAD tools: security](../../../bc/6.0/rad-security.md),
   [6.0.13 hardening notes](../../../bc/6.0/hardening.md)).
-- **request-shield**, when installed, as its own package.
+- **request-shield**: the extension `exp_request_shield` (part of the default installation since 6.0.15) brings the
+  library with it; update it with Composer like the other extensions, and re-copy its `exponential*.rules` into
+  `settings/request-shield/` when they change.
 
 ## Reporting a vulnerability
 

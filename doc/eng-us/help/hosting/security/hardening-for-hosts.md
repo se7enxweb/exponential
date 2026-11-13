@@ -201,9 +201,12 @@ read `security.log` weekly ([Security hardening](../../security-hardening.md#wat
 ## A shield in front
 
 [request-shield](../../security-hardening.md#a-shield-in-front-request-shield), a small web application firewall for
-PHP by the CJW Network, refuses scanners and floods before the kernel starts. It is recommended for every site that
-can be reached from the internet and is not part of Exponential's `composer.json`. A host can offer it as part of a
-managed plan: [request-shield and request rules](request-shield-and-request-rules.md).
+PHP by the CJW Network, refuses scanners and floods before the kernel starts. Since 6.0.15 it is part of the default
+installation: the extension `exp_request_shield` bundles it and one hook line in `config.php` runs it, enforcing as
+installed, under PHP-FPM and Velocity alike. An upgraded installation adds the hook line to `config.php` itself, since
+an update never overwrites that file. A host can check it on every site in **Setup > Request shield** and offer its
+tuning as part of a managed plan: [request-shield and request rules](request-shield-and-request-rules.md),
+[Request shield](../../../features/6.0/request-shield.md).
 
 ## Updates
 

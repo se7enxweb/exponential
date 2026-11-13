@@ -66,7 +66,7 @@ security documentation.
 | Audit keys backed up; forwarding to a SIEM configured | backup record; sink test output |
 | Mail: `exp:mail:status` ok, footer filled in, bounce reader configured | command output |
 | One user writes `var/` and `settings/`; no world-writable files; workers never root | `find settings extension/*/settings -perm -o+w` prints nothing |
-| request-shield in front (monitor, then enforce) | rule files, mode |
+| request-shield enforcing (the `config.php` hook present, the site's own rules in `settings/request-shield/`) | Setup > Request shield: mode, rule file, decisions |
 | Backups off the machine; restore tested | restore test record |
 | Update routine: who watches releases, who receives security mail | named owners |
 

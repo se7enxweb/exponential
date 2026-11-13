@@ -53,7 +53,7 @@ Zwei Erweiterungen schreiben Sitemaps als Cronjob-Teile: `bcgooglesitemaps` (Tei
 
 ## Sicherheitsmaßnahmen und Crawler
 
-- **request-shield** bremst, wenn eingesetzt, Clients über 120 Seiten pro Minute mit einer Browserprüfung und sperrt
+- **Request Shield**, seit 6.0.15 Teil der Standardinstallation, bremst Clients über 120 Seiten pro Minute mit einer Browserprüfung und sperrt
   nach wiederholten Ablehnungen; verifizierte Suchmaschinen werden nie gesperrt, aber der Crawler eines Archivs wird
   möglicherweise nicht erkannt. Vereinbaren Sie mit dem Archiv dessen Adressbereich oder User-Agent und fügen Sie eine
   Regel dafür hinzu ([request-shield](../sicherheit/request-shield.md)).

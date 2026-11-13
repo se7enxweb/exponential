@@ -69,7 +69,8 @@ proxy itself avoids that question ([TLS and HTTPS](tls-and-https.md#proxies-that
 
 ## A browser check in front
 
-request-shield's Exponential examples put a browser check before the sign-in form and the administration, scan every
+request-shield (part of the default installation since 6.0.15, `exp_request_shield`) and its Exponential rules put a
+browser check before the sign-in form and the administration, scan every
 parameter for attacks, and can limit the administration to a network (`EXP-ADMIN-NET`). The administration's
 background requests (the Admin 4 mega menu) get a machine-readable answer instead of a check page. Choose the main
 rules file by layout: `exponential-admin-uri.rules` for `/admin` on the same host, `exponential-admin-host.rules` for an

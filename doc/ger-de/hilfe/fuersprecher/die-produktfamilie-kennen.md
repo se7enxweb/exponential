@@ -73,7 +73,7 @@ Stellen Sie im Gespräch zuerst zwei Fragen:
 | „Legacy bedeutet alt.“ | „Legacy“ ist der Kernel von Exponential 6, wenn er neben einer Symfony-Plattform läuft ([Glossar](../wer-ist-die-exponential-foundation.md#glossar)). Exponential 6 selbst ist die gepflegte Linie. |
 | „Velocity ist Qbix.“ | Velocity begann als Fork der Webserver-Engine Qbix; der Produktname ist Exponential Velocity ([Marken- und Namensregeln](../geschaeft/marken-und-namensregeln.md#die-produktfamilie)). |
 | „Die KI veröffentlicht Inhalte.“ | Exponential Intelligence schreibt nur Entwürfe ([expai](../../funktionen/6.0/erweiterungen/expai.md#kurz-gesagt)). |
-| „request-shield ist Teil von Exponential.“ | Es ist ein Projekt von CJW Network; Exponential dokumentiert, wie man es nutzt ([Begleitprojekte](../wer-ist-die-exponential-foundation.md#begleitprojekte)). |
+| „request-shield ist die eigene Firewall von Exponential.“ | Es ist ein Projekt von CJW Network; seit 6.0.15 bringt Exponential es in der Erweiterung `exp_request_shield` mit und führt es standardmäßig aus ([Begleitprojekte](../wer-ist-die-exponential-foundation.md#begleitprojekte)). |
 
 ## Prüfen Sie sich selbst
 

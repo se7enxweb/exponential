@@ -51,7 +51,7 @@ administration designs show the same pages in a different frame.
    | **Site and URLs** | **Preload Sites**, **RSS**, **Packages**, **Search statistics**, **Link management**, **URL translator**, **URL wildcards** | Modules 5 and later |
    | **Workflows** | **Triggers**, **Workflows**, **Workflow processes** | Module 6 |
    | **Users and messages** | **Audit**, **E-mail preferences**, **Notification**, **Sessions**, **Check user accounts** | Module 2 and later |
-   | **System** | **Cache management**, **Maintenance**, **Cronjobs**, **Log files**, **Extensions**, **Ini settings**, **Site data**, **System information**, **Upgrade check** | most modules |
+   | **System** | **Cache management**, **Maintenance**, **Cronjobs**, **Log files**, **Request shield** (when exp_request_shield is active), **Extensions**, **Ini settings**, **Site data**, **System information**, **Upgrade check** | most modules |
 
    Installations with more extensions show more groups, for example **AI** and **Updates**.
 3. **The left menu** (2 minutes). On every Setup page the left column repeats the same groups as a menu, with

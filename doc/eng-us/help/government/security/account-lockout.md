@@ -65,7 +65,8 @@ count as failed logins too. Clear the INI cache and reload PHP after the change.
 ## Alternatives and complements
 
 - **Two-step sign-in** makes a guessed password useless on its own (see "Two-step sign-in for public staff").
-- **request-shield** slows sign-in floods and puts a browser check before the sign-in form.
+- **The request shield** (part of the default installation since 6.0.15) slows sign-in floods and puts a browser
+  check before the sign-in form.
 - **Alert rules** `brute_force` (20 failures from one network in 5 minutes) and `brute_force_user` (10 for one account
   in 15 minutes) report attacks to the alert recipients.
 - **Restricting the administration** to your network removes most guessing from the internet.

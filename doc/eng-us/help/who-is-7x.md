@@ -439,8 +439,8 @@ Exponential names the companies whose open source work it builds on:
   fork of `netgen/ezpublish-legacy`.
 - **Mugo Web**: their LoveStack improvements were rebuilt in 6.0.15 "with full credit to Mugo Web" (README,
   "Exponential Distribution Integration: LoveStack").
-- **CJW Network**: `cjw_newsletter` and the CJW flavor of Nexus; their request-shield is documented as a companion in
-  front of Exponential's HTTP cache ([HTTP cache](../bc/6.0/httpcache.md)).
+- **CJW Network**: `cjw_newsletter` and the CJW flavor of Nexus; their request-shield is bundled since 6.0.15 by the
+  extension `exp_request_shield` and runs in front of Exponential's HTTP cache ([HTTP cache](../bc/6.0/httpcache.md)).
 - **eZ Systems**, whose copyright from 1999 to 2014 stays in the code (COPYRIGHT.md).
 
 ## Open source licenses

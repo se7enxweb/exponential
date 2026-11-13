@@ -51,7 +51,10 @@ index.php
    (`expMaintenance::check()`).
 3. Bindet `autoload.php` ein.
 4. Führt eine Anfragefilter-Datei aus, wenn `config.php` `EXP_REQUEST_PREPEND_FILE` definiert. Sie läuft bei jeder
-   Anfrage, auch in einem persistenten Worker, in dem `config.php` selbst nur einmal läuft.
+   Anfrage, auch in einem persistenten Worker, in dem `config.php` selbst nur einmal läuft. In einer Standardinstallation
+   definiert der Hook von Request Shield (`exp_request_shield`) die Konstante unter Velocity; unter PHP-FPM führt der Hook in
+   `config.php` den Schutzschild selbst aus, vor dem frühen Ausstieg des HTTP-Caches
+   ([Request Shield](../../funktionen/6.0/request-shield.md)).
 5. Zeigt PHP-Fehler im Browser, wenn `eZINI::environment()` `dev` oder `test` ist (aus `EXP_ENV` in `config.env.php`).
 6. Führt den Kernel aus: `$kernel = new ezpKernel( new ezpKernelWeb() ); echo $kernel->run()->getContent();`
 

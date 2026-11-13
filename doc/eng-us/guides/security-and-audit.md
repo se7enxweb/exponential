@@ -80,6 +80,14 @@ php bin/php/resetuserpassword.php --allow-root-user -u admin -g
 
 `-g` generates a random password and prints it. Details: [reset a user password](../features/6.0/reset-user-password.md).
 
+**The request shield in front.** Since 6.0.15, request-shield (the extension `exp_request_shield`) decides every request before the kernel starts: scanners, floods, stray form posts and system URLs are refused, and the sign-in and the administration's forms ask for a browser check. It is on as installed, in enforce mode, from the hook line in `config.php`; an installation upgraded from an earlier version adds that line itself ([Request shield (BC)](../bc/6.0/request-shield.md)). Check that it runs: **Setup** > **Request shield** says whether the shield ran for that page, in which mode and from which rule file, and what it decided in the last 24 hours. From the outside:
+
+```bash
+curl -sI https://<site>/settings/site.ini      # 404, by the shield in enforce mode
+```
+
+Read its log in the first days and add an exception for anything a real visitor or editor did. To switch it off at once, create `var/request-shield/PAUSED`. Step by step: [Request shield](request-shield.md).
+
 Depth: [security defaults of September 2026](../specifications/6.0/security-defaults-2026-09.md), [datatype and input hardening](../specifications/6.0/datatype-input-hardening.md), [hardening of 6.0.13](../specifications/6.0/security-hardening-6.0.13.md).
 
 ## 2. Give people only the access they need (10 minutes)
@@ -300,6 +308,7 @@ The idea and the draft handling come from LoveStack (Mugo Web, commit 826e1d4647
 ## Checklist
 
 - [ ] Five security headers present, dot files and PHP files answer 404
+- [ ] **Setup** > **Request shield** shows the shield ran, in enforce mode; its log read in the first days
 - [ ] `config.php` mode `0640`, not committed; old backups in `var/backup/` removed
 - [ ] Initial administrator password changed
 - [ ] Roles hold only what people need; few administrators
@@ -312,7 +321,7 @@ The idea and the draft handling come from LoveStack (Mugo Web, commit 826e1d4647
 
 ## Related pages
 
-- The threats one by one, and request-shield in front: [Security hardening](../help/security-hardening.md); the administrator account: [Change the administrator password](../help/change-the-admin-password.md), [The default administrator password](../help/default-administrator-password.md).
+- The threats one by one, and request-shield in front: [Security hardening](../help/security-hardening.md), [Request shield](request-shield.md); the administrator account: [Change the administrator password](../help/change-the-admin-password.md), [The default administrator password](../help/default-administrator-password.md).
 - Control a site from scripts and apps with tokens: [remote services and apps](remote-services-and-apps.md).
 - `.htaccess` and `config.php` from the console, with masked secrets and backups: [Setting up .htaccess and config.php from the console](setup-files-from-the-console.md).
 - Upgrade impact of the security changes: [behaviour changes of 1-2 October 2026](../bc/6.0/behaviour-changes-2026-10.md), [security hardening of August 2026](../specifications/6.0/security-hardening-2026-08.md), [6.0.15 changelog](../../changelogs/6.0/6.0.15.md).

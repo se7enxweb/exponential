@@ -55,7 +55,7 @@ festgehalten“), sparen Sie Zeit und richten den Bericht auf das Neue aus.
 
 1. Führen Sie die Dateikonsistenzprüfung aus, damit der Test von einem bekannten Zustand ausgeht.
 2. Entscheiden Sie, was mit request-shield geschieht: vorgeschaltet lassen, um den realen Aufbau zu testen, oder in den
-   Beobachtungsmodus setzen, damit die Testenden die Anwendung erreichen; halten Sie die Wahl fest.
+   Beobachtungsmodus setzen (Setup > Request Shield), damit die Testenden die Anwendung erreichen; halten Sie die Wahl fest.
 3. Informieren Sie die Empfänger der Alarme: Audit-Alarme (Brute-Force, Rollenvergabe) werden auslösen.
 4. Sichern Sie die Staging-Datenbank und `var/storage`.
 5. Ist die Kontosperre eingeschaltet, nehmen Sie die Adressen der Testenden nur dann in `TrustedIPList[]` auf, wenn Sie

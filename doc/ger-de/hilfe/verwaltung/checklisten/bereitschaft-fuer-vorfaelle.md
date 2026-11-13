@@ -48,7 +48,9 @@ nutzen.
 - [ ] **Konten**: Deaktivieren Sie ein kompromittiertes Konto ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 - [ ] **Caches**: Leeren Sie nach einer Korrektur den richtigen Cache, `php bin/php/ezcache.php --clear-id=<id>` oder **Setup > Cache-Verwaltung** ([Caches](../../../anleitungen/caches.md)).
 - [ ] **Fehlerreferenzen**: Fehlermeldungen für Besucher tragen eine Referenz, die Sie nachschlagen können ([Einen Fehler über seine Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md)).
-- [ ] **Anfragefilter**: request-shield kann missbräuchliche Clients vor dem Kernel sperren oder bremsen ([Sicherheitshärtung](../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield)).
+- [ ] **Anfragefilter**: Request Shield (Standard seit 6.0.15) sperrt oder bremst missbräuchliche Clients vor dem
+  Kernel; Sie wissen, wie Sie es pausieren (`var/request-shield/PAUSED`) und wo sein Protokoll steht
+  (Setup > Request Shield) ([Sicherheitshärtung](../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield)).
 
 ## Beweise
 

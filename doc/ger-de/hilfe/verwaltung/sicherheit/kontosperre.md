@@ -72,7 +72,8 @@ laden Sie PHP neu.
 
 - **Zweistufige Anmeldung** macht ein erratenes Passwort allein wertlos (siehe „Zweistufige Anmeldung für Beschäftigte
   öffentlicher Stellen“).
-- **request-shield** bremst Anmeldefluten und schaltet vor das Anmeldeformular eine Browserprüfung.
+- **Request Shield** (seit 6.0.15 Teil der Standardinstallation) bremst Anmeldefluten und schaltet vor das
+  Anmeldeformular eine Browserprüfung.
 - **Alarmregeln** `brute_force` (20 Fehlschläge aus einem Netz in 5 Minuten) und `brute_force_user` (10 für ein Konto in
   15 Minuten) melden Angriffe an die Empfänger der Alarme.
 - **Die Administration auf Ihr Netz zu beschränken** entzieht dem Raten aus dem Internet den größten Teil der

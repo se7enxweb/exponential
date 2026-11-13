@@ -71,7 +71,8 @@ Einschränkung im Proxy selbst vermeidet diese Frage ([TLS und HTTPS](tls-und-ht
 
 ## Eine Browserprüfung davor
 
-Die Exponential-Beispiele von request-shield stellen eine Browserprüfung vor das Anmeldeformular und die Administration, durchsuchen jeden
+Request Shield (seit 6.0.15 Teil der Standardinstallation, `exp_request_shield`) und seine Regeln für Exponential stellen
+eine Browserprüfung vor das Anmeldeformular und die Administration, durchsuchen jeden
 Parameter nach Angriffen und können die Administration auf ein Netzwerk beschränken (`EXP-ADMIN-NET`). Die Hintergrundanfragen der
 Administration (das Mega-Menü von Admin 4) bekommen eine maschinenlesbare Antwort statt einer Prüfseite. Wählen Sie die Hauptregeldatei
 nach Aufbau: `exponential-admin-uri.rules` für `/admin` auf demselben Host, `exponential-admin-host.rules` für einen eigenen Host der

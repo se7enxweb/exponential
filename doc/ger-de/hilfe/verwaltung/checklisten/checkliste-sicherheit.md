@@ -65,7 +65,8 @@ die Sie entscheiden.
 
 - [ ] HTTPS mit einem gültigen Zertifikat ([TLS und HTTPS](../../hosting/sicherheit/tls-und-https.md)).
 - [ ] Die Administration, wo möglich, auf Netzebene beschränkt ([Die Administration einschränken](../../hosting/sicherheit/die-administration-einschraenken.md)).
-- [ ] Ein Anfragefilter wie request-shield davor ([Sicherheitshärtung](../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield)).
+- [ ] Request Shield setzt vor dem Kernel durch (Standard seit 6.0.15; eine aktualisierte Website ergänzt den Hook in
+      `config.php`) ([Sicherheitshärtung](../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield)).
 - [ ] Dateirechte wie dokumentiert ([Beschreibbare Verzeichnisse und Rechte](../../hosting/grundlagen/beschreibbare-verzeichnisse-und-berechtigungen.md)).
 
 ## Meldewege

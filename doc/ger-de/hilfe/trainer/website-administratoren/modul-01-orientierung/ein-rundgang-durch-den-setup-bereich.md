@@ -53,7 +53,7 @@ andere Designs der Administration zeigen dieselben Seiten in einem anderen Rahme
    | **Website und URLs** | **Seiten vorladen**, **RSS**, **Pakete**, **Suchstatistiken**, **URL-Verwaltung**, **URL-Übersetzer**, **URL Platzhalter** | Module 5 und später |
    | **Workflows** | **Trigger**, **Workflows**, **Workflow-Prozesse** | Modul 6 |
    | **Benutzer und Nachrichten** | **Audit**, **E-Mail-Einstellungen**, **Benachrichtigungen**, **Sitzungen**, **Benutzerkonten prüfen** | Modul 2 und später |
-   | **System** | **Cache-Verwaltung**, **Wartung**, **Cronjobs**, **Logdateien**, **Extensions**, **INI-Einstellungen**, **Site-Daten**, **Systeminformationen**, **Upgrade-Prüfung** | die meisten Module |
+   | **System** | **Cache-Verwaltung**, **Wartung**, **Cronjobs**, **Logdateien**, **Request Shield** (wenn exp_request_shield aktiv ist), **Extensions**, **INI-Einstellungen**, **Site-Daten**, **Systeminformationen**, **Upgrade-Prüfung** | die meisten Module |
 
    Installationen mit mehr Erweiterungen zeigen weitere Gruppen, zum Beispiel **KI** und **Updates**.
 3. **Das linke Menü** (2 Minuten). Auf jeder Setup-Seite wiederholt die linke Spalte dieselben Gruppen als Menü, mit

@@ -81,7 +81,7 @@ List the decisions, so that Y.1 can be checked at acceptance. For Exponential th
 | HSTS | `site.ini [HTTPHeaderSettings] SecurityHeaders[Strict-Transport-Security]` | empty | <value> |
 | Audit trail | `audit.ini [AuditSettings] Audit` | `enabled` | keep |
 | Settings locked in production | [Configuration managed by the deployment](../../../../features/6.0/managed-by-deployment.md) | off | <decision> |
-| Rate limiting in front | request-shield ([Security hardening](../../../security-hardening.md#a-shield-in-front-request-shield)) | not installed | <decision> |
+| Rate limiting in front | request-shield ([Security hardening](../../../security-hardening.md#a-shield-in-front-request-shield)) | installed and enforcing since 6.0.15 (an upgraded site adds the `config.php` hook) | <decision> |
 
 ## What an Exponential-based bid can show
 

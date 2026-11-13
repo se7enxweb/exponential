@@ -79,7 +79,7 @@ Lieferanten. Ein kürzeres Versprechen, als der Lieferant personell abdecken kan
 in [Support-Stufen und Reaktionszeiten](../../../partner/support-stufen-und-reaktionszeiten.md#ihre-eigenen-slas-abstimmen).
 
 Maßnahmen zur Abmilderung, die es in Exponential gibt und die dokumentiert sind: der Wartungsmodus ([Wartungsmodus](../../../../anleitungen/wartungsmodus.md)),
-Anfrageregeln und ein Anfragefilter vor der Website ([Sicherheitshärtung](../../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield)).
+Anfrageregeln und Request Shield vor dem Kernel, seit 6.0.15 Teil der Standardinstallation, dessen Regeln eine verwundbare Adresse sofort abweisen können ([Sicherheitshärtung](../../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield)).
 
 ## Ihr eigener Meldekanal
 

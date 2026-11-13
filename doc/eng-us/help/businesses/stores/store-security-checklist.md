@@ -82,7 +82,8 @@ From the project's hardening checklist ([Security hardening](../../security-hard
 - [ ] Debug output off and PHP errors not displayed.
 - [ ] The installation wizard cannot run on the installed site.
 - [ ] Code read-only for the web server's user.
-- [ ] A request shield or request rules in front ([Request rules](../../../features/6.0/request-rules.md)).
+- [ ] The request shield running in front (Setup > Request shield; [Request shield](../../../features/6.0/request-shield.md)) and
+      request rules decided ([Request rules](../../../features/6.0/request-rules.md)).
 
 ## Updates
 

@@ -85,7 +85,7 @@ Prüfen Sie die Befehlsnamen auf der Installation, die Sie verwenden; `--help` b
 | „Wie werden Sicherheitskorrekturen ausgeliefert?“ | Auf `main`, veröffentlicht mit dem nächsten Release 6.0.x | [Sicherheitskorrekturen](../wer-ist-die-exponential-foundation.md#sicherheitskorrekturen) |
 | „Dürfen wir Cron als root laufen lassen?“ | Die Anleitung zur Härtung behandelt Cron und Kommandozeilenskripte als root | [Sicherheitshärtung](../sicherheitshaertung.md#cron--und-kommandozeilenskripte-als-root) |
 | „Wie aktualisieren wir sicher?“ | Zuerst sichern, nie einen Installer über eine bestehende Website laufen lassen; Dateien je Datenbank aktualisieren | [Upgrade](../../installation/11-aktualisieren.md) |
-| „Kann eine WAF davor sitzen?“ | request-shield von CJW Network ist als Begleitprojekt dokumentiert | [Ein Schutzschild davor](../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield) |
+| „Kann eine WAF davor sitzen?“ | Ja, seit 6.0.15 standardmäßig: request-shield von CJW Network, mitgebracht in `exp_request_shield`, wie installiert durchsetzend | [Ein Schutzschild davor](../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield) |
 
 ## Sagen Sie nicht
 

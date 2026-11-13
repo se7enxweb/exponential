@@ -25,7 +25,7 @@ open source work. The project credits these companies by name; good coverage doe
 |---|---|---|
 | **Netgen** | Exponential Layouts brings "the concept of the upstream layouts packages to the Exponential kernel"; the Nexus distribution builds on Netgen Media Site and the upstream layouts packages; AdminUI is "a feature complete port of the legendary Netgen AdminUI"; the repository `se7enxweb/exponential` is a GitHub fork of `netgen/ezpublish-legacy` | README; [Contributors and friends](../who-is-7x.md#contributors-and-friends-of-the-project) |
 | **Mugo Web** | The LoveStack improvements, rebuilt in 6.0.15 "with full credit to Mugo Web" | README, "Exponential Distribution Integration: LoveStack" |
-| **CJW Network** | `cjw_newsletter`; a CJW flavor of Nexus; request-shield, documented as a companion in front of the HTTP cache ("a project of CJW Network ... not of the Foundation") | [Companion projects](../who-is-the-exponential-foundation.md#companion-projects) |
+| **CJW Network** | `cjw_newsletter`; a CJW flavor of Nexus; request-shield, bundled since 6.0.15 in the extension `exp_request_shield` and run in front of the HTTP cache by default ("a project of CJW Network ... not of the Foundation") | [Companion projects](../who-is-the-exponential-foundation.md#companion-projects) |
 | **Qbix** | Exponential Velocity "began as a fork of the Qbix web server engine" | Velocity README; [Exponential Velocity](../who-is-7x.md#exponential-velocity) |
 | **Zeta Components** | The kernel's libraries; 7x maintains forks and submitted security pull requests upstream | [The PHP stack it stands on](../who-is-the-exponential-foundation.md#the-php-stack-it-stands-on-and-gives-back-to) |
 | **AdminNeo** | The database source editor `sevenx_dse` | [sevenx_dse](../../features/6.0/extensions/sevenx_dse.md) |
@@ -52,7 +52,7 @@ open source work. The project credits these companies by name; good coverage doe
 | "Netgen's page builder for Exponential" | Exponential Layouts is a port of the concept with its own name and code |
 | "built by Netgen" for Exponential | Netgen contributed pull requests and its work is ported; 7x leads Exponential |
 | "Mugo Web joins Exponential" | The sources document reuse of open source work, not a business relationship |
-| "request-shield is part of Exponential" | It is a CJW Network project, documented as a companion |
+| "request-shield is an Exponential project" | It is a CJW Network project; Exponential bundles it since 6.0.15 (`exp_request_shield`) and credits CJW Network |
 | Any endorsement by these companies | None is documented; ask them for comment if your story needs it |
 
 ## Related pages

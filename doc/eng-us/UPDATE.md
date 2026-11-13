@@ -151,6 +151,21 @@ Set the new settings you want with `./console exp:config:set <NAME> <value> --ap
 values. Use `--static` with `exp:setup:htaccess` when the site serves the static cache. See
 [Setting up .htaccess and config.php from the console](guides/setup-files-from-the-console.md#12-after-an-upgrade).
 
+**Updating to 6.0.15 or later: add the request shield's hook.** Since 6.0.15, `composer.json` brings the extension
+`exp_request_shield`, which puts request-shield in front of the site, and `config.php-RECOMMENDED` loads its hook.
+Your `config.php` is never overwritten, so add the two lines yourself, **above** the HTTP cache's early exit
+(`ezphttpcacheearlyexit.php`):
+
+```php
+if ( is_file( __DIR__ . '/extension/exp_request_shield/bootstrap/hook.php' ) )
+    require __DIR__ . '/extension/exp_request_shield/bootstrap/hook.php';
+```
+
+The shield then enforces from the next request (under Velocity after its restart in step 6). Add
+`ActiveExtensions[]=exp_request_shield` for **Setup** > **Request shield**, and read its log in the first days. A site
+with unusual addresses can begin in monitor mode. See [Request shield (BC)](bc/6.0/request-shield.md) and the
+[Request shield guide](guides/request-shield.md).
+
 ## 5. Update the database
 
 The database update files are in `update/database/<engine>/6.0/`:

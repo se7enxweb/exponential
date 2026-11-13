@@ -94,7 +94,8 @@ development and again before launch; the hardening guide explains the attacks be
 
 - [ ] HTTPS everywhere, HSTS, secure cookies.
 - [ ] The administration on its own host or restricted by network.
-- [ ] Request rules or the request shield in front, first monitoring, then enforcing
+- [ ] The request shield in front (enforcing as installed since 6.0.15; the hook line in `config.php` after an upgrade)
+      and request rules decided, first monitoring, then enforcing
       ([Request rules](../../features/6.0/request-rules.md)).
 - [ ] The setting-by-setting list: [Go-live checklist](../../install/13-security-hardening.md#1316-go-live-checklist).
 

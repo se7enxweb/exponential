@@ -31,7 +31,7 @@ Composer-Pakete mit unveränderlichen Releases; die folgende Routine folgt
 | Composer-Abhängigkeiten | `composer audit` listet bekannte Schwachstellen in den festgeschriebenen Abhängigkeiten |
 | PHP, Datenbankserver, Betriebssystem | die Sicherheitsmeldungen Ihrer Distribution oder Ihres Herstellers |
 | Die Engine von Velocity und FrankenPHP | Releases der Engine; Version und Prüfsummen von FrankenPHP sind in `velocity.ini [FrankenPHPSettings]` festgeschrieben |
-| request-shield (falls verwendet) | seine Releases |
+| request-shield in `exp_request_shield` (seit 6.0.15 Teil der Standardinstallation) | die Releases der Erweiterung, die die enthaltene Version der Bibliothek nennen |
 
 Die CI des Projekts führt keinen Schwachstellenscan der Abhängigkeiten aus
 ([Sicherheitsstandards: bekannte Lücken](../../../standards/sicherheit.md#bekannte-lücken)), daher ist `composer audit` Ihre

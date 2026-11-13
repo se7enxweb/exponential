@@ -394,6 +394,17 @@ See [Trusted proxies](bc/6.0/trusted-proxies.md).
   roles, system settings, exports, deletions). Five groups are on by default; the sixth, content, is switched on under
   **Setup > Verify it's you** (`/setup/reauth`). See [Verify it's you](guides/verify-its-you.md).
 
+### The request shield in front
+
+Since 6.0.15 every request passes request-shield (the extension `exp_request_shield`) before the kernel starts: it
+refuses scanners, floods, stray form posts and system URLs, and asks for a browser check before the sign-in and the
+administration's forms. It is configured in rule files, not INI files: the site's own copy in
+`settings/request-shield/request-shield.rules`, else the extension's default. It is started by a hook line in
+`config.php` (in `config.php-RECOMMENDED`; an upgraded installation adds it), and **Setup** > **Request shield**
+(policies `requestshield/read` and `requestshield/manage`) shows its decisions and switches it between enforce,
+monitor and off. To switch it off at once, create `var/request-shield/PAUSED`. See
+[Request shield](features/6.0/request-shield.md) and the [Request shield guide](guides/request-shield.md).
+
 ### Secrets
 
 Passwords and keys that tools need (data table connections, import sources, remote servers) belong in the secret

@@ -3,8 +3,8 @@ title: request-shield and request rules
 audience: hosting, admin
 category: hosting
 order: 50
-summary: The three request layers a host can use with Exponential: request-shield, a firewall that decides before the kernel starts; the kernel's request classifier, which only classifies into security.log; and the kernel's request rules, which decide before a module view runs. How to install and switch each on, how they differ, and how a host can offer them.
-keywords: request-shield, WAF, web application firewall, request classifier, security.log, requestclassifier.ini, request rules, requestrules.ini, ezrequestrules.php, monitor mode, enforce, EXP_REQUEST_PREPEND_FILE, auto_prepend_file, Velocity, system URLs, brute force, scanners
+summary: The three request layers a host can use with Exponential: request-shield, a firewall that decides before the kernel starts and is part of the default installation since 6.0.15 (exp_request_shield); the kernel's request classifier, which only classifies into security.log; and the kernel's request rules, which decide before a module view runs. How to install and switch each on, how they differ, and how a host can offer them.
+keywords: request-shield, exp_request_shield, Setup > Request shield, WAF, web application firewall, request classifier, security.log, requestclassifier.ini, request rules, requestrules.ini, ezrequestrules.php, monitor mode, enforce, EXP_REQUEST_PREPEND_FILE, config.php hook, PAUSED, Velocity, system URLs, brute force, scanners
 type: help
 ---
 # request-shield and request rules
@@ -31,9 +31,9 @@ from [Request logs](../../../features/6.0/request-logs.md); the request rules fr
 |---|---|---|---|
 | What it does | **decides**: refuses, slows down, challenges, bans for a while, or only logs (monitor mode) | **classifies** only: probes, traversal, injection, attack tools, bursts of 404s | **decides** per module view: redirect, not found, access denied, sign in first, rewrite, log |
 | Where it runs | before the kernel starts | inside the kernel, at the end of every request | inside the kernel, just before a module view runs |
-| Part of Exponential | no; added by the host or site (MIT license, by the CJW Network) | yes, on by default | yes; three rules ship defined and off |
-| Settings | its own rule files | `settings/requestclassifier.ini` | `settings/requestrules.ini` |
-| Its log | its own log, and a live view under `/rs/` | `var/log/security.log` | as a rule's action decides |
+| Part of Exponential | yes since 6.0.15: the extension `exp_request_shield` bundles it (library MIT, by the CJW Network), enforcing as installed | yes, on by default | yes; three rules ship defined and off |
+| Settings | its rule files in `settings/request-shield/` | `settings/requestclassifier.ini` | `settings/requestrules.ini` |
+| Its log | `var/request-shield/log/shield.log`, read in **Setup > Request shield** | `var/log/security.log` | as a rule's action decides |
 
 A request the shield refuses never reaches the kernel, so it is not in `security.log`. In the shield's monitor mode the
 same probe can be in both logs. The classifier's probe and injection rule names follow request-shield's names in lower
@@ -42,20 +42,42 @@ case, so a line in one can be found in the other.
 ## request-shield
 
 [request-shield](https://request-shield.com) (source:
-[cjw-network/request-shield](https://github.com/cjw-network/request-shield)) looks at every request before the
-kernel starts. Real visitors pass in microseconds; a refused request costs about 30 µs instead of a rendered page.
+[cjw-network/request-shield](https://github.com/cjw-network/request-shield), by JAC Systeme GmbH / CJW Network, MIT
+license) looks at every request before the kernel starts. Real visitors pass in microseconds; a refused request costs
+about 30 µs instead of a rendered page.
 
-### Installing
+### Part of the default installation
 
-It is not part of Exponential's `composer.json`. Either:
+Since Exponential 6.0.15 a new installation has it. The root `composer.json` requires the extension
+`exp_request_shield` (`se7enxweb/exp_request_shield`, GPL-2.0-or-later), which bundles the library (request-shield
+0.4.0, plus a build of the same files for PHP 7.4; PHP 7.4 to 8.5) and the Exponential rules. One hook line in
+`config.php` runs it before the kernel and before the HTTP cache's early exit, so cached pages are protected too:
 
-```bash
-composer require cjw-network/request-shield
+```php
+if ( is_file( __DIR__ . '/extension/exp_request_shield/bootstrap/hook.php' ) )
+    require __DIR__ . '/extension/exp_request_shield/bootstrap/hook.php';
 ```
 
-or a checkout or release of the library in a directory **outside** the document root. Then copy the Exponential
-example rules from the library's `examples/exponential/` directory to a directory the web server never hands out (the
-library suggests `settings/request-shield/`), and choose the main file:
+- **New installations** get the line from `config.php-RECOMMENDED`; the 7x site packages (`sevenx_multisite`,
+  `cjw_multisite`) also activate the extension, which adds **Setup > Request shield** to the administration.
+- **Upgraded installations** add the line to `config.php` themselves: an update never overwrites `config.php`
+  (`./console exp:config:list` shows what is new in `config.php-RECOMMENDED`). Activate the extension
+  (`ActiveExtensions[]=exp_request_shield`) for the admin pages.
+
+The same hook covers both engines, and they give identical answers:
+
+- **Apache or nginx with PHP-FPM**: `config.php` runs on every request, so the hook runs the shield right there. No
+  `auto_prepend_file` is needed, so a host no longer has to set one per pool.
+- **Velocity**: `config.php` runs once per worker, so the hook sets `EXP_REQUEST_PREPEND_FILE` itself and `index.php`
+  runs the shield at the start of every request. There is no integration file to write by hand; restart Velocity
+  after adding or removing the hook. Velocity answers pages from its own response cache before a worker starts, so the
+  shield sees only what reaches a worker.
+
+### Rules, modes and switching it off
+
+The shield uses the site's own rule file, `settings/request-shield/request-shield.rules`, with copies of the
+extension's `exponential*.rules` next to it, and the extension's `rules/request-shield.rules` until the site has its
+own. Choose the administration's file there:
 
 | File | When |
 |---|---|
@@ -63,41 +85,32 @@ library suggests `settings/request-shield/`), and choose the main file:
 | `exponential-admin-uri.rules` | the administration is the siteaccess `/admin` on the same host |
 | `exponential-admin-host.rules` | the administration has a host of its own |
 
-### Switching it on
-
-The shield must run at the start of **every** request:
-
-- **Apache or nginx with PHP-FPM**: a `Shield::protectFile()` call at the top of `config.php`, or PHP's
-  `auto_prepend_file` pointing to the library's `bootstrap.php`. With `auto_prepend_file` in the pool configuration a
-  host can switch it on per customer without touching the customer's files.
-- **Velocity**: `config.php` runs once per worker, not per request. Since 6.0.15, `index.php` runs the file that
-  `config.php` names in the constant `EXP_REQUEST_PREPEND_FILE` at the start of every request; `config.php-RECOMMENDED`
-  shows the pattern. Velocity answers cached pages before a worker starts, so the shield sees only what reaches a
-  worker.
-
-Then, in this order:
-
-1. Start in **monitor mode** (`set mode monitor`, as the examples ship) and read its log for a few days while editors
-   work.
+1. The rules **enforce as installed**. For a site with unusual addresses (page aliases that start with a module name,
+   forms of its own extensions), switch to `set mode monitor` while you read the log, then back to `enforce`.
 2. Adapt the site-specific lines: URI siteaccesses (`EXP-MODULES`), extension modules that take forms (`EXP-POST`),
    host names and load balancer (`host`, `trust`).
-3. Check after every change:
+3. Check after every change, as the site's PHP user:
 
    ```bash
-   bin/request-shield check <main file>
-   bin/request-shield test <main file>
-   bin/request-shield trace <main file> "GET https://www.example.com/user/login"
+   php extension/exp_request_shield/bin/request-shield check settings/request-shield/request-shield.rules
+   php extension/exp_request_shield/bin/request-shield test  settings/request-shield/request-shield.rules
+   php extension/exp_request_shield/bin/request-shield trace settings/request-shield/request-shield.rules "GET https://www.example.com/user/login"
    ```
 
-4. Switch to `set mode enforce`.
-5. To switch it off, use `set mode off` rather than removing the include; under Velocity a persistent worker would
-   otherwise keep the last request's marks.
+4. **Setup > Request shield** (in the System group, right after Log files; policies `requestshield/read` and
+   `requestshield/manage`) shows the dashboard, the log and the rules, and has switches: pause, enforce, monitor, off.
+5. To switch it off at once on every server, create `var/request-shield/PAUSED`; remove it to switch the shield on
+   again. `set mode off` in the rules does the same for good.
 
 The example rules hide system URLs and administration modules on the public site, refuse internal paths, put a
 browser check before the sign-in and the administration, and ban an address for an hour after ten refusals in ten
 minutes (verified search engines are never banned). The shield cannot tell a right password from a wrong one, and
 does not see static files the web server serves itself: account lockout stays Exponential's job
 (`MaxNumberOfFailedLogin`, two-step sign-in).
+
+The feature: [Request shield](../../../features/6.0/request-shield.md); step by step:
+[Request shield guide](../../../guides/request-shield.md); what changed for existing installations:
+[Request shield (6.0.15)](../../../bc/6.0/request-shield.md).
 
 ## The request classifier
 
@@ -148,16 +161,18 @@ php bin/php/ezrequestrules.php -s <siteaccess> --uri=content/view/full/2 --allow
 
 These are options a host can choose:
 
-- request-shield in monitor mode on every new site, with enforcement after the first week, as part of a managed plan;
+- request-shield enforcing on every site, as installed, with monitor mode for the first week on a site with unusual
+  addresses, as part of a managed plan;
 - the administration behind the shield's browser check or limited to the customer's network (`EXP-ADMIN-NET`);
 - the system-URL rule on public siteaccesses as a default of the server template;
 - a weekly look at `security.log` and the shield's log, with a report to the customer when a rule rises sharply.
 
 ## Checklist
 
-- [ ] request-shield installed outside the document root, rules in a directory never served.
-- [ ] Hooked into every request: `config.php` or `auto_prepend_file` (PHP-FPM), `EXP_REQUEST_PREPEND_FILE` (Velocity).
-- [ ] Monitor mode first; `check` and `test` pass; then `enforce`.
+- [ ] `exp_request_shield` installed and active; the site's rules in `settings/request-shield/`, never served.
+- [ ] The hook line in `config.php` (an upgraded installation adds it itself); Velocity restarted after adding it;
+      Setup > Request shield does not say "did not run for this page".
+- [ ] `check` and `test` pass; `enforce`, or `monitor` only while the log is reviewed.
 - [ ] `security.log` read weekly; the classifier left on.
 - [ ] Request rules checked with `--check` on every siteaccess that uses them.
 - [ ] Proxies trusted correctly before any address-based rule is relied on.
@@ -169,6 +184,7 @@ These are options a host can choose:
 - [Restricting the administration](restricting-the-administration.md)
 - [Security log](../operations/security-log.md)
 - [HTTP cache: With request-shield in front](../../../bc/6.0/httpcache.md#with-request-shield-in-front)
+- [Request shield](../../../features/6.0/request-shield.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

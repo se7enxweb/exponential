@@ -64,7 +64,8 @@ setting that ships off or open and that you decide on.
 
 - [ ] HTTPS with a valid certificate ([TLS and HTTPS](../../hosting/security/tls-and-https.md)).
 - [ ] The administration restricted by network where possible ([Restricting the administration](../../hosting/security/restricting-the-administration.md)).
-- [ ] A request filter such as request-shield in front ([Security hardening](../../security-hardening.md#a-shield-in-front-request-shield)).
+- [ ] request-shield enforcing in front of the kernel (default since 6.0.15; an upgraded site adds the `config.php`
+      hook) ([Security hardening](../../security-hardening.md#a-shield-in-front-request-shield)).
 - [ ] File permissions as documented ([Writable directories and permissions](../../hosting/basics/writable-directories-and-permissions.md)).
 
 ## Reporting

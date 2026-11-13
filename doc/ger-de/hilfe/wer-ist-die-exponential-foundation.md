@@ -292,11 +292,11 @@ Vendor se7enxweb 219 Pakete (<https://packagist.org/packages/list.json?vendor=se
 
 ### Begleitprojekte
 
-- **request-shield** ist ein Projekt von CJW Network (<https://github.com/cjw-network/request-shield>), nicht der
-  Foundation. Exponential dokumentiert, wie sein HTTP-Cache mit vorgeschaltetem request-shield arbeitet
-  ([HTTP-Cache](../bc/6.0/httpcache.md)) und wie man es unter Velocity lädt (`config.php-RECOMMENDED`). Seine Website
-  <https://request-shield.com/> war nicht öffentlich, als diese Seite geschrieben wurde; deshalb steht hier nicht mehr
-  dazu.
+- **request-shield** ist ein Projekt von CJW Network (JAC Systeme GmbH, <https://github.com/cjw-network/request-shield>,
+  MIT-Lizenz), nicht der Foundation. Seit 6.0.15 bringt Exponential es mit: Die Erweiterung `exp_request_shield`
+  (GPL-2.0-or-later) verpackt die Bibliothek und führt sie vor jeder Anfrage aus, und die Standardinstallation verlangt
+  sie ([Request Shield](../funktionen/6.0/request-shield.md)). Seine Website <https://request-shield.com/> war nicht
+  öffentlich, als diese Seite geschrieben wurde; deshalb steht hier nicht mehr dazu.
 - **Der Paketserver** `exponential.packages.exponential.earth` liefert die Pakete des Setup-Assistenten aus („Users do
   not need to use this server outside the setup wizard usage“, Beschreibung des Repositorys).
 - **AdminNeo** über `sevenx_dse`, den Datenbank-Quelltexteditor ([sevenx_dse](../funktionen/6.0/erweiterungen/sevenx_dse.md)).

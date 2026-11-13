@@ -46,7 +46,8 @@ password ([Two-step sign-in](../../../guides/two-factor-login.md)).
 ## Are accounts locked after failed sign-ins?
 
 Not by default: `MaxNumberOfFailedLogin=0`. You can set a limit, with a trusted address list. Brute force is detected
-by the audit alert rules, and rate limiting is left to the web server or a request filter such as request-shield
+by the audit alert rules, and rate limiting is done by the request shield in front of the kernel (part of the default installation since 6.0.15), the
+web server or both
 ([Security standards](../../../standards/security.md#known-gaps), [Security hardening](../../security-hardening.md#a-shield-in-front-request-shield)).
 
 ## Can we see who did what?
@@ -71,7 +72,7 @@ How to plan for this: [Security updates and patching cadence](../procurement/lif
 ## What must we harden ourselves?
 
 HTTPS and HSTS, the lockout decision, password length, two-step sign-in, CSP enforcement, restricting the
-administration, a request filter, dependency checks with `composer audit` (not run in the project's CI), and server
+administration, the request shield's rules and mode, dependency checks with `composer audit` (not run in the project's CI), and server
 hardening. The guides: [Security hardening](../../security-hardening.md),
 [13. Security hardening for production](../../../install/13-security-hardening.md),
 [Security checklist](../checklists/security-checklist.md).

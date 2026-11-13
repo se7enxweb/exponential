@@ -59,8 +59,9 @@ assessment, which has not been made.
 ### Known gaps
 
 - **Account lockout is off by default**: `settings/site.ini [UserSettings] MaxNumberOfFailedLogin=0`. Brute force is
-  detected by the audit alert rules, not throttled by the kernel. Rate limiting is left to the web server or a
-  request filter such as request-shield ([Security hardening](../help/security-hardening.md#a-shield-in-front-request-shield)).
+  detected by the audit alert rules, not throttled by the kernel. Rate limiting is left to the web server and to the
+  request filter request-shield, which the default installation runs in front of the kernel since 6.0.15
+  ([Security hardening](../help/security-hardening.md#a-shield-in-front-request-shield)).
 - **Two-factor sign-in is opt-in** (an extension and a login handler to configure).
 - **No prepared statements** in the database layer: `lib/ezdb/classes/` escapes values (`escapeString()`) rather
   than binding parameters. Code in extensions must follow the same discipline; the kernel cannot enforce it.

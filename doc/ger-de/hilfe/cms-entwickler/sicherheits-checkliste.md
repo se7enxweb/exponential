@@ -101,7 +101,8 @@ Anleitung zur Härtung erklärt die Angriffe hinter jedem Punkt ([Sicherheitshä
 
 - [ ] Überall HTTPS, HSTS, sichere Cookies.
 - [ ] Die Administration auf einem eigenen Host oder per Netzwerk eingeschränkt.
-- [ ] Anfrageregeln oder der Request Shield davor, zuerst beobachtend, dann durchsetzend
+- [ ] Der Request Shield davor (seit 6.0.15 wie installiert durchsetzend; nach einem Upgrade die Hook-Zeile in
+      `config.php`) und über Anfrageregeln entschieden, zuerst beobachtend, dann durchsetzend
       ([Anfrageregeln](../../funktionen/6.0/anfrageregeln.md)).
 - [ ] Die Liste Einstellung für Einstellung: [Checkliste für den Live-Gang](../../installation/13-sicherheitshaertung.md#1316-checkliste-für-den-livegang).
 

@@ -201,10 +201,14 @@ Maschine weg und lesen Sie `security.log` wöchentlich
 
 ## Ein Schutz davor
 
-[request-shield](../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield), eine kleine Web Application Firewall für PHP vom CJW
-Network, weist Scanner und Fluten ab, bevor der Kernel startet. Es wird für jede Website empfohlen, die aus dem Internet erreichbar ist,
-und ist nicht Teil der `composer.json` von Exponential. Ein Hoster kann es als Teil eines verwalteten Tarifs anbieten:
-[request-shield und Request-Regeln](request-shield-und-request-regeln.md).
+[Request Shield](../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield), eine kleine Web Application Firewall für PHP vom CJW
+Network, weist Scanner und Fluten ab, bevor der Kernel startet. Seit 6.0.15 ist er Teil der Standardinstallation: Die
+Erweiterung `exp_request_shield` bringt ihn mit, und eine Hook-Zeile in `config.php` führt ihn aus, wie installiert
+durchsetzend, unter PHP-FPM und Velocity gleichermaßen. Eine aktualisierte Installation trägt die Hook-Zeile selbst in
+`config.php` ein, da ein Update diese Datei nie überschreibt. Ein Hoster kann ihn auf jeder Website unter
+**Setup > Request Shield** prüfen und seine Abstimmung als Teil eines verwalteten Tarifs anbieten:
+[request-shield und Request-Regeln](request-shield-und-request-regeln.md),
+[Request Shield](../../../funktionen/6.0/request-shield.md).
 
 ## Updates
 

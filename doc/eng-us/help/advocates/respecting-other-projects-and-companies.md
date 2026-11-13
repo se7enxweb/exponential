@@ -35,7 +35,7 @@ Speaking well of others is not only polite; it is how the project itself behaves
 |---|---|
 | Netgen | Exponential Layouts brings "the concept of the upstream layouts packages to the Exponential kernel" |
 | Mugo Web | LoveStack improvements rebuilt "with full credit to Mugo Web" |
-| CJW Network | `cjw_newsletter`; request-shield is "a project of CJW Network ... not of the Foundation" |
+| CJW Network | `cjw_newsletter`; request-shield is "a project of CJW Network ... not of the Foundation", bundled by Exponential since 6.0.15 (`exp_request_shield`) |
 | eZ Systems | Its copyright 1999 to 2014 stays in the code |
 | eZ Systems and Ibexa | "This project is not associated with" them; spoken of factually |
 

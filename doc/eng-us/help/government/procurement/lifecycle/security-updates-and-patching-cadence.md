@@ -77,7 +77,7 @@ than the supplier can staff is worthless; see the advice for partners in
 [Support levels and response times](../../../partners/support-levels-and-response-times.md#aligning-your-own-slas).
 
 Mitigations that exist in Exponential and are documented: maintenance mode ([Maintenance mode](../../../../guides/maintenance-mode.md)),
-request rules and a request filter in front of the site ([Security hardening](../../../security-hardening.md#a-shield-in-front-request-shield)).
+request rules and the request shield in front of the kernel, part of the default installation since 6.0.15, whose rules can refuse a vulnerable address at once ([Security hardening](../../../security-hardening.md#a-shield-in-front-request-shield)).
 
 ## Your own reporting channel
 

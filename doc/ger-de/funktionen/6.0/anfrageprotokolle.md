@@ -278,14 +278,17 @@ Mit `NotFoundLogFile=notfound.log` ist der Schlüssel `notfound`: Geben Sie ihr 
 
 ## Request Shield und der Klassifizierer
 
-[request-shield](https://github.com/cjw-network/request-shield) (cjw-network) ist eine eigene Schicht, die **vor dem
-Start des Kernels** läuft, am Anfang jeder Anfrage: aus `config.php` oder über `auto_prepend_file` von PHP unter Apache
-oder nginx mit PHP-FPM, und aus der Datei, die `config.php` in `EXP_REQUEST_PREPEND_FILE` nennt, unter Exponential
-Velocity (das Beispiel in `config.php-RECOMMENDED`). Ihre Regeln (zum Beispiel `var/request-shield/rules/*.rules`)
-können eine Anfrage ablehnen oder protokollieren, bevor der Kernel startet, in ihrem eigenen Protokoll (zum Beispiel
-`var/request-shield/log/shield.log`). Eine Anfrage, die sie ablehnt, erreicht den Kernel nie und steht daher auch nicht
-in `security.log`; in ihrem Überwachungsmodus protokolliert sie nur, und dieselbe Sondierung kann dann in `shield.log`
-und in `security.log` stehen. Wie Sie sie installieren und einschalten und was die Beispielregeln von Exponential tun:
+[request-shield](https://github.com/cjw-network/request-shield) (JAC Systeme GmbH / CJW Network) ist eine eigene Schicht,
+die **vor dem Start des Kernels** läuft, am Anfang jeder Anfrage. Seit 6.0.15 gehört sie über die Erweiterung
+`exp_request_shield` zur Standardinstallation; deren Hook in `config.php` führt sie aus: direkt unter Apache oder nginx
+mit PHP-FPM, und aus der Datei, die der Hook in `EXP_REQUEST_PREPEND_FILE` nennt, unter Exponential Velocity (die
+Hook-Zeile steht in `config.php-RECOMMENDED`; eine aktualisierte Installation fügt sie selbst ein). Ihre Regeln
+(`settings/request-shield/*.rules`, sonst die eigenen `rules/` der Erweiterung) lehnen eine Anfrage ab oder
+protokollieren sie, bevor der Kernel startet, in ihrem eigenen Protokoll (`var/request-shield/log/shield.log`, zu lesen
+unter **Setup** > **Request Shield** > **Log**). Eine Anfrage, die sie ablehnt, erreicht den Kernel nie und steht daher
+auch nicht in `security.log`; in ihrem Überwachungsmodus protokolliert sie nur, und dieselbe Sondierung kann dann in
+`shield.log` und in `security.log` stehen. Was sie tut: [Request Shield](request-shield.md); wie Sie sie anpassen und
+schalten und was die Regeln für Exponential tun:
 [Sicherheitshärtung: Ein Schutzschild davor](../../hilfe/sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield).
 
 Der Anfrageklassifizierer ist die eigene Schicht des Kernels, unter Apache/PHP-FPM wie unter Velocity. Er

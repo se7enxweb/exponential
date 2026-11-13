@@ -37,7 +37,7 @@ und [Sicherheitshärtung: beobachten](../../sicherheitshaertung.md#beobachten-lo
 | `var/log/auth.log` | jeden Schritt der zweistufigen Anmeldung (nie einen Code oder ein Geheimnis) | **Setup > Logdateien** |
 | `var/log/csp.log` | Meldungen über Verstöße gegen die Content Security Policy | **Setup > Logdateien** |
 | `error.log`, die Logs des Webservers | Fehler mit einer Referenz-ID | **Setup > Logdateien** |
-| das Log von request-shield | seine Entscheidungen, wenn der Schutz installiert ist | seine eigene Live-Ansicht |
+| `var/request-shield/log/shield.log` | die Entscheidungen von Request Shield (seit 6.0.15 Teil der Standardinstallation) | **Setup > Request Shield** |
 
 Quelle: [Sicherheitshärtung](../../sicherheitshaertung.md#beobachten-logs-der-request-klassifizierer-und-das-audit-protokoll).
 

@@ -67,7 +67,7 @@ die Projektverantwortlichen oder Sicherheitsbeauftragten, die ihn freigeben. Sie
 | Audit-Schlüssel gesichert; Weiterleitung an ein SIEM konfiguriert | Sicherungsnachweis; Ausgabe des Zieltests |
 | E-Mail: `exp:mail:status` in Ordnung, Fußzeile ausgefüllt, Bounce-Leser konfiguriert | Ausgabe des Befehls |
 | Ein Benutzer schreibt `var/` und `settings/`; keine für alle beschreibbaren Dateien; Worker nie als root | `find settings extension/*/settings -perm -o+w` gibt nichts aus |
-| request-shield vorgeschaltet (erst beobachten, dann durchsetzen) | Regeldateien, Modus |
+| Request Shield setzt durch (Hook in `config.php` vorhanden, eigene Regeln der Website in `settings/request-shield/`) | Setup > Request Shield: Modus, Regeldatei, Entscheidungen |
 | Sicherungen außerhalb des Rechners; Wiederherstellung getestet | Nachweis des Wiederherstellungstests |
 | Aktualisierungsroutine: wer Releases beobachtet, wer Sicherheits-E-Mails erhält | benannte Verantwortliche |
 

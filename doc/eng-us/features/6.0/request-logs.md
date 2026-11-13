@@ -263,14 +263,17 @@ With `NotFoundLogFile=notfound.log` the key is `notfound`: give it its settings 
 
 ## Request shield and the classifier
 
-[request-shield](https://github.com/cjw-network/request-shield) (cjw-network) is a separate layer that runs **before
-the kernel starts**, at the start of every request: from `config.php` or PHP's `auto_prepend_file` under Apache or
-nginx with PHP-FPM, and from the file `config.php` names in `EXP_REQUEST_PREPEND_FILE` under Exponential Velocity (the
-example in `config.php-RECOMMENDED`). Its rules (for example `var/request-shield/rules/*.rules`) can refuse or log a
-request before the kernel starts, in its own log (for example `var/request-shield/log/shield.log`). A request it
-refuses never reaches the kernel, so it is not in `security.log` either; in its monitor mode it only logs, and the same
-probe can then be in `shield.log` and in `security.log`. How to install and switch it on, and what the Exponential
-example rules do: [Security hardening: A shield in front](../../help/security-hardening.md#a-shield-in-front-request-shield).
+[request-shield](https://github.com/cjw-network/request-shield) (JAC Systeme GmbH / CJW Network) is a separate layer
+that runs **before the kernel starts**, at the start of every request. Since 6.0.15 it is part of the default
+installation through the extension `exp_request_shield`, whose hook in `config.php` runs it: directly under Apache or
+nginx with PHP-FPM, and from the file the hook names in `EXP_REQUEST_PREPEND_FILE` under Exponential Velocity (the hook
+line is in `config.php-RECOMMENDED`; an upgraded installation adds it itself). Its rules (`settings/request-shield/*.rules`,
+else the extension's own `rules/`) refuse or log a request before the kernel starts, in its own log
+(`var/request-shield/log/shield.log`, read in **Setup** > **Request shield** > **Log**). A request it refuses never
+reaches the kernel, so it is not in `security.log` either; in its monitor mode it only logs, and the same probe can
+then be in `shield.log` and in `security.log`. What it does: [Request shield](request-shield.md); how to adapt and
+switch it, and what the Exponential rules do:
+[Security hardening: A shield in front](../../help/security-hardening.md#a-shield-in-front-request-shield).
 
 The request classifier is the kernel's own layer, under Apache/PHP-FPM as under Velocity. It **only classifies**: it
 never refuses a request. Where the two overlap they use the same idea of a "probe" and similar names

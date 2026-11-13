@@ -51,7 +51,7 @@ Two extensions write sitemaps as cronjob parts: `bcgooglesitemaps` (part of the 
 
 ## Security measures and crawlers
 
-- **request-shield**, if used, slows clients past 120 pages a minute with a browser check and bans after repeated
+- **request-shield**, part of the default installation since 6.0.15, slows clients past 120 pages a minute with a browser check and bans after repeated
   refusals; verified search engines are never banned, but an archive's crawler may not be recognized. Agree its address
   range or user agent with the archive and add a rule for it ([request-shield](../security/request-shield.md)).
 - System URLs (`/content/view/full/<id>`) may be refused to visitors by request rules or request-shield; crawlers then

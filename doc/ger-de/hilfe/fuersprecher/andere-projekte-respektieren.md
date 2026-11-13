@@ -36,7 +36,7 @@ Sie glaubwürdig.
 |---|---|
 | Netgen | Exponential Layouts bringt „das Konzept der Upstream-Layouts-Pakete in den Kernel von Exponential“ |
 | Mugo Web | Die LoveStack-Verbesserungen wurden „unter voller Nennung von Mugo Web“ neu gebaut |
-| CJW Network | `cjw_newsletter`; request-shield ist „ein Projekt von CJW Network ... nicht der Foundation“ |
+| CJW Network | `cjw_newsletter`; request-shield ist „ein Projekt von CJW Network ... nicht der Foundation“, seit 6.0.15 von Exponential mitgebracht (`exp_request_shield`) |
 | eZ Systems | Sein Copyright von 1999 bis 2014 bleibt im Code |
 | eZ Systems und Ibexa | „Dieses Projekt steht in keiner Verbindung“ zu ihnen; über sie wird sachlich gesprochen |
 

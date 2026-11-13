@@ -11,7 +11,7 @@ type: help
 
 Part 5, chapter 17, the last of this part. Earlier chapters described what a good pull request contains. This one
 reads a real one: pull request 4 to `cjw-network/request-shield` on GitHub, opened on 8 October 2026 and merged the
-same day. request-shield is a project of another organization (MIT-licensed), which Exponential sites can use; the
+same day. request-shield is a project of another organization (MIT-licensed), which Exponential bundles since 6.0.15; the
 pull request came from this project, as an outside contributor would send it. You can read it in full on GitHub.
 
 ## The title

@@ -3,8 +3,8 @@ title: DDoS und Fluten von Sondierungsanfragen
 audience: government, admin, hosting
 category: public-sector
 order: 80
-summary: Runbook für eine öffentliche Website unter einer Flut von Anfragen - Sondierungen mit security.log und der Fehlerübersicht von echter Last unterscheiden, was Exponential blockiert und was nicht, die Website mit Caches, Anfrageregeln und einem vorgeschalteten Schutz am Laufen halten und mit Ihrem Netzanbieter zusammenarbeiten.
-keywords: DDoS, Denial of Service, Flut von Sondierungsanfragen, Bot-Verkehr, Scanner, security.log, Schwellenwert, 404-Rate, request-shield, Anfrageregeln, statischer Cache, Velocity-Antwortcache, Ratenbegrenzung, Vorfall, denial of service, probe flood, bot traffic, threshold, 404 rate, request rules, static cache, Velocity response cache, rate limiting, incident
+summary: Runbook für eine öffentliche Website unter einer Flut von Anfragen - Sondierungen mit security.log und der Fehlerübersicht von echter Last unterscheiden, was Exponential blockiert und was nicht, die Website mit Caches, Anfrageregeln und Request Shield vor dem Kernel (seit 6.0.15 Teil der Standardinstallation) am Laufen halten und mit Ihrem Netzanbieter zusammenarbeiten.
+keywords: DDoS, Denial of Service, Flut von Sondierungsanfragen, Bot-Verkehr, Scanner, security.log, Schwellenwert, 404-Rate, request-shield, Request Shield, exp_request_shield, Setup > Request Shield, WAF, Anfrageregeln, statischer Cache, Velocity-Antwortcache, Ratenbegrenzung, Vorfall, denial of service, probe flood, bot traffic, threshold, 404 rate, request rules, static cache, Velocity response cache, rate limiting, incident
 type: help
 ---
 # DDoS und Fluten von Sondierungsanfragen
@@ -17,9 +17,10 @@ Ankündigung (das ist kein Angriff und darf nicht blockiert werden).
 1. [Was Exponential tut und was nicht](#was-exponential-tut-und-was-nicht)
 2. [Den Verkehr ansehen](#den-verkehr-ansehen)
 3. [Die Website am Laufen halten](#die-website-am-laufen-halten)
-4. [Davor blockieren](#davor-blockieren)
-5. [Große Angriffe](#große-angriffe)
-6. [Verwandte Seiten](#verwandte-seiten)
+4. [Request Shield](#request-shield)
+5. [Davor blockieren](#davor-blockieren)
+6. [Große Angriffe](#große-angriffe)
+7. [Verwandte Seiten](#verwandte-seiten)
 
 ## Was Exponential tut und was nicht
 
@@ -27,8 +28,11 @@ Ankündigung (das ist kein Angriff und darf nicht blockiert werden).
   in `security.log`; er **blockiert nichts** ([Anfrage-Logs](../../../../funktionen/6.0/anfrageprotokolle.md)).
 - Anfrageregeln (`requestrules.ini`) können ausgewählte Anfragen frühzeitig beantworten, zum Beispiel mit „not found“
   ([Anfrageregeln](../../../../funktionen/6.0/anfrageregeln.md)).
-- Ratenbegrenzung, Blockieren und Bandbreite sind Aufgabe dessen, was davor steht: request-shield, der Webserver, ein
-  Reverse Proxy, ein CDN oder Ihr Netzanbieter
+- Request Shield (`exp_request_shield`, seit 6.0.15 Teil der Standardinstallation) **blockiert**, bevor der Kernel
+  startet: Es weist Scanner und System-URLs ab, bremst Fluten mit einer Browserprüfung und sperrt Wiederholungstäter
+  für eine Weile ([Request Shield](#request-shield)).
+- Bandbreite und volumetrische Angriffe sind Aufgabe dessen, was vor dem Server steht: der Webserver, ein Reverse Proxy,
+  ein CDN oder Ihr Netzanbieter
   ([Sicherheitshärtung, request-shield](../../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield)).
 
 ## Den Verkehr ansehen
@@ -60,10 +64,42 @@ Exponential reichen aus, um Muster zu erkennen; Ihr Netzwerkteam hat die vollst�
 - Der **Wartungsmodus** mit einer kurzen Meldung ist das letzte Mittel für eine Website, die die Last nicht bewältigt;
   er antwortet, bevor Einstellungen oder die Datenbank berührt werden.
 
+## Request Shield
+
+Seit Exponential 6.0.15 hat jede neue Installation request-shield (vom CJW Network) vor dem Kernel, über die
+Erweiterung `exp_request_shield` und eine Hook-Zeile in `config.php`; eine aktualisierte Installation hat es, sobald
+diese Zeile ergänzt ist ([Umstieg auf Request Shield](../../../../bc/6.0/request-shield.md)). Es läuft vor dem frühen
+Ausstieg des HTTP-Caches, antwortet unter PHP-FPM und Velocity gleich und **setzt durch, wie installiert**:
+
+- Scanner, interne Dateien, System-URLs und verirrte Formularsendungen werden abgewiesen, in wenigen Mikrosekunden je
+  Anfrage;
+- ab 120 Seiten pro Minute erhält ein Client die unsichtbare Browserprüfung, und zehn Abweisungen in zehn Minuten
+  sperren seine Adresse für eine Stunde (verifizierte Suchmaschinen werden nie gesperrt);
+- die Anmeldung und die Formulare der Administration verlangen die Browserprüfung.
+
+Während einer Flut:
+
+1. Öffnen Sie **Setup > Request Shield**: Das Dashboard zeigt die Entscheidungen pro Stunde und die Regeln, die am
+   häufigsten entschieden haben; die Seite **Log** filtert nach Zeitraum und Entscheidung.
+   `var/request-shield/log/shield.log` ist dasselbe Log auf der Festplatte.
+2. Werden echte Besucher abgewiesen (eine Ankündigung, ein Seitenalias, der wie eine System-URL aussieht), schalten Sie
+   währenddessen auf **Beobachten**, ergänzen eine Ausnahme in der Regeldatei der Website in `settings/request-shield/`,
+   prüfen sie mit
+   `php extension/exp_request_shield/bin/request-shield check settings/request-shield/request-shield.rules` und
+   schalten zurück auf **Durchsetzen**.
+3. Ein Netz, das immer wiederkommt, lässt sich mit einer weiteren Regel in derselben Datei abweisen; die Server lesen
+   eine geänderte Regeldatei innerhalb von Sekunden, ohne Neustart.
+4. Nehmen Sie den Schutz während eines Angriffs nie heraus. Muss er sofort anhalten, legen Sie
+   `var/request-shield/PAUSED` an (oder drücken **Pausieren**) und entfernen die Datei danach.
+
+Einzelheiten: [Request Shield](../../../../funktionen/6.0/request-shield.md),
+[Request Shield betreiben](../../../../anleitungen/request-shield.md).
+
 ## Davor blockieren
 
-Geben Sie die Muster an diejenigen weiter, die die vorgeschaltete Ebene betreiben: Pfade, die nur Scanner anfragen,
-User-Agents von Angriffswerkzeugen, Netze mit Fluten. Blockieren Sie am Rand, nicht in Exponential.
+Was der Schutz nicht halten kann, geben Sie an diejenigen weiter, die die vorgeschaltete Ebene betreiben: Pfade, die
+nur Scanner anfragen, User-Agents von Angriffswerkzeugen, Netze mit Fluten. Eine Flut, die die Leitung füllt, erreicht
+PHP nie; blockieren Sie sie deshalb am Rand.
 
 ## Große Angriffe
 

@@ -91,9 +91,10 @@ Exponential erledigen das URL-Platzhalter und Aliasse ([Links, URL-Aliasse, Plat
 **Request for Proposal (RFP).** Eine Ausschreibungsunterlage, die Anbieter um Angebote zu festgelegten Anforderungen
 bittet.
 
-**request-shield.** Eine kleine Web Application Firewall des CJW Network, ein getrenntes, MIT-lizenziertes Projekt, die
-vor dem Kernel von Exponential läuft: Sie weist Scanner ab, bremst Anfragefluten und kann die Administration auf ein
-Netz beschränken. Der Leitfaden zur Härtung empfiehlt sie für jede aus dem Internet erreichbare Website
+**request-shield (Request Shield).** Eine kleine Web Application Firewall des CJW Network (MIT-Lizenz), die vor dem
+Kernel von Exponential läuft: Sie weist Scanner ab, bremst Anfragefluten und kann die Administration auf ein Netz
+beschränken. Seit 6.0.15 ist sie über die Erweiterung `exp_request_shield` Teil der Standardinstallation, durchsetzend
+wie installiert, mit Setup > Request Shield in der Administration
 ([Sicherheitshärtung](../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield)).
 
 **Aufbewahrungsplan (Retention schedule).** Die Regel, wie lange jede Art von Schriftgut oder Daten vor der Löschung

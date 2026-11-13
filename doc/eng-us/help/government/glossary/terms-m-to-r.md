@@ -81,9 +81,10 @@ Exponential ([Links, URL aliases, wildcards](../../../guides/urls-and-aliases.md
 
 **Request for proposal (RFP).** A tender document asking suppliers for proposals against stated requirements.
 
-**request-shield.** A small web application firewall by the CJW Network, a separate MIT-licensed project, that runs
-before the Exponential kernel: it refuses scanners, slows floods and can limit the administration to a network. The
-hardening guide recommends it for every site reachable from the internet ([Security hardening](../../security-hardening.md#a-shield-in-front-request-shield)).
+**request-shield.** A small web application firewall by the CJW Network (MIT license) that runs before the Exponential
+kernel: it refuses scanners, slows floods and can limit the administration to a network. Since 6.0.15 it is part of
+the default installation through the extension `exp_request_shield`, enforcing as installed, with Setup > Request
+shield in the administration ([Security hardening](../../security-hardening.md#a-shield-in-front-request-shield)).
 
 **Retention schedule.** The rule for how long each kind of record or data is kept before deletion or archiving.
 

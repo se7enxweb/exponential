@@ -34,7 +34,7 @@ Drittanbieter dar. Die allgemeine Anleitung ist
 | Formular-Token (`ezformtoken`) | gefälschte Sendungen von anderen Sites (CSRF); einfache Skripte, die senden, ohne das Formular zu laden | nein ([CSRF-Formular-Token](csrf-formular-token.md)) |
 | CAPTCHA-Datentyp | automatisierte Einsendungen | ja |
 | Moderation | was durchgekommen ist | nein |
-| Filtern von Anfragen vor der Site | Fluten und bekannte schädliche Clients | nein, wenn Sie es selbst betreiben ([Sicherheitshärtung: request-shield](../../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield)) |
+| Filtern von Anfragen vor der Site | Fluten und bekannte schädliche Clients | nein: Request Shield läuft auf Ihrem eigenen Server, seit 6.0.15 Teil der Standardinstallation ([Sicherheitshärtung: request-shield](../../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield)) |
 
 ## Die CAPTCHA-Erweiterungen
 

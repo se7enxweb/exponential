@@ -52,7 +52,7 @@ mitgelieferte `security.txt`, kein Abhängigkeitsscan in der CI des Projekts.
 | [Zweistufige Anmeldung für Beschäftigte öffentlicher Stellen](zweistufige-anmeldung.md) | einschalten, verlangen, einführen, verlorene Telefone |
 | [Content Security Policy für öffentliche Websites](content-security-policy.md) | wie sie ausgeliefert wird, Einstellungen, Berichte |
 | [Von Report-only zu einer durchgesetzten CSP](csp-von-report-only-zur-durchsetzung.md) | ein gestufter Plan mit Rückfallmöglichkeit |
-| [request-shield vor einer öffentlichen Website](request-shield.md) | eine eigene Firewall; zuerst beobachten |
+| [request-shield vor einer öffentlichen Website](request-shield.md) | die Firewall vor dem Kernel, seit 6.0.15 Teil der Standardinstallation |
 | [Anfrageprotokolle und das Sicherheitsprotokoll](anfrageprotokolle-und-das-sicherheitsprotokoll.md) | `404.log`, `security.log`, Maskierung, Aufbewahrung |
 | [Sicherheits-Header](sicherheits-header.md) | die fünf Standardwerte; prüfen und ändern |
 | [HTTPS und HSTS](https-und-hsts.md) | Schritte, Einstellungen, HSTS sicher anheben |

@@ -32,7 +32,7 @@ Seit Dezember 2023 kommen Pull-Requests auch von einzelnen Mitwirkenden und Unte
 
 | Projekt | Was es ist |
 |---|---|
-| request-shield | "a project of CJW Network [...], not of the Foundation", ein Projekt von CJW Network, nicht der Foundation; Exponential dokumentiert, wie sein HTTP-Cache mit ihm davor zusammenarbeitet ([HTTP-Cache](../../../bc/6.0/httpcache.md)) |
+| request-shield | "a project of CJW Network [...], not of the Foundation", ein Projekt von CJW Network, nicht der Foundation; seit 6.0.15 bringt Exponential es in der Erweiterung `exp_request_shield` mit, als Teil der Standardinstallation, vor seinem HTTP-Cache ([Request Shield](../../../funktionen/6.0/request-shield.md), [HTTP-Cache](../../../bc/6.0/httpcache.md)) |
 | Der Paketserver | Liefert die Pakete des Einrichtungsassistenten aus ([Seitenpakete und der Paketserver](../pakete/seitenpakete-und-der-paketserver.md)) |
 | AdminNeo | Über `sevenx_dse` der Editor für Datenbankquellen ([sevenx_dse](../../../funktionen/6.0/erweiterungen/sevenx_dse.md)) |
 

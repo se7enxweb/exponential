@@ -53,7 +53,7 @@ Sources: [Privacy standards](../../../standards/privacy.md), [Check user account
 
 - The web server's and PHP-FPM's access and error logs.
 - Velocity's own logs and response cache.
-- request-shield's log, if used.
+- request-shield's log, `var/request-shield/log/shield.log` (client networks, masked by default).
 - Mail server logs and bounce mailboxes.
 - Third-party services your extensions call.
 - Exports people made: CSV files of users, consent logs and form submissions on someone's computer.

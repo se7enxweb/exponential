@@ -25,7 +25,8 @@ Zusammenfassung steht am Ende.
 > [Plesk](../hilfe/hosting/control-panels/plesk.md), [cPanel](../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../hilfe/hosting/control-panels/ispconfig.md).
 > **Unter LiteSpeed oder OpenLiteSpeed** kann zusätzlich der Seiten-Cache des Servers anonyme Besucher und Crawler ohne PHP bedienen: [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../anleitungen/seiten-cache-mit-litespeed.md).
 
-Für die Sicht des Angreifers, Bedrohung für Bedrohung, mit dem vorgeschalteten Request-Shield und dem, was Sie
+Für die Sicht des Angreifers, Bedrohung für Bedrohung, mit dem vorgeschalteten Request Shield (seit 6.0.15 Teil der
+Standardinstallation) und dem, was Sie
 beobachten sollten, lesen Sie [Sicherheitshärtung](../hilfe/sicherheitshaertung.md) in der Hilfe; für das
 Administratorkonto [Das Administratorpasswort ändern](../hilfe/administratorpasswort-aendern.md) und
 [Das Standard-Administratorpasswort](../hilfe/standard-administratorpasswort.md).
@@ -71,6 +72,8 @@ INI-Cache (`php bin/php/ezcache.php --clear-tag=ini`), und starten Sie unter Vel
      |
   [ what may be served as a file ]     .htaccess_root / Velocity's list / derived nginx block   13.2
      |
+  [ request shield ]                   exp_request_shield: config.php hook, request-shield.rules 13.1
+     |
   [ security headers ]                 site.ini [HTTPHeaderSettings] SecurityHeaders[],          13.9
      |                                 velocity.ini ResponseHeaders[]
   [ request rules, siteaccess login ]  requestrules.ini, [SiteAccessSettings] RequireUserLogin   13.5
@@ -96,6 +99,14 @@ INI-Cache (`php bin/php/ezcache.php --clear-tag=ini`), und starten Sie unter Vel
 | Weitergeleitete Header | nur von `127.0.0.1` und `::1` geglaubt | Ihre Proxys in `TrustedProxies[]` eintragen, und nichts weiter |
 | Sicherheits-Header | fünf Header auf jeder Seite | HSTS, sobald nur noch HTTPS; frame-ancestors für Redakteure |
 | Audit | an | Cron, Empfänger von Warnmeldungen, Schlüssel-Backup |
+| Request Shield | durchsetzend (seit 6.0.15, Hook-Zeile in `config.php-RECOMMENDED`) | die Regeln der Website in `settings/request-shield/`; nach einem Upgrade die Hook-Zeile ergänzen |
+
+Der Request Shield ist die Erweiterung `exp_request_shield`, seit 6.0.15 Teil der Standardinstallation. Sie bringt
+request-shield (CJW Network, MIT-Lizenz) mit und führt es über eine Hook-Zeile in `config.php` aus, vor dem Kernel und
+vor dem frühen Ausstieg des HTTP-Caches, unter PHP-FPM und Velocity gleichermaßen. Eine neue Installation erhält die
+Zeile aus `config.php-RECOMMENDED`; eine aktualisierte trägt sie selbst ein, da `config.php` nie überschrieben wird.
+**Setup > Request Shield** zeigt, was er entscheidet; `var/request-shield/PAUSED` schaltet ihn sofort aus. Siehe
+[Request Shield](../funktionen/6.0/request-shield.md) und [die Anleitung](../anleitungen/request-shield.md).
 
 ---
 
@@ -870,6 +881,8 @@ Vollständige Anleitung: [Audit](../bc/6.0/audit.md).
       `demo/mode` in `security.log` ([Der Demo-Modus muss ausgeschaltet sein](#der-demo-modus-muss-ausgeschaltet-sein)).
 - [ ] `[Session] CookieSecure=true` auf einer reinen HTTPS-Site; `HttpOnly` und `SameSite` eingeschaltet gelassen.
 - [ ] `ezformtoken` aktiv.
+- [ ] Der Request Shield läuft: die Hook-Zeile in `config.php`, Setup > Request Shield meldet nicht, dass er nicht lief,
+      und `check` und `test` bestehen für `settings/request-shield/request-shield.rules`.
 - [ ] HTTPS auf jedem Namen; HTTP umgeleitet; HSTS erhöht, sobald stabil; Zertifikatserneuerung überwacht.
 - [ ] Sicherheits-Header auf Seiten vorhanden (und auf statischen Dateien, wenn Sie sie dort haben möchten).
 - [ ] Hinter einem Proxy: `TrustedProxies[]` führt genau Ihre Proxys auf (Velocity: `Q.webserver.proxy.trusted`), der

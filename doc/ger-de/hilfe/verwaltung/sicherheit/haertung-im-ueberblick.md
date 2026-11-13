@@ -62,7 +62,7 @@ bedeutet das praktisch: Lockern Sie keinen Standardwert, damit etwas funktionier
 | 10. Debug | `DebugOutput=disabled`, PHP `display_errors=Off` | Debug-Ausgabe im Produktivbetrieb |
 | 11. Dateien | ein Schreiber, keine für alle beschreibbaren Dateien, Code schreibgeschützt | Dateirechte und Eigentümer |
 | 12. Konfigurationssperre | `ManagedByDeployment=enabled`, wo die Konfiguration aus der Versionsverwaltung kommt | Von der Bereitstellung verwaltete Konfiguration |
-| 13. Ein vorgeschalteter Schutz | request-shield, zuerst im Beobachtungsmodus | request-shield |
+| 13. Ein vorgeschalteter Schutz | Request Shield, durchsetzend wie installiert (6.0.15); Hook in `config.php`, Regeln der Website in `settings/request-shield/` | request-shield; Setup > Request Shield |
 | 14. Protokollierung | Audit-Cronjob läuft, Empfänger der Alarme, Weiterleitung an ein SIEM, wöchentliche Prüfung | Audit-Protokoll; Routine zur Protokollprüfung |
 | 15. Updates | Releases verfolgen, in einer Kopie testen, `composer audit`, Dateikonsistenzprüfung | Patch-Rhythmus; Dateikonsistenzprüfung |
 | 16. Wiederherstellung | Sicherungen außerhalb des Rechners, Wiederherstellung getestet | Sicherung und Wiederherstellung |

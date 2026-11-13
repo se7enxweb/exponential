@@ -22,8 +22,8 @@ Die ausgelieferten Einstellungen von `settings/requestclassifier.ini`: 7 Blöcke
 >
 > Nur Einordnung. Wegen eines Urteils wird nichts blockiert, verlangsamt oder anders beantwortet: Die Anfrage  
 > erhält die Antwort, die sie ohnehin erhielte, und ihre Logzeile geht nach security.log. Blockieren und Ratenbegrenzung bleiben  
-> den Listenern (Listeners\[\] unten) und dem vorgelagerten Webserver überlassen (request-shield unter Velocity lehnt manche  
-> Sondierungen ab, bevor PHP läuft, diese erreichen den Klassifizierer also nie).  
+> den Listenern (Listeners\[\] unten) und dem vorgelagerten Webserver überlassen (Request Shield, standardmäßig vor dem Kernel, lehnt viele  
+> Sondierungen ab, bevor der Kernel startet, diese erreichen den Klassifizierer also nie).  
 >
 > Kosten: keine Datenbank. Die Muster eines Regelsatzes werden zu einem regulären Ausdruck kompiliert, pro Version  
 > dieser Einstellungen in var/<site>/cache/requestclassifier/ gecacht (darf gelöscht werden; bei der nächsten Anfrage neu erzeugt). Nur eine  

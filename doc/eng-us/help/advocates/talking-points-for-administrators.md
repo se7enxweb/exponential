@@ -83,7 +83,7 @@ Check the command names on the installation you use; `--help` on each command li
 | "How are security fixes delivered?" | On `main`, published with the next 6.0.x release | [Security fixes](../who-is-the-exponential-foundation.md#security-fixes) |
 | "Can we run cron as root?" | The hardening guide covers cron and command-line scripts as root | [Security hardening](../security-hardening.md#cron-and-command-line-scripts-as-root) |
 | "How do we upgrade safely?" | Back up first, never run an installer over an existing site; update files per database | [Upgrading](../../install/11-upgrading.md) |
-| "Can a WAF sit in front?" | request-shield of CJW Network is documented as a companion | [A shield in front](../security-hardening.md#a-shield-in-front-request-shield) |
+| "Can a WAF sit in front?" | Yes, by default since 6.0.15: request-shield of CJW Network, bundled in `exp_request_shield`, enforcing as installed | [A shield in front](../security-hardening.md#a-shield-in-front-request-shield) |
 
 ## Do not say
 

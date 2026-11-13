@@ -84,7 +84,8 @@ Aus der Härtungs-Checkliste des Projekts ([Sicherheitshärtung](../../sicherhei
 - [ ] Debug-Ausgabe aus, und PHP-Fehler werden nicht angezeigt.
 - [ ] Der Installationsassistent kann auf der installierten Website nicht laufen.
 - [ ] Der Code ist für den Benutzer des Webservers nur lesbar.
-- [ ] Ein request-shield oder Request-Regeln davor ([Request-Regeln](../../../funktionen/6.0/anfrageregeln.md)).
+- [ ] Der Request Shield läuft davor (Setup > Request Shield; [Request Shield](../../../funktionen/6.0/request-shield.md)), und über
+      Request-Regeln ist entschieden ([Request-Regeln](../../../funktionen/6.0/anfrageregeln.md)).
 
 ## Updates
 

@@ -46,7 +46,8 @@ takes the site down, damages its data or exposes it to attack. The hosting runbo
 - [ ] **Accounts**: deactivate a compromised account ([Check user accounts](../../../features/6.0/user-hygiene.md)).
 - [ ] **Caches**: clear the right cache after a fix, `php bin/php/ezcache.php --clear-id=<id>` or **Setup > Cache management** ([Caches](../../../guides/caches.md)).
 - [ ] **Error references**: visitors' error messages carry a reference you can look up ([Finding an error by its reference](../../../guides/finding-an-error-by-its-reference.md)).
-- [ ] **Request filter**: request-shield can block or slow abusive clients before the kernel ([Security hardening](../../security-hardening.md#a-shield-in-front-request-shield)).
+- [ ] **Request filter**: request-shield (default since 6.0.15) blocks or slows abusive clients before the kernel; you
+  know how to pause it (`var/request-shield/PAUSED`) and where its log is (Setup > Request shield) ([Security hardening](../../security-hardening.md#a-shield-in-front-request-shield)).
 
 ## Evidence
 

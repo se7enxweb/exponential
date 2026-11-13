@@ -257,7 +257,7 @@ GroupLinks_data[]=data_syncs
 
 > Erweiterungen: expqueue (die Auftragswarteschlange, auch mit expai ausgeliefert), sevenx\_dse (der Datenbankeditor)  
 
-Standard: eine Liste mit 14: `cache`, `static_publishing`, `system_information`, `help_center`, `upgrade_check`, `migrations`, `maintenance`, `cronjobs`, `logs`, `extensions`, `ini`, `sitedata` ....
+Standard: eine Liste mit 15: `cache`, `static_publishing`, `system_information`, `help_center`, `upgrade_check`, `migrations`, `maintenance`, `cronjobs`, `logs`, `request_shield`, `extensions`, `ini` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -274,6 +274,7 @@ GroupLinks_system[]=migrations
 GroupLinks_system[]=maintenance
 GroupLinks_system[]=cronjobs
 GroupLinks_system[]=logs
+GroupLinks_system[]=request_shield
 GroupLinks_system[]=extensions
 GroupLinks_system[]=ini
 GroupLinks_system[]=sitedata
@@ -388,7 +389,7 @@ MegaMenuLinks[]=git_manager
 >                                   figure\_key=<key> nur für eine angezeigte Kachel eingebunden; leer oder nicht design: zeichnet keine  
 > Eine Erweiterung setzt sie für ihren eigenen Link in ihrer menu.ini.append.php (doc/eng-us/features/6.0/admin4-design.md).  
 
-Standard: ein Hash mit 61: `audit=journal-check`, `broken_relations=exclamation-diamond`, `storage_files=files`, `cache=arrow-clockwise`, `classes=diagram-3`, `datatypes=ui-radios`, `collected=inbox`, `contentfinder=search`, `cronjobs=clock`, `design_node=brush`, `dse=database`, `expai_budgets=piggy-bank` ....
+Standard: ein Hash mit 62: `audit=journal-check`, `broken_relations=exclamation-diamond`, `storage_files=files`, `cache=arrow-clockwise`, `classes=diagram-3`, `datatypes=ui-radios`, `collected=inbox`, `contentfinder=search`, `cronjobs=clock`, `design_node=brush`, `dse=database`, `expai_budgets=piggy-bank` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -416,13 +417,13 @@ LinkIcons[ezupdate]=cloud-arrow-down
 LinkIcons[git_manager]=git
 LinkIcons[git_manager_backup]=archive
 LinkIcons[global_setting]=globe
-# ... 41 weitere in der ausgelieferten Datei
+# ... 42 weitere in der ausgelieferten Datei
 */ ?>
 ```
 
 ## LinkDescriptions
 
-Standard: ein Hash mit 61: `audit=Who changed what: the audit settings and archives.`, `broken_relations=Visible content that links to deleted, hidden or trashed content.`, `storage_files=Files in the storage that nothing uses, and files with the wrong owner or mode.`, `cache=Clear or regenerate the caches.`, `classes=The content classes and their attributes.`, `datatypes=Every datatype of the kernel and the extensions, and how the classes and content use it.`, `collected=What visitors sent through forms.`, `contentfinder=Find content by its id, remote id or path.`, `cronjobs=The cronjob parts, their scripts and last runs.`, `design_node=The design's top node and the objects below it.`, `dse=Browse and query the database directly.`, `expai_budgets=AI budgets, queued requests and what they cost.` ....
+Standard: ein Hash mit 62: `audit=Who changed what: the audit settings and archives.`, `broken_relations=Visible content that links to deleted, hidden or trashed content.`, `storage_files=Files in the storage that nothing uses, and files with the wrong owner or mode.`, `cache=Clear or regenerate the caches.`, `classes=The content classes and their attributes.`, `datatypes=Every datatype of the kernel and the extensions, and how the classes and content use it.`, `collected=What visitors sent through forms.`, `contentfinder=Find content by its id, remote id or path.`, `cronjobs=The cronjob parts, their scripts and last runs.`, `design_node=The design's top node and the objects below it.`, `dse=Browse and query the database directly.`, `expai_budgets=AI budgets, queued requests and what they cost.` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -450,7 +451,7 @@ LinkDescriptions[ezupdate]=Packages with a newer release, and their updates.
 LinkDescriptions[git_manager]=The Git checkout of the installation and its updates.
 LinkDescriptions[git_manager_backup]=Make, download and remove backups.
 LinkDescriptions[global_setting]=The settings of the whole site.
-# ... 41 weitere in der ausgelieferten Datei
+# ... 42 weitere in der ausgelieferten Datei
 */ ?>
 ```
 
@@ -489,6 +490,11 @@ LinkFigureTemplates[cronjobs]=design:setup/setupmenu_figure.tpl
 > Migrationen (Modul migration): die Migrationen der Site und ihrer Erweiterungen, ihre Läufe, ein Lauf oder eine Rücknahme im  
 > Hintergrund, das Protokoll jedes Laufs  
 > Der Log-Viewer (doc/eng-us/features/6.0/log-viewer.md): Logdateien verfolgen, durchsuchen und querverweisen, nur mit setup/logs  
+> Request Shield (exp\_request\_shield, Teil der Standardpakete): der Filter vor der Site, direkt nach den  
+> Logdateien. Hier genannt, damit er diesen Platz hat; ohne die Erweiterung gibt es ihr Modul nicht, und der Link  
+> fällt weg (\[MenuAccessSettings\] CheckViewAccess). Die eigene menu.ini.append.php der Erweiterung nennt ihn auch, für  
+> ältere Kernel, und ergänzt ihre Policy (PolicyList\_request\_shield\[\]=requestshield/read): ein Kernel-Menü nennt nur  
+> die Policies von Kernel-Modulen.  
 > Die Seite des Reiters Design (sein URL\[default\]), in der Gruppe, die für den Reiter steht (GroupTabs\[design\]): nur angezeigt,  
 > solange der Reiter nicht im oberen Menü ist  
 > Entfernt seit 4.3. Aktivieren, wenn Sie besondere Anforderungen haben.  
@@ -521,7 +527,7 @@ LinkFigureTemplates[cronjobs]=design:setup/setupmenu_figure.tpl
 > PolicyList\_toolbar\_management\[\]=visual/\*  
 > RAD schließt die Gruppe „Site und URLs“  
 
-Standard: ein Hash mit 48: `overview=setup/menu`, `cache=setup/cache`, `static_publishing=staticpublish/dashboard`, `audit=audit/settings`, `classes=class/grouplist`, `datatypes=class/datatype/list`, `collected=infocollector/overview`, `contentfinder=contentfinder/search`, `unreferenced_objects=contentcheck/unreferenced`, `broken_relations=contentcheck/brokenrelations`, `storage_files=contentcheck/storage`, `maintenance=setup/maintenance` ....
+Standard: ein Hash mit 49: `overview=setup/menu`, `cache=setup/cache`, `static_publishing=staticpublish/dashboard`, `audit=audit/settings`, `classes=class/grouplist`, `datatypes=class/datatype/list`, `collected=infocollector/overview`, `contentfinder=contentfinder/search`, `unreferenced_objects=contentcheck/unreferenced`, `broken_relations=contentcheck/brokenrelations`, `storage_files=contentcheck/storage`, `maintenance=setup/maintenance` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -544,18 +550,18 @@ Links[maintenance]=setup/maintenance
 Links[migrations]=migration/status
 Links[cronjobs]=setup/cronjobs
 Links[logs]=setup/logs
+Links[request_shield]=requestshield/dashboard
 Links[extensions]=setup/extensions
 Links[design_node]=content/view/full/58
 Links[ini]=settings/view
 Links[languages]=content/translations
-Links[interface_languages]=setup/languages
-# ... 28 weitere in der ausgelieferten Datei
+# ... 29 weitere in der ausgelieferten Datei
 */ ?>
 ```
 
 ## LinkNames
 
-Standard: ein Hash mit 22: `static_publishing=Static publishing`, `audit=Audit`, `datatypes=Datatypes`, `contentfinder=Content finder`, `unreferenced_objects=Unreferenced objects`, `broken_relations=Broken relations`, `storage_files=Storage files`, `maintenance=Maintenance`, `migrations=Migrations`, `cronjobs=Cronjobs`, `logs=Log files`, `design_node=Design content` ....
+Standard: ein Hash mit 23: `static_publishing=Static publishing`, `audit=Audit`, `datatypes=Datatypes`, `contentfinder=Content finder`, `unreferenced_objects=Unreferenced objects`, `broken_relations=Broken relations`, `storage_files=Storage files`, `maintenance=Maintenance`, `migrations=Migrations`, `cronjobs=Cronjobs`, `logs=Log files`, `request_shield=Request shield` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -574,6 +580,7 @@ LinkNames[maintenance]=Maintenance
 LinkNames[migrations]=Migrations
 LinkNames[cronjobs]=Cronjobs
 LinkNames[logs]=Log files
+LinkNames[request_shield]=Request shield
 LinkNames[design_node]=Design content
 LinkNames[interface_languages]=Interface languages
 LinkNames[preload]=Preload Sites
@@ -582,8 +589,7 @@ LinkNames[datatables]=Data tables
 LinkNames[data_connections]=Connections
 LinkNames[secrets]=Secrets
 LinkNames[graphql]=GraphQL
-LinkNames[data_syncs]=Synchronisations
-# ... 2 weitere in der ausgelieferten Datei
+# ... 3 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

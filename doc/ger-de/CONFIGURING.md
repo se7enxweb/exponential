@@ -407,6 +407,17 @@ Siehe [Vertrauenswürdige Proxys](bc/6.0/vertrauenswuerdige-proxys.md).
   an; die sechste, Inhalte, wird unter **Setup > Verify it's you** (`/setup/reauth`) eingeschaltet. Siehe
   [Bestätigen Sie, dass Sie es sind](anleitungen/identitaet-bestaetigen.md).
 
+### Request Shield vor der Site
+
+Seit 6.0.15 durchläuft jede Anfrage request-shield (die Erweiterung `exp_request_shield`), bevor der Kernel startet: Er
+weist Scanner, Fluten, verirrte Formular-POSTs und System-URLs ab und verlangt eine Browserprüfung vor der Anmeldung
+und den Formularen der Administration. Konfiguriert wird er in Regeldateien, nicht in INI-Dateien: die eigene Kopie der
+Site in `settings/request-shield/request-shield.rules`, sonst der Standard der Erweiterung. Gestartet wird er von einer
+Hook-Zeile in `config.php` (in `config.php-RECOMMENDED`; eine aktualisierte Installation fügt sie ein), und **Setup** >
+**Request Shield** (Policies `requestshield/read` und `requestshield/manage`) zeigt seine Entscheidungen und schaltet
+ihn zwischen Durchsetzen, Monitor und Aus. Zum sofortigen Ausschalten legen Sie `var/request-shield/PAUSED` an. Siehe
+[Request Shield](funktionen/6.0/request-shield.md) und die [Anleitung Request Shield](anleitungen/request-shield.md).
+
 ### Geheimnisse
 
 Passwörter und Schlüssel, die Werkzeuge brauchen (Verbindungen von Datentabellen, Importquellen, entfernte Server),

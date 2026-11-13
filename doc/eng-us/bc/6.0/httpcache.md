@@ -182,7 +182,7 @@ POST and other writes; responses other than 200; responses that set a cookie
 of their own; pages with a disallowed query string; pages whose template sets
 `cache_ttl=0`; siteaccesses not in `CachedSiteAccesses`, or found by a rule
 that cannot be known before the kernel; anything not a content view; a request
-[request-shield](https://github.com/cjw-network/request-shield) in front
+[request-shield](#with-request-shield-in-front) in front
 marked as not for a cache (`REQUEST_SHIELD=allow-uncached`: a made-up path or
 parameter); a page that carries the debug report of its request (the Exp Debug
 bar or the classic report, `X-Exp-Cache: BYPASS (debug report)`): its timings,
@@ -223,9 +223,14 @@ before.
 ## With request-shield in front
 
 [request-shield](https://github.com/cjw-network/request-shield) runs before
-`config.php` (`auto_prepend_file`, or the first line of `index.php`). Its
-HTTP cache stays off on Exponential 6 — this one is the page cache — and the
-two work together:
+the kernel. Since 6.0.15 it is part of the default installation: the
+extension `exp_request_shield` bundles it, and its hook in `config.php`
+(in `config.php-RECOMMENDED`, **above** the early exit; an upgraded
+installation adds the line itself) runs it before the early exit under
+PHP-FPM, so cached pages are protected too
+([Request shield](../../features/6.0/request-shield.md),
+[Request shield (BC)](request-shield.md)). Its own HTTP cache stays off on
+Exponential 6 — this one is the page cache — and the two work together:
 
 - **Never kept:** a request request-shield marks `allow-uncached` (a path or
   query parameter outside its cacheable definition) is answered and never
@@ -250,8 +255,9 @@ two work together:
   miss in its dashboard.
 
 **Under Velocity** the server process answers from this cache before a
-worker, and so before request-shield, which runs inside the worker from the
-first line of `index.php`: it sees the address as the visitor sent it, with
+worker, and so before request-shield, which runs inside the worker from the file
+the hook names in `EXP_REQUEST_PREPEND_FILE`, at the start of
+`index.php`: it sees the address as the visitor sent it, with
 no `cache-ignore` and no `REQUEST_SHIELD_CACHE_LOOKUP`, so neither of those
 two saves a render there. The early exit does not run in a worker at all.
 What does apply is **Never kept**: the listener that stores the page runs in
@@ -259,7 +265,7 @@ the worker after request-shield, so an `allow-uncached` page is not stored
 under Velocity either. Velocity keeps `$_SERVER` entries whose name starts
 with `REQUEST_` from one request to the next in a persistent worker; switch
 request-shield off with `set mode off` (it still sets `REQUEST_SHIELD` on
-every request), not by removing the include, or a worker keeps the last
+every request), not by removing the hook, or a worker keeps the last
 request's `allow-uncached` and stores nothing until it is restarted.
 
 ## Headers an extension adds to a page

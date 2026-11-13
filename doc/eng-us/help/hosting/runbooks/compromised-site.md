@@ -102,7 +102,8 @@ root, a flaw in an extension cannot plant code."
 - Make the code read-only for the site's user (13.11).
 - Forward the audit trail off the machine with a sink (`[AuditSink_syslog]`, `[AuditSink_webhook]`), "so a compromised
   machine cannot quietly rewrite its own history" ([Security hardening](../../security-hardening.md#watching-logs-the-request-classifier-and-the-audit-trail)).
-- Consider request-shield in front ([request-shield and request rules](../security/request-shield-and-request-rules.md)).
+- Check that request-shield runs in front (Setup > Request shield; an upgraded installation may lack the hook line in
+  `config.php`) and look at its log ([request-shield and request rules](../security/request-shield-and-request-rules.md)).
 
 ## Related pages
 

@@ -54,7 +54,7 @@ Quellen: [Datenschutzstandards](../../../standards/datenschutz.md), [Benutzerkon
 
 - Die Zugriffs- und Fehlerprotokolle des Webservers und von PHP-FPM.
 - Die eigenen Protokolle und der Antwort-Cache von Velocity.
-- Das Protokoll von request-shield, falls genutzt.
+- Das Protokoll von Request Shield, `var/request-shield/log/shield.log` (Netze der Clients, standardmäßig maskiert).
 - Protokolle des Mailservers und Postfächer für Unzustellbarkeitsmeldungen.
 - Dienste von Drittanbietern, die Ihre Erweiterungen aufrufen.
 - Exporte, die Menschen erstellt haben: CSV-Dateien mit Benutzern, Einwilligungsprotokollen und Formulareinsendungen

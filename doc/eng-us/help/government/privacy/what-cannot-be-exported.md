@@ -34,7 +34,8 @@ the access request procedure and, if requests are frequent, commission a custom 
 | Logs are masked when shown | masked logs cannot identify a person; unmasked reading needs `setup/unmasklogs` and is recorded |
 | Search phrases have no person attached | they cannot be attributed to a requester |
 | Suppression list stores hashes | it can confirm an address is listed, not list it |
-| Web server, Velocity, request-shield and mail server logs | outside Exponential: ask the host |
+| Web server, Velocity and mail server logs | outside Exponential: ask the host |
+| request-shield's log | not per person: it holds masked client networks (`var/request-shield/log/shield.log`) |
 | Backups | not searched per person; they expire with your backup rotation |
 
 ## Why

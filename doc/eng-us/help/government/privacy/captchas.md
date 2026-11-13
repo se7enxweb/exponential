@@ -55,7 +55,7 @@ section of this help covers forms.
 |---|---|---|---|
 | Form token only (`ezformtoken`, active by default) | nothing leaves the site | no barrier | stops forged cross-site posts, not determined bots |
 | Form token plus your own server-side checks | nothing leaves the site | no barrier | moderate |
-| request-shield in front, with its browser check for form pages | nothing leaves the site (separate library) | invisible check | good against floods |
+| request-shield in front, with its browser check for form pages | nothing leaves the site (part of the default installation since 6.0.15) | invisible check | good against floods |
 | hCaptcha or reCAPTCHA | third party | possible barrier | strong |
 
 Start with the options that keep data on your site; add a CAPTCHA only on forms with real abuse.

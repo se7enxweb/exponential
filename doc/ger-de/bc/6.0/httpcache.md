@@ -205,9 +205,12 @@ fragt („debug viewer, address not known here“). Besucher, denen die Leiste n
 
 ## Mit vorgeschaltetem request-shield
 
-[request-shield](https://github.com/cjw-network/request-shield) läuft vor `config.php` (`auto_prepend_file` oder die
-erste Zeile von `index.php`). Sein HTTP-Cache bleibt unter Exponential 6 aus — dieser hier ist der Seiten-Cache —, und
-beide arbeiten zusammen:
+[request-shield](https://github.com/cjw-network/request-shield) läuft vor dem Kernel. Seit 6.0.15 gehört es zur
+Standardinstallation: Die Erweiterung `exp_request_shield` bringt es mit, und ihr Hook in `config.php` (in
+`config.php-RECOMMENDED`, **oberhalb** des frühen Ausstiegs; eine aktualisierte Installation fügt die Zeile selbst ein)
+führt es unter PHP-FPM vor dem frühen Ausstieg aus, sodass auch zwischengespeicherte Seiten geschützt sind
+([Request Shield](../../funktionen/6.0/request-shield.md), [Request Shield (BC)](request-shield.md)). Sein eigener
+HTTP-Cache bleibt unter Exponential 6 aus — dieser hier ist der Seiten-Cache —, und beide arbeiten zusammen:
 
 - **Nie behalten:** Eine Anfrage, die request-shield als `allow-uncached` markiert (ein Pfad oder Query-Parameter
   außerhalb seiner cachebaren Definition), wird beantwortet und nie gespeichert: Zufällige Adressen können den Cache
@@ -226,13 +229,14 @@ beide arbeiten zusammen:
   Klammern): die Antwortzeiten nach Treffer und Fehltreffer in seinem Dashboard.
 
 **Unter Velocity** antwortet der Serverprozess aus diesem Cache vor einem Worker und damit vor request-shield, das im
-Worker ab der ersten Zeile von `index.php` läuft: Es sieht die Adresse so, wie der Besucher sie gesendet hat, ohne
+Worker aus der Datei läuft, die der Hook in `EXP_REQUEST_PREPEND_FILE` nennt, zu Beginn von `index.php`: Es sieht
+die Adresse so, wie der Besucher sie gesendet hat, ohne
 `cache-ignore` und ohne `REQUEST_SHIELD_CACHE_LOOKUP`, daher spart dort keines von beiden ein Rendern. Der frühe
 Ausstieg läuft in einem Worker überhaupt nicht. Was gilt, ist **Nie behalten**: Der Listener, der die Seite speichert,
 läuft im Worker nach request-shield, daher wird eine Seite mit `allow-uncached` auch unter Velocity nicht gespeichert.
 Velocity behält in einem persistenten Worker Einträge von `$_SERVER`, deren Name mit `REQUEST_` beginnt, von einer
 Anfrage zur nächsten; schalten Sie request-shield mit `set mode off` aus (es setzt `REQUEST_SHIELD` weiterhin bei jeder
-Anfrage), nicht durch Entfernen des Includes, sonst behält ein Worker das `allow-uncached` der letzten Anfrage und
+Anfrage), nicht durch Entfernen des Hooks, sonst behält ein Worker das `allow-uncached` der letzten Anfrage und
 speichert nichts, bis er neu gestartet wird.
 
 ## Header, die eine Erweiterung einer Seite hinzufügt

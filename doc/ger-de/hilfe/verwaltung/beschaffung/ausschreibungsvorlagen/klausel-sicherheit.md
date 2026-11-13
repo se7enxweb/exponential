@@ -81,7 +81,7 @@ Führen Sie die Entscheidungen auf, damit sich Y.1 bei der Abnahme prüfen läss
 | HSTS | `site.ini [HTTPHeaderSettings] SecurityHeaders[Strict-Transport-Security]` | leer | <Wert> |
 | Audit-Protokoll | `audit.ini [AuditSettings] Audit` | `enabled` | beibehalten |
 | Im Produktivbetrieb gesperrte Einstellungen | [Vom Deployment verwaltete Konfiguration](../../../../funktionen/6.0/durch-deployment-verwaltet.md) | aus | <Entscheidung> |
-| Drosselung davor | request-shield ([Sicherheitshärtung](../../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield)) | nicht installiert | <Entscheidung> |
+| Drosselung davor | request-shield ([Sicherheitshärtung](../../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield)) | seit 6.0.15 installiert und durchsetzend (eine aktualisierte Website ergänzt den Hook in `config.php`) | <Entscheidung> |
 
 ## Was ein auf Exponential beruhendes Angebot zeigen kann
 

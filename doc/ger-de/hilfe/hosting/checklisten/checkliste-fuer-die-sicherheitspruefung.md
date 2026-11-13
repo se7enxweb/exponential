@@ -70,7 +70,8 @@ Site: <domain>        Reviewer: <name>        Date: <date>        Reason: <go-li
 - [ ] `security.log` wird geschrieben und durchgesehen ([Sicherheitslog](../betrieb/sicherheitslog.md)).
 - [ ] Hinter einem Proxy oder Load Balancer ist `TrustedProxies[]` konfiguriert, sodass die Logs die echten
       Client-Adressen sehen ([Sicherheitshärtung](../../sicherheitshaertung.md)).
-- [ ] Über einen Schutz vor der Website entschieden: request-shield oder die Request-Regeln des Kernels
+- [ ] Request Shield läuft vor der Website (die Hook-Zeile in `config.php`; Setup > Request Shield), und über die
+      Request-Regeln des Kernels ist entschieden
       ([request-shield und Request-Regeln](../sicherheit/request-shield-und-request-regeln.md)).
 - [ ] Das Prüfprotokoll ist an und für den Prüfer lesbar ([Prüfprotokoll](../sicherheit/pruefprotokoll.md)).
 

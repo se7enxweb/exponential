@@ -52,7 +52,7 @@ Schreiben Sie auf, wer welche Aufgabe für Ihre Website übernimmt. Die
 | 3 | Starke Anmeldung | bcrypt-Hashes, gängige Passwörter abgelehnt, zweistufige Anmeldung | [Benutzerkonten und Passwörter](benutzerkonten-und-passwoerter.md) |
 | 4 | Minimale Rechte | Feingranulare Rollen und Richtlinien; niemand bekommt etwas, das keine Rolle gibt | [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md) |
 | 5 | Backups, die sich wiederherstellen lassen | Eine dokumentierte Liste dessen, was zu sichern ist, und ein Verfahren zum Testen der Wiederherstellung | [Backups, die sich wiederherstellen lassen](../zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md) |
-| 6 | Eine geschützte Administration | Ein eigener Hostname, Netzwerkbeschränkungen, Request-Shield davor | [Die Administration einschränken](../../hosting/sicherheit/die-administration-einschraenken.md) |
+| 6 | Eine geschützte Administration | Ein eigener Hostname, Netzwerkbeschränkungen, Request Shield davor (seit 6.0.15 Teil der Standardinstallation) | [Die Administration einschränken](../../hosting/sicherheit/die-administration-einschraenken.md) |
 | 7 | Hinschauen | Anfrage-Logs, ein Log-Viewer und Audit-Alarme bei Brute Force und riskanten Änderungen | [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
 | 8 | Ihre personenbezogenen Daten kennen | Mail-Einwilligung, Formularexporte, Kontenlisten, Aufbewahrungseinstellungen | [Personenbezogene Daten in Exponential](personenbezogene-daten-in-exponential.md) |
 | 9 | Ein Weg, Probleme zu melden | Vertrauliche Meldungen an das Projekt, erste Antwort innerhalb eines Werktags | `SECURITY.md` |

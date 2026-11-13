@@ -22,7 +22,8 @@ checklist you can work through from top to bottom; a one-page summary is at the 
 > panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
 > **On LiteSpeed or OpenLiteSpeed,** the server's own page cache can also answer anonymous visitors and crawlers without PHP: [Page caching with LiteSpeed and OpenLiteSpeed](../guides/litespeed-page-cache.md).
 
-For the attacker's view, threat by threat, with the request-shield in front and what to watch, read
+For the attacker's view, threat by threat, with request-shield in front (part of the default installation since 6.0.15)
+and what to watch, read
 [Security hardening](../help/security-hardening.md) in the help; for the administrator account,
 [Change the administrator password](../help/change-the-admin-password.md) and
 [The default administrator password](../help/default-administrator-password.md).
@@ -67,6 +68,8 @@ change (`php bin/php/ezcache.php --clear-tag=ini`), and under Velocity restart t
      |
   [ what may be served as a file ]     .htaccess_root / Velocity's list / derived nginx block   13.2
      |
+  [ request shield ]                   exp_request_shield: config.php hook, request-shield.rules 13.1
+     |
   [ security headers ]                 site.ini [HTTPHeaderSettings] SecurityHeaders[],          13.9
      |                                 velocity.ini ResponseHeaders[]
   [ request rules, siteaccess login ]  requestrules.ini, [SiteAccessSettings] RequireUserLogin   13.5
@@ -92,6 +95,14 @@ change (`php bin/php/ezcache.php --clear-tag=ini`), and under Velocity restart t
 | Forwarded headers | believed only from `127.0.0.1` and `::1` | list your proxies in `TrustedProxies[]`, and nothing more |
 | Security headers | five headers on every page | HSTS once HTTPS-only; frame-ancestors for editors |
 | Audit | on | cron, alert recipients, key backup |
+| Request shield | enforcing (since 6.0.15, hook line in `config.php-RECOMMENDED`) | the site's rules in `settings/request-shield/`; add the hook line after an upgrade |
+
+The request shield is the extension `exp_request_shield`, part of the default installation since 6.0.15. It bundles
+request-shield (CJW Network, MIT license) and runs it from one hook line in `config.php`, before the kernel and before
+the HTTP cache's early exit, under PHP-FPM and Velocity alike. A new installation gets the line from
+`config.php-RECOMMENDED`; an upgraded one adds it itself, since `config.php` is never overwritten. **Setup > Request
+shield** shows what it decides; `var/request-shield/PAUSED` switches it off at once. See
+[Request shield](../features/6.0/request-shield.md) and [the guide](../guides/request-shield.md).
 
 ---
 
@@ -809,6 +820,8 @@ Full guide: [Audit](../bc/6.0/audit.md).
       `security.log` ([Demo mode must be off](#demo-mode-must-be-off)).
 - [ ] `[Session] CookieSecure=true` on an HTTPS-only site; `HttpOnly` and `SameSite` left on.
 - [ ] `ezformtoken` active.
+- [ ] The request shield runs: the hook line in `config.php`, Setup > Request shield shows no "did not run" notice, and
+      `check` and `test` pass on `settings/request-shield/request-shield.rules`.
 - [ ] HTTPS on every name; HTTP redirected; HSTS raised once stable; certificate renewal watched.
 - [ ] Security headers present on pages (and on static files if you want them there).
 - [ ] Behind a proxy: `TrustedProxies[]` lists exactly your proxies (Velocity: `Q.webserver.proxy.trusted`), the proxy

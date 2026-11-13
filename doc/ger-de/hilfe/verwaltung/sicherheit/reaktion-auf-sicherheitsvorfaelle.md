@@ -86,7 +86,8 @@ sollte, von der Website versandter Spam, ein Audit-Alarm wie `admin_role_granted
 
 - Gehen Sie die Go-live-Checkliste und die Härtungsschichten erneut durch; machen Sie den Code für den Benutzer der
   Website schreibgeschützt.
-- Leiten Sie das Audit-Protokoll vom Rechner weg; schalten Sie request-shield vor.
+- Leiten Sie das Audit-Protokoll vom Rechner weg; prüfen Sie, ob Request Shield durchsetzt (Setup > Request Shield),
+  und ergänzen Sie eine Regel für das, was der Angreifer benutzt hat.
 - Halten Sie eine Besprechung zu den gewonnenen Erkenntnissen ab und aktualisieren Sie dieses Verfahren.
 
 ## Verwandte Seiten

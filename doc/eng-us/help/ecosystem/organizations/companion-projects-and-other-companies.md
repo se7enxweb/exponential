@@ -32,7 +32,7 @@ Since December 2023 pull requests have also come from individual contributors an
 
 | Project | What it is |
 |---|---|
-| request-shield | "a project of CJW Network [...], not of the Foundation"; Exponential documents how its HTTP cache works with it in front ([HTTP cache](../../../bc/6.0/httpcache.md)) |
+| request-shield | "a project of CJW Network [...], not of the Foundation"; since 6.0.15 Exponential bundles it in the extension `exp_request_shield`, part of the default installation, in front of its HTTP cache ([Request shield](../../../features/6.0/request-shield.md), [HTTP cache](../../../bc/6.0/httpcache.md)) |
 | The package server | Serves the setup wizard's packages ([Site packages and the package server](../packages/site-packages-and-the-package-server.md)) |
 | AdminNeo | Through `sevenx_dse`, the database source editor ([sevenx_dse](../../../features/6.0/extensions/sevenx_dse.md)) |
 

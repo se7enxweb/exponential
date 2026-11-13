@@ -50,7 +50,9 @@ index.php
    (`expMaintenance::check()`).
 3. Requires `autoload.php`.
 4. Runs a request filter file when `config.php` defines `EXP_REQUEST_PREPEND_FILE`. It runs on every request, also in a
-   persistent worker, where `config.php` itself runs only once.
+   persistent worker, where `config.php` itself runs only once. In a default installation the request shield's hook
+   (`exp_request_shield`) defines it under Velocity; under PHP-FPM the hook in `config.php` runs the shield itself,
+   before the HTTP cache's early exit ([Request shield](../../features/6.0/request-shield.md)).
 5. Shows PHP errors in the browser when `eZINI::environment()` is `dev` or `test` (from `EXP_ENV` in `config.env.php`).
 6. Runs the kernel: `$kernel = new ezpKernel( new ezpKernelWeb() ); echo $kernel->run()->getContent();`
 

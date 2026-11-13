@@ -108,7 +108,9 @@ Eine veränderte Datei des Kernels, die niemand geändert hat, verdient einen Bl
   Shell-Befehle ohne `escapeshellarg()`, Ausgabe ohne Maskierung), und erzeugen Sie Erweiterungen neu, die von den RAD-Assistenten vor
   deren Korrektur erstellt wurden ([RAD-Werkzeuge: Sicherheit](../../../bc/6.0/rad-sicherheit.md),
   [Hinweise zur Härtung in 6.0.13](../../../bc/6.0/haertung.md)).
-- **request-shield**, wenn installiert, als eigenes Paket.
+- **Request Shield**: Die Erweiterung `exp_request_shield` (seit 6.0.15 Teil der Standardinstallation) bringt die
+  Bibliothek mit; aktualisieren Sie sie wie die anderen Erweiterungen mit Composer und kopieren Sie ihre
+  `exponential*.rules` erneut nach `settings/request-shield/`, wenn sie sich ändern.
 
 ## Eine Schwachstelle melden
 

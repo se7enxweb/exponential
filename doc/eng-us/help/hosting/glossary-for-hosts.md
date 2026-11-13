@@ -29,7 +29,7 @@ the documentation is [doc/eng-us/glossary.md](../../glossary.md).
 | `ManagedByDeployment` | per-siteaccess switch that stops the administration from writing settings, templates and packages | [Hardening for hosts](security/hardening-for-hosts.md) |
 | qbix | the name of Velocity's own engine in settings and commands (`[ServerSettings] Engine=qbix`) | [Velocity for hosts](servers/velocity-for-hosts.md) |
 | Request classifier | the kernel part that writes probes and attacks to `var/log/security.log`; it classifies, it does not block | [Security log](operations/security-log.md) |
-| request-shield | a separate web application firewall for PHP that decides before the kernel starts | [request-shield and request rules](security/request-shield-and-request-rules.md) |
+| request-shield | a web application firewall for PHP by the CJW Network that decides before the kernel starts; part of the default installation since 6.0.15 (extension `exp_request_shield`) | [request-shield and request rules](security/request-shield-and-request-rules.md) |
 | Response cache | Velocity's cache of whole rendered pages, answered without PHP; `exp:velocity cache clear` | [Velocity response cache](performance/velocity-response-cache.md) |
 | Runbook | a step-by-step page for an incident | [Runbooks](runbooks/README.md) |
 | Setup wizard | the browser installer, one page per step | [The setup wizard on shared hosting](provisioning/setup-wizard-on-shared-hosting.md) |

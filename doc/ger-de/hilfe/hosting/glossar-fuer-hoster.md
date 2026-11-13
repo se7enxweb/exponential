@@ -29,7 +29,7 @@ erklärt. Das allgemeine Glossar der Dokumentation ist [doc/eng-us/glossary.md](
 | `ManagedByDeployment` | Schalter pro Siteaccess, der verhindert, dass die Administration Einstellungen, Templates und Pakete schreibt | [Härtung für Hoster](sicherheit/haertung-fuer-hoster.md) |
 | qbix | der Name der eigenen Engine von Velocity in Einstellungen und Befehlen (`[ServerSettings] Engine=qbix`) | [Velocity für Hoster](server/velocity-fuer-hoster.md) |
 | Request-Klassifizierer | der Teil des Kernels, der Sondierungen und Angriffe in `var/log/security.log` schreibt; er ordnet ein, er blockiert nicht | [Sicherheitslog](betrieb/sicherheitslog.md) |
-| request-shield | eine separate Web Application Firewall für PHP, die entscheidet, bevor der Kernel startet | [request-shield und Request-Regeln](sicherheit/request-shield-und-request-regeln.md) |
+| request-shield | eine Web Application Firewall für PHP vom CJW Network, die entscheidet, bevor der Kernel startet; seit 6.0.15 Teil der Standardinstallation (Erweiterung `exp_request_shield`) | [request-shield und Request-Regeln](sicherheit/request-shield-und-request-regeln.md) |
 | Antwort-Cache (Response cache) | der Cache von Velocity für ganze gerenderte Seiten, beantwortet ohne PHP; `exp:velocity cache clear` | [Antwort-Cache von Velocity](leistung/antwort-cache-von-velocity.md) |
 | Runbook | eine Schritt-für-Schritt-Seite für einen Vorfall | [Runbooks](runbooks/README.md) |
 | Setup-Assistent | der Installer im Browser, eine Seite pro Schritt | [Der Setup-Assistent auf Shared Hosting](bereitstellung/der-setup-assistent-auf-shared-hosting.md) |

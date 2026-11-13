@@ -51,8 +51,8 @@ report on what is new.
 ## Preparing the installation
 
 1. Run the file consistency check so the test starts from a known state.
-2. Decide what to do with request-shield: leave it in front to test the real setup, or put it in monitor mode so the
-   testers reach the application; record the choice.
+2. Decide what to do with request-shield: leave it in front to test the real setup, or put it in monitor mode (Setup >
+   Request shield) so the testers reach the application; record the choice.
 3. Tell the alert recipients: audit alerts (brute force, role granted) will fire.
 4. Back up the staging database and `var/storage`.
 5. If lockout is on, add the testers' addresses to `TrustedIPList[]` only if you want to exclude lockout from the test.

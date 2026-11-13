@@ -30,7 +30,7 @@ extensions are Composer packages with immutable releases; the routine below foll
 | Composer dependencies | `composer audit` lists known vulnerabilities in the locked dependencies |
 | PHP, database server, operating system | your distribution's or vendor's security notices |
 | Velocity's engine and FrankenPHP | engine releases; FrankenPHP's version and checksums are pinned in `velocity.ini [FrankenPHPSettings]` |
-| request-shield (if used) | its releases |
+| request-shield, inside `exp_request_shield` (part of the default installation since 6.0.15) | the extension's releases, which name the bundled library version |
 
 The project's CI does not run a dependency vulnerability scan ([Security standards: Known gaps](../../../standards/security.md#known-gaps)),
 so `composer audit` is your job.

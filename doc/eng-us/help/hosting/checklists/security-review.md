@@ -68,7 +68,8 @@ Site: <domain>        Reviewer: <name>        Date: <date>        Reason: <go-li
 - [ ] `security.log` is written and reviewed ([Security log](../operations/security-log.md)).
 - [ ] Behind a proxy or load balancer, `TrustedProxies[]` is configured so the logs see real client addresses
       ([Security hardening](../../security-hardening.md)).
-- [ ] A shield in front of the site is decided: request-shield or the kernel's request rules
+- [ ] request-shield runs in front of the site (the hook line in `config.php`; Setup > Request shield), and the kernel's
+      request rules are decided
       ([request-shield and request rules](../security/request-shield-and-request-rules.md)).
 - [ ] The audit trail is on and readable by the reviewer ([Audit trail](../security/audit-trail.md)).
 

@@ -33,7 +33,7 @@ the options with and without third parties. The general guide is
 | Form token (`ezformtoken`) | forged posts from other sites (CSRF); simple scripts that post without loading the form | no ([CSRF form tokens](csrf-form-tokens.md)) |
 | CAPTCHA datatype | automated submissions | yes |
 | Moderation | what got through | no |
-| Request filtering in front of the site | floods and known bad clients | no, if you run it ([Security hardening: request-shield](../../../security-hardening.md#a-shield-in-front-request-shield)) |
+| Request filtering in front of the site | floods and known bad clients | no: request-shield runs on your own server, part of the default installation since 6.0.15 ([Security hardening: request-shield](../../../security-hardening.md#a-shield-in-front-request-shield)) |
 
 ## The CAPTCHA extensions
 

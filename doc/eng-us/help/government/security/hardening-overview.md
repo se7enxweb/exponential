@@ -60,7 +60,7 @@ practical meaning is: do not loosen a default to make something work; find the c
 | 10. Debug | `DebugOutput=disabled`, PHP `display_errors=Off` | Debug output in production |
 | 11. Files | one writer, no world-writable files, code read-only | File permissions and ownership |
 | 12. Configuration lock | `ManagedByDeployment=enabled` where configuration comes from version control | Configuration managed by the deployment |
-| 13. A shield in front | request-shield, monitor mode first | request-shield |
+| 13. A shield in front | request-shield, enforcing as installed (6.0.15); hook in `config.php`, site rules in `settings/request-shield/` | request-shield; Setup > Request shield |
 | 14. Logging | audit cronjob running, alert recipients, SIEM forwarding, weekly review | Audit trail; Log review routine |
 | 15. Updates | follow releases, test in a copy, `composer audit`, file consistency check | Patching cadence; File consistency check |
 | 16. Recovery | backups off the machine, restore tested | Backups and recovery |

@@ -797,6 +797,14 @@ Mehr dazu: [SQLite-Datenbankunterstützung](funktionen/6.0/sqlite-datenbank.md),
 
    Was sie tun und jeden weiteren Schritt finden Sie unter [Exponential Intelligence](funktionen/6.0/erweiterungen/expai.md)
    und [die Job-Warteschlange](funktionen/6.0/erweiterungen/expqueue.md).
+9. **Sehen Sie sich Request Shield an.** Eine neue Installation ist ab ihrer ersten Anfrage durch request-shield (die
+   Erweiterung `exp_request_shield`) geschützt: `config.php` lädt seinen Hook, und er weist Scanner, Fluten, verirrte
+   Formular-POSTs und System-URLs ab, bevor der Kernel startet, im Durchsetzungsmodus. Öffnen Sie **Setup** >
+   **Request Shield** (mit `sevenx_multisite` und `cjw_multisite` ist die Erweiterung aktiv; sonst ergänzen Sie
+   `ActiveExtensions[]=exp_request_shield`): Das Dashboard sagt, ob der Schutzschild lief und was er entschieden hat.
+   Tragen Sie Ihre Hostnamen in seine Regeln ein und lesen Sie in den ersten Tagen sein Log; wurde ein echter Besucher
+   oder Redakteur abgewiesen, ergänzen Sie eine Ausnahme. Zum sofortigen Ausschalten legen Sie
+   `var/request-shield/PAUSED` an. Siehe die [Anleitung Request Shield](anleitungen/request-shield.md).
 
 Fahren Sie dann mit den Anleitungen fort:
 
@@ -824,7 +832,9 @@ Release. Eine Installation von 6.0 bringen Sie mit dem kurzen Vorgehen von
 [Exponential 6.0 aktualisieren](UPDATE.md) auf den aktuellen Stand. Vergleichen Sie nach jeder Aktualisierung
 `.htaccess` und `config.php` mit den neuen Vorlagen: `./console exp:setup:status`, `./console exp:setup:htaccess`
 (der Diff) und `./console exp:config:list` (Einstellungen, die neu in `config.php-RECOMMENDED` sind, erscheinen als
-`(not set)`). Um eine Website umzuziehen oder zu entfernen,
+`(not set)`). Bei der Aktualisierung auf 6.0.15 oder später fügen Sie die Hook-Zeile von Request Shield selbst in
+`config.php` ein, oberhalb des frühen Ausstiegs des HTTP-Caches ([Request Shield (BC)](bc/6.0/request-shield.md)). Um
+eine Website umzuziehen oder zu entfernen,
 exportieren Sie zuerst alles mit [Exponential 6.0 deinstallieren](UNINSTALL.md).
 
 Das Online-Handbuch enthält weitere Hinweise zur Installation:

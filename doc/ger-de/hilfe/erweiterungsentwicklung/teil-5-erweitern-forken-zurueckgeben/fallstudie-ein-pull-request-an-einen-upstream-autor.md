@@ -12,7 +12,7 @@ type: help
 Teil 5, Kapitel 17, das letzte dieses Teils. Frühere Kapitel haben beschrieben, was ein guter Pull Request enthält.
 Dieses liest einen echten: Pull Request 4 an `cjw-network/request-shield` auf GitHub, eröffnet am 8. Oktober 2026 und
 am selben Tag übernommen. request-shield ist ein Projekt einer anderen Organisation (unter MIT-Lizenz), das
-Exponential-Websites verwenden können; der Pull Request kam aus diesem Projekt, so wie ihn ein externer Beitragender
+Exponential seit 6.0.15 mitbringt; der Pull Request kam aus diesem Projekt, so wie ihn ein externer Beitragender
 schicken würde. Sie können ihn vollständig auf GitHub lesen.
 
 ## Der Titel

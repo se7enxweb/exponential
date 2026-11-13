@@ -142,8 +142,9 @@ each line has an owner, a date and evidence. The lines most often forgotten:
 - [ ] Backups off the machine, restore tested.
 - [ ] An update routine: who watches releases, how updates are tested, who receives security mail.
 
-A shield in front of the site, request-shield (a project of CJW Network), is documented as an option, first in
-monitor mode, then enforced ([Security hardening](../security-hardening.md#a-shield-in-front-request-shield)).
+A shield in front of the site, request-shield (a project of CJW Network), is part of the default installation since
+6.0.15 (the extension `exp_request_shield`) and enforces as installed; an upgraded installation adds its hook line to
+`config.php` ([Security hardening](../security-hardening.md#a-shield-in-front-request-shield)).
 
 ## Accounts and access
 

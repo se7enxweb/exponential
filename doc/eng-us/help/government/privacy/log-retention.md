@@ -84,8 +84,9 @@ Rotations and prunes are recorded in the audit as `system.log.rotate` and `syste
 
 ## Logs outside Exponential
 
-The web server's and PHP-FPM's logs, Velocity's logs, request-shield's log and the mail server's logs are rotated by
-their own programs; set their retention there or ask your host.
+The web server's and PHP-FPM's logs, Velocity's logs and the mail server's logs are rotated by their own programs; set
+their retention there or ask your host. request-shield's log (`var/request-shield/log/shield.log`) is rotated by the
+shield at the size its rule file sets (`log-max-size`).
 
 ## Related pages
 

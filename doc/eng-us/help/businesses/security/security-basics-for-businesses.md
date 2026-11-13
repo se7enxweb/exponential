@@ -49,7 +49,7 @@ and the RACI matrix in [Project templates](../../leadership/project-templates.md
 | 3 | Strong sign-in | bcrypt hashes, common passwords refused, two-step sign-in | [User accounts and passwords](user-accounts-and-passwords.md) |
 | 4 | Least privilege | Fine-grained roles and policies; nobody gets anything no role gives | [Roles and policies](../../../guides/roles-and-policies.md) |
 | 5 | Backups that restore | A documented list of what to back up and a restore test procedure | [Backups that restore](../reliability/backups-that-restore.md) |
-| 6 | A protected administration | Its own host name, network limits, request-shield in front | [Restricting the administration](../../hosting/security/restricting-the-administration.md) |
+| 6 | A protected administration | Its own host name, network limits, request-shield in front (part of the default installation since 6.0.15) | [Restricting the administration](../../hosting/security/restricting-the-administration.md) |
 | 7 | Watching | Request logs, a log viewer, and audit alerts for brute force and risky changes | [The audit trail](../../../features/6.0/audit-trail.md) |
 | 8 | Know your personal data | Mail consent, form exports, account lists, retention settings | [Personal data in Exponential](personal-data-in-exponential.md) |
 | 9 | A way to report problems | Private reports to the project, first answer within one business day | `SECURITY.md` |

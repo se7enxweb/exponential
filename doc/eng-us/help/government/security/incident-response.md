@@ -81,7 +81,8 @@ an audit alert such as `admin_role_granted` or `chain_broken`.
 ## Prevent a repeat
 
 - Review the go-live checklist and the hardening layers; make the code read-only for the site's user.
-- Forward the audit trail off the machine; put request-shield in front.
+- Forward the audit trail off the machine; check that request-shield is enforcing (Setup > Request shield) and add a
+  rule for what the attacker used.
 - Hold a lessons-learned meeting and update this procedure.
 
 ## Related pages

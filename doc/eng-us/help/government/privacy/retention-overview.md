@@ -50,7 +50,8 @@ Sources: [Audit guide 4.3](../../../bc/6.0/audit.md#43-retention), [Log rotation
 | Search statistics | reset in Setup > Search statistics |
 | Trash | empty on a schedule (`content/trash`) |
 | Exports (CSV, JSON) people downloaded | delete after the task |
-| Web server, Velocity and request-shield logs | configure in those programs |
+| Web server and Velocity logs | configure in those programs |
+| request-shield's log | its rule file (`log-max-size`) |
 | Backups | your backup rotation |
 
 ## From schedule to settings

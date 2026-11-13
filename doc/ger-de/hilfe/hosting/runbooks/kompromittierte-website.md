@@ -105,7 +105,8 @@ kann eine Schwachstelle in einer Erweiterung keinen Code einschleusen.
 - Leiten Sie das Prüfprotokoll mit einer Senke von der Maschine weg (`[AuditSink_syslog]`, `[AuditSink_webhook]`), damit eine
   kompromittierte Maschine ihre eigene Geschichte nicht stillschweigend umschreiben kann
   ([Sicherheitshärtung](../../sicherheitshaertung.md#beobachten-logs-der-request-klassifizierer-und-das-audit-protokoll)).
-- Erwägen Sie request-shield davor ([request-shield und Request-Regeln](../sicherheit/request-shield-und-request-regeln.md)).
+- Prüfen Sie, ob Request Shield davor läuft (Setup > Request Shield; einer aktualisierten Installation kann die
+  Hook-Zeile in `config.php` fehlen), und sehen Sie sein Log an ([request-shield und Request-Regeln](../sicherheit/request-shield-und-request-regeln.md)).
 
 ## Verwandte Seiten
 

@@ -34,7 +34,8 @@ Auftrag geben. Die Fakten stammen aus [Datenschutzstandards: Bekannte Lücken](.
 | Protokolle werden beim Anzeigen maskiert | maskierte Protokolle können keine Person identifizieren; unmaskiertes Lesen erfordert `setup/unmasklogs` und wird aufgezeichnet |
 | Suchbegriffen ist keine Person zugeordnet | sie lassen sich keiner antragstellenden Person zuordnen |
 | Die Sperrliste speichert Hashes | sie kann bestätigen, dass eine Adresse aufgeführt ist, sie aber nicht auflisten |
-| Protokolle von Webserver, Velocity, request-shield und Mailserver | außerhalb von Exponential: fragen Sie den Hoster |
+| Protokolle von Webserver, Velocity und Mailserver | außerhalb von Exponential: fragen Sie den Hoster |
+| Protokoll von Request Shield | nicht pro Person: es enthält maskierte Netze der Clients (`var/request-shield/log/shield.log`) |
 | Datensicherungen | nicht pro Person durchsucht; sie laufen mit Ihrer Sicherungsrotation aus |
 
 ## Warum

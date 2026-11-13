@@ -26,6 +26,7 @@ ausgegraut oder gar nicht angezeigt.
 |---|---|
 | [Velocity ist Teil von Exponential 6.0.15](velocity-ist-teil-von-exponential-6-0-15.md) | Wissen, was sich geändert hat, als der Velocity Internet / Web Application Server Teil von Exponential wurde: ein Wendepunkt, der Exponential zu einem einzigen funktionierenden Stack macht (Server, RAD-Plattform, CMS, Digital Experience und E-Commerce) |
 | [Neu in 6.0.15: statisches Veröffentlichen](neu-in-6-0-15-statisches-veroeffentlichen.md) | Ihre Website kostenlos auf GitHub Pages veröffentlichen: was statisches Veröffentlichen bringt und wo Sie anfangen |
+| [Neu in 6.0.15: Die REST API ändert Inhalte](neu-in-6-0-15-rest-api.md) | Wissen, was die REST API seit 6.0.15 und ezprestapi 1.2.9 tut: Ändern über REST, JSON-Bodys, die Schreibzugriffe über den Kernel ohne nxc_powercontent und was sich in jedem 1.2.x-Release geändert hat |
 | [Warum Exponential PHP 7.4 unterstützt](warum-exponential-php-7-4-unterstuetzt.md) | Wissen, was unter PHP 7.4 ohne Support nutzbar ist und was PHP 8 braucht, wie Composer die passenden Pakete für Ihr PHP wählt, wie die Sicherheit gewahrt bleibt und warum das Projekt Brücken zu älteren PHP-Versionen baut |
 | [Erste Schritte](erste-schritte.md) | Anmelden, die ersten Schritte gehen und wissen, wo Sie Hilfe finden |
 | [Ein Rundgang durch die Administration](rundgang-durch-die-administration.md) | Kopfzeile, Registerkarten, Seitenspalten und Dashboard kennenlernen |

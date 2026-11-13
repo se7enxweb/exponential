@@ -281,10 +281,11 @@ se7enxweb has 219 packages (<https://packagist.org/packages/list.json?vendor=se7
 
 ### Companion projects
 
-- **request-shield** is a project of CJW Network (<https://github.com/cjw-network/request-shield>), not of the
-  Foundation. Exponential documents how its HTTP cache works with request-shield in front
-  ([HTTP cache](../bc/6.0/httpcache.md)) and how to load it under Velocity (`config.php-RECOMMENDED`). Its website
-  <https://request-shield.com/> was private when this page was written, so nothing more is said here.
+- **request-shield** is a project of CJW Network (JAC Systeme GmbH, <https://github.com/cjw-network/request-shield>,
+  MIT license), not of the Foundation. Since 6.0.15 Exponential bundles it: the extension `exp_request_shield`
+  (GPL-2.0-or-later) packages the library and runs it in front of every request, and the default installation requires
+  it ([Request shield](../features/6.0/request-shield.md)). Its website <https://request-shield.com/> was private when
+  this page was written, so nothing more is said here.
 - **The package server** `exponential.packages.exponential.earth` serves the packages of the setup wizard ("Users do
   not need to use this server outside the setup wizard usage", repository description).
 - **AdminNeo**, through `sevenx_dse`, the database source editor ([sevenx_dse](../features/6.0/extensions/sevenx_dse.md)).

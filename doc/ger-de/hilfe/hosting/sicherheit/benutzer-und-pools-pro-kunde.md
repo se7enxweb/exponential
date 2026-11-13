@@ -87,8 +87,10 @@ Benutzer und Gruppe und die PHP-Werte, die Exponential braucht (`memory_limit` m
 [PHP-Auswahl und FPM-Pools](../control-panels/php-auswahl-und-fpm-pools.md). Auf Maschinen mit mehreren PHP-Versionen findet
 `exp:velocity deploy` den Master, der die Website ausliefert (`[DeploySettings] PhpFpmService=auto`).
 
-Halten Sie Sitzungsdateien, `upload_tmp_dir` und jedes `auto_prepend_file` (zum Beispiel request-shield) pro Pool, damit nichts von einem
-Kunden im Verzeichnis eines anderen landet.
+Halten Sie Sitzungsdateien, `upload_tmp_dir` und jedes `auto_prepend_file` pro Pool, damit nichts von einem
+Kunden im Verzeichnis eines anderen landet. Request Shield braucht kein `auto_prepend_file`: Seit 6.0.15 führt jede
+Website ihn über die Hook-Zeile in ihrer eigenen `config.php` aus, mit Regeln und Log in ihren eigenen Verzeichnissen
+`settings/request-shield/` und `var/request-shield/`.
 
 ## Eine Velocity-Instanz pro Kunde
 
