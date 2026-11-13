@@ -45,7 +45,7 @@ class expImageAliasLog
         if ( self::$directory !== null )
         {
             if ( !is_dir( self::$directory ) )
-                @mkdir( self::$directory, 0777, true );
+                eZDir::mkdir( self::$directory, false, true );
             return @file_put_contents( self::path(), '[ ' . date( 'M d Y H:i:s' ) . ' ][ - ][ - ] ' . $line . "\n", FILE_APPEND | LOCK_EX ) !== false;
         }
         eZLog::write( $line, self::FILE );

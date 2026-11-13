@@ -206,10 +206,7 @@ class expImageAliasLock
         $directory = self::directory();
         if ( !is_dir( $directory ) )
         {
-            if ( class_exists( 'eZDir' ) )
-                eZDir::mkdir( $directory, false, true );
-            else
-                @mkdir( $directory, 0777, true );
+            eZDir::mkdir( $directory, false, true );
         }
         $file = $this->lockFile();
         while ( true )
@@ -236,8 +233,8 @@ class expImageAliasLock
                 if ( $locked && $named && $locked['ino'] === $named['ino'] && $locked['dev'] === $named['dev'] )
                 {
                     $this->handle = $handle;
+                    // No chmod: another user opens it read-only, which is enough for flock()
                     $this->lockFile = $file;
-                    @chmod( $file, 0666 );
                     return $this->held = true;
                 }
                 @flock( $handle, LOCK_UN );
