@@ -357,7 +357,8 @@ beide. Die Seite hat fünf Teile:
   Formatvarianten in der Reihenfolge, in der sie versucht werden, mit WebP/AVIF; Umgebung und Quelle (Zustand des
   Schutzschalters, Fehler, letzter Fehler, eine Schaltfläche zum Zurücksetzen); wartende, laufende und
   fehlgeschlagene Jobs je Jobtyp und ob Massenläufe pausiert sind; die letzten 24 Stunden aus dem Log (erzeugt,
-  Platzhalter, Fehler, geholt, Läufe, jeweils ein Link in den Verlauf); das Alter des Signaturschlüssels, die
+  Platzhalter, Fehler, an einen Job übergeben, geholt, Läufe, jeweils ein Link in den Verlauf; ein an einen Job
+  übergebener Alias ist kein Fehler und löst keine Warnung aus); das Alter des Signaturschlüssels, die
   Gültigkeit des vorherigen Schlüssels und **Schlüssel wechseln**; Prüfungen, die Aufmerksamkeit brauchen; „So
   funktioniert es“.
 - **Massenläufe**: Erzeugen, Neu erzeugen oder Entfernen (und Abgleich auf einer Staging-Installation) über die ganze
@@ -390,7 +391,7 @@ Webservers gehören.
 
 | Unterbefehl | Was er tut |
 |---|---|
-| `status` (Standard) | Modus, Einstellungen, Konverter, Staging-Quelle, Warteschlange, Pause, die letzten 24 Stunden des Logs, Prüfungen und die letzten Läufe. `--job=<id>` ein Job mit seinem Fortschritt; `--pause[=<reason>]` und `--resume` pausieren die Massenläufe aller Server oder lassen sie weiterlaufen; `--cancel=<id>` bricht einen Job für Bild-Aliase ab |
+| `status` (Standard) | Modus, Einstellungen, Konverter, Staging-Quelle, Warteschlange, Pause, die letzten 24 Stunden des Logs (Fehler und an einen Job übergebene Aliase getrennt; json: `dashboard.counts.failures` und `.deferred`), Prüfungen und die letzten Läufe. `--job=<id>` ein Job mit seinem Fortschritt; `--pause[=<reason>]` und `--resume` pausieren die Massenläufe aller Server oder lassen sie weiterlaufen; `--cancel=<id>` bricht einen Job für Bild-Aliase ab |
 | `generate` | die fehlenden Aliase erzeugen |
 | `regenerate` | die Aliase entfernen und neu erzeugen |
 | `purge` | die Aliase entfernen (die Originale bleiben); ein Seitenaufruf erzeugt sie auf Abruf neu |
@@ -443,8 +444,12 @@ und `LogFileCompress` rotiert:
 [ Nov 13 2026 09:12:01 ][ site ][ <request> ] event=generate result=ok ms=84 alias=small run=- path=var/site/storage/...
 ```
 
-Ereignisse: `generate`, `fail`, `placeholder`, `stage`, `queue`, `run-start`, `run-end`, `pause`, `resume` (und
-`serve`, das nicht geschrieben wird: eine Zeile je Bildanfrage würde das Log fluten). `run-start` und `run-end` eines
+Ereignisse: `generate`, `fail`, `defer`, `placeholder`, `stage`, `queue`, `run-start`, `run-end`, `pause`, `resume`
+(und `serve`, das nicht geschrieben wird: eine Zeile je Bildanfrage würde das Log fluten). `defer` (`result=timeout`)
+heißt: Innerhalb der Wartezeit wurde kein Umwandlungsplatz und keine Sperre frei; die Anfrage hat den Platzhalter
+geliefert, und ein Job erzeugt den Alias oder die Variante. Das ist kein Fehler. Logs von vor `defer` enthalten dafür
+`event=fail result=timeout`; Übersicht und Verlauf lesen diese Zeilen als `defer` (die Datei bleibt unverändert). Ein
+Abruf beim Staging, der in eine Zeitüberschreitung lief, nennt seine Quelle (`source=`) und bleibt ein `fail`. `run-start` und `run-end` eines
 Massenlaufs tragen die Lauf-ID, die die Seite und der Befehl ausgeben; `run-end` trägt die Zählungen. Zeilen einer
 Umwandlung tragen ihren Platz, wie lange sie auf den Platz gewartet und wie lange sie ihn gehalten hat. Der Verlauf in
 Setup > Bild-Aliase und Setup > Logdateien lesen es live.

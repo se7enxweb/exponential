@@ -328,8 +328,9 @@ both. The page has five parts:
   script, pre-generation (with the alias list when set), the number of aliases; the converters of the format variants
   in try order with WebP/AVIF; environment and source (breaker state, failures, last error, a reset button); jobs
   waiting, running and failed per job type, and whether bulk runs are paused; the last 24 hours from the log
-  (generated, placeholders, failures, staged, runs, each a link into the history); the signing key's age, the
-  previous key's validity and **Rotate the key**; checks that need attention; "How it works".
+  (generated, placeholders, failures, deferred to a job, staged, runs, each a link into the history; an alias
+  deferred to a job is no failure and raises no warning); the signing key's age, the previous key's validity and
+  **Rotate the key**; checks that need attention; "How it works".
 - **Bulk runs**: generate, regenerate or purge (and resync on a staging installation) over the whole site, a node or a
   subtree, with classes, attributes, aliases, "changed since" and a limit; dry run; overwrite for resync. Runs are
   queued as jobs with a live progress card (cancel, pause, resume); without a queue at most 50 images run in the
@@ -355,7 +356,7 @@ Started as root, it first becomes the owner of `var/`, so the files it writes be
 
 | Subcommand | What it does |
 |---|---|
-| `status` (default) | mode, settings, converters, staging source, queue, pause, the last 24 hours of the log, checks and the latest runs. `--job=<id>` one job with its progress; `--pause[=<reason>]` and `--resume` pause or let go on the bulk runs of every server; `--cancel=<id>` cancels a job of image aliases |
+| `status` (default) | mode, settings, converters, staging source, queue, pause, the last 24 hours of the log (failures and aliases deferred to a job apart; json: `dashboard.counts.failures` and `.deferred`), checks and the latest runs. `--job=<id>` one job with its progress; `--pause[=<reason>]` and `--resume` pause or let go on the bulk runs of every server; `--cancel=<id>` cancels a job of image aliases |
 | `generate` | make the aliases that are missing |
 | `regenerate` | remove the aliases and make them again |
 | `purge` | remove the aliases (the originals stay); a page view makes them again on demand |
@@ -407,8 +408,12 @@ through the kernel's log, so it rotates under `site.ini [FileSettings] LogFileMa
 [ Nov 13 2026 09:12:01 ][ site ][ <request> ] event=generate result=ok ms=84 alias=small run=- path=var/site/storage/...
 ```
 
-Events: `generate`, `fail`, `placeholder`, `stage`, `queue`, `run-start`, `run-end`, `pause`, `resume` (and `serve`,
-which is not written: one line per image request would flood the log). A bulk run's `run-start` and `run-end` carry
+Events: `generate`, `fail`, `defer`, `placeholder`, `stage`, `queue`, `run-start`, `run-end`, `pause`, `resume` (and
+`serve`, which is not written: one line per image request would flood the log). `defer` (`result=timeout`) means no
+conversion slot or lock came free within the wait: the request answered the placeholder and a job makes the alias or
+variant, so it is no failure. Logs written before `defer` existed have `event=fail result=timeout` for this; the
+dashboard and the run history read those lines as `defer` (the file is not changed). A staging fetch that timed out
+names its source (`source=`) and stays a `fail`. A bulk run's `run-start` and `run-end` carry
 the run id that the page and the command print; `run-end` carries the counts. Lines of a conversion carry its slot,
 how long it waited for the slot and how long it held it. The run history of Setup > Image aliases and Setup > Log files
 read it live.

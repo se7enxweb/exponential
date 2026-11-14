@@ -7063,7 +7063,7 @@ d764ef1d7e05fc5071e8521fe1dbe843  doc/eng-us/features/6.0/help-content.md
 4f1a1ae7306c96e21887396933a67685  doc/eng-us/features/6.0/help-system.md
 1497f038f1fb68bf320b385032fe2e31  doc/eng-us/features/6.0/hidden-admin-tabs.md
 67e2133c059b3294dd3d9275b167b820  doc/eng-us/features/6.0/icon-themes-in-extensions.md
-a3e8d7a4b2379e2a7d1b2ac8d069f9ba  doc/eng-us/features/6.0/image-aliases-on-demand.md
+6a4e1d631c72cd3e247907dfb376228c  doc/eng-us/features/6.0/image-aliases-on-demand.md
 c8c732f08abfb2593fd5f7599f60905f  doc/eng-us/features/6.0/install-in-one-command.md
 1a6c0d26fd13dea1a6e2b109c412530d  doc/eng-us/features/6.0/installation-name-in-pages.md
 ef86408eb52d65639150b32f89ecf5eb  doc/eng-us/features/6.0/jquery4-and-yui-removal.md
@@ -10320,7 +10320,7 @@ ad3c6176e2df7c9aaf202c2f10cb8a65  doc/eng-us/help/hosting/servers/velocity-besid
 07f8fed4fddfe0f38b05dd65281733c2  doc/eng-us/help/hosting/servers/velocity-https-certificates.md
 86f811bb9fe49ca9c1915aea1a6e3361  doc/eng-us/help/hosting/servers/velocity-workers-and-pools.md
 f6579144431c6fa63f4a0fc3fe2c4c00  doc/eng-us/help/hosting/static-publishing-and-your-hosting.md
-58ec9dcb9a0ed8eeab3b09d07c0a7712  doc/eng-us/help/image-aliases.md
+18f7d081589f3b7ae2dde36b9aa01387  doc/eng-us/help/image-aliases.md
 fcdea3299a32c3730f641822280611cf  doc/eng-us/help/images/accounts/admin-tour-header-dark.webp
 58926ad2a9a9b9f7a48a56d711f50cf0  doc/eng-us/help/images/accounts/change-password-form.webp
 86837f82d2244615e6714193b4b371a0  doc/eng-us/help/images/accounts/current-user-box.webp
@@ -17089,7 +17089,7 @@ b84f7c8bcee906734aff197e984eb450  doc/ger-de/funktionen/6.0/benutzer-auditprotok
 01bdf1a7b634a65d50398bd9afe37d36  doc/ger-de/funktionen/6.0/berechtigungspruefung-bei-vielen-zuweisungen.md
 1bba785c9852e2e139030b7f31d9182a  doc/ger-de/funktionen/6.0/bestellbelege.md
 dcb3a9249b7895ce43a2fc239356fe22  doc/ger-de/funktionen/6.0/bestellungen-nach-siteaccess.md
-43dde0d82242e2da84d9d4538dc3cc93  doc/ger-de/funktionen/6.0/bild-aliase-auf-abruf.md
+ff7c4378e72f938a4e11f0360dc7a54a  doc/ger-de/funktionen/6.0/bild-aliase-auf-abruf.md
 e5e4bca0d8e45f940df7c289f45b3bb6  doc/ger-de/funktionen/6.0/cache-leeren-durch-umbenennen.md
 c60cd2b24e9d7d010b86a57124ae2ab2  doc/ger-de/funktionen/6.0/content-security-policy.md
 1242ab657fedf66ac0d81c8127d723ad  doc/ger-de/funktionen/6.0/cronjobs-in-der-konsole.md
@@ -17692,7 +17692,7 @@ b0dab238fd660a80d57f170c1c839412  doc/ger-de/hilfe/benutzerverwaltung-von-der-ko
 db45fc747e4ec82e1d98c464c3e9b806  doc/ger-de/hilfe/benutzerverwaltung-von-der-konsole/wenn-ein-befehl-fehlschlaegt.md
 fb3c7fbec3ab24a8a562f408d5b32581  doc/ger-de/hilfe/benutzerverwaltung-von-der-konsole/zweistufige-anmeldung-nach-verlorenem-telefon-zuruecksetzen.md
 b1e060439d1fcc2d70b29b08015aa8a9  doc/ger-de/hilfe/betriebssystemunterstuetzung.md
-c6685f6d2665a14a9f533b74d97ccc6c  doc/ger-de/hilfe/bild-aliase.md
+e68aeca639602c78f8676cee29a84085  doc/ger-de/hilfe/bild-aliase.md
 cbf7ba8232f687a882a70f3393cb32b0  doc/ger-de/hilfe/bilder/accounts/admin-tour-header-dark.webp
 1d5fa27c0bd41dd15ffa08c3dbf25bd4  doc/ger-de/hilfe/bilder/accounts/change-password-form.webp
 6289c1a8852dcf166249e937d538d0e5  doc/ger-de/hilfe/bilder/accounts/current-user-box.webp

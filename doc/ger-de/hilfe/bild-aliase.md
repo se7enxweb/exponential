@@ -43,8 +43,10 @@ Was die Website gerade tut und was Aufmerksamkeit braucht:
   Zeigt, ob die Quelle antwortet, die Fehler in Folge, den letzten Fehler und ob sie pausiert ist. **Fehler
   zurücksetzen und die Quelle wieder fragen** beendet eine Pause.
 - **Job-Warteschlange**: wartende, laufende und fehlgeschlagene Bild-Jobs und ob Massenläufe pausiert sind.
-- **Die letzten 24 Stunden**: erzeugte Aliase, ausgelieferte Platzhalter, Fehler, geholte Dateien, gestartete Läufe.
-  Jede Zahl öffnet die passenden Zeilen des Verlaufs.
+- **Die letzten 24 Stunden**: erzeugte Aliase, ausgelieferte Platzhalter, Fehler, an einen Job übergeben, geholte
+  Dateien, gestartete Läufe. Jede Zahl öffnet die passenden Zeilen des Verlaufs. **An einen Job übergeben** zählt
+  Aliase, für die rechtzeitig kein Umwandlungsplatz frei wurde: Der Besucher sah den Platzhalter, und ein Job erzeugt
+  den Alias. Auf einer vollen Seite ist das normal und kein Fehler; nur echte Fehler lösen die Warnung aus.
 - **Signaturschlüssel**: das Alter des Schlüssels, der Bildadressen signiert, und wie lange der vorherige noch
   akzeptiert wird. **Schlüssel wechseln** erzeugt einen neuen; Adressen auf Seiten, die mit dem alten Schlüssel
   zwischengespeichert sind, funktionieren während der Übergangszeit weiter (standardmäßig eine Woche). Wechseln Sie
@@ -87,7 +89,8 @@ ganzen Teilbaums. Sie laufen als Jobs.
 
 Die neuesten Zeilen von `imagealias.log`: was erzeugt, geholt, abgewiesen oder eingereiht wurde, mit der Zeit, die es
 gedauert hat. Filtern Sie nach Ereignis (oder nur den Läufen), Lauf-ID, Alias oder einem Teil des Pfads, und wählen
-Sie, wie viele Zeilen gezeigt werden. **Verfolgen** hält die Liste alle drei Sekunden aktuell. Eine Lauf-ID öffnet
+Sie, wie viele Zeilen gezeigt werden. Das Ereignis `defer` ist ein an einen Job übergebener Alias, `fail` ein echter
+Fehler; ältere Zeilen mit `fail result=timeout` werden als `defer` gezeigt. **Verfolgen** hält die Liste alle drei Sekunden aktuell. Eine Lauf-ID öffnet
 die Zeilen dieses Laufs. Die ganze Datei steht auch unter Setup > Logdateien.
 
 ## Einstellungen

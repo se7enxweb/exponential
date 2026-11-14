@@ -42,8 +42,10 @@ What the site is doing now, and what needs attention:
   whether the source answers, the failures in a row, the last error, and whether it is paused. **Reset the failures
   and ask the source again** ends a pause.
 - **Job queue**: image jobs waiting, running and failed, and whether bulk runs are paused.
-- **The last 24 hours**: aliases generated, placeholders answered, failures, files staged, runs started. Each number
-  opens the matching lines of the run history.
+- **The last 24 hours**: aliases generated, placeholders answered, failures, deferred to a job, files staged, runs
+  started. Each number opens the matching lines of the run history. **Deferred to a job** counts aliases that got no
+  conversion slot in time: the visitor saw the placeholder and a job makes the alias. That is normal on a busy page
+  and no failure; only real failures raise the warning.
 - **Signing key**: the age of the key that signs image addresses, and how long the previous one is still accepted.
   **Rotate the key** makes a new one; addresses on pages cached with the old key keep working for the grace period
   (a week by default). Rotate it if you suspect the key has leaked.
@@ -81,7 +83,8 @@ regenerate or remove the aliases of the item or of its whole subtree. They run a
 ## Run history
 
 The newest lines of `imagealias.log`: what was made, fetched, refused or queued, with the time it took. Filter by
-event (or only the runs), run id, alias or a part of the path, and choose how many lines to show. **Follow** keeps the
+event (or only the runs), run id, alias or a part of the path, and choose how many lines to show. The event `defer`
+is an alias deferred to a job, `fail` a real failure; older lines that say `fail result=timeout` are shown as `defer`. **Follow** keeps the
 list current every three seconds. A run id opens the lines of that run. The whole file is also in Setup > Log files.
 
 ## Settings
