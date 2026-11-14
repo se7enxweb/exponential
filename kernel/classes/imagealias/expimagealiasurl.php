@@ -50,6 +50,9 @@ class expImageAliasUrl
     /** Seconds the keys are kept in the process (persistent workers) before they are read again */
     const KEY_TTL = 300;
 
+    /** Seconds before a process that found no key (or could not read it) asks the store again */
+    const KEY_RETRY = 5;
+
     /** @var array|null current => string|null, previous => string|null, previous_until => int, read => int */
     protected static $keys = null;
 
@@ -101,8 +104,15 @@ class expImageAliasUrl
         {
             try
             {
+                // expSecrets keeps what it read for the life of the process, and a persistent worker (Velocity)
+                // inherits what its parent read at the warm-up: it would never see a key changed by another process
+                // (rotateKey()), so the keys are read from the store itself (at most once per KEY_TTL)
+                expSecrets::reset();
                 $current = expSecrets::get( self::SECRET );
-                if ( ( $current === null || $current === '' ) && $create && self::storeAvailable() )
+                // Only a key that is really not there is made: a read that failed (a busy database) must not replace
+                // the key, which would end every URL signed so far, without a grace period
+                if ( self::mayCreateKey( $current, $create, $create && self::storeAvailable() && ( $current === null || $current === '' )
+                                                                           ? self::secretMissing() : false ) )
                 {
                     expSecrets::set( self::SECRET, bin2hex( random_bytes( 32 ) ), 'image',
                                      'Signs the URLs of image aliases that are made on demand (content/image). Changing it ends the old URLs after the grace period.' );
@@ -120,9 +130,62 @@ class expImageAliasUrl
                 eZDebug::writeError( 'The image alias signing key could not be read: ' . $e->getMessage(), __METHOD__ );
             }
         }
-        self::$keys = array( 'current' => is_string( $current ) && $current !== '' ? $current : null,
-                             'previous' => $previous, 'previous_until' => $previousUntil, 'read' => time() );
+        self::$keys = self::keysEntry( $current, $previous, $previousUntil, time() );
         return self::$keys;
+    }
+
+    /**
+     * The keys as a process keeps them. No key (not made yet, or the read failed) is asked again after KEY_RETRY
+     * seconds, a key after KEY_TTL.
+     *
+     * @param string|null $current
+     * @param string|null $previous
+     * @param int $previousUntil
+     * @param int $now
+     * @return array current, previous, previous_until, read (the time the entry counts as read)
+     */
+    public static function keysEntry( $current, $previous, $previousUntil, $now )
+    {
+        $current = is_string( $current ) && $current !== '' ? $current : null;
+        return array( 'current' => $current, 'previous' => is_string( $previous ) && $previous !== '' ? $previous : null,
+                      'previous_until' => (int)$previousUntil,
+                      'read' => $current === null ? (int)$now - self::KEY_TTL + self::KEY_RETRY : (int)$now );
+    }
+
+    /**
+     * Whether a new signing key is made: only when one is wanted, none was read and the store says for sure that
+     * there is none. A read that failed (a busy database: $missing null) never replaces the key, which would end
+     * every URL signed so far without a grace period.
+     *
+     * @param string|null $current what was read
+     * @param bool $create
+     * @param bool|null $missing secretMissing(): true missing, false there, null unknown
+     * @return bool
+     */
+    public static function mayCreateKey( $current, $create, $missing )
+    {
+        return $create && ( $current === null || $current === '' ) && $missing === true;
+    }
+
+    /**
+     * Whether the signing key's row is missing from the secret store, asked straight from the database.
+     *
+     * @return bool|null true missing, false there, null unknown (the database did not answer)
+     */
+    protected static function secretMissing()
+    {
+        try
+        {
+            $db = eZDB::instance();
+            $rows = $db->arrayQuery( "SELECT COUNT(*) AS n FROM " . expSecret::TABLE . " WHERE name = '" . $db->escapeString( self::SECRET ) . "'" );
+        }
+        catch ( Throwable $e )
+        {
+            return null;
+        }
+        if ( !is_array( $rows ) || !isset( $rows[0]['n'] ) )
+            return null;
+        return (int)$rows[0]['n'] === 0;
     }
 
     /**

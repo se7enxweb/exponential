@@ -11,6 +11,9 @@
  *  IAU-06 - storage paths of aliases are read (published and versioned directories, aliases with "_" in the
  *           basename or the alias name); anything outside the storage, or with "..", is refused
  *  IAU-07 - malformed tokens, file names and parameters are refused
+ *  IAU-08 - the signing key: a read that failed never makes a new key (only a key the store says is missing); no key
+ *           is asked again within seconds, a key after KEY_TTL; every read goes to the store itself, so a
+ *           persistent worker sees a key another process changed
  *
  * Run: php vendor/bin/phpunit tests/tests/kernel/classes/imagealias/expImageAliasUrlTest.php
  *
@@ -212,5 +215,39 @@ class expImageAliasUrlTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( expImageAliasUrl::validFileName( 'a/b.jpg' ) );
         $this->assertFalse( expImageAliasUrl::validFileName( "a\nb.jpg" ) );
         $this->assertTrue( expImageAliasUrl::validFileName( 'Sea_small.jpg' ) );
+    }
+
+    /** IAU-08 */
+    public function testTheSigningKeyIsNeverReplacedByAFailedRead()
+    {
+        // A new key only when wanted, none was read and the store says for sure that there is none
+        $this->assertTrue( expImageAliasUrl::mayCreateKey( null, true, true ), 'the first URL makes the key' );
+        $this->assertTrue( expImageAliasUrl::mayCreateKey( '', true, true ) );
+        $this->assertFalse( expImageAliasUrl::mayCreateKey( null, true, null ), 'the database did not answer: no new key' );
+        $this->assertFalse( expImageAliasUrl::mayCreateKey( null, true, false ), 'the row is there, the read failed: no new key' );
+        $this->assertFalse( expImageAliasUrl::mayCreateKey( null, false, true ), 'verifying never makes a key' );
+        $this->assertFalse( expImageAliasUrl::mayCreateKey( 'k', true, true ), 'a key that was read stays' );
+
+        // A key is kept KEY_TTL seconds; no key is asked again after KEY_RETRY seconds
+        $now = 1800000000;
+        $entry = expImageAliasUrl::keysEntry( str_repeat( 'k', 64 ), null, 0, $now );
+        $this->assertSame( $now, $entry['read'] );
+        $this->assertNull( $entry['previous'] );
+        $entry = expImageAliasUrl::keysEntry( null, 'old', 5, $now );
+        $this->assertNull( $entry['current'] );
+        $this->assertSame( 'old', $entry['previous'] );
+        $this->assertSame( expImageAliasUrl::KEY_TTL - expImageAliasUrl::KEY_RETRY, $now - $entry['read'], 'read again after KEY_RETRY seconds' );
+        $this->assertLessThan( 60, expImageAliasUrl::KEY_RETRY );
+
+        // Every read goes to the store itself (expSecrets keeps values for the life of a persistent worker), and
+        // a new key is made only through mayCreateKey() with the store's own answer
+        $source = (string)file_get_contents( dirname( __DIR__, 5 ) . '/kernel/classes/imagealias/expimagealiasurl.php' );
+        $keys = substr( $source, strpos( $source, 'public static function keys(' ) );
+        $keys = substr( $keys, 0, strpos( $keys, 'public static function keysEntry(' ) );
+        $this->assertGreaterThan( 0, strpos( $keys, 'expSecrets::reset()' ) );
+        $this->assertLessThan( strpos( $keys, 'expSecrets::get( self::SECRET )' ), strpos( $keys, 'expSecrets::reset()' ), 'reset before the read' );
+        $this->assertStringContainsString( 'self::mayCreateKey(', $keys );
+        $this->assertStringContainsString( 'self::secretMissing()', $keys );
+        $this->assertSame( 1, substr_count( $keys, 'expSecrets::set( self::SECRET,' ), 'the key is made in one place only' );
     }
 }
