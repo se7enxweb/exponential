@@ -17,7 +17,8 @@
  * renders, as Exponential always did. The switch works both ways at any time; nothing is migrated.
  *
  * Command line scripts (cronjobs, mailers, exports) always work in render mode: they read the alias files they ask
- * for, and nobody is there to ask for a URL later.
+ * for, and nobody is there to ask for a URL later. A web server running PHP in the CLI SAPI (Velocity, PHP's built-in
+ * server) is not a command line script: its requests follow the settings like PHP-FPM's (isWebProcess()).
  *
  * @since 6.0.15
  * @package kernel
@@ -44,9 +45,23 @@ class expImageAliasSettings
             return false;
         if ( self::$modeOverride !== null )
             return self::$modeOverride === self::MODE_ON_DEMAND;
-        if ( PHP_SAPI === 'cli' || PHP_SAPI === 'phpdbg' )
+        if ( !self::isWebProcess() )
             return false;
         return self::configuredMode() === self::MODE_ON_DEMAND;
+    }
+
+    /**
+     * Whether this process answers a web request. A web server that runs PHP in the CLI SAPI (Velocity's
+     * persistent workers, PHP's built-in server) answers browsers as 'cli' too; a request method and a Host header
+     * tell it from a command line script (eZExecution::isWebRequest()).
+     *
+     * @return bool
+     */
+    public static function isWebProcess()
+    {
+        if ( PHP_SAPI === 'phpdbg' )
+            return false;
+        return eZExecution::isWebRequest();
     }
 
     /**

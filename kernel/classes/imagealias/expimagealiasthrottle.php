@@ -456,7 +456,8 @@ class expImageAliasThrottle
     public static function lowerPriority( $nice = null )
     {
         $nice = $nice === null ? self::bulkNice() : max( 0, min( 19, (int)$nice ) );
-        if ( $nice <= 0 || PHP_SAPI !== 'cli' || !function_exists( 'pcntl_getpriority' ) || !function_exists( 'pcntl_setpriority' ) )
+        if ( $nice <= 0 || PHP_SAPI !== 'cli' || expImageAliasSettings::isWebProcess()
+             || !function_exists( 'pcntl_getpriority' ) || !function_exists( 'pcntl_setpriority' ) )
             return null;
         $before = @pcntl_getpriority();
         if ( !is_int( $before ) || $before >= $nice )

@@ -15,6 +15,9 @@
  *  IAS-06 - the log: one line per event, read back newest first, a URL with "]" in the request context
  *  IAS-07 - the mode switch: on-demand by default, render on the command line and inside withRender()
  *  IAS-08 - request paths: the www directory, index_image.php/ and the query string are taken off
+ *  IAS-09 - a web server in the CLI SAPI (Velocity, the built-in server) follows the settings like PHP-FPM: a request
+ *           method and a Host header make it a web process; without them the command line rule (render) stays; a web
+ *           process never lowers its priority
  *
  * Run: php vendor/bin/phpunit tests/tests/kernel/classes/imagealias/expImageAliasServerTest.php
  *
@@ -277,5 +280,43 @@ class expImageAliasServerTest extends PHPUnit\Framework\TestCase
     {
         $this->assertSame( 'var/site/storage/images/a/1-1-eng-GB/a_small.jpg', expImageAliasServer::normalizeRequestPath( '/var/site/storage/images/a/1-1-eng-GB/a_small.jpg?x=1' ) );
         $this->assertSame( 'var/site/storage/images/a/1-1-eng-GB/a b_small.jpg', expImageAliasServer::normalizeRequestPath( '/index_image.php/var/site/storage/images/a/1-1-eng-GB/a%20b_small.jpg' ) );
+    }
+
+    /** IAS-09 */
+    public function testAWebServerInTheCliSapiFollowsTheSettings()
+    {
+        $saved = array();
+        foreach ( array( 'REQUEST_METHOD', 'HTTP_HOST' ) as $key )
+            $saved[$key] = isset( $_SERVER[$key] ) ? $_SERVER[$key] : null;
+        try
+        {
+            unset( $_SERVER['REQUEST_METHOD'], $_SERVER['HTTP_HOST'] );
+            $this->assertFalse( expImageAliasSettings::isWebProcess(), 'a command line script' );
+            $this->assertFalse( expImageAliasSettings::isOnDemand(), 'the command line converts at once' );
+
+            // What a Velocity worker (PHP_SAPI cli) has while it answers a browser
+            $_SERVER['REQUEST_METHOD'] = 'GET';
+            $_SERVER['HTTP_HOST'] = 'www.example.org';
+            $this->assertTrue( expImageAliasSettings::isWebProcess() );
+            $this->assertSame( expImageAliasSettings::configuredMode() === expImageAliasSettings::MODE_ON_DEMAND,
+                               expImageAliasSettings::isOnDemand(), 'a request follows the settings, as under PHP-FPM' );
+            $this->assertFalse( expImageAliasSettings::withRender( function () {
+                return expImageAliasSettings::isOnDemand();
+            } ), 'content/image still makes the alias in render mode' );
+            expImageAliasSettings::setMode( 'render' );
+            $this->assertFalse( expImageAliasSettings::isOnDemand(), 'the process mode wins' );
+            expImageAliasSettings::setMode( null );
+            $this->assertNull( expImageAliasThrottle::lowerPriority( 10 ), 'a web server worker is never reniced' );
+        }
+        finally
+        {
+            foreach ( $saved as $key => $value )
+            {
+                if ( $value === null )
+                    unset( $_SERVER[$key] );
+                else
+                    $_SERVER[$key] = $value;
+            }
+        }
     }
 }
