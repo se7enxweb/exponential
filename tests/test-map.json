@@ -211,7 +211,8 @@
       "tests/tests/kernel/classes/imagealias/expImageAliasStagerTest.php",
       "tests/tests/kernel/classes/imagealias/expImageAliasQueueTest.php",
       "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php",
-      "tests/tests/kernel/private/classes/commands/expImageAliasCommandTest.php"
+      "tests/tests/kernel/private/classes/commands/expImageAliasCommandTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasPreGenerateTest.php"
     ],
     "tests/tests/kernel/classes/imagealias/fixtures/*": [
       "tests/tests/kernel/classes/imagealias/expImageAliasStagerTest.php"
@@ -238,7 +239,8 @@
       "tests/tests/kernel/classes/imagealias/expImageAliasServerTest.php",
       "tests/tests/kernel/classes/imagealias/expImageAliasFormatsTest.php",
       "tests/tests/kernel/classes/imagealias/expImageAliasStagerTest.php",
-      "tests/tests/kernel/classes/imagealias/expImageAliasQueueTest.php"
+      "tests/tests/kernel/classes/imagealias/expImageAliasQueueTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasPreGenerateTest.php"
     ],
     "lib/ezimage/classes/expimagefocalpoint.php": [
       "tests/tests/lib/ezimage/expImageFocalPointTest.php"
@@ -801,7 +803,8 @@
       "tests/tests/kernel/content/eZPendingIndexActionsTest.php",
       "tests/tests/kernel/classes/expLegacyForkFixesTest.php",
       "tests/tests/kernel/content/eZContentOperationCollectionPublishNodeTest.php",
-      "tests/tests/kernel/classes/imagealias/expImageAliasQueueTest.php"
+      "tests/tests/kernel/classes/imagealias/expImageAliasQueueTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasPreGenerateTest.php"
     ],
     "kernel/content/operation_definition.php": [
       "tests/tests/kernel/content/eZPendingIndexActionsTest.php",
@@ -3231,10 +3234,12 @@
       "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php"
     ],
     "design/admin*/templates/setup/aliases.tpl": [
-      "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php"
+      "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasPreGenerateTest.php"
     ],
     "design/admin*/templates/setup/aliases_setting_row.tpl": [
-      "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php"
+      "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasPreGenerateTest.php"
     ],
     "design/admin4/javascript/page/setup_aliases.js": [
       "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php"
