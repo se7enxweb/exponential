@@ -210,7 +210,8 @@
       "tests/tests/kernel/classes/imagealias/expImageAliasFormatsTest.php",
       "tests/tests/kernel/classes/imagealias/expImageAliasStagerTest.php",
       "tests/tests/kernel/classes/imagealias/expImageAliasQueueTest.php",
-      "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php"
+      "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php",
+      "tests/tests/kernel/private/classes/commands/expImageAliasCommandTest.php"
     ],
     "tests/tests/kernel/classes/imagealias/fixtures/*": [
       "tests/tests/kernel/classes/imagealias/expImageAliasStagerTest.php"
@@ -3237,6 +3238,18 @@
     ],
     "design/admin4/javascript/page/setup_aliases.js": [
       "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php"
+    ],
+    "bin/php/expimagealias.php": [
+      "tests/tests/kernel/private/classes/commands/expImageAliasCommandTest.php"
+    ],
+    "kernel/private/classes/commands/expimagealias.php": [
+      "tests/tests/kernel/private/classes/commands/expImageAliasCommandTest.php"
+    ],
+    "kernel/private/classes/commands/cache.php": [
+      "tests/tests/kernel/private/classes/commands/expImageAliasCommandTest.php"
+    ],
+    "design/admin*/templates/setup/cache.tpl": [
+      "tests/tests/kernel/private/classes/commands/expImageAliasCommandTest.php"
     ]
   },
   "generated": {
