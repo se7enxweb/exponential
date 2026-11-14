@@ -110,6 +110,22 @@ class expVelocityDeployCachePlanTest extends ezpTestCase
         $this->assertFalse( $kernel['rendered'] );
     }
 
+    /**
+     * --packer clears the packed scripts and styles; every cached page names them, so the rendered caches (content,
+     * exphttpcache, template-block, Velocity's response cache) are cleared too, even when no template changed. A kept
+     * page loaded packed files that answered 404.
+     */
+    public function testPackerClearsTheCachedPagesThatNameThePackedFiles()
+    {
+        $packer = self::cleared( array(), array( 'packer' => true ) );
+        $this->assertTrue( $packer['rendered'], '--packer: cached pages name the packed files it clears' );
+        $this->assertFalse( $packer['template'] );
+        $this->assertFalse( $packer['ini'] );
+        $plan = expVelocityDeploy::plan( array( 'known' => true, 'since' => 1700000000, 'changed' => array() ), array( 'packer' => true ) );
+        $this->assertStringContainsString( '--packer', $plan['rendered'][1] );
+        $this->assertFalse( self::cleared( array() )['rendered'], 'without --packer and without changes they are kept' );
+    }
+
     public function testTheReasonNamesTheChangedFiles()
     {
         $plan = expVelocityDeploy::plan( array( 'known' => true, 'since' => 1700000000,

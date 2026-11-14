@@ -40,7 +40,7 @@ php bin/php/velocity.php --help
 | `--fpm-reload` |  | deploy: PHP-FPM neu laden, auch wenn sein OPcache die Dateien neu prüft (php.ini oder Pool geändert, Dateien umbenannt) |
 | `--no-velocity` |  | deploy: Velocity nicht neu starten |
 | `--no-autoload` |  | deploy: die Autoload-Arrays nicht neu erzeugen |
-| `--packer` |  | deploy: auch die gepackten Skripte und Styles leeren (ezjscore-packer, direkt vor template-block) |
+| `--packer` |  | deploy: auch die gepackten Skripte und Styles leeren (ezjscore-packer, zuerst, vor den Caches, die sie nennen) |
 | `--clear-content` |  | deploy: die Caches content, exphttpcache, template-block und den Antwort-Cache auch leeren, wenn sich kein Template, keine Design-Datei, keine Einstellung und keine Übersetzung geändert hat |
 | `--all-caches` |  | deploy: jeden Cache leeren, gleich was sich seit dem letzten Deployment geändert hat |
 | `--caches` | erforderlich | deploy: diese Caches auch leeren, was immer sich geändert hat (IDs oder Tags von ezcache, durch Kommas getrennt: die Liste, die ein Migrationslauf meldet) |

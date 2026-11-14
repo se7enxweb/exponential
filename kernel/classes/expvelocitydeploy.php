@@ -47,9 +47,9 @@
  *                                      (no reload, see fpmRevalidateWait()), or
  *                                      systemctl reload <[DeploySettings] PhpFpmService>
  *   7  restart Velocity                bin/php/velocity.php restart
- *   8  content, exphttpcache, ezjscore-packer (--packer) and template-block
- *      caches, one id per call; the packer only ever right before
- *      template-block
+ *   8  ezjscore-packer (--packer), then the content, exphttpcache and
+ *      template-block caches, one id per call: the packer first, so no cached
+ *      page keeps the names of packed files it removed
  *   9  Velocity's response cache
  *  9a  the help index: bin/php/exphelp.php index --no-images (what changed in
  *      the documentation; a failure does not stop the deploy)
@@ -143,13 +143,17 @@ class expVelocityDeploy
         $steps[] = $this->fpmStep();
         $steps[] = $this->velocityStep();
 
-        // --packer: the packed scripts and styles, always right before
-        // template-block. Cached page heads name the packed files; with the
-        // packer cleared alone they point to files that are gone, and the
-        // admin loses its scripts and styles until template-block is cleared.
-        $ids = array( 'content', 'exphttpcache' );
+        // --packer: the packed scripts and styles first, then every cache that names packed files (content,
+        // exphttpcache, template-block, and Velocity's response cache after them). A page rendered between a
+        // content clear and the packer clear was cached with the old file names, which the packer clear then
+        // removed: the page loaded scripts and styles that answer 404 until the content cache was cleared again.
+        // plan() clears them whenever --packer is given, even when no template changed: a kept page would name
+        // packed files that are gone.
+        $ids = array();
         if ( !empty( $this->options['packer'] ) )
             $ids[] = 'ezjscore-packer';
+        $ids[] = 'content';
+        $ids[] = 'exphttpcache';
         $ids[] = 'template-block';
         foreach ( $ids as $id )
             $steps[] = $id === 'ezjscore-packer' ? $this->cacheStep( $id ) : $this->planned( $this->cacheStep( $id ), $plan['rendered'] );
@@ -308,7 +312,9 @@ class expVelocityDeploy
             'translation'       => $decide( array( 'translations' ), 'translation' ),
             'design_base'       => $decide( array( 'templates', 'settings' ), 'template or settings' ),
             'rendered'          => $decide( array( 'templates', 'settings', 'translations' ), 'template, design file, settings or translation',
-                                            array( 'clear-content' => '--clear-content' ) ),
+                                            array( 'clear-content' => '--clear-content',
+                                                   // the packed files a cached page names are cleared: so is the page
+                                                   'packer' => '--packer (cached pages name the packed scripts and styles)' ) ),
         );
         // --caches: the caches a migration run touched (expMigrationAfterRun), cleared whatever files changed
         $asked = self::cacheList( isset( $options['caches'] ) ? $options['caches'] : array() );

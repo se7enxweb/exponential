@@ -508,8 +508,8 @@
         "de": "deploy: Velocity nicht neu starten"
     },
     "command:velocity --packer": {
-        "en": "deploy: clear the packed scripts and styles too (ezjscore-packer, right before template-block)",
-        "de": "deploy: auch die gepackten Skripte und Styles leeren (ezjscore-packer, direkt vor template-block)"
+        "en": "deploy: clear the packed scripts and styles too (ezjscore-packer, first, before the caches that name them)",
+        "de": "deploy: auch die gepackten Skripte und Styles leeren (ezjscore-packer, zuerst, vor den Caches, die sie nennen)"
     },
     "command:velocity --clear-content": {
         "en": "deploy: clear the content, exphttpcache, template-block and response caches even when no template, design file, setting or translation changed",
