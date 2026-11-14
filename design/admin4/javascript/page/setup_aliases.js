@@ -101,7 +101,7 @@
         var rows = document.getElementById( 'ia-log-rows' );
         var empty = document.getElementById( 'ia-log-empty' );
         var runBase = historyForm ? historyForm.getAttribute( 'data-base' ) + '/(run)/' : '';
-        var badge = { fail: ' is-bad', placeholder: ' is-warn', generate: ' is-ok', stage: ' is-info' };
+        var badge = { fail: ' is-bad', defer: ' is-info', placeholder: ' is-warn', generate: ' is-ok', stage: ' is-info' };
         var logTimer = null;
         var cell = function ( row, className ) { var td = document.createElement( 'td' ); if ( className ) td.className = className; row.appendChild( td ); return td; };
         var code = function ( parent, value, className ) { var c = document.createElement( 'code' ); if ( className ) c.className = className; c.textContent = value; parent.appendChild( c ); return c; };

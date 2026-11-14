@@ -14,10 +14,12 @@
  *  IAA-04 - the scope of a bulk run: action, whole site / node / subtree, classes, attributes, aliases of the site
  *           only ('original' only for a resync), changed since, at most; dry run and overwrite per action
  *  IAA-05 - "changed since" takes a date, a date and time, or a time ago, never the future
- *  IAA-06 - the run history: the filter from view parameters, the log lines it keeps, the counts of the dashboard
- *           (generated, placeholders, failures, staged, runs) since a time, and whether the lines read reach back
+ *  IAA-06 - the run history: the filter from view parameters (defer a choice of its own, older "fail result=timeout"
+ *           lines of an alias read as defer), the log lines it keeps, the counts of the dashboard
+ *           (generated, placeholders, failures, deferred, staged, runs) since a time, and whether the lines read reach back
  *  IAA-07 - the dashboard's verdicts: render mode, no WebP writer, staging without an address, a paused or failing
- *           source, no job queue, failed jobs, paused bulk runs, failures, the signing key's age; the converters in
+ *           source, no job queue, failed jobs, paused bulk runs, failures (aliases deferred to a job are none), the
+ *           signing key's age; the converters in
  *           the order they are tried
  *  IAA-08 - the connection test's verdict per status and error
  *  IAA-09 - the wiring: the views and policies in module.php, the Setup menu entry right after Cache, the templates
@@ -220,6 +222,10 @@ class expImageAliasAdminTest extends PHPUnit\Framework\TestCase
         $entries = array(
             $line( $now - 10, 'event=generate result=ok ms=84 alias=small run=- by=job path=var/site/storage/images/a/1-1-eng-GB/a_small.jpg' ),
             $line( $now - 20, 'event=placeholder result=timeout ms=2001 alias=large run=- path=var/site/storage/images/a/1-1-eng-GB/a_large.jpg' ),
+            $line( $now - 21, 'event=defer result=timeout ms=2000 alias=small run=- path=var/site/storage/images/a/1-1-eng-GB/a_small.jpg' ),
+            // written before the defer event: a timeout of an alias is read as defer, a staging fetch that timed out stays fail
+            $line( $now - 22, 'event=fail result=timeout ms=2000 alias=small.webp run=- path=var/site/storage/images/a/1-1-eng-GB/a_small.jpg.webp' ),
+            $line( $now - 23, 'event=fail result=timeout ms=5000 alias=- source=pro bytes=0 stored=0 path=var/site/storage/images/d/5-1-eng-GB/d.jpg' ),
             $line( $now - 30, 'event=fail result=failed ms=5 alias=large run=bulk20261113-aa path=var/site/storage/images/b/2-1-eng-GB/b_large.jpg' ),
             $line( $now - 40, 'event=stage result=fetched ms=19 alias=original run=rs-1 path=var/site/storage/images/c/3-1-eng-GB/c.jpg' ),
             $line( $now - 50, 'event=run-start result=generate ms=0 alias=- run=bulk20261113-aa origin=bulk path=subtree=93' ),
@@ -245,8 +251,16 @@ class expImageAliasAdminTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'by=job', $public['extra'] );
         $this->assertSame( '', $public['run'], 'the "-" of no run is no run' );
 
+        // defer: a choice of the filter, kept apart from fail (older "fail result=timeout" lines with it)
+        $this->assertSame( 'defer', expImageAliasAdmin::logFilter( array( 'event' => 'defer' ) )['event'] );
+        $kept = expImageAliasAdmin::filterLog( $entries, expImageAliasAdmin::logFilter( array( 'event' => 'defer' ) ) );
+        $this->assertSame( array( 'small', 'small.webp' ), array_column( $kept, 'alias' ) );
+        $this->assertSame( 'defer', expImageAliasAdmin::publicEntry( $kept[1] )['event'] );
+        $kept = expImageAliasAdmin::filterLog( $entries, expImageAliasAdmin::logFilter( array( 'event' => 'fail' ) ) );
+        $this->assertSame( array( 'timeout', 'failed' ), array_column( $kept, 'result' ), 'the staging fetch and the real failure' );
+
         $counts = expImageAliasAdmin::logCounts( $entries, $now - 86400 );
-        $this->assertSame( array( 'generated' => 1, 'placeholders' => 1, 'failures' => 1, 'staged' => 1, 'runs' => 1, 'lines' => 6,
+        $this->assertSame( array( 'generated' => 1, 'placeholders' => 1, 'failures' => 2, 'deferred' => 2, 'staged' => 1, 'runs' => 1, 'lines' => 9,
                                   'oldest' => $now - 90000, 'complete' => true ), $counts );
     }
 
@@ -261,7 +275,7 @@ class expImageAliasAdminTest extends PHPUnit\Framework\TestCase
             'queue' => array( 'available' => true, 'types' => array( 'image.alias.bulk' => array( 'waiting' => 1, 'running' => 1, 'dead' => 0, 'registered' => true ),
                                                                      'image.alias.generate' => array( 'waiting' => 2, 'running' => 0, 'dead' => 0, 'registered' => true ) ) ),
             'bulk_pause' => null,
-            'counts' => array( 'generated' => 3, 'placeholders' => 0, 'failures' => 0, 'staged' => 0, 'runs' => 0, 'lines' => 3, 'oldest' => 0, 'complete' => true ),
+            'counts' => array( 'generated' => 3, 'placeholders' => 0, 'failures' => 0, 'deferred' => 0, 'staged' => 0, 'runs' => 0, 'lines' => 3, 'oldest' => 0, 'complete' => true ),
             'key' => array( 'exists' => true, 'modified' => 1800000000 - 10 * 86400, 'previous_until' => 0 ),
             'log_path' => 'var/log/imagealias.log', 'aliases' => 30 );
     }
@@ -281,6 +295,10 @@ class expImageAliasAdminTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'waiting' => 3, 'running' => 1, 'dead' => 0 ), $d['queue_total'] );
         $this->assertSame( array( 'imagick', 'imagemagick', 'gd' ), array_column( $d['converter_rows'], 'converter' ) );
         $this->assertSame( 'none', $d['source_state'] );
+        // aliases deferred to a job are no failures: no warning for them
+        $d = expImageAliasAdmin::buildDashboard( $this->raw( array( 'counts' => array( 'deferred' => 3310 ) + $this->raw()['counts'] ) ), $now );
+        $this->assertSame( array(), $d['checks'] );
+        $this->assertSame( 3310, $d['counts']['deferred'] );
 
         $d = expImageAliasAdmin::buildDashboard( $this->raw( array(
             'mode' => 'render', 'converters' => array( 'gd' => array() ), 'bulk_pause' => array( 'since' => 1, 'by' => 'x', 'reason' => '' ),

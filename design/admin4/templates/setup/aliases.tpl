@@ -71,6 +71,7 @@
     <li class="a4-figure is-ok"><a href={'setup/aliases/(tab)/history/(event)/generate'|ezurl}><strong>{$d.counts.generated}</strong><span>{'Aliases generated'|i18n( 'design/admin/setup/aliases' )}</span></a></li>
     <li class="a4-figure{if $d.counts.placeholders|gt( 0 )} is-warn{/if}"><a href={'setup/aliases/(tab)/history/(event)/placeholder'|ezurl}><strong>{$d.counts.placeholders}</strong><span>{'Placeholders answered'|i18n( 'design/admin/setup/aliases' )}</span></a></li>
     <li class="a4-figure{if $d.counts.failures|gt( 0 )} is-bad{/if}"><a href={'setup/aliases/(tab)/history/(event)/fail'|ezurl}><strong>{$d.counts.failures}</strong><span>{'Failures'|i18n( 'design/admin/setup/aliases' )}</span></a></li>
+    <li class="a4-figure{if $d.counts.deferred|gt( 0 )} is-info{/if}"><a href={'setup/aliases/(tab)/history/(event)/defer'|ezurl}><strong>{$d.counts.deferred}</strong><span>{'Deferred to a job'|i18n( 'design/admin/setup/aliases' )}</span></a></li>
     <li class="a4-figure"><a href={'setup/aliases/(tab)/history/(event)/stage'|ezurl}><strong>{$d.counts.staged}</strong><span>{'Files staged'|i18n( 'design/admin/setup/aliases' )}</span></a></li>
     <li class="a4-figure"><a href={'setup/aliases/(tab)/history/(event)/runs'|ezurl}><strong>{$d.counts.runs}</strong><span>{'Runs started'|i18n( 'design/admin/setup/aliases' )}</span></a></li>
     <li class="a4-figure{if $d.queue_total.waiting|gt( 0 )} is-info{/if}"><a href={'setup/aliases/(tab)/bulk'|ezurl}><strong>{$d.queue_total.waiting} / {$d.queue_total.running}</strong><span>{'Jobs waiting / running'|i18n( 'design/admin/setup/aliases' )}</span></a></li>
@@ -508,7 +509,7 @@
 {foreach $entries as $ia_entry}
 <tr>
     <td class="a4-nowrap">{$ia_entry.time|l10n( shortdatetime )}</td>
-    <td><span class="a4-badge{switch match=$ia_entry.event}{case match='fail'} is-bad{/case}{case match='placeholder'} is-warn{/case}{case match='generate'} is-ok{/case}{case match='stage'} is-info{/case}{case}{/case}{/switch}">{$ia_entry.event|wash}</span></td>
+    <td><span class="a4-badge{switch match=$ia_entry.event}{case match='fail'} is-bad{/case}{case match='defer'} is-info{/case}{case match='placeholder'} is-warn{/case}{case match='generate'} is-ok{/case}{case match='stage'} is-info{/case}{case}{/case}{/switch}">{$ia_entry.event|wash}</span></td>
     <td>{$ia_entry.result|wash}</td>
     <td><code>{$ia_entry.alias|wash}</code></td>
     <td class="a4-num">{$ia_entry.ms|wash}</td>

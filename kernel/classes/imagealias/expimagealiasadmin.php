@@ -851,7 +851,8 @@ class expImageAliasAdmin
     // ------------------------------------------------------------------------------------------------ the log
 
     /**
-     * A filter of the run history from view parameters: event (one of expImageAliasLog::EVENTS, or '' for all),
+     * A filter of the run history from view parameters: event (one of expImageAliasLog::EVENTS, defer included and
+     * older "fail result=timeout" lines with it, as expImageAliasLog::parse() reads them; or '' for all),
      * run (a run id), alias, text (in the path), lines.
      *
      * @param array $raw
@@ -945,16 +946,17 @@ class expImageAliasAdmin
     }
 
     /**
-     * What the log says since a time: aliases generated, placeholders answered, failures, files staged, runs.
+     * What the log says since a time: aliases generated, placeholders answered, failures, aliases deferred to a job
+     * (no conversion slot or lock in time; older lines "fail result=timeout" count here too), files staged, runs.
      *
      * @param array[] $entries expImageAliasLog::parse() results, newest first
      * @param int $since
-     * @return array generated, placeholders, failures, staged, runs, lines (read), oldest (time of the oldest line
+     * @return array generated, placeholders, failures, deferred, staged, runs, lines (read), oldest (time of the oldest line
      *               read, 0 when the log is empty), complete (the lines read reach back to $since)
      */
     public static function logCounts( array $entries, $since )
     {
-        $out = array( 'generated' => 0, 'placeholders' => 0, 'failures' => 0, 'staged' => 0, 'runs' => 0, 'lines' => 0,
+        $out = array( 'generated' => 0, 'placeholders' => 0, 'failures' => 0, 'deferred' => 0, 'staged' => 0, 'runs' => 0, 'lines' => 0,
                       'oldest' => 0, 'complete' => true );
         $reached = false;
         foreach ( $entries as $entry )
@@ -979,6 +981,9 @@ class expImageAliasAdmin
                     break;
                 case 'fail':
                     $out['failures']++;
+                    break;
+                case 'defer':
+                    $out['deferred']++;
                     break;
                 case 'stage':
                     if ( in_array( $entry['result'], array( 'fetched', 'replaced', 'adopted' ), true ) )
