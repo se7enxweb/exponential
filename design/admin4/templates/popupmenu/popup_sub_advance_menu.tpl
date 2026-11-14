@@ -2,6 +2,8 @@
 {* The content checks (doc/eng-us/features/6.0/content-checks.md) for the subtree, only for a user with their policies *}
 {def $contentcheck_unreferenced = fetch( 'user', 'has_access_to', hash( 'module', 'contentcheck', 'function', 'unreferenced' ) )
      $contentcheck_broken = fetch( 'user', 'has_access_to', hash( 'module', 'contentcheck', 'function', 'brokenrelations' ) )}
+{* Image aliases of the item or its subtree (Setup > Image aliases), as jobs: only with setup/managealiases *}
+{def $image_aliases_manage = fetch( 'user', 'has_access_to', hash( 'module', 'setup', 'function', 'managealiases' ) )}
 
 {* Export: the item or its subtree as a content package (the package wizard) and the export entries of extensions
    (xrowextract's CSV), from popupmenu/popup_export_items.tpl, which the node view's Import/Export menu shares. Every
@@ -23,6 +25,9 @@
     <hr />
     <a id="menu-history" data-menu-url={"content/history/%objectID%"|ezurl} href="#">{'Manage versions'|i18n( 'design/admin/popupmenu' )}</a>
     <a id="menu-url-alias" data-menu-url={"content/urlalias/%nodeID%"|ezurl} href="#">{'Manage URL aliases'|i18n( 'design/admin/popupmenu' )}</a>
+{if $image_aliases_manage}
+    <a id="menu-image-aliases" class="more" href="#" data-menu-submenu="ImageAliasesMenu">{'Image aliases'|i18n( 'design/admin/popupmenu' )}</a>
+{/if}
 {if $has_export_menu}
     <hr />
     <a id="menu-export" class="more" href="#" data-menu-submenu="ExportMenu"><span class="a4-icon a4-bi-download" aria-hidden="true"></span> {'Export'|i18n( 'design/admin/popupmenu' )}</a>
@@ -55,6 +60,28 @@
 {/if}
 {undef $has_export_menu $export_menu_items}
 
+{* Image aliases: generate, regenerate or remove those of the item or its subtree. Each a POST to setup/aliases, which
+   starts the run as a job and shows its progress *}
+{if $image_aliases_manage}
+<div class="popupmenu" id="ImageAliasesMenu" data-menu-depth="2">
+    <a id="menu-ia-generate-node" href="#" data-menu-form="menu-form-ia-generate-node">{'Generate for this item'|i18n( 'design/admin/popupmenu' )}</a>
+    <a id="menu-ia-generate-subtree" href="#" data-menu-form="menu-form-ia-generate-subtree">{'Generate for the subtree'|i18n( 'design/admin/popupmenu' )}</a>
+    <hr />
+    <a id="menu-ia-regenerate-node" href="#" data-menu-form="menu-form-ia-regenerate-node">{'Regenerate for this item'|i18n( 'design/admin/popupmenu' )}</a>
+    <a id="menu-ia-regenerate-subtree" href="#" data-menu-form="menu-form-ia-regenerate-subtree">{'Regenerate for the subtree'|i18n( 'design/admin/popupmenu' )}</a>
+    <hr />
+    <a id="menu-ia-purge-node" href="#" data-menu-form="menu-form-ia-purge-node">{'Remove for this item'|i18n( 'design/admin/popupmenu' )}</a>
+    <a id="menu-ia-purge-subtree" href="#" data-menu-form="menu-form-ia-purge-subtree">{'Remove for the subtree'|i18n( 'design/admin/popupmenu' )}</a>
+</div>
+{foreach array( 'generate', 'regenerate', 'purge' ) as $ia_action}{foreach array( 'node', 'subtree' ) as $ia_scope}
+<form id="menu-form-ia-{$ia_action}-{$ia_scope}" method="post" action={"/setup/aliases"|ezurl}>
+  <input type="hidden" name="NodeID" value="%nodeID%" />
+  <input type="hidden" name="NodeScope" value="{$ia_scope}" />
+  <input type="hidden" name="NodeActionButton" value="{$ia_action}" />
+</form>
+{/foreach}{/foreach}
+{/if}
+
 {* Hide / unhide: a POST, as it changes the site *}
 <form id="menu-form-hide" method="post" action={"/content/hide/%nodeID%"|ezurl}>
 </form>
@@ -78,4 +105,4 @@
   <input type="hidden" name="ContentObjectID" value="%objectID%" />
   <input type="hidden" name="SwapNodeButton" value="x" />
 </form>
-{undef $contentcheck_unreferenced $contentcheck_broken}
+{undef $contentcheck_unreferenced $contentcheck_broken $image_aliases_manage}

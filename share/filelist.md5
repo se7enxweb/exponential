@@ -848,7 +848,7 @@ e1a0c2dd058501083d6d68f51c3eae38  design/admin/templates/popupmenu/popup_bookmar
 857fcddd524286ed5ee42f56be5bdc96  design/admin/templates/popupmenu/popup_export_items.tpl
 1458d4bc28cc112faac27de0121bce13  design/admin/templates/popupmenu/popup_import_export_menu.tpl
 9f1dd21b909d4f1bfecd0b80d235f76f  design/admin/templates/popupmenu/popup_menu.tpl
-f20c62d1526c0a941b2584243f08dbbf  design/admin/templates/popupmenu/popup_sub_advance_menu.tpl
+6dd0f65c9786edf6316dfd93af48d8ff  design/admin/templates/popupmenu/popup_sub_advance_menu.tpl
 38c0973b3930bb871586a6025650b3c0  design/admin/templates/popupmenu/popup_sub_createhere_menu.tpl
 0e056d3ef6a2cd0a4ac00bf06c06b897  design/admin/templates/popupmenu/popup_sub_edit_menu.tpl
 e6e30f9197ee3b660a776d31bc151b53  design/admin/templates/popupmenu/popup_sub_editclass_menu.tpl
@@ -1731,7 +1731,7 @@ e1a0c2dd058501083d6d68f51c3eae38  design/admin4/templates/popupmenu/popup_bookma
 857fcddd524286ed5ee42f56be5bdc96  design/admin4/templates/popupmenu/popup_export_items.tpl
 1458d4bc28cc112faac27de0121bce13  design/admin4/templates/popupmenu/popup_import_export_menu.tpl
 9f1dd21b909d4f1bfecd0b80d235f76f  design/admin4/templates/popupmenu/popup_menu.tpl
-f20c62d1526c0a941b2584243f08dbbf  design/admin4/templates/popupmenu/popup_sub_advance_menu.tpl
+6dd0f65c9786edf6316dfd93af48d8ff  design/admin4/templates/popupmenu/popup_sub_advance_menu.tpl
 38c0973b3930bb871586a6025650b3c0  design/admin4/templates/popupmenu/popup_sub_createhere_menu.tpl
 0e056d3ef6a2cd0a4ac00bf06c06b897  design/admin4/templates/popupmenu/popup_sub_edit_menu.tpl
 e6e30f9197ee3b660a776d31bc151b53  design/admin4/templates/popupmenu/popup_sub_editclass_menu.tpl
