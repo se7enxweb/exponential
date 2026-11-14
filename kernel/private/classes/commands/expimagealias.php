@@ -59,7 +59,7 @@ class Expimagealias extends \Exponential\Runnable\Command
         'no-queue' => 'the job queue (expqueue) is not available',
         'dead-jobs' => 'some image alias jobs failed for good (Setup > Job queue shows why)',
         'bulk-paused' => 'bulk runs are paused',
-        'failures' => 'aliases failed in the last 24 hours (the fail lines of var/log/imagealias.log; Setup > Image aliases, Run history)',
+        'failures' => 'aliases failed in the last 24 hours (the fail lines of var/log/imagealias.log; Setup > Image aliases, Run history; a deferral to a job is no failure)',
         'key-old' => 'the signing key is more than a year old',
         'no-key' => 'no signing key yet: it is made with the first on-demand address',
     );
@@ -443,7 +443,7 @@ class Expimagealias extends \Exponential\Runnable\Command
                                                                     . ( $pause['reason'] !== '' ? ': ' . $pause['reason'] : '' ) );
         $c = $d['counts'];
         $lines[] = $row( 'last 24 hours', 'generated ' . (int)$c['generated'] . ', placeholders ' . (int)$c['placeholders'] . ', failures ' . (int)$c['failures']
-                                         . ', staged ' . (int)$c['staged'] . ', runs ' . (int)$c['runs'] . ( $c['complete'] ? '' : ' (from the last ' . (int)$c['lines'] . ' lines)' ) );
+                                         . ', deferred to a job ' . (int)( $c['deferred'] ?? 0 ) . ', staged ' . (int)$c['staged'] . ', runs ' . (int)$c['runs'] . ( $c['complete'] ? '' : ' (from the last ' . (int)$c['lines'] . ' lines)' ) );
         if ( !empty( $d['key']['exists'] ) )
             $lines[] = $row( 'signing key', ( $d['key_age_days'] === null ? 'there' : $d['key_age_days'] . ' days old' )
                                            . ( $d['previous_key_valid'] ? ', previous key valid until ' . date( 'Y-m-d H:i', (int)$d['key']['previous_until'] ) : '' ) );
@@ -587,7 +587,8 @@ class Expimagealias extends \Exponential\Runnable\Command
         $summary = (array)$started['summary'];
         $result = isset( $summary['result'] ) ? (string)$summary['result'] : 'failed';
         $counts = isset( $summary['counts'] ) ? (array)$summary['counts'] : array();
-        $failed = (int)( $counts['failed'] ?? 0 ) + (int)( $counts['variants_failed'] ?? 0 ) + (int)( $counts['timeout'] ?? 0 );
+        $failed = (int)( $counts['failed'] ?? 0 ) + (int)( $counts['variants_failed'] ?? 0 ) + (int)( $counts['timeout'] ?? 0 )
+                + (int)( $counts['variants_timeout'] ?? 0 );
         if ( $result === 'paused' )
             $exit = self::EXIT_PAUSED;
         else if ( $result === 'inactive' )

@@ -420,7 +420,9 @@ class expImageAliasQueueTest extends PHPUnit\Framework\TestCase
         $this->assertStringEndsWith( 'andernach_small.jpg', $response['headers']['Location'] );
         $this->assertSame( 'Accept', $response['headers']['Vary'] );
         $this->assertFileDoesNotExist( $variant );
-        $this->assertStringContainsString( 'event=fail result=timeout', (string)file_get_contents( expImageAliasLog::path() ) );
+        $log = (string)file_get_contents( expImageAliasLog::path() );
+        $this->assertStringContainsString( 'event=defer result=timeout', $log, 'no slot in time: deferred to a job' );
+        $this->assertStringNotContainsString( 'event=fail', $log );
         $this->assertSame( array( array( array( 'attribute' => 7, 'version' => 1, 'language' => 'eng-GB' ), 'small', array( 'webp' ), $this->dir . '/andernach_small.jpg' ) ),
                            $server->completions, 'the variant is handed to the queue at the visitors\' priority' );
 

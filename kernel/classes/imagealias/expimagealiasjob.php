@@ -509,7 +509,7 @@ class expImageAliasJob
      * @param array $payload see generatePayload()
      * @param callable|null $progress function( array $progress ): done, total, path, counts, run; it may throw to stop
      * @return array run, result (done, invalid), origin, items, counts (present, made, timeout, failed, unknown, gone,
-     *               variants_made, variants_present, variants_failed), ms
+     *               variants_made, variants_present, variants_timeout, variants_failed), ms
      */
     public static function runGenerate( array $payload, $progress = null )
     {
@@ -597,6 +597,9 @@ class expImageAliasJob
                         $counts['variants_made']++;
                     elseif ( $variant === 'present' )
                         $counts['variants_present']++;
+                    elseif ( $variant === 'timeout' )
+                        // no slot or lock in time: deferred (a retry or the next visit makes it), not failed
+                        $counts['variants_timeout']++;
                     else
                         $counts['variants_failed']++;
                 }
@@ -610,7 +613,7 @@ class expImageAliasJob
     public static function emptyCounts()
     {
         return array( 'present' => 0, 'made' => 0, 'timeout' => 0, 'failed' => 0, 'unknown' => 0, 'gone' => 0, 'purged' => 0,
-                      'variants_made' => 0, 'variants_present' => 0, 'variants_failed' => 0 );
+                      'variants_made' => 0, 'variants_present' => 0, 'variants_timeout' => 0, 'variants_failed' => 0 );
     }
 
     /**

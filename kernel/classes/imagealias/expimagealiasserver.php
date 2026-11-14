@@ -437,7 +437,8 @@ class expImageAliasServer
         if ( $this->job )
             $fields['by'] = 'job';
         $fields['path'] = $target !== null ? $target : ( $ok ? (string)$alias['url'] : '-' );
-        expImageAliasLog::write( $ok ? 'generate' : 'fail', $fields );
+        // A timeout is logged as defer, not fail: the request answers the placeholder and a job makes the alias
+        expImageAliasLog::write( expImageAliasLog::eventFor( $fields['result'] ), $fields );
         return $ok ? 'ok' : ( $timedOut ? 'timeout' : 'failed' );
     }
 
@@ -719,7 +720,7 @@ class expImageAliasServer
         if ( $this->job )
             $fields['by'] = 'job';
         $fields['path'] = $path;
-        expImageAliasLog::write( $result === 'ok' ? 'generate' : 'fail', $fields );
+        expImageAliasLog::write( expImageAliasLog::eventFor( $result ), $fields );
         // The browser gets the alias in its own format now; a job makes the variant for the next visit
         if ( $result === 'timeout' )
             $this->queueCompletion( $aliasName, array( $format ), $aliasPath );

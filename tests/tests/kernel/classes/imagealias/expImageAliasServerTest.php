@@ -12,7 +12,8 @@
  *           script only while an image is being made (200)
  *  IAS-05 - the lock: one per alias file, a second taker waits at most its limit and is told it timed out; the lock
  *           file is removed when given back
- *  IAS-06 - the log: one line per event, read back newest first, a URL with "]" in the request context
+ *  IAS-06 - the log: one line per event, read back newest first, a URL with "]" in the request context; a timeout
+ *           is event defer (deferred to a job), not fail, older "fail result=timeout" lines of an alias read as defer
  *  IAS-07 - the mode switch: on-demand by default, render on the command line and inside withRender()
  *  IAS-08 - request paths: the www directory, index_image.php/ and the query string are taken off
  *  IAS-09 - a web server in the CLI SAPI (Velocity, the built-in server) follows the settings like PHP-FPM: a request
@@ -250,8 +251,23 @@ class expImageAliasServerTest extends PHPUnit\Framework\TestCase
         $this->assertCount( 1, expImageAliasLog::read( 10, 'generate' ) );
 
         // A line as eZLog writes it, the request context a URL with "]"
-        $entry = expImageAliasLog::parse( '[ Nov 13 2026 09:12:01 ][ site ][ https://www.example.org/content/image/a]b/x.jpg ] event=fail result=timeout ms=2000 alias=small path=var/x' );
-        $this->assertSame( array( 'site', 'fail', 'timeout', 2000, 'var/x' ), array( $entry['siteaccess'], $entry['event'], $entry['result'], $entry['ms'], $entry['path'] ) );
+        $entry = expImageAliasLog::parse( '[ Nov 13 2026 09:12:01 ][ site ][ https://www.example.org/content/image/a]b/x.jpg ] event=fail result=failed ms=2000 alias=small path=var/x' );
+        $this->assertSame( array( 'site', 'fail', 'failed', 2000, 'var/x' ), array( $entry['siteaccess'], $entry['event'], $entry['result'], $entry['ms'], $entry['path'] ) );
+
+        // A timeout (no conversion slot or lock within the wait) is deferred to a job, no failure: event defer
+        $this->assertSame( array( 'generate', 'defer', 'fail', 'fail' ), array_map( array( 'expImageAliasLog', 'eventFor' ), array( 'ok', 'timeout', 'failed', '' ) ) );
+        $this->assertTrue( expImageAliasLog::write( expImageAliasLog::eventFor( 'timeout' ), array( 'result' => 'timeout', 'ms' => 2000, 'alias' => 'small', 'path' => 'var/y' ) ) );
+        $this->assertSame( array( 'defer', 'timeout' ), array( expImageAliasLog::read( 1 )[0]['event'], expImageAliasLog::read( 1 )[0]['result'] ) );
+        $this->assertCount( 1, expImageAliasLog::read( 10, 'defer' ) );
+        // both places that log making an alias or a variant go through eventFor(), none writes fail itself
+        $server = file_get_contents( dirname( __DIR__, 5 ) . '/kernel/classes/imagealias/expimagealiasserver.php' );
+        $this->assertSame( 2, substr_count( $server, 'expImageAliasLog::write( expImageAliasLog::eventFor(' ) );
+        $this->assertStringNotContainsString( "'fail'", $server );
+        // a line from before the defer event: an alias's timeout reads as defer (the line itself is not changed); a
+        // staging fetch that timed out names its source and stays a failure of the source
+        $old = expImageAliasLog::parse( '[ Nov 13 2026 09:12:01 ][ site ][ /x ] event=fail result=timeout ms=2000 alias=small path=var/x' );
+        $this->assertSame( array( 'defer', 'fail' ), array( $old['event'], $old['fields']['event'] ) );
+        $this->assertSame( 'fail', expImageAliasLog::parse( '[ Nov 13 2026 09:12:01 ][ site ][ /x ] event=fail result=timeout ms=5000 alias=- source=pro path=var/x' )['event'] );
         $this->assertNull( expImageAliasLog::parse( 'something else' ) );
         $this->assertStringNotContainsString( "\n", expImageAliasLog::format( 'serve', array( 'alias' => "a\nb", 'path' => "x\ny" ) ) );
     }

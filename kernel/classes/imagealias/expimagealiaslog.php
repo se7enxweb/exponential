@@ -14,9 +14,11 @@
  *
  *   [ Nov 13 2026 09:12:01 ][ site ][ <request> ] event=generate result=ok ms=84 alias=small run=- path=var/site/storage/...
  *
- * Events: generate, serve, stage, placeholder, fail, run-start, run-end, queue (work handed to the job queue), pause
- * and resume (of bulk runs). read() gives the newest lines back parsed,
- * for the administration (setup/aliases).
+ * Events: generate, serve, stage, placeholder, fail, defer (result=timeout: no conversion slot or lock within the
+ * wait; the request answered the placeholder and a job makes the alias, so it is no failure), run-start, run-end,
+ * queue (work handed to the job queue), pause and resume (of bulk runs). read() gives the newest lines back parsed,
+ * for the administration (setup/aliases). Lines written before defer existed say event=fail result=timeout; parse()
+ * reads them as defer.
  *
  * @since 6.0.15
  * @package kernel
@@ -26,7 +28,7 @@ class expImageAliasLog
     const FILE = 'imagealias.log';
 
     /** The events a line can carry */
-    const EVENTS = array( 'generate', 'serve', 'stage', 'placeholder', 'fail', 'run-start', 'run-end', 'queue', 'pause', 'resume' );
+    const EVENTS = array( 'generate', 'serve', 'stage', 'placeholder', 'fail', 'defer', 'run-start', 'run-end', 'queue', 'pause', 'resume' );
 
     /** @var string|null a log directory for this process (tests) */
     protected static $directory = null;
@@ -51,6 +53,20 @@ class expImageAliasLog
         }
         eZLog::write( $line, self::FILE );
         return true;
+    }
+
+    /**
+     * The event of an attempt to make an alias or a variant with this result: ok is generate, timeout (no conversion
+     * slot or lock in time: the alias is made later by a job) is defer, anything else is fail.
+     *
+     * @param string $result ok, timeout, failed ...
+     * @return string generate, defer or fail
+     */
+    public static function eventFor( $result )
+    {
+        if ( $result === 'ok' )
+            return 'generate';
+        return $result === 'timeout' ? 'defer' : 'fail';
     }
 
     /**
@@ -108,7 +124,8 @@ class expImageAliasLog
     }
 
     /**
-     * One log line parsed, or null when it is not a line of this log.
+     * One log line parsed, or null when it is not a line of this log. An older "event=fail result=timeout" of an
+     * alias or variant (not a staging fetch, which names its source) is read as event defer.
      *
      * @param string $line
      * @return array|null
@@ -134,8 +151,12 @@ class expImageAliasLog
                 $fields[substr( $pair, 0, $eq )] = substr( $pair, $eq + 1 );
         }
         $time = strtotime( $match[1] );
+        $event = isset( $fields['event'] ) ? $fields['event'] : '';
+        // A line from before the defer event: a timeout was logged as fail (fields keeps what the line says)
+        if ( $event === 'fail' && isset( $fields['result'] ) && $fields['result'] === 'timeout' && !isset( $fields['source'] ) )
+            $event = 'defer';
         return array( 'time' => $time === false ? 0 : $time, 'siteaccess' => $match[2],
-                      'event' => isset( $fields['event'] ) ? $fields['event'] : '',
+                      'event' => $event,
                       'result' => isset( $fields['result'] ) ? $fields['result'] : '',
                       'ms' => isset( $fields['ms'] ) ? (int)$fields['ms'] : null,
                       'alias' => isset( $fields['alias'] ) ? $fields['alias'] : '',

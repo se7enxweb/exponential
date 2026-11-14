@@ -266,17 +266,19 @@ class expImageAliasCommandTest extends PHPUnit\Framework\TestCase
                       'source' => array( 'base_url' => 'https://pro.example.org', 'paused' => false, 'failures' => 2, 'warning' => null, 'last_error' => 'timeout' ),
                       'queue' => array( 'available' => true, 'types' => array( 'image.alias.bulk' => array( 'waiting' => 1, 'running' => 0, 'dead' => 1, 'registered' => true ) ) ),
                       'bulk_pause' => array( 'since' => 1800000000, 'by' => 'cli:alpha', 'reason' => 'import' ),
-                      'counts' => array( 'generated' => 3, 'placeholders' => 1, 'failures' => 0, 'staged' => 4, 'runs' => 2, 'lines' => 9, 'oldest' => 0, 'complete' => true ),
+                      'counts' => array( 'generated' => 3, 'placeholders' => 1, 'failures' => 0, 'deferred' => 5, 'staged' => 4, 'runs' => 2, 'lines' => 9, 'oldest' => 0, 'complete' => true ),
                       'key' => array( 'exists' => true, 'modified' => 1800000000 - 3 * 86400, 'previous_until' => 0 ),
                       'log_path' => 'var/log/imagealias.log', 'aliases' => 30 );
         $d = expImageAliasAdmin::buildDashboard( $raw, 1800000000 );
         $text = implode( "\n", Expimagealias::dashboardLines( $d, array( $job ) ) );
         foreach ( array( 'on-demand (address token, delivery auto)', 'conversions at once 1 of 2 busy', 'swap script off', '30 (this siteaccess',
                          'imagick webp+avif, gd webp', 'environment dev, source pro https://pro.example.org, warn, 2 failures in a row, last error timeout',
-                         'waiting 1, running 0, failed for good 1', 'by cli:alpha: import', 'generated 3, placeholders 1, failures 0, staged 4, runs 2',
+                         'waiting 1, running 0, failed for good 1', 'by cli:alpha: import', 'generated 3, placeholders 1, failures 0, deferred to a job 5, staged 4, runs 2',
                          '3 days old', 'check           warn: the staging source failed recently', 'check           warn: bulk runs are paused',
                          '#12 regenerate' ) as $part )
             $this->assertStringContainsString( $part, $text );
+        $this->assertStringNotContainsString( 'aliases failed', $text, 'aliases deferred to a job are no failures' );
+        $this->assertStringContainsString( 'a deferral to a job is no failure', Expimagealias::CHECK_TEXTS['failures'] );
 
         $one = array( 'attribute' => 5, 'version' => 2, 'language' => 'eng-GB', 'identifier' => 'image', 'name' => 'Image',
                       'original' => array( 'url' => 'var/s/a.jpg', 'width' => 800, 'height' => 600, 'mime' => 'image/jpeg', 'exists' => true ),
