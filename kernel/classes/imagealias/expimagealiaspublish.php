@@ -16,6 +16,9 @@
  *   [SiteAccessSettings] RelatedSiteAccessList[]), each read through the INI system of that siteaccess and made as
  *   that siteaccess defines it (expImageAliasSettings::siteAccessAliasPlan()); plus the WebP/AVIF variants the alias
  *   blocks list in Formats[].
+ * - [AliasSettings] PreGenerateAliasList[] limits that union to the aliases it names (each still made as the
+ *   siteaccess that defines it); a name no related siteaccess defines is skipped and logged once per publication
+ *   (imagealias.log event=queue result=unknown-alias). PreGenerateFormats=disabled leaves the variants to on demand.
  * - Which images: the image attributes of the published version (every language) that have an image and miss at least
  *   one of those aliases (or a variant of one). An edit that kept the image queues nothing: the new version names the
  *   aliases already made.
@@ -77,11 +80,13 @@ class expImageAliasPublish
                                                                       'data_type_string' => 'ezimage' ) );
             if ( !$attributes )
                 return 'nothing';
-            $plan = expImageAliasSettings::siteAccessAliasPlan();
+            $choice = self::plan( $objectID, $version );
+            $plan = $choice['plan'];
+            $formats = $choice['formats'];
             $items = array();
             foreach ( $attributes as $attribute )
             {
-                if ( self::needsWork( (string)$attribute->attribute( 'data_text' ), $plan ) )
+                if ( self::needsWork( (string)$attribute->attribute( 'data_text' ), $plan, (bool)$formats ) )
                     $items[] = array( (int)$attribute->attribute( 'id' ), (int)$attribute->attribute( 'version' ), (string)$attribute->attribute( 'language_code' ) );
             }
             $available = $items ? expImageAliasJob::queueAvailable( expImageAliasJob::TYPE_GENERATE ) : false;
@@ -94,7 +99,7 @@ class expImageAliasPublish
             }
             elseif ( $decision === 'queue' )
             {
-                $queued = expImageAliasJob::queuePublish( $items, $plan, self::FORMATS, $objectID, $version );
+                $queued = expImageAliasJob::queuePublish( $items, $plan, $formats, $objectID, $version );
                 if ( $queued === null )
                     $decision = 'no-queue';
                 expImageAliasLog::write( 'queue', array( 'result' => $queued === null ? 'refused' : ( $queued['duplicate'] ? 'duplicate' : 'queued' ),
@@ -112,14 +117,50 @@ class expImageAliasPublish
     }
 
     /**
-     * Whether an image attribute (its stored XML) misses an alias of $plan, or a WebP/AVIF variant an alias block
-     * lists of an alias it has. An attribute without an image needs nothing.
+     * What a pre-generation job of a publication makes: the aliases of $union (siteaccess => names; null:
+     * expImageAliasSettings::siteAccessAliasPlan()) narrowed to [AliasSettings] PreGenerateAliasList[], and the
+     * formats ([AliasSettings] PreGenerateFormats). Names of the list that $union does not have are skipped, with a
+     * debug warning and one imagealias.log line (event=queue result=unknown-alias).
+     *
+     * @param int $objectID
+     * @param int $version
+     * @param array|null $union
+     * @return array plan (siteaccess => names), formats (string[]), unknown (names)
+     */
+    public static function plan( $objectID, $version, ?array $union = null )
+    {
+        $choice = expImageAliasSettings::preGeneratePlan( $union === null ? expImageAliasSettings::siteAccessAliasPlan() : $union,
+                                                          expImageAliasSettings::preGenerateAliasList() );
+        if ( $choice['unknown'] )
+        {
+            eZDebug::writeWarning( 'PreGenerateAliasList[] names aliases no related siteaccess defines, skipped: ' . implode( ', ', $choice['unknown'] ), __METHOD__ );
+            expImageAliasLog::write( 'queue', array( 'result' => 'unknown-alias', 'alias' => implode( ',', $choice['unknown'] ), 'origin' => 'publish',
+                                                     'object' => (int)$objectID, 'version' => (int)$version ) );
+        }
+        return $choice + array( 'formats' => self::formats( expImageAliasSettings::preGenerateFormatsEnabled() ) );
+    }
+
+    /**
+     * The formats a pre-generation job asks for.
+     *
+     * @param bool $variants [AliasSettings] PreGenerateFormats
+     * @return string[] FORMATS, or none
+     */
+    public static function formats( $variants )
+    {
+        return $variants ? self::FORMATS : array();
+    }
+
+    /**
+     * Whether an image attribute (its stored XML) misses an alias of $plan, or (with $variants) a WebP/AVIF variant
+     * an alias block lists of an alias of $plan it has. An attribute without an image needs nothing.
      *
      * @param string $xml the attribute's data_text
      * @param array $plan siteaccess => alias names
+     * @param bool $variants whether the variants count ([AliasSettings] PreGenerateFormats)
      * @return bool
      */
-    public static function needsWork( $xml, array $plan )
+    public static function needsWork( $xml, array $plan, $variants = true )
     {
         $files = expImageAliasStager::filesOfXml( $xml );
         if ( !isset( $files['original'] ) )
@@ -127,17 +168,22 @@ class expImageAliasPublish
         // An SVG gets no aliases of its own (every alias is the original)
         if ( strtolower( pathinfo( $files['original'], PATHINFO_EXTENSION ) ) === 'svg' )
             return false;
+        $planned = array();
         foreach ( $plan as $siteAccess => $names )
         {
             foreach ( (array)$names as $name )
             {
                 if ( !isset( $files[$name] ) )
                     return true;
+                $planned[$name] = true;
             }
         }
+        if ( !$variants )
+            return false;
         foreach ( $files as $name => $path )
         {
-            if ( $name === 'original' )
+            // the job makes variants only of the aliases it makes (an alias outside the plan is not its work)
+            if ( $name === 'original' || !isset( $planned[$name] ) )
                 continue;
             foreach ( expImageAliasSettings::aliasFormats( $name ) as $format )
             {

@@ -217,6 +217,70 @@ class expImageAliasSettings
     }
 
     /**
+     * The aliases pre-generation is limited to ([AliasSettings] PreGenerateAliasList[]): the names given, trimmed,
+     * each once, in the order given. A name no related siteaccess defines (or 'original', the upload itself) stays in
+     * the list, so preGeneratePlan() reports it. Empty (the default): every alias of the related siteaccesses.
+     *
+     * @return string[]
+     */
+    public static function preGenerateAliasList()
+    {
+        $out = array();
+        foreach ( (array)self::value( 'AliasSettings', 'PreGenerateAliasList', array() ) as $name )
+        {
+            $name = trim( (string)$name );
+            if ( $name === '' || in_array( $name, $out, true ) )
+                continue;
+            $out[] = $name;
+        }
+        return $out;
+    }
+
+    /**
+     * Whether pre-generation also makes the WebP/AVIF variants the alias blocks list in Formats[]
+     * ([AliasSettings] PreGenerateFormats, default enabled).
+     *
+     * @return bool
+     */
+    public static function preGenerateFormatsEnabled()
+    {
+        return self::enabled( 'AliasSettings', 'PreGenerateFormats', true );
+    }
+
+    /**
+     * The aliases pre-generation makes: $plan (siteAccessAliasPlan(), siteaccess => names) narrowed to $list
+     * (preGenerateAliasList()); each alias stays with the siteaccess whose image.ini makes it. An empty $list keeps
+     * the whole plan. Names in $list that no siteaccess of the plan defines are returned as unknown.
+     *
+     * @param array $plan siteaccess => alias names
+     * @param string[] $list
+     * @return array plan (siteaccess => names, siteaccesses left without an alias dropped), unknown (names)
+     */
+    public static function preGeneratePlan( array $plan, array $list )
+    {
+        if ( !$list )
+            return array( 'plan' => $plan, 'unknown' => array() );
+        $out = array();
+        $known = array();
+        foreach ( $plan as $siteAccess => $names )
+        {
+            foreach ( (array)$names as $name )
+            {
+                $known[$name] = true;
+                if ( in_array( $name, $list, true ) )
+                    $out[$siteAccess][] = $name;
+            }
+        }
+        $unknown = array();
+        foreach ( $list as $name )
+        {
+            if ( !isset( $known[$name] ) && !in_array( $name, $unknown, true ) )
+                $unknown[] = $name;
+        }
+        return array( 'plan' => $out, 'unknown' => $unknown );
+    }
+
+    /**
      * The extra formats an alias block lists (Formats[]=webp), lower case.
      *
      * @param string $aliasName
