@@ -245,6 +245,15 @@
 // define( 'CLUSTER_ENABLE_HTTP_RANGE', true );
 
 /**
+ * Image aliases made on demand (settings/image.ini [AliasSettings]): when the cluster
+ * gateway has no file for a storage image (an image alias not made yet), it hands the
+ * request on to index_image.php, which makes the alias in the cluster or answers a
+ * placeholder. false keeps the plain 404 for every missing file.
+ * Optional. Defaults to true.
+ */
+// define( 'CLUSTER_IMAGE_ALIAS_ON_DEMAND', false );
+
+/**
  * Enable usage of "Expires" headers.
  * Optional. Defaults to 86400 (one day).
  * Possible values: false (disable), or a TTL in seconds.

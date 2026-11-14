@@ -307,7 +307,7 @@ b974dde24700fd18ba9d30714509893a  composer.dev.json
 5401c8538d087c7c7484f38f1da741ae  composer.json
 a180ccab56cfc079f1e8da6819229745  composer.json.dist
 493b236b88d569268b7381a695b9b22a  config.env.php.example
-b8bdf80e44d3bc8d0e29e17fcd30f62a  config.php-RECOMMENDED
+81d83b433294489cbb16a8512cf056f2  config.php-RECOMMENDED
 3be3d7ac52263ec84d8a70dfa1f7821e  cronjobs/audit.php
 ca0e2a9e9d65e9821996ebd9d993bb90  cronjobs/basket_cleanup.php
 b7378e3691dbdd173f08422eb2108b95  cronjobs/cachecleanup.php
