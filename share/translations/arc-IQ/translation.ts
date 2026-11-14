@@ -86568,6 +86568,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>פוסחא</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>משתבקין לעבדא</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>פנקיתא מטיבתא</translation>
     </message>

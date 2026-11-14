@@ -86559,6 +86559,10 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <translation>Fallos</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Aprazados a un traballo</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Ficheiros preparados</translation>
     </message>

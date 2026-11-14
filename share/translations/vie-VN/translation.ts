@@ -86559,6 +86559,10 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <translation>Lỗi</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Hoãn cho một tác vụ</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Tệp đã lấy về</translation>
     </message>

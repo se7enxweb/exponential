@@ -87771,6 +87771,10 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Błędy</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Odłożone do zadania</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Przygotowane pliki</translation>
     </message>

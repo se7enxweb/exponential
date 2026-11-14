@@ -86559,6 +86559,10 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <translation>Mislearrings</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Útsteld nei in taak</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Bestannen ophelle</translation>
     </message>

@@ -86557,6 +86557,10 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <translation>Kushindwa</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Zimeahirishwa kwa kazi</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Faili zilizowekwa staging</translation>
     </message>

@@ -86559,6 +86559,10 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <translation>Nkogyinaeɛ</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Wɔde akɔma adwuma bi akyiri</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Fael a wɔahyɛ ho</translation>
     </message>

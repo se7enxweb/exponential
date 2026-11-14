@@ -86559,6 +86559,10 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <translation>Uğursuzluqlar</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>İşə təxirə salınan</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Hazırlanan fayllar</translation>
     </message>

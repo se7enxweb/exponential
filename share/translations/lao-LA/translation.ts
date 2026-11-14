@@ -86559,6 +86559,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ຄວາມລົ້ມເຫຼວ</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>ເລື່ອນໄປໃຫ້ວຽກ</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>ໄຟລ໌ທີ່ດຶງມາ</translation>
     </message>

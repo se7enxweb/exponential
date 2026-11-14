@@ -86559,6 +86559,10 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <translation>Fazioù</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Daleet d'un trevell</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Restroù tapet</translation>
     </message>

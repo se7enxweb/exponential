@@ -86559,6 +86559,10 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <translation>Nudzɔdzɔ siwo mewɔ dɔ o</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Wotsɔe de dɔ aɖe ŋu</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Faɛl siwo wotsɔ ɖo staging me</translation>
     </message>

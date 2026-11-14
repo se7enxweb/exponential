@@ -86567,6 +86567,10 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <translation>Kagagalan</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Ditundha menyang tugas</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Berkas sing dijupuk</translation>
     </message>

@@ -86589,6 +86589,10 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <translation>Fallimenti</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Posposti għal xogħol</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Fajls ippreparati</translation>
     </message>

@@ -86589,6 +86589,10 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <translation>Hibák</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Feladatra halasztva</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Előkészített fájlok</translation>
     </message>

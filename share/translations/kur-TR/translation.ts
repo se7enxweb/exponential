@@ -86557,6 +86557,10 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>Têkçûn</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Ji bo karekî hate paşxistin</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Pelên hatine staging kirin</translation>
     </message>

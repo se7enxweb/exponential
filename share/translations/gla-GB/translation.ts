@@ -86559,6 +86559,10 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <translation>Fàilligidhean</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Air an cur air ais gu obair</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Faidhlichean air an ullachadh</translation>
     </message>

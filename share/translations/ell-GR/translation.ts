@@ -86589,6 +86589,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Αποτυχίες</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Αναβλήθηκαν σε εργασία</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Αρχεία που τοποθετήθηκαν</translation>
     </message>

@@ -87845,6 +87845,10 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Selhání</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Odloženo na úlohu</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Přenesené soubory</translation>
     </message>

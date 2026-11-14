@@ -86559,6 +86559,10 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <translation>Nā hāʻule</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Hoʻopanee ʻia i kekahi hana</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Nā waihona i staging ʻia</translation>
     </message>

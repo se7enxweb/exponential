@@ -86589,6 +86589,10 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <translation>Eșecuri</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Amânate pentru un job</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Fișiere aduse</translation>
     </message>

@@ -86589,6 +86589,10 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <translation>Falhas</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Adiados para uma tarefa</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Ficheiros transferidos</translation>
     </message>

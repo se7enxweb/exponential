@@ -86559,6 +86559,10 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <translation>Hehttehusat</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Maŋiduvvon bargui</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Fiillat viežžojuvvon</translation>
     </message>

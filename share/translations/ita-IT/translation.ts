@@ -87966,6 +87966,10 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Errori</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Rinviati a un job</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>File preparati</translation>
     </message>

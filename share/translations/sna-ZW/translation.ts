@@ -86559,6 +86559,10 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <translation>Kutadza</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Zvakamiswa kubasa</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Mafaira akagadzirirwa</translation>
     </message>

@@ -86559,6 +86559,10 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <translation>A ma ɲɛ</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Baara ma bila kɔfɛ</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Fisiyew kɛnɛna</translation>
     </message>

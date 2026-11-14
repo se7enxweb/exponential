@@ -86559,6 +86559,10 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <translation>Tuccḍiwin</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Ttwasemḥelen ɣer umahil</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Ifuyla yettwaseqqen ɣer staging</translation>
     </message>

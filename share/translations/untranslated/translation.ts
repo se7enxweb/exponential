@@ -86381,6 +86381,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation type="unfinished"></translation>
     </message>

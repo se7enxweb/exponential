@@ -86592,6 +86592,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Defectus</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Ad opus dilata</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Fasciculi allati</translation>
     </message>

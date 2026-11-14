@@ -87862,6 +87862,10 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Fel</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Uppskjutna till ett jobb</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Filer hämtade till staging</translation>
     </message>

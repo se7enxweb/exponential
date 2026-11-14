@@ -86559,6 +86559,10 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <translation>Feeler</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Op ee Job verluecht</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Geholl Fichieren</translation>
     </message>

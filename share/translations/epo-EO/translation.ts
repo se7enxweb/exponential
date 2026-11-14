@@ -86559,6 +86559,10 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <translation>Malsukcesoj</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Prokrastitaj al tasko</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Prenitaj dosieroj</translation>
     </message>

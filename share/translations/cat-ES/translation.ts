@@ -86589,6 +86589,10 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <translation>Errors</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Ajornats a una tasca</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Fitxers preparats</translation>
     </message>

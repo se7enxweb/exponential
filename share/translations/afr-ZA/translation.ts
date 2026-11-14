@@ -86589,6 +86589,10 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <translation>Mislukkings</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Na 'n taak uitgestel</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Lêers gehaal</translation>
     </message>

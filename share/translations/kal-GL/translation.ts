@@ -86589,6 +86589,10 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <translation>Ajornerit</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Suliassamut kinguartitat</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Fiilit piareersarneqartut</translation>
     </message>

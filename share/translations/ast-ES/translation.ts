@@ -86559,6 +86559,10 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <translation>Fallos</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Aplazaos a una xera</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Ficheros traíos</translation>
     </message>

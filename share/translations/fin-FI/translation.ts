@@ -86589,6 +86589,10 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <translation>Virheet</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Siirretty työlle</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Valmistellut tiedostot</translation>
     </message>

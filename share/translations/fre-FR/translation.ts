@@ -87999,6 +87999,10 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Échecs</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Reportés à une tâche</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Fichiers récupérés</translation>
     </message>

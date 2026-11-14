@@ -86592,6 +86592,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>Qapbe&apos;ghach</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Qu'vaD pol</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>ghItlhmey tlhaptaH</translation>
     </message>

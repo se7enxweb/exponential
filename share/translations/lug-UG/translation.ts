@@ -86559,6 +86559,10 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <translation>Okulemererwa</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Byongezeddwayo ku mulimu</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Fayiro ezitaddwa mu staging</translation>
     </message>

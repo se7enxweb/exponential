@@ -86559,6 +86559,10 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <translation>Kũremwo</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Ciathiĩrio wĩra-inĩ</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Mafaili marĩa mahaandĩtwo staging</translation>
     </message>

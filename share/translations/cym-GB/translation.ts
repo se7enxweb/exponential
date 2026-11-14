@@ -86559,6 +86559,10 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <translation>Methiannau</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Wedi'u gohirio i swydd</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Ffeiliau wedi&apos;u llwyfannu</translation>
     </message>

@@ -86559,6 +86559,10 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <translation>Pantaykuna</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Huk llamk'ayman qhepachisqa</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Apamusqa willañiqikuna</translation>
     </message>

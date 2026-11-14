@@ -86559,6 +86559,10 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <translation>Fakkastal yi</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Ñu yàgg ko ci liggéey</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Fisiye yi ñu staging</translation>
     </message>

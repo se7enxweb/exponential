@@ -87239,6 +87239,10 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <translation>Fejl</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Udskudt til et job</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Filer hentet til staging</translation>
     </message>

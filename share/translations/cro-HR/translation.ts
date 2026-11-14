@@ -87612,6 +87612,10 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Neuspjesi</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Odgođeno na zadatak</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Preneseno datoteka</translation>
     </message>

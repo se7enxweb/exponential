@@ -93553,6 +93553,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Fehler</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>An einen Job übergeben</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Dateien geholt</translation>
     </message>

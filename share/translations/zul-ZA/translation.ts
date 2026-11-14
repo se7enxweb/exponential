@@ -86557,6 +86557,10 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <translation>Ukwehluleka</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Kuhlehliselwe umsebenzi</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Amafayela e-staging</translation>
     </message>

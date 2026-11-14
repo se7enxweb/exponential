@@ -86559,6 +86559,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>실패</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>작업으로 미룸</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>가져온 화일</translation>
     </message>

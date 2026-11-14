@@ -86589,6 +86589,10 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <translation>Zmólki</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Na nadawk wótstrcone</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Pśigótowane dataje</translation>
     </message>

@@ -86559,6 +86559,10 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <translation>Mabunga</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Etiki mpo na mosala</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Ba-fichier oyo esalemaki staging</translation>
     </message>

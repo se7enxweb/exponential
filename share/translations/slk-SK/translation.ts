@@ -86589,6 +86589,10 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <translation>Zlyhania</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Odložené na úlohu</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Pripravené súbory</translation>
     </message>

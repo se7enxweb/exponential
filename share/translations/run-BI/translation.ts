@@ -86559,6 +86559,10 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <translation>Ingorane</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Vyimuriwe ku gikorwa</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Amadosiye yazanywe</translation>
     </message>

@@ -86557,6 +86557,10 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <translation>Gazawa</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>An jinkirta zuwa aiki</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Fayilolin da aka tara</translation>
     </message>

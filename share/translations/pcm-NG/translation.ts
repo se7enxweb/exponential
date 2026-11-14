@@ -86567,6 +86567,10 @@ You go need change di class of di node wit di swap functionality.</translation>
         <translation>Failures</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Dem shift am go job</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Files wey dem stage</translation>
     </message>

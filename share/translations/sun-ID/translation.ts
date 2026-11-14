@@ -86567,6 +86567,10 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <translation>Kagagalan</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Ditunda ka pagawéan</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Berkas anu dicokot</translation>
     </message>

@@ -86557,6 +86557,10 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <translation>Ukusilela</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Kuhlehlisiwe kumsebenzi</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Iifayile ze-staging</translation>
     </message>

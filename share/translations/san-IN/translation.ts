@@ -86559,6 +86559,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>विफलताः</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>कार्याय स्थगितानि</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>आनीताः सञ्चिकाः</translation>
     </message>

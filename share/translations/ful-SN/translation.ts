@@ -86559,6 +86559,10 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <translation>Wooyre</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Dakkaaɗe e golle</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Fichier staging</translation>
     </message>

@@ -86559,6 +86559,10 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <translation>Şowsuzlyklar</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Işe yza süýşürilen</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Staging edilen faýllar</translation>
     </message>

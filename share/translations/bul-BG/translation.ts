@@ -86589,6 +86589,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Неуспехи</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Отложени за задача</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Изтеглени файлове</translation>
     </message>

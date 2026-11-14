@@ -86589,6 +86589,10 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <translation>Teipeanna</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Curtha siar chuig tasc</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Comhaid curtha ar stáitse</translation>
     </message>

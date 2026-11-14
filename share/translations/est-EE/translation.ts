@@ -86589,6 +86589,10 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <translation>Tõrked</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Edasi lükatud tööle</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Lavastatud failid</translation>
     </message>

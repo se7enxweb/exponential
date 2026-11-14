@@ -86557,6 +86557,10 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <translation>Ọdịda</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>E bufere ya na ọrụ</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Faịlụ e debere na staging</translation>
     </message>

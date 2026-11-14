@@ -86589,6 +86589,10 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <translation>Napake</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Odloženo na nalogo</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Pripravljene datoteke</translation>
     </message>

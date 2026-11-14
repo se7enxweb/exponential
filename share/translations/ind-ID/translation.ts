@@ -86559,6 +86559,10 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <translation>Kegagalan</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Ditunda ke tugas</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Berkas diambil</translation>
     </message>

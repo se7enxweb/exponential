@@ -86559,6 +86559,10 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <translation>Kufaatiiwwan</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Hojiif tursiifaman</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Faayiloonni staging ta&apos;an</translation>
     </message>

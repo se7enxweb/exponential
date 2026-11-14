@@ -86589,6 +86589,10 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <translation>Dështime</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Shtyrë te një punë</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Skedarë të marrë</translation>
     </message>

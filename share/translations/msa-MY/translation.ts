@@ -86559,6 +86559,10 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <translation>Kegagalan</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Ditangguhkan kepada tugas</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Fail diambil</translation>
     </message>

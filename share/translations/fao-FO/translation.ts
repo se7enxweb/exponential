@@ -86559,6 +86559,10 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <translation>Feilir</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Útsett til eina uppgávu</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Fílur heintaðar</translation>
     </message>

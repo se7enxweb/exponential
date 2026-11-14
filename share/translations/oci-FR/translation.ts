@@ -86559,6 +86559,10 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <translation>Fracasses</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Remeses a un prètzfach</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Fichièrs recuperats</translation>
     </message>

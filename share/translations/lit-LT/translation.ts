@@ -86589,6 +86589,10 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <translation>Klaidos</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Atidėta užduočiai</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Paruošta failų</translation>
     </message>

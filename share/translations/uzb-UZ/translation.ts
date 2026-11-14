@@ -86559,6 +86559,10 @@ Tugunning sinfini almashtirish funksiyasi yordamida o ªzgartirishingiz kerak bo 
         <translation>Xatolar</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Vazifaga qoldirilgan</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Staging qilingan fayllar</translation>
     </message>

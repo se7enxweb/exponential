@@ -86559,6 +86559,10 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <translation>Mga kapakyasan</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Gi-ugmad sa usa ka trabaho</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Mga file nga na-stage</translation>
     </message>

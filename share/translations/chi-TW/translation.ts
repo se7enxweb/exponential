@@ -86557,6 +86557,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>失敗</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>已延後交給工作</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>已暫存的檔案</translation>
     </message>

@@ -86557,6 +86557,10 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <translation>Guuldarrooyin</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Loo dib dhigay shaqo</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Faylal staging loo keenay</translation>
     </message>

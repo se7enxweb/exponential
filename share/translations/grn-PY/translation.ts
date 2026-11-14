@@ -86531,6 +86531,10 @@ Remoambuevaerã nódo klase swap tembiapo rupive.</translation>
         <translation>Jejavy</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Oñemombyry peteĩ mba'apópe</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Marandurenda ojegueruva&apos;ekue</translation>
     </message>

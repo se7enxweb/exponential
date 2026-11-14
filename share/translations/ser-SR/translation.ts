@@ -86589,6 +86589,10 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
         <translation>Greške</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Odloženo za posao</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Pripremljene datoteke</translation>
     </message>

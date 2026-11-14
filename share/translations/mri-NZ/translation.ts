@@ -86559,6 +86559,10 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <translation>Ngā rahunga</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Kua tukuna ki tētahi mahi</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Ngā kōnae kua whakaritea</translation>
     </message>

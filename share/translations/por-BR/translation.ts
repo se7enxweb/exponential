@@ -88555,6 +88555,10 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <translation>Falhas</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Adiados para uma tarefa</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Arquivos preparados</translation>
     </message>

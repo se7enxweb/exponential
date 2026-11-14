@@ -86559,6 +86559,10 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <translation>Hutsegiteak</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Lan batera atzeratuak</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Staging-eko fitxategiak</translation>
     </message>

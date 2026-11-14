@@ -86564,6 +86564,10 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <translation>Hatalar</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Bir işe ertelenen</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Aktarılan dosyalar</translation>
     </message>

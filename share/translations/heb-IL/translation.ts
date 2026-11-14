@@ -86591,6 +86591,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>כשלונות</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>נדחו למשימה</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>קבצים שהובאו</translation>
     </message>

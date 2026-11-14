@@ -90818,6 +90818,10 @@ Gracias por la retroalimentación</translation>
         <translation>Fallos</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Aplazados a un trabajo</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Archivos obtenidos</translation>
     </message>

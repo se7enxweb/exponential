@@ -86559,6 +86559,10 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <translation>Zmylki</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Na nadawk přesunjene</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Přijate dataje</translation>
     </message>

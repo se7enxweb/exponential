@@ -86559,6 +86559,10 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <translation>Tsy fahombiazana</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Nahemotra ho an'ny asa</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Rakitra staged</translation>
     </message>

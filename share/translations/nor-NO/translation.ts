@@ -87817,6 +87817,10 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <translation>Feil</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Utsatt til en jobb</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Filer hentet inn</translation>
     </message>

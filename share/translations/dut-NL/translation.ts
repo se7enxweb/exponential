@@ -87784,6 +87784,10 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Mislukkingen</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Uitgesteld naar een job</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Bestanden gestaged</translation>
     </message>

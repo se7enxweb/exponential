@@ -86589,6 +86589,10 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <translation>Kļūmes</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Atlikts uzdevumam</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Sagatavotie faili</translation>
     </message>

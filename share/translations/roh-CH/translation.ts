@@ -86559,6 +86559,10 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <translation>Errurs</translation>
     </message>
     <message>
+        <source>Deferred to a job</source>
+        <translation>Spustads ad ina incumbensa</translation>
+    </message>
+    <message>
         <source>Files staged</source>
         <translation>Datotecas prelevadas</translation>
     </message>
