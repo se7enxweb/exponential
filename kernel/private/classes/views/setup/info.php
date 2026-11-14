@@ -290,7 +290,7 @@ class Info extends \Exponential\Runnable\ModuleView
             foreach ( $parts as $part )
             {
                 if ( preg_match( '#^<h2[^>]*>(.*?)</h2>#is', $part, $m )
-                     && in_array( strtolower( trim( html_entity_decode( strip_tags( $m[1] ) ) ) ), self::PHPINFO_DROPPED_SECTIONS, true ) )
+                     && in_array( strtolower( trim( html_entity_decode( strip_tags( $m[1] ), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) ) ), self::PHPINFO_DROPPED_SECTIONS, true ) )
                 {
                     $end = strripos( $part, '</table>' );
                     $kept .= $end === false ? '' : substr( $part, $end + strlen( '</table>' ) );
@@ -300,10 +300,10 @@ class Info extends \Exponential\Runnable\ModuleView
             }
             // a row whose name is a secret: its values hidden
             $kept = preg_replace_callback( '#(<tr[^>]*>\s*<td class="e">)(.*?)(</td>)(.*?)(</tr>)#is', function ( $m ) {
-                if ( !self::isPhpInfoSecretName( trim( html_entity_decode( strip_tags( $m[2] ) ) ) ) )
+                if ( !self::isPhpInfoSecretName( trim( html_entity_decode( strip_tags( $m[2] ), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) ) ) )
                     return $m[0];
                 $values = preg_replace_callback( '#(<td class="v">)(.*?)(</td>)#is', function ( $v ) {
-                    return Info::isPhpInfoPlainValue( html_entity_decode( strip_tags( $v[2] ) ) ) ? $v[0] : $v[1] . \expSystemReportMask::HIDDEN . $v[3];
+                    return Info::isPhpInfoPlainValue( html_entity_decode( strip_tags( $v[2] ), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) ) ? $v[0] : $v[1] . \expSystemReportMask::HIDDEN . $v[3];
                 }, $m[4] );
                 return $m[1] . $m[2] . $m[3] . $values . $m[5];
             }, $kept );

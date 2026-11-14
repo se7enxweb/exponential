@@ -108,7 +108,7 @@ class GoogleSpell extends SpellChecker {
 		$string = preg_replace_callback('~&#x([0-9a-f]+);~i', function($m) {return chr(hexdec($m[1]));}, $string);
 		$string = preg_replace_callback('~&#([0-9]+);~', function($m) {return chr($m[1]);}, $string);
 
-		$trans_tbl = get_html_translation_table(HTML_ENTITIES);
+		$trans_tbl = get_html_translation_table(HTML_ENTITIES, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401);
 		$trans_tbl = array_flip($trans_tbl);
 
 		return strtr($string, $trans_tbl);

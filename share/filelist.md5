@@ -24519,7 +24519,7 @@ d68aef10c475f5d39441e5210cce2634  extension/ezoe/extension.xml
 c9989e354c39c19890be7a2a7abe5f10  extension/ezoe/ezxmltext/handlers/input/ezoeinputparser.php
 34731dfbf828917f9a97e597cf0fcb36  extension/ezoe/ezxmltext/handlers/input/ezoexmlinput.php
 84be03f87c6a63ead6d791281c09bda5  extension/ezoe/modules/ezoe/classes/EnchantSpell.php
-18f870446f4fbe17ed7e04874d42d544  extension/ezoe/modules/ezoe/classes/GoogleSpell.php
+787d438d95f5914490d1b346720672eb  extension/ezoe/modules/ezoe/classes/GoogleSpell.php
 61c42625117fd10f3bf7c497841b774c  extension/ezoe/modules/ezoe/classes/PSpell.php
 5a674b2b331aa2b5e422f1d25bdb6f39  extension/ezoe/modules/ezoe/classes/PSpellShell.php
 aaf0e11d569bc46a21521c6ecd72a7f0  extension/ezoe/modules/ezoe/classes/SpellChecker.php
@@ -26504,7 +26504,7 @@ e6d16c5b74a3e6da68b4c0e9d9ced420  kernel/private/classes/views/setup/cronjobsstr
 ab2785b088f8911a12310bf302c81fdd  kernel/private/classes/views/setup/extensions.php
 d07e260ec534c879d7b381f3de7eede8  kernel/private/classes/views/setup/ezsetup.php
 ae11e7010436d30804244b58f892c156  kernel/private/classes/views/setup/handlerextension.php
-ef0dd440837112da6d94f7103e390e09  kernel/private/classes/views/setup/info.php
+e62a2aa38190197c3ae6eba90bb5417f  kernel/private/classes/views/setup/info.php
 145b00435bed599bec736dee0133ebc6  kernel/private/classes/views/setup/kerneloverride.php
 a7678389153b770809ce09286f7f620e  kernel/private/classes/views/setup/languages.php
 6e6d569994d88aa530322bac8a4a6845  kernel/private/classes/views/setup/logs.php
