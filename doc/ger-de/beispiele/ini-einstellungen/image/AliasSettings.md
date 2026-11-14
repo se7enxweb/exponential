@@ -3,13 +3,13 @@ title: image.ini [AliasSettings]
 audience: developer, admin
 category: examples
 summary: "Die Einstellungen von [AliasSettings] in image.ini: AliasList, AliasGeneration, OnDemandURL, Delivery, MaxWait, DraftTokenLifetime, SigningKeyGrace, PreferredConverter ..."
-keywords: Einstellung, image.ini, AliasSettings, INI, setting, AliasList, AliasGeneration, OnDemandURL, Delivery, MaxWait, DraftTokenLifetime, SigningKeyGrace, PreferredConverter, Negotiate, Placeholder, SwapScript, PreGenerate, PreGenerateAliasList, PreGenerateFormats, MaxParallel, BulkNice, CacheMaxAge
+keywords: Einstellung, image.ini, AliasSettings, INI, setting, AliasList, AliasGeneration, OnDemandURL, Delivery, MaxWait, DraftTokenLifetime, SigningKeyGrace, PreferredConverter, Negotiate, Placeholder, SwapScript, PreGenerate, PreGenerateAliasList, PreGenerateFormats, MaxParallel, BulkNice, CacheMaxAge, LogFileMaxSize
 type: generated
 generated: exp:help:examples
 ---
 # image.ini [AliasSettings]
 
-Der Block `[AliasSettings]` von `settings/image.ini`, mit 17 Einstellung(en).
+Der Block `[AliasSettings]` von `settings/image.ini`, mit 18 Einstellung(en).
 
 > -------- Einstellungen der Bild-Aliase --------  
 
@@ -324,6 +324,22 @@ Standard: `31536000`.
 # settings/override/image.ini.append.php
 [AliasSettings]
 CacheMaxAge=31536000
+*/ ?>
+```
+
+## LogFileMaxSize
+
+> Bytes, die var/log/imagealias.log erreichen darf, bevor es rotiert wird (aufbewahrt: site.ini \[FileSettings\] LogFileRotateCount).  
+> Eine eigene Größe, nicht site.ini LogFileMaxSize für alle Logs: Ein Massenlauf schreibt eine Zeile je Alias, und bei 2 MB umfasste  
+> der Verlauf von Setup > Bild-Aliase nur Minuten. 1 MB bis 1 GB; Standard 20 MB.  
+
+Standard: `20971520`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/image.ini.append.php
+[AliasSettings]
+LogFileMaxSize=20971520
 */ ?>
 ```
 

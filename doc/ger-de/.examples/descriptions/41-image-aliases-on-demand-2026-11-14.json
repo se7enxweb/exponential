@@ -115,6 +115,10 @@
         "en": "Cache-Control max-age (seconds) of a real alias answered by content/image or index_image.php;\nplaceholders are always sent with no-store.",
         "de": "Cache-Control max-age (Sekunden) eines echten Alias, mit dem content/image oder index_image.php antwortet;\nPlatzhalter werden immer mit no-store gesendet."
     },
+    "ini:settings/image.ini [AliasSettings] LogFileMaxSize": {
+        "en": "Bytes var/log/imagealias.log may reach before it is rotated (kept: site.ini [FileSettings] LogFileRotateCount).\nIts own size, not site.ini LogFileMaxSize for all logs: a bulk run writes a line per alias, and at 2 MB the run\nhistory of Setup > Image aliases covered only minutes. 1 MB to 1 GB; default 20 MB.",
+        "de": "Bytes, die var/log/imagealias.log erreichen darf, bevor es rotiert wird (aufbewahrt: site.ini [FileSettings] LogFileRotateCount).\nEine eigene Größe, nicht site.ini LogFileMaxSize für alle Logs: Ein Massenlauf schreibt eine Zeile je Alias, und bei 2 MB umfasste\nder Verlauf von Setup > Bild-Aliase nur Minuten. 1 MB bis 1 GB; Standard 20 MB."
+    },
     "ini:settings/image.ini [AliasSettings] Delivery": {
         "en": "How content/image answers with an alias that exists:\n  auto      a redirect (302) to the storage URL when the web server serves the storage (a single server\n            or shared file system), the file itself otherwise (a database cluster, drafts)\n  redirect  always the redirect\n  stream    always the file itself",
         "de": "Wie content/image mit einem vorhandenen Alias antwortet:\n  auto      eine Weiterleitung (302) auf die Speicher-URL, wenn der Webserver den Speicher ausliefert (ein einzelner Server\n            oder ein gemeinsames Dateisystem), sonst die Datei selbst (ein Datenbank-Cluster, Entwürfe)\n  redirect  immer die Weiterleitung\n  stream    immer die Datei selbst"

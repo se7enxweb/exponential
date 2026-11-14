@@ -3,13 +3,13 @@ title: image.ini [AliasSettings]
 audience: developer, admin
 category: examples
 summary: "The settings of [AliasSettings] in image.ini: AliasList, AliasGeneration, OnDemandURL, Delivery, MaxWait, DraftTokenLifetime, SigningKeyGrace, PreferredConverter ..."
-keywords: image.ini, AliasSettings, INI, setting, AliasList, AliasGeneration, OnDemandURL, Delivery, MaxWait, DraftTokenLifetime, SigningKeyGrace, PreferredConverter, Negotiate, Placeholder, SwapScript, PreGenerate, PreGenerateAliasList, PreGenerateFormats, MaxParallel, BulkNice, CacheMaxAge
+keywords: image.ini, AliasSettings, INI, setting, AliasList, AliasGeneration, OnDemandURL, Delivery, MaxWait, DraftTokenLifetime, SigningKeyGrace, PreferredConverter, Negotiate, Placeholder, SwapScript, PreGenerate, PreGenerateAliasList, PreGenerateFormats, MaxParallel, BulkNice, CacheMaxAge, LogFileMaxSize
 type: generated
 generated: exp:help:examples
 ---
 # image.ini [AliasSettings]
 
-The block `[AliasSettings]` of `settings/image.ini`, with 17 setting(s).
+The block `[AliasSettings]` of `settings/image.ini`, with 18 setting(s).
 
 > -------- Image alias settings --------  
 
@@ -324,6 +324,22 @@ Default: `31536000`.
 # settings/override/image.ini.append.php
 [AliasSettings]
 CacheMaxAge=31536000
+*/ ?>
+```
+
+## LogFileMaxSize
+
+> Bytes var/log/imagealias.log may reach before it is rotated (kept: site.ini \[FileSettings\] LogFileRotateCount).  
+> Its own size, not site.ini LogFileMaxSize for all logs: a bulk run writes a line per alias, and at 2 MB the run  
+> history of Setup > Image aliases covered only minutes. 1 MB to 1 GB; default 20 MB.  
+
+Default: `20971520`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/image.ini.append.php
+[AliasSettings]
+LogFileMaxSize=20971520
 */ ?>
 ```
 
