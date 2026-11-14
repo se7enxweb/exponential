@@ -107,6 +107,12 @@ class expHelpDocumentIndex
     /** @var string|null */
     protected $signature = null;
 
+    /** @var array signature() => linkSignature() of the index in use */
+    protected $linkSignatures = array();
+
+    /** The file in the cache directory that holds linkSignature() of the current index signature */
+    const LINK_SIGNATURE_FILE = 'links.php';
+
     /** @var array|null the index: array( 'format', 'signature', 'built', 'documents', 'assets', 'sources', 'recent' ) */
     protected $data = null;
 
@@ -419,26 +425,7 @@ class expHelpDocumentIndex
     {
         if ( $this->signature !== null )
             return $this->signature;
-        $parts = array( 'format ' . self::FORMAT, $this->allowlist->configStamp(), json_encode( $this->audience->config() ),
-                        'language ' . $this->language . ' ' . $this->languages->stamp(),
-                        $this->gitHistory ? 'history' : 'no history',
-                        self::rendererSlugs() ? 'renderer slug' : 'own slug' );
-        // the code that builds the entries: a deploy of a changed parser or slugger builds the index again
-        foreach ( array( __FILE__, ( new ReflectionClass( 'expHelpFrontMatter' ) )->getFileName(),
-                         ( new ReflectionClass( 'expHelpAudience' ) )->getFileName(),
-                         ( new ReflectionClass( 'expHelpAllowlist' ) )->getFileName(),
-                         class_exists( 'expHelpProjectFiles' ) ? ( new ReflectionClass( 'expHelpProjectFiles' ) )->getFileName() : '',
-                         class_exists( 'expHelpMarkdownRenderer' ) ? ( new ReflectionClass( 'expHelpMarkdownRenderer' ) )->getFileName() : '',
-                         class_exists( 'expHelpRecordRenderer' ) ? ( new ReflectionClass( 'expHelpRecordRenderer' ) )->getFileName() : '' ) as $code )
-            if ( is_string( $code ) && $code !== '' )
-            {
-                // Velocity runs the kernel from its engine archive (phar://.../engine.phar/kernel/...): the file on
-                // disk is the same code, and its time is what PHP-FPM and the console see
-                if ( strpos( $code, 'phar://' ) === 0 && preg_match( '#\.phar/(.+)$#', $code, $inside )
-                     && is_file( $this->allowlist->rootDir() . '/' . $inside[1] ) )
-                    $code = $this->allowlist->rootDir() . '/' . $inside[1];
-                $parts[] = basename( $code ) . ':' . (int)@filemtime( $code ) . ':' . (int)@filesize( $code );
-            }
+        $parts = $this->settingsParts();
         // The git index and manifest (stamp()) tell that files were added or removed. Without a look at the files they
         // are all the signature has; with one, the listed paths with their sizes and times say the same, and the
         // stamp only decides whether the last look can be reused. Kept out of the signature, a rewrite of the git
@@ -474,6 +461,76 @@ class expHelpDocumentIndex
             $this->store( self::CHECKED_SIGNATURE_FILE, array( 'base' => $base, 'signature' => $this->signature, 'checked' => time() ),
                           self::CHECKED_SIGNATURE_FILE );
         return $this->signature;
+    }
+
+    /**
+     * Changes when what a page's links and anchors depend on changes: the pages and images there are, their paths,
+     * the anchors of the pages' headings, and the settings and code signature() covers. Not with the text of a page,
+     * nor with the git head. The render cache (exphelp/viewer) and the PDF cache (exphelp/pdf) are keyed on it
+     * together with the page's own text, so an edit of one page makes that page again, not every page: with
+     * signature() a documentation site taking a commit an hour made all its PDFs (thousands) again after each one.
+     *
+     * @return string 40 hex characters
+     */
+    public function linkSignature()
+    {
+        // the documents first: loading them can answer from an older index, which brings its own signature
+        $documents = $this->documents();
+        $signature = $this->signature();
+        if ( isset( $this->linkSignatures[$signature] ) )
+            return $this->linkSignatures[$signature];
+        // taken once per index (about 90 ms for 10 000 pages) and kept in the cache directory for every request
+        $stored = $this->read( self::LINK_SIGNATURE_FILE );
+        if ( is_array( $stored ) && isset( $stored['signature'], $stored['links'] ) && $stored['signature'] === $signature )
+        {
+            $this->linkSignatures = array( $signature => (string)$stored['links'] );
+            return $this->linkSignatures[$signature];
+        }
+        $parts = $this->settingsParts();
+        foreach ( $documents as $id => $document )
+        {
+            $anchors = array();
+            foreach ( isset( $document['headings'] ) ? (array)$document['headings'] : array() as $heading )
+                $anchors[] = isset( $heading['anchor'] ) ? (string)$heading['anchor'] : '';
+            $parts[] = $id . "\t" . ( isset( $document['path'] ) ? (string)$document['path'] : '' ) . "\t" . implode( ' ', $anchors );
+        }
+        // the images and every other listed file: a link names a page, an image or neither
+        $parts[] = implode( "\n", array_keys( $this->files() ) );
+        $this->linkSignatures = array( $signature => sha1( implode( "\n", $parts ) ) );
+        $this->store( self::LINK_SIGNATURE_FILE, array( 'signature' => $signature, 'links' => $this->linkSignatures[$signature] ),
+                      self::LINK_SIGNATURE_FILE );
+        return $this->linkSignatures[$signature];
+    }
+
+    /**
+     * What signature() and linkSignature() hold besides the files: the format, the settings, the language and the
+     * code that builds the entries.
+     *
+     * @return string[]
+     */
+    protected function settingsParts()
+    {
+        $parts = array( 'format ' . self::FORMAT, $this->allowlist->configStamp(), json_encode( $this->audience->config() ),
+                        'language ' . $this->language . ' ' . $this->languages->stamp(),
+                        $this->gitHistory ? 'history' : 'no history',
+                        self::rendererSlugs() ? 'renderer slug' : 'own slug' );
+        // the code that builds the entries: a deploy of a changed parser or slugger builds the index again
+        foreach ( array( __FILE__, ( new ReflectionClass( 'expHelpFrontMatter' ) )->getFileName(),
+                         ( new ReflectionClass( 'expHelpAudience' ) )->getFileName(),
+                         ( new ReflectionClass( 'expHelpAllowlist' ) )->getFileName(),
+                         class_exists( 'expHelpProjectFiles' ) ? ( new ReflectionClass( 'expHelpProjectFiles' ) )->getFileName() : '',
+                         class_exists( 'expHelpMarkdownRenderer' ) ? ( new ReflectionClass( 'expHelpMarkdownRenderer' ) )->getFileName() : '',
+                         class_exists( 'expHelpRecordRenderer' ) ? ( new ReflectionClass( 'expHelpRecordRenderer' ) )->getFileName() : '' ) as $code )
+            if ( is_string( $code ) && $code !== '' )
+            {
+                // Velocity runs the kernel from its engine archive (phar://.../engine.phar/kernel/...): the file on
+                // disk is the same code, and its time is what PHP-FPM and the console see
+                if ( strpos( $code, 'phar://' ) === 0 && preg_match( '#\.phar/(.+)$#', $code, $inside )
+                     && is_file( $this->allowlist->rootDir() . '/' . $inside[1] ) )
+                    $code = $this->allowlist->rootDir() . '/' . $inside[1];
+                $parts[] = basename( $code ) . ':' . (int)@filemtime( $code ) . ':' . (int)@filesize( $code );
+            }
+        return $parts;
     }
 
     /**
@@ -1094,13 +1151,20 @@ class expHelpDocumentIndex
     }
 
     /** The cache files that belong to one index signature and are named by a hash of it: subdirectory => suffix */
-    const DERIVED_CACHES = array( 'nav' => 'html', 'render' => 'json', 'order' => 'php' );
+    const DERIVED_CACHES = array( 'nav' => 'html', 'order' => 'php' );
+
+    /**
+     * The cache files keyed on linkSignature() and a page's own text, which outlive an index (a rebuild leaves them,
+     * an edit of another page does not change them): removed by pruneUnused() when not used for a while.
+     */
+    const PAGE_CACHES = array( 'render' => 'json', 'pdf' => 'pdf' );
 
     /**
      * Removes what an older index left in the cache directory: the other index-<signature>.php files and the cached
-     * navigation trees (nav/) and rendered pages (render/), whose names are hashes that include the index signature,
-     * so none of them is read again once the signature changed. Only files written before $before (the start of the
-     * rebuild) go: what another process wrote meanwhile stays, and so does the current index.
+     * navigation trees (nav/) and page orders (order/), whose names are hashes that include the index signature, so
+     * none of them is read again once the signature changed. Only files written before $before (the start of the
+     * rebuild) go: what another process wrote meanwhile stays, and so does the current index. The rendered pages and
+     * PDFs (PAGE_CACHES) stay: their keys do not hold the signature (pruneUnused() removes the unused ones).
      *
      * @param int $before a Unix time
      * @return int the number of files removed
@@ -1127,6 +1191,63 @@ class expHelpDocumentIndex
                 ++$removed;
         }
         return $removed;
+    }
+
+    /**
+     * Renews the time of a page cache file (PAGE_CACHES) that was just served, at most once a day, so pruneUnused()
+     * tells the files in use from the ones an older text of a page left.
+     *
+     * @param string $file
+     */
+    public static function keepInCache( $file )
+    {
+        $time = @filemtime( $file );
+        if ( $time !== false && $time < time() - 86400 )
+            @touch( $file );
+    }
+
+    /**
+     * Removes the rendered pages and PDFs (PAGE_CACHES) not served or made for $days days, and temporary files a
+     * stopped write left behind (older than a day). exp:help prune runs it for every language.
+     *
+     * @param int $days
+     * @param bool $dryRun count only
+     * @return array array( 'files' => removed (or to remove), 'bytes' => their size, 'kept' => files kept )
+     */
+    public function pruneUnused( $days, $dryRun = false )
+    {
+        $result = array( 'files' => 0, 'bytes' => 0, 'kept' => 0 );
+        $dir = $this->cacheDir();
+        if ( $dir === null || !is_dir( $dir ) )
+            return $result;
+        $before = time() - max( 1, (int)$days ) * 86400;
+        foreach ( self::PAGE_CACHES as $sub => $suffix )
+        {
+            if ( !is_dir( $dir . '/' . $sub ) )
+                continue;
+            foreach ( new DirectoryIterator( $dir . '/' . $sub ) as $entry )
+            {
+                if ( !$entry->isFile() )
+                    continue;
+                $name = $entry->getFilename();
+                $page = preg_match( '/^[a-f0-9]{40}\.' . $suffix . '$/', $name ) === 1;
+                $tmp = preg_match( '/^[a-f0-9]{40}\.' . $suffix . '\.[0-9]+\.tmp$/', $name ) === 1;
+                if ( !$page && !$tmp )
+                    continue;
+                if ( $entry->getMTime() >= ( $tmp ? time() - 86400 : $before ) )
+                {
+                    ++$result['kept'];
+                    continue;
+                }
+                $size = $entry->getSize();
+                if ( $dryRun || @unlink( $entry->getPathname() ) )
+                {
+                    ++$result['files'];
+                    $result['bytes'] += $size;
+                }
+            }
+        }
+        return $result;
     }
 
     /**

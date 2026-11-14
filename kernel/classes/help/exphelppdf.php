@@ -6,9 +6,12 @@
  * Only pages of the help index are made (expHelpDocumentIndex::document() and source(): git-tracked, allowed, not
  * refused); anything else is null, which the view answers with a 404. The PDF is drawn by expHelpPdfWriter from the
  * same safe HTML the viewer shows (Viewer::rendered(), so its render cache is shared) and kept in
- * <help cache>/pdf/<key>.pdf. The key holds the page id, the index signature (it changes with every change below
- * doc/), the page's text, the address the links point to, the fonts, the page size and the writer's version, so a
- * changed page or setting makes a new file and an old one is never served.
+ * <help cache>/pdf/<key>.pdf. The key holds the page id, the index's link signature (expHelpDocumentIndex::
+ * linkSignature(): the pages, images and anchors links can name), the page's text and its own title, summary, path
+ * and date, the address the links point to, the fonts, the page size and the writer's version, so a changed page or
+ * setting makes a new file and an old one is never served, while an edit of another page leaves the file in place.
+ * A file served from the cache gets its time renewed once a day; exp:help prune removes the ones not used for
+ * [PdfSettings] CacheKeepDays days, and exp:help pdf --all makes every page's file ahead of the readers.
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -31,7 +34,8 @@ class expHelpPdf
      * The cache key of a page's PDF.
      *
      * @param string $id page id
-     * @param string $signature the index signature (expHelpDocumentIndex::signature())
+     * @param string $signature what else the PDF depends on: the index's link signature and the page's own
+     *                          details (forPage())
      * @param string $source the page's text
      * @param string $baseUrl the address links and the page URL start with
      * @param array $fonts the font files (expHelpPdfWriter::defaultFonts())
@@ -111,13 +115,21 @@ class expHelpPdf
 
         $settings = self::writerSettings();
         $baseUrl = rtrim( (string)$baseUrl, '/' );
-        $key = self::cacheKey( $id, $index->signature(), $source . "\0" . self::notice( $id ), $baseUrl . "\0" . eZSys::indexDir(), $settings['fonts'], $settings['page_size'] );
+        // what the PDF prints of the page besides its text (build())
+        $own = json_encode( array( isset( $document['title'] ) ? (string)$document['title'] : '',
+                                   isset( $document['summary'] ) ? (string)$document['summary'] : '',
+                                   isset( $document['path'] ) ? (string)$document['path'] : '',
+                                   isset( $document['changed'] ) ? (int)$document['changed'] : ( isset( $document['mtime'] ) ? (int)$document['mtime'] : 0 ) ) );
+        $key = self::cacheKey( $id, $index->linkSignature() . "\0" . $own, $source . "\0" . self::notice( $id ), $baseUrl . "\0" . eZSys::indexDir(), $settings['fonts'], $settings['page_size'] );
         $cacheDir = $index->cacheDir();
         $dir = $cacheDir === null || $cacheDir === '' ? null : rtrim( (string)$cacheDir, '/' ) . '/pdf';
         $file = $dir === null ? null : $dir . '/' . $key . '.pdf';
         $filename = self::filename( $document, $id );
         if ( $file !== null && is_file( $file ) && filesize( $file ) > 0 )
+        {
+            expHelpDocumentIndex::keepInCache( $file );
             return array( 'file' => $file, 'data' => null, 'filename' => $filename, 'size' => filesize( $file ), 'cached' => true );
+        }
 
         $data = self::build( $index, $document, $id, $source, $baseUrl, $settings );
 

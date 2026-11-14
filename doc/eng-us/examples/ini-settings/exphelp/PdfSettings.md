@@ -2,14 +2,14 @@
 title: exphelp.ini [PdfSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [PdfSettings] in exphelp.ini: Enabled, PageSize, FontFiles, BoldFontFiles, ItalicFontFiles, BoldItalicFontFiles, MonoFontFiles, FallbackFontFiles"
-keywords: exphelp.ini, PdfSettings, INI, setting, Enabled, PageSize, FontFiles, BoldFontFiles, ItalicFontFiles, BoldItalicFontFiles, MonoFontFiles, FallbackFontFiles
+summary: "The settings of [PdfSettings] in exphelp.ini: Enabled, PageSize, CacheKeepDays, FontFiles, BoldFontFiles, ItalicFontFiles, BoldItalicFontFiles, MonoFontFiles ..."
+keywords: exphelp.ini, PdfSettings, INI, setting, Enabled, PageSize, CacheKeepDays, FontFiles, BoldFontFiles, ItalicFontFiles, BoldItalicFontFiles, MonoFontFiles, FallbackFontFiles
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [PdfSettings]
 
-The block `[PdfSettings]` of `settings/exphelp.ini`, with 8 setting(s).
+The block `[PdfSettings]` of `settings/exphelp.ini`, with 9 setting(s).
 
 > "Download as PDF" of a help page (exphelp/pdf/<page id>, ./console exp:help pdf <page id>), drawn by the kernel's  
 > own PDF library (lib/ezpdf); nothing outside the installation is called. Files are cached in <help cache>/pdf.  
@@ -45,6 +45,22 @@ Default: `A4`.
 # settings/override/exphelp.ini.append.php
 [PdfSettings]
 PageSize=A4
+*/ ?>
+```
+
+## CacheKeepDays
+
+> Days a cached PDF or rendered page (var/<site>/cache/exphelp/pdf/, render/) is kept when nobody asks for it:  
+> ./console exp:help prune removes the older ones (a file served gets its time renewed once a day). Their keys hold  
+> the page's own text, so an edit of another page leaves them valid; what an edit replaces goes after these days.  
+
+Default: `14`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[PdfSettings]
+CacheKeepDays=14
 */ ?>
 ```
 

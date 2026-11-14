@@ -94,6 +94,7 @@ Security Policy.
 | `[License]` | GFDL 1.3 or later | the documentation license and its notice; `Enabled=false` hides it |
 | `[PdfSettings] Enabled` | `true` | `false` hides "Download as PDF" and makes `exphelp/pdf` a 404 |
 | `[PdfSettings] PageSize` | `A4` | `A4` or `Letter` |
+| `[PdfSettings] CacheKeepDays` | `14` | days a cached PDF or rendered page nobody asked for is kept (`exp:help prune`) |
 | `[PdfSettings] FontFiles[]` and the others | DejaVu Sans, Droid Sans Fallback | TrueType fonts of the PDF, first readable file of each list (see below) |
 | `[TitleSettings] Titles[]`, `Summaries[]`, `TitleRules[]` | about 50 inherited pages | a clearer title and summary for a page whose own is unclear (see below) |
 | `[TreeSettings] PageOrder[]` | the top-level pages | `PageOrder[<page id>]=<integer>`: the place of a page in the page tree, the folder lists and the category lists; wins over the front matter `order` (see "Order of the pages") |
@@ -485,8 +486,24 @@ main font lacks, such as Chinese, Japanese and Korean. Right to left text (Hebre
 Arabic letters are drawn in their basic forms, without joining. Without any TrueType font the PDF core fonts are
 used and characters outside Western European are replaced by their closest Latin letters.
 
-PDFs are cached in `var/<site>/cache/exphelp/pdf/`, per page, index signature, address and fonts: a change to the
-page or the settings makes a new file.
+PDFs are cached in `var/<site>/cache/exphelp/pdf/`, rendered pages in `render/`. A file's key holds the page's own
+text, title and date, the address and siteaccess path its links use, the fonts and the index's *link signature*: the
+pages and images there are, their paths and the anchors of their headings. An edit of a page makes that page's
+files again; an edit of another page leaves them in place (it changes the link signature only when it adds, moves or
+removes a page, an image or a heading). Before 6.0.15 the key held the whole index signature, so every commit, on a
+documentation site several a day, made every PDF again on its next request.
+
+A file served from the cache gets its time renewed once a day. `./console exp:help prune` removes the PDFs and
+rendered pages nobody asked for in `[PdfSettings] CacheKeepDays` days (14), in every language; `--dry-run` only counts.
+After a documentation update, `exp:help pdf --all` makes every page's PDF ahead of the readers, and of the crawlers
+that ask for all of them: run it with low priority, once per host and siteaccess path the readers use.
+
+```bash
+nice -n 15 ./console exp:help pdf --all --base-url=https://doc.example.com
+nice -n 15 ./console exp:help pdf --all --base-url=https://doc.example.com --access-path=learninminutes
+nice -n 15 ./console exp:help pdf --all --base-url=https://doc.example.com --language=ger-de
+./console exp:help prune --dry-run
+```
 
 ## On the command line
 

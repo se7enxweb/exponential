@@ -1,0 +1,22 @@
+{
+    "command:exphelp --access-path": {
+        "en": "pdf: the siteaccess path of a URI-matched siteaccess the readers use (learninminutes), so the files are the ones its pages ask for",
+        "de": "pdf: der Siteaccess-Pfad eines per URI erkannten Siteaccess, den die Leser verwenden (learninminutes), damit die Dateien die sind, die seine Seiten abrufen"
+    },
+    "command:exphelp --all": {
+        "en": "check: also list the notices (links to files that are not help pages); pdf: every page",
+        "de": "check: auch die Hinweise auflisten (Links auf Dateien, die keine Hilfeseiten sind); pdf: jede Seite"
+    },
+    "command:exphelp --days": {
+        "en": "prune: days a file not used is kept (default exphelp.ini [PdfSettings] CacheKeepDays)",
+        "de": "prune: Tage, die eine nicht verwendete Datei behalten wird (Standard exphelp.ini [PdfSettings] CacheKeepDays)"
+    },
+    "command:exphelp --dry-run": {
+        "en": "prune: count, remove nothing",
+        "de": "prune: zählen, nichts entfernen"
+    },
+    "ini:settings/exphelp.ini [PdfSettings] CacheKeepDays": {
+        "en": "Days a cached PDF or rendered page (var/<site>/cache/exphelp/pdf/, render/) is kept when nobody asks for it:\n./console exp:help prune removes the older ones (a file served gets its time renewed once a day). Their keys hold\nthe page's own text, so an edit of another page leaves them valid; what an edit replaces goes after these days.",
+        "de": "Tage, die ein gecachtes PDF oder eine gerenderte Seite (var/<site>/cache/exphelp/pdf/, render/) behalten wird, wenn sie niemand abruft:\n./console exp:help prune entfernt die älteren (eine ausgelieferte Datei bekommt einmal am Tag eine neue Zeit). Ihre Schlüssel enthalten\nden eigenen Text der Seite, sodass eine Änderung an einer anderen Seite sie gültig lässt; was eine Änderung ersetzt, geht nach diesen Tagen."
+    }
+}

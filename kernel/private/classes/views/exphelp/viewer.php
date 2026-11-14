@@ -244,7 +244,9 @@ class Viewer extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * The rendered page, cached per page and index signature in <help cache>/render/ (a long changelog takes 0.3 s).
+     * The rendered page, cached in <help cache>/render/ (a long changelog takes 0.3 s) per page, its text and the
+     * index's link signature (expHelpDocumentIndex::linkSignature()): an edit of another page leaves it in place. A
+     * file served from the cache gets its time renewed once a day, so exp:help prune keeps the files in use.
      *
      * @param \expHelpDocumentIndex $index
      * @param array $document
@@ -257,13 +259,16 @@ class Viewer extends \Exponential\Runnable\ModuleView
         $markdown = isset( $document['suffix'] ) && in_array( $document['suffix'], array( 'md', 'markdown' ), true );
         $dir = rtrim( (string)$index->cacheDir(), '/' ) . '/render';
         // the siteaccess prefix is in the links, so it is part of the key
-        $file = $dir . '/' . sha1( self::RENDER_VERSION . "\0" . $index->signature() . "\0" . $id . "\0" . \eZSys::indexDir() . "\0" . md5( (string)$source )
+        $file = $dir . '/' . sha1( self::RENDER_VERSION . "\0" . $index->linkSignature() . "\0" . $id . "\0" . \eZSys::indexDir() . "\0" . md5( (string)$source )
                                    . "\0" . self::remoteImagesSignature() ) . '.json';
         if ( is_file( $file ) )
         {
             $cached = json_decode( (string)@file_get_contents( $file ), true );
             if ( is_array( $cached ) && isset( $cached['html'], $cached['toc'] ) )
+            {
+                \expHelpDocumentIndex::keepInCache( $file );
                 return $cached;
+            }
         }
         $renderer = self::renderer( isset( $document['path'] ) ? (string)$document['path'] : '' );
         // the links resolve through expHelpDocumentIndex::instance() (expHelpLinks), which is the reader's language:

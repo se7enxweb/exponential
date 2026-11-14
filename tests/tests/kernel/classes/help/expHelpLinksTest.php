@@ -157,7 +157,7 @@ class expHelpLinksTest extends PHPUnit\Framework\TestCase
         $viewer = (string)file_get_contents( dirname( __DIR__, 5 ) . '/kernel/private/classes/views/exphelp/viewer.php' );
         $this->assertStringContainsString( "'image_resolver' => array( 'expHelpLinks', 'sizedImage' )", $viewer );
         $this->assertMatchesRegularExpression( '/const RENDER_VERSION = [2-9]/', $viewer );
-        $this->assertStringContainsString( 'sha1( self::RENDER_VERSION . "\0" . $index->signature()', $viewer );
+        $this->assertStringContainsString( 'sha1( self::RENDER_VERSION . "\0" . $index->linkSignature()', $viewer );
         $html = ( new expHelpMarkdownRenderer( array( 'image_resolver' => array( 'expHelpLinks', 'sizedImage' ) ) ) )->render( '![About](' . $src . ')', $page );
         $this->assertStringContainsString( 'width="' . (int)$size[0] . '" height="' . (int)$size[1] . '"', is_array( $html ) ? $html['html'] : (string)$html );
     }

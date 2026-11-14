@@ -3881,7 +3881,7 @@ b791538120cc3622e7d2268eee2a4ab9  doc/eng-us/examples/commands/expgraphqlquery.m
 da3556f0306e10c9ebb391766a13b36c  doc/eng-us/examples/commands/expgraphqlstarter.md
 c147eb81b588ba2ab38af6dde1cab996  doc/eng-us/examples/commands/expgraphqlstatus.md
 838861e8d88a23d984e3c85e8112310c  doc/eng-us/examples/commands/expgraphqlwebhooks.md
-0f785bf17975e13e4cf701bb0c28193a  doc/eng-us/examples/commands/exphelp.md
+2a96d87ec7adfc6b06de711aaac45f9b  doc/eng-us/examples/commands/exphelp.md
 e8d9f6e06e1709a34a8e2b131e7a8b8a  doc/eng-us/examples/commands/exphelpcontent.md
 da36319ce9b473e688815ba1ef0871ae  doc/eng-us/examples/commands/exphelpexamples.md
 ab7f328f43bec968b39a2ca1d0b79589  doc/eng-us/examples/commands/expimagealias.md
@@ -5021,9 +5021,9 @@ fe2173817721329c4b06c9c1ce90b5bf  doc/eng-us/examples/ini-settings/exphelp/Landi
 7d12e661ef4fddfb71a732d3342f19b2  doc/eng-us/examples/ini-settings/exphelp/License.md
 0d8a3ac0ac11cdf177f8dc64833878de  doc/eng-us/examples/ini-settings/exphelp/ManualSettings.md
 c6c944212ad48406f15ae4df0adb435e  doc/eng-us/examples/ini-settings/exphelp/NavigationSettings.md
-a13bbc950bdaa9e2fdceb8ce86dc90e3  doc/eng-us/examples/ini-settings/exphelp/PdfSettings.md
+0256e7bbdd87a90d812de0fd2a5c0b46  doc/eng-us/examples/ini-settings/exphelp/PdfSettings.md
 b29cbc56f5ad26f1024645916ee55962  doc/eng-us/examples/ini-settings/exphelp/ProjectFiles.md
-ebfb66dd18c5fd20798a88d71f7d9003  doc/eng-us/examples/ini-settings/exphelp/README.md
+79d341152916c4afe0dcf547338eb5e4  doc/eng-us/examples/ini-settings/exphelp/README.md
 225ea27d3ea8cf52eb393d4f95124357  doc/eng-us/examples/ini-settings/exphelp/SearchSettings.md
 a049551ead973f7c0d01d422b681c6a1  doc/eng-us/examples/ini-settings/exphelp/SecuritySettings.md
 53262cd9e15b63b8fa26ebcda97c71ee  doc/eng-us/examples/ini-settings/exphelp/SupportOrganization_7x.md
@@ -7060,7 +7060,7 @@ c1612437070da67fdd2723c6b1e1c2b2  doc/eng-us/features/6.0/extensions/xrowmetadat
 c07093f263cd19afba94ebf074a3f885  doc/eng-us/features/6.0/front-design-switch.md
 b388ac5e100e8398638ffe8c4c6c8207  doc/eng-us/features/6.0/graphql.md
 d764ef1d7e05fc5071e8521fe1dbe843  doc/eng-us/features/6.0/help-content.md
-4f1a1ae7306c96e21887396933a67685  doc/eng-us/features/6.0/help-system.md
+3f3dbc6029b05961b3dd1fd969bf1b69  doc/eng-us/features/6.0/help-system.md
 1497f038f1fb68bf320b385032fe2e31  doc/eng-us/features/6.0/hidden-admin-tabs.md
 67e2133c059b3294dd3d9275b167b820  doc/eng-us/features/6.0/icon-themes-in-extensions.md
 a36270828104fa37cf3bda0353135917  doc/eng-us/features/6.0/image-aliases-on-demand.md
@@ -13637,6 +13637,7 @@ d5481e7bd597218cdc491e7d905b9f58  doc/ger-de/.examples/descriptions/37-help-left
 b77698c6eee8d107b3fef578dca0ea27  doc/ger-de/.examples/descriptions/39-url-map-import-2026-11-05.json
 74241955ebdd7e35369eaee561298f4a  doc/ger-de/.examples/descriptions/40-url-map-helpers-2026-11-06.json
 6d17ce10aad16af20731c4703b7d2409  doc/ger-de/.examples/descriptions/41-image-aliases-on-demand-2026-11-14.json
+27cfff59ae453e47c249c18a69040455  doc/ger-de/.examples/descriptions/42-exphelp-pdf-cache-2026-11-14.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
@@ -14008,7 +14009,7 @@ f57f59e5a76051a0e23e94efd9b4ab26  doc/ger-de/beispiele/befehle/expgraphqlschema.
 421bdc41e86c63e50124c2b0655fa258  doc/ger-de/beispiele/befehle/expgraphqlstarter.md
 ae3cf5941fc4f3486455dc7a938250e3  doc/ger-de/beispiele/befehle/expgraphqlstatus.md
 0e9bade60b30f5af36d2e573552588a0  doc/ger-de/beispiele/befehle/expgraphqlwebhooks.md
-5298a5810aac34700fb5e9c5a605293d  doc/ger-de/beispiele/befehle/exphelp.md
+5e2995400b904dc3c107fe8dfeb64705  doc/ger-de/beispiele/befehle/exphelp.md
 cfae99e30e49125b83c0ec01171d96a8  doc/ger-de/beispiele/befehle/exphelpcontent.md
 58988a3fdec2f3125b5d8701b0d29f1c  doc/ger-de/beispiele/befehle/exphelpexamples.md
 539d3d0efcb2cf54588a4b8a3f7158c9  doc/ger-de/beispiele/befehle/expimagealias.md
@@ -15123,9 +15124,9 @@ b7a6a3a3d9ec112fa0ca9468eaa81a19  doc/ger-de/beispiele/ini-einstellungen/exphelp
 78c84e8018fcf3d9c8b4fabc333267c7  doc/ger-de/beispiele/ini-einstellungen/exphelp/License.md
 2a0bdcb55fcc78a07ae1d01fdb0542ba  doc/ger-de/beispiele/ini-einstellungen/exphelp/ManualSettings.md
 770986c910fa96958f30430685db1386  doc/ger-de/beispiele/ini-einstellungen/exphelp/NavigationSettings.md
-a07bc3aaf3a104d38caf2a868c6cfc05  doc/ger-de/beispiele/ini-einstellungen/exphelp/PdfSettings.md
+a37fbcc702be0145a254d22295f09411  doc/ger-de/beispiele/ini-einstellungen/exphelp/PdfSettings.md
 08076023d9b89505a5c1bce49b7d0071  doc/ger-de/beispiele/ini-einstellungen/exphelp/ProjectFiles.md
-9dfec69ef7a3afe586777ede738c4424  doc/ger-de/beispiele/ini-einstellungen/exphelp/README.md
+44d5577c961048c3ec914997340ae680  doc/ger-de/beispiele/ini-einstellungen/exphelp/README.md
 20d0a84c3383f026ebcf41e4961d7f2a  doc/ger-de/beispiele/ini-einstellungen/exphelp/SearchSettings.md
 8f42949e80479ca116dc36d462fe92a5  doc/ger-de/beispiele/ini-einstellungen/exphelp/SecuritySettings.md
 d2090489dd6847b0e141e6bfd7d459b0  doc/ger-de/beispiele/ini-einstellungen/exphelp/SupportOrganization_7x.md
@@ -17172,7 +17173,7 @@ eb3d2bb16f19518e5d5f40301852dfa7  doc/ger-de/funktionen/6.0/generator-fuer-den-s
 182d80bb708aaaa1348d28e88f2008aa  doc/ger-de/funktionen/6.0/graphql.md
 e667b2bcfdc637b0ebf0d7ce755249e5  doc/ger-de/funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md
 68d47347beaa485aeeced24a6f68bde7  doc/ger-de/funktionen/6.0/hilfeinhalte.md
-fcff990386609795d127db9b90605ca9  doc/ger-de/funktionen/6.0/hilfesystem.md
+d23adb321d15141f0c573af398ebc30b  doc/ger-de/funktionen/6.0/hilfesystem.md
 445e9e9efb5d3397ac8acc5ce905b8bb  doc/ger-de/funktionen/6.0/icon-themes-in-extensions.md
 6a93174afff8017d38daaa3e8a6bcebc  doc/ger-de/funktionen/6.0/info-und-paketseiten.md
 94afe78af733f3cbd2be98702c68bd9a  doc/ger-de/funktionen/6.0/inhalte-schreiben.md
@@ -25191,7 +25192,7 @@ a63ff9934a8519aa4b506d0e5cfebfee  kernel/classes/help/exphelpallowlist.php
 5378d01788118723dc59f7347128b4cd  kernel/classes/help/exphelpcontextpageinterface.php
 f546e5b19a93c07565afe222731b0a3d  kernel/classes/help/exphelpcontextproviderinterface.php
 247a0d608b525106abde2b9bd8e6afb2  kernel/classes/help/exphelpcontextregistry.php
-c99fbf81df601277b6614e77804815ac  kernel/classes/help/exphelpdocumentindex.php
+37ca196fd7ae31f9959173eda3e68a17  kernel/classes/help/exphelpdocumentindex.php
 9cbbce6c93a112d302d03a64f6979e37  kernel/classes/help/exphelpexamplesgenerator.php
 08dbfd780297b74f7f1a800b1c50de6f  kernel/classes/help/exphelpexamplestranslation.php
 d36e09b1e690617bd7611e91f6360650  kernel/classes/help/exphelpfrontmatter.php
@@ -25205,7 +25206,7 @@ b62f68d250ea7c1033cfe53796e3cd30  kernel/classes/help/exphelplinkcheck.php
 fbae80fe63d96d6e887b16fe062af9a4  kernel/classes/help/exphelplinks.php
 e9aae42eb9117a8db806a575e23ad843  kernel/classes/help/exphelpmarkdownrenderer.php
 1237e10daa9b4e810db88025ace25a57  kernel/classes/help/exphelpnavigation.php
-7a323ea29b9c2af2832bfb915b89c644  kernel/classes/help/exphelppdf.php
+c8ab3e5e74f7661980dff8763b6dd106  kernel/classes/help/exphelppdf.php
 332da42923a1670f592402d3730ef688  kernel/classes/help/exphelppdfcanvas.php
 52367f95a9e48a3d386d0b7216e48c15  kernel/classes/help/exphelppdffontsubset.php
 b0968aefe44efcda01d0fefa681a4950  kernel/classes/help/exphelppdfwriter.php
@@ -26021,7 +26022,7 @@ f9ec87d9fa40c93ba773db5c58c1a950  kernel/private/classes/commands/expgraphqlsche
 3d0ea1ad9df088b281556665cc1f08be  kernel/private/classes/commands/expgraphqlstarter.php
 eb118ef2db669df16fdacf1e314c17b1  kernel/private/classes/commands/expgraphqlstatus.php
 4feaac0df7bc4b9dd4c016030182b5c1  kernel/private/classes/commands/expgraphqlwebhooks.php
-047191514b13784172688136d9b8086b  kernel/private/classes/commands/exphelp.php
+04ede5250bd89f830c34713f7e2cef29  kernel/private/classes/commands/exphelp.php
 708f0c28160cbb68a971dcc7c40dec44  kernel/private/classes/commands/exphelpcontent.php
 fb3a3a5f3af0553e8c2c1ac4c048f7b7  kernel/private/classes/commands/exphelpexamples.php
 277ca6e73d3c617e3757eca691db23ae  kernel/private/classes/commands/expimagealias.php
@@ -26422,7 +26423,7 @@ a70e70331330077c89bd95988d5704ec  kernel/private/classes/views/exphelp/report.ph
 10126a3407ed45e6102092e2a6f4aa69  kernel/private/classes/views/exphelp/search.php
 35d59f8e23e442e444da1bb4ec628d32  kernel/private/classes/views/exphelp/state.php
 2fe743d50acdea196af3a127840a4c5b  kernel/private/classes/views/exphelp/topic.php
-fb63d71c1c83daf6a352be3d4f389158  kernel/private/classes/views/exphelp/viewer.php
+c8b00339e4746c0bdeaa1031915cccd8  kernel/private/classes/views/exphelp/viewer.php
 b7fa0f2029b9a1ccc6120bb75baa525a  kernel/private/classes/views/ezinfo/about.php
 8db91d78d01d08ffd3328bc13bd46f18  kernel/private/classes/views/ezinfo/copyright.php
 5d5b6b638fe26b580f75e3b0c07a186d  kernel/private/classes/views/ezinfo/isalive.php
@@ -27448,7 +27449,7 @@ db2bae948264a3a4af9be5be6760321b  settings/debugbar.ini
 68d143fe1de8620b59c0a74d45d2d1d2  settings/design.ini
 b244336d7be89b1697f8232f4f0fe201  settings/editorpolicies.ini
 ab00f79238eebe7e595134867213df63  settings/error.ini
-b26c838451dab73c81cc5bd58974072c  settings/exphelp.ini
+6aa39c76bafbb5d626e6aecf3a28469c  settings/exphelp.ini
 373e2882d1581371eb4f16c2703212a0  settings/expqueue.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
@@ -29586,7 +29587,7 @@ a251ad33e6b9003ead18212ae3afd01e  tests/tests/kernel/classes/graphql/expGraphQLS
 9bfd5dde42df34757ac073d1f750d63d  tests/tests/kernel/classes/graphql/fixtures/migration-schema.graphql
 8a8da2e506dcd48c7a0df28144b3aba6  tests/tests/kernel/classes/help/expHelpAssetRevalidationTest.php
 e5cbad1db75cfafdf1e165a21f145e74  tests/tests/kernel/classes/help/expHelpAudienceBoostTest.php
-eda2f71ea09372f93dd9c462d065aaae  tests/tests/kernel/classes/help/expHelpCachePruneTest.php
+cfaf546179a86d0e6bdb8858ecc14413  tests/tests/kernel/classes/help/expHelpCachePruneTest.php
 c4394ed610114820c4c5a91d6fadc013  tests/tests/kernel/classes/help/expHelpCommunityAudiencesTest.php
 5f046e0b4e8cfa86ec7479a4b9e634d9  tests/tests/kernel/classes/help/expHelpContentAccessTest.php
 b6cb5652371e1b718299f2cd27bb1558  tests/tests/kernel/classes/help/expHelpContentDitaTest.php
@@ -29613,7 +29614,7 @@ e050085c069a32870983ec06ab04b7c3  tests/tests/kernel/classes/help/expHelpIndexFr
 657e6fce4de2af44656438bb0ef98350  tests/tests/kernel/classes/help/expHelpLandingPagesTest.php
 96354004fecd0e5b6115b2b52447de2b  tests/tests/kernel/classes/help/expHelpLeadershipAudiencesTest.php
 bd566ff127f583a3f9408797ef32e96b  tests/tests/kernel/classes/help/expHelpLicenseTest.php
-6808bf9d58df0654bef74261a8df098a  tests/tests/kernel/classes/help/expHelpLinksTest.php
+fed4e7af4b63756e953151cc1d9cae55  tests/tests/kernel/classes/help/expHelpLinksTest.php
 444d8be077d3ee2bc1ed5eb7a3257efa  tests/tests/kernel/classes/help/expHelpManualBuilderTest.php
 ced53606a9e6fdb45b22b9719a58fd65  tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php
 9530b7abd65cfb58abe94b528dbcadc6  tests/tests/kernel/classes/help/expHelpMigrationDocsTest.php

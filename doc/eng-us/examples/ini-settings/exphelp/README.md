@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # exphelp.ini
 
-The shipped settings of `settings/exphelp.ini`: 69 blocks, 295 settings.
+The shipped settings of `settings/exphelp.ini`: 69 blocks, 296 settings.
 
 > The help system of the administration: exphelp/dashboard, exphelp/viewer, exphelp/search, exphelp/asset and  
 > exphelp/report (doc/eng-us/features/6.0/help-system.md). It shows the git-tracked text and Markdown files under doc/,  
@@ -87,7 +87,7 @@ The shipped settings of `settings/exphelp.ini`: 69 blocks, 295 settings.
 | [Tracker_community](Tracker_community.md) | 4 |
 | [SecuritySettings](SecuritySettings.md) | 3 |
 | [License](License.md) | 17 |
-| [PdfSettings](PdfSettings.md) | 8 |
+| [PdfSettings](PdfSettings.md) | 9 |
 | [ContentSettings](ContentSettings.md) | 31 |
 | [ManualSettings](ManualSettings.md) | 8 |
 

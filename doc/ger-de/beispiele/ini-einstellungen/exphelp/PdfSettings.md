@@ -2,14 +2,14 @@
 title: exphelp.ini [PdfSettings]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [PdfSettings] in exphelp.ini: Enabled, PageSize, FontFiles, BoldFontFiles, ItalicFontFiles, BoldItalicFontFiles, MonoFontFiles, FallbackFontFiles"
-keywords: Einstellung, exphelp.ini, PdfSettings, INI, setting, Enabled, PageSize, FontFiles, BoldFontFiles, ItalicFontFiles, BoldItalicFontFiles, MonoFontFiles, FallbackFontFiles
+summary: "Die Einstellungen von [PdfSettings] in exphelp.ini: Enabled, PageSize, CacheKeepDays, FontFiles, BoldFontFiles, ItalicFontFiles, BoldItalicFontFiles, MonoFontFiles ..."
+keywords: Einstellung, exphelp.ini, PdfSettings, INI, setting, Enabled, PageSize, CacheKeepDays, FontFiles, BoldFontFiles, ItalicFontFiles, BoldItalicFontFiles, MonoFontFiles, FallbackFontFiles
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [PdfSettings]
 
-Der Block `[PdfSettings]` von `settings/exphelp.ini`, mit 8 Einstellung(en).
+Der Block `[PdfSettings]` von `settings/exphelp.ini`, mit 9 Einstellung(en).
 
 > „Als PDF herunterladen“ einer Hilfeseite (exphelp/pdf/<page id>, ./console exp:help pdf <page id>), gezeichnet von der eigenen  
 > PDF-Bibliothek des Kernels (lib/ezpdf); nichts außerhalb der Installation wird aufgerufen. Die Dateien werden in <help cache>/pdf gecacht.  
@@ -45,6 +45,22 @@ Standard: `A4`.
 # settings/override/exphelp.ini.append.php
 [PdfSettings]
 PageSize=A4
+*/ ?>
+```
+
+## CacheKeepDays
+
+> Tage, die ein gecachtes PDF oder eine gerenderte Seite (var/<site>/cache/exphelp/pdf/, render/) behalten wird, wenn sie niemand abruft:  
+> ./console exp:help prune entfernt die älteren (eine ausgelieferte Datei bekommt einmal am Tag eine neue Zeit). Ihre Schlüssel enthalten  
+> den eigenen Text der Seite, sodass eine Änderung an einer anderen Seite sie gültig lässt; was eine Änderung ersetzt, geht nach diesen Tagen.  
+
+Standard: `14`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[PdfSettings]
+CacheKeepDays=14
 */ ?>
 ```
 

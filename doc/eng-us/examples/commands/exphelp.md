@@ -32,6 +32,10 @@ The help system: the index of the documentation, its search and its link check
 ./console exp:help show guides/caches.md     the metadata and headings of one page
 ./console exp:help check                     check the links and images of every page (--below=guides/)
 ./console exp:help pdf help/searching.md      the page as a PDF file (--out=file.pdf, --base-url=https://host)
+./console exp:help pdf --all --base-url=https://host   make every page's PDF in the cache ahead of the
+                                             readers (--access-path=, --language=, --below=; after a docs update)
+./console exp:help prune                     remove cached PDFs and rendered pages not used for [PdfSettings]
+                                             CacheKeepDays days, in every language (--days=, --dry-run)
 ./console exp:help maps --language=ger-de    check doc/ger-de/.paths.json and .dirnames.json; --fix writes the
                                              union of both sides of a git conflict (and of --paths=, --dirnames=)
 
@@ -58,10 +62,13 @@ Exit code: 0 fine, 1 check found errors (with --strict also warnings) or nothing
 | `--type` | required | search, index --list: only pages of this type (guide, feature, bc, changelog ...) |
 | `--limit` | required | search: the number of results (default 10) |
 | `--below` | required | check, index --list: only the pages whose id starts with this (e.g. guides/) |
-| `--all` |  | check: also list the notices (links to files that are not help pages) |
+| `--all` |  | check: also list the notices (links to files that are not help pages); pdf: every page |
 | `--strict` |  | check: exit 1 on warnings too |
 | `--out` | required | pdf: the file to write (default: the page title as file name, in the current directory) |
 | `--base-url` | required | pdf: scheme and host for the links and the page address (https://www.example.com) |
+| `--access-path` | required | pdf: the siteaccess path of a URI-matched siteaccess the readers use (learninminutes), so the files are the ones its pages ask for |
+| `--days` | required | prune: days a file not used is kept (default exphelp.ini [PdfSettings] CacheKeepDays) |
+| `--dry-run` |  | prune: count, remove nothing |
 | `--language` | required | the documentation language: a directory of exphelp.ini [DocLanguages] Directories[] (eng-us, ger-de; the old en/us and de are accepted) |
 | `--fix` |  | maps: write .paths.json and .dirnames.json as the union of their entries, sorted |
 | `--paths` | required | maps --fix: also merge the entries of this JSON file into .paths.json |

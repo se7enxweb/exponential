@@ -99,6 +99,7 @@ daher unter der Content Security Policy der Administrationsoberfläche.
 | `[License]` | GFDL 1.3 oder später | die Lizenz der Dokumentation und ihr Hinweis; `Enabled=false` blendet ihn aus |
 | `[PdfSettings] Enabled` | `true` | `false` blendet „Als PDF herunterladen“ aus und macht `exphelp/pdf` zu einem 404 |
 | `[PdfSettings] PageSize` | `A4` | `A4` oder `Letter` |
+| `[PdfSettings] CacheKeepDays` | `14` | Tage, die ein gecachtes PDF oder eine gerenderte Seite ohne Abruf behalten wird (`exp:help prune`) |
 | `[PdfSettings] FontFiles[]` und die anderen | DejaVu Sans, Droid Sans Fallback | TrueType-Schriften des PDFs, die erste lesbare Datei jeder Liste (siehe unten) |
 | `[TitleSettings] Titles[]`, `Summaries[]`, `TitleRules[]` | etwa 50 übernommene Seiten | ein klarerer Titel und eine klarere Zusammenfassung für eine Seite, deren eigene unklar sind (siehe unten) |
 | `[TreeSettings] PageOrder[]` | die Seiten der obersten Ebene | `PageOrder[<page id>]=<integer>`: der Platz einer Seite im Seitenbaum, in den Ordnerlisten und den Kategorielisten; hat Vorrang vor `order` im Front Matter (siehe „Reihenfolge der Seiten“) |
@@ -520,8 +521,26 @@ gedruckt; arabische Buchstaben werden in ihren Grundformen gezeichnet, ohne Verb
 werden die PDF-Kernschriften verwendet, und Zeichen außerhalb des westeuropäischen Bereichs werden durch die
 nächstliegenden lateinischen Buchstaben ersetzt.
 
-PDFs werden in `var/<site>/cache/exphelp/pdf/` gecacht, pro Seite, Indexsignatur, Adresse und Schriften: Eine Änderung
-an der Seite oder den Einstellungen erzeugt eine neue Datei.
+PDFs werden in `var/<site>/cache/exphelp/pdf/` gecacht, gerenderte Seiten in `render/`. Der Schlüssel einer Datei
+enthält den eigenen Text, Titel und das Datum der Seite, die Adresse und den Siteaccess-Pfad ihrer Links, die
+Schriften und die *Link-Signatur* des Index: die vorhandenen Seiten und Bilder, ihre Pfade und die Anker ihrer
+Überschriften. Eine Änderung an einer Seite erzeugt deren Dateien neu; eine Änderung an einer anderen Seite lässt sie
+stehen (die Link-Signatur ändert sich nur, wenn eine Seite, ein Bild oder eine Überschrift dazukommt, verschoben wird
+oder wegfällt). Vor 6.0.15 enthielt der Schlüssel die ganze Indexsignatur, sodass jeder Commit, auf einer
+Dokumentationssite mehrere am Tag, beim nächsten Abruf jedes PDF neu erzeugte.
+
+Eine aus dem Cache ausgelieferte Datei bekommt einmal am Tag eine neue Zeit. `./console exp:help prune` entfernt die
+PDFs und gerenderten Seiten, die `[PdfSettings] CacheKeepDays` Tage (14) niemand abgerufen hat, in jeder Sprache;
+`--dry-run` zählt nur. Nach einer Aktualisierung der Dokumentation erzeugt `exp:help pdf --all` das PDF jeder Seite im
+Voraus, für die Leser und für Crawler, die alle abrufen: mit niedriger Priorität starten, einmal pro Host und
+Siteaccess-Pfad, den die Leser verwenden.
+
+```bash
+nice -n 15 ./console exp:help pdf --all --base-url=https://doc.example.com
+nice -n 15 ./console exp:help pdf --all --base-url=https://doc.example.com --access-path=learninminutes
+nice -n 15 ./console exp:help pdf --all --base-url=https://doc.example.com --language=ger-de
+./console exp:help prune --dry-run
+```
 
 ## Auf der Kommandozeile
 

@@ -34,6 +34,10 @@ The help system: the index of the documentation, its search and its link check
 ./console exp:help show guides/caches.md     the metadata and headings of one page
 ./console exp:help check                     check the links and images of every page (--below=guides/)
 ./console exp:help pdf help/searching.md      the page as a PDF file (--out=file.pdf, --base-url=https://host)
+./console exp:help pdf --all --base-url=https://host   make every page's PDF in the cache ahead of the
+                                             readers (--access-path=, --language=, --below=; after a docs update)
+./console exp:help prune                     remove cached PDFs and rendered pages not used for [PdfSettings]
+                                             CacheKeepDays days, in every language (--days=, --dry-run)
 ./console exp:help maps --language=ger-de    check doc/ger-de/.paths.json and .dirnames.json; --fix writes the
                                              union of both sides of a git conflict (and of --paths=, --dirnames=)
 
@@ -60,10 +64,13 @@ Exit code: 0 fine, 1 check found errors (with --strict also warnings) or nothing
 | `--type` | erforderlich | search, index --list: nur Seiten dieses Typs (guide, feature, bc, changelog ...) |
 | `--limit` | erforderlich | search: die Anzahl der Ergebnisse (Standard 10) |
 | `--below` | erforderlich | check, index --list: nur die Seiten, deren ID damit beginnt (z. B. guides/) |
-| `--all` |  | check: auch die Hinweise auflisten (Links auf Dateien, die keine Hilfeseiten sind) |
+| `--all` |  | check: also list the notices (links to files that are not help pages); pdf: every page |
 | `--strict` |  | check: auch bei Warnungen Exit-Code 1 |
 | `--out` | erforderlich | pdf: die zu schreibende Datei (Standard: der Seitentitel als Dateiname, im aktuellen Verzeichnis) |
 | `--base-url` | erforderlich | pdf: Schema und Host für die Links und die Adresse der Seite (https://www.example.com) |
+| `--access-path` | erforderlich | pdf: der Siteaccess-Pfad eines per URI erkannten Siteaccess, den die Leser verwenden (learninminutes), damit die Dateien die sind, die seine Seiten abrufen |
+| `--days` | erforderlich | prune: Tage, die eine nicht verwendete Datei behalten wird (Standard exphelp.ini [PdfSettings] CacheKeepDays) |
+| `--dry-run` |  | prune: zählen, nichts entfernen |
 | `--language` | erforderlich | die Sprache der Dokumentation: ein Verzeichnis aus exphelp.ini [DocLanguages] Directories[] (eng-us, ger-de; die alten en/us und de werden akzeptiert) |
 | `--fix` |  | maps: .paths.json und .dirnames.json als Vereinigung ihrer Einträge schreiben, sortiert |
 | `--paths` | erforderlich | maps --fix: außerdem die Einträge dieser JSON-Datei in .paths.json übernehmen |

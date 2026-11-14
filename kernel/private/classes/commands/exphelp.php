@@ -30,6 +30,10 @@ class Exphelp extends \Exponential\Runnable\Command
                                  "./console exp:help show guides/caches.md     the metadata and headings of one page\n" .
                                  "./console exp:help check                     check the links and images of every page (--below=guides/)\n" .
                                  "./console exp:help pdf help/searching.md      the page as a PDF file (--out=file.pdf, --base-url=https://host)\n" .
+                                 "./console exp:help pdf --all --base-url=https://host   make every page's PDF in the cache ahead of the\n" .
+                                 "                                             readers (--access-path=, --language=, --below=; after a docs update)\n" .
+                                 "./console exp:help prune                     remove cached PDFs and rendered pages not used for [PdfSettings]\n" .
+                                 "                                             CacheKeepDays days, in every language (--days=, --dry-run)\n" .
                                  "./console exp:help maps --language=ger-de    check doc/ger-de/.paths.json and .dirnames.json; --fix writes the\n" .
                                  "                                             union of both sides of a git conflict (and of --paths=, --dirnames=)\n" .
                                  "\n" .
@@ -45,7 +49,7 @@ class Exphelp extends \Exponential\Runnable\Command
                 'use-extensions' => true
             )
         );
-        $options = $this->startup( '[rebuild][list][no-images][keep-search][json][audience:][category:][type:][limit:][below:][all][strict][out:][base-url:][language:][fix][paths:][dirnames:]', '', array(
+        $options = $this->startup( '[rebuild][list][no-images][keep-search][json][audience:][category:][type:][limit:][below:][all][strict][out:][base-url:][access-path:][days:][dry-run][language:][fix][paths:][dirnames:]', '', array(
             'fix'      => 'maps: write .paths.json and .dirnames.json as the union of their entries, sorted',
             'paths'    => 'maps --fix: also merge the entries of this JSON file into .paths.json',
             'dirnames' => 'maps --fix: also merge the entries of this JSON file into .dirnames.json',
@@ -60,10 +64,13 @@ class Exphelp extends \Exponential\Runnable\Command
             'type'     => 'search, index --list: only pages of this type (guide, feature, bc, changelog ...)',
             'limit'    => 'search: the number of results (default 10)',
             'below'    => 'check, index --list: only the pages whose id starts with this (e.g. guides/)',
-            'all'      => 'check: also list the notices (links to files that are not help pages)',
+            'all'      => 'check: also list the notices (links to files that are not help pages); pdf: every page',
             'strict'   => 'check: exit 1 on warnings too',
             'out'      => 'pdf: the file to write (default: the page title as file name, in the current directory)',
             'base-url' => 'pdf: scheme and host for the links and the page address (https://www.example.com)',
+            'access-path' => 'pdf: the siteaccess path of a URI-matched siteaccess the readers use (learninminutes), so the files are the ones its pages ask for',
+            'days'     => 'prune: days a file not used is kept (default exphelp.ini [PdfSettings] CacheKeepDays)',
+            'dry-run'  => 'prune: count, remove nothing',
         ) );
 
         $arguments = isset( $options['arguments'] ) ? array_values( $options['arguments'] ) : array();
@@ -97,13 +104,17 @@ class Exphelp extends \Exponential\Runnable\Command
                     $code = $this->check( $options, $json );
                     break;
                 case 'pdf':
-                    $code = $this->pdf( $arguments ? (string)$arguments[0] : '', $options, $json );
+                    $code = !empty( $options['all'] ) ? $this->pdfAll( $options, $json )
+                                                      : $this->pdf( $arguments ? (string)$arguments[0] : '', $options, $json );
+                    break;
+                case 'prune':
+                    $code = $this->prune( $options, $language, $languages, $json );
                     break;
                 case 'maps':
                     $code = $this->maps( $options, $language, $languages, $json );
                     break;
                 default:
-                    $cli->error( "Unknown action \"$action\": index, search, show, check, pdf or maps (./console exp:help --help)" );
+                    $cli->error( "Unknown action \"$action\": index, search, show, check, pdf, prune or maps (./console exp:help --help)" );
                     $code = 2;
             }
         }
@@ -434,12 +445,9 @@ class Exphelp extends \Exponential\Runnable\Command
             $cli->error( 'Usage: ./console exp:help pdf <id> [--out=file.pdf] [--base-url=https://www.example.com]' );
             return 2;
         }
-        $baseUrl = isset( $options['base-url'] ) && is_string( $options['base-url'] ) ? trim( $options['base-url'] ) : '';
-        if ( $baseUrl !== '' && preg_match( '#^https?://[A-Za-z0-9.-]+(:[0-9]+)?$#', rtrim( $baseUrl, '/' ) ) !== 1 )
-        {
-            $cli->error( "--base-url takes a scheme and host, e.g. https://www.example.com: $baseUrl" );
+        $baseUrl = $this->baseUrlOption( $options );
+        if ( $baseUrl === false )
             return 2;
-        }
         $pdf = \expHelpPdf::forPage( $id, $baseUrl );
         if ( $pdf === null )
         {
@@ -457,6 +465,122 @@ class Exphelp extends \Exponential\Runnable\Command
             $this->printJson( array( 'id' => $id, 'file' => $out, 'size' => strlen( $data ), 'cached' => $pdf['cached'] ) );
         else
             $cli->output( sprintf( 'PASS %s -> %s (%d bytes%s)', $id, $out, strlen( $data ), $pdf['cached'] ? ', from the cache' : '' ) );
+        return 0;
+    }
+
+    /**
+     * The --base-url option: '' when it is not given, false (with the error printed) when it is not a scheme and host.
+     *
+     * @param array $options
+     * @return string|false
+     */
+    protected function baseUrlOption( array $options )
+    {
+        $baseUrl = isset( $options['base-url'] ) && is_string( $options['base-url'] ) ? trim( $options['base-url'] ) : '';
+        if ( $baseUrl !== '' && preg_match( '#^https?://[A-Za-z0-9.-]+(:[0-9]+)?$#', rtrim( $baseUrl, '/' ) ) !== 1 )
+        {
+            $this->cli()->error( "--base-url takes a scheme and host, e.g. https://www.example.com: $baseUrl" );
+            return false;
+        }
+        return $baseUrl;
+    }
+
+    /**
+     * exp:help pdf --all --base-url=https://host [--access-path=] [--language=] [--below=]: makes the PDF of every
+     * visible page in the cache, the files exphelp/pdf serves on that host (and siteaccess path), so after a docs
+     * update the readers, and the crawlers, are answered from the cache instead of each first request drawing one.
+     * Run it with low priority (nice). Pages already cached are only counted.
+     *
+     * @param array $options
+     * @param bool $json
+     * @return int
+     */
+    protected function pdfAll( array $options, $json )
+    {
+        $cli = $this->cli();
+        $baseUrl = $this->baseUrlOption( $options );
+        if ( $baseUrl === false )
+            return 2;
+        if ( $baseUrl === '' )
+            $cli->warning( 'No --base-url: the files are the ones of the command line (links into the administration left out), not the ones a web request asks for' );
+        $accessPath = isset( $options['access-path'] ) && is_string( $options['access-path'] ) ? trim( $options['access-path'], " /" ) : '';
+        if ( $accessPath !== '' )
+        {
+            if ( preg_match( '#^[A-Za-z0-9_-]+(/[A-Za-z0-9_-]+)*$#', $accessPath ) !== 1 )
+            {
+                $cli->error( "--access-path takes the siteaccess path of the readers' URLs, e.g. learninminutes: $accessPath" );
+                return 2;
+            }
+            // eZSys::indexDir() is part of the key and of the links: the same as in a request to /<access path>/...
+            \eZSys::addAccessPath( explode( '/', $accessPath ), $accessPath );
+        }
+        $index = \expHelpDocumentIndex::instance();
+        $result = array( 'pages' => 0, 'made' => 0, 'cached' => 0, 'failed' => array(), 'seconds' => 0 );
+        $start = microtime( true );
+        foreach ( $this->filter( $index->visibleDocuments(), $options ) as $id => $document )
+        {
+            ++$result['pages'];
+            try
+            {
+                $pdf = \expHelpPdf::forPage( (string)$id, $baseUrl, $index );
+                if ( $pdf === null || $pdf['file'] === null )
+                    $result['failed'][] = (string)$id;
+                elseif ( $pdf['cached'] )
+                    ++$result['cached'];
+                else
+                    ++$result['made'];
+            }
+            catch ( \Throwable $e )
+            {
+                $result['failed'][] = $id . ': ' . $e->getMessage();
+            }
+            if ( !$json && $result['pages'] % 250 === 0 )
+                $cli->output( sprintf( '%d pages: %d made, %d cached, %d failed', $result['pages'], $result['made'], $result['cached'], count( $result['failed'] ) ) );
+        }
+        $result['seconds'] = round( microtime( true ) - $start, 1 );
+        if ( $json )
+            $this->printJson( $result );
+        else
+        {
+            foreach ( array_slice( $result['failed'], 0, 20 ) as $failed )
+                $cli->warning( 'not cached: ' . $failed );
+            $cli->output( sprintf( '%s %d pages: %d made, %d already cached, %d failed, %.1f s', $result['failed'] ? 'FAIL' : 'PASS',
+                                   $result['pages'], $result['made'], $result['cached'], count( $result['failed'] ), $result['seconds'] ) );
+        }
+        return $result['failed'] ? 1 : 0;
+    }
+
+    /**
+     * exp:help prune [--days=] [--dry-run] [--language=]: removes the cached PDFs and rendered pages not used for
+     * [PdfSettings] CacheKeepDays days (expHelpDocumentIndex::pruneUnused()), in every language, or the one asked for.
+     *
+     * @param array $options
+     * @param string|null $language
+     * @param \expHelpLanguage $languages
+     * @param bool $json
+     * @return int
+     */
+    protected function prune( array $options, $language, $languages, $json )
+    {
+        $days = isset( $options['days'] ) && is_string( $options['days'] ) && $options['days'] !== ''
+              ? $options['days'] : (string)\expHelp::setting( 'PdfSettings', 'CacheKeepDays', '14' );
+        if ( preg_match( '/^[0-9]+$/', $days ) !== 1 || (int)$days < 1 )
+        {
+            $this->cli()->error( "--days takes a whole number of days, 1 or more: $days" );
+            return 2;
+        }
+        $dryRun = !empty( $options['dry-run'] );
+        $report = array( 'days' => (int)$days, 'dry_run' => $dryRun, 'languages' => array() );
+        foreach ( $language !== null ? array( $language ) : $languages->directories() as $directory )
+            $report['languages'][$directory] = \expHelpDocumentIndex::forLanguage( $directory, $languages )->pruneUnused( (int)$days, $dryRun );
+        if ( $json )
+            $this->printJson( $report );
+        else
+            foreach ( $report['languages'] as $directory => $counts )
+                $this->cli()->output( sprintf( '%s: %s %d files (%.1f MB), kept %d', $directory, $dryRun ? 'would remove' : 'removed',
+                                               $counts['files'], $counts['bytes'] / 1048576, $counts['kept'] ) );
+        if ( !$json )
+            $this->cli()->output( 'PASS' );
         return 0;
     }
 
