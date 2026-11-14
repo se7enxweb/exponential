@@ -64,7 +64,9 @@ Die linke Spalte ändert sich mit dem Reiter:
   Veröffentlichen** eine statische Kopie einer Site auf GitHub Pages oder einem anderen Host für Repositorys: ein Ziel,
   mit einem Assistenten angelegt, ein Build im Hintergrund, die Änderungen vor **Veröffentlichen** geprüft und jede
   Veröffentlichung aufbewahrt, um zu ihr zurückzukehren
-  ([Statisches Veröffentlichen](statisches-veroeffentlichen/README.md)).
+  ([Statisches Veröffentlichen](statisches-veroeffentlichen/README.md)). Direkt nach **Cache** zeigt **Bild-Aliase**, wie
+  die Bild-Aliase der Site auf Abruf erzeugt werden, und steuert sie: Übersicht, Massenläufe, Testwerkzeuge, Verlauf
+  und Einstellungen ([Bild-Aliase](bild-aliase.md)).
 
 ![Das Menü eines Objekts im Baum](bilder/context-menu.webp)
 

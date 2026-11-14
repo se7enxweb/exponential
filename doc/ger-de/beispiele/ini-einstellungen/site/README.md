@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # site.ini
 
-Die ausgelieferten Einstellungen von `settings/site.ini`: 67 Blöcke, 526 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/site.ini`: 67 Blöcke, 527 Einstellungen.
 
 > Exponential-Konfigurationsdatei.  
 >
@@ -42,7 +42,7 @@ Die ausgelieferten Einstellungen von `settings/site.ini`: 67 Blöcke, 526 Einste
 | [DebugSettings](DebugSettings.md) | 17 |
 | [RequestLogSettings](RequestLogSettings.md) | 4 |
 | [HTMLForms](HTMLForms.md) | 2 |
-| [URLTranslator](URLTranslator.md) | 14 |
+| [URLTranslator](URLTranslator.md) | 15 |
 | [AppendNodeIDFilterSettings](AppendNodeIDFilterSettings.md) | 1 |
 | [SiteSettings](SiteSettings.md) | 18 |
 | [AdminEnvironment](AdminEnvironment.md) | 7 |

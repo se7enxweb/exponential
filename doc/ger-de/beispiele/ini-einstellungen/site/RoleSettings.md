@@ -190,8 +190,10 @@ PermissionSQLOptimization=enabled
 > Der Formular-Endpunkt des statischen Veröffentlichens: Die Besucher einer statischen Kopie senden ihre Formulare  
 > hierher, angemeldet oder nicht; staticpublish/form prüft Ursprung, das beim Build signierte Token und die Rate selbst  
 > (expStaticFormEndpoint).  
+> Auf Abruf erzeugte Bild-Aliase (image.ini \[AliasSettings\]): Eine signierte URL ist die Berechtigung, das Bild zu lesen und  
+> den Alias zu erzeugen; eine unsignierte liefert nur einen vorhandenen Alias aus (expImageAliasServer). Es wird keine Sitzung gestartet.  
 
-Standard: eine Liste mit 26: `user/login`, `user/logout`, `user/register`, `user/activate`, `user/success`, `user/forgotpassword`, `layout`, `manual`, `ezinfo`, `paypal/notify_url`, `switchlanguage`, `oauth/authorize` ....
+Standard: eine Liste mit 27: `user/login`, `user/logout`, `user/register`, `user/activate`, `user/success`, `user/forgotpassword`, `layout`, `manual`, `ezinfo`, `paypal/notify_url`, `switchlanguage`, `oauth/authorize` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -219,7 +221,7 @@ PolicyOmitList[]=mailpreferences/unsubscribe
 PolicyOmitList[]=mailpreferences/confirm
 PolicyOmitList[]=mailpreferences/request
 PolicyOmitList[]=mailpreferences/export
-# ... 6 weitere in der ausgelieferten Datei
+# ... 7 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

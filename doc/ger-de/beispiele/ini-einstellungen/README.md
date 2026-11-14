@@ -45,6 +45,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [editorpolicies.ini](editorpolicies/README.md) | Kernel | 2 |
 | [error.ini](error/README.md) | Kernel | 11 |
 | [exphelp.ini](exphelp/README.md) | Kernel | 69 |
+| [expqueue.ini](expqueue/README.md) | Kernel | 3 |
 | [extendedattributefilter.ini](extendedattributefilter/README.md) | Kernel | 0 |
 | [ezxml.ini](ezxml/README.md) | Kernel | 4 |
 | [fetchalias.ini](fetchalias/README.md) | Kernel | 8 |
@@ -53,7 +54,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [httpcache.ini](httpcache/README.md) | Kernel | 1 |
 | [i18n.ini](i18n/README.md) | Kernel | 2 |
 | [icon.ini](icon/README.md) | Kernel | 3 |
-| [image.ini](image/README.md) | Kernel | 21 |
+| [image.ini](image/README.md) | Kernel | 23 |
 | [ini.ini](ini/README.md) | Kernel | 1 |
 | [kernelservices.ini](kernelservices/README.md) | Kernel | 15 |
 | [layout.ini](layout/README.md) | Kernel | 3 |

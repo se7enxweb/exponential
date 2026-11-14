@@ -173,6 +173,16 @@ Sie `ActiveExtensions[]=exp_request_shield` für **Setup** > **Request Shield**,
 Log. Eine Site mit ungewöhnlichen Adressen kann im Monitor-Modus beginnen. Siehe
 [Request Shield (BC)](bc/6.0/request-shield.md) und die [Anleitung Request Shield](anleitungen/request-shield.md).
 
+**Aktualisierung auf 6.0.15 oder später: Bild-Aliase werden auf Abruf erzeugt.** Ein Template wandelt einen fehlenden
+Bild-Alias nicht mehr beim Erzeugen der Seite um; der Alias wird erzeugt, wenn der Browser danach fragt
+(`image.ini [AliasSettings] AliasGeneration=on-demand`, der neue Standard). Übernehmen Sie die neuen Rewrite-Regeln,
+die ein fehlendes Bild der Ablage und `content/image` an `index_image.php` geben (`exp:setup:htaccess --force --apply`
+oben, oder die Zeilen in Ihrem virtuellen Host), nehmen Sie `index_image.php` in jede Liste erlaubter Skripte im
+Wurzelverzeichnis auf, und geben Sie Bildern im Request Shield ein eigenes Budget. Um das bisherige Verhalten zu
+behalten, setzen Sie `AliasGeneration=render` in `settings/override/image.ini.append.php`. Siehe
+[Auf Abruf erzeugte Bild-Aliase (BC)](bc/6.0/bild-aliase-auf-abruf.md) und die
+[Webserver-Rezepte](beispiele/webserver/bild-aliase-auf-abruf.md).
+
 ## 5. Die Datenbank aktualisieren
 
 Die Dateien der Datenbankaktualisierung liegen in `update/database/<engine>/6.0/`:

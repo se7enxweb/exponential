@@ -160,6 +160,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 
 ## I
 
+- **image alias made on demand**: since 6.0.15 a template only computes a missing image alias (address, size), and the alias is made when the browser asks for it, by `content/image` or `index_image.php`, with a placeholder meanwhile; `image.ini [AliasSettings] AliasGeneration=render` goes back to converting while the page renders. [Image aliases made on demand](features/6.0/image-aliases-on-demand.md)
 - **INI file**: a settings file (`site.ini`, `content.ini`, ...) in blocks of `Key=Value`; read in order, a later file winning: defaults, siteaccess, extensions, override. [INI override placements](specifications/6.0/ini-override-placements.md), [exp:ini](features/6.0/exp-ini-command.md).
 - **install type**: a named installer of **Exponential Platform** (`exponential-oss`, `ibexa-oss`, `exponential-media`, `exponential-cjw`) run by `exponential:install <type>`. [Platform SQLite installer](specifications/6.0/platform-sqlite-installer.md).
 - **installation name**: the name shown on non-production pages so staging is never taken for production. [Installation name](features/6.0/installation-name-in-pages.md).

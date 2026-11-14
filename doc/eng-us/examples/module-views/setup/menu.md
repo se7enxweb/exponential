@@ -21,7 +21,7 @@ A view of the `setup` module, defined in `kernel/setup/module.php` and run by `k
 
 The user needs this policy function:
 
-- [`setup/setup`](../../policies/setup.md#setup) or [`setup/administrate`](../../policies/setup.md#administrate) or [`setup/managecache`](../../policies/setup.md#managecache) or [`setup/managecronjobs`](../../policies/setup.md#managecronjobs) or [`setup/preload`](../../policies/setup.md#preload) or [`setup/system_info`](../../policies/setup.md#system_info) or [`setup/logs`](../../policies/setup.md#logs)
+- [`setup/setup`](../../policies/setup.md#setup) or [`setup/administrate`](../../policies/setup.md#administrate) or [`setup/managecache`](../../policies/setup.md#managecache) or [`setup/managecronjobs`](../../policies/setup.md#managecronjobs) or [`setup/preload`](../../policies/setup.md#preload) or [`setup/system_info`](../../policies/setup.md#system_info) or [`setup/logs`](../../policies/setup.md#logs) or [`setup/aliases`](../../policies/setup.md#aliases)
 
 A policy on `setup/*` (every function) also grants it; limitations of the policy (section, subtree, class ...) still apply where the view checks them.
 

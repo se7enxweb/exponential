@@ -161,6 +161,7 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 
 ## I
 
+- **image alias made on demand** (auf Abruf erzeugter Bild-Alias): seit 6.0.15 berechnet ein Template einen fehlenden Bild-Alias nur (Adresse, Größe), und der Alias wird erzeugt, wenn der Browser danach fragt, von `content/image` oder `index_image.php`, mit einem Platzhalter in der Zwischenzeit; `image.ini [AliasSettings] AliasGeneration=render` kehrt zum Umwandeln beim Erzeugen der Seite zurück. [Auf Abruf erzeugte Bild-Aliase](funktionen/6.0/bild-aliase-auf-abruf.md)
 - **INI file** (INI-Datei): eine Einstellungsdatei (`site.ini`, `content.ini`, ...) in Blöcken von `Key=Value`; gelesen in der Reihenfolge, eine spätere Datei gewinnt: Standards, Siteaccess, Extensions, Überschreibung. [Platzierungen von INI-Überschreibungen](spezifikationen/6.0/ini-override-platzierungen.md), [exp:ini](funktionen/6.0/exp-ini-befehl.md).
 - **install type** (Installationstyp): ein benannter Installer der **Exponential Platform** (`exponential-oss`, `ibexa-oss`, `exponential-media`, `exponential-cjw`), ausgeführt mit `exponential:install <type>`. [SQLite-Installer der Plattform](spezifikationen/6.0/platform-sqlite-installer.md).
 - **installation name** (Installationsname): der Name, der auf Seiten außerhalb der Produktion angezeigt wird, damit Staging nie für die Produktion gehalten wird. [Installationsname](funktionen/6.0/installationsname-in-seiten.md).

@@ -68,11 +68,13 @@ ImageConverters[]=ImageMagick
 
 ## LockTimeout
 
-> Wartezeit für Prozesse in der Warteschlange, um eine exklusive Schreibsperre  
-> zum Schreiben eines bestimmten Bild-Alias zu erhalten.  
->
-> Wartet ein Prozess länger, wird der Prozess, der die Sperre hält,  
-> beendet, und der wartende Prozess macht weiter und erzeugt den Bild-Alias.  
+> Sekunden, die ein Prozess auf die Sperre einer Alias-Datei wartet, während ein anderer Prozess  
+> diesen Alias erzeugt (eine Sperre pro Alias-Datei: Die Aliase eines Bildes werden parallel erzeugt).  
+> Ist der andere Prozess rechtzeitig fertig, wird seine Datei so verwendet, wie sie ist; läuft die Wartezeit  
+> ab, erzeugt diese Anfrage keinen Alias (eine Seite im Modus render zeigt diesmal kein Bild  
+> dafür, content/image antwortet mit dem Platzhalter). Auf einem einzelnen Server ist die  
+> Sperre eine Dateisperre (var/<site>/cache/imagealias-locks), auf einem Datenbank-Cluster  
+> (eZDFS) der .generating-Eintrag der Alias-Datei. 0 wartet überhaupt nicht.  
 
 Standard: `60`.
 

@@ -2,7 +2,7 @@
 title: Richtlinien des Moduls setup
 audience: developer, admin
 category: examples
-summary: Die Richtlinienfunktionen des Moduls setup (10) und ihre Einschränkungen.
+summary: Die Richtlinienfunktionen des Moduls setup (12) und ihre Einschränkungen.
 keywords: Richtlinie, Richtlinien, Rolle, Einschränkung, Berechtigung, setup, policy, policies, role, limitation, permission
 type: generated
 generated: exp:help:examples
@@ -25,6 +25,24 @@ $role->appendPolicy( 'setup', 'administrate' );
 
 ```tpl
 {if fetch( 'user', 'has_access_to', hash( 'module', 'setup', 'function', 'administrate' ) )}
+    ...
+{/if}
+```
+
+## aliases
+
+Geprüft von den Ansichten: [aliases](../modulansichten/setup/aliases.md), [aliasesfeed](../modulansichten/setup/aliasesfeed.md), [menu](../modulansichten/setup/menu.md).
+
+Keine Einschränkungen: Die Richtlinie gilt ganz oder gar nicht.
+
+```php
+// Einer Rolle die Richtlinie geben (eZRole::appendPolicy( $module, $function, $limitations ))
+$role = eZRole::fetchByName( 'Editor' );
+$role->appendPolicy( 'setup', 'aliases' );
+```
+
+```tpl
+{if fetch( 'user', 'has_access_to', hash( 'module', 'setup', 'function', 'aliases' ) )}
     ...
 {/if}
 ```
@@ -61,6 +79,24 @@ $role->appendPolicy( 'setup', 'logs' );
 
 ```tpl
 {if fetch( 'user', 'has_access_to', hash( 'module', 'setup', 'function', 'logs' ) )}
+    ...
+{/if}
+```
+
+## managealiases
+
+Keine Ansicht des Moduls nennt sie; Code prüft sie (`eZUser::hasAccessTo( 'setup', 'managealiases' )` oder der Fetch `user/has_access_to`).
+
+Keine Einschränkungen: Die Richtlinie gilt ganz oder gar nicht.
+
+```php
+// Einer Rolle die Richtlinie geben (eZRole::appendPolicy( $module, $function, $limitations ))
+$role = eZRole::fetchByName( 'Editor' );
+$role->appendPolicy( 'setup', 'managealiases' );
+```
+
+```tpl
+{if fetch( 'user', 'has_access_to', hash( 'module', 'setup', 'function', 'managealiases' ) )}
     ...
 {/if}
 ```

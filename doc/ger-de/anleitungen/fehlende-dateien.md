@@ -23,6 +23,12 @@ auf der Site defekte Bilder sehen.
 - Dieselbe Liste auf der Kommandozeile: `./console exp:content-check --missing-files --node=<node id>`.
 - Die Prüfung selbst ändert nichts; die Behebungen (Abschnitt 6) zeigen immer zuerst eine Vorschau.
 
+**Auf Abruf erzeugte Aliase (6.0.15).** Mit `image.ini [AliasSettings] AliasGeneration=on-demand`, dem Standard, ist ein
+Alias, der noch nie gezeigt wurde, noch nicht erzeugt; eine Seite erzeugt ihn, sobald ein Browser zum ersten Mal danach
+fragt. **Variante nie erstellt** ist dann normal und verlangt nichts; **Datei fehlt** bei einem Original weiterhin
+schon. Um die Aliase vor den Besuchern zu erzeugen, nutzen Sie **Setup > Bild-Aliase** oder
+`./console exp:image:alias generate` ([Auf Abruf erzeugte Bild-Aliase](../funktionen/6.0/bild-aliase-auf-abruf.md)).
+
 ## 1. Die Prüfung öffnen
 
 1. Melden Sie sich in der Administration an und öffnen Sie **Setup > Ungültige Relationen** (oder **Fortgeschritten >

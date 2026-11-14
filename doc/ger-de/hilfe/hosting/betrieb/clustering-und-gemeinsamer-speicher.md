@@ -168,6 +168,13 @@ RewriteRule ^/var_cache/([^/]+/)?cache/(texttoimage|public)/.* /index_cluster.ph
 > Halten Sie sie aus der Versionsverwaltung heraus und aus jeder Datei, die ein Kunde herunterladen kann; die
 > Sicherungen in `var/backup/config/` enthalten frühere Kopien von `config.php` und brauchen dieselbe Sorgfalt.
 
+**Auf Abruf erzeugte Bild-Aliase (6.0.15).** Hat das Gateway keine Metadaten zu einem Bild der Ablage (einem noch nicht
+erzeugten Bild-Alias), schließt es seine Verbindung und führt `index_image.php` in derselben Anfrage aus, das den Alias
+im Cluster erzeugt (die Sperre je Alias ist der `.generating`-Eintrag der Alias-Datei) oder einen Platzhalter antwortet;
+jede andere fehlende Datei bleibt ein 404. Die Cluster-Regel muss vor der Regel für `index_image.php` stehen. Um beim
+einfachen 404 zu bleiben: `define( 'CLUSTER_IMAGE_ALIAS_ON_DEMAND', false );` in `config.cluster.php`. Siehe
+[die Rezepte](../../../beispiele/webserver/bild-aliase-auf-abruf.md#das-cluster-gateway).
+
 ## Wartungsbefehle
 
 | Befehl | Was er tut | Optionen (aus der eigenen Hilfe des Befehls) |

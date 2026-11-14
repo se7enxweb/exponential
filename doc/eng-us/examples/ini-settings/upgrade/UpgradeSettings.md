@@ -27,11 +27,13 @@ Never edit `settings/upgrade.ini` itself: an update replaces it. Put the setting
 > stage database: schema and data, every engine (step 0 first: the record table exp\_migration)  
 > the older record expupgrade\_step of a pre-release of 6.0.15: its rows copied into exp\_migration, then dropped  
 > SQLite only: the tables the .dba keys on more than one column (ezcontentobject\_attribute on id, version) get that key  
+> every other table of the kernel schema the database lacks (an old database that never got one); before the  
+> scripts stage, which relies on them  
 > the tables of every active extension that ships a share/db\_schema.dba, where missing (no data loaded)  
 > stage scripts: the PHP upgrade steps, through the classes of the scripts and setup commands  
 > stage finish: make the changes live and check the site (only when the run changed something)  
 
-Default: a list of 48: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepMigrationTables`, `expUpgradeStepRecordTable`, `expUpgradeStepMigrationRecordingTables`, `expUpgradeStepSqliteCompositeKeys`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses` ....
+Default: a list of 49: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepMigrationTables`, `expUpgradeStepRecordTable`, `expUpgradeStepMigrationRecordingTables`, `expUpgradeStepSqliteCompositeKeys`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -59,7 +61,7 @@ StepList[]=expUpgradeStepMailPreferenceTables
 StepList[]=expUpgradeStepApiKeyTable
 StepList[]=expUpgradeStepTransferRunTable
 StepList[]=expUpgradeStepDataTableTables
-# ... 28 more in the shipped file
+# ... 29 more in the shipped file
 */ ?>
 ```
 

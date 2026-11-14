@@ -18,7 +18,7 @@ Every module of the kernel and the bundled extensions, from their `module.php`: 
 | [audit](audit/README.md) | 9 | `kernel/audit/module.php` |
 | [class](class/README.md) | 12 | `kernel/class/module.php` |
 | [collaboration](collaboration/README.md) | 4 | `kernel/collaboration/module.php` |
-| [content](content/README.md) | 51 | `kernel/content/module.php` |
+| [content](content/README.md) | 52 | `kernel/content/module.php` |
 | [contentcheck](contentcheck/README.md) | 7 | `kernel/contentcheck/module.php` |
 | [contentfinder](contentfinder/README.md) | 2 | `kernel/contentfinder/module.php` |
 | [csp](csp/README.md) | 1 | `kernel/csp/module.php` |
@@ -46,7 +46,7 @@ Every module of the kernel and the bundled extensions, from their `module.php`: 
 | [secrets](secrets/README.md) | 1 | `kernel/secrets/module.php` |
 | [section](section/README.md) | 4 | `kernel/section/module.php` |
 | [settings](settings/README.md) | 2 | `kernel/settings/module.php` |
-| [setup](setup/README.md) | 45 | `kernel/setup/module.php` |
+| [setup](setup/README.md) | 47 | `kernel/setup/module.php` |
 | [shop](shop/README.md) | 36 | `kernel/shop/module.php` |
 | [state](state/README.md) | 6 | `kernel/state/module.php` |
 | [staticpublish](staticpublish/README.md) | 10 | `kernel/staticpublish/module.php` |

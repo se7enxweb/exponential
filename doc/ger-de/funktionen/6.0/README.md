@@ -81,6 +81,8 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Generator für den statischen Cache](generator-fuer-den-statischen-cache.md)
 - [Statisches Veröffentlichen: eine statische Kopie einer Website für GitHub Pages und jeden statischen Host](statisches-veroeffentlichen.md)
 - [Request Shield: eine Web Application Firewall vor jeder Anfrage](request-shield.md)
+- [Auf Abruf erzeugte Bild-Aliase](bild-aliase-auf-abruf.md): beim Erzeugen einer Seite nur berechnet, erzeugt, wenn
+  der Browser fragt; WebP/AVIF, Vorab-Erzeugung, Staging aus der Produktion, Setup > Bild-Aliase und `exp:image:alias`
 - [Cronjob-Konsole](cronjobs-in-der-konsole.md), [Cronjob-Teile pausieren](cronjobs-pausieren.md),
   [Einen Cronjob-Teil auslassen](filter-fuer-cronjob-teile.md)
 - [Rotation und Bereinigung der Logs](log-rotation.md), [Der Log-Viewer](log-betrachter.md),

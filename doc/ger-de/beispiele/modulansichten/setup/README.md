@@ -10,10 +10,12 @@ generated: exp:help:examples
 ---
 # Das Modul setup
 
-Name `eZSetup`, definiert in `kernel/setup/module.php`. 45 Ansichten.
+Name `eZSetup`, definiert in `kernel/setup/module.php`. 47 Ansichten.
 
 | Ansicht | Adresse | Richtlinienfunktionen |
 |---|---|---|
+| [aliases](aliases.md) | `/setup/aliases` | aliases |
+| [aliasesfeed](aliasesfeed.md) | `/setup/aliasesfeed` | aliases |
 | [cache](cache.md) | `/setup/cache` | managecache |
 | [cachetoolbar](cachetoolbar.md) | `/setup/cachetoolbar` | managecache |
 | [contentextension](contentextension.md) | `/setup/contentextension` | setup |
@@ -34,7 +36,7 @@ Name `eZSetup`, definiert in `kernel/setup/module.php`. 45 Ansichten.
 | [logshealth](logshealth.md) | `/setup/logshealth` | logs |
 | [logsmanage](logsmanage.md) | `/setup/logsmanage/<Key>` | managelogs |
 | [maintenance](maintenance.md) | `/setup/maintenance` | administrate |
-| [menu](menu.md) | `/setup/menu` | setup or administrate or managecache or managecronjobs or preload or system_info or logs |
+| [menu](menu.md) | `/setup/menu` | setup or administrate or managecache or managecronjobs or preload or system_info or logs or aliases |
 | [menuconfig](menuconfig.md) | `/setup/menuconfig` | setup |
 | [moduleextension](moduleextension.md) | `/setup/moduleextension` | setup |
 | [moduletable](moduletable.md) | `/setup/moduletable` | setup |

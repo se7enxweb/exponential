@@ -32,10 +32,11 @@ Wo eine Erweiterung sich über Einstellungen in den Kernel einklinkt: INI-Einste
 | [editorpolicies.ini](editorpolicies.md) | Kernel | 1 | Classes |
 | [error.ini](error.md) | Kernel | 3 | DefaultErrorHandler, ErrorHandler, ErrorHandler |
 | [exphelp.ini](exphelp.md) | Kernel | 2 | Providers, BookChecks |
+| [expqueue.ini](expqueue.md) | Kernel | 6 | Handler, Class, Handler, Class, Handler, Class |
 | [ezxml.ini](ezxml.md) | Kernel | 4 | HandlerClass, AliasClasses, HandlerClass, AliasClasses |
 | [file.ini](file.md) | Kernel | 5 | Handler, SystemUserCheck, Handlers, FileHandler, Listener |
 | [graphql.ini](graphql.md) | Kernel | 2 | ClassList, ExcludedClassList |
-| [image.ini](image.md) | Kernel | 15 | Filters, Filters, Filters, Filters, Filters, Filters ... |
+| [image.ini](image.md) | Kernel | 16 | PreferredConverter, Filters, Filters, Filters, Filters, Filters ... |
 | [ini.ini](ini.md) | Kernel | 1 | ScopeProviders |
 | [kernelservices.ini](kernelservices.md) | Kernel | 25 | Class, Factory, Class, Factory, Class, Factory ... |
 | [ldap.ini](ldap.md) | Kernel | 2 | LDAPSearchFilters, LDAPGroupClass |

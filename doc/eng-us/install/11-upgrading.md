@@ -365,6 +365,13 @@ if ( is_file( __DIR__ . '/extension/exp_request_shield/bootstrap/hook.php' ) )
 It enforces from the next request (under Velocity after a restart). See
 [Request shield (BC)](../bc/6.0/request-shield.md).
 
+**Image aliases made on demand (6.0.15).** Missing image aliases are made when the browser asks for them, not while
+the page renders (`image.ini [AliasSettings] AliasGeneration=on-demand`, the default; `render` goes back). Take the new
+rules for `index_image.php` from `.htaccess_root` (or the
+[recipes](../examples/web-servers/image-aliases-on-demand.md) for nginx, LiteSpeed, Caddy and a cluster), allow the
+script where root scripts are listed, and give images their own budget in the request shield. See
+[Image aliases made on demand (BC)](../bc/6.0/image-aliases-on-demand.md).
+
 ### Step 2: apply the database update
 
 The file for the line is `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql`, for MySQL, PostgreSQL and SQLite.

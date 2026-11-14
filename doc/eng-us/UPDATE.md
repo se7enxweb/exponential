@@ -166,6 +166,15 @@ The shield then enforces from the next request (under Velocity after its restart
 with unusual addresses can begin in monitor mode. See [Request shield (BC)](bc/6.0/request-shield.md) and the
 [Request shield guide](guides/request-shield.md).
 
+**Updating to 6.0.15 or later: image aliases are made on demand.** A template no longer converts a missing image alias
+while the page renders; the alias is made when the browser asks for it (`image.ini [AliasSettings]
+AliasGeneration=on-demand`, the new default). Take the new rewrite rules that send a missing storage image and
+`content/image` to `index_image.php` (`exp:setup:htaccess --force --apply` above, or the lines in your virtual host),
+add `index_image.php` to any allow-list of root scripts, and give images a budget of their own in the request shield.
+To keep the old behavior, set `AliasGeneration=render` in `settings/override/image.ini.append.php`. See
+[Image aliases made on demand (BC)](bc/6.0/image-aliases-on-demand.md) and the
+[web server recipes](examples/web-servers/image-aliases-on-demand.md).
+
 ## 5. Update the database
 
 The database update files are in `update/database/<engine>/6.0/`:

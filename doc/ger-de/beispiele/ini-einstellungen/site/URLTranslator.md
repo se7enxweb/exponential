@@ -2,14 +2,14 @@
 title: site.ini [URLTranslator]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [URLTranslator] in site.ini: Translation, TranslatableSystemUrls, LoadOnPartialAliasPath, WordSeparator, TransformationGroup, UrlAliasNameLimit, MaxPathDepth, ScriptFallbackTransformationGroup ..."
-keywords: Einstellung, site.ini, URLTranslator, INI, setting, Translation, TranslatableSystemUrls, LoadOnPartialAliasPath, WordSeparator, TransformationGroup, UrlAliasNameLimit, MaxPathDepth, ScriptFallbackTransformationGroup, DecodeOnce, TrailingCleanup, WildcardTranslation, MaximumWildcardIterations, NodeTranslation, FilterClasses
+summary: "Die Einstellungen von [URLTranslator] in site.ini: Translation, TranslatableSystemUrls, LoadOnPartialAliasPath, WordSeparator, CompatWordSeparator, TransformationGroup, UrlAliasNameLimit, MaxPathDepth ..."
+keywords: Einstellung, site.ini, URLTranslator, INI, setting, Translation, TranslatableSystemUrls, LoadOnPartialAliasPath, WordSeparator, CompatWordSeparator, TransformationGroup, UrlAliasNameLimit, MaxPathDepth, ScriptFallbackTransformationGroup, DecodeOnce, TrailingCleanup, WildcardTranslation, MaximumWildcardIterations, NodeTranslation, FilterClasses
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [URLTranslator]
 
-Der Block `[URLTranslator]` von `settings/site.ini`, mit 14 Einstellung(en).
+Der Block `[URLTranslator]` von `settings/site.ini`, mit 15 Einstellung(en).
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -81,6 +81,20 @@ Standard: `dash`.
 # settings/override/site.ini.append.php
 [URLTranslator]
 WordSeparator=dash
+*/ ?>
+```
+
+## CompatWordSeparator
+
+> Das Trennzeichen der kleingeschriebenen URL-Aliase alter Art (TransformationGroup=urlalias\_compat): Unterstrich (Standard) oder Bindestrich  
+
+Standard: `underscore`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[URLTranslator]
+CompatWordSeparator=underscore
 */ ?>
 ```
 

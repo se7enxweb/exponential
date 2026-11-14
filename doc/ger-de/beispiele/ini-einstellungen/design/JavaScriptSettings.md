@@ -37,8 +37,10 @@ JavaScriptList[]
 
 > JavaScriptList\[\]=tools/ezjsselection.js  
 > Wie oben, für Frontend-Designs  
+> Tauscht die Platzhalter von Bild-Aliasen, die noch erzeugt werden, gegen die echten Bilder aus (image.ini \[AliasSettings\]  
+> SwapScript); tut nichts auf einer Seite ohne Platzhalter.  
 
-Standard: eine leere Liste.
+Standard: eine Liste mit 1: `exp_image_swap.js`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -46,6 +48,7 @@ Standard: eine leere Liste.
 [JavaScriptSettings]
 # ein leeres "FrontendJavaScriptList[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
 FrontendJavaScriptList[]
+FrontendJavaScriptList[]=exp_image_swap.js
 */ ?>
 ```
 

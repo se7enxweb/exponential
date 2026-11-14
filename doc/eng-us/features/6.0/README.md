@@ -75,6 +75,8 @@ nginx with PHP-FPM keep working as before.
 - [Static cache generator](static-cache-generator.md)
 - [Static publishing: a static copy of a site for GitHub Pages and any static host](static-publishing.md)
 - [Request shield: a web application firewall in front of every request](request-shield.md)
+- [Image aliases made on demand](image-aliases-on-demand.md): computed while a page renders, made when the browser
+  asks; WebP/AVIF, pre-generation, staging from production, Setup > Image aliases and `exp:image:alias`
 - [Cronjobs console](cronjobs-console.md), [Pausing cronjob parts](cronjob-pause.md),
   [Leaving out a cronjob part](cronjob-part-filter.md)
 - [Log rotation and pruning](log-rotation.md), [The log viewer](log-viewer.md),

@@ -2,14 +2,14 @@
 title: site.ini [URLTranslator]
 audience: developer, admin
 category: examples
-summary: "The settings of [URLTranslator] in site.ini: Translation, TranslatableSystemUrls, LoadOnPartialAliasPath, WordSeparator, TransformationGroup, UrlAliasNameLimit, MaxPathDepth, ScriptFallbackTransformationGroup ..."
-keywords: site.ini, URLTranslator, INI, setting, Translation, TranslatableSystemUrls, LoadOnPartialAliasPath, WordSeparator, TransformationGroup, UrlAliasNameLimit, MaxPathDepth, ScriptFallbackTransformationGroup, DecodeOnce, TrailingCleanup, WildcardTranslation, MaximumWildcardIterations, NodeTranslation, FilterClasses
+summary: "The settings of [URLTranslator] in site.ini: Translation, TranslatableSystemUrls, LoadOnPartialAliasPath, WordSeparator, CompatWordSeparator, TransformationGroup, UrlAliasNameLimit, MaxPathDepth ..."
+keywords: site.ini, URLTranslator, INI, setting, Translation, TranslatableSystemUrls, LoadOnPartialAliasPath, WordSeparator, CompatWordSeparator, TransformationGroup, UrlAliasNameLimit, MaxPathDepth, ScriptFallbackTransformationGroup, DecodeOnce, TrailingCleanup, WildcardTranslation, MaximumWildcardIterations, NodeTranslation, FilterClasses
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [URLTranslator]
 
-The block `[URLTranslator]` of `settings/site.ini`, with 14 setting(s).
+The block `[URLTranslator]` of `settings/site.ini`, with 15 setting(s).
 
 Never edit `settings/site.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -81,6 +81,20 @@ Default: `dash`.
 # settings/override/site.ini.append.php
 [URLTranslator]
 WordSeparator=dash
+*/ ?>
+```
+
+## CompatWordSeparator
+
+> The separator of the old-style lowercase url aliases (TransformationGroup=urlalias\_compat): underscore (default) or dash  
+
+Default: `underscore`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[URLTranslator]
+CompatWordSeparator=underscore
 */ ?>
 ```
 

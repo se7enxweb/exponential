@@ -60,7 +60,9 @@ The left column changes with the tab:
   [Migrations](migrations/README.md)). Next to **Cache** in the same group, **Static publishing** publishes a static
   copy of a site to GitHub Pages or any other host of repositories: a target made with a wizard, a build in the
   background, the changes checked before **Publish**, and every publish kept to go back to
-  ([Static publishing](static-publishing/README.md)).
+  ([Static publishing](static-publishing/README.md)). Right after **Cache**, **Image aliases**
+  shows how the site's image aliases are made on demand and controls it: dashboard, bulk runs, test tools, run
+  history and settings ([Image aliases](image-aliases.md)).
 
 ![The menu of an item in the tree](images/context-menu.webp)
 

@@ -55,6 +55,7 @@ replace. Each one implements the same list, in this order:
 | FrankenPHP | [FrankenPHP](frankenphp.md) | `frankenphp.Caddyfile.example` | `frankenphp validate` |
 | LiteSpeed, OpenLiteSpeed | [LiteSpeed](litespeed.md) | `openlitespeed-vhost.conf` | not run on LiteSpeed; its rewrite rules answered every test request as expected in Apache's `mod_rewrite` |
 | LiteSpeed, OpenLiteSpeed: page cache | [Page caching with LiteSpeed and OpenLiteSpeed](../../guides/litespeed-page-cache.md) | `litespeed-page-cache.conf` (and commented blocks in `.htaccess_root` and `openlitespeed-vhost.conf`) | not run on LiteSpeed; the address condition was checked with PCRE against sample addresses (cached, and excluded: the administration, `user/`, `shop/`, `content/` views other than `view/`) |
+| Image aliases made on demand (every server) | [Web server recipes for image aliases made on demand](image-aliases-on-demand.md) | the blocks in the files above | Apache, nginx and FrankenPHP rules run on throwaway servers (a missing alias made, a placeholder for an unknown one); `nginx -t` and `frankenphp validate` on the example files; LiteSpeed not run |
 | IIS | [IIS](iis.md) | `web.config` | well-formed XML (`xmllint`) only; not run on IIS |
 | PHP-FPM (behind Apache, nginx, Caddy) | [PHP-FPM pool](php-fpm.md) | `php-fpm-pool.conf` | `php-fpm -t` |
 

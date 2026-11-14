@@ -3,13 +3,13 @@ title: menu.ini [Leftmenu_setup]
 audience: developer, admin
 category: examples
 summary: "Die Einstellungen von [Leftmenu_setup] in menu.ini: Name, Groups, GroupNames, GroupTabs, GroupTabsLeftMenu, GroupSections, GroupLinks_content_model, GroupLinks_site ..."
-keywords: Einstellung, menu.ini, Leftmenu_setup, INI, setting, Name, Groups, GroupNames, GroupTabs, GroupTabsLeftMenu, GroupSections, GroupLinks_content_model, GroupLinks_site, GroupLinks_design, GroupLinks_workflow, GroupLinks_users, GroupLinks_data, GroupLinks_system, GroupLinks_ai, GroupLinks_updates, LeadLinks, MegaMenuLinks, LinkIcons, LinkDescriptions, LinkFigureTemplates, Links, LinkNames, PolicyList_cache, PolicyList_static_publishing, PolicyList_audit, PolicyList_classes, PolicyList_datatypes, PolicyList_collected, PolicyList_contentfinder, PolicyList_unreferenced_objects
+keywords: Einstellung, menu.ini, Leftmenu_setup, INI, setting, Name, Groups, GroupNames, GroupTabs, GroupTabsLeftMenu, GroupSections, GroupLinks_content_model, GroupLinks_site, GroupLinks_design, GroupLinks_workflow, GroupLinks_users, GroupLinks_data, GroupLinks_system, GroupLinks_ai, GroupLinks_updates, LeadLinks, MegaMenuLinks, LinkIcons, LinkDescriptions, LinkFigureTemplates, Links, LinkNames, PolicyList_cache, PolicyList_image_aliases, PolicyList_static_publishing, PolicyList_audit, PolicyList_classes, PolicyList_datatypes, PolicyList_collected, PolicyList_contentfinder
 type: generated
 generated: exp:help:examples
 ---
 # menu.ini [Leftmenu_setup]
 
-Der Block `[Leftmenu_setup]` von `settings/menu.ini`, mit 68 Einstellung(en).
+Der Block `[Leftmenu_setup]` von `settings/menu.ini`, mit 69 Einstellung(en).
 
 Bearbeiten Sie `settings/menu.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -257,7 +257,7 @@ GroupLinks_data[]=data_syncs
 
 > Erweiterungen: expqueue (die Auftragswarteschlange, auch mit expai ausgeliefert), sevenx\_dse (der Datenbankeditor)  
 
-Standard: eine Liste mit 15: `cache`, `static_publishing`, `system_information`, `help_center`, `upgrade_check`, `migrations`, `maintenance`, `cronjobs`, `logs`, `request_shield`, `extensions`, `ini` ....
+Standard: eine Liste mit 16: `cache`, `image_aliases`, `static_publishing`, `system_information`, `help_center`, `upgrade_check`, `migrations`, `maintenance`, `cronjobs`, `logs`, `request_shield`, `extensions` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -266,6 +266,7 @@ Standard: eine Liste mit 15: `cache`, `static_publishing`, `system_information`,
 # ein leeres "GroupLinks_system[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
 GroupLinks_system[]
 GroupLinks_system[]=cache
+GroupLinks_system[]=image_aliases
 GroupLinks_system[]=static_publishing
 GroupLinks_system[]=system_information
 GroupLinks_system[]=help_center
@@ -389,7 +390,7 @@ MegaMenuLinks[]=git_manager
 >                                   figure\_key=<key> nur für eine angezeigte Kachel eingebunden; leer oder nicht design: zeichnet keine  
 > Eine Erweiterung setzt sie für ihren eigenen Link in ihrer menu.ini.append.php (doc/eng-us/features/6.0/admin4-design.md).  
 
-Standard: ein Hash mit 62: `audit=journal-check`, `broken_relations=exclamation-diamond`, `storage_files=files`, `cache=arrow-clockwise`, `classes=diagram-3`, `datatypes=ui-radios`, `collected=inbox`, `contentfinder=search`, `cronjobs=clock`, `design_node=brush`, `dse=database`, `expai_budgets=piggy-bank` ....
+Standard: ein Hash mit 63: `audit=journal-check`, `broken_relations=exclamation-diamond`, `storage_files=files`, `cache=arrow-clockwise`, `image_aliases=images`, `classes=diagram-3`, `datatypes=ui-radios`, `collected=inbox`, `contentfinder=search`, `cronjobs=clock`, `design_node=brush`, `dse=database` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -401,6 +402,7 @@ LinkIcons[audit]=journal-check
 LinkIcons[broken_relations]=exclamation-diamond
 LinkIcons[storage_files]=files
 LinkIcons[cache]=arrow-clockwise
+LinkIcons[image_aliases]=images
 LinkIcons[classes]=diagram-3
 LinkIcons[datatypes]=ui-radios
 LinkIcons[collected]=inbox
@@ -416,14 +418,13 @@ LinkIcons[extensions]=puzzle
 LinkIcons[ezupdate]=cloud-arrow-down
 LinkIcons[git_manager]=git
 LinkIcons[git_manager_backup]=archive
-LinkIcons[global_setting]=globe
-# ... 42 weitere in der ausgelieferten Datei
+# ... 43 weitere in der ausgelieferten Datei
 */ ?>
 ```
 
 ## LinkDescriptions
 
-Standard: ein Hash mit 62: `audit=Who changed what: the audit settings and archives.`, `broken_relations=Visible content that links to deleted, hidden or trashed content.`, `storage_files=Files in the storage that nothing uses, and files with the wrong owner or mode.`, `cache=Clear or regenerate the caches.`, `classes=The content classes and their attributes.`, `datatypes=Every datatype of the kernel and the extensions, and how the classes and content use it.`, `collected=What visitors sent through forms.`, `contentfinder=Find content by its id, remote id or path.`, `cronjobs=The cronjob parts, their scripts and last runs.`, `design_node=The design's top node and the objects below it.`, `dse=Browse and query the database directly.`, `expai_budgets=AI budgets, queued requests and what they cost.` ....
+Standard: ein Hash mit 63: `audit=Who changed what: the audit settings and archives.`, `broken_relations=Visible content that links to deleted, hidden or trashed content.`, `storage_files=Files in the storage that nothing uses, and files with the wrong owner or mode.`, `cache=Clear or regenerate the caches.`, `image_aliases=See how image aliases are made, run bulk jobs, test images and sources, and change their settings.`, `classes=The content classes and their attributes.`, `datatypes=Every datatype of the kernel and the extensions, and how the classes and content use it.`, `collected=What visitors sent through forms.`, `contentfinder=Find content by its id, remote id or path.`, `cronjobs=The cronjob parts, their scripts and last runs.`, `design_node=The design's top node and the objects below it.`, `dse=Browse and query the database directly.` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -435,6 +436,7 @@ LinkDescriptions[audit]=Who changed what: the audit settings and archives.
 LinkDescriptions[broken_relations]=Visible content that links to deleted, hidden or trashed content.
 LinkDescriptions[storage_files]=Files in the storage that nothing uses, and files with the wrong owner or mode.
 LinkDescriptions[cache]=Clear or regenerate the caches.
+LinkDescriptions[image_aliases]=See how image aliases are made, run bulk jobs, test images and sources, and change their settings.
 LinkDescriptions[classes]=The content classes and their attributes.
 LinkDescriptions[datatypes]=Every datatype of the kernel and the extensions, and how the classes and content use it.
 LinkDescriptions[collected]=What visitors sent through forms.
@@ -450,8 +452,7 @@ LinkDescriptions[extensions]=Activate and deactivate extensions.
 LinkDescriptions[ezupdate]=Packages with a newer release, and their updates.
 LinkDescriptions[git_manager]=The Git checkout of the installation and its updates.
 LinkDescriptions[git_manager_backup]=Make, download and remove backups.
-LinkDescriptions[global_setting]=The settings of the whole site.
-# ... 42 weitere in der ausgelieferten Datei
+# ... 43 weitere in der ausgelieferten Datei
 */ ?>
 ```
 
@@ -478,6 +479,8 @@ LinkFigureTemplates[cronjobs]=design:setup/setupmenu_figure.tpl
 
 > Kein PolicyList\_overview\[\]: die Ansicht öffnet sich mit jeder einzelnen Funktion des Moduls setup (kernel/setup/module.php),  
 > was ein einzelner PolicyList-Eintrag nicht ausdrücken kann; CheckViewAccess fragt die Ansicht selbst.  
+> Setup > Bild-Aliase (expImageAliasAdmin): die auf Abruf erzeugten Bild-Aliase, ihre Einstellungen, Massenläufe als Jobs, die  
+> Testwerkzeuge und der Verlauf der Läufe; zum Ansehen braucht es setup/aliases, für jede Änderung setup/managealiases  
 > Statisches Veröffentlichen (Modul staticpublish): eine Site, als statische Dateien auf GitHub Pages oder einem beliebigen Git-Host veröffentlicht  
 > (doc/eng-us/help/static-publishing/README.md)  
 > Die Audit-Einstellungen und Archive (doc/eng-us/bc/6.0/audit.md, „Placement“), nur mit audit/manage  
@@ -527,7 +530,7 @@ LinkFigureTemplates[cronjobs]=design:setup/setupmenu_figure.tpl
 > PolicyList\_toolbar\_management\[\]=visual/\*  
 > RAD schließt die Gruppe „Site und URLs“  
 
-Standard: ein Hash mit 49: `overview=setup/menu`, `cache=setup/cache`, `static_publishing=staticpublish/dashboard`, `audit=audit/settings`, `classes=class/grouplist`, `datatypes=class/datatype/list`, `collected=infocollector/overview`, `contentfinder=contentfinder/search`, `unreferenced_objects=contentcheck/unreferenced`, `broken_relations=contentcheck/brokenrelations`, `storage_files=contentcheck/storage`, `maintenance=setup/maintenance` ....
+Standard: ein Hash mit 50: `overview=setup/menu`, `cache=setup/cache`, `image_aliases=setup/aliases`, `static_publishing=staticpublish/dashboard`, `audit=audit/settings`, `classes=class/grouplist`, `datatypes=class/datatype/list`, `collected=infocollector/overview`, `contentfinder=contentfinder/search`, `unreferenced_objects=contentcheck/unreferenced`, `broken_relations=contentcheck/brokenrelations`, `storage_files=contentcheck/storage` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -537,6 +540,7 @@ Standard: ein Hash mit 49: `overview=setup/menu`, `cache=setup/cache`, `static_p
 Links[]
 Links[overview]=setup/menu
 Links[cache]=setup/cache
+Links[image_aliases]=setup/aliases
 Links[static_publishing]=staticpublish/dashboard
 Links[audit]=audit/settings
 Links[classes]=class/grouplist
@@ -554,14 +558,13 @@ Links[request_shield]=requestshield/dashboard
 Links[extensions]=setup/extensions
 Links[design_node]=content/view/full/58
 Links[ini]=settings/view
-Links[languages]=content/translations
-# ... 29 weitere in der ausgelieferten Datei
+# ... 30 weitere in der ausgelieferten Datei
 */ ?>
 ```
 
 ## LinkNames
 
-Standard: ein Hash mit 23: `static_publishing=Static publishing`, `audit=Audit`, `datatypes=Datatypes`, `contentfinder=Content finder`, `unreferenced_objects=Unreferenced objects`, `broken_relations=Broken relations`, `storage_files=Storage files`, `maintenance=Maintenance`, `migrations=Migrations`, `cronjobs=Cronjobs`, `logs=Log files`, `request_shield=Request shield` ....
+Standard: ein Hash mit 24: `image_aliases=Image aliases`, `static_publishing=Static publishing`, `audit=Audit`, `datatypes=Datatypes`, `contentfinder=Content finder`, `unreferenced_objects=Unreferenced objects`, `broken_relations=Broken relations`, `storage_files=Storage files`, `maintenance=Maintenance`, `migrations=Migrations`, `cronjobs=Cronjobs`, `logs=Log files` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -569,6 +572,7 @@ Standard: ein Hash mit 23: `static_publishing=Static publishing`, `audit=Audit`,
 [Leftmenu_setup]
 # ein leeres "LinkNames[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
 LinkNames[]
+LinkNames[image_aliases]=Image aliases
 LinkNames[static_publishing]=Static publishing
 LinkNames[audit]=Audit
 LinkNames[datatypes]=Datatypes
@@ -588,8 +592,7 @@ LinkNames[user_hygiene]=Check user accounts
 LinkNames[datatables]=Data tables
 LinkNames[data_connections]=Connections
 LinkNames[secrets]=Secrets
-LinkNames[graphql]=GraphQL
-# ... 3 weitere in der ausgelieferten Datei
+# ... 4 weitere in der ausgelieferten Datei
 */ ?>
 ```
 
@@ -604,6 +607,20 @@ Standard: eine Liste mit 1: `setup/managecache`.
 # ein leeres "PolicyList_cache[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
 PolicyList_cache[]
 PolicyList_cache[]=setup/managecache
+*/ ?>
+```
+
+## PolicyList_image_aliases
+
+Standard: eine Liste mit 1: `setup/aliases`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/menu.ini.append.php
+[Leftmenu_setup]
+# ein leeres "PolicyList_image_aliases[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+PolicyList_image_aliases[]
+PolicyList_image_aliases[]=setup/aliases
 */ ?>
 ```
 

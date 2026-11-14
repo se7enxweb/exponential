@@ -37,8 +37,10 @@ JavaScriptList[]
 
 > JavaScriptList\[\]=tools/ezjsselection.js  
 > Same as above for frontend designs  
+> Swaps the placeholders of image aliases that are still being made for the real images (image.ini \[AliasSettings\]  
+> SwapScript); does nothing on a page without placeholders.  
 
-Default: an empty list.
+Default: a list of 1: `exp_image_swap.js`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -46,6 +48,7 @@ Default: an empty list.
 [JavaScriptSettings]
 # an empty "FrontendJavaScriptList[]" first replaces the shipped list; without it the items are added
 FrontendJavaScriptList[]
+FrontendJavaScriptList[]=exp_image_swap.js
 */ ?>
 ```
 

@@ -2,7 +2,7 @@
 title: Erweiterungspunkte in image.ini
 audience: developer, admin
 category: examples
-summary: Einstellungen von image.ini, die Handler, Klassen oder Verzeichnisse auflisten, die eine Erweiterung ergänzen kann (15, am Namen erkannt).
+summary: Einstellungen von image.ini, die Handler, Klassen oder Verzeichnisse auflisten, die eine Erweiterung ergänzen kann (16, am Namen erkannt).
 keywords: Erweiterungspunkt, Erweiterung, image.ini, extension point, handler, extension, hook
 type: generated
 generated: exp:help:examples
@@ -12,6 +12,18 @@ generated: exp:help:examples
 Einstellungen von `settings/image.ini`, deren Name sagt, dass sie Handler, Klassen, Filter, Provider oder Verzeichnisse enthalten, die eine Erweiterung ergänzen oder ersetzen kann. **Am Namen der Einstellung erkannt: eine Heuristik.** Lesen Sie den Kommentar der Einstellung (verlinkt), bevor Sie sich darauf verlassen.
 
 Eine Erweiterung ergänzt eine Liste in ihrer eigenen `settings/image.ini.append.php` (die Einstellungen aktiver Erweiterungen werden nach denen des Kernels und vor `settings/override` gelesen):
+
+## AliasSettings PreferredConverter
+
+Ausgeliefert: `auto`. [Die Einstellung](../ini-einstellungen/image/AliasSettings.md#preferredconverter).
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# extension/expexample/settings/image.ini.append.php
+[AliasSettings]
+PreferredConverter=auto    # durch Ihre Klasse oder Ihren Wert ersetzen
+*/ ?>
+```
 
 ## reference Filters
 

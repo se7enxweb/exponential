@@ -80,10 +80,12 @@ Handlers[gzipshell]=ezgzipshellcompressionhandler
 > extension the handlers of PHP-FPM, mod\_php and the panels map (php3 to  
 > php8, phtml, pht, phps, phar, phpt, pgif), server-side includes (shtml),  
 > CGI scripts (cgi, pl) and the other platforms' pages (asp, aspx, jsp),  
-> and .htaccess. Write the values in lower case: a file name's extension is  
+> .htaccess, and HTML pages (html, htm, xhtml, xht), which a browser would run  
+> in the site's origin if a web server ever served one directly. Write the  
+> values in lower case: a file name's extension is  
 > compared in lower case, so shell.PHP5 is refused as php5.  
 
-Default: a list of 19: `php`, `php3`, `php4`, `php5`, `php7`, `php8`, `phps`, `phar`, `phpt`, `pht`, `phtml`, `pgif` ....
+Default: a list of 23: `php`, `php3`, `php4`, `php5`, `php7`, `php8`, `phps`, `phar`, `phpt`, `pht`, `phtml`, `pgif` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -110,6 +112,8 @@ FileExtensionBlackList[]=asp
 FileExtensionBlackList[]=aspx
 FileExtensionBlackList[]=jsp
 FileExtensionBlackList[]=htaccess
+FileExtensionBlackList[]=html
+# ... 3 more in the shipped file
 */ ?>
 ```
 

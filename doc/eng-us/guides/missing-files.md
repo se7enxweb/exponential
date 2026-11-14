@@ -21,6 +21,12 @@ backups or clean up disks, and for anyone who sees broken images on the site.
 - The same list on the command line: `./console exp:content-check --missing-files --node=<node id>`.
 - Nothing is changed by the check itself; the resolutions (section 6) always show a preview first.
 
+**Aliases made on demand (6.0.15).** With `image.ini [AliasSettings] AliasGeneration=on-demand`, the default, an alias
+that was never shown is not made yet, and a page makes it the first time a browser asks for it. **Alias never made**
+is then normal and needs no action; **File missing** for an original still does. To make the aliases ahead of the
+visitors, use **Setup > Image aliases** or `./console exp:image:alias generate`
+([Image aliases made on demand](../features/6.0/image-aliases-on-demand.md)).
+
 ## 1. Open the check
 
 1. Sign in to the administration and open **Setup > Broken relations** (or **Advanced > Broken relations in

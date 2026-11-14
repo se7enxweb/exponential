@@ -124,6 +124,17 @@ Vorschaubildern. Das Document Root selbst lässt sich wie jedes andere Verzeichn
 Sie keine Listen wollen, geben Sie dem Verzeichnis eine Indexdatei oder liefern Sie über den Front-Controller aus, damit
 nicht aufgeführte Pfade an die Anwendung gehen.
 
+## Noch nicht erzeugte Bild-Aliase
+
+Seit Exponential 6.0.15 werden Bild-Aliase auf Abruf erzeugt. Ein Bild der Ablage, das Velocity nicht als statische
+Datei findet, und jede Anfrage an `content/image` gehen an den Front-Controller `index_image.php` (die
+`expVelocity::FRONT_CONTROLLERS` des Kernels), der im dauerhaften Worker läuft: Er erzeugt den Alias oder antwortet
+einen Platzhalter (ein SVG in der richtigen Größe), ohne den Seitenkernel. Die nächste Anfrage an denselben Pfad ist
+wieder eine statische Datei. Nichts einzustellen; Velocity schreibt die Routen beim Start. Der Antwort-Cache von
+Velocity beachtet `Vary` nicht, deshalb wird eine ausgehandelte WebP-/AVIF-Antwort, die direkt gesendet wird, als
+`private` gesendet. Einzelheiten: [Auf Abruf erzeugte Bild-Aliase](bild-aliase-auf-abruf.md),
+[Webserver-Rezepte](../../beispiele/webserver/bild-aliase-auf-abruf.md#exponential-velocity).
+
 ## Grenzen
 
 - Eine Anfrage, die eine neue Größe erzeugt, bezahlt die Kodierkosten (AVIF ist am langsamsten). Zwei gleichzeitige erste

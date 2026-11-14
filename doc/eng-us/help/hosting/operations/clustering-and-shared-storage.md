@@ -163,6 +163,13 @@ RewriteRule ^/var_cache/([^/]+/)?cache/(texttoimage|public)/.* /index_cluster.ph
 > out of version control and out of any file a customer can download; the backups in `var/backup/config/` hold earlier
 > copies of `config.php` and need the same care.
 
+**Image aliases made on demand (6.0.15).** When the gateway has no metadata for a storage image (an image alias not
+made yet), it closes its connection and runs `index_image.php` in the same request, which makes the alias in the
+cluster (the per-alias lock is the alias file's `.generating` entry) or answers a placeholder; any other missing file
+stays a 404. The cluster rule must stand before the `index_image.php` rule. To keep the plain 404,
+`define( 'CLUSTER_IMAGE_ALIAS_ON_DEMAND', false );` in `config.cluster.php`. See
+[the recipes](../../../examples/web-servers/image-aliases-on-demand.md#the-cluster-gateway).
+
 ## Maintenance commands
 
 | Command | What it does | Options (from the command's own help) |

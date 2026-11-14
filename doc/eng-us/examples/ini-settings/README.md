@@ -45,6 +45,7 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [editorpolicies.ini](editorpolicies/README.md) | kernel | 2 |
 | [error.ini](error/README.md) | kernel | 11 |
 | [exphelp.ini](exphelp/README.md) | kernel | 69 |
+| [expqueue.ini](expqueue/README.md) | kernel | 3 |
 | [extendedattributefilter.ini](extendedattributefilter/README.md) | kernel | 0 |
 | [ezxml.ini](ezxml/README.md) | kernel | 4 |
 | [fetchalias.ini](fetchalias/README.md) | kernel | 8 |
@@ -53,7 +54,7 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [httpcache.ini](httpcache/README.md) | kernel | 1 |
 | [i18n.ini](i18n/README.md) | kernel | 2 |
 | [icon.ini](icon/README.md) | kernel | 3 |
-| [image.ini](image/README.md) | kernel | 21 |
+| [image.ini](image/README.md) | kernel | 23 |
 | [ini.ini](ini/README.md) | kernel | 1 |
 | [kernelservices.ini](kernelservices/README.md) | kernel | 15 |
 | [layout.ini](layout/README.md) | kernel | 3 |

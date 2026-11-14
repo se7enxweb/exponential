@@ -189,8 +189,10 @@ PermissionSQLOptimization=enabled
 > (expContentPreviewLink); without a valid one the page says the link does not work.  
 > The form endpoint of static publishing: the visitors of a static copy post its forms here, signed in or not;  
 > staticpublish/form checks the origin, the token signed at build time and the rate itself (expStaticFormEndpoint).  
+> Image aliases made on demand (image.ini \[AliasSettings\]): a signed URL is the permission to read the image and to  
+> make the alias; an unsigned one only serves an alias that exists (expImageAliasServer). No session is started.  
 
-Default: a list of 26: `user/login`, `user/logout`, `user/register`, `user/activate`, `user/success`, `user/forgotpassword`, `layout`, `manual`, `ezinfo`, `paypal/notify_url`, `switchlanguage`, `oauth/authorize` ....
+Default: a list of 27: `user/login`, `user/logout`, `user/register`, `user/activate`, `user/success`, `user/forgotpassword`, `layout`, `manual`, `ezinfo`, `paypal/notify_url`, `switchlanguage`, `oauth/authorize` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -218,7 +220,7 @@ PolicyOmitList[]=mailpreferences/unsubscribe
 PolicyOmitList[]=mailpreferences/confirm
 PolicyOmitList[]=mailpreferences/request
 PolicyOmitList[]=mailpreferences/export
-# ... 6 more in the shipped file
+# ... 7 more in the shipped file
 */ ?>
 ```
 

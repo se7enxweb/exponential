@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # image.ini
 
-Die ausgelieferten Einstellungen von `settings/image.ini`: 21 Blöcke, 61 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/image.ini`: 23 Blöcke, 88 Einstellungen.
 
 > Exponential-Konfigurationsdatei für den Umgang mit Bildern  
 >
@@ -27,7 +27,9 @@ Die ausgelieferten Einstellungen von `settings/image.ini`: 21 Blöcke, 61 Einste
 | [GDSettings](GDSettings.md) | 1 |
 | [FileSettings](FileSettings.md) | 5 |
 | [OutputSettings](OutputSettings.md) | 1 |
-| [AliasSettings](AliasSettings.md) | 1 |
+| [AliasSettings](AliasSettings.md) | 17 |
+| [AliasStaging](AliasStaging.md) | 9 |
+| [AliasSource_pro](AliasSource_pro.md) | 2 |
 | [reference](reference.md) | 1 |
 | [small](small.md) | 2 |
 | [tiny](tiny.md) | 2 |

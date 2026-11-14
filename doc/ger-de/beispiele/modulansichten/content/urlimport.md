@@ -14,10 +14,10 @@ Eine Ansicht des Moduls `content`, definiert in `kernel/content/module.php` und 
 ## Adresse
 
 ```text
-/content/urlimport/(plan)/<Plan>/(state)/<State>/(offset)/<Offset>/(report)/<Report>/(source)/<Source>
+/content/urlimport/(plan)/<Plan>/(state)/<State>/(offset)/<Offset>/(report)/<Report>/(source)/<Source>/(example)/<Example>/(use)/<Use>
 ```
 
-Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(plan)` setzt `Plan`, `(state)` setzt `State`, `(offset)` setzt `Offset`, `(report)` setzt `Report`, `(source)` setzt `Source`.
+Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(plan)` setzt `Plan`, `(state)` setzt `State`, `(offset)` setzt `Offset`, `(report)` setzt `Report`, `(source)` setzt `Source`, `(example)` setzt `Example`, `(use)` setzt `Use`.
 
 ## Wer sie öffnen darf
 

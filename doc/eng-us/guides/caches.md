@@ -101,6 +101,12 @@ Each group and each result notice shows the command for exactly the caches it cl
 
 ## 6. Usual questions
 
+**Clearing the image aliases makes the next pages slow.** Since 6.0.15 it does not: the aliases are made on demand,
+when the browser asks for each image, and a placeholder is shown while one is being made. To make the aliases of
+part of the site again, or ahead of the visitors, use **Setup > Image aliases** (bulk runs) or
+`./console exp:image:alias regenerate` instead of clearing them all
+([Image aliases made on demand](../features/6.0/image-aliases-on-demand.md)).
+
 **A page still shows the old version after clearing.** Clear Velocity's response cache, or wait a few seconds. If
 it is a settings change, restart Velocity.
 

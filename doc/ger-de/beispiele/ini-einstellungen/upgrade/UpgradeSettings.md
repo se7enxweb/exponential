@@ -27,11 +27,13 @@ Bearbeiten Sie `settings/upgrade.ini` nie selbst: Ein Update ersetzt die Datei. 
 > Stufe database: Schema und Daten, jede Engine (Schritt 0 zuerst: die Aufzeichnungstabelle exp\_migration)  
 > die ältere Aufzeichnung expupgrade\_step einer Vorabversion von 6.0.15: ihre Zeilen in exp\_migration kopiert, dann gelöscht  
 > Nur SQLite: Die Tabellen, deren Schlüssel die .dba über mehr als eine Spalte legt (ezcontentobject\_attribute auf id, version), bekommen diesen Schlüssel  
+> jede andere Tabelle des Kernel-Schemas, die der Datenbank fehlt (eine alte Datenbank, die nie eine bekommen hat); vor der  
+> Stufe scripts, die sich auf sie verlässt  
 > die Tabellen jeder aktiven Erweiterung, die eine share/db\_schema.dba mitbringt, wo sie fehlen (ohne Daten zu laden)  
 > Stufe scripts: die PHP-Upgrade-Schritte, über die Klassen der Skripte und Setup-Befehle  
 > Stufe finish: die Änderungen wirksam machen und die Site prüfen (nur wenn der Lauf etwas geändert hat)  
 
-Standard: eine Liste mit 48: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepMigrationTables`, `expUpgradeStepRecordTable`, `expUpgradeStepMigrationRecordingTables`, `expUpgradeStepSqliteCompositeKeys`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses` ....
+Standard: eine Liste mit 49: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepMigrationTables`, `expUpgradeStepRecordTable`, `expUpgradeStepMigrationRecordingTables`, `expUpgradeStepSqliteCompositeKeys`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -59,7 +61,7 @@ StepList[]=expUpgradeStepMailPreferenceTables
 StepList[]=expUpgradeStepApiKeyTable
 StepList[]=expUpgradeStepTransferRunTable
 StepList[]=expUpgradeStepDataTableTables
-# ... 28 weitere in der ausgelieferten Datei
+# ... 29 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

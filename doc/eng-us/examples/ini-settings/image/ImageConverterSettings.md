@@ -68,11 +68,13 @@ ImageConverters[]=ImageMagick
 
 ## LockTimeout
 
-> Waiting time for processes in queue to get an exclusive writing lock  
-> for writing a specific image alias.  
->
-> If a process spends longer than this time waiting, the process holding the lock  
-> will be ended, and the waiting process will continue, generating the image alias.  
+> Seconds a process waits for the lock of one alias file while another process makes  
+> that alias (one lock per alias file: the aliases of one image are made in parallel).  
+> When the other process is done in time, its file is used as it is; when the wait  
+> runs out, no alias is made by this request (a page in render mode shows no image  
+> for it this time, content/image answers the placeholder). On a single server the  
+> lock is a file lock (var/<site>/cache/imagealias-locks), on a database cluster  
+> (eZDFS) the .generating entry of the alias file. 0 waits not at all.  
 
 Default: `60`.
 

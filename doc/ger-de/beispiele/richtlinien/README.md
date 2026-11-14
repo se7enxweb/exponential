@@ -46,7 +46,7 @@ Die Richtlinienfunktionen jedes Moduls und die Einschränkungen, die jede tragen
 | [secrets](secrets.md) | `manage` |
 | [section](section.md) | `assign`, `edit`, `view` |
 | [settings](settings.md) | (keine: `settings/*`) |
-| [setup](setup.md) | `administrate`, `install`, `logs`, `managecache`, `managecronjobs`, `managelogs`, `preload`, `setup`, `system_info`, `unmasklogs` |
+| [setup](setup.md) | `administrate`, `aliases`, `install`, `logs`, `managealiases`, `managecache`, `managecronjobs`, `managelogs`, `preload`, `setup`, `system_info`, `unmasklogs` |
 | [shop](shop.md) | `administrate`, `buy`, `edit_status`, `setstatus`, `setup` |
 | [state](state.md) | `administrate`, `assign` |
 | [staticpublish](staticpublish.md) | `build`, `publish`, `read`, `setup` |

@@ -11,9 +11,6 @@ generated: exp:help:examples
 
 The block `[reference]` of `settings/image.ini`, with 1 setting(s).
 
-> AliasList\[\]=rssitem  
-> AliasList\[\]=gray  
-> AliasList\[\]=zoom  
 > Example of an image alias, the group is called the same as the alias name  
 > \[myalias\]  
 >

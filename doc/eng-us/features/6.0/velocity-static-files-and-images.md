@@ -119,6 +119,16 @@ A directory without an index file is listed in a responsive page; image folders 
 document root itself can be listed like any other directory (21 September 2026). If you do not want listings, give the
 directory an index file, or serve through the front controller so unlisted paths go to the application.
 
+## Image aliases not made yet
+
+Since Exponential 6.0.15 image aliases are made on demand. A storage image that Velocity does not find as a static
+file, and every `content/image` request, go to the front controller `index_image.php` (the kernel's
+`expVelocity::FRONT_CONTROLLERS`), which runs in the persistent worker: it makes the alias, or answers a sized SVG
+placeholder, without the page kernel. The next request for the same path is a static file again. Nothing to
+configure; Velocity writes the routes when it starts. Velocity's response cache ignores `Vary`, so a negotiated
+WebP/AVIF answer that is streamed is sent `private`. Details: [Image aliases made on demand](image-aliases-on-demand.md),
+[web server recipes](../../examples/web-servers/image-aliases-on-demand.md#exponential-velocity).
+
 ## Limits
 
 - One request that generates a new size pays the encoding cost (AVIF is slowest). Two simultaneous first requests for

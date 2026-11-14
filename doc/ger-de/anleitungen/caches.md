@@ -101,6 +101,12 @@ Jede Gruppe und jede Ergebnismeldung zeigt den Befehl für genau die Caches, die
 
 ## 6. Häufige Fragen
 
+**Nach dem Leeren der Bild-Aliase werden die nächsten Seiten langsam.** Seit 6.0.15 nicht mehr: Die Aliase werden auf
+Abruf erzeugt, wenn der Browser nach dem jeweiligen Bild fragt, und solange einer erzeugt wird, erscheint ein
+Platzhalter. Um die Aliase eines Teils der Website neu oder vor den Besuchern zu erzeugen, nutzen Sie **Setup >
+Bild-Aliase** (Massenläufe) oder `./console exp:image:alias regenerate`, statt alle zu leeren
+([Auf Abruf erzeugte Bild-Aliase](../funktionen/6.0/bild-aliase-auf-abruf.md)).
+
 **Eine Seite zeigt nach dem Leeren noch die alte Fassung.** Leeren Sie den Antwort-Cache von Velocity oder warten Sie einige Sekunden. Handelt
 es sich um eine Änderung der Einstellungen, starten Sie Velocity neu.
 

@@ -100,8 +100,9 @@ RelatedSiteAccessList[]
 > siteaccess, the administration included (doc/eng-us/features/6.0/content-security-policy.md, "Reports").  
 > A deploy over FTP runs the migrations through migration/trigger without signing in: the view takes only signed  
 > requests from migration.ini \[TriggerSettings\] AllowedAddresses\[\], and nothing while Trigger=disabled.  
+> The images of a page are loaded without signing in, on every siteaccess (content/image, see PolicyOmitList\[\]).  
 
-Default: a list of 7: `user/register`, `user/success`, `user/activate`, `user/forgotpassword`, `user/megamenu`, `csp/report`, `migration/trigger`.
+Default: a list of 8: `user/register`, `user/success`, `user/activate`, `user/forgotpassword`, `user/megamenu`, `csp/report`, `migration/trigger`, `content/image`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -116,6 +117,7 @@ AnonymousAccessList[]=user/forgotpassword
 AnonymousAccessList[]=user/megamenu
 AnonymousAccessList[]=csp/report
 AnonymousAccessList[]=migration/trigger
+AnonymousAccessList[]=content/image
 */ ?>
 ```
 

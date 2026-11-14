@@ -2,7 +2,7 @@
 title: Extension points in image.ini
 audience: developer, admin
 category: examples
-summary: Settings of image.ini that list handlers, classes or directories an extension can add to (15, found by name).
+summary: Settings of image.ini that list handlers, classes or directories an extension can add to (16, found by name).
 keywords: image.ini, extension point, handler, extension, hook
 type: generated
 generated: exp:help:examples
@@ -12,6 +12,18 @@ generated: exp:help:examples
 Settings of `settings/image.ini` whose name says they hold handlers, classes, filters, providers or directories that an extension can add to or replace. **Found by the setting's name: a heuristic.** Read the setting's comment (linked) before relying on it.
 
 An extension adds to a list in its own `settings/image.ini.append.php` (active extensions' settings are read after the kernel's and before `settings/override`):
+
+## AliasSettings PreferredConverter
+
+Shipped: `auto`. [The setting](../ini-settings/image/AliasSettings.md#preferredconverter).
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# extension/expexample/settings/image.ini.append.php
+[AliasSettings]
+PreferredConverter=auto    # replace with your class or value
+*/ ?>
+```
 
 ## reference Filters
 

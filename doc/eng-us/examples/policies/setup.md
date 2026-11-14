@@ -2,7 +2,7 @@
 title: Policies of the setup module
 audience: developer, admin
 category: examples
-summary: The policy functions of the setup module (10) and their limitations.
+summary: The policy functions of the setup module (12) and their limitations.
 keywords: setup, policy, policies, role, limitation, permission
 type: generated
 generated: exp:help:examples
@@ -25,6 +25,24 @@ $role->appendPolicy( 'setup', 'administrate' );
 
 ```tpl
 {if fetch( 'user', 'has_access_to', hash( 'module', 'setup', 'function', 'administrate' ) )}
+    ...
+{/if}
+```
+
+## aliases
+
+Checked by the views: [aliases](../module-views/setup/aliases.md), [aliasesfeed](../module-views/setup/aliasesfeed.md), [menu](../module-views/setup/menu.md).
+
+No limitations: the policy is all or nothing.
+
+```php
+// Give a role the policy (eZRole::appendPolicy( $module, $function, $limitations ))
+$role = eZRole::fetchByName( 'Editor' );
+$role->appendPolicy( 'setup', 'aliases' );
+```
+
+```tpl
+{if fetch( 'user', 'has_access_to', hash( 'module', 'setup', 'function', 'aliases' ) )}
     ...
 {/if}
 ```
@@ -61,6 +79,24 @@ $role->appendPolicy( 'setup', 'logs' );
 
 ```tpl
 {if fetch( 'user', 'has_access_to', hash( 'module', 'setup', 'function', 'logs' ) )}
+    ...
+{/if}
+```
+
+## managealiases
+
+No view of the module names it; code checks it (`eZUser::hasAccessTo( 'setup', 'managealiases' )` or the `user/has_access_to` fetch).
+
+No limitations: the policy is all or nothing.
+
+```php
+// Give a role the policy (eZRole::appendPolicy( $module, $function, $limitations ))
+$role = eZRole::fetchByName( 'Editor' );
+$role->appendPolicy( 'setup', 'managealiases' );
+```
+
+```tpl
+{if fetch( 'user', 'has_access_to', hash( 'module', 'setup', 'function', 'managealiases' ) )}
     ...
 {/if}
 ```

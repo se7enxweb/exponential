@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # Das Modul content
 
-Name `eZContentObject`, definiert in `kernel/content/module.php`. 51 Ansichten.
+Name `eZContentObject`, definiert in `kernel/content/module.php`. 52 Ansichten.
 
 | Ansicht | Adresse | Richtlinienfunktionen |
 |---|---|---|
@@ -28,6 +28,7 @@ Name `eZContentObject`, definiert in `kernel/content/module.php`. 51 Ansichten.
 | [edit](edit.md) | `/content/edit/<ObjectID>/<EditVersion>/<EditLanguage>/<FromLanguage>` | edit or create |
 | [hide](hide.md) | `/content/hide/<NodeID>` | hide |
 | [history](history.md) | `/content/history/<ObjectID>/<EditVersion>` | read or edit |
+| [image](image.md) | `/content/image/<Part1>/<Part2>/<Part3>/<Part4>/<Part5>/<Part6>` | read |
 | [job](job.md) | `/content/job/<JobID>` | read |
 | [jobs](jobs.md) | `/content/jobs` | read |
 | [keyword](keyword.md) | `/content/keyword/<Alphabet>` | read |

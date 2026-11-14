@@ -79,11 +79,13 @@ Handlers[gzipshell]=ezgzipshellcompressionhandler
 > Die Liste enthält die Endungen, die ein Webserver als Code ausführen kann: jede PHP-  
 > Endung, die die Handler von PHP-FPM, mod\_php und den Panels zuordnen (php3 bis  
 > php8, phtml, pht, phps, phar, phpt, pgif), Server-Side Includes (shtml),  
-> CGI-Skripte (cgi, pl) und die Seiten anderer Plattformen (asp, aspx, jsp)  
-> sowie .htaccess. Schreiben Sie die Werte klein: Die Endung eines Dateinamens wird  
+> CGI-Skripte (cgi, pl) und die Seiten anderer Plattformen (asp, aspx, jsp),  
+> .htaccess sowie HTML-Seiten (html, htm, xhtml, xht), die ein Browser  
+> im Ursprung der Site ausführen würde, wenn ein Webserver je eine direkt ausliefern würde. Schreiben Sie die  
+> Werte klein: Die Endung eines Dateinamens wird  
 > in Kleinbuchstaben verglichen, shell.PHP5 wird also als php5 abgelehnt.  
 
-Standard: eine Liste mit 19: `php`, `php3`, `php4`, `php5`, `php7`, `php8`, `phps`, `phar`, `phpt`, `pht`, `phtml`, `pgif` ....
+Standard: eine Liste mit 23: `php`, `php3`, `php4`, `php5`, `php7`, `php8`, `phps`, `phar`, `phpt`, `pht`, `phtml`, `pgif` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -110,6 +112,8 @@ FileExtensionBlackList[]=asp
 FileExtensionBlackList[]=aspx
 FileExtensionBlackList[]=jsp
 FileExtensionBlackList[]=htaccess
+FileExtensionBlackList[]=html
+# ... 3 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

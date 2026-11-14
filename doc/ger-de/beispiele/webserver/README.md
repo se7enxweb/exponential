@@ -59,6 +59,7 @@ Jedes Beispiel auf diesen Seiten ist eine vollständige Datei zum Kopieren; erse
 | FrankenPHP | [FrankenPHP](frankenphp.md) | `frankenphp.Caddyfile.example` | `frankenphp validate` |
 | LiteSpeed, OpenLiteSpeed | [LiteSpeed](litespeed.md) | `openlitespeed-vhost.conf` | nicht auf LiteSpeed ausgeführt; seine Rewrite-Regeln beantworteten in Apaches `mod_rewrite` jede Testanfrage wie erwartet |
 | LiteSpeed, OpenLiteSpeed: Seiten-Cache | [Seiten-Caching mit LiteSpeed und OpenLiteSpeed](../../anleitungen/seiten-cache-mit-litespeed.md) | `litespeed-page-cache.conf` (und auskommentierte Blöcke in `.htaccess_root` und `openlitespeed-vhost.conf`) | nicht auf LiteSpeed ausgeführt; die Adressbedingung wurde mit PCRE gegen Beispieladressen geprüft (gespeichert, und ausgenommen: die Administration, `user/`, `shop/`, `content/`-Ansichten außer `view/`) |
+| Auf Abruf erzeugte Bild-Aliase (jeder Server) | [Webserver-Rezepte für auf Abruf erzeugte Bild-Aliase](bild-aliase-auf-abruf.md) | die Blöcke in den Dateien oben | Regeln für Apache, nginx und FrankenPHP auf Wegwerf-Servern ausgeführt (ein fehlender Alias erzeugt, ein Platzhalter für einen unbekannten); `nginx -t` und `frankenphp validate` auf den Beispieldateien; LiteSpeed nicht ausgeführt |
 | IIS | [IIS](iis.md) | `web.config` | nur wohlgeformtes XML (`xmllint`); nicht auf IIS ausgeführt |
 | PHP-FPM (hinter Apache, nginx, Caddy) | [PHP-FPM-Pool](php-fpm.md) | `php-fpm-pool.conf` | `php-fpm -t` |
 

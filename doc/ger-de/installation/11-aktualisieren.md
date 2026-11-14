@@ -390,6 +390,13 @@ if ( is_file( __DIR__ . '/extension/exp_request_shield/bootstrap/hook.php' ) )
 Er setzt ab der nächsten Anfrage durch (unter Velocity nach einem Neustart). Siehe
 [Request Shield (BC)](../bc/6.0/request-shield.md).
 
+**Auf Abruf erzeugte Bild-Aliase (6.0.15).** Fehlende Bild-Aliase werden erzeugt, wenn der Browser danach fragt, nicht
+beim Erzeugen der Seite (`image.ini [AliasSettings] AliasGeneration=on-demand`, der Standard; `render` kehrt zurück).
+Übernehmen Sie die neuen Regeln für `index_image.php` aus `.htaccess_root` (oder die
+[Rezepte](../beispiele/webserver/bild-aliase-auf-abruf.md) für nginx, LiteSpeed, Caddy und einen Cluster), erlauben
+Sie das Skript dort, wo Skripte im Wurzelverzeichnis aufgelistet sind, und geben Sie Bildern im Request Shield ein
+eigenes Budget. Siehe [Auf Abruf erzeugte Bild-Aliase (BC)](../bc/6.0/bild-aliase-auf-abruf.md).
+
 ### Schritt 2: das Datenbank-Update anwenden
 
 Die Datei für die Linie ist `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql`, für MySQL, PostgreSQL und

@@ -21,7 +21,7 @@ Eine Ansicht des Moduls `setup`, definiert in `kernel/setup/module.php` und ausg
 
 Der Benutzer braucht diese Richtlinienfunktion:
 
-- [`setup/setup`](../../richtlinien/setup.md#setup) oder [`setup/administrate`](../../richtlinien/setup.md#administrate) oder [`setup/managecache`](../../richtlinien/setup.md#managecache) oder [`setup/managecronjobs`](../../richtlinien/setup.md#managecronjobs) oder [`setup/preload`](../../richtlinien/setup.md#preload) oder [`setup/system_info`](../../richtlinien/setup.md#system_info) oder [`setup/logs`](../../richtlinien/setup.md#logs)
+- [`setup/setup`](../../richtlinien/setup.md#setup) oder [`setup/administrate`](../../richtlinien/setup.md#administrate) oder [`setup/managecache`](../../richtlinien/setup.md#managecache) oder [`setup/managecronjobs`](../../richtlinien/setup.md#managecronjobs) oder [`setup/preload`](../../richtlinien/setup.md#preload) oder [`setup/system_info`](../../richtlinien/setup.md#system_info) oder [`setup/logs`](../../richtlinien/setup.md#logs) oder [`setup/aliases`](../../richtlinien/setup.md#aliases)
 
 Eine Richtlinie auf `setup/*` (jede Funktion) erlaubt sie ebenfalls; Einschränkungen der Richtlinie (Sektion, Teilbaum, Klasse ...) gelten weiterhin, wo die Ansicht sie prüft.
 
