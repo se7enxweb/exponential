@@ -168,7 +168,21 @@ them is free documentation (GFDL 1.3 or later), like this page.
         # Exponential 6.0.15, soap.php only forwards to it. Uncomment with SOAP on:
         #RewriteRule ^/index_soap\.php - [L]
         RewriteRule ^/([^/]+/)?content/treemenu.* /index_treemenu.php [L]
+        # Image aliases made on demand: a storage image that is not there goes to
+        # index_image.php, which makes the alias or answers a placeholder;
+        # content/image is answered by the same script, without the page kernel.
+        # (A database cluster: the index_cluster.php rule stands before these.)
+        RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} !-f
+        RewriteRule ^/var/([^/]+/)?storage/images(-versioned)?/.* /index_image.php [L]
+        RewriteRule ^/([^/]+/)?content/image/ /index_image.php [L]
+        RewriteRule ^/index_image\.php - [L]
         RewriteRule ^/var/([^/]+/)?storage/images(-versioned)?/.* - [L]
+        # The WebP and AVIF variants of image aliases (foo_large.jpg.avif) get
+        # their own types, not image/jpeg after the inner .jpg.
+        <IfModule mod_mime.c>
+            AddType image/webp .webp
+            AddType image/avif .avif
+        </IfModule>
         # The stored files of PDF exports generated once (Setup > PDF export)
         RewriteRule ^/var/([^/]+/)?storage/pdf/[A-Za-z0-9][A-Za-z0-9._-]*\.pdf$ - [L]
         # Of the originals only the images; other uploads stay behind

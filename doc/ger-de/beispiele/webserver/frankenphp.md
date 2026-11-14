@@ -105,6 +105,17 @@ Maschine:
 	encode zstd br gzip
 	route {
 		respond /Q/health 200
+		# A storage image with no file (an image alias not made yet) goes to
+		# index_image.php, which makes it or answers a placeholder, before the
+		# file server would answer 404; content/image too, without the page kernel.
+		@image {
+			path_regexp image ^/var/([^/]+/)?storage/images(-versioned)?/
+			not file
+		}
+		rewrite @image /index_image.php
+		@imageview path_regexp imageview ^/([^/]+/)?content/image/
+		rewrite @imageview /index_image.php
+
 		@static {
 			path_regexp static ^/(design/[^/]+/(stylesheets|images|javascript|fonts)/|...|w3c/p3p\.xml$)
 			not path_regexp (?i)(\.(php\d?|phtml|phar)$|/\.)
@@ -115,7 +126,7 @@ Maschine:
 		rewrite @rest /index_rest.php
 		@treemenu path_regexp treemenu ^/([^/]+/)?content/treemenu
 		rewrite @treemenu /index_treemenu.php
-		@front not path /index_rest.php /index_treemenu.php
+		@front not path /index_rest.php /index_treemenu.php /index_image.php
 		rewrite @front /index.php
 		php {
 			env EXP_VELOCITY_ENGINE "FrankenPHP"
@@ -203,6 +214,17 @@ gehören in die Datei, die `SiteInclude` nennt; sie wird in beide Site-Blöcke i
 		@svg path_regexp svg (?i)\.svgz?$
 		header @svg Content-Security-Policy "sandbox; default-src 'none'; style-src 'unsafe-inline'"
 
+		# A storage image with no file (an image alias not made yet) goes to
+		# index_image.php, which makes it or answers a placeholder, before the
+		# file server would answer 404; content/image too, without the page kernel.
+		@image {
+			path_regexp image ^/var/([^/]+/)?storage/images(-versioned)?/
+			not file
+		}
+		rewrite @image /index_image.php
+		@imageview path_regexp imageview ^/([^/]+/)?content/image/
+		rewrite @imageview /index_image.php
+
 		# As generated: expVelocity::STATIC_PATHS, never a script or a dot path
 		@static {
 			path_regexp static ^/(design/[^/]+/(stylesheets|images|javascript|fonts)/|share/icons/|extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg|png|gif)$|extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/|var/([^/]+/)?storage/images(-versioned)?/|var/([^/]+/)?storage/pdf/[A-Za-z0-9][A-Za-z0-9._-]*\.pdf$|var/([^/]+/)?storage/original/image/.+\.(png|jpe?g|gif|webp|svg)$|var/([^/]+/)?cache/(texttoimage|public)/|packages/styles/.+/(stylesheets|images|javascript)/[^/]+/|packages/styles/.+/thumbnail/|var/storage/packages/.+\.(png|jpe?g|gif|webp)$|favicon\.ico$|design/standard/images/favicon\.ico$|robots\.txt$|(index|sw)\.js$|w3c/p3p\.xml$)
@@ -214,7 +236,7 @@ gehören in die Datei, die `SiteInclude` nennt; sie wird in beide Site-Blöcke i
 		rewrite @rest /index_rest.php
 		@treemenu path_regexp treemenu ^/([^/]+/)?content/treemenu
 		rewrite @treemenu /index_treemenu.php
-		@front not path /index_rest.php /index_treemenu.php
+		@front not path /index_rest.php /index_treemenu.php /index_image.php
 		rewrite @front /index.php
 		php
 	}

@@ -191,6 +191,13 @@ RewriteRule ^/?.+/[^/]+\.(php[0-9]?|phtml|phar)$ - [R=404,L]
 RewriteRule ^/?api/ /index_rest.php [L]
 RewriteRule ^/?index_rest\.php - [L]
 RewriteRule ^/?([^/]+/)?content/treemenu.* /index_treemenu.php [L]
+# Image aliases made on demand: a storage image that is not there goes to
+# index_image.php (it makes the alias or answers a placeholder); content/image
+# is answered by the same script, without the page kernel.
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} !-f
+RewriteRule ^/?var/([^/]+/)?storage/images(-versioned)?/.* /index_image.php [L]
+RewriteRule ^/?([^/]+/)?content/image/ /index_image.php [L]
+RewriteRule ^/?index_image\.php - [L]
 RewriteRule ^/?var/([^/]+/)?storage/images(-versioned)?/.* - [L]
 RewriteRule ^/?var/([^/]+/)?storage/pdf/[A-Za-z0-9][A-Za-z0-9._-]*\.pdf$ - [L]
 RewriteRule ^/?var/([^/]+/)?storage/original/image/.+\.(png|jpe?g|gif|webp|svg)$ - [L]

@@ -136,7 +136,30 @@ RewriteRule ^([^/]+/)?content/treemenu.* index_treemenu.php [L]
 # every request to index_webdav.php. webdav.php, its old name, only forwards to it
 # and will be removed in a later major version: name index_webdav.php in new rules.
 #RewriteRule ^index_webdav\.php - [L]
+# A database cluster (eZDFS or eZDB, file.ini [ClusteringSettings]) keeps the
+# storage files elsewhere, so its images are answered by index_cluster.php:
+# uncomment the two lines below, which have to stand before the index_image.php
+# rule. The cluster gateway hands an image it has no file for (an image alias
+# not made yet) on to index_image.php, which makes it in the cluster.
+#RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* index_cluster.php [L]
+#RewriteRule ^index_cluster\.php - [L]
+# An image of the storage that is not there (an image alias not made yet, see
+# settings/image.ini [AliasSettings]) goes to index_image.php, which makes the
+# alias or answers a placeholder; the files that exist are served as they are.
+# content/image, the address of an image alias made on demand, is answered by
+# the same script, without the page kernel.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* index_image.php [L]
+RewriteRule ^([^/]+/)?content/image/ index_image.php [L]
+RewriteRule ^index_image\.php - [L]
 RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* - [L]
+# The WebP and AVIF variants of image aliases (settings/image.ini Formats[]) are
+# named after their alias, foo_large.jpg.avif: a server that does not know .avif
+# would send such a file as image/jpeg, after its inner .jpg.
+<IfModule mod_mime.c>
+    AddType image/webp .webp
+    AddType image/avif .avif
+</IfModule>
 # SVG images are sanitized on upload; served from the storage they also run
 # nothing and load nothing when opened directly (needs mod_headers).
 <IfModule mod_headers.c>
@@ -311,6 +334,9 @@ RewriteRule .* index.php
 | `#RewriteRule ^index_soap\.php - [L]` (commented) | the SOAP server, when `soap.ini [GeneralSettings] EnableSOAP=true` | `index_soap.php` is the SOAP front controller since 6.0.15; `soap.php` only forwards to it. Uncomment the line with SOAP on, or SOAP requests end at `index.php`; see [the SOAP entry script is now index_soap.php](../../bc/6.0/soap-entry-script-index-soap.md) |
 | `RewriteRule ^([^/]+/)?content/treemenu.* index_treemenu.php [L]` | the administration's tree menu, with or without a siteaccess in front | a light front controller for the tree's JSON |
 | `#RewriteRule ^index_webdav\.php - [L]` (commented) | WebDAV on this host, once uncommented | `index_webdav.php` is the WebDAV server since 6.0.15; `webdav.php` only forwards to it ([what to change](../../bc/6.0/webdav-entry-script-index-webdav.md)) |
+| `#RewriteRule ...index_cluster.php` (commented) | a database cluster's storage images go to the cluster gateway, once uncommented | eZDFS/eZDB keep the files elsewhere; the gateway hands an image it has no file for on to `index_image.php` ([recipes](image-aliases-on-demand.md#the-cluster-gateway)) |
+| `RewriteCond %{REQUEST_FILENAME} !-f` + `^var/([^/]+/)?storage/images(-versioned)?/.* index_image.php` | a storage image that is not there goes to `index_image.php` | image aliases made on demand: the alias is made, or a placeholder answered ([the feature](../../features/6.0/image-aliases-on-demand.md)) |
+| `^([^/]+/)?content/image/ index_image.php`, `^index_image\.php - [L]` | `content/image` and the entry script itself are answered by `index_image.php` | the address of an alias made on demand, without the page kernel |
 | `^var/([^/]+/)?storage/images(-versioned)?/.*` | stored image variations are sent as files | images in content |
 | the `<FilesMatch "(?i)\.svgz?$">` block | an SVG is sent with `Content-Security-Policy: sandbox ...` | an SVG opened directly runs nothing and loads nothing |
 | `^var/([^/]+/)?storage/pdf/...\.pdf$` | stored PDF exports | Setup > PDF export |

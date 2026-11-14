@@ -80,7 +80,31 @@ RewriteRule ^([^/]+/)?content/treemenu.* index_treemenu.php [L]
 # alter Name, leitet nur noch weiter und wird in einer späteren Hauptversion
 # entfernt: nennen Sie in neuen Regeln index_webdav.php.
 #RewriteRule ^index_webdav\.php - [L]
+# Ein Datenbank-Cluster (eZDFS oder eZDB, file.ini [ClusteringSettings]) hält
+# die Dateien der Ablage anderswo, seine Bilder beantwortet index_cluster.php:
+# kommentieren Sie die beiden Zeilen unten ein; sie müssen vor der Regel für
+# index_image.php stehen. Das Cluster-Gateway gibt ein Bild, zu dem es keine
+# Datei hat (einen noch nicht erzeugten Bild-Alias), an index_image.php weiter,
+# das ihn im Cluster erzeugt.
+#RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* index_cluster.php [L]
+#RewriteRule ^index_cluster\.php - [L]
+# Ein Bild der Ablage, das nicht da ist (ein noch nicht erzeugter Bild-Alias,
+# siehe settings/image.ini [AliasSettings]), geht an index_image.php, das den
+# Alias erzeugt oder einen Platzhalter antwortet; vorhandene Dateien werden
+# ausgeliefert, wie sie sind. content/image, die Adresse eines auf Abruf
+# erzeugten Bild-Alias, beantwortet dasselbe Skript, ohne den Seitenkernel.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* index_image.php [L]
+RewriteRule ^([^/]+/)?content/image/ index_image.php [L]
+RewriteRule ^index_image\.php - [L]
 RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* - [L]
+# Die WebP- und AVIF-Varianten der Bild-Aliase (settings/image.ini Formats[])
+# heißen nach ihrem Alias, foo_large.jpg.avif: ein Server, der .avif nicht
+# kennt, sendet eine solche Datei nach dem inneren .jpg als image/jpeg.
+<IfModule mod_mime.c>
+    AddType image/webp .webp
+    AddType image/avif .avif
+</IfModule>
 # SVG-Bilder werden beim Hochladen bereinigt; aus dem Speicher ausgeliefert,
 # führen sie beim direkten Öffnen auch nichts aus und laden nichts (braucht
 # mod_headers).

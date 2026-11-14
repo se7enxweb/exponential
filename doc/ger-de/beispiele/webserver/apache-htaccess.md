@@ -141,7 +141,31 @@ RewriteRule ^([^/]+/)?content/treemenu.* index_treemenu.php [L]
 # every request to index_webdav.php. webdav.php, its old name, only forwards to it
 # and will be removed in a later major version: name index_webdav.php in new rules.
 #RewriteRule ^index_webdav\.php - [L]
+# Ein Datenbank-Cluster (eZDFS oder eZDB, file.ini [ClusteringSettings]) hält
+# die Dateien der Ablage anderswo, seine Bilder beantwortet index_cluster.php:
+# kommentieren Sie die beiden Zeilen unten ein; sie müssen vor der Regel für
+# index_image.php stehen. Das Cluster-Gateway gibt ein Bild, zu dem es keine
+# Datei hat (einen noch nicht erzeugten Bild-Alias), an index_image.php weiter,
+# das ihn im Cluster erzeugt.
+#RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* index_cluster.php [L]
+#RewriteRule ^index_cluster\.php - [L]
+# Ein Bild der Ablage, das nicht da ist (ein noch nicht erzeugter Bild-Alias,
+# siehe settings/image.ini [AliasSettings]), geht an index_image.php, das den
+# Alias erzeugt oder einen Platzhalter antwortet; vorhandene Dateien werden
+# ausgeliefert, wie sie sind. content/image, die Adresse eines auf Abruf
+# erzeugten Bild-Alias, beantwortet dasselbe Skript, ohne den Seitenkernel.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* index_image.php [L]
+RewriteRule ^([^/]+/)?content/image/ index_image.php [L]
+RewriteRule ^index_image\.php - [L]
 RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* - [L]
+# Die WebP- und AVIF-Varianten der Bild-Aliase (settings/image.ini Formats[])
+# heißen nach ihrem Alias, foo_large.jpg.avif: ein Server, der .avif nicht
+# kennt, sendet eine solche Datei nach dem inneren .jpg als image/jpeg.
+<IfModule mod_mime.c>
+    AddType image/webp .webp
+    AddType image/avif .avif
+</IfModule>
 # SVG images are sanitized on upload; served from the storage they also run
 # nothing and load nothing when opened directly (needs mod_headers).
 <IfModule mod_headers.c>
@@ -316,6 +340,9 @@ RewriteRule .* index.php
 | `#RewriteRule ^index_soap\.php - [L]` (auskommentiert) | der SOAP-Server, wenn `soap.ini [GeneralSettings] EnableSOAP=true` gilt | `index_soap.php` ist seit 6.0.15 der SOAP-Front-Controller; `soap.php` leitet nur dorthin weiter. Nehmen Sie mit SOAP an das Kommentarzeichen weg, sonst enden SOAP-Anfragen bei `index.php`; siehe [Das SOAP-Einstiegsskript heißt jetzt index_soap.php](../../bc/6.0/soap-einstiegsskript-index-soap.md) |
 | `RewriteRule ^([^/]+/)?content/treemenu.* index_treemenu.php [L]` | das Baummenü der Administration, mit oder ohne vorangestellten Siteaccess | ein schlanker Front-Controller für das JSON des Baums |
 | `#RewriteRule ^index_webdav\.php - [L]` (auskommentiert) | WebDAV auf diesem Host, sobald einkommentiert | `index_webdav.php` ist seit 6.0.15 der WebDAV-Server; `webdav.php` leitet nur dorthin weiter ([was zu ändern ist](../../bc/6.0/webdav-einstiegsskript-index-webdav.md)) |
+| `#RewriteRule ...index_cluster.php` (auskommentiert) | die Bilder der Ablage eines Datenbank-Clusters gehen an das Cluster-Gateway, sobald einkommentiert | eZDFS/eZDB halten die Dateien anderswo; das Gateway gibt ein Bild ohne Datei an `index_image.php` weiter ([Rezepte](bild-aliase-auf-abruf.md#das-cluster-gateway)) |
+| `RewriteCond %{REQUEST_FILENAME} !-f` + `^var/([^/]+/)?storage/images(-versioned)?/.* index_image.php` | ein Bild der Ablage, das nicht da ist, geht an `index_image.php` | auf Abruf erzeugte Bild-Aliase: der Alias wird erzeugt oder ein Platzhalter geantwortet ([die Funktion](../../funktionen/6.0/bild-aliase-auf-abruf.md)) |
+| `^([^/]+/)?content/image/ index_image.php`, `^index_image\.php - [L]` | `content/image` und das Einstiegsskript selbst beantwortet `index_image.php` | die Adresse eines auf Abruf erzeugten Alias, ohne den Seitenkernel |
 | `^var/([^/]+/)?storage/images(-versioned)?/.*` | gespeicherte Bildvarianten werden als Datei gesendet | Bilder in Inhalten |
 | der Block `<FilesMatch "(?i)\.svgz?$">` | ein SVG wird mit `Content-Security-Policy: sandbox ...` gesendet | ein direkt geöffnetes SVG führt nichts aus und lädt nichts |
 | `^var/([^/]+/)?storage/pdf/...\.pdf$` | gespeicherte PDF-Exporte | Setup > PDF-Export |

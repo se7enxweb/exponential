@@ -171,7 +171,21 @@ später); das dokumentierte Beispiel um sie herum ist freie Dokumentation (GFDL 
         # Exponential 6.0.15, soap.php only forwards to it. Uncomment with SOAP on:
         #RewriteRule ^/index_soap\.php - [L]
         RewriteRule ^/([^/]+/)?content/treemenu.* /index_treemenu.php [L]
+        # Auf Abruf erzeugte Bild-Aliase: ein Bild der Ablage, das nicht da ist,
+        # geht an index_image.php, das den Alias erzeugt oder einen Platzhalter
+        # antwortet; content/image beantwortet dasselbe Skript, ohne Seitenkernel.
+        # (Ein Datenbank-Cluster: die Regel für index_cluster.php steht davor.)
+        RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} !-f
+        RewriteRule ^/var/([^/]+/)?storage/images(-versioned)?/.* /index_image.php [L]
+        RewriteRule ^/([^/]+/)?content/image/ /index_image.php [L]
+        RewriteRule ^/index_image\.php - [L]
         RewriteRule ^/var/([^/]+/)?storage/images(-versioned)?/.* - [L]
+        # Die WebP- und AVIF-Varianten der Bild-Aliase (foo_large.jpg.avif)
+        # bekommen ihre eigenen Typen, nicht image/jpeg nach dem inneren .jpg.
+        <IfModule mod_mime.c>
+            AddType image/webp .webp
+            AddType image/avif .avif
+        </IfModule>
         # The stored files of PDF exports generated once (Setup > PDF export)
         RewriteRule ^/var/([^/]+/)?storage/pdf/[A-Za-z0-9][A-Za-z0-9._-]*\.pdf$ - [L]
         # Of the originals only the images; other uploads stay behind

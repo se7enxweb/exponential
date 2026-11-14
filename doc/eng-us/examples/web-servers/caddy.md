@@ -120,6 +120,17 @@ example.com, www.example.com {
 		@svg path_regexp svg (?i)\.svgz?$
 		header @svg Content-Security-Policy "sandbox; default-src 'none'; style-src 'unsafe-inline'"
 
+		# A storage image with no file (an image alias not made yet) goes to
+		# index_image.php, which makes it or answers a placeholder, before the
+		# file server would answer 404; content/image too, without the page kernel.
+		@image {
+			path_regexp image ^/var/([^/]+/)?storage/images(-versioned)?/
+			not file
+		}
+		rewrite @image /index_image.php
+		@imageview path_regexp imageview ^/([^/]+/)?content/image/
+		rewrite @imageview /index_image.php
+
 		# 4. Files served as they are: expVelocity::STATIC_PATHS, the list of
 		#    .htaccess_root, never a script or a dot path below them
 		@static {
@@ -136,7 +147,7 @@ example.com, www.example.com {
 		rewrite @rest /index_rest.php
 		@treemenu path_regexp treemenu ^/([^/]+/)?content/treemenu
 		rewrite @treemenu /index_treemenu.php
-		@front not path /index_rest.php /index_treemenu.php
+		@front not path /index_rest.php /index_treemenu.php /index_image.php
 		rewrite @front /index.php
 
 		reverse_proxy unix//run/php-fpm/www.sock {
