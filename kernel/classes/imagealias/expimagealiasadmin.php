@@ -100,6 +100,8 @@ class expImageAliasAdmin
                 'Placeholder' => $switch + array( 'default' => 'enabled' ),
                 'SwapScript' => $switch + array( 'default' => 'enabled' ),
                 'PreGenerate' => $switch + array( 'default' => 'enabled' ),
+                'PreGenerateAliasList' => array( 'type' => 'list', 'item' => 'alias', 'default' => array() ),
+                'PreGenerateFormats' => $switch + array( 'default' => 'enabled' ),
                 'MaxParallel' => array( 'type' => 'int', 'min' => 1, 'max' => 64, 'default' => '2' ),
                 'BulkNice' => array( 'type' => 'int', 'min' => 0, 'max' => 19, 'default' => '10' ),
                 'CacheMaxAge' => array( 'type' => 'int', 'min' => 0, 'max' => 31536000, 'default' => '31536000' ),
@@ -167,6 +169,8 @@ class expImageAliasAdmin
                     return array( 'ok' => false, 'value' => $out, 'error' => 'an entry is too long or has control characters' );
                 if ( $def['item'] === 'email' && !filter_var( $item, FILTER_VALIDATE_EMAIL ) )
                     return array( 'ok' => false, 'value' => $out, 'error' => 'not an e-mail address: ' . $item );
+                if ( $def['item'] === 'alias' && ( $item === 'original' || !expImageAliasUrl::validAliasName( $item ) ) )
+                    return array( 'ok' => false, 'value' => $out, 'error' => 'not an alias name: ' . $item );
                 if ( $def['item'] === 'pathmap' && !self::validPathMap( $item ) )
                     return array( 'ok' => false, 'value' => $out, 'error' => 'not "<local prefix>;<source prefix or URL>": ' . $item );
                 $out[] = $item;
@@ -1044,6 +1048,8 @@ class expImageAliasAdmin
             'busy' => expImageAliasThrottle::busy(),
             'negotiate' => expImageAliasSettings::negotiateEnabled(),
             'pre_generate' => expImageAliasSettings::preGenerateEnabled(),
+            'pre_generate_aliases' => expImageAliasSettings::preGenerateAliasList(),
+            'pre_generate_formats' => expImageAliasSettings::preGenerateFormatsEnabled(),
             'placeholder' => expImageAliasSettings::placeholderEnabled(),
             'swap_script' => expImageAliasSettings::swapScriptEnabled(),
             'preferred' => expImageAliasSettings::preferredConverter(),

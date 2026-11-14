@@ -404,7 +404,9 @@ class Expimagealias extends \Exponential\Runnable\Command
                                 . '; the command line itself always works in render mode' );
         $lines[] = $row( 'requests', 'wait at most ' . $d['max_wait'] . ' s, conversions at once ' . (int)$d['busy'] . ' of ' . (int)$d['max_parallel'] . ' busy' );
         $lines[] = $row( 'features', 'negotiation ' . $onOff( $d['negotiate'] ) . ', placeholder ' . $onOff( $d['placeholder'] ) . ', swap script '
-                                    . $onOff( $d['swap_script'] ) . ', pre-generation ' . $onOff( $d['pre_generate'] ) );
+                                    . $onOff( $d['swap_script'] ) . ', pre-generation ' . $onOff( $d['pre_generate'] )
+                                    . ( !empty( $d['pre_generate_aliases'] ) ? ' (' . implode( ', ', $d['pre_generate_aliases'] ) . ')' : '' )
+                                    . ( isset( $d['pre_generate_formats'] ) && !$d['pre_generate_formats'] ? ' without variants' : '' ) );
         $lines[] = $row( 'aliases', (int)$d['aliases'] . ' (this siteaccess and its related siteaccesses)' );
         $converters = array();
         foreach ( (array)$d['converter_rows'] as $c )

@@ -16,6 +16,8 @@
         {case match='Placeholder'}{'A neutral image of the right size while an image is missing.'|i18n( 'design/admin/setup/aliases' )}{/case}
         {case match='SwapScript'}{'A small script that replaces placeholders with the real image when it is there.'|i18n( 'design/admin/setup/aliases' )}{/case}
         {case match='PreGenerate'}{'After publishing, a job makes the aliases of the new images for every related siteaccess.'|i18n( 'design/admin/setup/aliases' )}{/case}
+        {case match='PreGenerateAliasList'}{'Only these aliases are made after publishing, one per line. Empty: all of them.'|i18n( 'design/admin/setup/aliases' )}{/case}
+        {case match='PreGenerateFormats'}{'Make the WebP and AVIF variants after publishing too.'|i18n( 'design/admin/setup/aliases' )}{/case}
         {case match='MaxParallel'}{'Conversions at once on one server.'|i18n( 'design/admin/setup/aliases' )}{/case}
         {case match='BulkNice'}{'The process priority (nice) of bulk runs, 0 to 19.'|i18n( 'design/admin/setup/aliases' )}{/case}
         {case match='CacheMaxAge'}{'Seconds browsers and caches may keep a made alias.'|i18n( 'design/admin/setup/aliases' )}{/case}

@@ -91,7 +91,7 @@
         <div><dt>{'Conversions at once'|i18n( 'design/admin/setup/aliases' )}</dt><dd>{'%busy of %max busy now'|i18n( 'design/admin/setup/aliases',, hash( '%busy', $d.busy, '%max', $d.max_parallel ) )}</dd></div>
         <div><dt>{'Format negotiation'|i18n( 'design/admin/setup/aliases' )}</dt><dd>{if $d.negotiate}{'on'|i18n( 'design/admin/setup/aliases' )}{else}{'off'|i18n( 'design/admin/setup/aliases' )}{/if}</dd></div>
         <div><dt>{'Placeholder and swap script'|i18n( 'design/admin/setup/aliases' )}</dt><dd>{if $d.placeholder}{'on'|i18n( 'design/admin/setup/aliases' )}{else}{'off'|i18n( 'design/admin/setup/aliases' )}{/if} / {if $d.swap_script}{'on'|i18n( 'design/admin/setup/aliases' )}{else}{'off'|i18n( 'design/admin/setup/aliases' )}{/if}</dd></div>
-        <div><dt>{'Pre-generation after publishing'|i18n( 'design/admin/setup/aliases' )}</dt><dd>{if $d.pre_generate}{'on'|i18n( 'design/admin/setup/aliases' )}{else}{'off'|i18n( 'design/admin/setup/aliases' )}{/if}</dd></div>
+        <div><dt>{'Pre-generation after publishing'|i18n( 'design/admin/setup/aliases' )}</dt><dd>{if $d.pre_generate}{'on'|i18n( 'design/admin/setup/aliases' )}{if $d.pre_generate_aliases|count} <code>{$d.pre_generate_aliases|implode( ', ' )|wash}</code>{/if}{if $d.pre_generate_formats|not} <span class="a4-meta">{'Formats'|i18n( 'design/admin/setup/aliases' )}: {'off'|i18n( 'design/admin/setup/aliases' )}</span>{/if}{else}{'off'|i18n( 'design/admin/setup/aliases' )}{/if}</dd></div>
         <div><dt>{'Aliases of the site'|i18n( 'design/admin/setup/aliases' )}</dt><dd>{$d.aliases}</dd></div>
     </dl>
     </div>
