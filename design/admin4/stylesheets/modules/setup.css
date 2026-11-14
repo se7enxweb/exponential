@@ -1508,3 +1508,17 @@ label.a4-package-option-label {
 /* The YAML migrations to open */
 .a4-setup-editor-files { margin: 0; padding: 0; list-style: none; }
 .a4-setup-editor-files > li + li { margin-top: var(--a4-space-2); }
+
+/* ---- setup/aliases: Setup > Image aliases (design:setup/aliases.tpl, aliases_setting_row.tpl) ---- */
+.a4-setup-alias-tabs { margin: 0 0 var(--a4-space-4); }
+.a4-setup-alias .a4-grid { margin: var(--a4-space-4) 0; }
+/* Storage paths, run ids and addresses break anywhere instead of widening the table */
+.a4-setup-alias-path { overflow-wrap: anywhere; word-break: break-word; }
+/* The run form's groups: a legend as a label, no frame of their own */
+.a4-setup-alias-fieldset { border: 0; padding: 0; margin: 0 0 var(--a4-space-4); min-width: 0; }
+.a4-setup-alias-reason { max-width: 320px; }
+/* The settings: the name and what it does beside the field */
+.a4-setup-alias-settings th[scope="row"] { width: 40%; font-weight: normal; }
+.a4-setup-alias-settings th[scope="row"] .a4-help { display: block; }
+.a4-setup-alias-settings td .a4-meta { display: block; }
+.a4-setup-alias-settings textarea.a4-input { width: 100%; }

@@ -47,6 +47,43 @@ $ViewList["cache"] = array(
                                        'RegenerateStaticCache' => array( 'StaticCacheSiteAccess' => 'StaticCacheSiteAccess' ) ),
     "params" => array() );
 
+// Setup > Image aliases (expImageAliasAdmin): the state of the image aliases made on demand, their settings, bulk runs
+// as jobs, the test tools and the run history of imagealias.log. Seeing it needs setup/aliases, every action (a POST
+// with the form token) setup/managealiases. Options are view parameters, never a query string.
+$ViewList['aliases'] = array(
+    'functions' => array( 'aliases' ),
+    'script' => 'aliases.php',
+    'ui_context' => 'administration',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'single_post_actions' => array( 'SaveSettingsButton' => 'SaveSettings',
+                                    'PreviewSettingsButton' => 'PreviewSettings',
+                                    'StartRunButton' => 'StartRun',
+                                    'PauseBulkButton' => 'PauseBulk',
+                                    'ResumeBulkButton' => 'ResumeBulk',
+                                    'CancelJobButton' => 'CancelJob',
+                                    'TestImageButton' => 'TestImage',
+                                    'MakeAliasButton' => 'MakeAlias',
+                                    'TestSourceButton' => 'TestSource',
+                                    'ResetSourceButton' => 'ResetSource',
+                                    'RotateKeyButton' => 'RotateKey',
+                                    // the content tree's context menu: generate, regenerate or remove for a node or
+                                    // its subtree (the button carries the action)
+                                    'NodeActionButton' => 'NodeAction' ),
+    'params' => array(),
+    'unordered_params' => array( 'tab' => 'Tab', 'job' => 'Job', 'event' => 'Event', 'run' => 'Run', 'alias' => 'Alias',
+                                 'text' => 'Text', 'lines' => 'Lines', 'node' => 'Node', 'object' => 'Object' ) );
+
+// The page's feed: the progress of one job and the newest lines of imagealias.log, as JSON (short GET requests,
+// polled by the page's script, never held open)
+$ViewList['aliasesfeed'] = array(
+    'functions' => array( 'aliases' ),
+    'script' => 'aliasesfeed.php',
+    'ui_context' => 'ajax',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'params' => array(),
+    'unordered_params' => array( 'job' => 'Job', 'log' => 'Log', 'event' => 'Event', 'run' => 'Run', 'alias' => 'Alias',
+                                 'text' => 'Text', 'lines' => 'Lines' ) );
+
 // The site's maintenance mode (expMaintenance), as bin/php/maintenance.php
 $ViewList['maintenance'] = array(
     'script' => 'maintenance.php',
@@ -257,7 +294,7 @@ $ViewList["extensions"] = array(
 // with managecache alone must keep it. A user with none of them gets the access denied page, which names the policy
 // of the last function eZUser::hasAccessToView() asked (system_info); any one of the listed functions opens the view.
 $ViewList['menu'] = array(
-    'functions' => array( 'setup or administrate or managecache or managecronjobs or preload or system_info or logs' ),
+    'functions' => array( 'setup or administrate or managecache or managecronjobs or preload or system_info or logs or aliases' ),
     'script' => 'setupmenu.php',
     'default_navigation_part' => 'ezsetupnavigationpart',
     'params' => array( ) );
@@ -492,6 +529,9 @@ $FunctionList['logs'] = array();
 $FunctionList['managelogs'] = array();
 $FunctionList['unmasklogs'] = array();
 $FunctionList['managecache'] = array();
+// Setup > Image aliases: see it (aliases), change its settings and run its jobs and tools (managealiases)
+$FunctionList['aliases'] = array();
+$FunctionList['managealiases'] = array();
 $FunctionList['managecronjobs'] = array();
 $FunctionList['preload'] = array();
 $FunctionList['setup'] = array();

@@ -297,6 +297,8 @@ class expRolePolicySentence
             'user/sessions_manage'       => 'see the sign-in report of the site and sign any user out everywhere',
             'setup/administrate'         => 'use the setup pages',
             'setup/managecache'          => 'clear caches',
+            'setup/aliases'              => 'see how image aliases are made, their jobs and their history',
+            'setup/managealiases'        => 'change the settings of image aliases and run their jobs and tools',
             'setup/system_info'          => 'view the system information',
             'section/assign'             => 'assign sections to content',
             'section/edit'               => 'edit sections',
