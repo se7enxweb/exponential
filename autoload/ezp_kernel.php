@@ -57,6 +57,7 @@ return array(
       'Exponential\\Command\\Kernel\\Exphelp'                        => 'kernel/private/classes/commands/exphelp.php',
       'Exponential\\Command\\Kernel\\Exphelpcontent'                 => 'kernel/private/classes/commands/exphelpcontent.php',
       'Exponential\\Command\\Kernel\\Exphelpexamples'                => 'kernel/private/classes/commands/exphelpexamples.php',
+      'Exponential\\Command\\Kernel\\Expimagealias'                  => 'kernel/private/classes/commands/expimagealias.php',
       'Exponential\\Command\\Kernel\\Explogs'                        => 'kernel/private/classes/commands/explogs.php',
       'Exponential\\Command\\Kernel\\Exploremipsumfill'              => 'kernel/private/classes/commands/exploremipsumfill.php',
       'Exponential\\Command\\Kernel\\Explovestack'                   => 'kernel/private/classes/commands/explovestack.php',

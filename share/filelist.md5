@@ -28,7 +28,7 @@ ae7e2ed631182f7180278f4953795ccb  .github/workflows/performance.yml
 4debf1d8dd6c381fcf99f60409da582b  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-119efe5319d28c276055e5d925cec096  autoload/ezp_kernel.php
+384864ca5670eaa19cf026e676974fc6  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 c7d5434eac3788fbeb0a44161d7cdda8  benchmarks/classes/ezbenchmarkclirunner.php
@@ -95,6 +95,7 @@ d5f6f1645f065f2bb963ed0f17966da9  bin/php/expgraphqlstatus.php
 d2d7a13982c829afc82bff2bb9b1ec63  bin/php/exphelp.php
 2268f5e4330551f95a7403a692b4a63a  bin/php/exphelpcontent.php
 734e919551b3e03c2175ba59dbdf7a64  bin/php/exphelpexamples.php
+62936d6969a8b9b3e967f8571dab3617  bin/php/expimagealias.php
 34975d0f0666787e4454ab1554d76853  bin/php/explogs.php
 1fa5d0cae68dc0cb183b0f92d233f9ae  bin/php/exploremipsumfill.php
 a9b18b1fafd69e59d3631a38432af4a0  bin/php/explovestack.php
@@ -25992,6 +25993,7 @@ eb118ef2db669df16fdacf1e314c17b1  kernel/private/classes/commands/expgraphqlstat
 047191514b13784172688136d9b8086b  kernel/private/classes/commands/exphelp.php
 708f0c28160cbb68a971dcc7c40dec44  kernel/private/classes/commands/exphelpcontent.php
 fb3a3a5f3af0553e8c2c1ac4c048f7b7  kernel/private/classes/commands/exphelpexamples.php
+dcdd107903c6b0622ef18024267d1740  kernel/private/classes/commands/expimagealias.php
 099dc77b3fcba4c0c532c01f59788c6a  kernel/private/classes/commands/explogs.php
 c55f78d8cd6dd5eda8db30da0de0efd5  kernel/private/classes/commands/exploremipsumfill.php
 0fdd4c3ba5e52392568e7324aefa3713  kernel/private/classes/commands/explovestack.php
