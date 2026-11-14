@@ -87472,5 +87472,13 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <source>inherited</source>
         <translation>zdedené</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Po publikovaní sa vytvoria len tieto aliasy, jeden na riadok. Prázdne: všetky.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Po publikovaní vytvoriť aj varianty WebP a AVIF.</translation>
+    </message>
 </context>
 </TS>

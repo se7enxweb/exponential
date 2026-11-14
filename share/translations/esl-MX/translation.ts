@@ -91701,5 +91701,13 @@ Gracias por la retroalimentación</translation>
         <source>inherited</source>
         <translation>heredado</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Tras publicar solo se crean estos alias, uno por línea. Vacío: todos.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Crear también las variantes WebP y AVIF tras publicar.</translation>
+    </message>
 </context>
 </TS>

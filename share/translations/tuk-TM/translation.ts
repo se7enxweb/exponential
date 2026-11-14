@@ -87442,5 +87442,13 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>inherited</source>
         <translation>miras alnan</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Çap edilenden soň diňe şu lakamlar ýasalýar, her setirde bir. Boş: hemmesi.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Çap edilenden soň WebP we AVIF wariantlaryny hem ýasa.</translation>
+    </message>
 </context>
 </TS>

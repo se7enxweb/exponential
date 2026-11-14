@@ -87442,5 +87442,13 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>inherited</source>
         <translation>kyaddira</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Oluvannyuma lw'okufulumya, amannya amalala gano gokka ge gakolebwa, erimu ku buli lunyiriri. Bwerere: gonna.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Kola n'ebika bya WebP ne AVIF oluvannyuma lw'okufulumya.</translation>
+    </message>
 </context>
 </TS>

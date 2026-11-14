@@ -87440,5 +87440,13 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>inherited</source>
         <translation>imerithiwa</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Baada ya kuchapisha, lakabu hizi pekee ndizo hutengenezwa, moja kwa kila mstari. Tupu: zote.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Tengeneza pia matoleo ya WebP na AVIF baada ya kuchapisha.</translation>
+    </message>
 </context>
 </TS>

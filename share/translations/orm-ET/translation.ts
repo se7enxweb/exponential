@@ -87442,5 +87442,13 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>inherited</source>
         <translation>dhaalame</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Maxxansaa booda maqaawwan gabaabaa kana qofatu hojjetama, sarara tokkotti tokko. Duwwaa: hunda.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Maxxansaa booda gosoota WebP fi AVIF illee hojjedhu.</translation>
+    </message>
 </context>
 </TS>

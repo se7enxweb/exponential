@@ -87442,5 +87442,13 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>inherited</source>
         <translation>árbejuvvon</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Almmuheami maŋŋel ráhkaduvvojit dušše dát aliasat, okta juohke linnjái. Guorus: buot.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Ráhkat maiddái WebP- ja AVIF-váriánttaid almmuheami maŋŋel.</translation>
+    </message>
 </context>
 </TS>

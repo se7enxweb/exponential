@@ -87474,5 +87474,13 @@ You will need to change the class of the node by using the swap functionality.</
         <source>inherited</source>
         <translation>עובר בירושה</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>לאחר פרסום נוצרים רק הכינויים האלה, אחד בכל שורה. ריק: כולם.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>ליצור גם את וריאנטי WebP ו-AVIF לאחר פרסום.</translation>
+    </message>
 </context>
 </TS>

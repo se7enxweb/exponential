@@ -87442,5 +87442,13 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>inherited</source>
         <translation>kua riro mai</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>I muri i te whakaputa, ko ēnei ingoa kē anake ka hangaia, kotahi mō ia rārangi. Wātea: ngā mea katoa.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Hangaia hoki ngā momo WebP me AVIF i muri i te whakaputa.</translation>
+    </message>
 </context>
 </TS>

@@ -87442,5 +87442,13 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>inherited</source>
         <translation>herdado</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Tras publicar só se fan estes alias, un por liña. Baleiro: todos.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Facer tamén as variantes WebP e AVIF tras publicar.</translation>
+    </message>
 </context>
 </TS>

@@ -94532,5 +94532,13 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>The signing key could not be changed: the secret store is not available.</source>
         <translation>Der Signaturschlüssel konnte nicht gewechselt werden: Der Geheimnisspeicher ist nicht verfügbar.</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Nach dem Veröffentlichen werden nur diese Bild-Aliase erzeugt, einer pro Zeile. Leer: alle.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Nach dem Veröffentlichen auch die WebP- und AVIF-Varianten erzeugen.</translation>
+    </message>
 </context>
 </TS>

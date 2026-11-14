@@ -87472,5 +87472,13 @@ You will need to change the class of the node by using the swap functionality.</
         <source>inherited</source>
         <translation>наследено</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>След публикуване се създават само тези псевдоними, по един на ред. Празно: всички.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Създавай след публикуване и вариантите WebP и AVIF.</translation>
+    </message>
 </context>
 </TS>

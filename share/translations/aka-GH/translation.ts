@@ -87442,5 +87442,13 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>inherited</source>
         <translation>wɔnyaa firi baabi</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Wɔapublish akyi, alias yi nko ara na wɔyɛ, baako wɔ nkyerɛwee biara so. Hwee nni mu: ne nyinaa.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Yɛ WebP ne AVIF nsakraeɛ no nso wɔ publish akyi.</translation>
+    </message>
 </context>
 </TS>

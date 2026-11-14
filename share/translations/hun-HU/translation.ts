@@ -87472,5 +87472,13 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>inherited</source>
         <translation>örökölt</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Közzététel után csak ezek az álnevek készülnek el, soronként egy. Üres: mind.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Közzététel után a WebP és AVIF változatokat is készítse el.</translation>
+    </message>
 </context>
 </TS>

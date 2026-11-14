@@ -89438,5 +89438,13 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <source>inherited</source>
         <translation>herdado</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Após a publicação, só estes aliases são criados, um por linha. Vazio: todos.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Criar também as variantes WebP e AVIF após a publicação.</translation>
+    </message>
 </context>
 </TS>

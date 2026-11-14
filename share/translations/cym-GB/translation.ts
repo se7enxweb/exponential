@@ -87442,5 +87442,13 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>inherited</source>
         <translation>wedi&apos;i etifeddu</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Ar ôl cyhoeddi, dim ond yr arallenwau hyn a wneir, un i bob llinell. Gwag: pob un.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Gwneud yr amrywiadau WebP ac AVIF ar ôl cyhoeddi hefyd.</translation>
+    </message>
 </context>
 </TS>

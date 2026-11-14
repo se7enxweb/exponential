@@ -87442,5 +87442,13 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>inherited</source>
         <translation>jëlee woon</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Ginnaaw publikasiyoŋ, turu nataal yii rekk lañuy defar, benn ci bépp rëdd. Neen: ñépp.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Defar itam xeeti WebP ak AVIF ginnaaw publikasiyoŋ.</translation>
+    </message>
 </context>
 </TS>

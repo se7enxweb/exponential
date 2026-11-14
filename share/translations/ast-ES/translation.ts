@@ -87442,5 +87442,13 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>inherited</source>
         <translation>heredáu</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Dempués de publicar namái se faen estos alias, ún per llinia. Baleru: toos.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Fai tamién les variantes WebP y AVIF dempués de publicar.</translation>
+    </message>
 </context>
 </TS>

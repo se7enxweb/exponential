@@ -87440,5 +87440,13 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>inherited</source>
         <translation>natara site na nna</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Mgbe ebipụtachara, ọ bụ naanị aha ọzọ ndị a ka a na-eme, otu n'ahịrị ọ bụla. Efu: ha niile.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Mee ụdị WebP na AVIF kwa mgbe ebipụtachara.</translation>
+    </message>
 </context>
 </TS>

@@ -87442,5 +87442,13 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>inherited</source>
         <translation>hêrezhet</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Goude an embann ne vez graet nemet an aliasoù-mañ, unan dre linenn. Goullo: an holl.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Ober ivez ar stummoù WebP hag AVIF goude an embann.</translation>
+    </message>
 </context>
 </TS>

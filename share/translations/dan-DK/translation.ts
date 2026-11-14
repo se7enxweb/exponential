@@ -88122,5 +88122,13 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>inherited</source>
         <translation>nedarvet</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Efter publicering laves kun disse aliasser, ét pr. linje. Tom: alle.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Lav også WebP- og AVIF-varianterne efter publicering.</translation>
+    </message>
 </context>
 </TS>

@@ -87442,5 +87442,13 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>inherited</source>
         <translation>herenciamanta</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Pawblikasqamanta qhipa kay sutichanakunallam ruwakun, sapa siqipi huk. Ch'usaq: llapanmi.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Pawblikasqamanta qhipa WebP hinaspa AVIF hukniraykunatapas ruway.</translation>
+    </message>
 </context>
 </TS>

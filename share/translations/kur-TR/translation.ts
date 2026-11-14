@@ -87440,5 +87440,13 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>inherited</source>
         <translation>mîrasî</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Piştî weşanê tenê ev nasnav têne çêkirin, her rêzekê yek. Vala: hemû.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Piştî weşanê guhertoyên WebP û AVIF jî çêke.</translation>
+    </message>
 </context>
 </TS>

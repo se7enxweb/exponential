@@ -87442,5 +87442,13 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <source>inherited</source>
         <translation>eretat</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Aprèp la publicacion, sonque aqueles aliases son fabricats, un per linha. Void : totes.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Fabricar tanben las variantas WebP e AVIF aprèp la publicacion.</translation>
+    </message>
 </context>
 </TS>

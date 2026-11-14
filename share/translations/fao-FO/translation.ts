@@ -87442,5 +87442,13 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <source>inherited</source>
         <translation>arvað</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Eftir útgávu verða bara hesir aliasar gjørdir, ein á hvørja linju. Tómt: allir.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Ger eisini WebP- og AVIF-variantirnar eftir útgávu.</translation>
+    </message>
 </context>
 </TS>

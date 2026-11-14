@@ -87414,5 +87414,13 @@ Remoambuevaerã nódo klase swap tembiapo rupive.</translation>
         <source>inherited</source>
         <translation>ojehupyty</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Ñemoherakuã rire ojejapo ko'ã téra mokõiha añoite, peteĩ peteĩ tysýipe. Nandi: opavave.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Ejapo avei WebP ha AVIF mba'eichagua ñemoherakuã rire.</translation>
+    </message>
 </context>
 </TS>

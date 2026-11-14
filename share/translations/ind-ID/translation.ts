@@ -87442,5 +87442,13 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <source>inherited</source>
         <translation>diwarisi</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Setelah penerbitan, hanya alias ini yang dibuat, satu per baris. Kosong: semuanya.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Buat juga varian WebP dan AVIF setelah penerbitan.</translation>
+    </message>
 </context>
 </TS>

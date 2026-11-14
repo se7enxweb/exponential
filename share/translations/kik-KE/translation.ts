@@ -87442,5 +87442,13 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>inherited</source>
         <translation>nĩ ĩrĩa ĩtongoretwo</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Thutha wa gũtangĩrĩria, marĩĩtwa maya moiki nĩmo mathondekagwo, rĩmwe o mũhari-inĩ. Gũtirĩ kĩndũ: mothe.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Thondeka o na mĩthemba ya WebP na AVIF thutha wa gũtangĩrĩria.</translation>
+    </message>
 </context>
 </TS>

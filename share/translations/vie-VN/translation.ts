@@ -87442,5 +87442,13 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>inherited</source>
         <translation>kế thừa</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Sau khi xuất bản, chỉ tạo các bí danh này, mỗi dòng một. Trống: tất cả.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Tạo cả các biến thể WebP và AVIF sau khi xuất bản.</translation>
+    </message>
 </context>
 </TS>

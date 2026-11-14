@@ -87472,5 +87472,13 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>inherited</source>
         <translation>oidhreacht</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Tar éis foilsithe ní dhéantar ach na hailiasanna seo, ceann in aghaidh an líne. Folamh: gach ceann.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Déan na hathraitheanna WebP agus AVIF freisin tar éis foilsithe.</translation>
+    </message>
 </context>
 </TS>

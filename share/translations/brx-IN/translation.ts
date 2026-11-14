@@ -87442,5 +87442,13 @@ You will need to change the class of the node by using the swap functionality.</
         <source>inherited</source>
         <translation>मोनहोनाय</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>प्रकासनि उनाव बेफोर उपनामसोलो खालामनो जायो, फारि मोनसेआव मोनसे। लांदां: गासैबो।</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>प्रकासनि उनाव WebP आरो AVIF रोखोमफोरखौबो खालाम।</translation>
+    </message>
 </context>
 </TS>

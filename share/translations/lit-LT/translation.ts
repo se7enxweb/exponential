@@ -87472,5 +87472,13 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>inherited</source>
         <translation>paveldėta</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Po paskelbimo sukuriami tik šie pseudonimai, po vieną eilutėje. Tuščia: visi.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Po paskelbimo sukurti ir WebP bei AVIF variantus.</translation>
+    </message>
 </context>
 </TS>

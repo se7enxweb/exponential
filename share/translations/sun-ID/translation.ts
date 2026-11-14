@@ -87450,5 +87450,13 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>inherited</source>
         <translation>diwariskeun</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Sanggeus medalkeun, ngan alias ieu anu dijieun, hiji unggal baris. Kosong: sadayana.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Jieun ogé varian WebP jeung AVIF sanggeus medalkeun.</translation>
+    </message>
 </context>
 </TS>

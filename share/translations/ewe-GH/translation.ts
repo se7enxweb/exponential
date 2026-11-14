@@ -87442,5 +87442,13 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <source>inherited</source>
         <translation>wodo ɖe esi</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Le ɖeɖefia megbe la, ŋkɔ bubu siawo ɖeɖe ko wowɔna, ɖeka le fli ɖesiaɖe dzi. Ƒuƒlu: wo katã.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Wɔ WebP kple AVIF fɔmat bubuwo hã le ɖeɖefia megbe.</translation>
+    </message>
 </context>
 </TS>

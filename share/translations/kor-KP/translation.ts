@@ -87442,5 +87442,13 @@ You will need to change the class of the node by using the swap functionality.</
         <source>inherited</source>
         <translation>상속됨</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>발행 후에는 이 별칭만 만듭니다 (한 줄에 하나씩). 비어 있으면: 모두.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>발행 후 WebP와 AVIF 변형도 만듭니다.</translation>
+    </message>
 </context>
 </TS>

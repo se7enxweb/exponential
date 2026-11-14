@@ -87472,5 +87472,13 @@ You will need to change the class of the node by using the swap functionality.</
         <source>inherited</source>
         <translation>موروث</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>بعد النشر تُنشأ هذه الأسماء المستعارة فقط، واحد في كل سطر. فارغ: جميعها.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>أنشئ متغيّرات WebP وAVIF أيضًا بعد النشر.</translation>
+    </message>
 </context>
 </TS>

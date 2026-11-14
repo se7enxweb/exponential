@@ -87442,5 +87442,13 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>inherited</source>
         <translation>jahdaama</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Baawo winndere, ɗee alias tan waɗetee, gooto e kala diidol. Mehe: fuu.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Waɗ kadi variant WebP e AVIF baawo winndere.</translation>
+    </message>
 </context>
 </TS>

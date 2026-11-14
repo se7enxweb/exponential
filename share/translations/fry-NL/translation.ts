@@ -87442,5 +87442,13 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <source>inherited</source>
         <translation>erfd</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Nei it publisearjen wurde allinne dizze aliassen makke, ien per rigel. Leech: alle.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Meitsje nei it publisearjen ek de WebP- en AVIF-farianten.</translation>
+    </message>
 </context>
 </TS>

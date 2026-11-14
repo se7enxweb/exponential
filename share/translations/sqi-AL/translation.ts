@@ -87472,5 +87472,13 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>inherited</source>
         <translation>e trashëguar</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Pas publikimit krijohen vetëm këto variante, një për rresht. Bosh: të gjitha.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Krijo edhe variantet WebP dhe AVIF pas publikimit.</translation>
+    </message>
 </context>
 </TS>

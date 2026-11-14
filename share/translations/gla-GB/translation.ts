@@ -87442,5 +87442,13 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>inherited</source>
         <translation>oighreachd</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Às dèidh foillseachadh, cha dèanar ach na h-alias seo, fear air gach loidhne. Falamh: iad uile.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Dèan na caochladh WebP agus AVIF cuideachd às dèidh foillseachadh.</translation>
+    </message>
 </context>
 </TS>

@@ -88849,5 +88849,13 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>inherited</source>
         <translation>ereditato</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Dopo la pubblicazione vengono creati solo questi alias, uno per riga. Vuoto: tutti.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Crea anche le varianti WebP e AVIF dopo la pubblicazione.</translation>
+    </message>
 </context>
 </TS>

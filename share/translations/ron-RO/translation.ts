@@ -87472,5 +87472,13 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>inherited</source>
         <translation>moștenit</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>După publicare se creează doar aceste aliasuri, câte unul pe rând. Gol: toate.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Creează și variantele WebP și AVIF după publicare.</translation>
+    </message>
 </context>
 </TS>

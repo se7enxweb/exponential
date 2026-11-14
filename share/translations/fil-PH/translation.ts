@@ -87442,5 +87442,13 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>inherited</source>
         <translation>minana</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Pagkatapos mag-publish, ang mga alias lang na ito ang gagawin, isa bawat linya. Walang laman: lahat.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Gawin din ang mga variant na WebP at AVIF pagkatapos mag-publish.</translation>
+    </message>
 </context>
 </TS>

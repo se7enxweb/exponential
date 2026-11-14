@@ -87442,5 +87442,13 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>inherited</source>
         <translation>hoʻoilina ʻia</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Ma hope o ka paʻi ʻana, hana ʻia kēia mau inoa ʻē wale nō, hoʻokahi ma ka lālani. Hakahaka: ʻo lākou a pau.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>E hana pū i nā ʻano WebP a me AVIF ma hope o ka paʻi ʻana.</translation>
+    </message>
 </context>
 </TS>

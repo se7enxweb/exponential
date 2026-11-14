@@ -88667,5 +88667,13 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>inherited</source>
         <translation>overgeërfd</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Na publicatie worden alleen deze aliassen gemaakt, één per regel. Leeg: alle.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Maak na publicatie ook de WebP- en AVIF-varianten.</translation>
+    </message>
 </context>
 </TS>

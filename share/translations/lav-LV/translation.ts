@@ -87472,5 +87472,13 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>inherited</source>
         <translation>mantots</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Pēc publicēšanas tiek izveidoti tikai šie aizstājvārdi, viens katrā rindā. Tukšs: visi.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Pēc publicēšanas izveidot arī WebP un AVIF variantus.</translation>
+    </message>
 </context>
 </TS>

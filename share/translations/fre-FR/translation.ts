@@ -88882,5 +88882,13 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>inherited</source>
         <translation>hérité</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Après publication, seuls ces alias sont créés, un par ligne. Vide : tous.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Créer aussi les variantes WebP et AVIF après publication.</translation>
+    </message>
 </context>
 </TS>

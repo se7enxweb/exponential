@@ -87442,5 +87442,13 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>inherited</source>
         <translation>geierft</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Nom Verëffentlechen ginn nëmmen dës Bildaliasen erstallt, ee pro Linn. Eidel: all.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Nom Verëffentlechen och d'WebP- an AVIF-Varianten erstellen.</translation>
+    </message>
 </context>
 </TS>

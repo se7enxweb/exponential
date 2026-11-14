@@ -87472,5 +87472,13 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>inherited</source>
         <translation>heretat</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Després de publicar només es creen aquests àlies, un per línia. Buit: tots.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Crea també les variants WebP i AVIF després de publicar.</translation>
+    </message>
 </context>
 </TS>

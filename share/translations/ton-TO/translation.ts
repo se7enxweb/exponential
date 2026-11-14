@@ -87442,5 +87442,13 @@ You will need to change the class of the node by using the swap functionality.</
         <source>inherited</source>
         <translation>maʻu mei ʻolunga</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Hili e pulusi, ʻoku ngaohi pē ʻa e ngaahi hingoa kehe ko ʻeni, taha ʻi he laine taki taha. Maha: kotoa.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Ngaohi foki ʻa e ngaahi fōmeti WebP mo e AVIF hili e pulusi.</translation>
+    </message>
 </context>
 </TS>

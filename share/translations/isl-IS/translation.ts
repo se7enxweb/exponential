@@ -87472,5 +87472,13 @@ You will need to change the class of the node by using the swap functionality.</
         <source>inherited</source>
         <translation>erft</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Eftir útgáfu eru aðeins þessi samnefni búin til, eitt í hverri línu. Autt: öll.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Búa einnig til WebP- og AVIF-afbrigðin eftir útgáfu.</translation>
+    </message>
 </context>
 </TS>

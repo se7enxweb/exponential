@@ -87472,5 +87472,13 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>inherited</source>
         <translation>peritty</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Julkaisun jälkeen tehdään vain nämä aliakset, yksi riviä kohden. Tyhjä: kaikki.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Tee julkaisun jälkeen myös WebP- ja AVIF-variantit.</translation>
+    </message>
 </context>
 </TS>

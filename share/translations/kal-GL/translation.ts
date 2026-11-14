@@ -87472,5 +87472,13 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>inherited</source>
         <translation>tigusaq</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Saqqummiunneqarnerup kingorna alias-it uku kisimik pilersinneqartarput, titarnermi ataaseq. Imaqanngitsoq: tamarmik.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Saqqummiunneqarnerup kingorna WebP aamma AVIF-imik assigiinngitsuutit aamma pilersikkit.</translation>
+    </message>
 </context>
 </TS>

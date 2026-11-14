@@ -87442,5 +87442,13 @@ Muzakenera guhindura ubwoko bw'ingingo mukoresheje imikorere yo guhinduranya.</t
         <source>inherited</source>
         <translation>byarazwe</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Nyuma yo gutangaza, izi aliyasi gusa ni zo zikorwa, imwe kuri buri murongo. Ubusa: zose.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Kora kandi imiterere ya WebP na AVIF nyuma yo gutangaza.</translation>
+    </message>
 </context>
 </TS>

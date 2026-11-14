@@ -87442,5 +87442,13 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <source>inherited</source>
         <translation>herbowany</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Po wozjewjenju so jenož tute aliasy wutworja, jedyn na linku. Prózdne: wšě.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Po wozjewjenju tež warianty WebP a AVIF wutworić.</translation>
+    </message>
 </context>
 </TS>

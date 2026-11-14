@@ -87442,5 +87442,13 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <source>inherited</source>
         <translation>diwarisi</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Selepas penerbitan, hanya alias ini dibuat, satu setiap baris. Kosong: semua.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Buat juga varian WebP dan AVIF selepas penerbitan.</translation>
+    </message>
 </context>
 </TS>

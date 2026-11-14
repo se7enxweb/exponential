@@ -87442,5 +87442,13 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <source>inherited</source>
         <translation>irsi alınıb</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Dərcdən sonra yalnız bu ləqəblər yaradılır, hər sətirdə bir. Boş: hamısı.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Dərcdən sonra WebP və AVIF variantlarını da yarat.</translation>
+    </message>
 </context>
 </TS>

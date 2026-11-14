@@ -88700,5 +88700,13 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>inherited</source>
         <translation>arvet</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Etter publisering lages bare disse aliasene, ett per linje. Tom: alle.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Lag også WebP- og AVIF-variantene etter publisering.</translation>
+    </message>
 </context>
 </TS>

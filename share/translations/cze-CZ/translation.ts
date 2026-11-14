@@ -88728,5 +88728,13 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>inherited</source>
         <translation>zděděno</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Po publikování se vytvoří jen tyto aliasy, jeden na řádek. Prázdné: všechny.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Po publikování vytvořit i varianty WebP a AVIF.</translation>
+    </message>
 </context>
 </TS>

@@ -87450,5 +87450,13 @@ You will need to change the class of the node by using the swap functionality.</
         <source>inherited</source>
         <translation>विरासतमा आएको</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>प्रकाशनपछि यी उपनामहरू मात्र बनाइन्छन्, प्रत्येक लाइनमा एउटा। खाली: सबै।</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>प्रकाशनपछि WebP र AVIF संस्करण पनि बनाउनुहोस्।</translation>
+    </message>
 </context>
 </TS>

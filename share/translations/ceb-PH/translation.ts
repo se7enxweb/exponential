@@ -87442,5 +87442,13 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>inherited</source>
         <translation>napanunod</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Human sa pagmantala, kini lang nga mga alias ang himoon, usa matag linya. Walay sulod: tanan.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Himoa usab ang mga lahi nga WebP ug AVIF human sa pagmantala.</translation>
+    </message>
 </context>
 </TS>

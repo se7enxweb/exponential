@@ -87440,5 +87440,13 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>inherited</source>
         <translation>an gada</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Bayan buga, waɗannan laƙabin kawai ake yi, ɗaya a kowane layi. Babu komai: duka.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Yi bambance-bambancen WebP da AVIF ma bayan buga.</translation>
+    </message>
 </context>
 </TS>

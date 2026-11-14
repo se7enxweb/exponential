@@ -87442,5 +87442,13 @@ You will need to change the class of the node by using the swap functionality.</
         <source>inherited</source>
         <translation>געירשנט</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>נאָך פּובליקירן װערן געמאַכט נאָר די דאָזיקע אַליאַסן, אײנער אױף אַ שורה. ליידיק: אַלע.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>מאַך אױך די WebP־ און AVIF־װאַריאַנטן נאָך פּובליקירן.</translation>
+    </message>
 </context>
 </TS>

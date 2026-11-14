@@ -87472,5 +87472,13 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>inherited</source>
         <translation>naslijeđeno</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Nakon objavljivanja prave se samo ovi aliasi, jedan po redu. Prazno: svi.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Napravi nakon objavljivanja i WebP i AVIF varijante.</translation>
+    </message>
 </context>
 </TS>

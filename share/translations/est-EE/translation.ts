@@ -87472,5 +87472,13 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>inherited</source>
         <translation>päritud</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Pärast avaldamist tehakse ainult need aliased, üks rea kohta. Tühi: kõik.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Tee pärast avaldamist ka WebP ja AVIF variandid.</translation>
+    </message>
 </context>
 </TS>

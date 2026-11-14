@@ -87442,5 +87442,13 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>inherited</source>
         <translation>oinordetua</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Argitaratu ondoren ezizen hauek bakarrik egiten dira, bat lerroko. Hutsik: guztiak.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Egin WebP eta AVIF aldaerak ere argitaratu ondoren.</translation>
+    </message>
 </context>
 </TS>

@@ -87442,5 +87442,13 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>inherited</source>
         <translation>meros qilingan</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Nashrdan keyin faqat shu taxalluslar yaratiladi, har qatorda bittadan. Boʻsh: hammasi.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Nashrdan keyin WebP va AVIF variantlarini ham yaratish.</translation>
+    </message>
 </context>
 </TS>

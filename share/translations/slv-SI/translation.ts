@@ -87472,5 +87472,13 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>inherited</source>
         <translation>podedovano</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Po objavi se ustvarijo samo ti vzdevki, po eden v vrstici. Prazno: vsi.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Po objavi ustvari tudi različici WebP in AVIF.</translation>
+    </message>
 </context>
 </TS>

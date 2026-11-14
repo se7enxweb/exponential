@@ -87475,5 +87475,13 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>inherited</source>
         <translation>hereditatum</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Post publicationem haec sola cognomina fiunt, singula in singulis versibus. Vacuum: omnia.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Variantes WebP et AVIF quoque post publicationem fac.</translation>
+    </message>
 </context>
 </TS>

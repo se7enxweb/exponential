@@ -87472,5 +87472,13 @@ You will need to change the class of the node by using the swap functionality.</
         <source>inherited</source>
         <translation>κληρονομείται</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Μετά τη δημοσίευση δημιουργούνται μόνο αυτά τα ψευδώνυμα, ένα ανά γραμμή. Κενό: όλα.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Δημιουργία και των παραλλαγών WebP και AVIF μετά τη δημοσίευση.</translation>
+    </message>
 </context>
 </TS>

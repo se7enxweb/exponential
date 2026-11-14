@@ -87451,5 +87451,13 @@ You will need to change the class of the node by using the swap functionality.</
         <source>inherited</source>
         <translation>מירתא</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>בתר נשרא הלין שמהא חלופא בלחוד מתעבדין, חד בכל שורא. סריק: כלהון.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>עבד אף טופסא ד WebP ו AVIF בתר נשרא.</translation>
+    </message>
 </context>
 </TS>

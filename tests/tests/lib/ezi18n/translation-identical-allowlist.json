@@ -25099,6 +25099,8 @@
         "Regenerate for this item": "Setup > Image aliases: Australian English: no difference",
         "Regenerate for the subtree": "Setup > Image aliases: Australian English: no difference",
         "Remove for this item": "Setup > Image aliases: Australian English: no difference",
-        "Remove for the subtree": "Setup > Image aliases: Australian English: no difference"
+        "Remove for the subtree": "Setup > Image aliases: Australian English: no difference",
+        "Only these aliases are made after publishing, one per line. Empty: all of them.": "Setup > Image aliases: Australian English: no difference",
+        "Make the WebP and AVIF variants after publishing too.": "Setup > Image aliases: Australian English: no difference"
     }
 }

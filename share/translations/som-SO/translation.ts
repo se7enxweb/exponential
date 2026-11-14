@@ -87440,5 +87440,13 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>inherited</source>
         <translation>la dhaxlay</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Ka dib daabacaadda, magacyadan kale oo keliya ayaa la sameeyaa, mid saf kasta. Madhan: dhammaan.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Samee noocyada WebP iyo AVIF sidoo kale ka dib daabacaadda.</translation>
+    </message>
 </context>
 </TS>

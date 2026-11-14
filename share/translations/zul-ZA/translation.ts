@@ -87440,5 +87440,13 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <source>inherited</source>
         <translation>kudluliselwe</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Ngemuva kokushicilela, la magama angaphandle kuphela enziwayo, elilodwa emugqeni ngamunye. Akukho lutho: wonke.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Yenza nezinhlobo ze-WebP ne-AVIF ngemuva kokushicilela.</translation>
+    </message>
 </context>
 </TS>

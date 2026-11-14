@@ -87472,5 +87472,13 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>inherited</source>
         <translation>wirt</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Wara l-pubblikazzjoni jinħolqu biss dawn l-aliases, wieħed għal kull linja. Vojt: kollha.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Oħloq ukoll il-varjanti WebP u AVIF wara l-pubblikazzjoni.</translation>
+    </message>
 </context>
 </TS>

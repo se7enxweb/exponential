@@ -88654,5 +88654,13 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>inherited</source>
         <translation>odziedziczone</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Po publikacji tworzone są tylko te aliasy, po jednym w wierszu. Puste: wszystkie.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Po publikacji twórz także warianty WebP i AVIF.</translation>
+    </message>
 </context>
 </TS>

@@ -87442,5 +87442,13 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>inherited</source>
         <translation>yettwawriɣ</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Deffir usuffeɣ, d isulayen-agi kan i d-ittwaxedmen, yiwen deg yal izirig. D ilem: akk.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Xdem daɣen inawen-nniḍen WebP d AVIF deffir usuffeɣ.</translation>
+    </message>
 </context>
 </TS>

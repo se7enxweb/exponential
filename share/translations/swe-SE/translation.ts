@@ -88745,5 +88745,13 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>inherited</source>
         <translation>ärvd</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Efter publicering skapas bara dessa alias, ett per rad. Tomt: alla.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Skapa även WebP- och AVIF-varianterna efter publicering.</translation>
+    </message>
 </context>
 </TS>

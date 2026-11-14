@@ -87442,5 +87442,13 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>inherited</source>
         <translation>a bɔra a fɛ</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Jɛnsɛnni kɔ, tɔgɔ wɛrɛ ninnu dɔrɔn de bɛ dilan, kelen sira kelen kan. Lankolon: u bɛɛ.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>WebP ni AVIF suguyaw fana dilan jɛnsɛnni kɔ.</translation>
+    </message>
 </context>
 </TS>

@@ -87450,5 +87450,13 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>inherited</source>
         <translation>inherited</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Afta publishing, na only dis aliases dem go make, one for each line. Empty: all of dem.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Make di WebP and AVIF variants too afta publishing.</translation>
+    </message>
 </context>
 </TS>

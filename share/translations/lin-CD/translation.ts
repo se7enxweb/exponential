@@ -87442,5 +87442,13 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>inherited</source>
         <translation>ezwami na libula</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Nsima ya kopanza, kaka ba-alias oyo nde esalemaka, moko na molɔngɔ moko na moko. Mpamba: nyonso.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Salá mpe ba-variante WebP mpe AVIF nsima ya kopanza.</translation>
+    </message>
 </context>
 </TS>

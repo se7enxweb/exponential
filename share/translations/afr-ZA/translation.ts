@@ -87472,5 +87472,13 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>inherited</source>
         <translation>geërf</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Slegs hierdie aliasse word ná publisering gemaak, een per reël. Leeg: almal.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Maak ook die WebP- en AVIF-variante ná publisering.</translation>
+    </message>
 </context>
 </TS>

@@ -87442,5 +87442,13 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>inherited</source>
         <translation>lovana</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Aorian'ny famoahana, ireo solon-anarana ireo ihany no amboarina, iray isaky ny andalana. Foana: rehetra.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Amboary koa ny karazana WebP sy AVIF aorian'ny famoahana.</translation>
+    </message>
 </context>
 </TS>

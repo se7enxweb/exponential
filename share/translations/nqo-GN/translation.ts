@@ -87442,5 +87442,13 @@ You will need to change the class of the node by using the swap functionality.</
         <source>inherited</source>
         <translation>ߡߊߓߐߣߍ߲</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>ߛߍߓߍ ߞߍ߫ ߞߐ߫، ߕߐߜ߳ߐ ߥߍߙߍ ߣߌ߲߬ ߠߎ߬ ߟߋ߬ ߘߐߙߐ߲߫ ߦߋ߫ ߘߊ߲߫، ߞߋߟߋ߲߫ ߛߌߘߏ߲߫ ߞߋߟߋ߲ ߞߋߟߋ߲ ߞߊ߲߬. ߝߏߦߌ߫: ߓߍߓߍ.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>ߛߍߓߍ ߞߍ߫ ߞߐ߫، WebP ߣߌ߫ AVIF ߝߐߙߌߡߊ ߘߍ߲߬ߘߍ߲ ߠߎ߬ ߝߣߊ߫ ߘߊ߲߫.</translation>
+    </message>
 </context>
 </TS>

@@ -87442,5 +87442,13 @@ You will need to change the class of the node by using the swap functionality.</
         <source>inherited</source>
         <translation>بەمیرات گیراوە</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>دوای بڵاوکردنەوە تەنها ئەم ناوە جێگرەوانە دروست دەکرێن، هەر دێڕێک یەک. بەتاڵ: هەموویان.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>دوای بڵاوکردنەوە جۆرەکانی WebP و AVIF یش دروست بکە.</translation>
+    </message>
 </context>
 </TS>

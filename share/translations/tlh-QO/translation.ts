@@ -87475,5 +87475,13 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>inherited</source>
         <translation>Hevlu&apos;</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>ghItlh pagh mIllogh pongmey latlh vam neH chenmoHlu', wa' tlhegh wa'. chIm: Hoch.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>ghItlh pagh WebP 'ej AVIF Segh je chenmoH.</translation>
+    </message>
 </context>
 </TS>

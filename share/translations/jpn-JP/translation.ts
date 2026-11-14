@@ -87472,5 +87472,13 @@ You will need to change the class of the node by using the swap functionality.</
         <source>inherited</source>
         <translation>継承</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>公開後はこれらのエイリアスだけを作成します (1 行に 1 つ)。空の場合: すべて。</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>公開後に WebP と AVIF のバリアントも作成します。</translation>
+    </message>
 </context>
 </TS>

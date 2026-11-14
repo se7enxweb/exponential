@@ -87447,5 +87447,13 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>inherited</source>
         <translation>devralınan</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Yayımlamadan sonra yalnızca bu diğer adlar üretilir, her satıra bir tane. Boş: hepsi.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Yayımlamadan sonra WebP ve AVIF varyantlarını da üret.</translation>
+    </message>
 </context>
 </TS>

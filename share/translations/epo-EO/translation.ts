@@ -87442,5 +87442,13 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>inherited</source>
         <translation>heredita</translation>
     </message>
+    <message>
+        <source>Only these aliases are made after publishing, one per line. Empty: all of them.</source>
+        <translation>Post publikigo nur ĉi tiuj aliasoj estas kreataj, po unu en linio. Malplena: ĉiuj.</translation>
+    </message>
+    <message>
+        <source>Make the WebP and AVIF variants after publishing too.</source>
+        <translation>Krei ankaŭ la variantojn WebP kaj AVIF post publikigo.</translation>
+    </message>
 </context>
 </TS>
