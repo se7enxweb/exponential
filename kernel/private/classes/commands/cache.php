@@ -67,7 +67,13 @@ class Cache extends \Exponential\Runnable\Command
             'imagealias' => array( 'imagealias [clear|purge]',
                 "Image aliases. clear (the default) expires every alias, so each is made\n" .
                 "again when next viewed; purge deletes the alias files of every image\n" .
-                "attribute and keeps the originals.\n\n  exp:cache imagealias\n  exp:cache imagealias purge --dry-run" ),
+                "attribute and keeps the originals.\n\n" .
+                "To make, remake or remove the aliases of some images (a node, a subtree,\n" .
+                "classes, attributes, aliases, changed since), as background jobs or here,\n" .
+                "and to see how aliases are made on demand: exp:image:alias (status,\n" .
+                "generate, regenerate, purge, resync, test), or Setup > Image aliases\n" .
+                "(setup/aliases) in the administration.\n\n" .
+                "  exp:cache imagealias\n  exp:cache imagealias purge --dry-run\n  exp:image:alias status" ),
             'static' => array( 'static status|regenerate|clear [--site=<siteaccess>] [--path=<p>[,<p>]] [--node=<id>[,<id>]]',
                 "The static cache (html files the web server answers with):\n" .
                 "  status              where pages are written and what each site holds\n" .
@@ -132,7 +138,8 @@ class Cache extends \Exponential\Runnable\Command
                      "  --siteaccess=<name>  the siteaccess whose settings and var directory are used\n" .
                      "  --allow-root-user    required when run as root, as for every script\n\n" .
                      "Output ends with PASS or FAIL. Exit codes: 0 done, 1 failed, 2 usage error.\n" .
-                     "exp:cache <group> --help (or exp:cache help <group>) explains a group.";
+                     "exp:cache <group> --help (or exp:cache help <group>) explains a group.\n" .
+                     "Image aliases of some images, as jobs, and how they are made on demand: exp:image:alias.";
 
         if ( $wantsHelp && isset( $groupHelp[$group] ) )
         {

@@ -303,6 +303,7 @@
             <li>{'What would be cleared, with sizes, without clearing'|i18n( 'design/admin/setup/cache' )}<code>./console exp:cache clear --id=content --dry-run --allow-root-user</code></li>
             <li>{'Velocity\'s response cache'|i18n( 'design/admin/setup/cache' )}<code>./console exp:velocity cache clear --apply</code></li>
             <li>{'Velocity, after settings changed'|i18n( 'design/admin/setup/cache' )}<code>./console exp:velocity restart --allow-root-user</code></li>
+            <li><a href={'/setup/aliases'|ezurl}>{'Image aliases'|i18n( 'design/admin/setup/aliases' )}</a><code>./console exp:image:alias status --allow-root-user</code></li>
         </ul>
     </div>
 </details>

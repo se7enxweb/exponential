@@ -895,7 +895,7 @@ dcdfd28ff236916b7773ca84b5d3172e  design/admin/templates/settings/exp_origin.tpl
 c973f1114f2804cba52ac37c0673c9e4  design/admin/templates/settings/view.tpl
 6c4a673f20c36956034230a1012737f6  design/admin/templates/setup/aliases.tpl
 f962e596c5ce9790e3665346c74e9b3e  design/admin/templates/setup/aliases_setting_row.tpl
-b2b4c37c83b713db25e3f75ac3fe467e  design/admin/templates/setup/cache.tpl
+aa828a678fdb4699e3f5933543f89c87  design/admin/templates/setup/cache.tpl
 98118ae9ddcbbb63024645a31b8ed87c  design/admin/templates/setup/contentextension.tpl
 1dda5b76087ec179de6ed4904b22d3fa  design/admin/templates/setup/cronjobs.tpl
 21606eed72d8b173c6560d2322727acd  design/admin/templates/setup/datatype.tpl
@@ -1779,7 +1779,7 @@ dcdfd28ff236916b7773ca84b5d3172e  design/admin4/templates/settings/exp_origin.tp
 c973f1114f2804cba52ac37c0673c9e4  design/admin4/templates/settings/view.tpl
 6c4a673f20c36956034230a1012737f6  design/admin4/templates/setup/aliases.tpl
 f962e596c5ce9790e3665346c74e9b3e  design/admin4/templates/setup/aliases_setting_row.tpl
-b55d9e0517cb1eda436cc8327ccd6a68  design/admin4/templates/setup/cache.tpl
+eac3ca7e30d92bd8ca5f5dc3fad4ccc4  design/admin4/templates/setup/cache.tpl
 b19bea8949b01eb13fbddf1ef40fb06b  design/admin4/templates/setup/contentextension.tpl
 919550f7b53ed82490d695e3c60738ae  design/admin4/templates/setup/cronjobs.tpl
 70e384b20d7d4dc3d13bd5a88244ebd7  design/admin4/templates/setup/datatype.tpl
@@ -25963,7 +25963,7 @@ c0be86259df29eb80766daea3b7fe0cf  kernel/private/classes/commands/addoauthauthor
 627b7e80d41644ed46ec0ec38208612e  kernel/private/classes/commands/adduserapproval.php
 dadf3ececdba37d5c1c4519f06258277  kernel/private/classes/commands/audit.php
 38463d9328daf1224e73eb9a6eaa2ec2  kernel/private/classes/commands/benchmark.php
-d8f8d155154cdc77df0fda96eca4d9c7  kernel/private/classes/commands/cache.php
+c0135ae41f25e7404f4161a8e8bd350a  kernel/private/classes/commands/cache.php
 7e675a5c0ed99de3a39a49ac6866275b  kernel/private/classes/commands/changelog2xmltext.php
 dfaae08f33403266f7403a9a051aa223  kernel/private/classes/commands/checkclasses.php
 0214d9ea0d2304d1cad359b1573c3061  kernel/private/classes/commands/checkdbfiles.php
