@@ -475,7 +475,7 @@ e4286f3980c415c880cdb413793a0eea  design/admin/stylesheets/ezinfo.css
 1b10f6813d3ffa10b206bf643c6260af  design/admin/stylesheets/modules/content.css
 48e257b3057ab652644ca4a1f8dfd1dc  design/admin/stylesheets/modules/help.css
 ad39b6d6686649da879ae5c11dc6d148  design/admin/stylesheets/modules/people.css
-d53f1089a0e8feed730b50f642dc9cce  design/admin/stylesheets/modules/setup.css
+4b0b806cff537310ab65c8c874b5538d  design/admin/stylesheets/modules/setup.css
 870f0f020eb45e6b5b306b731e3371bf  design/admin/stylesheets/modules/structure.css
 3f6cb52db7363b1107114a1554b38a99  design/admin/stylesheets/modules/workflow.css
 f6736900d8e33587c384e14e7705af9d  design/admin/stylesheets/packagecompare.css
@@ -1310,7 +1310,7 @@ e26094514c3dac416b5fb6be0a9d9e21  design/admin4/stylesheets/ezinfo.css
 1b10f6813d3ffa10b206bf643c6260af  design/admin4/stylesheets/modules/content.css
 48e257b3057ab652644ca4a1f8dfd1dc  design/admin4/stylesheets/modules/help.css
 ad39b6d6686649da879ae5c11dc6d148  design/admin4/stylesheets/modules/people.css
-d53f1089a0e8feed730b50f642dc9cce  design/admin4/stylesheets/modules/setup.css
+4b0b806cff537310ab65c8c874b5538d  design/admin4/stylesheets/modules/setup.css
 870f0f020eb45e6b5b306b731e3371bf  design/admin4/stylesheets/modules/structure.css
 3f6cb52db7363b1107114a1554b38a99  design/admin4/stylesheets/modules/workflow.css
 62655eab02017f2ff9eac6379e50922d  design/admin4/stylesheets/packagecompare.css

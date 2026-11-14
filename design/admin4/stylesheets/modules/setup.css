@@ -1518,7 +1518,10 @@ label.a4-package-option-label {
 .a4-setup-alias-fieldset { border: 0; padding: 0; margin: 0 0 var(--a4-space-4); min-width: 0; }
 .a4-setup-alias-reason { max-width: 320px; }
 /* The settings: the name and what it does beside the field */
-.a4-setup-alias-settings th[scope="row"] { width: 40%; font-weight: normal; }
-.a4-setup-alias-settings th[scope="row"] .a4-help { display: block; }
+/* The row header holds the name and a sentence: not the table head style (capitals, one line), or the sentence ran
+   over the value and status columns */
+.a4-setup-alias-settings th[scope="row"] { width: 40%; font-weight: normal; white-space: normal; text-transform: none; letter-spacing: normal; font-size: var(--a4-text-s); color: var(--a4-ink); overflow-wrap: anywhere; }
+.a4-setup-alias-settings th[scope="row"] .a4-help { display: block; margin-top: var(--a4-space-1); color: var(--a4-muted); }
+.a4-setup-alias-settings thead th { white-space: normal; }
 .a4-setup-alias-settings td .a4-meta { display: block; }
 .a4-setup-alias-settings textarea.a4-input { width: 100%; }
