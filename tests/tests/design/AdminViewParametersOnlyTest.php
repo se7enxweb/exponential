@@ -35,7 +35,7 @@ class AdminViewParametersOnlyTest extends PHPUnit\Framework\TestCase
         'role/list.php', 'user/unactivated.php', 'url/list.php', 'search/stats.php', 'pdf/list.php',
         'mailpreferences/admin.php', 'shop/orderreceipt.php',
         'setup/cronjobsstream.php', 'setup/staticcachestream.php', 'setup/logsfeed.php', 'setup/languages.php',
-        'setup/sitedata.php', 'setup/cronjobs.php', 'setup/logs.php',
+        'setup/sitedata.php', 'setup/cronjobs.php', 'setup/logs.php', 'setup/aliases.php', 'setup/aliasesfeed.php',
         'visual/templatelist.php',
         'package/list.php', 'package/compare.php', 'package/view.php',
     );
@@ -57,7 +57,9 @@ class AdminViewParametersOnlyTest extends PHPUnit\Framework\TestCase
         'pdf' => array( 'list' => array( 'search' ) ),
         'shop' => array( 'orderreceipt' => array( 'download' ) ),
         'setup' => array( 'staticcachestream' => array( 'siteaccess', 'maxpages', 'maxdepth' ),
-                          'cronjobsstream' => array( 'offset' ), 'languages' => array( 'show' ), 'sitedata' => array( 'filter' ) ),
+                          'cronjobsstream' => array( 'offset' ), 'languages' => array( 'show' ), 'sitedata' => array( 'filter' ),
+                          'aliases' => array( 'tab', 'job', 'event', 'run', 'alias', 'text', 'lines', 'node', 'object' ),
+                          'aliasesfeed' => array( 'job', 'log', 'event', 'run', 'alias', 'text', 'lines' ) ),
         'visual' => array( 'templatelist' => array( 'filter' ) ),
         'package' => array( 'list' => array( 'search', 'type', 'state', 'sort' ), 'view' => array( 'type', 'search', 'offset' ) ),
     );
@@ -71,12 +73,12 @@ class AdminViewParametersOnlyTest extends PHPUnit\Framework\TestCase
         'contentcheck/*.tpl', 'contentfinder/*.tpl', 'settings/view.tpl',
         'role/list.tpl', 'user/unactivated.tpl', 'url/list.tpl', 'search/stats.tpl', 'oauthadmin/keys.tpl',
         'pdf/list.tpl', 'mailpreferences/*.tpl', 'shop/orderreceipt.tpl',
-        'setup/cronjobs.tpl', 'setup/cache.tpl', 'setup/logs*.tpl', 'setup/languages.tpl', 'setup/sitedata.tpl',
+        'setup/cronjobs.tpl', 'setup/cache.tpl', 'setup/logs*.tpl', 'setup/languages.tpl', 'setup/sitedata.tpl', 'setup/aliases*.tpl',
         'visual/templatelist.tpl', 'package/*.tpl', 'package/view/*.tpl',
     );
 
     /** The scripts (relative to design/<design>/javascript/) */
-    const SCRIPTS = array( 'ezajaxsubitems_expdatatable.js', 'page/setup_logs.js', 'page/setup_cronjobs.js',
+    const SCRIPTS = array( 'ezajaxsubitems_expdatatable.js', 'page/setup_logs.js', 'page/setup_cronjobs.js', 'page/setup_aliases.js',
                            'page/setup_cache_static.js', 'setup_logs.js', 'setup_cronjobs.js', 'setup_cache_static.js' );
 
     /** An option written as a query string */

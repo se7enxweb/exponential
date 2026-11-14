@@ -28818,7 +28818,7 @@ ad3ef84f9d21cd4076b60e33034063b0  tests/bootstrap.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 1b7dcb4dde933b1ebf8f8f93f3df7d55  tests/suite.php
-6202d30b891fc2274230a33164f1139a  tests/test-map.json
+55454053c69b36e3905d54b53416fb4b  tests/test-map.json
 4f2af04e2bf61d9e7bfbba8181fc08c0  tests/tests/bin/CiWorkflowPullRequestTest.php
 b152194c06e5b05fb18f088d0afd219c  tests/tests/bin/ConsoleExtensionAliasTest.php
 cf640022325724fc8a061137bbc5045e  tests/tests/bin/CopyrightNoticeTest.php
@@ -28929,7 +28929,7 @@ c0c0f5eb8bbcd4ba17e6dac25d579b6b  tests/tests/design/AdminTokenUsageTest.php
 038ea9b9b54b3684f8e3d0ea55f2a6dc  tests/tests/design/AdminTreeMenuEscapingTest.php
 2339c016f97159bcaae6c5ed0994e911  tests/tests/design/AdminTreeViewTest.php
 2a02d62a1037b0ae89f65cbb15b6411e  tests/tests/design/AdminUsedTranslationsTest.php
-6f58feddda7e7b59bbcc482135e6b93e  tests/tests/design/AdminViewParametersOnlyTest.php
+88b0b7c678cb974cf1682bb8cd0b4de7  tests/tests/design/AdminViewParametersOnlyTest.php
 2a9c78ad6f0f5709887ab57587764e44  tests/tests/design/AdminVisibilityStatusTest.php
 323460b0361becf1eb0f42d36fcf64d9  tests/tests/design/AsynchronousPublishingLinkTest.php
 3999bb1c3385aa4ad3bf6dcc97873526  tests/tests/design/ClassicAdminNarrowWindowTest.php
@@ -29608,6 +29608,7 @@ ec92451ec6c667e22a7a1270cdf8ae2c  tests/tests/kernel/classes/httpcache/ezpHttpCa
 700221552890de70fcbde1ece3508ca6  tests/tests/kernel/classes/i18n/expI18nCoverageMapTest.php
 ed696e81ec63f5233642450e14ddf65b  tests/tests/kernel/classes/i18n/expI18nFallbackReportTest.php
 06dc2c7240fe4c67b6fa5ea1ea729cc1  tests/tests/kernel/classes/i18n/expI18nTranslationWavesTest.php
+0f529a36972bf3d5e9592068b49f041d  tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php
 446f2cf11f2cf986bacb68873ca5516f  tests/tests/kernel/classes/imagealias/expImageAliasComputedTest.php
 93e08e4607a8cfe699e99b7cfe57ec3e  tests/tests/kernel/classes/imagealias/expImageAliasFormatsTest.php
 a299e1253c187e91fdf7af15ab12af39  tests/tests/kernel/classes/imagealias/expImageAliasQueueTest.php

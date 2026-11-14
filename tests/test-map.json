@@ -209,7 +209,8 @@
       "tests/tests/kernel/classes/imagealias/expImageAliasWebServersTest.php",
       "tests/tests/kernel/classes/imagealias/expImageAliasFormatsTest.php",
       "tests/tests/kernel/classes/imagealias/expImageAliasStagerTest.php",
-      "tests/tests/kernel/classes/imagealias/expImageAliasQueueTest.php"
+      "tests/tests/kernel/classes/imagealias/expImageAliasQueueTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php"
     ],
     "tests/tests/kernel/classes/imagealias/fixtures/*": [
       "tests/tests/kernel/classes/imagealias/expImageAliasStagerTest.php"
@@ -643,7 +644,8 @@
       "tests/tests/design/AdminMenuPolicyListTest.php",
       "tests/tests/design/AdminSetupOverviewTest.php",
       "tests/tests/design/AdminMegaMenuTest.php",
-      "tests/tests/kernel/common/eZTopMenuOperatorSetupTabAccessTest.php"
+      "tests/tests/kernel/common/eZTopMenuOperatorSetupTabAccessTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php"
     ],
     "kernel/*/module.php": [
       "tests/tests/design/AdminMenuPolicyListTest.php"
@@ -928,7 +930,8 @@
       "tests/tests/design/AdminSiteAccessMenuTest.php"
     ],
     "kernel/setup/module.php": [
-      "tests/tests/design/AdminMegaMenuTest.php"
+      "tests/tests/design/AdminMegaMenuTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php"
     ],
     "tests/tests/design/js/mega_menu.js": [
       "tests/tests/design/AdminMegaMenuTest.php"
@@ -1212,7 +1215,8 @@
       "tests/tests/design/AdminStylingRulesTest.php"
     ],
     "design/admin*/templates/popupmenu/popup_sub_advance_menu.tpl": [
-      "tests/tests/design/AdminContextMenuTest.php"
+      "tests/tests/design/AdminContextMenuTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php"
     ],
     "kernel/classes/contentcheck/*": [
       "tests/tests/kernel/contentcheck/expContentCheckQueryTest.php",
@@ -1777,7 +1781,8 @@
       "tests/tests/kernel/contentcheck/expContentCheckStorageTest.php"
     ],
     "design/admin*/stylesheets/modules/setup.css": [
-      "tests/tests/kernel/classes/expNodeQuickPickTest.php"
+      "tests/tests/kernel/classes/expNodeQuickPickTest.php",
+      "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php"
     ],
     "kernel/classes/help/exphelp.php": [
       "tests/tests/kernel/classes/help/expHelpLinksTest.php",
@@ -3211,6 +3216,27 @@
     ],
     "settings/expqueue.ini": [
       "tests/tests/kernel/classes/imagealias/expImageAliasQueueTest.php"
+    ],
+    "kernel/setup/aliases.php": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php"
+    ],
+    "kernel/setup/aliasesfeed.php": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php"
+    ],
+    "kernel/private/classes/views/setup/aliases.php": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php"
+    ],
+    "kernel/private/classes/views/setup/aliasesfeed.php": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php"
+    ],
+    "design/admin*/templates/setup/aliases.tpl": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php"
+    ],
+    "design/admin*/templates/setup/aliases_setting_row.tpl": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php"
+    ],
+    "design/admin4/javascript/page/setup_aliases.js": [
+      "tests/tests/kernel/classes/imagealias/expImageAliasAdminTest.php"
     ]
   },
   "generated": {
