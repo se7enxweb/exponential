@@ -705,10 +705,42 @@ class expImageAliasJob
     protected static function endBulkLog( array &$summary, $result, $started, $nice )
     {
         expImageAliasThrottle::restorePriority( $nice );
+        $extra = array();
+        if ( $summary['counts']['purged'] > 0 )
+            $extra['response_cache'] = $summary['response_cache'] = self::clearResponseCaches();
         $summary['ms'] = (int)round( ( microtime( true ) - $started ) * 1000 );
         expImageAliasLog::write( 'run-end', array( 'result' => $result, 'ms' => $summary['ms'], 'run' => $summary['run'], 'alias' => '-',
                                                    'origin' => 'bulk', 'images' => $summary['images'], 'total' => $summary['total'] )
-                                            + $summary['counts'] + array( 'path' => $summary['scope'] ) );
+                                            + $summary['counts'] + $extra + array( 'path' => $summary['scope'] ) );
+    }
+
+    /**
+     * After a run removed alias files: Velocity's response cache may still hold the answer index_image.php gave for
+     * one of them (a storage path it made on demand), and would go on serving the removed file. The cache keeps its
+     * entries in the server's own memory and APCu as well as on disk, which no other process can reach entry by
+     * entry, so its generation is moved on (expCacheManager::clearVelocityCache(), as `exp:velocity cache clear`):
+     * every response stored before now is a miss, pages included, and is made again on its next request. Nothing
+     * when Velocity is not part of the installation.
+     *
+     * @return string cleared, none (no Velocity) or failed
+     */
+    public static function clearResponseCaches()
+    {
+        if ( !class_exists( 'expCacheManager' ) || !class_exists( 'expVelocity' ) )
+            return 'none';
+        try
+        {
+            $result = expCacheManager::clearVelocityCache();
+        }
+        catch ( Throwable $e )
+        {
+            eZDebug::writeWarning( 'Velocity\'s response cache could not be cleared after removing image aliases: ' . $e->getMessage(), __METHOD__ );
+            return 'failed';
+        }
+        if ( !empty( $result['ok'] ) )
+            return 'cleared';
+        $message = isset( $result['message'] ) ? (string)$result['message'] : '';
+        return strpos( $message, 'not part of this installation' ) !== false ? 'none' : 'failed';
     }
 
     /**
