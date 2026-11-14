@@ -16532,6 +16532,34 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <source>Import/Export</source>
         <translation>yIqem/yIlel</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>mIllogh pongmey latlh</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>yIchenmoH &apos;ay&apos;vam vaD</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>yIchenmoH ngoq vaD</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>yIchenmoHqa&apos; &apos;ay&apos;vam vaD</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>yIchenmoHqa&apos; ngoq vaD</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>yIteq &apos;ay&apos;vam vaD</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>yIteq ngoq vaD</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86455,6 +86483,997 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>ngo' Qa'Hom server buq'Ir: return tlhej location =, tlhobghachvaD if ($args), Hoch mu' rur rewrite 'ej mob navmey map.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>mIllogh pongmey latlh</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>mIllogh pongmey latlh &apos;oH mIllogh Dun &apos;ej mIllogh poS yIqoSlIj, DuSaQmey ghItlh. naDev chenmoHlu&apos;bogh yIlegh, yoS Hoch Daq tIn Qu&apos;mey yIqIm, mIllogh pagh staging Hal yInID, Qu&apos;mey qunmey yIlaD &apos;ej DuHmey yIghun.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>&apos;ay&apos;mey ghItlh</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>jIH</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>tIn Qu&apos;mey</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>nID janmey</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>qun</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>DuHmey</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Hoch naDev DaleghlaH. DuHmey DaghunmeH, Qu&apos;mey DaqImmeH &apos;ej ghItlhmey chenmoHbogh janmey Dalo&apos;meH, Hut setup/managealiases poQ.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>&apos;ay&apos; vaD qaSpu&apos;</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Segh render: DuSaQmey mIllogh pongmey latlh Dubelbogh chenmoH &apos;ay&apos; leghlu&apos;taHvIS, wa&apos;DIch rur. Daq on-demand, mIllogh ngaSwI&apos;mey &apos;ej tuq Qu&apos;mey lo&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>ghItlh Dej chu&apos;ta&apos;, &apos;ach pagh naDev jan WebP ghItlhlaH.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>staging yoS &apos;oH naDev, &apos;ach Halvam BaseURL ghajbe&apos;: mIllogh Dubelbogh tlhaplu&apos;laHbe&apos;.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>staging Hal yevta&apos; Qapbe&apos;ghach law&apos;mo&apos;: mIllogh Dubelbogh mIllogh ngaSwI&apos;mey Suq, yev rIntaHvIS pagh yIghunqa&apos;.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>staging Hal Qapbe&apos;pu&apos; qen. Qagh Dubelbogh bIngDaq yIlegh.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>yoSvam DojwI&apos; &apos;oHbe&apos;, &apos;ach SyncFrom Hal pong ghajbe&apos;: pagh tlhaplu&apos;.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Qu&apos;mey ra&apos;wI&apos; (expqueue) tu&apos;lu&apos;be&apos;: mIllogh pongmey latlh poH Dubelbogh &apos;ay&apos; tlhob rapbogh chenmoH, ngoq poH rIntaHvIS Qu&apos; Hegh, &apos;ej tIn Qu&apos;mey mach &apos;ay&apos;mey neH.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>mIllogh pongmey latlh Qu&apos;mey Qapbe&apos;pu&apos; reH. Setup &gt; Qu&apos;mey ra&apos;wI&apos; qatlho&apos;.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>tIn Qu&apos;mey yevpu&apos;.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>mIllogh pongmey latlh Qapbe&apos;pu&apos; 24 rep. qun yIlaD.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>ghItlhmeH ngoq &apos;oH wa&apos; DIS law&apos;. yIchu&apos;qa&apos;chugh, Daq qanmey lI&apos;taH poH jajlo&apos; vaD.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>ghItlhmeH ngoq tu&apos;lu&apos;be&apos; wej: Daq wa&apos;DIch on-demand Daq chenmoHlu&apos;.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>24 rep Hoch</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>mIllogh pongmey latlh chenmoHta&apos;</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>mIllogh ngaSwI&apos;mey nIDta&apos;</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Qapbe&apos;ghach</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>ghItlhmey tlhaptaH</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Qu&apos;mey chenta&apos;</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Qu&apos;mey loStaH / QaptaH</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%lines wanI&apos; Dop rIntaH %file wIj, %time ghoS.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Segh &apos;ej nIDghach</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Segh</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>Daq ghov</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Daq mIw</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>nIDghach</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Qu&apos; poH &apos;ob wa&apos;</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>latlh mIllogh mIw rap</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy %max vaD DaH QaptaH</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>ghItlh Dej</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>chu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>Qaw&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>mIllogh ngaSwI&apos; &apos;ej mIllogh choH jan</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Qu&apos; DuSaQ ngoq chenmoH</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>yoS mIllogh pongmey latlh</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>ghItlh Segh janmey</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>jan</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>mIw wIv</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>wIvlu&apos;</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>HISlaH</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ghobe&apos;</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>mIllogh pongmey latlh qa&apos; janmey [ImageConverterSettings] chenmoH, wa&apos;DIch rur; naDev janmey WebP &apos;ej AVIF Segh ghItlh.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>pa&apos; &apos;ej Hal</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>yoSvam</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(DojwI&apos;: reH tlhapbe&apos;)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Hal tlhapbogh</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>pagh</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Hal Daq</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>ghunbe&apos;</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>yaj ghItlh</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>peghmey %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>pagh</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Dotlh</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>Qapla&apos;</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time Hoch yevta&apos;</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>Qapbe&apos;</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Qapbe&apos;ghach rap</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count qaSpa&apos; yev</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Qagh Dubelbogh</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Qapla&apos; Dubelbogh</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Qapbe&apos;ghach yIghunqa&apos; &apos;ej Hal yIjatlhqa&apos;</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Qu&apos;mey ra&apos;wI&apos;</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Qu&apos; Segh</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>loStaH</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>QaptaH</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Qapbe&apos;</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>ghItlhlu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Qu&apos;mey ra&apos;wI&apos; tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>tIn Qu&apos;mey yevta&apos;</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time %user vo&apos;</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>tIn Qu&apos;mey Qaplaj</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>ghItlhmeH ngoq</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>ngoq</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>peghmey bIghHom</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>pagh wej</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>DIS</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days jaj (%time vo&apos;)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>ngoq wa&apos;DIch</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time Hoch lI&apos;</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>ngoq yIchu&apos;qa&apos;</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>ghItlhmeH ngoq DaH &apos;oH Dub &apos;oH ghItlh Daqmey lI&apos;taH poH jajlo&apos; vaD (SigningKeyGrace). qaSpa&apos; mIllogh ngaSwI&apos;mey Suq, &apos;ay&apos;mey chenmoHqa&apos;lu&apos; &apos;e&apos; Hoch.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>DaH yIchu&apos;qa&apos;</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>chay vum</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>on-demand, Segh render, staging &apos;ej wanI&apos; tetlh</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>Daq ghov (wa&apos;DIch): &apos;ay&apos; wa&apos; mIllogh pongmey latlh tu&apos;lu&apos;be&apos;bogh ghItlh Daqvam rarmoH. Qu&apos; poH &apos;ob Dop ghunmoH wa&apos; tlhob; pagh chugh, mIllogh ngaSwI&apos; Dojbe&apos;bogh Suq &apos;ej Qu&apos; ghItlh Qaplu&apos;; mIllogh tu&apos;lu&apos;chugh, ghItlh choH jan mIllogh ngaSwI&apos; choH.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Segh render: DuSaQ mIllogh pongmey latlh chenmoH &apos;ay&apos; leghlu&apos;taHvIS, wa&apos;DIch rur. cha&apos; DaSambe&apos;laH reH; pagh yIqIm.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>staging yoS ghItlhmey wa&apos;DIch &apos;ej mIllogh pongmey latlh Dubelbogh Halvo&apos; tlhap; Hal Qapbe&apos;bogh yev Qapbe&apos;ghach law&apos;mo&apos;, &apos;ej ra&apos;wI&apos;pu&apos; wa&apos; rep vaD wa&apos; QIn neH tu&apos;.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>tIn Qu&apos;mey &apos;ej ngoq poH rIntaHvIS Qu&apos; Hegh Qu&apos;mey ra&apos;wI&apos; Qu&apos;mey &apos;oH, &apos;ej Qu&apos;mey SuvwI&apos; Dubelbogh. mIllogh pongmey latlh teqmeH, Velocity jang De&apos; bIngDaq yIlIj, ghItlh teqta&apos; &apos;e&apos; qelbe&apos;.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>mIllogh pongmey latlh chenta&apos; Hoch, mIllogh ngaSwI&apos; nIDta&apos; Hoch, ghItlh tlhapta&apos; Hoch &apos;ej Qu&apos; Hoch wa&apos; Dop %file. mu&apos;tlhegh janmey rap ghaj: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Qu&apos; %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done %total mIllogh</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Qu&apos;</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>&apos;ay&apos; Dun</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ngoD</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Qu&apos;vam yIqIl</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Qu&apos; %job mIllogh pongmey latlh Qu&apos; &apos;oHbe&apos;, pagh Qu&apos;mey ra&apos;wI&apos;vo&apos; teqlu&apos;pu&apos;.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Qu&apos; %run ngoD</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>tIn Qu&apos;mey yevpu&apos;</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time %user vo&apos; yevta&apos;.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>yev wa&apos; tIn Qu&apos; Hoch mIllogh DaH &apos;oSDI&apos; mev, server Hoch Daq; loStaHbogh Qu&apos;mey loS. SuvwI&apos; vaD mIllogh pongmey latlh chenmoHlu&apos;taH.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>tIn Qu&apos;mey yItaghqa&apos;</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>qechmey (pIj)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>tIn Qu&apos;mey yIyev</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Qu&apos; yIchen</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Qu&apos;mey &apos;oH Qu&apos;mey ra&apos;wI&apos; Qu&apos;mey: &apos;ay&apos; DaHevlaH &apos;ej DaqIm.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Qu&apos;mey ra&apos;wI&apos; tu&apos;lu&apos;be&apos;chugh, Qu&apos; wa&apos; tlhob Dop Qaplu&apos;, %count mIllogh Dop.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>vang</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>yIchenmoH: mIllogh pongmey latlh Dubelbogh yIchenmoH</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>yIchenmoHqa&apos;: yIteq &apos;ej yIchenmoHqa&apos;</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>yIQaw&apos;: yIteq (Daq ghov chenmoHqa&apos;lu&apos;)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>yIvuQqa&apos;: ghItlhmey staging Halvo&apos; yItlhap</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(staging yoSDaq neH)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>yoS Hoch</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Sor wa&apos;</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Sor &apos;ej Sor &apos;etlh</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Sor ngu&apos;meH mI&apos;</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>buvmey</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>buv tlheghmey</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>mIw ghuHmo&apos; choHpu&apos;</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>jaj (2026-11-01) pagh poH Hutlh (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>mIllogh law&apos; Dop</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>mIllogh pongmey latlh (pagh wIvlu&apos;chugh: Hoch)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>vuQqa&apos;</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>waHmeH Qu&apos;: mI&apos; neH (vuQqa&apos; Hal yIlaj &apos;ej pagh pol)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>ghItlhmey wanbogh yIteq (vuQqa&apos;)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Qu&apos; yIchen</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Qu&apos;mey Dubelbogh</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Qu&apos;</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ghoSghach</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Qu&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>vangghachmey</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>yIqIl</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>tIn Qu&apos; pagh vuQqa&apos; pagh wej.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>mIllogh wa&apos;</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>mIllogh pongmey latlh DuSaQ DaH Suqbogh Daqmey, mIllogh pongmey latlh Hoch vaD mI&apos;lu&apos;bogh tInghach &apos;ej Segh, &apos;ej ghItlh tu&apos;lu&apos; qar.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>yIngu&apos;meH</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Doch ngu&apos;meH mI&apos;</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>mI&apos;</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>yI&apos;ang</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Doch vam laDlaHbe&apos;.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Dochvam mIllogh ghajbe&apos;.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Doch mI&apos;vam ghajbe&apos;.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>Doch %object, Sor %node, mIw %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>wa&apos;DIch: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>ghItlh tu&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>ghItlh Dub</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name mIllogh pongmey latlh</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>pong latlh</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>tInghach</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Segh</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ghItlh</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Segh</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Daq DuSaQDaq</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>tu&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>Dub</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>Seghvam vaD ghobe&apos;</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>yInuD</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>yIchenmoH</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>mIllogh Hutlhvam ghajbe&apos;.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>poH</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Hal rarghach</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>HEAD tlhob Hal staging, rarghach yaj ghItlh DaH ngu&apos;lu&apos;chugh. yaj ghItlh Suqlu&apos;, &apos;ach not &apos;angbe&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Hal</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>yaj ghItlh ghaj</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Daq ghItlh (qechmey)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>rarghach yInID</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>pagh Hal BaseURL ghaj. DuHmeyDaq Halmey pol ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>tlhaplaH</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>chaw&apos;be&apos;: yaj ghItlh yInuD</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>Halvo&apos; tu&apos;lu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>jang tu&apos;lu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>poH Dach</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>tlhegh (ghoSbe&apos;lu&apos;)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL tu&apos;lu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>Daq ghItlh &apos;oHbe&apos;</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Daq</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Dotlh</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>Suq</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>pegh Dub</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>pegh &apos;oH user:password &apos;oHbe&apos; &apos;ej Bearer &lt;token&gt; &apos;oHbe&apos;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file wanI&apos; Dop chu&apos;, chu&apos; wa&apos;DIch.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Setup &gt; wanI&apos; tetlh ghItlhmey</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>qaSghach</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>qaSghach Hoch</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Qu&apos;mey (QapmeH &apos;ej mevmeH)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Daq Dop ghaj</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>tlheghmey</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>yISay&apos;moH</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>yIlIj: tlhegh chu&apos; leghlu&apos;taH ghItlhlu&apos;DI&apos;</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Daq &apos;ej &apos;ay&apos;mey</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>wanI&apos; tetlh tlhegh pagh rap.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>yIpoltaHvIS &apos;e&apos; Dachu&apos;</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>chenmoHta&apos;</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php Daq yIpol, vaj naDev ngoD siteaccess Hoch Dub. ngoDmey leghlu&apos;bogh siteaccessvam vaD Dub. yIpolmeH, SoH &apos;e&apos; yI&apos;ol Daghov.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>mIllogh pongmey latlh chenmoHlu&apos; &apos;ej nIDlu&apos;bogh.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>mIllogh Dachu&apos;bogh yoS latlh vo&apos; yItlhap (alpha, dev, beta, stage, pro, post, arc). DojwI&apos; (pro) reH tlhapbe&apos;.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>DuH</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>ngoD</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override Daq</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Hal Hoch Daq &apos;ej pegh pong yaj ghItlh ghajbogh (user:password pagh Bearer &lt;token&gt;). pegh ngoD peghmey Daq pollu&apos; (Setup &gt; peghmey) &apos;ej naDev &apos;angbe&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>choHmey yIlegh qa&apos;</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>yIpol</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>yIlIjtaH: %time chu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>yevta&apos;</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>De&apos; lIj jang; yIQoybe&apos;.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Qu&apos; Qaptaj.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: DuSaQmey Daq ghaj, mIllogh pongmey latlh tlhob chenmoHlu&apos;. render: DuSaQ &apos;ay&apos; leghlu&apos;taHvIS chenmoH (wa&apos;DIch Dun).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>mIllogh pongmey latlh chenmoHlu&apos;be&apos;bogh Daq: token (ghItlhta&apos;, De&apos; tetlh pagh poQ), ids-token, ids, node pagh storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: ghItlh Daq tlhaplu&apos; web server ngaS lo&apos;taHvIS, pagh ghItlh lIjlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>lup tlhob wa&apos; mIllogh pongmey latlh chenmoHmeH pagh tlhapmeH Dop ghaj; qaSpa&apos; mIllogh ngaSwI&apos; Suq &apos;ej Qu&apos; ghItlh Qaplu&apos;.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>janmey WebP &apos;ej AVIF Segh vaD wa&apos;DIch nID.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>WebP pagh AVIF yISuq navigators tlhobbogh vaD, mIllogh pongmey latlh Formats[] ghajbogh vaD.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>mIllogh rap tInghach Dun mIllogh Dubelbogh yIngDI&apos;.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>ghItlh mach mIllogh ngaSwI&apos;mey mIllogh Dun Sam mIllogh tu&apos;lu&apos;DI&apos;.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>ghItlh Qu&apos; chenmoH mIllogh pongmey latlh mIllogh chu&apos;mey vaD siteaccess Hoch ghaH &apos;e&apos; tu&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>latlh mIllogh mIw rap wa&apos; server Daq.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>mIllogh pongmey latlh tIn Qu&apos;mey nice Dub, 0 19 Dop.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>lup navigators &apos;ej Qu&apos;mey ghItlh mIllogh pongmey latlh chenmoHta&apos; pol.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>lup mIllogh pagh qechmey Daq lI&apos;taH.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>lup ghItlhmeH ngoq wa&apos;DIch lI&apos;taH yIchu&apos;qa&apos;DI&apos;.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>yoSvam &apos;ay&apos;.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>&apos;ay&apos; mIllogh Dubelbogh tlhapbogh; none: pagh tlhaplu&apos;.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>wa&apos; tlhegh: yoS pa&apos; ghItlh Dop;Hal Dop pagh Daq, Daq ghItlh Dubmey vaD.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>lup tlhob wa&apos; Hal Daq Dop.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>ghItlh tIn Halvo&apos; tlhaplu&apos;bogh, byte.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Qapbe&apos;ghach rap qaSpa&apos; Hal yevlu&apos;.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Hal Qapbe&apos;bogh yevlu&apos; &apos;ej Dop poH.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>ra&apos;wI&apos;pu&apos; QIn ngeH Hal yevlu&apos;DI&apos; (wa&apos; rep wa&apos; Dop).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>wa&apos; QIn Daq tlhegh; chIm: site.ini AdminEmail.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Hal yoS %block Daq, DuH: https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>peghvam pong yaj ghItlh ghajbogh, pagh env:VARIABLE. yaj ghItlh ghaj Daq pagh.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(pagh)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>wa&apos;DIch: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>naDev pollu&apos;; yIQaw&apos;meH yIngu&apos;</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>Hevlu&apos;</translation>
     </message>
 </context>
 </TS>

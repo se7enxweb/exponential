@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>นำเข้า/ส่งออก</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>นามแฝงรูปภาพ</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>สร้างสำหรับรายการนี้</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>สร้างสำหรับต้นไม้ย่อย</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>สร้างใหม่สำหรับรายการนี้</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>สร้างใหม่สำหรับต้นไม้ย่อย</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>ลบสำหรับรายการนี้</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>ลบสำหรับต้นไม้ย่อย</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>บล็อก server ของไซต์เก่า: location = กับ return, if ($args) สำหรับคิวรี, rewrite เป็นไวลด์การ์ด และ map ของหน้าเดี่ยว</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>นามแฝงรูปภาพ</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>นามแฝงรูปภาพคือสำเนาของรูปภาพที่ปรับขนาดและครอบตัดแล้วซึ่งเทมเพลตนำไปแสดง ที่นี่คุณดูได้ว่าสร้างขึ้นอย่างไร สั่งงานจำนวนมากทั้งไซต์ ทดสอบรูปภาพหนึ่งรูปหรือแหล่งที่มา staging ติดตามประวัติการรัน และเปลี่ยนการตั้งค่า</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>ส่วนต่าง ๆ ของหน้า</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>แดชบอร์ด</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>การรันจำนวนมาก</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>เครื่องมือทดสอบ</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>ประวัติการรัน</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>การตั้งค่า</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>คุณดูทุกอย่างที่นี่ได้ การเปลี่ยนการตั้งค่า การรันงาน และเครื่องมือที่สร้างไฟล์ต้องมีนโยบาย setup/managealiases</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>สิ่งที่ต้องใส่ใจ</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>โหมด render: เทมเพลตสร้างนามแฝงที่ขาดหายขณะแสดงผลหน้า เหมือนเดิม ที่อยู่แบบ on-demand ตัวแทนภาพ และงานเบื้องหลังจะไม่ถูกใช้</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>การเลือกรูปแบบอัตโนมัติเปิดอยู่ แต่ไม่มีตัวแปลงใดที่นี่เขียน WebP ได้</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>นี่คือการติดตั้งแบบ staging แต่แหล่งที่มาไม่มี BaseURL: ไม่สามารถดึงรูปภาพที่ขาดหายได้</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>แหล่งที่มา staging ถูกพักไว้หลังล้มเหลวติดต่อกัน: รูปภาพที่ขาดหายจะได้ตัวแทนภาพจนกว่าการพักจะสิ้นสุดหรือคุณรีเซ็ต</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>แหล่งที่มา staging ล้มเหลวเมื่อไม่นานมานี้ ดูข้อผิดพลาดล่าสุดด้านล่าง</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>การติดตั้งนี้ไม่ใช่ production แต่ SyncFrom ไม่ระบุแหล่งที่มา: จึงไม่มีการดึงข้อมูล</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>คิวงาน (expqueue) ไม่พร้อมใช้งาน: นามแฝงที่ไม่ทันเวลาจะถูกสร้างโดยคำขอถัดไป การสร้างล่วงหน้าหลังเผยแพร่จะถูกข้าม และการรันจำนวนมากถูกจำกัดให้อยู่ในขอบเขตเล็ก</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>งานนามแฝงรูปภาพบางงานล้มเหลวถาวร ดูสาเหตุได้ที่ ตั้งค่าระบบ &gt; คิวงาน</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>การรันจำนวนมากถูกพักไว้</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>มีนามแฝงล้มเหลวใน 24 ชั่วโมงที่ผ่านมา ประวัติการรันแสดงรายการไว้</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>คีย์สำหรับลงนามมีอายุเกินหนึ่งปี การหมุนเวียนคีย์จะทำให้ที่อยู่เดิมยังใช้ได้ในช่วงผ่อนผัน</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>ยังไม่มีคีย์สำหรับลงนาม: คีย์จะถูกสร้างพร้อมที่อยู่ on-demand แรก</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>24 ชั่วโมงที่ผ่านมา</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>นามแฝงที่สร้างแล้ว</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>ตัวแทนภาพที่ตอบกลับ</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>ความล้มเหลว</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>ไฟล์ที่ดึงมา</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>การรันที่เริ่มแล้ว</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>งานที่รอ / กำลังรัน</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>นับจาก %lines บรรทัดล่าสุดของ %file ซึ่งย้อนไปถึง %time</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>โหมดและการส่งมอบ</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>โหมด</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>ตามที่ร้องขอ</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>รูปแบบที่อยู่</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>การส่งมอบ</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>เวลารอนานที่สุดของคำขอ</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds วินาที</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>การแปลงพร้อมกัน</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>ไม่ว่าง %busy จาก %max ในขณะนี้</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>การเลือกรูปแบบอัตโนมัติ</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>เปิด</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ปิด</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>ตัวแทนภาพและสคริปต์สลับ</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>การสร้างล่วงหน้าหลังเผยแพร่</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>นามแฝงของไซต์</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>ตัวแปลงของรูปแบบทางเลือก</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>ตัวแปลง</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>ลำดับที่ลอง</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>ที่ต้องการ</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ใช่</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ไม่</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>ตัวนามแฝงเองสร้างโดยตัวแปลงใน [ImageConverterSettings] เหมือนเดิม ส่วนตัวแปลงเหล่านี้เขียนรูปแบบ WebP และ AVIF</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>สภาพแวดล้อมและแหล่งที่มา</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>การติดตั้งนี้</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production: ไม่ดึงข้อมูลเลย)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>ดึงจาก</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>ไม่มี</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>ที่อยู่แหล่งที่มา</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>ไม่ได้ตั้งค่า</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>ข้อมูลรับรอง</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>ข้อมูลลับ %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ไม่มี</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>สถานะการทำงาน</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>ทำงานอยู่</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>พักไว้จนถึง %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>ล้มเหลว</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>ล้มเหลวติดต่อกัน</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>พักหลัง %count ครั้ง</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>ข้อผิดพลาดล่าสุด</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>สำเร็จครั้งล่าสุด</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>รีเซ็ตความล้มเหลวและถามแหล่งที่มาอีกครั้ง</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>คิวงาน</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>ประเภทงาน</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>รอ</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>กำลังรัน</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ล้มเหลว</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>ไม่ได้ลงทะเบียน</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>คิวงานไม่พร้อมใช้งาน</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>การรันจำนวนมากถูกพัก</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>ตั้งแต่ %time โดย %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>อนุญาตให้รันจำนวนมาก</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>คีย์สำหรับลงนาม</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>คีย์</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>ในที่เก็บข้อมูลลับ</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ยังไม่มี</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>อายุ</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days วัน (ตั้งแต่ %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>คีย์ก่อนหน้า</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>ใช้ได้จนถึง %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>หมุนเวียนคีย์</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>ที่อยู่ที่ลงนามด้วยคีย์ปัจจุบันยังใช้งานได้ในช่วงผ่อนผัน (SigningKeyGrace) จากนั้นจะตอบเป็นตัวแทนภาพจนกว่าจะสร้างหน้าใหม่</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>หมุนเวียนตอนนี้</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>ทำงานอย่างไร</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand โหมด render, staging และบันทึก</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>ตามที่ร้องขอ (ค่าเริ่มต้น): หน้าเว็บลิงก์นามแฝงที่ยังไม่มีไปยังที่อยู่ที่ลงนามไว้ คำขอแรกจะสร้างให้ภายในเวลารอนานที่สุด มิฉะนั้นจะตอบเป็นตัวแทนภาพกลาง ๆ แล้วให้งานหนึ่งทำส่วนที่เหลือ สคริปต์สลับจะแทนที่ตัวแทนภาพเมื่อมีรูปภาพแล้ว</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>โหมด render: เทมเพลตสร้างนามแฝงขณะแสดงผลหน้า เหมือนเดิม สลับระหว่างสองโหมดได้ทุกเมื่อ ไม่ต้องย้ายข้อมูลใด ๆ</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>การติดตั้งแบบ staging จะดึงไฟล์ต้นฉบับและนามแฝงที่ขาดจากแหล่งที่มา แหล่งที่มาที่ล้มเหลวจะถูกพักหลังล้มเหลวติดต่อกัน และผู้ดูแลจะได้รับอีเมลไม่เกินหนึ่งฉบับต่อชั่วโมง</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>การรันจำนวนมากและการสร้างล่วงหน้าหลังเผยแพร่เป็นงานของคิวงาน โดยมีลำดับความสำคัญต่ำกว่าผู้เข้าชม การลบนามแฝงยังล้างแคชการตอบกลับของ Velocity ด้วย เพื่อไม่ให้ไฟล์ที่ลบแล้วถูกส่งจากแคช</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>ทุกนามแฝงที่สร้าง ตัวแทนภาพที่ตอบ ไฟล์ที่ดึงมา และการรัน จะเป็นหนึ่งบรรทัดใน %file บรรทัดคำสั่งมีเครื่องมือเดียวกัน: %command</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>งาน %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done จาก %total รูปภาพ</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>การรัน</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>ขอบเขต</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ผลลัพธ์</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>ยกเลิกงานนี้</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>งาน %job ไม่ใช่งานนามแฝงรูปภาพ หรือถูกลบออกจากคิวแล้ว</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>ผลลัพธ์ของการรัน %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>การรันจำนวนมากถูกพักไว้</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>พักไว้ตั้งแต่ %time โดย %user</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>การพักจะหยุดทุกการรันจำนวนมากหลังรูปภาพปัจจุบัน บนทุกเซิร์ฟเวอร์ การรันที่อยู่ในคิวจะรอ นามแฝงสำหรับผู้เข้าชมยังคงถูกสร้างต่อไป</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>รันจำนวนมากต่อ</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>เหตุผล (ไม่บังคับ)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>พักการรันจำนวนมาก</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>เริ่มการรัน</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>การรันเป็นงานของคิวงาน: คุณออกจากหน้านี้แล้วกลับมาใหม่ได้</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>หากไม่มีคิวงาน การรันจะทำในคำขอนี้ สูงสุด %count รูปภาพ</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>การดำเนินการ</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>สร้าง: สร้างนามแฝงที่ขาดหาย</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>สร้างใหม่: ลบแล้วสร้างอีกครั้ง</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>ล้าง: ลบออก (สร้างใหม่ตามที่ร้องขอ)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>ซิงก์ใหม่: ดึงไฟล์จากแหล่งที่มา staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(เฉพาะการติดตั้งแบบ staging)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>ทั้งไซต์</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>หนึ่งโหนด</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>หนึ่งโหนดและต้นไม้ย่อยของมัน</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID โหนด</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>คลาส</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>แอตทริบิวต์</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>เปลี่ยนแปลงตั้งแต่</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>วันที่ (2026-11-01) หรือช่วงเวลาที่ผ่านมา (12 hours, 2 days)</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>รูปภาพสูงสุด</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>นามแฝง (ไม่เลือก: ทั้งหมด)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>ซิงก์ใหม่</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>ทดลองรัน: นับอย่างเดียว (การซิงก์ใหม่ตรวจแหล่งที่มาโดยไม่เก็บอะไร)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>เขียนทับไฟล์ที่แตกต่าง (ซิงก์ใหม่)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>เริ่มรัน</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>การรันล่าสุด</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>งาน</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ความคืบหน้า</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>อยู่ในคิว</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>การดำเนินการ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ยกเลิก</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>ยังไม่มีการรันจำนวนมากหรือการซิงก์ใหม่</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>รูปภาพหนึ่งรูป</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>ที่อยู่ที่เทมเพลตได้รับในตอนนี้ ขนาดและประเภทที่คำนวณสำหรับทุกนามแฝง และมีไฟล์แต่ละไฟล์อยู่หรือไม่</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>ค้นหาด้วย</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID ออบเจ็กต์</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>แสดง</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>คุณไม่มีสิทธิ์อ่านออบเจ็กต์นี้</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>ออบเจ็กต์นี้ไม่มีรูปภาพ</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>ไม่มีออบเจ็กต์ที่มี ID นี้</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>ออบเจ็กต์ %object, โหนด %node, เวอร์ชัน %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>ต้นฉบับ: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>มีไฟล์</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>ไฟล์ขาดหาย</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>นามแฝงของ %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>นามแฝง</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ขนาด</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>ประเภท</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ไฟล์</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>รูปแบบ</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>ที่อยู่ในเทมเพลต</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>มี</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>ขาดหาย</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ไม่รองรับประเภทนี้</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>ตรวจสอบ</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>สร้าง</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>ไม่มีรูปภาพในช่องนี้</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>เวลา</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>การเชื่อมต่อกับแหล่งที่มา</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>คำขอ HEAD ไปยังแหล่งที่มา staging พร้อมข้อมูลรับรองเมื่อมีการระบุ ข้อมูลรับรองจะถูกส่งไปแต่ไม่แสดงเลย</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>แหล่งที่มา</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>พร้อมข้อมูลรับรอง</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>พาธพื้นที่จัดเก็บ (ไม่บังคับ)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>ทดสอบการเชื่อมต่อ</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>ไม่มีแหล่งที่มาใดมี BaseURL แหล่งที่มาตั้งค่าในการตั้งค่า ([AliasSource_&lt;environment&gt;])</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>เข้าถึงได้</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>ถูกปฏิเสธ: ตรวจสอบข้อมูลรับรอง</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>ไม่พบที่แหล่งที่มา</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>ไม่มีการตอบกลับ</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>หมดเวลา</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>ถูกเปลี่ยนเส้นทาง (ไม่ตาม)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>ไม่มี BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>ไม่ใช่พาธพื้นที่จัดเก็บ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ที่อยู่</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>สถานะ</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>ส่งแล้ว</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>ไม่พบข้อมูลลับ</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>ข้อมูลลับไม่ใช่ user:password หรือ Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>บรรทัดใหม่ล่าสุดของ %file เรียงใหม่สุดก่อน</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>ตั้งค่าระบบ &gt; ไฟล์ล็อก</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>เหตุการณ์</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>ทุกเหตุการณ์</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>การรัน (เริ่มและสิ้นสุด)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>พาธมีคำว่า</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>บรรทัด</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>กรอง</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>ติดตาม: แสดงบรรทัดใหม่ทันทีที่เขียน</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>พาธและรายละเอียด</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>ไม่มีบรรทัดของล็อกที่ตรงกัน</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>สิ่งที่จะเปลี่ยนเมื่อบันทึก</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>สิ่งที่เปลี่ยนแปลงแล้ว</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>บันทึกลงใน settings/override/image.ini.append.php ดังนั้นค่าที่นี่มีผลเหนือทุก siteaccess ค่าที่แสดงคือค่าที่ใช้อยู่สำหรับ siteaccess นี้ การบันทึกจะขอให้คุณยืนยันตัวตนก่อน</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>วิธีสร้างและส่งมอบนามแฝง</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>ดึงรูปภาพที่ขาดหายจากการติดตั้งอื่น (alpha, dev, beta, stage, pro, post, arc) production (pro) ไม่ดึงข้อมูลเลย</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>การตั้งค่า</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>ค่า</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>ใน settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>ที่อยู่ของแต่ละแหล่งที่มาและชื่อข้อมูลลับที่เก็บข้อมูลรับรอง (user:password หรือ Bearer &lt;token&gt;) ค่าของข้อมูลลับตั้งที่ ตั้งค่าระบบ &gt; ข้อมูลลับ และไม่แสดงที่นี่เลย</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>ดูตัวอย่างการเปลี่ยนแปลง</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>บันทึก</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>กำลังติดตาม: อัปเดต %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>พักไว้</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>ฟีดไม่ตอบกลับ กำลังลองอีกครั้ง</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>งานสิ้นสุดแล้ว</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: เทมเพลตได้รับที่อยู่ นามแฝงจะถูกสร้างเมื่อมีการร้องขอ render: เทมเพลตสร้างขณะแสดงผลหน้า (พฤติกรรมเดิม)</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>ที่อยู่ของนามแฝงที่ยังไม่ถูกสร้าง: token (ลงนามแล้ว ไม่ต้องใช้ฐานข้อมูล), ids-token, ids, node หรือ storage</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: เปลี่ยนเส้นทางไปยังไฟล์เมื่อเว็บเซิร์ฟเวอร์ให้บริการพื้นที่จัดเก็บ มิฉะนั้นไฟล์จะถูกสตรีม</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>จำนวนวินาทีที่คำขอใช้สร้างหรือดึงนามแฝงได้ จากนั้นจะตอบเป็นตัวแทนภาพและให้งานหนึ่งทำส่วนที่เหลือ</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>ตัวแปลงที่ลองก่อนสำหรับรูปแบบ WebP และ AVIF</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>ตอบ WebP หรือ AVIF ให้เบราว์เซอร์ที่ร้องขอ สำหรับนามแฝงที่ระบุ Formats[]</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>รูปภาพกลาง ๆ ขนาดที่เหมาะสมระหว่างที่รูปภาพยังไม่มี</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>สคริปต์เล็ก ๆ ที่แทนที่ตัวแทนภาพด้วยรูปภาพจริงเมื่อมีแล้ว</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>หลังเผยแพร่ งานหนึ่งจะสร้างนามแฝงของรูปภาพใหม่สำหรับทุก siteaccess ที่เกี่ยวข้อง</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>การแปลงพร้อมกันบนเซิร์ฟเวอร์เดียว</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>ลำดับความสำคัญของโพรเซส (nice) ของการรันจำนวนมาก 0 ถึง 19</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>จำนวนวินาทีที่เบราว์เซอร์และแคชเก็บนามแฝงที่สร้างแล้วได้</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>จำนวนวินาทีที่ที่อยู่ของรูปภาพฉบับร่างหรือตัวอย่างยังใช้ได้</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>จำนวนวินาทีที่คีย์ลงนามก่อนหน้ายังใช้ได้หลังการหมุนเวียน</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>สภาพแวดล้อมของการติดตั้งนี้</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>สภาพแวดล้อมที่ดึงรูปภาพที่ขาดหาย none: ไม่ดึงอะไรเลย</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>หนึ่งรายการต่อบรรทัด: คำนำหน้าพื้นที่จัดเก็บในเครื่อง;คำนำหน้าหรือที่อยู่ของแหล่งที่มา สำหรับพาธพื้นที่จัดเก็บที่ต่างกัน</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>จำนวนวินาทีสูงสุดที่คำขอหนึ่งไปยังแหล่งที่มาใช้ได้</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>ไฟล์ที่ใหญ่ที่สุดที่ดึงจากแหล่งที่มา หน่วยเป็นไบต์</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>จำนวนความล้มเหลวติดต่อกันที่ทำให้พักแหล่งที่มา</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>ระยะเวลาที่พักแหล่งที่มาที่ล้มเหลว</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>ส่งอีเมลถึงผู้ดูแลเมื่อแหล่งที่มาถูกพัก (อย่างมากชั่วโมงละครั้ง)</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>หนึ่งอีเมลต่อบรรทัด ถ้าว่าง: ใช้ AdminEmail ของ site.ini</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>ที่อยู่ของการติดตั้งต้นทาง %block เช่น https://www.example.org</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>ชื่อข้อมูลลับที่เก็บข้อมูลรับรอง หรือ env:VARIABLE ห้ามใส่ข้อมูลรับรองโดยตรง</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(ไม่มี)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>ค่าเริ่มต้น: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>ตั้งไว้ที่นี่ เลือกเพื่อลบ</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>สืบทอดมา</translation>
     </message>
 </context>
 </TS>

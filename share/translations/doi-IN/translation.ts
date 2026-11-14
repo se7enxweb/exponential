@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>इंपोर्ट/एक्सपोर्ट</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>तस्वीर उपनांऽ</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>इस आइटम आस्तै बनाओ</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>उप-रुक्ख आस्तै बनाओ</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>इस आइटम आस्तै फी बनाओ</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>उप-रुक्ख आस्तै फी बनाओ</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>इस आइटम आस्तै हटाओ</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>उप-रुक्ख आस्तै हटाओ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>पुरानी साइट दा server ब्लाक: return कन्नै location =, क्वेरी आस्तै if ($args), वाइल्डकार्ड दे रूप च rewrite ते इक्कले सफें दा map।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>तस्वीर उपनांऽ</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>तस्वीर उपनांऽ तस्वीर दियां ओह छोटियां-बड्डियां ते कट्टियां होईयां कापियां न्हा जेहड़ियां टेम्प्लेट दस्सदे न। इत्थें तुस दिक्खी सकदे ओ जे एह् किस चाल्लें बनदियां न, पूरी साइट उप्पर थोक चलाने शुरू करी सकदे ओ, इक तस्वीर जां स्टेजिंग स्रोत दी परख करी सकदे ओ, चलाइयें दा इतिहास दिक्खी सकदे ओ ते सेटिंग बदली सकदे ओ।</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>पन्ने दे हिस्से</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>डैशबोर्ड</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>थोक चलाइयां</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>परखने दे साधन</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>चलाइयें दा इतिहास</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>सेटिंग</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>तुस इत्थें सब किश दिक्खी सकदे ओ। सेटिंग बदलने, जाब शुरू करने ते फाइलां बनाने आले साधनें आस्तै setup/managealiases नीति दी लोड़ ऐ।</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>जिन्हें पर ध्यान देना ऐ</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>render मोड: पन्ना दस्सने बेलै टेम्प्लेट गुआचे उपनांऽ पैहले आंगर बनांदे न। on-demand पते, प्लेसहोल्डर ते पिच्छोकड़ दे जाब बरते नेईं जंदे।</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>फार्मेट चुनाव चालू ऐ, पर इत्थें कोई कन्वर्टर WebP नेईं लिखी सकदा।</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>एह् स्टेजिंग इंस्टालेशन ऐ, पर उदे स्रोत च BaseURL नेईं ऐ: गुआची दियां तस्वीरां नेईं आनियां जाई सकदियां।</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>स्टेजिंग स्रोत लगातार होई गल्तियें दे बाद रोकी दित्ता गेदा ऐ: जिन्नै तगर रोक खत्म नेईं होंदी जां तुस रीसेट नेईं करदे, गुआची दियां तस्वीरें गी प्लेसहोल्डर मिलदे न।</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>स्टेजिंग स्रोत हाल च नेईं होई सकेआ। उदी पिछली गलती थल्ले दिक्खो।</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>एह् इंस्टालेशन प्रोडक्शन नेईं ऐ, पर SyncFrom कोई स्रोत नेईं दस्सदा: किश नेईं आनेआ जंदा।</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>जाब कतार (expqueue) उपलब्ध नेईं ऐ: टैम पार करने आले उपनांऽ अगली मंग बनांदी ऐ, छापने दे बाद पैहले बनाना छोड़ी दित्ता जंदा ऐ ते थोक चलाइयां छोटे दायरें तगर सीमत न।</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>तस्वीर उपनांऽ दे किश जाब हमेशा आस्तै नेईं होई सके। सेटअप &gt; जाब कतार च कारण दस्सेआ गेदा ऐ।</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>थोक चलाइयां रोकियां गेदियां न।</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>पिछले 24 घंटें च उपनांऽ नेईं होई सके। चलाइयें दा इतिहास उंदी सूची दिंदा ऐ।</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>दस्तखत कुंजी इक साल थमां पुराणी ऐ। इसी बदलने कन्नै पुराने पते छूट दे टैम तगर ठीक रौंदे न।</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>दस्तखत कुंजी अजें नेईं ऐ: एह् पैहले on-demand पते कन्नै बनदी ऐ।</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>पिछले 24 घंटे</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>बनाए गेदे उपनांऽ</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>जवाब दित्ते गेदे प्लेसहोल्डर</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>गलतियां</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>आनियां गेदियां फाइलां</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>शुरू कीतियां गेदियां चलाइयां</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>जाब उडीक च / चलदे</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file दियां पिछलियां %lines लीकां थमां गिनेआ गेआ, जेहड़ियां %time तगर पिच्छें जंदियां न।</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>मोड ते पुजाई</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>मोड</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>मंग उप्पर</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>पते दा रूप</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>पुजाई</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>इक मंग दी सब थमां लम्मी उडीक</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>इक्कै बेल्लै रूपांतर</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%max च %busy हुन व्यस्त</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>फार्मेट चुनाव</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>चालू</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>बंद</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>प्लेसहोल्डर ते अदला-बदली स्क्रिप्ट</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>छापने दे बाद पैहले बनाना</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>साइट दे उपनांऽ</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>फार्मेट रूपें दे कन्वर्टर</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>कन्वर्टर</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>कोशश दा क्रम</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>पसंदीदा</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>हां</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>नेईं</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>उपनांऽ अपने आप [ImageConverterSettings] दे कन्वर्टर पैहले आंगर बनांदे न; एह् WebP ते AVIF रूप लिखदे न।</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>माहौल ते स्रोत</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>एह् इंस्टालेशन</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(प्रोडक्शन: कदें नेईं आनदा)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>इत्थें थमां आनदा ऐ</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>कुसै बी नेईं</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>स्रोत दा पता</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>सेट नेईं कीता गेदा</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>पुष्टि दा ब्यौरा</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>गुप्त %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>कोई नेईं</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>स्थिति</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>ठीक चलदा ऐ</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time तगर रोकी दित्ता</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>नेईं होई सकदा</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>लगातार गलतियां</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count दे बाद रोक</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>पिछली गलती</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>पिछली सफलता</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>गलतियां रीसेट करो ते स्रोत थमां फी पुच्छो</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>जाब कतार</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>जाब दी किस्म</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>उडीक च</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>चलदा</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>नेईं होई सकेआ</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>दर्ज नेईं कीता गेदा</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>जाब कतार उपलब्ध नेईं ऐ।</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>थोक चलाइयां रोकियां गेदियां</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time थमां %user आसेआ</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>थोक चलाइयां चली सकदियां न</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>दस्तखत कुंजी</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>कुंजी</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>गुप्त भंडार च</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>अजें कोई नेईं</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>उमर</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days दिन (%time थमां)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>पिछली कुंजी</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time तगर मान्य</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>कुंजी बदलो</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>मौजूदा कुंजी कन्नै दस्तखत कीते गेदे पते छूट दे टैम (SigningKeyGrace) च चलदे रौंदे न, फी पन्ने फिरी बनने तगर प्लेसहोल्डर जवाब दिंदे न।</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>हुन बदलो</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>एह् किय चलदा ऐ</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render मोड, स्टेजिंग ते लॉग</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (मूल): पन्ना इक उस उपनांऽ गी जेहड़ा अजें नेईं ऐ, दस्तखत कीते गेदे पते कन्नै जोड़दा ऐ। पैहली मंग उसी सब थमां लम्मी उडीक दे अंदर बनांदी ऐ, नेईं ते निरपेख प्लेसहोल्डर दिंदी ऐ ते इक जाब कम्म पूरा करदा ऐ; तस्वीर आई गेई तां अदला-बदली स्क्रिप्ट प्लेसहोल्डर बदली दिंदी ऐ।</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>render मोड: टेम्प्लेट पन्ना दस्सने बेलै उपनांऽ बनांदा ऐ, पैहले आंगर। तुस कदें बी दौने च बदली सकदे ओ; किश बी ट्रांसफर करने दी लोड़ नेईं।</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>स्टेजिंग इंस्टालेशन गुआची दियां असल फाइलां ते उपनांऽ अपने स्रोत थमां आनदी ऐ; नेईं होने आला स्रोत लगातार गलतियें दे बाद रोकी दित्ता जंदा ऐ ते प्रशासकें गी घैंटे च बद्धी तों बद्धी इक ई-मेल मिलदी ऐ।</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>थोक चलाइयां ते छापने दे बाद पैहले बनाना जाब कतार दे जाब न, मेहमानें थमां घट्ट प्राथमिकता कन्नै। उपनांऽ हटाने कन्नै Velocity दा जवाब कैश बी साफ होंदा ऐ, ताकि हटाई दी फाइल उदे थमां नेईं दित्ती जा।</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>बनाया गेदा हर उपनांऽ, जवाब दित्ता गेदा हर प्लेसहोल्डर, आनी गेदी हर फाइल ते हर चलाई %file दी इक लीक ऐ। कमांड लाइन च बी एहे साधन न: %command।</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>जाब %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%total तस्वीरें चों %done</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>चलाई</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>दायरा</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>नतीजा</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>एह् जाब रद्द करो</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>जाब %job तस्वीर उपनांऽ दा जाब नेईं ऐ, जां कतार चों हटाई दित्ता गेआ ऐ।</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>चलाई %run दा नतीजा</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>थोक चलाइयां रोकियां गेदियां न</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time थमां %user आसेआ रोकी दित्ता।</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>रोक हर थोक चलाई गी उदी हुन दी तस्वीर दे बाद, हर सर्वर उप्पर, रोकदी ऐ; कतार च चलाइयां उडीकदियां न। मेहमानें दे उपनांऽ अजें बी बनदे न।</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>थोक चलाइयां फी शुरू करो</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>कारण (मर्जी दा)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>थोक चलाइयां रोको</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>इक चलाई शुरू करो</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>चलाइयां जाब कतार दे जाब न: तुस पन्ना छोड़ियै फी परतोई सकदे ओ।</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>जाब कतार दे बगैर चलाई इस मंग च होंदी ऐ, बद्धी तों बद्धी %count तस्वीरें आस्तै।</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>कार्रवाई</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>बनाओ: गुआचे उपनांऽ बनाओ</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>फी बनाओ: हटाओ ते फी बनाओ</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>साफ करो: हटाओ (मंग उप्पर फी बनदे न)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>फी मेल करो: स्टेजिंग स्रोत थमां फाइलां आनो</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(सिर्फ स्टेजिंग इंस्टालेशन उप्पर)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>पूरी साइट</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>इक नोड</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>इक नोड ते उदा उप-रुक्ख</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>नोड ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>वर्ग</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>गुण</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>इसते बाद बदलोआ</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>इक तरीक (2026-11-01) जां पिच्छले टैम (12 hours, 2 days)।</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>बद्धी तों बद्धी तस्वीरां</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>उपनांऽ (कोई नेईं चुनेआ: सारे)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>फी मेल</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>सूखी चलाई: सिर्फ गिनो (फी मेल स्रोत जांचदा ऐ ते किश नेईं सहेजदा)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>अलग फाइलां उप्पर लिखो (फी मेल)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>चलाई शुरू करो</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>पिछलियां चलाइयां</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>जाब</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>प्रगति</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>कतार च पाया</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>कार्रवाइयां</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>रद्द करो</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>अजें कोई थोक चलाई जां फी मेल नेईं।</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>इक तस्वीर</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>जेहड़े पते टेम्प्लेट गी हुन मिलदे न, हर उपनांऽ आस्तै गिनी दियां मापां ते किस्में, ते हर फाइल ऐ जां नेईं।</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>इस मुताबक खोजो</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ऑब्जेक्ट ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>दस्सो</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>तुसें गी एह् ऑब्जेक्ट पढ़ने दी इजाजत नेईं।</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>इस ऑब्जेक्ट च तस्वीर नेईं।</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>इस ID आला कोई ऑब्जेक्ट नेईं।</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>ऑब्जेक्ट %object, नोड %node, संस्करण %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>असल: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>फाइल ऐ</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>फाइल नेईं ऐ</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name दे उपनांऽ</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>उपनांऽ</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>आकार</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>किस्म</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>फाइल</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>फार्मेट</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>टेम्प्लेट च पता</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>ऐ</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>नेईं ऐ</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>इस किस्म आस्तै नेईं</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>जांचो</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>बनाओ</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>इस खेत्तर च तस्वीर नेईं।</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>टैम</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>स्रोत कन्नै जुड़ाई</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>स्टेजिंग स्रोत गी HEAD मंग, जेकर नां दित्ता गेदा होऐ तां उदे पुष्टि ब्यौरे कन्नै। पुष्टि ब्यौरा भेजेआ जंदा ऐ, कदें नेईं दस्सेआ जंदा।</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>स्रोत</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>पुष्टि ब्यौरे कन्नै</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>भंडारण रस्ता (मर्जी दा)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>जुड़ाई परखो</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>कुसै बी स्रोत च BaseURL नेईं। स्रोत सेटिंग च सेट होंदे न ([AliasSource_&lt;environment&gt;])।</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>पुज्जी सकदा</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>मना कीता: पुष्टि ब्यौरा जांचो</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>स्रोत उप्पर नेईं लब्भेआ</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>कोई जवाब नेईं</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>टैम खत्म</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>दुए पासै भेजेआ (पिच्छें नेईं गेआ)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL नेईं</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>भंडारण रस्ता नेईं</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>पता</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>स्थिति</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>भेजेआ गेआ</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>गुप्त नेईं ऐ</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>गुप्त न user:password ऐ ते न Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file दियां नमियां लीकां, नमियां पैहले।</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>सेटअप &gt; लॉग फाइलां</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>घटना</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>सारी घटनां</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>चलाइयां (शुरू ते खत्म)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>रस्ते च ऐ</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>लीकां</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>फिल्टर</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>पिच्छें चलो: नमियां लीकां लिखदे गै दस्सो</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>रस्ता ते ब्यौरा</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>लॉग दी कोई लीक नेईं मेल खांदी।</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>सहेजने कन्नै केह् बदलग</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>केह् बदलोआ</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php च सहेजेआ जंदा ऐ, इस करी इत्थें दा मान हर siteaccess थमां उप्पर ऐ। दस्से गेदे मान ओह् न जेहड़े इस siteaccess आस्तै लागू न। सहेजने थमां पैहले तुसें थमां पुष्टि करने आस्तै आखेआ जाग जे तुस कुन ओ।</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>उपनांऽ किय बनदे ते पुजाए जंदे न।</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>गुआची दियां तस्वीरां दूए इंस्टालेशन थमां आनना (alpha, dev, beta, stage, pro, post, arc)। प्रोडक्शन (pro) कदें नेईं आनदा।</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>सेटिंग</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>मान</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override च</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>हर स्रोत दा पता ते उस गुप्त दा नां जिस च उदा पुष्टि ब्यौरा ऐ (user:password जां Bearer &lt;token&gt;)। गुप्त दा मान सेटअप &gt; गुप्त मान च सेट होंदा ऐ ते इत्थें कदें नेईं दस्सेआ जंदा।</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>बदलावें दा पैहलें दर्शन</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>सहेजो</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>पिच्छें चलो: %time उप्पर अपडेट कीता</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>रोकेआ</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>फीड ने जवाब नेईं दित्ता; फी कोशश करदे न।</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>जाब खत्म होई गेआ।</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: टेम्प्लेटें गी पता मिलदा ऐ, उपनांऽ तदूं बनदा ऐ जिसलै मंगेआ जंदा ऐ। render: टेम्प्लेट उसी पन्ना दस्सने बेलै बनांदा ऐ (असल बरताव)।</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>उस उपनांऽ दा पता जेहड़ा अजें नेईं बनेआ: token (दस्तखत कीता, डेटाबेस दी लोड़ नेईं), ids-token, ids, node जां storage।</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: जदूं वेब सर्वर भंडारण दिंदा ऐ तां फाइल पासै रीडायरेक्ट, नेईं ते फाइल स्ट्रीम कीती जंदी ऐ।</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>इक मंग उपनांऽ बनाने जां आनने च जित्थें सेकंड लाई सकदी ऐ; उसदे बाद प्लेसहोल्डर जवाब दिंदा ऐ ते इक जाब कम्म पूरा करदा ऐ।</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP ते AVIF रूपें आस्तै पैहले कोशश कीता जाने आला कन्वर्टर।</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>जेहड़े ब्राउजर मंगदे न उनेंगी WebP जां AVIF देओ, उनें उपनांऽ आस्तै जिंदे च Formats[] ऐ।</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>तस्वीर गुआची होने बेलै सही आकार दी निरपेख तस्वीर।</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>इक छोटी स्क्रिप्ट जेहड़ी तस्वीर आई गेई तां प्लेसहोल्डर गी असल तस्वीर कन्नै बदलदी ऐ।</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>छापने दे बाद इक जाब नमीं तस्वीरें दे उपनांऽ हर जुड़े दे siteaccess आस्तै बनांदा ऐ।</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>इक सर्वर उप्पर इक्कै बेल्लै रूपांतर।</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>थोक चलाइयें दी प्रक्रिया प्राथमिकता (nice), 0 थमां 19।</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>सेकंड जित्थें तगर ब्राउजर ते कैश बनाए दे उपनांऽ गी रक्खी सकदे न।</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>मसौदे जां पूर्वावलोकन तस्वीर दा पता जित्थें सेकंड मान्य रौंदा ऐ।</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>बदलोने दे बाद पिछली दस्तखत कुंजी जित्थें सेकंड मान्य रौंदी ऐ।</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>इस इंस्टालेशन दा माहौल।</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>उस माहौल जित्थें थमां गुआची दियां तस्वीरां आनियां जंदियां न; none: किश नेईं आनेआ जंदा।</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>हर लीक च इक: स्थानिक भंडारण उपसर्ग;स्रोत उपसर्ग जां पता, अलग भंडारण रस्तें आस्तै।</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>स्रोत गी इक मंग जित्थें सेकंड लेई सकदी ऐ।</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>स्रोत थमां लैती जाने आली सब थमां बड्डी फाइल, बाइटें च।</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>लगातार गलतियां जिंदे बाद स्रोत रोकी दित्ता जंदा ऐ।</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>नेईं होने आला स्रोत कित्थें तगर रोकेआ जंदा ऐ।</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>स्रोत रोकने उप्पर प्रशासकें गी मेल भेजो (घैंटे च बद्धी तों बद्धी इक बारी)।</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>हर लीक च इक ई-मेल पता; खाली: site.ini दा AdminEmail।</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>स्रोत इंस्टालेशन %block दा पता, जियां https://www.example.org।</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>उस गुप्त दा नां जिस च पुष्टि ब्यौरा ऐ, जां env:VARIABLE। पुष्टि ब्यौरा अपने आप कदें नेईं।</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(कोई नेईं)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>मूल: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>इत्थें सेट कीता; हटाने आस्तै टिक करो</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>विरासत च मिलेआ</translation>
     </message>
 </context>
 </TS>

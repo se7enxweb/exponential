@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>आयातः/निर्यातः</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>चित्रोपनामानि</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>अस्य घटकस्य कृते निर्मातु</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>उपवृक्षस्य कृते निर्मातु</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>अस्य घटकस्य कृते पुनः निर्मातु</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>उपवृक्षस्य कृते पुनः निर्मातु</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>अस्य घटकस्य कृते अपसारयतु</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>उपवृक्षस्य कृते अपसारयतु</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>पुरातनस्य जालस्थलस्य server खण्डः: return सह location =, प्रश्नाय if ($args), वन्यकार्डरूपेण rewrite, एकलपृष्ठानां map च।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>चित्रोपनामानि</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>चित्रोपनामानि चित्रस्य मापितानि कर्तितानि च प्रतिलिपयः सन्ति, याः प्रतिमानानि दर्शयन्ति। अत्र भवान् पश्यति तानि कथं निर्मीयन्ते, जालस्थले समूहकार्याणि सञ्चालयति, एकं चित्रं पूर्वप्रयोगस्रोतः वा परीक्षते, सञ्चालनेतिहासम् अनुसरति विन्यासं च परिवर्तयति।</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>पृष्ठस्य भागाः</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>नियन्त्रणफलकम्</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>समूहसञ्चालनानि</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>परीक्षासाधनानि</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>सञ्चालनेतिहासः</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>विन्यासः</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>अत्र सर्वं द्रष्टुं शक्नोति। विन्यासपरिवर्तनाय, कार्यसञ्चालनाय सञ्चिकानिर्माणसाधनेभ्यश्च setup/managealiases नीतिः आवश्यकी।</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>किं ध्यानम् अपेक्षते</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>रेण्डर-प्रकारः: प्रतिमानानि पृष्ठनिर्माणकाले अनुपस्थितानि उपनामानि निर्मान्ति, पूर्ववत्। on-demand सङ्केताः, स्थानधारकाः पृष्ठभूमिकार्याणि च न उपयुज्यन्ते।</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>प्रारूपचयनं प्रवृत्तम् अस्ति, किन्तु अत्र कोऽपि परिवर्तकः WebP लेखितुं न शक्नोति।</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>इयं पूर्वप्रयोगस्थापना अस्ति, किन्तु तस्याः स्रोतसः BaseURL नास्ति: अनुपस्थितानि चित्राणि आनेतुं न शक्यन्ते।</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>क्रमशः विफलतानन्तरं पूर्वप्रयोगस्रोतः विरामे अस्ति: अनुपस्थितानि चित्राणि स्थानधारकान् प्राप्नुवन्ति यावत् विरामः समाप्यते भवान् वा तं पुनःस्थापयति।</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>पूर्वप्रयोगस्रोतः अधुना विफलः अभवत्। तस्य अन्तिमां त्रुटिम् अधः पश्यतु।</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>इयं स्थापना उत्पादनं न अस्ति, किन्तु SyncFrom कमपि स्रोतः न नामयति: किमपि न आनीयते।</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>कार्यपङ्क्तिः (expqueue) उपलब्धा नास्ति: ये उपनामानि स्वसमयं लङ्घयन्ति तानि अग्रिमः अनुरोधः निर्माति, प्रकाशनानन्तरं पूर्वनिर्माणं त्यज्यते समूहसञ्चालनानि च लघुपरिधिषु सीमितानि भवन्ति।</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>चित्रोपनामानां केचन कार्याणि अन्तिमरूपेण विफलानि अभवन्। स्थापना &gt; कार्यपङ्क्तिः कारणं दर्शयति।</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>समूहसञ्चालनानि विरामे सन्ति।</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>विगतेषु २४ होरासु उपनामानि विफलानि अभवन्। सञ्चालनेतिहासः तानि सूचयति।</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>हस्ताक्षरकुञ्जी वर्षात् अधिकं पुराणी अस्ति। तस्याः परिवर्तनं पुरातनसङ्केतान् अनुग्रहकाले मान्यान् रक्षति।</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>हस्ताक्षरकुञ्जी अद्यापि नास्ति: सा प्रथमेन on-demand सङ्केतेन सह निर्मीयते।</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>विगताः २४ होराः</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>निर्मितानि उपनामानि</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>प्रदत्ताः स्थानधारकाः</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>विफलताः</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>आनीताः सञ्चिकाः</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>प्रारब्धानि सञ्चालनानि</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>कार्याणि प्रतीक्षमाणानि / प्रचलन्ति</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file इत्यस्य अन्तिमासु %lines पङ्क्तिषु गणितम्, याः %time पर्यन्तं पश्चात् गच्छन्ति।</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>प्रकारः वितरणं च</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>प्रकारः</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>आवश्यकतानुसारम्</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>सङ्केतरूपम्</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>वितरणम्</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>अनुरोधस्य दीर्घतमा प्रतीक्षा</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>युगपत् परिवर्तनानि</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%max मध्ये %busy इदानीं व्यापृतानि</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>प्रारूपचयनम्</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>प्रवृत्तम्</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>निवृत्तम्</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>स्थानधारकः विनिमयस्क्रिप्ट् च</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>प्रकाशनानन्तरं पूर्वनिर्माणम्</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>जालस्थलस्य उपनामानि</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>प्रारूपभेदानां परिवर्तकाः</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>परिवर्तकः</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>प्रयत्नक्रमः</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>प्राधान्यम्</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>आम्</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>न</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>उपनामानि स्वयं [ImageConverterSettings] इत्यस्य परिवर्तकैः निर्मीयन्ते, पूर्ववत्; एते WebP AVIF भेदान् लिखन्ति।</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>पर्यावरणं स्रोतः च</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>इयं स्थापना</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(उत्पादनम्: कदापि न आनयति)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>इतः आनयति</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>किमपि न</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>स्रोतसः सङ्केतः</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>न स्थापितम्</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>प्रमाणपत्रम्</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>गोप्यम् %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>नास्ति</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>अवस्था</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>कार्यक्षमम्</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time पर्यन्तं विरामे</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>विफलति</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>क्रमशः विफलताः</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count अनन्तरं विरामः</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>अन्तिमा त्रुटिः</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>अन्तिमं सफलत्वम्</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>विफलताः पुनःस्थापयतु स्रोतः पुनः पृच्छतु च</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>कार्यपङ्क्तिः</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>कार्यप्रकारः</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>प्रतीक्षमाणम्</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>प्रचलति</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>विफलम्</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>न पञ्जीकृतम्</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>कार्यपङ्क्तिः उपलब्धा नास्ति।</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>समूहसञ्चालनानि विरामे</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time तः %user द्वारा</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>समूहसञ्चालनानि सञ्चलितुं शक्नुवन्ति</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>हस्ताक्षरकुञ्जी</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>कुञ्जी</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>गोप्यसङ्ग्रहे</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>अद्यापि नास्ति</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>वयः</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days दिनानि (%time तः)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>पूर्वा कुञ्जी</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time पर्यन्तं मान्या</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>कुञ्जीं परिवर्तयतु</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>वर्तमानकुञ्ज्या हस्ताक्षरिताः सङ्केताः अनुग्रहकालं (SigningKeyGrace) यावत् कार्यं कुर्वन्ति, ततः पृष्ठानि पुनः निर्मीयन्ते यावत् ते स्थानधारकान् ददति।</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>अधुना परिवर्तयतु</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>इदं कथं कार्यं करोति</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>on-demand, रेण्डर-प्रकारः, पूर्वप्रयोगः अभिलेखश्च</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>on-demand (पूर्वनिर्धारितम्): पृष्ठम् अद्यापि अनुपस्थितम् उपनाम हस्ताक्षरितेन सङ्केतेन सह योजयति। प्रथमः अनुरोधः दीर्घतमप्रतीक्षायाम् एव तत् निर्माति, अन्यथा तटस्थं स्थानधारकं ददाति कार्यं च कश्चन कार्यः समापयति; चित्रे उपस्थिते विनिमयस्क्रिप्ट् स्थानधारकं स्थापयति।</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>रेण्डर-प्रकारः: प्रतिमानं पृष्ठनिर्माणकाले उपनाम निर्माति, पूर्ववत्। उभयोः मध्ये कदापि परिवर्तयतु; किमपि स्थानान्तरणीयं नास्ति।</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>पूर्वप्रयोगस्थापना स्वस्रोतसः अनुपस्थितानि मूलचित्राणि उपनामानि च आनयति; विफलः स्रोतः क्रमशः विफलतानन्तरं विरामे स्थाप्यते प्रशासकाः च होरायां अधिकतमम् एकं विद्युत्पत्रं प्राप्नुवन्ति।</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>समूहसञ्चालनानि प्रकाशनानन्तरं पूर्वनिर्माणं च कार्यपङ्क्तेः कार्याणि सन्ति, आगन्तुकेभ्यः न्यूनप्राथमिकतया। उपनामानाम् अपसारणं Velocity इत्यस्य उत्तरसञ्चयम् अपि रिक्तीकरोति, येन अपसारिता सञ्चिका ततः न वितीर्यते।</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>प्रत्येकं निर्मितम् उपनाम, प्रदत्तः स्थानधारकः, आनीता सञ्चिका सञ्चालनं च %file इत्यस्य एका पङ्क्तिः अस्ति। आदेशपङ्क्तौ समानानि साधनानि सन्ति: %command।</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>कार्यम् %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%total चित्रेषु %done</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>सञ्चालनम्</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>परिधिः</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>परिणामः</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>इदं कार्यं रद्दीकरोतु</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>कार्यम् %job चित्रोपनामानां कार्यं नास्ति, अथवा तत् पङ्क्तितः अपसारितम्।</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>सञ्चालनस्य %run परिणामः</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>समूहसञ्चालनानि विरामे सन्ति</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time तः %user द्वारा विरामे।</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>विरामः प्रत्येकं समूहसञ्चालनं तस्य वर्तमानचित्रानन्तरं स्थगयति, सर्वेषु सर्वरेषु; पङ्क्तिबद्धानि सञ्चालनानि प्रतीक्षन्ते। आगन्तुकानाम् उपनामानि तथापि निर्मीयन्ते।</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>समूहसञ्चालनानि पुनरारभताम्</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>कारणम् (वैकल्पिकम्)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>समूहसञ्चालनानि विरमतु</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>सञ्चालनं प्रारभताम्</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>सञ्चालनानि कार्यपङ्क्तेः कार्याणि सन्ति: भवान् पृष्ठं त्यक्त्वा पुनः आगन्तुं शक्नोति।</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>कार्यपङ्क्तिं विना सञ्चालनम् अस्मिन् अनुरोधे एव भवति, अधिकतमं %count चित्राणां कृते।</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>क्रिया</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>निर्माणम्: अनुपस्थितानि उपनामानि निर्मातु</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>पुनर्निर्माणम्: अपसार्य पुनः निर्मातु</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>विलोपनम्: अपसारयतु (on-demand पुनः निर्मीयन्ते)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>पुनःसमन्वयः: पूर्वप्रयोगस्रोतसः सञ्चिकाः आनयतु</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(केवलं पूर्वप्रयोगस्थापनायाम्)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>सम्पूर्णं जालस्थलम्</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>एका ग्रन्थिः</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>एका ग्रन्थिः तस्याः उपवृक्षः च</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ग्रन्थिः ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>वर्गाः</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>गुणधर्माः</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>तः परिवर्तितम्</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>एका दिनाङ्कः (2026-11-01) अथवा पूर्वकालः (12 hours, 2 days)।</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>अधिकतमानि चित्राणि</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>उपनामानि (किमपि न चिह्नितम्: सर्वाणि)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>पुनःसमन्वयः</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>परीक्षासञ्चालनम्: केवलं गणयतु (पुनःसमन्वयः स्रोतः परीक्षते किमपि न सङ्गृह्णाति)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>भिन्नाः सञ्चिकाः अधिलिखतु (पुनःसमन्वयः)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>सञ्चालनं प्रारभताम्</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>अन्तिमानि सञ्चालनानि</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>कार्यम्</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>प्रगतिः</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>पङ्क्तिबद्धम्</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>क्रियाः</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>रद्दीकरणम्</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>अद्यापि कोऽपि समूहसञ्चालनं पुनःसमन्वयः वा नास्ति।</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>एकं चित्रम्</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>प्रतिमानम् अधुना ये सङ्केताः प्राप्नोति, प्रत्येकस्य उपनाम्नः गणिताः आकाराः प्रकाराश्च, प्रत्येका सञ्चिका उपस्थिता वा इति च।</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>अनेन अन्विष्यताम्</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>पदार्थः ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>अभिज्ञापकः</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>दर्शनम्</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>भवान् इमं पदार्थं पठितुं न अनुमतः।</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>अस्य पदार्थस्य चित्रं नास्ति।</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>अनेन ID युक्तः पदार्थः नास्ति।</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>पदार्थः %object, ग्रन्थिः %node, संस्करणम् %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>मूलम्: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>सञ्चिका उपस्थिता</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>सञ्चिका अनुपस्थिता</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name इत्यस्य उपनामानि</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>उपनाम</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>आकारः</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>प्रकारः</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>सञ्चिका</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>प्रारूपाणि</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>प्रतिमाने सङ्केतः</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>उपस्थितम्</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>अनुपस्थितम्</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>अस्य प्रकारस्य कृते न</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>परीक्षणम्</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>निर्माणम्</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>अस्मिन् क्षेत्रे चित्रं नास्ति।</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>समयः</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>स्रोतसा सह सम्पर्कः</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>पूर्वप्रयोगस्रोतसः प्रति HEAD अनुरोधः, तस्य प्रमाणपत्रेण सह यदि नामितम्। प्रमाणपत्रं प्रेष्यते, कदापि न दर्श्यते।</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>स्रोतः</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>प्रमाणपत्रेण सह</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>सङ्ग्रहमार्गः (वैकल्पिकः)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>सम्पर्कं परीक्षताम्</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>कस्यापि स्रोतसः BaseURL नास्ति। स्रोताः विन्यासे स्थाप्यन्ते ([AliasSource_&lt;environment&gt;])।</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>प्राप्यम्</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>प्रत्याख्यातम्: प्रमाणपत्रं परीक्षताम्</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>स्रोतसि न लब्धम्</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>उत्तरं नास्ति</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>समयः समाप्तः</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>पुनर्निर्दिष्टम् (न अनुसृतम्)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL नास्ति</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>सङ्ग्रहमार्गः न अस्ति</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>सङ्केतः</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>स्थितिः</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>प्रेषितम्</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>गोप्यम् अनुपस्थितम्</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>गोप्यं user:password अथवा Bearer &lt;token&gt; न अस्ति</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file इत्यस्य नूतनतमाः पङ्क्तयः, नूतनतमा प्रथमम्।</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>स्थापना &gt; अभिलेखसञ्चिकाः</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>घटना</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>सर्वाः घटनाः</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>सञ्चालनानि (आरम्भः अन्तः च)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>मार्गे अस्ति</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>पङ्क्तयः</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>छानकम्</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>अनुसरणम्: नूतनाः पङ्क्तीः लिख्यमानाः दर्शयतु</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>मार्गः विवरणानि च</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>अभिलेखस्य कापि पङ्क्तिः न मिलति।</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>संरक्षणं किं परिवर्तयेत्</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>किं परिवर्तितम्</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php मध्ये संरक्षितम्, अतः अत्र मूल्यं प्रत्येकस्य siteaccess इत्यस्य उपरि प्रबलं भवति। दर्शितानि मूल्यानि अस्य siteaccess कृते प्रवृत्तानि सन्ति। संरक्षणात् पूर्वं भवान् कः इति पुष्टिं कर्तुं पृच्छ्यते।</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>उपनामानि कथं निर्मीयन्ते वितीर्यन्ते च।</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>अनुपस्थितानि चित्राणि अन्यस्याः स्थापनायाः आनयनम् (alpha, dev, beta, stage, pro, post, arc)। उत्पादनं (pro) कदापि न आनयति।</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>विन्यासः</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>मूल्यम्</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override मध्ये</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>प्रत्येकस्य स्रोतसः सङ्केतः तस्य प्रमाणपत्रं धारयतः गोप्यस्य नाम च (user:password अथवा Bearer &lt;token&gt;)। गोप्यस्य मूल्यं स्थापना &gt; गोप्यानि मध्ये स्थाप्यते अत्र कदापि न दर्श्यते।</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>परिवर्तनानां पूर्वावलोकनम्</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>संरक्षणम्</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>अनुसरणम्: %time अद्यतनम्</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>विरामे</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>प्रवाहः नोत्तरितवान्; पुनः प्रयत्यते।</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>कार्यं समाप्तम्।</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: प्रतिमानानि सङ्केतं प्राप्नुवन्ति, उपनाम तदा निर्मीयते यदा तद् अपेक्ष्यते। render: प्रतिमानं पृष्ठनिर्माणकाले तद् निर्माति (मूलव्यवहारः)।</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>अद्यापि अनिर्मितस्य उपनाम्नः सङ्केतः: token (हस्ताक्षरितः, दत्तांशकोशं न अपेक्षते), ids-token, ids, node अथवा storage।</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: यदा जालसेवकः सङ्ग्रहं वितरति तदा सञ्चिकां प्रति पुनर्निर्देशः, अन्यथा सञ्चिका प्रवाह्यते।</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>अनुरोधः उपनाम निर्मातुम् आनेतुं वा यावन्तः क्षणान् व्ययितुं शक्नोति; ततः सः स्थानधारकं ददाति कार्यं च कश्चन कार्यः समापयति।</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP AVIF भेदानां कृते प्रथमं प्रयत्यमानः परिवर्तकः।</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>ये विचरकाः WebP अथवा AVIF याचन्ते तेभ्यः तद् ददातु, Formats[] सूचीकुर्वतां उपनामानां कृते।</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>चित्रस्य अनुपस्थितौ समीचीनाकारस्य तटस्थं चित्रम्।</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>लघुः स्क्रिप्ट् यः स्थानधारकान् वास्तविकचित्रेण प्रतिस्थापयति यदा तद् उपस्थितं भवति।</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>प्रकाशनानन्तरं कार्यं प्रत्येकस्य सम्बद्धस्य siteaccess कृते नूतनचित्राणाम् उपनामानि निर्माति।</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>एकस्मिन् सर्वरे युगपत् परिवर्तनानि।</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>समूहसञ्चालनानां प्रक्रियाप्राथमिकता (nice), 0 तः 19।</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>विचरकाः सञ्चयाश्च निर्मितम् उपनाम यावन्तः क्षणान् धारयितुं शक्नुवन्ति।</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>प्रारूपस्य पूर्वावलोकनचित्रस्य वा सङ्केतः यावन्तः क्षणान् मान्यः तिष्ठति।</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>परिवर्तनानन्तरं पूर्वा हस्ताक्षरकुञ्जी यावन्तः क्षणान् मान्या तिष्ठति।</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>अस्याः स्थापनायाः पर्यावरणम्।</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>यस्मात् पर्यावरणात् अनुपस्थितानि चित्राणि आनीयन्ते; none: किमपि न आनीयते।</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>प्रतिपङ्क्ति एकम्: स्थानीयसङ्ग्रहपूर्वपदम्;स्रोतसः पूर्वपदं सङ्केतो वा, भिन्नानां सङ्ग्रहमार्गाणां कृते।</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>स्रोतसं प्रति एकः अनुरोधः यावन्तः क्षणान् गृह्णीयात्।</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>स्रोतसः गृहीता बृहत्तमा सञ्चिका, bytes मध्ये।</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>क्रमशः विफलताः यासाम् अनन्तरं स्रोतः विरामे स्थाप्यते।</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>विफलः स्रोतः कियत्कालं विरामे स्थाप्यते।</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>स्रोतसि विरामे स्थापिते प्रशासकान् विद्युत्पत्रं प्रेषयतु (होरायाम् अधिकतमम् एकवारम्)।</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>प्रतिपङ्क्ति एकः विद्युत्पत्रसङ्केतः; रिक्तम्: site.ini इत्यस्य AdminEmail।</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>स्रोतःस्थापनायाः %block सङ्केतः, यथा https://www.example.org।</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>प्रमाणपत्रयुक्तस्य गोप्यस्य नाम, अथवा env:VARIABLE। कदापि प्रमाणपत्रं स्वयं न।</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(नास्ति)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>पूर्वनिर्धारितम्: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>अत्र स्थापितम्; अपसारयितुं चिह्नयतु</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>उत्तराधिकृतम्</translation>
     </message>
 </context>
 </TS>

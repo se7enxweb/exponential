@@ -17029,6 +17029,34 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
         <source>Import/Export</source>
         <translation>Importeren/exporteren</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Afbeeldingsaliassen</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Genereren voor dit item</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Genereren voor de substructuur</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Opnieuw genereren voor dit item</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Opnieuw genereren voor de substructuur</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Verwijderen voor dit item</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Verwijderen voor de substructuur</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -87647,6 +87675,997 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Het server-blok van een oude site: location = met return, if ($args) voor een query, rewrite als wildcard en een map van losse pagina's.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Afbeeldingsaliassen</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Afbeeldingsaliassen zijn de geschaalde en bijgesneden kopieën van een afbeelding die de templates tonen. Hier ziet u hoe ze worden gemaakt, voert u bulkopdrachten uit over de site, test u één afbeelding of een stagingbron, volgt u de uitvoergeschiedenis en wijzigt u de instellingen.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Onderdelen van de pagina</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dashboard</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Bulkruns</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Testhulpmiddelen</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Uitvoergeschiedenis</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Instellingen</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>U kunt hier alles bekijken. Instellingen wijzigen, jobs uitvoeren en de hulpmiddelen die bestanden maken vereisen de policy setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Wat aandacht nodig heeft</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Render-modus: templates maken ontbrekende aliassen terwijl de pagina wordt gerenderd, zoals voorheen. De on-demand-adressen, placeholders en achtergrondjobs worden niet gebruikt.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Formatonderhandeling staat aan, maar geen enkele converter hier kan WebP schrijven.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Dit is een stagingomgeving, maar de bron heeft geen BaseURL: ontbrekende afbeeldingen kunnen niet worden opgehaald.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>De stagingbron is gepauzeerd na mislukkingen op rij: ontbrekende afbeeldingen krijgen placeholders totdat de pauze eindigt of u hem opnieuw instelt.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>De stagingbron is onlangs mislukt. Zie hieronder de laatste fout.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Deze installatie is geen productie, maar SyncFrom noemt geen bron: er wordt niets opgehaald.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>De jobwachtrij (expqueue) is niet beschikbaar: aliassen die hun tijd overschrijden worden door het volgende verzoek gemaakt, pregeneratie na publicatie wordt overgeslagen en bulkruns zijn beperkt tot kleine bereiken.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Sommige jobs voor afbeeldingsaliassen zijn definitief mislukt. Setup &gt; Jobwachtrij toont waarom.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Bulkruns zijn gepauzeerd.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Aliassen zijn mislukt in de afgelopen 24 uur. De uitvoergeschiedenis toont ze.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>De ondertekeningssleutel is meer dan een jaar oud. Door hem te roteren blijven oude adressen geldig gedurende de respijtperiode.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Er is nog geen ondertekeningssleutel: die wordt gemaakt bij het eerste on-demand-adres.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>De afgelopen 24 uur</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Aliassen gegenereerd</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Placeholders geleverd</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Mislukkingen</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Bestanden gestaged</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Runs gestart</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Jobs wachtend / actief</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Geteld uit de laatste %lines regels van %file, die teruggaan tot %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Modus en levering</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Modus</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>on-demand</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Adresvorm</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Levering</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Langste wachttijd van een verzoek</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Gelijktijdige conversies</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy van %max nu bezig</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Formatonderhandeling</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>aan</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>uit</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Placeholder en wisselscript</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Pregeneratie na publicatie</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Aliassen van de site</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Converters van de formatvarianten</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Converter</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Geprobeerd</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>voorkeur</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nee</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>De aliassen zelf worden zoals voorheen gemaakt door de converters van [ImageConverterSettings]; deze schrijven de WebP- en AVIF-varianten.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Omgeving en bron</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Deze installatie</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(productie: haalt nooit op)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Haalt op van</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>niets</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Bronadres</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>niet ingesteld</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Referentie</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>secret %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>geen</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>werkt</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>gepauzeerd tot %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>mislukt</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Mislukkingen op rij</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>pauze na %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Laatste fout</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Laatste succes</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>De mislukkingen herstellen en de bron opnieuw vragen</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Jobwachtrij</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Jobtype</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Wachtend</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Actief</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mislukt</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>niet geregistreerd</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>De jobwachtrij is niet beschikbaar.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Bulkruns gepauzeerd</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>sinds %time door %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Bulkruns mogen draaien</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Ondertekeningssleutel</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Sleutel</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>in de secretopslag</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>nog geen</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Leeftijd</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days dagen (sinds %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Vorige sleutel</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>geldig tot %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>De sleutel roteren</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Adressen die met de huidige sleutel zijn ondertekend blijven werken gedurende de respijtperiode (SigningKeyGrace); daarna antwoorden ze met placeholders totdat de pagina&apos;s opnieuw zijn gemaakt.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Nu roteren</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Hoe het werkt</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render-modus, staging en het log</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (standaard): een pagina linkt een alias die er nog niet is naar een ondertekend adres. Het eerste verzoek maakt hem binnen de langste wachttijd, anders antwoordt het met een neutrale placeholder en rondt een job het werk af; het wisselscript vervangt de placeholder zodra de afbeelding er is.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render-modus: de template maakt de alias terwijl de pagina wordt gerenderd, zoals voorheen. U kunt op elk moment wisselen tussen de twee; er hoeft niets te worden gemigreerd.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Een stagingomgeving haalt de originelen en aliassen die ze mist op uit haar bron; een falende bron wordt na mislukkingen op rij gepauzeerd en de beheerders krijgen hooguit één e-mail per uur.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Bulkruns en pregeneratie na publicatie zijn jobs van de jobwachtrij, met een lagere prioriteit dan bezoekers. Het verwijderen van aliassen leegt ook de responscache van Velocity, zodat een verwijderd bestand er niet meer uit wordt geserveerd.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Elke gemaakte alias, geleverde placeholder, gestaged bestand en run is een regel van %file. De opdrachtregel heeft dezelfde hulpmiddelen: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Job %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done van %total afbeeldingen</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Run</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Bereik</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultaat</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Deze job annuleren</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Job %job is geen job van afbeeldingsaliassen, of hij is uit de wachtrij verwijderd.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Resultaat van run %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Bulkruns zijn gepauzeerd</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Gepauzeerd sinds %time door %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Een pauze stopt elke bulkrun na zijn huidige afbeelding, op elke server; runs in de wachtrij wachten. De aliassen van bezoekers worden nog steeds gemaakt.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Bulkruns hervatten</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Reden (optioneel)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Bulkruns pauzeren</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Een run starten</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Runs zijn jobs van de jobwachtrij: u kunt de pagina verlaten en terugkomen.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Zonder de jobwachtrij wordt een run in dit verzoek uitgevoerd, voor hooguit %count afbeeldingen.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Actie</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Genereren: de ontbrekende aliassen maken</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Opnieuw genereren: verwijderen en opnieuw maken</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Wissen: verwijderen (on-demand opnieuw gemaakt)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: de bestanden ophalen uit de stagingbron</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(alleen op een stagingomgeving)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>De hele site</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Eén node</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Een node en zijn substructuur</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Node-ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klassen</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Attributen</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Gewijzigd sinds</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Een datum (2026-11-01) of een tijd geleden (12 uur, 2 dagen).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Maximaal aantal afbeeldingen</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Aliassen (geen aangevinkt: alle)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Proefrun: alleen tellen (een resync controleert de bron en slaat niets op)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Afwijkende bestanden overschrijven (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>De run starten</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Laatste runs</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Job</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Voortgang</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>In wachtrij</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Acties</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Annuleren</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Nog geen bulkrun of resync.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Eén afbeelding</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>De adressen die een template nu krijgt, de voor elke alias berekende afmetingen en typen, en of elk bestand er is.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Opzoeken op</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Object-ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Tonen</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>U mag dit object niet lezen.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Dit object heeft geen afbeelding.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Geen object met deze ID.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>object %object, node %node, versie %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Origineel: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>bestand aanwezig</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>bestand ontbreekt</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Aliassen van %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Alias</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Afmetingen</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Bestand</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Formats</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Adres in een template</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>aanwezig</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>ontbreekt</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>niet voor dit type</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Controleren</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Maken</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Geen afbeelding in dit veld.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tijd</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Verbinding met een bron</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Een HEAD-verzoek aan een stagingbron, met zijn referentie als er een is genoemd. De referentie wordt verzonden, nooit getoond.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Bron</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>met referentie</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Opslagpad (optioneel)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>De verbinding testen</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Geen enkele bron heeft een BaseURL. Bronnen worden ingesteld in de instellingen ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>bereikbaar</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>geweigerd: controleer de referentie</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>niet gevonden bij de bron</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>geen antwoord</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>time-out</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>omgeleid (niet gevolgd)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>geen BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>geen opslagpad</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adres</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>verzonden</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>het secret ontbreekt</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>het secret is niet user:password of Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>De nieuwste regels van %file, nieuwste eerst.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Setup &gt; Logbestanden</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Gebeurtenis</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Alle gebeurtenissen</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Runs (start en einde)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Pad bevat</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Regels</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filteren</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Volgen: nieuwe regels tonen zodra ze worden geschreven</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Pad en details</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Geen enkele regel van het log komt overeen.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Wat opslaan zou wijzigen</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Wat is gewijzigd</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Opgeslagen in settings/override/image.ini.append.php, zodat een waarde hier voorrang heeft op elke siteaccess. De getoonde waarden zijn die welke voor deze siteaccess gelden. Voor het opslaan moet u eerst bevestigen wie u bent.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Hoe aliassen worden gemaakt en geleverd.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Ontbrekende afbeeldingen ophalen van een andere installatie (alpha, dev, beta, stage, pro, post, arc). Productie (pro) haalt nooit op.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Instelling</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Waarde</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>In settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Het adres van elke bron en de naam van het secret dat zijn referentie bevat (user:password of Bearer &lt;token&gt;). De waarde van een secret wordt ingesteld in Setup &gt; Geheimen en hier nooit getoond.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Wijzigingen bekijken</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Opslaan</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Volgen: bijgewerkt %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Gepauzeerd</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>De feed antwoordde niet; er wordt opnieuw geprobeerd.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>De job is beëindigd.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: templates krijgen het adres, de alias wordt gemaakt wanneer erom wordt gevraagd. render: de template maakt hem terwijl de pagina wordt gerenderd (het oorspronkelijke gedrag).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Het adres van een alias die nog niet is gemaakt: token (ondertekend, heeft geen database nodig), ids-token, ids, node of storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: een redirect naar het bestand wanneer de webserver de opslag serveert, anders wordt het bestand gestreamd.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Seconden die een verzoek mag besteden aan het maken of ophalen van een alias; daarna antwoordt het met de placeholder en rondt een job het werk af.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>De converter die eerst wordt geprobeerd voor de WebP- en AVIF-varianten.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>WebP of AVIF antwoorden aan browsers die erom vragen, voor aliassen die Formats[] vermelden.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Een neutrale afbeelding van het juiste formaat zolang een afbeelding ontbreekt.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Een klein script dat placeholders vervangt door de echte afbeelding zodra die er is.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Na publicatie maakt een job de aliassen van de nieuwe afbeeldingen voor elke gerelateerde siteaccess.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Gelijktijdige conversies op één server.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>De procesprioriteit (nice) van bulkruns, 0 tot 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Seconden dat browsers en caches een gemaakte alias mogen bewaren.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Seconden dat het adres van een concept- of voorbeeldafbeelding geldig blijft.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Seconden dat de vorige ondertekeningssleutel na een rotatie geldig blijft.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>De omgeving van deze installatie.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>De omgeving waarvan ontbrekende afbeeldingen worden opgehaald; none: er wordt niets opgehaald.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Eén per regel: lokaal opslagvoorvoegsel;bronvoorvoegsel of adres, voor opslagpaden die verschillen.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Seconden die één verzoek aan de bron mag duren.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Het grootste bestand dat van de bron wordt genomen, in bytes.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Mislukkingen op rij waarna de bron wordt gepauzeerd.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Hoe lang een falende bron wordt gepauzeerd.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>De beheerders e-mailen wanneer de bron wordt gepauzeerd (hooguit één keer per uur).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Eén e-mailadres per regel; leeg: het AdminEmail van site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Het adres van de broninstallatie %block, bijvoorbeeld https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>De naam van het secret met de referentie, of env:VARIABLE. Nooit de referentie zelf.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(geen)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Standaard: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Hier ingesteld; aanvinken om te verwijderen</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>overgeërfd</translation>
     </message>
 </context>
 </TS>

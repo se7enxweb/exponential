@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>Импортлох/экспортлох</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Зургийн өөр нэрс</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Энэ зүйлд үүсгэх</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Дэд модонд үүсгэх</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Энэ зүйлд дахин үүсгэх</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Дэд модонд дахин үүсгэх</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Энэ зүйлээс устгах</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Дэд модноос устгах</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Хуучин сайтын server блок: return-тэй location =, асуулгад зориулсан if ($args), орлуулах тэмдэгт болгон rewrite ба тусдаа хуудсуудын map.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Зургийн өөр нэрс</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Зургийн өөр нэрс нь загварууд харуулдаг зургийн томруулсан, жижигрүүлсан болон тайрсан хуулбарууд юм. Эндээс тэдгээрийг хэрхэн үүсгэдгийг харах, сайтад бөөнөөр ажил ажиллуулах, нэг зураг эсвэл staging эх сурвалжийг турших, ажиллуулалтын түүхийг дагах, тохиргоог өөрчлөх боломжтой.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Хуудасны хэсгүүд</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Хяналтын самбар</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Бөөнөөр ажиллуулах</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Туршилтын хэрэгслүүд</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Ажиллуулалтын түүх</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Тохиргоо</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Энд бүгдийг харж болно. Тохиргоо өөрчлөх, ажил ажиллуулах, файл үүсгэдэг хэрэгслүүдэд setup/managealiases бодлого шаардлагатай.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Анхаарах зүйлс</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Render горим: загварууд дутуу өөр нэрсийг хуудсыг боловсруулах үед үүсгэнэ, урьдын адил. On-demand хаягууд, түр орлуулагчид болон арын ажлууд ашиглагдахгүй.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Форматын тохиролцоо идэвхтэй, гэвч энд ямар ч хөрвүүлэгч WebP бичиж чадахгүй.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Энэ нь staging суулгац боловч эх сурвалж нь BaseURL-гүй: дутуу зургуудыг татаж авах боломжгүй.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Staging эх сурвалж дараалан бүтэлгүйтсэний дараа түр зогссон: түр зогсолт дуустал эсвэл та дахин тохируултал дутуу зургуудад түр орлуулагч өгнө.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Staging эх сурвалж саяхан бүтэлгүйтсэн. Сүүлийн алдааг доороос харна уу.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Энэ суулгац production биш боловч SyncFrom ямар ч эх сурвалж заагаагүй: юу ч татагдахгүй.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Ажлын дараалал (expqueue) байхгүй: хугацаандаа амжаагүй өөр нэрсийг дараагийн хүсэлт үүсгэнэ, нийтлэсний дараах урьдчилан үүсгэлтийг алгасна, бөөнөөр ажиллуулалт жижиг хүрээнд хязгаарлагдана.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Зургийн өөр нэрсийн зарим ажил эргэж сэргэхгүйгээр бүтэлгүйтсэн. Тохируулга &gt; Ажлын дараалал шалтгааныг харуулна.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Бөөнөөр ажиллуулалт түр зогссон.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Сүүлийн 24 цагт өөр нэрс бүтэлгүйтсэн. Ажиллуулалтын түүхэд жагсаасан.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Гарын үсгийн түлхүүр нэг жилээс илүү настай. Үүнийг сольвол хуучин хаягууд хөнгөлөлтийн хугацаанд хүчинтэй хэвээр байна.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Гарын үсгийн түлхүүр хараахан байхгүй: анхны on-demand хаягийн хамт үүснэ.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Сүүлийн 24 цаг</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Үүсгэсэн өөр нэрс</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Хариулсан түр орлуулагчид</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Алдаанууд</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Staging хийсэн файлууд</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Эхэлсэн ажиллуулалтууд</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Хүлээж буй / ажиллаж буй ажлууд</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file-ийн сүүлийн %lines мөрөөс тоолсон, %time хүртэл хамрагдана.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Горим ба хүргэлт</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Горим</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>эрэлтээр</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Хаягийн хэлбэр</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Хүргэлт</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Хүсэлтийн хамгийн урт хүлээлт</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds с</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Зэрэг хөрвүүлэлт</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>Одоо %max-ээс %busy завгүй</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Форматын тохиролцоо</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>идэвхтэй</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>идэвхгүй</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Түр орлуулагч ба солих скрипт</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Нийтлэсний дараах урьдчилан үүсгэлт</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Сайтын өөр нэрс</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Форматын хувилбаруудын хөрвүүлэгчид</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Хөрвүүлэгч</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Оролдсон</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>илүүд үздэг</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>тийм</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>үгүй</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Өөр нэрсийг өөрсдийг нь урьдын адил [ImageConverterSettings]-ийн хөрвүүлэгчид үүсгэнэ; эдгээр нь WebP ба AVIF хувилбаруудыг бичнэ.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Орчин ба эх сурвалж</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Энэ суулгац</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production: хэзээ ч татдаггүй)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Татах эх</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>юу ч үгүй</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Эх сурвалжийн хаяг</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>тохируулаагүй</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Итгэмжлэл</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>%name нууц</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>байхгүй</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Төлөв</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>ажиллаж байна</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time хүртэл түр зогссон</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>бүтэлгүйтэж байна</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Дараалсан алдаа</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count-ийн дараа түр зогсоох</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Сүүлийн алдаа</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Сүүлийн амжилт</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Алдааг дахин тохируулж эх сурвалжаас дахин асуух</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Ажлын дараалал</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Ажлын төрөл</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Хүлээж буй</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Ажиллаж буй</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Амжилтгүй</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>бүртгээгүй</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Ажлын дараалал байхгүй.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Бөөнөөр ажиллуулалт түр зогссон</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time-аас %user-ээр</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Бөөнөөр ажиллуулахыг зөвшөөрнө</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Гарын үсгийн түлхүүр</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Түлхүүр</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>нууцын санд</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>хараахан байхгүй</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Нас</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days хоног (%time-аас)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Өмнөх түлхүүр</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time хүртэл хүчинтэй</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Түлхүүрийг солих</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Одоогийн түлхүүрээр гарын үсэг зурсан хаягууд хөнгөлөлтийн хугацаанд (SigningKeyGrace) ажиллаж, дараа нь хуудсуудыг дахин үүсгэх хүртэл түр орлуулагчаар хариулна.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Одоо солих</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Хэрхэн ажилладаг</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render горим, staging ба лог</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (өгөгдмөл): хуудас хараахан үүсээгүй өөр нэрийг гарын үсэг зурсан хаягаар холбоно. Эхний хүсэлт хамгийн урт хүлээлтийн дотор үүсгэнэ, эс бөгөөс саармаг түр орлуулагчаар хариулж, ажил үлдсэнийг дуусгана; зураг бэлэн болоход солих скрипт түр орлуулагчийг сольно.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render горим: загвар өөр нэрийг хуудсыг боловсруулах үед үүсгэнэ, урьдын адил. Хоёрын хооронд хэдийд ч сэлгэж болно; юу ч шилжүүлэх шаардлагагүй.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Staging суулгац дутуу эх зураг ба өөр нэрсийг эх сурвалжаасаа татна; бүтэлгүйтсэн эх сурвалж дараалсан алдааны дараа түр зогсоно, администраторуудад цагт хамгийн ихдээ нэг имэйл очино.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Бөөнөөр ажиллуулалт ба нийтлэсний дараах урьдчилан үүсгэлт нь ажлын дарааллын ажлууд бөгөөд зочдоос бага ээлжинд ордог. Өөр нэрсийг устгахад Velocity-ийн хариултын кэшийг мөн цэвэрлэх тул устгасан файл түүнээс үйлчлэгдэхгүй.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Үүсгэсэн өөр нэр, хариулсан түр орлуулагч, staging хийсэн файл, ажиллуулалт бүр %file-ийн нэг мөр болно. Командын мөр мөн ижил хэрэгсэлтэй: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Ажил %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%total зургийн %done</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Ажиллуулах</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Хүрээ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Үр дүн</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Энэ ажлыг цуцлах</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>%job ажил нь зургийн өөр нэрсийн ажил биш эсвэл дараалалаас хасагдсан.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>%run ажиллуулалтын үр дүн</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Бөөнөөр ажиллуулалт түр зогссон</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time-аас %user түр зогсоосон.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Түр зогсолт бүх серверт бөөнөөр ажиллуулалт бүрийг одоогийн зургийн дараа зогсооно; дараалалд байгаа ажиллуулалтууд хүлээнэ. Зочдын өөр нэрс үргэлжлэн үүснэ.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Бөөнөөр ажиллуулахыг үргэлжлүүлэх</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Шалтгаан (заавал биш)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Бөөнөөр ажиллуулахыг түр зогсоох</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Ажиллуулалт эхлүүлэх</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Ажиллуулалтууд нь ажлын дарааллын ажлууд: хуудсыг орхиод буцаж ирж болно.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Ажлын дараалалгүй бол ажиллуулалт энэ хүсэлтэд хамгийн ихдээ %count зурагт хийгдэнэ.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Үйлдэл</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: дутуу өөр нэрсийг үүсгэх</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: устгаад дахин үүсгэх</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: устгах (эрэлтээр дахин үүснэ)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: файлуудыг staging эх сурвалжаас татах</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(зөвхөн staging суулгацад)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Бүх сайт</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Нэг зангилаа</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Зангилаа ба түүний дэд мод</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Зангилааны ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Ангиуд</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Атрибутууд</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Өөрчлөгдсөн огноо</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Огноо (2026-11-01) эсвэл хэдийн өмнө (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Хамгийн ихдээ зураг</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Өөр нэрс (юу ч сонгоогүй бол: бүгд)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Туршилтын ажиллуулалт: зөвхөн тоолох (resync эх сурвалжийг шалгаад юу ч хадгалахгүй)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Ялгаатай файлуудыг дарж бичих (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Ажиллуулалтыг эхлүүлэх</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Сүүлийн ажиллуулалтууд</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Ажил</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Явц</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Дараалалд</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Үйлдлүүд</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Цуцлах</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Бөөнөөр ажиллуулалт эсвэл resync хараахан хийгдээгүй.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Нэг зураг</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Загвар одоо авдаг хаягууд, өөр нэр бүрт тооцсон хэмжээ ба төрөл, мөн файл бүр байгаа эсэх.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Хайх үндэс</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Объектын ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Харуулах</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Та энэ объектыг унших эрхгүй.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Энэ объектод зураг байхгүй.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Энэ ID-тай объект байхгүй.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>объект %object, зангилаа %node, хувилбар %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Эх зураг: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>файл байна</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>файл дутуу</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name-ийн өөр нэрс</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Өөр нэр</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Хэмжээ</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Төрөл</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Форматууд</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Загвар дахь хаяг</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>байна</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>дутуу</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>энэ төрөлд биш</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Шалгах</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Үүсгэх</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Энэ талбарт зураг алга.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Цаг</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms мс</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Эх сурвалжтай холболт</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Staging эх сурвалж руу HEAD хүсэлт, нэрлэсэн бол түүний итгэмжлэлтэй. Итгэмжлэлийг илгээнэ, хэзээ ч харуулахгүй.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Эх сурвалж</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>итгэмжлэлтэй</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Хадгалах зам (заавал биш)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Холболтыг турших</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Ямар ч эх сурвалж BaseURL-гүй. Эх сурвалжийг тохиргоонд ([AliasSource_&lt;environment&gt;]) тохируулна.</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>хүрч болно</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>татгалзсан: итгэмжлэлийг шалгана уу</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>эх сурвалжаас олдсонгүй</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>хариу алга</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>хугацаа хэтэрсэн</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>чиглүүлсэн (дагаагүй)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL алга</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>хадгалах зам биш</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Хаяг</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Статус</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>илгээсэн</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>нууц дутуу байна</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>нууц нь user:password эсвэл Bearer &lt;token&gt; биш</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file-ийн хамгийн шинэ мөрүүд, хамгийн шинэ нь эхэнд.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Тохируулга &gt; Лог файлууд</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Үйл явдал</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Бүх үйл явдал</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Ажиллуулалтууд (эхлэл ба төгсгөл)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Зам агуулсан</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Мөр</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Шүүх</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Дагах: шинэ мөрүүдийг бичигдэх үед нь харуулах</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Зам ба дэлгэрэнгүй</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Логийн ямар ч мөр таарахгүй байна.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Хадгалбал юу өөрчлөгдөх</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Юу өөрчлөгдсөн</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php-д хадгалагдана, тиймээс эндэх утга бүх siteaccess-ийг дарна. Харуулсан утгууд нь энэ siteaccess-д хүчинтэй утгууд. Хадгалахдаа эхлээд таныг мөн эсэхийг баталгаажуулахыг шаардана.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Өөр нэрсийг хэрхэн үүсгэж хүргэдэг.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Дутуу зургуудыг өөр суулгацаас татах (alpha, dev, beta, stage, pro, post, arc). Production (pro) хэзээ ч татдаггүй.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Тохиргоо</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Утга</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override-д</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Эх сурвалж бүрийн хаяг ба итгэмжлэлийг агуулсан нууцын нэр (user:password эсвэл Bearer &lt;token&gt;). Нууцын утгыг Тохируулга &gt; Нууцууд хэсэгт тохируулах бөгөөд эндээс хэзээ ч харагдахгүй.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Өөрчлөлтийг урьдчилан харах</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Хадгалах</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Дагаж байна: %time шинэчлэгдсэн</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Түр зогссон</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Мэдээний суваг хариулсангүй; дахин оролдож байна.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Ажил дууссан.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: загварууд хаяг авна, өөр нэрийг хүсэх үед үүсгэнэ. render: загвар үүнийг хуудсыг боловсруулах үед үүсгэнэ (анхны үйлдэл).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Хараахан үүсээгүй өөр нэрийн хаяг: token (гарын үсэгтэй, мэдээллийн сан шаардахгүй), ids-token, ids, node эсвэл storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: вэб сервер хадгалалтыг үйлчилдэг бол файл руу чиглүүлнэ, эс бөгөөс файлыг урсгана.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Хүсэлт өөр нэрийг үүсгэх эсвэл татахад зарцуулж болох секунд; дараа нь түр орлуулагчаар хариулж, ажил үлдсэнийг дуусгана.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP ба AVIF хувилбарт хамгийн түрүүнд оролддог хөрвүүлэгч.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Formats[] жагсаасан өөр нэрсийн хувьд WebP эсвэл AVIF хүссэн хөтөчид тэдгээрээр хариулах.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Зураг дутуу байх үеийн зөв хэмжээтэй саармаг зураг.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Зураг бэлэн болоход түр орлуулагчийг жинхэнэ зургаар солих жижиг скрипт.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Нийтлэсний дараа ажил шинэ зургуудын өөр нэрсийг холбогдох бүх siteaccess-д үүсгэнэ.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Нэг серверт зэрэг хийх хөрвүүлэлт.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Бөөнөөр ажиллуулалтын процессийн ээлж (nice), 0-ээс 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Хөтөч ба кэш үүсгэсэн өөр нэрийг хадгалж болох секунд.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Ноорог эсвэл урьдчилан харах зургийн хаяг хүчинтэй хэвээр байх секунд.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Солилтын дараа өмнөх гарын үсгийн түлхүүр хүчинтэй хэвээр байх секунд.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Энэ суулгацын орчин.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Дутуу зургуудыг татах орчин; none: юу ч татахгүй.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Мөр бүрт нэг: орон нутгийн хадгалалтын угтвар;эх сурвалжийн угтвар эсвэл хаяг, зөрүүтэй хадгалах замуудад.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Эх сурвалж руу нэг хүсэлт зарцуулж болох секунд.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Эх сурвалжаас авах хамгийн том файл, байтаар.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Үүний дараа эх сурвалжийг түр зогсоох дараалсан алдааны тоо.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Бүтэлгүйтсэн эх сурвалж хэр удаан түр зогсох.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Эх сурвалж түр зогсоход администраторуудад имэйл илгээх (цагт хамгийн ихдээ нэг удаа).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Мөр бүрт нэг имэйл хаяг; хоосон бол: site.ini-ийн AdminEmail.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>%block эх сурвалж суулгацын хаяг, жишээ нь https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Итгэмжлэл бүхий нууцын нэр, эсвэл env:VARIABLE. Итгэмжлэлийг өөрийг нь хэзээ ч биш.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(байхгүй)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Өгөгдмөл: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Энд тохируулсан; устгахын тулд тэмдэглэнэ үү</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>өвлөгдсөн</translation>
     </message>
 </context>
 </TS>

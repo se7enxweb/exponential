@@ -16529,6 +16529,34 @@ Notă: pachetele nu vor fi dezinstalate.</translation>
         <source>Import/Export</source>
         <translation>Import/Export</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Aliasuri de imagine</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Generare pentru acest element</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Generare pentru subarbore</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Regenerare pentru acest element</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Regenerare pentru subarbore</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Eliminare pentru acest element</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Eliminare pentru subarbore</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86452,6 +86480,997 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Blocul server al unui site vechi: location = cu return, if ($args) pentru o interogare, rewrite ca metacaracter și un map de pagini individuale.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Aliasuri de imagine</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Aliasurile de imagine sunt copiile redimensionate și decupate ale unei imagini pe care le afișează șabloanele. Aici vedeți cum sunt create, porniți rulări în masă peste site, testați o imagine sau o sursă de staging, urmăriți istoricul rulărilor și modificați setările.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Părțile paginii</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Tablou de bord</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Rulări în masă</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Instrumente de testare</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Istoricul rulărilor</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Setări</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Aici puteți vedea totul. Modificarea setărilor, pornirea joburilor și instrumentele care creează fișiere necesită politica setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Ce necesită atenție</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Mod render: șabloanele creează aliasurile lipsă în timp ce se redă pagina, ca până acum. Adresele on-demand, substituenții și joburile din fundal nu sunt folosite.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Negocierea formatelor este activă, dar niciun convertor de aici nu poate scrie WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Aceasta este o instalare de staging, dar sursa ei nu are BaseURL: imaginile lipsă nu pot fi preluate.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Sursa de staging este suspendată după eșecuri consecutive: imaginile lipsă primesc substituenți până se termină suspendarea sau o resetați.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Sursa de staging a eșuat recent. Vedeți mai jos ultima eroare.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Această instalare nu este de producție, dar SyncFrom nu indică nicio sursă: nu se preia nimic.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Coada de joburi (expqueue) nu este disponibilă: aliasurile care depășesc timpul sunt create la cererea următoare, pre-generarea după publicare este omisă, iar rulările în masă sunt limitate la domenii mici.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Unele joburi ale aliasurilor de imagine au eșuat definitiv. Configurare &gt; Coada de joburi arată motivul.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Rulările în masă sunt suspendate.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Aliasuri au eșuat în ultimele 24 de ore. Istoricul rulărilor le listează.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Cheia de semnare are peste un an. Rotirea ei păstrează valide adresele vechi pe durata perioadei de grație.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Nu există încă o cheie de semnare: se creează odată cu prima adresă on-demand.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Ultimele 24 de ore</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Aliasuri generate</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Substituenți livrați</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Eșecuri</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Fișiere aduse</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Rulări pornite</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Joburi în așteptare / în execuție</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Numărat din ultimele %lines linii din %file, care ajung înapoi până la %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Mod și livrare</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mod</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>la cerere</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Forma adresei</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Livrare</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Cea mai lungă așteptare a unei cereri</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Conversii simultane</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy din %max ocupate acum</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Negocierea formatelor</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>activă</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>inactivă</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Substituent și script de înlocuire</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Pre-generare după publicare</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Aliasurile site-ului</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Convertoarele variantelor de format</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Convertor</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Ordine de încercare</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>preferat</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>da</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nu</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Aliasurile în sine sunt create de convertoarele din [ImageConverterSettings], ca până acum; acestea scriu variantele WebP și AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Mediu și sursă</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Această instalare</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(producție: nu preia niciodată)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Preia de la</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>nimic</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Adresa sursei</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>nesetată</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Credențial</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>secretul %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>niciunul</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stare</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>funcționează</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>suspendată până la %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>eșuează</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Eșecuri consecutive</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>suspendare după %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Ultima eroare</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Ultimul succes</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Resetați eșecurile și interogați din nou sursa</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Coadă de joburi</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Tip de job</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>În așteptare</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>În execuție</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Eșuat</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>neînregistrat</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Coada de joburi nu este disponibilă.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Rulări în masă suspendate</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>din %time de %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Rulările în masă pot rula</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Cheie de semnare</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Cheie</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>în depozitul de secrete</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>încă niciuna</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Vechime</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days zile (din %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Cheia anterioară</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>valabilă până la %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Rotiți cheia</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Adresele semnate cu cheia curentă continuă să funcționeze pe durata perioadei de grație (SigningKeyGrace), apoi răspund cu substituenți până când paginile sunt create din nou.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Rotiți acum</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Cum funcționează</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, modul render, staging și jurnalul</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (implicit): o pagină leagă un alias care nu există încă de o adresă semnată. Prima cerere îl creează în limita celei mai lungi așteptări, altfel răspunde cu un substituent neutru, iar un job termină lucrarea; scriptul de înlocuire schimbă substituentul când imaginea există.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Modul render: șablonul creează aliasul în timp ce se redă pagina, ca până acum. Puteți comuta între cele două oricând; nu trebuie migrat nimic.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>O instalare de staging preia de la sursa ei originalele și aliasurile care îi lipsesc; o sursă care eșuează este suspendată după eșecuri consecutive, iar administratorii primesc cel mult un e-mail pe oră.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Rulările în masă și pre-generarea după publicare sunt joburi ale cozii de joburi, cu prioritate mai mică decât vizitatorii. Ștergerea aliasurilor golește și memoria cache de răspunsuri a Velocity, astfel încât un fișier șters să nu mai fie servit din ea.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Fiecare alias creat, substituent livrat, fișier adus și rulare este o linie din %file. Linia de comandă are aceleași instrumente: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Job %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done din %total imagini</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Rulare</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Domeniu</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultat</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Anulați acest job</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Jobul %job nu este un job al aliasurilor de imagine sau a fost scos din coadă.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Rezultatul rulării %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Rulările în masă sunt suspendate</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Suspendate din %time de %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>O suspendare oprește fiecare rulare în masă după imaginea curentă, pe toate serverele; rulările din coadă așteaptă. Aliasurile vizitatorilor se creează în continuare.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Reluați rulările în masă</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Motiv (opțional)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Suspendați rulările în masă</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Porniți o rulare</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Rulările sunt joburi ale cozii de joburi: puteți părăsi pagina și reveni.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Fără coada de joburi, o rulare se face în această cerere, pentru cel mult %count imagini.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Acțiune</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generare: creează aliasurile lipsă</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerare: le șterge și le creează din nou</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Eliminare: le șterge (create din nou la cerere)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resincronizare: preia fișierele de la sursa de staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(numai pe o instalare de staging)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Întregul site</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Un nod</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Un nod și subarborele său</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID nod</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Clase</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atribute</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Modificat de la</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>O dată (2026-11-01) sau un interval în urmă (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Cel mult imagini</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Aliasuri (niciunul bifat: toate)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resincronizare</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Rulare de probă: doar numără (o resincronizare verifică sursa și nu stochează nimic)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Suprascrie fișierele diferite (resincronizare)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Porniți rularea</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Ultimele rulări</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Job</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Progres</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>În coadă</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Acțiuni</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anulare</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Încă nu există nicio rulare în masă sau resincronizare.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>O imagine</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Adresele pe care le primește acum un șablon, dimensiunile și tipurile calculate pentru fiecare alias și dacă fișierul există.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Căutați după</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID obiect</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Afișare</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Nu aveți voie să citiți acest obiect.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Acest obiect nu are imagine.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Niciun obiect cu acest ID.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>obiect %object, nod %node, versiunea %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Original: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>fișier existent</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>fișier lipsă</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Aliasurile lui %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Alias</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Dimensiune</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tip</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fișier</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Formate</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Adresa într-un șablon</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>există</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>lipsă</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>nu pentru acest tip</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Verificare</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Creare</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Nicio imagine în acest câmp.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Oră</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Conexiune la o sursă</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>O cerere HEAD către o sursă de staging, cu credențialul ei când este indicat unul. Credențialul este trimis, niciodată afișat.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Sursă</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>cu credențial</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Cale de stocare (opțional)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Testați conexiunea</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Nicio sursă nu are BaseURL. Sursele se setează în setări ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>accesibilă</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>refuzat: verificați credențialul</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>negăsit la sursă</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>fără răspuns</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>timp expirat</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>redirecționat (nu este urmat)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>fără BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>nu este o cale de stocare</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresă</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Stare</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>trimis</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>secretul lipsește</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>secretul nu este user:password sau Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Cele mai noi linii din %file, cele mai noi primele.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Configurare &gt; Fișiere jurnal</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Eveniment</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Toate evenimentele</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Rulări (început și sfârșit)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Calea conține</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Linii</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrare</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Urmărire: afișează liniile noi pe măsură ce sunt scrise</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Cale și detalii</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Nicio linie din jurnal nu se potrivește.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Ce ar schimba salvarea</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Ce s-a schimbat</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Salvat în settings/override/image.ini.append.php, deci o valoare de aici prevalează asupra oricărui siteaccess. Valorile afișate sunt cele în vigoare pentru acest siteaccess. Salvarea vă cere mai întâi să vă confirmați identitatea.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Cum sunt create și livrate aliasurile.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Preluarea imaginilor lipsă de la o altă instalare (alpha, dev, beta, stage, pro, post, arc). Producția (pro) nu preia niciodată.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Setare</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valoare</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>În settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Adresa fiecărei surse și numele secretului care conține credențialul ei (user:password sau Bearer &lt;token&gt;). Valoarea unui secret se setează în Configurare &gt; Secrete și nu este afișată niciodată aici.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Previzualizați modificările</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Salvare</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Urmărire: actualizat %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Suspendat</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Fluxul nu a răspuns; se încearcă din nou.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Jobul s-a încheiat.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: șabloanele primesc adresa, iar aliasul este creat când este cerut. render: șablonul îl creează în timp ce se redă pagina (comportamentul original).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Adresa unui alias care nu este încă creat: token (semnată, nu necesită bază de date), ids-token, ids, node sau storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: o redirecționare către fișier când serverul web servește stocarea, altfel fișierul este transmis în flux.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Secundele cât o cerere poate petrece creând sau preluând un alias; apoi răspunde cu substituentul, iar un job termină lucrarea.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Convertorul încercat primul pentru variantele WebP și AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Răspunde cu WebP sau AVIF browserelor care îl cer, pentru aliasurile care listează Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>O imagine neutră de dimensiunea potrivită cât timp lipsește o imagine.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Un script mic care înlocuiește substituenții cu imaginea reală când aceasta există.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>După publicare, un job creează aliasurile noilor imagini pentru fiecare siteaccess înrudit.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Conversii simultane pe un server.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Prioritatea procesului (nice) pentru rulările în masă, de la 0 la 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Secundele cât browserele și cache-urile pot păstra un alias creat.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Secundele cât rămâne valabilă adresa unei imagini de ciornă sau de previzualizare.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Secundele cât rămâne valabilă cheia de semnare anterioară după o rotire.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Mediul acestei instalări.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Mediul de la care se preiau imaginile lipsă; none: nu se preia nimic.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Câte una pe linie: prefix de stocare locală;prefix al sursei sau adresă, pentru căile de stocare care diferă.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Secundele cât poate dura o cerere către sursă.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Cel mai mare fișier preluat de la sursă, în octeți.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Eșecuri consecutive după care sursa este suspendată.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Cât timp este suspendată o sursă care eșuează.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Trimite e-mail administratorilor când sursa este suspendată (cel mult o dată pe oră).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>O adresă de e-mail pe linie; gol: AdminEmail din site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Adresa instalării sursă %block, de ex. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Numele secretului cu credențialul sau env:VARIABLE. Niciodată credențialul în sine.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(niciunul)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Implicit: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Setat aici; bifați pentru a elimina</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>moștenit</translation>
     </message>
 </context>
 </TS>

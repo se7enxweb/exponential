@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>Импорт/Экспорт</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Суьрташйн псевдонимаш</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Хӏара хӀумана дан</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Subtree-на дан</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Хӏара хӀумана юха дан</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Subtree-на юха дан</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Хӏара хӀумана дӀадаккха</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Subtree-на дӀадаккха</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Шира сайтан server блок: return йолу location =, запросна if ($args), маска санна rewrite, цхьалха агӀонийн map а.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Суьрташйн псевдонимаш</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Суьрташйн псевдонимаш бу шаблонаша гойтуш йолу суьртан масштаб хийцина а, дӀатоьхна а копеш. Кхузахь ахь гуш ду уьш муха даьхкина, массо сайтехь дуккха болх муха лело йиш йу, цхьа сурт е staging-хьост муха таллам бан йиш йу, дӀадоьллачу болхийн истори муха хьажа а, параметраш хийца а.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>АгӀон дакъош</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Урхаллин панель</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Дуккха болхаш</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Талламан гӀирсаш</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>ДӀадоьллачу болхийн истори</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Параметраш</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Кхузахь массо а хӀума гича мега. Параметраш хийцар, тӀедилларш дӀадаккхар а, файлаш йохкучу гӀирсаш а setup/managealiases политикина оьшу.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Шена тидам оьшуш йолу</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Render режим: шаблонаша йоцуш йолу псевдонимаш агӀо гайтинчу хенахь йо, хьалха санна. On-demand адресаш, плейсхолдераш а, чаккхенгахь долу тӀедилларш а ца лелайо.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Форматийн дийцар кхетийна ду, амма кхузахь цхьа конвертер а WebP язъян ца ю.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Хӏара staging-дӀахӀоттор ду, амма цуьнан хьостан BaseURL яц: йоцуш йолу суьрташ схьаэцалур яц.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Staging-хьост социйна дукха тӀаьхьа-тӀаьхьа ца хиларна: йоцуш йолу суьрташна плейсхолдераш луш ю, соцунгӀа чекхъяллалц е ахь юха хӀоттор яллалц.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Staging-хьост дукха хан йоццуш ца хилла. Лахахь цуьнан тӀаьххьара гӀалат хьажа.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Хӏара дӀахӀоттор production яц, амма SyncFrom-ехь хьост яцо: схьаэцар хуьлуш дац.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>ТӀедилларийн рогӀ (expqueue) йиш йац: хан чекхъяьлла псевдонимаш тӀаьхьарчу тӀеэцар йо, зорбатоьхначул тӀаьхьа хьалха кхоллар дӀаяхна ю, дуккха болхаш жима барамашна кхерам бу.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Суьрташийн псевдонимийн цхьа хӀара тӀедилларш яра ца хилла. Setup &gt; ТӀедилларийн рогӀ-ехь бахьана гойту.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Дуккха болхаш социйна ю.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>ТӀаьххьарчу 24 сохьтехь псевдонимаш ца хилла. ДӀадоьллачу болхийн историехь уьш язйина ю.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Куьг тоьхна догӀу хӀоттам цхьа шо оцул дукха хан ду. Цуьнан хийцамо цхьа хан йоцуш хьалха долу адресаш мегаш йу.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Куьг тоьхна догӀу хӀоттам яцара: цунах хуьлу хьалхарчу on-demand адресца.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>ТӀаьххьарчу 24 сохьта</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Кхоьллина псевдонимаш</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Дина плейсхолдераш</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Ца хиллачарш</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Staging-хьоьхна файлаш</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Доло йолийна болхаш</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Хьоьжуш / болх беш долу тӀедилларш</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file файлан тӀаьххьарчу %lines строкех лара дина, уьш %time кхаччалц бу.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Реже а, дӀахьош а</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Реже</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>on demand</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Адресан форма</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>ДӀахьар</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Дехарна тӀаьххьара хьоьжу хан</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Цхьана хенахь конверсеш</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy а, %max а, кхин а болх беш ю</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Форматийн дийцар</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>латтийна</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>дӀасаций</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Плейсхолдер а, swap-скрипт а</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Зорбатоьхначул тӀаьхьа хьалха кхоллар</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Сайтан псевдонимаш</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Формат-вариантийн конвертерш</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Конвертер</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Хьахийна</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>гӀоле</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>хӀаъ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>хӀан-хӀа</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Псевдонимаш шайна [ImageConverterSettings] конвертерша йо, хьалха санна; цара WebP а, AVIF а варианташ язйо.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Environment а, хьост а</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Хӏара дӀахӀоттор</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production: цкъа а схьаоьцур яц)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Схьаоьцу</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>цхьаъ а яц</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Хьостан адрес</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>ца хӀоттийна</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Credential</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>къайле %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>цхьаъ а яц</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Статус</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>болх беш</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time кхаччалц социйна</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>ца хилла</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>ТӀаьхьа-тӀаьхьа ца хилларш</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count тӀаьхьа соцу</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>ТӀаьххьара гӀалат</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>ТӀаьххьара тоьхна</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Ца хилларш дӀадаккха а, хьостах юха хаьттина а</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>ТӀедилларийн рогӀ</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>ТӀедилларан тайпа</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Хьоьжуш</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Болх беш</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ца хилла</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>ца регистрациехь</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>ТӀедилларийн рогӀ йиш йац.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Дуккха болхаш социйна</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time %user тӀера</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Дуккха болхаш дӀадоло мега</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Куьг тоьхна догӀу хӀоттам</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Хӏоттам</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>къайлийн дӀалечкъийнехь</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ХӀинца яц</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Ийна</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days де (%time тӀера)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Хьалхара хӀоттам</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time кхаччалц мег</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>ХӀоттам хийца</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Карарчу хӀоттамца куьг тоьхна адресаш гӀо хан (SigningKeyGrace) болх бо, цул тӀаьхьа агӀонаш юха кхоллалц плейсхолдераш луш ю.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>ХӀинца хийца</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Муха болх бо</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render режим, staging а, журнал а</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (хьалха долу): агӀо ямартачу псевдонимах куьг тоьхна адресе хьожу. Хьалхара дехар чекх йо хьоьжу тӀаьххьара хенахь, йоцуш бале нейтралан плейсхолдер лулу, тӀедиллар болх чекхйоккху; суьрт кхаьчча swap-скрипто плейсхолдер хийцало.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render режим: шаблон агӀо гайтинчу хенахь псевдоним йо, хьалха санна. Шиннан юккъехь муьлххачу хенахь хийца мега; цхьаъ а дӀатуьйсуш дац.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Staging-дӀахӀоттор шен хьостара йоцуш йолу оригиналаш а, псевдонимаш а схьаоьцу; ца хиллачу хьостана тӀаьхьа-тӀаьхьа ца хилча соцу, урхалчаша сохьтехь цхьа е-mail бен ца оьцу.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Дуккха болхаш а, зорбатоьхначул тӀаьхьа хьалха кхоллар а тӀедилларийн рогӀан тӀедилларш бу, хьошалгийн хьалха лахара приоритетца. Псевдонимаш дӀадаккхар Velocity-н response cache а цӀанйо, дӀадаьхна файл цуьнах ца луш хуьлийла.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Кхоьллина, луш йолу плейсхолдер, staging-хьоьхна файл, дӀадоьллар а %file файлан цхьа строка бу. Команданан строкехь иштта гӀирсаш ю: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>ТӀедиллар %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done, %total суьртах</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ДӀадоьллар</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Барам</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ЖамӀ</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Хӏара тӀедиллар дӀадаккха</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>%job тӀедиллар суьрташийн псевдонимийн яц, е рогӀера дӀадаьхна ю.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>%run дӀадоьллар жамӀ</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Дуккха болхаш социйна ю</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time %user тӀера социйна.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Соцо хӀара массо дуккха болх шен карарчу суьртал тӀаьхьа соцу, массо серверехь; рогӀехь болхаш хьоьжу. Хьошалгийн псевдонимаш кхуллуш ю.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Дуккха болхаш юха кхечало</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Бахьана (ца оьшуш)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Дуккха болхаш соцо</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>ДӀадоьллар доло</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>ДӀадоьллар тӀедилларийн рогӀан тӀедиллар бу: агӀонах араяла а, юха охьа а мега.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>ТӀедилларийн рогӀ йоцуш дӀадоьллар хӀара дехарехь до, %count суьрт кхаччалц.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ГӀуллакх</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: йоцуш йолу псевдонимаш дан</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: дӀадаккха а, юха дан а</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: дӀадаккха (дехча юха кхоллало)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: файлаш staging-хьостара схьаэца</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(staging-дӀахӀоттор бен ца ю)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Йерриг сайт</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Цхьа шад</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Шад а, цуьнан subtree а</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Шад ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Классаш</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Атрибуташ</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Хийцина хенахь</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Терахь (2026-11-01) е хан дӀаяьлла (12 сахьт, 2 де).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Дукхахь суьрташ</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Псевдонимаш (цхьаъ а ца билгалйина: массо)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Dry run: бен лара (resync хьост таллам бо, цхьаъ а ца лардо)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Дикка файлаш тӀехь язъян (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>ДӀадоьллар доло</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>ТӀаьххьарчу дӀадоьллар</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>ТӀедиллар</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ДӀабахар</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>РогӀехь</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ГӀуллакхаш</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Юхадаккха</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Дуккха болх е resync лаххара яц.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Цхьа сурт</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Шаблонехь карарчу хенахь долу адресаш, ахь псевдонимана ларйина барам, тайпа а, файл йолуш йуй.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Лаха</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Объект ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Гайта</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Хӏара объект ахьа ларъян мегаш дац.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Хӏара объектехь сурт яц.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Хӏара id йолу объект яц.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>объект %object, шад %node, верси %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Оригинал: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>файл ю</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>файл яц</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name псевдонимаш</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Псевдоним</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Барам</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Тайпа</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Форматаш</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Шаблонехь адрес</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>ю</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>яц</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>хӀара тайпана яц</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Талла</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Дан</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Хӏара аренехь сурт яц.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Хан</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Хьостаца зӀе</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Staging-хьостана HEAD дехар, цуьнан credential лелор ю цхьаъ цӀе луш делахь. Credential дӀаьхьар ду, цкъа а ца гайтар.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Хьост</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>credential-ца</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Storage-некъ (ца оьшуш)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>ЗӀе таллам бан</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Цхьаъ а хьостан BaseURL яц. Хьосташ параметрашкахь ду ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>кхочуш ю</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>ца лаьцна: credential талла</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>хьостехь ца карийна</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>жоп яц</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>хан чекхъяьлла</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>дӀаяьхна (тӀаьхьа ца даьлла)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL яц</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>storage-некъ яц</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Адрес</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Статус</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>дӀаяьхна</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>къайле яц</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>къайле user:password е Bearer &lt;token&gt; яц</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file файлан тӀаьххьарчу строкаш, ширачу хьалха.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Setup &gt; Журналан файлаш</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Хилларг</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Массо хилларш</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>ДӀадоьллар (доло а, чаккхе а)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Некъехь ду</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Строкаш</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Фильтр</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>ТӀаьхьа хьажа: керлачу строкаш яздечу хенахь гайта</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Некъ а, хаамаш а</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Журналехь цхьаъ а строка ца тарло.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Лардечу хенахь хийцамаш</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Хийцина хӀумаш</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php-ехь ларйина, цундела хӀара маьӀна массо siteaccess-ал а лекха ю. Гайтинарш хӀара siteaccess-ана гӀо долу маьӀнаш ю. Ларъяро хьо мила ю тӀечӀагӀде аьтту.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Псевдонимаш муха кхоллало, дӀахьало.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Йоцуш суьрташ кхечу дӀахӀоттарх схьаэцар (alpha, dev, beta, stage, pro, post, arc). Production (pro) цкъа а схьа ца оьцу.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Параметр</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>МаьӀна</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override-ехь</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Хьостан адрес а, цуьнан credential лардечу къайлан цӀе а (user:password е Bearer &lt;token&gt;). Къайлан маьӀна Setup &gt; Къайле хӀуманаш-ехь хӀоттало, кхузахь цкъа а ца гайтало.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Хийцамаш хьалха хьажа</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Ӏалашдан</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>ТӀаьхьа хьоьжу: %time керлачу</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Социйна</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Feed жоп ца делла; юха хьоьху.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>ТӀедиллар чекхъяьлла.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: шаблонашна адрес кхочу, псевдоним дехча йо. render: шаблон агӀо гайтинчу хенахь йо (хьалхара амал).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Ца йинчу псевдонан адрес: token (куьг тоьхна, database ца оьшу), ids-token, ids, node е storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: web-сервера storage лелахь, файл тӀе redirect, йоцуш бале файл стрим до.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Дехарно псевдоним йан е схьаэца йиш йолу секунда; цул тӀаьхьа плейсхолдер лу, тӀедиллар болх чекхйоккху.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP а, AVIF а варианташна хьалха хьоьхуш йолу конвертер.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Дехна браузерашна WebP е AVIF жоп луш, Formats[] язйина псевдонашна.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Суьрт йоцуш хенахь нейтрал бакъо барам йолу сурт.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Суьрт карийча плейсхолдераш билгалчу суьртаца хийцадо жима скрипт.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Зорбатоьхначул тӀаьхьа тӀедиллара керла суьрташийн псевдонаш массо долчу siteaccess-ана йо.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Цхьана серверехь цхьана хенахь конверсеш.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Дуккха болхийн процессан приоритет (nice), 0 гӀо 19 кхаччалц.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Браузерашна а, cache-ашна а кхоьллина псевдоним лардан йиш йолу секунда.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Черновикан е хьалха хьажаран суьртан адрес мегаш долу секунда.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Хийцаман тӀаьхьа хьалхара куьг тоьхна хӀоттам мегаш долу секунда.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Хӏара дӀахӀоттаран environment.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Environment, цигара йоцуш суьрташ схьаоьцу; none: цхьаъ а схьаоьцур яц.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Цхьа строкехь цхьаъ: локалан storage-префикс;хьостан префикс е адрес, ца цхьаьна storage-некъашна.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Хьостана цхьа дехар дан йиш йолу секунда.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Хьостара схьаоьцу йоккха файл, байтехь.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Хьост соцу тӀаьхьа-тӀаьхьа ца хилларш.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Ца хилла хьост муьлха хан соцу.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Хьост соцучу хенахь урхалчашка mail дахьа (сохьтехь цкъа бен ца).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Цхьа строкехь цхьа е-mail адрес; йоцуш: site.ini-н AdminEmail.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Хьостан дӀахӀоттаран %block адрес, масала https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Credential долу къайлан цӀе, е env:VARIABLE. Credential шемаш цкъа а яц.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(цхьаъ а яц)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Стандартан: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Кхузахь хӀоттийна; дӀадаккха билгалъяха</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>ӀаьтӀина</translation>
     </message>
 </context>
 </TS>

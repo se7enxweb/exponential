@@ -16529,6 +16529,34 @@ Shënim: paketat nuk do të çinstalohen.</translation>
         <source>Import/Export</source>
         <translation>Importo/Eksporto</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Variantet e imazheve</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Krijo për këtë element</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Krijo për nënpemën</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Rikrijo për këtë element</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Rikrijo për nënpemën</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Hiq për këtë element</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Hiq për nënpemën</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86452,6 +86480,997 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Blloku server i një sajti të vjetër: location = me return, if ($args) për një pyetësor, rewrite si karakter i përgjithshëm dhe një map faqesh të veçanta.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Variantet e imazheve</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Variantet e imazheve janë kopjet e shkallëzuara dhe të prera të një imazhi që shfaqin shabllonet. Këtu shihni si krijohen, nisni punë masive mbi faqen, provoni një imazh ose një burim staging, ndiqni historikun e ekzekutimeve dhe ndryshoni cilësimet.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Pjesët e faqes</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Paneli</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Ekzekutime masive</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Mjete provë</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Historiku i ekzekutimeve</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Cilësimet</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Mund t&apos;i shihni të gjitha këtu. Ndryshimi i cilësimeve, nisja e punëve dhe mjetet që krijojnë skedarë kërkojnë politikën setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Çfarë kërkon vëmendje</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Mënyra render: shabllonet krijojnë variantet që mungojnë gjatë shfaqjes së faqes, si më parë. Adresat on-demand, vendmbajtësit dhe punët në sfond nuk përdoren.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Negocimi i formatit është i aktivizuar, por asnjë konvertues këtu nuk mund të shkruajë WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Ky është një instalim staging, por burimi i tij nuk ka BaseURL: imazhet që mungojnë nuk mund të merren.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Burimi staging është pezulluar pas dështimesh të njëpasnjëshme: imazhet që mungojnë marrin vendmbajtës derisa të mbarojë pezullimi ose ta rivendosni.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Burimi staging ka dështuar së fundmi. Shihni gabimin e tij të fundit më poshtë.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Ky instalim nuk është prodhim, por SyncFrom nuk emërton asnjë burim: nuk merret asgjë.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Radha e punëve (expqueue) nuk është e disponueshme: variantet që e kalojnë kohën krijohen nga kërkesa e radhës, krijimi paraprak pas publikimit anashkalohet dhe ekzekutimet masive kufizohen në fusha të vogla.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Disa punë të varianteve të imazheve dështuan përfundimisht. Konfigurimi &gt; Radha e punëve tregon pse.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Ekzekutimet masive janë pezulluar.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Variante kanë dështuar në 24 orët e fundit. Historiku i ekzekutimeve i liston.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Çelësi i nënshkrimit është më i vjetër se një vit. Rrotullimi i tij i mban adresat e vjetra të vlefshme gjatë periudhës së tolerancës.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Nuk ka ende çelës nënshkrimi: krijohet me adresën e parë on-demand.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>24 orët e fundit</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Variante të krijuara</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Vendmbajtës të dhënë</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Dështime</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Skedarë të marrë</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Ekzekutime të nisura</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Punë në pritje / në ekzekutim</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Numëruar nga %lines rreshtat e fundit të %file, që shkojnë deri te %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Mënyra dhe shpërndarja</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mënyra</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>sipas kërkesës</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Forma e adresës</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Shpërndarja</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Pritja më e gjatë e një kërkese</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Konvertime njëkohësisht</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy nga %max të zëna tani</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Negocimi i formatit</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>aktiv</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>joaktiv</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Vendmbajtësi dhe skripti i këmbimit</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Krijimi paraprak pas publikimit</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Variantet e faqes</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Konvertuesit e varianteve të formatit</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Konvertuesi</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Provuar</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>i preferuar</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>po</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>jo</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Vetë variantet krijohen nga konvertuesit e [ImageConverterSettings], si më parë; këta shkruajnë variantet WebP dhe AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Mjedisi dhe burimi</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Ky instalim</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(prodhim: nuk merr kurrë)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Merr nga</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>asgjë</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Adresa e burimit</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>e pacaktuar</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Kredenciali</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>sekreti %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>asnjë</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Gjendja</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>funksionon</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>i pezulluar deri më %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>po dështon</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Dështime të njëpasnjëshme</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>pezullim pas %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Gabimi i fundit</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Suksesi i fundit</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Rivendos dështimet dhe pyet burimin sërish</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Radha e punëve</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Lloji i punës</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Në pritje</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Në ekzekutim</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Dështoi</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>i paregjistruar</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Radha e punëve nuk është e disponueshme.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Ekzekutimet masive të pezulluara</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>që nga %time nga %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Ekzekutimet masive lejohen</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Çelësi i nënshkrimit</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Çelësi</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>në magazinën e sekreteve</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ende asnjë</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Mosha</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days ditë (që nga %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Çelësi i mëparshëm</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>i vlefshëm deri më %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Rrotullo çelësin</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Adresat e nënshkruara me çelësin aktual vazhdojnë të funksionojnë gjatë periudhës së tolerancës (SigningKeyGrace), pastaj japin vendmbajtës derisa faqet të krijohen sërish.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Rrotullo tani</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Si funksionon</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, mënyra render, staging dhe regjistri</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>Sipas kërkesës (parazgjedhja): një faqe lidh një variant që s&apos;ekziston ende me një adresë të nënshkruar. Kërkesa e parë e krijon brenda pritjes më të gjatë, përndryshe jep një vendmbajtës neutral dhe një punë e përfundon; skripti i këmbimit e zëvendëson vendmbajtësin kur imazhi është gati.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Mënyra render: shablloni krijon variantin gjatë shfaqjes së faqes, si më parë. Kaloni mes të dyjave në çdo kohë; nuk duhet migruar asgjë.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Një instalim staging merr nga burimi i tij origjinalët dhe variantet që i mungojnë; një burim që dështon pezullohet pas dështimesh të njëpasnjëshme dhe administratorët marrin më së shumti një e-mail në orë.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Ekzekutimet masive dhe krijimi paraprak pas publikimit janë punë të radhës së punëve, me prioritet më të ulët se vizitorët. Heqja e varianteve pastron edhe cache-in e përgjigjeve të Velocity, që skedari i hequr të mos shërbehet prej tij.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Çdo variant i krijuar, vendmbajtës i dhënë, skedar i marrë dhe ekzekutim është një rresht i %file. Linja e komandës ka të njëjtat mjete: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Puna %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done nga %total imazhe</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Ekzekutimi</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Fusha</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultati</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Anulo këtë punë</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Puna %job nuk është punë e varianteve të imazheve, ose u hoq nga radha.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Rezultati i ekzekutimit %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Ekzekutimet masive janë pezulluar</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Pezulluar që nga %time nga %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Një pezullim ndalon çdo ekzekutim masiv pas imazhit aktual, në çdo server; ekzekutimet në radhë presin. Variantet për vizitorët krijohen ende.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Rifillo ekzekutimet masive</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Arsyeja (opsionale)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Pezullo ekzekutimet masive</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Nis një ekzekutim</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Ekzekutimet janë punë të radhës së punëve: mund ta lini faqen dhe të ktheheni.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Pa radhën e punëve, ekzekutimi bëhet në këtë kërkesë, për më së shumti %count imazhe.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Veprimi</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Krijo: krijon variantet që mungojnë</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Rikrijo: i heq dhe i krijon sërish</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Pastro: i heq (krijohen sërish sipas kërkesës)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Risinkronizo: merr skedarët nga burimi staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(vetëm në një instalim staging)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>E gjithë faqja</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Një nyje</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Një nyje dhe nënpema e saj</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID-ja e nyjes</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klasat</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atributet</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Ndryshuar që nga</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Një datë (2026-11-01) ose një kohë më parë (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Më së shumti imazhe</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Variantet (asnjë e shënuar: të gjitha)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>risinkronizim</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Provë: vetëm numëro (një risinkronizim kontrollon burimin dhe nuk ruan asgjë)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Mbishkruaj skedarët që ndryshojnë (risinkronizim)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Nis ekzekutimin</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Ekzekutimet e fundit</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Puna</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ecuria</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Në radhë</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Veprimet</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anulo</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Ende asnjë ekzekutim masiv apo risinkronizim.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Një imazh</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Adresat që merr tani një shabllon, madhësitë dhe llojet e llogaritura për çdo variant, dhe nëse çdo skedar ekziston.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Kërko sipas</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID-ja e objektit</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Shfaq</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Nuk keni të drejtë ta lexoni këtë objekt.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Ky objekt nuk ka imazh.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Asnjë objekt me këtë ID.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>objekti %object, nyja %node, versioni %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Origjinali: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>skedari ekziston</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>skedari mungon</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Variantet e %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Varianti</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Madhësia</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Lloji</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Skedari</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Formatet</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Adresa në një shabllon</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>ekziston</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>mungon</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>jo për këtë lloj</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Kontrollo</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Krijo</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Asnjë imazh në këtë fushë.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Koha</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Lidhja me një burim</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Një kërkesë HEAD te një burim staging, me kredencialin e tij kur është caktuar një. Kredenciali dërgohet, por nuk shfaqet kurrë.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Burimi</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>me kredencial</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Rruga e ruajtjes (opsionale)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Provo lidhjen</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Asnjë burim nuk ka BaseURL. Burimet caktohen në cilësime ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>i arritshëm</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>refuzuar: kontrolloni kredencialin</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>nuk u gjet në burim</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>pa përgjigje</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>koha skadoi</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>ridrejtuar (nuk u ndoq)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>pa BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>nuk është rrugë ruajtjeje</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresa</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Statusi</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>dërguar</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>sekreti mungon</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>sekreti nuk është user:password ose Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Rreshtat më të rinj të %file, më të rinjtë së pari.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Konfigurimi &gt; Skedarët e regjistrit</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Ngjarja</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Të gjitha ngjarjet</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Ekzekutimet (fillimi dhe mbarimi)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Rruga përmban</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Rreshtat</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtro</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Ndiq: shfaq rreshtat e rinj sapo shkruhen</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Rruga dhe detajet</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Asnjë rresht i regjistrit nuk përputhet.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Çfarë do të ndryshonte ruajtja</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Çfarë u ndryshua</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Ruhet në settings/override/image.ini.append.php, kështu që një vlerë këtu mbizotëron mbi çdo siteaccess. Vlerat e shfaqura janë ato në fuqi për këtë siteaccess. Ruajtja fillimisht ju kërkon të konfirmoni se jeni ju.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Si krijohen dhe shpërndahen variantet.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Marrja e imazheve që mungojnë nga një instalim tjetër (alpha, dev, beta, stage, pro, post, arc). Prodhimi (pro) nuk merr kurrë.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Cilësimi</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Vlera</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Në settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Adresa e çdo burimi dhe emri i sekretit që mban kredencialin e tij (user:password ose Bearer &lt;token&gt;). Vlera e një sekreti caktohet te Konfigurimi &gt; Sekretet dhe nuk shfaqet kurrë këtu.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Shiko paraprakisht ndryshimet</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Ruaj</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Duke ndjekur: përditësuar %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Pezulluar</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Burimi nuk u përgjigj; po provohet sërish.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Puna ka përfunduar.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: shabllonet marrin adresën, varianti krijohet kur kërkohet. render: shablloni e krijon gjatë shfaqjes së faqes (sjellja origjinale).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Adresa e një varianti që s&apos;është krijuar ende: token (e nënshkruar, nuk kërkon bazë të dhënash), ids-token, ids, node ose storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: një ridrejtim te skedari kur serveri web e shërben ruajtjen, përndryshe skedari transmetohet.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Sekonda që një kërkesë mund të kalojë duke krijuar ose marrë një variant; pastaj jep vendmbajtësin dhe një punë e përfundon.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Konvertuesi që provohet i pari për variantet WebP dhe AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Jep WebP ose AVIF te shfletuesit që e kërkojnë, për variantet që listojnë Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Një imazh neutral me madhësinë e duhur ndërsa një imazh mungon.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Një skript i vogël që zëvendëson vendmbajtësit me imazhin e vërtetë kur ai është gati.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Pas publikimit, një punë krijon variantet e imazheve të reja për çdo siteaccess të lidhur.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Konvertime njëkohësisht në një server.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Prioriteti i procesit (nice) i ekzekutimeve masive, 0 deri 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Sekonda që shfletuesit dhe cache-t mund ta mbajnë një variant të krijuar.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Sekonda që adresa e një imazhi drafti ose paraskicë mbetet e vlefshme.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Sekonda që çelësi i mëparshëm i nënshkrimit mbetet i vlefshëm pas një rrotullimi.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Mjedisi i këtij instalimi.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Mjedisi nga merren imazhet që mungojnë; none: nuk merret asgjë.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Një për rresht: prefiksi i ruajtjes lokale;prefiksi ose adresa e burimit, për rrugë ruajtjeje që ndryshojnë.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Sekonda që mund të zgjasë një kërkesë te burimi.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Skedari më i madh i marrë nga burimi, në bajte.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Dështime të njëpasnjëshme pas të cilave burimi pezullohet.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Sa kohë pezullohet një burim që dështon.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Dërgo e-mail administratorëve kur burimi pezullohet (më së shumti një herë në orë).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Një adresë e-mail për rresht; bosh: AdminEmail i site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Adresa e instalimit burim %block, p.sh. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Emri i sekretit me kredencialin, ose env:VARIABLE. Kurrë vetë kredenciali.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(asnjë)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Parazgjedhja: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Caktuar këtu; shënoni për ta hequr</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>e trashëguar</translation>
     </message>
 </context>
 </TS>

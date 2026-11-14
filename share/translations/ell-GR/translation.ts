@@ -16529,6 +16529,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>Εισαγωγή/Εξαγωγή</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Ψευδώνυμα εικόνων</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Δημιουργία για αυτό το στοιχείο</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Δημιουργία για το υποδέντρο</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Νέα δημιουργία για αυτό το στοιχείο</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Νέα δημιουργία για το υποδέντρο</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Αφαίρεση για αυτό το στοιχείο</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Αφαίρεση για το υποδέντρο</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86452,6 +86480,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Το μπλοκ server ενός παλιού ιστότοπου: location = με return, if ($args) για ερώτημα, rewrite ως μπαλαντέρ και ένα map μεμονωμένων σελίδων.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Ψευδώνυμα εικόνων</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Τα ψευδώνυμα εικόνων είναι τα αντίγραφα μιας εικόνας με αλλαγή κλίμακας και περικοπή που εμφανίζουν τα πρότυπα. Εδώ βλέπετε πώς δημιουργούνται, εκτελείτε μαζικές εργασίες σε όλο τον ιστότοπο, δοκιμάζετε μία εικόνα ή μια πηγή staging, παρακολουθείτε το ιστορικό εκτελέσεων και αλλάζετε τις ρυθμίσεις.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Τμήματα της σελίδας</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Πίνακας εργαλείων</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Μαζικές εκτελέσεις</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Εργαλεία δοκιμής</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Ιστορικό εκτελέσεων</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Ρυθμίσεις</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Μπορείτε να δείτε τα πάντα εδώ. Η αλλαγή ρυθμίσεων, η εκτέλεση εργασιών και τα εργαλεία που δημιουργούν αρχεία απαιτούν την πολιτική setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Τι χρειάζεται προσοχή</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Λειτουργία render: τα πρότυπα δημιουργούν τα ψευδώνυμα που λείπουν κατά την απόδοση της σελίδας, όπως πριν. Οι διευθύνσεις on-demand, τα προσωρινά placeholders και οι εργασίες παρασκηνίου δεν χρησιμοποιούνται.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Η διαπραγμάτευση μορφής είναι ενεργή, αλλά κανένας μετατροπέας εδώ δεν μπορεί να γράψει WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Αυτή είναι εγκατάσταση staging, αλλά η πηγή της δεν έχει BaseURL: οι εικόνες που λείπουν δεν μπορούν να ληφθούν.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Η πηγή staging έχει τεθεί σε παύση μετά από διαδοχικές αποτυχίες: οι εικόνες που λείπουν παίρνουν placeholders μέχρι να λήξει η παύση ή να την επαναφέρετε.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Η πηγή staging απέτυχε πρόσφατα. Δείτε το τελευταίο σφάλμα της παρακάτω.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Αυτή η εγκατάσταση δεν είναι παραγωγής, αλλά το SyncFrom δεν ορίζει καμία πηγή: δεν λαμβάνεται τίποτα.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Η ουρά εργασιών (expqueue) δεν είναι διαθέσιμη: τα ψευδώνυμα που ξεπερνούν τον χρόνο τους δημιουργούνται από το επόμενο αίτημα, η προδημιουργία μετά τη δημοσίευση παραλείπεται και οι μαζικές εκτελέσεις περιορίζονται σε μικρά εύρη.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Ορισμένες εργασίες ψευδωνύμων εικόνων απέτυχαν οριστικά. Το Ρυθμίσεις συστήματος &gt; Ουρά εργασιών δείχνει τον λόγο.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Οι μαζικές εκτελέσεις βρίσκονται σε παύση.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Ψευδώνυμα απέτυχαν τις τελευταίες 24 ώρες. Το ιστορικό εκτελέσεων τα απαριθμεί.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Το κλειδί υπογραφής είναι παλαιότερο από ένα έτος. Η εναλλαγή του διατηρεί τις παλιές διευθύνσεις έγκυρες κατά την περίοδο χάριτος.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Δεν υπάρχει ακόμη κλειδί υπογραφής: δημιουργείται με την πρώτη διεύθυνση on-demand.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Οι τελευταίες 24 ώρες</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Ψευδώνυμα που δημιουργήθηκαν</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Placeholders που εστάλησαν</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Αποτυχίες</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Αρχεία που τοποθετήθηκαν</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Εκτελέσεις που ξεκίνησαν</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Εργασίες σε αναμονή / εκτέλεση</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Μετρήθηκαν από τις τελευταίες %lines γραμμές του %file, που φτάνουν πίσω έως %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Λειτουργία και παράδοση</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Λειτουργία</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>κατά απαίτηση</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Μορφή διεύθυνσης</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Παράδοση</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Μέγιστη αναμονή αιτήματος</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds δ</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Ταυτόχρονες μετατροπές</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy από %max απασχολημένες τώρα</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Διαπραγμάτευση μορφής</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ενεργή</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ανενεργή</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Placeholder και σενάριο αντικατάστασης</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Προδημιουργία μετά τη δημοσίευση</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Ψευδώνυμα του ιστότοπου</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Μετατροπείς των παραλλαγών μορφής</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Μετατροπέας</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Δοκιμάστηκε</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>προτιμώμενος</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ναι</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>όχι</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Τα ίδια τα ψευδώνυμα δημιουργούνται από τους μετατροπείς του [ImageConverterSettings], όπως πριν· αυτοί γράφουν τις παραλλαγές WebP και AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Περιβάλλον και πηγή</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Αυτή η εγκατάσταση</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(παραγωγή: δεν λαμβάνει ποτέ)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Λήψη από</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>τίποτα</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Διεύθυνση πηγής</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>δεν έχει οριστεί</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Διαπιστευτήριο</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>μυστικό %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>κανένα</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Κατάσταση</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>λειτουργεί</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>σε παύση έως %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>αποτυγχάνει</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Διαδοχικές αποτυχίες</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>παύση μετά από %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Τελευταίο σφάλμα</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Τελευταία επιτυχία</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Μηδενισμός των αποτυχιών και νέο ερώτημα στην πηγή</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Ουρά εργασιών</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Τύπος εργασίας</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Σε αναμονή</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Σε εκτέλεση</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Απέτυχε</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>δεν έχει καταχωριστεί</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Η ουρά εργασιών δεν είναι διαθέσιμη.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Μαζικές εκτελέσεις σε παύση</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>από %time από %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Οι μαζικές εκτελέσεις επιτρέπονται</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Κλειδί υπογραφής</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Κλειδί</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>στο αποθετήριο μυστικών</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>δεν υπάρχει ακόμη</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Ηλικία</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days ημέρες (από %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Προηγούμενο κλειδί</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>ισχύει έως %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Εναλλαγή του κλειδιού</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Οι διευθύνσεις που υπογράφηκαν με το τρέχον κλειδί εξακολουθούν να λειτουργούν κατά την περίοδο χάριτος (SigningKeyGrace) και έπειτα απαντούν με placeholders μέχρι να δημιουργηθούν ξανά οι σελίδες.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Εναλλαγή τώρα</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Πώς λειτουργεί</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, λειτουργία render, staging και το αρχείο καταγραφής</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (η προεπιλογή): μια σελίδα συνδέει ένα ψευδώνυμο που δεν υπάρχει ακόμη με μια υπογεγραμμένη διεύθυνση. Το πρώτο αίτημα το δημιουργεί μέσα στη μέγιστη αναμονή, αλλιώς απαντά με ένα ουδέτερο placeholder και μια εργασία ολοκληρώνει τη δουλειά· το σενάριο αντικατάστασης αντικαθιστά το placeholder όταν η εικόνα είναι έτοιμη.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Λειτουργία render: το πρότυπο δημιουργεί το ψευδώνυμο κατά την απόδοση της σελίδας, όπως πριν. Μπορείτε να εναλλάσσεστε μεταξύ των δύο ανά πάσα στιγμή· τίποτα δεν χρειάζεται μετάβαση.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Μια εγκατάσταση staging λαμβάνει από την πηγή της τα πρωτότυπα και τα ψευδώνυμα που της λείπουν· μια πηγή που αποτυγχάνει τίθεται σε παύση μετά από διαδοχικές αποτυχίες και οι διαχειριστές λαμβάνουν το πολύ ένα email την ώρα.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Οι μαζικές εκτελέσεις και η προδημιουργία μετά τη δημοσίευση είναι εργασίες της ουράς εργασιών, με χαμηλότερη προτεραιότητα από τους επισκέπτες. Η αφαίρεση ψευδωνύμων καθαρίζει επίσης την προσωρινή μνήμη απαντήσεων του Velocity, ώστε ένα αρχείο που αφαιρέθηκε να μην σερβίρεται από αυτήν.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Κάθε ψευδώνυμο που δημιουργείται, placeholder που αποστέλλεται, αρχείο που τοποθετείται και εκτέλεση είναι μια γραμμή του %file. Η γραμμή εντολών έχει τα ίδια εργαλεία: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Εργασία %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done από %total εικόνες</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Εκτέλεση</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Εύρος</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Αποτέλεσμα</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Ακύρωση αυτής της εργασίας</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Η εργασία %job δεν είναι εργασία ψευδωνύμων εικόνων ή αφαιρέθηκε από την ουρά.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Αποτέλεσμα της εκτέλεσης %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Οι μαζικές εκτελέσεις βρίσκονται σε παύση</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Σε παύση από %time από %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Η παύση σταματά κάθε μαζική εκτέλεση μετά την τρέχουσα εικόνα της, σε κάθε διακομιστή· οι εκτελέσεις στην ουρά περιμένουν. Τα ψευδώνυμα των επισκεπτών εξακολουθούν να δημιουργούνται.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Συνέχιση των μαζικών εκτελέσεων</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Αιτιολογία (προαιρετικά)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Παύση των μαζικών εκτελέσεων</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Έναρξη εκτέλεσης</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Οι εκτελέσεις είναι εργασίες της ουράς εργασιών: μπορείτε να φύγετε από τη σελίδα και να επιστρέψετε.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Χωρίς την ουρά εργασιών, μια εκτέλεση γίνεται σε αυτό το αίτημα, για το πολύ %count εικόνες.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ενέργεια</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: δημιουργία των ψευδωνύμων που λείπουν</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: αφαίρεση και νέα δημιουργία</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: αφαίρεσή τους (δημιουργούνται ξανά κατά απαίτηση)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: λήψη των αρχείων από την πηγή staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(μόνο σε εγκατάσταση staging)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Ολόκληρος ο ιστότοπος</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Ένας κόμβος</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Ένας κόμβος και το υποδέντρο του</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Αναγνωριστικό κόμβου</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Κλάσεις</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Χαρακτηριστικά</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Αλλαγή από</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Μια ημερομηνία (2026-11-01) ή ένα χρονικό διάστημα πριν (12 ώρες, 2 ημέρες).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Το πολύ εικόνες</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Ψευδώνυμα (αν δεν επιλεγεί κανένα: όλα)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Δοκιμαστική εκτέλεση: μόνο μέτρηση (το resync ελέγχει την πηγή και δεν αποθηκεύει τίποτα)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Αντικατάσταση αρχείων που διαφέρουν (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Έναρξη της εκτέλεσης</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Τελευταίες εκτελέσεις</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Εργασία</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Πρόοδος</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Σε ουρά</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ενέργειες</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Άκυρο</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Δεν υπάρχει ακόμη μαζική εκτέλεση ή resync.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Μία εικόνα</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Οι διευθύνσεις που παίρνει τώρα ένα πρότυπο, τα μεγέθη και οι τύποι που υπολογίζονται για κάθε ψευδώνυμο, και αν υπάρχει κάθε αρχείο.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Αναζήτηση με</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Αναγνωριστικό αντικειμένου</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Αναγνωριστικό</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Εμφάνιση</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Δεν επιτρέπεται να διαβάσετε αυτό το αντικείμενο.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Αυτό το αντικείμενο δεν έχει εικόνα.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Δεν υπάρχει αντικείμενο με αυτό το αναγνωριστικό.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>αντικείμενο %object, κόμβος %node, έκδοση %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Πρωτότυπο: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>το αρχείο υπάρχει</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>το αρχείο λείπει</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Ψευδώνυμα του %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Ψευδώνυμο</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Μέγεθος</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Τύπος</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Αρχείο</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Μορφές</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Διεύθυνση σε πρότυπο</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>υπάρχει</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>λείπει</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>δεν ισχύει για αυτόν τον τύπο</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Έλεγχος</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Δημιουργία</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Δεν υπάρχει εικόνα σε αυτό το πεδίο.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Χρόνος</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Σύνδεση με πηγή</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Ένα αίτημα HEAD σε μια πηγή staging, με το διαπιστευτήριό της όταν έχει οριστεί. Το διαπιστευτήριο αποστέλλεται, δεν εμφανίζεται ποτέ.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Πηγή</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>με διαπιστευτήριο</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Διαδρομή αποθήκευσης (προαιρετικά)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Δοκιμή της σύνδεσης</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Καμία πηγή δεν έχει BaseURL. Οι πηγές ορίζονται στις ρυθμίσεις ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>προσβάσιμη</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>απορρίφθηκε: ελέγξτε το διαπιστευτήριο</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>δεν βρέθηκε στην πηγή</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>καμία απάντηση</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>λήξη χρονικού ορίου</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>ανακατεύθυνση (δεν ακολουθήθηκε)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>χωρίς BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>δεν είναι διαδρομή αποθήκευσης</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Διεύθυνση</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Κατάσταση</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>εστάλη</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>το μυστικό λείπει</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>το μυστικό δεν είναι user:password ή Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Οι νεότερες γραμμές του %file, πρώτα οι νεότερες.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Ρυθμίσεις συστήματος &gt; Αρχεία καταγραφής</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Συμβάν</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Όλα τα συμβάντα</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Εκτελέσεις (έναρξη και λήξη)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Η διαδρομή περιέχει</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Γραμμές</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Φίλτρο</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Παρακολούθηση: εμφάνιση νέων γραμμών καθώς γράφονται</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Διαδρομή και λεπτομέρειες</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Καμία γραμμή του αρχείου καταγραφής δεν ταιριάζει.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Τι θα άλλαζε η αποθήκευση</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Τι άλλαξε</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Αποθηκεύεται στο settings/override/image.ini.append.php, ώστε μια τιμή εδώ να υπερισχύει όλων των siteaccess. Οι τιμές που εμφανίζονται είναι αυτές που ισχύουν για αυτό το siteaccess. Η αποθήκευση ζητά πρώτα να επιβεβαιώσετε την ταυτότητά σας.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Πώς δημιουργούνται και παραδίδονται τα ψευδώνυμα.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Λήψη των εικόνων που λείπουν από άλλη εγκατάσταση (alpha, dev, beta, stage, pro, post, arc). Η παραγωγή (pro) δεν λαμβάνει ποτέ.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Ρύθμιση</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Τιμή</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Στο settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Η διεύθυνση κάθε πηγής και το όνομα του μυστικού που περιέχει το διαπιστευτήριό της (user:password ή Bearer &lt;token&gt;). Η τιμή ενός μυστικού ορίζεται στο Ρυθμίσεις συστήματος &gt; Μυστικά και δεν εμφανίζεται ποτέ εδώ.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Προεπισκόπηση των αλλαγών</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Αποθήκευση</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Παρακολούθηση: ενημερώθηκε %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Σε παύση</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Η ροή δεν απάντησε· γίνεται νέα προσπάθεια.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Η εργασία έχει τελειώσει.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: τα πρότυπα παίρνουν τη διεύθυνση, το ψευδώνυμο δημιουργείται όταν ζητηθεί. render: το πρότυπο το δημιουργεί κατά την απόδοση της σελίδας (η αρχική συμπεριφορά).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Η διεύθυνση ενός ψευδωνύμου που δεν έχει δημιουργηθεί ακόμη: token (υπογεγραμμένη, δεν χρειάζεται βάση δεδομένων), ids-token, ids, node ή storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: ανακατεύθυνση στο αρχείο όταν ο διακομιστής ιστού σερβίρει την αποθήκευση, αλλιώς το αρχείο αποστέλλεται ως ροή.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Δευτερόλεπτα που μπορεί να διαθέσει ένα αίτημα για τη δημιουργία ή λήψη ενός ψευδωνύμου· έπειτα απαντά με το placeholder και μια εργασία ολοκληρώνει τη δουλειά.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Ο μετατροπέας που δοκιμάζεται πρώτος για τις παραλλαγές WebP και AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Απάντηση WebP ή AVIF στους browsers που το ζητούν, για ψευδώνυμα που απαριθμούν Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Μια ουδέτερη εικόνα σωστού μεγέθους όσο λείπει μια εικόνα.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Ένα μικρό σενάριο που αντικαθιστά τα placeholders με την πραγματική εικόνα όταν είναι διαθέσιμη.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Μετά τη δημοσίευση, μια εργασία δημιουργεί τα ψευδώνυμα των νέων εικόνων για κάθε σχετικό siteaccess.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Ταυτόχρονες μετατροπές σε έναν διακομιστή.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Η προτεραιότητα διεργασίας (nice) των μαζικών εκτελέσεων, από 0 έως 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Δευτερόλεπτα που οι browsers και οι προσωρινές μνήμες μπορούν να κρατούν ένα ψευδώνυμο που δημιουργήθηκε.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Δευτερόλεπτα που παραμένει έγκυρη η διεύθυνση μιας εικόνας πρόχειρου ή προεπισκόπησης.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Δευτερόλεπτα που παραμένει έγκυρο το προηγούμενο κλειδί υπογραφής μετά από μια εναλλαγή.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Το περιβάλλον αυτής της εγκατάστασης.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Το περιβάλλον από το οποίο λαμβάνονται οι εικόνες που λείπουν· none: δεν λαμβάνεται τίποτα.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Ένα ανά γραμμή: τοπικό πρόθεμα αποθήκευσης;πρόθεμα πηγής ή διεύθυνση, για διαδρομές αποθήκευσης που διαφέρουν.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Δευτερόλεπτα που μπορεί να διαρκέσει ένα αίτημα προς την πηγή.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Το μεγαλύτερο αρχείο που λαμβάνεται από την πηγή, σε byte.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Διαδοχικές αποτυχίες μετά τις οποίες η πηγή τίθεται σε παύση.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Για πόσο διάστημα τίθεται σε παύση μια πηγή που αποτυγχάνει.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Αποστολή email στους διαχειριστές όταν η πηγή τίθεται σε παύση (το πολύ μία φορά την ώρα).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Μία διεύθυνση email ανά γραμμή· κενό: το AdminEmail του site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Η διεύθυνση της εγκατάστασης πηγής %block, π.χ. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Το όνομα του μυστικού με το διαπιστευτήριο ή env:VARIABLE. Ποτέ το ίδιο το διαπιστευτήριο.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(κανένα)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Προεπιλογή: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Ορίστηκε εδώ· επιλέξτε για να αφαιρεθεί</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>κληρονομείται</translation>
     </message>
 </context>
 </TS>

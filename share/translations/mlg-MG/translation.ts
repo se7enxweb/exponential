@@ -16590,6 +16590,34 @@ Fanamarihana: Tsy hesorina ny fametrahan'ny fonosana.</translation>
         <source>Import/Export</source>
         <translation>Fampidirana/Fandefasana</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Solon-anarana sary</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Amorony ho an&apos;ity singa ity</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Amorony ho an&apos;ny sampana</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Amorony indray ho an&apos;ity singa ity</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Amorony indray ho an&apos;ny sampana</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Esory ho an&apos;ity singa ity</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Esory ho an&apos;ny sampana</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Ny sakana server an'ny tranonkala taloha: location = miaraka amin'ny return, if ($args) ho an'ny fangatahana, rewrite ho mpitovo ary map an'ny pejy tokana.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Solon-anarana sary</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Ny solon-anarana sary dia kopian&apos;ny sary voahenjana sy notapahina izay aseho amin&apos;ny endrika. Eto no hitanao ny fomba anaovana azy, afaka mampandeha asa maro amin&apos;ny tranonkala, mitsapa sary iray na loharanon&apos;ny staging, manaraka ny tantaran&apos;ny fampandehanana ary manova ny fikirana.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Ampahany amin&apos;ny pejy</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Tabilao fanaraha-maso</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Fampandehanana maro</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Fitaovana fitsapana</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Tantaran&apos;ny fampandehanana</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Fikirana</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Hitanao eto ny zava-drehetra. Ny fanovana fikirana, ny fampandehanana asa ary ny fitaovana mamorona rakitra dia mila ny politika setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Izay mila fiheveran-tsaina</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Fomba render: ny endrika no mamorona ny solon-anarana tsy ampy rehefa alamina ny pejy, tahaka ny teo aloha. Ny adiresy on-demand, ny solon-toerana ary ny asa an-dafin&apos;ny sehatra dia tsy ampiasaina.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Mandeha ny fifanarahana amin&apos;ny format, fa tsy misy mpamadika eto afaka manoratra WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Fametrahana staging ity, fa tsy misy BaseURL ny loharanony: tsy azo alaina ny sary tsy ampy.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Najanona ny loharanon&apos;ny staging taorian&apos;ny fahatontosana tsy nahomby misesy: ny sary tsy ampy dia mahazo solon-toerana mandra-pahatapitry ny fijanonana na mandra-pamerinanao azy.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Tsy nahomby vao haingana ny loharanon&apos;ny staging. Jereo etsy ambany ny hadisoany farany.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Tsy production ity fametrahana ity, fa tsy manonona loharano ny SyncFrom: tsy misy alaina.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Tsy azo ampiasaina ny filaharan&apos;asa (expqueue): ny solon-anarana tsy tonga ara-potoana dia ataon&apos;ny fangatahana manaraka, tsy atao ny famoronana mialoha aorian&apos;ny famoahana ary voafetra amin&apos;ny sehatra kely ny fampandehanana maro.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Tsy nahomby tanteraka ny asa sasany momba ny solon-anarana sary. Ny Fametrahana &gt; Filaharan&apos;asa no mampiseho ny antony.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Najanona ny fampandehanana maro.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Tsy nahomby ny solon-anarana tao anatin&apos;ny 24 ora farany. Ny tantaran&apos;ny fampandehanana no manisa azy.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Mihoatra ny herintaona ny fanalahidy sonia. Ny fanovana azy dia mitazona ny adiresy taloha ho manan-kery mandritra ny fotoana fanamorana.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Mbola tsy misy fanalahidy sonia: noforonina miaraka amin&apos;ny adiresy on-demand voalohany izy.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Ny 24 ora farany</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Solon-anarana noforonina</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Solon-toerana novaliana</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Tsy fahombiazana</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Rakitra staged</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Fampandehanana natomboka</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Asa miandry / mandeha</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Voaisa avy amin&apos;ny andalana %lines farany ao amin&apos;ny %file, izay miverina hatramin&apos;ny %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Fomba sy fandefasana</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Fomba</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>araka ny fangatahana</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Endriky ny adiresy</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Fandefasana</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Fiandrasana lava indrindra amin&apos;ny fangatahana</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Fanovana miaraka</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy amin&apos;ny %max no mirotsaka izao</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Fifanarahana amin&apos;ny format</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>mandeha</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>tsy mandeha</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Solon-toerana sy script fanoloana</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Famoronana mialoha aorian&apos;ny famoahana</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Solon-anaran&apos;ny tranonkala</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Mpamadika ny karazana format</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Mpamadika</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Nanandrana</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>tiana kokoa</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>eny</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>tsia</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Ny solon-anarana mihitsy dia ataon&apos;ny mpamadika ao amin&apos;ny [ImageConverterSettings], tahaka ny teo aloha; ireto no manoratra ny karazana WebP sy AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Tontolo sy loharano</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Ity fametrahana ity</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production: tsy mandray mihitsy)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Mandray avy amin&apos;ny</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>tsy misy</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Adiresin&apos;ny loharano</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>tsy voafaritra</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Fahazoan-dalana</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>zava-miafina %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>tsy misy</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Toe-javatra</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>mandeha</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>najanona hatramin&apos;ny %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>tsy mahomby</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Tsy fahombiazana misesy</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>fijanonana aorian&apos;ny %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Hadisoana farany</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Fahombiazana farany</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Averina ny tsy fahombiazana ary angataho indray ny loharano</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Filaharan&apos;asa</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Karazana asa</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Miandry</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Mandeha</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Tsy nahomby</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>tsy voasoratra</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Tsy azo ampiasaina ny filaharan&apos;asa.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Najanona ny fampandehanana maro</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>hatramin&apos;ny %time avy amin&apos;i %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Azo andehanana ny fampandehanana maro</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Fanalahidy sonia</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Fanalahidy</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>ao amin&apos;ny fitahirizana zava-miafina</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>mbola tsy misy</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Faha</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days andro (hatramin&apos;ny %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Fanalahidy teo aloha</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>manan-kery hatramin&apos;ny %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Hivadika ny fanalahidy</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Ny adiresy nosoniavina tamin&apos;ny fanalahidy ankehitriny dia mbola mandeha mandritra ny fotoana fanamorana (SigningKeyGrace), avy eo mamaly solon-toerana mandra-pamoronana indray ny pejy.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Hivadika izao</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Ny fomba fiasany</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, fomba render, staging ary ny diary</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (ilay mahazatra): mamatotra solon-anarana mbola tsy misy amin&apos;ny adiresy nosoniavina ny pejy. Ny fangatahana voalohany no mamorona azy ao anatin&apos;ny fiandrasana lava indrindra, raha tsy izany dia mamaly solon-toerana tsy mitanila ary asa no mamita ny ambiny; ny script fanoloana no manolo ny solon-toerana rehefa vonona ny sary.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Fomba render: ny endrika no mamorona ny solon-anarana rehefa alamina ny pejy, tahaka ny teo aloha. Azo ovaina amin&apos;ny fotoana rehetra ny roa; tsy ilaina ny mifindra.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Ny fametrahana staging dia maka ny tany am-boalohany sy ny solon-anarana tsy ampy avy amin&apos;ny loharanony; ny loharano tsy mahomby dia ajanona aorian&apos;ny tsy fahombiazana misesy ary mahazo mailaka iray isan&apos;ora ihany ny mpitantana.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Ny fampandehanana maro sy ny famoronana mialoha aorian&apos;ny famoahana dia asan&apos;ny filaharan&apos;asa, misy laharam-pahamehana ambany noho ny mpitsidika. Ny fanesorana solon-anarana koa dia manadio ny cache valin&apos;ny Velocity, mba tsy hatolotra avy any ny rakitra nesorina.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Ny solon-anarana nataon&apos;ny, solon-toerana novaliana, rakitra staged ary fampandehanana rehetra dia andalana iray ao amin&apos;ny %file. Ny tsipika baiko dia manana ireo fitaovana ireo ihany: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Asa %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done amin&apos;ny sary %total</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Alefaso</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Sehatra</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Valiny</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Foano ity asa ity</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Tsy asa momba ny solon-anarana sary ny asa %job, na nesorina tamin&apos;ny filaharana.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Valin&apos;ny fampandehanana %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Najanona ny fampandehanana maro</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Najanon&apos;i %user hatramin&apos;ny %time.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Ny fijanonana dia mampitsahatra ny fampandehanana maro rehetra aorian&apos;ny sary ankehitriny, amin&apos;ny mpizara rehetra; miandry ny fampandehanana any amin&apos;ny filaharana. Mbola atao ihany ny solon-anaran&apos;ny mpitsidika.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Ataovy tohizana ny fampandehanana maro</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Antony (tsy voatery)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Ajanony ny fampandehanana maro</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Atombohy ny fampandehanana</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Asan&apos;ny filaharan&apos;asa ny fampandehanana: afaka mamela ny pejy ianao ary miverina.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Raha tsy misy filaharan&apos;asa, ny fampandehanana dia atao amin&apos;ity fangatahana ity, ho an&apos;ny sary %count raha be indrindra.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Hetsika</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: mamorona ny solon-anarana tsy ampy</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: esory ary amorona indray</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: esory (amorona indray araka ny fangatahana)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: alao ny rakitra avy amin&apos;ny loharanon&apos;ny staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(amin&apos;ny fametrahana staging ihany)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Ny tranonkala manontolo</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Fihaonana iray</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Fihaonana iray sy ny sampany</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID-n&apos;ny fihaonana</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Kilasy</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Toetra</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Novaina hatramin&apos;ny</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Daty (2026-11-01) na fotoana lasa (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Sary betsaka indrindra</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Solon-anarana (raha tsy misy voasafidy: rehetra)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Fampandehanana fitsapana: manisa fotsiny (ny resync dia manamarina ny loharano ary tsy mitahiry na inona na inona)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Soloy ny rakitra tsy mitovy (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Atombohy ny fampandehanana</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Fampandehanana farany</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Asa</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Fandrosoana</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Ao amin&apos;ny filaharana</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Hetsika</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Foano</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Mbola tsy misy fampandehanana maro na resync.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Sary iray</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Ny adiresy azon&apos;ny endrika izao, ny habe sy ny karazana kajiana ho an&apos;ny solon-anarana tsirairay, ary raha eo ny rakitra tsirairay.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Hikaroka araka ny</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID-n&apos;ny zavatra</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Asehoy</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Tsy azonao vakiana ity zavatra ity.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Tsy misy sary ity zavatra ity.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Tsy misy zavatra manana ity ID ity.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>zavatra %object, fihaonana %node, dikan-teny %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Tany am-boalohany: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>eo ny rakitra</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>tsy eo ny rakitra</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Solon-anarana an&apos;i %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Solon-anarana</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Habe</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Karazana</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Rakitra</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Format</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Adiresy ao amin&apos;ny endrika</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>eo</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>tsy eo</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>tsy ho an&apos;ity karazana ity</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Hamarino</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Amorony</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Tsy misy sary ao amin&apos;ity saha ity.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ora</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Fifandraisana amin&apos;ny loharano</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Fangatahana HEAD amin&apos;ny loharanon&apos;ny staging, miaraka amin&apos;ny fahazoan-dalany raha misy voatonona. Alefa ny fahazoan-dalana, tsy asehoina mihitsy.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Loharano</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>miaraka amin&apos;ny fahazoan-dalana</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Lalan&apos;ny fitahirizana (tsy voatery)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Hitsapa ny fifandraisana</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Tsy misy BaseURL ny loharano rehetra. Ao amin&apos;ny fikirana no ametrahana ny loharano ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>azo tratrarina</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>nolavina: hamarino ny fahazoan-dalana</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>tsy hita tao amin&apos;ny loharano</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>tsy misy valiny</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>lany andro</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>nodimandry (tsy narahina)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>tsy misy BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>tsy lalan&apos;ny fitahirizana</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adiresy</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Sata</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>nalefa</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>tsy hita ny zava-miafina</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>tsy user:password na Bearer &lt;token&gt; ny zava-miafina</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Ny andalana vaovao indrindra amin&apos;ny %file, ny vaovao indrindra no voalohany.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Fametrahana &gt; Rakitra diary</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Hetsika</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Hetsika rehetra</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Fampandehanana (fanombohana sy faran&apos;ny)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Misy ny lalana</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Andalana</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Sivana</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Araho: asehoy ny andalana vaovao rehefa soratana</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Lalana sy antsipiriany</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Tsy misy andalan&apos;ny diary mifanaraka.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Izay hovain&apos;ny fitehirizana</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Izay novaina</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Tehirizina ao amin&apos;ny settings/override/image.ini.append.php, ka ny sanda eto no mandresy ny siteaccess rehetra. Ny sanda aseho dia ireo mihatra amin&apos;ity siteaccess ity. Ny fitehirizana dia mangataka anao hamarina aloha fa ianao izany.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Ny fomba anaovana sy fandefasana ny solon-anarana.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Fakana ny sary tsy ampy avy amin&apos;ny fametrahana hafa (alpha, dev, beta, stage, pro, post, arc). Ny production (pro) dia tsy mandray mihitsy.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Fikirana</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Sanda</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Ao amin&apos;ny settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Ny adiresin&apos;ny loharano tsirairay sy ny anaran&apos;ny zava-miafina mitazona ny fahazoan-dalany (user:password na Bearer &lt;token&gt;). Ny sandan&apos;ny zava-miafina dia apetraka ao amin&apos;ny Fametrahana &gt; Zava-miafina ary tsy asehoina eto mihitsy.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Topi-maso ny fanovana</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Tehirizo</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Manaraka: nohavaozina %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Najanona</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Tsy namaly ny feed; manandrana indray.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Vita ny asa.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: ny endrika no mahazo ny adiresy, ny solon-anarana dia atao rehefa angatahana. render: ny endrika no mamorona azy rehefa alamina ny pejy (ny fiasa tany am-boalohany).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Ny adiresin&apos;ny solon-anarana mbola tsy vita: token (nosoniavina, tsy mila angon-drakitra), ids-token, ids, node na storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: famindrana mankany amin&apos;ny rakitra rehefa manompo ny fitahirizana ny mpizara tranonkala, raha tsy izany dia alefa mandalo ny rakitra.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Segondra azon&apos;ny fangatahana lanaina amin&apos;ny famoronana na fakana solon-anarana; avy eo mamaly ny solon-toerana ary asa no mamita ny ambiny.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Ny mpamadika sedraina voalohany ho an&apos;ny karazana WebP sy AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Valio WebP na AVIF ny mpizaha tranonkala mangataka azy, ho an&apos;ny solon-anarana manonona Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Sary tsy mitanila amin&apos;ny habe mety raha tsy ampy ny sary.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Script kely manolo ny solon-toerana amin&apos;ny sary tena izy rehefa vonona.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Aorian&apos;ny famoahana, asa no mamorona ny solon-anaran&apos;ny sary vaovao ho an&apos;ny siteaccess rehetra mifandray.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Fanovana miaraka amin&apos;ny mpizara iray.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Ny laharam-pahamehanan&apos;ny fizotra (nice) amin&apos;ny fampandehanana maro, 0 hatramin&apos;ny 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Segondra azon&apos;ny mpizaha tranonkala sy ny cache itahirizana solon-anarana vita.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Segondra mijanona manan-kery ny adiresin&apos;ny sary drafitra na topi-maso.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Segondra mijanona manan-kery ny fanalahidy sonia teo aloha aorian&apos;ny fivadihana.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Ny tontolon&apos;ity fametrahana ity.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Ny tontolo alaina ny sary tsy ampy; none: tsy misy alaina.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Iray isaky ny andalana: tovona fitahirizana eo an-toerana;tovon&apos;ny loharano na adiresy, ho an&apos;ny lalana fitahirizana tsy mitovy.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Segondra azon&apos;ny fangatahana iray mankany amin&apos;ny loharano.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Ny rakitra lehibe indrindra alaina avy amin&apos;ny loharano, amin&apos;ny byte.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Tsy fahombiazana misesy izay ajanona aorinany ny loharano.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Hafiriana no ajanona ny loharano tsy mahomby.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Alefaso mailaka ny mpitantana rehefa ajanona ny loharano (indray mandeha isan&apos;ora raha be indrindra).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Adiresy mailaka iray isaky ny andalana; foana: ny AdminEmail ao amin&apos;ny site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Ny adiresin&apos;ny fametrahana loharano %block, ohatra https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Ny anaran&apos;ny zava-miafina misy ny fahazoan-dalana, na env:VARIABLE. Tsy ny fahazoan-dalana mihitsy.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(tsy misy)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Ilay mahazatra: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Napetraka eto; asio marika hanesorana azy</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>lovana</translation>
     </message>
 </context>
 </TS>

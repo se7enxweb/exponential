@@ -16590,6 +16590,34 @@ Maandu: Paketji ɗin ittaaka aafugo maɓɓe.</translation>
         <source>Import/Export</source>
         <translation>Naattin/Yaltin</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Alias nate</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Waɗu ngam huunde ɗoo</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Waɗu ngam subtree</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Waɗu fahin ngam huunde ɗoo</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Waɗu fahin ngam subtree</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Ittu ngam huunde ɗoo</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Ittu ngam subtree</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Bulo server lowre kiiɗnde: location = e return, if ($args) ngam naamnal, rewrite no wildcard e map kelle gooto gooto.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Alias nate</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Alias nate ko kopi nate mbaɗaaɗe mawɗe e famɗe ngam templates cuɓooɗe cuɓoo. Ɗo a nanndi no ndi mbaɗetee, a dogina golle mawɗe e sayt kesum, a sappito nde no woni ndee ɗe fabriq, a ndaarda historik dogginoore, a waylita teelte.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Peeje ɗakki</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Tableau de bord</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Dogginooje mawɗe</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Kuutiniroowe sappaago</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Historik dogginooje</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Teelte</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>A mbaawi yiide fuu ɗo. Waylude teelte, dogginde golle e kuutiniroowe mbaɗooɗe fichier ngaddi dawrugol setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Ko haani ndaarde</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Mode render: templates mbaɗay alias ngalaa tuggi nde ɗakki ina sarii, no adii. Ñiiɓirde on-demand, jooɗorɗe e golle baawo ngoni kuutiniraaki.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Jaabawol format hoɗi, kono converter ngalaa ɗo mbaawi winndude WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Ɗum ko installation staging, kono sumpo mum ngalaa BaseURL: nate ngalaaɗe ngaa mbaawata nde nanndi.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Sumpo staging ɗuurnii ngam wooyre sakitiiɗe: nate ngalaaɗe keɓay jooɗorɗe haa ɗuurngol timmi malla a hoodi ɗum.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Sumpo staging wooyri ko wayri. Ndaar wooyre mum cakkitiire les.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Installation ɗoo ɗum ko production fuu, kono SyncFrom wiyaay sumpo: hay huunde nanndataa.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Reeniroowo golle (expqueue) hoodaa: alias mbuuɗɗi waktu mbaɗetee e tonngol jokkoore, waɗugo adii baawo winndere ina ɓurtee e dogginooje mawɗe ina mbaawi tan ko e koɗolle famɗe.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Golle alias nate feere-feere ngaɗaaki haa timmi. Setup &gt; Reeniroowo golle hollii sabaabu.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Dogginooje mawɗe ɗuurnii.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Alias mbooyii e waktu jamma 24 ɗen. Historik dogginoore limtii ɗum.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Cabi hawrugol ɓurii hitaande. Ko a waylii ɗum, ñiiɓirde ɓooyɗe ngaɗay waktu jaɓugol.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Cabi hawrugol woodaani: ina waɗetee e ñiiɓirde on-demand artuɗo.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Waktu jamma 24 ɗen</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Alias mbaɗaaɗi</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Jooɗorɗe jaabaaɗe</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Wooyre</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Fichier staging</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Dogginooje fuɗɗiiɗe</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Golle ɗuuɗooɗe / ɗogginoojooɗe</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Limtaama diga lewru %lines cakkitiiru %file, ɗi ngaddi haa %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Mode e hokkugol</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mode</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>on demand</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Mbaadi ñiiɓirde</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Hokkugol</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Ŋaɗanke ɓurtungol e tonngol</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Waylooje e nde gooto</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy e %max ina ngoodi jooni</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Jaabawol format</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>hoɗi</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ñifaama</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Jooɗorde e skript swap</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Waɗugo adii baawo winndere</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Alias sayt</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Converter ɗi variant format</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Converter</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Sappaama</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>suɓaama</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>eey</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>alaa</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Alias ko converter [ImageConverterSettings] mbaɗata, no adii; ɗen winndata variant WebP e AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Jooɗorde e sumpo</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Installation ɗoo</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production: waɗataa nanndugol)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Nanndii diga</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>hay huunde</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Ñiiɓirde sumpo</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>ɓesdaaka</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Seedaago</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>suuɗɗe %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>alaa</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ngonka</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>ina golla</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>ɗuurnii haa %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>ina wooya</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Wooyre sakitiiɗe</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>ɗuurngol baawo %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Wooyre cakkitiire</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Jaɓɓaare cakkitiire</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Hoodu wooyre ɗen e naamnu sumpo fahin</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Reeniroowo golle</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Fannu golle</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Ina ndaroo</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Ina dogaa</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Waɗaaki</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>winndaaka</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Reeniroowo golle hoodaa.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Dogginooje mawɗe ɗuurnii</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>diga %time ka %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Dogginooje mawɗe mbaawi dogugo</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Cabi hawrugol</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Cabi</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>ka suuɗɗe maɓɓude</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>alaa tawi</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Ɓesngu</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>nunɗal %days (diga %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Cabi adii</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>gooduɗo haa %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Wayluɗe cabi</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Ñiiɓirde hawraaɗe e cabi jooni ina njokka golle e waktu jaɓugol (SigningKeyGrace), refti ina njaabaa jooɗorɗe haa ɗakki ngaɗaa fahin.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Wayluɗe jooni</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>No golla</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, mode render, staging e deftere</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (ko woowaa): ɗakki ina hawrii alias ngaɗaaki e ñiiɓirde hawraande. Tonngol artungol ina waɗa ɗum e ŋaɗanke ɓurtungol, naa ɗum ina jaabii jooɗorde ngalaa jikkuu e golle ina timmina golle; skript swap ina waylita jooɗorde to nate nanndi.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Mode render: template ina waɗa alias nde ɗakki ina sarii, no adii. A waylata hakkunde ɗiɗi ɗen waktu fuu; hay huunde ngalaa ngam yaltinde.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Installation staging ina nanndita ɓiɗɗa e alias ngalaaɗi diga sumpo mum; sumpo wooyoowo ina ɗuurnoo baawo wooyre sakitiiɗe e hooreejo-hooreeji ina keɓa i-meel gooto tan nder awa.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Dogginooje mawɗe e waɗugo adii baawo winndere ko golle reeniroowo golle, e ɓurtungol ɓurtiingol ngol sooynooɓe. Ittugo alias ina wasa response cache Velocity fahin, ngam fichier ittaaɗo sey hokkee diga ton.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Alias fuu mbaɗaaɗo, jooɗorde jaabaande, fichier staging e dogginoore fuu ko gaɗa gooto ka %file. Gaɗa ordre ina ngoodi kuutiniroowe ɗen: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Golle %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done e %total ka nate</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Dogginoore</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Sago</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Njaɓɓi</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Haaytu golle ɗoo</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Golle %job ko golle alias nate fuu naa, malla ittaama diga reeniroowo.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Njaɓɓi dogginoore %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Dogginooje mawɗe ɗuurnii</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Ɗuurnii diga %time ka %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Ɗuurngol ina ɗuurna dogginoore mawngo fuu baawo nate mum jooni, ka serveur fuu; dogginooje reenaaɗe ina ndaroo. Alias sooynooɓe ina ngaɗaa fahin.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Jokku dogginooje mawɗe</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Sabaabu (naa ko haani)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Ɗuurnu dogginooje mawɗe</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Fuɗɗu dogginoore</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Dogginooje ko golle reeniroowo golle: a mbaawi yaltugo ɗakki e ruttugo.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Ko reeniroowo golle ngalaa, dogginoore ina waɗa e tonngol ndee, haa nate %count tan.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Golle</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: waɗu alias ngalaaɗi</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: ittu e waɗu ɗi fahin</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: ittu ɗi (ɗi ngaɗetee fahin ko ɗi naamnaama)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: nanndu fichier diga sumpo staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(ko e installation staging tan)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Sayt kesum</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Nokkuure gooto</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Nokkuure e subtree mum</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Nokkuure ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Sifaaji</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Jikkuuji</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Waylaama diga</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Ñalnde (2026-11-01) malla wakkati ɗoftaaki (waktu 12, nde 2).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Nate ɓurɗe</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Alias (ko hay gooto suɓaaka: fuu)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Dry run: limtu tan (resync ina sappita sumpo e ɓoggaani hay huunde)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Winndu dow fichier ceertuɗi (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Fuɗɗu dogginoore</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Dogginooje cakkitiiɗe</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Golle</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ko yaha</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Ina reeni</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Golle</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Haaytu</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Dogginoore mawngo malla resync woodaani.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Nate gooto</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Ñiiɓirde template keɓi jooni, mawnugol e fannuuji limtaaɗi ngam alias fuu, e fichier fuu woodi na.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Ɗaɓɓu ko</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Huunde ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Hollu</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>A waawaa janngugo huunde ndee.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Huunde ndee woodaani nate.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Huunde ngalaa ID ndee.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>huunde %object, nokkuure %node, versiyon %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Taaniraaɗo: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>fichier woodi</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>fichier ngalaa</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Alias %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Alias</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Mawnugol</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Fannu</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fichier</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Format</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Ñiiɓirde ka template</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>woodi</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>ngalaa</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ngam fannu ɗoo naa</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Laar</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Waɗu</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Nate ngalaa e ɗerewol ndee.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Waktu</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Hawrugol e sumpo</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Naamnal HEAD ka sumpo staging, e seedaago mum to wiyaama. Seedaago ina neldee, wanngataa weeyo.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Sumpo</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>e seedaago</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Laawol fichier (naa ko haani)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Sappu hawrugol</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Sumpo ngalaa BaseURL. Sumpooji ina ngoodi ka teelte ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>hawretee</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>haɗaama: laar seedaago</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>tawaaka ka sumpo</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>jaabawol ngalaa</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>waktu timmi</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>neɗɗaama (ko jokkaaka)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL ngalaa</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>ko laawol fichier naa</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Ñiiɓirde</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Statut</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>neldaama</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>suuɗɗe ngalaa</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>suuɗɗe ɗe ko user:password malla Bearer &lt;token&gt; naa</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Gaɗe %file kesum, kesum adii.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Setup &gt; Fichier deftere golle</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Huunde waɗnde</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Huutinooje fuu</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Dogginooje (fuɗɗoode e timmoode)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Laawol ina waɗi</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Gaɗe</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Sooɓ</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Jokku: hollu gaɗe kesum nde ɗe winndaa</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Laawol e ko woni</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Gaɗe deftere fuu ngaɗaa.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Ko moofto waylata</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Ko waylaama</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Moofaama ka settings/override/image.ini.append.php, ngam nden keewal ɗoo ina ɓura siteaccess fuu. Keewal hollaaɗe ko ɗe kuutiniraama ngam siteaccess ɗoo. Moofugo ina naamna adii a hoolo ko an.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>No alias mbaɗetee e no hokketee.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Nanndugo nate ngalaaɗe diga installation feere (alpha, dev, beta, stage, pro, post, arc). Production (pro) waɗataa nanndugo.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Teelte</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Keewal</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Ka settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Ñiiɓirde sumpo fuu e innde suuɗɗe wondi seedaago mum (user:password malla Bearer &lt;token&gt;). Keewal suuɗɗe ina teeltee ka Setup &gt; Ɗuuɗe suuɗɗe, wanngataa ɗo.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Yiy adii ko waylaama</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Mooftu</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Ina jokka: ɓeydaama %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Ɗuurnii</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Feed jaabaayi; ina eto fahin.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Golle ndee timmi.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: templates keɓa ñiiɓirde, alias ina waɗee nde naamnaa. render: template ina waɗa ɗum nde ɗakki ina sarii (no adii).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Ñiiɓirde alias ngaɗaaka: token (hawraande, tawataa base de données), ids-token, ids, node malla storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: redirection ka fichier to serveur web ina hokka storage, naa fichier ina yaadee no stream.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Sekondi tonngol waawi huutinugo ngam waɗugo malla nanndugo alias; refti ina jaaba jooɗorde e golle ina timmina golle.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Converter sappaaɗo adii ngam variant WebP e AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Jaabu WebP malla AVIF e navigateurs ɗaɓɓooɓe, ngam alias limtooɗi Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Nate jikkuu ngalaa e mawnugol maayaaɗo, nde nate ngalaa.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Skript pamaro ɗum waylita jooɗorɗe e nate goonga nde ɗum woodi.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Baawo winndere, golle ina waɗa alias nate kese ngam siteaccess fuu dawroowo.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Waylooje e nde gooto ka serveur gooto.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Dawrugol proses (nice) dogginooje mawɗe, 0 haa 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Sekondi navigateurs e cache mbaawi mooftugo alias mbaɗaaɗo.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Sekondi ñiiɓirde natal brouillon malla yiy adii gooduɗo.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Sekondi cabi hawrugol adii goodoto baawo wayluɗe.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Jooɗorde installation ɗoo.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Jooɗorde nanndirteeɗe nate ngalaaɗe; none: hay huunde nanndataa.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Gooto e gaɗa: préfixe storage ɗoo;préfixe sumpo malla ñiiɓirde, ngam laawi storage ceertuɗi.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Sekondi tonngol gooto ka sumpo waawi hoosugo.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Fichier ɓurngo mawnugol nanndaaɗo diga sumpo, ka oktet.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Wooyre sakitiiɗe baawo ɗe sumpo ɗuurnaa.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Ɗuurngol sumpo wooyoowo ina ɗuuri no.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Neldu i-meel hooreejo-hooreeji nde sumpo ɗuurnaa (gooto tan nder awa).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Ñiiɓirde i-meel gooto e gaɗa; ɗooɗa: AdminEmail ka site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Ñiiɓirde installation sumpo %block, ndeke https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Innde suuɗɗe wondi seedaago, malla env:VARIABLE. Naa seedaago mum.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(alaa)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Ko woowaa: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Teeltaama ɗo; maaku ngam ittugo</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>jahdaama</translation>
     </message>
 </context>
 </TS>

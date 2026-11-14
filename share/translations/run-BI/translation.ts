@@ -16590,6 +16590,34 @@ Ikitonderwa: Amapaki ntazokurwamwo.</translation>
         <source>Import/Export</source>
         <translation>Kwinjiza/Gusohora hanze</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Amazina y&apos;ukundi y&apos;amashusho</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Kora kuri iki kintu</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Kora ku ishami</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Subiramwo kuri iki kintu</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Subiramwo ku ishami</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Kuramwo kuri iki kintu</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Kuramwo ku ishami</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Igice server c'urubuga rwa kera: location = hamwe na return, if ($args) ku kibazo, rewrite nk'ikimenyetso gisimbura na map y'impapuro imwimwe.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Amazina y&apos;ukundi y&apos;amashusho</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Amazina y&apos;ukundi y&apos;amashusho ni kopi z&apos;ishusho zigabanijwe canke zaciwe, ibishushanyo vyerekana. Hano urabona uko zikorwa, utangura imirimo ihambwa kuri site yose, ugerageza ishusho imwe canke isoko ya staging, ukurikirana ivyakozwe kandi uhindura ingene vyateguwe.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Ibice vy&apos;urupapuro</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Ikibaho</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Imirimo ihambwa ku bwinshi</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Ibikoresho vyo kugerageza</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Ivyakozwe</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Ingene vyateguwe</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Urashobora kubona vyose hano. Guhindura ingene vyateguwe, gutangura imirimo n&apos;ibikoresho bikora amadosiye bisaba politiki setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Ivyo dukwiye kwitaho</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Uburyo render: ibishushanyo bikora amazina y&apos;ukundi abura igihe urupapuro rutegurwa, nk&apos;uko vyari bisanzwe. Aderesi on-demand, ibisimbura n&apos;imirimo yo inyuma ntivyakoreshwa.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Guhitamo ifishi vyaratuwe, ariko nta mpindura n&apos;imwe hano ishobora kwandika WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Iyi ni ushinga wa staging, ariko isoko yayo nta BaseURL ifise: amashusho abura ntashobora kuzanwa.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Isoko ya staging yahagaritswe kubera ingorane zikurikiranye: amashusho abura aronka ibisimbura gushika igihe co guhagarika gurangiriye canke uyisubiriza.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Isoko ya staging yananiwe vuba aha. Raba ikosa ryayo rya nyuma hepfo.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Iyi nstalasiyo si iy&apos;umusaruro, ariko SyncFrom nta soko ivuga: nta kintu cizanwa.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Umurongo w&apos;imirimo (expqueue) ntuboneka: amazina y&apos;ukundi arenza igihe akorwa n&apos;icasabwe gikurikira, gutegura imbere nyuma yo gutangaza biradasimbukwa kandi imirimo ihambwa ku bwinshi igarukira ku bice bitoya.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Imirimo imwe y&apos;amazina y&apos;ukundi y&apos;amashusho yananiwe burundu. Gutunganya &gt; Umurongo w&apos;imirimo birerekana impamvu.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Imirimo ihambwa ku bwinshi yarahagaritswe.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Amazina y&apos;ukundi yananiwe mu masaha 24 aheze. Ivyakozwe birayatondagura.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Urufunguzo rwo gusinya rurengeje umwaka. Kurusimbura bituma aderesi za kera zigumana agaciro mu gihe c&apos;inyongera.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Nta rufunguzo rwo gusinya ruriho: rukorwa na aderesi ya mbere on-demand.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Amasaha 24 aheze</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Amazina y&apos;ukundi yakozwe</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Ibisimbura vyasubije</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Ingorane</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Amadosiye yazanywe</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Imirimo yatanguwe</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Imirimo itegereje / irakora</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Vyabaruwe mu ntondo %lines za nyuma za %file, zisubira inyuma gushika %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Uburyo no gutanga</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Uburyo</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>igihe bisabwe</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Ishusho ya aderesi</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Gutanga</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Igihe kirekire co gutegereza icasabwe</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Guhindura icarimwe</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy kuri %max birakora ubu</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Guhitamo ifishi</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>vyatuwe</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>vyazimye</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Ikisimbura n&apos;inyandiko yo gusimbura</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Gutegura imbere nyuma yo gutangaza</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Amazina y&apos;ukundi ya site</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Impindura z&apos;ifishi zindi</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Impindura</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Itondekanya</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>ryihitirwa</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ego</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>oya</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Amazina y&apos;ukundi ubwayo ayakora impindura zo muri [ImageConverterSettings], nk&apos;uko vyari bisanzwe; izi zandika ifishi WebP na AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Ibidukikije n&apos;isoko</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Iyi nstalasiyo</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(umusaruro: ntizana na rimwe)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Izana kuri</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>ntakintu</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Aderesi y&apos;isoko</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>ntivyashizweho</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Ibimenyetso vyo kwinjira</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>ibanga %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nta</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Uko bihagaze</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>birakora</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>vyahagaritswe gushika %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>birananiwe</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Ingorane zikurikiranye</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>guhagarika nyuma ya %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Ikosa rya nyuma</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Intsinzi ya nyuma</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Subiza ingorane hanyuma ubaze isoko kandi</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Umurongo w&apos;imirimo</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Ubwoko bw&apos;umurimo</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Birategereje</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Birakora</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Vyananiwe</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>ntivyanditswe</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Umurongo w&apos;imirimo ntuboneka.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Imirimo ihambwa ku bwinshi yarahagaritswe</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>kuva %time na %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Imirimo ihambwa ku bwinshi irashobora gukora</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Urufunguzo rwo gusinya</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Urufunguzo</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>mu bubiko bw&apos;ibanga</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>nta n&apos;rumwe ubu</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Imyaka</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>iminsi %days (kuva %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Urufunguzo rwa mbere</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>rufise agaciro gushika %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Simbura urufunguzo</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Aderesi zasinywe n&apos;urufunguzo rwa none zirakomeza gukora mu gihe c&apos;inyongera (SigningKeyGrace), hanyuma zisubiza ibisimbura gushika izo mpapuro zongeye gukorwa.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Simbura ubu</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Uko bikora</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, uburyo render, staging n&apos;ivyakozwe</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (ico bisanzwe): urupapuro ruhuza izina ry&apos;ukundi ritaraboneka na aderesi yasinywe. Icasabwe ca mbere kirikora mu gihe kirekire co gutegereza, bitaba ukwo gisubiza ikisimbura kitagira ico kivuga maze umurimo ukarangiza ico gikorwa; inyandiko yo gusimbura isimbura ikisimbura ishusho ibonetse.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Uburyo render: ishusho ikora izina ry&apos;ukundi igihe urupapuro rutegurwa, nk&apos;uko vyari bisanzwe. Urashobora guhindura hagati y&apos;ivyo bibiri igihe cose; nta kintu gikeneye kwimurwa.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Instalasiyo ya staging izana umwimerere n&apos;amazina y&apos;ukundi bibura biva ku soko yayo; isoko inanirwa irahagarikwa nyuma y&apos;ingorane zikurikiranye maze abayobozi bakaronka imeri imwe ku isaha ku bwinshi.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Imirimo ihambwa ku bwinshi no gutegura imbere nyuma yo gutangaza ni imirimo y&apos;umurongo w&apos;imirimo, ifise akamaro gake kuruta abasuye. Gukuraho amazina y&apos;ukundi kandi bisiba ububiko bw&apos;ibisubizo bwa Velocity, kugira ngo idosiye ikuweho idatangwa na bwo.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Izina ry&apos;ukundi ryose ryakozwe, ikisimbura cose casubijwe, idosiye yose yazanywe n&apos;umurimo wose ni umurongo wa %file. Umurongo w&apos;amategeko ufise ibikoresho nk&apos;ivyo: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Umurimo %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done kuri %total amashusho</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Umurimo</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Ingano</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Ingaruka</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Hagarika uyu murimo</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Umurimo %job si umurimo w&apos;amazina y&apos;ukundi y&apos;amashusho, canke wakuwe mu murongo.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Ingaruka z&apos;umurimo %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Imirimo ihambwa ku bwinshi yarahagaritswe</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Vyahagaritswe kuva %time na %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Guhagarika bihagarika umurimo wose uhambwa ku bwinshi nyuma y&apos;ishusho urimwo, ku mashini yose; imirimo iri mu murongo iratereje. Amazina y&apos;ukundi y&apos;abasuye aracakorwa.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Subira ku mirimo ihambwa ku bwinshi</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Impamvu (si ngombwa)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Hagarika imirimo ihambwa ku bwinshi</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Tangura umurimo</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Imirimo ni imirimo y&apos;umurongo w&apos;imirimo: urashobora kuva kuri uru rupapuro ukagaruka.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Hatari umurongo w&apos;imirimo, umurimo ukorerwa muri iki casabwe, ku mashusho %count ku bwinshi.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Igikorwa</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Kora: kora amazina y&apos;ukundi abura</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Subiramwo: kuramwo hanyuma ukore bundi bushasha</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Siba: kuramwo (akorwa igihe asabwe)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Ongera uhuze: zana amadosiye avuye ku soko ya staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(gusa ku nstalasiyo ya staging)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Site yose</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Ihuriro rimwe</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Ihuriro n&apos;ishami ryaryo</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID y&apos;ihuriro</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Amoko</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Ibiranga</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Vyahinduwe kuva</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Itariki (2026-11-01) canke igihe cashize (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Amashusho ku bwinshi</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Amazina y&apos;ukundi (nta na rimwe ryatoranijwe: yose)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>kongera guhuza</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Igerageza: baruramwo gusa (kongera guhuza birabaza isoko kandi nta kintu bibika)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Andikira amadosiye atandukanye (kongera guhuza)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Tangura umurimo</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Imirimo ya nyuma</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Umurimo</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Aho bigeze</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Vyashizwe mu murongo</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ibikorwa</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Guhagarika</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Nta murimo uhambwa ku bwinshi canke kongera guhuza biraraba.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Ishusho imwe</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Aderesi ishusho ironka ubu, ingano n&apos;ubwoko bibarwa kuri buri zina ry&apos;ukundi, no kumenya niba buri dosiye ihari.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Shakisha ukoresheje</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID y&apos;ikintu</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Erekana</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Ntushobora gusoma iki kintu.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Iki kintu nta shusho gifise.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Nta kintu gifise iyi ID.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>ikintu %object, ihuriro %node, verisiyo %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Umwimerere: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>idosiye irahari</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>idosiye irabura</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Amazina y&apos;ukundi ya %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Izina ry&apos;ukundi</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Ingano</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Ubwoko</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Idosiye</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Ifishi</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Aderesi mu shusho</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>irahari</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>irabura</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>si iy&apos;ubu bwoko</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Raba</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Kora</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Nta shusho muri uyu murima.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Igihe</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Ihuriro n&apos;isoko</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Icasabwe HEAD ku soko ya staging, n&apos;ibimenyetso vyayo vyo kwinjira igihe biriho. Ibimenyetso birahabwa, ntibigeze byerekanwa.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Isoko</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>hamwe n&apos;ibimenyetso vyo kwinjira</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Inzira y&apos;ububiko (si ngombwa)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Gerageza ihuriro</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Nta soko ifise BaseURL. Amasoko ashirwaho mu ngene vyateguwe ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>irashobora kugerwaho</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>vyanzwe: raba ibimenyetso vyo kwinjira</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>ntivyabonetse ku soko</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>nta gisubizo</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>igihe cararenze</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>vyerekejwe ahandi (ntivyakurikiwe)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>nta BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>si inzira y&apos;ububiko</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Aderesi</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Uko bihagaze</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>vyoherejwe</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>ibanga riribura</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>ibanga si user:password canke Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Intondo nshasha za %file, nshasha zibanza.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Gutunganya &gt; Amadosiye y&apos;ivyakozwe</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Ikintu cabaye</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Ivyabaye vyose</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Imirimo (itangira n&apos;iherezo)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Inzira irimwo</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Intondo</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Iyungurura</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Kurikirana: erekana intondo nshasha zigihe zandikwa</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Inzira n&apos;utuntu</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Nta ntondo n&apos;imwe y&apos;ivyakozwe ihura.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Ivyo kubika vyahindura</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Ivyahinduwe</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Vyabitswe muri settings/override/image.ini.append.php, rero agaciro hano karuta siteaccess yose. Agaciro kerekanwa ni ako gakoreshwa kuri iyi siteaccess. Imbere yo kubika, urasabwa kwemeza uwo uri we.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Uko amazina y&apos;ukundi akorwa agatangwa.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Kuzana amashusho abura ku yindi nstalasiyo (alpha, dev, beta, stage, pro, post, arc). Umusaruro (pro) ntuzana na rimwe.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Ingene</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Agaciro</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Muri settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Aderesi ya buri soko n&apos;izina ry&apos;ibanga rifise ibimenyetso vyayo vyo kwinjira (user:password canke Bearer &lt;token&gt;). Agaciro k&apos;ibanga gashirwaho muri Gutunganya &gt; Ibanga kandi ntikigera kerekanwa hano.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Raba mbere ivyahindutse</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Kubika</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Kurikirana: vyavuguruwe %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Vyahagaritswe</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Feed ntiyasubije; kwongera kugerageza.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Umurimo warangiye.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: ibishushanyo biraronka aderesi, izina ry&apos;ukundi rikorwa rimaze gusabwa. render: ishusho irikora igihe urupapuro rutegurwa (ico bisanzwe vyakora).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Aderesi y&apos;izina ry&apos;ukundi ritarakorwa: token (isinywe, nta bubiko bw&apos;amakuru ikeneye), ids-token, ids, node canke storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: kwerekeza ku dosiye igihe seriveri y&apos;urubuga itanga ububiko, bitaba ukwo idosiye ikoherezwa.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Amasegonda icasabwe gishobora kumara gikora canke kizana izina ry&apos;ukundi; hanyuma gisubiza ikisimbura maze umurimo ukarangiza ico gikorwa.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Impindura igeragezwa mbere ku fishi WebP na AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Subiza WebP canke AVIF ku bisomerwa biyisaba, ku mazina y&apos;ukundi ariko Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Ishusho idafise ico ivuga y&apos;ingano ikwiye igihe ishusho ibura.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Akanyandiko gatoyi gasimbura ibisimbura n&apos;ishusho nyayo igihe iri aho.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Nyuma yo gutangaza, umurimo ukora amazina y&apos;ukundi y&apos;amashusho mashasha kuri siteaccess zose zifitaniye isano.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Guhindura icarimwe ku mashini imwe.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Akamaro k&apos;igikorwa (nice) c&apos;imirimo ihambwa ku bwinshi, kuva kuri 0 gushika kuri 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Amasegonda ibisomerwa n&apos;ububiko bishobora kubika izina ry&apos;ukundi ryakozwe.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Amasegonda aderesi y&apos;ishusho y&apos;urwandiko rutaratangazwa canke y&apos;imbere igumana agaciro.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Amasegonda urufunguzo rwo gusinya rwa mbere rugumana agaciro nyuma yo gusimburwa.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Ibidukikije vy&apos;iyi nstalasiyo.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Ibidukikije amashusho abura azanirwako; none: nta kintu cizanwa.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Umwe kuri buri ntondo: ikimenyetso c&apos;ububiko bwo mu karere;ikimenyetso c&apos;isoko canke aderesi, ku nzira z&apos;ububiko zitandukanye.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Amasegonda icasabwe kimwe ku soko gishobora kumara.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Idosiye nini cane ifatwa ku soko, mu mabayite.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Ingorane zikurikiranye zituma isoko ihagarikwa.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Igihe isoko inanirwa imara ihagaritswe.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Handikire abayobozi igihe isoko ihagaritswe (rimwe ku isaha ku bwinshi).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Aderesi imwe y&apos;imeri kuri buri ntondo; ubusa: AdminEmail yo muri site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Aderesi y&apos;instalasiyo y&apos;isoko %block, nk&apos;urugero https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Izina ry&apos;ibanga rifise ibimenyetso vyo kwinjira, canke env:VARIABLE. Ntihagire ibimenyetso ubwabyo.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(nta)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Ico bisanzwe: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Vyashizweho hano; shira ikimenyetso kugira ngo bikurweho</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>vyarazwe</translation>
     </message>
 </context>
 </TS>

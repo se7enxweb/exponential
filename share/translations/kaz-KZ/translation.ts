@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>Импорттау/экспорттау</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Сурет бүркеншік аттары</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Осы элемент үшін жасау</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Ішкі ағаш үшін жасау</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Осы элемент үшін қайта жасау</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Ішкі ағаш үшін қайта жасау</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Осы элемент үшін жою</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Ішкі ағаш үшін жою</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Ескі сайттың server блогы: return бар location =, сұрауға арналған if ($args), қойылмалы таңба ретінде rewrite және жеке беттердің map картасы.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Сурет бүркеншік аттары</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Сурет бүркеншік аттары — үлгілер көрсететін суреттің масштабталған және қиылған көшірмелері. Мұнда олардың қалай жасалатынын көресіз, сайт бойынша жаппай тапсырмалар іске қосасыз, бір суретті немесе аралық көзді сынайсыз, іске қосу тарихын қадағалайсыз және баптауларды өзгертесіз.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Беттің бөлімдері</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Басқару тақтасы</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Жаппай іске қосулар</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Сынақ құралдары</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Іске қосу тарихы</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Баптаулар</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Мұнда бәрін көруге болады. Баптауларды өзгерту, тапсырмаларды іске қосу және файл жасайтын құралдар setup/managealiases саясатын қажет етеді.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Назар аударуды қажет ететіндер</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>render режимі: үлгілер жоқ бүркеншік аттарды бет жасалып жатқанда жасайды, бұрынғыдай. On-demand мекенжайлары, толтырғыштар және фондық тапсырмалар қолданылмайды.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Форматты келісу қосулы, бірақ мұнда ешбір түрлендіргіш WebP жаза алмайды.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Бұл аралық (staging) орнату, бірақ оның көзінде BaseURL жоқ: жоқ суреттерді алу мүмкін емес.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Аралық көз қатарынан болған сәтсіздіктерден кейін тоқтатылды: тоқтату аяқталғанша немесе сіз оны нөлге қайтарғанша жоқ суреттерге толтырғыш беріледі.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Аралық көз жақында сәтсіз болды. Соңғы қатені төменнен қараңыз.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Бұл орнату өндірістік емес, бірақ SyncFrom ешбір көзді атамайды: ештеңе алынбайды.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Тапсырмалар кезегі (expqueue) қолжетімсіз: уақытына үлгермеген бүркеншік аттарды келесі сұраныс жасайды, жариялаудан кейінгі алдын ала жасау өткізіледі, ал жаппай іске қосулар шағын ауқыммен шектеледі.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Бүркеншік аттардың кейбір тапсырмалары түпкілікті сәтсіз болды. Себебін Баптау &gt; Тапсырмалар кезегі көрсетеді.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Жаппай іске қосулар тоқтатылған.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Соңғы 24 сағатта бүркеншік аттар сәтсіз болды. Іске қосу тарихында тізімделген.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Қол қою кілті бір жылдан асты. Оны ауыстыру ескі мекенжайларды жеңілдік кезеңі бойына жарамды етеді.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Қол қою кілті әлі жоқ: ол алғашқы on-demand мекенжаймен жасалады.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Соңғы 24 сағат</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Жасалған бүркеншік аттар</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Жауап берілген толтырғыштар</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Сәтсіздіктер</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Аралыққа алынған файлдар</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Басталған іске қосулар</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Күтіп тұрған / орындалып жатқан тапсырмалар</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file файлының соңғы %lines жолынан есептелді, олар %time уақытқа дейін қамтиды.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Режим және жеткізу</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Режим</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>сұраныс бойынша</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Мекенжай пішіні</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Жеткізу</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Сұраныстың ең ұзақ күту уақыты</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds с</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Бір мезгілдегі түрлендірулер</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>Қазір %max ішінен %busy бос емес</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Форматты келісу</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>қосулы</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>өшірулі</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Толтырғыш және ауыстыру скрипті</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Жариялаудан кейінгі алдын ала жасау</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Сайттың бүркеншік аттары</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Формат нұсқаларының түрлендіргіштері</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Түрлендіргіш</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Сыналды</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>қалаулы</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>иә</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>жоқ</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Бүркеншік аттардың өздерін бұрынғыдай [ImageConverterSettings] түрлендіргіштері жасайды; бұлар WebP және AVIF нұсқаларын жазады.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Орта және көз</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Осы орнату</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(өндіріс: ешқашан алмайды)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Алатын жері</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>ештеңе</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Көз мекенжайы</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>орнатылмаған</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Тіркелгі деректері</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>құпия %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>жоқ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Күйі</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>жұмыс істеп тұр</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time дейін тоқтатылған</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>сәтсіз</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Қатарынан сәтсіздіктер</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count кейін тоқтату</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Соңғы қате</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Соңғы сәттілік</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Сәтсіздіктерді нөлге қайтарып, көзден қайта сұрау</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Тапсырмалар кезегі</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Тапсырма түрі</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Күтуде</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Орындалуда</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Сәтсіз</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>тіркелмеген</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Тапсырмалар кезегі қолжетімсіз.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Жаппай іске қосулар тоқтатылған</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time бастап, %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Жаппай іске қосуға рұқсат</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Қол қою кілті</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Кілт</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>құпиялар қоймасында</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>әлі жоқ</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Жасы</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days күн (%time бастап)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Алдыңғы кілт</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time дейін жарамды</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Кілтті ауыстыру</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Ағымдағы кілтпен қол қойылған мекенжайлар жеңілдік кезеңі (SigningKeyGrace) бойына жұмыс істей береді, содан кейін беттер қайта жасалғанша толтырғыш қайтарады.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Қазір ауыстыру</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Қалай жұмыс істейді</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render режимі, аралық орнату және журнал</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (әдепкі): бет әлі жоқ бүркеншік атты қол қойылған мекенжайға байланыстырады. Алғашқы сұраныс оны ең ұзақ күту уақыты ішінде жасайды, әйтпесе бейтарап толтырғыш қайтарады да, жұмысты тапсырма аяқтайды; сурет дайын болғанда ауыстыру скрипті толтырғышты ауыстырады.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render режимі: үлгі бүркеншік атты бет жасалып жатқанда жасайды, бұрынғыдай. Екеуінің арасында кез келген уақытта ауыса аласыз; ештеңені көшірудің қажеті жоқ.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Аралық орнату өзінде жоқ түпнұсқалар мен бүркеншік аттарды көзінен алады; сәтсіз көз қатарынан болған сәтсіздіктерден кейін тоқтатылады, ал әкімшілерге сағатына ең көбі бір хат жіберіледі.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Жаппай іске қосулар мен жариялаудан кейінгі алдын ала жасау — тапсырмалар кезегінің тапсырмалары, олар келушілерден төмен басымдықпен орындалады. Бүркеншік аттарды жою Velocity жауап кэшін де тазалайды, сондықтан жойылған файл одан берілмейді.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Жасалған әрбір бүркеншік ат, берілген толтырғыш, аралыққа алынған файл және іске қосу — %file файлындағы бір жол. Пәрмен жолында да осындай құралдар бар: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Тапсырма %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done / %total сурет</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Іске қосу</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Ауқым</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Нәтиже</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Бұл тапсырманы болдырмау</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>%job тапсырмасы бүркеншік ат тапсырмасы емес немесе ол кезектен жойылған.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>%run іске қосу нәтижесі</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Жаппай іске қосулар тоқтатылған</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time бастап %user тоқтатқан.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Тоқтату әр жаппай іске қосуды ағымдағы суреттен кейін, барлық серверлерде тоқтатады; кезектегілер күтеді. Келушілердің бүркеншік аттары бұрынғыдай жасалады.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Жаппай іске қосуды жалғастыру</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Себебі (міндетті емес)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Жаппай іске қосуды тоқтату</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Іске қосуды бастау</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Іске қосулар — тапсырмалар кезегінің тапсырмалары: бетті тастап, кейін орала аласыз.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Тапсырмалар кезегінсіз іске қосу осы сұраныста орындалады, ең көбі %count сурет үшін.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Әрекет</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Жасау: жоқ бүркеншік аттарды жасау</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Қайта жасау: жою және қайта жасау</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Тазалау: жою (сұраныс бойынша қайта жасалады)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Қайта синхрондау: файлдарды аралық көзден алу</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(тек аралық орнатуда)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Бүкіл сайт</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Бір түйін</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Түйін және оның ішкі ағашы</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Түйін id</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Кластар</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Атрибуттар</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Өзгерген уақыты</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Күн (2026-11-01) немесе қанша уақыт бұрын (12 сағат, 2 күн).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Ең көбі сурет</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Бүркеншік аттар (ешқайсысы таңдалмаса: барлығы)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Сынақ іске қосу: тек санау (resync көзді тексереді, ештеңе сақтамайды)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Айырмашылығы бар файлдарды үстінен жазу (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Іске қосуды бастау</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Соңғы іске қосулар</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Тапсырма</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Барысы</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Кезекке қойылды</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Әрекеттер</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Бас тарту</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Жаппай іске қосу немесе resync әлі жоқ.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Бір сурет</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Үлгі қазір алатын мекенжайлар, әр бүркеншік ат үшін есептелген өлшемдер мен түрлер және әр файлдың бар-жоғы.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Іздеу тәсілі</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Нысан id</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Id</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Көрсету</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Бұл нысанды оқуға рұқсатыңыз жоқ.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Бұл нысанда сурет жоқ.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Бұл id-мен нысан жоқ.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>нысан %object, түйін %node, нұсқа %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Түпнұсқа: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>файл бар</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>файл жоқ</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name бүркеншік аттары</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Бүркеншік ат</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Өлшемі</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Түрі</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Форматтар</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Үлгідегі мекенжай</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>бар</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>жоқ</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>бұл түрге жоқ</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Тексеру</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Жасау</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Бұл өрісте сурет жоқ.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Уақыты</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms мс</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Көзге қосылу</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Аралық көзге HEAD сұрауы, аталса, оның тіркелгі деректерімен. Тіркелгі деректері жіберіледі, ешқашан көрсетілмейді.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Көз</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>тіркелгі деректерімен</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Сақтау жолы (міндетті емес)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Қосылымды сынау</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Ешбір көзде BaseURL жоқ. Көздер баптауларда орнатылады ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>қолжетімді</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>бас тартылды: тіркелгі деректерін тексеріңіз</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>көзден табылмады</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>жауап жоқ</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>уақыт бітті</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>бағытталды (ілеспейді)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL жоқ</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>сақтау жолы емес</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Мекенжай</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Мәртебе</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>жіберілді</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>құпия жоқ</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>құпия user:password немесе Bearer &lt;token&gt; емес</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file файлының ең жаңа жолдары, жаңасы бірінші.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Баптау &gt; Журнал файлдары</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Оқиға</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Барлық оқиғалар</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Іске қосулар (басталуы және аяқталуы)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Жол құрамында</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Жолдар</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Сүзгі</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Қадағалау: жаңа жолдар жазылғанда көрсету</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Жол және мәліметтер</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Журналдың ешбір жолы сәйкес келмейді.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Сақтау нені өзгертеді</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Не өзгертілді</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php файлына сақталады, сондықтан мұндағы мән кез келген siteaccess мәнінен басым. Көрсетілген мәндер осы siteaccess үшін күшінде тұрғандар. Сақтау алдында өзіңізді растауыңыз сұралады.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Бүркеншік аттардың қалай жасалатыны және жеткізілетіні.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Жоқ суреттерді басқа орнатудан алу (alpha, dev, beta, stage, pro, post, arc). Өндіріс (pro) ешқашан алмайды.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Баптау</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Мән</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override ішінде</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Әр көздің мекенжайы және оның тіркелгі деректерін сақтайтын құпияның аты (user:password немесе Bearer &lt;token&gt;). Құпияның мәні Баптау &gt; Құпиялар ішінде орнатылады және мұнда ешқашан көрсетілмейді.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Өзгерістерді алдын ала қарау</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Сақтау</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Қадағалануда: %time жаңартылды</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Тоқтатылған</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Арна жауап бермеді; қайта әрекеттенуде.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Тапсырма аяқталды.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: үлгілер мекенжай алады, бүркеншік ат сұралғанда жасалады. render: үлгі оны бет жасалып жатқанда жасайды (бастапқы мінез-құлық).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Әлі жасалмаған бүркеншік аттың мекенжайы: token (қол қойылған, дерекқорды қажет етпейді), ids-token, ids, node немесе storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: веб-сервер сақтау орнын беретін болса, файлға бағыттау, әйтпесе файл ағынмен беріледі.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Сұраныс бүркеншік атты жасауға немесе алуға жұмсай алатын секунд; содан кейін ол толтырғыш қайтарады, ал жұмысты тапсырма аяқтайды.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP және AVIF нұсқалары үшін бірінші сыналатын түрлендіргіш.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Formats[] тізімдейтін бүркеншік аттар үшін WebP немесе AVIF сұрайтын браузерлерге соны жауап ету.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Сурет жоқ кезде дұрыс өлшемді бейтарап сурет.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Сурет пайда болғанда толтырғыштарды нақты суретпен ауыстыратын шағын скрипт.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Жариялаудан кейін тапсырма жаңа суреттердің бүркеншік аттарын барлық қатысты siteaccess үшін жасайды.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Бір серверде бір мезгілдегі түрлендірулер.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Жаппай іске қосулардың процесс басымдығы (nice), 0-ден 19-ға дейін.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Браузерлер мен кэштер жасалған бүркеншік атты сақтай алатын секунд.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Қара жазбаның немесе алдын ала қарау суретінің мекенжайы жарамды болатын секунд.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Ауыстырудан кейін алдыңғы қол қою кілті жарамды болатын секунд.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Осы орнатудың ортасы.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Жоқ суреттер алынатын орта; none: ештеңе алынбайды.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Әр жолға біреуі: жергілікті сақтау префиксі;көз префиксі немесе мекенжайы, айырмашылығы бар сақтау жолдары үшін.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Көзге бір сұраныс алатын секунд.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Көзден алынатын ең үлкен файл, байтпен.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Көз тоқтатылатын қатарынан сәтсіздіктер саны.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Сәтсіз көздің қанша уақыт тоқтатылатыны.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Көз тоқтатылғанда әкімшілерге хат жіберу (сағатына ең көбі бір рет).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Әр жолға бір электрондық пошта мекенжайы; бос: site.ini ішіндегі AdminEmail.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>%block көз орнатуының мекенжайы, мысалы https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Тіркелгі деректері бар құпияның аты немесе env:VARIABLE. Ешқашан тіркелгі деректерінің өзі емес.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(жоқ)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Әдепкі: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Осында орнатылған; жою үшін белгілеңіз</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>мұраланған</translation>
     </message>
 </context>
 </TS>

@@ -16590,6 +16590,34 @@ Yuyay: q'ipikunaqa manam churasqata hurqusqa kanqachu.</translation>
         <source>Import/Export</source>
         <translation>Apamuy/Apachiy</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Rikchay sutichanakuna</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Kay kaqpaq ruway</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>K&apos;allmapaq ruway</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Kay kaqpaq musuqmanta ruway</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>K&apos;allmapaq musuqmanta ruway</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Kay kaqmanta hurquy</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>K&apos;allmamanta hurquy</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Ñawpa web kitiq server bloquen: location = return nisqawan, tapuypaq if ($args), rewrite URL kumudin hina, sapallan raphikunapa map nisqanpas.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Rikchay sutichanakuna</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Rikchay sutichanakunaqa rikchaypa tupusqa hinaspa kuchusqa kikinchasqankunam, plantillakuna rikuchiqnin. Kaypiqa rikunki imaynatas ruwasqa kanku, tukuy siti patapi hatun purichiykunata kallpachanki, huk rikchayta icha staging ñawpaqta pruebanki, purichiykunap willakusqanta qatinki hinaspa allichaykunata tikranki.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Panqap t&apos;aqankuna</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Llamk&apos;ana panqa</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Hatun purichiykuna</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Pruebana llamk&apos;anakuna</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Purichiy willakuy</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Allichaykuna</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Kaypi tukuy imatam qhawayta atinki. Allichaykunata tikraypaq, llamk&apos;aykunata purichiypaq hinaspa willañiqikunata ruwaq llamk&apos;anakunapaqqa politica setup/managealiases nisqa necesitakun.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Imakunas qhawayta munan</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Render ruway laya: plantillakunaqa panqa rikuchikushaqtin pisiq sutichanakunata ruwanku, ñawpaqta hinalla. On-demand riqsichiqkuna, rantiq rikchaykuna hinaspa qhipa llamk&apos;aykuna mana llamk&apos;achkankuchu.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Rikch&apos;ay akllay llamk&apos;achkanmi, ichaqa kaypi mana ima tikrachiqpas WebP qillqayta atinchu.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Kaymi staging churasqa, ichaqa ñawpaqninpaq mana BaseURL kanchu: pisiq rikchaykunata mana apamuyta atikunchu.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Staging ñawpaqqa qatiqnimpi pantaykunamanta samarichkan: pisiq rikchaykunaqa rantiq rikchayta chaskinqa samay tukunankama icha qam kutichinaykama.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Staging ñawpaqqa kayllapi pantarqan. Qhipa pantayninta uraypi qhaway.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Kay churayqa mana producciónchu, ichaqa SyncFrom mana ima ñawpaqtapas sutinchanchu: manan imapas apamunchu.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Llamk&apos;ay suyana sinru (expqueue) mana kanchu: pachanta pasaq sutichanakunataqa qatiq mañakuy ruwanqa, pawblikasqamanta qhipa ñawpaq ruway saqisqa kanqa, hatun purichiykunapas huch&apos;uy ukhukunallapi kanqa.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Wakin rikchay sutichana llamk&apos;aykuna wiñaypaq pantarqanku. Wakichiy &gt; Llamk&apos;ay suyana sinru nisqapi imarayku rikukun.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Hatun purichiykuna samarichkanku.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Qhipa 24 horapi sutichanakuna pantarqanku. Purichiy willakuyqa chaykunata qillqan.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Firma kichanaqa huk watamanta aswan machuñam. Tikrayqa ñawpaq riqsichiqkunata samay pachakama allinta waqaychan.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Manaraqmi firma kichana kanchu: ñawpaq on-demand riqsichiqwan ruwasqa kanqa.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Qhipa 24 hora</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Ruwasqa sutichanakuna</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Kutichisqa rantiq rikchaykuna</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Pantaykuna</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Apamusqa willañiqikuna</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Qallarisqa purichiykuna</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Llamk&apos;aykuna suyashan / puriykuchkan</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file nisqap qhipa %lines siqinmanta yupasqa, %time pachakama kutiq.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Ruway laya hinaspa apachiy</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Ruway laya</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>mañakusqaman hina</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Riqsichiq rikch&apos;ay</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Apachiy</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Mañakuypa aswan unay suyayninqa</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Huk kutipi tikrachiykuna</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%max nisqamanta %busy kunan llamk&apos;achkan</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Rikch&apos;ay akllay</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>llamk&apos;achkan</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>samachkan</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Rantiq rikchay hinaspa rantinakuy script</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Pawblikasqamanta qhipa ñawpaq ruway</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Siti nisqap sutichanakuna</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Rikch&apos;ay hukniraykunap tikrachiqninkuna</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Tikrachiq</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Pruebasqa</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>akllasqa</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>arí</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>mana</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Sutichanakunataqa [ImageConverterSettings] nisqap tikrachiqninkunam ruwanku, ñawpaqta hinalla; kaykunaqa WebP hinaspa AVIF hukniraykunatam qillqanku.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Muyuriq hinaspa ñawpaq</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Kay churay</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(producción: mana hayk&apos;aqpas apamunchu)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Apamun kaymanta</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>manan imapas</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Ñawpaqpa riqsichiqnin</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>mana churasqa</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Yaykunapaq willakuy</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>pakasqa %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>mana ima</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Kaynin</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>allinta llamk&apos;achkan</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time kama samarichkan</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>pantachkan</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Qatiqnimpi pantaykuna</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count qhipata samay</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Qhipa pantay</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Qhipa atipay</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Pantaykunata kutichiy hinaspa ñawpaqmanta huktawan tapuy</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Llamk&apos;ay suyana sinru</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Llamk&apos;ay laya</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Suyashan</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Puriykuchkan</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mana atipasqa</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>mana qillqasqa</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Llamk&apos;ay suyana sinruqa mana kanchu.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Hatun purichiykuna samarichkan</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time manta %user nisqawan</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Hatun purichiykuna purinman</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Firma kichana</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Kichana</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>pakasqa waqaychanapi</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>manaraq</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Watan</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days p&apos;unchaw (%time manta)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Ñawpaq kichana</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time kama allin</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Kichanata tikray</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Kunan kichanawan firmasqa riqsichiqkunaqa samay pachakama (SigningKeyGrace) llamk&apos;asqallanmi, chaymantataq rantiq rikchaykunata kutichinqaku panqakuna musuqmanta ruwasqa kanankama.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Kunan tikray</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Imaynatas llamk&apos;an</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render ruway laya, staging hinaspa willañiqi</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (ñawpaqmanta): panqaqa manaraq kaq sutichanata firmasqa riqsichiqman tinkichin. Ñawpaq mañakuyqa aswan unay suyayninpi ruwan, mana chayqa mana ima kaq rantiq rikchayta kutichin hinaspa huk llamk&apos;ay ruwayta tukuchin; rantinakuy scriptqa rikchay chayaqtin rantiq rikchayta rantin.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render ruway laya: plantillaqa panqa rikuchikushaqtin sutichanata ruwan, ñawpaqta hinalla. Iskayninta mayna horapas tikrankim; manan imapas astana kanchu.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Staging churayqa pisiq ñawpaq rikchaykunata hinaspa sutichanakunata ñawpaqninmanta apamun; pantaq ñawpaqqa qatiqnimpi pantaykunamanta samarichisqa kan, kamachiqkunapas huk horapi aswan huk e-mailllata chaskinku.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Hatun purichiykuna hinaspa pawblikasqamanta qhipa ñawpaq ruwayqa llamk&apos;ay suyana sinrup llamk&apos;ayninkunam, watukuqkunamanta aswan pisi hatun kayniyuq. Sutichanakunata hurquyqa Velocity nisqap kutichiy utqay waqaychantapas ch&apos;uyanchan, chaymi hurqusqa willañiqiqa manam chaymanta qusqachu.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Sapa ruwasqa sutichana, kutichisqa rantiq rikchay, apamusqa willañiqi hinaspa purichiypas %file nisqapi huk siqim. Kamachiy siqipipas kikin llamk&apos;anakuna kan: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Llamk&apos;ay %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%total rikchaymanta %done</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Purichiy</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Ukhu</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Lluqsiyniy</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Kay llamk&apos;ayta qhisachay</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Llamk&apos;ay %job manam rikchay sutichanakunap llamk&apos;ayninchu, icha sinrumanta hurqusqa karqan.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Purichiy %run nisqap lluqsiyninqa</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Hatun purichiykuna samarichkanku</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time manta %user nisqawan samarichkan.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Samayqa sapa hatun purichiyta kunan rikchayninmanta qhipa sayarichin, tukuy servidorpi; suyaq purichiykunapas suyanku. Watukuqkunap sutichanakunam ruwasqallaraq kanku.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Hatun purichiykunata qatipay</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Imarayku (munaspaqa)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Hatun purichiykunata samarichiy</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Purichiyta qallariy</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Purichiykunaqa llamk&apos;ay suyana sinrup llamk&apos;ayninkunam: panqata saqispa kutimuyta atinki.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Llamk&apos;ay suyana sinru mana kaqtinqa, purichiyqa kay mañakuypi ruwasqa kan, aswanta %count rikchaykunapaq.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ruray</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Ruway: pisiq sutichanakunata ruway</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Musuqmanta ruway: hurquy hinaspa kutimpuy ruway</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Ch&apos;uyanchay: hurquy (mañakusqaman hina musuqmanta ruwasqa)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Musuq tinkichiy: willañiqikunata staging ñawpaqmanta apamuy</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(staging churaypilla)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Llapan siti</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Huk khipu</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Huk khipu hinaspa k&apos;allman</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Khipu ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>T&apos;aqakuna</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Kaqninkuna</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Tikrasqa chaymanta</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Huk p&apos;unchaw (2026-11-01) icha ñawpaq pacha (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Aswanta rikchaykuna</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Sutichanakuna (mana ima chimpasqachu: llapanmi)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>musuq tinkichiy</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Pruebapaq purichiy: yupayllata (musuq tinkichiyqa ñawpaqta qhawan, manataq imatapas waqaychanchu)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Hukniray willañiqikunata ñawpaqman qillqay (musuq tinkichiy)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Purichiyta qallariy</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Qhipa purichiykuna</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Llamk&apos;ay</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ñawpaqman riy</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Suyanapi</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ruraykuna</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Qhisachay</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Manaraq hatun purichiy nitaq musuq tinkichiypas kanchu.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Huk rikchay</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Plantilla kunan chaskiq riqsichiqkuna, sapa sutichanapaq yupasqa tupukuna hinaspa layakuna, willañiqipas kanchu.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Maskay kaywan</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Objetu ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rikuchiy</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Kay objetuta mana ñawiriyta atinkichu.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Kay objetuqa mana rikchayniyuqchu.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Kay ID kaq objetu mana kanchu.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>objetu %object, khipu %node, versión %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Ñawpaq: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>willañiqi kan</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>willañiqi pisin</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name nisqap sutichanakuna</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Sutichana</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Tupu</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Laya</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Willañiqi</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Rikch&apos;aykuna</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Plantillapi riqsichiq</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>kan</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>pisin</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>kay layapaq mana</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Qhaway</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Ruway</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Kay k&apos;anchapi mana rikchay kanchu.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Pacha</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Ñawpaqwan tinkuy</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Staging ñawpaqman HEAD mañakuy, yaykunapaq willakuyninwan sutichasqa kaqtin. Yaykunapaq willakuyqa apachisqam, mana hayk&apos;aqpas rikuchisqachu.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Ñawpaq</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>yaykunapaq willakuywan</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Waqaychana ñan (munaspaqa)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Tinkuyta pruebay</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Mana ima ñawpaqpas BaseURL nisqayuqchu. Ñawpaqkunaqa allichaykunapi churasqa kanku ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>chayana</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>mana chaskisqa: yaykunapaq willakuyta qhaway</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>ñawpaqpi mana tarisqachu</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>mana kutichiy</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>pacha tukusqa</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>huk ladoman kutichisqa (mana qatisqachu)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>mana BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>mana waqaychana ñanchu</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Riqsichiq</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Kaynin</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>apachisqa</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>pakasqa pisin</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>pakasqaqa manam user:password nitaq Bearer &lt;token&gt; kanchu</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file nisqap aswan musuq siqinkuna, musuqmanta qallarispa.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Wakichiy &gt; Pasakuy qillqa willañiqikuna</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Pasakuy</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Llapa pasakuykuna</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Purichiykuna (qallariy hinaspa tukukuy)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Ñanpi kachkan</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Siqikuna</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Suysuy</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Qatiy: musuq siqikunata qillqasqa kaqtin rikuchiy</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Ñan hinaspa sut&apos;inchaykuna</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Willañiqipi mana ima siqipas tupanchu.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Waqaychayqa imakunatas tikranman</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Imakunas tikrasqa karqan</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php nisqapi waqaychasqa, chayrayku kaypi chaniqa tukuy siteaccess nisqamanta aswan kallpayuqmi. Rikuchisqa chanikunaqa kay siteaccesspaq kallpayuqkunam. Waqaychanaykipaq ñawpaqta pi kasqaykita takyachinaykita mañanqa.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Sutichanakuna imaynatas ruwasqa hinaspa apachisqa kanku.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Pisiq rikchaykunata huk churaymanta apamuy (alpha, dev, beta, stage, pro, post, arc). Producción (pro) mana hayk&apos;aqpas apamunchu.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Allichay</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Chani</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override nisqapi</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Sapa ñawpaqpa riqsichiqnin hinaspa yaykunapaq willakuyninta hap&apos;iq pakasqap sutin (user:password icha Bearer &lt;token&gt;). Pakasqap chanintaqa Wakichiy &gt; Pakasqakuna nisqapi churanki, kaypiqa mana hayk&apos;aqpas rikuchisqachu.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Tikrasqakunata ñawpaq qhaway</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Waqaychay</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Qatiy: %time musuqchasqa</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Samarichkan</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Feed mana kutichirqanchu; huktawan pruebachkan.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Llamk&apos;ayqa tukusqañam.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: plantillakuna riqsichiqta chaskinku, sutichanaqa mañakusqa kaqtin ruwasqa kan. render: plantillaqa panqa rikuchikushaqtin ruwan (ñawpaq ruway).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Manaraq ruwasqa sutichanap riqsichiqnin: token (firmasqa, mana datakunap t&apos;aqanta necesitan), ids-token, ids, node icha storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: willañiqiman kutichiy web servidor waqaychanata quktin, mana chayqa willañiqi streaming nisqawan apachisqa.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Mañakuy sutichanata ruwaspa icha apamuspa hayk&apos;a sikundukunatas pasanman; chaymantataq rantiq rikchayta kutichin hinaspa huk llamk&apos;ay ruwayta tukuchin.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP hinaspa AVIF hukniraykunapaq ñawpaqta pruebasqa tikrachiq.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>WebP icha AVIF nisqata maskaq browserkunaman kutichiy, Formats[] qillqaq sutichanakunapaq.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Rikchay pisiqtin allin tupuyuq mana ima kaq rikchay.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Rantiq rikchaykunata cheqaq rikchaywan rantiq huch&apos;uy script, rikchay chayaqtin.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Pawblikasqamanta qhipa, huk llamk&apos;ayqa musuq rikchaykunap sutichanakunata sapa tinkisqa siteaccesspaq ruwan.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Huk servidorpi huk kutipi tikrachiykuna.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Hatun purichiykunap ruwaypa hatun kaynin (nice), 0 manta 19 kama.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Browserkuna hinaspa utqay waqaychakuna ruwasqa sutichanata hayk&apos;a sikundukunas waqaychayta atinku.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Borrador icha ñawpaq qhaway rikchaypa riqsichiqnin hayk&apos;a sikundukunas allin kachkan.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Tikrayniymanta qhipa ñawpaq firma kichana hayk&apos;a sikundukunas allin kachkan.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Kay churaypa muyuriqnin.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Pisiq rikchaykuna apamusqa kanankupaq muyuriq; mana ima: manan imapas apamunchu.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Sapa siqipi huk: kikin waqaychana ñawpaq p&apos;akin;ñawpaq p&apos;akin icha riqsichiq, hukniray waqaychana ñankunapaq.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Ñawpaqman huk mañakuy hayk&apos;a sikundukunas ruwayta atin.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Ñawpaqmanta chaskisqa aswan hatun willañiqi, bytekunapi.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Qatiqnimpi hayk&apos;a pantaykunamanta ñawpaq samarichisqa kan.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Pantaq ñawpaq hayk&apos;a pachas samarichisqa kan.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Ñawpaq samarichisqa kaqtin kamachiqkunaman e-mail apay (huk horapi aswan huk kuti).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Sapa siqipi huk e-mail riqsichiq; ch&apos;usaq: site.ini nisqap AdminEmail nisqan.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Ñawpaq churay %block nisqap riqsichiqnin, qhawariy: https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Yaykunapaq willakuyniyuq pakasqap sutin, icha env:VARIABLE. Mana hayk&apos;aqpas yaykunapaq willakuyllan.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(mana ima)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Ñawpaqmanta: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Kaypi churasqa; hurquyta munaspa chimpay</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>herenciamanta</translation>
     </message>
 </context>
 </TS>

@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>Импорт/экспорт</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Рәсем псевдонимнары</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Шушы элемент өчен ясау</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Эчке агач өчен ясау</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Шушы элемент өчен яңадан ясау</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Эчке агач өчен яңадан ясау</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Шушы элемент өчен бетерү</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Эчке агач өчен бетерү</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Иске сайтның server блогы: return белән location =, сорау өчен if ($args), алыштыру билгесе буларак rewrite һәм аерым битләрнең map җыелмасы.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Рәсем псевдонимнары</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Рәсем псевдонимнары — шаблоннар күрсәтә торган рәсемнең кечерәйтелгән һәм киселгән күчермәләре. Монда аларның ничек ясалуын күреп, сайт буенча күпләп эшләр башкарып, бер рәсемне яки staging чыганагын сынап, эшләтүләр тарихын күзәтеп һәм көйләүләрне үзгәртеп була.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Битнең бүлекләре</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Идарә панеле</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Күпләп эшләтүләр</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Сынау кораллары</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Эшләтүләр тарихы</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Көйләүләр</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Монда барысын да карап була. Көйләүләрне үзгәртү, эшләр башкару һәм файллар ясаучы кораллар өчен setup/managealiases сәясәте кирәк.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Игътибар таләп итә</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Render режимы: шаблоннар җитмәгән псевдонимнарны битне төзегәндә ясый, элеккечә. On-demand адреслары, урын тутыргычлар һәм фон эшләре кулланылмый.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Форматларны килешү кабызылган, ләкин монда бер конвертер да WebP яза алмый.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Бу staging урнаштыруы, ләкин аның чыганагында BaseURL юк: җитмәгән рәсемнәрне алып булмый.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Staging чыганагы рәт буенча берничә уңышсызлыктан соң туктатылды: тәнәфес беткәнче яки сез аны ташлаганчы, җитмәгән рәсемнәргә урын тутыргычлар бирелә.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Staging чыганагы күптән түгел уңышсыз булды. Аның соңгы хатасын түбәндә карагыз.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Бу урнаштыру production түгел, ләкин SyncFrom бер чыганакны да атамый: берни дә алынмый.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Эшләр чираты (expqueue) ирешеп булмый: вакытында өлгермәгән псевдонимнарны киләсе сорау ясый, бастырганнан соңгы алдан ясау калдырыла, күпләп эшләтүләр кечкенә даирәләр белән чикләнә.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Рәсем псевдонимнарының кайбер эшләре бөтенләйгә уңышсыз булды. Көйләү &gt; Эшләр чираты сәбәбен күрсәтә.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Күпләп эшләтүләр туктатылган.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Соңгы 24 сәгатьтә псевдонимнар уңышсыз булды. Эшләтүләр тарихы аларны санап чыга.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Имза ачкычы бер елдан күбрәк. Аны алмаштыру иске адресларны җиңеллек срогы дәвамында көчендә калдыра.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Имза ачкычы әле юк: ул беренче on-demand адрес белән ясала.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Соңгы 24 сәгать</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Ясалган псевдонимнар</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Җавап бирелгән урын тутыргычлар</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Уңышсызлыклар</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Staging ясалган файллар</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Башланган эшләтүләр</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Көткән / эшләгән эшләр</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file файлының соңгы %lines юлыннан саналды, алар %time кадәр җитә.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Режим һәм тапшыру</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Режим</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>таләп буенча</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Адрес рәвеше</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Тапшыру</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Сорауның иң озын көтүе</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds с</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Бер үк вакытта конвертацияләр</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>Хәзер %max эченнән %busy мәшгуль</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Форматларны килешү</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>кабызылган</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>сүндерелгән</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Урын тутыргыч һәм алмаштыру скрипты</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Бастырганнан соң алдан ясау</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Сайтның псевдонимнары</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Формат вариантларының конвертерлары</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Конвертер</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Сыналган</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>өстенлекле</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>әйе</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>юк</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Псевдонимнарны үзләрен элеккечә [ImageConverterSettings] конвертерлары ясый; болар WebP һәм AVIF вариантларын яза.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Мохит һәм чыганак</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Бу урнаштыру</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production: беркайчан да алмый)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Алып килә</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>берни дә</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Чыганак адресы</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>билгеләнмәгән</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Ышаныч грамотасы</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>сер %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>юк</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Хәле</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>эшли</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time кадәр туктатылган</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>уңышсыз була</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Рәт буенча уңышсызлыклар</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count дан соң туктату</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Соңгы хата</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Соңгы уңыш</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Уңышсызлыкларны ташлап, чыганактан тагын бер сорау</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Эшләр чираты</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Эш төре</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Көтә</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Эшли</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Барып чыкмады</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>теркәлмәгән</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Эшләр чираты ирешеп булмый.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Күпләп эшләтүләр туктатылган</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time башлап, %user тарафыннан</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Күпләп эшләтүләргә рөхсәт</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Имза ачкычы</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Ачкыч</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>серләр саклагычында</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>әле юк</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Яше</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days көн (%time башлап)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Алдагы ачкыч</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time кадәр гамәлдә</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Ачкычны алмаштыру</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Хәзерге ачкыч белән имзаланган адреслар җиңеллек срогы (SigningKeyGrace) дәвамында эшләвен дәвам итә, аннан соң битләр яңадан ясалганчы урын тутыргычлар белән җавап бирә.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Хәзер алмаштыру</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Ничек эшли</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render режимы, staging һәм журнал</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (килешенгән): бит әле булмаган псевдонимны имзаланган адреска бәйли. Беренче сорау аны иң озын көтү эчендә ясый, юкса битарафлык урын тутыргычы белән җавап бирә, эшне исә эш тәмамлый; рәсем әзер булгач алмаштыру скрипты урын тутыргычны алмаштыра.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render режимы: шаблон псевдонимны битне төзегәндә ясый, элеккечә. Икесе арасында теләсә кайчан күчеп була; берни дә күчерергә кирәкми.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Staging урнаштыруы җитмәгән оригиналларны һәм псевдонимнарны үз чыганагыннан алып килә; уңышсыз чыганак рәт буенча берничә уңышсызлыктан соң туктатыла, администраторлар сәгатенә иң күбе бер хат ала.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Күпләп эшләтүләр һәм бастырганнан соңгы алдан ясау — эшләр чираты эшләре, килүчеләргә караганда түбәнрәк өстенлек белән. Псевдонимнарны бетерү Velocity җавап кэшын да чистарта, шуңа күрә бетерелгән файл аннан бирелми.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Ясалган һәр псевдоним, җавап бирелгән урын тутыргыч, staging ясалган файл һәм эшләтү — %file файлындагы бер юл. Боерык юлында да нәкъ шундый кораллар бар: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Эш %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%total рәсемнән %done</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Башкару</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Даирә</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Нәтиҗә</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Бу эшне гамәлдән чыгару</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>%job эше рәсем псевдонимнары эше түгел яки чираттан алынган.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>%run эшләтүенең нәтиҗәсе</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Күпләп эшләтүләр туктатылган</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time башлап %user туктаткан.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Туктау барлык серверларда һәр күпләп эшләтүне хәзерге рәсемнән соң туктата; чираттагы эшләтүләр көтә. Килүчеләрнең псевдонимнары ясала бирә.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Күпләп эшләтүләрне дәвам итү</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Сәбәп (мәҗбүри түгел)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Күпләп эшләтүләрне туктату</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Эшләтүне башлау</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Эшләтүләр — эшләр чираты эшләре: битне калдырып, кире кайтып була.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Эшләр чираты булмаса, эшләтү шушы сорауда, иң күбе %count рәсем өчен башкарыла.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Гамәл</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: җитмәгән псевдонимнарны ясау</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: бетереп, яңадан ясау</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: бетерү (таләп буенча яңадан ясала)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: файлларны staging чыганагыннан алып килү</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(staging урнаштыруында гына)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Бөтен сайт</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Бер төен</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Төен һәм аның эчке агачы</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Төен ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Класслар</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Атрибутлар</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Үзгәртелгән вакыттан бирле</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Дата (2026-11-01) яки күпме вакыт элек (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Иң күбе рәсем</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Псевдонимнар (берсе дә билгеләнмәсә: барысы)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Сынау эшләтүе: санау гына (resync чыганакны тикшерә, берни дә саклый алмый)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Аерылган файлларны өстенә язу (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Эшләтүне башлау</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Соңгы эшләтүләр</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Эш</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Барыш</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Чиратта</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Гамәлләр</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Баш тарту</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Күпләп эшләтү яки resync әле юк.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Бер рәсем</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Шаблон хәзер алган адреслар, һәр псевдоним өчен исәпләнгән зурлыклар һәм төрләр, һәм һәр файлның бар-юклыгы.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Эзләү буенча</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Объект ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Күрсәтү</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Сезгә бу объектны укырга ярамый.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Бу объектта рәсем юк.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Мондый ID белән объект юк.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>объект %object, төен %node, версия %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Оригинал: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>файл бар</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>файл юк</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name псевдонимнары</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Псевдоним</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Зурлык</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Төр</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Форматлар</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Шаблондагы адрес</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>бар</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>юк</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>бу төр өчен түгел</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Тикшерү</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Ясау</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Бу кырда рәсем юк.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Вакыт</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms мс</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Чыганак белән тоташу</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Staging чыганагына HEAD соравы, исеме бирелгән булса, аның ышаныч грамотасы белән. Ышаныч грамотасы җибәрелә, беркайчан да күрсәтелми.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Чыганак</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>ышаныч грамотасы белән</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Саклагыч юлы (мәҗбүри түгел)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Тоташуны сынау</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Бер чыганакта да BaseURL юк. Чыганаклар көйләүләрдә бирелә ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>ирешеп була</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>кире кагылды: ышаныч грамотасын тикшерегез</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>чыганакта табылмады</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>җавап юк</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>вакыт узды</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>күчерелде (эзәрлекләнмәде)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL юк</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>саклагыч юлы түгел</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Адрес</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Статус</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>җибәрелде</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>сер юк</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>сер user:password яки Bearer &lt;token&gt; түгел</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file файлының иң яңа юллары, иң яңасы беренче.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Көйләү &gt; Журнал файллары</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Вакыйга</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Барлык вакыйгалар</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Эшләтүләр (башы һәм азагы)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Юл үз эченә ала</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Юллар</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Фильтр</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Эзләп бару: яңа юлларны язылу белән күрсәтү</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Юл һәм җентекләр</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Журналның бер юлы да туры килми.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Саклау нәрсәне үзгәртәчәк</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Нәрсә үзгәрде</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php файлына саклана, шуңа күрә монда кыйммәт барлык siteaccess&apos;лардан өстен тора. Күрсәтелгән кыйммәтләр шушы siteaccess өчен гамәлдәгеләр. Саклау алдыннан Сез икәнегезне раслау сорала.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Псевдонимнар ничек ясала һәм тапшырыла.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Җитмәгән рәсемнәрне башка урнаштырудан алып килү (alpha, dev, beta, stage, pro, post, arc). Production (pro) беркайчан да алмый.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Көйләү</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Кыйммәт</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override эчендә</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Һәр чыганакның адресы һәм аның ышаныч грамотасын тоткан сернең исеме (user:password яки Bearer &lt;token&gt;). Сернең кыйммәте Көйләү &gt; Серләр бүлегендә бирелә һәм монда беркайчан да күрсәтелми.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Үзгәрешләрне алдан карау</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Саклау</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Эзләп бара: %time яңартылды</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Туктатылган</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Агым җавап бирмәде; тагын сынап карала.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Эш тәмамланды.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: шаблоннар адрес ала, псевдоним сорагач ясала. render: шаблон аны битне төзегәндә ясый (элекке гамәл).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Әле ясалмаган псевдоним адресы: token (имзаланган, мәгълүмат базасы кирәкми), ids-token, ids, node яки storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: веб-сервер саклагычны бирсә — файлга юнәлтү, юкса файл агым белән бирелә.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Сорау псевдонимны ясауга яки алып килүгә сарыф итә алган секундлар; аннан соң урын тутыргыч белән җавап бирә, эшне исә эш тәмамлый.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP һәм AVIF вариантлары өчен беренче сынала торган конвертер.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Formats[] санаган псевдонимнар өчен WebP яки AVIF сораган браузерларга шуны бирү.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Рәсем җитмәгәндә дөрес зурлыктагы битараф рәсем.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Рәсем әзер булгач урын тутыргычларны чын рәсем белән алмаштыручы кечкенә скрипт.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Бастырганнан соң эш яңа рәсемнәрнең псевдонимнарын барлык бәйләнешле siteaccess өчен ясый.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Бер серверда бер үк вакытта конвертацияләр.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Күпләп эшләтүләрнең процесс өстенлеге (nice), 0 дән 19 га кадәр.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Браузерлар һәм кэшлар ясалган псевдонимны саклый алган секундлар.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Рәсемнең төзәтмә яки алдан карау адресы гамәлдә калган секундлар.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Алмаштырганнан соң алдагы имза ачкычы гамәлдә калган секундлар.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Бу урнаштыруның мохите.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Җитмәгән рәсемнәр алына торган мохит; none: берни дә алынмый.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Һәр юлга берәү: җирле саклагыч префиксы;чыганак префиксы яки адресы, аерылган саклагыч юллары өчен.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Чыганакка бер сорау ала алган секундлар.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Чыганактан алына торган иң зур файл, байтларда.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Шуннан соң чыганак туктатыла торган рәт буенча уңышсызлыклар саны.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Уңышсыз чыганак күпме туктатыла.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Чыганак туктатылганда администраторларга хат җибәрү (сәгатенә иң күбе бер тапкыр).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Һәр юлга бер электрон почта адресы; буш: site.ini эчендәге AdminEmail.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>%block чыганак урнаштыруының адресы, мәсәлән https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Ышаныч грамотасы булган сернең исеме, яки env:VARIABLE. Беркайчан да ышаныч грамотасының үзе түгел.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(юк)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Килешенгән: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Монда бирелгән; бетерү өчен билгеләгез</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>мирас алынган</translation>
     </message>
 </context>
 </TS>

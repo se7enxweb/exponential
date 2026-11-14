@@ -16586,6 +16586,34 @@ Pakete okañýta opa árape g̃uarã.
         <source>Import/Export</source>
         <translation>Ñemoinge/Ñemondo</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Ta&apos;ãnga téra mokõiha</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Mbojapo ko mba&apos;e g̃uarã</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Mbojapo hi&apos;ái g̃uarã</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Mbojapo jey ko mba&apos;e g̃uarã</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Mbojapo jey hi&apos;ái g̃uarã</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Mbogue ko mba&apos;e g̃uarã</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Mbogue hi&apos;ái g̃uarã</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86394,6 +86422,997 @@ Remoambuevaerã nódo klase swap tembiapo rupive.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Tenda tuja server bloque: location = return ndive, if ($args) porandúpe g̃uarã, rewrite comodín ramo ha peteĩ map kuatiarogue peteĩteĩ rehegua.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Ta&apos;ãnga téra mokõiha</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Ta&apos;ãnga téra mokõiha ha&apos;e ta&apos;ãnga rembopichi térã ojeikepa&apos;ỹva kopia, umi tembiecharã ohechaukáva. Ko&apos;ápe rehecha mba&apos;éichapa ojejapo, reñepyrũ mba&apos;apo tuicha ñemoñepyrũ pe tendápe, repehẽngue peteĩ ta&apos;ãnga térã staging ypy, rapykuere&apos;ỹ mba&apos;apo ñepyrũ rembohasa ha embojoko ñemboheko.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Kuatiaroguépe hendaha</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Ñangarekoha</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Mba&apos;apo tuicha</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Mba&apos;e jehecha</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Ñepyrũ rembiasakue</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Ñemboheko</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Ko&apos;ápe ikatu rehecha opa mba&apos;e. Ñemboheko ñemoambue, mba&apos;apo ñepyrũ ha mba&apos;e ojapóva marandurenda oikotevẽ pe tembiapoukapy setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Mba&apos;e oikotevẽva ñangareko</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Render ñemomba&apos;e: tembiecharã ojapo téra mokõiha ofaltáva kuatiarogue ojehechaukávo, ymaguaicha. Umi kundaharape on-demand, ta&apos;ãnga renda ha mba&apos;apo mombyry noñemoĩri.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Ñemoambue ñemoĩ oñemyendy, ha katu mba&apos;eve mbohasaha ko&apos;ápe ndaikatúi ohai WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Ko&apos;ã staging ñemoĩ, ha katu hi&apos;ypy nandi&apos;ái BaseURL: ta&apos;ãnga ofaltáva ndaikatúi ojegueru.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Staging ypy opytu&apos;u hetaiterei jejavy ojuehe rire: ta&apos;ãnga ofaltáva ohupyty ta&apos;ãnga renda pytu&apos;u opa peve térã rembojeguaru jey.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Staging ypy ojavy ko&apos;ágã. Ehecha hi&apos;ipy&apos;ỹ ipahaguáva ysy.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Ko ñemoĩ ndaha&apos;éi produkción, ha katu SyncFrom ndohota ypy: mba&apos;eve ndojegueru.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Mba&apos;apo ha&apos;arõha (expqueue) ndaipóri: téra mokõiha ohasa&apos;ỹva hi&apos;ara ojapo ojerure hipyre, ñemoherakuã rire mboyve ojapo ojejopy ha mba&apos;apo tuicha oñemboguejy mba&apos;e michĩvape.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Ta&apos;ãnga téra mokõiha mba&apos;apo ojavy opa árape. Ñemboheko &gt; Mba&apos;apo ha&apos;arõha ohechauka mba&apos;ére.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Mba&apos;apo tuicha opytu&apos;u.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Téra mokõiha ojavy 24 aravo pahápe. Ñepyrũ rembiasakue omoĩ ichupe.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Ñemoñe&apos;ẽ ñemo&apos;ã yvyraroguy ha&apos;e peteĩ ary guasúgui hetave. Ñemoambue omoĩ kundaharape tuja oikóvo ñemoĩ aravo peve.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Ndaipóri gueteri sello ñemo&apos;ã: ojejapo peteĩha kundaharape on-demand reheve.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>24 aravo paha</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Téra mokõiha ojejapóva</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Ta&apos;ãnga renda ojeikóva</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Jejavy</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Marandurenda ojegueruva&apos;ekue</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Ñepyrũ oñepyrũva&apos;ekue</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Mba&apos;apo oha&apos;arõva / oikóva</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Ojepuru %lines tysýi paha %file-gui, ohókuépe %time peve.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Ñemomba&apos;e ha mondo</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Ñemomba&apos;e</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>ojerurévo</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Kundaharape ñemoheñói</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Mondo</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Ha&apos;arõ pukúva ojerure rehe</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Ñemoambue peteĩ jerekópe</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy %max-gui ojepuru ko&apos;ágã</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Ñemoambue ñemoĩ</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>oñemyendy</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ojepe&apos;a</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Ta&apos;ãnga renda ha moambue skripta</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Ñemoherakuã rire jejapo mboyve</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Tenda téra mokõiha</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Ñemoambue mbohasaha mba&apos;eichagua</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Mbohasaha</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Jehechauka</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>ojeporavóva</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>heẽ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nahániri</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Téra mokõiha ojapo umi mbohasaha [ImageConverterSettings]-gui, ymaguaicha; ko&apos;ãva ohai WebP ha AVIF mba&apos;eichagua.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Tekoha ha ypy</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Ko ñemoĩ</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(produkción: araka&apos;eve ndojegueru)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Ojegueru guive</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>mba&apos;eve</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Ypy kundaharape</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>nomboheko</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Ñemoñe&apos;ẽ rape</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>ñemi %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>mba&apos;eve</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Teko</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>omba&apos;apo</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>opytu&apos;u %time peve</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>ojavy</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Jejavy ojuehe</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>pytu&apos;u %count rire</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Jejavy paha</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Ñepyrũ porã paha</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Emboguejy jejavy ha eporandu jey ypýpe</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Mba&apos;apo ha&apos;arõha</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Mba&apos;apo mba&apos;eichagua</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Oha&apos;arõva</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Oikóva</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ndoikóiva</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>noñemoĩri</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Mba&apos;apo ha&apos;arõha ndaipóri.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Mba&apos;apo tuicha opytu&apos;u</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time guive %user rupi</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Mba&apos;apo tuicha ikatu oiko</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Sello ñemo&apos;ã</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Ñemo&apos;ã</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>ñemi ñongatuhápe</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ndaipóri gueteri</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Ary</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days ara (%time guive)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Ñemo&apos;ã mboyvegua</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>oikóva %time peve</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Emoambue ñemo&apos;ã</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Kundaharape ojehai ko&apos;ágã ñemo&apos;ã reheve oikove ñemoĩ aravo (SigningKeyGrace) peve, upéi omoĩ ta&apos;ãnga renda kuatiarogue ojejapo jey peve.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Emoambue ko&apos;ágã</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Mba&apos;éichapa omba&apos;apo</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render ñemomba&apos;e, staging ha rysýi</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (ojepuru raẽ): kuatiarogue ohasa téra mokõiha ndaipóri gueteri peteĩ kundaharape ojehaívape. Ojerure peteĩha ojapo ha&apos;arõ pukúva ryepýpe, ndaha&apos;éiramo omoĩ ta&apos;ãnga renda ha mba&apos;apo opa; moambue skripta oipe&apos;a ta&apos;ãnga renda ta&apos;ãnga oĩvo.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render ñemomba&apos;e: tembiecharã ojapo téra mokõiha kuatiarogue ojehechaukávo, ymaguaicha. Ikatu remoambue mokõive pa&apos;ũme arakuaa; mba&apos;eve noñemomýiva.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Staging ñemoĩ ogueru umi ypyguáva ha téra mokõiha ofaltáva hi&apos;ypýgui; ypy ojavýva opytu&apos;u jejavy ojuehe rire ha ñangarekoha ohupyty peteĩ marandu ára ára pyhare.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Mba&apos;apo tuicha ha ñemoherakuã rire jejapo mboyve ha&apos;e mba&apos;apo ha&apos;arõhápe, mba&apos;e tenondeha michĩvéva ikatúgui ñemoñepyrũ. Téra mokõiha ñemboguejy omopotĩ avei Velocity moñe&apos;ẽ cache, ha marandurenda oñembogue&apos;akue ndojepuru.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Opa téra mokõiha ojejapóva, ta&apos;ãnga renda ojeikóva, marandurenda ojegueruva ha ñepyrũ ha&apos;e peteĩ tysýi %file-pe. Komandu rysýi oguereko avei ko&apos;ã mba&apos;e: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Mba&apos;apo %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done %total ta&apos;ãngagui</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Ñepyrũ</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Ñemomba&apos;e rupi</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Jehupyty</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Heja ko mba&apos;apo</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Mba&apos;apo %job ndaha&apos;éi ta&apos;ãnga téra mokõiha mba&apos;apo, térã oñembogue ha&apos;arõhágui.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Ñepyrũ %run jehupyty</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Mba&apos;apo tuicha opytu&apos;u</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Opytu&apos;u %time guive %user rupi.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Pytu&apos;u omboyke opa mba&apos;apo tuicha ta&apos;ãnga ko&apos;ágãgua rire, opa servidóre; ñepyrũ ha&apos;arõháva oha&apos;arõ. Téra mokõiha ñepyrũhárape ojejapo gueteri.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Emoñepyrũ jey mba&apos;apo tuicha</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Mba&apos;ére (ndaha&apos;éi tekotevẽ)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Embopytu&apos;u mba&apos;apo tuicha</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Emoñepyrũ peteĩ ñepyrũ</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Ñepyrũ ha&apos;e mba&apos;apo ha&apos;arõhápe: ikatu reja kuatiarogue ha reju jey.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Mba&apos;apo ha&apos;arõha&apos;ỹre ñepyrũ ojejapo ko jerurépe, %count ta&apos;ãnga mba&apos;e rupi.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Tembiapo</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Mbojapo: embojapo téra mokõiha ofaltáva</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Mbojapo jey: embogue ha embojapo jey</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Mbogue: embogue (ojejapo jey ojerurévo)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Moĩ jey: egueru marandurenda staging ypýgui</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(staging ñemoĩhápe añoite)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Tenda guasu</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Peteĩ nódo</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Peteĩ nódo ha hi&apos;ái</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Nódo ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klase</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atrivúto</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Ñemoambue guive</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Peteĩ ára (2026-11-01) térã aravo ohasava&apos;ekue (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Ta&apos;ãnga hetaveha</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Téra mokõiha (mba&apos;eve ndojeporavóiramo: opavave)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>moĩ jey</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Ñepyrũ jehecha: ñemoñe&apos;ẽ añoite (moĩ jey ohecha ypy ha ndoñongatúi mba&apos;eve)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Ehai marandurenda ojaváva ári (moĩ jey)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Emoñepyrũ ñepyrũ</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Ñepyrũ paha</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Mba&apos;apo</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ñemoñepyrũ</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Oñemoĩva ha&apos;arõhápe</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Tembiapo</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Heja</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Ndaipóri gueteri mba&apos;apo tuicha térã moĩ jey.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Peteĩ ta&apos;ãnga</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Kundaharape tembiecharã ohupyty ko&apos;ágã, tuichakue ha mba&apos;eichagua oñemoñe&apos;ẽ téra mokõiha ndive, ha marandurenda oĩpa.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Eheka</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Mba&apos;e ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ehecha</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Ndaikatúi rehecha ko mba&apos;e.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Ko mba&apos;e nombyakúi ta&apos;ãnga.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Ndaipóri mba&apos;e ko ID reheve.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>mba&apos;e %object, nódo %node, peteĩchagua %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Ypyguáva: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>marandurenda oĩ</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>marandurenda ofalta</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name téra mokõiha</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Téra mokõiha</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Tuichakue</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Mba&apos;eichagua</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Marandurenda</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Ñemoheñói</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Kundaharape tembiecharãme</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>oĩ</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>ofalta</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ndaha&apos;éi ko mba&apos;eichaguápe</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Ehecha</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Mbojapo</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Ndaipóri ta&apos;ãnga ko tendápe.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Aravo</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Jopy ypýpe</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Peteĩ jerure HEAD staging ypýpe, ñemoñe&apos;ẽ rape reheve oĩramo. Ñemoñe&apos;ẽ rape ojeme&apos;ẽ, araka&apos;eve ojehechaukái.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Ypy</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>ñemoñe&apos;ẽ rape reheve</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Ñongatu rape (ndaha&apos;éi tekotevẽ)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Ehecha jopy</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Ndaipóri ypy BaseURL reheve. Ypy oñemboheko ñembohekópe ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>ojehupyty</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>ojeja: ehecha ñemoñe&apos;ẽ rape</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>ndojejuhúi ypýpe</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>ndojerurévi</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>aravo opa</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>ojeguerojey (nojeropyrõi)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL&apos;ỹ</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>ndaha&apos;éi ñongatu rape</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Kundaharape</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Teko</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>oñemondo</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>ñemi ofalta</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>ñemi ndaha&apos;éi user:password térã Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file tysýi pyahuvéva, pyahuvéva raẽ.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Ñemboheko &gt; Marandurenda rysýi</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Mba&apos;e oikóva</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Opa mba&apos;e oikóva</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Ñepyrũ (ñepyrũ ha opa)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Rape oguereko</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Tysýi</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Mbogua</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Rapykuere: ehecha tysýi pyahu ojehai haguépe</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Rape ha mba&apos;e mbykymi</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Ndaipóri tysýi rysýi-pe oĩ porãva.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Mba&apos;e eñongatu omoambuéva</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Mba&apos;e oñemoambue</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Oñeñongatu settings/override/image.ini.append.php-pe, upévare repy ko&apos;ápe ipoguýva opa siteaccess ári. Repy ojehechaukáva ha&apos;e ko siteaccess g̃uarã. Eñongatu mboyve ojerure emoneĩ mávapa nde.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Mba&apos;éichapa téra mokõiha ojejapo ha ojeme&apos;ẽ.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Ñegueru ta&apos;ãnga ofaltáva ambue ñemoĩgui (alpha, dev, beta, stage, pro, post, arc). Produkción (pro) araka&apos;eve ndojegueru.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Ñemboheko</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Repy</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>In settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Opa ypy kundaharape ha pe ñemi réra oguerekóva ñemoñe&apos;ẽ rape (user:password térã Bearer &lt;token&gt;). Ñemi repy oñemboheko Ñemboheko &gt; Ñemi-pe ha araka&apos;eve ojehechaukái ko&apos;ápe.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Ehecha ñemoambue raẽ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Eñongatu</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Rapykuere: oñemoambue %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Opytu&apos;úva</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Feed ndohusỹi; ojehecha jey.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Mba&apos;apo opa.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: tembiecharã ohupyty kundaharape, téra mokõiha ojejapo ojerurévo. render: tembiecharã ojapo kuatiarogue ojehechaukávo (teko ypyguáva).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Téra mokõiha ojejapo&apos;ỹva kundaharape: token (ojehaíva, ndoikotevẽi marandu ñongatuha), ids-token, ids, node térã storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: ñemoĩ jey marandurendápe tuichavy servidór ome&apos;ẽ ñongatuha, ndaha&apos;éiramo marandurenda oguejy.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Sekúndo ojerure ikatúva ohepyme&apos;ẽ ojapo térã ogueru téra mokõiha; upéi omoĩ ta&apos;ãnga renda ha mba&apos;apo opa.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Mbohasaha ojehechauka raẽ WebP ha AVIF mba&apos;eichaguápe.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Emoĩ WebP térã AVIF kundahára ojerurévape, téra mokõiha oguerekóva Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Peteĩ ta&apos;ãnga neutral tuichakue porãme ta&apos;ãnga ofaltávo.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Peteĩ skripta michĩ omoambue ta&apos;ãnga renda ta&apos;ãnga añetegua reheve oĩvo.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Ñemoherakuã rire, peteĩ mba&apos;apo ojapo ta&apos;ãnga pyahu téra mokõiha opa siteaccess ojoajúvape.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Ñemoambue peteĩ jerekópe peteĩ servidórpe.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Tembiapo tenondeha (nice) mba&apos;apo tuichápe, 0 guive 19 peve.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Sekúndo kundahára ha cache ikatúva oñongatu téra mokõiha ojejapóva.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Sekúndo jehaipyrã térã ta&apos;ãnga jehecha raẽ kundaharape oikove.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Sekúndo sello ñemo&apos;ã mboyvegua oikove ñemoambue rire.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Ko ñemoĩ tekoha.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Tekoha ojegueru ta&apos;ãnga ofaltáva; mba&apos;eve: mba&apos;eve ndojegueru.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Peteĩ tysýi rupi: ñongatuha ypyguáva prefijo;ypy prefijo térã kundaharape, ñongatu rape ojavávape g̃uarã.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Sekúndo peteĩ jerure ypýpe ikatúva ohasa.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Marandurenda tuichavéva ojeguerúva ypýgui, byte-pe.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Jejavy ojuehe ypy opytu&apos;u mboyve.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Araka&apos;e peve ypy ojavýva opytu&apos;u.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Emondo marandu ñangarekohárape ypy opytu&apos;uvo (peteĩ jey ára pyharépe).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Peteĩ marandu kundaharape tysýi rupi; nandi: AdminEmail site.ini-gui.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Ypy ñemoĩ kundaharape %block, techapyrã https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Ñemi réra ñemoñe&apos;ẽ rape reheve, térã env:VARIABLE. Araka&apos;eve ñemoñe&apos;ẽ rape voi.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(mba&apos;eve)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Ojepuru raẽ: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Oñemboheko ko&apos;ápe; eje&apos;a embogue haguã</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>ojehupyty</translation>
     </message>
 </context>
 </TS>

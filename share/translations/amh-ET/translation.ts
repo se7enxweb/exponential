@@ -16588,6 +16588,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>አስመጣ/ላክ</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>የምስል ተለዋጭ ስሞች</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>ለዚህ ንጥል አመንጭ</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>ለንዑስ ዛፉ አመንጭ</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>ለዚህ ንጥል እንደገና አመንጭ</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>ለንዑስ ዛፉ እንደገና አመንጭ</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>ለዚህ ንጥል አስወግድ</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>ለንዑስ ዛፉ አስወግድ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86420,6 +86448,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>የቀድሞ ጣቢያ የserver ብሎክ፦ location = ከ return ጋር፣ ለመጠይቅ if ($args)፣ rewrite እንደ ምትክ ምልክት እና የነጠላ ገጾች map።</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>የምስል ተለዋጭ ስሞች</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>የምስል ተለዋጭ ስሞች አብነቶች የሚያሳዩአቸው የአንድ ምስል የተመጠኑና የተከረከሙ ቅጂዎች ናቸው። እዚህ እንዴት እንደሚሠሩ ማየት፣ በጣቢያው ላይ የጅምላ ሥራዎችን ማስኬድ፣ አንድን ምስል ወይም የስቴጂንግ ምንጭ መሞከር፣ የሩጫ ታሪክን መከታተል እና ቅንብሮችን መቀየር ይችላሉ።</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>የገጹ ክፍሎች</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ዳሽቦርድ</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>የጅምላ ሩጫዎች</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>የሙከራ መሣሪያዎች</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>የሩጫ ታሪክ</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ቅንብሮች</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>እዚህ ሁሉንም ማየት ይችላሉ። ቅንብሮችን መቀየር፣ ሥራዎችን ማስኬድ እና ፋይሎችን የሚሠሩ መሣሪያዎች setup/managealiases የተባለውን ፖሊሲ ይፈልጋሉ።</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>ትኩረት የሚሹ ነገሮች</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>የrender ሁኔታ፦ አብነቶች የጎደሉ ተለዋጭ ስሞችን ገጹ ሲሰራ እንደ በፊቱ ይሠራሉ። የon-demand አድራሻዎች፣ ቦታ ያዦች እና የጀርባ ሥራዎች አይጠቀሙም።</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>የቅርጸት ድርድር በርቷል፣ ግን እዚህ ያለ ምንም መቀየሪያ WebP መጻፍ አይችልም።</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>ይህ የስቴጂንግ ጭነት ነው፣ ነገር ግን ምንጩ BaseURL የለውም፦ የጎደሉ ምስሎችን ማምጣት አይቻልም።</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>የስቴጂንግ ምንጭ ተከታታይ ውድቀቶች በኋላ ቆሟል፦ የጎደሉ ምስሎች ዕረፍቱ እስኪያበቃ ወይም እስኪያስጀምሩት ድረስ ቦታ ያዥ ያገኛሉ።</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>የስቴጂንግ ምንጭ በቅርቡ ወድቋል። የመጨረሻውን ስህተቱን ከታች ይመልከቱ።</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>ይህ ጭነት ፕሮዳክሽን አይደለም፣ ነገር ግን SyncFrom ምንም ምንጭ አልጠቀሰም፦ ምንም አይመጣም።</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>የሥራ ወረፋ (expqueue) አይገኝም፦ በጊዜው ያልተሠሩ ተለዋጭ ስሞች በሚቀጥለው ጥያቄ ይሠራሉ፣ ከህትመት በኋላ ቅድመ ማመንጨት ይዘለላል፣ የጅምላ ሩጫዎችም በትናንሽ ወሰኖች ይገደባሉ።</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>አንዳንድ የምስል ተለዋጭ ስሞች ሥራዎች ለዘለቄታው ወድቀዋል። ዝግጅት &gt; የሥራ ወረፋ ምክንያቱን ያሳያል።</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>የጅምላ ሩጫዎች ቆመዋል።</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>ተለዋጭ ስሞች ባለፉት 24 ሰዓታት ውስጥ ወድቀዋል። የሩጫ ታሪክ ይዘረዝራቸዋል።</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>የመፈረሚያ ቁልፍ ከአንድ ዓመት በላይ ሆኖታል። ማሽከርከሩ የድሮ አድራሻዎችን በችሮታ ጊዜ ውስጥ ተቀባይነት ያለው ያደርጋቸዋል።</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>እስካሁን የመፈረሚያ ቁልፍ የለም፦ በመጀመሪያው የon-demand አድራሻ ይሠራል።</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>ባለፉት 24 ሰዓታት</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>የተፈጠሩ ተለዋጭ ስሞች</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>የተመለሱ ቦታ ያዦች</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>ውድቀቶች</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>የተቀመጡ ፋይሎች</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>የተጀመሩ ሩጫዎች</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>የሚጠብቁ / የሚሄዱ ሥራዎች</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>ከ%file የመጨረሻ %lines መስመሮች የተቆጠረ፣ እስከ %time ድረስ የሚደርስ።</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>ሁኔታ እና አቅርቦት</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>ሁኔታ</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>በጥያቄ</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>የአድራሻ ቅርጽ</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>አቅርቦት</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>የአንድ ጥያቄ ረጅሙ ጥበቃ</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ሰ</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>በአንድ ጊዜ ለውጦች</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>አሁን ከ%max ውስጥ %busy ተጠምደዋል</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>የቅርጸት ድርድር</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>በርቷል</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ጠፍቷል</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>ቦታ ያዥ እና የመለዋወጫ ስክሪፕት</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>ከህትመት በኋላ ቅድመ ማመንጨት</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>የጣቢያው ተለዋጭ ስሞች</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>የቅርጸት ልዩነቶች መቀየሪያዎች</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>መቀየሪያ</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>የተሞከረ</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>ተመራጭ</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>አዎ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>አይደለም</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>ተለዋጭ ስሞቹ እራሳቸው እንደ በፊቱ በ[ImageConverterSettings] መቀየሪያዎች ይሠራሉ፤ እነዚህ የWebP እና AVIF ልዩነቶችን ይጽፋሉ።</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>አካባቢ እና ምንጭ</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>ይህ ጭነት</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(ፕሮዳክሽን፦ በጭራሽ አያመጣም)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>የሚያመጣው ከ</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>ምንም</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>የምንጭ አድራሻ</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>አልተዘጋጀም</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>ምስክር</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>ምስጢር %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>የለም</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ሁኔታ</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>እየሠራ ነው</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>እስከ %time ቆሟል</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>እየወደቀ ነው</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>ተከታታይ ውድቀቶች</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>ከ%count በኋላ ማቆም</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>የመጨረሻ ስህተት</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>የመጨረሻ ስኬት</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>ውድቀቶችን እንደገና አስጀምር እና ምንጩን እንደገና ጠይቅ</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>የሥራ ወረፋ</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>የሥራ ዓይነት</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>በመጠበቅ ላይ</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>በመሄድ ላይ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ወድቋል</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>አልተመዘገበም</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>የሥራ ወረፋ አይገኝም።</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>የጅምላ ሩጫዎች ቆመዋል</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>ከ%time ጀምሮ በ%user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>የጅምላ ሩጫዎች ሊሄዱ ይችላሉ</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>የመፈረሚያ ቁልፍ</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>ቁልፍ</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>በምስጢር ማከማቻ ውስጥ</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>እስካሁን የለም</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>ዕድሜ</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days ቀናት (ከ%time ጀምሮ)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>ቀዳሚ ቁልፍ</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>እስከ %time ድረስ ተቀባይነት ያለው</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>ቁልፉን አሽከርክር</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>አሁን ባለው ቁልፍ የተፈረሙ አድራሻዎች በችሮታ ጊዜ (SigningKeyGrace) ድረስ ይሠራሉ፣ ከዚያ ገጾቹ እንደገና እስኪሠሩ ድረስ በቦታ ያዦች ይመልሳሉ።</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>አሁን አሽከርክር</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>እንዴት እንደሚሠራ</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand፣ የrender ሁኔታ፣ ስቴጂንግ እና መዝገቡ</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (ነባሪ)፦ አንድ ገጽ ገና ያልተሠራ ተለዋጭ ስምን ከተፈረመ አድራሻ ጋር ያገናኛል። የመጀመሪያው ጥያቄ በረጅሙ ጥበቃ ውስጥ ይሠራዋል፣ ካልሆነ ገለልተኛ ቦታ ያዥ ይመልሳል እና አንድ ሥራ ሥራውን ያጠናቅቃል፤ ምስሉ ሲዘጋጅ የመለዋወጫ ስክሪፕት ቦታ ያዡን ይተካል።</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>የrender ሁኔታ፦ አብነቱ ገጹ ሲሰራ ተለዋጭ ስሙን ይሠራል፣ እንደ በፊቱ። በሁለቱ መካከል በማንኛውም ጊዜ መቀያየር ይቻላል፤ ምንም ማዛወር አያስፈልግም።</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>የስቴጂንግ ጭነት የጎደሉትን ዋና ምስሎችና ተለዋጭ ስሞች ከምንጩ ያመጣል፤ የሚወድቅ ምንጭ ከተከታታይ ውድቀቶች በኋላ ይቆማል፣ አስተዳዳሪዎችም በሰዓት ቢበዛ አንድ ኢሜይል ያገኛሉ።</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>የጅምላ ሩጫዎች እና ከህትመት በኋላ ቅድመ ማመንጨት የሥራ ወረፋ ሥራዎች ናቸው፣ ከጎብኝዎች ያነሰ ቅድሚያ ያላቸው። ተለዋጭ ስሞችን ማስወገድ የVelocityን የምላሽ መሸጎጫም ያጸዳል፣ ስለዚህ የተወገደ ፋይል ከዚያ አይቀርብም።</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>እያንዳንዱ የተሠራ ተለዋጭ ስም፣ የተመለሰ ቦታ ያዥ፣ የተቀመጠ ፋይል እና ሩጫ የ%file አንድ መስመር ነው። የትዕዛዝ መስመሩም ተመሳሳይ መሣሪያዎች አሉት፦ %command።</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>ሥራ %job፦ %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>ከ%total ምስሎች %done</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ሩጫ</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>ወሰን</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ውጤት</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>ይህን ሥራ ሰርዝ</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>ሥራ %job የምስል ተለዋጭ ስሞች ሥራ አይደለም፣ ወይም ከወረፋው ተወግዷል።</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>የሩጫ %run ውጤት</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>የጅምላ ሩጫዎች ቆመዋል</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>ከ%time ጀምሮ በ%user ቆሟል።</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>ዕረፍት እያንዳንዱን የጅምላ ሩጫ አሁን ባለው ምስሉ በኋላ በሁሉም አገልጋዮች ላይ ያቆማል፤ በወረፋ ያሉ ሩጫዎች ይጠብቃሉ። የጎብኝዎች ተለዋጭ ስሞች አሁንም ይሠራሉ።</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>የጅምላ ሩጫዎችን ቀጥል</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>ምክንያት (አማራጭ)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>የጅምላ ሩጫዎችን አቁም</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>ሩጫ ጀምር</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>ሩጫዎች የሥራ ወረፋ ሥራዎች ናቸው፦ ገጹን ትተው መመለስ ይችላሉ።</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>የሥራ ወረፋ ከሌለ ሩጫው በዚህ ጥያቄ ውስጥ ይከናወናል፣ ቢበዛ ለ%count ምስሎች።</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ድርጊት</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>አመንጭ፦ የጎደሉ ተለዋጭ ስሞችን ሥራ</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>እንደገና አመንጭ፦ አስወግድና እንደገና ሥራ</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>አጽዳ፦ አስወግድ (በጥያቄ እንደገና ይሠራሉ)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync፦ ፋይሎችን ከስቴጂንግ ምንጭ አምጣ</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(በስቴጂንግ ጭነት ላይ ብቻ)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>መላው ጣቢያ</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>አንድ መስቀለኛ ነጥብ</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>መስቀለኛ ነጥብ እና ንዑስ ዛፉ</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>የመስቀለኛ ነጥብ መታወቂያ</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>ክፍሎች</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>ባህሪዎች</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>ከዚህ ጊዜ ጀምሮ የተቀየረ</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>ቀን (2026-11-01) ወይም ከምን ያህል ጊዜ በፊት (12 ሰዓት፣ 2 ቀን)።</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>ቢበዛ ምስሎች</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>ተለዋጭ ስሞች (ምንም ካልተመረጠ፦ ሁሉም)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>የሙከራ ሩጫ፦ መቁጠር ብቻ (resync ምንጩን ይፈትሻል እና ምንም አያስቀምጥም)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>የሚለያዩ ፋይሎችን ተካ (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>ሩጫውን ጀምር</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>የቅርብ ጊዜ ሩጫዎች</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>ሥራ</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ሂደት</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>በወረፋ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ድርጊቶች</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ሰርዝ</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>እስካሁን የጅምላ ሩጫ ወይም resync የለም።</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>አንድ ምስል</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>አብነት አሁን የሚያገኛቸው አድራሻዎች፣ ለእያንዳንዱ ተለዋጭ ስም የተሰሉ መጠኖችና ዓይነቶች፣ እና እያንዳንዱ ፋይል መኖሩ።</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>የሚፈለግበት</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>የነገር መታወቂያ</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>መታወቂያ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>አሳይ</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>ይህን ነገር ማንበብ አይፈቀድልዎትም።</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>ይህ ነገር ምስል የለውም።</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>ይህ መታወቂያ ያለው ነገር የለም።</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>ነገር %object፣ መስቀለኛ ነጥብ %node፣ ስሪት %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>ዋና፦ %width x %height፣ %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>ፋይሉ አለ</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>ፋይሉ የለም</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>የ%name ተለዋጭ ስሞች</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>ተለዋጭ ስም</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>መጠን</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>ዓይነት</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ፋይል</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>ቅርጸቶች</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>በአብነት ውስጥ ያለ አድራሻ</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>አለ</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>የለም</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ለዚህ ዓይነት አይደለም</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>ፈትሽ</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>ሥራ</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>በዚህ መስክ ውስጥ ምስል የለም።</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ጊዜ</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ሚሴ</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>ከምንጭ ጋር ግንኙነት</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>ወደ ስቴጂንግ ምንጭ HEAD ጥያቄ፣ ከተጠቀሰ ከምስክሩ ጋር። ምስክሩ ይላካል፣ በጭራሽ አይታይም።</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>ምንጭ</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>ከምስክር ጋር</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>የማከማቻ መንገድ (አማራጭ)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>ግንኙነቱን ሞክር</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>የትኛውም ምንጭ BaseURL የለውም። ምንጮች በቅንብሮች ውስጥ ይዘጋጃሉ ([AliasSource_&lt;environment&gt;])።</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>ሊደረስበት ይችላል</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>ተከልክሏል፦ ምስክሩን ይፈትሹ</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>በምንጩ ላይ አልተገኘም</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>ምላሽ የለም</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>ጊዜው አልፏል</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>ተዘዋውሯል (አልተከተለም)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL የለም</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>የማከማቻ መንገድ አይደለም</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>አድራሻ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ሁኔታ</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>ተልኳል</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>ምስጢሩ የለም</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>ምስጢሩ user:password ወይም Bearer &lt;token&gt; አይደለም</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>የ%file አዳዲስ መስመሮች፣ አዲሱ መጀመሪያ።</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>ዝግጅት &gt; የምዝግብ ማስታወሻ ፋይሎች</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>ክስተት</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>ሁሉም ክስተቶች</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>ሩጫዎች (መጀመሪያና መጨረሻ)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>መንገዱ የያዘው</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>መስመሮች</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>አጣራ</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>ተከታተል፦ አዳዲስ መስመሮችን ሲጻፉ አሳይ</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>መንገድ እና ዝርዝሮች</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>ምንም የመዝገብ መስመር አይዛመድም።</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>ማስቀመጥ የሚቀይረው</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>የተቀየረው</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>በsettings/override/image.ini.append.php ውስጥ ይቀመጣል፣ ስለዚህ እዚህ ያለ እሴት ከማንኛውም siteaccess ይበልጣል። የሚታዩት እሴቶች ለዚህ siteaccess ተፈጻሚ የሆኑት ናቸው። ማስቀመጥ መጀመሪያ ማንነትዎን እንዲያረጋግጡ ይጠይቅዎታል።</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>ተለዋጭ ስሞች እንዴት እንደሚሠሩና እንደሚደርሱ።</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>የጎደሉ ምስሎችን ከሌላ ጭነት ማምጣት (alpha፣ dev፣ beta፣ stage፣ pro፣ post፣ arc)። ፕሮዳክሽን (pro) በጭራሽ አያመጣም።</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>ቅንብር</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>እሴት</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>በsettings/override ውስጥ</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>የእያንዳንዱ ምንጭ አድራሻ እና ምስክሩን የያዘው ምስጢር ስም (user:password ወይም Bearer &lt;token&gt;)። የምስጢር እሴት በዝግጅት &gt; ምስጢሮች ውስጥ ይዘጋጃል እና እዚህ በጭራሽ አይታይም።</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>ለውጦቹን አስቀድመህ ተመልከት</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>አስቀምጥ</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>በመከተል ላይ፦ %time ተዘምኗል</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>ቆሟል</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>ምግቡ አልመለሰም፤ እንደገና በመሞከር ላይ።</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>ሥራው አብቅቷል።</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand፦ አብነቶች አድራሻውን ያገኛሉ፣ ተለዋጭ ስሙ ሲጠየቅ ይሠራል። render፦ አብነቱ ገጹ ሲሰራ ይሠራዋል (የመጀመሪያው ባህሪ)።</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>ገና ያልተሠራ ተለዋጭ ስም አድራሻ፦ token (የተፈረመ፣ ዳታቤዝ አያስፈልገውም)፣ ids-token፣ ids፣ node ወይም storage።</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto፦ የድር አገልጋዩ ማከማቻውን ሲያቀርብ ወደ ፋይሉ አቅጣጫ ማዞር፣ አለበለዚያ ፋይሉ ይተላለፋል።</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>አንድ ጥያቄ ተለዋጭ ስም ለመሥራት ወይም ለማምጣት ሊያጠፋቸው የሚችላቸው ሰከንዶች፤ ከዚያ በቦታ ያዥ ይመልሳል እና አንድ ሥራ ሥራውን ያጠናቅቃል።</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>ለWebP እና AVIF ልዩነቶች መጀመሪያ የሚሞከረው መቀየሪያ።</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Formats[] ለሚዘረዝሩ ተለዋጭ ስሞች WebP ወይም AVIF ለሚጠይቁ አሳሾች መልስ።</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>ምስል በሚጎድልበት ጊዜ ትክክለኛ መጠን ያለው ገለልተኛ ምስል።</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>እውነተኛው ምስል ሲዘጋጅ ቦታ ያዦችን የሚተካ ትንሽ ስክሪፕት።</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>ከህትመት በኋላ አንድ ሥራ ለእያንዳንዱ ተዛማጅ siteaccess የአዳዲስ ምስሎችን ተለዋጭ ስሞች ይሠራል።</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>በአንድ አገልጋይ ላይ በአንድ ጊዜ ለውጦች።</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>የጅምላ ሩጫዎች የሂደት ቅድሚያ (nice)፣ ከ0 እስከ 19።</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>አሳሾችና መሸጎጫዎች የተሠራ ተለዋጭ ስም ሊይዙ የሚችሉባቸው ሰከንዶች።</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>የረቂቅ ወይም የቅድመ እይታ ምስል አድራሻ ተቀባይነት የሚኖርባቸው ሰከንዶች።</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>ከማሽከርከር በኋላ ቀዳሚው የመፈረሚያ ቁልፍ ተቀባይነት የሚኖርባቸው ሰከንዶች።</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>የዚህ ጭነት አካባቢ።</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>የጎደሉ ምስሎች የሚመጡበት አካባቢ፤ none፦ ምንም አይመጣም።</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>በአንድ መስመር አንድ፦ የአካባቢ ማከማቻ ቅድመ ቅጥያ;የምንጭ ቅድመ ቅጥያ ወይም አድራሻ፣ ለሚለያዩ የማከማቻ መንገዶች።</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>ወደ ምንጩ አንድ ጥያቄ ሊወስድ የሚችላቸው ሰከንዶች።</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>ከምንጩ የሚወሰደው ትልቁ ፋይል፣ በባይት።</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>ምንጩ የሚቆምበት ተከታታይ ውድቀቶች ብዛት።</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>የሚወድቅ ምንጭ የሚቆምበት ጊዜ።</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>ምንጩ ሲቆም አስተዳዳሪዎችን በኢሜይል አሳውቅ (በሰዓት ቢበዛ አንዴ)።</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>በአንድ መስመር አንድ የኢሜይል አድራሻ፤ ባዶ፦ የsite.ini AdminEmail።</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>የምንጭ ጭነት %block አድራሻ፣ ለምሳሌ https://www.example.org።</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>ምስክሩን የያዘው ምስጢር ስም፣ ወይም env:VARIABLE። በጭራሽ ምስክሩ ራሱ አይደለም።</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(የለም)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>ነባሪ፦ %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>እዚህ የተዘጋጀ፤ ለማስወገድ ምልክት ያድርጉ</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>የተወረሰ</translation>
     </message>
 </context>
 </TS>

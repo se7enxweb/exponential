@@ -16588,6 +16588,34 @@ Fiiro gaar ah: Xirmooyinka lama saari doono rakibaaddooda.</translation>
         <source>Import/Export</source>
         <translation>Soo dhoofso/Dhoofi</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Magacyo kale oo sawir</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Samee shaygan</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Samee geedka hoose</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Dib u samee shaygan</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Dib u samee geedka hoose</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Ka saar shaygan</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Ka saar geedka hoose</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86420,6 +86448,997 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Qaybta server ee goob hore: location = oo leh return, if ($args) oo loogu talagalay weydiin, rewrite oo ah calaamad guud iyo map bogag gaar ah.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Magacyo kale oo sawir</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Magacyada kale ee sawirku waa nuqullo la yareeyay oo la gooyay oo sawir ah oo qaabeynayaasha muujiyaan. Halkan waxaad ku aragtaa sida loo sameeyo, ku socodsiisaa shaqooyin badan goobta oo dhan, tijaabisaa sawir ama il staging ah, la socotaa taariikhda socodka oo bedeshaa dejinta.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Qaybaha bogga</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dashboard</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Socodsiinno badan</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Qalabka tijaabada</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Taariikhda socodka</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Dejinta</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Halkan wax walba waad eegi kartaa. Beddelka dejinta, socodsiinta shaqooyinka iyo qalabka samaynaya faylasha waxay u baahan yihiin siyaasadda setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Waxa u baahan feejignaan</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Habka render: qaabeynayaashu waxay sameeyaan magacyada kale ee maqan marka bogga la soo bandhigayo, sidii hore. Cinwaannada on-demand, meelqabsiyada iyo shaqooyinka gadaasha lagama isticmaalo.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Wada xaajoodka qaabka waa shidan yahay, laakiin halkan ma jiro beddele WebP qori kara.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Tani waa rakibaad staging ah, laakiin ilkeeda ma laha BaseURL: sawirrada maqan lama keeni karo.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Ilka staging waa la hakiyay ka dib guuldarro isku xigta: sawirrada maqan waxay helaan meelqabsiyo ilaa hakadku dhammaado ama aad dib u dejiso.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Ilka staging waa guuldaraystay dhawaan. Hoos ka eeg khaladkiisii ugu dambeeyay.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Rakibaaddan ma aha wax soo saar, laakiin SyncFrom ma magacaabo il: waxba lama keeno.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Safka shaqada (expqueue) lama heli karo: magacyada kale ee waqtigooda dhaafa waxaa samaynaya codsiga xiga, horu-samaynta ka dib daabacaadda waa la boodaa socodsiinta badanna waxay ku koobanyihiin baaxad yar.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Qaar ka mid ah shaqooyinka magacyada kale ee sawirka waa fashilmeen si joogto ah. Setup &gt; Job queue wuxuu muujiyaa sababta.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Socodsiinta badan waa la hakiyay.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Magacyo kale ayaa fashilmay 24-kii saacadood ee la soo dhaafay. Taariikhda socodku waa liis garaynayaa.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Furaha saxiixa wuxuu ka weyn yahay hal sano. Wareejintiisu waxay ka dhigtaa cinwaannadii hore kuwo shaqeynaya muddada deeqda.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Weli ma jiro fure saxiixa: waxaa la sameeyaa cinwaanka koowaad ee on-demand.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>24-kii saacadood ee la soo dhaafay</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Magacyo kale la sameeyay</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Meelqabsiyo la jawaabay</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Guuldarrooyin</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Faylal staging loo keenay</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Socodsiinno bilaabmay</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Shaqooyin sugaya / socda</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>La tiriyay %lines safafka ugu dambeeyay ee %file, kuwaas oo dib u gaadha %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Habka iyo gaarsiinta</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Habka</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>on demand</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Qaabka cinwaanka</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Gaarsiinta</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Sugitaanka ugu dheer ee codsi</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Beddelaad isku mar ah</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy ee %max waa mashquul hadda</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Wada xaajoodka qaabka</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>shid</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>dami</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Meelqabsiga iyo qoraalka beddelka</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Horu-samaynta ka dib daabacaadda</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Magacyada kale ee goobta</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Beddelayaasha noocyada qaabka</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Beddele</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>La tijaabiyay</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>la door bidey</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>haa</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>maya</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Magacyada kale laftooda waxaa sameeya beddelayaasha [ImageConverterSettings], sidii hore; kuwanu waxay qoraan noocyada WebP iyo AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Deegaanka iyo il</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Rakibaaddan</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(wax soo saar: marna ma keeno)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Waxay ka keentaa</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>waxba</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Cinwaanka ilka</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>lama dejin</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Aqoonsiga gelitaanka</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>sir %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>midna</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Xaalad</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>waa shaqeynayaa</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>la hakiyay ilaa %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>waa guuldaraystaa</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Guuldarrooyin isku xigta</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>hakad ka dib %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Khaladkii ugu dambeeyay</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Guushii ugu dambeeysay</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Dib u deji guuldarrooyinka oo mar kale weydii ilka</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Safka shaqada</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Nooca shaqada</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Sugaya</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Socda</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Waa fashilmeen</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>lama diiwaangelin</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Safka shaqada lama heli karo.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Socodsiinta badan waa la hakiyay</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>min %time, %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Socodsiinta badan way socon karaan</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Furaha saxiixa</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Fure</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>kaydka sirta</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>weli midna</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Da&apos;da</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days maalmood (min %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Furihii hore</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>ansax ilaa %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Wareeji furaha</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Cinwaannada lagu saxiixay furaha hadda way shaqeeyaan muddada deeqda (SigningKeyGrace), kadibna waxay jawaabaan meelqabsiyo ilaa bogagga dib loo sameeyo.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Wareeji hadda</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Sida ay u shaqeyso</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, habka render, staging iyo diiwaanka</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (caadiga): bogga ayaa magac kale oo aan weli jirin ku xiraa cinwaan la saxiixay. Codsiga koowaad wuu sameeyaa sugitaanka ugu dheer gudihiisa, haddii kale wuxuu jawaabaa meelqabsi dhexdhexaad ah shaqona way dhammaystirtaa; qoraalka beddelku wuxuu beddelaa meelqabsiga marka sawirku jiro.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Habka render: qaabeynaha ayaa sameeya magaca kale marka bogga la soo bandhigayo, sidii hore. U beddel labada mar kasta; waxba looma baahna in la guuriyo.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Rakibaadda staging waxay ka keentaa asalka iyo magacyada kale ee ka maqan ilkeeda; ilka guuldaraysta waa la hakiyaa ka dib guuldarro isku xigta maamulayaashuna waxay helaan hal iimayl saacaddii ugu badnaan.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Socodsiinta badan iyo horu-samaynta ka dib daabacaadda waa shaqooyin safka shaqada ah, oo ay ka hooseyso mudnaanta soo booqdayaasha. Ka saarista magacyada kale waxay nadiifisaa kaydka jawaabaha ee Velocity, si faylka laga saaray looga bixin.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Magac kale kasta oo la sameeyay, meelqabsi la jawaabay, fayl staging loo keenay iyo socodsiin waa hal safar oo %file ah. Khadka amarka wuxuu leeyahay isla qalabkaas: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Shaqada %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done ee %total sawir</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Socodsiin</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Baaxad</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Natiijo</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Jooji shaqadan</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Shaqada %job ma aha shaqo magacyo kale oo sawir ah, ama waa laga saaray safka.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Natiijada socodsiinta %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Socodsiinta badan waa la hakiyay</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>La hakiyay min %time, %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Hakadku wuxuu joojiyaa socodsiin kasta oo badan ka dib sawirkiisa hadda, dhammaan serfarrada; socodsiinnada safka ku jira way sugayaan. Magacyada kale ee soo booqdayaasha weli waa la sameeyaa.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Sii wad socodsiinta badan</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Sabab (ikhtiyaari)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Hakii socodsiinta badan</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Bilow socodsiin</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Socodsiinnadu waa shaqooyin safka shaqada ah: bogga waad ka tagi kartaa oo soo laaban kartaa.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Isagoo aan safka shaqada lahayn socodsiinta waxaa lagu sameeyaa codsigan, ugu badnaan %count sawir.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ficil</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: samee magacyada kale ee maqan</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: ka saar oo mar kale samee</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: ka saar (waa la sameeyaa mar kale marka loo baahdo)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: ka keen faylasha ilka staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(rakibaadda staging oo keliya)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Goobta oo dhan</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Hal node</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Node iyo geedkiisa hoose</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID-ga node</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Fasallada</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Sifooyin</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>La beddelay min</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Taariikh (2026-11-01) ama waqti hore (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Sawirrada ugu badan</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Magacyo kale (midna lama calaamadin: dhammaan)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Orod tijaabo ah: tiri oo keliya (resync wuxuu hubiyaa ilka oo waxba ma keydiyo)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Dul qor faylasha ka duwan (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Bilow socodsiinta</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Socodsiinnadii ugu dambeeyay</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Shaqo</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Horumar</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Safka la geliyay</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ficillo</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Jooji</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Weli ma jiro socodsiin badan ama resync.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Hal sawir</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Cinwaannada qaabeynuhu hadda helo, cabbirrada iyo noocyada loo xisaabiyay magac kale kasta, iyo in fayl kastaa jiro.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Ku raadi</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID-ga shayga</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Muuji</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Ma aadan awoodin inaad akhrido shaygan.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Shaygan sawir ma laha.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Shay ID-gan leh ma jiro.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>shay %object, node %node, nuqul %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Asal: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>fayl waa jiraa</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>fayl waa maqan yahay</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Magacyada kale ee %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Magac kale</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Cabbir</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Nooca</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fayl</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Qaabab</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Cinwaanka qaabeynaha</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>jira</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>maqan</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ma ahan nooca</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Hubi</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Samee</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Sawir ma jiro goobtan.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Waqti</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Xiriirka ilka</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Codsi HEAD ah oo loo diro ilka staging, iyadoo la adeegsanayo aqoonsigiisa gelitaanka haddii la magacaabay. Aqoonsiga waa la dirayaa, marna lama muujiyo.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Il</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>oo leh aqoonsi gelitaan</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Waddada kaydka (ikhtiyaari)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Tijaabi xiriirka</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Ma jiro il leh BaseURL. Ilaha waxaa lagu dejiyaa dejinta ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>la gaari karo</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>la diiday: hubi aqoonsiga gelitaanka</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>lagama helin ilka</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>jawaab ma jiro</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>waqtigii wuu dhammaaday</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>dib loo jiheeyay (lama raacin)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL ma jiro</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>ma aha waddo kayd</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Cinwaan</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Xaalad</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>la diray</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>sirta way maqan tahay</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>sirta ma aha user:password ama Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Safafka ugu cusub ee %file, kuwa ugu cusub marka hore.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Habeyn &gt; Faylasha diiwaanka</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Dhacdo</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Dhammaan dhacdooyinka</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Socodsiinno (bilow iyo dhammaad)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Waddadu waxay ka kooban tahay</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Safafka</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Shaandhee</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Raac: muuji safaf cusub marka la qorayo</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Waddo iyo faahfaahin</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Safar diiwaanka ah ma waafaqsana.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Waxa kaydintu beddeli lahayd</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Waxa la beddelay</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Waxaa lagu kaydiyay settings/override/image.ini.append.php, sidaa darteed qiimaha halkan ayaa ka adkaada siteaccess kasta. Qiimayaasha la muujiyay waa kuwa u dhaqan galay siteaccess-kan. Kaydintu waxay kaa codsataa inaad marka hore xaqiijiso kuu tahay.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Sida magacyada kale loo sameeyo oo loo gaarsiiyo.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Keenista sawirrada maqan rakibaad kale (alpha, dev, beta, stage, pro, post, arc). Wax soo saarka (pro) marna ma keeno.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Dejin</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Qiime</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Gudaha settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Cinwaanka il kasta iyo magaca sirta haysa aqoonsigiisa gelitaanka (user:password ama Bearer &lt;token&gt;). Qiimaha sirta waxaa lagu dejiyaa Habeyn &gt; Sirta lamana muujiyo halkan.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Horudhac isbeddellada</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Kaydi</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Waa la raacayaa: la cusboonaysiiyay %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>La hakiyay</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Quudinta ma jawaabin; mar kale ayaa la isku dayayaa.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Shaqadu way dhammaatay.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: qaabeynayaashu waxay helaan cinwaanka, magaca kale waxaa la sameeyaa marka la weydiiyo. render: qaabeynaha ayaa sameeya marka bogga la soo bandhigayo (habdhaqankii asalka ahaa).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Cinwaanka magac kale oo aan weli la samayn: token (la saxiixay, ma u baahna kaydka xogta), ids-token, ids, node ama storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: u jiheyn faylka marka server-ka webku bixiyo kaydka, haddii kale faylka waa la qulqulinayaa.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Ilbiriqsiyada codsigu ku bixin karo samaynta ama keenista magac kale; kadib wuxuu jawaabaa meelqabsiga shaqona way dhammaystirtaa.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Beddelaha marka hore la tijaabiyo noocyada WebP iyo AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>U jawaab WebP ama AVIF browserrada weydiista, magacyada kale ee liiska ka dhigaya Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Sawir dhexdhexaad ah oo cabbirka saxda ah marka sawir uu maqan yahay.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Qoraal yar oo meelqabsiyada ku beddela sawirka dhabta ah marka uu jiro.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Ka dib daabacaadda, shaqo ayaa samaysa magacyada kale ee sawirrada cusub siteaccess kasta oo la xiriira.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Beddelaad isku mar ah hal server.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Mudnaanta habraaca (nice) ee socodsiinta badan, 0 ilaa 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Ilbiriqsiyada browserrada iyo kaydadku haysan karaan magac kale la sameeyay.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Ilbiriqsiyada cinwaanka sawir qabyo ama horudhac ahi ansax ku yahay.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Ilbiriqsiyada furihii hore ee saxiixa ansax ku yahay ka dib wareejin.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Deegaanka rakibaaddan.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Deegaanka laga keeno sawirrada maqan; none: waxba lama keeno.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Mid safar kasta: horgale kayd maxalli ah;horgale ilaha ama cinwaan, waddooyinka kaydka ee ka duwan.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Ilbiriqsiyada hal codsi ilka ku qaadan karo.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Faylka ugu weyn ee laga qaado ilka, bytes.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Guuldarrooyinka isku xigta ee ka dib ilka la hakiyo.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Mudada ilka guuldaraysta la hakiyo.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Iimayl u dir maamulayaasha marka ilka la hakiyo (ugu badnaan hal mar saacaddii).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Cinwaan iimayl ah mid safar kasta; madhan: AdminEmail ee site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Cinwaanka rakibaadda ilka %block, tusaale https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Magaca sirta leh aqoonsiga gelitaanka, ama env:VARIABLE. Marna aqoonsiga laftiisa.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(midna)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Caadi: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Halkan ayaa la dejiyay; calaamadee si aad u saarto</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>la dhaxlay</translation>
     </message>
 </context>
 </TS>

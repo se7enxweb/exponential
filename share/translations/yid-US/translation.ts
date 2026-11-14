@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>אימפּאָרטירן/עקספּאָרטירן</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>בילד־אַליאַסן</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>מאַכן פֿאַר דעם עלעמענט</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>מאַכן פֿאַר דעם אונטערבוים</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>װידער מאַכן פֿאַר דעם עלעמענט</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>װידער מאַכן פֿאַר דעם אונטערבוים</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>אַרויסנעמען פֿאַר דעם עלעמענט</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>אַרויסנעמען פֿאַר דעם אונטערבוים</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>דער server־בלאָק פֿון אַן אַלטן וועבזייַטל: location = מיט return, if ($args) פֿאַר אַ פֿראַגע, rewrite ווי אַ וויילדקאַרד און אַ map פֿון איינציקע בלעטער.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>בילד־אַליאַסן</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>בילד־אַליאַסן זענען די סקאַלירטע און אָפּגעשניטענע קאָפּיעס פֿון אַ בילד וואָס די שאַבלאָנען ווייַזן. דאָ זעט איר ווי זיי ווערן געמאַכט, לאָזט אָן מאַסן־אַרבעטן איבער דער וועבזייַט, פּרוּווט אויס איין בילד אָדער אַ staging־קוואַל, פֿאָלגט די געשיכטע פֿון די לויפֿן און ענדערט די באַשטימונגען.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>טיילן פֿון דער זײַט</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>קאָנטראָל־ברעט</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>מאַסן־לויפֿן</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>פּרוּוו־מכשירים</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>געשיכטע פֿון לויפֿן</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>באַשטימונגען</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>איר קענט דאָ אַלץ אָנקוקן. באַשטימונגען ענדערן, אַרבעטן אָנלאָזן און די מכשירים וואָס מאַכן טעקעס פֿאַרלאַנגען די פּאָליסי setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>וואָס דאַרף אויפֿמערקזאַמקייט</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>render־מאָדוס: שאַבלאָנען מאַכן פֿעלנדיקע אַליאַסן בעת די זײַט װערט געמאַלט, ווי פֿריִער. די on-demand אַדרעסן, פּלאַץ־האַלטער און הינטערגרונט־אַרבעטן ווערן נישט גענוצט.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>פֿאָרמאַט־אויסוואַל איז אָנגעשטעלט, אָבער קיין קאָנווערטער דאָ קען נישט שרײַבן WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>דאָס איז אַ staging־אינסטאַלאַציע, אָבער איר קוואַל האָט נישט קיין BaseURL: פֿעלנדיקע בילדער קענען נישט ווערן געבראַכט.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>די staging־קוואַל איז אָפּגעשטעלט נאָך אַ רײ דורכפֿאַלן: פֿעלנדיקע בילדער באַקומען פּלאַץ־האַלטער ביז די פּויזע ענדיקט זיך אָדער איר שטעלט עס צוריק.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>די staging־קוואַל איז לעצטנס דורכגעפֿאַלן. זעט איר לעצטן טעות אונטן.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>די אינסטאַלאַציע איז נישט פּראָדוקציע, אָבער SyncFrom נאָמט קיין קוואַל נישט: גאָרנישט ווערט געבראַכט.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>די אַרבעט־ריי (expqueue) איז נישט בנימצא: אַליאַסן וואָס פֿאַרשפּעטיקן זיך ווערן געמאַכט דורך דער קומענדיקער בקשה, פֿאָרויס־מאַכן נאָך פּובליקירן ווערט איבערגעשפּרונגען און מאַסן־לויפֿן זענען באַגרענעצט צו קליינע געביטן.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>עטלעכע אַרבעטן פֿון בילד־אַליאַסן זענען פֿאַרטיק דורכגעפֿאַלן. אייַנריכטונג &gt; אַרבעט־ריי ווײַזט פֿאַרוואָס.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>מאַסן־לויפֿן זענען אָפּגעשטעלט.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>אַליאַסן זענען דורכגעפֿאַלן אין די לעצטע 24 שעה. די געשיכטע פֿון די לויפֿן ליסטעט זיי.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>דער אונטערשריפֿט־שליסל איז עלטער ווי אַ יאָר. אים ראָטירן האַלט אַלטע אַדרעסן גילטיק בעת דער חסד־צײַט.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>עס איז נאָך נישטאָ קיין אונטערשריפֿט־שליסל: ער ווערט געמאַכט מיט דער ערשטער on-demand אַדרעס.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>די לעצטע 24 שעה</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>אַליאַסן געמאַכט</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>פּלאַץ־האַלטער געענטפֿערט</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>דורכפֿאַלן</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>טעקעס געבראַכט</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>לויפֿן אָנגעהויבן</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>אַרבעטן װאַרטנדיק / לויפֿנדיק</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>געצײלט פֿון די לעצטע %lines שורות פֿון %file, וואָס גייען צוריק ביז %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>מאָדוס און ליפֿערונג</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>מאָדוס</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>אויף פֿאַרלאַנג</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>אַדרעס־פֿאָרעם</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>ליפֿערונג</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>לענגסטע וואַרטן פֿון אַ בקשה</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>קאָנווערסיעס אין איינעם</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy פֿון %max פֿאַרנומען איצט</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>פֿאָרמאַט־אויסוואַל</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>אָן</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>אַוועק</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>פּלאַץ־האַלטער און טויש־סקריפּט</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>פֿאָרויס־מאַכן נאָך פּובליקירן</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>אַליאַסן פֿון דער וועבזייַט</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>קאָנווערטערס פֿון די פֿאָרמאַט־וואַריאַנטן</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>קאָנווערטער</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>פּרוּוו</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>בכּבֿוד</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>יאָ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ניין</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>די אַליאַסן אַלײן ווערן געמאַכט דורך די קאָנווערטערס פֿון [ImageConverterSettings], ווי פֿריִער; די דאָזיקע שרײַבן די WebP־ און AVIF־וואַריאַנטן.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>סבֿיבֿה און קוואַל</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>די אינסטאַלאַציע</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(פּראָדוקציע: ברענגט קיינמאָל נישט)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>ברענגט פֿון</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>גאָרנישט</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>קוואַל־אַדרעס</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>נישט באַשטימט</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>אַקרעדיטיוו</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>סוד %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>קײנע</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>מצבֿ</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>אַרבעט</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>אָפּגעשטעלט ביז %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>פֿאַלט דורך</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>דורכפֿאַלן אין אַ רײ</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>פּויזע נאָך %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>לעצטער טעות</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>לעצטער דערפֿאָלג</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>צוריקשטעלן די דורכפֿאַלן און פֿרעגן די קוואַל װידער</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>אַרבעט־ריי</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>אַרבעט־טיפּ</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>װאַרטנדיק</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>לויפֿנדיק</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>דורכגעפֿאַלן</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>נישט רעגיסטרירט</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>די אַרבעט־ריי איז נישט בנימצא.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>מאַסן־לויפֿן אָפּגעשטעלט</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>זײַט %time דורך %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>מאַסן־לויפֿן מעגן לויפֿן</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>אונטערשריפֿט־שליסל</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>שליסל</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>אין דער סודות־קראָם</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>נאָך נישט</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>עלטער</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days טעג (זײַט %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>פֿריִערדיקער שליסל</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>גילטיק ביז %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>ראָטירן דעם שליסל</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>אַדרעסן אונטערגעשריבן מיטן איצטיקן שליסל בלײַבן גילטיק בעת דער חסד־צײַט (SigningKeyGrace), דערנאָך ענטפֿערן זיי פּלאַץ־האַלטער ביז די זײַטן ווערן װידער געמאַכט.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>ראָטירן איצט</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>ווי עס אַרבעט</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render־מאָדוס, staging און דער זשורנאַל</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>אויף פֿאַרלאַנג (דער סטאַנדאַרט): אַ זײַט פֿאַרבינדט אַן אַליאַס װאָס איז נאָך נישטאָ מיט אַן אונטערגעשריבענער אַדרעס. די ערשטע בקשה מאַכט עס אין דער לענגסטער װאַרטצײַט, אַנדערש ענטפֿערט זי אַ נייטראַלן פּלאַץ־האַלטער און אַן אַרבעט פֿאַרענדיקט די אַרבעט; דער טויש־סקריפּט פֿאַרבײַט דעם פּלאַץ־האַלטער װען דאָס בילד איז דאָ.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>render־מאָדוס: דער שאַבלאָן מאַכט דעם אַליאַס בעת די זײַט װערט געמאַלט, ווי פֿריִער. איר קענט יעדע צײַט איבערשאַלטן צווישן די צװײ; גאָרנישט דאַרף מיגרירט װערן.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>אַ staging־אינסטאַלאַציע ברענגט די אָריגינאַלן און אַליאַסן װאָס פֿעלן איר פֿון איר קוואַל; אַ קוואַל װאָס פֿאַלט דורך װערט אָפּגעשטעלט נאָך אַ רײ דורכפֿאַלן און די אַדמיניסטראַטאָרן באַקומען העכסטנס איין אימעיל אַ שעה.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>מאַסן־לויפֿן און פֿאָרויס־מאַכן נאָך פּובליקירן זענען אַרבעטן פֿון דער אַרבעט־ריי, מיט אַ נידעריקערער פּריאָריטעט װי באַזוכער. אַליאַסן אַרויסנעמען רײניקט אויך דעם ענטפֿער־קעש פֿון Velocity, כּדי אַן אַרויסגענומענע טעקע זאָל נישט װערן באַדינט דערפֿון.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>יעדער געמאַכטער אַליאַס, געענטפֿערטער פּלאַץ־האַלטער, געבראַכטע טעקע און לויף איז אַ שורה אין %file. די באַפֿעל־שורה האָט די זעלבע מכשירים: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>אַרבעט %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done פֿון %total בילדער</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>לויף</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>געביט</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>רעזולטאַט</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>אַנולירן די דאָזיקע אַרבעט</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>אַרבעט %job איז נישט קיין אַרבעט פֿון בילד־אַליאַסן, אָדער זי איז אַרויסגענומען פֿון דער ריי.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>רעזולטאַט פֿון לויף %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>מאַסן־לויפֿן זענען אָפּגעשטעלט</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>אָפּגעשטעלט זײַט %time דורך %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>אַ פּויזע שטעלט אָפּ יעדן מאַסן־לויף נאָך זײַן איצטיקן בילד, אויף יעדן סערווער; לויפֿן אין דער ריי װאַרטן. אַליאַסן פֿאַר באַזוכער װערן װײַטער געמאַכט.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>פֿאָרזעצן מאַסן־לויפֿן</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>סיבה (אָפּציאָנעל)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>אָפּשטעלן מאַסן־לויפֿן</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>אָנהייבן אַ לויף</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>לויפֿן זענען אַרבעטן פֿון דער אַרבעט־ריי: איר קענט פֿאַרלאָזן די זײַט און צוריקקומען.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>אָן דער אַרבעט־ריי װערט אַ לויף דורכגעפֿירט אין דער דאָזיקער בקשה, פֿאַר העכסטנס %count בילדער.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>אַקציע</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>מאַכן: מאַכט די אַליאַסן װאָס פֿעלן</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>װידער מאַכן: אַרויסנעמען און װידער מאַכן</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>רײניקן: אַרויסנעמען (װערן װידער געמאַכט אויף פֿאַרלאַנג)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>װידער־סינכראָניזירן: ברענגען די טעקעס פֿון דער staging־קוואַל</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(נאָר אויף אַ staging־אינסטאַלאַציע)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>די גאַנצע וועבזייַט</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>איין קנופּ</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>אַ קנופּ און זײַן אונטערבוים</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>קנופּ־ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>קלאַסן</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>אַטריבוטן</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>געענדערט זײַט</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>אַ דאַטום (2026-11-01) אָדער אַ צײַט צוריק (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>העכסטנס בילדער</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>אַליאַסן (קײנער נישט אָפּגעצייכנט: אַלע)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>װידער־סינכראָניזירן</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>טרוקענער לויף: נאָר צײלן (אַ װידער־סינכראָניזירן קאָנטראָלירט די קוואַל און שפּײַכלערט גאָרנישט)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>איבערשרײַבן טעקעס װאָס אונטערשײדן זיך (װידער־סינכראָניזירן)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>אָנהייבן דעם לויף</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>לעצטע לויפֿן</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>אַרבעט</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>פֿאָרשריט</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>אין דער ריי</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>אַקציעס</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>אַנולירן</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>נאָך קיין מאַסן־לויף אָדער װידער־סינכראָניזירן.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>איין בילד</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>די אַדרעסן װאָס אַ שאַבלאָן באַקומט איצט, די גרײסן און טיפּן באַרעכנט פֿאַר יעדן אַליאַס, און צי יעדע טעקע איז דאָ.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>זוכן לויט</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>אָביעקט־ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ווייַזן</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>איר מעגט נישט לייענען דעם דאָזיקן אָביעקט.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>דער דאָזיקער אָביעקט האָט נישט קיין בילד.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>קיין אָביעקט מיט דער דאָזיקער ID.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>אָביעקט %object, קנופּ %node, ווערסיע %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>אָריגינאַל: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>טעקע איז דאָ</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>טעקע פֿעלט</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>אַליאַסן פֿון %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>אַליאַס</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>גרייס</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>טיפּ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>טעקע</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>פֿאָרמאַטן</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>אַדרעס אין אַ שאַבלאָן</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>דאָ</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>פֿעלט</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>נישט פֿאַר דעם טיפּ</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>קאָנטראָלירן</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>מאַכן</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>קיין בילד אין דעם פֿעלד.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>צײַט</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>פֿאַרבינדונג צו אַ קוואַל</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>אַ HEAD־בקשה צו אַ staging־קוואַל, מיט איר אַקרעדיטיוו װען אײנער איז גענאָמען. דער אַקרעדיטיוו װערט געשיקט, קײנמאָל נישט געוויזן.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>קוואַל</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>מיט אַקרעדיטיוו</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>שפּײַכלער־שטעג (אָפּציאָנעל)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>פּרוּװן די פֿאַרבינדונג</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>קיין קוואַל האָט נישט קיין BaseURL. קוואַלן װערן באַשטימט אין די באַשטימונגען ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>דערגרײכבאַר</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>אָפּגעזאָגט: קאָנטראָלירט דעם אַקרעדיטיוו</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>נישט געפֿונען בײַ דער קוואַל</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>קיין ענטפֿער</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>צײַט אַרויס</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>אומגעפֿירט (נישט נאָכגעגאַנגען)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>קיין BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>נישט קיין שפּײַכלער־שטעג</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>אַדרעס</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>סטאַטוס</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>געשיקט</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>דער סוד פֿעלט</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>דער סוד איז נישט user:password אָדער Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>די נײַסטע שורות פֿון %file, די נײַסטע צוערשט.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>אייַנריכטונג &gt; זשורנאַל־טעקעס</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>געשעעניש</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>אַלע געשעענישן</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>לויפֿן (אָנהייב און סוף)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>שטעג אַנטהאַלט</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>שורות</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>פֿילטער</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>נאָכפֿאָלגן: ווײַזן נײַע שורות װי זיי װערן געשריבן</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>שטעג און פּרטים</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>קיין שורה פֿון דעם זשורנאַל שטימט נישט.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>וואָס אויפֿהיטן װאָלט געענדערט</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>וואָס איז געענדערט געװאָרן</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>אויפֿגעהיטן אין settings/override/image.ini.append.php, אַזוי אַז אַ װערט דאָ גײט פֿאַר יעדן siteaccess. די געוויזענע װערטן זענען די װאָס גילטן פֿאַר דעם siteaccess. אויפֿהיטן בעט איר צו באַשטעטיקן װער איר זענט.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>ווי אַליאַסן װערן געמאַכט און געליפֿערט.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>ברענגען פֿעלנדיקע בילדער פֿון אַן אַנדער אינסטאַלאַציע (alpha, dev, beta, stage, pro, post, arc). פּראָדוקציע (pro) ברענגט קיינמאָל נישט.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>באַשטימונג</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>װערט</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>אין settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>די אַדרעס פֿון יעדער קוואַל און דער נאָמען פֿון דעם סוד װאָס האַלט איר אַקרעדיטיוו (user:password אָדער Bearer &lt;token&gt;). דער װערט פֿון אַ סוד װערט באַשטימט אין אייַנריכטונג &gt; סודות און װערט קײנמאָל נישט דאָ געוויזן.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>פֿאָרויסקוקן די ענדערונגען</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>אויפֿהיטן</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>נאָכפֿאָלגן: דערהײַנטיקט %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>אָפּגעשטעלט</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>דער פֿיד האָט נישט געענטפֿערט; פּרוּוו װידער.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>די אַרבעט איז געענדיקט.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: שאַבלאָנען באַקומען די אַדרעס, דער אַליאַס װערט געמאַכט װען מען פֿרעגט אים. render: דער שאַבלאָן מאַכט אים בעת די זײַט װערט געמאַלט (דאָס אָריגינעלע פֿאַרהאַלטן).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>די אַדרעס פֿון אַן אַליאַס װאָס איז נאָך נישט געמאַכט: token (אונטערגעשריבן, דאַרף נישט קיין דאַטנבאַזע), ids-token, ids, node אָדער storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: אַ אומפֿירונג צו דער טעקע װען דער װעב־סערװער באַדינט דעם שפּײַכלער, אַנדערש װערט די טעקע געסטרימט.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>סעקונדעס װאָס אַ בקשה מעג פֿאַרברענגען מיט מאַכן אָדער ברענגען אַן אַליאַס; דערנאָך ענטפֿערט זי דעם פּלאַץ־האַלטער און אַן אַרבעט פֿאַרענדיקט די אַרבעט.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>דער קאָנווערטער װאָס װערט צוערשט געפּרוּװט פֿאַר די WebP־ און AVIF־װאַריאַנטן.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>ענטפֿערן WebP אָדער AVIF צו בראַוזערס װאָס פֿרעגן דערנאָך, פֿאַר אַליאַסן װאָס ליסטן Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>אַ נייטראַל בילד אין דער ריכטיקער גרײס בעת אַ בילד פֿעלט.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>אַ קליין סקריפּט װאָס פֿאַרבײַט פּלאַץ־האַלטער מיטן אמתן בילד װען עס איז דאָ.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>נאָך פּובליקירן מאַכט אַן אַרבעט די אַליאַסן פֿון די נײַע בילדער פֿאַר יעדן פֿאַרבונדענעם siteaccess.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>קאָנווערסיעס אין איינעם אויף איין סערװער.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>די פּראָצעס־פּריאָריטעט (nice) פֿון מאַסן־לויפֿן, 0 ביז 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>סעקונדעס װאָס בראַוזערס און קעשעס מעגן האַלטן אַ געמאַכטן אַליאַס.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>סעקונדעס װאָס די אַדרעס פֿון אַ פּראָיעקט־ אָדער פֿאָרויסקוק־בילד בלײַבט גילטיק.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>סעקונדעס װאָס דער פֿריִערדיקער אונטערשריפֿט־שליסל בלײַבט גילטיק נאָך אַ ראָטירונג.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>די סבֿיבֿה פֿון דער אינסטאַלאַציע.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>די סבֿיבֿה פֿון װאַנען פֿעלנדיקע בילדער װערן געבראַכט; none: גאָרנישט װערט געבראַכט.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>איינס פּער שורה: לאָקאַלער שפּײַכלער־פּרעפֿיקס;קוואַל־פּרעפֿיקס אָדער אַדרעס, פֿאַר שפּײַכלער־שטעגן װאָס אונטערשײדן זיך.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>סעקונדעס װאָס איין בקשה צו דער קוואַל מעג דויערן.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>די גרעסטע טעקע גענומען פֿון דער קוואַל, אין בײַטן.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>דורכפֿאַלן אין אַ רײ נאָך װעלכע די קוואַל װערט אָפּגעשטעלט.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>װי לאַנג אַ קוואַל װאָס פֿאַלט דורך װערט אָפּגעשטעלט.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>שיקן אימעיל צו די אַדמיניסטראַטאָרן װען די קוואַל װערט אָפּגעשטעלט (העכסטנס איין מאָל אַ שעה).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>איין אימעיל־אַדרעס פּער שורה; ליידיק: דער AdminEmail פֿון site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>די אַדרעס פֿון דער קוואַל־אינסטאַלאַציע %block, צ.ב. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>דער נאָמען פֿון דעם סוד מיטן אַקרעדיטיוו, אָדער env:VARIABLE. קײנמאָל נישט דער אַקרעדיטיוו אַלײן.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(קײנע)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>סטאַנדאַרט: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>דאָ באַשטימט; צייכנט אָפּ צו אַרויסנעמען</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>געירשנט</translation>
     </message>
 </context>
 </TS>

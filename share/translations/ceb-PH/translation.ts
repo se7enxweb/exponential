@@ -16590,6 +16590,34 @@ Hinumdomi: Dili i-uninstall ang mga pakete.</translation>
         <source>Import/Export</source>
         <translation>I-import/I-export</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Mga alias sa hulagway</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Himoa alang niini nga aytem</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Himoa alang sa subtree</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Himoa pag-usab alang niini nga aytem</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Himoa pag-usab alang sa subtree</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Tangtanga alang niini nga aytem</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Tangtanga alang sa subtree</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Ang server block sa usa ka daang site: location = uban sa return, if ($args) alang sa usa ka query, rewrite isip wildcard ug usa ka map sa tagsa-tagsa nga mga panid.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Mga alias sa hulagway</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Ang mga alias sa hulagway mao ang gipakaylap ug gipraning kopya sa usa ka hulagway nga gipakita sa mga template. Dinhi makita nimo kung giunsa kini paghimo, makapadagan ka og dagkong trabaho sa tibuok site, makasulay ug usa ka hulagway o staging source, makasunod sa kasaysayan sa pagdagan ug makabag-o sa mga setting.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Mga bahin sa panid</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dashboard</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Dagkong pagdagan</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Mga himan sa pagsulay</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Kasaysayan sa pagdagan</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Mga setting</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Makita nimo ang tanan dinhi. Ang pagbag-o sa mga setting, pagpadagan og trabaho ug ang mga himan nga naghimo og file nanginahanglan sa polisiya setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Unsa ang kinahanglan atimanon</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Render mode: ang mga template maghimo sa nawala nga mga alias samtang gipakita ang panid, sama kaniadto. Ang mga adres nga on-demand, placeholder ug background job wala gigamit.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Naka-on ang format negotiation, apan walay converter dinhi nga makasulat og WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Kini usa ka staging installation, apan ang source niini walay BaseURL: dili makuha ang nawala nga mga hulagway.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Gipahunong ang staging source human sa sunod-sunod nga mga kapakyasan: ang nawala nga mga hulagway makadawat og placeholder hangtod matapos ang paghunong o i-reset nimo kini.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Napakyas ang staging source bag-o lang. Tan-awa ang katapusan nga sayop sa ubos.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Kini nga installation dili production, apan ang SyncFrom walay gipangalan nga source: walay makuha.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Wala ang job queue (expqueue): ang mga alias nga nahuman sa oras himuon sa sunod nga hangyo, ang pre-generation human sa pagmantala gilaktawan ug ang dagkong pagdagan limitado sa gagmay nga sakup.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Ang pipila ka trabaho sa mga alias sa hulagway napakyas na sa hingpit. Ang Pag-setup &gt; Job queue nagpakita kung ngano.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Gipahunong ang dagkong pagdagan.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Napakyas ang mga alias sa miaging 24 oras. Gilista kini sa kasaysayan sa pagdagan.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Ang signing key labaw na sa usa ka tuig ang edad. Ang pag-ilis niini nagpabilin nga balido sa daan nga mga adres sulod sa grace period.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Wala pay signing key: himuon kini kauban ang unang on-demand nga adres.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Ang miaging 24 oras</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Mga alias nga gihimo</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Mga placeholder nga gitubag</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Mga kapakyasan</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Mga file nga na-stage</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Mga pagdagan nga nagsugod</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Mga trabaho nga naghulat / nagdagan</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Gibilang gikan sa katapusang %lines ka linya sa %file, nga moabot balik sa %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Mode ug paghatod</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mode</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>kung gihangyo</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Porma sa adres</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Paghatod</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Pinakataas nga paghulat sa usa ka hangyo</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Mga pagbalhin sa usa ka higayon</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy sa %max okupado karon</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Format negotiation</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>naka-on</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>naka-off</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Placeholder ug swap script</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Pre-generation human sa pagmantala</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Mga alias sa site</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Mga converter sa mga lahi sa format</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Converter</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Gisulayan</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>gipalabi</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>oo</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>dili</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Ang mga alias mismo gihimo sa mga converter sa [ImageConverterSettings], sama kaniadto; kini nagsulat sa mga lahi nga WebP ug AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Palibot ug source</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Kini nga installation</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production: dili gayud mokuha)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Mokuha gikan sa</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>walay</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Adres sa source</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>wala gi-set</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Kredensyal</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>sekreto %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>wala</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Kahimtang</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>nagtrabaho</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>gipahunong hangtod %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>napakyas</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Sunod-sunod nga kapakyasan</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>hunong human sa %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Katapusang sayop</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Katapusang kalampusan</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>I-reset ang mga kapakyasan ug pangutana pag-usab sa source</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Job queue</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Matang sa trabaho</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Naghulat</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Nagdagan</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Napakyas</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>wala narehistro</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Wala ang job queue.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Gipahunong ang dagkong pagdagan</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>sukad %time ni %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Mahimong modagan ang dagkong pagdagan</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Signing key</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Yawe</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>sa tipiganan sa sekreto</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>wala pa</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Edad</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days ka adlaw (sukad %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Miaging yawe</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>balido hangtod %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Ilisi ang yawe</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Ang mga adres nga gipirmahan sa karon nga yawe magpadayon sa pagtrabaho sulod sa grace period (SigningKeyGrace), unya motubag sila og placeholder hangtod mahimo pag-usab ang mga panid.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Ilisi karon</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Giunsa kini pagtrabaho</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render mode, staging ug ang log</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (ang default): ang panid mag-link sa alias nga wala pa didto ngadto sa gipirmahan nga adres. Ang unang hangyo maghimo niini sulod sa pinakataas nga paghulat, kung dili motubag kini og neutral nga placeholder ug usa ka trabaho ang mohuman sa buluhaton; ilisan sa swap script ang placeholder kung naa na ang hulagway.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render mode: ang template maghimo sa alias samtang gipakita ang panid, sama kaniadto. Pag-switch tali sa duha bisan unsang oras; walay kinahanglan ibalhin.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Ang staging installation mokuha sa mga orihinal ug alias nga kulang niini gikan sa source niini; ang napakyas nga source gipahunong human sa sunod-sunod nga kapakyasan ug ang mga administrador makadawat og usa ka e-mail kada oras kadaghanan.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Ang dagkong pagdagan ug pre-generation human sa pagmantala mga trabaho sa job queue, nga mas ubos ang prayoridad kaysa mga bisita. Ang pagtangtang sa mga alias nagpahawa usab sa response cache sa Velocity, aron ang gitangtang nga file dili na ihatag gikan niini.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Ang matag alias nga gihimo, placeholder nga gitubag, file nga na-stage ug pagdagan usa ka linya sa %file. Ang command line adunay parehas nga mga himan: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Trabaho %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done sa %total ka hulagway</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Pagdagan</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Sakup</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resulta</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Kanselaha kini nga trabaho</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Ang trabaho %job dili trabaho sa mga alias sa hulagway, o gitangtang kini gikan sa queue.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Resulta sa pagdagan %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Gipahunong ang dagkong pagdagan</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Gipahunong sukad %time ni %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Ang paghunong nagpahunong sa matag dakong pagdagan human sa karon niyang hulagway, sa tanang server; ang mga pagdagan sa queue maghulat. Ang mga alias sa mga bisita gihimo gihapon.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Ipadayon ang dagkong pagdagan</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Rason (opsyonal)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Hunonga ang dagkong pagdagan</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Sugdi ang pagdagan</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Ang mga pagdagan mga trabaho sa job queue: makabiya ka sa panid ug mobalik.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Kung walay job queue, ang pagdagan buhaton niini nga hangyo, hangtod %count ka hulagway.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aksyon</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Himoa: himoa ang mga alias nga nawala</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Himoa pag-usab: tangtanga ug himoa pag-usab</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Limpyohi: tangtanga kini (himuon pag-usab kung hangyoon)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: kuhaa ang mga file gikan sa staging source</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(sa staging installation lang)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Ang tibuok site</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Usa ka node</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Usa ka node ug ang subtree niini</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID sa node</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Mga klase</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Mga kinaiya</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Giilisan sukad</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Usa ka petsa (2026-11-01) o usa ka panahon nga nilabay (12 oras, 2 adlaw).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Kadaghanan nga hulagway</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Mga alias (kung walay gi-tick: tanan)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Dry run: ihap lang (ang resync mosusi sa source ug walay tipigan)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Sulatan ang mga file nga lahi (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Sugdi ang pagdagan</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Pinakabag-ong pagdagan</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Trabaho</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Pag-uswag</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Naa sa queue</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Mga aksyon</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kanselaha</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Wala pay dakong pagdagan o resync.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Usa ka hulagway</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Ang mga adres nga nadawat karon sa template, ang gidak-on ug matang nga gikuwenta alang sa matag alias, ug kung naa ba ang matag file.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Pangitaa pinaagi sa</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID sa butang</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ipakita</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Dili ka tugotan nga mabasa kini nga butang.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Kini nga butang walay hulagway.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Walay butang nga adunay kini nga ID.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>butang %object, node %node, bersyon %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Orihinal: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>naa ang file</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>nawala ang file</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Mga alias sa %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Alias</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Gidak-on</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Matang</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>File</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Mga format</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Adres sa template</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>naa</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>nawala</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>dili alang niini nga matang</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Susiha</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Himoa</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Walay hulagway niini nga field.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Oras</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Koneksyon sa usa ka source</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Usa ka HEAD request ngadto sa staging source, uban sa kredensyal niini kung naay gipangalan. Ang kredensyal ipadala, dili gayud ipakita.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Gigikanan</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>uban sa kredensyal</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Dalan sa storage (opsyonal)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Sulayi ang koneksyon</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Walay source nga adunay BaseURL. Ang mga source gi-set sa mga setting ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>maabot</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>gisalikway: susiha ang kredensyal</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>wala makit-i sa source</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>walay tubag</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>nahurot ang oras</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>gi-redirect (wala sundi)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>walay BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>dili dalan sa storage</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adres</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>gipadala</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>nawala ang sekreto</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>ang sekreto dili user:password o Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Ang pinakabag-ong linya sa %file, pinakabag-o ang una.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Pag-setup &gt; Mga log file</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Panghitabo</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Tanang panghitabo</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Mga pagdagan (sugod ug tapos)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Ang dalan adunay</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Mga linya</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Salaan</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Sunda: ipakita ang bag-ong linya samtang gisulat</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Dalan ug mga detalye</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Walay linya sa log nga motugma.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Unsa ang mausab sa pagtipig</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Unsa ang giilisan</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Gitipig sa settings/override/image.ini.append.php, busa ang bili dinhi modaog sa matag siteaccess. Ang gipakitang mga bili mao ang naglihok alang niini nga siteaccess. Ang pagtipig mohangyo nimo nga kumpirmahon una kung kinsa ka.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Kung giunsa paghimo ug paghatod ang mga alias.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Pagkuha sa nawala nga mga hulagway gikan sa lain nga installation (alpha, dev, beta, stage, pro, post, arc). Ang production (pro) dili gayud mokuha.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Setting</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Bili</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Sa settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Ang adres sa matag source ug ang ngalan sa sekreto nga naghupot sa kredensyal niini (user:password o Bearer &lt;token&gt;). Ang bili sa usa ka sekreto gi-set sa Pag-setup &gt; Mga sekreto ug dili gayud ipakita dinhi.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Tan-awa daan ang mga kausaban</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Tipigi</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Nagsunod: gi-update %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Gipahunong</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Wala motubag ang feed; misulay pag-usab.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Natapos na ang trabaho.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: ang mga template makadawat sa adres, ang alias himuon kung gihangyo. render: ang template maghimo niini samtang gipakita ang panid (ang orihinal nga batasan).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Ang adres sa alias nga wala pa mahimo: token (gipirmahan, dili kinahanglan og database), ids-token, ids, node o storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: usa ka redirect ngadto sa file kung ang web server nag-alagad sa storage, kung dili ang file i-stream.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Segundo nga mahimong gamiton sa hangyo sa paghimo o pagkuha og alias; unya motubag kini sa placeholder ug usa ka trabaho ang mohuman sa buluhaton.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Ang converter nga unang gisulayan alang sa mga lahi nga WebP ug AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Tubagi og WebP o AVIF ang mga browser nga naghangyo niini, alang sa mga alias nga naglista og Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Usa ka neutral nga hulagway sa saktong gidak-on samtang nawala ang hulagway.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Usa ka gamay nga script nga mopuli sa mga placeholder gamit ang tinuod nga hulagway kung naa na.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Human sa pagmantala, usa ka trabaho ang maghimo sa mga alias sa bag-ong mga hulagway alang sa matag may kalambigitan nga siteaccess.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Mga pagbalhin sa usa ka higayon sa usa ka server.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Ang prayoridad sa proseso (nice) sa dagkong pagdagan, 0 hangtod 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Segundo nga mahimong tipigan sa mga browser ug cache ang nahimo nga alias.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Segundo nga magpabilin nga balido ang adres sa hulagway nga draft o preview.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Segundo nga magpabilin nga balido ang miaging signing key human sa pag-ilis.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Ang palibot niini nga installation.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Ang palibot diin makuha ang nawala nga mga hulagway; none: walay makuha.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Usa kada linya: prefix sa lokal nga storage;prefix sa source o adres, alang sa mga dalan sa storage nga lahi.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Segundo nga mahimong kuhaon sa usa ka hangyo ngadto sa source.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Ang pinakadako nga file nga kuhaon gikan sa source, sa bytes.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Sunod-sunod nga kapakyasan diin gipahunong ang source.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Unsa kadugay gipahunong ang napakyas nga source.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Padad-i og mail ang mga administrador kung gipahunong ang source (kadaghanan kausa kada oras).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Usa ka e-mail address kada linya; walay sulod: ang AdminEmail sa site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Ang adres sa source installation %block, pananglitan https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Ang ngalan sa sekreto nga adunay kredensyal, o env:VARIABLE. Dili gayud ang kredensyal mismo.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(wala)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Default: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Gi-set dinhi; i-tick aron tangtangon</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>napanunod</translation>
     </message>
 </context>
 </TS>

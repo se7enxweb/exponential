@@ -16529,6 +16529,34 @@ Napomena: paketi neće biti deinstalirani.</translation>
         <source>Import/Export</source>
         <translation>Uvoz/izvoz</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Alijasi slika</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Napravi za ovu stavku</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Napravi za podstablo</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Napravi ponovo za ovu stavku</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Napravi ponovo za podstablo</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Ukloni za ovu stavku</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Ukloni za podstablo</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86452,6 +86480,997 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>server blok starog sajta: location = sa return, if ($args) za upit, rewrite kao džoker i map pojedinačnih stranica.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Alijasi slika</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Alijasi slika su umanjene i isečene kopije slike koje prikazuju šabloni. Ovde vidite kako se prave, pokrećete masovne poslove nad sajtom, testirate jednu sliku ili izvor za staging, pratite istoriju pokretanja i menjate podešavanja.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Delovi stranice</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Kontrolna tabla</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Masovna pokretanja</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Alati za testiranje</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Istorija pokretanja</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Podešavanja</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Ovde možete videti sve. Za menjanje podešavanja, pokretanje poslova i alate koji prave datoteke potrebna je politika setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Šta zahteva pažnju</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Režim render: šabloni prave alijase koji nedostaju dok se stranica iscrtava, kao do sada. Adrese on-demand, rezervisane slike i poslovi u pozadini se ne koriste.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Pregovaranje o formatu je uključeno, ali nijedan konvertor ovde ne može da piše WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Ovo je staging instalacija, ali njen izvor nema BaseURL: slike koje nedostaju ne mogu da se preuzmu.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Staging izvor je pauziran zbog uzastopnih grešaka: slike koje nedostaju dobijaju rezervisane slike dok pauza ne istekne ili je ne poništite.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Staging izvor je nedavno otkazao. Poslednju grešku pogledajte ispod.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Ova instalacija nije produkcijska, ali SyncFrom ne navodi nijedan izvor: ništa se ne preuzima.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Red poslova (expqueue) nije dostupan: alijasi koji ne stignu na vreme prave se pri sledećem zahtevu, prethodno pravljenje posle objavljivanja se preskače, a masovna pokretanja su ograničena na mali obim.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Neki poslovi alijasa slika su trajno otkazali. Razlog prikazuje Podešavanje &gt; Red poslova.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Masovna pokretanja su pauzirana.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Alijasi su otkazali u poslednja 24 sata. Istorija pokretanja ih navodi.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Ključ za potpisivanje je stariji od godinu dana. Njegova rotacija čuva stare adrese važećim tokom odloženog roka.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Ključ za potpisivanje još ne postoji: pravi se uz prvu on-demand adresu.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Poslednja 24 sata</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Napravljeni alijasi</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Poslate rezervisane slike</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Greške</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Pripremljene datoteke</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Pokrenuta pokretanja</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Poslovi na čekanju / u toku</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Izbrojano iz poslednjih %lines redova datoteke %file, koji sežu unazad do %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Režim i isporuka</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Režim</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>na zahtev</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Oblik adrese</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Isporuka</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Najduže čekanje zahteva</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Istovremene konverzije</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy od %max zauzeto sada</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Pregovaranje o formatu</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>uključeno</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>isključeno</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Rezervisana slika i skripta za zamenu</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Prethodno pravljenje posle objavljivanja</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Alijasi sajta</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Konvertori varijanti formata</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Konvertor</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Redosled pokušaja</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>poželjan</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>da</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ne</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Same alijase prave konvertori iz [ImageConverterSettings], kao do sada; ovi pišu varijante WebP i AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Okruženje i izvor</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Ova instalacija</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(produkcija: nikada ne preuzima)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Preuzima iz</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>ništa</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Adresa izvora</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>nije podešena</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Akreditiv</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>tajna %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nema</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stanje</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>radi</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>pauziran do %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>otkazuje</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Uzastopne greške</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>pauza posle %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Poslednja greška</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Poslednji uspeh</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Poništi greške i ponovo pitaj izvor</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Red poslova</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Tip posla</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Na čekanju</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>U toku</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Neuspešno</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>nije registrovano</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Red poslova nije dostupan.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Masovna pokretanja pauzirana</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>od %time, korisnik %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Masovna pokretanja smeju da rade</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Ključ za potpisivanje</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Ključ</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>u skladištu tajni</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>još nema</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Starost</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days dana (od %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Prethodni ključ</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>važi do %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Rotiraj ključ</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Adrese potpisane trenutnim ključem rade i dalje tokom odloženog roka (SigningKeyGrace), a zatim odgovaraju rezervisanim slikama dok se stranice ponovo ne naprave.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Rotiraj sada</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Kako radi</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, režim render, staging i dnevnik</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (podrazumevano): stranica povezuje alijas koji još ne postoji sa potpisanom adresom. Prvi zahtev ga pravi u okviru najdužeg čekanja, inače odgovara neutralnom rezervisanom slikom, a posao završava rad; skripta za zamenu menja rezervisanu sliku kada je slika spremna.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Režim render: šablon pravi alijas dok se stranica iscrtava, kao do sada. Između ova dva možete da prebacujete u svakom trenutku; ništa ne treba da se migrira.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Staging instalacija preuzima originale i alijase koji joj nedostaju iz svog izvora; izvor koji otkazuje se pauzira posle uzastopnih grešaka, a administratori dobijaju najviše jednu e-poruku na sat.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Masovna pokretanja i prethodno pravljenje posle objavljivanja su poslovi reda poslova, sa nižim prioritetom od posetilaca. Uklanjanje alijasa čisti i keš odgovora servera Velocity, da se uklonjena datoteka ne bi isporučivala iz njega.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Svaki napravljeni alijas, poslata rezervisana slika, pripremljena datoteka i pokretanje je jedan red u %file. Komandna linija ima iste alate: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Posao %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done od %total slika</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Pokretanje</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Obim</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultat</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Otkaži ovaj posao</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Posao %job nije posao alijasa slika ili je uklonjen iz reda.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Rezultat pokretanja %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Masovna pokretanja su pauzirana</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Pauzirano od %time, korisnik %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Pauza zaustavlja svako masovno pokretanje posle trenutne slike, na svim serverima; pokretanja u redu čekaju. Alijasi posetilaca se i dalje prave.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Nastavi masovna pokretanja</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Razlog (opciono)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Pauziraj masovna pokretanja</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Pokreni</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Pokretanja su poslovi reda poslova: možete napustiti stranicu i vratiti se.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Bez reda poslova pokretanje se obavlja u ovom zahtevu, za najviše %count slika.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Radnja</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Napravi: napravi alijase koji nedostaju</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Napravi ponovo: ukloni ih i napravi ponovo</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Očisti: ukloni ih (prave se ponovo na zahtev)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Ponovo sinhronizuj: preuzmi datoteke iz staging izvora</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(samo na staging instalaciji)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Ceo sajt</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Jedan čvor</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Čvor i njegovo podstablo</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID čvora</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klase</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atributi</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Promenjeno od</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Datum (2026-11-01) ili vreme unazad (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Najviše slika</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Alijasi (ništa nije označeno: svi)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Probno pokretanje: samo izbroj (resync proverava izvor i ništa ne čuva)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Prepiši datoteke koje se razlikuju (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Pokreni</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Poslednja pokretanja</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Posao</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Napredak</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>U redu</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Radnje</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Odustani</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Još nema masovnog pokretanja ni resync.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Jedna slika</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Adrese koje šablon sada dobija, veličine i tipovi izračunati za svaki alijas i da li datoteka postoji.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Traži po</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID objekta</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Prikaži</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Nemate pravo da čitate ovaj objekat.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Ovaj objekat nema sliku.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Nema objekta sa ovim ID.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>objekat %object, čvor %node, verzija %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Original: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>datoteka postoji</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>datoteka nedostaje</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Alijasi za %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Alijas</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Veličina</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tip</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datoteka</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Formati</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Adresa u šablonu</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>postoji</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>nedostaje</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ne za ovaj tip</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Proveri</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Napravi</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>U ovom polju nema slike.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Vreme</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Veza sa izvorom</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>HEAD zahtev ka staging izvoru, sa njegovim akreditivom kada je naveden. Akreditiv se šalje, nikada prikazuje.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Izvor</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>sa akreditivom</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Putanja skladišta (opciono)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Testiraj vezu</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Nijedan izvor nema BaseURL. Izvori se podešavaju u podešavanjima ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>dostupan</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>odbijeno: proverite akreditiv</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>nije pronađeno na izvoru</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>nema odgovora</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>isteklo vreme</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>preusmereno (nije praćeno)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>nema BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>nije putanja skladišta</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresa</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Stanje</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>poslato</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>tajna nedostaje</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>tajna nije user:password ni Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Najnoviji redovi datoteke %file, najnoviji prvi.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Podešavanje &gt; Datoteke dnevnika</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Događaj</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Svi događaji</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Pokretanja (početak i kraj)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Putanja sadrži</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Redova</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Prati: prikazuj nove redove dok se pišu</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Putanja i detalji</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Nijedan red dnevnika se ne poklapa.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Šta bi čuvanje promenilo</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Šta je promenjeno</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Čuva se u settings/override/image.ini.append.php, pa vrednost ovde ima prednost nad svakim siteaccess. Prikazane su vrednosti koje važe za ovaj siteaccess. Pre čuvanja se traži da potvrdite da ste to vi.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Kako se alijasi prave i isporučuju.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Preuzimanje slika koje nedostaju iz druge instalacije (alpha, dev, beta, stage, pro, post, arc). Produkcija (pro) nikada ne preuzima.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Podešavanje</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Vrednost</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>U settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Adresa svakog izvora i naziv tajne koja drži njegov akreditiv (user:password ili Bearer &lt;token&gt;). Vrednost tajne se podešava u Podešavanje &gt; Tajne i ovde se nikada ne prikazuje.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Pregledaj promene</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Sačuvaj</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Praćenje: ažurirano %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Pauzirano</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Izvor nije odgovorio; pokušava se ponovo.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Posao je završen.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: šabloni dobijaju adresu, a alijas se pravi kada se zatraži. render: šablon ga pravi dok se stranica iscrtava (originalno ponašanje).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Adresa alijasa koji još nije napravljen: token (potpisana, ne treba baza podataka), ids-token, ids, node ili storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: preusmeravanje na datoteku kada veb server služi skladište, inače se datoteka strimuje.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Sekunde koje zahtev sme da provede praveći ili preuzimajući alijas; zatim odgovara rezervisanom slikom, a posao završava rad.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Konvertor koji se prvi pokušava za varijante WebP i AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Odgovaraj sa WebP ili AVIF pregledačima koji ih traže, za alijase koji navode Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Neutralna slika prave veličine dok prava slika nedostaje.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Mala skripta koja zamenjuje rezervisane slike pravom slikom kada je spremna.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Posle objavljivanja posao pravi alijase novih slika za svaki povezani siteaccess.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Istovremene konverzije na jednom serveru.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Prioritet procesa (nice) masovnih pokretanja, od 0 do 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Sekunde tokom kojih pregledači i keševi smeju da čuvaju napravljeni alijas.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Sekunde tokom kojih adresa slike nacrta ili pregleda ostaje važeća.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Sekunde tokom kojih prethodni ključ za potpisivanje ostaje važeći posle rotacije.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Okruženje ove instalacije.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Okruženje iz kog se preuzimaju slike koje nedostaju; none: ništa se ne preuzima.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Jedan po redu: prefiks lokalnog skladišta;prefiks izvora ili adresa, za putanje skladišta koje se razlikuju.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Sekunde koje jedan zahtev ka izvoru sme da traje.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Najveća datoteka preuzeta iz izvora, u bajtovima.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Broj uzastopnih grešaka posle kog se izvor pauzira.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Koliko dugo je izvor koji otkazuje pauziran.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Pošalji administratorima e-poruku kada je izvor pauziran (najviše jednom na sat).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Jedna e-adresa po redu; prazno: AdminEmail iz site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Adresa izvorne instalacije %block, npr. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Naziv tajne sa akreditivom ili env:VARIABLE. Nikada sam akreditiv.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(nema)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Podrazumevano: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Podešeno ovde; označite da uklonite</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>nasleđeno</translation>
     </message>
 </context>
 </TS>

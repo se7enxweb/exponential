@@ -16529,6 +16529,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>가져오기/내보내기</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>이미지 별칭</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>이 항목에 대해 생성</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>하위 트리에 대해 생성</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>이 항목에 대해 재생성</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>하위 트리에 대해 재생성</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>이 항목에 대해 제거</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>하위 트리에 대해 제거</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86452,6 +86480,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>옛 사이트의 server 블록: return이 있는 location =, 쿼리용 if ($args), 와일드카드로서의 rewrite, 그리고 단일 페이지의 map.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>이미지 별칭</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>이미지 별칭은 템플릿이 보여 주는 이미지의 축소 및 잘라낸 사본입니다. 여기서 별칭이 만들어지는 방식을 확인하고, 사이트 전체에 대한 일괄 작업을 실행하고, 이미지 하나나 스테이징 원본을 테스트하고, 실행 기록을 따라가고, 설정을 변경할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>페이지 구성</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>대시보드</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>일괄 실행</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>테스트 도구</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>실행 기록</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>설정</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>여기서는 모든 것을 볼 수 있습니다. 설정 변경, 작업 실행, 파일을 만드는 도구에는 setup/managealiases 정책이 필요합니다.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>확인이 필요한 항목</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>render 모드: 이전과 같이 템플릿이 페이지를 렌더링하는 동안 없는 별칭을 만듭니다. on-demand 주소, 자리 표시자, 백그라운드 작업은 사용하지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>형식 협상이 켜져 있지만 여기에는 WebP를 쓸 수 있는 변환기가 없습니다.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>이 설치는 스테이징 설치이지만 원본에 BaseURL이 없어 없는 이미지를 가져올 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>스테이징 원본이 연속 실패로 일시 중지되었습니다. 중지가 끝나거나 초기화할 때까지 없는 이미지에는 자리 표시자가 표시됩니다.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>스테이징 원본이 최근에 실패했습니다. 아래에서 마지막 오류를 확인하세요.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>이 설치는 프로덕션이 아니지만 SyncFrom에 원본이 지정되어 있지 않아 아무것도 가져오지 않습니다.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>작업 큐(expqueue)를 사용할 수 없습니다. 시간 내에 끝나지 못한 별칭은 다음 요청이 만들고, 게시 후 사전 생성은 건너뛰며, 일괄 실행은 작은 범위로 제한됩니다.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>일부 이미지 별칭 작업이 최종적으로 실패했습니다. 이유는 설정 &gt; 작업 큐에서 확인하세요.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>일괄 실행이 일시 중지되었습니다.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>지난 24시간 동안 별칭 생성이 실패했습니다. 실행 기록에 목록이 있습니다.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>서명 키가 1년 넘었습니다. 키를 교체해도 유예 기간 동안은 이전 주소가 계속 유효합니다.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>아직 서명 키가 없습니다. 첫 on-demand 주소와 함께 만들어집니다.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>지난 24시간</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>생성된 별칭</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>응답한 자리 표시자</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>실패</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>준비된 파일</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>시작된 실행</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>대기 중 / 실행 중인 작업</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file의 마지막 %lines줄에서 집계했으며, %time까지 거슬러 올라갑니다.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>모드 및 전달</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>모드</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>요청 시</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>주소 형식</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>전달</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>요청의 최대 대기 시간</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds초</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>동시 변환</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>현재 %max개 중 %busy개 사용 중</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>형식 협상</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>켜짐</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>꺼짐</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>자리 표시자 및 교체 스크립트</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>게시 후 사전 생성</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>사이트의 별칭</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>형식 변형 변환기</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>변환기</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>시도 순서</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>우선</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>예</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>아니요</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>별칭 자체는 이전과 같이 [ImageConverterSettings]의 변환기가 만들며, 여기의 변환기는 WebP 및 AVIF 변형을 씁니다.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>환경 및 원본</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>이 설치</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(프로덕션: 가져오지 않음)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>가져오는 곳</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>없음</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>원본 주소</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>설정되지 않음</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>자격 증명</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>비밀 값 %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>없음</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>상태</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>작동 중</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time까지 일시 중지</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>실패 중</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>연속 실패</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count회 후 일시 중지</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>마지막 오류</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>마지막 성공</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>실패를 초기화하고 원본에 다시 요청</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>작업 큐</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>작업 유형</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>대기 중</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>실행 중</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>실패</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>등록되지 않음</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>작업 큐를 사용할 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>일괄 실행 일시 중지됨</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time부터, %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>일괄 실행 허용</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>서명 키</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>키</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>비밀 값 저장소에 있음</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>아직 없음</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>사용 기간</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days일 (%time부터)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>이전 키</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time까지 유효</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>키 교체</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>현재 키로 서명한 주소는 유예 기간(SigningKeyGrace) 동안 계속 작동하며, 그 후에는 페이지가 다시 만들어질 때까지 자리 표시자로 응답합니다.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>지금 교체</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>작동 방식</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render 모드, 스테이징 및 로그</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand(기본값): 페이지는 아직 없는 별칭을 서명된 주소로 연결합니다. 첫 요청이 최대 대기 시간 안에 별칭을 만들고, 그렇지 않으면 중립적인 자리 표시자로 응답한 뒤 작업이 나머지를 끝내며, 이미지가 준비되면 교체 스크립트가 자리 표시자를 바꿉니다.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>render 모드: 이전과 같이 템플릿이 페이지를 렌더링하는 동안 별칭을 만듭니다. 둘 사이는 언제든 전환할 수 있으며 마이그레이션할 필요가 없습니다.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>스테이징 설치는 없는 원본 이미지와 별칭을 원본에서 가져옵니다. 실패하는 원본은 연속 실패 후 일시 중지되며, 관리자는 한 시간에 최대 한 통의 이메일을 받습니다.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>일괄 실행과 게시 후 사전 생성은 작업 큐의 작업이며 방문자보다 우선순위가 낮습니다. 별칭을 제거하면 Velocity의 응답 캐시도 지워지므로 제거된 파일이 캐시에서 제공되지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>만들어진 별칭, 응답한 자리 표시자, 준비된 파일, 실행은 각각 %file의 한 줄입니다. 명령줄에도 같은 도구가 있습니다: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>작업 %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>이미지 %total개 중 %done개</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>실행</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>범위</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>결과</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>이 작업 취소</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>작업 %job은(는) 이미지 별칭 작업이 아니거나 큐에서 제거되었습니다.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>실행 %run의 결과</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>일괄 실행이 일시 중지되었습니다</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time부터 %user 님이 일시 중지했습니다.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>일시 중지하면 모든 서버에서 모든 일괄 실행이 현재 이미지 이후에 멈추고, 큐에 있는 실행은 대기합니다. 방문자의 별칭은 계속 만들어집니다.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>일괄 실행 재개</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>사유(선택 사항)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>일괄 실행 일시 중지</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>실행 시작</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>실행은 작업 큐의 작업이므로 페이지를 나갔다가 다시 돌아와도 됩니다.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>작업 큐가 없으면 이 요청 안에서 실행하며 최대 %count개의 이미지만 처리합니다.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>작업</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>생성: 없는 별칭 만들기</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>재생성: 제거한 뒤 다시 만들기</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>삭제: 제거 (요청 시 다시 만들어짐)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>재동기화: 스테이징 원본에서 파일 가져오기</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(스테이징 설치에서만)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>사이트 전체</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>노드 하나</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>노드와 그 하위 트리</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>노드 ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>클래스</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>속성</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>변경 시점</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>날짜(2026-11-01) 또는 이전 시간(12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>최대 이미지 수</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>별칭 (선택하지 않으면 전체)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>시험 실행: 개수만 세기 (재동기화는 원본을 확인하며 아무것도 저장하지 않음)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>다른 파일 덮어쓰기 (재동기화)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>실행 시작</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>최근 실행</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>작업</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>진행률</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>대기열</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>작업</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>취소</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>일괄 실행이나 재동기화가 아직 없습니다.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>이미지 하나</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>템플릿이 지금 받는 주소, 각 별칭에 대해 계산된 크기와 유형, 각 파일의 존재 여부입니다.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>조회 기준</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>개체 ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>표시</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>이 개체를 읽을 권한이 없습니다.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>이 개체에는 이미지가 없습니다.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>이 ID의 개체가 없습니다.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>개체 %object, 노드 %node, 버전 %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>원본: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>파일 있음</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>파일 없음</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name의 별칭</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>별칭</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>크기</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>유형</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>파일</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>형식</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>템플릿의 주소</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>있음</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>없음</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>이 유형에는 해당 없음</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>확인</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>만들기</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>이 필드에 이미지가 없습니다.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>시간</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>원본 연결</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>스테이징 원본에 대한 HEAD 요청이며, 자격 증명이 지정되어 있으면 함께 보냅니다. 자격 증명은 전송되지만 표시되지는 않습니다.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>원본</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>자격 증명 사용</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>스토리지 경로 (선택 사항)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>연결 테스트</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>BaseURL이 있는 원본이 없습니다. 원본은 설정([AliasSource_&lt;environment&gt;])에서 지정합니다.</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>연결 가능</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>거부됨: 자격 증명을 확인하세요</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>원본에서 찾을 수 없음</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>응답 없음</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>시간 초과</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>리디렉션됨 (따라가지 않음)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL 없음</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>스토리지 경로가 아님</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>주소</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>상태</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>전송됨</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>비밀 값이 없습니다</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>비밀 값이 user:password 또는 Bearer &lt;token&gt; 형식이 아닙니다</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file의 최신 줄, 최신순.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>설정 &gt; 로그 파일</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>이벤트</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>모든 이벤트</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>실행 (시작과 종료)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>경로에 포함</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>줄 수</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>필터</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>따라가기: 새 줄이 기록되는 대로 표시</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>경로 및 세부 정보</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>일치하는 로그 줄이 없습니다.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>저장 시 바뀌는 내용</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>변경된 내용</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php에 저장되므로 여기의 값이 모든 siteaccess보다 우선합니다. 표시된 값은 이 siteaccess에 적용 중인 값입니다. 저장하기 전에 본인 확인을 요청합니다.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>별칭을 만들고 전달하는 방식입니다.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>다른 설치(alpha, dev, beta, stage, pro, post, arc)에서 없는 이미지 가져오기. 프로덕션(pro)은 가져오지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>설정</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>값</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override에서</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>각 원본의 주소와 해당 자격 증명이 들어 있는 비밀 값의 이름(user:password 또는 Bearer &lt;token&gt;)입니다. 비밀 값은 설정 &gt; 비밀 값에서 지정하며 여기에는 표시되지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>변경 사항 미리보기</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>저장</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>따라가는 중: %time에 업데이트됨</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>일시 중지됨</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>피드가 응답하지 않아 다시 시도하는 중입니다.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>작업이 끝났습니다.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: 템플릿은 주소를 받고 별칭은 요청될 때 만들어집니다. render: 템플릿이 페이지를 렌더링하는 동안 만듭니다(기존 동작).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>아직 만들어지지 않은 별칭의 주소: token (서명됨, 데이터베이스 불필요), ids-token, ids, node 또는 storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: 웹 서버가 스토리지를 제공하면 파일로 리디렉션하고, 그렇지 않으면 파일을 스트리밍합니다.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>요청이 별칭을 만들거나 가져오는 데 쓸 수 있는 시간(초)입니다. 그 후에는 자리 표시자로 응답하고 작업이 나머지를 끝냅니다.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP 및 AVIF 변형에 가장 먼저 시도하는 변환기입니다.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Formats[]를 나열한 별칭에 대해 WebP 또는 AVIF를 요청하는 브라우저에 해당 형식으로 응답합니다.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>이미지가 없는 동안 표시되는 알맞은 크기의 중립적인 이미지입니다.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>실제 이미지가 준비되면 자리 표시자를 바꾸는 작은 스크립트입니다.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>게시 후 작업이 관련된 모든 siteaccess에 대해 새 이미지의 별칭을 만듭니다.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>서버 하나에서 동시에 처리하는 변환 수입니다.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>일괄 실행의 프로세스 우선순위(nice)이며 0~19입니다.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>브라우저와 캐시가 만들어진 별칭을 보관할 수 있는 시간(초)입니다.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>초안 또는 미리보기 이미지 주소가 유효한 시간(초)입니다.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>교체 후 이전 서명 키가 유효한 시간(초)입니다.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>이 설치의 환경입니다.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>없는 이미지를 가져올 환경입니다. none: 아무것도 가져오지 않습니다.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>한 줄에 하나: 로컬 스토리지 접두사;원본 접두사 또는 주소, 스토리지 경로가 다른 경우에 사용합니다.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>원본에 대한 요청 하나가 걸릴 수 있는 시간(초)입니다.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>원본에서 가져올 수 있는 가장 큰 파일의 크기(바이트)입니다.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>이 횟수만큼 연속 실패하면 원본을 일시 중지합니다.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>실패하는 원본을 일시 중지하는 기간입니다.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>원본이 일시 중지되면 관리자에게 메일을 보냅니다(최대 한 시간에 한 번).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>한 줄에 이메일 주소 하나. 비워 두면 site.ini의 AdminEmail을 사용합니다.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>원본 설치 %block의 주소입니다. 예: https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>자격 증명이 있는 비밀 값의 이름 또는 env:VARIABLE입니다. 자격 증명 자체는 절대 입력하지 마세요.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(없음)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>기본값: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>여기서 설정됨, 제거하려면 선택</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>상속됨</translation>
     </message>
 </context>
 </TS>

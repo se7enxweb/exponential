@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>درآمد/برآمد</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>تصویر عرف</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>ایس شے لئی بناؤ</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>ذیلی درخت لئی بناؤ</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>ایس شے لئی مڑ بناؤ</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>ذیلی درخت لئی مڑ بناؤ</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>ایس شے لئی ہٹاؤ</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>ذیلی درخت لئی ہٹاؤ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>پرانی سائٹ دا server بلاک: return نال location =، کوئری لئی if ($args)، وائلڈ کارڈ دے طور تے rewrite تے اکلے صفحیاں دا map۔</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>تصویر عرف</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>تصویر عرف اک تصویر دیاں او ناپ بدلیاں تے کٹیاں کاپیاں نیں جیہڑیاں ٹیمپلیٹ وکھاندے نیں۔ ایتھے تسیں ویکھ سکدے او کہ اوہ کیویں بندیاں نیں، ساری سائٹ اتے بلک کم چلا سکدے او، اک تصویر یا سٹیجنگ ماخذ نوں پرکھ سکدے او، چلانے دی تاریخ ویکھ سکدے او تے سیٹنگاں بدل سکدے او۔</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>صفحے دے حصے</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ڈیش بورڈ</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>بلک چلانا</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>پرکھ دے اوزار</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>چلانے دی تاریخ</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>سیٹنگاں</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>تسیں ایتھے سب کجھ ویکھ سکدے او۔ سیٹنگاں بدلن، کم چلان تے فائلاں بنان والے اوزاراں لئی setup/managealiases پالیسی چاہیدی اے۔</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>کیہڑی گل ولے دھیان چاہیدا اے</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Render موڈ: ٹیمپلیٹ صفحہ رینڈر ہون ویلے گم عرف بناندے نیں، پہلاں وانگوں۔ on-demand پتے، پلیس ہولڈر تے پچھوکڑ دے کم ورتے نہیں جاندے۔</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>فارمیٹ گل بات چالو اے، پر ایتھے کوئی کنورٹر WebP نہیں لکھ سکدا۔</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>ایہہ سٹیجنگ انسٹالیشن اے، پر اوندے ماخذ وچ BaseURL نہیں: گم تصویراں نہیں لیائیاں جا سکدیاں۔</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>سٹیجنگ ماخذ لگاتار ناکامیاں پاروں روکیا ہویا اے: گم تصویراں لئی پلیس ہولڈر ملدے نیں جدوں تیکر روک مک نہیں جاندی یا تسیں ایہنوں ری سیٹ نہیں کردے۔</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>سٹیجنگ ماخذ ہنے ناکام ہویا۔ تھلے اوندی آخری غلطی ویکھو۔</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>ایہہ انسٹالیشن پروڈکشن نہیں، پر SyncFrom کسے ماخذ دا ناں نہیں دیندا: کجھ وی نہیں لیایا جاندا۔</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>کم دی قطار (expqueue) موجود نہیں: جیہڑے عرف ویلا لنگھا دیندے نیں اوہ اگلی درخواست بنائے گی، شائع کرن پچھوں اگوں بنانا چھڈیا جاندا اے تے بلک چلانا چھوٹے دائرے تیکر محدود اے۔</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>تصویر عرفاں دے کجھ کم ہمیشہ لئی ناکام ہوئے۔ Setup &gt; کم دی قطار وچ وجہ ویکھو۔</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>بلک چلانا روکیا ہویا اے۔</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>پچھلے 24 گھنٹیاں وچ عرف ناکام ہوئے۔ چلانے دی تاریخ وچ فہرست اے۔</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>دستخطی کنجی اک سال توں پرانی اے۔ ایہنوں بدلن نال پرانے پتے رعایتی مدت تیکر ٹھیک رہندے نیں۔</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>ہجے کوئی دستخطی کنجی نہیں: اوہ پہلے on-demand پتے نال بندی اے۔</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>پچھلے 24 گھنٹے</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>بنے عرف</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>دتے پلیس ہولڈر</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>ناکامیاں</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>سٹیج ہوئیاں فائلاں</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>شروع ہوئے چلانے</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>اڈیک وچ / چلدے کم</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file دیاں آخری %lines لائناں توں گنے ہوئے، جیہڑے %time تیکر جاندے نیں۔</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>موڈ تے پہنچاون</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>موڈ</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>منگن اتے</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>پتے دی شکل</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>پہنچاون</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>درخواست دی سبھ توں لمی اڈیک</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>اکو ویلے کنورژن</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy / %max ہن مصروف</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>فارمیٹ گل بات</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>چالو</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>بند</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>پلیس ہولڈر تے swap سکرپٹ</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>شائع کرن پچھوں اگوں بنانا</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>سائٹ دے عرف</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>فارمیٹ قسماں دے کنورٹر</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>کنورٹر</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>پرکھیا</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>ترجیحی</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ہاں</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>نہیں</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>عرف آپ [ImageConverterSettings] دے کنورٹر بناندے نیں، پہلاں وانگوں؛ ایہہ WebP تے AVIF قسماں لکھدے نیں۔</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>ماحول تے ماخذ</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>ایہہ انسٹالیشن</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(پروڈکشن: کدی نہیں لیاندا)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>ایتھوں لیاندا اے</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>کجھ وی نہیں</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>ماخذ دا پتہ</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>مقرر نہیں</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>سند</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>خفیہ %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>کوئی نہیں</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>حالت</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>کم کر رہیا اے</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time تیکر روکیا ہویا</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>لگاتار ناکامیاں</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count پچھوں روک</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>آخری غلطی</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>آخری کامیابی</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>ناکامیاں ری سیٹ کرو تے ماخذ توں مڑ پچھو</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>کم دی قطار</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>کم دی قسم</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>اڈیک وچ</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>چل رہیا اے</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>رجسٹر نہیں</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>کم دی قطار موجود نہیں۔</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>بلک چلانا روکیا ہویا</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time توں %user ولوں</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>بلک چلانا چل سکدا اے</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>دستخطی کنجی</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>کنجی</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>خفیہ ذخیرے وچ</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ہجے کوئی نہیں</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>عمر</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days دن (%time توں)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>پچھلی کنجی</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time تیکر ٹھیک</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>کنجی بدلو</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>موجودہ کنجی نال دستخط ہوئے پتے رعایتی مدت (SigningKeyGrace) تیکر کم کردے رہندے نیں، پھر صفحے مڑ بن تیکر پلیس ہولڈر جواب دیندے نیں۔</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>ہنے بدلو</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>ایہہ کیویں کم کردا اے</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand، render موڈ، سٹیجنگ تے لاگ</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (ڈیفالٹ): صفحہ اوس عرف نوں جیہڑا ہجے نہیں بنیا دستخط ہوئے پتے نال جوڑدا اے۔ پہلی درخواست اوہنوں سبھ توں لمی اڈیک وچ بناندی اے، نہیں تے غیر جانبدار پلیس ہولڈر دیندی اے تے اک کم کم مکاندا اے؛ تصویر تیار ہون اتے swap سکرپٹ پلیس ہولڈر بدل دیندا اے۔</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render موڈ: ٹیمپلیٹ صفحہ رینڈر ہون ویلے عرف بناندا اے، پہلاں وانگوں۔ دوہاں وچ کدی وی بدلو؛ کجھ وی مائیگریٹ کرن دی لوڑ نہیں۔</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>سٹیجنگ انسٹالیشن اپنے ماخذ توں اوہ اصل تے عرف لیاندی اے جیہڑے اوہدے کول نہیں؛ ناکام ماخذ لگاتار ناکامیاں پچھوں روکیا جاندا اے تے منتظماں نوں گھنٹے وچ اک ای میل ملدی اے۔</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>بلک چلانا تے شائع کرن پچھوں اگوں بنانا کم دی قطار دے کم نیں، گاہکاں توں گھٹ ترجیح نال۔ عرف ہٹاون نال Velocity دا response cache وی صاف ہندا اے، تاں جے ہٹائی فائل اوہدے وچوں نہ دتی جائے۔</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>ہر بنیا عرف، دتا پلیس ہولڈر، سٹیج ہوئی فائل تے چلانا %file دی اک لائن اے۔ کمانڈ لائن وچ ایہو اوزار نیں: %command۔</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>کم %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%total وچوں %done تصویراں</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>چلانا</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>دائرہ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نتیجہ</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>ایہہ کم منسوخ کرو</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>کم %job تصویر عرفاں دا کم نہیں، یا اوہ قطار وچوں ہٹا دتا گیا۔</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>چلانے %run دا نتیجہ</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>بلک چلانا روکیا ہویا اے</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time توں %user ولوں روکیا۔</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>روک ہر بلک چلانے نوں اوندی موجودہ تصویر پچھوں ہر سرور اتے روکدی اے؛ قطار وچ چلانے اڈیکدے نیں۔ گاہکاں دے عرف ہجے وی بندے نیں۔</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>بلک چلانا مڑ شروع کرو</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>وجہ (اختیاری)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>بلک چلانا روکو</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>چلانا شروع کرو</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>چلانے کم دی قطار دے کم نیں: تسیں صفحہ چھڈ کے مڑ آ سکدے او۔</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>کم دی قطار بنا چلانا ایس درخواست وچ ہندا اے، زیادہ توں زیادہ %count تصویراں لئی۔</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>کارروائی</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: جیہڑے عرف گم نیں اوہ بناؤ</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: ہٹاؤ تے مڑ بناؤ</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: ہٹاؤ (منگن اتے مڑ بنن گے)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: فائلاں سٹیجنگ ماخذ توں لیاؤ</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(صرف سٹیجنگ انسٹالیشن اتے)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>ساری سائٹ</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>اک نوڈ</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>اک نوڈ تے اوندا ذیلی درخت</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>نوڈ ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>کلاساں</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>خاصیتاں</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>بدلیا ہویا توں</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>اک تاریخ (2026-11-01) یا لنگھیا ویلا (12 گھنٹے، 2 دن)۔</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>زیادہ توں زیادہ تصویراں</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>عرف (کوئی نہیں چنیا: سبھ)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Dry run: صرف گنو (resync ماخذ جانچدا اے تے کجھ محفوظ نہیں کردا)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>فرق والیاں فائلاں اتے لکھو (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>چلانا شروع کرو</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>تازہ چلانے</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>کم</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>پیش رفت</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>قطار وچ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>کارروائیاں</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>رد کرو</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>ہجے کوئی بلک چلانا یا resync نہیں۔</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>اک تصویر</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>اوہ پتے جیہڑے ٹیمپلیٹ نوں ہن ملدے نیں، ہر عرف لئی گنے سائز تے قسماں، تے کیہ ہر فائل موجود اے۔</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>ایدھے مطابق لبھو</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>آبجیکٹ ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>وکھاؤ</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>تسیں ایہہ آبجیکٹ پڑھ نہیں سکدے۔</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>ایس آبجیکٹ وچ تصویر نہیں۔</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>ایس ID والا کوئی آبجیکٹ نہیں۔</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>آبجیکٹ %object، نوڈ %node، ورژن %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>اصل: %width x %height، %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>فائل موجود اے</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>فائل گم اے</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name دے عرف</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>عرف</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>سائز</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>قسم</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>فائل</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>فارمیٹ</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>ٹیمپلیٹ وچ پتہ</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>موجود</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>گم</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ایس قسم لئی نہیں</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>جانچو</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>بناؤ</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>ایس خانے وچ تصویر نہیں۔</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ویلا</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>ماخذ نال جوڑ</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>سٹیجنگ ماخذ ولوں HEAD درخواست، اوندی سند نال جے کوئی ناں دتا ہووے۔ سند بھیجی جاندی اے، کدی وکھائی نہیں جاندی۔</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>ماخذ</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>سند نال</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>ذخیرے دا راستہ (اختیاری)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>جوڑ پرکھو</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>کسے ماخذ وچ BaseURL نہیں۔ ماخذ سیٹنگاں وچ مقرر ہندے نیں ([AliasSource_&lt;environment&gt;])۔</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>پہنچ وچ</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>رد کیتا: سند جانچو</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>ماخذ اتے نہیں لبھیا</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>جواب نہیں</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>ویلا مک گیا</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>ریڈائریکٹ ہویا (پچھے نہیں گیا)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL نہیں</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>ذخیرے دا راستہ نہیں</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>پتہ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>سٹیٹس</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>بھیجیا گیا</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>خفیہ گم اے</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>خفیہ user:password یا Bearer &lt;token&gt; نہیں</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file دیاں تازہ لائناں، تازہ پہلاں۔</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Setup &gt; لاگ فائلاں</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>واقعہ</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>سارے واقعے</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>چلانے (شروع تے انت)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>راستے وچ شامل اے</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>لائناں</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>فلٹر</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>پچھا کرو: نویاں لائناں لکھیاں جان نال وکھاؤ</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>راستہ تے تفصیل</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>لاگ دی کوئی لائن نہیں ملدی۔</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>محفوظ کرن نال کیہ بدلے گا</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>کیہ بدلیا گیا</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php وچ محفوظ ہویا، ایس لئی ایتھوں دی قدر ہر siteaccess اتے بھاری رہندی اے۔ وکھائیاں قدراں ایس siteaccess لئی لاگو نیں۔ محفوظ کرن توں پہلاں تہاڈی پچھان دی تصدیق منگی جاوے گی۔</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>عرف کیویں بندے تے پہنچائے جاندے نیں۔</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>گم تصویراں کسے ہور انسٹالیشن توں لیاؤنا (alpha, dev, beta, stage, pro, post, arc)۔ پروڈکشن (pro) کدی نہیں لیاندا۔</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>سیٹنگ</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>قدر</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override وچ</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>ہر ماخذ دا پتہ تے اوس خفیہ دا ناں جیدے وچ اوندی سند اے (user:password یا Bearer &lt;token&gt;)۔ خفیہ دی قدر Setup &gt; خفیہ معلومات وچ مقرر ہندی اے تے ایتھے کدی نہیں وکھائی جاندی۔</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>تبدیلیاں پہلاں ویکھو</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>محفوظ کرو</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>پچھا کر رہیا اے: %time نوں تازہ کیتا</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>روکیا</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>فیڈ جواب نہیں دتا؛ مڑ کوشش کر رہیا اے۔</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>کم مک گیا اے۔</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: ٹیمپلیٹ نوں پتہ ملدا اے، عرف اوس ویلے بندا اے جدوں منگیا جاوے۔ render: ٹیمپلیٹ ایہنوں صفحہ رینڈر ہون ویلے بناندا اے (اصل رویہ)۔</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>ہجے نہ بنے عرف دا پتہ: token (دستخط ہویا، ڈیٹابیس دی لوڑ نہیں)، ids-token، ids، node یا storage۔</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: فائل ولے ریڈائریکٹ جدوں ویب سرور سٹوریج دیندا اے، نہیں تے فائل سٹریم ہندی اے۔</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>سیکنڈ جیہڑے اک درخواست عرف بنان یا لیاون وچ لا سکدی اے؛ پھر اوہ پلیس ہولڈر دیندی اے تے اک کم کم مکاندا اے۔</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP تے AVIF قسماں لئی پہلاں پرکھیا جان والا کنورٹر۔</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>اوہناں براؤزراں نوں WebP یا AVIF دیو جیہڑے منگدے نیں، اوہناں عرفاں لئی جیہڑے Formats[] دسدے نیں۔</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>تصویر گم ہون ویلے صحیح سائز دی غیر جانبدار تصویر۔</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>اک چھوٹی سکرپٹ جیہڑی تصویر تیار ہون اتے پلیس ہولڈر نوں اصل تصویر نال بدل دیندی اے۔</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>شائع کرن پچھوں اک کم ہر متعلقہ siteaccess لئی نویاں تصویراں دے عرف بناندا اے۔</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>اک سرور اتے اکو ویلے کنورژن۔</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>بلک چلانیاں دی پروسیس ترجیح (nice)، 0 توں 19۔</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>سیکنڈ جنہاں تیکر براؤزر تے کیش بنایا عرف رکھ سکدے نیں۔</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>سیکنڈ جنہاں تیکر مسودے یا پریویو تصویر دا پتہ ٹھیک رہندا اے۔</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>سیکنڈ جنہاں تیکر بدلن پچھوں پچھلی دستخطی کنجی ٹھیک رہندی اے۔</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>ایس انسٹالیشن دا ماحول۔</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>اوہ ماحول جتھوں گم تصویراں لیاندیاں جاندیاں نیں؛ none: کجھ نہیں لیایا جاندا۔</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>ہر لائن وچ اک: مقامی سٹوریج سابقہ;ماخذ سابقہ یا پتہ، اوہناں سٹوریج راستیاں لئی جیہڑے فرق نیں۔</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>سیکنڈ جنہاں تیکر ماخذ ولے اک درخواست لگ سکدی اے۔</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>ماخذ توں لیتی جان والی سبھ توں وڈی فائل، بائٹس وچ۔</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>لگاتار ناکامیاں جنہاں پچھوں ماخذ روکیا جاندا اے۔</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>ناکام ماخذ کنی دیر لئی روکیا جاندا اے۔</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>جدوں ماخذ روکیا جاوے تے منتظماں نوں میل بھیجو (گھنٹے وچ زیادہ توں زیادہ اک وار)۔</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>ہر لائن وچ اک ای میل پتہ؛ خالی: site.ini دا AdminEmail۔</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>ماخذ انسٹالیشن %block دا پتہ، جیویں https://www.example.org۔</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>اوس خفیہ دا ناں جیدے وچ سند اے، یا env:VARIABLE۔ کدی وی خود سند نہیں۔</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(کوئی نہیں)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>ڈیفالٹ: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>ایتھے مقرر کیتا؛ ہٹاون لئی نشان لاؤ</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>ورثے وچ ملیا</translation>
     </message>
 </context>
 </TS>

@@ -16588,6 +16588,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>ഇറക്കുമതി/കയറ്റുമതി</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>ചിത്ര അപരനാമങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>ഈ ഇനത്തിനായി നിർമ്മിക്കുക</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>ഉപവൃക്ഷത്തിനായി നിർമ്മിക്കുക</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>ഈ ഇനത്തിനായി വീണ്ടും നിർമ്മിക്കുക</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>ഉപവൃക്ഷത്തിനായി വീണ്ടും നിർമ്മിക്കുക</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>ഈ ഇനത്തിനായി നീക്കം ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>ഉപവൃക്ഷത്തിനായി നീക്കം ചെയ്യുക</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86420,6 +86448,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>ഒരു പഴയ സൈറ്റിന്റെ server ബ്ലോക്ക്: return ഉള്ള location =, ക്വറിക്കായി if ($args), വൈൽഡ്കാർഡായി rewrite, ഒറ്റ പേജുകളുടെ ഒരു map.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>ചിത്ര അപരനാമങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>ടെംപ്ലേറ്റുകൾ കാണിക്കുന്ന ഒരു ചിത്രത്തിന്റെ വലുപ്പം മാറ്റിയതും മുറിച്ചതുമായ പകർപ്പുകളാണ് ചിത്ര അപരനാമങ്ങൾ. ഇവ എങ്ങനെ നിർമ്മിക്കപ്പെടുന്നുവെന്ന് ഇവിടെ കാണാം, സൈറ്റിലുടനീളം ബൾക്ക് ജോബുകൾ പ്രവർത്തിപ്പിക്കാം, ഒരു ചിത്രമോ സ്റ്റേജിംഗ് ഉറവിടമോ പരീക്ഷിക്കാം, റൺ ചരിത്രം പിന്തുടരാം, ക്രമീകരണങ്ങൾ മാറ്റാം.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>പേജിന്റെ ഭാഗങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ഡാഷ്ബോർഡ്</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>ബൾക്ക് റണ്ണുകൾ</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>പരിശോധനാ ഉപകരണങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>റൺ ചരിത്രം</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ക്രമീകരണങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>ഇവിടെ എല്ലാം കാണാം. ക്രമീകരണങ്ങൾ മാറ്റാനും ജോബുകൾ പ്രവർത്തിപ്പിക്കാനും ഫയലുകൾ നിർമ്മിക്കുന്ന ഉപകരണങ്ങൾക്കും setup/managealiases പോളിസി ആവശ്യമാണ്.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>ശ്രദ്ധ ആവശ്യമുള്ളവ</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>render മോഡ്: പഴയതുപോലെ പേജ് റെൻഡർ ചെയ്യുമ്പോൾ ടെംപ്ലേറ്റുകൾ ഇല്ലാത്ത അപരനാമങ്ങൾ നിർമ്മിക്കുന്നു. on-demand വിലാസങ്ങൾ, പ്ലേസ്ഹോൾഡറുകൾ, പശ്ചാത്തല ജോബുകൾ എന്നിവ ഉപയോഗിക്കുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>ഫോർമാറ്റ് ചർച്ച ഓണാണ്, പക്ഷേ ഇവിടെയുള്ള ഒരു കൺവെർട്ടറിനും WebP എഴുതാൻ കഴിയില്ല.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>ഇതൊരു സ്റ്റേജിംഗ് ഇൻസ്റ്റാളേഷനാണ്, പക്ഷേ അതിന്റെ ഉറവിടത്തിന് BaseURL ഇല്ല: ഇല്ലാത്ത ചിത്രങ്ങൾ കൊണ്ടുവരാൻ കഴിയില്ല.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>തുടർച്ചയായ പരാജയങ്ങൾക്കു ശേഷം സ്റ്റേജിംഗ് ഉറവിടം താൽക്കാലികമായി നിർത്തി: ഇടവേള തീരുന്നതുവരെ അല്ലെങ്കിൽ നിങ്ങൾ റീസെറ്റ് ചെയ്യുന്നതുവരെ ഇല്ലാത്ത ചിത്രങ്ങൾക്ക് പ്ലേസ്ഹോൾഡറുകൾ ലഭിക്കും.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>സ്റ്റേജിംഗ് ഉറവിടം അടുത്തിടെ പരാജയപ്പെട്ടു. അതിന്റെ അവസാന പിശക് താഴെ കാണുക.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>ഈ ഇൻസ്റ്റാളേഷൻ പ്രൊഡക്ഷൻ അല്ല, പക്ഷേ SyncFrom ഒരു ഉറവിടവും നൽകിയിട്ടില്ല: ഒന്നും കൊണ്ടുവരുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>ജോബ് ക്യൂ (expqueue) ലഭ്യമല്ല: സമയം തെറ്റുന്ന അപരനാമങ്ങൾ അടുത്ത അഭ്യർത്ഥന നിർമ്മിക്കും, പ്രസിദ്ധീകരണത്തിനു ശേഷമുള്ള മുൻകൂർ നിർമ്മാണം ഒഴിവാക്കും, ബൾക്ക് റണ്ണുകൾ ചെറിയ പരിധികളിൽ ഒതുങ്ങും.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>ചിത്ര അപരനാമങ്ങളുടെ ചില ജോബുകൾ സ്ഥിരമായി പരാജയപ്പെട്ടു. കാരണം Setup &gt; ജോബ് ക്യൂ കാണിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>ബൾക്ക് റണ്ണുകൾ താൽക്കാലികമായി നിർത്തി.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>കഴിഞ്ഞ 24 മണിക്കൂറിൽ അപരനാമങ്ങൾ പരാജയപ്പെട്ടു. റൺ ചരിത്രം അവ പട്ടികപ്പെടുത്തുന്നു.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>സൈനിംഗ് കീ ഒരു വർഷത്തിലേറെ പഴക്കമുള്ളതാണ്. ഇത് മാറ്റിയാൽ പഴയ വിലാസങ്ങൾ ഗ്രേസ് കാലയളവു വരെ സാധുവായി തുടരും.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>ഇതുവരെ സൈനിംഗ് കീ ഇല്ല: ആദ്യത്തെ on-demand വിലാസത്തോടൊപ്പം അത് നിർമ്മിക്കപ്പെടും.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>കഴിഞ്ഞ 24 മണിക്കൂർ</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>നിർമ്മിച്ച അപരനാമങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>മറുപടി നൽകിയ പ്ലേസ്ഹോൾഡറുകൾ</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>പരാജയങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>സ്റ്റേജ് ചെയ്ത ഫയലുകൾ</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>ആരംഭിച്ച റണ്ണുകൾ</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>കാത്തിരിക്കുന്ന / പ്രവർത്തിക്കുന്ന ജോബുകൾ</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file ന്റെ അവസാന %lines വരികളിൽ നിന്ന് എണ്ണിയത്, ഇവ %time വരെ പിന്നോട്ട് പോകുന്നു.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>മോഡും വിതരണവും</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>മോഡ്</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>on demand</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>വിലാസ രൂപം</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>വിതരണം</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>ഒരു അഭ്യർത്ഥനയുടെ പരമാവധി കാത്തിരിപ്പ്</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>ഒരേസമയത്തെ പരിവർത്തനങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>ഇപ്പോൾ %max ൽ %busy തിരക്കിൽ</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>ഫോർമാറ്റ് ചർച്ച</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ഓൺ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ഓഫ്</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>പ്ലേസ്ഹോൾഡറും സ്വാപ്പ് സ്ക്രിപ്റ്റും</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>പ്രസിദ്ധീകരണത്തിനു ശേഷമുള്ള മുൻകൂർ നിർമ്മാണം</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>സൈറ്റിന്റെ അപരനാമങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>ഫോർമാറ്റ് വകഭേദങ്ങളുടെ കൺവെർട്ടറുകൾ</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>കൺവെർട്ടർ</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>ശ്രമിച്ചത്</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>ഇഷ്ടപ്പെട്ടത്</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>അതെ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ഇല്ല</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>അപരനാമങ്ങൾ പഴയതുപോലെ [ImageConverterSettings] ലെ കൺവെർട്ടറുകൾ തന്നെ നിർമ്മിക്കുന്നു; ഇവ WebP, AVIF വകഭേദങ്ങൾ എഴുതുന്നു.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>പരിസ്ഥിതിയും ഉറവിടവും</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>ഈ ഇൻസ്റ്റാളേഷൻ</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(പ്രൊഡക്ഷൻ: ഒരിക്കലും കൊണ്ടുവരില്ല)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>ഇവിടെ നിന്ന് കൊണ്ടുവരുന്നു</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>ഒന്നുമില്ല</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>ഉറവിട വിലാസം</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>സജ്ജമാക്കിയിട്ടില്ല</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>ക്രെഡൻഷ്യൽ</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>രഹസ്യം %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ഒന്നുമില്ല</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>നില</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>പ്രവർത്തിക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time വരെ താൽക്കാലികമായി നിർത്തി</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>പരാജയപ്പെടുന്നു</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>തുടർച്ചയായ പരാജയങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count ന് ശേഷം താൽക്കാലികമായി നിർത്തും</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>അവസാന പിശക്</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>അവസാന വിജയം</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>പരാജയങ്ങൾ പുനഃസജ്ജമാക്കി ഉറവിടത്തോട് വീണ്ടും ചോദിക്കുക</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>ജോബ് ക്യൂ</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>ജോബ് തരം</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>കാത്തിരിക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>പ്രവർത്തിക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>പരാജയപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>രജിസ്റ്റർ ചെയ്തിട്ടില്ല</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>ജോബ് ക്യൂ ലഭ്യമല്ല.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>ബൾക്ക് റണ്ണുകൾ താൽക്കാലികമായി നിർത്തി</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time മുതൽ %user മുഖേന</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>ബൾക്ക് റണ്ണുകൾ പ്രവർത്തിക്കാം</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>സൈനിംഗ് കീ</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>കീ</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>രഹസ്യ സംഭരണിയിൽ</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ഇതുവരെ ഇല്ല</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>പ്രായം</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days ദിവസം (%time മുതൽ)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>മുൻ കീ</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time വരെ സാധുവാണ്</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>കീ മാറ്റുക</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>നിലവിലെ കീ ഉപയോഗിച്ച് ഒപ്പിട്ട വിലാസങ്ങൾ ഗ്രേസ് കാലയളവിൽ (SigningKeyGrace) പ്രവർത്തിക്കും, പിന്നീട് പേജുകൾ വീണ്ടും നിർമ്മിക്കുന്നതുവരെ അവ പ്ലേസ്ഹോൾഡറുകൾ നൽകും.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>ഇപ്പോൾ മാറ്റുക</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>ഇത് എങ്ങനെ പ്രവർത്തിക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render മോഡ്, സ്റ്റേജിംഗ്, ലോഗ്</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (സ്ഥിരസ്ഥിതി): ഒരു പേജ് ഇതുവരെ ഇല്ലാത്ത അപരനാമത്തെ ഒപ്പിട്ട വിലാസത്തിലേക്ക് ലിങ്ക് ചെയ്യുന്നു. ആദ്യ അഭ്യർത്ഥന പരമാവധി കാത്തിരിപ്പിനുള്ളിൽ അത് നിർമ്മിക്കുന്നു, അല്ലെങ്കിൽ നിഷ്പക്ഷ പ്ലേസ്ഹോൾഡർ നൽകുകയും ഒരു ജോബ് ജോലി പൂർത്തിയാക്കുകയും ചെയ്യുന്നു; ചിത്രം തയ്യാറായാൽ സ്വാപ്പ് സ്ക്രിപ്റ്റ് പ്ലേസ്ഹോൾഡറിനു പകരം വയ്ക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render മോഡ്: പഴയതുപോലെ പേജ് റെൻഡർ ചെയ്യുമ്പോൾ ടെംപ്ലേറ്റ് അപരനാമം നിർമ്മിക്കുന്നു. രണ്ടിനുമിടയിൽ എപ്പോൾ വേണമെങ്കിലും മാറാം; ഒന്നും മൈഗ്രേറ്റ് ചെയ്യേണ്ടതില്ല.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>ഒരു സ്റ്റേജിംഗ് ഇൻസ്റ്റാളേഷൻ തനിക്കില്ലാത്ത ഒറിജിനലുകളും അപരനാമങ്ങളും സ്വന്തം ഉറവിടത്തിൽ നിന്ന് കൊണ്ടുവരുന്നു; പരാജയപ്പെടുന്ന ഉറവിടം തുടർച്ചയായ പരാജയങ്ങൾക്കു ശേഷം താൽക്കാലികമായി നിർത്തും, അഡ്മിനിസ്ട്രേറ്റർമാർക്ക് മണിക്കൂറിൽ പരമാവധി ഒരു ഇ-മെയിൽ ലഭിക്കും.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>ബൾക്ക് റണ്ണുകളും പ്രസിദ്ധീകരണത്തിനു ശേഷമുള്ള മുൻകൂർ നിർമ്മാണവും ജോബ് ക്യൂവിലെ ജോബുകളാണ്, സന്ദർശകരേക്കാൾ കുറഞ്ഞ മുൻഗണനയോടെ. അപരനാമങ്ങൾ നീക്കം ചെയ്യുമ്പോൾ Velocity യുടെ പ്രതികരണ കാഷെയും ക്ലിയർ ചെയ്യപ്പെടുന്നു, അതിനാൽ നീക്കിയ ഫയൽ അതിൽ നിന്ന് നൽകില്ല.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>നിർമ്മിച്ച ഓരോ അപരനാമവും, മറുപടി നൽകിയ ഓരോ പ്ലേസ്ഹോൾഡറും, സ്റ്റേജ് ചെയ്ത ഓരോ ഫയലും, ഓരോ റണ്ണും %file ലെ ഒരു വരിയാണ്. കമാൻഡ് ലൈനിലും ഇതേ ഉപകരണങ്ങളുണ്ട്: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>ജോബ് %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%total ചിത്രങ്ങളിൽ %done</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>റൺ</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>വ്യാപ്തി</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ഫലം</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>ഈ ജോബ് റദ്ദാക്കുക</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>ജോബ് %job ചിത്ര അപരനാമങ്ങളുടെ ജോബ് അല്ല, അല്ലെങ്കിൽ അത് ക്യൂവിൽ നിന്ന് നീക്കം ചെയ്തു.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>റൺ %run ന്റെ ഫലം</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>ബൾക്ക് റണ്ണുകൾ താൽക്കാലികമായി നിർത്തി</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time മുതൽ %user താൽക്കാലികമായി നിർത്തി.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>ഒരു ഇടവേള ഓരോ ബൾക്ക് റണ്ണിനെയും അതിന്റെ നിലവിലെ ചിത്രത്തിനു ശേഷം, എല്ലാ സെർവറുകളിലും നിർത്തുന്നു; ക്യൂവിലുള്ള റണ്ണുകൾ കാത്തിരിക്കുന്നു. സന്ദർശകരുടെ അപരനാമങ്ങൾ അപ്പോഴും നിർമ്മിക്കപ്പെടും.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>ബൾക്ക് റണ്ണുകൾ പുനരാരംഭിക്കുക</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>കാരണം (ഓപ്ഷണൽ)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>ബൾക്ക് റണ്ണുകൾ താൽക്കാലികമായി നിർത്തുക</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>ഒരു റൺ ആരംഭിക്കുക</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>റണ്ണുകൾ ജോബ് ക്യൂവിലെ ജോബുകളാണ്: നിങ്ങൾക്ക് പേജ് വിട്ട് തിരികെ വരാം.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>ജോബ് ക്യൂ ഇല്ലാതെ ഒരു റൺ ഈ അഭ്യർത്ഥനയിൽ തന്നെ, പരമാവധി %count ചിത്രങ്ങൾക്കായി ചെയ്യുന്നു.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>പ്രവൃത്തി</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: ഇല്ലാത്ത അപരനാമങ്ങൾ നിർമ്മിക്കുക</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: നീക്കി വീണ്ടും നിർമ്മിക്കുക</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: അവ നീക്കുക (on-demand വീണ്ടും നിർമ്മിക്കും)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: സ്റ്റേജിംഗ് ഉറവിടത്തിൽ നിന്ന് ഫയലുകൾ കൊണ്ടുവരിക</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(ഒരു സ്റ്റേജിംഗ് ഇൻസ്റ്റാളേഷനിൽ മാത്രം)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>മുഴുവൻ സൈറ്റ്</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>ഒരു നോഡ്</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>ഒരു നോഡും അതിന്റെ ഉപവൃക്ഷവും</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>നോഡ് ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>ക്ലാസുകൾ</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>ആട്രിബ്യൂട്ടുകൾ</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>ഇതിനു ശേഷം മാറിയവ</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>ഒരു തീയതി (2026-11-01) അല്ലെങ്കിൽ എത്ര മുമ്പ് (12 മണിക്കൂർ, 2 ദിവസം).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>പരമാവധി ചിത്രങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>അപരനാമങ്ങൾ (ഒന്നും തിരഞ്ഞെടുത്തില്ലെങ്കിൽ: എല്ലാം)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>ഡ്രൈ റൺ: എണ്ണുക മാത്രം (resync ഉറവിടം പരിശോധിക്കുന്നു, ഒന്നും സംഭരിക്കുന്നില്ല)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>വ്യത്യസ്തമായ ഫയലുകൾ മേലെഴുതുക (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>റൺ ആരംഭിക്കുക</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>ഏറ്റവും പുതിയ റണ്ണുകൾ</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>ജോബ്</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>പുരോഗതി</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>ക്യൂവിൽ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>പ്രവൃത്തികൾ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>റദ്ദാക്കുക</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>ഇതുവരെ ബൾക്ക് റണ്ണോ resync ഓ ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>ഒരു ചിത്രം</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>ഒരു ടെംപ്ലേറ്റിന് ഇപ്പോൾ ലഭിക്കുന്ന വിലാസങ്ങൾ, ഓരോ അപരനാമത്തിനും കണക്കാക്കിയ വലുപ്പങ്ങളും തരങ്ങളും, ഓരോ ഫയലും ഉണ്ടോ എന്നതും.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>ഇതുപയോഗിച്ച് തിരയുക</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ഒബ്ജക്റ്റ് ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>കാണിക്കുക</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>ഈ ഒബ്ജക്റ്റ് വായിക്കാൻ നിങ്ങൾക്ക് അനുമതിയില്ല.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>ഈ ഒബ്ജക്റ്റിന് ചിത്രമില്ല.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>ഈ ID യുള്ള ഒബ്ജക്റ്റ് ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>ഒബ്ജക്റ്റ് %object, നോഡ് %node, പതിപ്പ് %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>ഒറിജിനൽ: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>ഫയൽ ഉണ്ട്</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>ഫയൽ ഇല്ല</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name ന്റെ അപരനാമങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>അപരനാമം</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>വലുപ്പം</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>തരം</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ഫയൽ</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>ഫോർമാറ്റുകൾ</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>ടെംപ്ലേറ്റിലെ വിലാസം</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>ഉണ്ട്</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>ഇല്ല</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ഈ തരത്തിന് ബാധകമല്ല</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>പരിശോധിക്കുക</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>നിർമ്മിക്കുക</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>ഈ ഫീൽഡിൽ ചിത്രമില്ല.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>സമയം</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>ഒരു ഉറവിടത്തിലേക്കുള്ള കണക്ഷൻ</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>ഒരു സ്റ്റേജിംഗ് ഉറവിടത്തിലേക്കുള്ള HEAD അഭ്യർത്ഥന, പേരു നൽകിയിട്ടുണ്ടെങ്കിൽ അതിന്റെ ക്രെഡൻഷ്യലോടെ. ക്രെഡൻഷ്യൽ അയയ്ക്കുന്നു, ഒരിക്കലും കാണിക്കുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>ഉറവിടം</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>ക്രെഡൻഷ്യലോടെ</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>storage പാത്ത് (ഓപ്ഷണൽ)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>കണക്ഷൻ പരീക്ഷിക്കുക</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>ഒരു ഉറവിടത്തിനും BaseURL ഇല്ല. ഉറവിടങ്ങൾ ക്രമീകരണങ്ങളിൽ സജ്ജമാക്കുന്നു ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>എത്തിച്ചേരാം</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>നിരസിച്ചു: ക്രെഡൻഷ്യൽ പരിശോധിക്കുക</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>ഉറവിടത്തിൽ കണ്ടെത്തിയില്ല</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>മറുപടിയില്ല</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>സമയം കഴിഞ്ഞു</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>റീഡയറക്ട് ചെയ്തു (പിന്തുടർന്നില്ല)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL ഇല്ല</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>storage പാത്ത് അല്ല</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>വിലാസം</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>നില</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>അയച്ചു</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>രഹസ്യം ഇല്ല</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>രഹസ്യം user:password അല്ലെങ്കിൽ Bearer &lt;token&gt; അല്ല</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file ന്റെ ഏറ്റവും പുതിയ വരികൾ, പുതിയത് ആദ്യം.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Setup &gt; ലോഗ് ഫയലുകൾ</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>സംഭവം</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>എല്ലാ സംഭവങ്ങളും</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>റണ്ണുകൾ (തുടക്കവും അവസാനവും)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>പാത്തിൽ അടങ്ങിയിരിക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>വരികൾ</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>ഫിൽട്ടർ</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>പിന്തുടരുക: പുതിയ വരികൾ എഴുതുന്നതനുസരിച്ച് കാണിക്കുക</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>പാത്തും വിശദാംശങ്ങളും</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>ലോഗിലെ ഒരു വരിയും യോജിക്കുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>സംരക്ഷിച്ചാൽ എന്ത് മാറും</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>എന്താണ് മാറ്റിയത്</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php ലേക്ക് സംരക്ഷിച്ചു, അതിനാൽ ഇവിടത്തെ മൂല്യം എല്ലാ siteaccess നെയും മറികടക്കുന്നു. കാണിച്ചിരിക്കുന്ന മൂല്യങ്ങൾ ഈ siteaccess ന് പ്രാബല്യത്തിലുള്ളവയാണ്. സംരക്ഷിക്കുമ്പോൾ നിങ്ങൾ ആരാണെന്ന് ആദ്യം സ്ഥിരീകരിക്കാൻ ആവശ്യപ്പെടും.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>അപരനാമങ്ങൾ എങ്ങനെ നിർമ്മിച്ച് വിതരണം ചെയ്യുന്നു.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>ഇല്ലാത്ത ചിത്രങ്ങൾ മറ്റൊരു ഇൻസ്റ്റാളേഷനിൽ നിന്ന് കൊണ്ടുവരുന്നു (alpha, dev, beta, stage, pro, post, arc). പ്രൊഡക്ഷൻ (pro) ഒരിക്കലും കൊണ്ടുവരില്ല.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>ക്രമീകരണം</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>മൂല്യം</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override ൽ</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>ഓരോ ഉറവിടത്തിന്റെയും വിലാസവും അതിന്റെ ക്രെഡൻഷ്യൽ സൂക്ഷിക്കുന്ന രഹസ്യത്തിന്റെ പേരും (user:password അല്ലെങ്കിൽ Bearer &lt;token&gt;). രഹസ്യത്തിന്റെ മൂല്യം Setup &gt; രഹസ്യങ്ങൾ ൽ സജ്ജമാക്കുന്നു, ഇവിടെ ഒരിക്കലും കാണിക്കില്ല.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>മാറ്റങ്ങളുടെ പ്രിവ്യൂ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>സംരക്ഷിക്കുക</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>പിന്തുടരുന്നു: %time ന് പുതുക്കി</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>താൽക്കാലികമായി നിർത്തി</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>ഫീഡ് മറുപടി നൽകിയില്ല; വീണ്ടും ശ്രമിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>ജോബ് അവസാനിച്ചു.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: ടെംപ്ലേറ്റുകൾക്ക് വിലാസം ലഭിക്കുന്നു, ആവശ്യപ്പെടുമ്പോൾ അപരനാമം നിർമ്മിക്കുന്നു. render: പേജ് റെൻഡർ ചെയ്യുമ്പോൾ ടെംപ്ലേറ്റ് അത് നിർമ്മിക്കുന്നു (യഥാർത്ഥ പെരുമാറ്റം).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>ഇതുവരെ നിർമ്മിക്കാത്ത അപരനാമത്തിന്റെ വിലാസം: token (ഒപ്പിട്ടത്, ഡാറ്റാബേസ് ആവശ്യമില്ല), ids-token, ids, node അല്ലെങ്കിൽ storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: വെബ് സെർവർ storage നൽകുന്നുവെങ്കിൽ ഫയലിലേക്ക് റീഡയറക്ട്, അല്ലെങ്കിൽ ഫയൽ സ്ട്രീം ചെയ്യുന്നു.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>ഒരു അപരനാമം നിർമ്മിക്കാനോ കൊണ്ടുവരാനോ ഒരു അഭ്യർത്ഥന ചെലവഴിക്കാവുന്ന സെക്കൻഡുകൾ; പിന്നീട് അത് പ്ലേസ്ഹോൾഡർ നൽകുകയും ഒരു ജോബ് ജോലി പൂർത്തിയാക്കുകയും ചെയ്യുന്നു.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP, AVIF വകഭേദങ്ങൾക്കായി ആദ്യം പരീക്ഷിക്കുന്ന കൺവെർട്ടർ.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Formats[] പട്ടികപ്പെടുത്തുന്ന അപരനാമങ്ങൾക്ക്, ആവശ്യപ്പെടുന്ന ബ്രൗസറുകൾക്ക് WebP അല്ലെങ്കിൽ AVIF നൽകുക.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>ഒരു ചിത്രം ഇല്ലാത്തപ്പോൾ ശരിയായ വലുപ്പത്തിലുള്ള നിഷ്പക്ഷ ചിത്രം.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>ചിത്രം ലഭ്യമാകുമ്പോൾ പ്ലേസ്ഹോൾഡറുകൾക്കു പകരം യഥാർത്ഥ ചിത്രം വയ്ക്കുന്ന ചെറിയ സ്ക്രിപ്റ്റ്.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>പ്രസിദ്ധീകരണത്തിനു ശേഷം ഒരു ജോബ് ബന്ധപ്പെട്ട ഓരോ siteaccess നും പുതിയ ചിത്രങ്ങളുടെ അപരനാമങ്ങൾ നിർമ്മിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>ഒരു സെർവറിലെ ഒരേസമയത്തെ പരിവർത്തനങ്ങൾ.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>ബൾക്ക് റണ്ണുകളുടെ പ്രോസസ് മുൻഗണന (nice), 0 മുതൽ 19 വരെ.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>നിർമ്മിച്ച അപരനാമം ബ്രൗസറുകൾക്കും കാഷെകൾക്കും സൂക്ഷിക്കാവുന്ന സെക്കൻഡുകൾ.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>ഡ്രാഫ്റ്റ് അല്ലെങ്കിൽ പ്രിവ്യൂ ചിത്രത്തിന്റെ വിലാസം സാധുവായിരിക്കുന്ന സെക്കൻഡുകൾ.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>മാറ്റത്തിനു ശേഷം മുൻ സൈനിംഗ് കീ സാധുവായിരിക്കുന്ന സെക്കൻഡുകൾ.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>ഈ ഇൻസ്റ്റാളേഷന്റെ പരിസ്ഥിതി.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>ഇല്ലാത്ത ചിത്രങ്ങൾ കൊണ്ടുവരുന്ന പരിസ്ഥിതി; none: ഒന്നും കൊണ്ടുവരുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>ഓരോ വരിയിലും ഒന്ന്: പ്രാദേശിക storage പ്രിഫിക്സ്;ഉറവിട പ്രിഫിക്സ് അല്ലെങ്കിൽ വിലാസം, വ്യത്യസ്തമായ storage പാത്തുകൾക്ക്.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>ഉറവിടത്തിലേക്കുള്ള ഒരു അഭ്യർത്ഥനയ്ക്ക് എടുക്കാവുന്ന സെക്കൻഡുകൾ.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>ഉറവിടത്തിൽ നിന്ന് എടുക്കുന്ന ഏറ്റവും വലിയ ഫയൽ, ബൈറ്റുകളിൽ.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>ഇത്രയും തുടർച്ചയായ പരാജയങ്ങൾക്കു ശേഷം ഉറവിടം താൽക്കാലികമായി നിർത്തുന്നു.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>പരാജയപ്പെടുന്ന ഉറവിടം എത്ര സമയം താൽക്കാലികമായി നിർത്തുന്നു.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>ഉറവിടം താൽക്കാലികമായി നിർത്തുമ്പോൾ അഡ്മിനിസ്ട്രേറ്റർമാർക്ക് മെയിൽ അയയ്ക്കുക (മണിക്കൂറിൽ പരമാവധി ഒരിക്കൽ).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>ഓരോ വരിയിലും ഒരു ഇ-മെയിൽ വിലാസം; ശൂന്യം: site.ini ലെ AdminEmail.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>ഉറവിട ഇൻസ്റ്റാളേഷൻ %block ന്റെ വിലാസം, ഉദാ. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>ക്രെഡൻഷ്യൽ ഉള്ള രഹസ്യത്തിന്റെ പേര്, അല്ലെങ്കിൽ env:VARIABLE. ക്രെഡൻഷ്യൽ തന്നെ ഒരിക്കലുമല്ല.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(ഒന്നുമില്ല)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>സ്ഥിരസ്ഥിതി: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>ഇവിടെ സജ്ജമാക്കി; നീക്കം ചെയ്യാൻ ടിക്ക് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>പാരമ്പര്യമായി ലഭിച്ചത്</translation>
     </message>
 </context>
 </TS>

@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>Імпарт/экспарт</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Псеўданімы выяў</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Стварыць для гэтага элемента</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Стварыць для паддрэва</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Стварыць нанова для гэтага элемента</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Стварыць нанова для паддрэва</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Выдаліць для гэтага элемента</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Выдаліць для паддрэва</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Блок server старога сайта: location = з return, if ($args) для запыту, rewrite як падстаноўка і map асобных старонак.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Псеўданімы выяў</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Псеўданімы выяў — гэта памененыя і абрэзаныя копіі выявы, якія паказваюць шаблоны. Тут вы бачыце, як яны ствараюцца, можаце запускаць масавыя заданні для сайта, правяраць адну выяву або часовую крыніцу, сачыць за гісторыяй запускаў і змяняць налады.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Раздзелы старонкі</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Панэль кіравання</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Масавыя запускі</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Інструменты праверкі</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Гісторыя запускаў</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Налады</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Тут можна глядзець усё. Для змены налад, запуску заданняў і інструментаў, якія ствараюць файлы, патрэбна палітыка setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Што патрабуе ўвагі</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Рэжым render: шаблоны ствараюць адсутныя псеўданімы падчас рэндарынгу старонкі, як і раней. Адрасы on-demand, запаўняльнікі і фонавыя заданні не выкарыстоўваюцца.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Ужыванне фарматаў уключана, але ніводзін канвертар тут не ўмее запісваць WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Гэта часовая (staging) устаноўка, але ў яе крыніцы няма BaseURL: адсутныя выявы нельга атрымаць.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Часовая крыніца прыпынена пасля некалькіх збояў запар: пакуль не скончыцца прыпынак або вы яго не скінеце, замест адсутных выяў будуць запаўняльнікі.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Часовая крыніца нядаўна давала збой. Апошнюю памылку глядзіце ніжэй.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Гэта не production-устаноўка, але SyncFrom не называе крыніцу: нічога не атрымліваецца.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Чарга заданняў (expqueue) недаступная: псеўданімы, якія не ўкладаюцца ў час, ствараюцца наступным запытам, папярэдняе стварэнне пасля публікацыі прапускаецца, а масавыя запускі абмежаваныя невялікімі абласцямі.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Некаторыя заданні для псеўданімаў выяў канчаткова не ўдаліся. Прычыну паказвае Канфігурацыя &gt; Чарга заданняў.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Масавыя запускі прыпынены.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Псеўданімы не ўдалося стварыць за апошнія 24 гадзіны. Іх пералічвае гісторыя запускаў.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Ключ подпісу старэйшы за год. Яго замена пакідае старыя адрасы дзейснымі на час водпуску (grace period).</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Ключа подпісу яшчэ няма: ён ствараецца разам з першым адрасам on-demand.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Апошнія 24 гадзіны</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Створана псеўданімаў</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Выдана запаўняльнікаў</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Збоі</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Падрыхтавана файлаў</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Запушчана запускаў</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Заданні ў чарзе / выконваюцца</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Падлічана па апошніх %lines радках файла %file, якія сягаюць да %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Рэжым і выдача</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Рэжым</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>на патрабаванне</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Форма адраса</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Выдача</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Найдаўжэйшае чаканне запыту</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds с</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Адначасовыя пераўтварэнні</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>Занята %busy з %max</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Ужыванне фарматаў</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>укл.</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>выкл.</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Запаўняльнік і скрыпт замены</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Папярэдняе стварэнне пасля публікацыі</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Псеўданімы сайта</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Канвертары варыянтаў фарматаў</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Канвертар</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Спробаваны</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>пераважны</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>так</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>не</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Самі псеўданімы ствараюцца канвертарамі з [ImageConverterSettings], як і раней; гэтыя канвертары запісваюць варыянты WebP і AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Асяроддзе і крыніца</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Гэта ўстаноўка</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production: ніколі нічога не атрымлівае)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Атрымлівае з</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>нічога</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Адрас крыніцы</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>не зададзены</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Уліковыя даныя</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>сакрэт %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>няма</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Стан</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>працуе</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>прыпынена да %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>збоіць</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Збояў запар</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>прыпынак пасля %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Апошняя памылка</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Апошні поспех</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Скінуць збоі і зноў звярнуцца да крыніцы</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Чарга заданняў</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Тып задання</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Чакаюць</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Выконваюцца</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Не ўдалося</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>не зарэгістравана</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Чарга заданняў недаступная.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Масавыя запускі прыпынены</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>з %time, прыпыніў %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Масавыя запускі дазволены</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Ключ подпісу</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Ключ</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>у сховішчы сакрэтаў</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>яшчэ няма</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Узрост</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days дзён (з %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Папярэдні ключ</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>дзейнічае да %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Замяніць ключ</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Адрасы, падпісаныя бягучым ключом, застаюцца дзейснымі на час водпуску (SigningKeyGrace), а потым выдаюць запаўняльнікі, пакуль старонкі не створаны нанова.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Замяніць зараз</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Як гэта працуе</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, рэжым render, staging і журнал</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (па змаўчанні): старонка спасылаецца на яшчэ не створаны псеўданім праз падпісаны адрас. Першы запыт стварае яго за найдаўжэйшае чаканне, інакш выдае нейтральны запаўняльнік, а заданне заканчвае працу; скрыпт замены падмяняе запаўняльнік, калі выява гатова.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Рэжым render: шаблон стварае псеўданім падчас рэндарынгу старонкі, як і раней. Пераключацца паміж імі можна ў любы час; нічога мігрыраваць не трэба.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Часовая (staging) устаноўка атрымлівае з крыніцы арыгіналы і псеўданімы, якіх ёй не стае; крыніца, якая збоіць, прыпыняецца пасля некалькіх збояў запар, і адміністратары атрымліваюць не больш за адзін ліст у гадзіну.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Масавыя запускі і папярэдняе стварэнне пасля публікацыі — гэта заданні чаргі заданняў з ніжэйшым прыярытэтам, чым у наведвальнікаў. Выдаленне псеўданімаў таксама ачышчае кэш адказаў Velocity, каб выдалены файл не выдаваўся з яго.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Кожны створаны псеўданім, выдадзены запаўняльнік, падрыхтаваны файл і запуск — гэта радок у %file. Тыя ж інструменты ёсць у каманднага радка: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Заданне %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done з %total выяў</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Запуск</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Вобласць</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Вынік</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Скасаваць гэта заданне</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Заданне %job не з&apos;яўляецца заданнем для псеўданімаў выяў або яго выдалілі з чаргі.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Вынік запуску %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Масавыя запускі прыпынены</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Прыпынена з %time, прыпыніў %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Прыпынак спыняе кожны масавы запуск пасля бягучай выявы, на кожным серверы; запускі ў чарзе чакаюць. Псеўданімы для наведвальнікаў па-ранейшаму ствараюцца.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Узнавіць масавыя запускі</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Прычына (неабавязкова)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Прыпыніць масавыя запускі</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Пачаць запуск</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Запускі — гэта заданні чаргі заданняў: можна пакінуць старонку і вярнуцца.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Без чаргі заданняў запуск выконваецца ў гэтым запыце, не больш чым для %count выяў.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Дзеянне</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: стварыць адсутныя псеўданімы</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: выдаліць і стварыць іх нанова</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: выдаліць іх (будуць створаны нанова па патрабаванні)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: атрымаць файлы з часовай крыніцы</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(толькі на часовай устаноўцы)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Увесь сайт</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Адзін вузел</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Вузел і яго паддрэва</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID вузла</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Класы</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Атрыбуты</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Зменена пасля</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Дата (2026-11-01) або час таму (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Не больш выяў</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Псеўданімы (нічога не абрана: усе)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Прабны запуск: толькі падлік (resync правярае крыніцу і нічога не захоўвае)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Перазапісаць файлы, якія адрозніваюцца (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Пачаць запуск</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Апошнія запускі</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Заданне</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ход выканання</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>У чарзе</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Дзеянні</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Скасаваць</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Масавых запускаў або resync яшчэ не было.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Адна выява</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Адрасы, якія шаблон атрымлівае зараз, памеры і тыпы, вылічаныя для кожнага псеўданіма, і ці ёсць кожны файл.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Шукаць па</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID аб&apos;екта</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Паказаць</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Вам нельга чытаць гэты аб&apos;ект.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>У гэтага аб&apos;екта няма выявы.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Аб&apos;екта з такім ID няма.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>аб&apos;ект %object, вузел %node, версія %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Арыгінал: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>файл ёсць</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>файла няма</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Псеўданімы для %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Псеўданім</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Памер</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Тып</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Фарматы</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Адрас у шаблоне</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>ёсць</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>адсутнічае</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>не для гэтага тыпу</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Праверыць</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Стварыць</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>У гэтым полі няма выявы.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Час</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms мс</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Злучэнне з крыніцай</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Запыт HEAD да часовай крыніцы з яе ўліковымі данымі, калі яны названы. Уліковыя даныя адпраўляюцца, але ніколі не паказваюцца.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Крыніца</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>з уліковымі данымі</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Шлях у сховішчы (неабавязкова)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Праверыць злучэнне</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Ні ў адной крыніцы няма BaseURL. Крыніцы задаюцца ў наладах ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>даступна</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>адхілена: праверце ўліковыя даныя</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>не знойдзена ў крыніцы</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>няма адказу</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>час чакання скончыўся</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>перанакіравана (не выконваецца)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>няма BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>не шлях у сховішчы</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Адрас</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Статус</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>адпраўлена</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>сакрэт адсутнічае</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>сакрэт не мае выгляд user:password або Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Найноўшыя радкі %file, найноўшыя першымі.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Канфігурацыя &gt; Файлы журналаў</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Падзея</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Усе падзеі</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Запускі (пачатак і канец)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Шлях змяшчае</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Радкоў</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Фільтр</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Сачыць: паказваць новыя радкі па меры запісу</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Шлях і падрабязнасці</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Ні адзін радок журнала не падыходзіць.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Што змяніць захаванне</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Што было зменена</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Захоўваецца ў settings/override/image.ini.append.php, таму значэнне тут мацнейшае за ўсе siteaccess. Паказаны значэнні, якія дзейнічаюць для гэтага siteaccess. Перад захаваннем трэба пацвердзіць, што гэта вы.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Як ствараюцца і выдаюцца псеўданімы.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Атрыманне адсутных выяў з іншай устаноўкі (alpha, dev, beta, stage, pro, post, arc). Production (pro) ніколі нічога не атрымлівае.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Налада</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Значэнне</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>У settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Адрас кожнай крыніцы і імя сакрэту з яе ўліковымі данымі (user:password або Bearer &lt;token&gt;). Значэнне сакрэту задаецца ў Канфігурацыя &gt; Сакрэты і тут ніколі не паказваецца.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Прагледзець змены</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Захаваць</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Сачэнне: абноўлена %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Прыпынена</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Струмень не адказаў; паўтараю спробу.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Заданне скончылася.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: шаблоны атрымліваюць адрас, псеўданім ствараецца, калі яго запытваюць. render: шаблон стварае яго падчас рэндарынгу старонкі (былыя паводзіны).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Адрас яшчэ не створанага псеўданіма: token (падпісаны, без базы даных), ids-token, ids, node або storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: перанакіраванне на файл, калі вэб-сервер аддае сховішча, інакш файл перадаецца патокам.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Секунды, якія запыт можа марнаваць на стварэнне або атрыманне псеўданіма; потым ён выдае запаўняльнік, а заданне заканчвае працу.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Канвертар, які спрабуецца першым для варыянтаў WebP і AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Выдаваць WebP або AVIF браўзерам, якія іх просяць, для псеўданімаў з Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Нейтральная выява патрэбнага памеру, пакуль выявы няма.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Невялікі скрыпт, які замяняе запаўняльнікі сапраўднай выявай, калі яна гатова.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Пасля публікацыі заданне стварае псеўданімы новых выяў для кожнага звязанага siteaccess.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Адначасовыя пераўтварэнні на адным серверы.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Прыярытэт працэсу (nice) масавых запускаў, ад 0 да 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Секунды, на якія браўзеры і кэшы могуць захоўваць створаны псеўданім.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Секунды, на якія застаецца дзейсным адрас выявы чарнавіка або папярэдняга прагляду.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Секунды, на якія пасля замены застаецца дзейсным папярэдні ключ подпісу.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Асяроддзе гэтай устаноўкі.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Асяроддзе, з якога атрымліваюцца адсутныя выявы; none: нічога не атрымліваецца.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Па адным у радку: лакальны прэфікс сховішча;прэфікс або адрас крыніцы, для шляхоў сховішча, якія адрозніваюцца.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Секунды, якія можа заняць адзін запыт да крыніцы.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Найбольшы файл, які бярэцца з крыніцы, у байтах.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Збояў запар, пасля якіх крыніца прыпыняецца.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Як доўга прыпынена крыніца, якая збоіць.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Паведамляць адміністратарам, калі крыніца прыпынена (не часцей за раз у гадзіну).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Адзін адрас эл. пошты ў радку; пуста: AdminEmail з site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Адрас крыніцы-устаноўкі %block, напрыклад https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Імя сакрэту з уліковымі данымі або env:VARIABLE. Ніколі не самі ўліковыя даныя.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(няма)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Па змаўчанні: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Зададзена тут; адзначце, каб выдаліць</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>успадкавана</translation>
     </message>
 </context>
 </TS>

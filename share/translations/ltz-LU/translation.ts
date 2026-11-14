@@ -16590,6 +16590,34 @@ Hiweis: D'Packagen ginn net desinstalléiert.</translation>
         <source>Import/Export</source>
         <translation>Import/Export</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Bildaliasen</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Fir dëst Element erstellen</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Fir den Ënnerbam erstellen</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Fir dëst Element nei erstellen</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Fir den Ënnerbam nei erstellen</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Fir dëst Element ewechhuelen</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Fir den Ënnerbam ewechhuelen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>De server-Block vun engem alen Site: location = mat return, if ($args) fir eng Ufro, rewrite als Joker an eng map vun eenzelne Säiten.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Bildaliasen</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Bildaliasen sinn d&apos;skaléiert an zougeschniddene Kopie vun engem Bild, déi d&apos;Templates weisen. Hei gesitt Dir, wéi se erstallt ginn, start Massenlaf iwwer d&apos;Websäit, testt e Bild oder eng Staging-Quell, verfollgt de Verlaf vun den Läf an ännert d&apos;Astellungen.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Deeler vun der Säit</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Iwwersiicht</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Massenläf</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Testwierkzäich</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Lafverlaf</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Astellungen</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Dir kënnt hei alles ukucken. Astellunge änneren, Jobs starten an d&apos;Wierkzäicher, déi Fichieren erstellen, brauche d&apos;Politik setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Wat Opmierksamkeet brauch</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Render-Modus: Templates erstellen fehlend Bildaliasen, wann d&apos;Säit duergestallt gëtt, wéi virdrun. D&apos;Adressen on-demand, d&apos;Placeholderen an d&apos;Hannergrondjobs ginn net benotzt.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>D&apos;Formatauswiel ass ugeschalt, awer kee Konverter hei kann WebP schreiwen.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Dëst ass eng Staging-Installatioun, awer hir Quell huet keng BaseURL: Fehlend Biller kënnen net geholl ginn.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>D&apos;Staging-Quell ass no méi Feeler hannerteneen ugehalen: Fehlend Biller kréie Placeholderen, bis d&apos;Paus eriwwer ass oder Dir se zrécksetzt.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>D&apos;Staging-Quell ass viru kuerzem feelgeschloen. Hire leschte Feeler gesitt Dir drënner.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Dës Installatioun ass keng Produktioun, awer SyncFrom nennt keng Quell: Et gëtt näischt geholl.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>D&apos;Job-Schlaang (expqueue) ass net disponibel: Bildaliasen, déi hir Zäit iwwerschreiden, erstellt déi nächst Ufro, d&apos;Viraus-Erstellung nom Verëffentlechen entfält a Massenläf sinn op kleng Beräicher limitéiert.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>E puer Jobs fir Bildaliasen sinn definitiv feelgeschloen. Konfiguratioun &gt; Job-Schlaang weist firwat.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Massenläf sinn ugehalen.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>An de leschte 24 Stonne sinn Bildaliasen feelgeschloen. De Lafverlaf lëscht se op.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>De Signaturschlëssel ass méi al wéi e Joer. En Wiessel hält al Adressen fir d&apos;Iwwergangszäit gëlteg.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Et gëtt nach kee Signaturschlëssel: Hie gëtt mat der éischter Adress on-demand erstallt.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Déi lescht 24 Stonnen</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Erstallt Bildaliasen</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Beäntwert Placeholderen</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Feeler</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Geholl Fichieren</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Gestart Läf</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Jobs waarden / lafen</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Gezielt aus de leschte %lines Zeilen vu(n) %file, déi bis %time zréckreechen.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Modus a Liwwerung</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Modus</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>op Ufro</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Adressform</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Liwwerung</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Längst Waardezäit vun enger Ufro</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Konversioune gläichzäiteg</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy vun %max grad beschäftegt</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Formatauswiel</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>un</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>aus</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Placeholder an Austauschskript</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Viraus-Erstellung nom Verëffentlechen</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Bildaliasen vun der Websäit</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Konverter vun de Formatvarianten</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Konverter</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Reihefolleg</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>bevorzugt</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>jo</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>neen</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>D&apos;Bildaliasen selwer erstellen d&apos;Konverter aus [ImageConverterSettings], wéi virdrun; dës hei schreiwen d&apos;WebP- an AVIF-Varianten.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Ëmfeld a Quell</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Dës Installatioun</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(Produktioun: hëlt ni)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Hëlt vun</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>näischt</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Adress vun der Quell</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>net gesat</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Zougangsdaten</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>Geheimnis %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>keng</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Zoustand</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>funktionéiert</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>ugehalen bis %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>feelerhaft</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Feeler hannerteneen</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>Paus no %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Leschte Feeler</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Leschten Erfolleg</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Feeler zrécksetzen an d&apos;Quell nees froen</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Job-Schlaang</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Jobtyp</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Waarden</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Lafen</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Feelgeschloen</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>net registréiert</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>D&apos;Job-Schlaang ass net disponibel.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Massenläf ugehalen</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>zënter %time duerch %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Massenläf däerfen lafen</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Signaturschlëssel</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Schlëssel</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>am Geheimnisspäicher</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>nach keen</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Alter</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days Deeg (zënter %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Virege Schlëssel</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>gëlteg bis %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Schlëssel wiesselen</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Adressen, déi mam aktuelle Schlëssel signéiert sinn, funktionéieren während der Iwwergangszäit (SigningKeyGrace) weider, duerno äntwere se mat Placeholderen, bis d&apos;Säite nei erstallt sinn.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Elo wiesselen</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Esou funktionéiert et</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, Render-Modus, Staging an d&apos;Protokoll</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (Standard): Eng Säit verlinkt e Bildalias, deen et nach net gëtt, mat enger signéierter Adress. Déi éischt Ufro erstellt en innerhalb vun der längster Waardezäit, soss äntwert se mat engem neutrale Placeholder an e Job mécht d&apos;Aarbecht fäerdeg; d&apos;Austauschskript ersetzt de Placeholder, soubal d&apos;Bild do ass.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render-Modus: D&apos;Template erstellt de Bildalias, wann d&apos;Säit duergestallt gëtt, wéi virdrun. Dir kënnt zu all Moment tëscht deenen zwee wiesselen; näischt muss migréiert ginn.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Eng Staging-Installatioun hëlt fehlend Originaler a Bildaliasen vu hirer Quell; eng feelerhaft Quell gëtt no Feeler hannerteneen ugehalen an d&apos;Administratore kréien héchstens eng E-Mail pro Stonn.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Massenläf an d&apos;Viraus-Erstellung nom Verëffentlechen sinn Jobs vun der Job-Schlaang, mat méi niddregerer Prioritéit wéi d&apos;Besucher. Wann een Bildaliasen ewechhëlt, gëtt och de Äntwert-Cache vu Velocity geleert, sou datt keng ewechgeholl Datei doduerch ausgeliwwert gëtt.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>All erstallte Bildalias, all beäntwert Placeholder, all geholl Datei an all Laf ass eng Zeil an %file. D&apos;Kommandozeil huet déiselwecht Wierkzäicher: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Job %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done vu(n) %total Biller</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Laf</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Beräich</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Dëse Job ofbriechen</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>De Job %job ass kee Job fir Bildaliasen, oder en ass aus der Schlaang ewechgeholl ginn.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Resultat vum Laf %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Massenläf sinn ugehalen</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Ugehalen zënter %time duerch %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Eng Paus hält all Massenlaf no sengem aktuelle Bild un, op all Server; Läf an der Schlaang waarden. D&apos;Bildaliase fir Besucher ginn weider erstallt.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Massenläf fortsetzen</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Grond (optional)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Massenläf unhalen</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>E Laf starten</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Läf sinn Jobs vun der Job-Schlaang: Dir kënnt d&apos;Säit verloossen a spéider erëmkommen.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Ouni d&apos;Job-Schlaang gëtt e Laf an dëser Ufro gemaach, fir héchstens %count Biller.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aktioun</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Erstellen: déi fehlend Bildaliasen erstellen</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Nei erstellen: ewechhuelen an nees erstellen</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Läschen: ewechhuelen (bei Ufro nei erstallt)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Nei ofgläichen: d&apos;Fichieren vun der Staging-Quell huelen</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(nëmmen op enger Staging-Installatioun)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>D&apos;ganzt Websäit</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Ee Knuet</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>E Knuet a säin Ënnerbam</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Knuet-ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klassen</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Attributer</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Geännert zënter</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>E Datum (2026-11-01) oder eng Zäitspan zréck (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Héchstens Biller</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Bildaliasen (keng ugekräizt: all)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>Offgläich</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Probelaf: nëmmen zielen (en Offgläich kontrolléiert d&apos;Quell a späichert näischt)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Ofwäichend Fichieren iwwerschreiwen (Offgläich)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>De Laf starten</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Läscht Läf</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Job</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Fortschrëtt</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Ageréiht</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aktiounen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ofbriechen</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Nach kee Massenlaf a kee Offgläich.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>E Bild</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>D&apos;Adressen, déi en Template elo kritt, d&apos;Gréissten an Typen, déi fir all Bildalias berechent ginn, a ob all Datei do ass.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Sichen no</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Objet-ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Weisen</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Dir däerft dëst Objet net liesen.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Dëst Objet huet kee Bild.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Kee Objet mat dëser ID.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>Objet %object, Knuet %node, Versioun %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Original: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>Datei do</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>Datei feelt</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Bildaliasen vu(n) %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Bildalias</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Gréisst</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datei</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Formater</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Adress an engem Template</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>do</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>feelt</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>net fir dësen Typ</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Préiwen</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Erstellen</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Kee Bild an dësem Feld.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Zäit</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Verbindung zu enger Quell</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Eng HEAD-Ufro un eng Staging-Quell, mat hire Zougangsdaten, wann et eng gëtt. D&apos;Zougangsdate ginn geschéckt, ni ugewisen.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Quell</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>mat Zougangsdaten</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Späicherpfad (optional)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>D&apos;Verbindung testen</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Keng Quell huet eng BaseURL. Quelle ginn an den Astellunge gesat ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>erreechbar</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>ofgewisen: Zougangsdaten préiwen</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>un der Quell net fonnt</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>keng Äntwert</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>Zäit iwwerschratt</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>ëmgeleet (net gefollegt)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>keng BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>kee Späicherpfad</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adress</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>geschéckt</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>d&apos;Geheimnis feelt</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>d&apos;Geheimnis ass weder user:password nach Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Déi neisten Zeile vu(n) %file, déi neist als éischt.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Konfiguratioun &gt; Protokollfichieren</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Evenement</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>All Evenementer</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Läf (Start an Enn)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Pfad enthält</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Zeilen</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Verfollgen: nei Zeilen weisen, soubal se geschriwwe ginn</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Pfad an Detailer</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Keng Zeil vum Protokoll passt.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Wat d&apos;Späicheren änneren géif</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Wat geännert gouf</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Gespäichert an settings/override/image.ini.append.php, sou datt e Wäert hei viru jidder Siteaccess gëllt. Ugewise ginn d&apos;Wäerter, déi fir dës Siteaccess gëllen. Virum Späicheren gitt Dir gefrot ze bestätegen, wien Dir sidd.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Wéi Bildaliasen erstallt an ausgeliwwert ginn.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Fehlend Biller vun enger anerer Installatioun huelen (alpha, dev, beta, stage, pro, post, arc). D&apos;Produktioun (pro) hëlt ni.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Astellung</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Wäert</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>An settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>D&apos;Adress vun all Quell an den Numm vum Geheimnis mat hire Zougangsdaten (user:password oder Bearer &lt;token&gt;). De Wäert vun engem Geheimnis gëtt ënner Konfiguratioun &gt; Geheimnisser gesat an hei ni ugewisen.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Ännerungen ukucken</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Späicheren</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Verfollgen: aktualiséiert %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Ugehalen</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>De Feed huet net geäntwert; en neie Versuch.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>De Job ass fäerdeg.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: Templates kréien d&apos;Adress, de Bildalias gëtt erstallt, wann en ugefrot gëtt. render: D&apos;Template erstellt en, wann d&apos;Säit duergestallt gëtt (dat ursprénglecht Verhalen).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>D&apos;Adress vun engem Bildalias, deen nach net erstallt ass: token (signéiert, brauch keng Datebank), ids-token, ids, node oder storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: eng Weiderleedung op d&apos;Datei, wann de Webserver de Späicher ausliwwert, soss gëtt d&apos;Datei gestreamt.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Sekonnen, déi eng Ufro fir en Bildalias ze erstellen oder ze huelen brauche däerf; duerno äntwert se mam Placeholder an e Job mécht d&apos;Aarbecht fäerdeg.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>De Konverter, deen als éischt fir d&apos;WebP- an AVIF-Varianten probéiert gëtt.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>WebP oder AVIF u Browser liwwere, déi dornach froen, fir Bildaliasen mat Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>E neutrust Bild an der richteger Gréisst, soulaang e Bild feelt.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>E klengt Skript, dat Placeholderen duerch dat richtegt Bild ersetzt, soubal et do ass.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Nom Verëffentlechen erstellt e Job d&apos;Bildaliasen vun den neie Biller fir all verwandte Siteaccess.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Konversioune gläichzäiteg op engem Server.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>D&apos;Prozessprioritéit (nice) vu Massenläf, 0 bis 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Sekonnen, déi Browser a Caches en erstallte Bildalias behale däerfen.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Sekonnen, déi d&apos;Adress vun engem Entworf- oder Virschaubild gëlteg bleift.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Sekonnen, déi de viregte Signaturschlëssel no engem Wiessel gëlteg bleift.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>D&apos;Ëmfeld vun dëser Installatioun.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>D&apos;Ëmfeld, vun där fehlend Biller geholl ginn; none: Et gëtt näischt geholl.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Ee pro Zeil: lokale Späicherpräfix;Präfix oder Adress vun der Quell, fir Späicherpfaden, déi ofwäichen.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Sekonnen, déi eng Ufro un d&apos;Quell daueren däerf.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Déi gréissten Datei, déi vun der Quell iwwerholl gëtt, a Bytes.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Feeler hannerteneen, no deenen d&apos;Quell ugehalen gëtt.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Wéi laang eng feelerhaft Quell ugehalen gëtt.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>D&apos;Administratore per E-Mail informéieren, wann d&apos;Quell ugehalen gëtt (héchstens eemol pro Stonn).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Eng E-Mail-Adress pro Zeil; eidel: d&apos;AdminEmail aus site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>D&apos;Adress vun der Quellinstallatioun %block, z. B. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Den Numm vum Geheimnis mat den Zougangsdaten oder env:VARIABLE. Ni d&apos;Zougangsdaten selwer.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(keng)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Standard: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Hei gesat; ukräizen, fir et ewechzehuelen</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>geierft</translation>
     </message>
 </context>
 </TS>

@@ -16529,6 +16529,34 @@ Malugiuk: Poortukkat ikkussinerat piiarneqassanngilaq.</translation>
         <source>Import/Export</source>
         <translation>Isertitsineq/Anitsineq</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Assinut aliasit</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Una pillugu pilersiguk</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Ataavartaq pillugu pilersiguk</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Una pillugu nutaamik pilersiguk</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Ataavartaq pillugu nutaamik pilersiguk</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Una pillugu piiaruk</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Ataavartaq pillugu piiaruk</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86452,6 +86480,997 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Nittartakkap pisoqaap server-blokia: location = return-ilik, apeqqummut if ($args), rewrite wildcard-itut aamma quppernerit ataasiakkaat map-iat.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Assinut aliasit</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Assinut aliasit assimut tulleriaat mikillisat aamma kipisimasat template-it takutitsisartagaat. Maani takuneqarsinnaavoq qanoq pilersinneqarnerat, nittartakkami tamarmi suliassanik ataatsimoortunik aallartitsisoqarsinnaavoq, assimik ataatsimik imaluunniit staging-imik aallaavimmik misissuisoqarsinnaavoq, aallartitsinernut nalunaarutit malinneqarsinnaapput aamma aaqqissuussinerit allanngortinneqarsinnaapput.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Qupperneq immikkoortuinut</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Aqutsivik</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Ataatsimoortunik ingerlatsinerit</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Misissuinermut atortut</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Ingerlatsinerit nalunaarsuiffiat</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Aaqqissuussinerit</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Maani tamaasa takuneqarsinnaapput. Aaqqissuussinerit allanngortinnissaannut, suliassat aallartinnissaannut fiilinillu pilersitsisunut atortunut politikki setup/managealiases pisariaqarpoq.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Isumaginissaanik pisariaqartut</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Render-imik ileqqaarneq: template-it pilersitsisarput alias-it amigaataasut qupperneq ersersinneqarnerani, siusinnerusukkut assigalugu. On-demand adressit, inissaatitaasunik ilanngussat aamma tunuliaqutaasumi suliassat atorneqanngillat.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Format-it isumaqatigiissutigineqarnerat ammarsimavoq, kisianni maani converter-imit ataatsimit WebP-imik allanneqarsinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Una staging-imik ikkussuineruvoq, kisianni aallaavia BaseURL-imik peqanngilaq: assit amigaataasut tigusinnaanngillat.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Staging-imik aallaavik tulleriaarlugu ajorsimanerit kingunerisaannik unitsinneqarpoq: assit amigaataasut inissaatitaasunik ilanngussanik tigusassapput unitsitsineq naammassinissaata imaluunniit nutaamik aallartinnissaanut tikillugu.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Staging-imik aallaavik kingullermik ajorpoq. Kingulleq kukkuneq ataani takuuk.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Una ikkussuineq produktionimut tunngassuteqanngilaq, kisianni SyncFrom aallaavimmik taaneqanngilaq: tigusassaqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Suliassat utaqqiffiat (expqueue) atorneqarsinnaanngilaq: alias-it piffissami naammassineqanngitsut qinnuteqaammit tullermit pilersinneqassapput, saqqummiunneqarnerup kingorna siunnersuutigineqartut ingerlatiinnarneqassapput aamma ataatsimoortunik ingerlatsinerit annikitsunut killeqartinneqassapput.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Assinut alias-inut tunngasut ilaat naammassineqarsimanngillat. Aaqqissuussineq &gt; Suliassat utaqqiffiat taamaaliornermut pissutaasoq takutippaa.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Ataatsimoortunik ingerlatsinerit unitsinneqarput.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Alias-it ulloq unnuarlu 24-ni kingullerni ajorput. Ingerlatsinerit nalunaarsuiffiat taakku nalunaarsorpai.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Atsiorneq-aqqutaa ukiumit utoqqarnerusoq. Taanna allanngortikkaanni adressit utoqqaat piffissami akuersaarnerup nalaani atorsinnaaffiit pigiinnassavaat.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Atsiorneq-aqqutaa suli peqanngilaq: adressimik on-demand siullermik pilersinneqarnerani pilersinneqassaaq.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Ulloq unnuarlu 24 kingulleq</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Alias-it pilersinneqartut</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Inissaatitaasunik ilanngussat akineqartut</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Ajornerit</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Fiilit piareersarneqartut</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Ingerlatsinerit aallartinneqartut</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Suliassat utaqqisut / ingerlasut</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file-ip %lines kingulliit sukkasuuffigisaannut naatsorsuutigineqarpoq, %time tikillugu.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Ileqqaarneq tunniussinerlu</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Ileqqaarneq</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>piumasarineqarneratigut</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Adressip ittua</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Tunniussineq</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Qinnuteqaammut utaqqisimaffiusinnaasoq sivisunerpaaq</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Ataatsikkut allanngortitsinerit</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%max-ip ilaanni %busy maanna sulerujussuarput</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Format-it isumaqatigiissutigineqarnerat</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ammarsimavoq</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>matuneqarpoq</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Inissaatitaasunik ilanngussaq taarsiinermullu script</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Saqqummiunneqarnerup kingorna siunnersuutigineqartut</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Nittartakkap alias-ii</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Format-ip assigiinngitsuutaasa converter-ii</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Converter</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Misilinnerit tulleriaarnerat</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>kissaatigineqarpoq</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>aap</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>naamik</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Alias-it namminneq [ImageConverterSettings]-imi converter-init pilersinneqartarput, siusinnerusukkut assigalugu; una WebP aamma AVIF-imik assigiinngitsuutinik allaqqissaaq.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Avatangiisit aallaavillu</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Una ikkussuineq</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(produktioni: tigusaqartanngilaq)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Tigusisarpaa</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>peqanngilaq</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Aallaavip adressia</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>aaqqissuunneqanngilaq</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Isissutissaq</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>isertugaq %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>peqanngilaq</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Killiffik</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>sulivoq</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time tikillugu unitsinneqarpoq</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>ajorpoq</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Tulleriaarlugit ajornerit</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count kingorna unitsitsineq</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Kukkuneq kingulleq</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Iluatsitsineq kingulleq</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Ajornerit pitsaanerulaartillugit aallaavik apeqquteqarfigiuk</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Suliassat utaqqiffiat</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Suliap suussusia</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Utaqqisoq</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Ingerlavoq</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Iluatsinngitsoq</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>nalunaarsorneqanngilaq</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Suliassat utaqqiffiat atorneqarsinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Ataatsimoortunik ingerlatsinerit unitsinneqarput</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time-miit %user-imit</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Ataatsimoortunik ingerlatsinerit ingerlasinnaapput</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Atsiorneq-aqqutaa</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Aqqutaa</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>isertugat toqqorsivianiipput</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>suli peqanngilaq</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Ukioq</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>ulloq %days (%time-miit)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Aqqutaa siusinnerusoq</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time tikillugu atuuppoq</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Aqqutaa allanngortiguk</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Atsiorneq-aqqutaanik maanna atorneqartumik atsiorneqarsimasut adressit piffissami akuersaarnerup nalaani atorsinnaaffiit pigiinnassavaat (SigningKeyGrace), tamatuma kingorna qupperneq pilersinneqaqqinnissaata tikillugu inissaatitaasunik ilanngussanik akissapput.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Maanna allanngortiguk</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Qanoq ingerlanera</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render-imik ileqqaarneq, staging nalunaarsuiffiillu</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (siulliutaq): qupperneq alias suli pioreersuunngitsoq atsiorneqarsimasumut adressimut atassuteqartippaa. Qinnuteqaat siullermik utaqqisimaffiusinnaasoq sivisunerpaaq iluani pilersippaa, naamik inissaatitaasumik ilanngussamik sunngiffimmik akissaaq suliarlu naammassissaaq; taarsiinermut script inissaatitaasoq taarsiissaaq assi piareeraangat.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render-imik ileqqaarneq: template alias pilersippaa qupperneq ersersinneqarnerani, siusinnerusukkut assigalugu. Taakkunannga ataaseq allanngortinneqarsinnaavoq piffissaq tamaat; tigusassaqanngilaq nuutsiffigineqartussaq.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Staging-imik ikkussuineq aallaavimminit assit tamatigut ilaasullu aliasit amigaataasut tigusisarpai; ajorsimasoq aallaavik tulleriaarlugu ajorsimanerit kingorna unitsinneqartarpoq, aqutsisullu akunnerup iluani e-mailimik ataatsimik kisimik tigusisinnaapput.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Ataatsimoortunik ingerlatsinerit saqqummiunneqarnerullu kingorna siunnersuutigineqartut suliassat utaqqiffiannit suliassaapput, inunnit salliutinnginnerusumik. Alias-it piiarneqarneratigut Velocity-p akissutit cache-ia aamma tamarmik piiarneqartarput, fiilip piiarneqarsimasup tassannga tunniunneqannginnissaa pillugu.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Alias tamarmik pilersinneqartut, inissaatitaasunik ilanngussat akineqartut, fiilit piareersarneqartut ingerlatsinerillu tamarmik %file-imi sukkasuuffiupput. Allaaserisamut sukkasuuffimmi atortut taakku assigiissuupput: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Suliaq %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%total-ip ilaanni assit %done</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Ingerlatsineq</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Killeqarfia</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Inernera</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Suliaq una taamaatiguk</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Suliaq %job assinut alias-inut tunngassuteqanngilaq imaluunniit utaqqiffimmit piiarneqarsimavoq.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Ingerlatsinerup %run inernera</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Ataatsimoortunik ingerlatsinerit unitsinneqarput</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time-miit %user-imit unitsinneqarpoq.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Unitsitsineq ataatsimoortumik ingerlatsineq tamaasa assimut maanna atorneqartumut kingorna unitsitsisarpoq, serverit tamaasa nalaani; utaqqiffimmiittut utaqqipput. Ineriartortitsisut alias-ii suli pilersinneqartarput.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Ataatsimoortunik ingerlatsinerit aallartikkiguk</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Pissutaasoq (piumasarineqanngilaq)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Ataatsimoortunik ingerlatsinerit unitsikkiguk</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Ingerlatsineq aallartiguk</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Ingerlatsinerit suliassat utaqqiffiannit suliassaapput: qupperneq qimaasinnaavat utertarlutillu.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Suliassat utaqqiffiat peqanngikkuni ingerlatsineq qinnuteqaammi una iluanni naammassineqassaaq, assit %count tikillugit.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Iliuuseq</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Pilersiguk: alias-it amigaataasut pilersikkiguk</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Nutaamik pilersiguk: piiaruk pilersikkiguklu</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Eqqartuk: piiaruk (piumasarineqaraangat nutaamik pilersinneqassapput)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Nutaamik naleqqussaruk: aallaavimmit fiilit tigusiguk</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(staging-imik ikkussuinermi kisimi)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Nittartakkap tamarmi</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Inissisimaffik ataaseq</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Inissisimaffik ataavartaasaalu</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Inissisimaffiup ID-ia</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klassit</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Attributit</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Allanngortinneqarsimasoq tikillugu</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Ulloq (2026-11-01) imaluunniit piffissaq siusissukkut (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Assit amerlanerpaaffii</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Alias-it (ataaseq toqqarneqanngikkuni: tamarmik)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Misiliineq: kisimi naatsorsuuteqarneq (resync aallaavik misissuivoq toqqortaqaratilu)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Fiilit assigiinngitsut qaritiguk (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Ingerlatsineq aallartiguk</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Ingerlatsinerit kingulliit</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Suliaq</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ingerlaarnera</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Utaqqiffimmi</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Iliusissat</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Taamaatiguk</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Ataatsimoortunik ingerlatsineq resync-iluunniit suli peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Assi ataaseq</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Adressit template maanna tigusaa, alias tamarmut naatsorsuutigineqartut angissusaat suussusaallu fiilillu tamarmik pioreersuunersut.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Ujaasiguk</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Objektip ID-ia</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Takutiguk</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Objekti una atuarsinnaanngilatit.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Objekti una assimik peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>ID taanna objektimik peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>objekti %object, inissisimaffik %node, versioni %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Siulliulluunniit: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>fiilip pioreersuuvoq</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>fiilip amigaataavoq</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name-ip alias-ii</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Alias</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Angissusaa</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Suussuseq</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fiili</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Format-it</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Adressi template-mi</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>pioreersuuvoq</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>amigaataavoq</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>suussuseq una pillugu atorneqanngilaq</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Misissoruk</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Pilersiguk</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Fiilimi una assimik peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Nalunaaqutaq</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Aallaavimmut atassuteqarneq</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>HEAD qinnuteqaat staging-imik aallaavimmut, isissutissaa taaneqarsimappat tamatumalu peqatigalugu. Isissutissaq nassiunneqartarpoq, takutinneqarneq ajorluni.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Aallaavik</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>isissutissamik peqarluni</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Toqqorsivimmi aqqutaa (piumasarineqanngilaq)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Atassuteqarneq misissoruk</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Aallaavit BaseURL-imik peqanngillat. Aallaavit aaqqissuussinerni aaqqissuunneqartarput ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>tikinneqarsinnaavoq</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>itigartinneqarpoq: isissutissaq misissoruk</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>aallaavimmi nassaarineqanngilaq</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>akissuteqanngilaq</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>piffissaq naavoq</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>allamut ingerlateqqinneqarpoq (malinneqanngilaq)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL peqanngilaq</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>toqqorsivimmi aqqutaanngilaq</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Najugaq</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Killiffik</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>nassiunneqarpoq</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>isertugaq amigaataavoq</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>isertugaq user:password imaluunniit Bearer &lt;token&gt; pinngilaq</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file-ip sukkasuuffii nutaanerpaat, nutaanerpaat siullii.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Aaqqissuussineq &gt; Nalunaarsuiffiup fiiliai</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Pisoq</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Pisut tamarmik</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Ingerlatsinerit (aallartinneq naggasiinerlu)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Aqqutaa imaqarpoq</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Sukkasuuffiit</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filteri</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Malinnaaruk: sukkasuuffiit nutaat allanneqarneranni takutiguk</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Aqqutaa paasissutissallu</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Nalunaarsuiffimmi sukkasuuffik ataaseq naleqqunngilaq.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Toqqorneq sunik allanngortitsissanersoq</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Suut allanngortinneqarsimanersut</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php-mut toqqarneqarpoq, taamaattumik maani naleq siteaccess tamaasa qaangerpaa. Naleqartitat takutinneqartut tassaapput siteaccess una pillugu atuuttut. Toqqoriartornerup siornatigut kina ilumoortuunerit uppernarsaatigineqartussaavoq.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Alias-it qanoq pilersinneqartarnersut tunniunneqartarnersullu.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Assit amigaataasut ikkussuinermit allamit tigusinerat (alpha, dev, beta, stage, pro, post, arc). Produktioni (pro) tigusaqartanngilaq.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Aaqqissuussineq</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Naleq</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override-mi</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Aallaavit tamarmik adressii isertugallu isissutissaannik imaqartup ateri (user:password imaluunniit Bearer &lt;token&gt;). Isertugap nalinga Aaqqissuussineq &gt; Isertugat-ni aaqqissuunneqartarpoq maanilu takutinneqarneq ajorluni.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Allanngortitsinerit siumut takuneq</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Toqqoruk</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Malinneqarpoq: nutarterneqarpoq %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Unitsinneqarpoq</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Feed akissuteqanngilaq; misileqqinneqarpoq.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Suliaq naammassivoq.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: template-it adressimik tigusaqarput, alias-ilu piumasarineqaraangat pilersinneqartarpoq. render: template pilersippaa qupperneq ersersinneqarnerani (siulleq ileqqaarneq).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Alias suli pilersinneqarsimanngitsup adressia: token (atsiorneqarsimasoq, database pisariaqanngilaq), ids-token, ids, node imaluunniit storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: web-server toqqorsivik atuutillugu fiilimut allamut ingerlateqqitsineq, naamik fiili sukkasuumik nassiunneqartarpoq.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Qinnuteqaat alias pilersinnermut tigusinermulluunniit atuisinnaasaa sekundit; tamatuma kingorna inissaatitaasumik akissaaq suliarlu naammassissaaq.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Converter WebP aamma AVIF-imik assigiinngitsuutinut siullermik misilinneqartoq.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>WebP imaluunniit AVIF-imik akissuteqarit browser-inut tamakkuninnga qinnuteqartunut, alias-inut Formats[] taaneqartunut.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Assi naleqquttumik angissusilik alla assi tikkuussiffiunngitsoq amigaataagaangat.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Script mikikkaluartoq inissaatitaasunik ilanngussanik assimik ilumoortumik taarsiisoq assi pioreeraangat.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Saqqummiunneqarnerup kingorna suliaq assit nutaat alias-ii siteaccess atassuteqartunut tamanut pilersippai.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Ataatsikkut allanngortitsinerit server ataatsimi.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Ataatsimoortunik ingerlatsinerit ingerlaarnerata salliutitaa (nice), 0-imiit 19-imut.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Browser-it cache-illu alias pilersinneqarsimasoq toqqortarsinnaasaat sekundit.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Missingiut imaluunniit siumut takuneqartussap assiata adressia atuuttuarnera sekundit.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Atsiorneq-aqqutaa siusinnerusoq allanngortiternerup kingorna atuuttuarnera sekundit.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Una ikkussuinerup avatangiisaa.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Avatangiisit assit amigaataasut tigusiffigineqartartut; none: tigusassaqanngilaq.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Sukkasuuffik ataaseq tamarmut: nunap iluani toqqorsivimmi prefiksi;aallaavip prefiksia imaluunniit adressia, toqqorsivimmi aqqutit assigiinngitsut pillugit.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Aallaavimmut qinnuteqaat ataaseq sivisussusissaa sekundit.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Fiili aallaavimmit tigusat angisuuffigisaat, bytes-inngorlugit.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Tulleriaarlugit ajornerit amerlassusaat tamatuma kingorna aallaavik unitsinneqartartoq.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Aallaavik ajorsimasoq qanoq sivisutigisumik unitsinneqartarnersoq.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Aqutsisunut e-mailimik nassiuteruk aallaavik unitsinneqaraangat (akunneranut ataasiarlugu amerlanerpaamik).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>E-mail-imi adressi sukkasuuffimmut ataaseq; peqanngikkuni: site.ini-p AdminEmail-ia.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Aallaavimmik ikkussuinerup %block adressia, assersuutigalugu https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Isissutissaqartup isertugaata ateri imaluunniit env:VARIABLE. Isissutissaq namminneq atorlugu naamik.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(peqanngilaq)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Siulliutaq: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Maani aaqqissuunneqarpoq; piiarniarukku toqqaruk</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>tigusaq</translation>
     </message>
 </context>
 </TS>

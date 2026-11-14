@@ -16590,6 +16590,34 @@ Note: Dem no go uninstall di packages.</translation>
         <source>Import/Export</source>
         <translation>Import/Export</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Image aliases</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Generate for dis item</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Generate for di subtree</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Regenerate for dis item</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Regenerate for di subtree</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Remove for dis item</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Remove for di subtree</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86430,6 +86458,997 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Di server block of old site: location = with return, if ($args) for query, rewrite as wildcard and one map of single pages.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Image aliases</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Image aliases na di scaled and cropped copies of one image wey templates dey show. Here you go see how dem dey make dem, run bulk jobs for di site, test one image or one staging source, follow di run history and change di settings.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Parts of di page</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dashboard</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Bulk runs</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Test tools</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Run history</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Settings</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>You fit look everything here. To change settings, run jobs and use di tools wey dey make files, you need di policy setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Wetin need attention</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>render mode: templates dey make missing aliases as di page dey render, as e be before. Di on-demand addresses, placeholders and background jobs no dey work.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Format negotiation don on, but no converter here fit write WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Dis na staging installation, but im source no get BaseURL: dem no fit fetch missing images.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Dem don pause di staging source afta e fail many times one afta di other: missing images go get placeholders until di pause end or you reset am.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Di staging source fail recently. See im last error below.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Dis installation no be production, but SyncFrom no name any source: dem no go fetch anything.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Di job queue (expqueue) no dey available: aliases wey no finish for time go dey made by di next request, pre-generation afta publishing go skip and bulk runs go dey limited to small scopes.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Some image aliases jobs fail for good. Setup &gt; Job queue go show why.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Dem don pause bulk runs.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Aliases fail inside di last 24 hours. Di run history list dem.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Di signing key don pass one year. If you rotate am, old addresses go still work for di grace period.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Signing key no dey yet: dem go make am wit di first on-demand address.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Di last 24 hours</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Aliases wey dem generate</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Placeholders wey dem answer</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Failures</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Files wey dem stage</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Runs wey start</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Jobs wey dey wait / dey run</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Dem count am from di last %lines lines of %file, wey reach back to %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Mode and delivery</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mode</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>on demand</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Address form</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Delivery</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Di longest wait of one request</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Conversions at once</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy of %max dey busy now</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Format negotiation</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>on</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>off</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Placeholder and swap script</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Pre-generation afta publishing</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Aliases of di site</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Converters of di format variants</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Converter</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Tried</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>preferred</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>yes</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>no</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Di converters of [ImageConverterSettings] dey make di aliases demsef, as e be before; dem dey write di WebP and AVIF variants.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Environment and source</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Dis installation</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production: e no dey fetch ever)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>E dey fetch from</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>nothing</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Source address</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>no set</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Credential</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>secret %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>none</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>State</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>dey work</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>dem pause am until %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>dey fail</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Failures one afta di other</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>pause afta %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Last error</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Last success</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Reset di failures and ask di source again</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Job queue</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Job type</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Dey wait</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Dey run</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Failed</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>no register</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Di job queue no dey available.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Dem pause bulk runs</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>since %time by %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Bulk runs fit run</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Signing key</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Key</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>inside di secret store</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>none yet</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Age</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days days (since %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Previous key</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>valid until %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Rotate di key</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Addresses wey dem sign wit di current key go still work for di grace period (SigningKeyGrace), afta dat dem go answer placeholders until dem make di pages again.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Rotate now</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>How e dey work</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render mode, staging and di log</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (di default): one page dey link alias wey no dey yet to one signed address. Di first request go make am inside di longest wait, if no be so e go answer one neutral placeholder and one job go finish di work; di swap script go replace di placeholder when di image dey.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render mode: di template dey make di alias as di page dey render, as e be before. You fit switch between di two anytime; nothing need to move.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>One staging installation dey fetch di originals and aliases wey e miss from im source; if source dey fail, dem go pause am afta e fail many times one afta di other and di administrators go get one e-mail for one hour at most.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Bulk runs and pre-generation afta publishing na jobs of di job queue, for lower priority than visitors. If you remove aliases, e go also clear di response cache of Velocity, so dem no go serve removed file from am.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Every alias wey dem make, placeholder wey dem answer, file wey dem stage and run na one line of %file. Di command line get di same tools: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Job %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done of %total images</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Run</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Scope</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Result</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Cancel dis job</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Job %job no be image aliases job, or dem don remove am from di queue.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Result of run %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Dem don pause bulk runs</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Dem pause am since %time by %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Pause dey stop every bulk run afta im current image, for every server; queued runs dey wait. Visitors aliases still dey made.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Continue bulk runs</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Reason (optional)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Pause bulk runs</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Start one run</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Runs na jobs of di job queue: you fit leave di page and come back.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>If job queue no dey, dem go do di run for dis request, for at most %count images.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Action</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: make di aliases wey miss</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: remove and make dem again</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: remove dem (dem go make dem again on demand)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: fetch di files from di staging source</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(na only for staging installation)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Di whole site</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>One node</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>One node and im subtree</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Node id</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Classes</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Attributes</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Changed since</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>One date (2026-11-01) or time ago (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>At most images</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Aliases (if you no tick any: all of dem)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Dry run: only count (resync dey check di source and e no dey store anything)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Overwrite files wey no match (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Start di run</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Latest runs</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Job</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Progress</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Queued</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actions</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>No bulk run or resync yet.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>One image</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Di addresses wey template dey get now, di sizes and types wey dem compute for every alias, and whether each file dey.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Look up by</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Object id</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Id</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Show</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>You no fit read dis object.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Dis object no get image.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>No object get dis id.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>object %object, node %node, version %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Original: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>file dey</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>file miss</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Aliases of %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Alias</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Size</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>File</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Formats</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Address for one template</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>dey</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>miss</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>no be for dis type</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Check</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Make</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>No image dey dis field.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Time</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Connection to one source</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>One HEAD request to one staging source, wit im credential if dem name one. Dem dey send di credential, dem no dey ever show am.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Source</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>wit credential</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Storage path (optional)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Test di connection</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>No source get BaseURL. Dem dey set sources for di settings ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>reachable</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>dem refuse: check di credential</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>no dey for di source</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>no answer</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>time don out</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>dem redirect am (dem no follow)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>no BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>no be storage path</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Address</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>sent</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>di secret miss</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>di secret no be user:password or Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Di newest lines of %file, newest first.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Setup &gt; Log files</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Event</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>All events</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Runs (start and end)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Path contains</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Lines</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Follow: show new lines as dem dey write dem</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Path and details</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>No line of di log match.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Wetin saving go change</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Wetin dem change</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Dem save am inside settings/override/image.ini.append.php, so one value here dey win over every siteaccess. Di values wey dem show na di ones wey dey work for dis siteaccess. Before you save, dem go ask you to confirm say na you.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>How dem dey make and deliver aliases.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>To fetch missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) no dey ever fetch.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Setting</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Value</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Inside settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Di address of each source and di name of di secret wey hold im credential (user:password or Bearer &lt;token&gt;). Dem dey set di value of one secret for Setup &gt; Secrets and dem no dey ever show am here.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Preview di changes</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Save</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Dey follow: dem update am %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Dem don pause am</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Di feed no answer; dey try again.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Di job don end.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: templates dey get di address, dem go make di alias when dem ask for am. render: di template dey make am as di page dey render (di original behavior).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Di address of one alias wey dem never make: token (signed, no need database), ids-token, ids, node or storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: one redirect to di file when di web server dey serve di storage, if no be so dem go stream di file.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Seconds wey one request fit spend to make or fetch one alias; afta dat e go answer di placeholder and one job go finish di work.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Di converter wey dem go try first for di WebP and AVIF variants.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Answer WebP or AVIF to browsers wey ask for am, for aliases wey list Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>One neutral image of di correct size as image dey miss.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>One small script wey dey replace placeholders wit di real image when e dey.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Afta publishing, one job dey make di aliases of di new images for every related siteaccess.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Conversions at once for one server.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Di process priority (nice) of bulk runs, 0 to 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Seconds wey browsers and caches fit keep one alias wey dem don make.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Seconds wey di address of one draft or preview image go stay valid.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Seconds wey di previous signing key go stay valid afta one rotation.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Di environment of dis installation.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Di environment wey dem go fetch missing images from; none: dem no go fetch anything.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>One per line: local storage prefix;source prefix or address, for storage paths wey no match.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Seconds wey one request to di source fit take.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Di largest file wey dem take from di source, for bytes.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Number of failures one afta di other wey go make dem pause di source.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>How long dem go pause one source wey dey fail.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Mail di administrators when dem pause di source (at most one time for one hour).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>One e-mail address per line; empty: di AdminEmail of site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Di address of di source installation %block, e.g. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Di name of di secret wit di credential, or env:VARIABLE. Never di credential itself.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(none)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Default: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Set here; tick am make dem remove am</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>inherited</translation>
     </message>
 </context>
 </TS>

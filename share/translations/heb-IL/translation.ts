@@ -16531,6 +16531,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>ייבוא/ייצוא</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>כינויי תמונה</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>יצירה עבור פריט זה</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>יצירה עבור תת-העץ</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>יצירה מחדש עבור פריט זה</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>יצירה מחדש עבור תת-העץ</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>הסרה עבור פריט זה</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>הסרה עבור תת-העץ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86454,6 +86482,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>בלוק ה-server של אתר ישן: location = עם return, if ($args) עבור שאילתה, rewrite כתו כללי ו-map של דפים בודדים.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>כינויי תמונה</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>כינויי תמונה הם העותקים המוקטנים והחתוכים של תמונה שהתבניות מציגות. כאן אפשר לראות איך הם נוצרים, להפעיל ריצות גורפות על האתר, לבדוק תמונה או מקור staging, לעקוב אחר היסטוריית הריצות ולשנות את ההגדרות.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>חלקי העמוד</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>לוח בקרה</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>ריצות גורפות</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>כלי בדיקה</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>היסטוריה</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>הגדרות</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>אפשר לראות כאן הכול. שינוי הגדרות, הפעלת משימות והכלים שיוצרים קבצים דורשים את המדיניות setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>מה דורש תשומת לב</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>מצב render: התבניות יוצרות כינויים חסרים בזמן הצגת העמוד, כמו קודם. כתובות on-demand, תמונות מציין מיקום ומשימות רקע אינן בשימוש.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>המשא ומתן על הפורמט פעיל, אך אף ממיר כאן אינו יכול לכתוב WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>זו התקנת staging, אך למקור שלה אין BaseURL: לא ניתן להביא תמונות חסרות.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>מקור ה-staging מושהה לאחר כשלונות רצופים: תמונות חסרות מקבלות תמונות מציין מיקום עד שההשהיה תסתיים או שתאפסו אותה.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>מקור ה-staging נכשל לאחרונה. השגיאה האחרונה שלו מופיעה למטה.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>התקנה זו אינה ייצור, אך SyncFrom אינו מציין מקור: שום דבר אינו מובא.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>תור המשימות (expqueue) אינו זמין: כינויים שחורגים מהזמן שלהם נוצרים על ידי הבקשה הבאה, יצירה מוקדמת לאחר פרסום מדולגת וריצות גורפות מוגבלות להיקפים קטנים.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>חלק ממשימות כינויי התמונה נכשלו סופית. הגדרות &gt; תור משימות מראה מדוע.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>הריצות הגורפות מושהות.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>כינויים נכשלו ב-24 השעות האחרונות. ההיסטוריה מפרטת אותם.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>מפתח החתימה בן יותר משנה. החלפתו משאירה כתובות ישנות תקפות במהלך תקופת החסד.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>עדיין אין מפתח חתימה: הוא נוצר עם כתובת on-demand הראשונה.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>24 השעות האחרונות</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>כינויים שנוצרו</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>תמונות מציין מיקום שסופקו</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>כשלונות</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>קבצים שהובאו</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>ריצות שהתחילו</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>משימות ממתינות / פועלות</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>נספר מ-%lines השורות האחרונות של %file, שחוזרות אחורה עד %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>מצב ואספקה</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>מצב</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>לפי דרישה</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>צורת הכתובת</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>אספקה</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>ההמתנה הארוכה ביותר של בקשה</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>המרות בו-זמנית</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy מתוך %max תפוסות כעת</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>משא ומתן על פורמט</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>פעיל</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>כבוי</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>תמונת מציין מיקום וסקריפט החלפה</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>יצירה מוקדמת לאחר פרסום</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>כינויי האתר</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>ממירים של וריאנטי הפורמט</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>ממיר</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>סדר ניסיון</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>מועדף</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>כן</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>לא</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>הכינויים עצמם נוצרים, כמו קודם, על ידי הממירים של [ImageConverterSettings]; אלה כותבים את וריאנטי WebP ו-AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>סביבה ומקור</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>התקנה זו</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(ייצור: אף פעם לא מביאה)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>מביאה מ</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>כלום</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>כתובת המקור</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>לא הוגדר</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>אישורי גישה</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>סוד %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>אין</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>מצב</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>פועל</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>מושהה עד %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>נכשל</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>כשלונות רצופים</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>השהיה לאחר %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>שגיאה אחרונה</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>הצלחה אחרונה</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>איפוס הכשלונות ושאילת המקור מחדש</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>תור משימות</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>סוג משימה</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>ממתינות</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>פועלות</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>נכשלו</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>לא רשום</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>תור המשימות אינו זמין.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>ריצות גורפות מושהות</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>מאז %time על ידי %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>ריצות גורפות רשאיות לרוץ</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>מפתח חתימה</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>מפתח</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>במאגר הסודות</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>עדיין אין</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>גיל</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days ימים (מאז %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>מפתח קודם</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>תקף עד %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>החלפת המפתח</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>כתובות שנחתמו במפתח הנוכחי ממשיכות לעבוד במהלך תקופת החסד (SigningKeyGrace), ואחר כך הן מחזירות תמונות מציין מיקום עד שהעמודים נוצרים מחדש.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>להחליף עכשיו</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>איך זה עובד</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>לפי דרישה, מצב render, staging והיומן</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>לפי דרישה (ברירת המחדל): עמוד מקשר כינוי שעדיין לא קיים לכתובת חתומה. הבקשה הראשונה יוצרת אותו בתוך ההמתנה הארוכה ביותר, ואחרת היא מחזירה תמונת מציין מיקום ניטרלית ומשימה משלימה את העבודה; סקריפט ההחלפה מחליף את תמונת מציין המיקום כשהתמונה מוכנה.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>מצב render: התבנית יוצרת את הכינוי בזמן הצגת העמוד, כמו קודם. אפשר לעבור בין השניים בכל עת; אין צורך להעביר דבר.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>התקנת staging מביאה ממקורה את המקורות והכינויים החסרים לה; מקור שנכשל מושהה לאחר כשלונות רצופים והמנהלים מקבלים לכל היותר דוא&quot;ל אחד בשעה.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>ריצות גורפות ויצירה מוקדמת לאחר פרסום הן משימות של תור המשימות, בעדיפות נמוכה מזו של מבקרים. הסרת כינויים מנקה גם את מטמון התגובות של Velocity, כך שקובץ שהוסר לא יסופק ממנו.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>כל כינוי שנוצר, תמונת מציין מיקום שסופקה, קובץ שהובא וריצה הם שורה ב-%file. לשורת הפקודה יש אותם כלים: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>משימה %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done מתוך %total תמונות</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ריצה</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>היקף</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>תוצאה</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>ביטול משימה זו</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>משימה %job אינה משימת כינויי תמונה, או שהוסרה מהתור.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>תוצאת ריצה %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>הריצות הגורפות מושהות</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>מושהות מאז %time על ידי %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>השהיה עוצרת כל ריצה גורפת לאחר התמונה הנוכחית שלה, בכל שרת; ריצות בתור ממתינות. כינויים למבקרים עדיין נוצרים.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>המשך ריצות גורפות</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>סיבה (אופציונלי)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>השהיית ריצות גורפות</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>הפעלת ריצה</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>ריצות הן משימות של תור המשימות: אפשר לעזוב את העמוד ולחזור.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>ללא תור המשימות ריצה מתבצעת בבקשה זו, לכל היותר עבור %count תמונות.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>פעולה</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>יצירה: יצירת הכינויים החסרים</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>יצירה מחדש: הסרה ויצירה מחדש</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>ניקוי: הסרה (נוצרים מחדש לפי דרישה)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>סנכרון מחדש: הבאת הקבצים ממקור ה-staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(רק בהתקנת staging)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>האתר כולו</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>צומת אחד</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>צומת ותת-העץ שלו</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>מזהה צומת</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>מחלקות</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>מאפיינים</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>השתנה מאז</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>תאריך (2026-11-01) או פרק זמן אחורה (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>מקסימום תמונות</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>כינויים (אם לא סומן אף אחד: כולם)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>סנכרון מחדש</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>ריצת ניסיון: רק לספור (סנכרון מחדש בודק את המקור ואינו שומר דבר)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>דריסת קבצים שונים (סנכרון מחדש)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>הפעלת הריצה</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>ריצות אחרונות</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>משימה</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>התקדמות</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>הועמדה בתור</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>פעולות</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ביטול</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>עדיין אין ריצה גורפת או סנכרון מחדש.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>תמונה אחת</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>הכתובות שתבנית מקבלת עכשיו, הגדלים והסוגים שחושבו לכל כינוי, והאם כל קובץ קיים.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>חיפוש לפי</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>מזהה אובייקט</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>מזהה</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>הצגה</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>אין לך הרשאה לקרוא אובייקט זה.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>לאובייקט זה אין תמונה.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>אין אובייקט עם מזהה זה.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>אובייקט %object, צומת %node, גרסה %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>מקור: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>הקובץ קיים</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>הקובץ חסר</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>כינויים של %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>כינוי</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>גודל</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>סוג</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>קובץ</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>פורמטים</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>כתובת בתבנית</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>קיים</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>חסר</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>לא לסוג זה</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>בדיקה</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>יצירה</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>אין תמונה בשדה זה.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>זמן</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>חיבור למקור</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>בקשת HEAD למקור staging, עם אישורי הגישה שלו אם נקובים. אישורי הגישה נשלחים, לעולם לא מוצגים.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>מקור</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>עם אישורי גישה</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>נתיב אחסון (אופציונלי)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>בדיקת החיבור</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>לאף מקור אין BaseURL. מקורות מוגדרים בהגדרות ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>נגיש</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>נדחה: בדקו את אישורי הגישה</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>לא נמצא במקור</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>אין תגובה</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>תם הזמן</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>הופנה מחדש (לא במעקב)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>אין BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>אינו נתיב אחסון</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>כתובת</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>מצב</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>נשלח</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>הסוד חסר</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>הסוד אינו user:password ואינו Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>השורות החדשות ביותר של %file, החדשות תחילה.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>הגדרות &gt; קובצי יומן</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>אירוע</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>כל האירועים</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>ריצות (התחלה וסיום)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>הנתיב מכיל</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>שורות</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>סינון</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>מעקב: הצגת שורות חדשות כשהן נכתבות</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>נתיב ופרטים</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>אף שורה ביומן אינה תואמת.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>מה ישתנה בשמירה</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>מה שונה</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>נשמר ב-settings/override/image.ini.append.php, ולכן ערך כאן גובר על כל siteaccess. הערכים המוצגים הם אלה התקפים עבור siteaccess זה. לפני השמירה תתבקשו לאשר את זהותכם.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>איך כינויים נוצרים ומסופקים.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>הבאת תמונות חסרות מהתקנה אחרת (alpha, dev, beta, stage, pro, post, arc). ייצור (pro) אף פעם לא מביא.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>הגדרה</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>ערך</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>ב-settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>הכתובת של כל מקור ושם הסוד שמחזיק את אישורי הגישה שלו (user:password או Bearer &lt;token&gt;). ערך הסוד נקבע בהגדרות &gt; סודות ואינו מוצג כאן לעולם.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>תצוגה מקדימה של השינויים</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>שמירה</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>במעקב: עודכן %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>מושהה</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>ההזנה לא ענתה; מנסה שוב.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>המשימה הסתיימה.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: התבניות מקבלות את הכתובת, והכינוי נוצר כשמבקשים אותו. render: התבנית יוצרת אותו בזמן הצגת העמוד (ההתנהגות המקורית).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>הכתובת של כינוי שעדיין לא נוצר: token (חתומה, אינה צריכה מסד נתונים), ids-token, ids, node או storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: הפניה לקובץ כשרת האינטרנט מגיש את האחסון, אחרת הקובץ מוזרם.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>שניות שבקשה רשאית להקדיש ליצירה או להבאה של כינוי; אחר כך היא מחזירה את תמונת מציין המיקום ומשימה משלימה את העבודה.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>הממיר שמנסים קודם עבור וריאנטי WebP ו-AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>החזרת WebP או AVIF לדפדפנים שמבקשים זאת, עבור כינויים שמפרטים Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>תמונה ניטרלית בגודל הנכון בזמן שתמונה חסרה.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>סקריפט קטן שמחליף תמונות מציין מיקום בתמונה האמיתית כשהיא קיימת.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>לאחר פרסום, משימה יוצרת את הכינויים של התמונות החדשות עבור כל siteaccess קשור.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>המרות בו-זמנית בשרת אחד.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>עדיפות התהליך (nice) של ריצות גורפות, 0 עד 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>שניות שדפדפנים ומטמונים רשאים לשמור כינוי שנוצר.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>שניות שכתובת של תמונת טיוטה או תצוגה מקדימה נשארת תקפה.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>שניות שמפתח החתימה הקודם נשאר תקף לאחר החלפה.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>הסביבה של התקנה זו.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>הסביבה שממנה מובאות תמונות חסרות; none: שום דבר אינו מובא.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>אחד בכל שורה: קידומת אחסון מקומית;קידומת או כתובת של המקור, עבור נתיבי אחסון שונים.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>שניות שבקשה אחת למקור רשאית להימשך.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>הקובץ הגדול ביותר שנלקח מהמקור, בבתים.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>כשלונות רצופים שלאחריהם המקור מושהה.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>למשך כמה זמן מושהה מקור שנכשל.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>שליחת דוא&quot;ל למנהלים כשהמקור מושהה (לכל היותר פעם בשעה).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>כתובת דוא&quot;ל אחת בכל שורה; ריק: ה-AdminEmail של site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>כתובת התקנת המקור %block, למשל https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>שם הסוד עם אישורי הגישה, או env:VARIABLE. לעולם לא אישורי הגישה עצמם.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(אין)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>ברירת מחדל: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>הוגדר כאן; סמנו כדי להסיר</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>עובר בירושה</translation>
     </message>
 </context>
 </TS>

@@ -16529,6 +16529,34 @@ Athugaðu: uppsetning pakkanna verður ekki fjarlægð.</translation>
         <source>Import/Export</source>
         <translation>Innflutningur/útflutningur</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Myndasamnefni</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Búa til fyrir þennan hlut</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Búa til fyrir undirtréð</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Búa til aftur fyrir þennan hlut</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Búa til aftur fyrir undirtréð</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Fjarlægja fyrir þennan hlut</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Fjarlægja fyrir undirtréð</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86452,6 +86480,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>server-blokk gamals vefs: location = með return, if ($args) fyrir fyrirspurn, rewrite sem algildisvefslóð og map stakra síðna.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Myndasamnefni</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Myndasamnefni eru kvarðuð og skorin afrit af mynd sem sniðmátin sýna. Hér sérðu hvernig þau eru búin til, getur keyrt magnverk yfir allan vefinn, prófað eina mynd eða staging-uppsprettu, fylgst með keyrslusögunni og breytt stillingum.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Hlutar síðunnar</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Mælaborð</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Magnkeyrslur</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Prófunartól</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Keyrslusaga</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Stillingar</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Þú getur skoðað allt hér. Til að breyta stillingum, keyra verk og nota tólin sem búa til skrár þarf stefnuna setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Hvað þarf athygli</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Hamur render: sniðmát búa til samnefni sem vantar á meðan síðan er teiknuð, eins og áður. Slóðir on-demand, staðgenglar og bakgrunnsverk eru ekki notuð.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Sniðsamningur er virkur, en enginn umbreytir hér getur skrifað WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Þetta er staging-uppsetning, en uppspretta hennar hefur ekkert BaseURL: ekki er hægt að sækja myndir sem vantar.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Staging-uppsprettan er í bið eftir margar bilanir í röð: myndir sem vantar fá staðgengla þar til biðinni lýkur eða þú núllstillir hana.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Staging-uppsprettan bilaði nýlega. Sjá síðustu villu hennar hér að neðan.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Þessi uppsetning er ekki framleiðsla, en SyncFrom nefnir enga uppsprettu: ekkert er sótt.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Verkröðin (expqueue) er ekki tiltæk: samnefni sem ná ekki tímamörkum eru búin til af næstu beiðni, forgerð eftir útgáfu er sleppt og magnkeyrslur takmarkast við lítil umfang.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Sum verk myndasamnefna mistókust endanlega. Uppsetning &gt; Verkröð sýnir hvers vegna.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Magnkeyrslur eru í bið.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Samnefni mistókust síðustu 24 klukkustundir. Keyrslusagan telur þau upp.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Undirskriftarlykillinn er meira en árs gamall. Ef honum er skipt út gilda gamlar slóðir áfram á fresttímanum.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Enginn undirskriftarlykill er til enn: hann er búinn til með fyrstu on-demand slóðinni.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Síðustu 24 klukkustundir</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Samnefni búin til</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Staðgenglar afgreiddir</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Bilanir</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Skrár undirbúnar</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Keyrslur hafnar</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Verk í bið / í keyrslu</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Talið úr síðustu %lines línum %file, sem ná aftur til %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Hamur og afhending</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Hamur</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>eftir þörfum</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Form slóðar</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Afhending</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Lengsta bið beiðni</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Umbreytingar samtímis</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy af %max uppteknar núna</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Sniðsamningur</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>virkur</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>óvirkur</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Staðgengill og skiptiskrifta</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Forgerð eftir útgáfu</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Samnefni vefsins</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Umbreytar sniðafbrigða</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Umbreytir</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Reynt</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>æskilegt</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>já</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nei</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Samnefnin sjálf eru búin til af umbreytum [ImageConverterSettings], eins og áður; þeir skrifa WebP- og AVIF-afbrigðin.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Umhverfi og uppspretta</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Þessi uppsetning</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(framleiðsla: sækir aldrei)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Sækir frá</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>ekkert</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Slóð uppsprettu</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>ekki stillt</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Auðkenni</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>leyndarmál %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ekkert</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Staða</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>virkar</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>í bið til %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>bilar</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Bilanir í röð</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>bið eftir %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Síðasta villa</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Síðasti árangur</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Núllstilla bilanir og spyrja uppsprettuna aftur</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Verkröð</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Tegund verks</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Í bið</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Í keyrslu</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mistókst</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>ekki skráð</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Verkröðin er ekki tiltæk.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Magnkeyrslur í bið</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>frá %time af %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Magnkeyrslur mega keyra</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Undirskriftarlykill</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Lykill</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>í leyndarmálageymslunni</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>enginn enn</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Aldur</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days dagar (frá %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Fyrri lykill</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>gildir til %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Skipta um lykil</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Slóðir undirritaðar með núverandi lykli virka áfram á fresttímanum (SigningKeyGrace), síðan svara þær með staðgenglum þar til síðurnar eru búnar til aftur.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Skipta núna</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Hvernig þetta virkar</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, hamur render, staging og annállinn</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (sjálfgefið): síða tengir samnefni sem er ekki til enn við undirritaða slóð. Fyrsta beiðnin býr það til innan lengstu biðar, annars svarar hún með hlutlausum staðgengli og verk lýkur vinnunni; skiptiskriftan skiptir staðgenglinum út þegar myndin er tilbúin.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Hamur render: sniðmátið býr til samnefnið á meðan síðan er teiknuð, eins og áður. Hægt er að skipta á milli þeirra hvenær sem er; ekkert þarf að flytja.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Staging-uppsetning sækir frumeintök og samnefni sem hana vantar úr uppsprettu sinni; uppspretta sem bilar fer í bið eftir margar bilanir í röð og stjórnendur fá í mesta lagi einn tölvupóst á klukkustund.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Magnkeyrslur og forgerð eftir útgáfu eru verk í verkröðinni, með lægri forgang en gestir. Þegar samnefni eru fjarlægð er einnig hreinsað svarskyndiminni Velocity, svo að fjarlægð skrá sé ekki afgreidd úr því.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Hvert samnefni sem er búið til, hver staðgengill sem er afgreiddur, hver skrá sem er undirbúin og hver keyrsla er lína í %file. Skipanalínan hefur sömu tól: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Verk %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done af %total myndum</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Keyrsla</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Umfang</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Niðurstaða</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Hætta við þetta verk</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Verk %job er ekki verk myndasamnefna, eða það var fjarlægt úr röðinni.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Niðurstaða keyrslu %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Magnkeyrslur eru í bið</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Í bið frá %time af %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Bið stöðvar hverja magnkeyrslu eftir núverandi mynd, á hverjum netþjóni; keyrslur í röð bíða. Samnefni gesta eru enn búin til.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Halda magnkeyrslum áfram</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Ástæða (valfrjálst)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Setja magnkeyrslur í bið</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Hefja keyrslu</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Keyrslur eru verk í verkröðinni: þú getur farið af síðunni og komið aftur.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Án verkraðarinnar er keyrsla gerð í þessari beiðni, fyrir í mesta lagi %count myndir.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aðgerð</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: búa til samnefnin sem vantar</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: fjarlægja og búa þau til aftur</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: fjarlægja þau (búin til aftur eftir þörfum)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: sækja skrárnar úr staging-uppsprettunni</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(aðeins á staging-uppsetningu)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Allur vefurinn</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Einn hnútur</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Hnútur og undirtré hans</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Kenni hnúts</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klasar</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Eigindir</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Breytt síðan</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Dagsetning (2026-11-01) eða tími síðan (12 klukkustundir, 2 dagar).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Í mesta lagi myndir</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Samnefni (ekkert valið: öll)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Þurrkeyrsla: aðeins telja (resync athugar uppsprettuna og vistar ekkert)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Skrifa yfir skrár sem eru ólíkar (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Hefja keyrsluna</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Nýjustu keyrslur</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Verk</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Framvinda</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Í röð</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aðgerðir</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Hætta við</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Engin magnkeyrsla eða resync enn.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Ein mynd</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Slóðirnar sem sniðmát fær núna, stærðir og tegundir reiknaðar fyrir hvert samnefni og hvort hver skrá er til.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Fletta upp eftir</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Kenni hlutar</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Kenni</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Sýna</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Þú hefur ekki leyfi til að lesa þennan hlut.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Þessi hlutur hefur enga mynd.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Enginn hlutur með þessu kenni.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>hlutur %object, hnútur %node, útgáfa %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Frumeintak: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>skrá til</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>skrá vantar</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Samnefni %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Samnefni</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Stærð</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tegund</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Skrá</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Snið</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Slóð í sniðmáti</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>til</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>vantar</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ekki fyrir þessa tegund</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Athuga</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Búa til</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Engin mynd í þessum reit.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tími</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Tenging við uppsprettu</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>HEAD-beiðni til staging-uppsprettu, með auðkenni hennar þegar það er tilgreint. Auðkennið er sent en aldrei sýnt.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Uppspretta</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>með auðkenni</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Geymsluslóð (valfrjálst)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Prófa tenginguna</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Engin uppspretta hefur BaseURL. Uppsprettur eru stilltar í stillingunum ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>næst</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>hafnað: athugaðu auðkennið</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>fannst ekki hjá uppsprettunni</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>ekkert svar</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>rann út á tíma</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>vísað áfram (ekki fylgt)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>ekkert BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>ekki geymsluslóð</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Slóð</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Staða</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>sent</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>leyndarmálið vantar</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>leyndarmálið er hvorki user:password né Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Nýjustu línur %file, nýjustu fyrst.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Uppsetning &gt; Annálsskrár</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Atburður</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Allir atburðir</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Keyrslur (upphaf og lok)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Slóð inniheldur</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Línur</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Sía</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Fylgjast með: sýna nýjar línur um leið og þær eru skrifaðar</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Slóð og nánari upplýsingar</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Engin lína í annálnum passar.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Hverju vistun myndi breyta</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Hverju var breytt</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Vistað í settings/override/image.ini.append.php, þannig að gildi hér gengur framar öllum siteaccess. Gildin sem sýnd eru gilda fyrir þetta siteaccess. Vistun biður þig fyrst um að staðfesta hver þú ert.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Hvernig samnefni eru búin til og afhent.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Að sækja myndir sem vantar úr annarri uppsetningu (alpha, dev, beta, stage, pro, post, arc). Framleiðsla (pro) sækir aldrei.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Stilling</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Gildi</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Í settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Slóð hverrar uppsprettu og heiti leyndarmálsins sem geymir auðkenni hennar (user:password eða Bearer &lt;token&gt;). Gildi leyndarmáls er stillt í Uppsetning &gt; Leyndarmál og aldrei sýnt hér.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Forskoða breytingarnar</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Vista</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Fylgist með: uppfært %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Í bið</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Straumurinn svaraði ekki; reyni aftur.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Verkinu er lokið.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: sniðmát fá slóðina, samnefnið er búið til þegar beðið er um það. render: sniðmátið býr það til á meðan síðan er teiknuð (upphaflega hegðunin).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Slóð samnefnis sem er ekki búið til enn: token (undirrituð, þarf engan gagnagrunn), ids-token, ids, node eða storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: tilvísun á skrána þegar vefþjónninn afgreiðir geymsluna, annars er skránni streymt.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Sekúndur sem beiðni má nota til að búa til eða sækja samnefni; síðan svarar hún með staðgenglinum og verk lýkur vinnunni.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Umbreytirinn sem er reyndur fyrst fyrir WebP- og AVIF-afbrigðin.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Svara með WebP eða AVIF til vafra sem biðja um það, fyrir samnefni sem telja upp Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Hlutlaus mynd af réttri stærð á meðan mynd vantar.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Lítil skrifta sem skiptir staðgenglum út fyrir réttu myndina þegar hún er tilbúin.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Eftir útgáfu býr verk til samnefni nýju myndanna fyrir hvert tengt siteaccess.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Umbreytingar samtímis á einum netþjóni.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Forgangur ferlis (nice) í magnkeyrslum, 0 til 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Sekúndur sem vafrar og skyndiminni mega geyma samnefni sem hefur verið búið til.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Sekúndur sem slóð drög- eða forskoðunarmyndar er gild.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Sekúndur sem fyrri undirskriftarlykill er gildur eftir skipti.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Umhverfi þessarar uppsetningar.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Umhverfið sem myndir sem vantar eru sóttar úr; none: ekkert er sótt.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Ein á línu: forskeyti staðbundinnar geymslu;forskeyti uppsprettu eða slóð, fyrir geymsluslóðir sem eru ólíkar.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Sekúndur sem ein beiðni til uppsprettunnar má taka.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Stærsta skráin sem tekin er úr uppsprettunni, í bætum.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Bilanir í röð eftir sem uppsprettan fer í bið.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Hversu lengi uppspretta sem bilar er í bið.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Senda stjórnendum tölvupóst þegar uppsprettan fer í bið (í mesta lagi einu sinni á klukkustund).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Eitt netfang á línu; tómt: AdminEmail í site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Slóð uppsprettuuppsetningarinnar %block, t.d. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Heiti leyndarmálsins með auðkenninu, eða env:VARIABLE. Aldrei auðkennið sjálft.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(ekkert)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Sjálfgefið: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Stillt hér; hakaðu við til að fjarlægja</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>erft</translation>
     </message>
 </context>
 </TS>

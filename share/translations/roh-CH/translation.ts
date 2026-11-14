@@ -16590,6 +16590,34 @@ Avertiment: Ils pachets na vegnan betg deinstallads.</translation>
         <source>Import/Export</source>
         <translation>Importar/exportar</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Aliases da maletgs</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Crear per quest element</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Crear per la part da l&apos;arbra</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Crear danovamain per quest element</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Crear danovamain per la part da l&apos;arbra</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Allontanar per quest element</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Allontanar per la part da l&apos;arbra</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Il bloc server d'ina veglia website: location = cun return, if ($args) per ina dumonda, rewrite sco joker ed ina map da paginas singulas.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Aliases da maletgs</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Ils aliases da maletgs èn las copias scalladas e tagliadas d&apos;in maletg che ils models mussan. Qua vesais Vus co ch&apos;els vegnan fatgs, lantschais incumbensas en massa sur la website, testais in maletg u ina funtauna da staging, suondais la cronica dals process e midais ils parameters.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Parts da la pagina</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Survista</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Process en massa</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Utensils da test</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Cronica dals process</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Parameters</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Qua pudais Vus guardar tut. Midar parameters, lantschar incumbensas e ils utensils che creeschan datotecas dumondan la directiva setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Tge che dumonda attenziun</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Modus render: ils models creeschan aliases mancants durant che la pagina vegn represchentada, sco enfin ussa. Las adressas on-demand, ils remplazzants ed las incumbensas en il fund na vegnan betg duvrads.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>La tscherna dal format è activada, ma nagin convertider qua na po scriver WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Quai è ina installaziun da staging, ma sia funtauna n&apos;ha nagina BaseURL: maletgs mancants na pon betg vegnir prelevads.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>La funtauna da staging è en pausa suenter errurs consecutivas: maletgs mancants survegnan remplazzants fin che la pausa ha fin u che Vus la restabilis.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>La funtauna da staging n&apos;ha dentant betg reussì dacurt. Guardai sia davosa errur sutvart.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Questa installaziun n&apos;è betg la producziun, ma SyncFrom na numna nagina funtauna: nagut na vegn prelevà.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>La fila d&apos;incumbensas (expqueue) n&apos;è betg disponibla: aliases che surpassan lur temp vegnan fatgs da la proxima dumonda, la creaziun anticipada suenter la publicaziun vegn betg fatga e process en massa èn limitads a pitschens secturs.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Mintgin dad ils incumbensas per aliases da maletgs n&apos;han definitivamain betg reussì. Configuraziun &gt; Fila d&apos;incumbensas mussa pertge.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Ils process en massa èn en pausa.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Aliases n&apos;han betg reussì durant las ultimas 24 uras. La cronica dals process als glista.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>La clav da signatura è dapli ch&apos;in on veglia. Sche Vus la midais, restan las adressas veglias valaivlas durant il temp da tolleranza.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>I na dat anc nagina clav da signatura: ella vegn creada cun l&apos;emprima adressa on-demand.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Las ultimas 24 uras</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Aliases creads</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Remplazzants surdads</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Errurs</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Datotecas prelevadas</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Process lantschads</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Incumbensas spetgantas / currentas</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Chalculà or da las ultimas %lines lingias da %file che van enavos fin %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Modus e surdada</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Modus</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>tenor basegn</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Furma da l&apos;adressa</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Surdada</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Pli lunga spetga d&apos;ina dumonda</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Conversiuns simultanas</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy da %max occupads ussa</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Tscherna dal format</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ligà</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>stgilà</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Remplazzant e scrip da midada</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Creaziun anticipada suenter la publicaziun</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Aliases da la website</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Convertiders da las variantas da format</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Convertider</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Successiun</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>preferì</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>gea</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>na</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Ils aliases svessa vegnan fatgs sco enfin ussa dals convertiders da [ImageConverterSettings]; questas scrivan las variantas WebP ed AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Ambient e funtauna</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Questa installaziun</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(producziun: na preleva mai)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Preleva da</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>nagut</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Adressa da la funtauna</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>betg definì</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Datas d&apos;access</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>secret %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nagin</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stadi</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>funcziunescha</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>en pausa fin %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>cun errurs</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Errurs consecutivas</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>pausa suenter %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Davosa errur</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Ultim success</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Restabilir las errurs e dumandar danovamain la funtauna</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Fila d&apos;incumbensas</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Tip d&apos;incumbensa</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Spetgant</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Va</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Betg reussì</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>betg registrà</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>La fila d&apos;incumbensas n&apos;è betg disponibla.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Process en massa en pausa</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>dapi %time da %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Process en massa pon currer</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Clav da signatura</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Clav</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>en la memoria dals secrets</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>anc nagina</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Vegliadetgna</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days dis (dapi %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Clav precedenta</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>valaivla fin %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Midar la clav</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Adressas signadas cun la clav actuala funcziunan vinavant durant il temp da tolleranza (SigningKeyGrace); lura surdattan ellas remplazzants, fin che las paginas èn creadas danovamain.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Midar ussa</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Co che funcziunescha</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, modus render, staging e il protocol</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (standard): ina pagina colliescha in alias che n&apos;exista anc betg cun ina adressa signada. L&apos;emprima dumonda al crea entaifer la pli lunga spetga, uschiglio surdat ella in remplazzant neutral ed ina incumbensa terminescha il lavur; il scrip da midada remplazza il remplazzant sco ch&apos;il maletg è là.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Modus render: il model crea l&apos;alias durant che la pagina vegn represchentada, sco enfin ussa. Pudais midar a mintga mument tranter omadus; nagut na sto vegnir migrà.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Ina installaziun da staging preleva ils originals ed aliases mancants da sia funtauna; ina funtauna cun errurs vegn messa en pausa suenter errurs consecutivas ed ils administraturs survegnan maximalmain in e-mail l&apos;ura.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Process en massa e la creaziun anticipada suenter la publicaziun èn incumbensas da la fila d&apos;incumbensas, cun pli pitschna prioritad che visitaders. Sche aliases vegnan allontanads, vegn era svidada la memoria intermediara da respostas da Velocity, uschè ch&apos;ina datoteca allontanada na vegn betg surdada or da quella.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Mintga alias creà, mintga remplazzant surdà, mintga datoteca prelevada e mintga process è ina lingia en %file. La lingia da cumond ha ils medems utensils: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Incumbensa %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done da %total maletgs</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Process</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Sectur</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Interrumper questa incumbensa</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>L&apos;incumbensa %job n&apos;è betg ina incumbensa per aliases da maletgs u ella è vegnida allontanada da la fila.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Resultat dal process %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Ils process en massa èn en pausa</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>En pausa dapi %time da %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Ina pausa ferma mintga process en massa suenter ses maletg actual, sin mintga server; process en la fila spetgan. Aliases per visitaders vegnan anc adina creads.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Cuntinuar ils process en massa</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Motiv (opziunal)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Metter ils process en massa en pausa</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Lantschar in process</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Process èn incumbensas da la fila d&apos;incumbensas: Vus pudais bandunar la pagina e turnar pli tard.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Senza la fila d&apos;incumbensas vegn in process exequì en questa dumonda, per maximalmain %count maletgs.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Acziun</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Crear: crear ils aliases mancants</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Crear danovamain: allontanar e crear danovamain</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Allontanar: stizzar (creads danovamain tenor basegn)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Sincronisar danovamain: prelevar las datotecas da la funtauna da staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(mo sin ina installaziun da staging)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Tutta la website</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>In nod</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>In nod e sia part da l&apos;arbra</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID dal nod</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Classas</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Attributs</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Midà dapi</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Ina data (2026-11-01) u ina durada enavos (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Maximalmain maletgs</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Aliases (nagin marcà: tuts)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>sincronisar danovamain</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Process da test: be cumptar (ina sincronisaziun nova controllescha la funtauna e memorisescha nagut)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Surscriver datotecas divergentas (sincronisaziun nova)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Lantschar il process</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Ultims process</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Incumbensa</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Avanzament</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>En la fila da spetga</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Acziuns</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Interrumper</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Anc nagin process en massa e nagina sincronisaziun nova.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>In maletg</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Las adressas ch&apos;in model survegn ussa, las grondezzas ed ils tips calculads per mintga alias e sche mintga datoteca exista.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Tschertgar tenor</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID da l&apos;object</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Mussar</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Vus na das betg leger quest object.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Quest object n&apos;ha nagin maletg.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Nagin object cun questa ID.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>object %object, nod %node, versiun %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Original: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>datoteca avant maun</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>datoteca manca</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Aliases da %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Alias</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Grondezza</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tip</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datoteca</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Formats</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Adressa en in model</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>avant maun</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>manca</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>betg per quest tip</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Controllar</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Crear</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Nagin maletg en quest champ.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ura</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Colliaziun cun ina funtauna</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Ina dumonda HEAD a ina funtauna da staging, cun ses datas d&apos;access sch&apos;ina è numnada. Las datas d&apos;access vegnan trametteas, mai mussadas.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Funtauna</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>cun datas d&apos;access</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Via da memorisaziun (opziunal)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Testar la colliaziun</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Nagina funtauna n&apos;ha ina BaseURL. Las funtaunas vegnan definidas en ils parameters ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>accessibel</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>refusà: controllar las datas d&apos;access</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>betg chattà tar la funtauna</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>naginas respostas</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>temp surpassà</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>renvià (betg suandà)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>nagina BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>betg ina via da memorisaziun</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adressa</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>trametta</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>il secret manca</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>il secret n&apos;è betg user:password u Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Las pli novas lingias da %file, las pli novas l&apos;emprim.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Configuraziun &gt; Datotecas da protocol</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Eveniment</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Tut ils eveniments</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Process (cumenzament e fin)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>La via cuntegna</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Lingias</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Suandar: mussar novas lingias uschespert ch&apos;ellas vegnan scrittas</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Via e detagls</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Naginas lingias dal protocol correspundan.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Tge che la memorisaziun midass</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Tge che è vegnì midà</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Memorisà en settings/override/image.ini.append.php, uschia che ina valur qua vala sur mintga siteaccess. Las valurs mussadas èn quellas ch&apos;èn en vigur per quest siteaccess. Avant ch&apos;u memorisar vegnis Vus dumandà da confermar tgi che Vus essas.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Co ch&apos;aliases vegnan creads e surdads.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Prelevar maletgs mancants dad in&apos;autra installaziun (alpha, dev, beta, stage, pro, post, arc). La producziun (pro) na preleva mai.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Parameter</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valur</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>En settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>L&apos;adressa da mintga funtauna e il num dal secret che cuntegna las datas d&apos;access (user:password u Bearer &lt;token&gt;). La valur d&apos;in secret vegn definida en Configuraziun &gt; Secrets e mai mussada qua.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Prevista da las midadas</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Memorisar</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Suandar: actualisà %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>En pausa</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Il feed n&apos;ha betg respundì; nov test.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>L&apos;incumbensa è finida.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: ils models survegnan l&apos;adressa, l&apos;alias vegn creà cura ch&apos;el vegn dumandà. render: il model al crea durant che la pagina vegn represchentada (il cumportament original).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>L&apos;adressa d&apos;in alias che n&apos;è anc betg creà: token (signà, na dovra nagina banca da datas), ids-token, ids, node u storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: in renviament a la datoteca sch&apos;il server web surdat la memoria, uschiglio vegn la datoteca trametta en streaming.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Secundas ch&apos;ina dumonda dastga duvrar per crear u prelevar in alias; lura surdat ella il remplazzant ed ina incumbensa terminescha il lavur.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Il convertider ch&apos;è empruvà l&apos;emprim per las variantas WebP ed AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Surdar WebP u AVIF a navigaturs che dumondan quai, per aliases che glistan Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>In maletg neutral da la grondezza giusta, durant ch&apos;in maletg manca.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>In pitschen scrip che remplazza ils remplazzants cun il vair maletg, sco ch&apos;el è avant maun.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Suenter la publicaziun crea ina incumbensa ils aliases dals novs maletgs per mintga siteaccess relatà.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Conversiuns simultanas sin in server.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>La prioritad dal process (nice) dals process en massa, 0 fin 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Secundas ch&apos;ils navigaturs e las memorias intermediaras dastgan tegnair in alias creà.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Secundas ch&apos;ina adressa d&apos;in maletg da concept u da prevista resta valaivla.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Secundas ch&apos;ina clav da signatura precedenta resta valaivla suenter ina midada.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>L&apos;ambient da questa installaziun.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>L&apos;ambient dal qual maletgs mancants vegnan prelevads; nagin: nagut na vegn prelevà.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>In per lingia: prefix da memorisaziun locala;prefix u adressa da la funtauna, per vias da memorisaziun divergentas.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Secundas ch&apos;ina dumonda a la funtauna dastga durar.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>La pli gronda datoteca prelevada da la funtauna, en bytes.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Errurs consecutivas suenter las qualas la funtauna vegn messa en pausa.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Quant ditg che ina funtauna cun errurs vegn messa en pausa.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Trametter in e-mail als administraturs cura che la funtauna vegn messa en pausa (maximalmain ina giada l&apos;ura).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Ina adressa dad e-mail per lingia; vid: l&apos;AdminEmail da site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>L&apos;adressa da l&apos;installaziun da funtauna %block, p. ex. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Il num dal secret cun las datas d&apos;access, u env:VARIABLE. Mai las datas d&apos;access svessa.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(nagin)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Standard: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Definì qua; marcar per allontanar</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>ertà</translation>
     </message>
 </context>
 </TS>

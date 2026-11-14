@@ -16529,6 +16529,34 @@ Pastaba: paketai nebus pašalinti iš įdiegtų (neįdiegiami).</translation>
         <source>Import/Export</source>
         <translation>Importuoti/Eksportuoti</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Paveikslėlių pseudonimai</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Generuoti šiam elementui</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Generuoti pomedžiui</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Generuoti iš naujo šiam elementui</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Generuoti iš naujo pomedžiui</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Pašalinti šiam elementui</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Pašalinti pomedžiui</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86452,6 +86480,997 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Senos svetainės server blokas: location = su return, if ($args) užklausai, rewrite kaip pakaitos simbolis ir map atskiriems puslapiams.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Paveikslėlių pseudonimai</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Paveikslėlių pseudonimai yra sumažintos ir apkarpytos paveikslėlio kopijos, kurias rodo šablonai. Čia matote, kaip jie kuriami, paleidžiate masines užduotis visoje svetainėje, išbandote vieną paveikslėlį ar staging šaltinį, sekate paleidimų istoriją ir keičiate nustatymus.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Puslapio dalys</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Valdymo skydelis</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Masiniai paleidimai</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Bandymo įrankiai</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Paleidimų istorija</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Nustatymai</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Čia galite peržiūrėti viską. Nustatymams keisti, užduotims paleisti ir failus kuriantiems įrankiams reikalinga politika setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Kam reikia dėmesio</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Režimas render: šablonai trūkstamus pseudonimus sukuria piešiant puslapį, kaip ir anksčiau. Adresai on-demand, vietos žymekliai ir fono užduotys nenaudojami.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Formatų derinimas įjungtas, bet nė vienas čia esantis keitiklis negali rašyti WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Tai staging diegimas, bet jo šaltinis neturi BaseURL: trūkstamų paveikslėlių gauti negalima.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Staging šaltinis sustabdytas po iš eilės įvykusių klaidų: trūkstami paveikslėliai gauna vietos žymeklius, kol pauzė baigsis arba ją atstatysite.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Staging šaltinis neseniai sutriko. Paskutinę klaidą žr. žemiau.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Šis diegimas nėra produkcinis, bet SyncFrom nenurodo jokio šaltinio: niekas neatsisiunčiama.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Užduočių eilė (expqueue) nepasiekiama: pseudonimus, nespėjusius laiku, sukuria kita užklausa, išankstinis kūrimas po paskelbimo praleidžiamas, o masiniai paleidimai apriboti nedidelėmis apimtimis.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Kai kurios paveikslėlių pseudonimų užduotys visam laikui nepavyko. Priežastį rodo Sąranka &gt; Užduočių eilė.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Masiniai paleidimai sustabdyti.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Per paskutines 24 valandas pseudonimų kūrimas nepavyko. Paleidimų istorijoje jie išvardyti.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Pasirašymo raktas senesnis nei metai. Jį pakeitus, seni adresai lieka galioti atidėjimo laikotarpiu.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Pasirašymo rakto dar nėra: jis sukuriamas su pirmuoju on-demand adresu.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Paskutinės 24 valandos</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Sukurta pseudonimų</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Atsakyta vietos žymekliais</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Klaidos</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Paruošta failų</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Pradėta paleidimų</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Užduotys laukia / vykdomos</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Suskaičiuota iš paskutinių %lines %file eilučių, siekiančių iki %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Režimas ir pristatymas</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Režimas</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>pagal poreikį</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Adreso forma</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Pristatymas</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Ilgiausias užklausos laukimas</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Vienu metu vykdomi konvertavimai</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy iš %max šiuo metu užimta</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Formatų derinimas</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>įjungta</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>išjungta</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Vietos žymeklis ir keitimo scenarijus</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Išankstinis kūrimas po paskelbimo</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Svetainės pseudonimai</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Formato variantų keitikliai</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Keitiklis</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Bandymo tvarka</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>pageidaujamas</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>taip</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ne</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Pačius pseudonimus kuria [ImageConverterSettings] keitikliai, kaip ir anksčiau; šie rašo WebP ir AVIF variantus.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Aplinka ir šaltinis</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Šis diegimas</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(produkcija: niekada negauna)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Gauna iš</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>nieko</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Šaltinio adresas</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>nenustatytas</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Prisijungimo duomenys</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>paslaptis %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nėra</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Būsena</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>veikia</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>sustabdytas iki %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>sutrikęs</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Iš eilės įvykusios klaidos</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>pauzė po %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Paskutinė klaida</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Paskutinis sėkmingas bandymas</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Atstatyti klaidas ir vėl paklausti šaltinio</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Užduočių eilė</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Užduoties tipas</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Laukiama</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Vykdoma</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Nepavyko</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>neregistruota</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Užduočių eilė nepasiekiama.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Masiniai paleidimai sustabdyti</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>nuo %time, naudotojas %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Masiniai paleidimai gali veikti</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Pasirašymo raktas</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Raktas</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>paslapčių saugykloje</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>dar nėra</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Amžius</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days d. (nuo %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Ankstesnis raktas</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>galioja iki %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Pakeisti raktą</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Dabartiniu raktu pasirašyti adresai toliau veikia atidėjimo laikotarpiu (SigningKeyGrace), po to atsako vietos žymekliais, kol puslapiai sukuriami iš naujo.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Pakeisti dabar</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Kaip tai veikia</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, režimas render, staging ir žurnalas</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (numatytasis): puslapis dar neesantį pseudonimą susieja su pasirašytu adresu. Pirmoji užklausa jį sukuria per ilgiausią laukimo laiką, kitaip atsako neutraliu vietos žymekliu, o darbą užbaigia užduotis; keitimo scenarijus žymeklį pakeičia, kai paveikslėlis paruoštas.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Režimas render: šablonas pseudonimą sukuria piešiant puslapį, kaip ir anksčiau. Tarp jų galima perjungti bet kada; nieko nereikia perkelti.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Staging diegimas iš savo šaltinio gauna trūkstamus originalus ir pseudonimus; sutrikęs šaltinis po iš eilės įvykusių klaidų sustabdomas, o administratoriai gauna ne daugiau kaip vieną el. laišką per valandą.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Masiniai paleidimai ir išankstinis kūrimas po paskelbimo yra užduočių eilės užduotys, žemesnio prioriteto nei lankytojai. Pašalinus pseudonimus išvalomas ir Velocity atsakymų talpyklos turinys, kad pašalintas failas iš jos nebūtų teikiamas.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Kiekvienas sukurtas pseudonimas, atsakytas vietos žymeklis, paruoštas failas ir paleidimas yra %file eilutė. Komandų eilutėje yra tie patys įrankiai: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Užduotis %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done iš %total paveikslėlių</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Paleidimas</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Apimtis</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultatas</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Atšaukti šią užduotį</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Užduotis %job nėra paveikslėlių pseudonimų užduotis arba buvo pašalinta iš eilės.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Paleidimo %run rezultatas</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Masiniai paleidimai sustabdyti</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Sustabdyta nuo %time, naudotojas %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Pauzė sustabdo kiekvieną masinį paleidimą po dabartinio paveikslėlio visuose serveriuose; eilėje esantys paleidimai laukia. Lankytojų pseudonimai vis dar kuriami.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Tęsti masinius paleidimus</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Priežastis (nebūtina)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Sustabdyti masinius paleidimus</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Pradėti paleidimą</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Paleidimai yra užduočių eilės užduotys: puslapį galite palikti ir sugrįžti.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Be užduočių eilės paleidimas atliekamas šioje užklausoje, daugiausia %count paveikslėlių.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Veiksmas</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generuoti: sukurti trūkstamus pseudonimus</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Generuoti iš naujo: pašalinti ir sukurti juos iš naujo</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Išvalyti: pašalinti juos (sukuriami iš naujo pagal poreikį)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Sinchronizuoti iš naujo: gauti failus iš staging šaltinio</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(tik staging diegime)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Visa svetainė</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Vienas mazgas</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Mazgas ir jo pomedis</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Mazgo ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klasės</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atributai</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Pakeista nuo</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Data (2026-11-01) arba laikas atgal (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Daugiausia paveikslėlių</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Pseudonimai (nepažymėta: visi)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Bandomasis paleidimas: tik suskaičiuoti (resync patikrina šaltinį ir nieko neišsaugo)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Perrašyti besiskiriančius failus (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Pradėti paleidimą</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Naujausi paleidimai</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Užduotis</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Eiga</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Eilėje</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Veiksmai</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Atšaukti</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Masinio paleidimo ar resync dar nėra.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Vienas paveikslėlis</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Adresai, kuriuos šablonas gauna dabar, kiekvienam pseudonimui apskaičiuoti dydžiai ir tipai bei ar failas yra.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Ieškoti pagal</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Objekto ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rodyti</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Neturite teisės skaityti šio objekto.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Šis objektas neturi paveikslėlio.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Objekto su šiuo ID nėra.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>objektas %object, mazgas %node, versija %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Originalas: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>failas yra</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>failo trūksta</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name pseudonimai</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Pseudonimas</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Dydis</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tipas</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Failas</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Formatai</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Adresas šablone</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>yra</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>trūksta</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>netinka šiam tipui</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Tikrinti</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Sukurti</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Šiame lauke paveikslėlio nėra.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Valanda</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Ryšys su šaltiniu</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>HEAD užklausa staging šaltiniui su jo prisijungimo duomenimis, kai jie nurodyti. Prisijungimo duomenys siunčiami, bet niekada nerodomi.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Šaltinis</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>su prisijungimo duomenimis</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Saugyklos kelias (nebūtina)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Išbandyti ryšį</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Nė vienas šaltinis neturi BaseURL. Šaltiniai nustatomi nustatymuose ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>pasiekiamas</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>atmesta: patikrinkite prisijungimo duomenis</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>šaltinyje nerasta</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>nėra atsakymo</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>baigėsi laikas</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>nukreipta (nesekta)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>nėra BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>ne saugyklos kelias</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresas</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Būklė</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>išsiųsta</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>paslapties nėra</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>paslaptis nėra user:password ar Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Naujausios %file eilutės, naujausios pirmos.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Sąranka &gt; Žurnalo failai</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Įvykis</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Visi įvykiai</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Paleidimai (pradžia ir pabaiga)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Kelias turi</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Eilučių</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtras</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Sekti: rodyti naujas eilutes, kai jos įrašomos</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Kelias ir išsami informacija</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Nė viena žurnalo eilutė neatitinka.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Ką pakeistų įrašymas</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Kas pakeista</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Įrašoma į settings/override/image.ini.append.php, todėl čia nustatyta reikšmė viršija visus siteaccess. Rodomos šiam siteaccess galiojančios reikšmės. Prieš įrašant paprašoma patvirtinti, kad tai jūs.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Kaip pseudonimai kuriami ir pristatomi.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Trūkstamų paveikslėlių gavimas iš kito diegimo (alpha, dev, beta, stage, pro, post, arc). Produkcija (pro) niekada negauna.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Nustatymas</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Reikšmė</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override faile</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Kiekvieno šaltinio adresas ir paslapties, kurioje laikomi jo prisijungimo duomenys (user:password arba Bearer &lt;token&gt;), pavadinimas. Paslapties reikšmė nustatoma Sąranka &gt; Slaptieji duomenys ir čia niekada nerodoma.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Peržiūrėti pakeitimus</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Įrašyti</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Sekama: atnaujinta %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Sustabdyta</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Šaltinis neatsakė; bandoma dar kartą.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Užduotis baigėsi.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: šablonai gauna adresą, o pseudonimas sukuriamas, kai jo paprašoma. render: šablonas jį sukuria piešiant puslapį (pradinis elgesys).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Dar nesukurto pseudonimo adresas: token (pasirašytas, duomenų bazės nereikia), ids-token, ids, node arba storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: nukreipimas į failą, kai saugyklą teikia žiniatinklio serveris, kitaip failas perduodamas srautu.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Sekundės, kiek užklausa gali užtrukti kurdama ar gaudama pseudonimą; paskui ji atsako vietos žymekliu, o darbą užbaigia užduotis.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Keitiklis, bandomas pirmas WebP ir AVIF variantams.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Atsakyti WebP arba AVIF naršyklėms, kurios jų prašo, pseudonimams, kuriuose nurodyta Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Neutralus tinkamo dydžio paveikslėlis, kol tikro paveikslėlio nėra.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Nedidelis scenarijus, kuris vietos žymeklius pakeičia tikru paveikslėliu, kai jis yra.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Po paskelbimo užduotis sukuria naujų paveikslėlių pseudonimus kiekvienam susijusiam siteaccess.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Vienu metu vykdomi konvertavimai viename serveryje.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Masinių paleidimų proceso prioritetas (nice), nuo 0 iki 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Sekundės, kiek naršyklės ir talpyklos gali saugoti sukurtą pseudonimą.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Sekundės, kiek galioja juodraščio ar peržiūros paveikslėlio adresas.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Sekundės, kiek po rakto keitimo galioja ankstesnis pasirašymo raktas.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Šio diegimo aplinka.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Aplinka, iš kurios gaunami trūkstami paveikslėliai; none: niekas negaunama.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Po vieną eilutėje: vietinės saugyklos priešdėlis;šaltinio priešdėlis arba adresas, skirtingiems saugyklos keliams.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Sekundės, kiek gali trukti viena užklausa šaltiniui.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Didžiausias iš šaltinio imamas failas, baitais.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Iš eilės įvykusių klaidų skaičius, po kurio šaltinis sustabdomas.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Kiek laiko sutrikęs šaltinis sustabdomas.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Siųsti administratoriams el. laišką, kai šaltinis sustabdomas (ne dažniau kaip kartą per valandą).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Vienas el. pašto adresas eilutėje; tuščia: site.ini AdminEmail.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Šaltinio diegimo %block adresas, pvz., https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Paslapties su prisijungimo duomenimis pavadinimas arba env:VARIABLE. Niekada ne patys prisijungimo duomenys.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(nėra)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Numatytoji: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Nustatyta čia; pažymėkite, kad pašalintumėte</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>paveldėta</translation>
     </message>
 </context>
 </TS>

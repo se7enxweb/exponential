@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>တင်သွင်း/ထုတ်ယူ</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>ပုံ အမည်ကွဲများ</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>ဤအရာအတွက် ပြုလုပ်ရန်</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>subtree အတွက် ပြုလုပ်ရန်</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>ဤအရာအတွက် ပြန်ပြုလုပ်ရန်</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>subtree အတွက် ပြန်ပြုလုပ်ရန်</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>ဤအရာအတွက် ဖယ်ရှားရန်</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>subtree အတွက် ဖယ်ရှားရန်</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>ဆိုက်ဟောင်း၏ server block- return ပါသော location =၊ query အတွက် if ($args)၊ wildcard အဖြစ် rewrite နှင့် စာမျက်နှာတစ်ခုချင်း၏ map။</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>ပုံ အမည်ကွဲများ</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>ပုံ အမည်ကွဲများသည် တမ်းပလိတ်များ ပြသသော ပုံတစ်ပုံ၏ အရွယ်အစားချိန်ထားပြီး ဖြတ်တောက်ထားသော မိတ္တူများ ဖြစ်သည်။ ဤနေရာတွင် ၎င်းတို့ကို မည်သို့ပြုလုပ်ကြောင်း ကြည့်နိုင်သည်၊ ဆိုက်တစ်ခုလုံးတွင် အစုလိုက်အလုပ်များ လုပ်ဆောင်နိုင်သည်၊ ပုံတစ်ပုံ သို့မဟုတ် staging ရင်းမြစ်ကို စမ်းသပ်နိုင်သည်၊ လုပ်ဆောင်မှုမှတ်တမ်းကို လိုက်ကြည့်နိုင်ပြီး ဆက်တင်များကို ပြောင်းနိုင်သည်။</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>စာမျက်နှာ၏ အစိတ်အပိုင်းများ</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ဒက်ရှ်ဘုတ်</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>အစုလိုက် လုပ်ဆောင်မှုများ</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>စမ်းသပ်ရေး ကိရိယာများ</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>လုပ်ဆောင်မှု မှတ်တမ်း</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ဆက်တင်များ</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>ဤနေရာတွင် အားလုံးကို ကြည့်နိုင်သည်။ ဆက်တင်များ ပြောင်းလဲခြင်း၊ အလုပ်များ လုပ်ဆောင်ခြင်းနှင့် ဖိုင်ပြုလုပ်သော ကိရိယာများအတွက် setup/managealiases မူဝါဒ လိုအပ်သည်။</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>အာရုံစိုက်ရန် လိုအပ်သည်များ</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Render မုဒ်: တမ်းပလိတ်များသည် စာမျက်နှာကို ပုံဖော်နေစဉ် ပျောက်နေသော အမည်ကွဲများကို ယခင်ကကဲ့သို့ ပြုလုပ်သည်။ on-demand လိပ်စာများ၊ နေရာယူပုံများနှင့် နောက်ခံအလုပ်များကို မသုံးပါ။</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>ဖော်မတ် ညှိနှိုင်းမှု ဖွင့်ထားသော်လည်း ဤနေရာရှိ ကွန်ဗာတာတစ်ခုမှ WebP ကို မရေးနိုင်ပါ။</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>ဤသည်မှာ staging တပ်ဆင်မှု ဖြစ်သော်လည်း ၎င်း၏ ရင်းမြစ်တွင် BaseURL မရှိပါ: ပျောက်နေသော ပုံများကို မရယူနိုင်ပါ။</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>staging ရင်းမြစ်သည် ဆက်တိုက်မအောင်မြင်မှုများကြောင့် ရပ်ထားသည်: ရပ်ချိန်ကုန်သည်အထိ သို့မဟုတ် သင် ပြန်သတ်မှတ်သည်အထိ ပျောက်နေသော ပုံများအတွက် နေရာယူပုံများ ပေးမည်။</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>staging ရင်းမြစ် မကြာသေးမီက မအောင်မြင်ခဲ့ပါ။ အောက်တွင် ၎င်း၏ နောက်ဆုံးအမှားကို ကြည့်ပါ။</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>ဤတပ်ဆင်မှုသည် production မဟုတ်သော်လည်း SyncFrom တွင် ရင်းမြစ်အမည် မပါပါ: ဘာမျှ မရယူပါ။</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>အလုပ်တန်းစီ (expqueue) မရနိုင်ပါ: အချိန်မီမပြီးသော အမည်ကွဲများကို နောက်တောင်းဆိုမှုက ပြုလုပ်မည်၊ ထုတ်ဝေပြီးနောက် ကြိုတင်ပြုလုပ်ခြင်းကို ကျော်မည်ဖြစ်ပြီး အစုလိုက်လုပ်ဆောင်မှုများသည် သေးငယ်သော နယ်ပယ်များအထိသာ ကန့်သတ်ခံရမည်။</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>ပုံ အမည်ကွဲများ၏ အလုပ်အချို့ အပြီးအပိုင် မအောင်မြင်ခဲ့ပါ။ Setup &gt; အလုပ်တန်းစီ တွင် အကြောင်းရင်းကို ကြည့်ပါ။</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>အစုလိုက် လုပ်ဆောင်မှုများကို ရပ်ထားသည်။</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>လွန်ခဲ့သော ၂၄ နာရီအတွင်း အမည်ကွဲများ မအောင်မြင်ခဲ့ပါ။ လုပ်ဆောင်မှုမှတ်တမ်းတွင် စာရင်းပြထားသည်။</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>လက်မှတ်ထိုးသော့သည် တစ်နှစ်ကျော် ရှိပြီ။ ၎င်းကို လှည့်ပြောင်းလျှင် ဟောင်းသော လိပ်စာများသည် ခွင့်ပြုကာလအတွင်း ဆက်လက်အသုံးဝင်သည်။</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>လက်မှတ်ထိုးသော့ မရှိသေးပါ: ပထမ on-demand လိပ်စာနှင့်အတူ ပြုလုပ်မည်။</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>လွန်ခဲ့သော ၂၄ နာရီ</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>ပြုလုပ်ပြီး အမည်ကွဲများ</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>ပြန်ပေးခဲ့သော နေရာယူပုံများ</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>မအောင်မြင်မှုများ</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>staging လုပ်ထားသော ဖိုင်များ</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>စတင်ခဲ့သော လုပ်ဆောင်မှုများ</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>စောင့်နေသော / လုပ်ဆောင်နေသော အလုပ်များ</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file ၏ နောက်ဆုံး %lines လိုင်းမှ ရေတွက်ထားပြီး %time အထိ ပါဝင်သည်။</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>မုဒ်နှင့် ပေးပို့မှု</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>မုဒ်</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>လိုအပ်မှ</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>လိပ်စာပုံစံ</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>ပေးပို့မှု</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>တောင်းဆိုမှုတစ်ခု၏ အရှည်ဆုံး စောင့်ချိန်</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>တစ်ပြိုင်နက် ပြောင်းလဲမှုများ</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>ယခု %busy / %max လုပ်ဆောင်နေသည်</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>ဖော်မတ် ညှိနှိုင်းမှု</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ဖွင့်</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ပိတ်</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>နေရာယူပုံနှင့် swap စကရစ်</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>ထုတ်ဝေပြီးနောက် ကြိုတင်ပြုလုပ်ခြင်း</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>ဆိုက်၏ အမည်ကွဲများ</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>ဖော်မတ်ပုံစံကွဲများ၏ ကွန်ဗာတာများ</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>ကွန်ဗာတာ</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>စမ်းခဲ့သည်</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>ဦးစားပေး</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ဟုတ်ကဲ့</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>မဟုတ်ပါ</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>အမည်ကွဲများကို [ImageConverterSettings] ၏ ကွန်ဗာတာများက ယခင်ကကဲ့သို့ ပြုလုပ်သည်၊ ဤကွန်ဗာတာများက WebP နှင့် AVIF ပုံစံကွဲများကို ရေးသည်။</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>ပတ်ဝန်းကျင်နှင့် ရင်းမြစ်</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>ဤတပ်ဆင်မှု</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production: ဘယ်တော့မှ မရယူပါ)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>ရယူသည့်နေရာ</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>ဘာမျှမရှိ</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>ရင်းမြစ် လိပ်စာ</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>မသတ်မှတ်ရသေး</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>အထောက်အထား</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>လျှို့ဝှက်ချက် %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>မရှိ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>အခြေအနေ</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>အလုပ်လုပ်နေသည်</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time အထိ ရပ်ထားသည်</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>မအောင်မြင်နေသည်</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>ဆက်တိုက် မအောင်မြင်မှုများ</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count ပြီးနောက် ရပ်မည်</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>နောက်ဆုံး အမှား</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>နောက်ဆုံး အောင်မြင်မှု</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>မအောင်မြင်မှုများကို ပြန်သတ်မှတ်ပြီး ရင်းမြစ်ကို ထပ်မေးရန်</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>အလုပ်တန်းစီ</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>အလုပ်အမျိုးအစား</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>စောင့်နေသည်</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>လုပ်ဆောင်နေသည်</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>မအောင်မြင်ပါ</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>မမှတ်ပုံတင်ရသေး</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>အလုပ်တန်းစီ မရနိုင်ပါ။</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>အစုလိုက် လုပ်ဆောင်မှုများ ရပ်ထားသည်</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time မှစ၍ %user က</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>အစုလိုက် လုပ်ဆောင်မှုများ လုပ်ဆောင်နိုင်သည်</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>လက်မှတ်ထိုးသော့</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>သော့</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>လျှို့ဝှက်ချက်သိုလှောင်ရာတွင်</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>မရှိသေးပါ</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>အသက်</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days ရက် (%time မှစ၍)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>ယခင်သော့</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time အထိ သက်တမ်းရှိသည်</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>သော့ကို လှည့်ပြောင်းရန်</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>လက်ရှိသော့ဖြင့် လက်မှတ်ထိုးထားသော လိပ်စာများသည် ခွင့်ပြုကာလ (SigningKeyGrace) အတွင်း ဆက်လက်အလုပ်လုပ်ပြီး စာမျက်နှာများ ပြန်ပြုလုပ်သည်အထိ နေရာယူပုံများကို ပြန်ပေးမည်။</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>ယခု လှည့်ပြောင်းရန်</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>အလုပ်လုပ်ပုံ</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand၊ render မုဒ်၊ staging နှင့် မှတ်တမ်း</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (မူလ): စာမျက်နှာသည် မရှိသေးသော အမည်ကွဲကို လက်မှတ်ထိုးထားသော လိပ်စာသို့ လင့်ခ်ချိတ်သည်။ ပထမတောင်းဆိုမှုက အရှည်ဆုံးစောင့်ချိန်အတွင်း ပြုလုပ်ပေးသည်၊ မဟုတ်လျှင် ကြားနေနေရာယူပုံကို ပြန်ပေးပြီး အလုပ်တစ်ခုက ကျန်သည်ကို ပြီးစီးစေသည်၊ ပုံရောက်လာသောအခါ swap စကရစ်က နေရာယူပုံကို အစားထိုးသည်။</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render မုဒ်: တမ်းပလိတ်သည် စာမျက်နှာကို ပုံဖော်နေစဉ် အမည်ကွဲကို ယခင်ကကဲ့သို့ ပြုလုပ်သည်။ နှစ်ခုကြား အချိန်မရွေး ပြောင်းနိုင်သည်၊ ဘာမျှ ရွှေ့ပြောင်းရန် မလိုပါ။</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>staging တပ်ဆင်မှုသည် မရှိသော မူရင်းများနှင့် အမည်ကွဲများကို ၎င်း၏ ရင်းမြစ်မှ ရယူသည်၊ မအောင်မြင်သော ရင်းမြစ်ကို ဆက်တိုက်မအောင်မြင်မှုများနောက် ရပ်ထားပြီး စီမံခန့်ခွဲသူများသည် တစ်နာရီလျှင် အီးမေးလ်တစ်စောင်သာ ရမည်။</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>အစုလိုက် လုပ်ဆောင်မှုများနှင့် ထုတ်ဝေပြီးနောက် ကြိုတင်ပြုလုပ်ခြင်းတို့သည် အလုပ်တန်းစီ၏ အလုပ်များဖြစ်ပြီး ဧည့်သည်များထက် ဦးစားပေးမှု နိမ့်သည်။ အမည်ကွဲများ ဖယ်ရှားခြင်းသည် Velocity ၏ တုံ့ပြန်မှု cache ကိုပါ ရှင်းလင်းသောကြောင့် ဖယ်ရှားထားသော ဖိုင်ကို ၎င်းမှ မပေးပို့ပါ။</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>ပြုလုပ်ထားသော အမည်ကွဲ၊ ပြန်ပေးခဲ့သော နေရာယူပုံ၊ staging လုပ်ထားသော ဖိုင်နှင့် လုပ်ဆောင်မှုတိုင်းသည် %file ၏ လိုင်းတစ်ကြောင်း ဖြစ်သည်။ command line တွင်လည်း ထိုကိရိယာများ ရှိသည်: %command။</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>အလုပ် %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>ပုံ %total ပုံအနက် %done</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>လုပ်ဆောင်မှု</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>နယ်ပယ်</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ရလဒ်</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>ဤအလုပ်ကို ပယ်ဖျက်ရန်</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>အလုပ် %job သည် ပုံ အမည်ကွဲများ၏ အလုပ် မဟုတ်ပါ၊ သို့မဟုတ် တန်းစီမှ ဖယ်ရှားခံရသည်။</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>လုပ်ဆောင်မှု %run ၏ ရလဒ်</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>အစုလိုက် လုပ်ဆောင်မှုများ ရပ်ထားသည်</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time မှစ၍ %user က ရပ်ထားသည်။</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>ရပ်ခြင်းသည် အစုလိုက်လုပ်ဆောင်မှုတိုင်းကို ၎င်း၏ လက်ရှိပုံပြီးနောက် ဆာဗာတိုင်းတွင် ရပ်စေသည်၊ တန်းစီထားသော လုပ်ဆောင်မှုများ စောင့်နေမည်။ ဧည့်သည်များ၏ အမည်ကွဲများကို ဆက်လက်ပြုလုပ်သည်။</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>အစုလိုက် လုပ်ဆောင်မှုများကို ပြန်စရန်</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>အကြောင်းရင်း (မထည့်လည်းရ)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>အစုလိုက် လုပ်ဆောင်မှုများကို ရပ်ရန်</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>လုပ်ဆောင်မှု စတင်ရန်</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>လုပ်ဆောင်မှုများသည် အလုပ်တန်းစီ၏ အလုပ်များဖြစ်သည်: စာမျက်နှာမှ ထွက်ပြီး ပြန်လာနိုင်သည်။</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>အလုပ်တန်းစီမရှိလျှင် လုပ်ဆောင်မှုကို ဤတောင်းဆိုမှုတွင် ပုံ %count အထိသာ လုပ်ဆောင်သည်။</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>လုပ်ဆောင်ချက်</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: မရှိသော အမည်ကွဲများကို ပြုလုပ်ရန်</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: ဖယ်ရှားပြီး ပြန်ပြုလုပ်ရန်</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: ဖယ်ရှားရန် (လိုအပ်မှ ပြန်ပြုလုပ်မည်)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: ဖိုင်များကို staging ရင်းမြစ်မှ ရယူရန်</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(staging တပ်ဆင်မှုတွင်သာ)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>ဆိုက်တစ်ခုလုံး</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>နုဒ်တစ်ခု</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>နုဒ်တစ်ခုနှင့် ၎င်း၏ subtree</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>နုဒ် ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>အတန်းအစားများ</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>ဂုဏ်ရည်များ</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>ပြောင်းလဲခဲ့သည့်အချိန်မှစ၍</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>ရက်စွဲ (2026-11-01) သို့မဟုတ် လွန်ခဲ့သောအချိန် (၁၂ နာရီ၊ ၂ ရက်)။</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>ပုံ အများဆုံး</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>အမည်ကွဲများ (တစ်ခုမှ မအမှတ်ပါက အားလုံး)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Dry run: ရေတွက်ရုံသာ (resync သည် ရင်းမြစ်ကို စစ်ပြီး ဘာမျှ မသိမ်းပါ)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>ကွဲပြားသော ဖိုင်များကို ထပ်ရေးရန် (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>လုပ်ဆောင်မှု စတင်ရန်</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>နောက်ဆုံး လုပ်ဆောင်မှုများ</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>အလုပ်</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>တိုးတက်မှု</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>တန်းစီထားသည်</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>လုပ်ဆောင်ချက်များ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ပယ်ဖျက်ရန်</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>အစုလိုက် လုပ်ဆောင်မှု သို့မဟုတ် resync မရှိသေးပါ။</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>ပုံတစ်ပုံ</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>တမ်းပလိတ်က ယခုရသော လိပ်စာများ၊ အမည်ကွဲတိုင်းအတွက် တွက်ထားသော အရွယ်အစားများနှင့် အမျိုးအစားများ၊ ဖိုင်တိုင်း ရှိမရှိ။</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>ရှာရန်ပုံစံ</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>အရာဝတ္ထု ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ပြရန်</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>ဤအရာဝတ္ထုကို ဖတ်ခွင့်မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>ဤအရာဝတ္ထုတွင် ပုံမရှိပါ။</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>ဤ id ဖြင့် အရာဝတ္ထု မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>အရာဝတ္ထု %object၊ နုဒ် %node၊ ဗားရှင်း %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>မူရင်း: %width x %height၊ %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>ဖိုင်ရှိသည်</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>ဖိုင်မရှိ</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name ၏ အမည်ကွဲများ</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>အမည်ကွဲ</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>အရွယ်အစား</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>အမျိုးအစား</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ဖိုင်</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>ဖော်မတ်များ</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>တမ်းပလိတ်ရှိ လိပ်စာ</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>ရှိသည်</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>မရှိ</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ဤအမျိုးအစားအတွက် မဟုတ်ပါ</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>စစ်ဆေးရန်</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>ပြုလုပ်ရန်</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>ဤအကွက်တွင် ပုံမရှိပါ။</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>အချိန်</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>ရင်းမြစ်သို့ ချိတ်ဆက်မှု</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>staging ရင်းမြစ်သို့ HEAD တောင်းဆိုမှု၊ အမည်ပေးထားလျှင် ၎င်း၏ အထောက်အထားနှင့်အတူ။ အထောက်အထားကို ပို့သည်၊ ဘယ်တော့မှ မပြပါ။</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>ရင်းမြစ်</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>အထောက်အထားနှင့်</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>သိမ်းဆည်းရာလမ်းကြောင်း (မထည့်လည်းရ)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>ချိတ်ဆက်မှု စမ်းသပ်ရန်</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>မည်သည့်ရင်းမြစ်တွင်မျှ BaseURL မရှိပါ။ ရင်းမြစ်များကို ဆက်တင်များတွင် သတ်မှတ်သည် ([AliasSource_&lt;environment&gt;])။</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>ရောက်ရှိနိုင်သည်</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>ငြင်းပယ်ခံရသည်: အထောက်အထားကို စစ်ပါ</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>ရင်းမြစ်တွင် မတွေ့ပါ</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>တုံ့ပြန်မှုမရှိ</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>အချိန်ကုန်သွားသည်</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>လမ်းလွှဲထားသည် (မလိုက်ပါ)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL မရှိ</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>သိမ်းဆည်းရာလမ်းကြောင်း မဟုတ်ပါ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>လိပ်စာ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>အနေအထား</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>ပို့ပြီး</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>လျှို့ဝှက်ချက် မရှိပါ</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>လျှို့ဝှက်ချက်သည် user:password သို့မဟုတ် Bearer &lt;token&gt; မဟုတ်ပါ</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file ၏ နောက်ဆုံးလိုင်းများ၊ အသစ်ဆုံးအရင်။</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Setup &gt; မှတ်တမ်းဖိုင်များ</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>ဖြစ်ရပ်</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>ဖြစ်ရပ်အားလုံး</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>လုပ်ဆောင်မှုများ (စတင်ခြင်းနှင့် ပြီးဆုံးခြင်း)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>လမ်းကြောင်းတွင် ပါဝင်သည်</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>လိုင်းများ</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>စစ်ထုတ်ရန်</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>လိုက်ကြည့်ရန်: ရေးသည်နှင့် လိုင်းအသစ်များ ပြရန်</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>လမ်းကြောင်းနှင့် အသေးစိတ်</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>မှတ်တမ်း၏ မည်သည့်လိုင်းမျှ မကိုက်ညီပါ။</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>သိမ်းလျှင် ဘာပြောင်းမည်နည်း</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>ဘာပြောင်းခဲ့သနည်း</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php တွင် သိမ်းထားသောကြောင့် ဤနေရာမှ တန်ဖိုးသည် siteaccess တိုင်းထက် ဦးစားရသည်။ ပြထားသော တန်ဖိုးများသည် ဤ siteaccess အတွက် အသက်ဝင်နေသည်များ ဖြစ်သည်။ မသိမ်းမီ သင်ဖြစ်ကြောင်း အတည်ပြုရန် မေးမည်။</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>အမည်ကွဲများကို မည်သို့ပြုလုပ်ပြီး ပေးပို့ကြောင်း။</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>ပျောက်နေသော ပုံများကို အခြားတပ်ဆင်မှုမှ ရယူခြင်း (alpha, dev, beta, stage, pro, post, arc)။ Production (pro) သည် ဘယ်တော့မှ မရယူပါ။</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>ဆက်တင်</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>တန်ဖိုး</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override တွင်</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>ရင်းမြစ်တစ်ခုစီ၏ လိပ်စာနှင့် ၎င်း၏ အထောက်အထားကို ကိုင်ထားသော လျှို့ဝှက်ချက်၏ အမည် (user:password သို့မဟုတ် Bearer &lt;token&gt;)။ လျှို့ဝှက်ချက်၏ တန်ဖိုးကို Setup &gt; လျှို့ဝှက်ချက်များ တွင် သတ်မှတ်ပြီး ဤနေရာတွင် ဘယ်တော့မှ မပြပါ။</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>ပြောင်းလဲမှုများကို အစမ်းကြည့်ရန်</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>သိမ်းရန်</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>လိုက်ကြည့်နေသည်: %time တွင် ပြင်ဆင်ခဲ့သည်</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>ရပ်ထားသည်</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>feed မတုံ့ပြန်ပါ၊ ထပ်ကြိုးစားနေသည်။</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>အလုပ် ပြီးဆုံးသွားပြီ။</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: တမ်းပလိတ်များက လိပ်စာရပြီး တောင်းဆိုမှ အမည်ကွဲကို ပြုလုပ်သည်။ render: တမ်းပလိတ်က စာမျက်နှာပုံဖော်စဉ် ပြုလုပ်သည် (မူလအပြုအမူ)။</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>မပြုလုပ်ရသေးသော အမည်ကွဲ၏ လိပ်စာ: token (လက်မှတ်ထိုးထား၊ ဒေတာဘေ့စ် မလို)၊ ids-token၊ ids၊ node သို့မဟုတ် storage။</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: ဝဘ်ဆာဗာက သိမ်းဆည်းရာကို ပေးပို့လျှင် ဖိုင်သို့ redirect၊ မဟုတ်လျှင် ဖိုင်ကို stream လုပ်သည်။</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>တောင်းဆိုမှုတစ်ခုက အမည်ကွဲကို ပြုလုပ်ရန် သို့မဟုတ် ရယူရန် သုံးနိုင်သော စက္ကန့်များ၊ ထို့နောက် နေရာယူပုံကို ပြန်ပေးပြီး အလုပ်တစ်ခုက ကျန်သည်ကို ပြီးစီးစေသည်။</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP နှင့် AVIF ပုံစံကွဲများအတွက် ပထမစမ်းသော ကွန်ဗာတာ။</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Formats[] စာရင်းပါသော အမည်ကွဲများအတွက် တောင်းဆိုသော ဘရောက်ဇာများသို့ WebP သို့မဟုတ် AVIF ပြန်ပေးရန်။</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>ပုံမရှိစဉ် မှန်ကန်သော အရွယ်အစားရှိ ကြားနေပုံ။</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>ပုံရောက်လာသောအခါ နေရာယူပုံများကို အစစ်အမှန်ပုံဖြင့် အစားထိုးသော စကရစ်သေး။</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>ထုတ်ဝေပြီးနောက် အလုပ်တစ်ခုက ဆက်စပ် siteaccess တိုင်းအတွက် ပုံအသစ်များ၏ အမည်ကွဲများကို ပြုလုပ်သည်။</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>ဆာဗာတစ်လုံးတွင် တစ်ပြိုင်နက် ပြောင်းလဲမှုများ။</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>အစုလိုက် လုပ်ဆောင်မှုများ၏ ပရိုဆက်စ် ဦးစားပေး (nice)၊ ၀ မှ ၁၉။</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>ဘရောက်ဇာများနှင့် cache များက ပြုလုပ်ပြီး အမည်ကွဲကို ထိန်းထားနိုင်သော စက္ကန့်များ။</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>မူကြမ်း သို့မဟုတ် အစမ်းကြည့်ပုံ၏ လိပ်စာ သက်တမ်းရှိသော စက္ကန့်များ။</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>လှည့်ပြောင်းပြီးနောက် ယခင်လက်မှတ်ထိုးသော့ သက်တမ်းရှိသော စက္ကန့်များ။</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>ဤတပ်ဆင်မှု၏ ပတ်ဝန်းကျင်။</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>ပျောက်နေသော ပုံများ ရယူမည့် ပတ်ဝန်းကျင်၊ none: ဘာမျှ မရယူပါ။</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>တစ်လိုင်းလျှင် တစ်ခု: ဒေသတွင်း storage ရှေ့ဆက်;ရင်းမြစ် ရှေ့ဆက် သို့မဟုတ် လိပ်စာ၊ ကွဲပြားသော storage လမ်းကြောင်းများအတွက်။</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>ရင်းမြစ်သို့ တောင်းဆိုမှုတစ်ခု ကြာနိုင်သော စက္ကန့်များ။</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>ရင်းမြစ်မှ ယူမည့် အကြီးဆုံးဖိုင်၊ ဘိုက်ဖြင့်။</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>ဤအကြိမ်ရေ ဆက်တိုက်မအောင်မြင်လျှင် ရင်းမြစ်ကို ရပ်မည်။</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>မအောင်မြင်သော ရင်းမြစ်ကို မည်မျှကြာ ရပ်ထားမည်နည်း။</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>ရင်းမြစ်ရပ်ထားသည့်အခါ စီမံခန့်ခွဲသူများထံ မေးလ်ပို့ရန် (တစ်နာရီလျှင် တစ်ကြိမ်သာ)။</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>တစ်လိုင်းလျှင် အီးမေးလ်လိပ်စာတစ်ခု၊ ဗလာ: site.ini ၏ AdminEmail။</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>ရင်းမြစ်တပ်ဆင်မှု %block ၏ လိပ်စာ၊ ဥပမာ https://www.example.org။</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>အထောက်အထားပါသော လျှို့ဝှက်ချက်၏ အမည်၊ သို့မဟုတ် env:VARIABLE။ အထောက်အထားကိုယ်တိုင် ဘယ်တော့မှ မဟုတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(မရှိ)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>မူလ: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>ဤနေရာတွင် သတ်မှတ်ထားသည်၊ ဖယ်ရှားရန် အမှတ်ခြစ်ပါ</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>အမွေဆက်ခံထားသည်</translation>
     </message>
 </context>
 </TS>

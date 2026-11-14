@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>درآمد/برآمد</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>تصوير جا عرف</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>هن شيءِ لاءِ ٺاهيو</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>ذيلي وڻ لاءِ ٺاهيو</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>هن شيءِ لاءِ ٻيهر ٺاهيو</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>ذيلي وڻ لاءِ ٻيهر ٺاهيو</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>هن شيءِ لاءِ هٽايو</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>ذيلي وڻ لاءِ هٽايو</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>پراڻي سائيٽ جو server بلاڪ: return سان location =، سوال لاءِ if ($args)، وائلڊ ڪارڊ طور rewrite ۽ اڪيلن صفحن جو map.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>تصوير جا عرف</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>تصوير جا عرف تصوير جون اهي ماپ بدليل ۽ ڪٽيل نقلون آهن جيڪي ٽيمپليٽ ڏيکارين ٿا. هتي توهان ڏسي سگهو ٿا ته اهي ڪيئن ٺهن ٿا، سڄي سائيٽ تي بلڪ ڪم هلائي سگهو ٿا، هڪ تصوير يا اسٽيجنگ ماخذ آزمائي سگهو ٿا، هلائڻ جي تاريخ ڏسي سگهو ٿا ۽ سيٽنگون تبديل ڪري سگهو ٿا.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>صفحي جا حصا</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ڊيش بورڊ</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>بلڪ هلائڻ</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>آزمائشي اوزار</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>هلائڻ جي تاريخ</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>سيٽنگون</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>توهان هتي سڀ ڪجهه ڏسي سگهو ٿا. سيٽنگون تبديل ڪرڻ، ڪم هلائڻ ۽ فائلون ٺاهيندڙ اوزارن لاءِ setup/managealiases پاليسي گهرجي.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>ڪهڙي ڏانهن ڌيان گهرجي</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Render موڊ: ٽيمپليٽ صفحو رينڊر ٿيڻ مهل غائب عرف ٺاهين ٿا، اڳ وانگر. on-demand پتا، پليس هولڊر ۽ پس منظر جا ڪم استعمال نه ٿين ٿا.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>فارميٽ جي ڳالهه ٻولهه آن آهي، پر هتي ڪو ڪنورٽر WebP لکي نٿو سگهي.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>هي اسٽيجنگ انسٽاليشن آهي، پر ان جي ماخذ ۾ BaseURL ناهي: غائب تصويرون حاصل نٿيون ٿي سگهن.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>اسٽيجنگ ماخذ لڳاتار ناڪامين ڪري روڪيل آهي: غائب تصويرن لاءِ پليس هولڊر ملندا جيستائين روڪ ختم ٿئي يا توهان ان کي ري سيٽ ڪريو.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>اسٽيجنگ ماخذ تازو ناڪام ٿيو. هيٺ ان جي آخري غلطي ڏسو.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>هي انسٽاليشن پروڊڪشن ناهي، پر SyncFrom ڪنهن ماخذ جو نالو نٿو ڏئي: ڪجهه به حاصل نٿو ٿئي.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>ڪم جي قطار (expqueue) موجود ناهي: جيڪي عرف وقت وڃائين ٿا اهي ايندڙ درخواست ٺاهيندي، شايع ڪرڻ کانپوءِ اڳواٽ ٺاهڻ ڇڏيو وڃي ٿو ۽ بلڪ هلائڻ ننڍي دائري تائين محدود آهي.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>تصوير جي عرفن جا ڪجهه ڪم هميشه لاءِ ناڪام ٿيا. Setup &gt; ڪم جي قطار ۾ سبب ڏسو.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>بلڪ هلائڻ روڪيل آهي.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>گذريل 24 ڪلاڪن ۾ عرف ناڪام ٿيا. هلائڻ جي تاريخ ۾ فهرست ڏسو.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>سائننگ ڪي هڪ سال کان پراڻي آهي. ان کي بدلائڻ سان پراڻا پتا گريس مدت تائين صحيح رهن ٿا.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>اڃا ڪا سائننگ ڪي ناهي: اها پهرين on-demand پتي سان ٺهندي.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>گذريل 24 ڪلاڪ</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>ٺهيل عرف</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>ڏنل پليس هولڊر</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>ناڪاميون</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>اسٽيج ٿيل فائلون</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>شروع ٿيل هلائڻ</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>انتظار ۾ / هلندڙ ڪم</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file جي آخري %lines لائنن مان ڳڻيل، جيڪي %time تائين پهچن ٿيون.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>موڊ ۽ پهچائڻ</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>موڊ</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>گهرڻ تي</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>پتي جو روپ</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>پهچائڻ</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>درخواست جو وڌ ۾ وڌ انتظار</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>هڪ ئي وقت ڪنورشن</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy / %max هاڻي مصروف</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>فارميٽ جي ڳالهه ٻولهه</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>آن</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>آف</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>پليس هولڊر ۽ swap اسڪرپٽ</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>شايع ڪرڻ کانپوءِ اڳواٽ ٺاهڻ</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>سائيٽ جا عرف</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>فارميٽ قسمن جا ڪنورٽر</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>ڪنورٽر</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>آزمايل</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>ترجيحي</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ها</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>نه</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>عرف پاڻ [ImageConverterSettings] جي ڪنورٽرن ٺاهيا آهن، اڳ وانگر؛ اهي WebP ۽ AVIF قسم لکن ٿا.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>ماحول ۽ ماخذ</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>هي انسٽاليشن</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(پروڊڪشن: ڪڏهن به حاصل نٿو ڪري)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>هتان حاصل ڪري ٿو</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>ڪجهه به نه</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>ماخذ جو پتو</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>مقرر ناهي</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>سند</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>ڳجهي %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ڪوبه نه</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>حالت</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>ڪم ڪري رهيو آهي</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time تائين روڪيل</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>ناڪام</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>لڳاتار ناڪاميون</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count کانپوءِ روڪ</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>آخري غلطي</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>آخري ڪاميابي</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>ناڪاميون ري سيٽ ڪريو ۽ ماخذ کان ٻيهر پڇو</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>ڪم جي قطار</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>ڪم جو قسم</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>انتظار ۾</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>هلندڙ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناڪام</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>رجسٽر ٿيل ناهي</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>ڪم جي قطار موجود ناهي.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>بلڪ هلائڻ روڪيل</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time کان %user طرفان</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>بلڪ هلائڻ هلي سگهي ٿو</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>سائننگ ڪي</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>ڪي</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>ڳجهن جي ذخيري ۾</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>اڃا ڪوبه نه</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>عمر</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days ڏينهن (%time کان)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>پويون ڪي</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time تائين صحيح</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>ڪي بدلايو</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>موجوده ڪي سان صحيح ڪيل پتا گريس مدت (SigningKeyGrace) تائين ڪم ڪندا رهن ٿا، پوءِ صفحا ٻيهر ٺهڻ تائين پليس هولڊر جواب ڏين ٿا.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>هاڻي بدلايو</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>اهو ڪيئن ڪم ڪري ٿو</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand، render موڊ، اسٽيجنگ ۽ لاگ</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (ڊفالٽ): صفحو اڃا نه ٺهيل عرف کي صحيح ڪيل پتي سان ڳنڍي ٿو. پهرين درخواست ان کي وڌ ۾ وڌ انتظار اندر ٺاهي ٿي، ٻي صورت ۾ غير جانبدار پليس هولڊر ڏئي ٿي ۽ هڪ ڪم ڪم مڪمل ڪري ٿو؛ swap اسڪرپٽ تصوير تيار ٿيڻ تي پليس هولڊر بدلائي ٿو.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render موڊ: ٽيمپليٽ صفحو رينڊر ٿيڻ مهل عرف ٺاهي ٿو، اڳ وانگر. ٻنهي جي وچ ۾ ڪنهن به وقت بدلايو؛ ڪجهه به مائيگريٽ ڪرڻ جي ضرورت ناهي.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>اسٽيجنگ انسٽاليشن پنهنجي ماخذ کان اهي اصل ۽ عرف حاصل ڪري ٿي جيڪي ان وٽ ناهن؛ ناڪام ماخذ لڳاتار ناڪامين کانپوءِ روڪيو وڃي ٿو ۽ منتظمن کي گهڻ ۾ گهڻ ڪلاڪ ۾ هڪ اي ميل ملي ٿي.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>بلڪ هلائڻ ۽ شايع ڪرڻ کانپوءِ اڳواٽ ٺاهڻ ڪم جي قطار جا ڪم آهن، گراهڪن کان گهٽ ترجيح سان. عرف هٽائڻ Velocity جو response cache به صاف ڪري ٿو، تنهنڪري هٽايل فائل ان مان نه ڏني وڃي.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>هر ٺهيل عرف، ڏنل پليس هولڊر، اسٽيج ٿيل فائل ۽ هلائڻ %file جي هڪ لائن آهي. ڪمانڊ لائين ۾ ساڳيا اوزار آهن: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>ڪم %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%total مان %done تصويرون</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>هلائڻ</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>دائرو</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نتيجو</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>هي ڪم رد ڪريو</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>ڪم %job تصوير جي عرفن جو ڪم ناهي، يا اهو قطار مان هٽايو ويو.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>هلائڻ %run جو نتيجو</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>بلڪ هلائڻ روڪيل آهي</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time کان %user طرفان روڪيل.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>روڪ هر بلڪ هلائڻ کي ان جي موجوده تصوير کانپوءِ هر سرور تي روڪي ٿي؛ قطار ۾ هلائڻ انتظار ڪن ٿا. گراهڪن جا عرف اڃا به ٺهن ٿا.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>بلڪ هلائڻ ٻيهر شروع ڪريو</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>سبب (اختياري)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>بلڪ هلائڻ روڪيو</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>هلائڻ شروع ڪريو</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>هلائڻ ڪم جي قطار جا ڪم آهن: توهان صفحو ڇڏي واپس اچي سگهو ٿا.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>ڪم جي قطار کانسواءِ هلائڻ هن درخواست ۾ ٿئي ٿو، گهڻ ۾ گهڻ %count تصويرن لاءِ.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ڪارروائي</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: جيڪي عرف غائب آهن اهي ٺاهيو</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: هٽايو ۽ ٻيهر ٺاهيو</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: هٽايو (گهرڻ تي ٻيهر ٺهندا)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: فائلون اسٽيجنگ ماخذ کان حاصل ڪريو</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(رڳو اسٽيجنگ انسٽاليشن تي)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>سڄي سائيٽ</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>هڪ نوڊ</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>هڪ نوڊ ۽ ان جو ذيلي وڻ</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>نوڊ ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>ڪلاس</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>خاصيتون</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>تبديل ٿيل کان</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>هڪ تاريخ (2026-11-01) يا گذريل وقت (12 ڪلاڪ، 2 ڏينهن).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>گهڻ ۾ گهڻ تصويرون</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>عرف (ڪوبه نه چونڊيو: سڀ)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Dry run: رڳو ڳڻيو (resync ماخذ چڪاسي ٿو ۽ ڪجهه به محفوظ نٿو ڪري)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>فرق وارين فائلن مٿان لکو (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>هلائڻ شروع ڪريو</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>تازا هلائڻ</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>ڪم</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>پيش رفت</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>قطار ۾</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ڪارروايون</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>رد ڪريو</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>اڃا ڪو بلڪ هلائڻ يا resync ناهي.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>هڪ تصوير</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>اهي پتا جيڪي ٽيمپليٽ کي هاڻي ملن ٿا، هر عرف لاءِ ڳڻيل سائيز ۽ قسم، ۽ ڇا هر فائل موجود آهي.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>هن مطابق ڳوليو</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>شيءِ ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ڏيکاريو</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>توهان هي شيءِ پڙهي نٿا سگهو.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>هن شيءِ ۾ تصوير ناهي.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>هن ID سان ڪا شيءِ ناهي.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>شيءِ %object، نوڊ %node، نسخو %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>اصل: %width x %height، %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>فائل موجود آهي</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>فائل غائب آهي</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name جا عرف</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>عرف</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>سائيز</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>قسم</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>فائل</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>فارميٽ</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>ٽيمپليٽ ۾ پتو</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>موجود</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>غائب</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>هن قسم لاءِ ناهي</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>جانچيو</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>ٺاهيو</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>هن فيلڊ ۾ تصوير ناهي.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>وقت</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>ماخذ سان ڳنڍڻ</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>اسٽيجنگ ماخذ ڏانهن HEAD درخواست، ان جي سند سان جيڪڏهن ڪا نالي ڏني وئي هجي. سند موڪلي وڃي ٿي، ڪڏهن به ڏيکاري نه ويندي آهي.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>ماخذ</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>سند سان</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>ذخيري جو رستو (اختياري)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>ڳنڍڻ آزمايو</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>ڪنهن ماخذ ۾ BaseURL ناهي. ماخذ سيٽنگن ۾ مقرر ٿين ٿا ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>پهچ ۾</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>رد ڪيو ويو: سند چڪاسيو</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>ماخذ تي نه مليو</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>جواب ناهي</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>وقت ختم ٿي ويو</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>ريڊائريڪٽ ٿيو (نه پٺيان ويو)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL ناهي</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>ذخيري جو رستو ناهي</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>پتو</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>اسٽيٽس</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>موڪليو ويو</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>ڳجهو غائب آهي</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>ڳجهو user:password يا Bearer &lt;token&gt; ناهي</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file جون تازيون لائنون، تازيون پهرين.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Setup &gt; لاگ فائلون</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>واقعو</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>سڀ واقعا</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>هلائڻ (شروع ۽ پڄاڻي)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>رستي ۾ شامل آهي</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>لائنون</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>فلٽر</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>پٺيان هلو: نيون لائنون لکجڻ سان ڏيکاريو</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>رستو ۽ تفصيل</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>لاگ جي ڪا لائن نٿي ملي.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>محفوظ ڪرڻ سان ڇا بدلبو</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>ڇا بدليو ويو</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php ۾ محفوظ ٿيو، تنهنڪري هتي جي قدر هر siteaccess تي غالب رهي ٿي. ڏيکاريل قدر هن siteaccess لاءِ لاڳو ٿيل آهن. محفوظ ڪرڻ کان اڳ توهان کان پنهنجي سڃاڻپ جي تصديق گهري ويندي.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>عرف ڪيئن ٺهن ٿا ۽ پهچايا وڃن ٿا.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>ٻئي انسٽاليشن کان غائب تصويرون حاصل ڪرڻ (alpha, dev, beta, stage, pro, post, arc). پروڊڪشن (pro) ڪڏهن به حاصل نٿو ڪري.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>سيٽنگ</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>قدر</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override ۾</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>هر ماخذ جو پتو ۽ ان ڳجهي جو نالو جنهن ۾ ان جي سند آهي (user:password يا Bearer &lt;token&gt;). ڳجهي جي قدر Setup &gt; ڳجهيون معلومات ۾ مقرر ٿئي ٿي ۽ هتي ڪڏهن به نه ڏيکاري ويندي.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>تبديليون اڳ ۾ ڏسو</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>محفوظ ڪريو</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>پٺيان هلي رهيو آهي: %time تي تازه ڪيو ويو</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>روڪيل</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>فيڊ جواب نه ڏنو؛ ٻيهر ڪوشش ڪري رهيو آهي.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>ڪم ختم ٿي ويو آهي.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: ٽيمپليٽ کي پتو ملي ٿو، عرف تڏهن ٺهي ٿو جڏهن گهرجي. render: ٽيمپليٽ ان کي صفحو رينڊر ٿيڻ مهل ٺاهي ٿو (اصل رويو).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>اڃا نه ٺهيل عرف جو پتو: token (صحيح ڪيل، ڊيٽابيس جي ضرورت ناهي)، ids-token، ids، node يا storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: فائل ڏانهن ريڊائريڪٽ جڏهن ويب سرور اسٽوريج ڏئي ٿو، ٻي صورت ۾ فائل اسٽريم ٿئي ٿي.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>سيڪنڊ جيڪي هڪ درخواست عرف ٺاهڻ يا حاصل ڪرڻ ۾ لڳائي سگهي ٿي؛ پوءِ اها پليس هولڊر ڏئي ٿي ۽ هڪ ڪم ڪم مڪمل ڪري ٿو.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP ۽ AVIF قسمن لاءِ پهرين آزمايل ڪنورٽر.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>انهن برائوزرن کي WebP يا AVIF ڏيو جيڪي گهرن ٿا، انهن عرفن لاءِ جيڪي Formats[] ڏين ٿا.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>تصوير غائب هجڻ مهل صحيح سائيز جي غير جانبدار تصوير.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>هڪ ننڍو اسڪرپٽ جيڪو تصوير تيار ٿيڻ تي پليس هولڊر کي اصل تصوير سان بدلائي ٿو.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>شايع ڪرڻ کانپوءِ هڪ ڪم هر لاڳاپيل siteaccess لاءِ نين تصويرن جا عرف ٺاهي ٿو.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>هڪ سرور تي هڪ ئي وقت ڪنورشن.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>بلڪ هلائڻ جي پروسيس ترجيح (nice)، 0 کان 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>سيڪنڊ جيڪي برائوزر ۽ ڪيش ٺهيل عرف رکي سگهن ٿا.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>سيڪنڊ جيڪي مسودي يا پريويو تصوير جو پتو صحيح رهي ٿو.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>سيڪنڊ جيڪي بدلائڻ کانپوءِ پويون سائننگ ڪي صحيح رهي ٿو.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>هن انسٽاليشن جو ماحول.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>اهو ماحول جتان غائب تصويرون حاصل ٿين ٿيون؛ none: ڪجهه به حاصل نٿو ٿئي.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>هر لائن ۾ هڪ: مقامي اسٽوريج اڳياڙي;ماخذ اڳياڙي يا پتو، انهن اسٽوريج رستن لاءِ جيڪي فرق ڪن ٿا.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>سيڪنڊ جيڪي ماخذ ڏانهن هڪ درخواست وٺي سگهي ٿي.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>ماخذ مان ورتل سڀ کان وڏي فائل، بائيٽس ۾.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>لڳاتار ناڪاميون جن کانپوءِ ماخذ روڪيو وڃي ٿو.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>ناڪام ماخذ ڪيتري وقت لاءِ روڪيو وڃي ٿو.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>ماخذ روڪجڻ تي منتظمن کي ميل موڪليو (ڪلاڪ ۾ گهڻ ۾ گهڻ هڪ ڀيرو).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>هر لائن ۾ هڪ اي ميل پتو؛ خالي: site.ini جو AdminEmail.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>ماخذ انسٽاليشن %block جو پتو، مثال https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>ڳجهي جو نالو جنهن ۾ سند آهي، يا env:VARIABLE. ڪڏهن به پاڻ سند نه.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(ڪوبه نه)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>ڊفالٽ: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>هتي مقرر ٿيل؛ هٽائڻ لاءِ نشان لڳايو</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>ورثي ۾ مليل</translation>
     </message>
 </context>
 </TS>

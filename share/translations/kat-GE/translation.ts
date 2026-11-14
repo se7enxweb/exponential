@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>იმპორტი/ექსპორტი</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>სურათის ფსევდონიმები</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>გენერირება ამ ელემენტისთვის</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>გენერირება ქვეხისთვის</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>ხელახლა გენერირება ამ ელემენტისთვის</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>ხელახლა გენერირება ქვეხისთვის</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>მოცილება ამ ელემენტისთვის</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>მოცილება ქვეხისთვის</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>ძველი საიტის server ბლოკი: location = return-ით, if ($args) მოთხოვნისთვის, rewrite შაბლონად და ცალკეული გვერდების map.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>სურათის ფსევდონიმები</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>სურათის ფსევდონიმები არის სურათის მასშტაბირებული და მოჭრილი ასლები, რომლებსაც შაბლონები აჩვენებენ. აქ ხედავთ, როგორ იქმნება ისინი, უშვებთ მასობრივ დავალებებს საიტზე, ამოწმებთ ერთ სურათს ან დროებით წყაროს, ადევნებთ თვალს გაშვებების ისტორიას და ცვლით პარამეტრებს.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>გვერდის ნაწილები</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>საინფორმაციო დაფა</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>მასობრივი გაშვებები</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>სატესტო ინსტრუმენტები</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>გაშვებების ისტორია</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>პარამეტრები</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>აქ ყველაფრის ნახვა შეგიძლიათ. პარამეტრების შეცვლას, დავალებების გაშვებას და ფაილების შემქმნელ ინსტრუმენტებს სჭირდება setup/managealiases პოლიტიკა.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>რას სჭირდება ყურადღება</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>render რეჟიმი: შაბლონები არარსებულ ფსევდონიმებს გვერდის გენერირებისას ქმნიან, როგორც აქამდე. on-demand მისამართები, ჩამნაცვლებლები და ფონური დავალებები არ გამოიყენება.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>ფორმატის შეთანხმება ჩართულია, მაგრამ აქ არც ერთ გარდამქმნელს არ შეუძლია WebP-ის ჩაწერა.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>ეს დროებითი (staging) ინსტალაციაა, მაგრამ მის წყაროს BaseURL არ აქვს: არარსებული სურათების მიღება შეუძლებელია.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>დროებითი წყარო შეჩერებულია თანმიმდევრული წარუმატებლობების შემდეგ: არარსებულ სურათებზე ჩამნაცვლებლები გაიცემა, სანამ პაუზა არ დასრულდება ან თქვენ არ განაულებთ.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>დროებითი წყარო ცოტა ხნის წინ ჩავარდა. იხილეთ მისი ბოლო შეცდომა ქვემოთ.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>ეს ინსტალაცია არ არის საწარმოო, მაგრამ SyncFrom არცერთ წყაროს არ ასახელებს: არაფერი მიიღება.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>დავალებების რიგი (expqueue) მიუწვდომელია: ფსევდონიმებს, რომლებმაც დროზე ვერ მოასწრეს, შემდეგი მოთხოვნა ქმნის, გამოქვეყნების შემდგომი წინასწარი გენერირება გამოტოვებულია, ხოლო მასობრივი გაშვებები მცირე მოცულობით შემოიფარგლება.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>სურათის ფსევდონიმების ზოგიერთი დავალება საბოლოოდ ჩავარდა. მიზეზს აჩვენებს კონფიგურაცია &gt; დავალებების რიგი.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>მასობრივი გაშვებები შეჩერებულია.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>ბოლო 24 საათში ფსევდონიმები ჩავარდა. გაშვებების ისტორია ჩამოთვლის მათ.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>ხელმოწერის გასაღები ერთ წელზე უფროსია. მისი როტაცია ძველ მისამართებს ლოდინის პერიოდის განმავლობაში მოქმედებას უნარჩუნებს.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>ხელმოწერის გასაღები ჯერ არ არსებობს: ის იქმნება პირველ on-demand მისამართთან ერთად.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>ბოლო 24 საათი</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>გენერირებული ფსევდონიმები</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>გაცემული ჩამნაცვლებლები</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>წარუმატებლობები</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>დროებით შენახული ფაილები</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>დაწყებული გაშვებები</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>მოლოდინში / მიმდინარე დავალებები</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>დათვლილია %file-ის ბოლო %lines სტრიქონიდან, რომლებიც %time-მდე აღწევს.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>რეჟიმი და მიწოდება</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>რეჟიმი</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>მოთხოვნისას</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>მისამართის ფორმა</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>მიწოდება</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>მოთხოვნის ყველაზე ხანგრძლივი ლოდინი</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds წმ</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>ერთდროული გარდაქმნები</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>ახლა დაკავებულია %busy %max-დან</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>ფორმატის შეთანხმება</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ჩართულია</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>გამორთულია</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>ჩამნაცვლებელი და ჩანაცვლების სკრიპტი</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>წინასწარი გენერირება გამოქვეყნების შემდეგ</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>საიტის ფსევდონიმები</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>ფორმატის ვარიანტების გარდამქმნელები</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>გარდამქმნელი</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>ცდა</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>სასურველი</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>დიახ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>არა</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>თავად ფსევდონიმებს, როგორც აქამდე, [ImageConverterSettings]-ის გარდამქმნელები ქმნიან; ესენი წერენ WebP და AVIF ვარიანტებს.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>გარემო და წყარო</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>ეს ინსტალაცია</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(საწარმოო: არასოდეს იღებს)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>იღებს აქედან</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>არაფერი</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>წყაროს მისამართი</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>არ არის დაყენებული</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>სერტიფიკატი</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>საიდუმლო %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>არცერთი</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>მდგომარეობა</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>მუშაობს</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>შეჩერებულია %time-მდე</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>ჩავარდნილია</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>თანმიმდევრული წარუმატებლობები</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>პაუზა %count-ის შემდეგ</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>ბოლო შეცდომა</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>ბოლო წარმატება</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>წარუმატებლობების განულება და წყაროსთვის ხელახლა კითხვა</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>დავალებების რიგი</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>დავალების ტიპი</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>მოლოდინში</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>მიმდინარეობს</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ჩავარდნილი</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>არ არის რეგისტრირებული</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>დავალებების რიგი მიუწვდომელია.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>მასობრივი გაშვებები შეჩერებულია</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time-დან, %user-ის მიერ</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>მასობრივი გაშვებები დაიშვება</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>ხელმოწერის გასაღები</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>გასაღები</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>საიდუმლოებების საცავში</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ჯერ არ არის</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>ასაკი</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days დღე (%time-დან)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>წინა გასაღები</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>მოქმედებს %time-მდე</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>გასაღების როტაცია</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>მიმდინარე გასაღებით ხელმოწერილი მისამართები ლოდინის პერიოდის (SigningKeyGrace) განმავლობაში მუშაობს, შემდეგ კი ჩამნაცვლებლებს აბრუნებს, სანამ გვერდები ხელახლა არ შეიქმნება.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>როტაცია ახლავე</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>როგორ მუშაობს</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>on-demand, render რეჟიმი, დროებითი ინსტალაცია და ჟურნალი</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>on-demand (ნაგულისხმევი): გვერდი ჯერ არარსებულ ფსევდონიმს ხელმოწერილ მისამართზე მიუთითებს. პირველი მოთხოვნა მას ყველაზე ხანგრძლივ ლოდინში ქმნის, თორემ ნეიტრალურ ჩამნაცვლებელს აბრუნებს, სამუშაოს კი დავალება ასრულებს; ჩანაცვლების სკრიპტი ჩამნაცვლებელს ცვლის, როცა სურათი მზადაა.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>render რეჟიმი: შაბლონი ფსევდონიმს გვერდის გენერირებისას ქმნის, როგორც აქამდე. ორს შორის ნებისმიერ დროს შეგიძლიათ გადართვა; არაფრის მიგრაციაა საჭირო.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>დროებითი ინსტალაცია თავის წყაროდან იღებს ორიგინალებსა და ფსევდონიმებს, რომლებიც აკლია; ჩავარდნილი წყარო თანმიმდევრული წარუმატებლობების შემდეგ ჩერდება, ადმინისტრატორებს კი საათში მაქსიმუმ ერთ ელფოსტას უგზავნიან.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>მასობრივი გაშვებები და გამოქვეყნების შემდგომი წინასწარი გენერირება დავალებების რიგის დავალებებია, ვიზიტორებზე დაბალი პრიორიტეტით. ფსევდონიმების წაშლა Velocity-ის პასუხების ქეშსაც ასუფთავებს, ამიტომ წაშლილი ფაილი მისგან არ გაიცემა.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>ყოველი შექმნილი ფსევდონიმი, გაცემული ჩამნაცვლებელი, შენახული ფაილი და გაშვება %file-ის ერთი სტრიქონია. ბრძანების სტრიქონსაც იგივე ინსტრუმენტები აქვს: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>დავალება %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done / %total სურათი</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>გაშვება</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>არე</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>შედეგი</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>ამ დავალების გაუქმება</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>%job არ არის სურათის ფსევდონიმების დავალება, ან ის რიგიდან წაიშალა.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>გაშვების %run შედეგი</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>მასობრივი გაშვებები შეჩერებულია</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>შეჩერებულია %time-დან, %user-ის მიერ.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>პაუზა ყველა მასობრივ გაშვებას თავისი მიმდინარე სურათის შემდეგ აჩერებს, ყველა სერვერზე; რიგში მყოფები ელოდებიან. ვიზიტორების ფსევდონიმები კვლავ იქმნება.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>მასობრივი გაშვებების განახლება</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>მიზეზი (არასავალდებულო)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>მასობრივი გაშვებების შეჩერება</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>გაშვების დაწყება</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>გაშვებები დავალებების რიგის დავალებებია: შეგიძლიათ გვერდი დატოვოთ და მოგვიანებით დაბრუნდეთ.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>დავალებების რიგის გარეშე გაშვება ამ მოთხოვნაში სრულდება, მაქსიმუმ %count სურათისთვის.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>მოქმედება</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>გენერირება: არარსებული ფსევდონიმების შექმნა</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>ხელახლა გენერირება: წაშლა და ხელახლა შექმნა</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>გასუფთავება: წაშლა (მოთხოვნისას ხელახლა შეიქმნება)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>ხელახალი სინქრონიზაცია: ფაილების მიღება დროებითი წყაროდან</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(მხოლოდ დროებით ინსტალაციაზე)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>მთელი საიტი</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>ერთი კვანძი</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>კვანძი და მისი ქვეხე</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>კვანძის id</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>კლასები</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>ატრიბუტები</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>შეცვლილია მას შემდეგ</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>თარიღი (2026-11-01) ან რამდენი ხნის წინ (12 საათი, 2 დღე).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>მაქსიმუმ სურათი</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>ფსევდონიმები (არცერთი მონიშნული არ არის: ყველა)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>საცდელი გაშვება: მხოლოდ დათვლა (resync წყაროს ამოწმებს და არაფერს ინახავს)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>განსხვავებული ფაილების გადაწერა (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>გაშვების დაწყება</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>უახლესი გაშვებები</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>დავალება</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>პროგრესი</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>რიგში ჩადგმულია</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>მოქმედებები</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>გაუქმება</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>მასობრივი გაშვება ან resync ჯერ არ ყოფილა.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>ერთი სურათი</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>მისამართები, რომლებსაც შაბლონი ახლა იღებს, ყოველი ფსევდონიმისთვის გამოთვლილი ზომები და ტიპები და არის თუ არა თითოეული ფაილი.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>ძიების საფუძველი</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ობიექტის id</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Id</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ჩვენება</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>ამ ობიექტის წაკითხვის უფლება არ გაქვთ.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>ამ ობიექტს სურათი არ აქვს.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>ამ id-ით ობიექტი არ არსებობს.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>ობიექტი %object, კვანძი %node, ვერსია %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>ორიგინალი: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>ფაილი არის</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>ფაილი აკლია</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name-ის ფსევდონიმები</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>ფსევდონიმი</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ზომა</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>ტიპი</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ფაილი</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>ფორმატები</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>მისამართი შაბლონში</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>არის</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>აკლია</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ამ ტიპისთვის არა</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>შემოწმება</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>შექმნა</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>ამ ველში სურათი არ არის.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>დრო</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms მწ</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>კავშირი წყაროსთან</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>HEAD მოთხოვნა დროებით წყაროზე, მისი სერტიფიკატით, თუ ასეთი დასახელებულია. სერტიფიკატი იგზავნება, არასოდეს ნაჩვენებია.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>წყარო</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>სერტიფიკატით</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>შენახვის გზა (არასავალდებულო)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>კავშირის შემოწმება</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>არცერთ წყაროს BaseURL არ აქვს. წყაროები პარამეტრებში მითითდება ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>ხელმისაწვდომია</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>უარყოფილია: შეამოწმეთ სერტიფიკატი</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>წყაროსთან ვერ მოიძებნა</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>პასუხი არ არის</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>დრო ამოიწურა</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>გადამისამართებულია (არ მიჰყვებიან)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL არ არის</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>არ არის შენახვის გზა</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>მისამართი</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>სტატუსი</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>გაგზავნილია</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>საიდუმლო აკლია</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>საიდუმლო არ არის user:password ან Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file-ის უახლესი სტრიქონები, ახალი პირველად.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>კონფიგურაცია &gt; ჟურნალის ფაილები</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>მოვლენა</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>ყველა მოვლენა</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>გაშვებები (დასაწყისი და დასასრული)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>გზა შეიცავს</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>სტრიქონები</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>ფილტრი</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>თვალყურის დევნება: ახალი სტრიქონების ჩვენება ჩაწერისთანავე</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>გზა და დეტალები</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>ჟურნალის არცერთი სტრიქონი არ ემთხვევა.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>რას შეცვლიდა შენახვა</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>რა შეიცვალა</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>ინახება settings/override/image.ini.append.php-ში, ამიტომ აქაური მნიშვნელობა ყველა siteaccess-ის მნიშვნელობაზე უპირატესია. ნაჩვენებია ამ siteaccess-ისთვის მოქმედი მნიშვნელობები. შენახვამდე გთხოვენ თქვენი ვინაობის დადასტურებას.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>როგორ იქმნება და მიეწოდება ფსევდონიმები.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>არარსებული სურათების მიღება სხვა ინსტალაციიდან (alpha, dev, beta, stage, pro, post, arc). საწარმოო (pro) არასოდეს იღებს.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>პარამეტრი</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>მნიშვნელობა</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override-ში</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>თითოეული წყაროს მისამართი და იმ საიდუმლოს სახელი, რომელიც მის სერტიფიკატს ინახავს (user:password ან Bearer &lt;token&gt;). საიდუმლოს მნიშვნელობა მითითდება კონფიგურაცია &gt; საიდუმლოებებში და აქ არასოდეს ჩანს.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>ცვლილებების გადახედვა</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>შენახვა</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>თვალყურის დევნება: განახლდა %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>შეჩერებულია</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>არხმა არ უპასუხა; ხელახლა ვცდილობთ.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>დავალება დასრულდა.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: შაბლონები იღებენ მისამართს, ფსევდონიმი იქმნება მოთხოვნისას. render: შაბლონი მას გვერდის გენერირებისას ქმნის (თავდაპირველი ქცევა).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>ჯერ შეუქმნელი ფსევდონიმის მისამართი: token (ხელმოწერილი, მონაცემთა ბაზა არ სჭირდება), ids-token, ids, node ან storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: გადამისამართება ფაილზე, როცა ვებსერვერი საცავს ემსახურება, თორემ ფაილი იგზავნება ნაკადად.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>წამები, რომელთა განმავლობაშიც მოთხოვნას შეუძლია ფსევდონიმის შექმნა ან მიღება; შემდეგ ის ჩამნაცვლებელს აბრუნებს, სამუშაოს კი დავალება ასრულებს.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>გარდამქმნელი, რომელსაც WebP და AVIF ვარიანტებისთვის პირველად ცდიან.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>WebP ან AVIF-ის გაცემა ბრაუზერებისთვის, რომლებიც ითხოვენ, იმ ფსევდონიმებისთვის, რომლებიც Formats[]-ს ჩამოთვლიან.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>სწორი ზომის ნეიტრალური სურათი, სანამ სურათი აკლია.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>პატარა სკრიპტი, რომელიც ჩამნაცვლებლებს ნამდვილი სურათით ცვლის, როცა ის მზადაა.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>გამოქვეყნების შემდეგ დავალება ქმნის ახალი სურათების ფსევდონიმებს ყველა დაკავშირებული siteaccess-ისთვის.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>ერთდროული გარდაქმნები ერთ სერვერზე.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>მასობრივი გაშვებების პროცესის პრიორიტეტი (nice), 0-დან 19-მდე.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>წამები, რომლებიც ბრაუზერებსა და ქეშებს შეუძლიათ შექმნილი ფსევდონიმი შეინახონ.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>წამები, რომლებიც დრაფტის ან გადახედვის სურათის მისამართი მოქმედია.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>წამები, რომლებიც წინა ხელმოწერის გასაღები როტაციის შემდეგ მოქმედია.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>ამ ინსტალაციის გარემო.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>გარემო, საიდანაც არარსებული სურათები მიიღება; none: არაფერი მიიღება.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>თითო სტრიქონზე ერთი: ადგილობრივი საცავის პრეფიქსი;წყაროს პრეფიქსი ან მისამართი, განსხვავებული საცავის გზებისთვის.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>წამები, რომლებიც წყაროსთან ერთ მოთხოვნას შეიძლება დასჭირდეს.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>წყაროდან აღებული ყველაზე დიდი ფაილი, ბაიტებში.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>თანმიმდევრული წარუმატებლობების რაოდენობა, რომლის შემდეგაც წყარო ჩერდება.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>რამდენ ხანს რჩება შეჩერებული ჩავარდნილი წყარო.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>ადმინისტრატორებისთვის ელფოსტის გაგზავნა, როცა წყარო შეჩერდება (საათში მაქსიმუმ ერთხელ).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>თითო სტრიქონზე ერთი ელფოსტის მისამართი; ცარიელი: site.ini-ის AdminEmail.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>წყაროს ინსტალაციის %block მისამართი, მაგ. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>სერტიფიკატის მქონე საიდუმლოს სახელი ან env:VARIABLE. არასოდეს თავად სერტიფიკატი.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(არცერთი)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>ნაგულისხმევი: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>მითითებულია აქ; წასაშლელად მონიშნეთ</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>მემკვიდრეობით</translation>
     </message>
 </context>
 </TS>

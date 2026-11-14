@@ -16588,6 +16588,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>ಆಮದು/ರಫ್ತು</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>ಚಿತ್ರ ಅಲಿಯಾಸ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>ಈ ಐಟಂಗೆ ರಚಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>ಉಪವೃಕ್ಷಕ್ಕೆ ರಚಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>ಈ ಐಟಂಗೆ ಮರುರಚಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>ಉಪವೃಕ್ಷಕ್ಕೆ ಮರುರಚಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>ಈ ಐಟಂಗೆ ತೆಗೆಯಿರಿ</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>ಉಪವೃಕ್ಷಕ್ಕೆ ತೆಗೆಯಿರಿ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86420,6 +86448,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>ಹಳೆಯ ಸೈಟ್‌ನ server ಬ್ಲಾಕ್: return ಜೊತೆಗೆ location =, ಕ್ವೆರಿಗಾಗಿ if ($args), ವೈಲ್ಡ್‌ಕಾರ್ಡ್ ಆಗಿ rewrite ಮತ್ತು ಏಕ ಪುಟಗಳ map.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>ಚಿತ್ರ ಅಲಿಯಾಸ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>ಚಿತ್ರ ಅಲಿಯಾಸ್‌ಗಳು ಎಂದರೆ ಟೆಂಪ್ಲೇಟ್‌ಗಳು ತೋರಿಸುವ ಚಿತ್ರದ ಗಾತ್ರ ಬದಲಿಸಿದ ಮತ್ತು ಕತ್ತರಿಸಿದ ಪ್ರತಿಗಳು. ಇಲ್ಲಿ ಅವು ಹೇಗೆ ಮಾಡಲ್ಪಡುತ್ತವೆ ಎಂದು ನೋಡಬಹುದು, ಸೈಟ್‌ನಾದ್ಯಂತ ಬಲ್ಕ್ ಜಾಬ್‌ಗಳನ್ನು ಚಲಾಯಿಸಬಹುದು, ಒಂದು ಚಿತ್ರ ಅಥವಾ ಸ್ಟೇಜಿಂಗ್ ಮೂಲವನ್ನು ಪರೀಕ್ಷಿಸಬಹುದು, ರನ್ ಇತಿಹಾಸವನ್ನು ಅನುಸರಿಸಬಹುದು ಮತ್ತು ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಬದಲಿಸಬಹುದು.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>ಪುಟದ ಭಾಗಗಳು</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ಡ್ಯಾಶ್‌ಬೋರ್ಡ್</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>ಬಲ್ಕ್ ರನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>ಪರೀಕ್ಷಾ ಸಾಧನಗಳು</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>ರನ್ ಇತಿಹಾಸ</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ಸೆಟ್ಟಿಂಗ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>ಇಲ್ಲಿ ಎಲ್ಲವನ್ನೂ ನೋಡಬಹುದು. ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಬದಲಿಸಲು, ಜಾಬ್‌ಗಳನ್ನು ಚಲಾಯಿಸಲು ಮತ್ತು ಫೈಲ್‌ಗಳನ್ನು ಮಾಡುವ ಸಾಧನಗಳಿಗೆ setup/managealiases ನೀತಿ ಬೇಕು.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>ಗಮನ ಬೇಕಾದದ್ದು</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>render ಮೋಡ್: ಟೆಂಪ್ಲೇಟ್‌ಗಳು ಮೊದಲಿನಂತೆ ಪುಟ ರೆಂಡರ್ ಆಗುವಾಗ ಕಾಣೆಯಾದ ಅಲಿಯಾಸ್‌ಗಳನ್ನು ಮಾಡುತ್ತವೆ. on-demand ವಿಳಾಸಗಳು, ಪ್ಲೇಸ್‌ಹೋಲ್ಡರ್‌ಗಳು ಮತ್ತು ಹಿನ್ನೆಲೆ ಜಾಬ್‌ಗಳನ್ನು ಬಳಸಲಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>ಫಾರ್ಮ್ಯಾಟ್ ಸಂಧಾನ ಆನ್ ಆಗಿದೆ, ಆದರೆ ಇಲ್ಲಿರುವ ಯಾವ ಪರಿವರ್ತಕವೂ WebP ಬರೆಯಲಾರದು.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>ಇದು ಸ್ಟೇಜಿಂಗ್ ಇನ್‌ಸ್ಟಾಲೇಶನ್, ಆದರೆ ಇದರ ಮೂಲಕ್ಕೆ BaseURL ಇಲ್ಲ: ಕಾಣೆಯಾದ ಚಿತ್ರಗಳನ್ನು ತರಲಾಗದು.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>ಸತತ ವೈಫಲ್ಯಗಳ ನಂತರ ಸ್ಟೇಜಿಂಗ್ ಮೂಲವನ್ನು ವಿರಾಮಗೊಳಿಸಲಾಗಿದೆ: ವಿರಾಮ ಮುಗಿಯುವವರೆಗೆ ಅಥವಾ ನೀವು ಮರುಹೊಂದಿಸುವವರೆಗೆ ಕಾಣೆಯಾದ ಚಿತ್ರಗಳಿಗೆ ಪ್ಲೇಸ್‌ಹೋಲ್ಡರ್‌ಗಳು ಸಿಗುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>ಸ್ಟೇಜಿಂಗ್ ಮೂಲ ಇತ್ತೀಚೆಗೆ ವಿಫಲವಾಯಿತು. ಅದರ ಕೊನೆಯ ದೋಷವನ್ನು ಕೆಳಗೆ ನೋಡಿ.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>ಈ ಇನ್‌ಸ್ಟಾಲೇಶನ್ ಉತ್ಪಾದನೆಯದಲ್ಲ, ಆದರೆ SyncFrom ಯಾವ ಮೂಲವನ್ನೂ ಹೆಸರಿಸಿಲ್ಲ: ಏನನ್ನೂ ತರಲಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>ಜಾಬ್ ಸರದಿ (expqueue) ಲಭ್ಯವಿಲ್ಲ: ಸಮಯ ಮೀರಿದ ಅಲಿಯಾಸ್‌ಗಳನ್ನು ಮುಂದಿನ ವಿನಂತಿ ಮಾಡುತ್ತದೆ, ಪ್ರಕಟಣೆಯ ನಂತರದ ಪೂರ್ವ-ಉತ್ಪಾದನೆಯನ್ನು ಬಿಟ್ಟುಬಿಡಲಾಗುತ್ತದೆ ಮತ್ತು ಬಲ್ಕ್ ರನ್‌ಗಳು ಸಣ್ಣ ವ್ಯಾಪ್ತಿಗಳಿಗೆ ಸೀಮಿತ.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>ಚಿತ್ರ ಅಲಿಯಾಸ್‌ಗಳ ಕೆಲವು ಜಾಬ್‌ಗಳು ಶಾಶ್ವತವಾಗಿ ವಿಫಲವಾದವು. ಏಕೆಂದು Setup &gt; ಜಾಬ್ ಸರದಿ ತೋರಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>ಬಲ್ಕ್ ರನ್‌ಗಳನ್ನು ವಿರಾಮಗೊಳಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>ಕಳೆದ 24 ಗಂಟೆಗಳಲ್ಲಿ ಅಲಿಯಾಸ್‌ಗಳು ವಿಫಲವಾದವು. ರನ್ ಇತಿಹಾಸ ಅವುಗಳನ್ನು ಪಟ್ಟಿಮಾಡುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>ಸಹಿ ಕೀ ಒಂದು ವರ್ಷಕ್ಕಿಂತ ಹಳೆಯದು. ಅದನ್ನು ಬದಲಿಸಿದರೆ ಹಳೆಯ ವಿಳಾಸಗಳು ರಿಯಾಯಿತಿ ಅವಧಿಯವರೆಗೆ ಮಾನ್ಯವಾಗಿರುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>ಇನ್ನೂ ಸಹಿ ಕೀ ಇಲ್ಲ: ಅದು ಮೊದಲ on-demand ವಿಳಾಸದೊಂದಿಗೆ ಮಾಡಲ್ಪಡುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>ಕಳೆದ 24 ಗಂಟೆಗಳು</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>ರಚಿತವಾದ ಅಲಿಯಾಸ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>ಉತ್ತರಿಸಿದ ಪ್ಲೇಸ್‌ಹೋಲ್ಡರ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>ವೈಫಲ್ಯಗಳು</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>ಸ್ಟೇಜ್ ಮಾಡಿದ ಫೈಲ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>ಪ್ರಾರಂಭವಾದ ರನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>ಕಾಯುತ್ತಿರುವ / ಚಲಿಸುತ್ತಿರುವ ಜಾಬ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file ನ ಕೊನೆಯ %lines ಸಾಲುಗಳಿಂದ ಎಣಿಸಲಾಗಿದೆ, ಇವು %time ವರೆಗೆ ಹಿಂದಕ್ಕೆ ಹೋಗುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>ಮೋಡ್ ಮತ್ತು ವಿತರಣೆ</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>ಮೋಡ್</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>on demand</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>ವಿಳಾಸದ ರೂಪ</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>ವಿತರಣೆ</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>ವಿನಂತಿಯ ಗರಿಷ್ಠ ಕಾಯುವಿಕೆ</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>ಏಕಕಾಲದ ಪರಿವರ್ತನೆಗಳು</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>ಈಗ %max ರಲ್ಲಿ %busy ಬ್ಯುಸಿ</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>ಫಾರ್ಮ್ಯಾಟ್ ಸಂಧಾನ</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ಆನ್</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ಆಫ್</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>ಪ್ಲೇಸ್‌ಹೋಲ್ಡರ್ ಮತ್ತು ಸ್ವಾಪ್ ಸ್ಕ್ರಿಪ್ಟ್</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>ಪ್ರಕಟಣೆಯ ನಂತರದ ಪೂರ್ವ-ಉತ್ಪಾದನೆ</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>ಸೈಟ್‌ನ ಅಲಿಯಾಸ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>ಫಾರ್ಮ್ಯಾಟ್ ಪ್ರಕಾರಗಳ ಪರಿವರ್ತಕಗಳು</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>ಪರಿವರ್ತಕ</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>ಪ್ರಯತ್ನಿಸಿದ್ದು</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>ಆದ್ಯತೆಯ</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ಹೌದು</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>ಅಲಿಯಾಸ್‌ಗಳನ್ನು ಮೊದಲಿನಂತೆ [ImageConverterSettings] ನ ಪರಿವರ್ತಕಗಳೇ ಮಾಡುತ್ತವೆ; ಇವು WebP ಮತ್ತು AVIF ಪ್ರಕಾರಗಳನ್ನು ಬರೆಯುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>ಪರಿಸರ ಮತ್ತು ಮೂಲ</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>ಈ ಇನ್‌ಸ್ಟಾಲೇಶನ್</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(ಉತ್ಪಾದನೆ: ಎಂದಿಗೂ ತರುವುದಿಲ್ಲ)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>ಇಲ್ಲಿಂದ ತರುತ್ತದೆ</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>ಏನೂ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>ಮೂಲ ವಿಳಾಸ</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>ಹೊಂದಿಸಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>ರುಜುವಾತು</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>ರಹಸ್ಯ %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ಯಾವುದೂ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ಸ್ಥಿತಿ</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>ಕೆಲಸ ಮಾಡುತ್ತಿದೆ</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time ವರೆಗೆ ವಿರಾಮ</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>ವಿಫಲವಾಗುತ್ತಿದೆ</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>ಸತತ ವೈಫಲ್ಯಗಳು</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count ನಂತರ ವಿರಾಮ</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>ಕೊನೆಯ ದೋಷ</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>ಕೊನೆಯ ಯಶಸ್ಸು</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>ವೈಫಲ್ಯಗಳನ್ನು ಮರುಹೊಂದಿಸಿ ಮೂಲವನ್ನು ಮತ್ತೆ ಕೇಳಿ</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>ಜಾಬ್ ಸರದಿ</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>ಜಾಬ್ ಪ್ರಕಾರ</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>ಕಾಯುತ್ತಿದೆ</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>ಚಲಿಸುತ್ತಿದೆ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ವಿಫಲವಾದವು</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>ನೋಂದಾಯಿಸಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>ಜಾಬ್ ಸರದಿ ಲಭ್ಯವಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>ಬಲ್ಕ್ ರನ್‌ಗಳು ವಿರಾಮದಲ್ಲಿವೆ</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time ರಿಂದ %user ಅವರಿಂದ</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>ಬಲ್ಕ್ ರನ್‌ಗಳು ಚಲಿಸಬಹುದು</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>ಸಹಿ ಕೀ</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>ಕೀ</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>ರಹಸ್ಯ ಸಂಗ್ರಹದಲ್ಲಿ</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ಇನ್ನೂ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>ವಯಸ್ಸು</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days ದಿನಗಳು (%time ರಿಂದ)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>ಹಿಂದಿನ ಕೀ</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time ವರೆಗೆ ಮಾನ್ಯ</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>ಕೀ ಬದಲಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>ಈಗಿನ ಕೀಯಿಂದ ಸಹಿ ಮಾಡಿದ ವಿಳಾಸಗಳು ರಿಯಾಯಿತಿ ಅವಧಿಯವರೆಗೆ (SigningKeyGrace) ಕೆಲಸ ಮಾಡುತ್ತವೆ, ನಂತರ ಪುಟಗಳನ್ನು ಮತ್ತೆ ಮಾಡುವವರೆಗೆ ಪ್ಲೇಸ್‌ಹೋಲ್ಡರ್‌ಗಳನ್ನು ಉತ್ತರಿಸುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>ಈಗ ಬದಲಿಸಿ</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>ಇದು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render ಮೋಡ್, ಸ್ಟೇಜಿಂಗ್ ಮತ್ತು ಲಾಗ್</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (ಡೀಫಾಲ್ಟ್): ಪುಟವು ಇನ್ನೂ ಇಲ್ಲದ ಅಲಿಯಾಸ್ ಅನ್ನು ಸಹಿ ಮಾಡಿದ ವಿಳಾಸಕ್ಕೆ ಲಿಂಕ್ ಮಾಡುತ್ತದೆ. ಮೊದಲ ವಿನಂತಿ ಅದನ್ನು ಗರಿಷ್ಠ ಕಾಯುವಿಕೆಯೊಳಗೆ ಮಾಡುತ್ತದೆ, ಇಲ್ಲದಿದ್ದರೆ ತಟಸ್ಥ ಪ್ಲೇಸ್‌ಹೋಲ್ಡರ್ ಉತ್ತರಿಸುತ್ತದೆ ಮತ್ತು ಜಾಬ್ ಕೆಲಸ ಮುಗಿಸುತ್ತದೆ; ಚಿತ್ರ ಸಿದ್ಧವಾದಾಗ ಸ್ವಾಪ್ ಸ್ಕ್ರಿಪ್ಟ್ ಪ್ಲೇಸ್‌ಹೋಲ್ಡರ್ ಅನ್ನು ಬದಲಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render ಮೋಡ್: ಟೆಂಪ್ಲೇಟ್ ಮೊದಲಿನಂತೆ ಪುಟ ರೆಂಡರ್ ಆಗುವಾಗ ಅಲಿಯಾಸ್ ಅನ್ನು ಮಾಡುತ್ತದೆ. ಎರಡರ ನಡುವೆ ಯಾವಾಗ ಬೇಕಾದರೂ ಬದಲಿಸಬಹುದು; ಏನನ್ನೂ ವರ್ಗಾಯಿಸಬೇಕಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>ಸ್ಟೇಜಿಂಗ್ ಇನ್‌ಸ್ಟಾಲೇಶನ್ ತನ್ನ ಮೂಲದಿಂದ ತನಗೆ ಇಲ್ಲದ ಮೂಲ ಚಿತ್ರಗಳು ಮತ್ತು ಅಲಿಯಾಸ್‌ಗಳನ್ನು ತರುತ್ತದೆ; ವಿಫಲವಾಗುವ ಮೂಲವನ್ನು ಸತತ ವೈಫಲ್ಯಗಳ ನಂತರ ವಿರಾಮಗೊಳಿಸಲಾಗುತ್ತದೆ ಮತ್ತು ನಿರ್ವಾಹಕರಿಗೆ ಗಂಟೆಗೆ ಗರಿಷ್ಠ ಒಂದು ಇ-ಮೇಲ್ ಸಿಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>ಬಲ್ಕ್ ರನ್‌ಗಳು ಮತ್ತು ಪ್ರಕಟಣೆಯ ನಂತರದ ಪೂರ್ವ-ಉತ್ಪಾದನೆ ಜಾಬ್ ಸರದಿಯ ಜಾಬ್‌ಗಳು, ಸಂದರ್ಶಕರಿಗಿಂತ ಕಡಿಮೆ ಆದ್ಯತೆಯೊಂದಿಗೆ. ಅಲಿಯಾಸ್‌ಗಳನ್ನು ತೆಗೆದರೆ Velocity ಯ ಪ್ರತಿಕ್ರಿಯೆ ಕ್ಯಾಶ್ ಕೂಡ ಖಾಲಿಯಾಗುತ್ತದೆ, ಆದ್ದರಿಂದ ತೆಗೆದ ಫೈಲ್ ಅದರಿಂದ ಬರುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>ಮಾಡಿದ ಪ್ರತಿ ಅಲಿಯಾಸ್, ಉತ್ತರಿಸಿದ ಪ್ಲೇಸ್‌ಹೋಲ್ಡರ್, ಸ್ಟೇಜ್ ಮಾಡಿದ ಫೈಲ್ ಮತ್ತು ರನ್ %file ನ ಒಂದು ಸಾಲು. ಕಮಾಂಡ್ ಲೈನ್‌ನಲ್ಲೂ ಅದೇ ಸಾಧನಗಳಿವೆ: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>ಜಾಬ್ %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%total ಚಿತ್ರಗಳಲ್ಲಿ %done</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ರನ್</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>ವ್ಯಾಪ್ತಿ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ಫಲಿತಾಂಶ</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>ಈ ಜಾಬ್ ರದ್ದುಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>ಜಾಬ್ %job ಚಿತ್ರ ಅಲಿಯಾಸ್‌ಗಳ ಜಾಬ್ ಅಲ್ಲ, ಅಥವಾ ಅದನ್ನು ಸರದಿಯಿಂದ ತೆಗೆದಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>ರನ್ %run ನ ಫಲಿತಾಂಶ</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>ಬಲ್ಕ್ ರನ್‌ಗಳು ವಿರಾಮದಲ್ಲಿವೆ</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time ರಿಂದ %user ಅವರಿಂದ ವಿರಾಮ.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>ವಿರಾಮವು ಪ್ರತಿ ಬಲ್ಕ್ ರನ್ ಅನ್ನು ಅದರ ಈಗಿನ ಚಿತ್ರದ ನಂತರ, ಪ್ರತಿ ಸರ್ವರ್‌ನಲ್ಲಿ ನಿಲ್ಲಿಸುತ್ತದೆ; ಸರದಿಯಲ್ಲಿರುವ ರನ್‌ಗಳು ಕಾಯುತ್ತವೆ. ಸಂದರ್ಶಕರ ಅಲಿಯಾಸ್‌ಗಳನ್ನು ಆದರೂ ಮಾಡಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>ಬಲ್ಕ್ ರನ್‌ಗಳನ್ನು ಮುಂದುವರಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>ಕಾರಣ (ಐಚ್ಛಿಕ)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>ಬಲ್ಕ್ ರನ್‌ಗಳನ್ನು ವಿರಾಮಗೊಳಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>ರನ್ ಪ್ರಾರಂಭಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>ರನ್‌ಗಳು ಜಾಬ್ ಸರದಿಯ ಜಾಬ್‌ಗಳು: ನೀವು ಪುಟ ಬಿಟ್ಟು ಮತ್ತೆ ಬರಬಹುದು.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>ಜಾಬ್ ಸರದಿ ಇಲ್ಲದೆ ರನ್ ಅನ್ನು ಈ ವಿನಂತಿಯಲ್ಲೇ, ಗರಿಷ್ಠ %count ಚಿತ್ರಗಳಿಗೆ ಮಾಡಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ಕ್ರಿಯೆ</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: ಕಾಣೆಯಾದ ಅಲಿಯಾಸ್‌ಗಳನ್ನು ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: ತೆಗೆದು ಮತ್ತೆ ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: ಅವುಗಳನ್ನು ತೆಗೆಯಿರಿ (on-demand ಮತ್ತೆ ಮಾಡಲಾಗುತ್ತದೆ)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: ಸ್ಟೇಜಿಂಗ್ ಮೂಲದಿಂದ ಫೈಲ್‌ಗಳನ್ನು ತನ್ನಿ</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(ಸ್ಟೇಜಿಂಗ್ ಇನ್‌ಸ್ಟಾಲೇಶನ್‌ನಲ್ಲಿ ಮಾತ್ರ)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>ಇಡೀ ಸೈಟ್</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>ಒಂದು ನೋಡ್</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>ಒಂದು ನೋಡ್ ಮತ್ತು ಅದರ ಉಪವೃಕ್ಷ</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ನೋಡ್ ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>ವರ್ಗಗಳು</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>ಗುಣಲಕ್ಷಣಗಳು</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>ಇದರ ನಂತರ ಬದಲಾದವು</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>ಒಂದು ದಿನಾಂಕ (2026-11-01) ಅಥವಾ ಎಷ್ಟು ಸಮಯದ ಹಿಂದೆ (12 ಗಂಟೆ, 2 ದಿನ).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>ಗರಿಷ್ಠ ಚಿತ್ರಗಳು</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>ಅಲಿಯಾಸ್‌ಗಳು (ಯಾವುದೂ ಆಯ್ದಿಲ್ಲದಿದ್ದರೆ: ಎಲ್ಲವೂ)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>ಡ್ರೈ ರನ್: ಕೇವಲ ಎಣಿಸಿ (resync ಮೂಲವನ್ನು ಪರೀಕ್ಷಿಸುತ್ತದೆ ಮತ್ತು ಏನನ್ನೂ ಉಳಿಸುವುದಿಲ್ಲ)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>ಭಿನ್ನವಾಗಿರುವ ಫೈಲ್‌ಗಳನ್ನು ಅತಿಬರೆಯಿರಿ (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>ರನ್ ಪ್ರಾರಂಭಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>ಇತ್ತೀಚಿನ ರನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>ಜಾಬ್</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ಪ್ರಗತಿ</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>ಸರದಿಯಲ್ಲಿ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ಕ್ರಿಯೆಗಳು</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ರದ್ದುಮಾಡು</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>ಇನ್ನೂ ಯಾವ ಬಲ್ಕ್ ರನ್ ಅಥವಾ resync ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>ಒಂದು ಚಿತ್ರ</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>ಟೆಂಪ್ಲೇಟ್‌ಗೆ ಈಗ ಸಿಗುವ ವಿಳಾಸಗಳು, ಪ್ರತಿ ಅಲಿಯಾಸ್‌ಗೆ ಲೆಕ್ಕಹಾಕಿದ ಗಾತ್ರಗಳು ಮತ್ತು ಪ್ರಕಾರಗಳು, ಮತ್ತು ಪ್ರತಿ ಫೈಲ್ ಇದೆಯೇ ಎಂದು.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>ಇದರಿಂದ ಹುಡುಕಿ</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ವಸ್ತು ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ತೋರಿಸು</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>ಈ ವಸ್ತುವನ್ನು ಓದಲು ನಿಮಗೆ ಅನುಮತಿ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>ಈ ವಸ್ತುವಿಗೆ ಚಿತ್ರವಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>ಈ ID ಯ ವಸ್ತು ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>ವಸ್ತು %object, ನೋಡ್ %node, ಆವೃತ್ತಿ %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>ಮೂಲ: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>ಫೈಲ್ ಇದೆ</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>ಫೈಲ್ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name ನ ಅಲಿಯಾಸ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>ಅಲಿಯಾಸ್</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ಗಾತ್ರ</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>ಪ್ರಕಾರ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ಫೈಲ್</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>ಫಾರ್ಮ್ಯಾಟ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>ಟೆಂಪ್ಲೇಟ್‌ನಲ್ಲಿನ ವಿಳಾಸ</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>ಇದೆ</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ಈ ಪ್ರಕಾರಕ್ಕಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>ಪರಿಶೀಲಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>ಈ ಕ್ಷೇತ್ರದಲ್ಲಿ ಚಿತ್ರವಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ಸಮಯ</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>ಮೂಲಕ್ಕೆ ಸಂಪರ್ಕ</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>ಸ್ಟೇಜಿಂಗ್ ಮೂಲಕ್ಕೆ HEAD ವಿನಂತಿ, ಹೆಸರಿಸಿದ್ದರೆ ಅದರ ರುಜುವಾತಿನೊಂದಿಗೆ. ರುಜುವಾತನ್ನು ಕಳುಹಿಸಲಾಗುತ್ತದೆ, ಎಂದಿಗೂ ತೋರಿಸಲಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>ಮೂಲ</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>ರುಜುವಾತಿನೊಂದಿಗೆ</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>storage ಪಥ (ಐಚ್ಛಿಕ)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>ಸಂಪರ್ಕ ಪರೀಕ್ಷಿಸಿ</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>ಯಾವ ಮೂಲಕ್ಕೂ BaseURL ಇಲ್ಲ. ಮೂಲಗಳನ್ನು ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಹೊಂದಿಸಲಾಗುತ್ತದೆ ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>ತಲುಪಬಹುದು</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>ನಿರಾಕರಿಸಲಾಗಿದೆ: ರುಜುವಾತು ಪರಿಶೀಲಿಸಿ</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>ಮೂಲದಲ್ಲಿ ಸಿಗಲಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>ಉತ್ತರವಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>ಸಮಯ ಮೀರಿತು</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>ಮರುನಿರ್ದೇಶಿಸಲಾಗಿದೆ (ಅನುಸರಿಸಿಲ್ಲ)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>storage ಪಥವಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ವಿಳಾಸ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ಸ್ಥಿತಿ</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>ಕಳುಹಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>ರಹಸ್ಯ ಕಾಣೆಯಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>ರಹಸ್ಯವು user:password ಅಥವಾ Bearer &lt;token&gt; ಅಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file ನ ಹೊಸ ಸಾಲುಗಳು, ಹೊಸದು ಮೊದಲು.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Setup &gt; ಲಾಗ್ ಫೈಲ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>ಘಟನೆ</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>ಎಲ್ಲಾ ಘಟನೆಗಳು</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>ರನ್‌ಗಳು (ಪ್ರಾರಂಭ ಮತ್ತು ಅಂತ್ಯ)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>ಪಥದಲ್ಲಿದೆ</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>ಸಾಲುಗಳು</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>ಫಿಲ್ಟರ್</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>ಅನುಸರಿಸಿ: ಹೊಸ ಸಾಲುಗಳನ್ನು ಬರೆದಂತೆ ತೋರಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>ಪಥ ಮತ್ತು ವಿವರಗಳು</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>ಲಾಗ್‌ನ ಯಾವ ಸಾಲೂ ಹೊಂದುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>ಉಳಿಸಿದರೆ ಏನು ಬದಲಾಗುತ್ತದೆ</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>ಏನು ಬದಲಾಯಿತು</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php ನಲ್ಲಿ ಉಳಿಸಲಾಗಿದೆ, ಆದ್ದರಿಂದ ಇಲ್ಲಿನ ಮೌಲ್ಯ ಪ್ರತಿ siteaccess ಗಿಂತ ಮೇಲುಗೈ ಪಡೆಯುತ್ತದೆ. ತೋರಿಸಿದ ಮೌಲ್ಯಗಳು ಈ siteaccess ಗೆ ಜಾರಿಯಲ್ಲಿರುವವು. ಉಳಿಸುವ ಮೊದಲು ನೀವು ಯಾರೆಂದು ದೃಢೀಕರಿಸಲು ಕೇಳಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>ಅಲಿಯಾಸ್‌ಗಳನ್ನು ಹೇಗೆ ಮಾಡಿ ತಲುಪಿಸಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>ಕಾಣೆಯಾದ ಚಿತ್ರಗಳನ್ನು ಇನ್ನೊಂದು ಇನ್‌ಸ್ಟಾಲೇಶನ್‌ನಿಂದ ತರುವುದು (alpha, dev, beta, stage, pro, post, arc). ಉತ್ಪಾದನೆ (pro) ಎಂದಿಗೂ ತರುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>ಸೆಟ್ಟಿಂಗ್</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>ಮೌಲ್ಯ</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override ನಲ್ಲಿ</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>ಪ್ರತಿ ಮೂಲದ ವಿಳಾಸ ಮತ್ತು ಅದರ ರುಜುವಾತನ್ನು ಹೊಂದಿರುವ ರಹಸ್ಯದ ಹೆಸರು (user:password ಅಥವಾ Bearer &lt;token&gt;). ರಹಸ್ಯದ ಮೌಲ್ಯವನ್ನು Setup &gt; ರಹಸ್ಯಗಳು ನಲ್ಲಿ ಹೊಂದಿಸಲಾಗುತ್ತದೆ ಮತ್ತು ಇಲ್ಲಿ ಎಂದಿಗೂ ತೋರಿಸಲಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>ಬದಲಾವಣೆಗಳ ಮುನ್ನೋಟ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ಉಳಿಸು</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>ಅನುಸರಿಸುತ್ತಿದೆ: %time ಕ್ಕೆ ನವೀಕರಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>ವಿರಾಮದಲ್ಲಿ</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>ಫೀಡ್ ಉತ್ತರಿಸಲಿಲ್ಲ; ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಲಾಗುತ್ತಿದೆ.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>ಜಾಬ್ ಮುಗಿದಿದೆ.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: ಟೆಂಪ್ಲೇಟ್‌ಗಳಿಗೆ ವಿಳಾಸ ಸಿಗುತ್ತದೆ, ಕೇಳಿದಾಗ ಅಲಿಯಾಸ್ ಮಾಡಲಾಗುತ್ತದೆ. render: ಪುಟ ರೆಂಡರ್ ಆಗುವಾಗ ಟೆಂಪ್ಲೇಟ್ ಅದನ್ನು ಮಾಡುತ್ತದೆ (ಮೂಲ ವರ್ತನೆ).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>ಇನ್ನೂ ಮಾಡದ ಅಲಿಯಾಸ್‌ನ ವಿಳಾಸ: token (ಸಹಿ ಮಾಡಿದ್ದು, ಡೇಟಾಬೇಸ್ ಬೇಡ), ids-token, ids, node ಅಥವಾ storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: ವೆಬ್ ಸರ್ವರ್ storage ಅನ್ನು ಒದಗಿಸಿದರೆ ಫೈಲ್‌ಗೆ ರೀಡೈರೆಕ್ಟ್, ಇಲ್ಲದಿದ್ದರೆ ಫೈಲ್ ಸ್ಟ್ರೀಮ್ ಆಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>ಒಂದು ವಿನಂತಿ ಅಲಿಯಾಸ್ ಮಾಡಲು ಅಥವಾ ತರಲು ಕಳೆಯಬಹುದಾದ ಸೆಕೆಂಡುಗಳು; ನಂತರ ಅದು ಪ್ಲೇಸ್‌ಹೋಲ್ಡರ್ ಉತ್ತರಿಸುತ್ತದೆ ಮತ್ತು ಜಾಬ್ ಕೆಲಸ ಮುಗಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP ಮತ್ತು AVIF ಪ್ರಕಾರಗಳಿಗೆ ಮೊದಲು ಪ್ರಯತ್ನಿಸುವ ಪರಿವರ್ತಕ.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Formats[] ಪಟ್ಟಿಮಾಡುವ ಅಲಿಯಾಸ್‌ಗಳಿಗೆ, ಕೇಳುವ ಬ್ರೌಸರ್‌ಗಳಿಗೆ WebP ಅಥವಾ AVIF ಉತ್ತರಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>ಚಿತ್ರ ಇಲ್ಲದಿರುವಾಗ ಸರಿಯಾದ ಗಾತ್ರದ ತಟಸ್ಥ ಚಿತ್ರ.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>ಚಿತ್ರ ಸಿದ್ಧವಾದಾಗ ಪ್ಲೇಸ್‌ಹೋಲ್ಡರ್‌ಗಳನ್ನು ನಿಜವಾದ ಚಿತ್ರದಿಂದ ಬದಲಿಸುವ ಸಣ್ಣ ಸ್ಕ್ರಿಪ್ಟ್.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>ಪ್ರಕಟಣೆಯ ನಂತರ ಒಂದು ಜಾಬ್ ಪ್ರತಿ ಸಂಬಂಧಿತ siteaccess ಗೆ ಹೊಸ ಚಿತ್ರಗಳ ಅಲಿಯಾಸ್‌ಗಳನ್ನು ಮಾಡುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>ಒಂದು ಸರ್ವರ್‌ನಲ್ಲಿ ಏಕಕಾಲದ ಪರಿವರ್ತನೆಗಳು.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>ಬಲ್ಕ್ ರನ್‌ಗಳ ಪ್ರಕ್ರಿಯೆ ಆದ್ಯತೆ (nice), 0 ರಿಂದ 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>ಮಾಡಿದ ಅಲಿಯಾಸ್ ಅನ್ನು ಬ್ರೌಸರ್‌ಗಳು ಮತ್ತು ಕ್ಯಾಶ್‌ಗಳು ಇಟ್ಟುಕೊಳ್ಳಬಹುದಾದ ಸೆಕೆಂಡುಗಳು.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>ಡ್ರಾಫ್ಟ್ ಅಥವಾ ಪೂರ್ವವೀಕ್ಷಣೆ ಚಿತ್ರದ ವಿಳಾಸ ಮಾನ್ಯವಾಗಿರುವ ಸೆಕೆಂಡುಗಳು.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>ಬದಲಾವಣೆಯ ನಂತರ ಹಿಂದಿನ ಸಹಿ ಕೀ ಮಾನ್ಯವಾಗಿರುವ ಸೆಕೆಂಡುಗಳು.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>ಈ ಇನ್‌ಸ್ಟಾಲೇಶನ್‌ನ ಪರಿಸರ.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>ಕಾಣೆಯಾದ ಚಿತ್ರಗಳನ್ನು ತರುವ ಪರಿಸರ; none: ಏನನ್ನೂ ತರಲಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>ಪ್ರತಿ ಸಾಲಿಗೆ ಒಂದು: ಸ್ಥಳೀಯ storage ಪೂರ್ವಪ್ರತ್ಯಯ;ಮೂಲದ ಪೂರ್ವಪ್ರತ್ಯಯ ಅಥವಾ ವಿಳಾಸ, ಭಿನ್ನವಾದ storage ಪಥಗಳಿಗೆ.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>ಮೂಲಕ್ಕೆ ಒಂದು ವಿನಂತಿ ತೆಗೆದುಕೊಳ್ಳಬಹುದಾದ ಸೆಕೆಂಡುಗಳು.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>ಮೂಲದಿಂದ ತೆಗೆದುಕೊಳ್ಳುವ ಅತಿದೊಡ್ಡ ಫೈಲ್, ಬೈಟ್‌ಗಳಲ್ಲಿ.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>ಇಷ್ಟು ಸತತ ವೈಫಲ್ಯಗಳ ನಂತರ ಮೂಲವನ್ನು ವಿರಾಮಗೊಳಿಸಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>ವಿಫಲವಾಗುವ ಮೂಲವನ್ನು ಎಷ್ಟು ಕಾಲ ವಿರಾಮಗೊಳಿಸಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>ಮೂಲವನ್ನು ವಿರಾಮಗೊಳಿಸಿದಾಗ ನಿರ್ವಾಹಕರಿಗೆ ಮೇಲ್ ಮಾಡಿ (ಗಂಟೆಗೆ ಗರಿಷ್ಠ ಒಮ್ಮೆ).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>ಪ್ರತಿ ಸಾಲಿಗೆ ಒಂದು ಇ-ಮೇಲ್ ವಿಳಾಸ; ಖಾಲಿ: site.ini ನ AdminEmail.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>ಮೂಲ ಇನ್‌ಸ್ಟಾಲೇಶನ್ %block ನ ವಿಳಾಸ, ಉದಾ. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>ರುಜುವಾತು ಹೊಂದಿರುವ ರಹಸ್ಯದ ಹೆಸರು, ಅಥವಾ env:VARIABLE. ರುಜುವಾತು ಸ್ವತಃ ಎಂದಿಗೂ ಅಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(ಯಾವುದೂ ಇಲ್ಲ)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>ಡೀಫಾಲ್ಟ್: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>ಇಲ್ಲಿ ಹೊಂದಿಸಲಾಗಿದೆ; ತೆಗೆಯಲು ಟಿಕ್ ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>ಆನುವಂಶಿಕ</translation>
     </message>
 </context>
 </TS>

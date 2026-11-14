@@ -16590,6 +16590,34 @@ An aire: Cha tèid na pacaidean a dhì-stàladh.</translation>
         <source>Import/Export</source>
         <translation>Ion-phortadh/Às-phortadh</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Alias dhealbhan</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Gin airson an nì seo</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Gin airson an fho-chraobh</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Ath-ghin airson an nì seo</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Ath-ghin airson an fho-chraobh</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Thoir air falbh airson an nì seo</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Thoir air falbh airson an fho-chraobh</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Bloca server seann làraich: location = le return, if ($args) airson ceist, rewrite mar shaoragan agus map de dhuilleagan singilte.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Alias dhealbhan</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Is e alias dhealbhan lethbhric de dhealbh a tha air a sgèileadh agus a ghearradh a bhios na teamplaidean a’ sealltainn. An seo chì thu mar a thèid an dèanamh, cuiridh tu obraichean mòra air dòigh air an làrach, dearbhaidh tu aon dealbh no tùs ullachaidh, leanaidh tu eachdraidh nan ruith agus atharraichidh tu na roghainnean.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Earrannan na duilleige</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Deas-bhòrd</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Ruith mhòra</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Innealan deuchainn</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Eachdraidh nan ruith</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Roghainnean</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Faodaidh tu a h-uile rud a choimhead an seo. Feumaidh atharrachadh nan roghainnean, ruith obraichean agus na h-innealan a nì faidhlichean am poileasaidh setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Na tha feumach air aire</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Modh render: bidh na teamplaidean a’ dèanamh alias a tha a dhìth fhad ’s a thèid an duilleag a thoirt gu buil, mar roimhe. Chan eil na seòlaidhean on-demand, na h-àiteachan-glèidhidh no na h-obraichean cùl-raoin ’gan cleachdadh.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Tha rèiteachadh fòrmait air, ach chan urrainn do chonbhartair an seo WebP a sgrìobhadh.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Seo stàladh ullachaidh (staging), ach chan eil BaseURL aig an tùs aige: chan urrainnear dealbhan a tha a dhìth fhaighinn.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Tha an tùs ullachaidh air stad às dèidh grunn fhàilligidhean ann an sreath: gheibh dealbhan a tha a dhìth àite-glèidhidh gus an tig an stad gu crìch no gus an ath-shuidhich thu e.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Dh’fhàillig an tùs ullachaidh o chionn ghoirid. Faic an mearachd mu dheireadh gu h-ìosal.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Chan e stàladh riochdachaidh a tha seo, ach chan eil SyncFrom a’ ainmeachadh tùs: cha tèid dad fhaighinn.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Chan eil ciudha nan obraichean (expqueue) ri fhaighinn: nì an ath-iarrtas alias nach d’ rinn a’ chùis ann an àm, thèid ro-ghineadh às dèidh foillseachadh a leum thairis agus tha ruith mhòra air an cuingeachadh gu raointean beaga.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Dh’fhàillig cuid de dh’obraichean alias dhealbhan airson math. Seallaidh Suidheachadh &gt; Ciudha obrach carson.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Tha ruith mhòra air stad.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Dh’fhàillig alias anns na 24 uairean mu dheireadh. Tha liosta dhiubh ann an eachdraidh nan ruith.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Tha an iuchair shoidhnidh nas sine na bliadhna. Ma thionndaidheas tu i, fanaidh seann sheòlaidhean dligheach fad na h-ùine shìobhalta.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Chan eil iuchair shoidhnidh ann fhathast: thèid a dhèanamh leis a’ chiad seòladh on-demand.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Na 24 uairean mu dheireadh</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Alias air an gineadh</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Àiteachan-glèidhidh a fhreagair</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Fàilligidhean</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Faidhlichean air an ullachadh</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Ruith air tòiseachadh</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Obraichean a’ feitheamh / a’ ruith</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Air a chunntadh bho na %lines loidhne mu dheireadh de %file, a ruigeas air ais gu %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Modh agus lìbhrigeadh</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Modh</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>air iarrtas</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Cruth an t-seòlaidh</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Lìbhrigeadh</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>An fhaid as fhaide a dh’fheitheas iarrtas</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds diog</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Tionndaidhean aig an aon àm</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy à %max trang an-dràsta</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Rèiteachadh fòrmait</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>air</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>dheth</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Àite-glèidhidh agus sgriobt iomlaid</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Ro-ghineadh às dèidh foillseachadh</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Alias na làraich</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Conbhartairean nan caochladh fòrmait</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Conbhartair</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Air feuchainn</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>roghnaichte</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>tha</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>chan eil</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Tha na h-alias fhèin air an dèanamh le conbhartairean [ImageConverterSettings], mar roimhe; bidh iad sin a’ sgrìobhadh nan caochladh WebP agus AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Àrainneachd agus tùs</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>An stàladh seo</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(riochdachadh: cha tig e a-chaoidh)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>A’ faighinn o</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>dad</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Seòladh an tùis</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>gun suidheachadh</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Teisteanas</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>dìomhair %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>chan eil gin</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Staid</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>ag obair</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>air stad gu %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>a’ fàiligeadh</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Fàilligidhean ann an sreath</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>stad às dèidh %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Mearachd mu dheireadh</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Soirbheachadh mu dheireadh</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Ath-shuidhich na fàilligidhean agus faighnich dhan tùs a-rithist</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Ciudha obrach</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Seòrsa obrach</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>A’ feitheamh</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>A’ ruith</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fàillte</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>gun chlàradh</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Chan eil ciudha nan obraichean ri fhaighinn.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Ruith mhòra air stad</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>bho %time le %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Faodaidh ruith mhòra ruith</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Iuchair shoidhnidh</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Iuchair</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>san stòr dìomhair</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>chan eil fhathast</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Aois</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days latha (bho %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>An iuchair roimhe</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>dligheach gu %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Tionndaidh an iuchair</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Cumaidh seòlaidhean a chaidh a shoidhneadh leis an iuchair làithreach ag obair fad na h-ùine shìobhalta (SigningKeyGrace), agus an uairsin freagraidh iad le àiteachan-glèidhidh gus an tèid na duilleagan a dhèanamh a-rithist.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Tionndaidh an-dràsta</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Mar a dh’obraicheas e</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, modh render, ullachadh agus an loga</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (a’ bhun-roghainn): bidh duilleag a’ ceangal alias nach eil ann fhathast ri seòladh soidhnichte. Nì a’ chiad iarrtas e taobh a-staigh na h-ùine feitheimh as fhaide, no freagraidh e le àite-glèidhidh neodrach agus crìochnaichidh obair an obair; cuiridh an sgriobt iomlaid an dealbh an àite an àite-ghlèidhidh nuair a bhios e ann.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Modh render: nì an teamplaid an alias fhad ’s a thèid an duilleag a thoirt gu buil, mar roimhe. Gabhaidh atharrachadh eadar an dà chuid uair sam bith; chan eil feum air dad imrich.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Bidh stàladh ullachaidh a’ faighinn nan tùsan agus nan alias a tha a dhìth air bhon tùs aige; stadaidh tùs a tha a’ fàiligeadh às dèidh grunn fhàilligidhean ann an sreath agus gheibh an luchd-rianachd aon phost-d san uair aig a char as àirde.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Tha ruith mhòra agus ro-ghineadh às dèidh foillseachadh nan obraichean de chiudha nan obraichean, aig prìomhachas nas ìsle na luchd-tadhail. Nuair a thèid alias a thoirt air falbh, thèid tasgadan freagairtean Velocity a ghlanadh cuideachd, gus nach tèid faidhle a chaidh a thoirt air falbh a thoirt seachad uaithe.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Tha a h-uile alias a chaidh a dhèanamh, àite-glèidhidh a fhreagair, faidhle a chaidh ullachadh agus ruith na loidhne ann an %file. Tha na h-aon innealan aig an loidhne-àithne: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Obair %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done à %total dealbh</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Ruith</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Farsaingeachd</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Toradh</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Sguir dhen obair seo</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Chan e obair alias dhealbhan a th’ ann an obair %job, no chaidh a toirt às a’ chiudha.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Toradh ruith %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Tha ruith mhòra air stad</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Air stad bho %time le %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Bidh stad a’ stad a h-uile ruith mhòr às dèidh an deilbh làithrich aice, air a h-uile frithealaiche; fanaidh ruith sa chiudha. Thèid alias an luchd-tadhail a dhèanamh fhathast.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Lean air adhart le ruith mhòra</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Adhbhar (roghainneil)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Cuir stad air ruith mhòra</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Tòisich ruith</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Tha ruith nan obraichean de chiudha nan obraichean: faodaidh tu an duilleag fhàgail agus tilleadh.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Às aonais ciudha nan obraichean thèid ruith a dhèanamh san iarrtas seo, airson %count dealbh aig a char as àirde.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Gnìomh</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Gin: dèan na h-alias a tha a dhìth</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Ath-ghin: thoir air falbh agus dèan a-rithist iad</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Glan: thoir air falbh iad (thèid an dèanamh a-rithist air iarrtas)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Ath-sioncronaich: faigh na faidhlichean on tùs ullachaidh</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(air stàladh ullachaidh a-mhàin)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>An làrach air fad</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Aon nòd</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Nòd agus an fho-chraobh aige</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID nòid</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Clasaichean</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Buadhan</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Air atharrachadh bho</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Ceann-latha (2026-11-01) no ùine air ais (12 uair a thìde, 2 latha).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Co-dhiù dealbhan</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Alias (gin air a thiocadh: iad uile)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Ruith deuchainn: cunntadh a-mhàin (nì resync sgrùdadh air an tùs agus cha ghlèidh e dad)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Sgrìobh thairis air faidhlichean a tha eadar-dhealaichte (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Tòisich an ruith</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Na ruith as ùire</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Obair</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Adhartas</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Air a chur sa chiudha</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Gnìomhan</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Sguir dheth</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Cha deach ruith mhòr no resync a dhèanamh fhathast.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Aon dealbh</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Na seòlaidhean a gheibh teamplaid an-dràsta, na meudan agus na seòrsaichean a tha air an cunntadh airson gach alias, agus a bheil gach faidhle ann.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Lorg le</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID an oibseict</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Seall</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Chan fhaod thu an t-oibseact seo a leughadh.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Chan eil dealbh aig an oibseact seo.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Chan eil oibseact leis an ID seo ann.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>oibseact %object, nòd %node, tionndadh %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Tùsail: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>faidhle ann</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>faidhle a dhìth</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Alias aig %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Alias</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Meud</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Seòrsa</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faidhle</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Fòrmaidean</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Seòladh ann an teamplaid</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>ann</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>a dhìth</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>chan ann airson an t-seòrsa seo</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Dèan sgrùdadh</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Dèan</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Chan eil dealbh san raon seo.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Àm</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Ceangal ri tùs</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Iarrtas HEAD gu tùs ullachaidh, leis an teisteanas aige nuair a thèid fear ainmeachadh. Thèid an teisteanas a chur, cha tèid a shealltainn a-chaoidh.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Tùs</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>le teisteanas</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Slighe stòrais (roghainneil)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Dèan deuchainn air a’ cheangal</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Chan eil BaseURL aig tùs sam bith. Thèid tùsan a shuidheachadh anns na roghainnean ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>ri ruigsinn</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>air a dhiùltadh: thoir sùil air an teisteanas</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>gun lorg aig an tùs</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>gun fhreagairt</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>dh’fhalbh an ùine</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>air ath-stiùireadh (gun leantainn)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>gun BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>chan e slighe stòrais a th’ ann</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Seòladh</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Inbhe</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>air a chur</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>tha an rùn-dìomhair a dhìth</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>chan e user:password no Bearer &lt;token&gt; a th’ san rùn-dìomhair</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Na loidhnichean as ùire de %file, an fheadhainn as ùire an toiseach.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Suidheachadh &gt; Faidhlichean loga</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Tachartas</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>A h-uile tachartas</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Ruith (tòiseachadh agus deireadh)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Tha an t-slighe a’ gabhail a-steach</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Loidhnichean</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Criathrag</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Lean: seall loidhnichean ùra nuair a thèid an sgrìobhadh</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Slighe agus mion-fhiosrachadh</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Chan eil loidhne dhen loga a’ freagairt.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Na dh’atharraicheadh le sàbhaladh</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Na chaidh atharrachadh</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Thèid a shàbhaladh ann an settings/override/image.ini.append.php, agus mar sin bheir luach an seo buaidh air a h-uile siteaccess. ’S iad na luachan a tha sealltainn an fheadhainn a tha an gnìomh airson an t-siteaccess seo. Iarraidh sàbhaladh ort dearbhadh cò thusa an toiseach.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Mar a thèid alias a dhèanamh agus a lìbhrigeadh.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>A’ faighinn dhealbhan a tha a dhìth o stàladh eile (alpha, dev, beta, stage, pro, post, arc). Cha tig riochdachadh (pro) a-chaoidh.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Roghainn</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Luach</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Ann an settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Seòladh gach tùis agus ainm an rùin-dìomhair anns a bheil an teisteanas aige (user:password no Bearer &lt;token&gt;). Thèid luach rùin-dìomhair a shuidheachadh ann an Suidheachadh &gt; Rùintean-dìomhair agus cha tèid a shealltainn an seo a-chaoidh.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Ro-shealladh air na h-atharrachaidhean</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Sàbhail</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>A’ leantainn: air ùrachadh %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Air stad</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Cha do fhreagair an fhead; a’ feuchainn a-rithist.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Tha an obair air crìochnachadh.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: gheibh na teamplaidean an seòladh, thèid an alias a dhèanamh nuair a thèid iarraidh. render: nì an teamplaid e fhad ’s a thèid an duilleag a thoirt gu buil (an giùlan tùsail).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Seòladh alias nach eil air a dhèanamh fhathast: token (soidhnichte, gun feum air stòr-dàta), ids-token, ids, node no storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: ath-stiùireadh dhan fhaidhle nuair a bhios am frithealaiche-lìn a’ frithealadh an stòrais, air neo thèid am faidhle a shruthadh.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Diogan a dh’fhaodas iarrtas a chosg air alias a dhèanamh no fhaighinn; an uairsin freagraidh e leis an àite-ghlèidhidh agus crìochnaichidh obair an obair.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>An conbhartair a thèid fheuchainn an toiseach airson nan caochladh WebP agus AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Freagair le WebP no AVIF do bhrobhsairean a dh’iarras e, airson alias a tha a’ liostadh Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Dealbh neodrach den cheart mheud fhad ’s a tha dealbh a dhìth.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Sgriobt beag a chuireas an dealbh fhìor an àite àiteachan-glèidhidh nuair a bhios e ann.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Às dèidh foillseachadh, nì obair na h-alias airson dealbhan ùra airson gach siteaccess co-cheangailte.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Tionndaidhean aig an aon àm air aon fhrithealaiche.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Prìomhachas pròiseas (nice) ruith mhòra, 0 gu 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Diogan a dh’fhaodas brobhsairean agus tasgadain alias a chumail.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Diogan a dh’fhanas seòladh dealbh dreachd no ro-shealladh dligheach.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Diogan a dh’fhanas an iuchair shoidhnidh roimhe dligheach às dèidh tionndadh.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Àrainneachd an stàlaidh seo.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>An àrainneachd às am faighear dealbhan a tha a dhìth; none: cha tèid dad fhaighinn.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Fear san loidhne: ro-leasachan stòrais ionadail;ro-leasachan an tùis no seòladh, airson slighean stòrais a tha eadar-dhealaichte.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Diogan a dh’fhaodas aon iarrtas dhan tùs a ghabhail.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>An faidhle as motha a thèid a ghabhail on tùs, ann am bytes.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Fàilligidhean ann an sreath às dèidh an cuirear an tùs air stad.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Dè cho fada ’s a bhios tùs a tha a’ fàiligeadh air stad.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Cuir post-d dhan luchd-rianachd nuair a thèid an tùs a chur air stad (aon uair san uair aig a char as àirde).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Aon seòladh puist-d san loidhne; falamh: AdminEmail aig site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Seòladh an stàlaidh tùis %block, m.e. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Ainm an rùin-dìomhair leis an teisteanas, no env:VARIABLE. Chan e an teisteanas fhèin a-chaoidh.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(chan eil gin)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Bun-roghainn: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Air a shuidheachadh an seo; thoc gus a thoirt air falbh</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>oighreachd</translation>
     </message>
 </context>
 </TS>

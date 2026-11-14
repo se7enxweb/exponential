@@ -16529,6 +16529,34 @@ Märkus: pakette ei desinstallita.</translation>
         <source>Import/Export</source>
         <translation>Import/eksport</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Pildialiased</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Genereeri selle üksuse jaoks</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Genereeri alampuu jaoks</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Genereeri uuesti selle üksuse jaoks</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Genereeri uuesti alampuu jaoks</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Eemalda selle üksuse jaoks</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Eemalda alampuu jaoks</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86452,6 +86480,997 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Vana saidi server-plokk: location = koos return-iga, if ($args) päringu jaoks, rewrite metamärgina ja üksikute lehtede map.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Pildialiased</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Pildialiased on pildi skaleeritud ja kärbitud koopiad, mida mallid kuvavad. Siin näete, kuidas need tehakse, saate käivitada massitöid kogu saidil, testida ühte pilti või staging-allikat, jälgida käivituste ajalugu ja muuta sätteid.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Lehe osad</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Armatuurlaud</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Massikäivitused</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Testimisvahendid</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Käivituste ajalugu</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Sätted</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Siin saate kõike vaadata. Sätete muutmiseks, tööde käivitamiseks ja faile tegevate tööriistade kasutamiseks on vaja eeskirja setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Mis vajab tähelepanu</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Režiim render: mallid teevad puuduvad aliased lehe renderdamise ajal, nagu varem. Aadresse on-demand, kohatäiteid ja taustatöid ei kasutata.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Vormingu läbirääkimine on sees, kuid ükski siinne konverter ei oska WebP-d kirjutada.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>See on staging-paigaldus, kuid selle allikal puudub BaseURL: puuduvaid pilte ei saa tuua.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Staging-allikas on peatatud mitme järjestikuse tõrke tõttu: puuduvad pildid saavad kohatäited, kuni paus lõpeb või te selle lähtestate.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Staging-allikas andis hiljuti tõrke. Vaadake selle viimast viga allpool.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>See paigaldus ei ole tootmine, kuid SyncFrom ei nimeta ühtegi allikat: midagi ei tooda.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Tööde järjekord (expqueue) ei ole saadaval: aliased, mis ajast ei jõua, teeb järgmine päring, eelgenereerimine pärast avaldamist jäetakse vahele ja massikäivitused piirduvad väikeste ulatustega.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Mõned pildialiaste tööd ebaõnnestusid lõplikult. Häälestus &gt; Tööde järjekord näitab põhjust.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Massikäivitused on peatatud.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Aliased ebaõnnestusid viimase 24 tunni jooksul. Käivituste ajalugu loetleb need.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Allkirjastamisvõti on üle aasta vana. Selle roteerimine hoiab vanad aadressid kehtivad üleminekuperioodi jooksul.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Allkirjastamisvõtit veel ei ole: see tehakse esimese on-demand aadressiga.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Viimased 24 tundi</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Genereeritud aliased</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Vastatud kohatäited</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Tõrked</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Lavastatud failid</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Alustatud käivitused</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Ootel / käimasolevad tööd</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Loendatud faili %file viimasest %lines reast, mis ulatuvad tagasi ajani %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Režiim ja edastus</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Režiim</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>nõudmisel</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Aadressi vorm</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Edastus</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Päringu pikim ooteaeg</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Samaaegsed teisendused</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy / %max hõivatud praegu</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Vormingu läbirääkimine</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>sees</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>väljas</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Kohatäide ja asendusskript</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Eelgenereerimine pärast avaldamist</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Saidi aliased</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Vormingu variantide konverterid</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Konverter</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Proovitud</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>eelistatud</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>jah</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ei</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Aliased ise teevad sektsiooni [ImageConverterSettings] konverterid, nagu varem; need kirjutavad WebP ja AVIF variandid.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Keskkond ja allikas</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>See paigaldus</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(tootmine: ei too kunagi)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Toob allikast</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>mitte midagi</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Allika aadress</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>määramata</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Mandaat</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>saladus %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>puudub</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Olek</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>töötab</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>peatatud kuni %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>tõrkub</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Järjestikused tõrked</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>paus pärast %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Viimane viga</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Viimane õnnestumine</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Lähtesta tõrked ja küsi allikalt uuesti</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Tööde järjekord</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Töö tüüp</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Ootel</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Käimas</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ebaõnnestus</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>registreerimata</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Tööde järjekord ei ole saadaval.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Massikäivitused peatatud</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>alates %time, peatas %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Massikäivitused tohivad töötada</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Allkirjastamisvõti</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Võti</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>saladuste hoidlas</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>veel puudub</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Vanus</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days päeva (alates %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Eelmine võti</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>kehtib kuni %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Roteeri võti</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Praeguse võtmega allkirjastatud aadressid töötavad üleminekuperioodi (SigningKeyGrace) jooksul, seejärel vastavad nad kohatäidetega, kuni lehed uuesti tehakse.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Roteeri kohe</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Kuidas see töötab</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, režiim render, staging ja logi</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (vaikimisi): leht viitab veel olematule aliasele allkirjastatud aadressiga. Esimene päring teeb selle pikima ooteaja jooksul, vastasel juhul vastab neutraalse kohatäitega ja töö lõpetab ülesande; asendusskript asendab kohatäite, kui pilt on olemas.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Režiim render: mall teeb aliase lehe renderdamise ajal, nagu varem. Nende vahel saab igal ajal ümber lülitada; midagi ei pea migreerima.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Staging-paigaldus toob oma allikast originaalid ja aliased, mis tal puuduvad; tõrkuv allikas peatatakse mitme järjestikuse tõrke järel ja administraatorid saavad tunnis kuni ühe e-kirja.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Massikäivitused ja eelgenereerimine pärast avaldamist on tööde järjekorra tööd, madalama prioriteediga kui külastajad. Aliaste eemaldamine tühjendab ka Velocity vastuste vahemälu, et eemaldatud faili sealt ei serveeritaks.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Iga tehtud alias, vastatud kohatäide, lavastatud fail ja käivitus on faili %file rida. Käsurealt on samad tööriistad: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Töö %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done / %total pilti</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Käivitus</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Ulatus</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Tulemus</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Tühista see töö</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Töö %job ei ole pildialiaste töö või see eemaldati järjekorrast.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Käivituse %run tulemus</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Massikäivitused on peatatud</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Peatatud alates %time, peatas %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Paus peatab iga massikäivituse pärast selle praegust pilti, igas serveris; järjekorras käivitused ootavad. Külastajate aliased tehakse endiselt.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Jätka massikäivitusi</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Põhjus (valikuline)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Peata massikäivitused</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Alusta käivitust</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Käivitused on tööde järjekorra tööd: võite lehelt lahkuda ja hiljem tagasi tulla.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Ilma tööde järjekorrata tehakse käivitus selles päringus, kuni %count pildi jaoks.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Toiming</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: tee puuduvad aliased</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: eemalda ja tee need uuesti</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: eemalda need (tehakse nõudmisel uuesti)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: too failid staging-allikast</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(ainult staging-paigaldusel)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Kogu sait</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Üks sõlm</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Sõlm ja selle alampuu</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Sõlme ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klassid</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atribuudid</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Muudetud alates</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Kuupäev (2026-11-01) või aeg tagasi (12 tundi, 2 päeva).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Kuni pilti</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Aliased (kui ühtegi pole märgitud: kõik)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Proovikäivitus: ainult loe (resync kontrollib allikat ja ei salvesta midagi)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Kirjuta üle erinevad failid (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Alusta käivitust</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Viimased käivitused</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Töö</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Edenemine</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Järjekorras</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Toimingud</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Loobu</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Massikäivitust ega resync&apos;i veel ei ole.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Üks pilt</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Aadressid, mille mall praegu saab, iga aliase arvutatud suurused ja tüübid ning see, kas iga fail on olemas.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Otsi</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Objekti ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Näita</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Teil ei ole lubatud seda objekti lugeda.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Sellel objektil ei ole pilti.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Sellise ID-ga objekti ei ole.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>objekt %object, sõlm %node, versioon %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Originaal: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>fail olemas</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>fail puudub</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Objekti %name aliased</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Alias</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Suurus</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tüüp</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fail</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Vormingud</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Aadress mallis</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>olemas</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>puudub</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ei sobi sellele tüübile</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Kontrolli</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Tee</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Selles väljas ei ole pilti.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Aeg</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Ühendus allikaga</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>HEAD-päring staging-allikale koos selle mandaadiga, kui see on nimetatud. Mandaat saadetakse, kuid seda ei näidata kunagi.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Allikas</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>mandaadiga</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Salvestustee (valikuline)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Testi ühendust</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Ühelgi allikal ei ole BaseURL-i. Allikad määratakse sätetes ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>kättesaadav</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>keeldutud: kontrollige mandaati</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>allikas ei leitud</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>vastust ei tulnud</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>aegus</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>suunatud ümber (ei jälgitud)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL puudub</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>ei ole salvestustee</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Aadress</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Olek</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>saadetud</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>saladus puudub</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>saladus ei ole user:password ega Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Faili %file uusimad read, uusimad ees.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Häälestus &gt; Logifailid</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Sündmus</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Kõik sündmused</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Käivitused (algus ja lõpp)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Tee sisaldab</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Read</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtreeri</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Jälgi: näita uusi ridu nende kirjutamise ajal</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Tee ja üksikasjad</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Ükski logirida ei sobi.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Mida salvestamine muudaks</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Mis muudeti</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Salvestatakse faili settings/override/image.ini.append.php, nii et siinne väärtus ületab kõik siteaccessid. Näidatud väärtused on selle siteaccessi kehtivad väärtused. Salvestamisel palutakse teil kõigepealt oma isik kinnitada.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Kuidas aliased tehakse ja edastatakse.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Puuduvate piltide toomine teisest paigaldusest (alpha, dev, beta, stage, pro, post, arc). Tootmine (pro) ei too kunagi.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Säte</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Väärtus</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Failis settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Iga allika aadress ja selle mandaati hoidva saladuse nimi (user:password või Bearer &lt;token&gt;). Saladuse väärtus määratakse jaotises Häälestus &gt; Saladused ja seda ei näidata siin kunagi.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Eelvaata muudatusi</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Salvesta</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Jälgimine: uuendatud %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Peatatud</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Voog ei vastanud; proovitakse uuesti.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Töö on lõppenud.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: mallid saavad aadressi, alias tehakse, kui seda küsitakse. render: mall teeb selle lehe renderdamise ajal (algne käitumine).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Veel tegemata aliase aadress: token (allkirjastatud, ei vaja andmebaasi), ids-token, ids, node või storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: ümbersuunamine failile, kui veebiserver serveerib salvestust, vastasel juhul voogedastatakse fail.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Sekundid, mille päring võib aliase tegemisele või toomisele kulutada; seejärel vastab see kohatäitega ja töö lõpetab ülesande.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Konverter, mida WebP ja AVIF variantide jaoks esimesena proovitakse.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Vasta WebP või AVIF brauseritele, mis seda küsivad, aliastele, mis loetlevad Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Neutraalne õige suurusega pilt, kuni pilt puudub.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Väike skript, mis asendab kohatäited tegeliku pildiga, kui see on olemas.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Pärast avaldamist teeb töö uute piltide aliased kõigile seotud siteaccessidele.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Samaaegsed teisendused ühes serveris.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Massikäivituste protsessi prioriteet (nice), 0 kuni 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Sekundid, mille jooksul brauserid ja vahemälud tohivad tehtud aliast hoida.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Sekundid, mille jooksul mustandi või eelvaate pildi aadress kehtib.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Sekundid, mille jooksul eelmine allkirjastamisvõti kehtib pärast roteerimist.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Selle paigalduse keskkond.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Keskkond, kust puuduvaid pilte tuuakse; none: midagi ei tooda.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Üks rea kohta: kohalik salvestuse prefiks;allika prefiks või aadress, erinevate salvestusteede jaoks.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Sekundid, mille jooksul üks päring allikale võib kesta.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Suurim allikast võetav fail baitides.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Järjestikused tõrked, mille järel allikas peatatakse.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Kui kauaks tõrkuv allikas peatatakse.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Saada administraatoritele e-kiri, kui allikas peatatakse (kuni üks kord tunnis).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Üks e-posti aadress rea kohta; tühi: faili site.ini säte AdminEmail.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Allikapaigalduse aadress %block, nt https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Mandaadiga saladuse nimi või env:VARIABLE. Mitte kunagi mandaat ise.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(puudub)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Vaikimisi: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Määratud siin; märkige eemaldamiseks</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>päritud</translation>
     </message>
 </context>
 </TS>

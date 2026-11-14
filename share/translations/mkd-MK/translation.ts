@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>Увоз/Извоз</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Алијаси на слики</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Создај за оваа ставка</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Создај за подрачјето</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Создај повторно за оваа ставка</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Создај повторно за подрачјето</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Отстрани за оваа ставка</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Отстрани за подрачјето</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Блокот server на стар сајт: location = со return, if ($args) за барање, rewrite како џокер и map на поединечни страници.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Алијаси на слики</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Алијасите на слики се променетите по големина и исечени копии на сликата што ги прикажуваат шаблоните. Овде гледате како се создаваат, започнувате масовни задачи за целиот сајт, тестирате една слика или извор за стејџинг, ја следите историјата на извршувањата и ги менувате поставките.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Делови од страницата</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Контролна табла</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Масовни извршувања</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Алатки за тестирање</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Историја на извршувања</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Поставки</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Овде можете да гледате сѐ. За менување на поставки, започнување задачи и алатките што создаваат датотеки е потребна политиката setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Што бара внимание</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Режим render: шаблоните ги создаваат алијасите што недостасуваат додека се исцртува страницата, како досега. Адресите on-demand, местодржачите и задачите во позадина не се користат.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Договарањето на формат е вклучено, но овде ниту еден конвертор не може да запишува WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Ова е инсталација за стејџинг, но нејзиниот извор нема BaseURL: слики што недостасуваат не можат да се преземат.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Изворот за стејџинг е паузиран по неколку последователни грешки: за слики што недостасуваат се користат местодржачи додека паузата не заврши или додека не го ресетирате.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Изворот за стејџинг неодамна не успеа. Видете ја неговата последна грешка подолу.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Оваа инсталација не е продукциска, но SyncFrom не наведува извор: ништо не се презема.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Редицата на задачи (expqueue) не е достапна: алијасите што го надминуваат времето ги создава следното барање, претходното создавање по објавувањето се прескокнува, а масовните извршувања се ограничени на мали опсези.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Некои задачи за алијаси на слики конечно не успеаја. Конфигурација &gt; Редица на задачи покажува зошто.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Масовните извршувања се паузирани.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Алијаси не успеаја во последните 24 часа. Историјата на извршувања ги наведува.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Клучот за потпишување е постар од една година. Со неговата замена старите адреси остануваат важечки во периодот на почит.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Сѐ уште нема клуч за потпишување: се создава со првата адреса on-demand.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Последните 24 часа</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Создадени алијаси</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Одговорени местодржачи</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Грешки</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Преземени датотеки</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Започнати извршувања</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Задачи што чекаат / се извршуваат</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Изброено од последните %lines редови на %file, кои досегаат до %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Режим и испорака</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Режим</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>на барање</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Облик на адресата</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Испорака</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Најдолго чекање на барање</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Истовремени конверзии</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy од %max зафатени сега</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Договарање на формат</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>вкл.</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>искл.</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Местодржач и скрипта за замена</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Претходно создавање по објавувањето</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Алијаси на сајтот</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Конвертори на формат-варијантите</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Конвертор</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Редослед</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>претпочитан</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>да</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>не</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Самите алијаси ги создаваат конверторите од [ImageConverterSettings], како досега; овие ги запишуваат варијантите WebP и AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Околина и извор</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Оваа инсталација</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(продукција: никогаш не презема)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Презема од</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>ништо</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Адреса на изворот</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>не е поставено</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Акредитиви</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>тајна %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>нема</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Состојба</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>работи</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>паузирано до %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>не работи</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Последователни грешки</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>пауза по %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Последна грешка</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Последен успех</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Ресетирај ги грешките и прашај го изворот повторно</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Редица на задачи</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Тип на задача</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>На чекање</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Се извршува</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Неуспешно</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>не е регистрирано</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Редицата на задачи не е достапна.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Масовните извршувања се паузирани</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>од %time од %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Масовните извршувања смеат да работат</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Клуч за потпишување</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Клуч</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>во складиштето на тајни</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>сѐ уште нема</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Старост</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days дена (од %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Претходен клуч</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>важи до %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Замени го клучот</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Адресите потпишани со тековниот клуч продолжуваат да работат во периодот на почит (SigningKeyGrace), а потоа одговараат со местодржачи додека страниците не се создадат повторно.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Замени сега</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Како работи</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, режим render, стејџинг и дневникот</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (стандардно): страницата поврзува алијас што сè уште го нема со потпишана адреса. Првото барање го создава во рамките на најдолгото чекање, инаку одговара со неутрален местодржач, а задача ја завршува работата; скриптата за замена го заменува местодржачот кога сликата ќе биде тука.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Режим render: шаблонот го создава алијасот додека се исцртува страницата, како досега. Можете да менувате меѓу двата во секое време; ништо не треба да се мигрира.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Инсталација за стејџинг ги презема оригиналите и алијасите што ѝ недостасуваат од својот извор; изворот што не работи се паузира по последователни грешки, а администраторите добиваат најмногу еден е-пошта на час.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Масовните извршувања и претходното создавање по објавувањето се задачи на редицата на задачи, со понизок приоритет од посетителите. Отстранувањето алијаси го чисти и кешот на одговори на Velocity, за отстранета датотека да не се услужува од него.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Секој создаден алијас, одговорен местодржач, преземена датотека и извршување е ред во %file. Командната линија ги има истите алатки: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Задача %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done од %total слики</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Извршување</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Опсег</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Резултат</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Откажи ја задачата</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Задачата %job не е задача за алијаси на слики или е отстранета од редицата.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Резултат од извршувањето %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Масовните извршувања се паузирани</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Паузирано од %time од %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Паузата го запира секое масовно извршување по тековната слика, на секој сервер; извршувањата во редица чекаат. Алијасите за посетителите сè уште се создаваат.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Продолжи ги масовните извршувања</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Причина (по избор)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Паузирај ги масовните извршувања</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Започни извршување</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Извршувањата се задачи на редицата на задачи: можете да ја напуштите страницата и да се вратите.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Без редица на задачи, извршувањето се врши во ова барање, за најмногу %count слики.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Дејство</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Создај: создај ги алијасите што недостасуваат</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Создај повторно: отстрани ги и создај ги одново</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Исчисти: отстрани ги (се создаваат одново on-demand)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Повторно усогласи: преземи ги датотеките од изворот за стејџинг</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(само на инсталација за стејџинг)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Целиот сајт</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Еден јазол</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Јазол и неговото подрачје</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID на јазол</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Класи</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Атрибути</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Изменето од</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Датум (2026-11-01) или време наназад (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Најмногу слики</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Алијаси (ниту еден штиклиран: сите)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>повторно усогласување</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Пробно извршување: само брои (повторното усогласување го проверува изворот и ништо не складира)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Пребриши датотеки што се разликуваат (повторно усогласување)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Започни го извршувањето</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Последни извршувања</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Задача</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Напредок</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Ставено во редица</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Дејства</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Откажи</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Сè уште нема масовно извршување или повторно усогласување.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Една слика</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Адресите што ги добива шаблонот сега, големините и типовите пресметани за секој алијас и дали секоја датотека е тука.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Барај по</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID на објект</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Прикажи</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Не смеете да го читате овој објект.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Овој објект нема слика.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Нема објект со овој ID.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>објект %object, јазол %node, верзија %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Оригинал: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>датотеката е тука</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>датотеката недостасува</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Алијаси на %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Алијас</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Големина</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Тип</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Датотека</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Формати</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Адреса во шаблон</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>тука</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>недостасува</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>не за овој тип</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Провери</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Создај</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Нема слика во ова поле.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Време</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Врска со извор</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>HEAD-барање до извор за стејџинг, со неговите акредитиви ако е наведен. Акредитивите се испраќаат, никогаш не се прикажуваат.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Извор</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>со акредитиви</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Патека на складиште (по избор)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Тестирај ја врската</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Ниту еден извор нема BaseURL. Изворите се поставуваат во поставките ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>достапен</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>одбиено: проверете ги акредитивите</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>не е најдено на изворот</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>нема одговор</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>истече времето</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>пренасочено (не е следено)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>нема BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>не е патека на складиште</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Адреса</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Статус</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>испратено</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>тајната недостасува</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>тајната не е user:password или Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Најновите редови на %file, најновите први.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Конфигурација &gt; Датотеки на дневник</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Настан</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Сите настани</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Извршувања (почеток и крај)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Патеката содржи</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Редови</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Филтер</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Следи: прикажувај ги новите редови штом се запишани</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Патека и детали</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Ниеден ред од дневникот не одговара.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Што би променило зачувувањето</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Што е променето</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Зачувано во settings/override/image.ini.append.php, па вредноста овде победува над секој siteaccess. Прикажаните вредности се оние што важат за овој siteaccess. Пред зачувување се бара да потврдите кои сте.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Како се создаваат и испорачуваат алијасите.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Преземање слики што недостасуваат од друга инсталација (alpha, dev, beta, stage, pro, post, arc). Продукцијата (pro) никогаш не презема.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Поставка</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Вредност</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Во settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Адресата на секој извор и името на тајната што ги чува неговите акредитиви (user:password или Bearer &lt;token&gt;). Вредноста на тајната се поставува во Конфигурација &gt; Тајни и никогаш не се прикажува тука.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Прегледај ги промените</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Зачувај</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Следење: ажурирано %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Паузирано</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Изворот не одговори; се обидува повторно.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Задачата заврши.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: шаблоните ја добиваат адресата, алијасот се создава кога ќе се побара. render: шаблонот го создава додека се исцртува страницата (оригиналното однесување).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Адресата на алијас што сè уште не е создаден: token (потпишана, не бара база на податоци), ids-token, ids, node или storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: пренасочување кон датотеката кога веб-серверот го услужува складиштето, инаку датотеката се емитува.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Секунди што барањето може да ги потроши за создавање или преземање алијас; потоа одговара со местодржач, а задача ја завршува работата.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Конверторот што се пробува прв за варијантите WebP и AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Одговарај со WebP или AVIF на прелистувачи што го бараат тоа, за алијаси што наведуваат Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Неутрална слика со вистинска големина додека сликата недостасува.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Мала скрипта што ги заменува местодржачите со вистинската слика кога ќе биде тука.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>По објавувањето, задача ги создава алијасите на новите слики за секој поврзан siteaccess.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Истовремени конверзии на еден сервер.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Приоритетот на процесот (nice) на масовните извршувања, од 0 до 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Секунди што прелистувачите и кешовите смеат да го чуваат создадениот алијас.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Секунди што адресата на слика од нацрт или преглед останува важечка.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Секунди што претходниот клуч за потпишување останува важечки по замена.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Околината на оваа инсталација.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Околината од која се преземаат слики што недостасуваат; none: ништо не се презема.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Еден по ред: локален префикс на складиште;префикс на изворот или адреса, за патеки на складиште што се разликуваат.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Секунди што може да трае едно барање до изворот.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Најголемата датотека преземена од изворот, во бајти.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Последователни грешки по кои изворот се паузира.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Колку долго се паузира извор што не работи.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Испрати е-пошта до администраторите кога изворот е паузиран (најмногу еднаш на час).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Една е-мејл адреса по ред; празно: AdminEmail од site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Адресата на изворната инсталација %block, на пр. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Името на тајната со акредитивите или env:VARIABLE. Никогаш самите акредитиви.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(нема)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Стандардно: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Поставено овде; штиклирајте за да се отстрани</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>наследено</translation>
     </message>
 </context>
 </TS>

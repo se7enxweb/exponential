@@ -16590,6 +16590,34 @@ Muitte: Páhkaid sajáiduhttin ii sihkkojuvvo.</translation>
         <source>Import/Export</source>
         <translation>Sisafievrridit/olggosfievrridit</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Govvaaliasat</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Ráhkat dán áittardussii</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Ráhkat oassemuorrii</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Ráhkat ođđasit dán áittardussii</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Ráhkat ođđasit oassemuorrii</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Váldit eret dán áittardusas</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Váldit eret oassemuorrras</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Boares neahttabáikki server-blokka: location = return-bagadusain, if ($args) jearaldahkii, rewrite buotmearkan ja map ovttaskas siidduide.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Govvaaliasat</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Govvaaliasat leat skálejuvvon ja rájuvvon kopiijat maid template čájeha. Dás oainnát got dat ráhkaduvvojit, álggat ollu bargguid ollislaš siidui badjel, geahččalat ovtta govvii dahje staging-gáldu, čuovut vuodjinhistorjjá ja rievdadat heivehusaid.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Siiddu oasit</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dieđáhusbeavdi</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Stuorra vuodjimat</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Geahččalanreaiddut</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Vuodjinhistorjá</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Heivehusat</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Don sáhtát geahččat buot dás. Heivehusaid rievdadeapmi, bargguid vuodjin ja reaiddut mat ráhkadit fiillaid dárbbašit njuolggadusa setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Mii dárbbaša fuopmášumi</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Render-vuohki: template ráhkadit váilevaš aliasaid dan botta go siidu ráhkaduvvo, nugo ovdal. On-demand-čujuhusat, sajáiduhttit ja duogášbargguid ii adnojuvvo.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Hápmeválljen lea alde, muhto ii oktage molssodeaddji dás sáhte čállit WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Dát lea staging-ásaheapmi, muhto gáldus ii leat BaseURL: váilevaš govaid ii sáhte viežžat.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Staging-gáldu lea bisuhuvvon máŋgga hehttehusa maŋŋel: váilevaš govat oažžut sajáiduhttiid dassážii go bisáneapmi nogai dahje don nuollat dan.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Staging-gáldu ii lihkostuvvan dán maŋemus áiggis. Geahča maŋemus meattáhusa vuolábealde.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Dát ásaheapmi ii leat buvttadeapmi, muhto SyncFrom ii nammat gáldu: ii mihkkige viežžojuvvo.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Bargovuorru (expqueue) ii lea olámuttos: aliasat mat eai joksa áiggi ráhkaduvvojit boahttevaš bivdagis, ovdalgo almmuheami maŋŋel ráhkadeapmi báhtará ja stuorra vuodjimat leat ráddjejuvvon smávva guovlluide.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Muhtun govvaaliasiid bargguid ii lihkostuvvan ii goassige. Ásaheapmi &gt; Bargovuorru čájeha manne.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Stuorra vuodjimat leat bisuhuvvon.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Aliasat eai lihkostuvvan maŋemus 24 diimmus. Vuodjinhistorjá listu daid.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Vuolláičállinčoavdi lea boarráseabbo go jahki. Molsun doallá boares čujuhusaid fámus ruovttoáiggi.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Ain ii leat vuolláičállinčoavdi: dat ráhkaduvvo vuosttaš on-demand-čujuhusain.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Maŋemus 24 diimmu</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Aliasat ráhkaduvvon</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Sajáiduhttit addojuvvon</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Hehttehusat</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Fiillat viežžojuvvon</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Vuodjimat álggahuvvon</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Bargguid vuordimin / vuodjimin</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Lohkkojuvvon maŋemus %lines linjjás %file:s, mat ollet ruovttoluotta %time rádjai.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Vuohki ja sádden</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Vuohki</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>on demand</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Čujuhusvuohki</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Sádden</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Bivdaga guhkimus vuordinuddi</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Molsumat oktanaga</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy %max:s dál geavahusas</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Hápmeválljen</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>alde</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>eret</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Sajáiduhttin ja molsunskripta</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Ovdalgo ráhkadeapmi almmuheami maŋŋel</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Siiddu aliasat</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Hápmeváriánttaid molssodeaddjit</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Molssodeaddji</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Čuovvoleapmi</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>vuoruhuvvon</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>juo</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ii</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Aliasaid ieža ráhkadit [ImageConverterSettings] molssodeaddjit, nugo ovdal; dát čállet WebP- ja AVIF-váriánttaid.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Birrasat ja gáldu</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Dát ásaheapmi</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(buvttadeapmi: ii goassige viežža)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Viežžá dás</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>ii mihkkige</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Gáldu čujuhus</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>ii biddjon</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Duođaštus</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>čiehkádus %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ii oktage</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Dilli</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>doaibmá</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>bisuhuvvon %time rádjai</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>hehttehuvvá</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Hehttehusat ovtta maŋis</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>bisáneapmi %count maŋŋel</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Maŋemus meattáhus</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Maŋemus lihkostuvvan</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Nuollat hehttehusaid ja jearrat gáldu fas</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Bargovuorru</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Barggu šládja</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Vuordá</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Vuodjá</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ii lihkostuvvan</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>ii registreren</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Bargovuorru ii lea olámuttos.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Stuorra vuodjimat bisuhuvvon</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time rájes %user bokte</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Stuorra vuodjimat sáhttet vuodjit</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Vuolláičállinčoavdi</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Čoavdi</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>čiehkádusvurkejumis</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ain ii oktage</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Ahki</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days beaivvi (%time rájes)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Ovddit čoavdi</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>fámus %time rádjai</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Molsut čoavddi</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Čujuhusat mat leat vuolláičállon dálá čoavdiin dahket ain doaimma ruovttoáiggi (SigningKeyGrace), dasto addet sajáiduhttiid dassážii go siidut ráhkaduvvojit ođđasit.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Molsut dál</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Got dat doaibmá</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On demand, render-vuohki, staging ja logga</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On demand (standárda): siidu čatnasa aliasa mii ii leat vel dán vuolláičállon čujuhussii. Vuosttaš bivdda ráhkada dan guhkimus vuordinuddis, muhto eará láhkai addá oaivilmeahttun sajáiduhttin ja bargu čađahuvvo bargu; molsunskripta molsu sajáiduhttima go govva lea.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render-vuohki: template ráhkada aliasa dan botta go siidu ráhkaduvvo, nugo ovdal. Sáhtát molsut guovtti gaskkas goas beare; ii dárbbaš mihkkige sirdit.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Staging-ásaheapmi viežžá váilevaš ovdaávdnasiid ja aliasaid gáldustis; hehttehuvvi gáldu bisuhuvvo hehttehusaid maŋŋel ja hálddašeaddjit ožžot eanemusat ovtta e-poastta diimmus.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Stuorra vuodjimat ja ovdalgo ráhkadeapmi almmuheami maŋŋel leat bargovuorru bargguid, vuollil vuoruheamis go guossit. Aliasaid váldin eret guorrada maiddái Velocity vástádusmuitoeriid, nu ahte eretváldojuvvon fiila ii juhkkojuvvo dan.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Juohke ráhkaduvvon alias, addojuvvon sajáiduhttin, viežžojuvvon fiila ja vuodjin lea linjá %file:s. Gohččunlinjá lea seamma reaiddut: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Bargu %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done %total govas</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Vuodjin</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Guovlu</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Bohtosat</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Gaskkalduhttit dán barggu</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Bargu %job ii leat govvaaliasiid bargu, dahje dat lea váldojuvvon eret vuorrust.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Vuodjima %run bohtosat</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Stuorra vuodjimat leat bisuhuvvon</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Bisuhuvvon %time rájes %user bokte.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Bisáneapmi bisuha juohke stuorra vuodjima dálá govvara maŋŋel, juohke geavaheaddjis; vuorus vuodjimat vuordet. Guossiid aliasat ain ráhkaduvvojit.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Joatkit stuorra vuodjimiid</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Sivva (eaktodáhtolaš)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Bisuhit stuorra vuodjimiid</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Álggahit vuodjima</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Vuodjimat leat bargovuorru bargguid: sáhtát guođđit siiddu ja máhccat.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Bargovuorruid haga vuodjin dahkko dán bivdagis, eanemusat %count govvii.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Doaibma</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Ráhkat: ráhkat váilevaš aliasaid</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Ráhkat ođđasit: váldit eret ja ráhkat fas</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Sihko: váldit eret (ráhkaduvvo fas on demand)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Sihkkardit fas: viežžat fiillaid staging-gáldus</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(dušše staging-ásaheamis)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Olles siidu</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Okta čuolbma</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Čuolbma ja su oassemuorra</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Čuolmma ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Luohkát</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Attribuhtat</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Rievdaduvvon rájes</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Dahtu (2026-11-01) dahje áigi ovdal (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Eanemusat govat</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Aliasat (jus ii oktage merkejuvvon: buot)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Geahččalanvuodjin: dušše lohkat (resync dárkkista gáldu ja ii vurke mihkkige)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Čállit badjel fiillaid mat earuhit (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Álggahit vuodjima</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Maŋemus vuodjimat</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Bargu</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ovdáneapmi</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Vuordimin</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Doaimmat</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Gaskkalduhttit</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Ain ii leat stuorra vuodjin dahje resync.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Okta govva</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Čujuhusat maid template oažžu dál, sturrodagat ja šládjat mat leat rehkenaston juohke aliasii, ja lea go juohke fiila das.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Ohcat</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Objeavtta ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Čájet</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Don it oačč lohkat dán objeavtta.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Dán objeavttas ii leat govva.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Ii leat objeakta dáinna ID:in.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>objeakta %object, čuolbma %node, veršuvdna %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Ovdaávdnas: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>fiila lea das</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>fiila váilu</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name aliasat</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Alias</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Sturrodat</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Šládja</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fiila</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Hámit</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Čujuhus templatas</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>das</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>váilu</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ii dán šládjii</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Dárkkistit</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Ráhkat</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Ii govva dán gieldda siste.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Áigi</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Oktavuohta gáldui</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>HEAD-bivdda staging-gáldui, su duođaštusain go dat lea nammaduvvon. Duođaštus sáddejuvvo, ii goassige čájehuvvo.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Gáldu</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>duođaštusain</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Vurkenbálgá (eaktodáhtolaš)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Geahččalit oktavuođa</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Ii oktage gáldu leat BaseURL. Gáldut biddjojuvvojit heivehusain ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>olahahtti</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>biehttaluvvon: dárkkis duođaštusa</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>ii gávdnon gáldus</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>ii vástádus</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>áigi nogai</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>sirdojuvvon (ii čuvvojuvvon)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>ii BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>ii vurkenbálgá</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Čujuhus</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Stáhtus</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>sáddejuvvon</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>čiehkádus váilu</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>čiehkádus ii leat user:password dahje Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file ođđasepmosat linjjáid, ođđasepmosat vuosttažin.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Ásaheapmi &gt; Loggafiillat</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Dáhpáhus</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Buot dáhpáhusat</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Vuodjimat (álggu ja loahpa)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Bálggis lea</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Linjját</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Sillu</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Čuovut: čájet ođđa linjjáid go daid čállojuvvojit</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Bálggis ja dieđut</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Ii oktage loggalinjá heive.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Maid vurkeheapmi rievdadivččii</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Maid lea rievdaduvvon</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Vurkejuvvon fiilii settings/override/image.ini.append.php, ja nu árvu dás vuoitá juohke siteaccessa badjel. Čájehuvvon árvvut leat dat mat gustojit dán siteaccessii. Ovdalgo vurket, don bivdojuvvot nannet gii don leat.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Got aliasat ráhkaduvvojit ja juhkkojuvvojit.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Viežžat váilevaš govaid eará ásaheamis (alpha, dev, beta, stage, pro, post, arc). Buvttadeapmi (pro) ii goassige viežža.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Heivehus</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Árvu</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>In settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Juohke gáldu čujuhus ja dan čiehkádusa namma mas lea su duođaštus (user:password dahje Bearer &lt;token&gt;). Čiehkádusa árvu biddjo Ásaheapmi &gt; Čiehkádusat ja ii goassige čájehuvvo dás.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Ovdačájehit rievdadusaid</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Vurket</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Čuovvu: ođasmahttojuvvon %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Bisuhuvvon</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Feed ii vástidan; geahččala fas.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Bargu lea nogaduvvon.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: template ožžot čujuhusa, alias ráhkaduvvo go dan bivdojuvvo. render: template ráhkada dan dan botta go siidu ráhkaduvvo (álgguoriginála láhki).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Aliasa čujuhus mii ii leat vel ráhkaduvvon: token (vuolláičállon, ii dárbbaš diehtovuođu), ids-token, ids, node dahje storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: sirdin fiilii go fierpmádatservvár juohká vurkema, muhto eará láhkai fiila streamejuvvo.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Sekunddat maid bivdda sáhttá geavahit aliasa ráhkadeapmái dahje viežžamii; dasto dat addá sajáiduhttima ja bargu čađahuvvo bargu.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Molssodeaddji mii geahččaluvvo vuosttažin WebP- ja AVIF-váriánttaide.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Addit WebP dahje AVIF bargoreaidduide mat dan bivdet, aliasaide main lea Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Oaivilmeahttun govva riekta sturrodagas dan botta go govva váilu.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Unna skripta mii molsu sajáiduhttiid duohta govain go dat lea das.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Almmuheami maŋŋel bargu ráhkada ođđa govaid aliasaid juohke gullevaš siteaccessii.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Molsumat oktanaga ovtta servvárii.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Stuorra vuodjimiid proseassavuoruheapmi (nice), 0 rádjai 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Sekunddat maid bargoreaiddut ja muitoeriid sáhttet doallat ráhkaduvvon aliasa.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Sekunddat maid čuokkáhus dahje ovdačájehangovvva čujuhus lea fámus.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Sekunddat maid ovddit vuolláičállinčoavdi lea fámus molsuma maŋŋel.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Dán ásaheami birrasat.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Birrasat maid váilevaš govat viežžojuvvojit; ii oktage: ii mihkkige viežžojuvvo.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Okta linjjás: báikkálaš vurkenprefiksa;gáldu prefiksa dahje čujuhus, vurkenbálgáide mat earuhit.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Sekunddat maid okta bivdda gáldui sáhttá váldit.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Stuorámus fiila mii váldojuvvo gáldus, bytes.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Hehttehusat ovtta maŋis maŋŋel mii gáldu bisuhuvvo.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Man guhká hehttehuvvi gáldu bisuhuvvo.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Sáddet hálddašeaddjiide e-poastta go gáldu bisuhuvvo (eanemusat oktii diimmus).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Okta e-poastačujuhus linjjás; guoros: site.ini AdminEmail.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Gáldu ásaheami %block čujuhus, ovdamearkka dihte https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Čiehkádusa namma mas lea duođaštus, dahje env:VARIABLE. Ii goassige duođaštus ieš.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(ii oktage)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Standárda: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Biddjon dás; merke váldit eret</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>árbejuvvon</translation>
     </message>
 </context>
 </TS>

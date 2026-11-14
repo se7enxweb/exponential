@@ -16588,6 +16588,34 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <source>Import/Export</source>
         <translation>Anîn/Derxistin</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Nasnavên wêneyan</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Ji bo vî tiştî çêke</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Ji bo binê darê çêke</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Ji bo vî tiştî dîsa çêke</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Ji bo binê darê dîsa çêke</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Ji bo vî tiştî rake</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Ji bo binê darê rake</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86420,6 +86448,997 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Bloka server a malpereke kevn: location = bi return, if ($args) ji bo pirsê, rewrite wekî joker û map a rûpelên yekane.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Nasnavên wêneyan</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Nasnavên wêneyan kopiyên biçûkkirî û birrîkirî yên wêneyekî ne ku şablon nîşan didin. Li vir tu dibînî ka ew çawa têne çêkirin, karên girseyî li ser malperê dimeşînî, wêneyek an çavkaniyeke staging diceribînî, dîroka xebatan dişopînî û mîhengan diguherînî.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Beşên rûpelê</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Panela kontrolê</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Xebatên girseyî</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Amûrên ceribandinê</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Dîroka xebatan</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Mîheng</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Tu dikarî li vir her tiştî bibînî. Guherandina mîhengan, meşandina karan û amûrên ku pelan çêdikin siyaseta setup/managealiases hewce dikin.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Çi baldarî dixwaze</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Moda render: şablon nasnavên winda di dema render kirina rûpelê de çêdikin, wekî berê. Navnîşanên on-demand, cihgir û karên paşperdeyê nayên bikaranîn.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Danûstandina formatê vekirî ye, lê li vir tu veguherîner nikare WebP binivîse.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Ev sazkirineke staging e, lê çavkaniya wê BaseURL nîne: wêneyên windabûyî nayên anîn.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Çavkaniya staging piştî têkçûnên li pey hev hat sekinandin: heta ku sekin biqede an tu ji nû ve saz bikî, wêneyên windabûyî cihgir distînin.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Çavkaniya staging nû têk çû. Xeletiya wê ya dawî li jêr bibîne.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Ev sazkirin ne production e, lê SyncFrom tu çavkaniyê nanîşan nake: tiştek nayê anîn.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Rêzkarên karan (expqueue) peyda nîne: nasnavên ku dem ji wan derbas dibe ji hêla daxwaza paşîn ve têne çêkirin, pêşçêkirina piştî weşanê tê derbaskirin û xebatên girseyî bi qadên biçûk têne sînorkirin.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Hin karên nasnavên wêneyan ji bo her û her têk çûn. Setup &gt; Rêzkarên karan sedemê nîşan dide.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Xebatên girseyî hatine sekinandin.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Nasnav di 24 saetên dawî de têk çûn. Dîroka xebatan wan lîste dike.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Mifteya îmzeyê ji salekê kevintir e. Zivirandina wê navnîşanên kevin heta demsala dilovaniyê derbasdar dihêle.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Hê mifteya îmzeyê tune: ew bi navnîşana yekem a on-demand tê çêkirin.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>24 saetên dawî</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Nasnavên hatine çêkirin</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Cihgirên hatine bersivandin</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Têkçûn</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Pelên hatine staging kirin</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Xebatên destpêkirî</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Kar li bendê / dimeşin</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Ji %lines rêzên dawî yên %file hatiye jimartin, ku heta %time vedigerin.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Mod û radestkirin</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mod</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>on demand</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Formê navnîşanê</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Radestkirin</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Wextê herî dirêj ê daxwazekê</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Veguherandinên di heman demê de</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>Niha %busy ji %max mijûl in</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Danûstandina formatê</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>vekirî</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>girtî</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Cihgir û skrîpta guhertinê</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Pêşçêkirina piştî weşanê</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Nasnavên malperê</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Veguherînerên guhertoyên formatê</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Veguherîner</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Hat ceribandin</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>tercîhkirî</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>erê</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>na</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Nasnavên bi xwe wekî berê ji hêla veguherînerên [ImageConverterSettings] ve têne çêkirin; ev guhertoyên WebP û AVIF dinivîsin.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Jîngeh û çavkanî</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Ev sazkirin</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production: tu carî nayîne)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Ji vir tîne</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>tiştek</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Navnîşana çavkaniyê</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>nehatiye danîn</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Cihêrêzî</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>nepenî %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>tune</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Rewş</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>dixebite</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>heta %time sekinandî</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>têk diçe</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Têkçûnên li pey hev</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>piştî %count sekin</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Xeletiya dawî</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Serkeftina dawî</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Têkçûnan ji nû ve saz bike û dîsa ji çavkaniyê bipirse</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Rêzkarên karan</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Cureyê karê</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Li bendê</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Dimeşe</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Têk çû</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>nehatiye tomarkirin</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Rêzkarên karan peyda nîne.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Xebatên girseyî sekinandî</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>ji %time ve ji aliyê %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Xebatên girseyî dikarin bimeşin</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Mifteya îmzeyê</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Mifte</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>di embara nepeniyan de</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>hê tune</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Temen</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days roj (ji %time ve)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Mifteya berê</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>heta %time derbasdar</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Miftê bizivirîne</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Navnîşanên bi mifteya heyî hatine îmzekirin heta demsala dilovaniyê (SigningKeyGrace) dixebitin, paşê heta ku rûpel dîsa bên çêkirin cihgiran bersiv didin.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Niha bizivirîne</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Çawa dixebite</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, moda render, staging û tomar</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (bingehîn): rûpelek nasnavekî ku hê tune bi navnîşaneke îmzekirî ve girê dide. Daxwaza yekem wê di nav wextê herî dirêj de çêdike, an na cihgirekî bêalî bersiv dide û karek xebatê diqedîne; skrîpta guhertinê cihgir diguherîne dema ku wêne amade ye.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Moda render: şablon nasnavê di dema render kirina rûpelê de çêdike, wekî berê. Tu dikarî her gav di navbera herduyan de biguherînî; tiştek ne hewce ye ku were barkirin.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Sazkirineke staging ên orîjînal û nasnavên ku nînin ji çavkaniya xwe tîne; çavkaniyeke têkçûyî piştî têkçûnên li pey hev tê sekinandin û rêveber di saetekê de herî zêde e-nameyek distînin.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Xebatên girseyî û pêşçêkirina piştî weşanê karên rêzkara karan in, bi pêşengiyeke kêmtir ji mêvanan. Rakirina nasnavan kaşa bersivan a Velocity jî paqij dike, da ku pelê rakirî jê neyê dayîn.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Her nasnavê hatiye çêkirin, her cihgirê hatiye bersivandin, her pelê staging kirî û her xebat rêzek ji %file ye. Rêzika fermanan heman amûran heye: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Kar %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done ji %total wêneyan</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Xebat</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Qad</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Encam</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Vî karî betal bike</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Kara %job karê nasnavên wêneyan nîne, an jî ji rêzkarê hatiye rakirin.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Encama xebata %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Xebatên girseyî hatine sekinandin</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Ji %time ve ji aliyê %user ve hatiye sekinandin.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Sekinandin her xebata girseyî piştî wêneyê wê yê heyî, li ser her serverê, radiwestîne; xebatên di rêzê de li bendê dimînin. Nasnavên mêvanan dîsa têne çêkirin.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Xebatên girseyî ji nû ve bidomîne</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Sedem (bijarte)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Xebatên girseyî bisekinîne</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Xebatekê dest pê bike</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Xebat karên rêzkara karan in: tu dikarî rûpelê bihêlî û vegerî.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Bêyî rêzkara karan xebat di vê daxwazê de, ji bo herî zêde %count wêneyan tê kirin.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Çalakî</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: nasnavên winda çêke</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: rake û dîsa çêke</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: wan rake (on-demand dîsa têne çêkirin)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: pelan ji çavkaniya staging bîne</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(tenê li ser sazkirineke staging)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Tevahiya malperê</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Girêkek</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Girêkek û binê wê yê dar</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Nasnameya girêkê</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Çînan</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Taybetmendî</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Ji vê demê ve hatine guhertin</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Dîrokek (2026-11-01) an çiqas berê (12 saet, 2 roj).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Herî zêde wêne</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Nasnav (heke tu yek nehatibe hilbijartin: hemû)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Ceribandina hişk: tenê bijmêre (resync çavkaniyê kontrol dike û tiştek tomar nake)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Pelên cuda li ser binivîse (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Xebatê dest pê bike</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Xebatên dawî</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Kar</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Pêşketin</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Di rêzê de</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Çalakî</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Betal</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Hê tu xebata girseyî an resync tune.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Wêneyek</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Navnîşanên ku şablonek niha distîne, mezinahî û cureyên ji bo her nasnavî hatine hesibandin, û ka her pel heye an na.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Li gorî lê bigere</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Nasnameya heyberê</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Nasname</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Nîşan bide</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Destûra te tune ku vî heyberî bixwînî.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Vî heyberî wêne tune.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Heyberek bi vê nasnameyê tune.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>heyber %object, girêk %node, guhertoya %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Orîjînal: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>pel heye</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>pel tune</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Nasnavên %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Nasnav</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Mezinahî</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Cure</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Pel</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Format</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Navnîşan di şablonê de</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>heye</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>tune</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ji bo vê cureyê nîne</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Kontrol bike</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Çêke</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Di vê qadê de wêne tune.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Dem</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Girêdan bi çavkaniyekê</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Daxwazeke HEAD ji çavkaniyeke staging re, bi cihêrêziya wê ku heke yek hatibe navkirin. Cihêrêzî tê şandin, tu carî nayê nîşandan.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Çavkanî</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>bi cihêrêziyê</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Rêya storage (bijarte)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Girêdanê biceribîne</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Tu çavkaniyê BaseURL nîne. Çavkanî di mîhengan de têne danîn ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>tê gihîştin</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>red kirin: cihêrêziyê kontrol bike</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>li çavkaniyê nehat dîtin</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>bersiv tune</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>dem qediya</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>hat veguhastin (nehat şopandin)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL tune</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>ne rêyeke storage ye</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Navnîşan</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Rewş</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>hat şandin</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>nepenî tune</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>nepenî ne user:password ne jî Bearer &lt;token&gt; e</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Rêzên herî nû yên %file, yên nû pêşî.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Setup &gt; Pelên tomarê</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Bûyer</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Hemû bûyer</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Xebat (destpêk û dawî)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Rê tê de heye</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Rêz</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Fîlter</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Bişopîne: rêzên nû dema têne nivîsandin nîşan bide</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Rê û hûrgulî</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Tu rêza tomarê nayê hev.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Tomarkirin dê çi biguherîne</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Çi hat guhertin</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Li settings/override/image.ini.append.php hat tomarkirin, ji ber vê nirxeke li vir li ser her siteaccessê serdest e. Nirxên têne nîşandan yên ji bo vî siteaccessî derbasdar in. Tomarkirin ji te dixwaze ku pêşî nasnameya xwe piştrast bikî.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Nasnav çawa têne çêkirin û radest kirin.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Anîna wêneyên windabûyî ji sazkirineke din (alpha, dev, beta, stage, pro, post, arc). Production (pro) tu carî nayîne.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Mîheng</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Nirx</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Di settings/override de</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Navnîşana her çavkaniyê û navê nepeniya ku cihêrêziya wê digire (user:password an Bearer &lt;token&gt;). Nirxa nepeniyê di Setup &gt; Nepenî de tê danîn û li vir tu carî nayê nîşandan.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Guhertinan pêşdîtin bike</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Tomar bike</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Tê şopandin: %time hat nûkirin</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Sekinandî</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Feed bersiv neda; dîsa tê ceribandin.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Kar qediya.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: şablon navnîşanê distînin, nasnav dema tê xwestin tê çêkirin. render: şablon wê di dema render kirina rûpelê de çêdike (tevgera orîjînal).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Navnîşana nasnavekî ku hê nehatiye çêkirin: token (îmzekirî, danegeh nafikire), ids-token, ids, node an storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: ber bi pelê ve beralîkirin dema ku serverê webê storage radest dike, wekî din pel tê stream kirin.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Çend çirke daxwazek dikare ji bo çêkirin an anîna nasnavekî bikar bîne; paşê cihgir bersiv dide û karek xebatê diqedîne.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Veguherînerê ku pêşî ji bo guhertoyên WebP û AVIF tê ceribandin.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>WebP an AVIF ji gerokên ku dixwazin re bersiv bide, ji bo nasnavên ku Formats[] lîste dikin.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Wêneyekî bêalî yê mezinahiya rast heta ku wêne tune ye.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Skrîptek biçûk ku dema wêne amade be cihgiran bi wêneyê rastîn diguherîne.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Piştî weşanê, karek nasnavên wêneyên nû ji bo her siteaccessê têkildar çêdike.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Veguherandinên di heman demê de li ser serverekê.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Pêşengiya pêvajoyê (nice) ya xebatên girseyî, 0 heta 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Çend çirke gerok û kaş dikarin nasnavê çêkirî biparêzin.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Çend çirke navnîşana wêneyê pêşnivîs an pêşdîtinê derbasdar dimîne.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Çend çirke mifteya îmzeyê ya berê piştî zivirandinê derbasdar dimîne.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Jîngeha vê sazkirinê.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Jîngeha ku wêneyên windabûyî jê têne anîn; none: tiştek nayê anîn.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Yek ji bo her rêzê: pêşgira storage ya herêmî;pêşgira çavkaniyê an navnîşan, ji bo rêyên storage yên cuda.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Çend çirke daxwazek ji çavkaniyê re dikare bigire.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Pelê herî mezin ê ji çavkaniyê tê girtin, bi bytan.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Têkçûnên li pey hev ku piştî wan çavkanî tê sekinandin.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Çavkaniyeke têkçûyî çiqas dem tê sekinandin.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Gava çavkanî tê sekinandin ji rêveberan re name bişîne (di saetekê de herî zêde carek).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Yek navnîşana e-nameyê ji bo her rêzê; vala: AdminEmail ya site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Navnîşana sazkirina çavkaniyê %block, mînak https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Navê nepeniya bi cihêrêziyê re, an env:VARIABLE. Tu carî ne cihêrêziya bi xwe.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(tune)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Bingehîn: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Li vir hatiye danîn; ji bo rakirinê nîşan bike</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>mîrasî</translation>
     </message>
 </context>
 </TS>

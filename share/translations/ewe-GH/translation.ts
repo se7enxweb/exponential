@@ -16590,6 +16590,34 @@ Nyabiala: Womaɖe agbawo ɖa le ɖoɖoɖi me o.</translation>
         <source>Import/Export</source>
         <translation>Tsɔ va eme/Tsɔ yi go</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Nɔnɔmetata ƒe ŋkɔ bubuwo</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Wɔ na nu sia</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Wɔ na ateƒea</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Gawɔ na nu sia</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Gawɔ na ateƒea</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Ɖe ɖa na nu sia</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Ɖe ɖa na ateƒea</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Nyatakakaɖoƒe xoxo aɖe ƒe server blɔk: location = kple return, if ($args) na biabia, rewrite abe dzesi-ɖesiaɖe ene kple axa ɖekaɖekawo ƒe map.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Nɔnɔmetata ƒe ŋkɔ bubuwo</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Nɔnɔmetata ƒe ŋkɔ bubuwo nye nɔnɔmetata ƒe kɔpi siwo wololo alo wokpa si template-wo fiaa. Afisia nàkpɔ alesi woawɔna, nàwɔ dɔ gãwo ɖe saɖa la dzi, nàtea nɔnɔmetata ɖeka alo staging nutsoƒe ɖeka ɖe te, nàdze ƒuƒuwɔwɔ ƒe ŋutinya yome eye nàtrɔ ɖoɖowo.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Axa sia ƒe akpa dzedzewo</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dɔwɔƒe</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Dɔ gã siwo wowɔna</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Dodokpɔ ƒe dɔwɔnuwo</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Ƒuƒuwɔwɔ ƒe ŋutinya</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Ɖoɖowo</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Àteŋu akpɔ nu sia nu le afisia. Ɖoɖowo trɔtrɔ, dɔwo ƒuƒu kple dɔwɔnu siwo wɔa faɛlwo hiã be nàxɔ mɔ le policy setup/managealiases me.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Nu siwo hiã nuƒoƒo</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Render mɔnu: template-wo wɔa ŋkɔ bubu si mele afi ma o esime axa la le dzedzem, abe tsã ene. Womezãa on-demand adrɛswo, nutsɔƒewo kple dɔ siwo wowɔna le megbe o.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Fɔmat ɖoɖo le dɔ wɔm, gake trɔla aɖeke mele afisia si ate ŋu atsɔ WebP aŋlɔ o.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Esia nye staging ɖoɖo, gake eƒe nutsoƒe mele BaseURL aɖeke o: womate ŋu atsɔ nɔnɔmetata siwo mele afi ma o vɛ o.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Wotɔ staging nutsoƒea te le nudzɔdzɔ mawo ɖeka yome le mɔdzɔdzɔ ɖe sia ɖe me: nɔnɔmetata siwo mele afi ma o xɔa nutsɔƒewo vaseɖe esime tɔtɔ la nawu alo nàtrɔ aɖo gɔme.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Staging nutsoƒea mewɔ dɔ o le ɣeyiɣi kpui aɖe me. Kpɔ eƒe vodada mamlɛtɔ le ete.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Ɖoɖo sia menye production o, gake SyncFrom mekpɔ nutsoƒe aɖeke ƒe ŋkɔ o: wometsɔ naneke vɛ o.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Dɔwo ƒe ɖoɖo (expqueue) mele anyi o: ŋkɔ bubu siwo ɣeyiɣia ƒe la, biabia si ava la awɔ wo, womawɔ wo do ŋgɔ le ɖeɖefia megbe o eye dɔ gãwo ɖeka ate ŋu awɔ ɖe teƒe suewo ko.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Nɔnɔmetata ƒe ŋkɔ bubu ƒe dɔ aɖewo mewɔ dɔ o ɖaa. Ɖoɖowɔwɔ &gt; Dɔwo ƒe ɖoɖo fiaa nu si ta.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Wotɔ dɔ gã siwo wowɔna la te.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Ŋkɔ bubu aɖewo mewɔ dɔ o le gaƒoƒo 24 mamlɛtɔwo me. Ƒuƒuwɔwɔ ƒe ŋutinya ŋlɔa wo ɖi.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Kpe ɖe edzi ƒe safui la xɔ ƒe ɖeka wu. Eƒe trɔtrɔ na adrɛs xoxowo nanɔ dɔ wɔm le ɣeyiɣi si woɖe asi le eŋu me.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Kpe ɖe edzi ƒe safui aɖeke meli haɖe o: woawɔe kple on-demand adrɛs gbãtɔ.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Gaƒoƒo 24 mamlɛtɔwo</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Ŋkɔ bubu siwo wowɔ</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Nutsɔƒe siwo wona</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Nudzɔdzɔ siwo mewɔ dɔ o</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Faɛl siwo wotsɔ ɖo staging me</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Ƒuƒuwɔwɔ siwo dze egɔme</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Dɔ siwo le lalam / wɔm</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Woƒo ƒui tso %file ƒe nɔnɔme %lines mamlɛtɔwo me, siwo yia megbe va ɖo %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Mɔnu kple ŋudɔwɔwɔ</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mɔnu</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>ne woabia</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Adrɛs ƒe nɔnɔme</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Ŋudɔwɔwɔ</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Biabia ɖeka ƒe lalaɣi didi wu</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Trɔtrɔ siwo wowɔna ɖekae</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy le %max me le dɔ wɔm fifia</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Fɔmat ɖoɖo</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>le dɔ wɔm</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>mele dɔ wɔm o</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Nutsɔƒe kple skript si trɔa nu</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Wɔwɔ do ŋgɔ le ɖeɖefia megbe</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Dukɔmeʋa ƒe ŋkɔ bubuwo</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Fɔmat bubuwo ƒe trɔlawo</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Trɔla</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Wodo ɖe te</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>si wodi wu</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ɛ̃</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ao</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>[ImageConverterSettings] ƒe trɔlawo ŋutɔ wɔa ŋkɔ bubuwo, abe tsã ene; esiawo ŋlɔa WebP kple AVIF fɔmat bubuwo.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Nɔnɔme kple nutsoƒe</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Ɖoɖo sia</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production: metsɔa naneke vɛ gbeɖe o)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Tsɔa nu vɛ tso</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>naneke</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Nutsoƒe ƒe adrɛs</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>womeɖo o</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Kpe ɖe edzi ƒe nuwo</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>nuvi %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>naneke</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Nɔnɔme</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>le dɔ wɔm</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>wotɔ te vaseɖe %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>mele dɔ wɔm o</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Nudzɔdzɔ siwo mewɔ dɔ o ɖekaɖekae</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>tɔtɔ te le %count megbe</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Vodada mamlɛtɔ</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Dzidzedze mamlɛtɔ</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Trɔ nudzɔdzɔ siwo mewɔ dɔ o la aɖo gɔme eye nàbia nutsoƒea ake</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Dɔwo ƒe ɖoɖo</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Dɔ ƒe ƒomevi</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Le lalam</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Le dɔ wɔm</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mewɔ dɔ o</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>womeŋlɔe ɖi o</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Dɔwo ƒe ɖoɖo mele anyi o.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Wotɔ dɔ gãwo te</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>tso %time tso %user gbɔ</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Dɔ gãwo ate ŋu awɔ dɔ</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Kpe ɖe edzi ƒe safui</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Safui</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>le nuvi dzraɖoƒe</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>naneke haɖe o</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Ƒe</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>ŋkeke %days (tso %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Safui si do ŋgɔ</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>le dɔ wɔm vaseɖe %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Trɔ safuia</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Adrɛs siwo woŋlɔ kple safui si le fifia la nɔa dɔ wɔm le ɣeyiɣi si woɖe asi le eŋu me (SigningKeyGrace), emegbe wona nutsɔƒewo vaseɖe esime woaɖo axawo ake.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Trɔe fifia</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Alesi wòwɔa dɔ</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render mɔnu, staging kple ŋutinya faɛla</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (gɔmeɖoanyi): axa aɖe tsɔa ŋkɔ bubu si mele afi ma haɖe o ƒoa ɖe adrɛs si woŋlɔ ŋu. Biabia gbãtɔ wɔe le lalaɣi didi wu la me, ne menye nenema o la, ena nutsɔƒe si mele aɖeke dzi eye dɔ aɖe wu enu; skript si trɔa nu la tsɔa nɔnɔmetata la ɖɔ nutsɔƒea teƒe ne ele afi ma.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render mɔnu: template la wɔa ŋkɔ bubu la esime axa la le dzedzem, abe tsã ene. Trɔ tso ɖeka dzi yi bubu dzi ɣesiaɣi; naneke mehiã be woatsɔ aɖo ɖoƒe bubu o.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Staging ɖoɖo tsɔa gɔmedzedze nɔnɔmetatawo kple ŋkɔ bubu siwo mele esi la vɛ tso eƒe nutsoƒe me; nutsoƒe si mewɔa dɔ o la, wotɔa te le nudzɔdzɔ mawo ɖeka yome, eye dzikpɔlawo xɔa e-meil ɖeka le gaƒoƒo ɖeka me wu.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Dɔ gãwo kple wɔwɔ do ŋgɔ le ɖeɖefia megbe nye dɔwo ƒe ɖoɖo me dɔwo, eye wokpɔa wo ŋu le ɖoɖo gɔme tsɔ wu amedzroawo. Ŋkɔ bubuwo ɖeɖe ɖa hã tutua Velocity ƒe nyaɖeɖe cache, ale be womatsɔ faɛl si woɖe ɖa la ana tso eme o.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Ŋkɔ bubu sia ŋkɔ si woawɔ, nutsɔƒe si wona, faɛl si wotsɔ ɖo staging me kple ƒuƒuwɔwɔ ɖe sia ɖe nye nɔnɔme ɖeka le %file me. Gbeƒãɖeɖe ƒe ɖoɖo hã si dɔwɔnu mawo ɖeka: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Dɔ %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>Nɔnɔmetata %done le %total me</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Ƒuƒuwɔwɔ</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Gɔmeɖoɖo</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Nyaʋiʋli</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Ɖe asi le dɔ sia ŋu</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Dɔ %job menye nɔnɔmetata ƒe ŋkɔ bubu ƒe dɔ o, alo woɖee ɖa le ɖoɖoa me.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Ƒuƒuwɔwɔ %run ƒe nyaʋiʋli</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Wotɔ dɔ gãwo te</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Wotɔ te tso %time tso %user gbɔ.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Tɔtɔ te tɔa dɔ gã sia dɔ si nɔnɔmetata si le dɔ wɔm megbe, le sɛva sia sɛva dzi; dɔ siwo le ɖoɖo me la le lalam. Amedzroawo ƒe ŋkɔ bubuwo gakpɔtɔ wɔna.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Gaɖo dɔ gãwo wɔwɔ gɔme</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Nuka ta (mehiã o)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Tɔ dɔ gãwo te</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Dze ƒuƒuwɔwɔ gɔme</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Ƒuƒuwɔwɔwo nye dɔwo ƒe ɖoɖo me dɔwo: àteŋu ado le axa la dzi eye nàgatrɔ va.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Ne dɔwo ƒe ɖoɖo mele anyi o la, wowɔa ƒuƒuwɔwɔa le biabia sia me, ɖe nɔnɔmetata %count ko wu.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Dɔwɔwɔ</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Wɔ: wɔ ŋkɔ bubu siwo mele afi ma o</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Gawɔ: ɖe wo ɖa eye nàgawɔ wo</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Tutu: ɖe wo ɖa (woawɔ wo ake ne woabia)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Gaʋlia: tsɔ faɛlwo vɛ tso staging nutsoƒea me</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(le staging ɖoɖo dzi ko)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Dukɔmeʋa blibo</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Kadodoƒe ɖeka</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Kadodoƒe ɖeka kple eƒe ateƒe</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Kadodoƒe ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Hatsotsowo</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atribiutwo</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Wotrɔ tso</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Ŋkeke (2026-11-01) alo ɣeyiɣi si va yi (gaƒoƒo 12, ŋkeke 2).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Nɔnɔmetata gã wu</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Ŋkɔ bubuwo (ne mètia aɖeke o: wo katã)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Dodokpɔ: ƒo ƒui ko (resync kpɔa nutsoƒea eye medzraa naneke ɖo o)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Ŋlɔ faɛl siwo to vovo la dzi (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Dze ƒuƒuwɔwɔa gɔme</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Ƒuƒuwɔwɔ mamlɛtɔwo</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Dɔ</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ŋgɔyiyi</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Le ɖoɖo me</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Dɔwɔwɔwo</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ɖe asi le eŋu</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Dɔ gã alo resync aɖeke meli haɖe o.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Nɔnɔmetata ɖeka</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Adrɛs siwo template xɔna fifia, lolome kple ƒomevi siwo woƒo ƒui na ŋkɔ bubu sia ŋkɔ, kple faɛl sia faɛl le afi ma loo alo ao.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Di to</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Nu ƒe ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Fia</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Mèkpɔ mɔ xlẽ nu sia o.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Nɔnɔmetata aɖeke mele nu sia si o.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Nu aɖeke mele ID sia si o.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>nu %object, kadodoƒe %node, ʋɛsiɔn %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Gɔmedzedze: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>faɛl le afi ma</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>faɛl mele afi ma o</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name ƒe ŋkɔ bubuwo</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Ŋkɔ bubu</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Lolome</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Ƒomevi</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faɛl</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Fɔmatwo</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Adrɛs le template me</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>le afi ma</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>mele afi ma o</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>menye na ƒomevi sia o</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Kpɔ</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Wɔ</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Nɔnɔmetata aɖeke mele ɖoƒe sia me o.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ɣeyiɣi</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Nutsoƒe ŋu kadodo</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>HEAD biabia na staging nutsoƒe, kple eƒe kpe ɖe edzi ƒe nuwo ne woŋlɔ wo ŋkɔ. Wonaa kpe ɖe edzi ƒe nuwo la, gake womefiaa wo gbeɖe o.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Nutsoƒe</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>kple kpe ɖe edzi ƒe nuwo</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Dzraɖoƒe ƒe mɔ (mehiã o)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Dokpɔ kadodoa</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>BaseURL mele nutsoƒe aɖeke si o. Woɖoa nutsoƒewo le ɖoɖowo me ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>woate ŋu ade eŋu</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>wogbe: kpɔ kpe ɖe edzi ƒe nuwo</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>womekpɔe le nutsoƒea o</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>ŋuɖoɖo aɖeke meli o</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>ɣeyiɣia nu</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>wotrɔ eɖo bubu (womeyi eyome o)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL aɖeke meli o</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>menye dzraɖoƒe ƒe mɔ o</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adrɛs</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Ɖoƒe</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>wodɔe</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>nuvia mele afi ma o</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>nuvia menye user:password alo Bearer &lt;token&gt; o</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file ƒe nɔnɔme yeyewo, yeye gbãtɔ.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Ɖoɖowɔwɔ &gt; Ŋutinya faɛlwo</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Nudzɔdzɔ</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Nudzɔdzɔ katã</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Ƒuƒuwɔwɔwo (gɔmedzedze kple nuwuwu)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Mɔa me nɔ</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Nɔnɔmewo</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Tsotsonu</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Dze yome: fia nɔnɔme yeyewo esime woŋlɔna</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Mɔ kple nyatakakawo</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Ŋutinya faɛla me nɔnɔme aɖeke mesɔ o.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Nu si dzradzra ɖo atrɔ</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Nu si wotrɔ</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Wodzra ɖo ɖe settings/override/image.ini.append.php me, eyata asixɔxɔ si le afisia wu siteaccess sia siteaccess tɔ. Asixɔxɔ siwo wofia la nye esiwo le dɔ wɔm na siteaccess sia. Dzradzra ɖo bia tso asiwò be nàkpe ɖe edzi be wòe nye esi gbã.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Alesi woawɔ ŋkɔ bubuwo eye woatsɔ wo ana.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Nɔnɔmetata siwo mele afi ma o tsɔtsɔ vɛ tso ɖoɖo bubu me (alpha, dev, beta, stage, pro, post, arc). Production (pro) metsɔa naneke vɛ gbeɖe o.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Ɖoɖo</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Asixɔxɔ</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Le settings/override me</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Nutsoƒe sia nutsoƒe ƒe adrɛs kple nuvi si me eƒe kpe ɖe edzi ƒe nuwo le ƒe ŋkɔ (user:password alo Bearer &lt;token&gt;). Woɖoa nuvi ƒe asixɔxɔ le Ɖoɖowɔwɔ &gt; Nuviwo me eye womefiaa afisia gbeɖe o.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Kpɔ tɔtrɔwo do ŋgɔ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Dzra ɖo</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Le yome dzem: wogbugbɔ %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Wotɔ te</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Nuɖeɖea meɖo eŋu o; le dodom ake.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Dɔa wu enu.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: template-wo xɔa adrɛsa, woawɔ ŋkɔ bubua ne woabia. render: template la wɔe esime axa la le dzedzem (gɔmedzedze ƒe nɔnɔme).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Ŋkɔ bubu si womewɔ haɖe o ƒe adrɛs: token (woŋlɔe, medi database o), ids-token, ids, node alo storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: trɔtrɔ ɖe faɛla ŋu ne web sɛva la na dzraɖoƒea, ne menye nenema o la, wotsɔa faɛla ƒua tso.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Sekɔnd siwo biabia ate ŋu azã atsɔ awɔ alo atsɔ ŋkɔ bubu vɛ; emegbe wòna nutsɔƒea eye dɔ aɖe wu enu.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Trɔla si woatea ɖe te gbã na WebP kple AVIF fɔmat bubuwo.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Na WebP alo AVIF brauzawo siwo bia wo, na ŋkɔ bubu siwo ŋlɔa Formats[] ɖi.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Nɔnɔmetata si mele aɖeke dzi, si lolo sɔ, esime nɔnɔmetata aɖe mele afi ma o.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Skript sue aɖe si tsɔa nɔnɔmetata vavã ɖɔa nutsɔƒewo teƒe ne ele afi ma.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Le ɖeɖefia megbe la, dɔ aɖe wɔa nɔnɔmetata yeyewo ƒe ŋkɔ bubuwo na siteaccess sia siteaccess si ku ɖe eŋu.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Trɔtrɔ siwo wowɔna ɖekae le sɛva ɖeka dzi.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Dɔ gãwo ƒe ɖoɖo gɔme (nice), 0 yi 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Sekɔnd siwo brauzawo kple cache-wo ate ŋu atsɔ ŋkɔ bubu si woɖo la.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Sekɔnd siwo nɔnɔmetata si woŋlɔ do ŋgɔ alo si woakpɔ do ŋgɔ ƒe adrɛs nɔa dɔ wɔm.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Sekɔnd siwo kpe ɖe edzi ƒe safui si do ŋgɔ nɔa dɔ wɔm le trɔtrɔ megbe.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Ɖoɖo sia ƒe nɔnɔme.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Nɔnɔme si woatsɔ nɔnɔmetata siwo mele afi ma o vɛ tso; none: womatsɔ naneke vɛ o.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Ɖeka le nɔnɔme ɖe sia ɖe me: afisia dzraɖoƒe ƒe gɔmedzedze;nutsoƒe ƒe gɔmedzedze alo adrɛs, na dzraɖoƒe ƒe mɔ siwo to vovo.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Sekɔnd siwo biabia ɖeka na nutsoƒea ate ŋu axɔ.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Faɛl gãtɔ si wotsɔ tso nutsoƒea me, le bytes me.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Nudzɔdzɔ siwo mewɔ dɔ o ɖekaɖekae si megbe wotɔa nutsoƒea te.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Ɣeyiɣi didi si woatɔ nutsoƒe si mewɔa dɔ o la te.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Dɔ e-meil ɖe dzikpɔlawo ŋu ne wotɔ nutsoƒea te (zi ɖeka le gaƒoƒo ɖeka me wu).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>E-meil adrɛs ɖeka le nɔnɔme ɖe sia ɖe me; ɖeka mele o: site.ini ƒe AdminEmail.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Nutsoƒe ɖoɖo %block ƒe adrɛs, abe https://www.example.org ene.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Nuvi si me kpe ɖe edzi ƒe nuwo le ƒe ŋkɔ, alo env:VARIABLE. Menye kpe ɖe edzi ƒe nuwo ŋutɔ o gbeɖe.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(naneke)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Gɔmeɖoanyi: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Woɖe afisia; tia be woaɖee ɖa</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>wodo ɖe esi</translation>
     </message>
 </context>
 </TS>

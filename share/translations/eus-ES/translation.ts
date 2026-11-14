@@ -16590,6 +16590,34 @@ Oharra: paketeak ez dira desinstalatuko.</translation>
         <source>Import/Export</source>
         <translation>Inportatu/Esportatu</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Irudi-ezizenak</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Sortu elementu honentzat</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Sortu azpiarbolarentzat</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Birsortu elementu honentzat</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Birsortu azpiarbolarentzat</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Kendu elementu honentzat</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Kendu azpiarbolarentzat</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Gune zahar baten server blokea: location = return-ekin, if ($args) kontsulta baterako, rewrite komodin gisa eta orri bakarren map bat.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Irudi-ezizenak</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Irudi-ezizenak txantiloiek erakusten dituzten irudiaren kopia eskalatuak eta moztuak dira. Hemen ikusiko duzu nola egiten diren, gunean multzo-lanak abiarazi ditzakezu, irudi bat edo staging iturri bat probatu, exekuzioen historia jarraitu eta ezarpenak aldatu.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Orriaren atalak</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Aginte-panela</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Multzo-exekuzioak</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Proba-tresnak</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Exekuzioen historia</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Ezarpenak</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Hemen dena ikus dezakezu. Ezarpenak aldatzeko, lanak abiarazteko eta fitxategiak sortzen dituzten tresnak erabiltzeko setup/managealiases politika behar da.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Zer behar duen arreta</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Render modua: txantiloiek falta diren ezizenak orria sortzen den bitartean egiten dituzte, lehen bezala. On-demand helbideak, leku-markak eta atzeko planoko lanak ez dira erabiltzen.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Formatu-negoziazioa aktibatuta dago, baina hemen ez dago WebP idatz dezakeen bihurgailurik.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Hau staging instalazio bat da, baina bere iturriak ez du BaseURL: ezin dira falta diren irudiak eskuratu.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Staging iturria etenda dago huts egin duelako jarraian zenbait aldiz: falta diren irudiek leku-markak jasoko dituzte etena amaitu arte edo berrezarri arte.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Staging iturriak huts egin du duela gutxi. Ikusi behean bere azken errorea.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Instalazio hau ez da produkziokoa, baina SyncFrom-ek ez du iturririk ematen: ez da ezer eskuratzen.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Lan-ilara (expqueue) ez dago erabilgarri: denboran iristen ez diren ezizenak hurrengo eskaerak egingo ditu, argitaratu ondorengo aurre-sorrera saltatu egiten da eta multzo-exekuzioak eremu txikietara mugatzen dira.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Irudi-ezizenen lan batzuek behin betiko huts egin dute. Konfigurazioa &gt; Lan-ilara atalak zergatia azaltzen du.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Multzo-exekuzioak etenda daude.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Ezizenek huts egin dute azken 24 orduetan. Exekuzioen historiak zerrendatzen ditu.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Sinadura-gakoak urtebete baino gehiago du. Biratzeak helbide zaharrak baliozko mantentzen ditu luzapen-epean.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Oraindik ez dago sinadura-gakorik: lehen on-demand helbidearekin sortzen da.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Azken 24 orduak</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Sortutako ezizenak</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Erantzundako leku-markak</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Hutsegiteak</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Staging-eko fitxategiak</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Hasitako exekuzioak</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Lanak zain / martxan</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Zenbatua %file fitxategiaren azken %lines lerroetatik, %time arte iristen direnak.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Modua eta entrega</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Modua</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>eskariaren arabera</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Helbide-forma</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Entrega</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Eskaera baten gehienezko itxaronaldia</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Aldi bereko bihurketak</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy / %max okupatuta orain</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Formatu-negoziazioa</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>aktibo</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ez</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Leku-marka eta ordezkapen-scripta</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Argitaratu ondorengo aurre-sorrera</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Gunearen ezizenak</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Formatu-aldaeren bihurgailuak</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Bihurgailua</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Probatua</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>hobetsia</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>bai</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ez</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Ezizenak berak [ImageConverterSettings]-eko bihurgailuek egiten dituzte, lehen bezala; hauek WebP eta AVIF aldaerak idazten dituzte.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Ingurunea eta iturria</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Instalazio hau</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(produkzioa: ez du inoiz eskuratzen)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Hemendik eskuratzen du</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>ezer ez</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Iturriaren helbidea</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>ezarri gabe</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Kredentziala</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>%name sekretua</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>bat ere ez</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Egoera</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>martxan</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time arte etenda</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>huts egiten</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Jarraian izandako hutsegiteak</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>etena %count ondoren</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Azken errorea</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Azken arrakasta</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Berrezarri hutsegiteak eta galdetu iturriari berriro</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Lan-ilara</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Lan mota</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Zain</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Martxan</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Huts egin dute</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>erregistratu gabe</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Lan-ilara ez dago erabilgarri.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Multzo-exekuzioak etenda</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time -tik, %user erabiltzaileak</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Multzo-exekuzioak martxan egon daitezke</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Sinadura-gakoa</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Gakoa</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>sekretu-biltegian</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>oraindik ez</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Antzinatasuna</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days egun (%time -tik)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Aurreko gakoa</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time arte baliozkoa</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Biratu gakoa</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Uneko gakoarekin sinatutako helbideek funtzionatzen dute luzapen-epean (SigningKeyGrace); gero leku-markekin erantzuten dute orriak berriro egin arte.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Biratu orain</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Nola funtzionatzen duen</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render modua, staging eta erregistroa</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (lehenetsia): orri batek oraindik ez dagoen ezizen bat sinatutako helbide batera lotzen du. Lehen eskaerak gehienezko itxaronaldian egiten du; bestela leku-marka neutro batekin erantzuten du eta lan batek amaitzen du; ordezkapen-scriptak leku-marka ordezkatzen du irudia prest dagoenean.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render modua: txantiloiak ezizena orria sortzen den bitartean egiten du, lehen bezala. Bien artean noiznahi alda daiteke; ez da ezer migratu behar.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Staging instalazio batek falta zaizkion jatorrizkoak eta ezizenak bere iturritik eskuratzen ditu; huts egiten duen iturria jarraian zenbait hutsegiteren ondoren eteten da eta administratzaileek ordu bakoitzeko posta elektroniko bat jasotzen dute gehienez.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Multzo-exekuzioak eta argitaratu ondorengo aurre-sorrera lan-ilarako lanak dira, bisitarien lehentasuna baino txikiagoarekin. Ezizenak kentzeak Velocity-ren erantzun-cachea ere garbitzen du, kendutako fitxategia handik ez zerbitzatzeko.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Egindako ezizen, erantzundako leku-marka, staged fitxategi eta exekuzio bakoitza %file fitxategiko lerro bat da. Komando-lerroak tresna berberak ditu: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>%job lana: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done / %total irudi</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Exekuzioa</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Eremua</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Emaitza</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Utzi lan hau</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>%job lana ez da irudi-ezizenen lan bat, edo ilaratik kendu da.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>%run exekuzioaren emaitza</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Multzo-exekuzioak etenda daude</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time -tik etenda, %user erabiltzaileak.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Etenak multzo-exekuzio guztiak gelditzen ditu uneko irudiaren ondoren, zerbitzari guztietan; ilarako exekuzioek itxaron egiten dute. Bisitarien ezizenak egiten jarraitzen dira.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Jarraitu multzo-exekuzioekin</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Arrazoia (aukerakoa)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Eten multzo-exekuzioak</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Hasi exekuzio bat</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Exekuzioak lan-ilarako lanak dira: orria utzi eta gero itzul zaitezke.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Lan-ilararik gabe, exekuzioa eskaera honetan egiten da, gehienez %count irudirentzat.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ekintza</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: falta diren ezizenak egin</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: kendu eta berriro egin</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: kendu (eskariaren arabera berriro egiten dira)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: eskuratu fitxategiak staging iturritik</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(staging instalazioan soilik)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Gune osoa</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Nodo bat</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Nodo bat eta bere azpiarbola</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Nodoaren IDa</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klaseak</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atributuak</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Aldatua noiztik</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Data bat (2026-11-01) edo duela zenbat denbora (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Gehienez irudi</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Ezizenak (bat ere ez markatuta: guztiak)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Frogako exekuzioa: kontatu soilik (resync-ek iturria egiaztatzen du eta ez du ezer gordetzen)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Gainidatzi desberdinak diren fitxategiak (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Hasi exekuzioa</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Azken exekuzioak</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Lana</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Aurrerapena</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Ilaran</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ekintzak</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Utzi</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Oraindik ez dago multzo-exekuziorik edo resync-ik.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Irudi bat</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Txantiloi batek orain jasotzen dituen helbideak, ezizen bakoitzarentzat kalkulatutako tamainak eta motak, eta fitxategi bakoitza dagoen ala ez.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Bilatu honen arabera</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Objektuaren IDa</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Erakutsi</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Ezin duzu objektu hau irakurri.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Objektu honek ez du irudirik.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Ez dago ID hori duen objekturik.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>%object objektua, %node nodoa, %version bertsioa</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Jatorrizkoa: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>fitxategia dago</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>fitxategia falta da</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name-ren ezizenak</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Ezizena</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Tamaina</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Mota</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fitxategia</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Formatuak</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Helbidea txantiloian</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>badago</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>falta da</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ez mota honetarako</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Egiaztatu</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Egin</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Ez dago irudirik eremu honetan.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ordua</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Iturri baterako konexioa</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>HEAD eskaera bat staging iturri bati, bere kredentzialarekin izendatu bada. Kredentziala bidaltzen da, inoiz ez erakutsi.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Iturria</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>kredentzialarekin</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Biltegiratze-bidea (aukerakoa)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Probatu konexioa</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Iturri batek ere ez du BaseURL. Iturriak ezarpenetan ezartzen dira ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>eskuragarri</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>ukatua: egiaztatu kredentziala</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>ez da iturrian aurkitu</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>erantzunik ez</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>denbora-muga gainditu da</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>birbideratua (ez jarraitua)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL gabe</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>ez da biltegiratze-bide bat</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Helbidea</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Egoera</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>bidalita</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>sekretua falta da</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>sekretua ez da user:password edo Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file fitxategiaren lerro berrienak, berrienak lehenengo.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Konfigurazioa &gt; Erregistro-fitxategiak</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Gertaera</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Gertaera guztiak</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Exekuzioak (hasiera eta amaiera)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Bideak dauka</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Lerroak</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Iragazi</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Jarraitu: erakutsi lerro berriak idazten diren heinean</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Bidea eta xehetasunak</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Erregistroko ezein lerro ez dator bat.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Zer aldatuko lukeen gordetzeak</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Zer aldatu den</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php fitxategian gordetzen da, beraz hemengo balioak siteaccess guztiak gainditzen ditu. Erakutsitako balioak siteaccess honetan indarrean daudenak dira. Gorde aurretik zu zarela egiaztatzeko eskatzen da.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Nola egiten eta entregatzen diren ezizenak.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Falta diren irudiak beste instalazio batetik eskuratzea (alpha, dev, beta, stage, pro, post, arc). Produkzioak (pro) ez du inoiz eskuratzen.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Ezarpena</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Balioa</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override-n</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Iturri bakoitzaren helbidea eta bere kredentziala gordetzen duen sekretuaren izena (user:password edo Bearer &lt;token&gt;). Sekretu baten balioa Konfigurazioa &gt; Sekretuak atalean ezartzen da eta hemen ez da inoiz erakusten.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Aurrebista aldaketak</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Gorde</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Jarraitzen: %time eguneratua</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Etenda</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Jarioak ez du erantzun; berriro saiatzen.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Lana amaitu da.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: txantiloiek helbidea jasotzen dute, ezizena eskatzen denean egiten da. render: txantiloiak orria sortzen den bitartean egiten du (jatorrizko portaera).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Oraindik egin gabeko ezizen baten helbidea: token (sinatua, datu-baserik ez du behar), ids-token, ids, node edo storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: fitxategirako birbideratzea web-zerbitzariak biltegiratzea zerbitzatzen duenean, bestela fitxategia streaming bidez bidaltzen da.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Eskaera batek ezizen bat egiten edo eskuratzen eman ditzakeen segundoak; gero leku-markarekin erantzuten du eta lan batek amaitzen du.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP eta AVIF aldaeretarako lehenengo probatzen den bihurgailua.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Erantzun WebP edo AVIF eskatzen duten nabigatzaileei, Formats[] zerrendatzen duten ezizenentzat.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Tamaina egokiko irudi neutro bat irudia falta den bitartean.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Leku-markak irudi errealarekin ordezkatzen dituen script txiki bat, irudia dagoenean.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Argitaratu ondoren, lan batek irudi berrien ezizenak egiten ditu erlazionatutako siteaccess guztientzat.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Aldi bereko bihurketak zerbitzari bakar batean.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Multzo-exekuzioen prozesu-lehentasuna (nice), 0tik 19ra.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Nabigatzaileek eta cacheek egindako ezizen bat gorde dezaketen segundoak.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Zirriborro edo aurrebista-irudi baten helbideak baliozkoa izaten jarraitzen duen segundoak.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Biraketa ondoren aurreko sinadura-gakoak baliozkoa izaten jarraitzen duen segundoak.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Instalazio honen ingurunea.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Falta diren irudiak eskuratzen diren ingurunea; none: ez da ezer eskuratzen.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Bat lerroko: biltegiratze lokalaren aurrizkia;iturriaren aurrizkia edo helbidea, desberdinak diren biltegiratze-bideetarako.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Iturrirako eskaera batek har dezakeen segundoak.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Iturritik hartzen den fitxategirik handiena, byte-etan.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Jarraian izandako hutsegite kopurua, ondoren iturria eteten dena.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Huts egiten duen iturria zenbat denboran etengo den.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Bidali posta administratzaileei iturria eteten denean (orduko behin gehienez).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Posta helbide bat lerroko; hutsik: site.ini-ko AdminEmail.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>%block iturri-instalazioaren helbidea, adib. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Kredentziala duen sekretuaren izena, edo env:VARIABLE. Inoiz ez kredentziala bera.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(bat ere ez)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Lehenetsia: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Hemen ezarria; markatu kentzeko</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>oinordetua</translation>
     </message>
 </context>
 </TS>

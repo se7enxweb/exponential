@@ -16590,6 +16590,34 @@ Xamal ne: paket yi dootuñu ñu dindi samp.</translation>
         <source>Import/Export</source>
         <translation>Dugal/Génne</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Turu nataal yu wuute</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Defar ngir lii</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Defar ngir yoonam yi</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Defaraat ngir lii</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Defaraat ngir yoonam yi</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Far ngir lii</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Far ngir yoonam yi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Bloku server bu sit bu yàgg: location = ak return, if ($args) ngir laaj, rewrite ni màndarga wuutukat ak benn map bu xët yu kenn.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Turu nataal yu wuute</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Turu nataal yu wuute yi, ay kopi yu ndaw ak yu ñu dagg la ci nataal, yi template yi di wane. Fii ngay gis naka lañu leen di defe, ngay mën a dem ay liggéey yu bari ci sit bi, jéem benn nataal walla benn cosaan staging, topp taariix bu daje yi te soppi tànneef yi.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Pàrti yu xët wi</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Tabalu saytu</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Daje yu bari</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Jumtukaay yu jéem</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Taariixu daje yi</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Tànneef yi</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Fii mën nga gis lépp. Soppi tànneef yi, dem liggéey yi ak jumtukaay yiy defar fisiye, aji koy def war na am policy setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Li soxla xel</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Mode render: template yi dañuy defar turu nataal yi ñu soxla ba xët wi di defaru, ni mu doon woon. Adrees on-demand yi, placeholder yi ak liggéey yu ñu def ci biir du jëfandikoo.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Format negotiation dafa tàbbi, waaye amul converter fii mu ngi mën a bind WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Staging installation la, waaye cosaanam amul BaseURL: nataal yi ñu soxla mënuñu ñu indi.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Cosaan staging bi ñu taxaw na ko ginnaaw ay fakkastal yu toftal: nataal yi ñu soxla dañuy am placeholder ba taxaw bi jeex walla ba nga ko dellusee.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Cosaan staging bi fakkastalu na ci kanam. Xool ci suuf ni mu mujje woon.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Installation bii du production, waaye SyncFrom nanul benn cosaan: dara du indiku.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>File liggéey yi (expqueue) amul: turu nataal yi ñu mënul a def ci waxtu, saa bu ñu laaje ba noppi ñooy def ko, def ko ci kanam ginnaaw bu ñu publikee dafay ñaaw te daje yu bari yi dañuy yem ci ay ndayu yu ndaw.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Ay liggéey yu turu nataal yi fakkastalu nañu ba abadan. Defar &gt; File liggéey yi dafay wane lu tax.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Daje yu bari yi taxaw nañu.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Ay turu nataal fakkastalu nañu ci 24 waxtu yu mujj yi. Taariixu daje yi dafay leen lim.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Caabi bu sinye bi màgg na benn at. Soppi ko dina wóolu adrees yu yagg yi ci diir bu xaaj bi.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Amul caabi bu sinye ba tay: dina am ak adrees on-demand bu njëkk bi.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>24 waxtu yu mujj yi</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Turu nataal yi ñu defar</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Placeholder yi ñu tontu</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Fakkastal yi</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Fisiye yi ñu staging</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Daje yi tàmbali</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Liggéey yi di xaar / di dox</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Lim ci %lines rëdd yu mujj yi ci %file, yiy dem ba ci %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Mode ak yónnee</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mode</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>su ñu ko soxlaan</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Natt bu adrees bi</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Yónnee</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Xaar bi gëna yàgg ci ab laaj</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Soppi yi ci benn waxtu</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy ci %max a ngi yëngu léegi</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Format negotiation</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>tàbbi</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>génn</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Placeholder ak script bu wuutu</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Defar ci kanam ginnaaw publikasiyoŋ</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Turu nataal yu sit bi</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Converter yi ci xeeti format yi</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Converter</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Jéemees</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>gëna neex</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>waaw</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>déedéet</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Turu nataal yi ñoom ci seen bopp, converter yi ci [ImageConverterSettings] ñooy leen defar, ni mu doon woon; yii ñooy bind xeeti WebP ak AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Mbir mi ak cosaan bi</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Installation bii</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production: du jël mukk)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Jël ci</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>dara</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Adrees bu cosaan bi</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>dafa tëj</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Caabi bu woor</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>mbóot %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>amul</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Xaalat</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>dafay dox</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>taxaw ba %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>di fakkastal</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Fakkastal yu toftal</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>taxaw ginnaaw %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Fakkastal bu mujj</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Ndam bu mujj</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Dellusi fakkastal yi te laaj cosaan bi tamit</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>File liggéey yi</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Xeetu liggéey</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Di xaar</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Di dox</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fakkastalu na</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>duñu ko bind</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>File liggéey yi amul.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Daje yu bari yi taxaw nañu</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>ba %time, %user moo ko def</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Daje yu bari yi mën nañu dox</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Caabi bu sinye</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Caabi</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>ci denc-mbóot bi</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>amul ba tay</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Maggat</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days fan (ba %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Caabi bu jëkk</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>baax na ba %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Soppi caabi bi</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Adrees yi ñu sinye ak caabi bi nekk léegi dañuy dox ci diir bu xaaj bi (SigningKeyGrace), noonu ñuy tontu ak placeholder yi ba xët yi defaru ko mu bees.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Soppi léegi</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Naka la mu doxee</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, mode render, staging ak log bi</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (bi ñu def): xët dafay jëkkël turu nataal bu amagul ci adrees bu ñu sinye. Laaj bu njëkk bi dina ko defar ci xaar bi gëna yàgg, lu ko moy mu tontu ak placeholder bu amul tolof te ab liggéey mooy sottal; script bu wuutu bi dafay wuutu placeholder bi bu nataal bi sottee.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Mode render: template bi dafay defar turu nataal bi ba xët wi di defaru, ni mu doon woon. Mën nga soppi ci seen diggante saa su nekk; kenn du jëme dara.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Staging installation dafay jël ci cosaanam nataal yu njëkk yi ak turu nataal yi ko ñàkk; cosaan bu di fakkastal dañu koy taxaw ginnaaw ay fakkastal yu toftal te saytukat yi di jot benn imeel ci waxtu bu ne bu ëpp.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Daje yu bari yi ak defar ci kanam ginnaaw publikasiyoŋ ay liggéey yu file liggéey yi lañu, ak njëkk bu gëna ndaw ci ñi di ñów. Far turu nataal yi dafay set cache bu tontu bu Velocity, ngir fisiye bi ñu far du jóge fa.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Bu ne turu nataal bu ñu defar, placeholder bu ñu tontu, fisiye bu ñu staging ak daje bu ne mooy benn rëdd ci %file. Command line am na jumtukaay yooyu: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Liggéey %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done ci %total nataal</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Doxal</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Ndayu</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Njureel</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Neenal liggéey bii</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Liggéey %job du liggéeyu turu nataal, walla ñu def ko ci file bi.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Njureelu daje %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Daje yu bari yi taxaw nañu</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Taxaw ba %time, %user moo ko def.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Taxaw bi dafay taxawal bépp daje bu bari ginnaaw nataal bi nekk, ci bépp serwër; daje yi ci file bi di nañu xaar. Turu nataal yu ñi di ñów ñoom, dinañu ko defar.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Doxalaat daje yu bari yi</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Lu tax (soxlawul)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Taxawal daje yu bari yi</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Tàmbali daje</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Daje yi ay liggéeyu file liggéey yi lañu: mën nga bàyyi xët wi te dellusi.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Su amul file liggéey yi, daje bi dafay am ci laaj bii, ci %count nataal ci kanam.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Jëf</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: defar turu nataal yi ñu ñàkk</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: far leen te defar leen</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: far leen (dinañu leen defaraat su ñu soxlaan)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: jël fisiye yi ci cosaan staging bi</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(ci staging installation rekk)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Sit bi mépp</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Benn noo</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Benn noo ak ay yoonam</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID bu noo</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klaas yi</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atribi yi</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Soppi ba</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Ab bés (2026-11-01) walla ab waxtu bu jëkk (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Nataal yu ëpp rekk</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Turu nataal yi (su ñu tànnul dara: ñépp)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Daje bu jéem: lim rekk (resync dafay seet cosaan bi te dencul dara)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Bind ci kaw fisiye yi wuute (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Tàmbali daje bi</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Daje yu mujj yi</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Liggéey</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ni mu jëm</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Ci file bi</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Jëf yi</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Neenal</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Amul daje bu bari walla resync ba tay.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Benn nataal</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Adrees yi template bi di jot léegi, dayo yi ak xeet yi ñu natt ci turu nataal bu ne, ak ndax fisiye bu ne am na.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Wut ci</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID bu objee</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Wane</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Amuloo sañ-sañ ngir jàng objee bii.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Objee bii amul nataal.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Amul objee bu am ID bii.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>objee %object, noo %node, version %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Bu njëkk: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>fisiye bi am na</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>fisiye bi amul</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Turu nataal yu %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Turu nataal</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Dayo</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Xeet</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fisiye</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Format yi</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Adrees ci template</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>am na</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>amul</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>du ngir xeet bii</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Seet</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Def</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Amul nataal ci kaaraange bii.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Waxtu</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Jokkoo ak cosaan</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Ab laaj HEAD ci cosaan staging, ak caabi bi bu ñu tudde. Caabi bi dañu koy yónnee, duñu ko wane mukk.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Cosaan</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>ak caabi</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Yoonu denc (soxlawul)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Jéem jokkoo bi</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Amul cosaan bu am BaseURL. Cosaan yi ñuy ko tëral ci tànneef yi ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>mën nañu ko àgg</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>ñu ko ñaas: seet caabi bi</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>gisuñu ko ci cosaan bi</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>tontu amul</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>waxtu bi jeex na</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>ñu ko jëmale (topptoowul)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>amul BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>du yoonu denc</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adrees</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Sitiwaasiyoŋ</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>yónnee na</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>mbóot mi amul</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>mbóot mi du user:password walla Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Rëdd yi gëna bees ci %file, yu gëna bees ñooy jëkk.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Defar &gt; Fisieu xew-xew</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Xew-xew</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Xew-xew yépp</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Daje yi (tàmbali ak mujj)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Yoon bi am na</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Rëdd yi</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Sef</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Topp: wane rëdd yu bees ni ñuy bind</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Yoon ak ay xibaar</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Amul rëdd bu log bi dëppoo.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Li denc bi di soppi</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Li ñu soppi</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Dañu koy denc ci settings/override/image.ini.append.php, kon njëg ci fii moo ëpp siteaccess yépp. Njëg yi ñu wane ñooy yi am ci siteaccess bii. Su ñu denc, dañu lay laaj nga jëkk wóorlu ne yaa nekk.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Naka la ñuy defar te yónnee turu nataal yi.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Jël nataal yi ñu ñàkk ci beneen installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) du jël mukk.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Tànneef</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Njëg</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Ci settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Adrees bu cosaan bu ne ak turu mbóot mi ëmb caabi bi (user:password walla Bearer &lt;token&gt;). Njëgu mbóot mi dañu koy tëral ci Defar &gt; Mbóot yi te duñu ko wane fii mukk.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Xool soppi yi jëkk</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Denc</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Di topp: yeesal ci %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Taxaw na</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Feed bi tontuwul; di jéemaat.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Liggéey bi jeex na.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: template yi dañuy jot adrees bi, turu nataal bi dañu koy defar bu ñu ko laajee. render: template bi dafay ko defar ba xët wi di defaru (jëfandikoo bu njëkk bi).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Adrees bu turu nataal bu ñu defarul ba tay: token (ñu sinye ko, soxlul base de données), ids-token, ids, node walla storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: ab jëme ci fisiye bi bu serwëru web bi di jëfandikoo denc bi, lu ko moy fisiye bi dañu koy yëngal.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Sekond yi ab laaj mën a jëfandikoo ngir defar walla jël turu nataal; noonu mu tontu ak placeholder bi te ab liggéey sottal.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Converter bi ñuy jéem njëkk ngir xeeti WebP ak AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Tontu WebP walla AVIF ci browser yi koy laaj, ngir turu nataal yiy lim Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Benn nataal bu amul tolof ak dayo bu baax saa bu nataal bi ñàkkee.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Benn script bu ndaw buy wuutu placeholder yi ak nataal bu dëgg bu mu sottee.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Ginnaaw publikasiyoŋ, ab liggéey dafay defar turu nataal yu nataal yu bees yi ngir siteaccess yépp yu jëm.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Soppi yi ci benn waxtu ci benn serwër.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Njëkk bu proces bi (nice) ci daje yu bari yi, 0 ba 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Sekond yi browser yi ak cache yi mën a wéy turu nataal bu ñu defar.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Sekond yi adrees bu nataal bu brouillon walla bu ñu xool jëkk di baax.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Sekond yi caabi bu sinye bu jëkk bi di baax ginnaaw soppi.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Mbir mi ci installation bii.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Mbir mi ñuy jëlee nataal yi ñu ñàkk; none: dara du indiku.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Benn ci benn rëdd: njëkk-bind bu denc bu fi nekk;njëkk-bind bu cosaan walla adrees, ngir yoonu denc yu wuute.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Sekond yi benn laaj ci cosaan bi mën a yàgg.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Fisiye bi gëna rëy bu ñuy jël ci cosaan bi, ci byte.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Fakkastal yu toftal ginnaaw yoo ngi cosaan bi di taxaw.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Diir bu cosaan bu di fakkastal di taxaw.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Yónnee imeel saytukat yi bu cosaan bi taxawee (benn yoon ci waxtu bu ne bu ëpp).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Benn adrees imeel ci benn rëdd; neen: AdminEmail bu site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Adrees bu installation cosaan %block, ni https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Turu mbóot mi ëmb caabi bi, walla env:VARIABLE. Du caabi bi ci boppam.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(amul)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Bi ñu def: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Ñu ko tëral fii; màndarga ngir far ko</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>jëlee woon</translation>
     </message>
 </context>
 </TS>

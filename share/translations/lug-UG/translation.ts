@@ -16590,6 +16590,34 @@ Jjukira: Pakeeji tezijja kusimbulwa.</translation>
         <source>Import/Export</source>
         <translation>Okuyingiza/Okusindika ebweru</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Amannya amalala ag&apos;ebifaananyi</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Kola ku kino</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Kola ku ttabi</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Kola buggya ku kino</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Kola buggya ku ttabi</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Ggyawo ku kino</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Ggyawo ku ttabi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Ekitundu kya server eky'omukutu omukadde: location = ne return, if ($args) ku kibuuzo, rewrite ng'akabonero akakiikirira ne map y'empapula ssekinnoomu.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Amannya amalala ag&apos;ebifaananyi</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Amannya amalala ag&apos;ebifaananyi ze kopi z&apos;ekifaananyi ezitono oba ezisaliddwa eziragibwa ebisengekeddwa. Wano olaba engeri gye bikolebwamu, osobola okudduukirira emirimu mingi ku mukutu, okugezesa ekifaananyi kimu oba ensibuko ya staging, okugoberera ebyafaayo by&apos;okudduka n&apos;okukyusa entegeka.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Ebitundu by&apos;olupapula</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Olubaawo lw&apos;okulondoola</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Okudduka okw&apos;ekibinja</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Ebikozesebwa mu kugezesa</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Ebyafaayo by&apos;okudduka</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Entegeka</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Wano osobola okulaba buli kimu. Okukyusa entegeka, okuddukanya emirimu n&apos;ebikozesebwa ebikola fayiro kyetaaga policy ya setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Ebyetaaga okulabirira</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Enkola ya render: ebisengekeddwa bikola amannya amalala agabula ng&apos;olupapula lukolebwa, nga bwe kyali. Endagiriro za on-demand, ebiziba ebituuti n&apos;emirimu egy&apos;emabega tebikozesebwa.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Okukkaanya ku format kuli ku, naye tewali kikyusa wano ekisobola okuwandiika WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Eno ye staging installation, naye ensibuko yaayo terina BaseURL: ebifaananyi ebibula tebisobola kuggyibwayo.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Ensibuko ya staging yayimirizibwa oluvannyuma lw&apos;okulemererwa emirundi egigoberaganye: ebifaananyi ebibula bifuna ebiziba ebituuti okutuusa ng&apos;okuyimirizibwa kuggwa oba ng&apos;ogizzaawo.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Ensibuko ya staging yalemererwa jjuuzi. Laba wansi ensobi yaayo esembayo.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Installation eno si ya production, naye SyncFrom teyatula nsibuko yonna: tewali kiggyibwayo.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Olunyiriri lw&apos;emirimu (expqueue) terubaawo: amannya amalala agatatuuka mu budde gakolebwa okusaba okuddako, okukola nga bukyali oluvannyuma lw&apos;okufulumya kubuuka, era okudduka okw&apos;ekibinja kukoma ku bitundu bitono.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Emirimu egimu egy&apos;amannya amalala ag&apos;ebifaananyi gyalemererwa ddala. Setup &gt; Olunyiriri lw&apos;emirimu kulaga ensonga.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Okudduka okw&apos;ekibinja kuyimiriziddwa.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Amannya amalala gaalemererwa mu ssaawa 24 ezisembayo. Ebyafaayo by&apos;okudduka biwandiika.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Ekisumuluzo eky&apos;okussaako omukono kiweza omwaka mulamba. Okukyusa kikuuma endagiriro enkadde nga nnungi mu kiseera ky&apos;ekisonyiwa.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Tewali kisumuluzo kya kussaako mukono kyokka: kikolebwa wamu n&apos;endagiriro esooka eya on-demand.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Essaawa 24 ezisembayo</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Amannya amalala agakoleddwa</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Ebiziba ebituuti ebiddiddwamu</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Okulemererwa</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Fayiro ezitaddwa mu staging</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Okudduka okutandise</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Emirimu egirindirira / egidduka</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Kibalidwa okuva ku mirongo %lines egisembayo egya %file, egituuka emabega okutuuka ku %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Enkola n&apos;okutuusa</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Enkola</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>nga kyetaagiddwa</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Engeri y&apos;endagiriro</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Okutuusa</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Okulinda okusinga okuwanvu kw&apos;okusaba</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Okukyusa mu kiseera kimu</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy ku %max zikola kati</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Okukkaanya ku format</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ku</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ggyiddwako</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Ekiziba ekituuti ne script y&apos;okuddiza</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Okukola nga bukyali oluvannyuma lw&apos;okufulumya</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Amannya amalala ag&apos;omukutu</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Abakyusa b&apos;ebika bya format</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Omukyusa</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Kigezeddwa</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>kisinga okwagalibwa</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>yee</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nedda</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Amannya amalala gennyini gakolebwa abakyusa ba [ImageConverterSettings], nga bwe kyali; bano bawandiika ebika bya WebP ne AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Embeera n&apos;ensibuko</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Installation eno</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production: tebaako ky&apos;eggya)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Eggya okuva ku</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>tewali</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Endagiriro y&apos;ensibuko</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>tekyateekebwawo</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Ekitegeeza obuyinza</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>ekyama %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>tewali</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Embeera</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>ekola</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>kiyimiriziddwa okutuusa %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>kirema</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Okulemererwa okugoberaganye</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>okuyimiriza oluvannyuma lwa %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Ensobi esembayo</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Obuwanguzi obusembayo</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Zzaawo okulemererwa era ddamu obuuze ensibuko</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Olunyiriri lw&apos;emirimu</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Ekika ky&apos;omulimu</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Girindirira</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Giddukira</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Gireemereddwa</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>tekiwandiikiddwa</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Olunyiriri lw&apos;emirimu terubaawo.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Okudduka okw&apos;ekibinja kuyimiriziddwa</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>okuva %time ku %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Okudduka okw&apos;ekibinja kuyinza okudduka</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Ekisumuluzo eky&apos;okussaako omukono</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Ekisumuluzo</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>mu tterekero ly&apos;ebyama</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>tekinnaba kubaawo</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Emyaka</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>ennaku %days (okuva %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Ekisumuluzo ekyayita</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>kirungi okutuusa %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Kyusa ekisumuluzo</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Endagiriro ezissiddwako omukono n&apos;ekisumuluzo eky&apos;oluvannyuma zikola mu kiseera ky&apos;ekisonyiwa (SigningKeyGrace), olwo ne zizzaamu ebiziba ebituuti okutuusa ng&apos;empapula zikoleddwa buggya.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Kyusa kati</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Engeri gye kikola</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, enkola ya render, staging n&apos;ekitabo kya log</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (ekya bulijjo): olupapula luyunga erinnya eddala eritannaba kubaawo ku ndagiriro eriko omukono. Okusaba okusooka kulikola mu kulinda okusinga okuwanvu, bwe kitaba bwe kityo kuddamu n&apos;ekiziba ekituuti ekitaliiko ludda, omulimu ne gumaliriza; script y&apos;okuddiza ekyusa ekiziba ekituuti ng&apos;ekifaananyi kiwedde.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Enkola ya render: ekisengekeddwa kikola erinnya eddala ng&apos;olupapula lukolebwa, nga bwe kyali. Osobola okukyusa wakati w&apos;ebibiri buli kiseera; tewali kyetaaga kusengulwa.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Staging installation eggya ebifaananyi ebisooka n&apos;amannya amalala ebigibula okuva mu nsibuko yaayo; ensibuko erema eyimirizibwa oluvannyuma lw&apos;okulemererwa okugoberaganye, era abakulembeze bafuna email emu mu ssaawa nga nnyingi.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Okudduka okw&apos;ekibinja n&apos;okukola nga bukyali oluvannyuma lw&apos;okufulumya mirimu gya lunyiriri lw&apos;emirimu, nga gikulembeza abagenyi. Okuggyawo amannya amalala nakyo kirongoosa cache y&apos;eby&apos;okuddamu ya Velocity, fayiro eggiddwawo n&apos;etaweebwayo.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Buli linnya eddala eriddukiddwa, ekiziba ekituuti ekiddiddwamu, fayiro eteekeddwa mu staging n&apos;okudduka kiba lunyiriri lwa %file. Command line erina ebikozesebwa ebyo: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Omulimu %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done ku bifaananyi %total</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Ddusa</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Ekitundu</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Ekivuddemu</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Sazaamu omulimu guno</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Omulimu %job si mulimu gwa mannya malala ga bifaananyi, oba gwaggyibwa mu lunyiriri.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Ekivuddemu eky&apos;okudduka %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Okudduka okw&apos;ekibinja kuyimiriziddwa</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Kuyimiriziddwa okuva %time ku %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Okuyimiriza kuyimiriza buli kudduka okw&apos;ekibinja oluvannyuma lw&apos;ekifaananyi ekiriwo, ku buli seva; okudduka okuli mu lunyiriri kulinda. Amannya amalala g&apos;abagenyi gakyakolebwa.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Zzaawo okudduka okw&apos;ekibinja</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Ensonga (si ya buwaze)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Yimiriza okudduka okw&apos;ekibinja</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Tandika okudduka</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Okudduka mirimu gya lunyiriri lw&apos;emirimu: osobola okuva ku lupapula n&apos;ozzaayo.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Nga tewali lunyiriri lw&apos;emirimu okudduka kukolebwa mu kusaba kuno, ku bifaananyi %count ebisinga obungi.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ekikolwa</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: kola amannya amalala agabula</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: gaggyewo ogakole buggya</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: gaggyewo (gakolebwa buggya nga gabuuziddwa)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: aggya fayiro okuva mu nsibuko ya staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(ku staging installation yokka)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Omukutu gwonna</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Node emu</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Node n&apos;ettabi lyayo</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID ya nodi</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Kiraasi</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Ebikula</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Ebikyusiddwa okuva</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Olunaku (2026-11-01) oba obudde obuyise (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Ebifaananyi ebisinga obungi</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Amannya amalala (bwe watalonda kantu: gonna)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Okudduka okw&apos;okugezesa: kubala bubala (resync ekebera ensibuko so tetereka kantu)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Wandiika waggulu ku fayiro ezitafaanagana (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Tandika okudduka</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Okudduka okusembayo</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Omulimu</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Enkulaakulana</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Mu lunyiriri</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ebikolebwa</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Sazaamu</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Tewali kudduka kw&apos;ekibinja oba resync kukyabaddewo.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Ekifaananyi kimu</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Endagiriro ekisengekeddwa gye kifuna kati, obunene n&apos;ebika ebibaliddwa ku buli linnya eddala, n&apos;obanga buli fayiro eriwo.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Noonya nga okozesa</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID y&apos;ekintu</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Laga</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Tokirizibwa kusoma kintu kino.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Ekintu kino tekirina kifaananyi.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Tewali kintu kirina ID eno.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>ekintu %object, node %node, verisoni %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Ekisooka: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>fayiro eriwo</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>fayiro ebula</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Amannya amalala aga %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Erinnya eddala</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Obunene</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Ekika</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fayiro</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Ebika bya format</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Endagiriro mu kisengekeddwa</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>eriwo</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>ebula</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>si ya kika kino</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Kebera</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Kola</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Tewali kifaananyi mu kitundu kino.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Essaawa</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Okuyunga ku nsibuko</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Okusaba kwa HEAD eri ensibuko ya staging, n&apos;ekitegeeza obuyinza kyayo bwe kiba kyatuuliddwa. Ekitegeeza obuyinza kisindikibwa, tekiragibwa n&apos;akatono.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Ensibuko</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>n&apos;ekitegeeza obuyinza</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Ekkubo ly&apos;okutereka (si ya buwaze)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Gezesa okuyunga</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Tewali nsibuko erina BaseURL. Ensibuko ziteekebwawo mu ntegeka ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>esobola okutuukibwako</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>ekyaliddwa: kebera ekitegeeza obuyinza</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>tezuuliddwa ku nsibuko</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>tewali kuddamu</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>obudde buweddeko</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>ekyusiddwa (tekigoberereddwa)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>tewali BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>si kkubo lya kutereka</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Endagiriro</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Omutendera</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>kisindikiddwa</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>ekyama kibula</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>ekyama si user:password wadde Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Emirongo egisinga obupya egya %file, egisinga obupya egisooka.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Setup &gt; Fayiro za logi</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Ekyaliwo</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Ebyaliwo byonna</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Okudduka (okutandika n&apos;okuggwa)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Ekkubo kirimu</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Emirongo</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Ekisengejja</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Goberera: laga emirongo emipya nga giwandiikibwa</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Ekkubo n&apos;ebikwata ku nsonga</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Tewali mulongo gwa log gukwatagana.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Ekyandikyuse okutereka</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Ekyakyusiddwa</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Kiterekebwa mu settings/override/image.ini.append.php, kale omuwendo wano gusinga siteaccess zonna. Emiwendo egiragibwa gye giriwo ku siteaccess eno. Okutereka kukusaba okukakasa nti ggwe okusooka.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Engeri amannya amalala gye gakolebwamu n&apos;okutuusibwa.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Okuggya ebifaananyi ebibula ku installation endala (alpha, dev, beta, stage, pro, post, arc). Production (pro) teggya n&apos;akatono.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Entegeka</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Omuwendo</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Mu settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Endagiriro ya buli nsibuko n&apos;erinnya ly&apos;ekyama ekirimu ekitegeeza obuyinza kyayo (user:password oba Bearer &lt;token&gt;). Omuwendo gw&apos;ekyama guteekebwawo mu Setup &gt; Ebyama so tegulagibwa wano n&apos;akatono.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Sooka olabe enkyukakyuka</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Tereka</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Egoberera: ekyaweebwa obupya %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Kiyimiriziddwa</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Feed teddizza; kigezaako nate.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Omulimu guweddeko.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: ebisengekeddwa bifuna endagiriro, erinnya eddala likolebwa bwe lisabiddwa. render: ekisengekeddwa kikikola ng&apos;olupapula lukolebwa (enkola ey&apos;olubereberye).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Endagiriro y&apos;erinnya eddala eritannakolebwa: token (eriko omukono, tekyetaaga database), ids-token, ids, node oba storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: okuddiza ku fayiro seva ya web bw&apos;ebeera ewa ekifo ky&apos;okutereka, bwe kitaba bwe kityo fayiro esindikibwa mu kukulukuta.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Sekondi okusaba kwe kuyinza okumala nga kukola oba nga kuggya erinnya eddala; olwo kuddamu n&apos;ekiziba ekituuti, omulimu ne gumaliriza.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Omukyusa agezebwa asooka ku bika bya WebP ne AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Addamu WebP oba AVIF eri abakozesa browser abagisaba, ku mannya amalala agawandiika Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Ekifaananyi ekitaliiko ludda eky&apos;obunene obutuufu ng&apos;ekifaananyi kibula.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Script entono ekyusa ebiziba ebituuti n&apos;ekifaananyi ekituufu nga kiwedde.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Oluvannyuma lw&apos;okufulumya, omulimu gukola amannya amalala ag&apos;ebifaananyi ebipya ku siteaccess zonna ezikwatagana.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Okukyusa mu kiseera kimu ku seva emu.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Obukulu bw&apos;enkola (nice) obw&apos;okudduka okw&apos;ekibinja, 0 okutuuka ku 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Sekondi abakozesa browser ne cacheze basobola okukuuma erinnya eddala eryakolebwa.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Sekondi endagiriro y&apos;ekifaananyi eky&apos;ekiwandiiko oba okulaba nga tonnaba bw&apos;esigala nga nnungi.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Sekondi ekisumuluzo eky&apos;okussaako omukono ekyayita bwe kisigala nga kirungi oluvannyuma lw&apos;okukyusa.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Embeera ya installation eno.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Embeera ebifaananyi ebibula mwe biggyibwa; none: tewali kiggyibwayo.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Emu buli mulongo: ekiggulawo ky&apos;okutereka okw&apos;omu kifo;ekiggulawo ky&apos;ensibuko oba endagiriro, ku makubo g&apos;okutereka agafuganye.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Sekondi okusaba kumu eri ensibuko bwe kuyinza okumala.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Fayiro esinga obunene eggyibwa ku nsibuko, mu bytes.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Okulemererwa okugoberaganye ensibuko bwe giyimirizibwa oluvannyuma.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Ensibuko erema bwe giyimirizibwa ebbanga ki.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Weereza email eri abakulembeze ensibuko bw&apos;eyimirizibwa (omulundi gumu mu ssaawa nga mungi).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Endagiriro ya email emu buli mulongo; ekitaliimu: AdminEmail ya site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Endagiriro y&apos;installation y&apos;ensibuko %block, okugeza https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Erinnya ly&apos;ekyama ekirimu ekitegeeza obuyinza, oba env:VARIABLE. Si kitegeeza obuyinza kyennyini.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(tewali)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Ekya bulijjo: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Kiteekeddwawo wano; londa okukiggyawo</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>kyaddira</translation>
     </message>
 </context>
 </TS>

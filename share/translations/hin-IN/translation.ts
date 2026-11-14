@@ -16529,6 +16529,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>आयात/निर्यात</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>छवि उपनाम</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>इस आइटम के लिए बनाएँ</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>उप-वृक्ष के लिए बनाएँ</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>इस आइटम के लिए दोबारा बनाएँ</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>उप-वृक्ष के लिए दोबारा बनाएँ</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>इस आइटम के लिए हटाएँ</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>उप-वृक्ष के लिए हटाएँ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86452,6 +86480,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>पुरानी साइट का server ब्लॉक: return के साथ location =, क्वेरी के लिए if ($args), वाइल्डकार्ड के रूप में rewrite और एकल पेजों का एक map।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>छवि उपनाम</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>छवि उपनाम किसी छवि की वे स्केल और क्रॉप की गई प्रतियाँ हैं जो टेम्पलेट दिखाते हैं। यहाँ आप देखते हैं कि वे कैसे बनती हैं, पूरी साइट पर बल्क जॉब चलाते हैं, एक छवि या स्टेजिंग स्रोत को जाँचते हैं, रन इतिहास देखते हैं और सेटिंग्स बदलते हैं।</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>पृष्ठ के भाग</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>डैशबोर्ड</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>बल्क रन</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>जाँच उपकरण</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>रन इतिहास</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>सेटिंग्स</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>आप यहाँ सब कुछ देख सकते हैं। सेटिंग्स बदलने, जॉब चलाने और फ़ाइलें बनाने वाले उपकरणों के लिए नीति setup/managealiases आवश्यक है।</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>किन बातों पर ध्यान देना है</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>render मोड: टेम्पलेट पृष्ठ रेंडर होते समय अनुपस्थित उपनाम बनाते हैं, पहले की तरह। on-demand पते, प्लेसहोल्डर और बैकग्राउंड जॉब उपयोग नहीं होते।</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>फ़ॉर्मैट वार्ता चालू है, लेकिन यहाँ कोई कन्वर्टर WebP नहीं लिख सकता।</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>यह स्टेजिंग इंस्टॉलेशन है, लेकिन इसके स्रोत में BaseURL नहीं है: अनुपस्थित छवियाँ प्राप्त नहीं की जा सकतीं।</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>स्टेजिंग स्रोत लगातार विफलताओं के बाद रोक दिया गया है: अनुपस्थित छवियों को तब तक प्लेसहोल्डर मिलते हैं जब तक रोक समाप्त न हो या आप उसे रीसेट न करें।</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>स्टेजिंग स्रोत हाल ही में विफल हुआ। उसकी अंतिम त्रुटि नीचे देखें।</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>यह इंस्टॉलेशन प्रोडक्शन नहीं है, लेकिन SyncFrom कोई स्रोत नहीं बताता: कुछ भी प्राप्त नहीं किया जाता।</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>जॉब कतार (expqueue) उपलब्ध नहीं है: जो उपनाम समय पर नहीं बनते उन्हें अगला अनुरोध बनाता है, प्रकाशन के बाद पूर्व-निर्माण छोड़ दिया जाता है और बल्क रन छोटे दायरों तक सीमित रहते हैं।</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>छवि उपनामों के कुछ जॉब हमेशा के लिए विफल हो गए। सेटअप &gt; जॉब कतार कारण दिखाती है।</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>बल्क रन रोके गए हैं।</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>पिछले 24 घंटों में उपनाम विफल हुए। रन इतिहास उन्हें सूचीबद्ध करता है।</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>हस्ताक्षर कुंजी एक वर्ष से अधिक पुरानी है। उसे बदलने से पुराने पते छूट अवधि तक मान्य रहते हैं।</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>अभी कोई हस्ताक्षर कुंजी नहीं है: वह पहले on-demand पते के साथ बनती है।</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>पिछले 24 घंटे</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>बनाए गए उपनाम</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>दिए गए प्लेसहोल्डर</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>विफलताएँ</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>स्टेज की गई फ़ाइलें</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>शुरू किए गए रन</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>जॉब प्रतीक्षारत / चल रहे</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file की अंतिम %lines पंक्तियों से गिना गया, जो %time तक पीछे जाती हैं।</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>मोड और वितरण</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>मोड</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>माँग पर</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>पते का रूप</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>वितरण</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>अनुरोध की अधिकतम प्रतीक्षा</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds से.</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>एक साथ रूपांतरण</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy / %max अभी व्यस्त</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>फ़ॉर्मैट वार्ता</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>चालू</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>बंद</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>प्लेसहोल्डर और स्वैप स्क्रिप्ट</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>प्रकाशन के बाद पूर्व-निर्माण</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>साइट के उपनाम</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>फ़ॉर्मैट वेरिएंट के कन्वर्टर</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>कन्वर्टर</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>आज़माया गया</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>पसंदीदा</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>हाँ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>नहीं</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>उपनाम स्वयं [ImageConverterSettings] के कन्वर्टर बनाते हैं, पहले की तरह; ये WebP और AVIF वेरिएंट लिखते हैं।</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>परिवेश और स्रोत</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>यह इंस्टॉलेशन</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(प्रोडक्शन: कभी प्राप्त नहीं करता)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>यहाँ से प्राप्त करता है</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>कुछ नहीं</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>स्रोत का पता</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>सेट नहीं</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>क्रेडेंशियल</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>गोपनीय मान %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>कोई नहीं</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>स्थिति</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>काम कर रहा है</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time तक रुका हुआ</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>विफल हो रहा है</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>लगातार विफलताएँ</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count के बाद रोक</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>अंतिम त्रुटि</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>अंतिम सफलता</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>विफलताएँ रीसेट करें और स्रोत से फिर पूछें</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>जॉब कतार</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>जॉब प्रकार</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>प्रतीक्षारत</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>चल रहा है</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>विफल</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>पंजीकृत नहीं</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>जॉब कतार उपलब्ध नहीं है।</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>बल्क रन रोके गए</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time से, %user द्वारा</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>बल्क रन चल सकते हैं</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>हस्ताक्षर कुंजी</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>कुंजी</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>गोपनीय मान भंडार में</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>अभी कोई नहीं</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>आयु</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days दिन (%time से)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>पिछली कुंजी</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time तक मान्य</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>कुंजी बदलें</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>वर्तमान कुंजी से हस्ताक्षरित पते छूट अवधि (SigningKeyGrace) तक काम करते रहते हैं, फिर पृष्ठ दोबारा बनने तक वे प्लेसहोल्डर लौटाते हैं।</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>अभी बदलें</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>यह कैसे काम करता है</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render मोड, स्टेजिंग और लॉग</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (डिफ़ॉल्ट): पृष्ठ ऐसे उपनाम को, जो अभी नहीं बना है, हस्ताक्षरित पते से जोड़ता है। पहला अनुरोध उसे अधिकतम प्रतीक्षा के भीतर बनाता है, अन्यथा वह तटस्थ प्लेसहोल्डर लौटाता है और एक जॉब काम पूरा करता है; छवि तैयार होने पर स्वैप स्क्रिप्ट प्लेसहोल्डर को बदल देती है।</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>render मोड: टेम्पलेट पृष्ठ रेंडर होते समय उपनाम बनाता है, पहले की तरह। आप कभी भी दोनों के बीच बदल सकते हैं; कुछ भी माइग्रेट करने की आवश्यकता नहीं है।</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>स्टेजिंग इंस्टॉलेशन अपने स्रोत से वे मूल छवियाँ और उपनाम प्राप्त करता है जो उसके पास नहीं हैं; विफल होता स्रोत लगातार विफलताओं के बाद रोक दिया जाता है और प्रशासकों को प्रति घंटे अधिकतम एक ईमेल मिलता है।</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>बल्क रन और प्रकाशन के बाद पूर्व-निर्माण जॉब कतार के जॉब हैं, जिनकी प्राथमिकता आगंतुकों से कम है। उपनाम हटाने से Velocity का रिस्पॉन्स कैश भी साफ़ होता है, ताकि हटाई गई फ़ाइल वहाँ से न परोसी जाए।</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>बना हर उपनाम, दिया गया हर प्लेसहोल्डर, स्टेज की गई हर फ़ाइल और हर रन %file की एक पंक्ति है। कमांड लाइन पर वही उपकरण हैं: %command।</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>जॉब %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%total में से %done छवियाँ</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>रन</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>दायरा</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>परिणाम</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>यह जॉब रद्द करें</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>जॉब %job छवि उपनामों का जॉब नहीं है, या उसे कतार से हटा दिया गया।</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>रन %run का परिणाम</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>बल्क रन रोके गए हैं</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time से, %user द्वारा रोके गए।</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>रोक हर बल्क रन को उसकी वर्तमान छवि के बाद, हर सर्वर पर रोक देती है; कतार के रन प्रतीक्षा करते हैं। आगंतुकों के उपनाम फिर भी बनते हैं।</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>बल्क रन फिर शुरू करें</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>कारण (वैकल्पिक)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>बल्क रन रोकें</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>रन शुरू करें</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>रन जॉब कतार के जॉब हैं: आप पृष्ठ छोड़कर बाद में लौट सकते हैं।</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>जॉब कतार के बिना रन इसी अनुरोध में होता है, अधिकतम %count छवियों के लिए।</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>कार्रवाई</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: अनुपस्थित उपनाम बनाएँ</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: हटाकर दोबारा बनाएँ</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: उन्हें हटाएँ (माँग पर दोबारा बनते हैं)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: फ़ाइलें स्टेजिंग स्रोत से प्राप्त करें</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(केवल स्टेजिंग इंस्टॉलेशन पर)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>पूरी साइट</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>एक नोड</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>एक नोड और उसका उप-वृक्ष</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>नोड ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>वर्ग</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>विशेषताएँ</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>इसके बाद बदला गया</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>एक तारीख़ (2026-11-01) या कितना समय पहले (12 घंटे, 2 दिन)।</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>अधिकतम छवियाँ</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>उपनाम (कोई चिह्नित नहीं: सभी)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>ड्राई रन: केवल गिनें (resync स्रोत जाँचता है और कुछ संग्रहीत नहीं करता)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>भिन्न फ़ाइलें अधिलेखित करें (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>रन शुरू करें</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>नवीनतम रन</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>जॉब</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>प्रगति</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>कतार में</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>क्रियाएँ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>रद्द करें</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>अभी कोई बल्क रन या resync नहीं है।</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>एक छवि</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>वे पते जो टेम्पलेट को अभी मिलते हैं, हर उपनाम के लिए गणना किए गए आकार और प्रकार, और क्या हर फ़ाइल मौजूद है।</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>इससे खोजें</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ऑब्जेक्ट ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>दिखाएँ</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>आपको यह ऑब्जेक्ट पढ़ने की अनुमति नहीं है।</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>इस ऑब्जेक्ट में कोई छवि नहीं है।</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>इस ID का कोई ऑब्जेक्ट नहीं है।</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>ऑब्जेक्ट %object, नोड %node, संस्करण %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>मूल: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>फ़ाइल मौजूद है</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>फ़ाइल अनुपस्थित है</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name के उपनाम</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>उपनाम</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>आकार</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>प्रकार</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>फ़ाइल</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>फ़ॉर्मैट</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>टेम्पलेट में पता</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>मौजूद</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>अनुपस्थित</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>इस प्रकार के लिए नहीं</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>जाँचें</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>बनाएँ</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>इस फ़ील्ड में कोई छवि नहीं है।</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>समय</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>स्रोत से कनेक्शन</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>स्टेजिंग स्रोत को HEAD अनुरोध, उसके क्रेडेंशियल के साथ जब कोई नामित हो। क्रेडेंशियल भेजा जाता है, कभी दिखाया नहीं जाता।</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>स्रोत</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>क्रेडेंशियल के साथ</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>संग्रहण पथ (वैकल्पिक)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>कनेक्शन जाँचें</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>किसी स्रोत में BaseURL नहीं है। स्रोत सेटिंग्स में तय होते हैं ([AliasSource_&lt;environment&gt;])।</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>पहुँच योग्य</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>अस्वीकृत: क्रेडेंशियल जाँचें</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>स्रोत पर नहीं मिला</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>कोई उत्तर नहीं</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>समय समाप्त</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>रीडायरेक्ट हुआ (अनुसरण नहीं किया)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL नहीं</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>संग्रहण पथ नहीं है</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>पता</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>स्थिति</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>भेजा गया</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>गोपनीय मान अनुपस्थित है</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>गोपनीय मान user:password या Bearer &lt;token&gt; नहीं है</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file की नवीनतम पंक्तियाँ, नवीनतम पहले।</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>सेटअप &gt; लॉग फ़ाइलें</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>घटना</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>सभी घटनाएँ</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>रन (आरंभ और अंत)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>पथ में शामिल है</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>पंक्तियाँ</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>फ़िल्टर</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>अनुसरण करें: नई पंक्तियाँ लिखे जाते ही दिखाएँ</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>पथ और विवरण</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>लॉग की कोई पंक्ति मेल नहीं खाती।</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>सहेजने से क्या बदलेगा</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>क्या बदला गया</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php में सहेजा जाता है, इसलिए यहाँ का मान हर siteaccess पर भारी पड़ता है। दिखाए गए मान इस siteaccess के लिए लागू मान हैं। सहेजने पर पहले आपसे पहचान की पुष्टि माँगी जाती है।</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>उपनाम कैसे बनाए और पहुँचाए जाते हैं।</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>अनुपस्थित छवियाँ किसी अन्य इंस्टॉलेशन से प्राप्त करना (alpha, dev, beta, stage, pro, post, arc)। प्रोडक्शन (pro) कभी प्राप्त नहीं करता।</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>सेटिंग</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>मान</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override में</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>हर स्रोत का पता और उस गोपनीय मान का नाम जिसमें उसका क्रेडेंशियल है (user:password या Bearer &lt;token&gt;)। गोपनीय मान सेटअप &gt; गोपनीय मान में तय होता है और यहाँ कभी नहीं दिखाया जाता।</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>परिवर्तनों का पूर्वावलोकन</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>सहेजें</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>अनुसरण: %time पर अद्यतन</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>रुका हुआ</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>फ़ीड ने उत्तर नहीं दिया; फिर कोशिश की जा रही है।</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>जॉब समाप्त हो गया है।</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: टेम्पलेट को पता मिलता है, उपनाम तब बनता है जब माँगा जाए। render: टेम्पलेट उसे पृष्ठ रेंडर होते समय बनाता है (मूल व्यवहार)।</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>ऐसे उपनाम का पता जो अभी बना नहीं है: token (हस्ताक्षरित, डेटाबेस नहीं चाहिए), ids-token, ids, node या storage।</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: जब वेब सर्वर संग्रहण परोसता है तब फ़ाइल पर रीडायरेक्ट, अन्यथा फ़ाइल स्ट्रीम की जाती है।</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>वे सेकंड जो एक अनुरोध उपनाम बनाने या प्राप्त करने में लगा सकता है; फिर वह प्लेसहोल्डर लौटाता है और एक जॉब काम पूरा करता है।</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP और AVIF वेरिएंट के लिए सबसे पहले आज़माया जाने वाला कन्वर्टर।</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>जो ब्राउज़र माँगते हैं उन्हें WebP या AVIF दें, उन उपनामों के लिए जो Formats[] सूचीबद्ध करते हैं।</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>छवि अनुपस्थित होने पर सही आकार की एक तटस्थ छवि।</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>एक छोटी स्क्रिप्ट जो छवि उपलब्ध होने पर प्लेसहोल्डर को वास्तविक छवि से बदल देती है।</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>प्रकाशन के बाद, एक जॉब हर संबंधित siteaccess के लिए नई छवियों के उपनाम बनाता है।</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>एक सर्वर पर एक साथ रूपांतरण।</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>बल्क रन की प्रक्रिया प्राथमिकता (nice), 0 से 19।</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>वे सेकंड जिनके लिए ब्राउज़र और कैश बना हुआ उपनाम रख सकते हैं।</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>वे सेकंड जिनके लिए ड्राफ़्ट या पूर्वावलोकन छवि का पता मान्य रहता है।</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>वे सेकंड जिनके लिए बदलाव के बाद पिछली हस्ताक्षर कुंजी मान्य रहती है।</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>इस इंस्टॉलेशन का परिवेश।</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>वह परिवेश जहाँ से अनुपस्थित छवियाँ प्राप्त की जाती हैं; none: कुछ प्राप्त नहीं होता।</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>प्रति पंक्ति एक: स्थानीय संग्रहण उपसर्ग;स्रोत उपसर्ग या पता, उन संग्रहण पथों के लिए जो भिन्न हैं।</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>वे सेकंड जो स्रोत को एक अनुरोध में लग सकते हैं।</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>स्रोत से ली जाने वाली सबसे बड़ी फ़ाइल, बाइट में।</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>लगातार विफलताएँ जिनके बाद स्रोत रोक दिया जाता है।</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>विफल होता स्रोत कितने समय के लिए रोका जाता है।</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>स्रोत रोके जाने पर प्रशासकों को मेल भेजें (प्रति घंटे अधिकतम एक बार)।</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>प्रति पंक्ति एक ईमेल पता; खाली: site.ini का AdminEmail।</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>स्रोत इंस्टॉलेशन %block का पता, जैसे https://www.example.org।</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>क्रेडेंशियल वाले गोपनीय मान का नाम, या env:VARIABLE। कभी स्वयं क्रेडेंशियल नहीं।</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(कोई नहीं)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>डिफ़ॉल्ट: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>यहाँ सेट; हटाने के लिए चिह्नित करें</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>विरासत में मिला</translation>
     </message>
 </context>
 </TS>

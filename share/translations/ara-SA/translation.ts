@@ -16529,6 +16529,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>استيراد/تصدير</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>الأسماء المستعارة للصور</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>إنشاء لهذا العنصر</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>إنشاء للشجرة الفرعية</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>إعادة الإنشاء لهذا العنصر</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>إعادة الإنشاء للشجرة الفرعية</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>إزالة لهذا العنصر</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>إزالة للشجرة الفرعية</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86452,6 +86480,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>كتلة server لموقع قديم: location = مع return، و if ($args) لاستعلام، و rewrite كحرف بدل و map للصفحات المفردة.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>الأسماء المستعارة للصور</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>الأسماء المستعارة للصور هي النسخ المصغّرة والمقصوصة من الصورة التي تعرضها القوالب. هنا ترى كيف تُنشأ، وتشغّل عمليات جماعية على الموقع، وتختبر صورة أو مصدر staging، وتتابع سجل العمليات وتغيّر الإعدادات.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>أجزاء الصفحة</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>لوحة التحكم</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>العمليات الجماعية</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>أدوات الاختبار</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>سجل العمليات</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>الإعدادات</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>يمكنك عرض كل شيء هنا. تغيير الإعدادات وتشغيل المهام والأدوات التي تنشئ ملفات يتطلب السياسة setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>ما يحتاج إلى انتباه</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>وضع render: تنشئ القوالب الأسماء المستعارة المفقودة أثناء عرض الصفحة كما كان سابقًا. لا تُستخدم عناوين on-demand ولا الصور البديلة ولا مهام الخلفية.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>التفاوض على الصيغة مفعّل، لكن لا يوجد هنا محوّل قادر على كتابة WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>هذا تثبيت staging، لكن مصدره بلا BaseURL: لا يمكن جلب الصور المفقودة.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>مصدر staging متوقف مؤقتًا بعد إخفاقات متتالية: تحصل الصور المفقودة على صور بديلة إلى أن ينتهي الإيقاف أو تعيد ضبطه.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>أخفق مصدر staging مؤخرًا. آخر خطأ له أدناه.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>هذا التثبيت ليس للإنتاج، لكن SyncFrom لا يسمّي أي مصدر: لا يُجلب شيء.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>قائمة انتظار المهام (expqueue) غير متاحة: الأسماء المستعارة التي تتجاوز وقتها ينشئها الطلب التالي، ويُتخطى التوليد المسبق بعد النشر، وتقتصر العمليات الجماعية على نطاقات صغيرة.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>فشلت بعض مهام الأسماء المستعارة للصور نهائيًا. يوضح الإعداد &gt; قائمة انتظار المهام السبب.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>العمليات الجماعية متوقفة مؤقتًا.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>أخفقت أسماء مستعارة خلال الـ 24 ساعة الماضية. يسردها سجل العمليات.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>مفتاح التوقيع أقدم من سنة. تدويره يُبقي العناوين القديمة صالحة طوال فترة السماح.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>لا يوجد مفتاح توقيع بعد: يُنشأ مع أول عنوان on-demand.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>آخر 24 ساعة</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>الأسماء المستعارة المُنشأة</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>الصور البديلة المقدَّمة</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>الإخفاقات</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>الملفات المجلوبة</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>العمليات التي بدأت</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>المهام المنتظرة / قيد التشغيل</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>محسوب من آخر %lines سطرًا في %file، وتعود إلى %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>الوضع والتسليم</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>الوضع</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>عند الطلب</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>شكل العنوان</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>التسليم</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>أطول انتظار لطلب</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>التحويلات المتزامنة</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy من %max مشغولة الآن</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>التفاوض على الصيغة</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>مفعّل</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>معطّل</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>الصورة البديلة ونص الاستبدال</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>التوليد المسبق بعد النشر</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>الأسماء المستعارة للموقع</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>محوّلات متغيّرات الصيغة</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>المحوّل</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>ترتيب المحاولة</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>مفضّل</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>نعم</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>لا</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>الأسماء المستعارة نفسها تنشئها، كما كان سابقًا، محوّلات [ImageConverterSettings]؛ وهذه تكتب متغيّرات WebP وAVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>البيئة والمصدر</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>هذا التثبيت</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(الإنتاج: لا يجلب أبدًا)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>يجلب من</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>لا شيء</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>عنوان المصدر</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>غير مضبوط</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>بيانات الاعتماد</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>السر %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>لا شيء</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>الحالة</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>يعمل</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>متوقف مؤقتًا حتى %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>يخفق</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>الإخفاقات المتتالية</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>إيقاف بعد %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>آخر خطأ</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>آخر نجاح</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>إعادة ضبط الإخفاقات وسؤال المصدر مجددًا</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>قائمة انتظار المهام</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>نوع المهمة</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>بانتظار</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>قيد التشغيل</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>فشل</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>غير مسجّل</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>قائمة انتظار المهام غير متاحة.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>العمليات الجماعية متوقفة مؤقتًا</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>منذ %time بواسطة %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>يُسمح بتشغيل العمليات الجماعية</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>مفتاح التوقيع</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>المفتاح</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>في مخزن الأسرار</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>لا يوجد بعد</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>العمر</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days يومًا (منذ %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>المفتاح السابق</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>صالح حتى %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>تدوير المفتاح</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>تستمر العناوين الموقّعة بالمفتاح الحالي في العمل طوال فترة السماح (SigningKeyGrace)، ثم تردّ بصور بديلة إلى أن تُنشأ الصفحات من جديد.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>تدوير الآن</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>كيف يعمل</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>عند الطلب، وضع render، وstaging والسجل</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>عند الطلب (الافتراضي): تربط الصفحة اسمًا مستعارًا غير موجود بعد بعنوان موقّع. ينشئه الطلب الأول خلال أطول انتظار، وإلا يردّ بصورة بديلة محايدة وتُكمل مهمة العمل؛ ويستبدل نص الاستبدال الصورة البديلة عندما تتوفر الصورة.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>وضع render: ينشئ القالب الاسم المستعار أثناء عرض الصفحة كما كان سابقًا. يمكنك التبديل بين الوضعين في أي وقت؛ لا حاجة إلى ترحيل أي شيء.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>يجلب تثبيت staging من مصدره الأصول والأسماء المستعارة الناقصة؛ ويُوقف المصدر الذي يخفق مؤقتًا بعد إخفاقات متتالية ويتلقى المسؤولون رسالة بريد واحدة في الساعة كحد أقصى.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>العمليات الجماعية والتوليد المسبق بعد النشر هي مهام في قائمة انتظار المهام، بأولوية أدنى من الزوار. وإزالة الأسماء المستعارة تفرغ أيضًا ذاكرة الاستجابات المؤقتة في Velocity، حتى لا يُقدَّم منها ملف محذوف.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>كل اسم مستعار أُنشئ وكل صورة بديلة قُدّمت وكل ملف جُلب وكل عملية هي سطر في %file. يوفر سطر الأوامر الأدوات نفسها: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>المهمة %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done من %total صور</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>العملية</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>النطاق</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>النتيجة</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>إلغاء هذه المهمة</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>المهمة %job ليست مهمة أسماء مستعارة للصور، أو أُزيلت من القائمة.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>نتيجة العملية %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>العمليات الجماعية متوقفة مؤقتًا</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>متوقفة مؤقتًا منذ %time بواسطة %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>يوقف الإيقاف المؤقت كل عملية جماعية بعد صورتها الحالية، على كل خادم؛ وتنتظر العمليات في القائمة. ما تزال أسماء الزوار المستعارة تُنشأ.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>استئناف العمليات الجماعية</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>السبب (اختياري)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>إيقاف العمليات الجماعية مؤقتًا</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>بدء عملية</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>العمليات هي مهام في قائمة انتظار المهام: يمكنك مغادرة الصفحة والعودة.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>من دون قائمة انتظار المهام تُنفَّذ العملية في هذا الطلب، لما لا يزيد عن %count صورة.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>الإجراء</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>إنشاء: إنشاء الأسماء المستعارة المفقودة</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>إعادة الإنشاء: إزالتها وإنشاؤها من جديد</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>تطهير: إزالتها (تُنشأ من جديد عند الطلب)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>إعادة المزامنة: جلب الملفات من مصدر staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(في تثبيت staging فقط)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>الموقع بأكمله</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>عقدة واحدة</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>عقدة وشجرتها الفرعية</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>معرّف العقدة</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>الأصناف</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>السمات</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>تغيّر منذ</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>تاريخ (2026-11-01) أو مدة مضت (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>الحد الأقصى للصور</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>الأسماء المستعارة (بلا تحديد: جميعها)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>إعادة المزامنة</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>تشغيل تجريبي: العدّ فقط (تفحص إعادة المزامنة المصدر ولا تخزّن شيئًا)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>الكتابة فوق الملفات المختلفة (إعادة المزامنة)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>بدء العملية</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>آخر العمليات</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>المهمة</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>التقدم</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>أُضيفت إلى القائمة</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>الإجراءات</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>إلغاء</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>لا توجد عملية جماعية أو إعادة مزامنة بعد.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>صورة واحدة</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>العناوين التي يحصل عليها القالب الآن، والأحجام والأنواع المحسوبة لكل اسم مستعار، وهل كل ملف موجود.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>البحث بحسب</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>معرّف الكائن</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>المعرّف</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>عرض</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>لا يُسمح لك بقراءة هذا الكائن.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>ليس لهذا الكائن صورة.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>لا يوجد كائن بهذا المعرّف.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>الكائن %object، العقدة %node، الإصدار %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>الأصل: %width x %height، %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>الملف موجود</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>الملف مفقود</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>الأسماء المستعارة لـ %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>الاسم المستعار</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>الحجم</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>النوع</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>الملف</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>الصيغ</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>العنوان في قالب</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>موجود</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>مفقود</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ليس لهذا النوع</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>فحص</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>إنشاء</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>لا توجد صورة في هذا الحقل.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>الوقت</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>الاتصال بمصدر</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>طلب HEAD إلى مصدر staging، مع بيانات اعتماده إن سُمّيت. تُرسل بيانات الاعتماد ولا تُعرض أبدًا.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>المصدر</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>ببيانات اعتماد</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>مسار التخزين (اختياري)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>اختبار الاتصال</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>لا يملك أي مصدر BaseURL. تُضبط المصادر في الإعدادات ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>يمكن الوصول إليه</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>مرفوض: تحقق من بيانات الاعتماد</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>غير موجود في المصدر</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>لا ردّ</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>انتهت المهلة</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>أُعيد التوجيه (لم يُتَّبع)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>لا BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>ليس مسار تخزين</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>العنوان</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>الحالة</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>أُرسل</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>السر مفقود</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>السر ليس user:password ولا Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>أحدث أسطر %file، الأحدث أولًا.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>الإعداد &gt; ملفات السجل</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>الحدث</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>كل الأحداث</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>العمليات (البداية والنهاية)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>المسار يحتوي</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>الأسطر</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>تصفية</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>المتابعة: عرض الأسطر الجديدة فور كتابتها</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>المسار والتفاصيل</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>لا يطابق أي سطر من السجل.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>ما سيتغيّر عند الحفظ</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>ما الذي تغيّر</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>يُحفظ في settings/override/image.ini.append.php، لذلك تتغلب قيمة هنا على كل siteaccess. القيم المعروضة هي السارية لهذا الـ siteaccess. يُطلب منك قبل الحفظ تأكيد هويتك.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>كيف تُنشأ الأسماء المستعارة وتُسلَّم.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>جلب الصور المفقودة من تثبيت آخر (alpha وdev وbeta وstage وpro وpost وarc). الإنتاج (pro) لا يجلب أبدًا.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>الإعداد</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>القيمة</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>في settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>عنوان كل مصدر واسم السر الذي يحمل بيانات اعتماده (user:password أو Bearer &lt;token&gt;). تُضبط قيمة السر في الإعداد &gt; الأسرار ولا تُعرض هنا أبدًا.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>معاينة التغييرات</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>حفظ</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>المتابعة: حُدّث %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>متوقف مؤقتًا</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>لم تردّ التغذية؛ تتم المحاولة مجددًا.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>انتهت المهمة.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: تحصل القوالب على العنوان ويُنشأ الاسم المستعار عند طلبه. render: ينشئه القالب أثناء عرض الصفحة (السلوك الأصلي).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>عنوان اسم مستعار لم يُنشأ بعد: token (موقّع، لا يحتاج إلى قاعدة بيانات)، ids-token، ids، node أو storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: إعادة توجيه إلى الملف عندما يقدّم خادم الويب التخزين، وإلا يُبثّ الملف.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>عدد الثواني التي قد يقضيها الطلب في إنشاء اسم مستعار أو جلبه؛ بعدها يردّ بالصورة البديلة وتُكمل مهمة العمل.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>المحوّل الذي يُجرَّب أولًا لمتغيّرات WebP وAVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>الرد بـ WebP أو AVIF على المتصفحات التي تطلبهما، للأسماء المستعارة التي تسرد Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>صورة محايدة بالحجم الصحيح ما دامت الصورة مفقودة.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>نص صغير يستبدل الصور البديلة بالصورة الحقيقية عندما تتوفر.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>بعد النشر تنشئ مهمة الأسماء المستعارة للصور الجديدة لكل siteaccess ذي صلة.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>التحويلات المتزامنة على خادم واحد.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>أولوية العملية (nice) للعمليات الجماعية، من 0 إلى 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>عدد الثواني التي يمكن للمتصفحات والذاكرات المؤقتة الاحتفاظ فيها باسم مستعار أُنشئ.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>عدد الثواني التي يظل فيها عنوان صورة مسودة أو معاينة صالحًا.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>عدد الثواني التي يظل فيها مفتاح التوقيع السابق صالحًا بعد التدوير.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>بيئة هذا التثبيت.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>البيئة التي تُجلب منها الصور المفقودة؛ none: لا يُجلب شيء.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>واحد في كل سطر: بادئة التخزين المحلي;بادئة المصدر أو عنوانه، لمسارات التخزين المختلفة.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>عدد الثواني التي قد يستغرقها طلب واحد إلى المصدر.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>أكبر ملف يؤخذ من المصدر، بالبايت.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>عدد الإخفاقات المتتالية التي يُوقف المصدر مؤقتًا بعدها.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>مدة إيقاف المصدر المخفق مؤقتًا.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>إرسال بريد إلى المسؤولين عند إيقاف المصدر مؤقتًا (مرة واحدة في الساعة كحد أقصى).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>عنوان بريد إلكتروني واحد في كل سطر؛ فارغ: AdminEmail من site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>عنوان تثبيت المصدر %block، مثل https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>اسم السر الذي يحمل بيانات الاعتماد، أو env:VARIABLE. وليس بيانات الاعتماد نفسها أبدًا.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(لا شيء)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>الافتراضي: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>مضبوط هنا؛ حدّده لإزالته</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>موروث</translation>
     </message>
 </context>
 </TS>

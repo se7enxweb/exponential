@@ -16590,6 +16590,34 @@ bellik: Paketler gurnamadan aýrylmaz.</translation>
         <source>Import/Export</source>
         <translation>Import/eksport</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Surat lakamlary</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Şu element üçin ýasa</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Agaç bölegi üçin ýasa</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Şu element üçin täzeden ýasa</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Agaç bölegi üçin täzeden ýasa</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Şu element üçin aýyr</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Agaç bölegi üçin aýyr</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Köne saýtyň server bloky: return bilen location =, sorag üçin if ($args), çalşyryjy belgi hökmünde rewrite we aýry sahypalaryň map-i.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Surat lakamlary</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Surat lakamlary şablonlaryň görkezýän suratynyň kiçeldilen we kesilen nusgalarydyr. Bu ýerde olaryň nähili ýasalýandygyny görüp, sahypa boýunça köpçülikleýin işleri işledip, bir suraty ýa-da staging çeşmesini synap, işledişleriň taryhyny yzarlap we sazlamalary üýtgedip bilersiňiz.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Sahypanyň bölümleri</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dolandyryş paneli</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Köpçülikleýin işledişler</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Synag gurallary</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Işledişleriň taryhy</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Sazlamalar</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Bu ýerde hemme zady görüp bilersiňiz. Sazlamalary üýtgetmek, işleri işletmek we faýl ýasaýan gurallar üçin setup/managealiases syýasaty gerek.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Üns talap edýän zatlar</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Render tertibi: şablonlar ýetmeýän lakamlary sahypa gurlanda ýasaýar, öňküsi ýaly. On-demand salgylary, ýer tutujylar we arka plan işleri ulanylmaýar.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Format ylalaşygy açyk, ýöne bu ýerde hiç bir öwrüji WebP ýazyp bilmeýär.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Bu staging gurnalyşy, ýöne onuň çeşmesinde BaseURL ýok: ýetmeýän suratlary getirip bolmaýar.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Staging çeşmesi yzly-yzyna şowsuzlykdan soň saklandy: arakesme gutarýança ýa-da siz ony täzeden gurýança, ýetmeýän suratlara ýer tutujylar berilýär.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Staging çeşmesi ýaňy-ýakynda şowsuz boldy. Onuň soňky säwligini aşakda görüň.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Bu gurnalyş production däl, ýöne SyncFrom hiç bir çeşmäni görkezmeýär: hiç zat getirilmeýär.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Iş nobady (expqueue) elýeterli däl: wagtynda ýetişmeýän lakamlary indiki haýyş ýasaýar, çap edilenden soňky öňünden ýasamak taşlanýar, köpçülikleýin işledişler kiçi çäkler bilen çäklendirilýär.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Surat lakamlarynyň käbir işleri ebedilik şowsuz boldy. Sazlama &gt; Iş nobady sebäbini görkezýär.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Köpçülikleýin işledişler saklanyldy.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Soňky 24 sagatda lakamlar şowsuz boldy. Işledişleriň taryhy olary sanaýar.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Gol çekmek açary bir ýyldan köp wagt öň ýasaldy. Ony çalşyrmak köne salgylary artykmaç möhlet dowamynda güýçde saklaýar.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Gol çekmek açary entek ýok: ol ilkinji on-demand salgy bilen ýasalýar.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Soňky 24 sagat</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Ýasalan lakamlar</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Jogap berlen ýer tutujylar</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Şowsuzlyklar</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Staging edilen faýllar</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Başlanan işledişler</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Garaşýan / işleýän işler</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file faýlynyň soňky %lines setirinden sanaldy, olar %time çenli ýetýär.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Tertip we eltip bermek</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Tertip</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>talap boýunça</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Salgy görnüşi</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Eltip bermek</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Haýyşyň iň uzyn garaşmagy</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Bir wagtyň özünde öwürmeler</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>Häzir %max içinde %busy meşgul</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Format ylalaşygy</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>açyk</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ýapyk</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Ýer tutujy we çalşyrma skripti</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Çap edilenden soň öňünden ýasamak</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Sahypanyň lakamlary</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Format wariantlarynyň öwrüjileri</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Öwrüji</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Synanyşyldy</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>makul görülýän</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>hawa</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ýok</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Lakamlaryň özlerini öňküsi ýaly [ImageConverterSettings] öwrüjileri ýasaýar; bular WebP we AVIF wariantlaryny ýazýar.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Töwerek we çeşme</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Bu gurnalyş</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production: hiç haçan getirmeýär)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Getirýär</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>hiç zat</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Çeşmäniň salgysy</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>bellenmedik</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Ygtyýarnama</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>%name gizlini</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ýok</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ýagdaýy</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>işleýär</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time çenli saklanyldy</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>şowsuz bolýar</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Yzly-yzyna şowsuzlyklar</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count soň saklamak</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Soňky säwlik</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Soňky üstünlik</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Şowsuzlyklary täzeden gurup, çeşmeden ýene bir gezek soramak</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Iş nobady</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Iş görnüşi</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Garaşýar</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Işleýär</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Şowsuz</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>hasaba alynmadyk</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Iş nobady elýeterli däl.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Köpçülikleýin işledişler saklanyldy</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time bäri, %user tarapyndan</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Köpçülikleýin işledişlere rugsat</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Gol çekmek açary</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Açar</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>gizlinler ammarynda</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>entek ýok</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Ýaşy</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days gün (%time bäri)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Öňki açar</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time çenli dogry</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Açary çalyşmak</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Häzirki açar bilen gol çekilen salgylar artykmaç möhlet (SigningKeyGrace) dowamynda işlemegini dowam edýär, soň sahypalar täzeden ýasalýança ýer tutujylar bilen jogap berýär.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Indi çalyşmak</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Nähili işleýär</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render tertibi, staging we žurnal</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (adaty): sahypa entek ýok lakamy gol çekilen salgya baglaýar. Ilkinji haýyş ony iň uzyn garaşmak içinde ýasaýar, ýogsam bitarap ýer tutujy bilen jogap berýär-de, iş galan işi gutarýar; surat taýyn bolanda çalşyrma skripti ýer tutujyny çalşyrýar.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render tertibi: şablon lakamy sahypa gurlanda ýasaýar, öňküsi ýaly. Ikisiniň arasynda islendik wagt geçip bolýar; hiç zady göçürmek gerek däl.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Staging gurnalyşy ýetmeýän asyl nusgalaryny we lakamlaryny öz çeşmesinden getirýär; şowsuz çeşme yzly-yzyna şowsuzlykdan soň saklanýar, administratorlar sagatda iň köp bir hat alýar.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Köpçülikleýin işledişler we çap edilenden soňky öňünden ýasamak iş nobatynyň işleridir, myhmanlardan pes ileri tutulma bilen. Lakamlary aýyrmak Velocity jogap keşini hem arassalaýar, şonuň üçin aýrylan faýl ondan berilmeýär.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Ýasalan her lakam, jogap berlen ýer tutujy, staging edilen faýl we işledişi %file faýlynyň bir setiridir. Buýruk setirinde hem şol bir guraller bar: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Iş %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%total suratdan %done</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Işlet</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Çäk</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Netije</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Bu işi ýatyr</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>%job işi surat lakamlarynyň işi däl ýa-da nobatdan aýryldy.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>%run işledişiniň netijesi</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Köpçülikleýin işledişler saklanyldy</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time bäri %user saklady.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Saklamak ähli serwerlerde her köpçülikleýin işledişi häzirki suratdan soň duruzýar; nobatdaky işledişler garaşýar. Myhmanlaryň lakamlary ýasalmagyny dowam edýär.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Köpçülikleýin işledişleri dowam etdir</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Sebäp (hökman däl)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Köpçülikleýin işledişleri sakla</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Işledişi başla</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Işledişler iş nobatynyň işleridir: sahypany terk edip, yzyna gaýdyp bilersiňiz.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Iş nobady bolmasa, işledişi şu haýyşda iň köp %count surat üçin ýerine ýetirilýär.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Hereket</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: ýetmeýän lakamlary ýasa</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: aýyryp, täzeden ýasa</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: olary aýyr (talap boýunça täzeden ýasalýar)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: faýllary staging çeşmesinden getir</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(diňe staging gurnalyşynda)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Tutuş sahypa</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Bir düwün</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Düwün we onuň agaç bölegi</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Düwün ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klaslar</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atributlar</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Üýtgedilen wagtdan bäri</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Sene (2026-11-01) ýa-da näçe wagt öň (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Iň köp surat</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Lakamlar (hiç biri bellenmese: hemmesi)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Synag işledişi: diňe sana (resync çeşmäni barlaýar we hiç zat saklamaýar)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Tapawutly faýllaryň üstüne ýaz (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Işledişi başla</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Soňky işledişler</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Iş</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ösüş</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Nobatda</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Hereketler</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ýatyr</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Entek köpçülikleýin işledişi ýa-da resync ýok.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Bir surat</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Şablonyň häzir alýan salgylary, her lakam üçin hasaplanan ölçegler we görnüşler, we her faýlyň bardygy-ýokdugy.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Gözleg ýoly</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Obýekt ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Görkez</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Bu obýekti okamaga hakyňyz ýok.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Bu obýektde surat ýok.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Bu ID bilen obýekt ýok.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>obýekt %object, düwün %node, wersiýa %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Asyl nusga: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>faýl bar</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>faýl ýok</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name lakamlary</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Lakam</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Ölçeg</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Görnüş</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faýl</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Formatlar</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Şablondaky salgy</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>bar</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>ýok</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>bu görnüş üçin däl</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Barla</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Ýasa</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Bu meýdanda surat ýok.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Wagt</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Çeşme bilen baglanyşyk</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Staging çeşmesine HEAD haýyşy, ady görkezilen bolsa onuň ygtyýarnamasy bilen. Ygtyýarnama iberilýär, hiç haçan görkezilmeýär.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Çeşme</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>ygtyýarnama bilen</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Saklaýyş ýoly (hökman däl)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Baglanyşygy synap gör</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Hiç bir çeşmäniň BaseURL-y ýok. Çeşmeler sazlamalarda bellenýär ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>elýeterli</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>ret edildi: ygtyýarnamany barlaň</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>çeşmede tapylmady</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>jogap ýok</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>wagty gutardy</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>ugrukdyryldy (yzarlanmady)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL ýok</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>saklaýyş ýoly däl</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Salgy</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>iberildi</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>gizlin ýok</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>gizlin user:password ýa-da Bearer &lt;token&gt; däl</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file faýlynyň iň täze setirleri, iň täzesi birinji.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Sazlama &gt; Žurnal faýllary</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Waka</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Ähli wakalar</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Işledişler (başy we ahyry)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Ýol öz içine alýar</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Setirler</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Süzgüç</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Yzarla: täze setirleri ýazylýan badyna görkez</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Ýol we jikme-jiklikler</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Žurnalyň hiç bir setiri gabat gelmeýär.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Ýatda saklamak näme üýtgederdi</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Näme üýtgedildi</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php faýlynda saklanýar, şonuň üçin bu ýerdäki baha ähli siteaccess-lerden ileri tutulýar. Görkezilen bahalar şu siteaccess üçin güýçdäkiler. Ýatda saklamazdan öň siziň bolandygyňyzy tassyklamak soralýar.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Lakamlar nähili ýasalýar we eltilip berilýär.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Ýetmeýän suratlary başga gurnalyşdan getirmek (alpha, dev, beta, stage, pro, post, arc). Production (pro) hiç haçan getirmeýär.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Sazlama</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Baha</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override-da</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Her çeşmäniň salgysy we onuň ygtyýarnamasyny saklaýan gizliniň ady (user:password ýa-da Bearer &lt;token&gt;). Gizliniň bahasy Sazlama &gt; Gizlin bahalar bölüminde bellenýär we bu ýerde hiç haçan görkezilmeýär.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Üýtgeşmeleri öňünden gör</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Ýatda sakla</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Yzarlaýar: %time täzelendi</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Saklanyldy</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Akym jogap bermedi; ýene synanyşylýar.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Iş gutardy.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: şablonlar salgyny alýar, lakam soralanda ýasalýar. render: şablon ony sahypa gurlanda ýasaýar (asyl hereket).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Entek ýasalmadyk lakamyň salgysy: token (gol çekilen, maglumat bazasy gerek däl), ids-token, ids, node ýa-da storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: web serwer saklaýşy hyzmat edýän bolsa faýla ugrukdyrma, ýogsam faýl akym bilen iberilýär.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Haýyşyň lakamy ýasamaga ýa-da getirmäge sarp edip biljek sekuntlary; soň ýer tutujy bilen jogap berýär-de, iş galan işi gutarýar.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP we AVIF wariantlary üçin ilki synanyşylýan öwrüji.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Formats[] sanaýan lakamlar üçin WebP ýa-da AVIF soraýan brauzerlere şol formatda jogap ber.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Surat ýetmeýän wagtynda dogry ölçegdäki bitarap surat.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Surat taýyn bolanda ýer tutujylary hakyky surat bilen çalşyrýan kiçijik skript.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Çap edilenden soň iş täze suratlaryň lakamlaryny ähli baglanyşykly siteaccess üçin ýasaýar.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Bir serwerde bir wagtyň özünde öwürmeler.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Köpçülikleýin işledişleriň proses ileri tutulmasy (nice), 0-dan 19-a çenli.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Brauzerleriň we keşleriň ýasalan lakamy saklap biljek sekuntlary.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Garalama ýa-da öňünden görmek suratynyň salgysynyň dogry galýan sekuntlary.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Çalşyrylandan soň öňki gol çekmek açarynyň dogry galýan sekuntlary.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Bu gurnalyşyň töweregi.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Ýetmeýän suratlaryň getirilýän töweregi; none: hiç zat getirilmeýär.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Her setire bir: ýerli saklaýyş prefiksi;çeşme prefiksi ýa-da salgysy, tapawutly saklaýyş ýollary üçin.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Çeşmä bir haýyşyň alyp biljek sekuntlary.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Çeşmeden alynýan iň uly faýl, baýtlarda.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Şundan soň çeşme saklanýan yzly-yzyna şowsuzlyklaryň sany.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Şowsuz çeşmäniň näçe wagt saklanýandygy.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Çeşme saklananda administratorlara hat iber (sagatda iň köp bir gezek).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Her setire bir e-poçta salgysy; boş: site.ini-däki AdminEmail.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>%block çeşme gurnalyşynyň salgysy, meselem https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Ygtyýarnamasy bolan gizliniň ady, ýa-da env:VARIABLE. Hiç haçan ygtyýarnamanyň özi däl.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(ýok)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Adaty: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Bu ýerde bellenen; aýyrmak üçin belläň</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>miras alnan</translation>
     </message>
 </context>
 </TS>

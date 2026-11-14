@@ -16588,6 +16588,34 @@ Isaziso: Amaphakheji ngeke akhishwe.</translation>
         <source>Import/Export</source>
         <translation>Ngenisa/Thumela</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Amagama angaphandle ezithombe</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Yenza kulesi sakhi</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Yenza komuthi ongaphansi</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Yenza futhi kulesi sakhi</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Yenza futhi komuthi ongaphansi</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Susa kulesi sakhi</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Susa komuthi ongaphansi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86420,6 +86448,997 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Ibhulokhi ye-server yesayithi endala: location = ne-return, if ($args) yombuzo, rewrite njenge-wildcard ne-map yamakhasi angawodwana.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Amagama angaphandle ezithombe</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Amagama angaphandle ezithombe angamakhophi ethombe agoqiwe futhi anqunyiwe abonisa ama-template. Lapha ubona ukuthi enziwa kanjani, uqhube imisebenzi eminingi kuyo yonke isayithi, uvivinye ithombe elilodwa noma umthombo we-staging, ulandele umlando wokuqhuba futhi ushintshe izilungiselelo.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Izingxenye zekhasi</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Ideshibhodi</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Ukuqhuba ngobuningi</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Amathuluzi okuhlola</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Umlando wokuqhuba</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Izilungiselelo</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Ungabheka konke lapha. Ukushintsha izilungiselelo, ukuqhuba imisebenzi namathuluzi enza amafayela kudinga inqubomgomo setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Okudinga ukunakwa</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Imodi ye-render: ama-template enza amagama angaphandle angekho ngenkathi ikhasi lenziwa, njengakuqala. Amakheli e-on-demand, izabelo-ndawo nemisebenzi yangemuva akusetshenziswa.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Ingxoxo yefomethi iyasebenza, kodwa akukho mguquli lapha ongabhala i-WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Lokhu kufakwa kwe-staging, kodwa umthombo wakho awunayo i-BaseURL: izithombe ezingekho azikwazi ukulandwa.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Umthombo we-staging umiswe ngemuva kokwehluleka okulandelanayo: izithombe ezingekho zithola izabelo-ndawo kuze kuphele ukumiswa noma uwusethe kabusha.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Umthombo we-staging wehlulekile muva nje. Bheka iphutha lawo lokugcina ngezansi.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Lokhu kufakwa akukona kokukhiqiza, kodwa i-SyncFrom ayisho muthombo: akukho okulandwayo.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Ulayini wemisebenzi (expqueue) awukho: amagama angaphandle angafinyeleli ngesikhathi enziwa isicelo esilandelayo, ukwenza kwangaphambili ngemuva kokushicilela kudlulwa, futhi ukuqhuba ngobuningi kunqunyelwe ezindaweni ezincane.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Eminye imisebenzi yamagama angaphandle ezithombe yehlulekile unomphela. Setup &gt; Job queue ibonisa isizathu.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Ukuqhuba ngobuningi kumisiwe.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Amagama angaphandle ehlulekile emahoreni angama-24 edlule. Umlando wokuqhuba uyawabala.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Ukhiye wokusayina mdala kunonyaka owodwa. Ukuwuzungezisa kugcina amakheli amadala esebenza ngesikhathi somusa.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Akukabikho ukhiye wokusayina: wenziwa ngekheli lokuqala le-on-demand.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Amahora angama-24 edlule</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Amagama angaphandle enziwe</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Izabelo-ndawo eziphenduliwe</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Ukwehluleka</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Amafayela e-staging</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Ukuqhuba okuqalile</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Imisebenzi elindile / eqhubekayo</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Kubaliwe emgqeni ongu-%lines wokugcina we-%file, ofinyelela emuva ku-%time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Imodi nokulethwa</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Imodi</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>on demand</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Uhlobo lwekheli</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Ukulethwa</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Isikhathi eside kakhulu sokulinda sesicelo</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Ukuguqula ngesikhathi esisodwa</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy kwangu-%max zimatasa manje</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Ingxoxo yefomethi</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>kuvuliwe</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>kuvaliwe</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Isabelo-ndawo nesikripthi sokushintsha</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Ukwenza kwangaphambili ngemuva kokushicilela</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Amagama angaphandle esayithi</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Abaguquli bezinhlobo zefomethi</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Umguquli</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Kuzanyiwe</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>okukhethwayo</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>yebo</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>cha</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Amagama angaphandle ngokwawo enziwa ngabaguquli be-[ImageConverterSettings], njengakuqala; laba babhala izinhlobo ze-WebP ne-AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Indawo nomthombo</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Lokhu kufakwa</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(ukukhiqiza: akulandi neze)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Kuyalanda kusuka ku-</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>akukho lutho</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Ikheli lomthombo</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>akusethiwe</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Isiqinisekiso</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>imfihlo %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>akukho</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Isimo</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>iyasebenza</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>imisiwe kuze kube ngu-%time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>iyehluleka</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Ukwehluleka okulandelanayo</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>ukumisa ngemuva kwe-%count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Iphutha lokugcina</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Impumelelo yokugcina</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Setha kabusha ukwehluleka futhi ubuze umthombo futhi</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Ulayini wemisebenzi</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Uhlobo lomsebenzi</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Iyalinda</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Iyaqhuba</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Kuhlulekile</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>akubhalisiwe</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Ulayini wemisebenzi awukho.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Ukuqhuba ngobuningi kumisiwe</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>kusukela ku-%time ngu-%user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Ukuqhuba ngobuningi kungaqhubeka</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Ukhiye wokusayina</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Ukhiye</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>esitolo semfihlo</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>akukabikho</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Iminyaka</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>izinsuku ezingu-%days (kusukela ku-%time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Ukhiye wangaphambilini</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>usebenza kuze kube ngu-%time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Zungezisa ukhiye</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Amakheli asayinwe ngokhiye wamanje aqhubeka nokusebenza ngesikhathi somusa (SigningKeyGrace), bese ephendula ngezabelo-ndawo kuze kwenziwe amakhasi futhi.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Zungezisa manje</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Isebenza kanjani</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, imodi ye-render, i-staging nelogi</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (okuzenzakalelayo): ikhasi lixhumanisa igama langaphandle elingekho ekhelini elisayiniwe. Isicelo sokuqala siyalenza phakathi nesikhathi eside kakhulu sokulinda, ngaphandle kwalokho siphendula ngesabelo-ndawo esingathathi hlangothi futhi umsebenzi uyaqedela; isikripthi sokushintsha sishintsha isabelo-ndawo uma ithombe likhona.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Imodi ye-render: i-template yenza igama langaphandle ngenkathi ikhasi lenziwa, njengakuqala. Shintsha phakathi kwezi ezimbili noma nini; akukho okudinga ukufudukiswa.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Ukufakwa kwe-staging kulanda okwangempela namagama angaphandle angekho emthonjeni walo; umthombo ohlulekayo umiswa ngemuva kokwehluleka okulandelanayo futhi abaphathi bathola i-imeyili eyodwa ehorweni ubuningi.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Ukuqhuba ngobuningi nokwenza kwangaphambili ngemuva kokushicilela yimisebenzi yolayini wemisebenzi, enokubaluleka okuphansi kunabavakashi. Ukukhipha amagama angaphandle kuphinde kuhlanze i-cache yezimpendulo ye-Velocity, ukuze ifayela elikhishiwe lingaphakanyiswa lapho.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Igama langaphandle ngalinye elenziwe, isabelo-ndawo esiphenduliwe, ifayela le-staging nokuqhuba kungumugqa we-%file. Umugqa womyalo unamathuluzi afanayo: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Umsebenzi %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done wezithombe ezingu-%total</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Ukuqhuba</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Ububanzi</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Umphumela</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Khansela lo msebenzi</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Umsebenzi %job akusona isebenzi samagama angaphandle ezithombe, noma ususiwe kulayini.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Umphumela wokuqhuba %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Ukuqhuba ngobuningi kumisiwe</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Kumiswe kusukela ku-%time ngu-%user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Ukumisa kumisa wonke umsebenzi wobuningi ngemuva kwethombe lawo lamanje, kuwo wonke amaseva; ukuqhuba okulayinini kuyalinda. Amagama angaphandle abavakashi asenziwa.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Qhubeka nokuqhuba ngobuningi</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Isizathu (akuphoqelekile)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Misa ukuqhuba ngobuningi</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Qala ukuqhuba</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Ukuqhuba yimisebenzi yolayini wemisebenzi: ungasishiya isikhala bese ubuya.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Ngaphandle kolayini wemisebenzi ukuqhuba kwenziwa kulesi sicelo, kwezithombe ezingu-%count ubuningi.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Isenzo</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: yenza amagama angaphandle angekho</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: yikhiphe bese uyenza futhi</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: yikhiphe (yenziwa futhi uma iceliwe)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: landa amafayela emthonjeni we-staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(kuphela ekufakweni kwe-staging)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Isayithi lonke</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>I-node eyodwa</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>I-node nomuthi wayo ongaphansi</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>I-ID ye-node</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Izigaba</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Izici</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Kushintshiwe kusukela</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Usuku (2026-11-01) noma isikhathi esidlule (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Izithombe eziningi kakhulu</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Amagama angaphandle (akukho okukhethiwe: wonke)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Ukuqhuba kokuzama: bala kuphela (i-resync ihlola umthombo ingagcini lutho)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Bhala phezu kwamafayela ahlukile (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Qala ukuqhuba</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Ukuqhuba kwakamuva</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Umsebenzi</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Inqubekela phambili</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Kufakwe olayini</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Izenzo</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Khansela</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Akukabikho ukuqhuba ngobuningi noma i-resync.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Ithombe elilodwa</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Amakheli athola i-template manje, osayizi nezinhlobo ezibaliwe kugama langaphandle ngalinye, nokuthi ifayela ngalinye likhona yini.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Sesha ngo-</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>I-ID yento yokuqukethwe</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>I-ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Bonisa</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Awuvunyelwe ukufunda le nto yokuqukethwe.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Le nto yokuqukethwe ayinalo ithombe.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Ayikho into yokuqukethwe enale ID.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>into yokuqukethwe %object, i-node %node, uhlobo %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Okwangempela: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>ifayela likhona</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>ifayela alikho</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Amagama angaphandle e-%name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Igama langaphandle</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Usayizi</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Uhlobo</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Ifayela</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Amafomethi</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Ikheli ku-template</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>likhona</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>alikho</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>akusilo lolu hlobo</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Hlola</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Yenza</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Alikho ithombe kule nsimu.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Isikhathi</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Uxhumo emthonjeni</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Isicelo se-HEAD emthonjeni we-staging, ngesiqinisekiso sawo uma sisho igama. Isiqinisekiso siyathunyelwa, asibonisiwe neze.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Umthombo</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>ngesiqinisekiso</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Indlela yesitoreji (akuphoqelekile)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Vivinya uxhumo</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Akukho mthombo one-BaseURL. Imithombo isethwa ezilungiselelweni ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>iyafinyeleleka</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>ichithiwe: hlola isiqinisekiso</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>ayitholakalanga emthonjeni</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>akukho mpendulo</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>isikhathi siphelile</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>kuqondiswe kwenye indawo (akulandelwanga)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>akukho BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>akuyona indlela yesitoreji</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Ikheli</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Isimo</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>kuthunyelwe</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>imfihlo ayikho</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>imfihlo akuyona user:password noma Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Imigqa emisha ye-%file, emisha kuqala.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Ukumisa &gt; Amafayela amalogi</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Umcimbi</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Yonke imicimbi</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Ukuqhuba (ukuqala nokuphela)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Indlela iqukethe</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Imigqa</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Isihlungi</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Landela: bonisa imigqa emisha njengoba ibhalwa</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Indlela nemininingwane</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Alikho ulayini welogi ofanayo.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Okuzoshintshwa ukulondoloza</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Okushintshiwe</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Kulondolozwe ku-settings/override/image.ini.append.php, ngakho inani lapha linqoba yonke i-siteaccess. Amanani abonisiwe yilawo asebenza kule siteaccess. Ukulondoloza kukucela ukuthi uqale uqinisekise ukuthi ungubani.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Ukuthi amagama angaphandle enziwa futhi aletshwa kanjani.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Ukulanda izithombe ezingekho kokunye ukufakwa (alpha, dev, beta, stage, pro, post, arc). Ukukhiqiza (pro) akulandi neze.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Isilungiselelo</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Inani</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Ku-settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Ikheli lomthombo ngamunye negama lemfihlo equkethe isiqinisekiso sawo (user:password noma Bearer &lt;token&gt;). Inani lemfihlo lisethwa ku-Ukumisa &gt; Imfihlo futhi alibonisiwe lapha neze.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Buka kuqala izinguquko</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Londoloza</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Iyalandelwa: ibuyekezwe ngo-%time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Kumisiwe</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Ifidi ayiphendulanga; iyazama futhi.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Umsebenzi uphelile.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: ama-template athola ikheli, igama langaphandle lenziwa uma liceliwe. render: i-template iyalenza ngenkathi ikhasi lenziwa (indlela yasekuqaleni).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Ikheli legama langaphandle elingakenziwa: token (elisayiniwe, alidingi database), ids-token, ids, node noma storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: ukuqondisa kwelinye ifayela uma iseva yewebhu ihambisa isitoreji, ngaphandle kwalokho ifayela liyakhishwa.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Imizuzwana isicelo esingayisebenzisa senza noma silanda igama langaphandle; bese siphendula ngesabelo-ndawo futhi umsebenzi uyaqedela.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Umguquli ozanywa kuqala ezinhlotsheni ze-WebP ne-AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Phendula nge-WebP noma i-AVIF kubabhrawuza abayicelayo, kumagama angaphandle abala i-Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Ithombe elingathathi hlangothi losayizi olufanele ngenkathi ithombe lingekho.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Isikripthi esincane esishintsha izabelo-ndawo ngethombe langempela uma likhona.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Ngemuva kokushicilela, umsebenzi wenza amagama angaphandle ezithombe ezintsha kuyo yonke i-siteaccess ehlobene.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Ukuguqula ngesikhathi esisodwa kuseva eyodwa.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Ukubaluleka kwenqubo (nice) yokuqhuba ngobuningi, 0 kuya ku-19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Imizuzwana ababhrawuza nama-cache abangayigcina ngayo igama langaphandle elenziwe.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Imizuzwana ikheli lethombe lomklamo noma lokubuka kuqala lihlala lisebenza.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Imizuzwana ukhiye wokusayina wangaphambilini uhlala usebenza ngemuva kokuzungezisa.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Indawo yalokhu kufakwa.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Indawo lapho izithombe ezingekho zilandwa khona; none: akukho okulandwayo.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Okukodwa emgqeni: isiqalo sesitoreji sasendaweni;isiqalo somthombo noma ikheli, ezindleleni zesitoreji ezihlukile.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Imizuzwana isicelo esisodwa emthonjeni esingayithatha.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Ifayela elikhulu kunawo wonke elitholwa emthonjeni, ngamabhayithi.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Ukwehluleka okulandelanayo okuyimiswa ngemuva kwakho umthombo.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Isikhathi esingakanani umthombo ohlulekayo umiswa.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Thumela i-imeyili kubaphathi uma umthombo umiswa (kanye ehorweni ubuningi).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Ikheli elilodwa le-imeyili emgqeni; ayinalutho: i-AdminEmail ye-site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Ikheli lokufakwa komthombo %block, isb. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Igama lemfihlo equkethe isiqinisekiso, noma env:VARIABLE. Akusona isiqinisekiso ngokwaso.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(akukho)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Okuzenzakalelayo: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Kusethwe lapha; maka ukuze ukususe</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>kudluliselwe</translation>
     </message>
 </context>
 </TS>

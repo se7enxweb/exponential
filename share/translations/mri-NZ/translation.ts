@@ -16590,6 +16590,34 @@ Kia mōhio: kāore e tangohia te tāutanga o ngā mōkihi.</translation>
         <source>Import/Export</source>
         <translation>Kawemai me te kaweake</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Ingoa kē atahanga</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Waihanga mō tēnei tūemi</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Waihanga mō te peka iti</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Waihanga anō mō tēnei tūemi</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Waihanga anō mō te peka iti</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Tango mō tēnei tūemi</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Tango mō te peka iti</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Te poraka server o tētahi pae tawhito: location = me return, if ($args) mō tētahi pātai, rewrite hei tohu kāri me tētahi map o ngā whārangi takitahi.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Ingoa kē atahanga</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Ko ngā ingoa kē atahanga ngā kape whakarahi, kua tapahia o tētahi atahanga e whakaatu ai ngā tauira. Kei konei koe e kite ai i tō rātou waihanga, e whakahaere ai i ngā mahi rahi puta noa i te pae, e whakamātau ai i tētahi atahanga, i tētahi pūtake whakaritenga rānei, e whai ai i te hītori whakahaere, e whakarerekē ai i ngā tautuhinga.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Ngā wāhanga o te whārangi</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Papatohu</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Ngā whakahaere rahi</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Ngā taputapu whakamātau</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Hītori whakahaere</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Tautuhinga</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Ka taea e koe te titiro ki ngā mea katoa i konei. Ko te whakarerekē tautuhinga, te whakahaere mahi me ngā taputapu hanga kōnae me whai i te kaupapahere setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Ngā mea e hiahia aro ana</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Aratau render: ka hangaia e ngā tauira ngā ingoa kē kei te ngaro i te wā e hangaia ana te whārangi, pēnei i mua. Kāore e whakamahia ngā wāhitau on-demand, ngā mea whakakapi me ngā mahi papamuri.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Kua whakaaetia te whakarite hōputu, engari kāore he kaiwhakawhiti i konei e āhei ana ki te tuhi WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>He pūnaha whakaritenga (staging) tēnei, engari kāore tōna pūtake i whai BaseURL: kāore e taea te tiki i ngā atahanga e ngaro ana.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Kua whakatārewatia te pūtake whakaritenga i muri i ngā rahunga i ngā wā maha: ka tukuna he mea whakakapi mō ngā atahanga e ngaro ana kia mutu rā anō te whakatārewa, kia tautuhi anō rānei koe.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>I rahua te pūtake whakaritenga i nā tata nei. Tirohia tōna hapa whakamutunga i raro nei.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Ehara tēnei pūnaha i te pūnaha whakaputa, engari kāore a SyncFrom e ingoa i tētahi pūtake: kāore he mea e tikina.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Kāore te rārangi mahi (expqueue) e watea ana: ka hangaia e te tono e whai ake nei ngā ingoa kē kāore i eke ki te wā, ka tāpahia te hanga whakamua i muri i te whakaputa, ā, ka whakawhāitihia ngā whakahaere rahi ki ngā tirohanga iti.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>I rahua tūturu etahi mahi ingoa kē atahanga. Ka whakaatu a Whakaritenga &gt; Rārangi mahi i te take.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Kua whakatārewatia ngā whakahaere rahi.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>I rahua ngā ingoa kē i ngā haora 24 kua pahure. Kei te hītori whakahaere te rārangi.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Neke atu i te tau te pakeke o te kī waitohu. Mā te hurihuri i a ia ka mau tonu ngā wāhitau tawhito i te wā atawhai.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Kāore anō kia whai kī waitohu: ka hangaia ki te wāhitau on-demand tuatahi.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Ngā haora 24 kua pahure</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Ngā ingoa kē kua hangaia</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Ngā mea whakakapi kua whakautua</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Ngā rahunga</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Ngā kōnae kua whakaritea</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Ngā whakahaere kua tīmata</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Ngā mahi e tatari ana / e whakahaere ana</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Kua tatauhia mai i ngā rārangi %lines whakamutunga o %file, e hoki ana ki %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Aratau me te tukunga</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Aratau</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>i runga i te tono</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Āhua wāhitau</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Tukunga</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Te tatari roa rawa o tētahi tono</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds hēkona</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Ngā whakawhiti i te wā kotahi</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy o %max e pukumahi ana ināianei</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Whakarite hōputu</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>tuwhera</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>kati</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Mea whakakapi me te tuhinga whakawhiti</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Hanga whakamua i muri i te whakaputa</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Ngā ingoa kē o te pae</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Ngā kaiwhakawhiti o ngā momo hōputu</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Kaiwhakawhiti</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Kua whakamātauria</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>manakohia</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>āe</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>kāo</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Ko ngā ingoa kē ake e hangaia ana e ngā kaiwhakawhiti o [ImageConverterSettings], pēnei i mua; ka tuhi ēnei i ngā momo WebP me AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Taiao me te pūtake</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Tēnei pūnaha</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(whakaputa: kāore e tiki)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>E tiki mai i</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>tētahi mea kāore</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Wāhitau pūtake</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>kāore i tautuhia</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Tuakiri</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>muna %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>kāore</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tūnga</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>e mahi ana</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>kua whakatārewatia tae noa ki %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>e rahua ana</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Ngā rahunga i ngā wā maha</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>whakatārewa i muri i te %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Hapa whakamutunga</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Angitu whakamutunga</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Tautuhi anō i ngā rahunga, ā, pātai anō ki te pūtake</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Rārangi mahi</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Momo mahi</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>E tatari ana</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>E whakahaere ana</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>I rahua</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>kāore i rēhitatia</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Kāore te rārangi mahi e watea ana.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Kua whakatārewatia ngā whakahaere rahi</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>mai i %time e %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Ka āhei ngā whakahaere rahi</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Kī waitohu</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Kī</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>i te toa muna</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>kāore anō</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Pakeke</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days rā (mai i %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Kī o mua</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>whai mana tae noa ki %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Hurihuri i te kī</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Ka mau tonu ngā wāhitau i waitohua ki te kī o nāianei i te wā atawhai (SigningKeyGrace), ā, ka whakautu ki ngā mea whakakapi kia hangaia anō ngā whārangi.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Hurihuri ināianei</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Te āhua o tana mahi</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, aratau render, whakaritenga me te rangitaki</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (taunoa): ka hono te whārangi i tētahi ingoa kē kāore anō kia tae ki tētahi wāhitau kua waitohua. Mā te tono tuatahi e hanga i roto i te tatari roa rawa, ki te kāore ka whakautu ki tētahi mea whakakapi kōwhiri-kore, ā, mā tētahi mahi e whakaoti te mahi; ka whakakapi te tuhinga whakawhiti i te mea whakakapi ina tae mai te atahanga.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Aratau render: ka hangaia e te tauira te ingoa kē i te wā e hangaia ana te whārangi, pēnei i mua. Ka taea te whakawhiti i waenga i te rua i ngā wā katoa; kāore he mea hei neke.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Ka tiki te pūnaha whakaritenga i ngā taketake me ngā ingoa kē e ngaro ana i tōna pūtake; ka whakatārewatia te pūtake e rahua ana i muri i ngā rahunga i ngā wā maha, ā, kotahi noa te īmēra ia haora ka tukua ki ngā kaiwhakahaere.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Ko ngā whakahaere rahi me te hanga whakamua i muri i te whakaputa he mahi o te rārangi mahi, he whakaarotau iti iho i ō ngā manuhiri. Ka mukua hoki te keteroki whakautu a Velocity ina tangohia ngā ingoa kē, kia kore ai e tukuna he kōnae kua tangohia.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Ko ia ingoa kē kua hangaia, ia mea whakakapi kua whakautua, ia kōnae kua whakaritea me ia whakahaere he rārangi kotahi o %file. He taputapu ōrite kei te rārangi whakahau: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Mahi %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done o %total atahanga</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Whakahaere</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Whānuitanga</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Hua</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Whakakore i tēnei mahi</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Ehara a %job i te mahi ingoa kē atahanga, i tangohia rānei i te rārangi.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Hua o te whakahaere %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Kua whakatārewatia ngā whakahaere rahi</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Kua whakatārewatia mai i %time e %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Ka whakamutu te whakatārewa i ia whakahaere rahi i muri i tāna atahanga o nāianei, i ia tūmau; ka tatari ngā mea kei te rārangi. Ka hangaia tonutia ngā ingoa kē a ngā manuhiri.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Haere tonu ngā whakahaere rahi</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Take (kōwhiri)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Whakatārewa i ngā whakahaere rahi</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Tīmata i tētahi whakahaere</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>He mahi o te rārangi mahi ngā whakahaere: ka taea e koe te wehe i te whārangi, ā, te hoki mai.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Ki te kore he rārangi mahi, ka oti te whakahaere i tēnei tono, mō te %count atahanga i te nuinga rawa.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Mahi</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Waihanga: hangaia ngā ingoa kē e ngaro ana</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Waihanga anō: tangohia, ā, hangaia anōtia</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Tango: tangohia (ka hangaia anōtia i runga i te tono)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Tukutahi anō: tikina ngā kōnae mai i te pūtake whakaritenga</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(i runga i te pūnaha whakaritenga anake)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Te pae katoa</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Tētahi pona</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Tētahi pona me tōna peka iti</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID pona</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Ngā karaehe</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Ngā āhuatanga</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Kua whakarerekētia mai i</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>He rā (2026-11-01) he wā rānei kua pahure (12 haora, 2 rā).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>I te nuinga rawa atahanga</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Ngā ingoa kē (kāore i tohua tētahi: ngā mea katoa)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Whakahaere whakamātau: tatau anake (ka tirotiro te resync i te pūtake, kāore e penapena i tētahi mea)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Tuhi whakamuri i ngā kōnae e rerekē ana (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Tīmata i te whakahaere</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Ngā whakahaere hou</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Mahi</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Kauneke</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Kua whakarārangitia</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ngā mahi</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Whakakore</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Kāore anō kia whakahaerea he whakahaere rahi, he resync rānei.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Tētahi atahanga</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Ngā wāhitau e whiwhi ana te tauira ināianei, ngā rahi me ngā momo kua tātauhia mō ia ingoa kē, me te mea kei reira ia kōnae, kāore rānei.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Rapua mā</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID ahanoa</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Id</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Whakaatu</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Kāore koe e whakaaetia ki te pānui i tēnei ahanoa.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Kāore he atahanga o tēnei ahanoa.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Kāore he ahanoa me tēnei id.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>ahanoa %object, pona %node, putanga %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Taketake: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>kei reira te kōnae</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>kua ngaro te kōnae</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Ngā ingoa kē a %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Ingoa kē</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Rahi</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Momo</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Kōnae</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Ngā hōputu</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Wāhitau i te tauira</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>kei reira</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>kua ngaro</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>kāore mō tēnei momo</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Tirohia</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Hangaia</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Kāore he atahanga i tēnei āpure.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Wā</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Hononga ki tētahi pūtake</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>He tono HEAD ki tētahi pūtake whakaritenga, me tōna tuakiri ina ingoatia tētahi. Ka tukuna te tuakiri, kāore e whakaatuhia.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Pūtake</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>me te tuakiri</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Ara penapena (kōwhiri)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Whakamātauria te hononga</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Kāore he BaseURL a tētahi pūtake. Ka tautuhia ngā pūtake i ngā tautuhinga ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>e taea ana te tae</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>kua whakakāhoretia: tirohia te tuakiri</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>kāore i kitea ki te pūtake</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>kāore he whakautu</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>kua pau te wā</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>kua tuku atu (kāore i whaia)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>kāore he BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>ehara i te ara penapena</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Wāhitau</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Tūnga</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>kua tukuna</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>kua ngaro te muna</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>ehara te muna i a user:password, i a Bearer &lt;token&gt; rānei</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Ngā rārangi hou rawa o %file, te mea hou tuatahi.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Whakaritenga &gt; Ngā kōnae rangitaki</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Takahanga</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Ngā takahanga katoa</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Ngā whakahaere (te tīmatanga me te mutunga)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Kei te ara</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Ngā rārangi</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Tātari</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Whai: whakaatu i ngā rārangi hou i a rātou e tuhia ana</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Ara me ngā taipitopito</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Kāore he rārangi o te rangitaki e rite ana.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Ngā mea ka rerekē i te penapena</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Ngā mea kua rerekē</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Ka penapenahia ki settings/override/image.ini.append.php, nō reira ka mana te uara i konei ki runga i ia siteaccess. Ko ngā uara e whakaaturia ana ko ērā e mana ana mō tēnei siteaccess. Ka tono te penapena kia whakamanatia tō tuakiri i te tuatahi.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Te āhua o te hanga me te tuku o ngā ingoa kē.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Te tiki i ngā atahanga e ngaro ana mai i tētahi atu pūnaha (alpha, dev, beta, stage, pro, post, arc). Kāore te whakaputa (pro) e tiki.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Tautuhinga</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Uara</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>I settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Te wāhitau o ia pūtake me te ingoa o te muna e mau ana i tōna tuakiri (user:password, Bearer &lt;token&gt; rānei). Ka tautuhia te uara o te muna i Whakaritenga &gt; Ngā mea muna, ā, kāore e whakaatuhia ki konei.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Arotake i ngā rerekētanga</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Tiaki</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>E whai ana: kua whakahoutia %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Kua whakatārewatia</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Kāore te rerenga i whakautu; e whakamātau anō ana.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Kua mutu te mahi.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: ka whiwhi ngā tauira i te wāhitau, ka hangaia te ingoa kē ina tonoa. render: ka hangaia e te tauira i te wā e hangaia ana te whārangi (te whanonga taketake).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Te wāhitau o tētahi ingoa kē kāore anō kia hangaia: token (kua waitohua, kāore e hiahia ana i tētahi pātengi raraunga), ids-token, ids, node, storage rānei.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: he whakawhitinga ki te kōnae ina mahi te tūmau tukutuku i te penapena, ki te kore ka rere te kōnae.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Ngā hēkona e taea ai e tētahi tono te hanga, te tiki rānei i tētahi ingoa kē; kātahi ka whakautu ki te mea whakakapi, ā, mā tētahi mahi e whakaoti te mahi.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Te kaiwhakawhiti ka whakamātauria tuatahitia mō ngā momo WebP me AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Whakautua te WebP, te AVIF rānei ki ngā pūtohu e tono ana, mō ngā ingoa kē e rārangi ana i a Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>He atahanga kōwhiri-kore o te rahi tika i te wā e ngaro ana te atahanga.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>He tuhinga iti e whakakapi ana i ngā mea whakakapi ki te atahanga pono ina tae mai.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>I muri i te whakaputa, ka hangaia e tētahi mahi ngā ingoa kē o ngā atahanga hou mō ia siteaccess e pā ana.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Ngā whakawhiti i te wā kotahi i runga i tētahi tūmau.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Te whakaarotau tukanga (nice) o ngā whakahaere rahi, 0 ki te 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Ngā hēkona e taea ai e ngā pūtohu me ngā keteroki te pupuri i tētahi ingoa kē kua hangaia.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Ngā hēkona e mana ai te wāhitau o tētahi atahanga hukihuki, arokite rānei.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Ngā hēkona e mana tonu ai te kī waitohu o mua i muri i te hurihuri.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Te taiao o tēnei pūnaha.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Te taiao e tikina ai ngā atahanga e ngaro ana; none: kāore he mea e tikina.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Kotahi ia rārangi: tāpiritanga penapena ā-rohe;tāpiritanga pūtake, wāhitau rānei, mō ngā ara penapena e rerekē ana.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Ngā hēkona e taea ai e tētahi tono ki te pūtake.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Te kōnae nui rawa e tikina mai i te pūtake, ki ngā paita.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Te maha o ngā rahunga i ngā wā maha e whakatārewatia ai te pūtake.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Te roa e whakatārewatia ai tētahi pūtake e rahua ana.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Īmēra ki ngā kaiwhakahaere ina whakatārewatia te pūtake (kotahi noa ia haora i te nuinga rawa).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Kotahi te wāhitau īmēra ia rārangi; kau: te AdminEmail o site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Te wāhitau o te pūnaha pūtake %block, hei tauira https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Te ingoa o te muna me te tuakiri, env:VARIABLE rānei. Kāore ko te tuakiri anō.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(kāore)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Taunoa: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Kua tautuhia ki konei; tohua hei tango</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>kua riro mai</translation>
     </message>
 </context>
 </TS>

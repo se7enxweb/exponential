@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>ນຳເຂົ້າ/ສົ່ງອອກ</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>ນາມແຝງຮູບພາບ</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>ສ້າງສຳລັບລາຍການນີ້</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>ສ້າງສຳລັບຕົ້ນໄມ້ຍ່ອຍ</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>ສ້າງໃໝ່ສຳລັບລາຍການນີ້</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>ສ້າງໃໝ່ສຳລັບຕົ້ນໄມ້ຍ່ອຍ</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>ລຶບສຳລັບລາຍການນີ້</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>ລຶບສຳລັບຕົ້ນໄມ້ຍ່ອຍ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>ບລັອກ server ຂອງໄຊເກົ່າ: location = ກັບ return, if ($args) ສຳລັບຄິວຣີ, rewrite ເປັນໄວລດ໌ຄາດ ແລະ map ຂອງໜ້າດ່ຽວ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>ນາມແຝງຮູບພາບ</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>ນາມແຝງຮູບພາບແມ່ນສຳເນົາຂອງຮູບພາບທີ່ປັບຂະໜາດ ແລະ ຕັດແລ້ວ ທີ່ແມ່ແບບນຳໄປສະແດງ. ທີ່ນີ້ທ່ານເບິ່ງໄດ້ວ່າສ້າງຂຶ້ນແນວໃດ, ສັ່ງງານຈຳນວນຫຼາຍທົ່ວເວັບໄຊ, ທົດສອບຮູບພາບໜຶ່ງຮູບ ຫຼື ແຫຼ່ງ staging, ຕິດຕາມປະຫວັດການຣັນ ແລະ ປ່ຽນການຕັ້ງຄ່າ.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>ສ່ວນຕ່າງໆຂອງໜ້າ</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ແດຊບອດ</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>ການຣັນຈຳນວນຫຼາຍ</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>ເຄື່ອງມືທົດສອບ</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>ປະຫວັດການຣັນ</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ການຕັ້ງຄ່າ</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>ທ່ານເບິ່ງທຸກຢ່າງທີ່ນີ້ໄດ້. ການປ່ຽນການຕັ້ງຄ່າ, ການຣັນວຽກ ແລະ ເຄື່ອງມືທີ່ສ້າງໄຟລ໌ ຕ້ອງມີນະໂຍບາຍ setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>ສິ່ງທີ່ຕ້ອງເອົາໃຈໃສ່</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>ໂໝດ render: ແມ່ແບບສ້າງນາມແຝງທີ່ຂາດຫາຍໃນຂະນະສະແດງໜ້າ, ຄືເກົ່າ. ທີ່ຢູ່ແບບ on-demand, ຕົວແທນຮູບ ແລະ ວຽກເບື້ອງຫຼັງຈະບໍ່ຖືກນຳໃຊ້.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>ການເລືອກຮູບແບບອັດຕະໂນມັດເປີດຢູ່, ແຕ່ບໍ່ມີຕົວແປງໃດຢູ່ນີ້ຂຽນ WebP ໄດ້.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>ນີ້ແມ່ນການຕິດຕັ້ງແບບ staging, ແຕ່ແຫຼ່ງຂອງມັນບໍ່ມີ BaseURL: ບໍ່ສາມາດດຶງຮູບພາບທີ່ຂາດຫາຍໄດ້.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>ແຫຼ່ງ staging ຖືກຢຸດຊົ່ວຄາວຫຼັງລົ້ມເຫຼວຕິດຕໍ່ກັນ: ຮູບພາບທີ່ຂາດຫາຍຈະໄດ້ຕົວແທນຮູບຈົນກວ່າການຢຸດຈະສິ້ນສຸດ ຫຼື ທ່ານຣີເຊັດ.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>ແຫຼ່ງ staging ລົ້ມເຫຼວບໍ່ດົນມານີ້. ເບິ່ງຂໍ້ຜິດພາດຫຼ້າສຸດຂ້າງລຸ່ມ.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>ການຕິດຕັ້ງນີ້ບໍ່ແມ່ນ production, ແຕ່ SyncFrom ບໍ່ໄດ້ລະບຸແຫຼ່ງ: ຈຶ່ງບໍ່ມີການດຶງຂໍ້ມູນ.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>ຄິວວຽກ (expqueue) ບໍ່ພ້ອມໃຊ້ງານ: ນາມແຝງທີ່ບໍ່ທັນເວລາຈະຖືກສ້າງໂດຍຄຳຂໍຖັດໄປ, ການສ້າງລ່ວງໜ້າຫຼັງເຜີຍແຜ່ຈະຖືກຂ້າມ ແລະ ການຣັນຈຳນວນຫຼາຍຖືກຈຳກັດໃນຂອບເຂດນ້ອຍ.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>ວຽກນາມແຝງຮູບພາບບາງວຽກລົ້ມເຫຼວຖາວອນ. ເບິ່ງສາເຫດໄດ້ທີ່ ຕັ້ງຄ່າລະບົບ &gt; ຄິວວຽກ.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>ການຣັນຈຳນວນຫຼາຍຖືກຢຸດຊົ່ວຄາວ.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>ມີນາມແຝງລົ້ມເຫຼວໃນ 24 ຊົ່ວໂມງທີ່ຜ່ານມາ. ປະຫວັດການຣັນລະບຸລາຍການໄວ້.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>ກຸນແຈລົງນາມມີອາຍຸເກີນໜຶ່ງປີ. ການໝູນວຽນກຸນແຈຈະເຮັດໃຫ້ທີ່ຢູ່ເກົ່າຍັງໃຊ້ໄດ້ໃນຊ່ວງຜ່ອນຜັນ.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>ຍັງບໍ່ມີກຸນແຈລົງນາມ: ມັນຖືກສ້າງພ້ອມກັບທີ່ຢູ່ on-demand ທຳອິດ.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>24 ຊົ່ວໂມງທີ່ຜ່ານມາ</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>ນາມແຝງທີ່ສ້າງແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>ຕົວແທນຮູບທີ່ຕອບກັບ</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>ຄວາມລົ້ມເຫຼວ</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>ໄຟລ໌ທີ່ດຶງມາ</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>ການຣັນທີ່ເລີ່ມແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>ວຽກທີ່ລໍຖ້າ / ກຳລັງຣັນ</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>ນັບຈາກ %lines ແຖວຫຼ້າສຸດຂອງ %file ເຊິ່ງຍ້ອນໄປເຖິງ %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>ໂໝດ ແລະ ການສົ່ງມອບ</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>ໂໝດ</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>ຕາມການຮ້ອງຂໍ</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>ຮູບແບບທີ່ຢູ່</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>ການສົ່ງມອບ</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>ເວລາລໍຖ້ານານສຸດຂອງຄຳຂໍ</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ວິ</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>ການແປງພ້ອມກັນ</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>ບໍ່ຫວ່າງ %busy ຈາກ %max ໃນຂະນະນີ້</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>ການເລືອກຮູບແບບອັດຕະໂນມັດ</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ເປີດ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ປິດ</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>ຕົວແທນຮູບ ແລະ ສະຄຣິບສະຫຼັບ</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>ການສ້າງລ່ວງໜ້າຫຼັງເຜີຍແຜ່</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>ນາມແຝງຂອງເວັບໄຊ</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>ຕົວແປງຂອງຮູບແບບທາງເລືອກ</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>ຕົວແປງ</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>ລຳດັບທີ່ລອງ</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>ທີ່ຕ້ອງການ</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ແມ່ນ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ບໍ່</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>ຕົວນາມແຝງເອງຖືກສ້າງໂດຍຕົວແປງໃນ [ImageConverterSettings], ຄືເກົ່າ; ຕົວແປງເຫຼົ່ານີ້ຂຽນຮູບແບບ WebP ແລະ AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>ສະພາບແວດລ້ອມ ແລະ ແຫຼ່ງ</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>ການຕິດຕັ້ງນີ້</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production: ບໍ່ດຶງຂໍ້ມູນຈັກເທື່ອ)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>ດຶງຈາກ</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>ບໍ່ມີ</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>ທີ່ຢູ່ແຫຼ່ງ</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>ບໍ່ໄດ້ຕັ້ງຄ່າ</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>ຂໍ້ມູນຢັ້ງຢືນຕົວຕົນ</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>ຂໍ້ມູນລັບ %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ບໍ່ມີ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ສະຖານະການເຮັດວຽກ</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>ກຳລັງເຮັດວຽກ</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>ຢຸດຊົ່ວຄາວຈົນເຖິງ %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>ລົ້ມເຫຼວ</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>ລົ້ມເຫຼວຕິດຕໍ່ກັນ</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>ຢຸດຫຼັງ %count ຄັ້ງ</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>ຂໍ້ຜິດພາດຫຼ້າສຸດ</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>ສຳເລັດຄັ້ງຫຼ້າສຸດ</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>ຣີເຊັດຄວາມລົ້ມເຫຼວ ແລະ ຖາມແຫຼ່ງອີກຄັ້ງ</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>ຄິວວຽກ</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>ປະເພດວຽກ</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>ລໍຖ້າ</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>ກຳລັງຣັນ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ລົ້ມເຫຼວ</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>ບໍ່ໄດ້ລົງທະບຽນ</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>ຄິວວຽກບໍ່ພ້ອມໃຊ້ງານ.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>ການຣັນຈຳນວນຫຼາຍຖືກຢຸດ</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>ຕັ້ງແຕ່ %time ໂດຍ %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>ອະນຸຍາດໃຫ້ຣັນຈຳນວນຫຼາຍ</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>ກຸນແຈລົງນາມ</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>ກຸນແຈ</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>ໃນບ່ອນເກັບຂໍ້ມູນລັບ</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ຍັງບໍ່ມີ</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>ອາຍຸ</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days ມື້ (ຕັ້ງແຕ່ %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>ກຸນແຈກ່ອນໜ້າ</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>ໃຊ້ໄດ້ຈົນເຖິງ %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>ໝູນວຽນກຸນແຈ</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>ທີ່ຢູ່ທີ່ລົງນາມດ້ວຍກຸນແຈປັດຈຸບັນຍັງໃຊ້ໄດ້ໃນຊ່ວງຜ່ອນຜັນ (SigningKeyGrace), ຈາກນັ້ນຈະຕອບເປັນຕົວແທນຮູບຈົນກວ່າຈະສ້າງໜ້າໃໝ່.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>ໝູນວຽນດຽວນີ້</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>ເຮັດວຽກແນວໃດ</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, ໂໝດ render, staging ແລະ ບັນທຶກ</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>ຕາມການຮ້ອງຂໍ (ຄ່າເລີ່ມຕົ້ນ): ໜ້າເວັບລິ້ງນາມແຝງທີ່ຍັງບໍ່ມີໄປຫາທີ່ຢູ່ທີ່ລົງນາມໄວ້. ຄຳຂໍທຳອິດສ້າງໃຫ້ພາຍໃນເວລາລໍຖ້ານານສຸດ, ບໍ່ດັ່ງນັ້ນຈະຕອບເປັນຕົວແທນຮູບກາງໆ ແລ້ວໃຫ້ວຽກໜຶ່ງເຮັດສ່ວນທີ່ເຫຼືອ; ສະຄຣິບສະຫຼັບຈະແທນຕົວແທນຮູບເມື່ອມີຮູບພາບແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>ໂໝດ render: ແມ່ແບບສ້າງນາມແຝງໃນຂະນະສະແດງໜ້າ, ຄືເກົ່າ. ສະຫຼັບລະຫວ່າງສອງໂໝດໄດ້ທຸກເວລາ; ບໍ່ຕ້ອງຍ້າຍຂໍ້ມູນໃດໆ.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>ການຕິດຕັ້ງແບບ staging ດຶງໄຟລ໌ຕົ້ນສະບັບ ແລະ ນາມແຝງທີ່ຂາດຈາກແຫຼ່ງຂອງມັນ; ແຫຼ່ງທີ່ລົ້ມເຫຼວຈະຖືກຢຸດຫຼັງລົ້ມເຫຼວຕິດຕໍ່ກັນ ແລະ ຜູ້ດູແລຈະໄດ້ຮັບອີເມວບໍ່ເກີນໜຶ່ງສະບັບຕໍ່ຊົ່ວໂມງ.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>ການຣັນຈຳນວນຫຼາຍ ແລະ ການສ້າງລ່ວງໜ້າຫຼັງເຜີຍແຜ່ແມ່ນວຽກຂອງຄິວວຽກ, ມີລຳດັບຄວາມສຳຄັນຕ່ຳກວ່າຜູ້ເຂົ້າຊົມ. ການລຶບນາມແຝງຍັງລ້າງແຄຊການຕອບກັບຂອງ Velocity ດ້ວຍ, ເພື່ອບໍ່ໃຫ້ໄຟລ໌ທີ່ລຶບແລ້ວຖືກສົ່ງຈາກແຄຊ.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>ທຸກນາມແຝງທີ່ສ້າງ, ຕົວແທນຮູບທີ່ຕອບ, ໄຟລ໌ທີ່ດຶງມາ ແລະ ການຣັນ ແມ່ນໜຶ່ງແຖວໃນ %file. ແຖວຄຳສັ່ງມີເຄື່ອງມືດຽວກັນ: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>ວຽກ %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done ຈາກ %total ຮູບພາບ</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ການຣັນ</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>ຂອບເຂດ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ຜົນລັບ</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>ຍົກເລີກວຽກນີ້</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>ວຽກ %job ບໍ່ແມ່ນວຽກນາມແຝງຮູບພາບ ຫຼື ຖືກລຶບອອກຈາກຄິວແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>ຜົນລັບຂອງການຣັນ %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>ການຣັນຈຳນວນຫຼາຍຖືກຢຸດຊົ່ວຄາວ</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>ຢຸດຊົ່ວຄາວຕັ້ງແຕ່ %time ໂດຍ %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>ການຢຸດຊົ່ວຄາວຈະຢຸດທຸກການຣັນຈຳນວນຫຼາຍຫຼັງຮູບພາບປັດຈຸບັນ, ໃນທຸກເຊີບເວີ; ການຣັນທີ່ຢູ່ໃນຄິວຈະລໍຖ້າ. ນາມແຝງສຳລັບຜູ້ເຂົ້າຊົມຍັງຖືກສ້າງຕໍ່ໄປ.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>ຣັນຈຳນວນຫຼາຍຕໍ່</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>ເຫດຜົນ (ບໍ່ບັງຄັບ)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>ຢຸດການຣັນຈຳນວນຫຼາຍຊົ່ວຄາວ</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>ເລີ່ມການຣັນ</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>ການຣັນແມ່ນວຽກຂອງຄິວວຽກ: ທ່ານອອກຈາກໜ້ານີ້ແລ້ວກັບມາໃໝ່ໄດ້.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>ຖ້າບໍ່ມີຄິວວຽກ, ການຣັນຈະເຮັດໃນຄຳຂໍນີ້, ສູງສຸດ %count ຮູບພາບ.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ການດຳເນີນການ</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>ສ້າງ: ສ້າງນາມແຝງທີ່ຂາດຫາຍ</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>ສ້າງໃໝ່: ລຶບແລ້ວສ້າງອີກຄັ້ງ</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>ລ້າງ: ລຶບອອກ (ສ້າງໃໝ່ຕາມການຮ້ອງຂໍ)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>ຊິງຄ໌ໃໝ່: ດຶງໄຟລ໌ຈາກແຫຼ່ງ staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(ສະເພາະການຕິດຕັ້ງແບບ staging)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>ທັງເວັບໄຊ</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>ໜຶ່ງໂນດ</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>ໜຶ່ງໂນດ ແລະ ຕົ້ນໄມ້ຍ່ອຍຂອງມັນ</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID ໂນດ</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>ຄລາສ</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>ແອັດທຣິບິວ</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>ປ່ຽນແປງຕັ້ງແຕ່</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>ວັນທີ (2026-11-01) ຫຼື ໄລຍະເວລາທີ່ຜ່ານມາ (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>ຮູບພາບສູງສຸດ</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>ນາມແຝງ (ບໍ່ເລືອກ: ທັງໝົດ)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>ຊິງຄ໌ໃໝ່</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>ທົດລອງຣັນ: ນັບຢ່າງດຽວ (ການຊິງຄ໌ໃໝ່ກວດແຫຼ່ງໂດຍບໍ່ເກັບຫຍັງ)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>ຂຽນທັບໄຟລ໌ທີ່ແຕກຕ່າງ (ຊິງຄ໌ໃໝ່)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>ເລີ່ມຣັນ</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>ການຣັນຫຼ້າສຸດ</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>ວຽກ</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ຄວາມຄືບໜ້າ</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>ຢູ່ໃນຄິວ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ການດຳເນີນການ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ຍົກເລີກ</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>ຍັງບໍ່ມີການຣັນຈຳນວນຫຼາຍ ຫຼື ການຊິງຄ໌ໃໝ່.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>ຮູບພາບໜຶ່ງຮູບ</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>ທີ່ຢູ່ທີ່ແມ່ແບບໄດ້ຮັບໃນຕອນນີ້, ຂະໜາດ ແລະ ປະເພດທີ່ຄຳນວນສຳລັບທຸກນາມແຝງ, ແລະ ມີແຕ່ລະໄຟລ໌ຢູ່ຫຼືບໍ່.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>ຄົ້ນຫາດ້ວຍ</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID ອອບເຈັກ</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ສະແດງ</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>ທ່ານບໍ່ມີສິດອ່ານອອບເຈັກນີ້.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>ອອບເຈັກນີ້ບໍ່ມີຮູບພາບ.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>ບໍ່ມີອອບເຈັກທີ່ມີ ID ນີ້.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>ອອບເຈັກ %object, ໂນດ %node, ເວີຊັນ %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>ຕົ້ນສະບັບ: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>ມີໄຟລ໌</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>ໄຟລ໌ຂາດຫາຍ</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>ນາມແຝງຂອງ %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>ນາມແຝງ</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ຂະໜາດ</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>ປະເພດ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ໄຟລ໌</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>ຮູບແບບ</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>ທີ່ຢູ່ໃນແມ່ແບບ</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>ມີ</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>ຂາດຫາຍ</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ບໍ່ຮອງຮັບປະເພດນີ້</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>ກວດສອບ</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>ສ້າງ</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>ບໍ່ມີຮູບພາບໃນຊ່ອງນີ້.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ເວລາ</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>ການເຊື່ອມຕໍ່ກັບແຫຼ່ງ</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>ຄຳຂໍ HEAD ໄປຫາແຫຼ່ງ staging, ພ້ອມຂໍ້ມູນຢັ້ງຢືນຕົວຕົນເມື່ອມີການລະບຸ. ຂໍ້ມູນຢັ້ງຢືນຕົວຕົນຖືກສົ່ງໄປ ແຕ່ບໍ່ສະແດງເລີຍ.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>ແຫຼ່ງ</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>ພ້ອມຂໍ້ມູນຢັ້ງຢືນຕົວຕົນ</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>ພາດບ່ອນເກັບຂໍ້ມູນ (ບໍ່ບັງຄັບ)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>ທົດສອບການເຊື່ອມຕໍ່</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>ບໍ່ມີແຫຼ່ງໃດມີ BaseURL. ແຫຼ່ງຖືກຕັ້ງໃນການຕັ້ງຄ່າ ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>ເຂົ້າເຖິງໄດ້</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>ຖືກປະຕິເສດ: ກວດຂໍ້ມູນຢັ້ງຢືນຕົວຕົນ</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>ບໍ່ພົບທີ່ແຫຼ່ງ</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>ບໍ່ມີການຕອບກັບ</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>ໝົດເວລາ</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>ຖືກປ່ຽນເສັ້ນທາງ (ບໍ່ຕາມ)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>ບໍ່ມີ BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>ບໍ່ແມ່ນພາດບ່ອນເກັບຂໍ້ມູນ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ທີ່ຢູ່</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ສະຖານະ</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>ສົ່ງແລ້ວ</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>ບໍ່ພົບຂໍ້ມູນລັບ</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>ຂໍ້ມູນລັບບໍ່ແມ່ນ user:password ຫຼື Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>ແຖວໃໝ່ຫຼ້າສຸດຂອງ %file, ໃໝ່ສຸດກ່ອນ.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>ຕັ້ງຄ່າລະບົບ &gt; ໄຟລ໌ບັນທຶກເຫດການ</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>ເຫດການ</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>ທຸກເຫດການ</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>ການຣັນ (ເລີ່ມ ແລະ ສິ້ນສຸດ)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>ພາດມີຄຳວ່າ</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>ແຖວ</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>ຕົວກັ່ນຕອງ</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>ຕິດຕາມ: ສະແດງແຖວໃໝ່ທັນທີທີ່ຂຽນ</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>ພາດ ແລະ ລາຍລະອຽດ</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>ບໍ່ມີແຖວຂອງບັນທຶກທີ່ກົງກັນ.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>ສິ່ງທີ່ຈະປ່ຽນເມື່ອບັນທຶກ</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>ສິ່ງທີ່ປ່ຽນແປງແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>ບັນທຶກລົງໃນ settings/override/image.ini.append.php, ດັ່ງນັ້ນຄ່າທີ່ນີ້ມີຜົນເໜືອທຸກ siteaccess. ຄ່າທີ່ສະແດງແມ່ນຄ່າທີ່ໃຊ້ຢູ່ສຳລັບ siteaccess ນີ້. ການບັນທຶກຈະຂໍໃຫ້ທ່ານຢືນຢັນຕົວຕົນກ່ອນ.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>ວິທີສ້າງ ແລະ ສົ່ງມອບນາມແຝງ.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>ດຶງຮູບພາບທີ່ຂາດຫາຍຈາກການຕິດຕັ້ງອື່ນ (alpha, dev, beta, stage, pro, post, arc). Production (pro) ບໍ່ດຶງຂໍ້ມູນຈັກເທື່ອ.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>ການຕັ້ງຄ່າ</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>ຄ່າ</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>ໃນ settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>ທີ່ຢູ່ຂອງແຕ່ລະແຫຼ່ງ ແລະ ຊື່ຂໍ້ມູນລັບທີ່ເກັບຂໍ້ມູນຢັ້ງຢືນຕົວຕົນ (user:password ຫຼື Bearer &lt;token&gt;). ຄ່າຂອງຂໍ້ມູນລັບຕັ້ງທີ່ ຕັ້ງຄ່າລະບົບ &gt; ຂໍ້ມູນລັບ ແລະ ບໍ່ສະແດງທີ່ນີ້ເລີຍ.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>ເບິ່ງຕົວຢ່າງການປ່ຽນແປງ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ບັນທຶກ</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>ກຳລັງຕິດຕາມ: ອັບເດດ %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>ຢຸດຊົ່ວຄາວ</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>ຟີດບໍ່ຕອບກັບ; ກຳລັງລອງອີກຄັ້ງ.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>ວຽກສິ້ນສຸດແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: ແມ່ແບບໄດ້ຮັບທີ່ຢູ່, ນາມແຝງຖືກສ້າງເມື່ອມີການຮ້ອງຂໍ. render: ແມ່ແບບສ້າງໃນຂະນະສະແດງໜ້າ (ພຶດຕິກຳເດີມ).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>ທີ່ຢູ່ຂອງນາມແຝງທີ່ຍັງບໍ່ໄດ້ສ້າງ: token (ລົງນາມແລ້ວ, ບໍ່ຕ້ອງໃຊ້ຖານຂໍ້ມູນ), ids-token, ids, node ຫຼື storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: ປ່ຽນເສັ້ນທາງໄປຫາໄຟລ໌ເມື່ອເວັບເຊີບເວີໃຫ້ບໍລິການບ່ອນເກັບຂໍ້ມູນ, ບໍ່ດັ່ງນັ້ນໄຟລ໌ຈະຖືກສະຕຣີມ.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>ຈຳນວນວິນາທີທີ່ຄຳຂໍໃຊ້ສ້າງ ຫຼື ດຶງນາມແຝງໄດ້; ຈາກນັ້ນຈະຕອບເປັນຕົວແທນຮູບ ແລະ ໃຫ້ວຽກໜຶ່ງເຮັດສ່ວນທີ່ເຫຼືອ.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>ຕົວແປງທີ່ລອງກ່ອນສຳລັບຮູບແບບ WebP ແລະ AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>ຕອບ WebP ຫຼື AVIF ໃຫ້ເບຣາວເຊີທີ່ຮ້ອງຂໍ, ສຳລັບນາມແຝງທີ່ລະບຸ Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>ຮູບພາບກາງໆຂະໜາດທີ່ເໝາະສົມໃນຂະນະທີ່ຮູບພາບຍັງບໍ່ມີ.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>ສະຄຣິບນ້ອຍໆທີ່ແທນຕົວແທນຮູບດ້ວຍຮູບພາບຈິງເມື່ອມີແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>ຫຼັງເຜີຍແຜ່, ວຽກໜຶ່ງຈະສ້າງນາມແຝງຂອງຮູບພາບໃໝ່ສຳລັບທຸກ siteaccess ທີ່ກ່ຽວຂ້ອງ.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>ການແປງພ້ອມກັນໃນເຊີບເວີດຽວ.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>ລຳດັບຄວາມສຳຄັນຂອງໂປຣເຊສ (nice) ຂອງການຣັນຈຳນວນຫຼາຍ, 0 ເຖິງ 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>ຈຳນວນວິນາທີທີ່ເບຣາວເຊີ ແລະ ແຄຊເກັບນາມແຝງທີ່ສ້າງແລ້ວໄດ້.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>ຈຳນວນວິນາທີທີ່ທີ່ຢູ່ຂອງຮູບພາບສະບັບຮ່າງ ຫຼື ຕົວຢ່າງຍັງໃຊ້ໄດ້.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>ຈຳນວນວິນາທີທີ່ກຸນແຈລົງນາມກ່ອນໜ້າຍັງໃຊ້ໄດ້ຫຼັງການໝູນວຽນ.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>ສະພາບແວດລ້ອມຂອງການຕິດຕັ້ງນີ້.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>ສະພາບແວດລ້ອມທີ່ດຶງຮູບພາບທີ່ຂາດຫາຍ; none: ບໍ່ດຶງຫຍັງເລີຍ.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>ໜຶ່ງລາຍການຕໍ່ແຖວ: ຄຳນຳໜ້າບ່ອນເກັບຂໍ້ມູນໃນເຄື່ອງ;ຄຳນຳໜ້າ ຫຼື ທີ່ຢູ່ຂອງແຫຼ່ງ, ສຳລັບພາດບ່ອນເກັບຂໍ້ມູນທີ່ແຕກຕ່າງ.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>ຈຳນວນວິນາທີສູງສຸດທີ່ຄຳຂໍໜຶ່ງໄປຫາແຫຼ່ງໃຊ້ໄດ້.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>ໄຟລ໌ທີ່ໃຫຍ່ທີ່ສຸດທີ່ດຶງຈາກແຫຼ່ງ, ເປັນໄບຕ໌.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>ຈຳນວນຄວາມລົ້ມເຫຼວຕິດຕໍ່ກັນທີ່ເຮັດໃຫ້ແຫຼ່ງຖືກຢຸດຊົ່ວຄາວ.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>ໄລຍະເວລາທີ່ແຫຼ່ງທີ່ລົ້ມເຫຼວຖືກຢຸດຊົ່ວຄາວ.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>ສົ່ງອີເມວຫາຜູ້ດູແລເມື່ອແຫຼ່ງຖືກຢຸດຊົ່ວຄາວ (ຫຼາຍສຸດຊົ່ວໂມງລະຄັ້ງ).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>ໜຶ່ງທີ່ຢູ່ອີເມວຕໍ່ແຖວ; ຖ້າຫວ່າງ: ໃຊ້ AdminEmail ຂອງ site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>ທີ່ຢູ່ຂອງການຕິດຕັ້ງຕົ້ນທາງ %block, ເຊັ່ນ https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>ຊື່ຂໍ້ມູນລັບທີ່ເກັບຂໍ້ມູນຢັ້ງຢືນຕົວຕົນ, ຫຼື env:VARIABLE. ຢ່າໃສ່ຂໍ້ມູນຢັ້ງຢືນຕົວຕົນໂດຍກົງ.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(ບໍ່ມີ)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>ຄ່າເລີ່ມຕົ້ນ: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>ຕັ້ງໄວ້ທີ່ນີ້; ເລືອກເພື່ອລຶບ</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>ສືບທອດມາ</translation>
     </message>
 </context>
 </TS>

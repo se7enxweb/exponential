@@ -16591,6 +16591,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>מעלא/מפקא</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>שמהא חלופא דצורתא</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>מולד להנא פריטא</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>מולד לאילנא תחתיא</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>מולד מן דריש להנא פריטא</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>מולד מן דריש לאילנא תחתיא</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>שקול להנא פריטא</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>שקול לאילנא תחתיא</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86431,6 +86459,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>בלוק server דאתרא עתיקא: location = עם return, if ($args) לשאילתא, rewrite כאתותא כלניתא ו map דדפא יחידאי.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>שמהא חלופא דצורתא</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>שמהא חלופא דצורתא הוין נוסחא מתרבין וגזירא דצורתא דקלבא מחוין לה. בהרכא חזא איכנא עבידין, ארהט עבדא סגיאא על אתרא, בחון צורתא חדא או מבועא מטיבא, דוב בתשעיתא דרוהטא ושחלף טויבא.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>פלגא דדפא</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>פתורא</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>רוהטא סגיאא</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>מסאנא דבוחרנא</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>תשעיתא דרוהטא</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>טויבא</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>מצא אנת למחזא כל מדם בהרכא. שוחלפא דטויבא, ארהטא דעבדא ומסאנא דעבדין פנקיתא מבעין מדברנותא setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>מדם דבעא תורצא</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>אלצא render: קלבא עבדין שמהא חלופא דלא איתיהון במא דדפא מתעבד, איך קדים. מונעא on-demand, מחלפנא ועבדא דבסתרא לא מתתשמשין.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>מחויותא דטופסא פתיחא הי, אלא לית משחלפנא בהרכא דמצא למכתבו WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>הדא הי תשמשתא מטיבתא (staging), אלא למבועה לית לה BaseURL: צורתא דלא איתיהין לא מתיתין.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>מבועא מטיבא אתפסק בתר פוסחא דמתבעין חד בתר חד: צורתא דלא איתיהין מתיהבן להין מחלפנא עדמא דמתגמר פוסקא או דאפסת לה.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>מבועא מטיבא פסח בזבן קריבא. חזי טעיותה אחריתא לתחת.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>הדא תשמשתא לא איתיה יותרנתא, אלא SyncFrom לא מתכנא מבועא: מדם לא מתיתא.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>סדרא דעבדא (expqueue) לא איתיה: שמהא חלופא דלא אשתותפו בזבנהון מתעבדין בבעיתא דבתר הי, עבדא קדמיא דבתר נשרא מתדלג ורוהטא סגיאא מתכלין לאתרא זעורא.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>אית עבדא דשמהא חלופא דצורתא דלא אצלחו לעלם. טויבא &gt; סדרא דעבדא מחוא למנא.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>רוהטא סגיאא מפסקא אנון.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>שמהא חלופא לא אצלחו בארבעין וארבע שעא אחריא. תשעיתא דרוהטא מניא להון.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>קלידא דחתמא סגי מן שנתא. חולפה נטר מונעא עתיקא תקיפא בזבן חוסיא.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>לית עדלהשא קלידא דחתמא: מתעבד עם מונעא קדמיא דאיתוהי on-demand.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>ארבעין וארבע שעא אחריא</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>שמהא חלופא דאתמלדו</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>מחלפנא דאתפניו</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>פוסחא</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>פנקיתא מטיבתא</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>רוהטא דשריו</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>עבדא מסכין / רהטין</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>מנין מן %lines סטרא אחריא ד%file, דמטין עדמא ל%time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>אלצא ושודעא</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>אלצא</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>בבעיתא</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>טופסא דמונעא</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>שודעא</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>מסכיותא מתירתא דבעיתא</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds רג</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>שוחלפא בחד זבנא</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy מן %max לאין עדמא השא</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>מחויותא דטופסא</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>פתיחא</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>סגירא</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>מחלפנא וסכריפט דשוחלפא</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>עבדא קדמיא בתר נשרא</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>שמהא חלופא דאתרא</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>משחלפנא דטופסא משחלפא</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>משחלפנא</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>אתבעי</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>גביא</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>אין</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>לא</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>שמהא חלופא בנפשהון מתעבדין במשחלפנא ד[ImageConverterSettings], איך קדים; הלין כתבין טופסא ד WebP ו AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>עומרא ומבועא</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>הדא תשמשתא</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(יותרנתא: לא מיתיא לעלם)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>מיתא מן</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>מדם</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>מונעא דמבועא</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>לא מסים</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>תודעתא</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>ארזא %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>לית</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>מקמא</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>פלח</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>מפסק עדמא ל%time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>מתפסח</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>פוסחא חד בתר חד</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>פסקא בתר %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>טעיותא אחריתא</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>צלחתא אחריתא</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>אפסי לפוסחא ושאל למבועא תוב</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>סדרא דעבדא</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>גנסא דעבדא</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>מסכא</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>רהטא</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>לא אצלח</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>לא מסתגל</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>סדרא דעבדא לא איתוהי.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>רוהטא סגיאא מפסקא</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>מן %time באידא ד%user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>רוהטא סגיאא מצין למרהט</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>קלידא דחתמא</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>קלידא</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>באוצרא דארזא</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>לית עדלהשא</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>עומרא</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days יומתא (מן %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>קלידא קדמיא</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>תקיף עדמא ל%time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>חולף לקלידא</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>מונעא דחתימין בקלידא דהשא נטרין פולחנא בזבן חוסיא (SigningKeyGrace), ומן בתר הנא פנין מחלפנא עדמא דדפא תוב מתעבדין.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>חולף השא</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>איכנא פלח</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, אלצא render, מטיבותא ורושמא</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (מן קדם): דפא מקרב שמא חלופא דלא איתוהי עדלהשא למונעא חתימא. בעיתא קדמיתא עבדא לה בית מסכיותא מתירתא, או מפניא למחלפנא דלא גנבא ועבדא מושט הו עבדא; סכריפט דשוחלפא מחלף למחלפנא מא דצורתא איתיה.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>אלצא render: קלבא עבד לשמא חלופא במא דדפא מתעבד, איך קדים. מצא אנת למשחלפו בינת תריהון בכל זבן; לא כל מדם מתבעא למשחלפו.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>תשמשתא מטיבתא מיתיא מן מבועה לשרשא ולשמהא חלופא דחסירין לה; מבועא דמתפסח מתפסק בתר פוסחא חד בתר חד ולמדברנא משתדרא גליתא אלקטרוניתא חדא בשעתא למיתותא.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>רוהטא סגיאא ועבדא קדמיא דבתר נשרא הוין עבדא דסדרא דעבדא, בקדמיותא מחיתא מן עמורא. שוקלא דשמהא חלופא מדכא אף לגזא דפושקא ד Velocity, דפנקיתא דאשתקלת לא מתתיהבא מנה.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>כל שמא חלופא דאתעבד, מחלפנא דאתפני, פנקיתא מטיבתא ורוהטא הו סטרא חד ד%file. סטר פוקדנא אית לה מסאנא דהוין הלין: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>עבדא %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done מן %total צורתא</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>רוהטא</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>פושקא</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>פלטא</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>בטל להנא עבדא</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>עבדא %job לא הו עבדא דשמהא חלופא דצורתא, או אתשקל מן סדרא.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>פלטא דרוהטא %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>רוהטא סגיאא מפסקא</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>מפסק מן %time באידא ד%user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>פוסקא מפסק כל רוהטא סגיאא בתר צורתה דהשא, על כל משמשנא; רוהטא דבסדרא מסכין. שמהא חלופא דעמורא תוב מתעבדין.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>אומן רוהטא סגיאא</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>עלתא (לא עליצא)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>פסוק רוהטא סגיאא</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>שרי רוהטא</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>רוהטא הוין עבדא דסדרא דעבדא: מצא אנת למשבק לדפא ולמפנא בתר הנא.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>בלעד סדרא דעבדא רוהטא מתעבד בהדא בעיתא, על מרימותא ד%count צורתא.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>סוערנא</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>מולד: עבד לשמהא חלופא דחסירין</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>מולד מן דריש: שקול ועבד להון תוב</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>שקול: שקול להון (מתעבדין תוב בבעיתא)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: מיתא פנקיתא מן מבועא מטיבא</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(בתשמשתא מטיבתא בלחוד)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>כלה אתרא</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>קטרא חד</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>קטרא ואילנה תחתיא</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>מונעא דקטרא</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>זניא</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>דיליותא</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>אשתחלף מן</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>יומא (2026-11-01) או זבנא דעבר (12 שעא, 2 יומתא).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>מרימותא דצורתא</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>שמהא חלופא (אן לא אתבחר אפלא חד: כלהון)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>רוהטא דנסיונא: מנא בלחוד (resync בחר למבועא ולא נטר מדם)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>כתוב על פנקיתא דשנין (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>שרי לרוהטא</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>רוהטא אחריא</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>עבדא</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>מקדמנותא</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>אתסדר</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>סוערנא</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>בוטלא</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>לית עדלהשא רוהטא סגיאא או resync.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>צורתא חדא</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>מונעא דקלבא משכח השא, רבותא וגנסא דמנין לכל שמא חלופא, ואן פנקיתא איתיה או לא.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>בצי ב</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID דצבותא</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Id</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>מחויא</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>לא משתרא לך למקרא להדא צבותא.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>להדא צבותא לית צורתא.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>לית צבותא בהנא id.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>צבותא %object, קטרא %node, נוסחא %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>קדמיא: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>פנקיתא איתיה</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>פנקיתא חסירא</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>שמהא חלופא ד%name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>שמא חלופא</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>רבותא</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>גנסא</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>פנקיתא</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>טופסא</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>מונעא בקלבא</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>איתיה</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>חסירא</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>לא להנא גנסא</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>בחון</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>עבד</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>לא אית צורתא בהנא חקלא.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>זבנא</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms מל</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>חושרא למבועא</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>בעיתא HEAD למבועא מטיבא, עם תודעתה אן אתכנית. תודעתא משתדרא ולא מתחזיא לעלם.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>מבועא</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>עם תודעתא</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>שבילא דאוצרא (לא עליצא)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>בחון לחושרא</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>לא אית למבועא אפלא חד BaseURL. מבועא מסתימין בטויבא ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>משתכח</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>אתרגיג: בחון לתודעתא</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>לא אשתכח במבועא</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>לית פותגמא</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>זבנא חלף</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>אתפני (לא אתבעי בתרה)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>לית BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>לא הו שבילא דאוצרא</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>מונעא</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>מקמא</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>אשתדר</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>ארזא חסיר</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>ארזא לא הו user:password או Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>סטרא חדתא ד%file, חדתא קדמיא.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>טויבא &gt; פנקיתא דרושמא</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>גדשא</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>כלהון גדשא</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>רוהטא (שריא ושולמא)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>שבילא אית בה</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>סטרא</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>מצללנא</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>בתר: חוי סטרא חדתא מא דמתכתבין</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>שבילא ופורשא</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>לית סטרא ברושמא דמתחדא.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>מנא משחלף נטרא</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>מנא אשתחלף</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>מתנטר ב settings/override/image.ini.append.php, מטל הדא טימא דבהרכא עלים על כל siteaccess. טימא דמתחזין הוין הלין דפלחין להנא siteaccess. נטרא שאל לך לשררא דמן אנת קדם.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>איכנא שמהא חלופא מתעבדין ומתיהבין.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>מיתיותא דצורתא דחסירן מן תשמשתא אחרתא (alpha, dev, beta, stage, pro, post, arc). יותרנתא (pro) לא מיתיא לעלם.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>טויבא</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>טימא</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>ב settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>מונעא דכל מבועא ושמא דארזא דאחיד תודעתה (user:password או Bearer &lt;token&gt;). טימא דארזא מסתים בטויבא &gt; ארזא ולא מתחזא בהרכא לעלם.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>חזי קדם שוחלפא</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>נטר</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>מתבע: אתחדת %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>מפסק</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>מרעיתא לא אפנית; מקרב תוב.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>עבדא גמר.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: קלבא קבלין מונעא, ושמא חלופא מתעבד מא דמתבעא. render: קלבא עבד לה במא דדפא מתעבד (עבדא קדמיא).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>מונעא דשמא חלופא דלא עביד עדלהשא: token (חתימא, לא בעא בסיס ידעתא), ids-token, ids, node או storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: מפניתא לפנקיתא מא דמשמשנא דצורתא משמש לאוצרא, אלא פנקיתא מתעבדא בגריא.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>רגעא דבעיתא מציא למתרבא בהון למעבד או למיתא שמא חלופא; ומן בתר הנא מפניא למחלפנא ועבדא מושט הו עבדא.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>משחלפנא דמתנסא קדמיא לטופסא ד WebP ו AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>אפני ב WebP או AVIF למפתחנא דבעין לה, לשמהא חלופא דמנין Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>צורתא דלא גנבא דרבותא דמתבעא מא דצורתא חסירא.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>סכריפט זעורא דמחלף למחלפנא בצורתא שרירתא מא דאיתיה.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>בתר נשרא עבדא מעבד לשמהא חלופא דצורתא חדתתא לכל siteaccess דקריב.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>שוחלפא בחד זבנא על משמשנא חד.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>קדמיותא דתורצא (nice) דרוהטא סגיאא, מן 0 עדמא ל 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>רגעא דמפתחנא וגזא מצין למנטרו שמא חלופא דאתעבד.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>רגעא דמונעא דצורתא דמשוחלפא או דחזיתא קדמיתא נקום תקיף.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>רגעא דקלידא דחתמא קדמיא נקום תקיף בתר חולפא.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>עומרא דהדא תשמשתא.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>עומרא דמנה צורתא דחסירן מתיתין; none: מדם לא מתיתא.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>חד בכל סטרא: קדמיתא דאוצרא אתריא;קדמיתא דמבועא או מונעא, לשבילא דאוצרא דשנין.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>רגעא דבעיתא חדא למבועא מציא למסב.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>פנקיתא רבתא דמתיתיא מן מבועא, בבאיטא.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>מנינא דפוסחא חד בתר חד דבתרה מבועא מתפסק.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>כמא זבנא מבועא דמתפסח מפסק איתוהי.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>שדר גליתא למדברנא מא דמבועא מתפסק (חדא בשעתא למיתותא).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>מונעא חד דגליתא אלקטרוניתא בכל סטרא; ספיקא: AdminEmail ד site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>מונעא דתשמשתא דמבועא %block, איך https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>שמא דארזא עם תודעתא, או env:VARIABLE. לא תודעתא בנפשה לעלם.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(לית)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>מן קדם: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>מסתים בהרכא; סים סמא למשקל</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>מירתא</translation>
     </message>
 </context>
 </TS>

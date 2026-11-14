@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>ආයාත/අපනයනය</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>රූප අන්වර්ථ</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>මෙම අයිතමය සඳහා උත්පාදනය කරන්න</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>උප ගස සඳහා උත්පාදනය කරන්න</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>මෙම අයිතමය සඳහා නැවත උත්පාදනය කරන්න</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>උප ගස සඳහා නැවත උත්පාදනය කරන්න</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>මෙම අයිතමය සඳහා ඉවත් කරන්න</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>උප ගස සඳහා ඉවත් කරන්න</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>පැරණි අඩවියක server කොටස: return සමඟ location =, විමසුමක් සඳහා if ($args), වයිල්ඩ්කාඩ් ලෙස rewrite සහ තනි පිටුවල map එකක්.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>රූප අන්වර්ථ</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>රූප අන්වර්ථ යනු සැකිලි පෙන්වන රූපයක පරිමාණය කළ සහ කප්පාදු කළ පිටපත් ය. මෙහි ඒවා සාදන ආකාරය බලන්න, අඩවිය පුරා තොග කාර්යයන් ධාවනය කරන්න, එක් රූපයක් හෝ staging මූලයක් පරීක්ෂා කරන්න, ධාවන ඉතිහාසය අනුගමනය කරන්න සහ සැකසුම් වෙනස් කරන්න.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>පිටුවේ කොටස්</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>උපකරණ පුවරුව</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>තොග ධාවන</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>පරීක්ෂණ මෙවලම්</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>ධාවන ඉතිහාසය</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>සැකසුම්</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>ඔබට මෙහි සියල්ල බැලිය හැක. සැකසුම් වෙනස් කිරීමට, කාර්යයන් ධාවනය කිරීමට සහ ගොනු සාදන මෙවලම් සඳහා setup/managealiases ප්‍රතිපත්තිය අවශ්‍ය වේ.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>අවධානය අවශ්‍ය දේ</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Render ප්‍රකාරය: පිටුව ගොඩනඟන අතරතුර සැකිලි අස්ථානගත අන්වර්ථ සාදයි, පෙර මෙනි. on-demand ලිපින, ස්ථානගත දර්ශක සහ පසුබිම් කාර්යයන් භාවිත නොකෙරේ.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>ආකෘති සාකච්ඡාව සක්‍රීය ය, නමුත් මෙහි කිසිදු පරිවර්තකයකට WebP ලිවිය නොහැක.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>මෙය staging ස්ථාපනයකි, නමුත් එහි මූලයට BaseURL නැත: අස්ථානගත රූප ලබා ගත නොහැක.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>අඛණ්ඩ අසාර්ථකවීම් නිසා staging මූලය විරාම කර ඇත: විරාමය අවසන් වන තුරු හෝ ඔබ යළි සකසන තුරු අස්ථානගත රූපවලට ස්ථානගත දර්ශක ලැබේ.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>staging මූලය මෑතදී අසාර්ථක විය. එහි අවසාන දෝෂය පහත බලන්න.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>මෙම ස්ථාපනය production නොවේ, නමුත් SyncFrom කිසිදු මූලයක් නම් නොකරයි: කිසිවක් ලබා නොගනී.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>කාර්ය පෝලිම (expqueue) නොමැත: කාලය මග හැරෙන අන්වර්ථ ඊළඟ ඉල්ලීමෙන් සාදනු ලැබේ, ප්‍රකාශනයෙන් පසු පූර්ව-උත්පාදනය මඟ හැරේ, තොග ධාවන කුඩා විෂය පථයන්ට සීමා වේ.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>රූප අන්වර්ථ කාර්ය කිහිපයක් සදහටම අසාර්ථක විය. හේතුව පිහිටුවීම &gt; කාර්ය පෝලිමේ පෙන්වයි.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>තොග ධාවන විරාම කර ඇත.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>පසුගිය පැය 24 තුළ අන්වර්ථ අසාර්ථක විය. ධාවන ඉතිහාසය ඒවා ලැයිස්තුගත කරයි.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>අත්සන් යතුර වසරකට වඩා පැරණි ය. එය මාරු කිරීමෙන් පැරණි ලිපින සහන කාලය තුළ වලංගුව පවතී.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>තවම අත්සන් යතුරක් නැත: එය පළමු on-demand ලිපිනය සමඟ සාදනු ලැබේ.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>පසුගිය පැය 24</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>උත්පාදනය කළ අන්වර්ථ</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>පිළිතුරු දුන් ස්ථානගත දර්ශක</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>අසාර්ථකවීම්</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>stage කළ ගොනු</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>ආරම්භ කළ ධාවන</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>බලා සිටින / ධාවනය වන කාර්යයන්</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file හි අවසාන පේළි %lines ගණන් කර ඇත, ඒවා %time දක්වා දිවෙයි.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>ප්‍රකාරය සහ බෙදාහැරීම</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>ප්‍රකාරය</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>ඉල්ලූ විට</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>ලිපින ආකාරය</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>බෙදාහැරීම</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>ඉල්ලීමක දීර්ඝතම පොරොත්තු කාලය</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>තත්. %seconds</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>එකවර පරිවර්තන</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>දැන් %max න් %busy කාර්යබහුල</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>ආකෘති සාකච්ඡාව</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>සක්‍රීය</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>අක්‍රීය</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>ස්ථානගත දර්ශකය සහ හුවමාරු ස්ක්‍රිප්ටය</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>ප්‍රකාශනයෙන් පසු පූර්ව-උත්පාදනය</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>අඩවියේ අන්වර්ථ</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>ආකෘති ප්‍රභේදවල පරිවර්තක</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>පරිවර්තකය</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>උත්සාහ කළේ</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>වඩාත් කැමති</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ඔව්</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>නැත</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>අන්වර්ථ සාදන්නේ පෙර මෙන් [ImageConverterSettings] හි පරිවර්තක මගිනි; මේවා WebP සහ AVIF ප්‍රභේද ලියයි.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>පරිසරය සහ මූලය</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>මෙම ස්ථාපනය</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production: කිසිදා ලබා නොගනී)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>ලබා ගන්නේ</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>කිසිවක් නැත</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>මූල ලිපිනය</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>සකසා නැත</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>අක්තපත්‍රය</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>රහස %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>කිසිවක් නැත</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>තත්ත්වය</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>ක්‍රියාත්මකයි</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time දක්වා විරාම කර ඇත</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>අසාර්ථක වෙමින්</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>අඛණ්ඩ අසාර්ථකවීම්</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count කට පසු විරාමය</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>අවසාන දෝෂය</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>අවසාන සාර්ථකත්වය</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>අසාර්ථකවීම් යළි සකසා මූලයෙන් නැවත විමසන්න</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>කාර්ය පෝලිම</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>කාර්ය වර්ගය</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>බලා සිටී</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>ධාවනය වෙමින්</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>අසාර්ථකයි</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>ලියාපදිංචි කර නැත</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>කාර්ය පෝලිම නොමැත.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>තොග ධාවන විරාම කර ඇත</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time සිට %user විසින්</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>තොග ධාවනයට ඉඩ ඇත</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>අත්සන් යතුර</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>යතුර</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>රහස් ගබඩාවේ</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>තවම නැත</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>වයස</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>දින %days (%time සිට)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>පෙර යතුර</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time දක්වා වලංගුයි</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>යතුර මාරු කරන්න</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>වත්මන් යතුරෙන් අත්සන් කළ ලිපින සහන කාලය (SigningKeyGrace) තුළ දිගටම ක්‍රියා කරයි, ඉන්පසු පිටු නැවත සාදන තුරු ඒවා ස්ථානගත දර්ශක ලෙස පිළිතුරු දෙයි.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>දැන් මාරු කරන්න</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>එය ක්‍රියා කරන ආකාරය</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render ප්‍රකාරය, staging සහ ලොගය</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (පෙරනිමිය): පිටුවක් තවම නොමැති අන්වර්ථයක් අත්සන් කළ ලිපිනයකට සම්බන්ධ කරයි. පළමු ඉල්ලීම දීර්ඝතම පොරොත්තු කාලය තුළ එය සාදයි, නැතහොත් මධ්‍යස්ථ ස්ථානගත දර්ශකයක් පිළිතුරු දී කාර්යයක් වැඩය අවසන් කරයි; රූපය ඇති විට හුවමාරු ස්ක්‍රිප්ටය ස්ථානගත දර්ශකය ප්‍රතිස්ථාපනය කරයි.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render ප්‍රකාරය: පිටුව ගොඩනඟන අතරතුර සැකිල්ල අන්වර්ථය සාදයි, පෙර මෙනි. ඕනෑම වේලාවක දෙක අතර මාරු විය හැක; කිසිවක් සංක්‍රමණය කිරීම අවශ්‍ය නැත.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>staging ස්ථාපනයක් තමාට නොමැති මුල් පිටපත් සහ අන්වර්ථ එහි මූලයෙන් ලබා ගනී; අසාර්ථක වන මූලයක් අඛණ්ඩ අසාර්ථකවීම්වලින් පසු විරාම කරන අතර පරිපාලකයන්ට පැයකට උපරිම වශයෙන් එක් ඊමේල් පණිවිඩයක් ලැබේ.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>තොග ධාවන සහ ප්‍රකාශනයෙන් පසු පූර්ව-උත්පාදනය කාර්ය පෝලිමේ කාර්යයන් වන අතර, අමුත්තන්ට වඩා අඩු ප්‍රමුඛතාවකින් ය. අන්වර්ථ ඉවත් කිරීමෙන් Velocity හි ප්‍රතිචාර හැඹිලියද මකා දමයි, එබැවින් ඉවත් කළ ගොනුවක් එයින් සපයන්නේ නැත.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>සාදන සෑම අන්වර්ථයක්, පිළිතුරු දෙන ස්ථානගත දර්ශකයක්, stage කරන ගොනුවක් සහ ධාවනයක් %file හි පේළියකි. විධාන රේඛාවේද එම මෙවලම් ඇත: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>කාර්යය %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>රූප %total න් %done</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ධාවනය</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>විෂය පථය</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ප්‍රතිඵලය</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>මෙම කාර්යය අවලංගු කරන්න</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>%job කාර්යය රූප අන්වර්ථ කාර්යයක් නොවේ, නැතහොත් එය පෝලිමෙන් ඉවත් කර ඇත.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>%run ධාවනයේ ප්‍රතිඵලය</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>තොග ධාවන විරාම කර ඇත</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time සිට %user විසින් විරාම කර ඇත.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>විරාමයක් සෑම තොග ධාවනයක්ම එහි වත්මන් රූපයෙන් පසු සෑම සේවාදායකයකම නවත්වයි; පෝලිමේ ධාවන බලා සිටී. අමුත්තන්ගේ අන්වර්ථ තවමත් සාදනු ලැබේ.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>තොග ධාවන නැවත ආරම්භ කරන්න</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>හේතුව (විකල්ප)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>තොග ධාවන විරාම කරන්න</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>ධාවනයක් ආරම්භ කරන්න</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>ධාවන යනු කාර්ය පෝලිමේ කාර්යයන් ය: ඔබට පිටුවෙන් ඉවත් වී නැවත පැමිණිය හැක.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>කාර්ය පෝලිම නොමැතිව ධාවනය මෙම ඉල්ලීමේදී, උපරිම රූප %count ක් සඳහා සිදු කෙරේ.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ක්‍රියාව</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>උත්පාදනය: අස්ථානගත අන්වර්ථ සාදන්න</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>නැවත උත්පාදනය: ඉවත් කර නැවත සාදන්න</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>මකන්න: ඒවා ඉවත් කරන්න (ඉල්ලූ විට නැවත සාදයි)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>නැවත සමමුහුර්ත: staging මූලයෙන් ගොනු ලබා ගන්න</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(staging ස්ථාපනයක පමණි)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>සම්පූර්ණ අඩවිය</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>එක් නෝඩයක්</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>නෝඩයක් සහ එහි උප ගස</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>නෝඩ ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>පන්ති</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>ගුණාංග</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>වෙනස් කළේ සිට</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>දිනයක් (2026-11-01) හෝ කාලයකට පෙර (පැය 12, දින 2).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>උපරිම රූප</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>අන්වර්ථ (කිසිවක් තෝරා නැත්නම්: සියල්ල)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>පරීක්ෂණ ධාවනය: ගණන් කිරීම පමණි (resync මූලය පරීක්ෂා කර කිසිවක් ගබඩා නොකරයි)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>වෙනස් ගොනු උඩින් ලියන්න (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>ධාවනය ආරම්භ කරන්න</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>නවතම ධාවන</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>කාර්යය</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ප්‍රගතිය</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>පෝලිමේ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ක්‍රියා</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>අවලංගු කරන්න</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>තවම තොග ධාවනයක් හෝ resync නැත.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>එක් රූපයක්</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>සැකිල්ලකට දැන් ලැබෙන ලිපින, සෑම අන්වර්ථයක් සඳහාම ගණනය කළ ප්‍රමාණ සහ වර්ග, සහ සෑම ගොනුවක්ම ඇත්දැයි.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>සොයන්නේ</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>වස්තු ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>පෙන්වන්න</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>ඔබට මෙම වස්තුව කියවීමට අවසර නැත.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>මෙම වස්තුවේ රූපයක් නැත.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>මෙම ID සහිත වස්තුවක් නැත.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>වස්තුව %object, නෝඩය %node, අනුවාදය %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>මුල් පිටපත: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>ගොනුව ඇත</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>ගොනුව නැත</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name හි අන්වර්ථ</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>අන්වර්ථය</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ප්‍රමාණය</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>වර්ගය</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ගොනුව</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>ආකෘති</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>සැකිල්ලේ ලිපිනය</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>ඇත</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>නැත</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>මෙම වර්ගයට නොවේ</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>පරීක්ෂා කරන්න</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>සාදන්න</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>මෙම ක්ෂේත්‍රයේ රූපයක් නැත.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>වේලාව</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>මූලයකට සම්බන්ධතාව</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>staging මූලයකට HEAD ඉල්ලීමක්, නම් කර ඇත්නම් එහි අක්තපත්‍රය සමඟ. අක්තපත්‍රය යවනු ලැබේ, කිසිදා නොපෙන්වයි.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>මූලය</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>අක්තපත්‍රය සමඟ</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>ගබඩා මාර්ගය (විකල්ප)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>සම්බන්ධතාව පරීක්ෂා කරන්න</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>කිසිදු මූලයකට BaseURL නැත. මූල සැකසුම්වල සකසයි ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>ළඟා විය හැක</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>ප්‍රතික්ෂේප කළා: අක්තපත්‍රය පරීක්ෂා කරන්න</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>මූලයේ හමු නොවීය</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>පිළිතුරක් නැත</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>කාලය ඉකුත් විය</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>යළි යොමු කළා (අනුගමනය නොකළා)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL නැත</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>ගබඩා මාර්ගයක් නොවේ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ලිපිනය</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>තත්ත්වය</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>යැවිණි</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>රහස නැත</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>රහස user:password හෝ Bearer &lt;token&gt; නොවේ</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file හි අලුත්ම පේළි, අලුත්ම පළමුව.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>පිහිටුවීම &gt; ලොග් ගොනු</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>සිදුවීම</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>සියලු සිදුවීම්</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>ධාවන (ආරම්භය සහ අවසානය)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>මාර්ගයේ අඩංගුයි</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>පේළි</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>පෙරහන</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>අනුගමනය: අලුත් පේළි ලියන විට පෙන්වන්න</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>මාර්ගය සහ විස්තර</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>ලොගයේ කිසිදු පේළියක් නොගැළපේ.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>සුරැකීමෙන් වෙනස් වන දේ</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>වෙනස් කළ දේ</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php වෙත සුරකින බැවින් මෙහි අගයක් සෑම siteaccess එකකටම වඩා බලවත් වේ. පෙන්වන අගයන් මෙම siteaccess සඳහා බලපවත්නා ඒවා ය. සුරැකීමේදී ඔබ කවුදැයි තහවුරු කිරීමට ඉල්ලයි.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>අන්වර්ථ සාදන සහ බෙදාහරින ආකාරය.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>අස්ථානගත රූප වෙනත් ස්ථාපනයකින් ලබා ගැනීම (alpha, dev, beta, stage, pro, post, arc). Production (pro) කිසිදා ලබා නොගනී.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>සැකසුම</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>අගය</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override හි</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>සෑම මූලයකම ලිපිනය සහ එහි අක්තපත්‍රය රඳවා ඇති රහසේ නම (user:password හෝ Bearer &lt;token&gt;). රහසක අගය පිහිටුවීම &gt; රහස් හි සකසන අතර මෙහි කිසිදා නොපෙන්වයි.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>වෙනස්කම් පෙරදසුන</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>සුරකින්න</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>අනුගමනය: %time යාවත්කාලීන කළා</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>විරාම කර ඇත</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>ප්‍රවාහය පිළිතුරු දුන්නේ නැත; නැවත උත්සාහ කරමින්.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>කාර්යය අවසන් විය.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: සැකිලිවලට ලිපිනය ලැබේ, අන්වර්ථය සාදන්නේ ඉල්ලූ විට ය. render: පිටුව ගොඩනඟන අතරතුර සැකිල්ල එය සාදයි (මුල් හැසිරීම).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>තවම සාදා නැති අන්වර්ථයක ලිපිනය: token (අත්සන් කළ, දත්ත ගබඩාවක් අවශ්‍ය නැත), ids-token, ids, node හෝ storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: වෙබ් සේවාදායකය ගබඩාව සපයන්නේ නම් ගොනුවට යළි යොමුවක්, නැතහොත් ගොනුව ප්‍රවාහ කෙරේ.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>ඉල්ලීමකට අන්වර්ථයක් සෑදීමට හෝ ලබා ගැනීමට ගත හැකි තත්පර; ඉන්පසු එය ස්ථානගත දර්ශකය පිළිතුරු දී කාර්යයක් වැඩය අවසන් කරයි.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP සහ AVIF ප්‍රභේද සඳහා පළමුව උත්සාහ කරන පරිවර්තකය.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Formats[] ලැයිස්තුගත කරන අන්වර්ථ සඳහා WebP හෝ AVIF ඉල්ලන බ්‍රවුසරවලට එය පිළිතුරු දෙන්න.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>රූපයක් නැති විට නිවැරදි ප්‍රමාණයේ මධ්‍යස්ථ රූපයක්.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>රූපය ඇති විට ස්ථානගත දර්ශක සැබෑ රූපයෙන් ප්‍රතිස්ථාපනය කරන කුඩා ස්ක්‍රිප්ටයක්.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>ප්‍රකාශනයෙන් පසු, කාර්යයක් සෑම අදාළ siteaccess එකක් සඳහාම නව රූපවල අන්වර්ථ සාදයි.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>එක් සේවාදායකයක එකවර පරිවර්තන.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>තොග ධාවනවල ක්‍රියාවලි ප්‍රමුඛතාව (nice), 0 සිට 19 දක්වා.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>බ්‍රවුසර සහ හැඹිලිවලට සාදන ලද අන්වර්ථයක් තබා ගත හැකි තත්පර.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>කෙටුම්පත් හෝ පෙරදසුන් රූපයක ලිපිනය වලංගුව පවතින තත්පර.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>මාරුවෙන් පසු පෙර අත්සන් යතුර වලංගුව පවතින තත්පර.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>මෙම ස්ථාපනයේ පරිසරය.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>අස්ථානගත රූප ලබා ගන්නා පරිසරය; none: කිසිවක් ලබා නොගනී.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>පේළියකට එකක්: දේශීය ගබඩා උපසර්ගය;මූල උපසර්ගය හෝ ලිපිනය, වෙනස් ගබඩා මාර්ග සඳහා.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>මූලයට එක් ඉල්ලීමකට ගත හැකි තත්පර.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>මූලයෙන් ගන්නා විශාලතම ගොනුව, බයිට්වලින්.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>මූලය විරාම කරන අඛණ්ඩ අසාර්ථකවීම් ගණන.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>අසාර්ථක මූලයක් විරාම කරන කාලය.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>මූලය විරාම කළ විට පරිපාලකයන්ට ඊමේල් කරන්න (පැයකට උපරිම වශයෙන් එක් වරක්).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>පේළියකට එක් ඊමේල් ලිපිනයක්; හිස් නම්: site.ini හි AdminEmail.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>මූල ස්ථාපනය %block හි ලිපිනය, උදා. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>අක්තපත්‍රය සහිත රහසේ නම, හෝ env:VARIABLE. අක්තපත්‍රය කිසිදා නොවේ.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(කිසිවක් නැත)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>පෙරනිමිය: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>මෙහි සකසා ඇත; ඉවත් කිරීමට ටික් කරන්න</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>උරුම වූ</translation>
     </message>
 </context>
 </TS>

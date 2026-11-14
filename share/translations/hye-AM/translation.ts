@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>Ներմուծում/արտահանում</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Պատկերի կեղծանուններ</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Ստեղծել այս տարրի համար</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Ստեղծել ենթածառի համար</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Նորից ստեղծել այս տարրի համար</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Նորից ստեղծել ենթածառի համար</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Հեռացնել այս տարրի համար</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Հեռացնել ենթածառի համար</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Հին կայքի server բլոկը. location =՝ return-ով, if ($args)՝ հարցման համար, rewrite՝ որպես փոխարինող նշան, և առանձին էջերի map։</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Պատկերի կեղծանուններ</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Պատկերի կեղծանունները պատկերի մասշտաբավորված և կտրված պատճեններն են, որոնք ցուցադրում են ձևանմուշները։ Այստեղ կարող եք տեսնել, թե ինչպես են դրանք ստեղծվում, գործարկել զանգվածային առաջադրանքներ ամբողջ կայքի վրա, փորձարկել մեկ պատկեր կամ staging աղբյուր, հետևել գործարկումների պատմությանը և փոխել կարգավորումները։</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Էջի մասերը</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Վահանակ</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Զանգվածային գործարկումներ</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Փորձարկման գործիքներ</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Գործարկումների պատմություն</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Կարգավորումներ</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Այստեղ կարող եք դիտել ամեն ինչ։ Կարգավորումները փոխելու, առաջադրանքներ գործարկելու և ֆայլեր ստեղծող գործիքների համար պահանջվում է setup/managealiases քաղաքականությունը։</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Ինչին է պետք ուշադրություն դարձնել</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Render ռեժիմ: ձևանմուշները բացակայող կեղծանունները ստեղծում են էջը կառուցելիս, ինչպես նախկինում։ On-demand հասցեները, տեղապահները և հետին պլանի առաջադրանքները չեն օգտագործվում։</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Ձևաչափերի բանակցությունը միացված է, բայց այստեղ ոչ մի փոխակերպիչ չի կարող գրել WebP։</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Սա staging տեղադրում է, բայց նրա աղբյուրը BaseURL չունի. բացակայող պատկերները չեն կարող ստացվել։</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Staging աղբյուրը դադարեցված է հաջորդական ձախողումների պատճառով. բացակայող պատկերների համար տրվում են տեղապահներ՝ մինչև դադարի ավարտը կամ մինչև չվերակայեք այն։</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Staging աղբյուրը վերջերս ձախողվել է։ Տես նրա վերջին սխալը ներքևում։</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Այս տեղադրումը production չէ, բայց SyncFrom-ը աղբյուր չի նշում. ոչինչ չի ստացվում։</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Առաջադրանքների հերթը (expqueue) հասանելի չէ. ժամանակին չհասցրած կեղծանունները կստեղծվեն հաջորդ հարցմամբ, հրապարակումից հետո նախնական ստեղծումը բաց է թողնվում, իսկ զանգվածային գործարկումները սահմանափակվում են փոքր շրջանակներով։</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Պատկերի կեղծանունների որոշ առաջադրանքներ վերջնականապես ձախողվել են։ Setup &gt; Առաջադրանքների հերթը ցույց է տալիս պատճառը։</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Զանգվածային գործարկումները դադարեցված են։</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Վերջին 24 ժամվա ընթացքում կեղծանուններ են ձախողվել։ Գործարկումների պատմությունը թվարկում է դրանք։</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Ստորագրման բանալին մեկ տարուց ավելի հին է։ Այն պտտելիս հին հասցեները վավեր են մնում արտոնյալ ժամանակահատվածում։</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Ստորագրման բանալի դեռ չկա. այն ստեղծվում է առաջին on-demand հասցեի հետ։</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Վերջին 24 ժամը</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Ստեղծված կեղծանուններ</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Տրված տեղապահներ</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Ձախողումներ</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Staging արված ֆայլեր</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Սկսված գործարկումներ</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Սպասող / աշխատող առաջադրանքներ</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Հաշվարկված է %file-ի վերջին %lines տողերից, որոնք հասնում են մինչև %time։</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Ռեժիմ և մատակարարում</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Ռեժիմ</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>on demand</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Հասցեի ձև</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Մատակարարում</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Հարցման ամենաերկար սպասումը</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Միաժամանակյա փոխակերպումներ</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>Այժմ զբաղված է %busy / %max</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Ձևաչափերի բանակցություն</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>միացված</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>անջատված</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Տեղապահ և swap սկրիպտ</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Նախնական ստեղծում հրապարակումից հետո</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Կայքի կեղծանուններ</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Ձևաչափային տարբերակների փոխակերպիչներ</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Փոխակերպիչ</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Փորձված</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>նախընտրելի</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>այո</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ոչ</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Կեղծանունները ստեղծում են [ImageConverterSettings]-ի փոխակերպիչները, ինչպես նախկինում. սրանք գրում են WebP և AVIF տարբերակները։</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Միջավայր և աղբյուր</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Այս տեղադրումը</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production: երբեք չի ստանում)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Ստանում է</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>ոչինչ</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Աղբյուրի հասցե</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>սահմանված չէ</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Հավատարմագիր</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>գաղտնիք %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>չկա</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Վիճակ</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>աշխատում է</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>դադարեցված է մինչև %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>ձախողվում է</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Հաջորդական ձախողումներ</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>դադար %count-ից հետո</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Վերջին սխալ</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Վերջին հաջողություն</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Վերակայել ձախողումները և կրկին հարցնել աղբյուրին</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Առաջադրանքների հերթ</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Առաջադրանքի տեսակ</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Սպասում է</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Աշխատում է</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ձախողված</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>գրանցված չէ</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Առաջադրանքների հերթը հասանելի չէ։</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Զանգվածային գործարկումները դադարեցված են</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time-ից՝ %user-ի կողմից</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Զանգվածային գործարկումները կարող են աշխատել</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Ստորագրման բանալի</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Բանալի</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>գաղտնիքների պահոցում</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>դեռ չկա</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Տարիք</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days օր (%time-ից)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Նախորդ բանալի</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>վավեր է մինչև %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Պտտել բանալին</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Ընթացիկ բանալիով ստորագրված հասցեները շարունակում են աշխատել արտոնյալ ժամանակահատվածում (SigningKeyGrace), ապա պատասխանում են տեղապահներով, մինչև էջերը նորից ստեղծվեն։</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Պտտել հիմա</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Ինչպես է աշխատում</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render ռեժիմ, staging և մատյան</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (լռելյայն): էջը դեռ չստեղծված կեղծանունը կապում է ստորագրված հասցեի հետ։ Առաջին հարցումը ստեղծում է այն ամենաերկար սպասման ընթացքում, հակառակ դեպքում պատասխանում է չեզոք տեղապահով, և առաջադրանքն ավարտում է գործը. swap սկրիպտը փոխարինում է տեղապահը, երբ պատկերը պատրաստ է։</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render ռեժիմ: ձևանմուշը ստեղծում է կեղծանունը էջը կառուցելիս, ինչպես նախկինում։ Երկուսի միջև կարելի է փոխվել ցանկացած պահի. ոչինչ միգրացիայի կարիք չունի։</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Staging տեղադրումը իր աղբյուրից ստանում է բացակայող բնօրինակներն ու կեղծանունները. ձախողվող աղբյուրը դադարեցվում է հաջորդական ձախողումներից հետո, և ադմինիստրատորները ժամում առավելագույնը մեկ էլ. նամակ են ստանում։</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Զանգվածային գործարկումները և հրապարակումից հետո նախնական ստեղծումը առաջադրանքների հերթի առաջադրանքներ են՝ այցելուներից ցածր առաջնահերթությամբ։ Կեղծանունների հեռացումը մաքրում է նաև Velocity-ի response cache-ը, որպեսզի հեռացված ֆայլը դրանից չմատուցվի։</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Ստեղծված ամեն կեղծանուն, տրված տեղապահ, staging արված ֆայլ և գործարկում %file-ի մեկ տող է։ Հրամանի տողն ունի նույն գործիքները՝ %command։</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Առաջադրանք %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done %total պատկերից</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Գործարկում</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Շրջանակ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Արդյունք</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Չեղարկել այս առաջադրանքը</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>%job առաջադրանքը պատկերի կեղծանունների առաջադրանք չէ, կամ հեռացվել է հերթից։</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>%run գործարկման արդյունքը</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Զանգվածային գործարկումները դադարեցված են</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Դադարեցված է %time-ից՝ %user-ի կողմից։</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Դադարեցումը կանգնեցնում է յուրաքանչյուր զանգվածային գործարկում իր ընթացիկ պատկերից հետո, ամեն սերվերի վրա. հերթագրված գործարկումները սպասում են։ Այցելուների կեղծանունները շարունակում են ստեղծվել։</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Վերսկսել զանգվածային գործարկումները</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Պատճառ (ըստ ցանկության)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Դադարեցնել զանգվածային գործարկումները</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Սկսել գործարկում</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Գործարկումները առաջադրանքների հերթի առաջադրանքներ են. կարող եք լքել էջը և վերադառնալ։</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Առանց առաջադրանքների հերթի գործարկումը կատարվում է այս հարցման մեջ՝ առավելագույնը %count պատկերի համար։</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Գործողություն</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: ստեղծել բացակայող կեղծանունները</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: հեռացնել և նորից ստեղծել դրանք</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: հեռացնել դրանք (պահանջով նորից կստեղծվեն)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: ստանալ ֆայլերը staging աղբյուրից</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(միայն staging տեղադրման վրա)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Ամբողջ կայքը</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Մեկ հանգույց</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Հանգույց և նրա ենթածառը</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Հանգույցի ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Դասեր</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Ատրիբուտներ</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Փոփոխված է սկսած</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Ամսաթիվ (2026-11-01) կամ անցած ժամանակ (12 ժամ, 2 օր)։</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Առավելագույն պատկերներ</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Կեղծանուններ (եթե ոչինչ նշված չէ՝ բոլորը)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Dry run: միայն հաշվել (resync-ը ստուգում է աղբյուրը և ոչինչ չի պահում)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Վերագրել տարբերվող ֆայլերը (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Սկսել գործարկումը</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Վերջին գործարկումներ</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Առաջադրանք</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ընթացք</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Հերթագրված</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Գործողություններ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Չեղարկել</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Դեռ զանգվածային գործարկում կամ resync չկա։</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Մեկ պատկեր</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Հասցեները, որոնք ձևանմուշն այժմ ստանում է, յուրաքանչյուր կեղծանվան համար հաշվարկված չափերն ու տեսակները, և արդյոք ամեն ֆայլ առկա է։</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Որոնել ըստ</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Օբյեկտի ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ցուցադրել</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Դուք չեք կարող կարդալ այս օբյեկտը։</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Այս օբյեկտը պատկեր չունի։</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Այս id-ով օբյեկտ չկա։</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>օբյեկտ %object, հանգույց %node, տարբերակ %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Բնօրինակ: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>ֆայլը կա</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>ֆայլը բացակայում է</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name-ի կեղծանուններ</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Կեղծանուն</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Չափ</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Տեսակ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Ֆայլ</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Ձևաչափեր</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Հասցե ձևանմուշում</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>կա</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>բացակայում է</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>այս տեսակի համար չէ</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Ստուգել</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Ստեղծել</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Այս դաշտում պատկեր չկա։</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ժամ</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Կապ աղբյուրի հետ</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>HEAD հարցում staging աղբյուրին՝ իր հավատարմագրով, եթե այն նշված է։ Հավատարմագիրը ուղարկվում է, երբեք չի ցուցադրվում։</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Աղբյուր</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>հավատարմագրով</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Պահպանման ուղի (ըստ ցանկության)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Փորձել կապը</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Ոչ մի աղբյուր BaseURL չունի։ Աղբյուրները սահմանվում են կարգավորումներում ([AliasSource_&lt;environment&gt;])։</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>հասանելի է</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>մերժված է: ստուգեք հավատարմագիրը</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>աղբյուրում չի գտնվել</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>պատասխան չկա</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>ժամանակը սպառվեց</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>վերահղված է (չի հետևվել)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL չկա</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>պահպանման ուղի չէ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Հասցե</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Կարգավիճակ</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>ուղարկված է</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>գաղտնիքը բացակայում է</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>գաղտնիքը user:password կամ Bearer &lt;token&gt; չէ</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file-ի ամենաթարմ տողերը՝ նորերը առաջինը։</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Setup &gt; Մատյանի ֆայլեր</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Իրադարձություն</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Բոլոր իրադարձությունները</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Գործարկումներ (սկիզբ և ավարտ)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Ուղին պարունակում է</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Տողեր</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Զտիչ</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Հետևել: ցույց տալ նոր տողերը՝ գրվելուն պես</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Ուղի և մանրամասներ</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Մատյանի ոչ մի տող չի համապատասխանում։</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Ինչ կփոխի պահպանումը</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Ինչ փոխվեց</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Պահվում է settings/override/image.ini.append.php-ում, ուստի այստեղի արժեքը գերակա է յուրաքանչյուր siteaccess-ի վրա։ Ցուցադրված արժեքները այս siteaccess-ի համար գործողներն են։ Պահպանելիս նախ կպահանջվի հաստատել, որ դա Դուք եք։</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Ինչպես են կեղծանունները ստեղծվում և մատակարարվում։</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Բացակայող պատկերների ստացում մեկ այլ տեղադրումից (alpha, dev, beta, stage, pro, post, arc)։ Production-ը (pro) երբեք չի ստանում։</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Կարգավորում</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Արժեք</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override-ում</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Յուրաքանչյուր աղբյուրի հասցեն և այն գաղտնիքի անունը, որը պահում է իր հավատարմագիրը (user:password կամ Bearer &lt;token&gt;)։ Գաղտնիքի արժեքը սահմանվում է Setup &gt; Գաղտնիքներ-ում և այստեղ երբեք չի ցուցադրվում։</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Նախադիտել փոփոխությունները</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Պահպանել</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Հետևվում է: թարմացվել է %time-ին</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Դադարեցված</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Հոսքը չպատասխանեց. նորից է փորձում։</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Առաջադրանքն ավարտվել է։</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: ձևանմուշները ստանում են հասցեն, կեղծանունը ստեղծվում է, երբ պահանջվում է։ render: ձևանմուշը ստեղծում է այն էջը կառուցելիս (սկզբնական վարքագիծ)։</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Դեռ չստեղծված կեղծանվան հասցեն՝ token (ստորագրված, տվյալների բազա պետք չէ), ids-token, ids, node կամ storage։</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: վերահղում դեպի ֆայլ, երբ վեբ սերվերը մատուցում է պահոցը, հակառակ դեպքում ֆայլը հոսքով է տրվում։</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Վայրկյաններ, որոնք մեկ հարցումը կարող է ծախսել կեղծանուն ստեղծելու կամ ստանալու վրա. ապա այն պատասխանում է տեղապահով, և առաջադրանքն ավարտում է գործը։</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP և AVIF տարբերակների համար առաջինը փորձվող փոխակերպիչը։</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Պատասխանել WebP կամ AVIF այն բրաուզերներին, որոնք խնդրում են, այն կեղծանունների համար, որոնք թվարկում են Formats[]։</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Ճիշտ չափի չեզոք պատկեր, մինչև պատկերը բացակայում է։</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Փոքր սկրիպտ, որը փոխարինում է տեղապահները իրական պատկերով, երբ այն կա։</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Հրապարակումից հետո առաջադրանքը ստեղծում է նոր պատկերների կեղծանունները յուրաքանչյուր առնչվող siteaccess-ի համար։</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Միաժամանակյա փոխակերպումներ մեկ սերվերի վրա։</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Զանգվածային գործարկումների գործընթացի առաջնահերթությունը (nice), 0-ից 19։</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Վայրկյաններ, որոնց ընթացքում բրաուզերները և քեշերը կարող են պահել ստեղծված կեղծանունը։</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Վայրկյաններ, որոնց ընթացքում սևագրի կամ նախադիտման պատկերի հասցեն վավեր է մնում։</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Վայրկյաններ, որոնց ընթացքում նախորդ ստորագրման բանալին վավեր է մնում պտտումից հետո։</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Այս տեղադրման միջավայրը։</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Միջավայրը, որտեղից ստացվում են բացակայող պատկերները. none: ոչինչ չի ստացվում։</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Մեկ տողում մեկը՝ տեղական պահոցի նախածանց;աղբյուրի նախածանց կամ հասցե, տարբերվող պահպանման ուղիների համար։</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Վայրկյաններ, որոնք կարող է տևել աղբյուրին մեկ հարցումը։</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Աղբյուրից վերցվող ամենամեծ ֆայլը՝ բայթերով։</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Հաջորդական ձախողումներ, որոնցից հետո աղբյուրը դադարեցվում է։</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Որքան ժամանակ է ձախողվող աղբյուրը դադարեցվում։</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Նամակ ուղարկել ադմինիստրատորներին, երբ աղբյուրը դադարեցվում է (ժամում առավելագույնը մեկ անգամ)։</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Մեկ էլ. փոստի հասցե մեկ տողում. դատարկ՝ site.ini-ի AdminEmail-ը։</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Աղբյուր տեղադրման %block հասցեն, օրինակ՝ https://www.example.org։</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Հավատարմագիրը պարունակող գաղտնիքի անունը կամ env:VARIABLE։ Երբեք ոչ հավատարմագիրը ինքը։</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(չկա)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Լռելյայն. %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Սահմանված է այստեղ. նշեք՝ հեռացնելու համար</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>ժառանգված</translation>
     </message>
 </context>
 </TS>

@@ -16529,6 +16529,34 @@ Huomautus: pakettien asennusta ei poisteta.</translation>
         <source>Import/Export</source>
         <translation>Tuonti/vienti</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Kuva-aliakset</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Generoi tälle kohteelle</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Generoi alipuulle</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Generoi uudelleen tälle kohteelle</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Generoi uudelleen alipuulle</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Poista tältä kohteelta</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Poista alipuulta</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86452,6 +86480,997 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Vanhan sivuston server-lohko: location = ja return, if ($args) kyselylle, rewrite yleismerkkinä ja yksittäisten sivujen map.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Kuva-aliakset</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Kuva-aliakset ovat kuvan skaalattuja ja rajattuja kopioita, jotka mallipohjat näyttävät. Täällä näet, miten ne tehdään, voit ajaa massatöitä koko sivustolla, testata yhtä kuvaa tai staging-lähdettä, seurata ajohistoriaa ja muuttaa asetuksia.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Sivun osat</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Koontinäyttö</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Massa-ajot</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Testityökalut</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Ajohistoria</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Asetukset</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Täällä voit tarkastella kaikkea. Asetusten muuttaminen, töiden ajaminen ja tiedostoja tekevät työkalut vaativat käytännön setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Huomiota vaativat asiat</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Tila render: mallipohjat tekevät puuttuvat aliakset sivun renderöinnin aikana, kuten ennenkin. Osoitteita on-demand, paikkamerkkejä ja taustatöitä ei käytetä.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Formaatin neuvottelu on päällä, mutta mikään täällä oleva muunnin ei osaa kirjoittaa WebP:tä.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Tämä on staging-asennus, mutta sen lähteellä ei ole BaseURL-arvoa: puuttuvia kuvia ei voi noutaa.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Staging-lähde on keskeytetty peräkkäisten virheiden jälkeen: puuttuvat kuvat saavat paikkamerkit, kunnes keskeytys päättyy tai nollaat sen.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Staging-lähde epäonnistui äskettäin. Katso sen viimeisin virhe alta.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Tämä asennus ei ole tuotanto, mutta SyncFrom ei nimeä lähdettä: mitään ei noudeta.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Työjono (expqueue) ei ole käytettävissä: aliakset, jotka eivät valmistu ajoissa, tekee seuraava pyyntö, ennakkogenerointi julkaisun jälkeen ohitetaan ja massa-ajot rajoitetaan pieniin laajuuksiin.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Jotkin kuva-aliasten työt epäonnistuivat lopullisesti. Asetukset &gt; Työjono näyttää syyn.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Massa-ajot on keskeytetty.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Aliaksia epäonnistui viimeisten 24 tunnin aikana. Ajohistoria luettelee ne.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Allekirjoitusavain on yli vuoden vanha. Sen kierrätys pitää vanhat osoitteet voimassa lisäajan.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Allekirjoitusavainta ei ole vielä: se tehdään ensimmäisen on-demand-osoitteen yhteydessä.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Viimeiset 24 tuntia</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Generoidut aliakset</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Vastatut paikkamerkit</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Virheet</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Valmistellut tiedostot</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Aloitetut ajot</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Työt odottaa / käynnissä</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Laskettu tiedoston %file viimeisestä %lines rivistä, jotka yltävät aikaan %time asti.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Tila ja toimitus</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Tila</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>tarvittaessa</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Osoitteen muoto</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Toimitus</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Pyynnön pisin odotus</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Samanaikaiset muunnokset</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy/%max varattuna nyt</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Formaatin neuvottelu</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>päällä</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>pois</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Paikkamerkki ja vaihtoskripti</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Ennakkogenerointi julkaisun jälkeen</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Sivuston aliakset</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Formaattivarianttien muuntimet</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Muunnin</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Kokeiltu</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>ensisijainen</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>kyllä</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ei</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Aliakset itse tekevät osion [ImageConverterSettings] muuntimet, kuten ennenkin; nämä kirjoittavat WebP- ja AVIF-variantit.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Ympäristö ja lähde</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Tämä asennus</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(tuotanto: ei nouda koskaan)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Noutaa lähteestä</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>ei mitään</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Lähteen osoite</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>ei asetettu</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Tunnistetiedot</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>salaisuus %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ei mitään</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tila</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>toimii</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>keskeytetty kunnes %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>epäonnistuu</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Peräkkäiset virheet</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>keskeytys %count virheen jälkeen</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Viimeisin virhe</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Viimeisin onnistuminen</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Nollaa virheet ja kysy lähteeltä uudelleen</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Työjono</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Työn tyyppi</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Odottaa</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Käynnissä</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Epäonnistui</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>ei rekisteröity</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Työjono ei ole käytettävissä.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Massa-ajot keskeytetty</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>alkaen %time, keskeyttäjä %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Massa-ajot sallittu</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Allekirjoitusavain</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Avain</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>salaisuuksien säilössä</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ei vielä</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Ikä</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days päivää (alkaen %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Edellinen avain</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>voimassa %time asti</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Kierrätä avain</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Nykyisellä avaimella allekirjoitetut osoitteet toimivat lisäajan (SigningKeyGrace), minkä jälkeen ne vastaavat paikkamerkeillä, kunnes sivut tehdään uudelleen.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Kierrätä nyt</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Näin se toimii</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, tila render, staging ja loki</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (oletus): sivu linkittää vielä olemattoman aliaksen allekirjoitettuun osoitteeseen. Ensimmäinen pyyntö tekee sen pisimmän odotuksen sisällä, muuten se vastaa neutraalilla paikkamerkillä ja työ viimeistelee tehtävän; vaihtoskripti korvaa paikkamerkin, kun kuva on valmis.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Tila render: mallipohja tekee aliaksen sivun renderöinnin aikana, kuten ennenkin. Näiden välillä voi vaihtaa milloin tahansa; mitään ei tarvitse migroida.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Staging-asennus noutaa lähteestään originaalit ja aliakset, jotka siitä puuttuvat; epäonnistuva lähde keskeytetään peräkkäisten virheiden jälkeen ja ylläpitäjät saavat enintään yhden sähköpostin tunnissa.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Massa-ajot ja ennakkogenerointi julkaisun jälkeen ovat työjonon töitä, alemmalla prioriteetilla kuin kävijät. Aliasten poistaminen tyhjentää myös Velocityn vastausvälimuistin, jotta poistettua tiedostoa ei tarjoilla sieltä.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Jokainen tehty alias, vastattu paikkamerkki, valmisteltu tiedosto ja ajo on rivi tiedostossa %file. Komentorivillä on samat työkalut: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Työ %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done/%total kuvaa</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Ajo</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Laajuus</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Tulos</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Peruuta tämä työ</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Työ %job ei ole kuva-aliasten työ tai se poistettiin jonosta.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Ajon %run tulos</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Massa-ajot on keskeytetty</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Keskeytetty alkaen %time, keskeyttäjä %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Keskeytys pysäyttää jokaisen massa-ajon nykyisen kuvan jälkeen, kaikilla palvelimilla; jonossa olevat ajot odottavat. Kävijöiden aliakset tehdään edelleen.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Jatka massa-ajoja</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Syy (valinnainen)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Keskeytä massa-ajot</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Aloita ajo</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Ajot ovat työjonon töitä: voit poistua sivulta ja palata myöhemmin.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Ilman työjonoa ajo tehdään tässä pyynnössä, enintään %count kuvalle.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Toiminto</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: tee puuttuvat aliakset</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: poista ja tee ne uudelleen</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: poista ne (tehdään uudelleen tarvittaessa)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: nouda tiedostot staging-lähteestä</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(vain staging-asennuksessa)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Koko sivusto</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Yksi solmu</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Solmu ja sen alipuu</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Solmun tunnus</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Luokat</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Määritteet</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Muutettu sen jälkeen</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Päivämäärä (2026-11-01) tai aika sitten (12 tuntia, 2 päivää).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Enintään kuvaa</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Aliakset (jos ei valittu mitään: kaikki)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Kuiva-ajo: vain laske (resync tarkistaa lähteen eikä tallenna mitään)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Korvaa eroavat tiedostot (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Aloita ajo</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Viimeisimmät ajot</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Työ</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Edistyminen</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Jonossa</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Toiminnot</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Peruuta</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Massa-ajoa tai resynciä ei vielä ole.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Yksi kuva</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Osoitteet, jotka mallipohja saa nyt, jokaiselle aliakselle lasketut koot ja tyypit sekä se, onko kukin tiedosto olemassa.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Hae tunnuksella</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Objektin tunnus</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Tunnus</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Näytä</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Sinulla ei ole lupaa lukea tätä objektia.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Tällä objektilla ei ole kuvaa.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Tällä tunnuksella ei ole objektia.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>objekti %object, solmu %node, versio %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Alkuperäinen: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>tiedosto olemassa</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>tiedosto puuttuu</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Kohteen %name aliakset</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Alias</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Koko</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tyyppi</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Tiedosto</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Formaatit</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Osoite mallipohjassa</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>olemassa</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>puuttuu</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ei tälle tyypille</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Tarkista</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Tee</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Tässä kentässä ei ole kuvaa.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Aika</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Yhteys lähteeseen</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>HEAD-pyyntö staging-lähteeseen sen tunnistetiedoilla, kun sellaiset on nimetty. Tunnistetiedot lähetetään, mutta niitä ei koskaan näytetä.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Lähde</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>tunnistetiedoilla</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Tallennuspolku (valinnainen)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Testaa yhteys</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Millään lähteellä ei ole BaseURL-arvoa. Lähteet asetetaan asetuksissa ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>tavoitettavissa</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>hylätty: tarkista tunnistetiedot</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>ei löytynyt lähteestä</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>ei vastausta</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>aikakatkaisu</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>uudelleenohjattu (ei seurattu)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>ei BaseURL-arvoa</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>ei ole tallennuspolku</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Osoite</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Tila</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>lähetetty</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>salaisuus puuttuu</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>salaisuus ei ole muotoa user:password tai Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Tiedoston %file uusimmat rivit, uusin ensin.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Asetukset &gt; Lokitiedostot</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Tapahtuma</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Kaikki tapahtumat</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Ajot (alku ja loppu)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Polku sisältää</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Rivit</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Suodata</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Seuraa: näytä uudet rivit, kun ne kirjoitetaan</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Polku ja tiedot</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Mikään lokirivi ei täsmää.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Mitä tallennus muuttaisi</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Mitä muutettiin</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Tallennetaan tiedostoon settings/override/image.ini.append.php, joten tämän arvo ohittaa kaikki siteaccessit. Näytetyt arvot ovat tämän siteaccessin voimassa olevat arvot. Tallennus pyytää ensin vahvistamaan henkilöllisyytesi.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Miten aliakset tehdään ja toimitetaan.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Puuttuvien kuvien nouto toisesta asennuksesta (alpha, dev, beta, stage, pro, post, arc). Tuotanto (pro) ei nouda koskaan.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Asetus</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Arvo</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Tiedostossa settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Kunkin lähteen osoite ja sen tunnistetiedot sisältävän salaisuuden nimi (user:password tai Bearer &lt;token&gt;). Salaisuuden arvo asetetaan kohdassa Asetukset &gt; Salaisuudet, eikä sitä koskaan näytetä täällä.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Esikatsele muutokset</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Tallenna</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Seuranta: päivitetty %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Keskeytetty</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Syöte ei vastannut; yritetään uudelleen.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Työ on päättynyt.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: mallipohjat saavat osoitteen, alias tehdään, kun sitä pyydetään. render: mallipohja tekee sen sivun renderöinnin aikana (alkuperäinen toiminta).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Vielä tekemättömän aliaksen osoite: token (allekirjoitettu, ei tarvitse tietokantaa), ids-token, ids, node tai storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: uudelleenohjaus tiedostoon, kun verkkopalvelin tarjoilee tallennustilan, muuten tiedosto virtautetaan.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Sekunnit, jotka pyyntö saa käyttää aliaksen tekemiseen tai noutamiseen; sen jälkeen se vastaa paikkamerkillä ja työ viimeistelee tehtävän.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Ensimmäisenä kokeiltava muunnin WebP- ja AVIF-varianteille.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Vastaa WebP:llä tai AVIF:llä selaimille, jotka sitä pyytävät, aliaksille, jotka luettelevat Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Neutraali oikean kokoinen kuva, kun kuva puuttuu.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Pieni skripti, joka korvaa paikkamerkit oikealla kuvalla, kun se on valmis.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Julkaisun jälkeen työ tekee uusien kuvien aliakset kaikille liittyville siteaccesseille.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Samanaikaiset muunnokset yhdellä palvelimella.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Massa-ajojen prosessin prioriteetti (nice), 0–19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Sekunnit, jotka selaimet ja välimuistit saavat säilyttää tehdyn aliaksen.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Sekunnit, jotka luonnoksen tai esikatselukuvan osoite pysyy voimassa.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Sekunnit, jotka edellinen allekirjoitusavain pysyy voimassa kierrätyksen jälkeen.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Tämän asennuksen ympäristö.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Ympäristö, josta puuttuvat kuvat noudetaan; none: mitään ei noudeta.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Yksi per rivi: paikallisen tallennustilan etuliite;lähteen etuliite tai osoite, poikkeaville tallennuspoluille.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Sekunnit, jotka yksi pyyntö lähteeseen saa kestää.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Lähteestä otettava suurin tiedosto tavuina.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Peräkkäisten virheiden määrä, jonka jälkeen lähde keskeytetään.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Kuinka kauan epäonnistuva lähde pidetään keskeytettynä.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Lähetä ylläpitäjille sähköposti, kun lähde keskeytetään (enintään kerran tunnissa).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Yksi sähköpostiosoite per rivi; tyhjä: site.ini-tiedoston AdminEmail.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Lähdeasennuksen %block osoite, esim. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Tunnistetiedot sisältävän salaisuuden nimi tai env:VARIABLE. Ei koskaan itse tunnistetietoja.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(ei mitään)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Oletus: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Asetettu tässä; valitse poistaaksesi</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>peritty</translation>
     </message>
 </context>
 </TS>

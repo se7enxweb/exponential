@@ -16590,6 +16590,34 @@ Notenn: ne vo ket distaliet ar pakadoù.</translation>
         <source>Import/Export</source>
         <translation>Enporzhiañ/Ezporzhiañ</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Aliasoù skeudenn</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Krouiñ evit an elfenn-mañ</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Krouiñ evit an isc&apos;hwezenn</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Adkrouiñ evit an elfenn-mañ</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Adkrouiñ evit an isc&apos;hwezenn</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Dilemel evit an elfenn-mañ</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Dilemel evit an isc&apos;hwezenn</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Bloc'h server ul lec'hienn gozh: location = gant return, if ($args) evit ur reked, rewrite evel joker hag ur map eus ar pajennoù hiniennel.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Aliasoù skeudenn</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>An aliasoù skeudenn a zo an eiladoù skeudenn kemmet e ment ha troc&apos;het a ziskouez ar patromoù. amañ e welit penaos e vezont krouet, e c&apos;hallit lañsañ trevelloù hollek war al lec&apos;hienn, esaeañ ur skeudenn pe ur vammenn staging, heuliañ istor al lañsadennoù ha cheñch an arventennoù.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Rannoù ar bajenn</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Taolenn-stur</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Lañsadennoù hollek</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Binvioù esaeañ</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Istor al lañsadennoù</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Arventennoù</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Gwelet e c&apos;hallit pep tra amañ. Cheñch an arventennoù, lañsañ trevelloù hag an binvioù a grou restroù a ro ezhomm eus ar politikerezh setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Ar pezh a c&apos;houlenn aket</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Mod render: ar patromoù a grou an aliasoù a vank en ur skrammañ ar bajenn, evel a-raok. N&apos;int ket implijet ar chomlec&apos;hioù on-demand, ar plas-miret hag an trevelloù drekleur.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Ar gevreañ stummoù a zo gweredekaet, met n&apos;hall konverter ebet amañ skrivañ WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Ur staging eo an staliadur-mañ, met n&apos;en deus BaseURL ebet e vammenn: n&apos;haller ket kaout ar skeudennoù a vank.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Ehanet eo ar vammenn staging goude fazioù an eil goude egile: ar skeudennoù a vank a gav plas-miret betek ma echu an ehan pe ma adlakait anezhi.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>C&apos;hwitet he deus ar vammenn staging nevez zo. Gwelit he fazi diwezhañ dindan.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>N&apos;eo ket produiñ an staliadur-mañ, met SyncFrom n&apos;anvez mammenn ebet: n&apos;eus netra da gaout.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>N&apos;eo ket hegerz renkad an trevelloù (expqueue): an aliasoù a dremen o amzer a vez krouet gant ar reked o tont, ar rakkrouiñ goude embann a zo lezet a-gostez hag al lañsadennoù hollek a zo bevennet da dachennoù bihan.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Un nebeud trevelloù aliasoù skeudenn a zo c&apos;hwitet da vat. Kefluniañ &gt; Renkad an trevelloù a ziskouez perak.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Ehanet eo al lañsadennoù hollek.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Aliasoù a zo c&apos;hwitet e-pad an 24 eur diwezhañ. Istor al lañsadennoù a lak anezho en ur roll.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>An alc&apos;hwez sinañ a zo koshoc&apos;h eget ur bloaz. Ur c&apos;hemm a laka ar chomlec&apos;hioù kozh da chom mat e-pad ar prantad gras.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>N&apos;eus alc&apos;hwez sinañ ebet c&apos;hoazh: krouet e vez gant ar chomlec&apos;h on-demand kentañ.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>An 24 eur diwezhañ</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Aliasoù krouet</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Plas-miret kinniget</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Fazioù</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Restroù tapet</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Lañsadennoù loc&apos;het</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Trevelloù o c&apos;hortoz / o lañsañ</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Kontet diwar an %lines linenn diwezhañ eus %file, a ya war-gil betek %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Mod ha kinnig</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mod</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>on-demand</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Stumm ar chomlec&apos;h</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Kinnig</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Gortoz hirañ ur reked</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Konvertadennoù war un dro</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy war %max kemeret bremañ</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Kevreañ stummoù</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>gweredekaet</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>diweredekaet</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Plas-miret ha skript eskemm</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Rakkrouiñ goude embann</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Aliasoù al lec&apos;hienn</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Konverterioù ar stummoù all</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Konverter</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Urzh</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>dre ziouer</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ya</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ket</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>An aliasoù o-unan a zo krouet gant konvertierioù [ImageConverterSettings], evel a-raok; ar re-mañ a skriv ar stummoù WebP hag AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Endro ha mammenn</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>An staliadur-mañ</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(produiñ: ne denn morse)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Tapout a ra diwar</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>netra</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Chomlec&apos;h ar vammenn</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>n&apos;eo ket termenet</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Titouroù kevreañ</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>kuzhadenn %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>hini ebet</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stad</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>o labourat</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>ehanet betek %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>faziet</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Fazioù an eil goude egile</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>ehan goude %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Fazi diwezhañ</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Berzh diwezhañ</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Adlakaat ar fazioù ha goulenn adarre digant ar vammenn</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Renkad an trevelloù</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Rizh trevell</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>O c&apos;hortoz</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>O lañsañ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>C&apos;hwitet</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>n&apos;eo ket enrollet</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>N&apos;eo ket hegerz renkad an trevelloù.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Lañsadennoù hollek ehanet</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>abaoe %time gant %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Ar lañsadennoù hollek a c&apos;hall mont en-dro</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Alc&apos;hwez sinañ</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Alc&apos;hwez</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>e stal ar c&apos;huzhadennoù</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>hini c&apos;hoazh</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Oad</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days devezh (abaoe %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Alc&apos;hwez kent</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>talvoudus betek %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Cheñch an alc&apos;hwez</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Ar chomlec&apos;hioù sinet gant an alc&apos;hwez a-vremañ a gendalc&apos;h da labourat e-pad ar prantad gras (SigningKeyGrace), goude se e kinnigont plas-miret betek ma vo krouet ar pajennoù en-dro.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Cheñch bremañ</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Penaos e vez graet</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, mod render, staging ha ar marilh</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (dre ziouer): ur bajenn a liammañ un alias n&apos;eo ket anezhañ c&apos;hoazh ouzh ur chomlec&apos;h sinet. Ar reked kentañ a grou anezhañ en diabarzh ar gortoz hirañ, anez e kinnig ur plas-miret neptu hag un trevell a echu al labour; ar skript eskemm a ziskemm ar plas-miret pa vez ar skeudenn.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Mod render: ar patrom a grou an alias en ur skrammañ ar bajenn, evel a-raok. Cheñchit eus an eil d&apos;egile pa fell deoc&apos;h; n&apos;eus ezhomm da fiñval netra.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Un staliadur staging a denn diwar e vammenn an orinaloù hag an aliasoù a vank dezhañ; ur vammenn faziet a vez ehanet goude fazioù an eil goude egile hag ar verourien a resev ur postel d&apos;ar muiañ en eur.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Al lañsadennoù hollek hag ar rakkrouiñ goude embann a zo trevelloù eus renkad an trevelloù, gant ur raksivilded izeloc&apos;h eget ar weladennerien. Dilemel aliasoù a goll ivez krubuilh respont Velocity, evit na vo ket kinniget ur restr dilamet diwar-hi.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Pep alias krouet, plas-miret kinniget, restr tapet ha lañsadenn a zo ur linenn en %file. Al linenn-urzhiadoù he deus an hevelep binvioù: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Trevell %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done war %total skeudenn</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Lañsadenn</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Tachenn</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Disoc&apos;h</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Nullañ an trevell-mañ</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>N&apos;eo ket an trevell %job un trevell aliasoù skeudenn, pe dilamet eo bet diouzh ar renkad.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Disoc&apos;h al lañsadenn %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Ehanet eo al lañsadennoù hollek</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Ehanet abaoe %time gant %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Un ehan a harz pep lañsadenn hollek goude he skeudenn a-vremañ, war pep servijer; al lañsadennoù e renk a c&apos;hortoz. An aliasoù evit ar weladennerien a vez krouet atav.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Kenderc&apos;hel al lañsadennoù hollek</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Abeg (diret)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Ehanañ al lañsadennoù hollek</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Loc&apos;hañ ul lañsadenn</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Al lañsadennoù a zo trevelloù eus renkad an trevelloù: gallout a rit kuitaat ar bajenn ha dont en-dro.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Hep renkad an trevelloù e vez graet ul lañsadenn er reked-mañ, evit %count skeudenn d&apos;ar muiañ.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Obererezh</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Krouiñ: krouiñ an aliasoù a vank</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Adkrouiñ: o dilemel ha o c&apos;hrouiñ en-dro</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Dilemel: o diverkañ (krouet en-dro on-demand)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: tapout ar restroù diwar ar vammenn staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(war un staliadur staging hepken)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Al lec&apos;hienn a-bezh</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Ur skoulm</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Ur skoulm hag e isc&apos;hwezenn</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID skoulm</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klasadoù</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Doareennoù</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Kemmet abaoe</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Un deiziad (2026-11-01) pe ur prantad a-raok (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Da vuiañ a skeudennoù</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Aliasoù (hini ebet dibabet: an holl)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Amprouadenn: kontañ hepken (ur resync a wiriañ ar vammenn ha n&apos;enrol netra)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Skrivañ a-ziwar ar restroù disheñvel (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Loc&apos;hañ al lañsadenn</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Lañsadennoù diwezhañ</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Trevell</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Araokadenn</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>E renk</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Oberoù</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Nullañ</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Lañsadenn hollek pe resync ebet c&apos;hoazh.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Ur skeudenn</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Ar chomlec&apos;hioù a resev ur patrom bremañ, ar mentoù hag ar rizhioù jedet evit pep alias, ha ma&apos;z eo ar restr bep tro amañ.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Klask dre</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID objed</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Diskouez</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>N&apos;oc&apos;h ket aotreet da lenn an objed-mañ.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>An objed-mañ n&apos;en deus skeudenn ebet.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Objed ebet gant an ID-mañ.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>objed %object, skoulm %node, stumm %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Orinal: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>restr a-zo</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>restr o vankout</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Aliasoù %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Alias</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Ment</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Rizh</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Restr</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Stummoù</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Chomlec&apos;h en ur patrom</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>a-zo</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>a vank</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ket evit ar rizh-mañ</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Gwiriañ</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Krouiñ</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Skeudenn ebet er maez-mañ.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Eur</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Kevreadenn d&apos;ur vammenn</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Ur reked HEAD d&apos;ur vammenn staging, gant he zitouroù kevreañ pa vez anvet unan. An titouroù kevreañ a vez kaset, morse diskouezet.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Tarzh</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>gant titouroù kevreañ</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Hent stokañ (diret)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Esaeañ ar gevreadenn</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Mammenn ebet n&apos;en deus BaseURL. Ar mammennoù a vez termenet en arventennoù ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>tizhadus</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>nac&apos;het: gwiriit an titouroù kevreañ</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>n&apos;eo ket bet kavet er vammenn</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>respont ebet</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>amzer dremenet</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>adkaset (n&apos;eo ket heuliet)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL ebet</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>n&apos;eo ket un hent stokañ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Chomlec&apos;h</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Statud</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>kaset</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>ar c&apos;huzhadenn a vank</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>ar c&apos;huzhadenn n&apos;eo na user:password na Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Linennoù nevesañ %file, ar re nevesañ da gentañ.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Kefluniañ &gt; Restroù marilh</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Darvoud</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>An holl zarvoudoù</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Lañsadennoù (kregiñ ha echuiñ)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>An hent a ya gant</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Linennoù</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Sil</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Heuliañ: diskouez al linennoù nevez p&apos;int skrivet</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Hent ha munudoù</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Linenn ebet eus ar marilh ne glot.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Ar pezh a cheñchfe an enrollañ</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Ar pezh a zo bet cheñchet</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Enrollet e settings/override/image.ini.append.php, setu ez a un talvoud amañ a-us da bep siteaccess. An talvoudoù diskouezet a zo ar re a dalv evit ar siteaccess-mañ. An enrollañ a c&apos;houlenn diganeoc&apos;h kentoc&apos;h gwiriañ piv oc&apos;h.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Penaos e vez krouet ha kinniget an aliasoù.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Tapout ar skeudennoù a vank diwar ur staliadur all (alpha, dev, beta, stage, pro, post, arc). Ar produiñ (pro) ne denn morse.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Arventenn</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Talvoud</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>E settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Chomlec&apos;h pep mammenn hag anv ar c&apos;huzhadenn en deus he zitouroù kevreañ (user:password pe Bearer &lt;token&gt;). Talvoud ur c&apos;huzhadenn a vez termenet e Kefluniañ &gt; Kuzhadennoù ha morse diskouezet amañ.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Rakwelet ar c&apos;hemmoù</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Enrollañ</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Heuliañ: hizivaet %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Ehanet</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>N&apos;en deus ket respontet ar c&apos;hronnadur; esaeañ en-dro.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Echu eo an trevell.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: ar patromoù a resev ar chomlec&apos;h, an alias a vez krouet pa vez goulennet. render: ar patrom a grou anezhañ en ur skrammañ ar bajenn (ar emzalc&apos;h orin).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Chomlec&apos;h un alias n&apos;eo ket krouet c&apos;hoazh: token (sinet, n&apos;en deus ezhomm eus stlennvon ebet), ids-token, ids, node pe storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: un adkas d&apos;ar restr pa kinnig ar servijer web ar stokañ, anez e vez skignet ar restr.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Eilennoù ma c&apos;hall ur reked tremen o krouiñ pe o tapout un alias; goude se e kinnig ar plas-miret hag un trevell a echu al labour.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Ar c&apos;honverter esaeet da gentañ evit ar stummoù WebP hag AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Respont WebP pe AVIF d&apos;ar merdeerioù a c&apos;houlenn, evit an aliasoù a anv Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Ur skeudenn neptu er ment dereat keit ha ma vank ur skeudenn.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Ur skript bihan a ziskemm ar plas-miret gant ar skeudenn wir pa vez.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Goude an embann e krou un trevell aliasoù ar skeudennoù nevez evit pep siteaccess liammet.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Konvertadennoù war un dro war ur servijer.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Raksivilded ar prosesad (nice) eus al lañsadennoù hollek, 0 betek 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Eilennoù ma c&apos;hall ar merdeerioù hag ar c&apos;hrubuilhoù derc&apos;hel un alias krouet.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Eilennoù ma chom talvoudus chomlec&apos;h ur skeudenn bruderezh pe rakwel.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Eilennoù ma chom talvoudus an alc&apos;hwez sinañ kent goude ur c&apos;hemm.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Endro an staliadur-mañ.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>An endro ma vez tennet ar skeudennoù a vank diwarnañ; none: netra n&apos;eo tennet.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Unan dre linenn: rakger stokañ lec&apos;hel;rakger pe chomlec&apos;h ar vammenn, evit an hentoù stokañ disheñvel.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Eilennoù ma c&apos;hall ur reked d&apos;ar vammenn padout.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Ar restr vrasañ tennet diwar ar vammenn, e oktedoù.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Fazioù an eil goude egile goude ma vez ehanet ar vammenn.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Pet a bad ez eo ehanet ur vammenn faziet.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Kas ur postel d&apos;ar verourien pa vez ehanet ar vammenn (ur wech en eur d&apos;ar muiañ).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Ur chomlec&apos;h postel dre linenn; goullo: AdminEmail eus site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Chomlec&apos;h staliadur ar vammenn %block, da skouer https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Anv ar c&apos;huzhadenn gant an titouroù kevreañ, pe env:VARIABLE. Morse an titouroù kevreañ o-unan.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(hini ebet)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Dre ziouer: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Termenet amañ; hailhit evit e zilemel</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>hêrezhet</translation>
     </message>
 </context>
 </TS>

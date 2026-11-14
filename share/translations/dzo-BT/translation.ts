@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>ནང་འཁྱེར་/ཕྱིར་གཏང་།</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>པར་གྱི་མིང་གཞན།</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>རྣམ་གྲངས་འདི་གི་དོན་ལུ་བཟོ།</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>ཡན་ལག་ཤིང་གི་དོན་ལུ་བཟོ།</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>རྣམ་གྲངས་འདི་གི་དོན་ལུ་ལོག་བཟོ།</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>ཡན་ལག་ཤིང་གི་དོན་ལུ་ལོག་བཟོ།</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>རྣམ་གྲངས་འདི་གི་དོན་ལུ་བསུབ།</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>ཡན་ལག་ཤིང་གི་དོན་ལུ་བསུབ།</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>དྲྭ་ཚིགས་རྙིངམ་ཅིག་གི་ server སྡེབ་ཚན། return དང་གཅིག་ཁར་ location =, འདྲི་དཔྱད་ཀྱི་དོན་ལུ་ if ($args), ཚབ་རྟགས་སྦེ་ rewrite དང་ ཤོག་ལེབ་རྐྱང་པ་ཚུ་གི་ map</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>པར་གྱི་མིང་གཞན།</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>པར་གྱི་མིང་གཞན་ཚུ་ཡང་ཊེམ་པེལེཊི་ཚུ་གིས་སྟོན་མི་པར་གྱི་ཚད་བསྒྱུར་དང་བཅད་པའི་འདྲ་བཤུས་ཚུ་ཨིན། འདི་ལུ་ཁྱོད་ཀྱིས་དེ་ཚུ་ག་དེ་སྦེ་བཟོཝ་ཨིན་ན་མཐོང་ནི་དང་། ཝེབ་གནས་ཚུལ་ཆ་མཉམ་གྱི་ཐོག་ལུ་ཚོགས་ཆུང་ལཱ་འགོ་བཙུགས་ནི། པར་གཅིག་ཡང་ན་ staging འབྱུང་ཁུངས་བརྟག་ཞིབ་འབད་ནི། གཡོག་བཀོལ་གྱི་ལོ་རྒྱུས་ལུ་རྗེས་འདྲེན་འབད་ནི་དང་སྒྲིག་བཀོད་བསྒྱུར་བཅོས་འབད་ནི་ཚུ་འབད་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>ཤོག་ལྷེ་གི་ཆ་ཤས།</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ལཱ་གི་ངོས།</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>ཚོགས་ཆུང་གཡོག་བཀོལ།</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>བརྟག་ཞིབ་ལག་ཆས།</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>གཡོག་བཀོལ་གྱི་ལོ་རྒྱུས།</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>སྒྲིག་བཀོད།</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>ཁྱོད་ཀྱིས་འདི་ལུ་ཆ་མཉམ་བལྟ་ཚུགས། སྒྲིག་བཀོད་བསྒྱུར་བཅོས་དང་ ལཱ་འགོ་བཙུགས་ནི། ཡིག་སྣོད་བཟོ་མི་ལག་ཆས་ཚུ་གི་དོན་ལུ་སྲིད་བྱུས་ setup/managealiases དགོ།</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>དོ་སྣང་དགོ་མི།</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>render ཐབས་ལམ། ཊེམ་པེལེཊི་ཚུ་གིས་མ་འདང་མི་མིང་གཞན་ཚུ་ཤོག་ལྷེ་སྟོན་པའི་སྐབས་སྔོན་བཟུམ་སྦེ་བཟོཝ་ཨིན། on-demand ཁ་བྱང་། ཚབ་བྱེད་དང་རྒྱབ་ལྗོངས་ལཱ་ཚུ་ལག་ལེན་མི་འཐབ།</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>བཀོད་པའི་རྣམ་པ་གདམ་ཁ་ཁ་ཕྱེ་ཡོད་ད་ འདི་ལུ་བསྒྱུར་བཅོས་འབད་མི་གིས་ WebP ཡིག་འབྲི་མི་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>འདི་ staging གཞི་བཙུགས་ཨིན་རུང་ དེ་གི་འབྱུང་ཁུངས་ལུ་ BaseURL མིན་འདུག: མ་འདང་མི་པར་ཚུ་ཕྱིར་འདྲེན་མི་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>staging འབྱུང་ཁུངས་འདི་འཐུས་ཤོར་རིམ་འཛིན་འབྱུང་ཞིནམ་ལས་མཚམས་བཞག་ཡོད: མཚམས་བཞག་མ་ཚར་ཚུན་ཡང་ན་ཁྱོད་ཀྱིས་ལོག་སྒྲིག་མ་འབད་ཚུན་ མ་འདང་མི་པར་ཚུ་ལུ་ཚབ་བྱེད་ཐོབ།</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>staging འབྱུང་ཁུངས་འདི་ཉེ་དུས་ལུ་ཕམ་ཡོད། དེ་གི་ནོར་འཁྲུལ་མཇུག་མ་འདི་འོག་ལུ་བལྟ།</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>གཞི་བཙུགས་འདི་ཐོན་སྐྱེད་མེན་རུང་ SyncFrom གིས་འབྱུང་ཁུངས་ག་ནི་ཡང་མ་བརྗོད་: ག་ནི་ཡང་ཕྱིར་འདྲེན་མི་འབད།</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>ལཱ་གི་གྱལ་རིམ་ (expqueue) མིན་འདུག: དུས་ཚོད་ལས་བརྒལ་མི་མིང་གཞན་ཚུ་ཞུ་བ་ཤུལ་མམ་གྱིས་བཟོ། པར་བསྐྱེད་ཀྱི་ཤུལ་ལུ་སྔོན་བཟོ་ནི་འདི་ཁྱད་བསད་འགྱོ། ཚོགས་ཆུང་གཡོག་བཀོལ་ཚུ་ཁྱབ་ཁོངས་ཆུང་ཀུ་ལུ་ཨེབ་བཟུང་།</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>པར་གྱི་མིང་གཞན་གྱི་ལཱ་ལ་ལོ་ཅིག་རྩ་བ་ལས་ཕམ་ཡོད། སྒྲིག་བཙུགས། &gt; ལཱ་གི་གྱལ་རིམ་གྱིས་རྒྱུ་མཚན་སྟོན།</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>ཚོགས་ཆུང་གཡོག་བཀོལ་ཚུ་མཚམས་བཞག་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>ཆུ་ཚོད་ ༢༤ གི་ནང་མིང་གཞན་ཚུ་ཕམ་ཡོད། གཡོག་བཀོལ་གྱི་ལོ་རྒྱུསཔ་ཚུ་ཐོ་བཀོད་འབད།</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>མཚན་རྟགས་ལྡེ་མིག་འདི་ལོ་གཅིག་ལས་ལྷག་སྦེ་རྒསཔ། དེ་བརྗེ་བ་ཅིན་ཁ་བྱང་རྙིངམ་ཚུ་གྲོགས་པའི་དུས་ཡུན་གྱི་ནང་ནུས་ཅན་སྦེ་སྡོད།</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>མཚན་རྟགས་ལྡེ་མིག་ད་ལྟོ་ཡང་མིན་འདུག: འདི་ on-demand ཁ་བྱང་དང་པོ་དང་གཅིག་ཁར་བཟོཝ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>ཆུ་ཚོད་ ༢༤ མཇུག།</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>བཟོ་ཡོད་པའི་མིང་གཞན།</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>ལན་བཏབ་ཡོད་པའི་ཚབ་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>འཐུས་ཤོར།</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>ཕྱིར་འདྲེན་འབད་ཡོད་པའི་ཡིག་སྣོད།</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>འགོ་བཙུགས་ཡོད་པའི་གཡོག་བཀོལ།</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>བསྒུག་བཞིན་པའི་ / གཡོག་བཀོལ་བཞིན་པའི་ལཱ།</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file གི་ཐིག་མཇུག་ %lines ལས་ཁྲིམས་འབད་ཡོད། དེ་ཚུ་ %time ཚུན་ལོག་འགྱོ།</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>ཐབས་ལམ་དང་སྤྲོད་ནི།</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>ཐབས་ལམ།</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>དགོ་པའི་སྐབས།</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>ཁ་བྱང་གི་རྣམ་པ།</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>སྤྲོད་ནི།</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>ཞུ་བ་གི་བསྒུག་ཡུན་རིངམ།</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>དུས་མཉམ་གྱི་བསྒྱུར་བཅོས།</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%max ལས་ %busy ད་ལྟོ་རྒྱག་ཅན།</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>བཀོད་པའི་རྣམ་པ་གདམ་ཁ།</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ཁ་ཕྱེ།</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ཁ་བསྡམས།</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>ཚབ་བྱེད་དང་བརྗེ་སྒྱུར་ཡིག་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>པར་བསྐྱེད་ཀྱི་ཤུལ་ལུ་སྔོན་བཟོ།</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>ཝེབ་གནས་ཚུལ་གྱི་མིང་གཞན།</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>རྣམ་པ་གཞན་གྱི་བསྒྱུར་བཅོས་འབད་མི།</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>བསྒྱུར་བཅོས་འབད་མི།</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>བརྟག་ཞིབ་ཀྱི་རིམ་པ།</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>གདམ་ཁ་འབད་མི།</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ཨིན།</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>མེན།</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>མིང་གཞན་རང་ [ImageConverterSettings] གི་བསྒྱུར་བཅོས་འབད་མི་ཚུ་གིས་སྔོན་བཟུམ་སྦེ་བཟོ། འདི་ཚུ་གིས་ WebP དང་ AVIF རྣམ་པ་གཞན་ཚུ་འབྲི།</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>མཐའ་འཁོར་དང་འབྱུང་ཁུངས།</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>གཞི་བཙུགས་འདི།</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(ཐོན་སྐྱེད་: ནམ་ཡང་ཕྱིར་འདྲེན་མི་འབད།)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>ལས་ཕྱིར་འདྲེན།</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>ག་ནི་ཡང་མེད།</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>འབྱུང་ཁུངས་ཀྱི་ཁ་བྱང་།</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>ཚུད་མེད།</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>ནང་འཛུལ་བདེན་རྟགས།</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>གསང་བ་ %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>མེད།</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>གནས་སྟངས།</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>ལཱ་འབད་བཞིན་འདུག</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time ཚུན་མཚམས་བཞག</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>ཕམ་བཞིན་འདུག</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>རིམ་འཛིན་འཐུས་ཤོར།</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count གི་ཤུལ་ལུ་མཚམས་བཞག</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>ནོར་འཁྲུལ་མཇུག་མ།</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>ཕམ་མེད་མཇུག་མ།</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>འཐུས་ཤོར་ཚུ་ལོག་སྒྲིག་འབད་ཞིནམ་ལས་འབྱུང་ཁུངས་ལུ་ལོག་དྲི།</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>ལཱ་གི་གྱལ་རིམ།</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>ལཱ་གི་དབྱེ་བ།</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>བསྒུག་བཞིན་པ།</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>གཡོག་བཀོལ་བཞིན་པ།</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ཕམ་ཡོད།</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>ཐོ་བཀོད་མ་འབད།</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>ལཱ་གི་གྱལ་རིམ་མིན་འདུག</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>ཚོགས་ཆུང་གཡོག་བཀོལ་མཚམས་བཞག་ཡོད།</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time ལས་ %user གིས།</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>ཚོགས་ཆུང་གཡོག་བཀོལ་འགྱོ་ཆོག</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>མཚན་རྟགས་ལྡེ་མིག</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>ལྡེ་མིག</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>གསང་བའི་མཛོད་ནང་།</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ད་ལྟོ་ཡང་མེད།</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>ལོ་ཚད།</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>ཉིནམ་ %days (%time ལས།)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>ལྡེ་མིག་སྔོན་མ།</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time ཚུན་ནུས་ཅན།</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>ལྡེ་མིག་བརྗེ།</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>ད་ལྟོའི་ལྡེ་མིག་གིས་མཚན་རྟགས་བཀོད་ཡོད་པའི་ཁ་བྱང་ཚུ་གྲོགས་པའི་དུས་ཡུན་ (SigningKeyGrace) གི་ནང་ལཱ་འབད་བཞིན་སྡོད། དེ་གི་ཤུལ་ལུ་ཤོག་ལྷེ་ཚུ་ལོག་མ་བཟོ་ཚུན་ ཚབ་བྱེད་ཚུ་ལན་བཏབ།</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>ད་རེས་བརྗེ།</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>ག་དེ་སྦེ་ལཱ་འབད།</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render ཐབས་ལམ། staging དང་དྲན་ཐོ།</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (སྔོན་སྒྲིག): ཤོག་ལྷེ་གིས་ད་ལྟོ་ཡང་མེད་པའི་མིང་གཞན་ཅིག་མཚན་རྟགས་བཀོད་པའི་ཁ་བྱང་ལུ་འབྲེལ། ཞུ་བ་དང་པོ་གིས་བསྒུག་ཡུན་རིངམ་གྱི་ནང་བཟོ། དེ་མིན་པ་ཅིན་ཚབ་བྱེད་ལོགས་སུ་ལན་བཏབ་ལཱ་གིས་ལཱ་མཇུག་བསྡུ། པར་འཐོན་པའི་སྐབས་བརྗེ་སྒྱུར་ཡིག་ཚུགས་ཀྱིས་ཚབ་བྱེད་བརྗེ།</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>render ཐབས་ལམ། ཊེམ་པེལེཊི་གིས་ཤོག་ལྷེ་སྟོན་པའི་སྐབས་མིང་གཞན་བཟོ། སྔོན་བཟུམ། ཁྱོད་ཀྱིས་དུས་ཚོད་ག་ནི་ལུ་ཡང་གཉིས་ཀྱི་བར་བརྗེ་ཚུགས། ག་ནི་ཡང་སྤོ་དགོ་དགོ་མེད།</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>staging གཞི་བཙུགས་གིས་མ་འདང་མི་མ་ཕབ་དང་མིང་གཞན་ཚུ་རང་གི་འབྱུང་ཁུངས་ལས་ཕྱིར་འདྲེན། འབྱུང་ཁུངས་ཕམ་པ་འདི་རིམ་འཛིན་འཐུས་ཤོར་གྱི་ཤུལ་ལུ་མཚམས་བཞག། འཛིན་སྐྱོང་པ་ཚུ་ལུ་ཆུ་ཚོད་རེ་ལུ་གློག་འཕྲིན་གཅིག་ལས་མ་འབྱོར།</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>ཚོགས་ཆུང་གཡོག་བཀོལ་དང་ པར་བསྐྱེད་ཀྱི་ཤུལ་ལུ་སྔོན་བཟོ་ནི་ཚུ་ལཱ་གི་གྱལ་རིམ་གྱི་ལཱ་ཨིན། སྐོར་ཚུ་ལས་གོ་གནས་དམའ། མིང་གཞན་ཚུ་བསུབ་པ་ཅིན་ Velocity གི་ལན་གྱི་ཚོགས་མཛོད་ཡང་གཙང་མ་འབད། དེ་གིས་བསུབས་པའི་ཡིག་སྣོད་དེ་ལས་མི་སྤྲོད།</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>མིང་གཞན་ག་ར་བཟོ་ཡོད་པ། ཚབ་བྱེད་ལན་བཏབ་པ། ཡིག་སྣོད་ཕྱིར་འདྲེན་འབད་པ་དང་གཡོག་བཀོལ་ག་ར་ %file གི་ཐིག་རེ་ཨིན། བཀའ་ཐིག་ལུ་ལག་ཆས་འདི་དང་འདྲ་མཚུངས་ཡོད: %command།</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>ལཱ་ %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>པར་ %total ལས་ %done</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>གཡོག་བཀོལ།</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>ཁྱབ་ཁོངས།</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>གྲུབ་འབྲས།</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>ལཱ་འདི་ཆ་མེད་གཏང་།</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>ལཱ་ %job འདི་པར་གྱི་མིང་གཞན་གྱི་ལཱ་མེན། ཡང་ན་གྱལ་རིམ་ལས་བསུབས་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>གཡོག་བཀོལ་ %run གི་གྲུབ་འབྲས།</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>ཚོགས་ཆུང་གཡོག་བཀོལ་མཚམས་བཞག་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time ལས་ %user གིས་མཚམས་བཞག།</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>མཚམས་བཞག་གིས་ཚོགས་ཆུང་གཡོག་བཀོལ་ག་ར་ད་ལྟོའི་པར་གྱི་ཤུལ་ལུ་སེརཝར་ག་ར་ལུ་མཚམས་བཞག། གྱལ་རིམ་ནང་གི་གཡོག་བཀོལ་བསྒུག། འབད་རུང་འབྱོར་མི་ཚུ་གི་མིང་གཞན་ཚུ་བཟོ་བཞིན་སྡོད།</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>ཚོགས་ཆུང་གཡོག་བཀོལ་ཚུ་མུ་མཐུད།</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>རྒྱུ་མཚན། (གདམ་ཁ།)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>ཚོགས་ཆུང་གཡོག་བཀོལ་མཚམས་བཞག</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>གཡོག་བཀོལ་འགོ་བཙུགས།</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>གཡོག་བཀོལ་ཚུ་ལཱ་གི་གྱལ་རིམ་གྱི་ལཱ་ཨིན: ཁྱོད་ཀྱིས་ཤོག་ལྷེ་ལས་ཐོན་ཞིནམ་ལས་ལོག་འོང་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>ལཱ་གི་གྱལ་རིམ་མེད་པར་གཡོག་བཀོལ་འདི་ཞུ་བ་འདི་ནང་འབད། པར་ %count ཚུན་ལས་མ་འཐོན།</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>བྱ་བ།</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>བཟོ: མ་འདང་མི་མིང་གཞན་ཚུ་བཟོ།</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>ལོག་བཟོ: བསུབ་ཞིནམ་ལས་ལོག་བཟོ།</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>གཙང་སྦྲ: དེ་ཚུ་བསུབ། (དགོ་པའི་སྐབས་ལོག་བཟོ།)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>ལོག་མཐུན་བསྒྲིགས: staging འབྱུང་ཁུངས་ལས་ཡིག་སྣོད་ཚུ་ཕྱིར་འདྲེན།</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(staging གཞི་བཙུགས་ལུ་རྐྱངམ་ཅིག།)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>ཝེབ་གནས་ཚུལ་ཆ་མཉམ།</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>མདུད་ཚིག་གཅིག</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>མདུད་ཚིག་དང་དེ་གི་ཡན་ལག་ཤིང་།</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>མདུད་ཚིག་ ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>དབྱེ་བ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>ཁྱད་ཆོས་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>བསྒྱུར་བཅོས་འབད་ཡོད་པའི་ཚེས་གྲངས།</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>ཚེས་གྲངས་ (2026-11-01) ཡང་ན་ཧེ་མའི་དུས་ཡུན་ (12 hours, 2 days)།</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>པར་ཚུན་ལས་མ་འཐོན།</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>མིང་གཞན་ (ཅིག་ཡང་རྟགས་མ་བཀོད་པ་ཅིན་: ག་ར།)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>ལོག་མཐུན་བསྒྲིགས།</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>བརྟག་བཤེར་གཡོག་བཀོལ: ཁྲིམས་རྐྱངམ་ཅིག། (ལོག་མཐུན་བསྒྲིགས་གིས་འབྱུང་ཁུངས་བརྟག་ནི་དང་ག་ནི་ཡང་མི་སྲུངས།)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>མི་འདྲ་བའི་ཡིག་སྣོད་ཚུ་བསྒྱུར་འབྲི། (ལོག་མཐུན་བསྒྲིགས།)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>གཡོག་བཀོལ་འགོ་བཙུགས།</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>མཇུག་གི་གཡོག་བཀོལ།</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>ལཱ།</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>འཕེལ་རིམ།</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>གྱལ་རིམ་ལུ་བཙུགས།</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>བྱ་བ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ཆ་མེད་གཏང་།</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>ཚོགས་ཆུང་གཡོག་བཀོལ་ཡང་ན་ལོག་མཐུན་བསྒྲིགས་ད་ལྟོ་ཡང་མེད།</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>པར་གཅིག</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>ཊེམ་པེལེཊི་ཅིག་གིས་ད་ལྟོ་ཐོབ་པའི་ཁ་བྱང་། མིང་གཞན་རེ་རེ་གི་དོན་ལུ་ཁྲིམས་པའི་ཆེ་ཆུང་དང་དབྱེ་བ་དང་ཡིག་སྣོད་རེ་རེ་ཡོད་མེད།</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>ཚོལ་ནིའི་ཐབས།</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>དངོས་པོ་ ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>སྟོན།</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>ཁྱོད་ཀྱིས་དངོས་པོ་འདི་ཀློག་མི་ཆོག</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>དངོས་པོ་འདི་ལུ་པར་མིན་འདུག</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>ID འདི་དང་མཐུན་པའི་དངོས་པོ་མིན་འདུག</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>དངོས་པོ་ %object། མདུད་ཚིག་ %node། ཐོན་རིམ་ %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>མ་ཕབ། %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>ཡིག་སྣོད་ཡོད།</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>ཡིག་སྣོད་མེད།</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name གི་མིང་གཞན།</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>མིང་གཞན།</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ཆེ་ཆུང་།</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>དབྱེ་བ།</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ཡིག་སྣོད།</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>རྣམ་པ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>ཊེམ་པེལེཊི་ནང་གི་ཁ་བྱང་།</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>ཡོད།</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>མེད།</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>དབྱེ་བ་འདི་གི་དོན་ལུ་མེན།</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>བརྟག།</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>བཟོ།</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>ས་ཁོངས་འདི་ནང་པར་མིན་འདུག</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>དུས་ཚོད།</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>འབྱུང་ཁུངས་ལུ་འབྲེལ་མཐུད།</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>staging འབྱུང་ཁུངས་ཅིག་ལུ་ HEAD ཞུ་བ། ཁུངས་ཡིག་མིང་བཀོད་ཡོད་པ་ཅིན་དེ་དང་བཅས། ཁུངས་ཡིག་བསྐུར་རུང་ནམ་ཡང་མི་སྟོན།</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>འབྱུང་ཁུངས།</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>ཁུངས་ཡིག་དང་བཅས།</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>མཛོད་ཀྱི་ལམ་ཐིག (གདམ་ཁ།)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>འབྲེལ་མཐུད་བརྟག་ཞིབ་འབད།</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>འབྱུང་ཁུངས་ག་ནི་ལུ་ཡང་ BaseURL མིན་འདུག འབྱུང་ཁུངས་ཚུ་སྒྲིག་བཀོད་ནང་བཀོད། ([AliasSource_&lt;environment&gt;])།</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>ལྷག་འཐོབ།</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>ངོས་མ་ལེན: ཁུངས་ཡིག་བརྟག</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>འབྱུང་ཁུངས་ལུ་མ་ཐོབ།</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>ལན་མེད།</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>དུས་ཚོད་ལས་བརྒལ།</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>ཕྱོགས་སྒྱུར་འབད་ཡོད། (རྗེས་མ་འདྲེན།)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL མེད།</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>མཛོད་ཀྱི་ལམ་ཐིག་མེན།</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ཁ་བྱང་།</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>གནས་སྟངས།</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>བསྐུར་ཡོད།</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>གསང་བ་མེད།</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>གསང་བ་འདི་ user:password ཡང་ན་ Bearer &lt;token&gt; གང་ཡང་མེན།</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file གི་ཐིག་གསརཔ། གསརཔ་དང་པོ།</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>སྒྲིག་བཙུགས། &gt; དྲན་ཐོ་ཡིག་སྣོད།</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>བྱུང་རིམ།</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>བྱུང་རིམ་ག་ར།</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>གཡོག་བཀོལ། (འགོ་དང་མཇུག།)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>ལམ་ཐིག་ནང་ཡོད་མི།</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>ཐིག་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>འཚག་འདེམས།</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>རྗེས་འདྲེན: ཐིག་གསརཔ་བྲིསཔ་ཅིག་དང་སྟོན།</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>ལམ་ཐིག་དང་ཁ་གསལ།</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>དྲན་ཐོའི་ཐིག་ཅིག་ཡང་མི་མཐུན།</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>སྲུང་བཞག་འབད་བ་ཅིན་ག་ནི་བསྒྱུར།</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>ག་ནི་བསྒྱུར་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php ནང་སྲུང་བཞག་འབད་ཡོད། དེ་འབདཝ་ལས་འདི་ལུ་གི་གནས་གོང་འདི་ siteaccess ག་ར་ལས་མཐོ། སྟོན་མི་གནས་གོང་ཚུ་ siteaccess འདི་གི་དོན་ལུ་ནུས་ཅན་ཡོད་མི་ཚུ་ཨིན། སྲུང་བཞག་མ་འབད་བའི་སྔོན་ལུ་ཁྱོད་ཀྱི་ངོ་རྟགས་ངེས་འཛིན་འབད་དགོ།</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>མིང་གཞན་ཚུ་ག་དེ་སྦེ་བཟོ་སྤྲོད་འབདཝ་ཨིན་ན།</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>མ་འདང་མི་པར་ཚུ་གཞི་བཙུགས་གཞན་ཅིག་ལས་ཕྱིར་འདྲེན། (alpha, dev, beta, stage, pro, post, arc)། ཐོན་སྐྱེད། (pro) ནམ་ཡང་ཕྱིར་འདྲེན་མི་འབད།</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>སྒྲིག་བཀོད།</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>གནས་གོང་།</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override ནང་།</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>འབྱུང་ཁུངས་རེ་རེ་གི་ཁ་བྱང་དང་དེ་གི་ཁུངས་ཡིག་འཛིན་མི་གསང་བའི་མིང་། (user:password ཡང་ན་ Bearer &lt;token&gt;)། གསང་བའི་གནས་གོང་སྒྲིག་བཙུགས། &gt; གསང་བ་ནང་བཀོད། འདི་ལུ་ནམ་ཡང་མི་སྟོན།</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>བསྒྱུར་བཅོས་སྔོན་མཐོང་།</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>སྲུང་བཞག</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>རྗེས་འདྲེན: %time ལུ་དུས་མཐུན་བཟོ།</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>མཚམས་བཞག</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>འབྱུང་ཁུངས་ལན་མ་བཏབ། ལོག་འབད་རྩོལ་བཞིན་འདུག</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>ལཱ་མཇུག་བསྡུ་ཡོད།</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: ཊེམ་པེལེཊི་ལུ་ཁ་བྱང་ཐོབ། མིང་གཞན་འདི་དགོ་པའི་སྐབས་བཟོ། render: ཊེམ་པེལེཊི་གིས་ཤོག་ལྷེ་སྟོན་པའི་སྐབས་བཟོ། (མ་གཞི་གི་བྱ་སྟངས།)</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>མ་བཟོ་མི་མིང་གཞན་གྱི་ཁ་བྱང་། token (མཚན་རྟགས་བཀོད་ཡོད། གནས་སྒྲིག་མི་དགོ།), ids-token, ids, node ཡང་ན་ storage།</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: ཝེབ་སེརཝར་གིས་མཛོད་སྤྲོད་པའི་སྐབས་ཡིག་སྣོད་ལུ་ཕྱོགས་སྒྱུར། དེ་མིན་པ་ཅིན་ཡིག་སྣོད་འབབ་འགྲུལ་འབད།</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>ཞུ་བ་གཅིག་གིས་མིང་གཞན་བཟོ་ནི་ཡང་ན་ཕྱིར་འདྲེན་འབད་ནི་ལུ་སྤྱོད་ཆོག་པའི་སྐར་ཆ། དེ་གི་ཤུལ་ལུ་ཚབ་བྱེད་ལན་བཏབ་ལཱ་གིས་ལཱ་མཇུག་བསྡུ།</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP དང་ AVIF རྣམ་པ་གི་དོན་ལུ་དང་པོ་བརྟག་མི་བསྒྱུར་བཅོས་འབད་མི།</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>བརྡ་འཚོལ་ཆས་ཀྱིས་ཞུ་བ་འབད་བ་ཅིན་ WebP ཡང་ན་ AVIF ལན་བཏབ། Formats[] ཡོད་པའི་མིང་གཞན་གྱི་དོན་ལུ།</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>པར་མེད་པའི་སྐབས་ཆེ་ཆུང་འཚམས་པའི་པར་ལོགས་སུ།</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>ཡིག་ཚུགས་ཆུང་ཀུ་ཅིག་གིས་པར་འདི་འདུག་པ་ཅིན་ཚབ་བྱེད་ཚུ་པར་ངོ་མ་གིས་བརྗེ།</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>པར་བསྐྱེད་ཀྱི་ཤུལ་ལུ་ལཱ་གིས་པར་གསརཔ་ཚུ་གི་མིང་གཞན་ཚུ་འབྲེལ་ཡོད་ siteaccess རེ་རེ་གི་དོན་ལུ་བཟོ།</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>སེརཝར་གཅིག་གུ་དུས་མཉམ་གྱི་བསྒྱུར་བཅོས།</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>ཚོགས་ཆུང་གཡོག་བཀོལ་གྱི་ལས་རིམ་གོ་གནས་ (nice)། ༠ ལས་ ༡༩ ཚུན།</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>བརྡ་འཚོལ་ཆས་དང་ཚོགས་མཛོད་ཚུ་གིས་བཟོ་ཡོད་པའི་མིང་གཞན་ཉར་ཆོག་པའི་སྐར་ཆ།</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>ཟིན་བྲིས་ཡང་ན་སྔོན་མཐོང་པར་གྱི་ཁ་བྱང་ནུས་ཅན་སྡོད་པའི་སྐར་ཆ།</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>བརྗེ་བའི་ཤུལ་ལུ་མཚན་རྟགས་ལྡེ་མིག་སྔོན་མ་ནུས་ཅན་སྡོད་པའི་སྐར་ཆ།</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>གཞི་བཙུགས་འདི་གི་མཐའ་འཁོར།</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>མ་འདང་མི་པར་ཚུ་ཕྱིར་འདྲེན་འབད་མི་མཐའ་འཁོར། none: ག་ནི་ཡང་ཕྱིར་འདྲེན་མི་འབད།</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>ཐིག་རེ་ལུ་གཅིག: ས་གནས་མཛོད་ཀྱི་སྔོན་ཚིག། འབྱུང་ཁུངས་སྔོན་ཚིག་ཡང་ན་ཁ་བྱང་། མཛོད་ལམ་ཐིག་མི་འདྲ་བའི་དོན་ལུ།</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>འབྱུང་ཁུངས་ལུ་ཞུ་བ་གཅིག་གིས་ཡུན་རིང་འགྱོ་ཆོག་པའི་སྐར་ཆ།</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>འབྱུང་ཁུངས་ལས་ལེན་པའི་ཡིག་སྣོད་ཆེཤོམ། བཱའིཊི་གི་ཐོག།</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>རིམ་འཛིན་འཐུས་ཤོར་གི་ཤུལ་ལུ་འབྱུང་ཁུངས་མཚམས་བཞག་པའི་ཐེངས།</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>འབྱུང་ཁུངས་ཕམ་པ་འདི་ཇི་ཙམ་མཚམས་བཞག།</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>འབྱུང་ཁུངས་མཚམས་བཞག་པའི་སྐབས་འཛིན་སྐྱོང་པ་ཚུ་ལུ་གློག་འཕྲིན་བསྐུར། (ཆུ་ཚོད་རེ་ལུ་ཐེངས་གཅིག་ལས་མ་འབྱོར།)</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>ཐིག་རེ་ལུ་གློག་འཕྲིན་ཁ་བྱང་གཅིག། སྟོངམ། site.ini གི་ AdminEmail།</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>འབྱུང་ཁུངས་གཞི་བཙུགས་ %block གི་ཁ་བྱང་། དཔེར་ན་ https://www.example.org།</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>ཁུངས་ཡིག་ཡོད་པའི་གསང་བའི་མིང་། ཡང་ན་ env:VARIABLE། ཁུངས་ཡིག་རང་ནམ་ཡང་མེན།</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(མེད།)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>སྔོན་སྒྲིག: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>འདི་ལུ་བཀོད་ཡོད། བསུབ་ནི་ལུ་རྟགས་བཀོད།</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>ཁྱད་ཆོས་ཐོབ།</translation>
     </message>
 </context>
 </TS>

@@ -17903,6 +17903,34 @@ Nota: Os pacotes não serão desinstalados.</translation>
         <source>Import/Export</source>
         <translation>Importar/Exportar</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Aliases de imagem</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Gerar para este item</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Gerar para a subárvore</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Regenerar para este item</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Regenerar para a subárvore</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Remover para este item</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Remover para a subárvore</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -88418,6 +88446,997 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>O bloco server de um site antigo: location = com return, if ($args) para uma consulta, rewrite como curinga e um map de páginas individuais.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Aliases de imagem</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Os aliases de imagem são as cópias redimensionadas e recortadas de uma imagem que os templates exibem. Aqui você vê como são criados, executa tarefas em massa no site, testa uma imagem ou uma origem de staging, acompanha o histórico de execuções e altera as configurações.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Partes da página</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Painel</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Execuções em massa</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Ferramentas de teste</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Histórico de execuções</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Configurações</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Você pode ver tudo aqui. Alterar configurações, iniciar tarefas e usar as ferramentas que criam arquivos exige a política setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>O que precisa de atenção</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Modo render: os templates criam os aliases ausentes enquanto a página é renderizada, como antes. Os endereços on-demand, os placeholders e as tarefas em segundo plano não são usados.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>A negociação de formato está ativada, mas nenhum conversor aqui consegue gravar WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Esta é uma instalação de staging, mas sua origem não tem BaseURL: as imagens ausentes não podem ser buscadas.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>A origem de staging está em pausa após falhas seguidas: as imagens ausentes recebem placeholders até a pausa terminar ou você redefini-la.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>A origem de staging falhou recentemente. Veja o último erro dela abaixo.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Esta instalação não é de produção, mas SyncFrom não indica nenhuma origem: nada é buscado.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>A fila de tarefas (expqueue) não está disponível: os aliases que estouram o tempo são criados pela próxima requisição, a pré-geração após a publicação é ignorada e as execuções em massa ficam limitadas a escopos pequenos.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Algumas tarefas de aliases de imagem falharam definitivamente. Setup &gt; Fila de tarefas mostra o motivo.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>As execuções em massa estão em pausa.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Aliases falharam nas últimas 24 horas. O histórico de execuções os lista.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>A chave de assinatura tem mais de um ano. Girá-la mantém os endereços antigos válidos durante o período de tolerância.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Ainda não há chave de assinatura: ela é criada com o primeiro endereço on-demand.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Últimas 24 horas</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Aliases gerados</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Placeholders entregues</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Falhas</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Arquivos preparados</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Execuções iniciadas</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Tarefas aguardando / em execução</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Contado a partir das últimas %lines linhas de %file, que remontam a %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Modo e entrega</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Modo</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>sob demanda</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Forma do endereço</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Entrega</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Maior espera de uma requisição</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Conversões simultâneas</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy de %max ocupadas agora</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Negociação de formato</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ativada</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>desativada</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Placeholder e script de troca</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Pré-geração após a publicação</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Aliases do site</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Conversores das variantes de formato</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Conversor</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Tentado</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>preferido</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>sim</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>não</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Os aliases em si são criados pelos conversores de [ImageConverterSettings], como antes; estes gravam as variantes WebP e AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Ambiente e origem</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Esta instalação</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(produção: nunca busca)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Busca de</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>nada</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Endereço da origem</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>não definido</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Credencial</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>segredo %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nenhuma</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Estado</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>funcionando</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>em pausa até %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>falhando</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Falhas seguidas</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>pausa após %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Último erro</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Último sucesso</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Zerar as falhas e consultar a origem de novo</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Fila de tarefas</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Tipo de tarefa</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Aguardando</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Em execução</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Com falha</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>não registrado</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>A fila de tarefas não está disponível.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Execuções em massa em pausa</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>desde %time por %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Execuções em massa permitidas</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Chave de assinatura</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Chave</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>no armazenamento de segredos</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ainda nenhuma</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Idade</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days dias (desde %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Chave anterior</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>válida até %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Girar a chave</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Os endereços assinados com a chave atual continuam funcionando durante o período de tolerância (SigningKeyGrace); depois respondem com placeholders até que as páginas sejam criadas de novo.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Girar agora</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Como funciona</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, modo render, staging e o log</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (padrão): uma página vincula um alias que ainda não existe a um endereço assinado. A primeira requisição o cria dentro da maior espera; caso contrário responde com um placeholder neutro e uma tarefa conclui o trabalho; o script de troca substitui o placeholder quando a imagem estiver pronta.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Modo render: o template cria o alias enquanto a página é renderizada, como antes. Alterne entre os dois a qualquer momento; nada precisa ser migrado.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Uma instalação de staging busca em sua origem os originais e aliases que lhe faltam; uma origem com falhas é pausada após falhas seguidas e os administradores recebem no máximo um e-mail por hora.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>As execuções em massa e a pré-geração após a publicação são tarefas da fila de tarefas, com prioridade menor que a dos visitantes. Remover aliases também limpa o cache de respostas do Velocity, para que um arquivo removido não seja servido por ele.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Cada alias criado, placeholder entregue, arquivo preparado e execução é uma linha de %file. A linha de comando tem as mesmas ferramentas: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Tarefa %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done de %total imagens</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Execução</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Escopo</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultado</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Cancelar esta tarefa</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>A tarefa %job não é uma tarefa de aliases de imagem ou foi removida da fila.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Resultado da execução %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>As execuções em massa estão em pausa</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Em pausa desde %time por %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Uma pausa interrompe toda execução em massa após a imagem atual, em todos os servidores; as execuções na fila aguardam. Os aliases dos visitantes continuam sendo criados.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Retomar as execuções em massa</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Motivo (opcional)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Pausar as execuções em massa</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Iniciar uma execução</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>As execuções são tarefas da fila de tarefas: você pode sair da página e voltar.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Sem a fila de tarefas, uma execução é feita nesta requisição, para no máximo %count imagens.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ação</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: criar os aliases ausentes</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: removê-los e criá-los de novo</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: removê-los (criados de novo sob demanda)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: buscar os arquivos da origem de staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(somente em uma instalação de staging)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>O site inteiro</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Um nó</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Um nó e sua subárvore</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID do nó</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Classes</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atributos</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Alterados desde</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Uma data (2026-11-01) ou um tempo atrás (12 horas, 2 dias).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>No máximo imagens</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Aliases (nenhum marcado: todos)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Simulação: apenas contar (um resync verifica a origem e não armazena nada)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Sobrescrever arquivos diferentes (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Iniciar a execução</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Últimas execuções</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Tarefa</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Progresso</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Na fila</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ações</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Nenhuma execução em massa ou resync ainda.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Uma imagem</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Os endereços que um template recebe agora, os tamanhos e tipos calculados para cada alias e se cada arquivo existe.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Buscar por</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID do objeto</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Mostrar</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Você não pode ler este objeto.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Este objeto não tem imagem.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Nenhum objeto com este ID.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>objeto %object, nó %node, versão %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Original: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>arquivo presente</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>arquivo ausente</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Aliases de %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Alias</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Tamanho</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tipo</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Arquivo</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Formatos</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Endereço em um template</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>presente</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>ausente</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>não para este tipo</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Verificar</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Criar</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Nenhuma imagem neste campo.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Hora</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Conexão com uma origem</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Uma requisição HEAD a uma origem de staging, com a credencial dela quando uma é indicada. A credencial é enviada, nunca exibida.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Origem</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>com credencial</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Caminho de storage (opcional)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Testar a conexão</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Nenhuma origem tem BaseURL. As origens são definidas nas configurações ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>alcançável</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>recusada: verifique a credencial</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>não encontrado na origem</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>sem resposta</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>tempo esgotado</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>redirecionado (não seguido)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>sem BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>não é um caminho de storage</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Endereço</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>enviada</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>o segredo está ausente</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>o segredo não é user:password nem Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>As linhas mais recentes de %file, da mais nova para a mais antiga.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Setup &gt; Arquivos de log</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Evento</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Todos os eventos</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Execuções (início e fim)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>O caminho contém</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Linhas</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrar</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Acompanhar: mostrar as novas linhas conforme são gravadas</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Caminho e detalhes</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Nenhuma linha do log corresponde.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>O que salvar mudaria</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>O que foi alterado</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Salvo em settings/override/image.ini.append.php, portanto um valor aqui prevalece sobre todo siteaccess. Os valores exibidos são os em vigor para este siteaccess. Ao salvar, você precisa confirmar quem é antes.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Como os aliases são criados e entregues.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Busca de imagens ausentes em outra instalação (alpha, dev, beta, stage, pro, post, arc). A produção (pro) nunca busca.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Configuração</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valor</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Em settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>O endereço de cada origem e o nome do segredo que guarda sua credencial (user:password ou Bearer &lt;token&gt;). O valor de um segredo é definido em Setup &gt; Segredos e nunca é exibido aqui.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Pré-visualizar as alterações</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Salvar</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Acompanhando: atualizado %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Em pausa</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>O feed não respondeu; tentando de novo.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>A tarefa terminou.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: os templates recebem o endereço, o alias é criado quando solicitado. render: o template o cria enquanto a página é renderizada (o comportamento original).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>O endereço de um alias que ainda não foi criado: token (assinado, não precisa de banco de dados), ids-token, ids, node ou storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: um redirecionamento para o arquivo quando o servidor web serve o storage; caso contrário, o arquivo é enviado em streaming.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Segundos que uma requisição pode gastar criando ou buscando um alias; depois responde o placeholder e uma tarefa conclui o trabalho.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>O conversor tentado primeiro para as variantes WebP e AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Responder WebP ou AVIF aos navegadores que pedem, para aliases que listam Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Uma imagem neutra do tamanho certo enquanto uma imagem está ausente.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Um pequeno script que substitui os placeholders pela imagem real quando ela existe.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Após a publicação, uma tarefa cria os aliases das novas imagens para cada siteaccess relacionado.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Conversões simultâneas em um servidor.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>A prioridade de processo (nice) das execuções em massa, de 0 a 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Segundos que navegadores e caches podem manter um alias criado.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Segundos em que o endereço de uma imagem de rascunho ou pré-visualização continua válido.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Segundos em que a chave de assinatura anterior continua válida após uma rotação.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>O ambiente desta instalação.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>O ambiente de onde as imagens ausentes são buscadas; none: nada é buscado.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Um por linha: prefixo do storage local;prefixo da origem ou endereço, para caminhos de storage que diferem.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Segundos que uma requisição à origem pode levar.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>O maior arquivo obtido da origem, em bytes.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Falhas seguidas após as quais a origem é pausada.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Por quanto tempo uma origem com falhas fica em pausa.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Avisar os administradores por e-mail quando a origem for pausada (no máximo uma vez por hora).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Um endereço de e-mail por linha; vazio: o AdminEmail de site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>O endereço da instalação de origem %block, por exemplo https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>O nome do segredo com a credencial, ou env:VARIABLE. Nunca a credencial em si.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(nenhum)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Padrão: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Definido aqui; marque para remover</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>herdado</translation>
     </message>
 </context>
 </TS>

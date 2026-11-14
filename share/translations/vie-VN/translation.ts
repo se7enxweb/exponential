@@ -16590,6 +16590,34 @@ Lưu ý: Các gói sẽ không bị gỡ cài đặt.</translation>
         <source>Import/Export</source>
         <translation>Nhập/Xuất</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Bí danh hình ảnh</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Tạo cho mục này</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Tạo cho cây con</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Tạo lại cho mục này</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Tạo lại cho cây con</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Xóa cho mục này</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Xóa cho cây con</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Khối server của một trang web cũ: location = với return, if ($args) cho truy vấn, rewrite làm ký tự đại diện và một map các trang đơn lẻ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Bí danh hình ảnh</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Bí danh hình ảnh là các bản sao đã được thay đổi kích thước và cắt của một hình ảnh mà các mẫu giao diện hiển thị. Tại đây bạn xem chúng được tạo ra như thế nào, chạy các tác vụ hàng loạt trên toàn trang, thử một hình ảnh hoặc một nguồn staging, theo dõi lịch sử chạy và thay đổi cài đặt.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Các phần của trang</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Bảng điều khiển</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Chạy hàng loạt</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Công cụ thử nghiệm</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Lịch sử chạy</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Cài đặt</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Bạn có thể xem mọi thứ ở đây. Thay đổi cài đặt, chạy tác vụ và dùng các công cụ tạo tệp cần chính sách setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Những gì cần chú ý</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Chế độ render: các mẫu giao diện tạo bí danh còn thiếu khi trang được dựng, như trước đây. Các địa chỉ on-demand, hình giữ chỗ và tác vụ nền không được dùng.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Thương lượng định dạng đang bật, nhưng không có bộ chuyển đổi nào ở đây ghi được WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Đây là bản cài đặt staging, nhưng nguồn của nó không có BaseURL: không thể lấy các hình ảnh còn thiếu.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Nguồn staging đã bị tạm dừng sau nhiều lần lỗi liên tiếp: các hình ảnh còn thiếu nhận hình giữ chỗ cho đến khi hết thời gian tạm dừng hoặc bạn đặt lại.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Nguồn staging vừa bị lỗi. Xem lỗi gần nhất của nó bên dưới.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Bản cài đặt này không phải môi trường production, nhưng SyncFrom không nêu nguồn nào: không có gì được lấy về.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Hàng đợi tác vụ (expqueue) không khả dụng: các bí danh quá thời gian sẽ do yêu cầu kế tiếp tạo, việc tạo trước sau khi xuất bản bị bỏ qua và chạy hàng loạt chỉ giới hạn ở phạm vi nhỏ.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Một số tác vụ bí danh hình ảnh đã thất bại hẳn. Thiết lập &gt; Hàng đợi tác vụ cho biết lý do.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Chạy hàng loạt đang tạm dừng.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Có bí danh bị lỗi trong 24 giờ qua. Lịch sử chạy liệt kê chúng.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Khóa ký đã hơn một năm tuổi. Xoay khóa giúp các địa chỉ cũ còn hiệu lực trong thời gian gia hạn.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Chưa có khóa ký: khóa được tạo cùng địa chỉ on-demand đầu tiên.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>24 giờ qua</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Bí danh đã tạo</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Hình giữ chỗ đã trả</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Lỗi</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Tệp đã lấy về</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Lượt chạy đã bắt đầu</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Tác vụ đang chờ / đang chạy</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Đếm từ %lines dòng cuối của %file, kéo dài ngược đến %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Chế độ và phân phối</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Chế độ</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>theo yêu cầu</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Dạng địa chỉ</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Phân phối</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Thời gian chờ tối đa của một yêu cầu</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Số chuyển đổi cùng lúc</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy trên %max đang bận</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Thương lượng định dạng</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>bật</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>tắt</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Hình giữ chỗ và tập lệnh thay thế</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Tạo trước sau khi xuất bản</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Bí danh của trang</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Bộ chuyển đổi của các biến thể định dạng</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Bộ chuyển đổi</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Thử</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>ưu tiên</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>có</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>không</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Bản thân các bí danh được tạo bởi các bộ chuyển đổi trong [ImageConverterSettings], như trước đây; các bộ này ghi các biến thể WebP và AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Môi trường và nguồn</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Bản cài đặt này</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production: không bao giờ lấy về)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Lấy từ</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>không có</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Địa chỉ nguồn</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>chưa đặt</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Thông tin xác thực</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>bí mật %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>không có</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Trạng thái</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>đang hoạt động</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>tạm dừng đến %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>đang lỗi</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Số lỗi liên tiếp</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>tạm dừng sau %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Lỗi gần nhất</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Thành công gần nhất</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Đặt lại số lỗi và hỏi lại nguồn</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Hàng đợi tác vụ</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Loại tác vụ</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Đang chờ</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Đang chạy</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Thất bại</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>chưa đăng ký</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Hàng đợi tác vụ không khả dụng.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Chạy hàng loạt đã tạm dừng</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>từ %time bởi %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Cho phép chạy hàng loạt</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Khóa ký</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Khóa</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>trong kho bí mật</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>chưa có</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Tuổi</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days ngày (từ %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Khóa trước</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>hiệu lực đến %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Xoay khóa</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Các địa chỉ được ký bằng khóa hiện tại vẫn hoạt động trong thời gian gia hạn (SigningKeyGrace), sau đó chúng trả hình giữ chỗ cho đến khi các trang được tạo lại.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Xoay ngay</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Cách hoạt động</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, chế độ render, staging và nhật ký</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>Theo yêu cầu (mặc định): trang liên kết một bí danh chưa có tới một địa chỉ đã ký. Yêu cầu đầu tiên tạo nó trong thời gian chờ tối đa, nếu không sẽ trả một hình giữ chỗ trung tính và một tác vụ hoàn tất phần việc; tập lệnh thay thế đổi hình giữ chỗ khi hình ảnh đã có.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Chế độ render: mẫu giao diện tạo bí danh khi trang được dựng, như trước đây. Bạn có thể chuyển qua lại giữa hai chế độ bất cứ lúc nào; không cần di chuyển gì.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Bản cài đặt staging lấy từ nguồn của nó các bản gốc và bí danh còn thiếu; nguồn bị lỗi sẽ tạm dừng sau nhiều lần lỗi liên tiếp và quản trị viên nhận tối đa một e-mail mỗi giờ.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Chạy hàng loạt và tạo trước sau khi xuất bản là các tác vụ của hàng đợi tác vụ, có độ ưu tiên thấp hơn người truy cập. Xóa bí danh cũng xóa bộ nhớ đệm phản hồi của Velocity, để tệp đã xóa không còn được phục vụ từ đó.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Mỗi bí danh được tạo, hình giữ chỗ được trả, tệp được lấy về và lượt chạy là một dòng trong %file. Dòng lệnh có các công cụ tương tự: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Tác vụ %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done trên %total hình ảnh</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Lượt chạy</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Phạm vi</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Kết quả</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Hủy tác vụ này</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Tác vụ %job không phải tác vụ bí danh hình ảnh, hoặc đã bị xóa khỏi hàng đợi.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Kết quả lượt chạy %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Chạy hàng loạt đang tạm dừng</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Tạm dừng từ %time bởi %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Tạm dừng sẽ dừng mọi lượt chạy hàng loạt sau hình ảnh hiện tại, trên mọi máy chủ; các lượt chạy trong hàng đợi sẽ chờ. Bí danh cho người truy cập vẫn được tạo.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Tiếp tục chạy hàng loạt</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Lý do (tùy chọn)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Tạm dừng chạy hàng loạt</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Bắt đầu một lượt chạy</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Các lượt chạy là tác vụ của hàng đợi tác vụ: bạn có thể rời trang rồi quay lại.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Khi không có hàng đợi tác vụ, lượt chạy được thực hiện ngay trong yêu cầu này, tối đa %count hình ảnh.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Hành động</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Tạo: tạo các bí danh còn thiếu</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Tạo lại: xóa rồi tạo lại</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Xóa sạch: xóa chúng (sẽ được tạo lại theo yêu cầu)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Đồng bộ lại: lấy các tệp từ nguồn staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(chỉ trên bản cài đặt staging)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Toàn bộ trang</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Một nút</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Một nút và cây con của nó</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID nút</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Lớp</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Thuộc tính</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Thay đổi từ</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Một ngày (2026-11-01) hoặc khoảng thời gian trước (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Tối đa hình ảnh</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Bí danh (không chọn: tất cả)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>đồng bộ lại</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Chạy thử: chỉ đếm (đồng bộ lại chỉ kiểm tra nguồn và không lưu gì)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Ghi đè các tệp khác biệt (đồng bộ lại)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Bắt đầu chạy</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Các lượt chạy gần đây</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Tác vụ</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Tiến độ</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Trong hàng đợi</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Hành động</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Hủy</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Chưa có lượt chạy hàng loạt hay đồng bộ lại nào.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Một hình ảnh</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Các địa chỉ mà mẫu giao diện nhận được hiện giờ, kích thước và loại được tính cho mỗi bí danh, và tệp tương ứng có tồn tại hay không.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Tra cứu theo</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID đối tượng</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Hiển thị</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Bạn không được phép đọc đối tượng này.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Đối tượng này không có hình ảnh.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Không có đối tượng nào với ID này.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>đối tượng %object, nút %node, phiên bản %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Bản gốc: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>có tệp</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>thiếu tệp</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Bí danh của %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Bí danh</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Kích thước</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Loại</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Tệp</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Định dạng</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Địa chỉ trong mẫu giao diện</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>có</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>thiếu</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>không dành cho loại này</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Kiểm tra</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Tạo</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Không có hình ảnh trong trường này.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Thời gian</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Kết nối tới một nguồn</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Một yêu cầu HEAD tới nguồn staging, kèm thông tin xác thực nếu có chỉ định. Thông tin xác thực được gửi đi nhưng không bao giờ hiển thị.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Nguồn</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>có thông tin xác thực</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Đường dẫn lưu trữ (tùy chọn)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Kiểm tra kết nối</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Không nguồn nào có BaseURL. Các nguồn được đặt trong phần cài đặt ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>truy cập được</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>bị từ chối: kiểm tra thông tin xác thực</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>không tìm thấy tại nguồn</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>không phản hồi</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>hết thời gian chờ</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>bị chuyển hướng (không theo)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>không có BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>không phải đường dẫn lưu trữ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Địa chỉ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Tình trạng</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>đã gửi</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>thiếu bí mật</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>bí mật không phải user:password hay Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Các dòng mới nhất của %file, mới nhất trước.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Thiết lập &gt; Tệp nhật ký</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Sự kiện</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Mọi sự kiện</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Lượt chạy (bắt đầu và kết thúc)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Đường dẫn chứa</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Số dòng</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Bộ lọc</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Theo dõi: hiển thị dòng mới ngay khi được ghi</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Đường dẫn và chi tiết</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Không có dòng nhật ký nào khớp.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Việc lưu sẽ thay đổi gì</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Đã thay đổi gì</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Được lưu vào settings/override/image.ini.append.php, nên giá trị ở đây được ưu tiên hơn mọi siteaccess. Các giá trị hiển thị là giá trị đang có hiệu lực cho siteaccess này. Trước khi lưu, bạn sẽ được yêu cầu xác minh danh tính.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Cách bí danh được tạo và phân phối.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Lấy các hình ảnh còn thiếu từ một bản cài đặt khác (alpha, dev, beta, stage, pro, post, arc). Production (pro) không bao giờ lấy về.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Cài đặt</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Giá trị</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Trong settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Địa chỉ của mỗi nguồn và tên bí mật chứa thông tin xác thực của nó (user:password hoặc Bearer &lt;token&gt;). Giá trị của bí mật được đặt tại Thiết lập &gt; Bí mật và không bao giờ hiển thị ở đây.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Xem trước thay đổi</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Lưu</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Đang theo dõi: cập nhật %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Đã tạm dừng</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Nguồn cấp không phản hồi; đang thử lại.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Tác vụ đã kết thúc.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: mẫu giao diện nhận địa chỉ, bí danh được tạo khi có yêu cầu. render: mẫu giao diện tạo nó khi trang được dựng (cách hoạt động ban đầu).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Địa chỉ của bí danh chưa được tạo: token (đã ký, không cần cơ sở dữ liệu), ids-token, ids, node hoặc storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: chuyển hướng tới tệp khi máy chủ web phục vụ kho lưu trữ, nếu không thì tệp được truyền trực tiếp.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Số giây một yêu cầu được dùng để tạo hoặc lấy một bí danh; sau đó nó trả hình giữ chỗ và một tác vụ hoàn tất phần việc.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Bộ chuyển đổi được thử trước cho các biến thể WebP và AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Trả WebP hoặc AVIF cho các trình duyệt yêu cầu, với các bí danh có liệt kê Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Một hình ảnh trung tính đúng kích thước trong khi hình ảnh còn thiếu.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Một tập lệnh nhỏ thay hình giữ chỗ bằng hình ảnh thật khi hình đã có.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Sau khi xuất bản, một tác vụ tạo bí danh của các hình ảnh mới cho mọi siteaccess liên quan.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Số chuyển đổi cùng lúc trên một máy chủ.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Mức ưu tiên tiến trình (nice) của chạy hàng loạt, từ 0 đến 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Số giây trình duyệt và bộ nhớ đệm được giữ một bí danh đã tạo.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Số giây địa chỉ của hình ảnh bản nháp hoặc xem trước còn hiệu lực.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Số giây khóa ký trước còn hiệu lực sau khi xoay khóa.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Môi trường của bản cài đặt này.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Môi trường để lấy các hình ảnh còn thiếu; none: không lấy gì.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Mỗi dòng một mục: tiền tố lưu trữ cục bộ;tiền tố hoặc địa chỉ nguồn, cho các đường dẫn lưu trữ khác nhau.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Số giây tối đa cho một yêu cầu tới nguồn.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Tệp lớn nhất được lấy từ nguồn, tính bằng byte.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Số lỗi liên tiếp sau đó nguồn bị tạm dừng.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Thời gian một nguồn bị lỗi bị tạm dừng.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Gửi e-mail cho quản trị viên khi nguồn bị tạm dừng (tối đa mỗi giờ một lần).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Mỗi dòng một địa chỉ e-mail; để trống: dùng AdminEmail của site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Địa chỉ của bản cài đặt nguồn %block, ví dụ https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Tên bí mật chứa thông tin xác thực, hoặc env:VARIABLE. Không bao giờ là chính thông tin xác thực.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(không có)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Mặc định: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Đặt tại đây; chọn để gỡ bỏ</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>kế thừa</translation>
     </message>
 </context>
 </TS>

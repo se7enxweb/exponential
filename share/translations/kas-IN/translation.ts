@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>دَرآمَد/بَرآمَد</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>تَصویر عرف</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>یمہِ آیٹمَس خاطرٕ بناوِو</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>ذیلی درختس خاطرٕ بناوِو</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>یمہِ آیٹمَس خاطرٕ دوبارہٕ بناوِو</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>ذیلی درختس خاطرٕ دوبارہٕ بناوِو</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>یمہِ آیٹمَس خاطرٕ ہٹاوِو</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>ذیلی درختس خاطرٕ ہٹاوِو</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>پرٛانہِ سایِٹُک server بلاک: return سٕتۍ location =، کیوٗری خٲطرٕ if ($args)، وایِلڈ کارڈ بَنِتھ rewrite تہٕ اَکیٚلِہ صَفَن ہُند اَکھ map۔</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>تَصویر عرف</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>تَصویر عرف چھِ تَصویرٕک سائز بدلاونہٕ آمتۍ تہٕ کٹنہٕ آمتۍ نقل، یِم ٹیمپلیٹ ظاہر کَرَن۔ یتھ کُن ہیکو توہہ وُچھتھ زِ یِم کِتھہ بَنَن، پوٗرِس سایٹس پؠٹھ بلک رَن شُروٗع کٔرِتھ، اکھ تَصویر یا سٹیجِنگ سورس ٹیسٹ کٔرِتھ، رَنن ہند تاریخ وُچھتھ تہٕ ترتیبات بدلاوِتھ۔</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>صفحہ ہِنز حِصہ</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ڈیش بورڈ</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>بلک رَن</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>ٹیسٹ اوزار</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>رَنن ہند تاریخ</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ترتیبات</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>تۍ ہیکِو یتھ کُن سٲرِنی کُنہِ وُچھتھ۔ ترتیبات بدلاوُن، جاب شُروٗع کَرُن تہٕ فایِل بناوَن وۄلۍ اوزار خاطرٕ چھہٕ setup/managealiases پالیسی ضروٗرت۔</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>کُس چیز توجہ تُلِ</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>render موڈ: ٹیمپلیٹ بناونہٕ چھِ غایب عرف صفحہ ظاہر کَرنہٕ وَقتہٕ، یُتھ پتہٕ آسہِ۔ on-demand پتہٕ، پلیس ہولڈر تہٕ بیک گراونڈ جاب چھِ نہ استعمال گژھان۔</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>فارمیٹ نیگوسی ایشَن چھہٕ آن، مگر یتھ کُن چھہٕ کُنہِ کنورٹر WebP لِکھنہٕ سُنٛد قابل نہ۔</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>یہِ چھہٕ سٹیجِنگ انسٹالیشن، مگر تمہِ ہندس سورسس چھہٕ نہ BaseURL: غایب تَصویر ہیکن نہ آنہٕ آمُت۔</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>سٹیجِنگ سورس چھہٕ لگاتار ناکامی پتہٕ روکنہٕ آمُت: غایب تَصویرن چھہٕ پلیس ہولڈر میلان یمبرٕ زن وقفہٕ ختم گژھہِ یا تۍ تمہِ ری سیٹ کَرِو۔</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>سٹیجِنگ سورس چھہٕ نِش ناکام گومُت۔ تمۍ ہند آخری خرٲبی وُچھ تل۔</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>یہِ انسٹالیشن چھہٕ پروڈکشن نہ، مگر SyncFrom چھہٕ نہ کُنہِ سورس ناو دِوان: کانہہ چیز چھِ نہ آنہٕ آمُت۔</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>جاب قطار (expqueue) چھہٕ دستیاب نہ: وَقتہٕ تھپھ گژھن وۄلۍ عرف بناوان اگلۍ درخواست، شایع کَرنہٕ پتہٕ پیشگی بناون چھہٕ ٹاوُن گژھان تہٕ بلک رَن چھِ ازیٖ چھوٹین دایرن تام محدود۔</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>تَصویر عرفن ہِنز کینہہ جاب چھِ ہمیشہٕ خاطرٕ ناکام گیمژ۔ سیٹ اَپ &gt; جاب قطار چھہٕ وجہ ظاہر کران۔</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>بلک رَن چھِ روکنہٕ آمتۍ۔</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>اخری 24 گھنٹن منز چھِ عرف ناکام گیمتۍ۔ رَنن ہند تاریخ چھِ تِم فہرست کران۔</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>دستخطچ کُنجی چھیہ اکس ؤریس کھوتہ پرانۍ۔ تمۍ بدلاونہٕ چھِ پرانۍ پتہٕ رعایتی مدتس منز دُرست روزان۔</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>دستخطچ کُنجی چھیہ ہُن تام نہ: سۄ چھیہ پتھ on-demand پتہٕ سٟتۍ بَنان۔</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>اخری 24 گھنٹہٕ</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>بناونہٕ آمتۍ عرف</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>جواب دنہٕ آمتۍ پلیس ہولڈر</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>ناکامیاں</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>آنہٕ آمتۍ فایِل</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>شُروٗع کرنہٕ آمتۍ رَن</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>جاب اِنتظارس منز / چلان</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file ہند اخری %lines لیکھ چھِ گنتی کرنہٕ آمتۍ، یِم %time تام پتہٕ گچھن۔</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>موڈ تہٕ ترسیل</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>موڈ</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>مانگنہٕ پؠٹھ</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>پتچ شکل</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>ترسیل</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>درخواستچ زیادہ لمبۍ اِنتظار</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>اکھ وَقتہٕ تبدیلیاں</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%max منزٕ %busy ہُن مصروف</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>فارمیٹ نیگوسی ایشَن</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>آن</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>آف</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>پلیس ہولڈر تہٕ بدلاون سکرپٹ</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>شایع کَرنہٕ پتہٕ پیشگی بناون</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>سایٹچ عرف</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>فارمیٹ قسمن ہٕنز کنورٹر</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>کنورٹر</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>کوشش ترتیب</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>ترجیحی</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>آ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>نہ</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>عرف پننۍ چھِ [ImageConverterSettings] ہٕنز کنورٹر بناوان، یُتھ پتہٕ آسہِ؛ یم چھِ WebP تہٕ AVIF قسم لِکھان۔</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>ماحول تہٕ سورس</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>یہِ انسٹالیشن</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(پروڈکشن: کَنہِ وَقتہٕ نہ آنان)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>کتھ پؠٹھ چھہٕ آنان</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>کانہہ نہ</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>سورسچ پتہٕ</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>سیٹ نہ</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>تصدیقی معلومات</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>خُفیہ %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>کانہہ نہ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>صورتحال</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>چھہٕ کٲم کران</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time تام روکنہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>ناکام چھہٕ گژھان</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>لگاتار ناکامیاں</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count پتہٕ وقفہٕ</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>اخری خرٲبی</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>اخری کامیابی</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>ناکامیاں ری سیٹ کٔرِو تہٕ سورسَس دوبارہٕ پرُچھِو</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>جاب قطار</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>جابچ قسِم</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>اِنتظارس منز</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>چلان</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>رجسٹر نہ</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>جاب قطار چھیہ دستیاب نہ۔</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>بلک رَن روکنہٕ آمتۍ</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time پؠٹھ %user ہِس طرفہٕ</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>بلک رَن ہیکن چلتھ</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>دستخطچ کُنجی</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>کُنجی</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>خُفیہ معلوماتن ہندس ذخیرس منز</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ہُن تام کانہہ نہ</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>عُمر</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days دوہ (%time پؠٹھ)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>پیٹھمۍ کُنجی</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time تام دُرست</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>کُنجی بدلاوِو</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>مَوجوٗدہ کُنجی سٟتۍ دستخط کرنہٕ آمتۍ پتہٕ چھِ رعایتی مدتس (SigningKeyGrace) منز کٲم کران، پتھ چھِ تِم صفحہ دوبارہٕ بَنن تام پلیس ہولڈر سٟتۍ جواب دوان۔</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>ہُن بدلاوِو</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>یہِ چھہٕ کِتھہ چلان</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand، render موڈ، سٹیجِنگ تہٕ لاگ</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (ڈیفالٹ): صفحہ چھہٕ اکھ عرف یُس ہُن تام نہ چھہٕ، دستخط کرنہٕ آمتس پتس سٟتۍ جوڑان۔ پتمۍ درخواست چھیہ تمہِ لمبۍ اِنتظارس منز بناوان، نتہٕ چھہٕ غیرجانبدار پلیس ہولڈر جواب دوان تہٕ اکھ جاب چھہٕ کٲم مکمل کران؛ تَصویر آسنہٕ پتہٕ چھہٕ بدلاون سکرپٹ پلیس ہولڈر بدلاوان۔</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>render موڈ: ٹیمپلیٹ چھہٕ صفحہ ظاہر کرنہٕ وَقتہٕ عرف بناوان، یُتھ پتہٕ آسہِ۔ توہہ ہیکو کُنہِ وَقتہٕ دۅنین درمیان بدلاوِتھ؛ کانہہ چیز چھِ نہ منتقل کرُن ضروٗرت۔</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>سٹیجِنگ انسٹالیشن چھہٕ غایب اصل تہٕ عرف پننہِ سورسہٕ پؠٹھ آنان؛ ناکام سورس چھہٕ لگاتار ناکامی پتہٕ روکنہٕ یوان تہٕ منتظمن چھہٕ گھنٹس منز زیادہ کھوتہ زیادہ اکھ ای میل میلان۔</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>بلک رَن تہٕ شایع کَرنہٕ پتہٕ پیشگی بناون چھِ جاب قطارہِ ہٕنز جاب، زائرن کھوتہ کم ترجیحہٕ سٟتۍ۔ عرف ہٹاونہٕ چھہٕ Velocity ہُند جواب کیش بٔہ صاف گژھان، تاکہ ہٹاونہٕ آمُت فایِل تتھ پؠٹھ نہ دنہٕ یِیہِ۔</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>ہر بناونہٕ آمُت عرف، ہر جواب دنہٕ آمُت پلیس ہولڈر، ہر آنہٕ آمُت فایِل تہٕ ہر رَن چھہٕ %file ہُند اکھ لیکھ۔ کمانڈ لاین منز چھِ یمی اوزار: %command۔</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>جاب %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%total تَصویرن منزٕ %done</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>رَن</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>دایرہٕ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نتیجہٕ</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>یہِ جاب منسوٗخ کٔرِو</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>جاب %job چھہٕ نہ تَصویر عرفن ہند جاب، یا قطارہٕ پؠٹھ ہٹاونہٕ آمُت۔</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>رَن %run ہُند نتیجہٕ</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>بلک رَن چھِ روکنہٕ آمتۍ</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time پؠٹھ %user ہِس طرفہٕ روکنہٕ آمُت۔</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>وقفہٕ چھہٕ ہر بلک رَن تمہِ ہندِ موجوٗدہ تَصویر پتہٕ، ہر سرور پؠٹھ، روکان؛ قطارس منز رَن چھِ اِنتظار کران۔ زائرن ہٕنز عرف چھِ ہُن تام بَنان۔</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>بلک رَن دوبارہٕ شُروٗع کٔرِو</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>وجہ (اختیاری)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>بلک رَن روکِو</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>اکھ رَن شُروٗع کٔرِو</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>رَن چھِ جاب قطارہِ ہٕنز جاب: توہہ ہیکو صفحہ ہیجتھ واپس یِن۔</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>جاب قطارہِ کِن ہیتھ چھہٕ رَن امہِ درخواستس منز گژھان، زیادہ کھوتہ زیادہ %count تَصویرن خاطرٕ۔</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>عَمَل</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>بناوِو: غایب عرف بناوِو</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>دوبارہٕ بناوِو: ہٹاوِو تہٕ دوبارہٕ بناوِو</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>صاف کٔرِو: ہٹاوِو (مانگنہٕ پؠٹھ دوبارہٕ بَنان)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>دوبارہٕ ہم آہنگ کٔرِو: سٹیجِنگ سورسہٕ پؠٹھ فایِل آنِو</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(صرف سٹیجِنگ انسٹالیشنس پؠٹھ)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>پوٗرٕ سایٹ</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>اکھ نوڈ</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>اکھ نوڈ تہٕ تمہِ ہند ذیلی درخت</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>نوڈ ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>کلاس</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>اوصاف</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>تہٕ پتہٕ بدلاونہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>اکھ تاریخ (2026-11-01) یا پیٹھمۍ وَقت (12 hours, 2 days)۔</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>زیادہ کھوتہ زیادہ تَصویر</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>عرف (کانہہ نہ نشان: سارنۍ)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>دوبارہٕ ہم آہنگی</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>ڈرائی رَن: صرف گنتی (دوبارہٕ ہم آہنگی چھیہ سورس چیک کران تہٕ کانہہ نہ محفوظ کران)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>مختلف فایِل اوور رایٹ کٔرِو (دوبارہٕ ہم آہنگی)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>رَن شُروٗع کٔرِو</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>اخری رَن</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>جاب</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>پیش رفت</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>قطارس منز</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>عَمَل</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>منسوٗخ کٔرِو</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>ہُن تام کانہہ بلک رَن یا دوبارہٕ ہم آہنگی نہ۔</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>اکھ تَصویر</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>یِم پتہٕ ٹیمپلیٹس ہُن میلان، ہر عرفچ گنتی کرنہٕ آمتۍ سائز تہٕ قسم، تہٕ کُس فایِل چھہٕ موجوٗد۔</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>یتھ مطابق ژھارِو</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>آبجیکٹ ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>وُچھناوِو</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>توہہ ہیکو نہ یہِ آبجیکٹ پرتھ۔</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>یتھ آبجیکٹس چھیہ نہ کانہہ تَصویر۔</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>یتھ ID سٟتۍ کانہہ آبجیکٹ نہ۔</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>آبجیکٹ %object، نوڈ %node، ورژن %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>اصل: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>فایِل موجوٗد</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>فایِل غایب</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name ہٕنز عرف</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>عرف</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>سائز</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>قسِم</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>فایِل</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>فارمیٹ</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>ٹیمپلیٹ منز پتہٕ</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>موجوٗد</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>غایب</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>یتھ قسمَس خاطرٕ نہ</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>چیک کٔرِو</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>بناوِو</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>یتھ فیلڈس منز چھیہ نہ کانہہ تَصویر۔</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>وَقت</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>سورسس سٟتۍ جوڑ</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>سٹیجِنگ سورسس پؠٹھ HEAD درخواست، تصدیقی معلومات سٟتۍ اگر ناو دنہٕ آمُت۔ تصدیقی معلومات چھِ روانہ کرنہٕ یوان، کَنہِ وَقتہٕ نہ ظاہر۔</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>سورس</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>تصدیقی معلومات سٟتۍ</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>اسٹوریج پاتھ (اختیاری)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>جوڑ ٹیسٹ کٔرِو</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>کُنہِ سورسس چھہٕ نہ BaseURL۔ سورس چھِ ترتیباتن منز سیٹ گژھان ([AliasSource_&lt;environment&gt;])۔</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>رسایی ہیکہِ</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>رَد: تصدیقی معلومات چیک کٔرِو</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>سورسس پؠٹھ نہ لبنہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>کانہہ جواب نہ</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>وَقت ختم</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>دوسرِس جایہِ بھیجنہٕ آمُت (پتہٕ نہ گژھنہٕ آمُت)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL نہ</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>اسٹوریج پاتھ نہ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>پتہٕ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>صورتحال</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>روانہ کرنہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>خُفیہ چھہٕ غایب</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>خُفیہ چھہٕ نہ user:password نہ Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file ہٕنز نئۍ لیکھ، نئۍ پتہٕ۔</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>سیٹ اَپ &gt; لاگ فایِل</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>واقعہ</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>سارۍ واقعات</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>رَن (شُروٗع تہٕ ختم)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>پاتھ منز چھہٕ</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>لیکھ</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>فِلٹَر</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>پتہٕ گژھِو: نئۍ لیکھ ظاہر کٔرِو یُتھ لِکھنہٕ یِن</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>پاتھ تہٕ تفصیل</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>لاگچ کانہہ لیکھ چھیہ نہ میل کھیوان۔</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>محفوظ کرنہٕ سُند کیا اثر گژھہِ</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>کیا بدلاونہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php منز محفوظ گژھان، لہٰذا یتھ کُن قیمت چھیہ ہر siteaccess کھوتہ بالا۔ ظاہر کرنہٕ آمتۍ قیمت چھِ یِم یتھ siteaccess خاطرٕ لاگو چھِ۔ محفوظ کرنہٕ برونہٕ کنہِ چھہٕ توہہ پرُچھنہٕ یوان زِ توہہ کُس چھِو۔</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>عرف کِتھہ بَنن تہٕ پہنچاونہٕ یِن۔</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>غایب تَصویر دوسرِس انسٹالیشنہٕ پؠٹھ آنُن (alpha, dev, beta, stage, pro, post, arc)۔ پروڈکشن (pro) چھہٕ کَنہِ وَقتہٕ نہ آنان۔</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>ترتیب</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>قیمَت</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override منز</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>ہر سورسچ پتہٕ تہٕ تمہِ خُفیہ ہند ناو یُس تمہِ ہند تصدیقی معلومات چھہٕ سنبھالان (user:password یا Bearer &lt;token&gt;)۔ خُفیہ ہند قیمت چھہٕ سیٹ اَپ &gt; خُفیہ معلومات منز سیٹ گژھان تہٕ یتھ کُن کَنہِ وَقتہٕ نہ ظاہر۔</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>تبدیلی پیشگی وُچھِو</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>محفوظ کٔرِو</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>پتہٕ گژھان: %time پؠٹھ اپڈیٹ</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>روکنہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>فیڈ چھہٕ نہ جواب دِوان؛ دوبارہٕ کوشش چھیہ گژھان۔</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>جاب چھہٕ ختم گومُت۔</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: ٹیمپلیٹن چھہٕ پتہٕ میلان، عرف چھہٕ مانگنہٕ پؠٹھ بَنان۔ render: ٹیمپلیٹ چھہٕ تتھ صفحہ ظاہر کرنہٕ وَقتہٕ بناوان (اصل برتاو)۔</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>تمہِ عرفک پتہٕ یُس ہُن تام نہ بنیومت چھہٕ: token (دستخط کرنہٕ آمُت، ڈیٹابیس نہ ضروٗرت)، ids-token، ids، node یا storage۔</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: فایلس کُن ری ڈایریکٹ اگر ویب سرور اسٹوریج دِوان چھہٕ، نتہٕ چھیہ فایِل اسٹریم گژھان۔</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>سیکنڈ یم اکھ درخواست عرف بناونس یا آنُنس پؠٹھ خرچ ہیکہِ کٔرِتھ؛ تتھ پتہٕ چھہٕ پلیس ہولڈر جواب دوان تہٕ اکھ جاب چھہٕ کٲم مکمل کران۔</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>کنورٹر یُس WebP تہٕ AVIF قسمن خاطرٕ پتمہٕ پؠٹھ آزمایہٕ گژھان۔</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>براوزرن یم مانگن تمن WebP یا AVIF جواب دِوِو، تمن عرفن خاطرٕ یمن Formats[] چھہٕ۔</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>صحیح سائزٕچ غیرجانبدار تَصویر یُس وَقتہٕ تَصویر چھیہ غایب۔</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>اکھ چھوٹ سکرپٹ یُس پلیس ہولڈر اصل تَصویرن سٟتۍ بدلاوان چھہٕ یُس وَقتہٕ سۄ چھہٕ موجوٗد۔</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>شایع کَرنہٕ پتہٕ چھہٕ اکھ جاب نویو تَصویرن ہٕنز عرف ہر متعلقہ siteaccess خاطرٕ بناوان۔</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>اکس سرورس پؠٹھ اکھ وَقتہٕ تبدیلیاں۔</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>بلک رَنن ہند پروسیس ترجیحی (nice)، 0 پؠٹھ 19 تام۔</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>سیکنڈ یم براوزر تہٕ کیش بناونہٕ آمتس عرفس سنبھالتھ ہیکن۔</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>مسودہٕ یا پیش نظارہٕ تَصویرچ پتہٕ کِتھ تام دُرست روزِ، سیکنڈن منز۔</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>سیکنڈ یم پیٹھمۍ دستخطچ کُنجی بدلاونہٕ پتہٕ دُرست روزِ۔</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>یتھ انسٹالیشنُک ماحول۔</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>ماحول کتھ پؠٹھ غایب تَصویر آنہٕ یِن؛ none: کانہہ چیز چھِ نہ آنہٕ یوان۔</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>اکھ پرتھ لیکھہ: مقامی اسٹوریج پریفکس؛سورس پریفکس یا پتہٕ، مختلف اسٹوریج پاتھن خاطرٕ۔</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>سیکنڈ یم سورسس تام اکھ درخواست ہیکہِ لگتھ۔</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>سورسہٕ پؠٹھ ہیتنہٕ آمُت سۅ زیادہ بڈ فایِل، بایٹن منز۔</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>لگاتار ناکامیاں یمن پتہٕ سورس چھہٕ روکنہٕ یوان۔</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>ناکام سورس چھہٕ کتھ تام روکنہٕ یوان۔</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>منتظمن ای میل کٔرِو یُس وَقتہٕ سورس چھہٕ روکنہٕ یوان (گھنٹس منز زیادہ کھوتہ زیادہ اکھ پٕتھ)۔</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>اکھ ای میل پتہٕ پرتھ لیکھہ؛ خالی: site.ini ہند AdminEmail۔</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>سورس انسٹالیشن %block ہُند پتہٕ، مثلاً https://www.example.org۔</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>تمہِ خُفیہ ہند ناو یتھ تصدیقی معلومات چھِ، یا env:VARIABLE۔ تصدیقی معلومات پانہٕ کَنہِ وَقتہٕ نہ۔</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(کانہہ نہ)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>ڈیفالٹ: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>یتھ کُن سیٹ؛ ہٹاونہٕ خاطرٕ ٹِک کٔرِو</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>وراثت منز میلُت</translation>
     </message>
 </context>
 </TS>

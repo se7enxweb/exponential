@@ -16590,6 +16590,34 @@ Nota: Pakej tersebut tidak akan dinyahpasang.</translation>
         <source>Import/Export</source>
         <translation>Import/Eksport</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Alias imej</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Jana untuk item ini</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Jana untuk subpokok</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Jana semula untuk item ini</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Jana semula untuk subpokok</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Buang untuk item ini</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Buang untuk subpokok</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Blok server laman lama: location = dengan return, if ($args) untuk pertanyaan, rewrite sebagai kad bebas dan map halaman tunggal.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Alias imej</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Alias imej ialah salinan imej yang telah diubah saiz dan dipangkas yang dipaparkan oleh templat. Di sini anda melihat cara ia dibuat, menjalankan tugas pukal ke atas tapak, menguji satu imej atau sumber staging, mengikuti sejarah larian dan menukar tetapan.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Bahagian halaman</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Papan pemuka</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Larian pukal</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Alat ujian</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Sejarah larian</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Tetapan</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Anda boleh melihat semuanya di sini. Menukar tetapan, menjalankan tugas dan alat yang membuat fail memerlukan dasar setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Perkara yang perlu diberi perhatian</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Mod render: templat membuat alias yang tiada semasa halaman dipaparkan, seperti dahulu. Alamat on-demand, pemegang tempat dan tugas latar belakang tidak digunakan.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Rundingan format dihidupkan, tetapi tiada penukar di sini yang boleh menulis WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Ini ialah pemasangan staging, tetapi sumbernya tiada BaseURL: imej yang tiada tidak dapat diambil.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Sumber staging dijeda selepas kegagalan berturut-turut: imej yang tiada mendapat pemegang tempat sehingga jeda tamat atau anda menetapkannya semula.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Sumber staging gagal baru-baru ini. Lihat ralat terakhirnya di bawah.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Pemasangan ini bukan produksi, tetapi SyncFrom tidak menamakan sebarang sumber: tiada apa-apa diambil.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Baris gilir tugas (expqueue) tidak tersedia: alias yang terlepas masanya dibuat oleh permintaan seterusnya, penjanaan awal selepas penerbitan dilangkau dan larian pukal terhad kepada skop kecil.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Beberapa tugas alias imej gagal secara kekal. Persediaan &gt; Baris gilir tugas menunjukkan sebabnya.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Larian pukal dijeda.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Alias gagal dalam 24 jam yang lalu. Sejarah larian menyenaraikannya.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Kunci penandatanganan berusia lebih setahun. Memutarkannya mengekalkan alamat lama sah sepanjang tempoh bertolak ansur.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Belum ada kunci penandatanganan: ia dibuat bersama alamat on-demand yang pertama.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>24 jam yang lalu</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Alias dijana</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Pemegang tempat dijawab</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Kegagalan</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Fail diambil</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Larian dimulakan</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Tugas menunggu / berjalan</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Dikira daripada %lines baris terakhir %file, yang meliputi sehingga %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Mod dan penghantaran</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mod</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>atas permintaan</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Bentuk alamat</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Penghantaran</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Masa menunggu terpanjang bagi satu permintaan</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Penukaran serentak</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy daripada %max sibuk sekarang</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Rundingan format</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>hidup</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>mati</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Pemegang tempat dan skrip penukar</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Penjanaan awal selepas penerbitan</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Alias tapak</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Penukar varian format</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Penukar</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Dicuba</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>diutamakan</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ya</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>tidak</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Alias itu sendiri dibuat oleh penukar dalam [ImageConverterSettings], seperti dahulu; penukar ini menulis varian WebP dan AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Persekitaran dan sumber</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Pemasangan ini</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(produksi: tidak pernah mengambil)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Mengambil daripada</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>tiada</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Alamat sumber</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>tidak ditetapkan</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Bukti kelayakan</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>rahsia %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>tiada</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Keadaan</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>berfungsi</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>dijeda sehingga %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>gagal</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Kegagalan berturut-turut</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>jeda selepas %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Ralat terakhir</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Kejayaan terakhir</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Tetapkan semula kegagalan dan tanya sumber sekali lagi</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Baris gilir tugas</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Jenis tugas</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Menunggu</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Berjalan</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Gagal</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>tidak didaftarkan</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Baris gilir tugas tidak tersedia.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Larian pukal dijeda</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>sejak %time oleh %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Larian pukal dibenarkan berjalan</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Kunci penandatanganan</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Kunci</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>dalam stor rahsia</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>belum ada</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Umur</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days hari (sejak %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Kunci terdahulu</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>sah sehingga %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Putar kunci</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Alamat yang ditandatangani dengan kunci semasa terus berfungsi sepanjang tempoh bertolak ansur (SigningKeyGrace), kemudian ia menjawab dengan pemegang tempat sehingga halaman dibuat semula.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Putar sekarang</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Cara ia berfungsi</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, mod render, staging dan log</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>Atas permintaan (lalai): halaman memaut alias yang belum wujud kepada alamat yang ditandatangani. Permintaan pertama membuatnya dalam masa menunggu terpanjang, jika tidak ia menjawab dengan pemegang tempat neutral dan satu tugas menyiapkan kerja; skrip penukar menggantikan pemegang tempat apabila imej sudah ada.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Mod render: templat membuat alias semasa halaman dipaparkan, seperti dahulu. Tukar antara kedua-duanya pada bila-bila masa; tiada apa-apa perlu dimigrasikan.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Pemasangan staging mengambil fail asal dan alias yang tiada daripada sumbernya; sumber yang gagal dijeda selepas kegagalan berturut-turut dan pentadbir menerima paling banyak satu e-mel sejam.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Larian pukal dan penjanaan awal selepas penerbitan ialah tugas baris gilir tugas, dengan keutamaan lebih rendah daripada pelawat. Membuang alias juga mengosongkan cache respons Velocity, supaya fail yang dibuang tidak disajikan daripadanya.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Setiap alias yang dibuat, pemegang tempat yang dijawab, fail yang diambil dan larian ialah satu baris dalam %file. Baris arahan mempunyai alat yang sama: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Tugas %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done daripada %total imej</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Larian</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Skop</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Keputusan</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Batalkan tugas ini</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Tugas %job bukan tugas alias imej, atau telah dibuang daripada baris gilir.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Keputusan larian %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Larian pukal dijeda</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Dijeda sejak %time oleh %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Jeda menghentikan setiap larian pukal selepas imej semasanya, pada setiap pelayan; larian dalam baris gilir menunggu. Alias untuk pelawat masih dibuat.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Sambung larian pukal</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Sebab (pilihan)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Jeda larian pukal</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Mulakan larian</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Larian ialah tugas baris gilir tugas: anda boleh meninggalkan halaman dan kembali semula.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Tanpa baris gilir tugas, larian dilakukan dalam permintaan ini, untuk paling banyak %count imej.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Tindakan</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Jana: buat alias yang tiada</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Jana semula: buang dan buat semula</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Singkir: buang (dibuat semula atas permintaan)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Segerak semula: ambil fail daripada sumber staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(hanya pada pemasangan staging)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Seluruh tapak</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Satu nod</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Satu nod dan subpokoknya</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID nod</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Kelas</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atribut</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Diubah sejak</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Tarikh (2026-11-01) atau tempoh yang lalu (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Paling banyak imej</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Alias (tiada ditanda: semua)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>segerak semula</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Larian ujian: hanya kira (segerak semula menyemak sumber dan tidak menyimpan apa-apa)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Tulis ganti fail yang berbeza (segerak semula)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Mulakan larian</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Larian terkini</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Tugas</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Kemajuan</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Dalam baris gilir</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Tindakan</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Batal</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Belum ada larian pukal atau segerak semula.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Satu imej</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Alamat yang diperoleh templat sekarang, saiz dan jenis yang dikira bagi setiap alias, dan sama ada setiap fail wujud.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Cari mengikut</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID objek</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Tunjukkan</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Anda tidak dibenarkan membaca objek ini.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Objek ini tiada imej.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Tiada objek dengan ID ini.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>objek %object, nod %node, versi %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Asal: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>fail wujud</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>fail tiada</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Alias bagi %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Alias</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Saiz</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Jenis</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fail</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Format</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Alamat dalam templat</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>wujud</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>tiada</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>bukan untuk jenis ini</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Semak</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Buat</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Tiada imej dalam medan ini.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Masa</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Sambungan ke sumber</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Permintaan HEAD kepada sumber staging, dengan bukti kelayakannya apabila dinamakan. Bukti kelayakan dihantar, tidak pernah dipaparkan.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Sumber</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>dengan bukti kelayakan</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Laluan storan (pilihan)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Uji sambungan</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Tiada sumber mempunyai BaseURL. Sumber ditetapkan dalam tetapan ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>boleh dicapai</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>ditolak: semak bukti kelayakan</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>tidak ditemui pada sumber</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>tiada jawapan</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>tamat masa</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>dilencongkan (tidak diikuti)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>tiada BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>bukan laluan storan</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Alamat</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>dihantar</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>rahsia tiada</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>rahsia itu bukan user:password atau Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Baris terbaharu %file, yang terbaharu dahulu.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Persediaan &gt; Fail log</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Peristiwa</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Semua peristiwa</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Larian (mula dan tamat)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Laluan mengandungi</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Baris</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Tapis</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Ikuti: tunjukkan baris baharu sebaik sahaja ditulis</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Laluan dan butiran</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Tiada baris log yang sepadan.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Perkara yang akan berubah jika disimpan</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Perkara yang telah diubah</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Disimpan ke dalam settings/override/image.ini.append.php, jadi nilai di sini mengatasi setiap siteaccess. Nilai yang dipaparkan ialah yang berkuat kuasa untuk siteaccess ini. Menyimpan akan meminta anda mengesahkan identiti anda terlebih dahulu.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Cara alias dibuat dan dihantar.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Mengambil imej yang tiada daripada pemasangan lain (alpha, dev, beta, stage, pro, post, arc). Produksi (pro) tidak pernah mengambil.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Tetapan</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Nilai</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Dalam settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Alamat setiap sumber dan nama rahsia yang menyimpan bukti kelayakannya (user:password atau Bearer &lt;token&gt;). Nilai rahsia ditetapkan dalam Persediaan &gt; Rahsia dan tidak pernah dipaparkan di sini.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Pratonton perubahan</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Simpan</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Mengikuti: dikemas kini %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Dijeda</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Suapan tidak menjawab; mencuba semula.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Tugas telah tamat.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: templat mendapat alamat, alias dibuat apabila diminta. render: templat membuatnya semasa halaman dipaparkan (kelakuan asal).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Alamat alias yang belum dibuat: token (bertandatangan, tidak perlukan pangkalan data), ids-token, ids, node atau storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: lencongan ke fail apabila pelayan web menyajikan storan, jika tidak fail disiarkan secara strim.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Saat yang boleh digunakan satu permintaan untuk membuat atau mengambil alias; kemudian ia menjawab dengan pemegang tempat dan satu tugas menyiapkan kerja.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Penukar yang dicuba dahulu untuk varian WebP dan AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Jawab dengan WebP atau AVIF kepada pelayar yang memintanya, bagi alias yang menyenaraikan Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Imej neutral dengan saiz yang betul semasa imej tiada.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Skrip kecil yang menggantikan pemegang tempat dengan imej sebenar apabila sudah ada.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Selepas penerbitan, satu tugas membuat alias imej baharu untuk setiap siteaccess yang berkaitan.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Penukaran serentak pada satu pelayan.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Keutamaan proses (nice) larian pukal, 0 hingga 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Saat pelayar dan cache boleh menyimpan alias yang telah dibuat.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Saat alamat imej draf atau pratonton kekal sah.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Saat kunci penandatanganan terdahulu kekal sah selepas putaran.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Persekitaran pemasangan ini.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Persekitaran tempat imej yang tiada diambil; none: tiada apa-apa diambil.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Satu setiap baris: awalan storan tempatan;awalan atau alamat sumber, bagi laluan storan yang berbeza.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Saat maksimum bagi satu permintaan kepada sumber.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Fail terbesar yang diambil daripada sumber, dalam bait.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Kegagalan berturut-turut yang menyebabkan sumber dijeda.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Tempoh sumber yang gagal dijeda.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>E-mel kepada pentadbir apabila sumber dijeda (paling banyak sekali sejam).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Satu alamat e-mel setiap baris; kosong: AdminEmail dalam site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Alamat pemasangan sumber %block, cth. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Nama rahsia yang mengandungi bukti kelayakan, atau env:VARIABLE. Jangan sekali-kali bukti kelayakan itu sendiri.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(tiada)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Lalai: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Ditetapkan di sini; tandakan untuk membuangnya</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>diwarisi</translation>
     </message>
 </context>
 </TS>

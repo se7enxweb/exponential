@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>درون‌ریزی/برون‌بری</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>نام‌های مستعار تصویر</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>ساخت برای این مورد</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>ساخت برای زیردرخت</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>ساخت دوباره برای این مورد</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>ساخت دوباره برای زیردرخت</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>حذف برای این مورد</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>حذف برای زیردرخت</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>بلوک server یک سایت قدیمی: location = همراه return، if ($args) برای پرس‌وجو، rewrite به‌عنوان الگوی عام و یک map از صفحه‌های تکی.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>نام‌های مستعار تصویر</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>نام‌های مستعار تصویر نسخه‌های تغییر اندازه‌یافته و برش‌خوردهٔ یک تصویر هستند که قالب‌ها نمایش می‌دهند. در اینجا می‌بینید که چگونه ساخته می‌شوند، کارهای گروهی را روی سایت اجرا می‌کنید، یک تصویر یا یک منبع staging را آزمایش می‌کنید، تاریخچهٔ اجراها را دنبال می‌کنید و تنظیمات را تغییر می‌دهید.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>بخش‌های صفحه</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>پیشخوان</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>اجراهای گروهی</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>ابزارهای آزمایش</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>تاریخچهٔ اجراها</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>تنظیمات</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>شما می‌توانید همه چیز را در اینجا ببینید. تغییر تنظیمات، اجرای کارها و ابزارهایی که فایل می‌سازند به خط‌مشی setup/managealiases نیاز دارند.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>آنچه به توجه نیاز دارد</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>حالت render: قالب‌ها نام‌های مستعار گم‌شده را هنگام نمایش صفحه می‌سازند، مانند گذشته. آدرس‌های on-demand، جانشین‌ها و کارهای پس‌زمینه استفاده نمی‌شوند.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>انتخاب قالب فعال است، اما هیچ مبدلی در اینجا نمی‌تواند WebP بنویسد.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>این یک نصب staging است، اما منبع آن BaseURL ندارد: تصاویر گم‌شده را نمی‌توان گرفت.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>منبع staging پس از چند خطای پیاپی متوقف شده است: تصاویر گم‌شده جانشین می‌گیرند تا وقتی که توقف پایان یابد یا شما آن را بازنشانی کنید.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>منبع staging به تازگی ناموفق بوده است. آخرین خطای آن را در زیر ببینید.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>این نصب production نیست، اما SyncFrom هیچ منبعی را نام نمی‌برد: چیزی گرفته نمی‌شود.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>صف کار (expqueue) در دسترس نیست: نام‌های مستعاری که از زمان خود می‌گذرند توسط درخواست بعدی ساخته می‌شوند، ساخت پیشین پس از انتشار انجام نمی‌شود و اجراهای گروهی به محدوده‌های کوچک محدود می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>برخی کارهای نام‌های مستعار تصویر برای همیشه ناموفق شدند. راه‌اندازی &gt; صف کار دلیل آن را نشان می‌دهد.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>اجراهای گروهی متوقف شده‌اند.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>در ۲۴ ساعت گذشته نام‌های مستعاری ناموفق بوده‌اند. تاریخچهٔ اجراها آنها را فهرست می‌کند.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>کلید امضا بیش از یک سال قدمت دارد. تعویض آن، آدرس‌های قدیمی را در مدت مهلت معتبر نگه می‌دارد.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>هنوز کلید امضا وجود ندارد: با نخستین آدرس on-demand ساخته می‌شود.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>۲۴ ساعت گذشته</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>نام‌های مستعار ساخته‌شده</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>جانشین‌های ارسال‌شده</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>خطاها</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>فایل‌های گرفته‌شده</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>اجراهای آغازشده</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>کارهای در انتظار / در حال اجرا</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>از %lines سطر آخر %file شمرده شده است که تا %time به عقب می‌رسد.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>حالت و تحویل</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>حالت</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>بر حسب نیاز</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>شکل آدرس</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>تحویل</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>طولانی‌ترین انتظار یک درخواست</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>تبدیل‌های همزمان</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy از %max اکنون مشغول</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>انتخاب قالب</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>روشن</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>خاموش</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>جانشین و اسکریپت جایگزینی</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>ساخت پیشین پس از انتشار</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>نام‌های مستعار سایت</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>مبدل‌های گونه‌های قالب</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>مبدل</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>ترتیب</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>ترجیحی</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>بلی</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>نه</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>خود نام‌های مستعار مانند گذشته توسط مبدل‌های [ImageConverterSettings] ساخته می‌شوند؛ اینها گونه‌های WebP و AVIF را می‌نویسند.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>محیط و منبع</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>این نصب</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production: هرگز نمی‌گیرد)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>می‌گیرد از</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>هیچ</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>آدرس منبع</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>تنظیم نشده</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>اعتبارنامه</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>مقدار محرمانه %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>هیچ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>حالت</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>کار می‌کند</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>متوقف تا %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>خطادار</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>خطاهای پیاپی</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>توقف پس از %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>آخرین خطا</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>آخرین موفقیت</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>خطاها را بازنشانی کن و دوباره از منبع بپرس</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>صف کار</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>نوع کار</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>در انتظار</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>در حال اجرا</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناموفق</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>ثبت نشده</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>صف کار در دسترس نیست.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>اجراهای گروهی متوقف شده</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>از %time توسط %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>اجراهای گروهی اجازهٔ اجرا دارند</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>کلید امضا</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>کلید</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>در مخزن مقادیر محرمانه</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>هنوز هیچ</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>قدمت</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days روز (از %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>کلید پیشین</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>معتبر تا %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>تعویض کلید</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>آدرس‌هایی که با کلید فعلی امضا شده‌اند در مدت مهلت (SigningKeyGrace) به کار ادامه می‌دهند، سپس جانشین ارسال می‌کنند تا زمانی که صفحه‌ها دوباره ساخته شوند.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>همین حالا تعویض کن</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>چگونه کار می‌کند</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand، حالت render، staging و گزارش</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (پیش‌فرض): یک صفحه نام مستعاری را که هنوز وجود ندارد به یک آدرس امضاشده پیوند می‌دهد. نخستین درخواست آن را در مدت طولانی‌ترین انتظار می‌سازد، وگرنه یک جانشین خنثی ارسال می‌کند و یک کار، کار را تمام می‌کند؛ اسکریپت جایگزینی وقتی تصویر آماده شد، جانشین را عوض می‌کند.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>حالت render: قالب نام مستعار را هنگام نمایش صفحه می‌سازد، مانند گذشته. در هر زمان می‌توانید بین این دو جابه‌جا شوید؛ چیزی نیاز به انتقال ندارد.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>یک نصب staging اصل‌ها و نام‌های مستعار گم‌شدهٔ خود را از منبعش می‌گیرد؛ منبع خطادار پس از چند خطای پیاپی متوقف می‌شود و مدیران حداکثر در هر ساعت یک ایمیل می‌گیرند.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>اجراهای گروهی و ساخت پیشین پس از انتشار کارهای صف کار هستند، با اولویتی پایین‌تر از بازدیدکنندگان. حذف نام‌های مستعار حافظهٔ پنهان پاسخ Velocity را نیز پاک می‌کند تا فایل حذف‌شده از آن ارائه نشود.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>هر نام مستعار ساخته‌شده، جانشین ارسال‌شده، فایل گرفته‌شده و اجرا یک سطر از %file است. خط فرمان همین ابزارها را دارد: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>کار %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done از %total تصویر</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>اجرا</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>محدوده</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نتیجه</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>این کار را لغو کن</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>کار %job کار نام‌های مستعار تصویر نیست یا از صف حذف شده است.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>نتیجهٔ اجرای %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>اجراهای گروهی متوقف شده‌اند</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>متوقف از %time توسط %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>یک توقف هر اجرای گروهی را پس از تصویر فعلی‌اش در هر سرور متوقف می‌کند؛ اجراهای در صف منتظر می‌مانند. نام‌های مستعار بازدیدکنندگان همچنان ساخته می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>ادامهٔ اجراهای گروهی</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>دلیل (اختیاری)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>توقف اجراهای گروهی</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>آغاز یک اجرا</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>اجراها کارهای صف کار هستند: می‌توانید صفحه را ترک کنید و دوباره برگردید.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>بدون صف کار، یک اجرا در همین درخواست انجام می‌شود، حداکثر برای %count تصویر.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>اقدام</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>ساخت: نام‌های مستعار گم‌شده را بساز</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>ساخت دوباره: حذف کن و دوباره بساز</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>پاک‌سازی: حذف کن (بر حسب نیاز دوباره ساخته می‌شود)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>همگام‌سازی دوباره: فایل‌ها را از منبع staging بگیر</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(فقط در نصب staging)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>کل سایت</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>یک گره</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>یک گره و زیردرخت آن</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>شناسهٔ گره</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>کلاس‌ها</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>ویژگی‌ها</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>تغییریافته از</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>یک تاریخ (2026-11-01) یا یک مدت پیش (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>حداکثر تصاویر</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>نام‌های مستعار (اگر هیچ‌کدام علامت نخورد: همه)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>همگام‌سازی دوباره</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>اجرای آزمایشی: فقط بشمار (همگام‌سازی دوباره منبع را بررسی می‌کند و چیزی ذخیره نمی‌کند)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>فایل‌های متفاوت را بازنویسی کن (همگام‌سازی دوباره)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>اجرا را آغاز کن</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>آخرین اجراها</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>کار</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>پیشرفت</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>در صف</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>اقدام‌ها</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>لغو</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>هنوز اجرای گروهی یا همگام‌سازی دوباره‌ای نیست.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>یک تصویر</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>آدرس‌هایی که یک قالب اکنون می‌گیرد، اندازه‌ها و نوع‌های محاسبه‌شده برای هر نام مستعار و اینکه آیا هر فایل وجود دارد.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>جستجو بر اساس</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>شناسهٔ شیء</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>شناسه</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>نمایش</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>شما اجازهٔ خواندن این شیء را ندارید.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>این شیء تصویر ندارد.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>شیئی با این شناسه وجود ندارد.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>شیء %object، گره %node، نسخهٔ %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>اصل: %width x %height، %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>فایل موجود است</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>فایل وجود ندارد</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>نام‌های مستعار %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>نام مستعار</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>اندازه</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>نوع</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>فایل</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>قالب‌ها</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>آدرس در یک قالب</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>موجود</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>وجود ندارد</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>برای این نوع نیست</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>بررسی</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>ساخت</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>در این فیلد تصویری نیست.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>زمان</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>اتصال به یک منبع</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>یک درخواست HEAD به یک منبع staging، با اعتبارنامهٔ آن در صورتی که نامی برده شده باشد. اعتبارنامه ارسال می‌شود، هرگز نمایش داده نمی‌شود.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>منبع</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>با اعتبارنامه</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>مسیر ذخیره‌سازی (اختیاری)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>آزمایش اتصال</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>هیچ منبعی BaseURL ندارد. منبع‌ها در تنظیمات تعیین می‌شوند ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>در دسترس</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>رد شد: اعتبارنامه را بررسی کنید</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>در منبع پیدا نشد</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>پاسخی نیست</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>زمان به پایان رسید</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>تغییر مسیر داده شد (دنبال نشد)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>بدون BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>مسیر ذخیره‌سازی نیست</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>آدرس</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>وضعیت</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>ارسال شد</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>مقدار محرمانه وجود ندارد</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>مقدار محرمانه نه user:password است و نه Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>تازه‌ترین سطرهای %file، تازه‌ترین نخست.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>راه‌اندازی &gt; فایل‌های گزارش</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>رویداد</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>همهٔ رویدادها</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>اجراها (آغاز و پایان)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>مسیر شامل</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>سطرها</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>فیلتر</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>دنبال کردن: سطرهای جدید را به محض نوشته شدن نمایش بده</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>مسیر و جزئیات</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>هیچ سطری از گزارش مطابقت ندارد.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>آنچه ذخیره‌سازی تغییر می‌دهد</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>آنچه تغییر کرد</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>در settings/override/image.ini.append.php ذخیره می‌شود، بنابراین یک مقدار در اینجا بر هر دسترسی سایت برتری دارد. مقادیر نمایش‌داده‌شده همانی است که برای این دسترسی سایت در کار است. پیش از ذخیره از شما خواسته می‌شود هویت خود را تأیید کنید.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>نام‌های مستعار چگونه ساخته و تحویل داده می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>گرفتن تصاویر گم‌شده از نصب دیگر (alpha, dev, beta, stage, pro, post, arc). Production (pro) هرگز نمی‌گیرد.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>تنظیم</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>مقدار</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>در settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>آدرس هر منبع و نام مقدار محرمانه‌ای که اعتبارنامهٔ آن را نگه می‌دارد (user:password یا Bearer &lt;token&gt;). مقدار یک مقدار محرمانه در راه‌اندازی &gt; مقادیر محرمانه تعیین می‌شود و هرگز در اینجا نمایش داده نمی‌شود.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>پیش‌نمایش تغییرات</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ذخیره</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>دنبال کردن: به‌روز شد %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>متوقف‌شده</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>فید پاسخ نداد؛ دوباره تلاش می‌شود.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>کار پایان یافته است.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: قالب‌ها آدرس را می‌گیرند، نام مستعار وقتی درخواست شود ساخته می‌شود. render: قالب آن را هنگام نمایش صفحه می‌سازد (رفتار اصلی).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>آدرس نام مستعاری که هنوز ساخته نشده است: token (امضاشده، به پایگاه داده نیاز ندارد)، ids-token، ids، node یا storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: تغییر مسیر به فایل وقتی وب‌سرور ذخیره‌سازی را ارائه می‌دهد، وگرنه فایل جریان‌دهی می‌شود.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>ثانیه‌هایی که یک درخواست می‌تواند صرف ساختن یا گرفتن یک نام مستعار کند؛ سپس جانشین را ارسال می‌کند و یک کار، کار را تمام می‌کند.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>مبدلی که نخست برای گونه‌های WebP و AVIF آزموده می‌شود.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>به مرورگرهایی که WebP یا AVIF می‌خواهند آن را ارسال کن، برای نام‌های مستعاری که Formats[] را فهرست می‌کنند.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>یک تصویر خنثی با اندازهٔ درست تا وقتی که تصویر وجود ندارد.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>یک اسکریپت کوچک که جانشین‌ها را وقتی تصویر واقعی آماده شد با آن عوض می‌کند.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>پس از انتشار، یک کار نام‌های مستعار تصاویر جدید را برای هر دسترسی سایت مرتبط می‌سازد.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>تبدیل‌های همزمان در یک سرور.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>اولویت پردازش (nice) اجراهای گروهی، از 0 تا 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>ثانیه‌هایی که مرورگرها و حافظه‌های پنهان می‌توانند یک نام مستعار ساخته‌شده را نگه دارند.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>ثانیه‌هایی که آدرس یک تصویر پیش‌نویس یا پیش‌نمایش معتبر می‌ماند.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>ثانیه‌هایی که کلید امضای پیشین پس از تعویض معتبر می‌ماند.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>محیط این نصب.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>محیطی که تصاویر گم‌شده از آن گرفته می‌شود؛ هیچ: چیزی گرفته نمی‌شود.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>یکی در هر سطر: پیشوند ذخیره‌سازی محلی;پیشوند یا آدرس منبع، برای مسیرهای ذخیره‌سازی که فرق دارند.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>ثانیه‌هایی که یک درخواست به منبع می‌تواند طول بکشد.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>بزرگ‌ترین فایلی که از منبع گرفته می‌شود، به بایت.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>تعداد خطاهای پیاپی که پس از آن منبع متوقف می‌شود.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>مدت توقف یک منبع خطادار.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>وقتی منبع متوقف شد به مدیران ایمیل بفرست (حداکثر یک بار در ساعت).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>یک آدرس ایمیل در هر سطر؛ خالی: AdminEmail از site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>آدرس نصب منبع %block، مثلاً https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>نام مقدار محرمانه‌ای که اعتبارنامه را دارد، یا env:VARIABLE. هرگز خود اعتبارنامه نه.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(هیچ)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>پیش‌فرض: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>در اینجا تعیین شده؛ برای حذف علامت بزنید</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>به ارث رسیده</translation>
     </message>
 </context>
 </TS>

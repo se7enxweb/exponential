@@ -17329,6 +17329,34 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <source>Import/Export</source>
         <translation>Import/eksport</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Bildealiaser</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Generer for dette elementet</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Generer for undertreet</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Generer på nytt for dette elementet</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Generer på nytt for undertreet</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Fjern for dette elementet</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Fjern for undertreet</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -87680,6 +87708,997 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Server-blokken til et gammelt nettsted: location = med return, if ($args) for en spørring, rewrite som jokertegn og et map over enkeltsider.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Bildealiaser</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Bildealiaser er de skalerte og beskårne kopiene av et bilde som malene viser. Her ser du hvordan de lages, kjører massejobber over nettstedet, tester ett bilde eller en staging-kilde, følger kjørehistorikken og endrer innstillingene.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Deler av siden</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Oversikt</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Massekjøringer</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Testverktøy</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Kjørehistorikk</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Innstillinger</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Du kan se alt her. Å endre innstillinger, kjøre jobber og bruke verktøyene som lager filer krever policyen setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Hva som trenger oppmerksomhet</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Render-modus: malene lager manglende aliaser mens siden rendres, som før. On-demand-adressene, plassholderne og bakgrunnsjobbene brukes ikke.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Formatforhandling er på, men ingen konverterer her kan skrive WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Dette er en staging-installasjon, men kilden har ingen BaseURL: manglende bilder kan ikke hentes.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Staging-kilden er satt på pause etter flere feil på rad: manglende bilder får plassholdere til pausen er over eller du nullstiller den.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Staging-kilden feilet nylig. Se siste feil nedenfor.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Denne installasjonen er ikke produksjon, men SyncFrom oppgir ingen kilde: ingenting hentes.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Jobbkøen (expqueue) er ikke tilgjengelig: aliaser som ikke rekker tiden lages av neste forespørsel, forhåndsgenerering etter publisering hoppes over, og massekjøringer er begrenset til små omfang.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Noen jobber for bildealiaser feilet for godt. Setup &gt; Jobbkø viser hvorfor.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Massekjøringer er satt på pause.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Aliaser feilet de siste 24 timene. Kjørehistorikken lister dem.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Signeringsnøkkelen er mer enn ett år gammel. Å rotere den holder gamle adresser gyldige i karensperioden.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Det finnes ingen signeringsnøkkel ennå: den lages med den første on-demand-adressen.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Siste 24 timer</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Aliaser generert</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Plassholdere levert</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Feil</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Filer hentet inn</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Kjøringer startet</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Jobber som venter / kjører</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Telt fra de siste %lines linjene i %file, som går tilbake til %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Modus og levering</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Modus</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>på forespørsel</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Adresseform</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Levering</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Lengste ventetid for en forespørsel</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Samtidige konverteringer</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy av %max opptatt nå</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Formatforhandling</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>på</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>av</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Plassholder og byttescript</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Forhåndsgenerering etter publisering</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Aliaser på nettstedet</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Konverterere for formatvariantene</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Konverterer</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Forsøkt</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>foretrukket</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nei</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Selve aliasene lages av konvertererne i [ImageConverterSettings], som før; disse skriver WebP- og AVIF-variantene.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Miljø og kilde</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Denne installasjonen</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(produksjon: henter aldri)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Henter fra</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>ingenting</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Kildeadresse</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>ikke satt</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Legitimasjon</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>hemmelighet %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ingen</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tilstand</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>fungerer</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>satt på pause til %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>feiler</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Feil på rad</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>pause etter %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Siste feil</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Siste suksess</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Nullstill feilene og spør kilden på nytt</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Jobbkø</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Jobbtype</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Venter</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Kjører</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Feilet</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>ikke registrert</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Jobbkøen er ikke tilgjengelig.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Massekjøringer satt på pause</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>siden %time av %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Massekjøringer kan kjøre</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Signeringsnøkkel</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Nøkkel</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>i hemmelighetslageret</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ingen ennå</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Alder</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days dager (siden %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Forrige nøkkel</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>gyldig til %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Roter nøkkelen</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Adresser signert med den gjeldende nøkkelen fortsetter å virke i karensperioden (SigningKeyGrace), deretter svarer de med plassholdere til sidene er laget på nytt.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Roter nå</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Slik fungerer det</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render-modus, staging og loggen</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (standard): en side lenker et alias som ikke finnes ennå til en signert adresse. Den første forespørselen lager det innenfor lengste ventetid, ellers svarer den med en nøytral plassholder og en jobb gjør ferdig arbeidet; byttescriptet erstatter plassholderen når bildet finnes.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render-modus: malen lager aliaset mens siden rendres, som før. Bytt mellom de to når som helst; ingenting må migreres.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>En staging-installasjon henter originalene og aliasene den mangler fra kilden sin; en kilde som feiler settes på pause etter flere feil på rad, og administratorene får høyst én e-post i timen.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Massekjøringer og forhåndsgenerering etter publisering er jobber i jobbkøen, med lavere prioritet enn besøkende. Å fjerne aliaser tømmer også svarbufferen til Velocity, slik at en fjernet fil ikke serveres derfra.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Hvert alias som lages, hver plassholder som leveres, hver fil som hentes inn og hver kjøring er en linje i %file. Kommandolinjen har de samme verktøyene: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Jobb %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done av %total bilder</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Kjøring</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Omfang</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Avbryt denne jobben</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Jobb %job er ikke en jobb for bildealiaser, eller den ble fjernet fra køen.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Resultat av kjøring %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Massekjøringer er satt på pause</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>På pause siden %time av %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>En pause stopper hver massekjøring etter det gjeldende bildet, på alle servere; køede kjøringer venter. Besøkendes aliaser lages fortsatt.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Gjenoppta massekjøringer</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Årsak (valgfritt)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Sett massekjøringer på pause</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Start en kjøring</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Kjøringer er jobber i jobbkøen: du kan forlate siden og komme tilbake.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Uten jobbkøen gjøres en kjøring i denne forespørselen, for høyst %count bilder.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Handling</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: lag aliasene som mangler</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: fjern og lag dem på nytt</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: fjern dem (lages på nytt on-demand)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: hent filene fra staging-kilden</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(bare på en staging-installasjon)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Hele nettstedet</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Én node</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>En node og dens undertre</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Node-ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klasser</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Attributter</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Endret siden</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>En dato (2026-11-01) eller en tid siden (12 timer, 2 dager).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Høyst bilder</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Aliaser (ingen valgt: alle)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Prøvekjøring: bare tell (en resync sjekker kilden og lagrer ingenting)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Overskriv filer som er forskjellige (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Start kjøringen</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Siste kjøringer</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Jobb</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Fremdrift</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Køet</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Handlinger</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Avbryt</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Ingen massekjøring eller resync ennå.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Ett bilde</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Adressene en mal får nå, størrelsene og typene beregnet for hvert alias, og om hver fil finnes.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Slå opp etter</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Objekt-ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Vis</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Du har ikke lov til å lese dette objektet.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Dette objektet har ikke noe bilde.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Ingen objekt med denne ID-en.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>objekt %object, node %node, versjon %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Original: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>filen finnes</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>filen mangler</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Aliaser for %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Alias</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Størrelse</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fil</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Formater</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Adresse i en mal</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>finnes</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>mangler</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ikke for denne typen</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Sjekk</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Lag</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Ingen bilde i dette feltet.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tid</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Tilkobling til en kilde</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>En HEAD-forespørsel til en staging-kilde, med legitimasjonen hvis en er oppgitt. Legitimasjonen sendes, aldri vist.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Kilde</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>med legitimasjon</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Storage-sti (valgfritt)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Test tilkoblingen</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Ingen kilde har en BaseURL. Kilder settes i innstillingene ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>nåbar</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>avvist: sjekk legitimasjonen</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>ikke funnet hos kilden</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>ikke noe svar</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>tidsavbrudd</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>omdirigert (ikke fulgt)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>ingen BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>ikke en storage-sti</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>sendt</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>hemmeligheten mangler</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>hemmeligheten er ikke user:password eller Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>De nyeste linjene i %file, nyeste først.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Setup &gt; Loggfiler</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Hendelse</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Alle hendelser</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Kjøringer (start og slutt)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Stien inneholder</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Linjer</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrer</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Følg: vis nye linjer etter hvert som de skrives</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Sti og detaljer</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Ingen linje i loggen passer.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Hva lagring ville endret</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Hva som ble endret</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Lagret i settings/override/image.ini.append.php, så en verdi her går foran alle siteaccess. Verdiene som vises er de som gjelder for dette siteaccess. Før lagring må du bekrefte hvem du er.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Hvordan aliaser lages og leveres.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Henting av manglende bilder fra en annen installasjon (alpha, dev, beta, stage, pro, post, arc). Produksjon (pro) henter aldri.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Innstilling</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Verdi</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>I settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Adressen til hver kilde og navnet på hemmeligheten som holder legitimasjonen (user:password eller Bearer &lt;token&gt;). Verdien av en hemmelighet settes i Setup &gt; Hemmeligheter og vises aldri her.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Forhåndsvis endringene</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Lagre</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Følger: oppdatert %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>På pause</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Strømmen svarte ikke; prøver igjen.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Jobben er avsluttet.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: malene får adressen, aliaset lages når det etterspørres. render: malen lager det mens siden rendres (den opprinnelige oppførselen).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Adressen til et alias som ikke er laget ennå: token (signert, trenger ingen database), ids-token, ids, node eller storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: en omdirigering til filen når webserveren serverer storage, ellers strømmes filen.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Sekunder en forespørsel kan bruke på å lage eller hente et alias; deretter svarer den med plassholderen og en jobb gjør ferdig arbeidet.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Konvertereren som prøves først for WebP- og AVIF-variantene.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Svar med WebP eller AVIF til nettlesere som ber om det, for aliaser som lister Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Et nøytralt bilde i riktig størrelse mens et bilde mangler.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Et lite script som erstatter plassholdere med det ekte bildet når det finnes.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Etter publisering lager en jobb aliasene for de nye bildene for hvert relatert siteaccess.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Samtidige konverteringer på én server.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Prosessprioriteten (nice) til massekjøringer, 0 til 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Sekunder nettlesere og buffere kan beholde et laget alias.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Sekunder adressen til et utkast- eller forhåndsvisningsbilde forblir gyldig.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Sekunder den forrige signeringsnøkkelen forblir gyldig etter en rotasjon.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Miljøet til denne installasjonen.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Miljøet manglende bilder hentes fra; none: ingenting hentes.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Én per linje: lokalt storage-prefiks;kildeprefiks eller adresse, for storage-stier som er forskjellige.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Sekunder én forespørsel til kilden kan ta.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Den største filen som hentes fra kilden, i byte.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Feil på rad som kilden settes på pause etter.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Hvor lenge en kilde som feiler er på pause.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Send e-post til administratorene når kilden settes på pause (høyst én gang i timen).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Én e-postadresse per linje; tom: AdminEmail i site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Adressen til kildeinstallasjonen %block, f.eks. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Navnet på hemmeligheten med legitimasjonen, eller env:VARIABLE. Aldri selve legitimasjonen.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(ingen)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Standard: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Satt her; kryss av for å fjerne den</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>arvet</translation>
     </message>
 </context>
 </TS>

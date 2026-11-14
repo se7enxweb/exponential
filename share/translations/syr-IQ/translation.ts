@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>ܡܥܠܐ/ܡܦܩܐ</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>ܫܡܗ̈ܐ ܚܠܘܦ̈ܐ ܕܨܘܪ̈ܬܐ</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>ܡܘܠܕ ܠܗܢܐ ܦܪܝܛܐ</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>ܡܘܠܕ ܠܐܝܠܢܐ ܬܚܬܝܐ</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>ܡܘܠܕ ܡܢ ܕܪܝܫ ܠܗܢܐ ܦܪܝܛܐ</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>ܡܘܠܕ ܡܢ ܕܪܝܫ ܠܐܝܠܢܐ ܬܚܬܝܐ</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>ܫܩܘܠ ܠܗܢܐ ܦܪܝܛܐ</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>ܫܩܘܠ ܠܐܝܠܢܐ ܬܚܬܝܐ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86430,6 +86458,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>ܦܠܓܘܬܐ server ܕܐܬܪܐ ܥܬܝܩܐ: location = ܥܡ return، if ($args) ܠܫܘܐܠܐ، rewrite ܐܝܟ ܐܬܐ ܟܠܢܝܬܐ ܘ map ܕܦܐܬ̈ܐ ܝܚܝܕ̈ܝܬܐ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>ܫܡܗ̈ܐ ܚܠܘܦ̈ܐ ܕܨܘܪ̈ܬܐ</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>ܫܡܗ̈ܐ ܚܠܘܦ̈ܐ ܕܨܘܪ̈ܬܐ ܗܘܝܢ ܢܘܣܚ̈ܐ ܡܬܪܒܝܢ ܘܓܙܝܪ̈ܐ ܕܨܘܪܬܐ ܕܩܠܒ̈ܐ ܡܚܘܝܢ ܠܗ. ܒܗܪܟܐ ܚܙܐ ܐܝܟܢܐ ܥܒܝܕܝܢ, ܐܪܗܛ ܥܒܕ̈ܐ ܣܓܝܐ̈ܐ ܥܠ ܐܬܪܐ, ܒܚܘܢ ܨܘܪܬܐ ܚܕܐ ܐܘ ܡܒܘܥܐ ܡܛܝܒܐ, ܕܘܒ ܒܬܫܥܝܬܐ ܕܪܘܗܛ̈ܐ ܘܫܚܠܦ ܛܘܝ̈ܒܐ.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>ܦܠܓ̈ܐ ܕܕܦܐ</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ܦܬܘܪܐ</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>ܪܘܗܛ̈ܐ ܣܓܝܐ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>ܡܣܐܢ̈ܐ ܕܒܘܚܪܢܐ</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>ܬܫܥܝܬܐ ܕܪܘܗܛ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ܛܘܝ̈ܒܐ</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>ܡܨܐ ܐܢܬ ܠܡܚܙܐ ܟܠ ܡܕܡ ܒܗܪܟܐ. ܫܘܚܠܦܐ ܕܛܘܝ̈ܒܐ, ܐܪܗܛܐ ܕܥܒܕ̈ܐ ܘܡܣܐܢ̈ܐ ܕܥܒܕܝܢ ܦܢܩ̈ܝܬܐ ܡܒܥܝܢ ܡܕܒܪܢܘܬܐ setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>ܡܕܡ ܕܒܥܐ ܬܘܪܨܐ</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>ܐܠܨܐ render: ܩܠܒ̈ܐ ܥܒܕܝܢ ܫܡܗ̈ܐ ܚܠܘܦ̈ܐ ܕܠܐ ܐܝܬܝܗܘܢ ܒܡܐ ܕܕܦܐ ܡܬܥܒܕ, ܐܝܟ ܩܕܝܡ. ܡܘܢܥ̈ܐ on-demand, ܡܚܠܦܢ̈ܐ ܘܥܒܕ̈ܐ ܕܒܣܬܪܐ ܠܐ ܡܬܬܫܡܫܝܢ.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>ܡܚܘܝܘܬܐ ܕܛܘܦܣܐ ܦܬܝܚܐ ܗܝ, ܐܠܐ ܠܝܬ ܡܫܚܠܦܢܐ ܒܗܪܟܐ ܕܡܨܐ ܠܡܟܬܒܘ WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>ܗܕܐ ܗܝ ܬܫܡܫܬܐ ܡܛܝܒܬܐ (staging), ܐܠܐ ܠܡܒܘܥܗ ܠܝܬ ܠܗ BaseURL: ܨܘܪ̈ܬܐ ܕܠܐ ܐܝܬܝܗܝܢ ܠܐ ܡܬܝܬܝܢ.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>ܡܒܘܥܐ ܡܛܝܒܐ ܐܬܦܣܩ ܒܬܪ ܦܘܣܚ̈ܐ ܕܡܬܒܥܝܢ ܚܕ ܒܬܪ ܚܕ: ܨܘܪ̈ܬܐ ܕܠܐ ܐܝܬܝܗܝܢ ܡܬܝܗܒܢ ܠܗܝܢ ܡܚܠܦܢ̈ܐ ܥܕܡܐ ܕܡܬܓܡܪ ܦܘܣܩܐ ܐܘ ܕܐܦܣܬ ܠܗ.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>ܡܒܘܥܐ ܡܛܝܒܐ ܦܣܚ ܒܙܒܢ ܩܪܝܒܐ. ܚܙܝ ܛܥܝܘܬܗ ܐܚܪܝܬܐ ܠܬܚܬ.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>ܗܕܐ ܬܫܡܫܬܐ ܠܐ ܐܝܬܝܗ ܝܘܬܪܢܬܐ, ܐܠܐ SyncFrom ܠܐ ܡܬܟܢܐ ܡܒܘܥܐ: ܡܕܡ ܠܐ ܡܬܝܬܐ.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>ܣܕܪܐ ܕܥܒܕ̈ܐ (expqueue) ܠܐ ܐܝܬܝܗ: ܫܡܗ̈ܐ ܚܠܘܦ̈ܐ ܕܠܐ ܐܫܬܘܬܦܘ ܒܙܒܢܗܘܢ ܡܬܥܒܕܝܢ ܒܒܥܝܬܐ ܕܒܬܪ ܗܝ, ܥܒܕܐ ܩܕܡܝܐ ܕܒܬܪ ܢܫܪܐ ܡܬܕܠܓ ܘܪܘܗܛ̈ܐ ܣܓܝܐ̈ܐ ܡܬܟܠܝܢ ܠܐܬܪ̈ܐ ܙܥܘܪ̈ܐ.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>ܐܝܬ ܥܒܕ̈ܐ ܕܫܡܗ̈ܐ ܚܠܘܦ̈ܐ ܕܨܘܪ̈ܬܐ ܕܠܐ ܐܨܠܚܘ ܠܥܠܡ. ܛܘܝܒܐ &gt; ܣܕܪܐ ܕܥܒܕ̈ܐ ܡܚܘܐ ܠܡܢܐ.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>ܪܘܗܛ̈ܐ ܣܓܝܐ̈ܐ ܡܦܣܩܐ ܐܢܘܢ.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>ܫܡܗ̈ܐ ܚܠܘܦ̈ܐ ܠܐ ܐܨܠܚܘ ܒܐܪܒܥܝܢ ܘܐܪܒܥ ܫܥ̈ܐ ܐܚܪܝ̈ܐ. ܬܫܥܝܬܐ ܕܪܘܗܛ̈ܐ ܡܢܝܐ ܠܗܘܢ.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>ܩܠܝܕܐ ܕܚܬܡܐ ܣܓܝ ܡܢ ܫܢܬܐ. ܚܘܠܦܗ ܢܛܪ ܡܘܢܥ̈ܐ ܥܬܝܩ̈ܐ ܬܩܝܦ̈ܐ ܒܙܒܢ ܚܘܣܝܐ.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>ܠܝܬ ܥܕܠܗܫܐ ܩܠܝܕܐ ܕܚܬܡܐ: ܡܬܥܒܕ ܥܡ ܡܘܢܥܐ ܩܕܡܝܐ ܕܐܝܬܘܗܝ on-demand.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>ܐܪܒܥܝܢ ܘܐܪܒܥ ܫܥ̈ܐ ܐܚܪܝ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>ܫܡܗ̈ܐ ܚܠܘܦ̈ܐ ܕܐܬܡܠܕܘ</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>ܡܚܠܦܢ̈ܐ ܕܐܬܦܢܝܘ</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>ܦܘܣܚ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>ܦܢܩ̈ܝܬܐ ܡܛܝܒ̈ܬܐ</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>ܪܘܗܛ̈ܐ ܕܫܪܝܘ</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>ܥܒܕ̈ܐ ܡܣܟܝܢ / ܪܗܛܝܢ</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>ܡܢܝܢ ܡܢ %lines ܣܛܪ̈ܐ ܐܚܪܝ̈ܐ ܕ%file, ܕܡܛܝܢ ܥܕܡܐ ܠ%time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>ܐܠܨܐ ܘܫܘܕܥܐ</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>ܐܠܨܐ</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>ܒܒܥܝܬܐ</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>ܛܘܦܣܐ ܕܡܘܢܥܐ</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>ܫܘܕܥܐ</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>ܡܣܟܝܘܬܐ ܡܬܝܪܬܐ ܕܒܥܝܬܐ</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ܪܓ</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>ܫܘܚܠܦ̈ܐ ܒܚܕ ܙܒܢܐ</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy ܡܢ %max ܠܐܝܢ ܥܕܡܐ ܗܫܐ</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>ܡܚܘܝܘܬܐ ܕܛܘܦܣܐ</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ܦܬܝܚܐ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ܣܓܝܪܐ</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>ܡܚܠܦܢܐ ܘܣܟܪܝܦܛ ܕܫܘܚܠܦܐ</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>ܥܒܕܐ ܩܕܡܝܐ ܒܬܪ ܢܫܪܐ</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>ܫܡܗ̈ܐ ܚܠܘܦ̈ܐ ܕܐܬܪܐ</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>ܡܫܚܠܦܢ̈ܐ ܕܛܘܦܣ̈ܐ ܡܫܚܠܦ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>ܡܫܚܠܦܢܐ</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>ܐܬܒܥܝ</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>ܓܒܝܐ</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ܐܝܢ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ܠܐ</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>ܫܡܗ̈ܐ ܚܠܘܦ̈ܐ ܒܢܦܫܗܘܢ ܡܬܥܒܕܝܢ ܒܡܫܚܠܦܢ̈ܐ ܕ[ImageConverterSettings], ܐܝܟ ܩܕܝܡ; ܗܠܝܢ ܟܬܒܝܢ ܛܘܦܣ̈ܐ ܕ WebP ܘ AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>ܥܘܡܪܐ ܘܡܒܘܥܐ</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>ܗܕܐ ܬܫܡܫܬܐ</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(ܝܘܬܪܢܬܐ: ܠܐ ܡܝܬܝܐ ܠܥܠܡ)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>ܡܝܬܐ ܡܢ</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>ܡܕܡ</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>ܡܘܢܥܐ ܕܡܒܘܥܐ</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>ܠܐ ܡܣܝܡ</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>ܬܘܕܥܬܐ</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>ܐܪܙܐ %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ܠܝܬ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ܡܩܡܐ</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>ܦܠܚ</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>ܡܦܣܩ ܥܕܡܐ ܠ%time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>ܡܬܦܣܚ</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>ܦܘܣܚ̈ܐ ܚܕ ܒܬܪ ܚܕ</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>ܦܣܩܐ ܒܬܪ %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>ܛܥܝܘܬܐ ܐܚܪܝܬܐ</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>ܨܠܚܬܐ ܐܚܪܝܬܐ</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>ܐܦܣܝ ܠܦܘܣܚ̈ܐ ܘܫܐܠ ܠܡܒܘܥܐ ܬܘܒ</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>ܣܕܪܐ ܕܥܒܕ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>ܓܢܣܐ ܕܥܒܕܐ</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>ܡܣܟܐ</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>ܪܗܛܐ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ܠܐ ܐܨܠܚ</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>ܠܐ ܡܣܬܓܠ</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>ܣܕܪܐ ܕܥܒܕ̈ܐ ܠܐ ܐܝܬܘܗܝ.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>ܪܘܗܛ̈ܐ ܣܓܝܐ̈ܐ ܡܦܣܩܐ</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>ܡܢ %time ܒܐܝܕ̈ܐ ܕ%user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>ܪܘܗܛ̈ܐ ܣܓܝܐ̈ܐ ܡܨܝܢ ܠܡܪܗܛ</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>ܩܠܝܕܐ ܕܚܬܡܐ</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>ܩܠܝܕܐ</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>ܒܐܘܨܪܐ ܕܐܪ̈ܙܐ</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ܠܝܬ ܥܕܠܗܫܐ</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>ܥܘܡܪܐ</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days ܝܘܡ̈ܬܐ (ܡܢ %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>ܩܠܝܕܐ ܩܕܡܝܐ</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>ܬܩܝܦ ܥܕܡܐ ܠ%time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>ܚܘܠܦ ܠܩܠܝܕܐ</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>ܡܘܢܥ̈ܐ ܕܚܬܝܡܝܢ ܒܩܠܝܕܐ ܕܗܫܐ ܢܛܪܝܢ ܦܘܠܚܢܐ ܒܙܒܢ ܚܘܣܝܐ (SigningKeyGrace), ܘܡܢ ܒܬܪ ܗܢܐ ܦܢܝܢ ܡܚܠܦܢ̈ܐ ܥܕܡܐ ܕܕܦ̈ܐ ܬܘܒ ܡܬܥܒܕܝܢ.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>ܚܘܠܦ ܗܫܐ</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>ܐܝܟܢܐ ܦܠܚ</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, ܐܠܨܐ render, ܡܛܝܒܘܬܐ ܘܪܘܫܡܐ</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (ܡܢ ܩܕܡ): ܕܦܐ ܡܩܪܒ ܫܡܐ ܚܠܘܦܐ ܕܠܐ ܐܝܬܘܗܝ ܥܕܠܗܫܐ ܠܡܘܢܥܐ ܚܬܝܡܐ. ܒܥܝܬܐ ܩܕܡܝܬܐ ܥܒܕܐ ܠܗ ܒܝܬ ܡܣܟܝܘܬܐ ܡܬܝܪܬܐ, ܐܘ ܡܦܢܝܐ ܠܡܚܠܦܢܐ ܕܠܐ ܓܢܒܐ ܘܥܒܕܐ ܡܘܫܛ ܗܘ ܥܒܕܐ; ܣܟܪܝܦܛ ܕܫܘܚܠܦܐ ܡܚܠܦ ܠܡܚܠܦܢܐ ܡܐ ܕܨܘܪܬܐ ܐܝܬܝܗ.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>ܐܠܨܐ render: ܩܠܒܐ ܥܒܕ ܠܫܡܐ ܚܠܘܦܐ ܒܡܐ ܕܕܦܐ ܡܬܥܒܕ, ܐܝܟ ܩܕܝܡ. ܡܨܐ ܐܢܬ ܠܡܫܚܠܦܘ ܒܝܢܬ ܬܪܝܗܘܢ ܒܟܠ ܙܒܢ; ܠܐ ܟܠ ܡܕܡ ܡܬܒܥܐ ܠܡܫܚܠܦܘ.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>ܬܫܡܫܬܐ ܡܛܝܒܬܐ ܡܝܬܝܐ ܡܢ ܡܒܘܥܗ ܠܫܪܫܐ ܘܠܫܡܗ̈ܐ ܚܠܘܦ̈ܐ ܕܚܣܝܪܝܢ ܠܗ; ܡܒܘܥܐ ܕܡܬܦܣܚ ܡܬܦܣܩ ܒܬܪ ܦܘܣܚ̈ܐ ܚܕ ܒܬܪ ܚܕ ܘܠܡܕܒܪܢ̈ܐ ܡܫܬܕܪܐ ܓܠܝܬܐ ܐܠܩܛܪܘܢܝܬܐ ܚܕܐ ܒܫܥܬܐ ܠܡܝܬܘܬܐ.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>ܪܘܗܛ̈ܐ ܣܓܝܐ̈ܐ ܘܥܒܕܐ ܩܕܡܝܐ ܕܒܬܪ ܢܫܪܐ ܗܘܝܢ ܥܒܕ̈ܐ ܕܣܕܪܐ ܕܥܒܕ̈ܐ, ܒܩܕܡܝܘܬܐ ܡܚܝܬܐ ܡܢ ܥܡܘܪ̈ܐ. ܫܘܩܠܐ ܕܫܡܗ̈ܐ ܚܠܘܦ̈ܐ ܡܕܟܐ ܐܦ ܠܓܙܐ ܕܦܘܫܩܐ ܕ Velocity, ܕܦܢܩܝܬܐ ܕܐܫܬܩܠܬ ܠܐ ܡܬܬܝܗܒܐ ܡܢܗ.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>ܟܠ ܫܡܐ ܚܠܘܦܐ ܕܐܬܥܒܕ, ܡܚܠܦܢܐ ܕܐܬܦܢܝ, ܦܢܩܝܬܐ ܡܛܝܒܬܐ ܘܪܘܗܛܐ ܗܘ ܣܛܪܐ ܚܕ ܕ%file. ܣܛܪ ܦܘܩܕܢܐ ܐܝܬ ܠܗ ܡܣܐܢ̈ܐ ܕܗܘܝܢ ܗܠܝܢ: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>ܥܒܕܐ %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done ܡܢ %total ܨܘܪ̈ܬܐ</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ܪܘܗܛܐ</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>ܦܘܫܩܐ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ܦܠܛܐ</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>ܒܛܠ ܠܗܢܐ ܥܒܕܐ</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>ܥܒܕܐ %job ܠܐ ܗܘ ܥܒܕܐ ܕܫܡܗ̈ܐ ܚܠܘܦ̈ܐ ܕܨܘܪ̈ܬܐ, ܐܘ ܐܬܫܩܠ ܡܢ ܣܕܪܐ.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>ܦܠܛܐ ܕܪܘܗܛܐ %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>ܪܘܗܛ̈ܐ ܣܓܝܐ̈ܐ ܡܦܣܩܐ</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>ܡܦܣܩ ܡܢ %time ܒܐܝܕ̈ܐ ܕ%user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>ܦܘܣܩܐ ܡܦܣܩ ܟܠ ܪܘܗܛܐ ܣܓܝܐܐ ܒܬܪ ܨܘܪܬܗ ܕܗܫܐ, ܥܠ ܟܠ ܡܫܡܫܢܐ; ܪܘܗܛ̈ܐ ܕܒܣܕܪܐ ܡܣܟܝܢ. ܫܡܗ̈ܐ ܚܠܘܦ̈ܐ ܕܥܡܘܪ̈ܐ ܬܘܒ ܡܬܥܒܕܝܢ.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>ܐܘܡܢ ܪܘܗܛ̈ܐ ܣܓܝܐ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>ܥܠܬܐ (ܠܐ ܥܠܝܨܐ)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>ܦܣܘܩ ܪܘܗܛ̈ܐ ܣܓܝܐ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>ܫܪܝ ܪܘܗܛܐ</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>ܪܘܗܛ̈ܐ ܗܘܝܢ ܥܒܕ̈ܐ ܕܣܕܪܐ ܕܥܒܕ̈ܐ: ܡܨܐ ܐܢܬ ܠܡܫܒܩ ܠܕܦܐ ܘܠܡܦܢܐ ܒܬܪ ܗܢܐ.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>ܒܠܥܕ ܣܕܪܐ ܕܥܒܕ̈ܐ ܪܘܗܛܐ ܡܬܥܒܕ ܒܗܕܐ ܒܥܝܬܐ, ܥܠ ܡܪܝܡܘܬܐ ܕ%count ܨܘܪ̈ܬܐ.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ܣܘܥܪܢܐ</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>ܡܘܠܕ: ܥܒܕ ܠܫܡܗ̈ܐ ܚܠܘܦ̈ܐ ܕܚܣܝܪܝܢ</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>ܡܘܠܕ ܡܢ ܕܪܝܫ: ܫܩܘܠ ܘܥܒܕ ܠܗܘܢ ܬܘܒ</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>ܫܩܘܠ: ܫܩܘܠ ܠܗܘܢ (ܡܬܥܒܕܝܢ ܬܘܒ ܒܒܥܝܬܐ)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: ܡܝܬܐ ܦܢܩ̈ܝܬܐ ܡܢ ܡܒܘܥܐ ܡܛܝܒܐ</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(ܒܬܫܡܫܬܐ ܡܛܝܒܬܐ ܒܠܚܘܕ)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>ܟܠܗ ܐܬܪܐ</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>ܩܛܪܐ ܚܕ</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>ܩܛܪܐ ܘܐܝܠܢܗ ܬܚܬܝܐ</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ܡܘܢܥܐ ܕܩܛܪܐ</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>ܙ̈ܢܝܐ</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>ܕܝ̈ܠܝܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>ܐܫܬܚܠܦ ܡܢ</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>ܝܘܡܐ (2026-11-01) ܐܘ ܙܒܢܐ ܕܥܒܪ (12 ܫܥ̈ܐ, 2 ܝܘܡ̈ܬܐ).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>ܡܪܝܡܘܬܐ ܕܨܘܪ̈ܬܐ</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>ܫܡܗ̈ܐ ܚܠܘܦ̈ܐ (ܐܢ ܠܐ ܐܬܒܚܪ ܐܦܠܐ ܚܕ: ܟܠܗܘܢ)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>ܪܘܗܛܐ ܕܢܣܝܘܢܐ: ܡܢܐ ܒܠܚܘܕ (resync ܒܚܪ ܠܡܒܘܥܐ ܘܠܐ ܢܛܪ ܡܕܡ)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>ܟܬܘܒ ܥܠ ܦܢܩ̈ܝܬܐ ܕܫܢܝܢ (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>ܫܪܝ ܠܪܘܗܛܐ</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>ܪܘܗܛ̈ܐ ܐܚܪܝ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>ܥܒܕܐ</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ܡܩܕܡܢܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>ܐܬܣܕܪ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ܣܘܥܪ̈ܢܐ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ܒܘܛܠܐ</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>ܠܝܬ ܥܕܠܗܫܐ ܪܘܗܛܐ ܣܓܝܐܐ ܐܘ resync.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>ܨܘܪܬܐ ܚܕܐ</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>ܡܘܢܥ̈ܐ ܕܩܠܒܐ ܡܫܟܚ ܗܫܐ, ܪܒܘ̈ܬܐ ܘܓܢܣ̈ܐ ܕܡܢܝܢ ܠܟܠ ܫܡܐ ܚܠܘܦܐ, ܘܐܢ ܦܢܩܝܬܐ ܐܝܬܝܗ ܐܘ ܠܐ.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>ܒܨܝ ܒ</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID ܕܨܒܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Id</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ܡܚܘܝܐ</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>ܠܐ ܡܫܬܪܐ ܠܟ ܠܡܩܪܐ ܠܗܕܐ ܨܒܘܬܐ.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>ܠܗܕܐ ܨܒܘܬܐ ܠܝܬ ܨܘܪܬܐ.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>ܠܝܬ ܨܒܘܬܐ ܒܗܢܐ id.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>ܨܒܘܬܐ %object, ܩܛܪܐ %node, ܢܘܣܚܐ %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>ܩܕܡܝܐ: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>ܦܢܩܝܬܐ ܐܝܬܝܗ</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>ܦܢܩܝܬܐ ܚܣܝܪܐ</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>ܫܡܗ̈ܐ ܚܠܘܦ̈ܐ ܕ%name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>ܫܡܐ ܚܠܘܦܐ</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ܪܒܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>ܓܢܣܐ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ܦܢܩܝܬܐ</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>ܛܘܦܣ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>ܡܘܢܥܐ ܒܩܠܒܐ</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>ܐܝܬܝܗ</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>ܚܣܝܪܐ</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ܠܐ ܠܗܢܐ ܓܢܣܐ</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>ܒܚܘܢ</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>ܥܒܕ</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>ܠܐ ܐܝܬ ܨܘܪܬܐ ܒܗܢܐ ܚܩܠܐ.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ܙܒܢܐ</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ܡܠ</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>ܚܘܫܪܐ ܠܡܒܘܥܐ</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>ܒܥܝܬܐ HEAD ܠܡܒܘܥܐ ܡܛܝܒܐ, ܥܡ ܬܘܕܥܬܗ ܐܢ ܐܬܟܢܝܬ. ܬܘܕܥܬܐ ܡܫܬܕܪܐ ܘܠܐ ܡܬܚܙܝܐ ܠܥܠܡ.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>ܡܒܘܥܐ</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>ܥܡ ܬܘܕܥܬܐ</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>ܫܒܝܠܐ ܕܐܘܨܪܐ (ܠܐ ܥܠܝܨܐ)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>ܒܚܘܢ ܠܚܘܫܪܐ</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>ܠܐ ܐܝܬ ܠܡܒܘܥܐ ܐܦܠܐ ܚܕ BaseURL. ܡܒܘ̈ܥܐ ܡܣܬܝܡܝܢ ܒܛܘܝ̈ܒܐ ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>ܡܫܬܟܚ</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>ܐܬܪܓܝܓ: ܒܚܘܢ ܠܬܘܕܥܬܐ</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>ܠܐ ܐܫܬܟܚ ܒܡܒܘܥܐ</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>ܠܝܬ ܦܘܬܓܡܐ</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>ܙܒܢܐ ܚܠܦ</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>ܐܬܦܢܝ (ܠܐ ܐܬܒܥܝ ܒܬܪܗ)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>ܠܝܬ BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>ܠܐ ܗܘ ܫܒܝܠܐ ܕܐܘܨܪܐ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ܡܘܢܥܐ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ܡܩܡܐ</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>ܐܫܬܕܪ</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>ܐܪܙܐ ܚܣܝܪ</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>ܐܪܙܐ ܠܐ ܗܘ user:password ܐܘ Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>ܣܛܪ̈ܐ ܚܕܬ̈ܐ ܕ%file, ܚܕܬܐ ܩܕܡܝܐ.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>ܛܘܝܒܐ &gt; ܦܢܩ̈ܝܬܐ ܕܪܘܫܡܐ</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>ܓܕܫܐ</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>ܟܠܗܘܢ ܓܕܫ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>ܪܘܗܛ̈ܐ (ܫܪܝܐ ܘܫܘܠܡܐ)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>ܫܒܝܠܐ ܐܝܬ ܒܗ</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>ܣܛܪ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>ܡܨܠܠܢܐ</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>ܒܬܪ: ܚܘܝ ܣܛܪ̈ܐ ܚܕܬ̈ܐ ܡܐ ܕܡܬܟܬܒܝܢ</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>ܫܒܝܠܐ ܘܦܘܪܫܐ</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>ܠܝܬ ܣܛܪܐ ܒܪܘܫܡܐ ܕܡܬܚܕܐ.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>ܡܢܐ ܡܫܚܠܦ ܢܛܪܐ</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>ܡܢܐ ܐܫܬܚܠܦ</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>ܡܬܢܛܪ ܒ settings/override/image.ini.append.php, ܡܛܠ ܗܕܐ ܛܝܡܐ ܕܒܗܪܟܐ ܥܠܝܡ ܥܠ ܟܠ siteaccess. ܛܝܡ̈ܐ ܕܡܬܚܙܝܢ ܗܘܝܢ ܗܠܝܢ ܕܦܠܚܝܢ ܠܗܢܐ siteaccess. ܢܛܪܐ ܫܐܠ ܠܟ ܠܫܪܪܐ ܕܡܢ ܐܢܬ ܩܕܡ.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>ܐܝܟܢܐ ܫܡܗ̈ܐ ܚܠܘܦ̈ܐ ܡܬܥܒܕܝܢ ܘܡܬܝܗܒܝܢ.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>ܡܝܬܝܘܬܐ ܕܨܘܪ̈ܬܐ ܕܚܣܝܪܢ ܡܢ ܬܫܡܫܬܐ ܐܚܪܬܐ (alpha, dev, beta, stage, pro, post, arc). ܝܘܬܪܢܬܐ (pro) ܠܐ ܡܝܬܝܐ ܠܥܠܡ.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>ܛܘܝܒܐ</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>ܛܝܡܐ</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>ܒ settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>ܡܘܢܥܐ ܕܟܠ ܡܒܘܥܐ ܘܫܡܐ ܕܐܪܙܐ ܕܐܚܝܕ ܬܘܕܥܬܗ (user:password ܐܘ Bearer &lt;token&gt;). ܛܝܡܐ ܕܐܪܙܐ ܡܣܬܝܡ ܒܛܘܝܒܐ &gt; ܐܪ̈ܙܐ ܘܠܐ ܡܬܚܙܐ ܒܗܪܟܐ ܠܥܠܡ.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>ܚܙܝ ܩܕܡ ܫܘܚܠܦ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ܢܛܪ</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>ܡܬܒܥ: ܐܬܚܕܬ %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>ܡܦܣܩ</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>ܡܪܥܝܬܐ ܠܐ ܐܦܢܝܬ; ܡܩܪܒ ܬܘܒ.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>ܥܒܕܐ ܓܡܪ.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: ܩܠܒ̈ܐ ܩܒܠܝܢ ܡܘܢܥܐ, ܘܫܡܐ ܚܠܘܦܐ ܡܬܥܒܕ ܡܐ ܕܡܬܒܥܐ. render: ܩܠܒܐ ܥܒܕ ܠܗ ܒܡܐ ܕܕܦܐ ܡܬܥܒܕ (ܥܒܕܐ ܩܕܡܝܐ).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>ܡܘܢܥܐ ܕܫܡܐ ܚܠܘܦܐ ܕܠܐ ܥܒܝܕ ܥܕܠܗܫܐ: token (ܚܬܝܡܐ, ܠܐ ܒܥܐ ܒܣܝܣ ܝܕܥܬܐ), ids-token, ids, node ܐܘ storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: ܡܦܢܝܬܐ ܠܦܢܩܝܬܐ ܡܐ ܕܡܫܡܫܢܐ ܕܨܘܪܬܐ ܡܫܡܫ ܠܐܘܨܪܐ, ܐܠܐ ܦܢܩܝܬܐ ܡܬܥܒܕܐ ܒܓܪܝܐ.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>ܪܓ̈ܥܐ ܕܒܥܝܬܐ ܡܨܝܐ ܠܡܬܪܒܐ ܒܗܘܢ ܠܡܥܒܕ ܐܘ ܠܡܝܬܐ ܫܡܐ ܚܠܘܦܐ; ܘܡܢ ܒܬܪ ܗܢܐ ܡܦܢܝܐ ܠܡܚܠܦܢܐ ܘܥܒܕܐ ܡܘܫܛ ܗܘ ܥܒܕܐ.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>ܡܫܚܠܦܢܐ ܕܡܬܢܣܐ ܩܕܡܝܐ ܠܛܘܦܣ̈ܐ ܕ WebP ܘ AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>ܐܦܢܝ ܒ WebP ܐܘ AVIF ܠܡܦܬܚ̈ܢܐ ܕܒܥܝܢ ܠܗ, ܠܫܡܗ̈ܐ ܚܠܘܦ̈ܐ ܕܡܢܝܢ Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>ܨܘܪܬܐ ܕܠܐ ܓܢܒܐ ܕܪܒܘܬܐ ܕܡܬܒܥܐ ܡܐ ܕܨܘܪܬܐ ܚܣܝܪܐ.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>ܣܟܪܝܦܛ ܙܥܘܪܐ ܕܡܚܠܦ ܠܡܚܠܦܢ̈ܐ ܒܨܘܪܬܐ ܫܪܝܪܬܐ ܡܐ ܕܐܝܬܝܗ.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>ܒܬܪ ܢܫܪܐ ܥܒܕܐ ܡܥܒܕ ܠܫܡܗ̈ܐ ܚܠܘܦ̈ܐ ܕܨܘܪ̈ܬܐ ܚܕܬ̈ܬܐ ܠܟܠ siteaccess ܕܩܪܝܒ.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>ܫܘܚܠܦ̈ܐ ܒܚܕ ܙܒܢܐ ܥܠ ܡܫܡܫܢܐ ܚܕ.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>ܩܕܡܝܘܬܐ ܕܬܘܪܨܐ (nice) ܕܪܘܗܛ̈ܐ ܣܓܝܐ̈ܐ, ܡܢ 0 ܥܕܡܐ ܠ 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>ܪܓ̈ܥܐ ܕܡܦܬܚ̈ܢܐ ܘܓܙ̈ܐ ܡܨܝܢ ܠܡܢܛܪܘ ܫܡܐ ܚܠܘܦܐ ܕܐܬܥܒܕ.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>ܪܓ̈ܥܐ ܕܡܘܢܥܐ ܕܨܘܪܬܐ ܕܡܫܘܚܠܦܐ ܐܘ ܕܚܙܝܬܐ ܩܕܡܝܬܐ ܢܩܘܡ ܬܩܝܦ.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>ܪܓ̈ܥܐ ܕܩܠܝܕܐ ܕܚܬܡܐ ܩܕܡܝܐ ܢܩܘܡ ܬܩܝܦ ܒܬܪ ܚܘܠܦܐ.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>ܥܘܡܪܐ ܕܗܕܐ ܬܫܡܫܬܐ.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>ܥܘܡܪܐ ܕܡܢܗ ܨܘܪ̈ܬܐ ܕܚܣܝܪܢ ܡܬܝܬܝܢ; none: ܡܕܡ ܠܐ ܡܬܝܬܐ.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>ܚܕ ܒܟܠ ܣܛܪܐ: ܩܕܡܝܬܐ ܕܐܘܨܪܐ ܐܬܪܝܐ;ܩܕܡܝܬܐ ܕܡܒܘܥܐ ܐܘ ܡܘܢܥܐ, ܠܫܒܝܠ̈ܐ ܕܐܘܨܪܐ ܕܫܢܝܢ.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>ܪܓ̈ܥܐ ܕܒܥܝܬܐ ܚܕܐ ܠܡܒܘܥܐ ܡܨܝܐ ܠܡܣܒ.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>ܦܢܩܝܬܐ ܪܒܬܐ ܕܡܬܝܬܝܐ ܡܢ ܡܒܘܥܐ, ܒܒܐܝܛ̈ܐ.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>ܡܢܝܢܐ ܕܦܘܣܚ̈ܐ ܚܕ ܒܬܪ ܚܕ ܕܒܬܪܗ ܡܒܘܥܐ ܡܬܦܣܩ.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>ܟܡܐ ܙܒܢܐ ܡܒܘܥܐ ܕܡܬܦܣܚ ܡܦܣܩ ܐܝܬܘܗܝ.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>ܫܕܪ ܓܠܝܬܐ ܠܡܕܒܪܢ̈ܐ ܡܐ ܕܡܒܘܥܐ ܡܬܦܣܩ (ܚܕܐ ܒܫܥܬܐ ܠܡܝܬܘܬܐ).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>ܡܘܢܥܐ ܚܕ ܕܓܠܝܬܐ ܐܠܩܛܪܘܢܝܬܐ ܒܟܠ ܣܛܪܐ; ܣܦܝܩܐ: AdminEmail ܕ site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>ܡܘܢܥܐ ܕܬܫܡܫܬܐ ܕܡܒܘܥܐ %block, ܐܝܟ https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>ܫܡܐ ܕܐܪܙܐ ܥܡ ܬܘܕܥܬܐ, ܐܘ env:VARIABLE. ܠܐ ܬܘܕܥܬܐ ܒܢܦܫܗ ܠܥܠܡ.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(ܠܝܬ)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>ܡܢ ܩܕܡ: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>ܡܣܬܝܡ ܒܗܪܟܐ; ܣܝܡ ܣܡܐ ܠܡܫܩܠ</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>ܡܝܪܬܐ</translation>
     </message>
 </context>
 </TS>

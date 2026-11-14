@@ -16588,6 +16588,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>இறக்குமதிசெய்/ஏற்றுமதிசெய்</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>பட மாற்றுப்பெயர்கள்</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>இந்த உருப்படிக்கு உருவாக்கு</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>துணை மரத்துக்கு உருவாக்கு</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>இந்த உருப்படிக்கு மீண்டும் உருவாக்கு</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>துணை மரத்துக்கு மீண்டும் உருவாக்கு</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>இந்த உருப்படிக்கு நீக்கு</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>துணை மரத்துக்கு நீக்கு</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86420,6 +86448,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>ஒரு பழைய தளத்தின் server தொகுதி: return உடன் location =, வினவலுக்கான if ($args), வைல்டுகார்டாக rewrite மற்றும் தனிப் பக்கங்களின் ஒரு map.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>பட மாற்றுப்பெயர்கள்</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>பட மாற்றுப்பெயர்கள் என்பவை டெம்ப்ளேட்டுகள் காட்டும் படத்தின் அளவு மாற்றப்பட்ட, வெட்டப்பட்ட நகல்கள். அவை எப்படி உருவாக்கப்படுகின்றன என்பதை இங்கே காணலாம், தளம் முழுவதும் மொத்த வேலைகளை இயக்கலாம், ஒரு படத்தை அல்லது ஸ்டேஜிங் மூலத்தைச் சோதிக்கலாம், இயக்க வரலாற்றைப் பின்தொடரலாம், அமைப்புகளை மாற்றலாம்.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>பக்கத்தின் பகுதிகள்</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>டாஷ்போர்டு</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>மொத்த இயக்கங்கள்</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>சோதனைக் கருவிகள்</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>இயக்க வரலாறு</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>அமைப்புகள்</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>இங்கே எல்லாவற்றையும் பார்க்கலாம். அமைப்புகளை மாற்றவும், வேலைகளை இயக்கவும், கோப்புகளை உருவாக்கும் கருவிகளுக்கும் setup/managealiases கொள்கை தேவை.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>கவனம் தேவைப்படுபவை</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>render பயன்முறை: டெம்ப்ளேட்டுகள் பக்கம் உருவாகும்போதே விடுபட்ட மாற்றுப்பெயர்களை உருவாக்குகின்றன, முன்பு போலவே. on-demand முகவரிகள், இடஒதுக்கிகள், பின்னணி வேலைகள் பயன்படுத்தப்படுவதில்லை.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>வடிவ பேச்சுவார்த்தை இயக்கத்தில் உள்ளது, ஆனால் இங்கே எந்த மாற்றியாலும் WebP எழுத முடியாது.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>இது ஒரு ஸ்டேஜிங் நிறுவல், ஆனால் அதன் மூலத்தில் BaseURL இல்லை: விடுபட்ட படங்களைப் பெற முடியாது.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>ஸ்டேஜிங் மூலம் தொடர் தோல்விகளுக்குப் பிறகு இடைநிறுத்தப்பட்டது: இடைநிறுத்தம் முடியும் வரை அல்லது நீங்கள் மீட்டமைக்கும் வரை விடுபட்ட படங்களுக்கு இடஒதுக்கிகள் கிடைக்கும்.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>ஸ்டேஜிங் மூலம் சமீபத்தில் தோல்வியடைந்தது. அதன் கடைசிப் பிழையைக் கீழே பாருங்கள்.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>இந்த நிறுவல் உற்பத்தி அல்ல, ஆனால் SyncFrom எந்த மூலத்தையும் குறிப்பிடவில்லை: எதுவும் பெறப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>வேலை வரிசை (expqueue) கிடைக்கவில்லை: நேரத்தைத் தவறவிடும் மாற்றுப்பெயர்களை அடுத்த கோரிக்கை உருவாக்கும், வெளியிட்ட பின் முன்-உருவாக்கம் தவிர்க்கப்படும், மொத்த இயக்கங்கள் சிறிய வரம்புகளுக்கு மட்டுப்படுத்தப்படும்.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>பட மாற்றுப்பெயர்களின் சில வேலைகள் நிரந்தரமாகத் தோல்வியடைந்தன. அமைவு &gt; வேலை வரிசை காரணத்தைக் காட்டும்.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>மொத்த இயக்கங்கள் இடைநிறுத்தப்பட்டுள்ளன.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>கடந்த 24 மணி நேரத்தில் மாற்றுப்பெயர்கள் தோல்வியடைந்தன. இயக்க வரலாறு அவற்றைப் பட்டியலிடுகிறது.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>கையொப்ப விசை ஓராண்டுக்கு மேல் பழையது. அதைச் சுழற்றினால் பழைய முகவரிகள் சலுகைக் காலம் வரை செல்லுபடியாகும்.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>இன்னும் கையொப்ப விசை இல்லை: முதல் on-demand முகவரியுடன் உருவாக்கப்படும்.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>கடந்த 24 மணி நேரம்</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>உருவாக்கப்பட்ட மாற்றுப்பெயர்கள்</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>பதிலளிக்கப்பட்ட இடஒதுக்கிகள்</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>தோல்விகள்</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>ஸ்டேஜ் செய்யப்பட்ட கோப்புகள்</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>தொடங்கப்பட்ட இயக்கங்கள்</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>காத்திருக்கும் / இயங்கும் வேலைகள்</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file இன் கடைசி %lines வரிகளிலிருந்து எண்ணப்பட்டது, அவை %time வரை பின்னோக்கிச் செல்கின்றன.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>பயன்முறையும் வழங்கலும்</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>பயன்முறை</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>on demand</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>முகவரி வடிவம்</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>வழங்கல்</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>ஒரு கோரிக்கையின் நீண்ட காத்திருப்பு</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds வி</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>ஒரே நேரத்தில் மாற்றங்கள்</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>இப்போது %max இல் %busy பணியில்</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>வடிவ பேச்சுவார்த்தை</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>இயக்கம்</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>நிறுத்தம்</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>இடஒதுக்கியும் மாற்று ஸ்கிரிப்டும்</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>வெளியிட்ட பின் முன்-உருவாக்கம்</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>தளத்தின் மாற்றுப்பெயர்கள்</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>வடிவ வகைகளின் மாற்றிகள்</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>மாற்றி</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>முயற்சிக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>விருப்பமானது</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ஆம்</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>இல்லை</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>மாற்றுப்பெயர்களை [ImageConverterSettings] மாற்றிகளே உருவாக்குகின்றன, முன்பு போலவே; இவை WebP, AVIF வகைகளை எழுதுகின்றன.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>சூழலும் மூலமும்</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>இந்த நிறுவல்</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(உற்பத்தி: ஒருபோதும் பெறாது)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>பெறும் இடம்</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>எதுவுமில்லை</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>மூல முகவரி</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>அமைக்கப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>சான்று</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>ரகசியம் %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>எதுவுமில்லை</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>நிலை</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>செயல்படுகிறது</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time வரை இடைநிறுத்தம்</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>தோல்வியடைகிறது</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>தொடர் தோல்விகள்</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count க்குப் பின் இடைநிறுத்தம்</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>கடைசிப் பிழை</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>கடைசி வெற்றி</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>தோல்விகளை மீட்டமைத்து மூலத்தை மீண்டும் கேள்</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>வேலை வரிசை</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>வேலை வகை</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>காத்திருப்பவை</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>இயங்குபவை</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>தோல்வியடைந்தவை</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>பதிவு செய்யப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>வேலை வரிசை கிடைக்கவில்லை.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>மொத்த இயக்கங்கள் இடைநிறுத்தம்</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time முதல் %user மூலம்</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>மொத்த இயக்கங்கள் இயங்கலாம்</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>கையொப்ப விசை</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>விசை</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>ரகசியக் களஞ்சியத்தில்</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>இன்னும் இல்லை</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>வயது</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days நாட்கள் (%time முதல்)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>முந்தைய விசை</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time வரை செல்லுபடியாகும்</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>விசையைச் சுழற்று</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>தற்போதைய விசையால் கையொப்பமிட்ட முகவரிகள் சலுகைக் காலம் (SigningKeyGrace) வரை தொடர்ந்து செயல்படும், பின்னர் பக்கங்கள் மீண்டும் உருவாக்கப்படும் வரை இடஒதுக்கிகளையே பதிலளிக்கும்.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>இப்போதே சுழற்று</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>இது எப்படி வேலை செய்கிறது</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render பயன்முறை, ஸ்டேஜிங் மற்றும் பதிவு</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (இயல்புநிலை): இன்னும் இல்லாத மாற்றுப்பெயரைப் பக்கம் கையொப்பமிட்ட முகவரியுடன் இணைக்கிறது. முதல் கோரிக்கை நீண்ட காத்திருப்புக்குள் அதை உருவாக்கும், இல்லையெனில் நடுநிலை இடஒதுக்கியைப் பதிலளிக்கும், வேலை ஒன்று பணியை முடிக்கும்; படம் தயாரானதும் மாற்று ஸ்கிரிப்ட் இடஒதுக்கியை மாற்றும்.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render பயன்முறை: டெம்ப்ளேட் பக்கம் உருவாகும்போதே மாற்றுப்பெயரை உருவாக்குகிறது, முன்பு போலவே. இரண்டுக்கும் இடையே எப்போது வேண்டுமானாலும் மாறலாம்; எதையும் இடம்பெயர்க்கத் தேவையில்லை.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>ஸ்டேஜிங் நிறுவல் தன்னிடம் இல்லாத மூலப்படங்களையும் மாற்றுப்பெயர்களையும் தன் மூலத்திலிருந்து பெறுகிறது; தோல்வியடையும் மூலம் தொடர் தோல்விகளுக்குப் பிறகு இடைநிறுத்தப்படும், நிர்வாகிகளுக்கு மணிக்கு அதிகபட்சம் ஒரு மின்னஞ்சல் கிடைக்கும்.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>மொத்த இயக்கங்களும் வெளியிட்ட பின் முன்-உருவாக்கமும் வேலை வரிசையின் வேலைகள், பார்வையாளர்களை விடக் குறைந்த முன்னுரிமையுடன். மாற்றுப்பெயர்களை நீக்குவது Velocity இன் பதில் தற்காலிக சேமிப்பையும் அழிக்கிறது, எனவே நீக்கப்பட்ட கோப்பு அங்கிருந்து வழங்கப்படாது.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>உருவாக்கப்பட்ட ஒவ்வொரு மாற்றுப்பெயரும், பதிலளிக்கப்பட்ட இடஒதுக்கியும், ஸ்டேஜ் செய்யப்பட்ட கோப்பும், இயக்கமும் %file இல் ஒரு வரி. கட்டளை வரியிலும் அதே கருவிகள் உள்ளன: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>வேலை %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%total படங்களில் %done</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>இயக்கம்</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>வரம்பு</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>முடிவு</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>இந்த வேலையை ரத்துசெய்</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>வேலை %job பட மாற்றுப்பெயர்களின் வேலை அல்ல, அல்லது அது வரிசையிலிருந்து நீக்கப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>இயக்கம் %run இன் முடிவு</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>மொத்த இயக்கங்கள் இடைநிறுத்தப்பட்டுள்ளன</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time முதல் %user இடைநிறுத்தினார்.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>இடைநிறுத்தம் ஒவ்வொரு மொத்த இயக்கத்தையும் அதன் தற்போதைய படத்துக்குப் பின், எல்லாச் சேவையகங்களிலும் நிறுத்தும்; வரிசையிலுள்ள இயக்கங்கள் காத்திருக்கும். பார்வையாளர்களின் மாற்றுப்பெயர்கள் தொடர்ந்து உருவாக்கப்படும்.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>மொத்த இயக்கங்களைத் தொடரு</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>காரணம் (விருப்பத்திற்குரியது)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>மொத்த இயக்கங்களை இடைநிறுத்து</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>இயக்கத்தைத் தொடங்கு</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>இயக்கங்கள் வேலை வரிசையின் வேலைகள்: பக்கத்தை விட்டுச் சென்று திரும்பலாம்.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>வேலை வரிசை இல்லாமல் இயக்கம் இந்தக் கோரிக்கையிலேயே, அதிகபட்சம் %count படங்களுக்குச் செய்யப்படும்.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>செயல்</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: விடுபட்ட மாற்றுப்பெயர்களை உருவாக்கு</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: நீக்கி மீண்டும் உருவாக்கு</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: நீக்கு (கேட்கப்படும்போது மீண்டும் உருவாகும்)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: ஸ்டேஜிங் மூலத்திலிருந்து கோப்புகளைப் பெறு</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(ஸ்டேஜிங் நிறுவலில் மட்டும்)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>முழுத் தளம்</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>ஒரு முனை</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>ஒரு முனையும் அதன் துணை மரமும்</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>முனை ஐடி</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>வகுப்புகள்</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>பண்புகள்</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>மாற்றப்பட்டது முதல்</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>ஒரு தேதி (2026-11-01) அல்லது கடந்த காலம் (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>அதிகபட்ச படங்கள்</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>மாற்றுப்பெயர்கள் (எதுவும் தேர்வாகவில்லை எனில்: அனைத்தும்)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>சோதனை இயக்கம்: எண்ணுவது மட்டும் (resync மூலத்தைச் சரிபார்க்கும், எதையும் சேமிக்காது)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>வேறுபடும் கோப்புகளை மேலெழுது (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>இயக்கத்தைத் தொடங்கு</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>சமீபத்திய இயக்கங்கள்</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>வேலை</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>முன்னேற்றம்</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>வரிசையில்</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>செயல்கள்</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ரத்துசெய்</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>இன்னும் மொத்த இயக்கமோ resync-ஓ இல்லை.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>ஒரு படம்</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>டெம்ப்ளேட்டுக்கு இப்போது கிடைக்கும் முகவரிகள், ஒவ்வொரு மாற்றுப்பெயருக்கும் கணக்கிடப்பட்ட அளவுகளும் வகைகளும், ஒவ்வொரு கோப்பும் உள்ளதா என்பதும்.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>இதன் மூலம் தேடு</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>பொருள் ஐடி</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ஐடி</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>காட்டு</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>இந்தப் பொருளை நீங்கள் படிக்க அனுமதி இல்லை.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>இந்தப் பொருளில் படம் இல்லை.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>இந்த ஐடியுடன் பொருள் இல்லை.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>பொருள் %object, முனை %node, பதிப்பு %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>மூலம்: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>கோப்பு உள்ளது</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>கோப்பு இல்லை</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name இன் மாற்றுப்பெயர்கள்</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>மாற்றுப்பெயர்</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>அளவு</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>வகை</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>கோப்பு</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>வடிவங்கள்</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>டெம்ப்ளேட்டில் முகவரி</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>உள்ளது</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>இல்லை</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>இந்த வகைக்கு இல்லை</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>சரிபார்</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>உருவாக்கு</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>இந்தப் புலத்தில் படம் இல்லை.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>நேரம்</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms மி.வி</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>மூலத்துடன் இணைப்பு</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>ஸ்டேஜிங் மூலத்துக்கு HEAD கோரிக்கை, பெயரிடப்பட்டிருந்தால் அதன் சான்றுடன். சான்று அனுப்பப்படும், ஒருபோதும் காட்டப்படாது.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>மூலம்</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>சான்றுடன்</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>சேமிப்பகப் பாதை (விருப்பத்திற்குரியது)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>இணைப்பைச் சோதி</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>எந்த மூலத்திற்கும் BaseURL இல்லை. மூலங்கள் அமைப்புகளில் அமைக்கப்படுகின்றன ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>அடையக்கூடியது</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>நிராகரிக்கப்பட்டது: சான்றைச் சரிபார்க்கவும்</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>மூலத்தில் காணப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>பதில் இல்லை</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>நேரம் முடிந்தது</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>திருப்பிவிடப்பட்டது (பின்தொடரப்படவில்லை)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL இல்லை</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>சேமிப்பகப் பாதை அல்ல</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>முகவரி</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>நிலை</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>அனுப்பப்பட்டது</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>ரகசியம் இல்லை</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>ரகசியம் user:password அல்லது Bearer &lt;token&gt; அல்ல</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file இன் புதிய வரிகள், புதியவை முதலில்.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>அமைவு &gt; பதிவுக் கோப்புகள்</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>நிகழ்வு</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>அனைத்து நிகழ்வுகள்</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>இயக்கங்கள் (தொடக்கமும் முடிவும்)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>பாதையில் உள்ளது</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>வரிகள்</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>வடிகட்டி</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>பின்தொடர்: புதிய வரிகள் எழுதப்படும்போது காட்டு</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>பாதையும் விவரங்களும்</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>பதிவின் எந்த வரியும் பொருந்தவில்லை.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>சேமிப்பது எதை மாற்றும்</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>என்ன மாற்றப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php இல் சேமிக்கப்படும், எனவே இங்குள்ள மதிப்பு ஒவ்வொரு siteaccess ஐயும் விட மேலோங்கும். காட்டப்படும் மதிப்புகள் இந்த siteaccess க்குப் பொருந்துபவை. சேமிக்கும் முன் நீங்கள் யார் என்பதை உறுதிப்படுத்தக் கேட்கப்படும்.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>மாற்றுப்பெயர்கள் எப்படி உருவாக்கப்பட்டு வழங்கப்படுகின்றன.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>விடுபட்ட படங்களை மற்றொரு நிறுவலிலிருந்து பெறுதல் (alpha, dev, beta, stage, pro, post, arc). உற்பத்தி (pro) ஒருபோதும் பெறாது.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>அமைப்பு</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>மதிப்பு</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override இல்</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>ஒவ்வொரு மூலத்தின் முகவரியும், அதன் சான்றைக் கொண்ட ரகசியத்தின் பெயரும் (user:password அல்லது Bearer &lt;token&gt;). ரகசியத்தின் மதிப்பு அமைவு &gt; ரகசியங்கள் பிரிவில் அமைக்கப்படும், இங்கே ஒருபோதும் காட்டப்படாது.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>மாற்றங்களை முன்னோட்டமிடு</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>சேமி</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>பின்தொடர்கிறது: %time இல் புதுப்பிக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>இடைநிறுத்தப்பட்டது</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>ஊட்டம் பதிலளிக்கவில்லை; மீண்டும் முயல்கிறது.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>வேலை முடிந்தது.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: டெம்ப்ளேட்டுகளுக்கு முகவரி கிடைக்கும், மாற்றுப்பெயர் கேட்கப்படும்போது உருவாக்கப்படும். render: டெம்ப்ளேட் பக்கம் உருவாகும்போதே அதை உருவாக்கும் (அசல் நடத்தை).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>இன்னும் உருவாக்கப்படாத மாற்றுப்பெயரின் முகவரி: token (கையொப்பமிட்டது, தரவுத்தளம் தேவையில்லை), ids-token, ids, node அல்லது storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: வலையமைப்பு சேமிப்பகத்தை வழங்கினால் கோப்புக்குத் திருப்பிவிடல், இல்லையெனில் கோப்பு ஸ்ட்ரீம் செய்யப்படும்.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>ஒரு கோரிக்கை மாற்றுப்பெயரை உருவாக்க அல்லது பெற செலவிடக்கூடிய வினாடிகள்; பின்னர் அது இடஒதுக்கியைப் பதிலளிக்கும், வேலை ஒன்று பணியை முடிக்கும்.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP, AVIF வகைகளுக்கு முதலில் முயலும் மாற்றி.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Formats[] பட்டியலிடும் மாற்றுப்பெயர்களுக்கு, கேட்கும் உலாவிகளுக்கு WebP அல்லது AVIF பதிலளி.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>படம் இல்லாதபோது சரியான அளவில் ஒரு நடுநிலைப் படம்.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>படம் கிடைத்ததும் இடஒதுக்கிகளை உண்மையான படத்தால் மாற்றும் சிறிய ஸ்கிரிப்ட்.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>வெளியிட்ட பின், ஒரு வேலை புதிய படங்களின் மாற்றுப்பெயர்களைத் தொடர்புடைய ஒவ்வொரு siteaccess க்கும் உருவாக்கும்.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>ஒரு சேவையகத்தில் ஒரே நேரத்தில் மாற்றங்கள்.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>மொத்த இயக்கங்களின் செயல்முறை முன்னுரிமை (nice), 0 முதல் 19 வரை.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>உருவாக்கப்பட்ட மாற்றுப்பெயரை உலாவிகளும் தற்காலிக சேமிப்புகளும் வைத்திருக்கக்கூடிய வினாடிகள்.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>வரைவு அல்லது முன்னோட்டப் படத்தின் முகவரி செல்லுபடியாகும் வினாடிகள்.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>சுழற்சிக்குப் பின் முந்தைய கையொப்ப விசை செல்லுபடியாகும் வினாடிகள்.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>இந்த நிறுவலின் சூழல்.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>விடுபட்ட படங்கள் பெறப்படும் சூழல்; none: எதுவும் பெறப்படாது.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>ஒரு வரிக்கு ஒன்று: உள்ளூர் சேமிப்பக முன்னொட்டு;மூல முன்னொட்டு அல்லது முகவரி, வேறுபடும் சேமிப்பகப் பாதைகளுக்கு.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>மூலத்துக்கான ஒரு கோரிக்கை எடுக்கக்கூடிய வினாடிகள்.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>மூலத்திலிருந்து எடுக்கப்படும் மிகப் பெரிய கோப்பு, பைட்டுகளில்.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>எத்தனை தொடர் தோல்விகளுக்குப் பிறகு மூலம் இடைநிறுத்தப்படும்.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>தோல்வியடையும் மூலம் எவ்வளவு நேரம் இடைநிறுத்தப்படும்.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>மூலம் இடைநிறுத்தப்படும்போது நிர்வாகிகளுக்கு மின்னஞ்சல் அனுப்பு (மணிக்கு அதிகபட்சம் ஒருமுறை).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>ஒரு வரிக்கு ஒரு மின்னஞ்சல் முகவரி; காலியாக இருந்தால்: site.ini இன் AdminEmail.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>மூல நிறுவல் %block இன் முகவரி, எ.கா. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>சான்றைக் கொண்ட ரகசியத்தின் பெயர், அல்லது env:VARIABLE. சான்றே அல்ல.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(எதுவுமில்லை)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>இயல்புநிலை: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>இங்கே அமைக்கப்பட்டது; நீக்க டிக் செய்யவும்</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>மரபுரிமை</translation>
     </message>
 </context>
 </TS>

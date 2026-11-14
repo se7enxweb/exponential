@@ -16588,6 +16588,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>ইমপোর্ট/এক্সপোর্ট</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>ছবির অ্যালিয়াস</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>এই আইটেমের জন্য জেনারেট করুন</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>সাবট্রির জন্য জেনারেট করুন</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>এই আইটেমের জন্য পুনরায় জেনারেট করুন</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>সাবট্রির জন্য পুনরায় জেনারেট করুন</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>এই আইটেমের জন্য সরান</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>সাবট্রির জন্য সরান</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86420,6 +86448,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>একটি পুরোনো সাইটের server ব্লক: return-সহ location =, কোয়েরির জন্য if ($args), ওয়াইল্ডকার্ড হিসেবে rewrite এবং একক পৃষ্ঠার একটি map।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>ছবির অ্যালিয়াস</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>ছবির অ্যালিয়াস হলো একটি ছবির ছোট করা ও ক্রপ করা কপি, যা টেমপ্লেট দেখায়। এখানে আপনি দেখতে পারেন সেগুলো কীভাবে তৈরি হয়, সাইট জুড়ে বাল্ক কাজ চালাতে পারেন, একটি ছবি বা স্টেজিং সোর্স পরীক্ষা করতে পারেন, রানের ইতিহাস অনুসরণ করতে পারেন এবং সেটিংস পরিবর্তন করতে পারেন।</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>পেজের অংশসমূহ</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ড্যাশবোর্ড</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>বাল্ক রান</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>পরীক্ষার টুল</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>রানের ইতিহাস</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>সেটিংস</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>আপনি এখানে সবকিছু দেখতে পারেন। সেটিংস পরিবর্তন, কাজ চালানো এবং ফাইল তৈরি করে এমন টুলের জন্য setup/managealiases নীতি প্রয়োজন।</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>যেসবে মনোযোগ দরকার</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>render মোড: টেমপ্লেট পেজ রেন্ডার হওয়ার সময়, আগের মতোই, অনুপস্থিত অ্যালিয়াস তৈরি করে। on-demand ঠিকানা, প্লেসহোল্ডার ও ব্যাকগ্রাউন্ড কাজ ব্যবহৃত হয় না।</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>ফরম্যাট নেগোশিয়েশন চালু আছে, কিন্তু এখানকার কোনো কনভার্টার WebP লিখতে পারে না।</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>এটি একটি স্টেজিং ইনস্টলেশন, কিন্তু এর সোর্সে BaseURL নেই: অনুপস্থিত ছবি আনা যাচ্ছে না।</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>টানা কয়েকবার ব্যর্থ হওয়ার পর স্টেজিং সোর্স বিরতিতে আছে: বিরতি শেষ না হওয়া বা আপনি রিসেট না করা পর্যন্ত অনুপস্থিত ছবির জন্য প্লেসহোল্ডার দেওয়া হবে।</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>স্টেজিং সোর্স সম্প্রতি ব্যর্থ হয়েছে। নিচে এর শেষ ত্রুটি দেখুন।</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>এই ইনস্টলেশন প্রোডাকশন নয়, কিন্তু SyncFrom কোনো সোর্সের নাম দেয়নি: কিছুই আনা হচ্ছে না।</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>জব কিউ (expqueue) পাওয়া যাচ্ছে না: সময়মতো তৈরি না হওয়া অ্যালিয়াস পরের অনুরোধ তৈরি করবে, প্রকাশের পরের প্রি-জেনারেশন বাদ পড়বে এবং বাল্ক রান ছোট পরিসরে সীমিত থাকবে।</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>ছবির অ্যালিয়াসের কিছু জব চূড়ান্তভাবে ব্যর্থ হয়েছে। সেটআপ &gt; জব কিউ কারণ দেখায়।</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>বাল্ক রান বিরতিতে আছে।</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>গত ২৪ ঘণ্টায় অ্যালিয়াস ব্যর্থ হয়েছে। রানের ইতিহাসে সেগুলো তালিকাভুক্ত আছে।</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>সাইনিং কী এক বছরের বেশি পুরনো। এটি ঘোরালে পুরনো ঠিকানাগুলো গ্রেস পিরিয়ডে বৈধ থাকে।</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>এখনও কোনো সাইনিং কী নেই: প্রথম on-demand ঠিকানার সাথে এটি তৈরি হবে।</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>গত ২৪ ঘণ্টা</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>তৈরি হওয়া অ্যালিয়াস</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>উত্তর দেওয়া প্লেসহোল্ডার</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>ব্যর্থতা</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>স্টেজ করা ফাইল</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>শুরু হওয়া রান</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>অপেক্ষমাণ / চলমান জব</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file-এর শেষ %lines লাইন থেকে গোনা, যা %time পর্যন্ত পিছিয়ে যায়।</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>মোড ও ডেলিভারি</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>মোড</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>অন-ডিমান্ড</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>ঠিকানার ধরন</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>ডেলিভারি</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>একটি অনুরোধের সর্বোচ্চ অপেক্ষা</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds সে.</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>একসাথে রূপান্তর</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>এখন %max-এর মধ্যে %busy ব্যস্ত</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>ফরম্যাট নেগোশিয়েশন</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>চালু</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>বন্ধ</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>প্লেসহোল্ডার ও অদলবদল স্ক্রিপ্ট</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>প্রকাশের পরের প্রি-জেনারেশন</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>সাইটের অ্যালিয়াস</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>ফরম্যাট ভ্যারিয়েন্টের কনভার্টার</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>কনভার্টার</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>চেষ্টা করা হয়েছে</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>পছন্দের</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>হ্যাঁ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>না</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>অ্যালিয়াসগুলো নিজে আগের মতোই [ImageConverterSettings]-এর কনভার্টার তৈরি করে; এগুলো WebP ও AVIF ভ্যারিয়েন্ট লেখে।</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>পরিবেশ ও সোর্স</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>এই ইনস্টলেশন</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(প্রোডাকশন: কখনও আনে না)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>যেখান থেকে আনে</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>কিছু না</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>সোর্সের ঠিকানা</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>সেট করা নেই</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>ক্রেডেনশিয়াল</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>সিক্রেট %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>নেই</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>অবস্থা</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>চলছে</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time পর্যন্ত বিরতিতে</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>ব্যর্থ হচ্ছে</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>টানা ব্যর্থতা</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count-এর পর বিরতি</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>শেষ ত্রুটি</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>শেষ সফলতা</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>ব্যর্থতা রিসেট করে সোর্সকে আবার জিজ্ঞাসা করুন</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>জব কিউ</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>জবের ধরন</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>অপেক্ষমাণ</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>চলমান</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ব্যর্থ</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>নিবন্ধিত নয়</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>জব কিউ পাওয়া যাচ্ছে না।</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>বাল্ক রান বিরতিতে</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time থেকে %user দ্বারা</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>বাল্ক রান চলতে পারে</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>সাইনিং কী</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>কী</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>সিক্রেট স্টোরে</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>এখনও নেই</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>বয়স</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days দিন (%time থেকে)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>আগের কী</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time পর্যন্ত বৈধ</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>কী ঘোরান</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>বর্তমান কী দিয়ে সাইন করা ঠিকানাগুলো গ্রেস পিরিয়ড (SigningKeyGrace) পর্যন্ত কাজ করে, তারপর পেজ আবার তৈরি না হওয়া পর্যন্ত প্লেসহোল্ডার দিয়ে উত্তর দেয়।</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>এখনই ঘোরান</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>এটি কীভাবে কাজ করে</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>অন-ডিমান্ড, render মোড, স্টেজিং ও লগ</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>অন-ডিমান্ড (ডিফল্ট): পেজ এখনও তৈরি না হওয়া অ্যালিয়াসকে একটি সাইন করা ঠিকানায় লিংক করে। প্রথম অনুরোধ সর্বোচ্চ অপেক্ষার মধ্যে সেটি তৈরি করে, নইলে একটি নিরপেক্ষ প্লেসহোল্ডার দিয়ে উত্তর দেয় এবং একটি জব কাজ শেষ করে; ছবি তৈরি হলে অদলবদল স্ক্রিপ্ট প্লেসহোল্ডার বদলে দেয়।</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>render মোড: পেজ রেন্ডার হওয়ার সময় টেমপ্লেট অ্যালিয়াস তৈরি করে, আগের মতোই। যেকোনো সময় দুটির মধ্যে বদলানো যায়; কিছুই মাইগ্রেট করতে হয় না।</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>একটি স্টেজিং ইনস্টলেশন তার অনুপস্থিত মূল ছবি ও অ্যালিয়াস নিজের সোর্স থেকে আনে; ব্যর্থ সোর্স টানা ব্যর্থতার পর বিরতিতে যায় এবং প্রশাসকেরা ঘণ্টায় সর্বোচ্চ একটি ই-মেইল পান।</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>বাল্ক রান ও প্রকাশের পরের প্রি-জেনারেশন জব কিউয়ের জব, দর্শকদের চেয়ে কম অগ্রাধিকারে। অ্যালিয়াস সরালে Velocity-র রেসপন্স ক্যাশও পরিষ্কার হয়, যাতে সরানো ফাইল সেখান থেকে পরিবেশিত না হয়।</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>প্রতিটি তৈরি অ্যালিয়াস, উত্তর দেওয়া প্লেসহোল্ডার, স্টেজ করা ফাইল ও রান %file-এর একটি লাইন। কমান্ড লাইনেও একই টুল আছে: %command।</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>জব %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%total-এর মধ্যে %done ছবি</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>রান</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>পরিসর</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ফলাফল</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>এই জব বাতিল করুন</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>জব %job ছবির অ্যালিয়াসের জব নয়, অথবা এটি কিউ থেকে সরানো হয়েছে।</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>রান %run-এর ফলাফল</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>বাল্ক রান বিরতিতে আছে</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time থেকে %user দ্বারা বিরতিতে।</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>বিরতি প্রতিটি বাল্ক রানকে তার বর্তমান ছবির পর থামায়, সব সার্ভারে; কিউতে থাকা রান অপেক্ষা করে। দর্শকদের অ্যালিয়াস তবু তৈরি হয়।</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>বাল্ক রান আবার শুরু করুন</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>কারণ (ঐচ্ছিক)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>বাল্ক রান বিরতিতে দিন</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>একটি রান শুরু করুন</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>রান জব কিউয়ের জব: আপনি পেজ ছেড়ে গিয়ে আবার ফিরে আসতে পারেন।</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>জব কিউ ছাড়া রান এই অনুরোধেই হয়, সর্বোচ্চ %count টি ছবির জন্য।</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>কাজ</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>জেনারেট: অনুপস্থিত অ্যালিয়াস তৈরি করুন</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>পুনরায় জেনারেট: সরিয়ে আবার তৈরি করুন</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>পরিষ্কার: সরান (অন-ডিমান্ড আবার তৈরি হবে)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: স্টেজিং সোর্স থেকে ফাইল আনুন</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(শুধু স্টেজিং ইনস্টলেশনে)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>পুরো সাইট</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>একটি নোড</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>একটি নোড ও তার সাবট্রি</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>নোড ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>ক্লাস</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>অ্যাট্রিবিউট</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>যেদিন থেকে বদলেছে</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>একটি তারিখ (2026-11-01) বা কত আগে (12 ঘণ্টা, 2 দিন)।</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>সর্বোচ্চ ছবি</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>অ্যালিয়াস (কোনোটি টিক না থাকলে: সবগুলো)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>ট্রায়াল রান: শুধু গুনুন (resync সোর্স পরীক্ষা করে, কিছু সংরক্ষণ করে না)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>ভিন্ন ফাইল ওভাররাইট করুন (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>রান শুরু করুন</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>সাম্প্রতিক রান</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>জব</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>অগ্রগতি</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>কিউতে</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>কাজসমূহ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>বাতিল করুন</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>এখনও কোনো বাল্ক রান বা resync নেই।</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>একটি ছবি</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>টেমপ্লেট এখন যে ঠিকানা পায়, প্রতিটি অ্যালিয়াসের জন্য হিসাব করা মাপ ও ধরন, এবং প্রতিটি ফাইল আছে কি না।</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>যা দিয়ে খুঁজবেন</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>অবজেক্ট ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>দেখান</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>আপনি এই অবজেক্ট পড়তে পারবেন না।</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>এই অবজেক্টে কোনো ছবি নেই।</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>এই ID-র কোনো অবজেক্ট নেই।</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>অবজেক্ট %object, নোড %node, সংস্করণ %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>মূল: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>ফাইল আছে</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>ফাইল নেই</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name-এর অ্যালিয়াস</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>অ্যালিয়াস</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>মাপ</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>ধরন</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ফাইল</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>ফরম্যাট</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>টেমপ্লেটে ঠিকানা</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>আছে</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>নেই</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>এই ধরনের জন্য নয়</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>পরীক্ষা করুন</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>তৈরি করুন</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>এই ফিল্ডে কোনো ছবি নেই।</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>সময়</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms মি.সে.</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>সোর্সের সাথে সংযোগ</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>একটি স্টেজিং সোর্সে HEAD অনুরোধ, নাম দেওয়া থাকলে তার ক্রেডেনশিয়ালসহ। ক্রেডেনশিয়াল পাঠানো হয়, কখনও দেখানো হয় না।</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>সোর্স</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>ক্রেডেনশিয়ালসহ</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>স্টোরেজ পাথ (ঐচ্ছিক)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>সংযোগ পরীক্ষা করুন</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>কোনো সোর্সে BaseURL নেই। সোর্স সেটিংসে ঠিক করা হয় ([AliasSource_&lt;environment&gt;])।</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>পৌঁছানো যায়</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>প্রত্যাখ্যাত: ক্রেডেনশিয়াল পরীক্ষা করুন</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>সোর্সে পাওয়া যায়নি</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>সাড়া নেই</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>সময় শেষ</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>রিডাইরেক্ট হয়েছে (অনুসরণ করা হয়নি)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL নেই</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>স্টোরেজ পাথ নয়</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ঠিকানা</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>স্ট্যাটাস</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>পাঠানো হয়েছে</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>সিক্রেট নেই</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>সিক্রেটটি user:password বা Bearer &lt;token&gt; নয়</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file-এর সর্বশেষ লাইন, নতুনগুলো আগে।</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>সেটআপ &gt; লগ ফাইল</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>ঘটনা</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>সব ঘটনা</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>রান (শুরু ও শেষ)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>পাথে আছে</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>লাইন</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>ফিল্টার</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>অনুসরণ: নতুন লাইন লেখা হলে দেখান</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>পাথ ও বিবরণ</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>লগের কোনো লাইন মেলেনি।</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>সংরক্ষণ করলে যা বদলাবে</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>যা বদলানো হয়েছে</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php-এ সংরক্ষিত হয়, তাই এখানকার মান প্রতিটি siteaccess-এর ওপর প্রাধান্য পায়। দেখানো মানগুলো এই siteaccess-এ কার্যকর মান। সংরক্ষণের আগে আপনার পরিচয় নিশ্চিত করতে বলা হবে।</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>অ্যালিয়াস কীভাবে তৈরি ও ডেলিভার হয়।</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>অন্য ইনস্টলেশন থেকে অনুপস্থিত ছবি আনা (alpha, dev, beta, stage, pro, post, arc)। প্রোডাকশন (pro) কখনও আনে না।</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>সেটিং</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>মান</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override-এ</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>প্রতিটি সোর্সের ঠিকানা এবং তার ক্রেডেনশিয়াল ধারণকারী সিক্রেটের নাম (user:password বা Bearer &lt;token&gt;)। সিক্রেটের মান সেটআপ &gt; সিক্রেটে ঠিক করা হয় এবং এখানে কখনও দেখানো হয় না।</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>পরিবর্তনের প্রিভিউ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>সংরক্ষণ করুন</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>অনুসরণ করা হচ্ছে: %time-এ হালনাগাদ</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>বিরতিতে</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>ফিড সাড়া দেয়নি; আবার চেষ্টা করা হচ্ছে।</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>জবটি শেষ হয়েছে।</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: টেমপ্লেট ঠিকানা পায়, চাওয়া হলে অ্যালিয়াস তৈরি হয়। render: পেজ রেন্ডার হওয়ার সময় টেমপ্লেট এটি তৈরি করে (আগের আচরণ)।</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>এখনও তৈরি না হওয়া অ্যালিয়াসের ঠিকানা: token (সাইন করা, ডেটাবেস লাগে না), ids-token, ids, node বা storage।</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: ওয়েব সার্ভার স্টোরেজ পরিবেশন করলে ফাইলে রিডাইরেক্ট, নইলে ফাইল স্ট্রিম করা হয়।</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>একটি অনুরোধ অ্যালিয়াস তৈরি বা আনতে যত সেকেন্ড ব্যয় করতে পারে; তারপর সেটি প্লেসহোল্ডার দিয়ে উত্তর দেয় এবং একটি জব কাজ শেষ করে।</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP ও AVIF ভ্যারিয়েন্টের জন্য প্রথমে যে কনভার্টার চেষ্টা করা হয়।</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>যেসব অ্যালিয়াস Formats[] তালিকাভুক্ত করে, সেগুলোর জন্য WebP বা AVIF চাওয়া ব্রাউজারকে তা দিন।</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>ছবি না থাকলে সঠিক মাপের একটি নিরপেক্ষ ছবি।</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>একটি ছোট স্ক্রিপ্ট, যা আসল ছবি তৈরি হলে প্লেসহোল্ডার বদলে দেয়।</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>প্রকাশের পর একটি জব প্রতিটি সংশ্লিষ্ট siteaccess-এর জন্য নতুন ছবির অ্যালিয়াস তৈরি করে।</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>একটি সার্ভারে একসাথে রূপান্তর।</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>বাল্ক রানের প্রসেস অগ্রাধিকার (nice), 0 থেকে 19।</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>ব্রাউজার ও ক্যাশ একটি তৈরি অ্যালিয়াস যত সেকেন্ড রাখতে পারে।</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>ড্রাফট বা প্রিভিউ ছবির ঠিকানা যত সেকেন্ড বৈধ থাকে।</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>ঘোরানোর পর আগের সাইনিং কী যত সেকেন্ড বৈধ থাকে।</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>এই ইনস্টলেশনের পরিবেশ।</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>যে পরিবেশ থেকে অনুপস্থিত ছবি আনা হয়; none: কিছুই আনা হয় না।</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>প্রতি লাইনে একটি: স্থানীয় স্টোরেজ প্রিফিক্স;সোর্স প্রিফিক্স বা ঠিকানা, যেসব স্টোরেজ পাথ আলাদা তাদের জন্য।</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>সোর্সে একটি অনুরোধ যত সেকেন্ড নিতে পারে।</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>সোর্স থেকে নেওয়া সবচেয়ে বড় ফাইল, বাইটে।</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>টানা কতবার ব্যর্থ হলে সোর্স বিরতিতে যায়।</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>একটি ব্যর্থ সোর্স কতক্ষণ বিরতিতে থাকে।</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>সোর্স বিরতিতে গেলে প্রশাসকদের মেইল করুন (ঘণ্টায় সর্বোচ্চ একবার)।</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>প্রতি লাইনে একটি ই-মেইল ঠিকানা; ফাঁকা: site.ini-র AdminEmail।</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>সোর্স ইনস্টলেশন %block-এর ঠিকানা, যেমন https://www.example.org।</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>ক্রেডেনশিয়াল ধারণকারী সিক্রেটের নাম, বা env:VARIABLE। কখনও ক্রেডেনশিয়াল নিজে নয়।</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(নেই)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>ডিফল্ট: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>এখানে সেট করা; সরাতে টিক দিন</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>উত্তরাধিকারসূত্রে</translation>
     </message>
 </context>
 </TS>

@@ -16588,6 +16588,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>Gbé wọlé/Gbé jáde</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Orúkọ àfidípò àwòrán</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Ṣe fún ohun yìí</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Ṣe fún igi abẹ́</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Tún ṣe fún ohun yìí</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Tún ṣe fún igi abẹ́</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Yọ kúrò fún ohun yìí</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Yọ kúrò fún igi abẹ́</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86420,6 +86448,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Búlọ́ọ̀kù server ti sáìtì àtijọ́: location = pẹ̀lú return, if ($args) fún ìbéèrè, rewrite gẹ́gẹ́ bí àmì àfidípò àti map ti àwọn ojú-ìwé ẹyọkan.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Orúkọ àfidípò àwòrán</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Orúkọ àfidípò àwòrán ni àwọn ẹ̀dà àwòrán tí a ti dín ní ìwọ̀n tí a sì ti gé, tí àwọn àwòṣe ń fihàn. Níbí ni o ti lè rí bí a ṣe ń ṣe wọ́n, ṣe àwọn iṣẹ́ ọ̀pọ̀lọpọ̀ káàkiri ojúlé, dán àwòrán kan tàbí orísun staging wò, tẹ̀lé ìtàn ìṣiṣẹ́, kí o sì yí ètò padà.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Àwọn apá ojú ìwé</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Pánẹ́ẹ̀lì ìṣàkóso</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Àwọn ìṣiṣẹ́ ọ̀pọ̀lọpọ̀</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Àwọn irinṣẹ́ ìdánwò</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Ìtàn ìṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Ètò</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>O lè wo gbogbo nǹkan níbí. Yíyí ètò padà, ṣíṣe iṣẹ́ àti àwọn irinṣẹ́ tí ń ṣe fáìlì nílò ìlànà setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Ohun tó nílò àkíyèsí</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Ipò render: àwọn àwòṣe ń ṣe àwọn orúkọ àfidípò tó sọnù nígbà tí a bá ń ṣe ojú ìwé, bíi ti àtẹ̀yìnwá. A kò lo àwọn àdírẹ́sì on-demand, àwọn olùdúró àti àwọn iṣẹ́ ẹ̀yìn.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Ìjíròrò ọ̀nà kíkọ ti wà ní títàn, ṣùgbọ́n kò sí olùyípadà níbí tó lè kọ WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Èyí jẹ́ ìfisílẹ̀ staging, ṣùgbọ́n orísun rẹ̀ kò ní BaseURL: a kò lè mú àwọn àwòrán tó sọnù wá.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>A ti dá orísun staging dúró lẹ́yìn àìṣeéṣe léraléra: àwọn àwòrán tó sọnù ń gba àwọn olùdúró títí ìdúró yóò fi parí tàbí tí o fi tún un ṣe.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Orísun staging kùnà láìpẹ́ yìí. Wo àṣìṣe rẹ̀ tó gbẹ̀yìn ní ìsàlẹ̀.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Ìfisílẹ̀ yìí kì í ṣe ti iṣẹ́ àgbéjáde, ṣùgbọ́n SyncFrom kò dárúkọ orísun kankan: a kò mú nǹkan wá.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Ìlà iṣẹ́ (expqueue) kò sí: àwọn orúkọ àfidípò tí kò dé àkókò ni ìbéèrè tó kàn yóò ṣe, a ó fo ìṣẹ̀dá ṣáájú lẹ́yìn títẹ̀jáde, a sì dín àwọn ìṣiṣẹ́ ọ̀pọ̀lọpọ̀ kù sí àwọn ààlà kéékèèké.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Àwọn iṣẹ́ kan ti orúkọ àfidípò àwòrán kùnà pátápátá. Ètò &gt; Ìlà iṣẹ́ fi ìdí rẹ̀ hàn.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>A ti dá àwọn ìṣiṣẹ́ ọ̀pọ̀lọpọ̀ dúró.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Àwọn orúkọ àfidípò kùnà ní wákàtí 24 tó kọjá. Ìtàn ìṣiṣẹ́ ṣe àkójọ wọn.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Kọ́kọ́rọ́ ìfọwọ́sí ju ọdún kan lọ. Yíyí i po mú kí àwọn àdírẹ́sì àtijọ́ máa ṣiṣẹ́ ní àkókò àánú.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Kò tíì sí kọ́kọ́rọ́ ìfọwọ́sí: a ṣe é pẹ̀lú àdírẹ́sì on-demand àkọ́kọ́.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Wákàtí 24 tó kọjá</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Àwọn orúkọ àfidípò tí a ṣe</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Àwọn olùdúró tí a dáhùn</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Àwọn àìṣeéṣe</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Àwọn fáìlì tí a fi sí staging</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Àwọn ìṣiṣẹ́ tó bẹ̀rẹ̀</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Àwọn iṣẹ́ tó ń dúró / tó ń ṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>A kà láti %lines ìlà tó gbẹ̀yìn ti %file, tó padà sẹ́yìn títí dé %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Ipò àti ìfijiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Ipò</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>on demand</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Ìrísí àdírẹ́sì</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Ìfijiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Ìdúró tó gùn jù ti ìbéèrè</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ìṣ</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Àwọn ìyípadà lẹ́ẹ̀kan náà</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy nínú %max ń ṣiṣẹ́ báyìí</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Ìjíròrò ọ̀nà kíkọ</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>títàn</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>pípa</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Olùdúró àti àkọsílẹ̀ ìpààrọ̀</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Ìṣẹ̀dá ṣáájú lẹ́yìn títẹ̀jáde</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Àwọn orúkọ àfidípò ojúlé</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Àwọn olùyípadà ti àwọn oríṣi ọ̀nà kíkọ</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Olùyípadà</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>A ti gbìyànjú</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>tí a fẹ́ jù</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>bẹ́ẹ̀ni</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>rárá</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Àwọn olùyípadà [ImageConverterSettings] ni ó ń ṣe àwọn orúkọ àfidípò fúnra wọn, bíi ti àtẹ̀yìnwá; àwọn wọ̀nyí ni ó ń kọ àwọn oríṣi WebP àti AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Àyíká àti orísun</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Ìfisílẹ̀ yìí</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(iṣẹ́ àgbéjáde: kì í mú wá láéláé)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Ó ń mú wá láti</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>kò sí nǹkan</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Àdírẹ́sì orísun</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>a kò tíì ṣètò</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Ẹ̀rí ìwọlé</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>àṣírí %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>kò sí</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ipò</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>ń ṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>a dá dúró títí dé %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>ń kùnà</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Àwọn àìṣeéṣe léraléra</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>ìdúró lẹ́yìn %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Àṣìṣe tó gbẹ̀yìn</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Àṣeyọrí tó gbẹ̀yìn</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Tún àwọn àìṣeéṣe ṣe kí o sì béèrè lọ́wọ́ orísun lẹ́ẹ̀kan sí i</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Ìlà iṣẹ́</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Irú iṣẹ́</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Ń dúró</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Ń ṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ó kùnà</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>a kò tíì forúkọ sílẹ̀</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Ìlà iṣẹ́ kò sí.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>A ti dá àwọn ìṣiṣẹ́ ọ̀pọ̀lọpọ̀ dúró</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>láti %time láti ọwọ́ %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Àwọn ìṣiṣẹ́ ọ̀pọ̀lọpọ̀ lè ṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Kọ́kọ́rọ́ ìfọwọ́sí</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Kọ́kọ́rọ́</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>nínú ibi ìpamọ́ àṣírí</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>kò tíì sí</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Ọjọ́ orí</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>ọjọ́ %days (láti %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Kọ́kọ́rọ́ tẹ́lẹ̀</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>wúlò títí dé %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Yí kọ́kọ́rọ́ po</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Àwọn àdírẹ́sì tí a fọwọ́ sí pẹ̀lú kọ́kọ́rọ́ lọ́wọ́lọ́wọ́ yóò máa ṣiṣẹ́ ní àkókò àánú (SigningKeyGrace), lẹ́yìn náà wọ́n ó dáhùn pẹ̀lú olùdúró títí a ó fi tún àwọn ojú ìwé ṣe.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Yí po báyìí</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Bí ó ṣe ń ṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, ipò render, staging àti àkọsílẹ̀</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (àìyípadà): ojú ìwé so orúkọ àfidípò tí kò tíì sí mọ́ àdírẹ́sì tí a fọwọ́ sí. Ìbéèrè àkọ́kọ́ yóò ṣe é láàrín ìdúró tó gùn jù, bí bẹ́ẹ̀ kọ́ yóò dáhùn pẹ̀lú olùdúró aláìṣègbè, iṣẹ́ kan yóò sì parí iṣẹ́ náà; àkọsílẹ̀ ìpààrọ̀ yóò pààrọ̀ olùdúró nígbà tí àwòrán bá wà.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Ipò render: àwòṣe ń ṣe orúkọ àfidípò nígbà tí a bá ń ṣe ojú ìwé, bíi ti àtẹ̀yìnwá. Yípadà láàrín méjèèjì nígbàkúgbà; kò sí ohun tí a nílò láti gbé lọ.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Ìfisílẹ̀ staging ń mú àwọn ojúlówó àti àwọn orúkọ àfidípò tó sọnù wá láti orísun rẹ̀; orísun tó ń kùnà ni a ó dá dúró lẹ́yìn àìṣeéṣe léraléra, àwọn alábòójútó yóò sì gba ímeèlì kan ní wákàtí kan ní àpapọ̀ jù lọ.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Àwọn ìṣiṣẹ́ ọ̀pọ̀lọpọ̀ àti ìṣẹ̀dá ṣáájú lẹ́yìn títẹ̀jáde jẹ́ iṣẹ́ ìlà iṣẹ́, pẹ̀lú ìṣaájú tó kéré sí ti àwọn àlejò. Yíyọ àwọn orúkọ àfidípò kúrò tún ń pa kaṣe ìdáhùn Velocity rẹ́, kí a má bàa fi fáìlì tí a yọ kúrò jíṣẹ́ láti ibẹ̀.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Orúkọ àfidípò kọ̀ọ̀kan tí a ṣe, olùdúró tí a dáhùn, fáìlì tí a fi sí staging àti ìṣiṣẹ́ jẹ́ ìlà kan ti %file. Ìlà àṣẹ ní àwọn irinṣẹ́ kan náà: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Iṣẹ́ %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done nínú àwòrán %total</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Ìṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Ààlà</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Èsì</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Fagilé iṣẹ́ yìí</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Iṣẹ́ %job kì í ṣe iṣẹ́ orúkọ àfidípò àwòrán, tàbí a ti yọ ọ́ kúrò nínú ìlà.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Èsì ìṣiṣẹ́ %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>A ti dá àwọn ìṣiṣẹ́ ọ̀pọ̀lọpọ̀ dúró</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>A dá dúró láti %time láti ọwọ́ %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Ìdúró ń dá ìṣiṣẹ́ ọ̀pọ̀lọpọ̀ kọ̀ọ̀kan dúró lẹ́yìn àwòrán rẹ̀ lọ́wọ́lọ́wọ́, lórí gbogbo olupin; àwọn ìṣiṣẹ́ inú ìlà ń dúró. A ṣì ń ṣe àwọn orúkọ àfidípò àwọn àlejò.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Tẹ̀síwájú àwọn ìṣiṣẹ́ ọ̀pọ̀lọpọ̀</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Ìdí (àṣàyàn)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Dá àwọn ìṣiṣẹ́ ọ̀pọ̀lọpọ̀ dúró</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Bẹ̀rẹ̀ ìṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Àwọn ìṣiṣẹ́ jẹ́ iṣẹ́ ìlà iṣẹ́: o lè kúrò ní ojú ìwé kí o sì padà wá.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Láìsí ìlà iṣẹ́, a ṣe ìṣiṣẹ́ nínú ìbéèrè yìí, fún àwòrán %count ní àpapọ̀ jù lọ.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Iṣẹ́</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: ṣe àwọn orúkọ àfidípò tó sọnù</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: yọ wọ́n kúrò kí o sì tún wọn ṣe</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: yọ wọ́n kúrò (a ó tún wọn ṣe nígbà tí a bá béèrè)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: mú àwọn fáìlì wá láti orísun staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(lórí ìfisílẹ̀ staging nìkan)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Gbogbo ojúlé</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Ọ̀pá ìsopọ̀ kan</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Ọ̀pá ìsopọ̀ àti igi abẹ́ rẹ̀</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID Ọ̀pá ìsopọ̀</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Àwọn kíláàsì</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Àwọn ìhùwà</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Tí a yí padà láti</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Déètì (2026-11-01) tàbí àkókò tó kọjá (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Àwòrán tó pọ̀ jù</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Àwọn orúkọ àfidípò (kò sí tí a yàn: gbogbo wọn)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Ìṣiṣẹ́ àyẹ̀wò: kàn ka nìkan (resync ń ṣàyẹ̀wò orísun kò sì tọ́jú nǹkan)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Kọ sórí àwọn fáìlì tó yàtọ̀ (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Bẹ̀rẹ̀ ìṣiṣẹ́ náà</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Àwọn ìṣiṣẹ́ tuntun jù</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Iṣẹ́</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ìlọsíwájú</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Wà nínú ìlà</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Àwọn iṣẹ́</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Fagilé</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Kò tíì sí ìṣiṣẹ́ ọ̀pọ̀lọpọ̀ tàbí resync.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Àwòrán kan</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Àwọn àdírẹ́sì tí àwòṣe ń gbà báyìí, àwọn ìwọ̀n àti irú tí a ṣírò fún orúkọ àfidípò kọ̀ọ̀kan, àti bóyá fáìlì kọ̀ọ̀kan wà.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Wá nípasẹ̀</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID Ohun</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Fihàn</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>A kò gbà ọ́ láàyè láti ka ohun yìí.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Ohun yìí kò ní àwòrán.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Kò sí ohun tó ní ID yìí.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>ohun %object, ọ̀pá ìsopọ̀ %node, ẹ̀dà %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Ojúlówó: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>fáìlì wà</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>fáìlì kò sí</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Àwọn orúkọ àfidípò %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Orúkọ àfidípò</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Ìwọ̀n</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Irú</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fáìlì</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Àwọn ọ̀nà kíkọ</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Àdírẹ́sì nínú àwòṣe</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>wà</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>kò sí</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>kì í ṣe fún irú yìí</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Ṣàyẹ̀wò</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Ṣe</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Kò sí àwòrán nínú pápá yìí.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Àkókò</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Ìsopọ̀ sí orísun</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Ìbéèrè HEAD sí orísun staging, pẹ̀lú ẹ̀rí ìwọlé rẹ̀ bí a bá dárúkọ ọ̀kan. A fi ẹ̀rí ìwọlé ránṣẹ́, a kì í fihàn láéláé.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Orísun</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>pẹ̀lú ẹ̀rí ìwọlé</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Ọ̀nà ibi ìpamọ́ (àṣàyàn)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Dán ìsopọ̀ wò</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Kò sí orísun tó ní BaseURL. A ṣètò àwọn orísun nínú ètò ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>a lè dé ọ̀dọ̀ rẹ̀</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>a kọ̀: ṣàyẹ̀wò ẹ̀rí ìwọlé</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>a kò rí i ní orísun</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>kò sí ìdáhùn</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>àkókò parí</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>a darí rẹ̀ sí ibòmíràn (a kò tẹ̀lé)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>kò sí BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>kì í ṣe ọ̀nà ibi ìpamọ́</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Àdírẹ́sì</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Ipò</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>a ti fi ránṣẹ́</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>àṣírí kò sí</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>àṣírí kì í ṣe user:password tàbí Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Àwọn ìlà tuntun jù ti %file, tuntun ní àkọ́kọ́.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Ìgbékalẹ̀ &gt; Àwọn fáìlì ìkọsílẹ̀</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Ìṣẹ̀lẹ̀</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Gbogbo ìṣẹ̀lẹ̀</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Àwọn ìṣiṣẹ́ (ìbẹ̀rẹ̀ àti ìparí)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Ọ̀nà ní nínú</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Àwọn ìlà</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Àlẹ̀mọ́</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Tẹ̀lé: fi àwọn ìlà tuntun hàn bí a ṣe ń kọ wọ́n</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Ọ̀nà àti àwọn àlàyé</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Kò sí ìlà àkọsílẹ̀ tó bá a mu.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Ohun tí fífipamọ́ yóò yí padà</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Ohun tí a yí padà</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>A fi pamọ́ sínú settings/override/image.ini.append.php, nítorí náà iye níbí borí gbogbo siteaccess. Àwọn iye tí a fihàn ni àwọn tó wà ní ipa fún siteaccess yìí. Fífipamọ́ yóò béèrè pé kí o kọ́kọ́ jẹ́rìí ẹni tí o jẹ́.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Bí a ṣe ń ṣe àwọn orúkọ àfidípò àti jíjíṣẹ́ wọn.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Mímú àwọn àwòrán tó sọnù wá láti ìfisílẹ̀ mìíràn (alpha, dev, beta, stage, pro, post, arc). Iṣẹ́ àgbéjáde (pro) kì í mú wá láéláé.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Ètò</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Iye</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Nínú settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Àdírẹ́sì orísun kọ̀ọ̀kan àti orúkọ àṣírí tó ní ẹ̀rí ìwọlé rẹ̀ (user:password tàbí Bearer &lt;token&gt;). A ṣètò iye àṣírí nínú Ìgbékalẹ̀ &gt; Àwọn àṣírí, a kì í sì fihàn níbí láéláé.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Wo àwọn ìyípadà ṣáájú</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Fi pamọ́</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Ń tẹ̀lé: a ṣe ìmúdójúiwọ̀n ní %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>A dá dúró</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Ìṣàn kò dáhùn; ó ń gbìyànjú lẹ́ẹ̀kan sí i.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Iṣẹ́ náà ti parí.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: àwọn àwòṣe ń gba àdírẹ́sì, a ó ṣe orúkọ àfidípò nígbà tí a bá béèrè rẹ̀. render: àwòṣe ń ṣe é nígbà tí a bá ń ṣe ojú ìwé (ìhùwàsí àtilẹ̀wá).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Àdírẹ́sì orúkọ àfidípò tí a kò tíì ṣe: token (tí a fọwọ́ sí, kò nílò ibi ìpamọ́ dátà), ids-token, ids, node tàbí storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: ìdarí sí fáìlì nígbà tí olupin wẹ́ẹ̀bù bá ń pèsè ibi ìpamọ́, bí bẹ́ẹ̀ kọ́ a ó ṣàn fáìlì náà.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Ìṣẹ́jú-àáyá tí ìbéèrè lè lò láti ṣe tàbí mú orúkọ àfidípò wá; lẹ́yìn náà ó dáhùn pẹ̀lú olùdúró, iṣẹ́ kan yóò sì parí iṣẹ́ náà.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Olùyípadà tí a kọ́kọ́ gbìyànjú fún àwọn oríṣi WebP àti AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Dáhùn WebP tàbí AVIF fún àwọn aṣàwákiri tó béèrè rẹ̀, fún àwọn orúkọ àfidípò tó ṣe àkójọ Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Àwòrán aláìṣègbè ní ìwọ̀n tó tọ́ nígbà tí àwòrán kò sí.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Àkọsílẹ̀ kékeré tó ń pààrọ̀ àwọn olùdúró pẹ̀lú àwòrán gidi nígbà tó bá wà.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Lẹ́yìn títẹ̀jáde, iṣẹ́ kan ń ṣe àwọn orúkọ àfidípò àwọn àwòrán tuntun fún gbogbo siteaccess tó jọmọ́ wọn.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Àwọn ìyípadà lẹ́ẹ̀kan náà lórí olupin kan.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Ìṣaájú ìṣàkóso (nice) àwọn ìṣiṣẹ́ ọ̀pọ̀lọpọ̀, 0 sí 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Ìṣẹ́jú-àáyá tí àwọn aṣàwákiri àti kaṣe lè pa orúkọ àfidípò tí a ṣe mọ́.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Ìṣẹ́jú-àáyá tí àdírẹ́sì àwòrán àkọsílẹ̀ tàbí àyẹ̀wò ṣíwájú fi wúlò.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Ìṣẹ́jú-àáyá tí kọ́kọ́rọ́ ìfọwọ́sí tẹ́lẹ̀ fi wúlò lẹ́yìn yíyípo.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Àyíká ìfisílẹ̀ yìí.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Àyíká tí a ti mú àwọn àwòrán tó sọnù wá; none: a kò mú nǹkan wá.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Ọ̀kan ní ìlà kan: ìbẹ̀rẹ̀ ibi ìpamọ́ àdúgbò;ìbẹ̀rẹ̀ orísun tàbí àdírẹ́sì, fún àwọn ọ̀nà ibi ìpamọ́ tó yàtọ̀.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Ìṣẹ́jú-àáyá tí ìbéèrè kan sí orísun lè gbà.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Fáìlì tó tóbi jù tí a mú láti orísun, ní bytes.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Àwọn àìṣeéṣe léraléra tí lẹ́yìn wọn ni a dá orísun dúró.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Báwo ni a ṣe dá orísun tó ń kùnà dúró pẹ́ tó.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Fi ímeèlì ránṣẹ́ sí àwọn alábòójútó nígbà tí a bá dá orísun dúró (ní ẹ̀ẹ̀kan ní wákàtí kan jù lọ).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Àdírẹ́sì ímeèlì kan ní ìlà kan; òfo: AdminEmail ti site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Àdírẹ́sì ìfisílẹ̀ orísun %block, fún àpẹẹrẹ https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Orúkọ àṣírí tó ní ẹ̀rí ìwọlé, tàbí env:VARIABLE. Kì í ṣe ẹ̀rí ìwọlé fúnra rẹ̀ láéláé.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(kò sí)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Àìyípadà: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>A ṣètò níbí; fi àmì sí láti yọ ọ́ kúrò</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>a jogún</translation>
     </message>
 </context>
 </TS>

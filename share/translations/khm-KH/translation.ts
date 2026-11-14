@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>នាំចូល/នាំចេញ</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>ឈ្មោះក្លែងរូបភាព</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>បង្កើតសម្រាប់ធាតុនេះ</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>បង្កើតសម្រាប់ដើមឈើរង</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>បង្កើតឡើងវិញសម្រាប់ធាតុនេះ</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>បង្កើតឡើងវិញសម្រាប់ដើមឈើរង</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>លុបសម្រាប់ធាតុនេះ</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>លុបសម្រាប់ដើមឈើរង</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>ប្លុក server នៃគេហទំព័រចាស់៖ location = ជាមួយ return, if ($args) សម្រាប់សំណួរ, rewrite ជាម៉ាស្ក និង map នៃទំព័រតែមួយ។</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>ឈ្មោះក្លែងរូបភាព</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>ឈ្មោះក្លែងរូបភាពគឺជាច្បាប់ចម្លងដែលបានកែទំហំ និងកាត់នៃរូបភាព ដែលគំរូបង្ហាញ។ នៅទីនេះអ្នកអាចមើលពីរបៀបបង្កើតវា ដំណើរការការងារជាក្រុមលើគេហទំព័រ សាកល្បងរូបភាពមួយ ឬប្រភព staging តាមដានប្រវត្តិដំណើរការ និងផ្លាស់ប្ដូរការកំណត់។</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>ផ្នែកនៃទំព័រ</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ផ្ទាំងគ្រប់គ្រង</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>ការដំណើរការជាក្រុម</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>ឧបករណ៍សាកល្បង</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>ប្រវត្តិដំណើរការ</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ការកំណត់</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>អ្នកអាចមើលអ្វីៗទាំងអស់នៅទីនេះ។ ការផ្លាស់ប្ដូរការកំណត់ ការដំណើរការការងារ និងឧបករណ៍ដែលបង្កើតឯកសារ ត្រូវការគោលការណ៍ setup/managealiases។</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>អ្វីដែលត្រូវការយកចិត្តទុកដាក់</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>របៀប render៖ គំរូបង្កើតឈ្មោះក្លែងដែលបាត់ ពេលទំព័របង្ហាញ ដូចមុន។ អាសយដ្ឋាន on-demand កន្លែងរក្សាទុក និងការងារផ្ទៃខាងក្រោយមិនត្រូវបានប្រើទេ។</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>ការចរចាទ្រង់ទ្រាយបានបើក ប៉ុន្តែគ្មានកម្មវិធីបំប្លែងនៅទីនេះអាចសរសេរ WebP បានទេ។</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>នេះជាការដំឡើង staging ប៉ុន្តែប្រភពរបស់វាគ្មាន BaseURL៖ មិនអាចទាញយករូបភាពដែលបាត់បានទេ។</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>ប្រភព staging ត្រូវបានផ្អាកក្រោយពីបរាជ័យជាប់ៗគ្នា៖ រូបភាពដែលបាត់ទទួលបានកន្លែងរក្សាទុក រហូតដល់ការផ្អាកចប់ ឬអ្នកកំណត់ឡើងវិញ។</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>ប្រភព staging បានបរាជ័យថ្មីៗនេះ។ មើលកំហុសចុងក្រោយរបស់វាខាងក្រោម។</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>ការដំឡើងនេះមិនមែន production ទេ ប៉ុន្តែ SyncFrom មិនបានដាក់ឈ្មោះប្រភពណាមួយទេ៖ គ្មានអ្វីត្រូវបានទាញយកឡើយ។</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>ជួរការងារ (expqueue) មិនមានទេ៖ ឈ្មោះក្លែងដែលហួសពេលត្រូវបានបង្កើតដោយសំណើបន្ទាប់ ការបង្កើតជាមុនក្រោយការផ្សព្វផ្សាយត្រូវបានរំលង ហើយការដំណើរការជាក្រុមត្រូវកំណត់ត្រឹមវិសាលភាពតូច។</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>ការងារឈ្មោះក្លែងរូបភាពមួយចំនួនបរាជ័យជាស្ថាពរ។ ការរៀបចំ &gt; ជួរការងារ បង្ហាញមូលហេតុ។</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>ការដំណើរការជាក្រុមត្រូវបានផ្អាក។</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>ឈ្មោះក្លែងបានបរាជ័យក្នុង ២៤ ម៉ោងចុងក្រោយ។ ប្រវត្តិដំណើរការរាយបញ្ជីវា។</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>សោចុះហត្ថលេខាមានអាយុជាងមួយឆ្នាំ។ ការផ្លាស់ប្ដូរវារក្សាអាសយដ្ឋានចាស់ឱ្យមានសុពលភាពក្នុងរយៈពេលអនុគ្រោះ។</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>មិនទាន់មានសោចុះហត្ថលេខាទេ៖ វាត្រូវបានបង្កើតជាមួយអាសយដ្ឋាន on-demand ដំបូង។</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>២៤ ម៉ោងចុងក្រោយ</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>ឈ្មោះក្លែងដែលបានបង្កើត</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>កន្លែងរក្សាទុកដែលបានឆ្លើយ</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>បរាជ័យ</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>ឯកសារដែលបាន stage</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>ការដំណើរការដែលបានចាប់ផ្ដើម</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>ការងារកំពុងរង់ចាំ / កំពុងដំណើរការ</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>រាប់ពី %lines បន្ទាត់ចុងក្រោយនៃ %file ដែលរហូតដល់ %time។</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>របៀប និងការចែកចាយ</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>របៀប</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>តាមការស្នើសុំ</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>ទម្រង់អាសយដ្ឋាន</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>ការចែកចាយ</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>ការរង់ចាំវែងបំផុតនៃសំណើ</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds វិ</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>ការបំប្លែងក្នុងពេលតែមួយ</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy ក្នុងចំណោម %max កំពុងរវល់ឥឡូវនេះ</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>ការចរចាទ្រង់ទ្រាយ</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>បើក</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>បិទ</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>កន្លែងរក្សាទុក និងស្គ្រីបជំនួស</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>ការបង្កើតជាមុនក្រោយការផ្សព្វផ្សាយ</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>ឈ្មោះក្លែងរបស់គេហទំព័រ</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>កម្មវិធីបំប្លែងនៃទ្រង់ទ្រាយផ្សេងៗ</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>កម្មវិធីបំប្លែង</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>បានសាកល្បង</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>ពេញចិត្ត</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>បាទ/ចាស</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ទេ</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>ឈ្មោះក្លែងខ្លួនឯងត្រូវបានបង្កើតដោយកម្មវិធីបំប្លែងនៃ [ImageConverterSettings] ដូចមុន។ ទាំងនេះសរសេរទ្រង់ទ្រាយ WebP និង AVIF។</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>បរិស្ថាន និងប្រភព</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>ការដំឡើងនេះ</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production៖ មិនដែលទាញយកទេ)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>ទាញយកពី</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>គ្មានអ្វី</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>អាសយដ្ឋានប្រភព</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>មិនបានកំណត់</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>ព័ត៌មានផ្ទៀងផ្ទាត់</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>ការសម្ងាត់ %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>គ្មាន</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ស្ថានភាព</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>កំពុងដំណើរការ</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>ផ្អាករហូតដល់ %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>កំពុងបរាជ័យ</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>បរាជ័យជាប់ៗគ្នា</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>ផ្អាកបន្ទាប់ពី %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>កំហុសចុងក្រោយ</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>ជោគជ័យចុងក្រោយ</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>កំណត់បរាជ័យឡើងវិញ ហើយសួរប្រភពម្ដងទៀត</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>ជួរការងារ</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>ប្រភេទការងារ</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>កំពុងរង់ចាំ</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>កំពុងដំណើរការ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>បរាជ័យ</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>មិនបានចុះឈ្មោះ</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>ជួរការងារមិនមានទេ។</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>ការដំណើរការជាក្រុមត្រូវបានផ្អាក</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>ចាប់ពី %time ដោយ %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>ការដំណើរការជាក្រុមអាចដំណើរការបាន</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>សោចុះហត្ថលេខា</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>សោ</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>ក្នុងកន្លែងផ្ទុកការសម្ងាត់</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>មិនទាន់មាន</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>អាយុ</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days ថ្ងៃ (ចាប់ពី %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>សោមុន</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>មានសុពលភាពរហូតដល់ %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>ផ្លាស់ប្ដូរសោ</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>អាសយដ្ឋានដែលបានចុះហត្ថលេខាដោយសោបច្ចុប្បន្នបន្តដំណើរការក្នុងរយៈពេលអនុគ្រោះ (SigningKeyGrace) បន្ទាប់មកវាឆ្លើយជាកន្លែងរក្សាទុក រហូតដល់ទំព័រត្រូវបានបង្កើតឡើងវិញ។</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>ផ្លាស់ប្ដូរឥឡូវនេះ</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>របៀបដំណើរការ</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand របៀប render staging និងកំណត់ហេតុ</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (លំនាំដើម)៖ ទំព័រភ្ជាប់ឈ្មោះក្លែងដែលមិនទាន់មាន ទៅអាសយដ្ឋានដែលបានចុះហត្ថលេខា។ សំណើដំបូងបង្កើតវាក្នុងការរង់ចាំវែងបំផុត បើមិនដូច្នោះទេវាឆ្លើយជាកន្លែងរក្សាទុកអព្យាក្រឹត ហើយការងារបញ្ចប់ការងារ ស្គ្រីបជំនួសជំនួសកន្លែងរក្សាទុក នៅពេលរូបភាពមាន។</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>របៀប render៖ គំរូបង្កើតឈ្មោះក្លែងពេលទំព័របង្ហាញ ដូចមុន។ ប្ដូររវាងពីរនេះនៅពេលណាក៏បាន គ្មានអ្វីត្រូវផ្លាស់ប្ដូរទិន្នន័យទេ។</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>ការដំឡើង staging ទាញយកដើម និងឈ្មោះក្លែងដែលវាខ្វះពីប្រភពរបស់វា។ ប្រភពដែលបរាជ័យត្រូវបានផ្អាកក្រោយបរាជ័យជាប់ៗគ្នា ហើយអ្នកគ្រប់គ្រងទទួលអ៊ីមែលមួយក្នុងមួយម៉ោងយ៉ាងច្រើន។</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>ការដំណើរការជាក្រុម និងការបង្កើតជាមុនក្រោយការផ្សព្វផ្សាយ គឺជាការងារនៃជួរការងារ ដែលមានអាទិភាពទាបជាងអ្នកទស្សនា។ ការលុបឈ្មោះក្លែងក៏សម្អាតឃ្លាំងឆ្លើយតបរបស់ Velocity ផងដែរ ដូច្នេះឯកសារដែលបានលុបមិនត្រូវបានបម្រើពីវាទេ។</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>រាល់ឈ្មោះក្លែងដែលបានបង្កើត កន្លែងរក្សាទុកដែលបានឆ្លើយ ឯកសារដែលបាន stage និងការដំណើរការ គឺជាបន្ទាត់មួយនៃ %file។ បន្ទាត់ពាក្យបញ្ជាមានឧបករណ៍ដូចគ្នា៖ %command។</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>ការងារ %job៖ %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done ក្នុងចំណោមរូបភាព %total</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ដំណើរការ</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>វិសាលភាព</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>លទ្ធផល</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>បោះបង់ការងារនេះ</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>ការងារ %job មិនមែនជាការងារឈ្មោះក្លែងរូបភាពទេ ឬត្រូវបានដកចេញពីជួរ។</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>លទ្ធផលនៃការដំណើរការ %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>ការដំណើរការជាក្រុមត្រូវបានផ្អាក</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>ផ្អាកចាប់ពី %time ដោយ %user។</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>ការផ្អាកបញ្ឈប់ការដំណើរការជាក្រុមនីមួយៗ បន្ទាប់ពីរូបភាពបច្ចុប្បន្នរបស់វា នៅលើគ្រប់ម៉ាស៊ីនមេ។ ការដំណើរការនៅក្នុងជួររង់ចាំ។ ឈ្មោះក្លែងរបស់អ្នកទស្សនានៅតែត្រូវបានបង្កើត។</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>បន្តការដំណើរការជាក្រុម</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>មូលហេតុ (ស្រេចចិត្ត)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>ផ្អាកការដំណើរការជាក្រុម</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>ចាប់ផ្ដើមការដំណើរការ</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>ការដំណើរការគឺជាការងារនៃជួរការងារ៖ អ្នកអាចចាកចេញពីទំព័រ ហើយត្រឡប់មកវិញ។</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>បើគ្មានជួរការងារ ការដំណើរការត្រូវបានធ្វើក្នុងសំណើនេះ សម្រាប់រូបភាពច្រើនបំផុត %count។</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>សកម្មភាព</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>បង្កើត៖ បង្កើតឈ្មោះក្លែងដែលបាត់</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>បង្កើតឡើងវិញ៖ លុប ហើយបង្កើតម្ដងទៀត</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>សម្អាត៖ លុបវា (បង្កើតម្ដងទៀតតាមការស្នើសុំ)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>ធ្វើសមកាលកម្មឡើងវិញ៖ ទាញយកឯកសារពីប្រភព staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(តែលើការដំឡើង staging ប៉ុណ្ណោះ)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>ទាំងគេហទំព័រ</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>ថ្នាំងមួយ</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>ថ្នាំងមួយ និងដើមឈើរងរបស់វា</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID ថ្នាំង</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>ថ្នាក់</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>លក្ខណៈ</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>បានផ្លាស់ប្ដូរចាប់ពី</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>កាលបរិច្ឆេទ (2026-11-01) ឬរយៈពេលមុន (១២ ម៉ោង, ២ ថ្ងៃ)។</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>រូបភាពច្រើនបំផុត</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>ឈ្មោះក្លែង (បើមិនធីកអ្វី៖ ទាំងអស់)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>ដំណើរការសាកល្បង៖ រាប់ប៉ុណ្ណោះ (resync ពិនិត្យប្រភព ហើយមិនរក្សាទុកអ្វីទេ)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>សរសេរជាន់ឯកសារដែលខុសគ្នា (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>ចាប់ផ្ដើមការដំណើរការ</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>ការដំណើរការថ្មីៗ</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>ការងារ</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ដំណើរការ</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>ក្នុងជួរ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>សកម្មភាព</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>បោះបង់</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>មិនទាន់មានការដំណើរការជាក្រុម ឬ resync ទេ។</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>រូបភាពមួយ</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>អាសយដ្ឋានដែលគំរូទទួលបានឥឡូវនេះ ទំហំ និងប្រភេទដែលបានគណនាសម្រាប់ឈ្មោះក្លែងនីមួយៗ និងថាតើឯកសារនីមួយៗមានឬអត់។</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>រកតាម</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID វត្ថុ</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>បង្ហាញ</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>អ្នកមិនអាចអានវត្ថុនេះបានទេ។</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>វត្ថុនេះគ្មានរូបភាពទេ។</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>គ្មានវត្ថុដែលមាន ID នេះទេ។</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>វត្ថុ %object ថ្នាំង %node កំណែ %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>ដើម៖ %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>មានឯកសារ</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>ឯកសារបាត់</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>ឈ្មោះក្លែងរបស់ %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>ឈ្មោះក្លែង</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ទំហំ</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>ប្រភេទ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ឯកសារ</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>ទ្រង់ទ្រាយ</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>អាសយដ្ឋានក្នុងគំរូ</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>មាន</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>បាត់</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>មិនសម្រាប់ប្រភេទនេះ</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>ពិនិត្យ</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>បង្កើត</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>គ្មានរូបភាពក្នុងវាលនេះទេ។</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ពេលវេលា</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>ការតភ្ជាប់ទៅប្រភព</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>សំណើ HEAD ទៅប្រភព staging ជាមួយព័ត៌មានផ្ទៀងផ្ទាត់របស់វា នៅពេលមានដាក់ឈ្មោះ។ ព័ត៌មានផ្ទៀងផ្ទាត់ត្រូវបានផ្ញើ មិនដែលបង្ហាញឡើយ។</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>ប្រភព</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>ជាមួយព័ត៌មានផ្ទៀងផ្ទាត់</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>ផ្លូវផ្ទុក (ស្រេចចិត្ត)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>សាកល្បងការតភ្ជាប់</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>គ្មានប្រភពណាមាន BaseURL ទេ។ ប្រភពត្រូវបានកំណត់ក្នុងការកំណត់ ([AliasSource_&lt;environment&gt;])។</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>អាចភ្ជាប់បាន</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>បដិសេធ៖ ពិនិត្យព័ត៌មានផ្ទៀងផ្ទាត់</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>រកមិនឃើញនៅប្រភព</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>គ្មានចម្លើយ</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>អស់ពេល</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>បានបញ្ជូនបន្ត (មិនបានតាម)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>គ្មាន BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>មិនមែនជាផ្លូវផ្ទុក</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>អាសយដ្ឋាន</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ស្ថានភាព</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>បានផ្ញើ</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>ការសម្ងាត់បាត់</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>ការសម្ងាត់មិនមែន user:password ឬ Bearer &lt;token&gt; ទេ</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>បន្ទាត់ថ្មីបំផុតនៃ %file ថ្មីបំផុតមុន។</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>ការរៀបចំ &gt; ឯកសារកំណត់ហេតុ</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>ព្រឹត្តិការណ៍</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>ព្រឹត្តិការណ៍ទាំងអស់</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>ការដំណើរការ (ចាប់ផ្ដើម និងបញ្ចប់)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>ផ្លូវមាន</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>បន្ទាត់</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>តម្រង</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>តាមដាន៖ បង្ហាញបន្ទាត់ថ្មីនៅពេលវាត្រូវបានសរសេរ</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>ផ្លូវ និងព័ត៌មានលម្អិត</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>គ្មានបន្ទាត់នៃកំណត់ហេតុត្រូវគ្នាទេ។</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>អ្វីដែលការរក្សាទុកនឹងផ្លាស់ប្ដូរ</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>អ្វីដែលបានផ្លាស់ប្ដូរ</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>រក្សាទុកក្នុង settings/override/image.ini.append.php ដូច្នេះតម្លៃនៅទីនេះឈ្នះគ្រប់ siteaccess។ តម្លៃដែលបង្ហាញគឺជាតម្លៃដែលមានប្រសិទ្ធភាពសម្រាប់ siteaccess នេះ។ ការរក្សាទុកសុំឱ្យអ្នកផ្ទៀងផ្ទាត់អត្តសញ្ញាណជាមុន។</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>របៀបដែលឈ្មោះក្លែងត្រូវបានបង្កើត និងចែកចាយ។</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>ការទាញយករូបភាពដែលបាត់ពីការដំឡើងផ្សេង (alpha, dev, beta, stage, pro, post, arc)។ Production (pro) មិនដែលទាញយកទេ។</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>ការកំណត់</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>តម្លៃ</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>ក្នុង settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>អាសយដ្ឋាននៃប្រភពនីមួយៗ និងឈ្មោះនៃការសម្ងាត់ដែលរក្សាព័ត៌មានផ្ទៀងផ្ទាត់របស់វា (user:password ឬ Bearer &lt;token&gt;)។ តម្លៃនៃការសម្ងាត់ត្រូវបានកំណត់ក្នុង ការរៀបចំ &gt; ការសម្ងាត់ ហើយមិនដែលបង្ហាញនៅទីនេះឡើយ។</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>មើលការផ្លាស់ប្ដូរជាមុន</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>រក្សាទុក</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>កំពុងតាមដាន៖ បានធ្វើបច្ចុប្បន្នភាព %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>បានផ្អាក</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>មិនមានការឆ្លើយតបពីហ្វីត កំពុងព្យាយាមម្ដងទៀត។</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>ការងារបានបញ្ចប់។</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: គំរូទទួលបានអាសយដ្ឋាន ឈ្មោះក្លែងត្រូវបានបង្កើតនៅពេលមានការស្នើសុំ។ render: គំរូបង្កើតវាពេលទំព័របង្ហាញ (ឥរិយាបថដើម)។</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>អាសយដ្ឋាននៃឈ្មោះក្លែងដែលមិនទាន់បានបង្កើត៖ token (បានចុះហត្ថលេខា មិនត្រូវការមូលដ្ឋានទិន្នន័យ), ids-token, ids, node ឬ storage។</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: ការបញ្ជូនបន្តទៅឯកសារ នៅពេលម៉ាស៊ីនមេគេហទំព័របម្រើកន្លែងផ្ទុក បើមិនដូច្នោះទេឯកសារត្រូវបានស្ទ្រីម។</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>វិនាទីដែលសំណើអាចចំណាយក្នុងការបង្កើត ឬទាញយកឈ្មោះក្លែង បន្ទាប់មកវាឆ្លើយកន្លែងរក្សាទុក ហើយការងារបញ្ចប់ការងារ។</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>កម្មវិធីបំប្លែងដែលសាកល្បងមុនសម្រាប់ទ្រង់ទ្រាយ WebP និង AVIF។</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>ឆ្លើយ WebP ឬ AVIF ទៅកម្មវិធីរុករកដែលស្នើសុំ សម្រាប់ឈ្មោះក្លែងដែលរាយ Formats[]។</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>រូបភាពអព្យាក្រឹតទំហំត្រឹមត្រូវ ពេលរូបភាពបាត់។</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>ស្គ្រីបតូចមួយដែលជំនួសកន្លែងរក្សាទុកដោយរូបភាពពិត នៅពេលវាមាន។</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>បន្ទាប់ពីការផ្សព្វផ្សាយ ការងារមួយបង្កើតឈ្មោះក្លែងនៃរូបភាពថ្មី សម្រាប់ siteaccess ដែលពាក់ព័ន្ធនីមួយៗ។</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>ការបំប្លែងក្នុងពេលតែមួយលើម៉ាស៊ីនមេមួយ។</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>អាទិភាពដំណើរការ (nice) នៃការដំណើរការជាក្រុម ពី ០ ដល់ ១៩។</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>វិនាទីដែលកម្មវិធីរុករក និងឃ្លាំងអាចរក្សាឈ្មោះក្លែងដែលបានបង្កើត។</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>វិនាទីដែលអាសយដ្ឋាននៃរូបភាពព្រាង ឬមើលជាមុនមានសុពលភាព។</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>វិនាទីដែលសោចុះហត្ថលេខាមុនមានសុពលភាពបន្ទាប់ពីការផ្លាស់ប្ដូរ។</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>បរិស្ថាននៃការដំឡើងនេះ។</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>បរិស្ថានដែលរូបភាពដែលបាត់ត្រូវបានទាញយកពី៖ none: គ្មានអ្វីត្រូវបានទាញយកទេ។</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>មួយក្នុងមួយបន្ទាត់៖ បុព្វបទកន្លែងផ្ទុកក្នុងស្រុក;បុព្វបទប្រភព ឬអាសយដ្ឋាន សម្រាប់ផ្លូវផ្ទុកដែលខុសគ្នា។</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>វិនាទីដែលសំណើមួយទៅប្រភពអាចចំណាយ។</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>ឯកសារធំបំផុតដែលយកពីប្រភព គិតជាបៃ។</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>ចំនួនបរាជ័យជាប់ៗគ្នា ដែលក្រោយមកប្រភពត្រូវបានផ្អាក។</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>រយៈពេលដែលប្រភពបរាជ័យត្រូវបានផ្អាក។</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>ផ្ញើអ៊ីមែលទៅអ្នកគ្រប់គ្រងនៅពេលប្រភពត្រូវបានផ្អាក (យ៉ាងច្រើនម្ដងក្នុងមួយម៉ោង)។</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>អាសយដ្ឋានអ៊ីមែលមួយក្នុងមួយបន្ទាត់៖ ទទេ៖ AdminEmail នៃ site.ini។</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>អាសយដ្ឋាននៃការដំឡើងប្រភព %block ឧទាហរណ៍ https://www.example.org។</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>ឈ្មោះនៃការសម្ងាត់ដែលមានព័ត៌មានផ្ទៀងផ្ទាត់ ឬ env:VARIABLE។ មិនមែនព័ត៌មានផ្ទៀងផ្ទាត់ខ្លួនវាឡើយ។</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(គ្មាន)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>លំនាំដើម៖ %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>កំណត់នៅទីនេះ ធីកដើម្បីលុប</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>បានទទួលមរតក</translation>
     </message>
 </context>
 </TS>

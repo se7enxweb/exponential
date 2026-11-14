@@ -16588,6 +16588,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>దిగుమతి/ఎగుమతి</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>చిత్రం మారుపేర్లు</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>ఈ అంశానికి తయారుచేయండి</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>ఉపవృక్షానికి తయారుచేయండి</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>ఈ అంశానికి మళ్లీ తయారుచేయండి</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>ఉపవృక్షానికి మళ్లీ తయారుచేయండి</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>ఈ అంశానికి తొలగించండి</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>ఉపవృక్షానికి తొలగించండి</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86420,6 +86448,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>పాత సైట్ యొక్క server బ్లాక్: return తో location =, క్వెరీ కోసం if ($args), వైల్డ్‌కార్డ్‌గా rewrite మరియు ఒక్కొక్క పేజీల map.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>చిత్రం మారుపేర్లు</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>చిత్రం మారుపేర్లు అంటే టెంప్లేట్‌లు చూపించే చిత్రం యొక్క పరిమాణం మార్చిన, కత్తిరించిన కాపీలు. అవి ఎలా తయారవుతాయో ఇక్కడ చూడవచ్చు, సైట్ అంతటా బల్క్ జాబ్‌లు నడపవచ్చు, ఒక చిత్రాన్ని లేదా స్టేజింగ్ మూలాన్ని పరీక్షించవచ్చు, రన్ చరిత్రను అనుసరించవచ్చు, సెట్టింగ్‌లను మార్చవచ్చు.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>పేజీ భాగాలు</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>డాష్‌బోర్డ్</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>బల్క్ రన్‌లు</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>పరీక్ష సాధనాలు</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>రన్ చరిత్ర</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>సెట్టింగ్‌లు</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>ఇక్కడ అన్నీ చూడవచ్చు. సెట్టింగ్‌లను మార్చడానికి, జాబ్‌లు నడపడానికి, ఫైళ్లను తయారుచేసే సాధనాలకు setup/managealiases పాలసీ అవసరం.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>దృష్టి అవసరమైనవి</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>render మోడ్: టెంప్లేట్‌లు పేజీ రెండర్ అవుతున్నప్పుడే లేని మారుపేర్లను తయారుచేస్తాయి, ఇంతకు ముందులాగే. on-demand చిరునామాలు, ప్లేస్‌హోల్డర్‌లు, నేపథ్య జాబ్‌లు ఉపయోగించబడవు.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>ఫార్మాట్ చర్చ ఆన్‌లో ఉంది, కానీ ఇక్కడ ఏ కన్వర్టర్ WebP రాయలేదు.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>ఇది స్టేజింగ్ ఇన్‌స్టాలేషన్, కానీ దాని మూలానికి BaseURL లేదు: లేని చిత్రాలను తీసుకురాలేరు.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>వరుస వైఫల్యాల తర్వాత స్టేజింగ్ మూలం పాజ్ చేయబడింది: విరామం ముగిసే వరకు లేదా మీరు రీసెట్ చేసే వరకు లేని చిత్రాలకు ప్లేస్‌హోల్డర్‌లు వస్తాయి.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>స్టేజింగ్ మూలం ఇటీవల విఫలమైంది. దాని చివరి లోపాన్ని క్రింద చూడండి.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>ఈ ఇన్‌స్టాలేషన్ ప్రొడక్షన్ కాదు, కానీ SyncFrom ఏ మూలాన్నీ పేర్కొనలేదు: ఏదీ తీసుకురావడం లేదు.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>జాబ్ క్యూ (expqueue) అందుబాటులో లేదు: సమయానికి పూర్తికాని మారుపేర్లను తదుపరి అభ్యర్థన తయారుచేస్తుంది, ప్రచురణ తర్వాత ముందస్తు తయారీ వదిలివేయబడుతుంది, బల్క్ రన్‌లు చిన్న పరిధులకు పరిమితమవుతాయి.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>చిత్రం మారుపేర్ల కొన్ని జాబ్‌లు శాశ్వతంగా విఫలమయ్యాయి. సెటప్ &gt; జాబ్ క్యూ కారణం చూపిస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>బల్క్ రన్‌లు పాజ్ చేయబడ్డాయి.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>గత 24 గంటల్లో మారుపేర్లు విఫలమయ్యాయి. రన్ చరిత్ర వాటిని జాబితా చేస్తుంది.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>సంతకం కీ ఒక సంవత్సరం కంటే పాతది. దాన్ని తిప్పితే పాత చిరునామాలు గ్రేస్ వ్యవధి వరకు చెల్లుబాటు అవుతాయి.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>ఇంకా సంతకం కీ లేదు: మొదటి on-demand చిరునామాతో తయారవుతుంది.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>గత 24 గంటలు</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>తయారైన మారుపేర్లు</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>సమాధానమిచ్చిన ప్లేస్‌హోల్డర్‌లు</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>వైఫల్యాలు</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>స్టేజ్ చేసిన ఫైళ్లు</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>ప్రారంభమైన రన్‌లు</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>వేచి ఉన్న / నడుస్తున్న జాబ్‌లు</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file లోని చివరి %lines పంక్తుల నుండి లెక్కించబడింది, అవి %time వరకు వెనక్కి వెళ్తాయి.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>మోడ్ మరియు డెలివరీ</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>మోడ్</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>on demand</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>చిరునామా రూపం</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>డెలివరీ</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>అభ్యర్థన గరిష్ఠ నిరీక్షణ</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds సె</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>ఒకేసారి మార్పిడులు</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>ఇప్పుడు %max లో %busy బిజీ</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>ఫార్మాట్ చర్చ</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ఆన్</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ఆఫ్</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>ప్లేస్‌హోల్డర్ మరియు మార్పిడి స్క్రిప్ట్</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>ప్రచురణ తర్వాత ముందస్తు తయారీ</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>సైట్ మారుపేర్లు</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>ఫార్మాట్ రకాల కన్వర్టర్‌లు</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>కన్వర్టర్</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>ప్రయత్నించింది</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>ప్రాధాన్యత</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>అవును</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>కాదు</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>మారుపేర్లను [ImageConverterSettings] కన్వర్టర్‌లే తయారుచేస్తాయి, ఇంతకు ముందులాగే; ఇవి WebP, AVIF రకాలను రాస్తాయి.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>పర్యావరణం మరియు మూలం</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>ఈ ఇన్‌స్టాలేషన్</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(ప్రొడక్షన్: ఎప్పుడూ తీసుకురాదు)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>ఎక్కడినుండి తీసుకుంటుంది</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>ఏదీ లేదు</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>మూలం చిరునామా</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>సెట్ చేయలేదు</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>ఆధారాలు</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>రహస్యం %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ఏదీ లేదు</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>స్థితి</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>పని చేస్తోంది</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time వరకు పాజ్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>విఫలమవుతోంది</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>వరుస వైఫల్యాలు</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count తర్వాత పాజ్</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>చివరి లోపం</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>చివరి విజయం</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>వైఫల్యాలను రీసెట్ చేసి మూలాన్ని మళ్లీ అడుగు</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>జాబ్ క్యూ</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>జాబ్ రకం</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>వేచి ఉన్నవి</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>నడుస్తున్నవి</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>విఫలమైనవి</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>నమోదు కాలేదు</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>జాబ్ క్యూ అందుబాటులో లేదు.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>బల్క్ రన్‌లు పాజ్ చేయబడ్డాయి</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time నుండి %user ద్వారా</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>బల్క్ రన్‌లు నడవవచ్చు</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>సంతకం కీ</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>కీ</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>రహస్యాల నిల్వలో</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ఇంకా లేదు</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>వయస్సు</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days రోజులు (%time నుండి)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>మునుపటి కీ</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time వరకు చెల్లుతుంది</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>కీని తిప్పండి</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>ప్రస్తుత కీతో సంతకం చేసిన చిరునామాలు గ్రేస్ వ్యవధి (SigningKeyGrace) వరకు పని చేస్తూనే ఉంటాయి, ఆ తర్వాత పేజీలు మళ్లీ తయారయ్యే వరకు ప్లేస్‌హోల్డర్‌ను ఇస్తాయి.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>ఇప్పుడే తిప్పండి</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>ఇది ఎలా పని చేస్తుంది</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render మోడ్, స్టేజింగ్ మరియు లాగ్</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (డిఫాల్ట్): పేజీ ఇంకా లేని మారుపేరును సంతకం చేసిన చిరునామాకు లింక్ చేస్తుంది. మొదటి అభ్యర్థన గరిష్ఠ నిరీక్షణలో దాన్ని తయారుచేస్తుంది, లేకపోతే తటస్థ ప్లేస్‌హోల్డర్‌ను ఇస్తుంది, ఒక జాబ్ పనిని ముగిస్తుంది; చిత్రం సిద్ధమయ్యాక మార్పిడి స్క్రిప్ట్ ప్లేస్‌హోల్డర్‌ను మారుస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Render మోడ్: టెంప్లేట్ పేజీ రెండర్ అవుతున్నప్పుడే మారుపేరును తయారుచేస్తుంది, ఇంతకు ముందులాగే. ఈ రెండింటి మధ్య ఎప్పుడైనా మారవచ్చు; ఏదీ మైగ్రేట్ చేయనవసరం లేదు.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>స్టేజింగ్ ఇన్‌స్టాలేషన్ తనకు లేని ఒరిజినల్‌లను, మారుపేర్లను తన మూలం నుండి తీసుకుంటుంది; విఫలమయ్యే మూలం వరుస వైఫల్యాల తర్వాత పాజ్ చేయబడుతుంది, నిర్వాహకులకు గంటకు గరిష్ఠంగా ఒక ఇమెయిల్ వస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>బల్క్ రన్‌లు, ప్రచురణ తర్వాత ముందస్తు తయారీ జాబ్ క్యూ జాబ్‌లు, సందర్శకుల కంటే తక్కువ ప్రాధాన్యతతో. మారుపేర్లను తొలగిస్తే Velocity ప్రతిస్పందన కాష్ కూడా క్లియర్ అవుతుంది, కాబట్టి తొలగించిన ఫైల్ అక్కడినుండి అందించబడదు.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>తయారైన ప్రతి మారుపేరు, సమాధానమిచ్చిన ప్లేస్‌హోల్డర్, స్టేజ్ చేసిన ఫైల్, రన్ %file లో ఒక పంక్తి. కమాండ్ లైన్‌లో కూడా అవే సాధనాలు ఉన్నాయి: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>జాబ్ %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%total చిత్రాలలో %done</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>రన్</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>పరిధి</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ఫలితం</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>ఈ జాబ్‌ను రద్దు చేయండి</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>జాబ్ %job చిత్రం మారుపేర్ల జాబ్ కాదు, లేదా అది క్యూ నుండి తొలగించబడింది.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>రన్ %run ఫలితం</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>బల్క్ రన్‌లు పాజ్ చేయబడ్డాయి</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time నుండి %user పాజ్ చేశారు.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>పాజ్ ప్రతి బల్క్ రన్‌ను దాని ప్రస్తుత చిత్రం తర్వాత, అన్ని సర్వర్‌లలో ఆపుతుంది; క్యూలోని రన్‌లు వేచి ఉంటాయి. సందర్శకుల మారుపేర్లు ఇంకా తయారవుతాయి.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>బల్క్ రన్‌లను కొనసాగించండి</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>కారణం (ఐచ్ఛికం)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>బల్క్ రన్‌లను పాజ్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>రన్ ప్రారంభించండి</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>రన్‌లు జాబ్ క్యూ జాబ్‌లు: మీరు పేజీని వదిలి తిరిగి రావచ్చు.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>జాబ్ క్యూ లేకుండా రన్ ఈ అభ్యర్థనలోనే, గరిష్ఠంగా %count చిత్రాలకు జరుగుతుంది.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>చర్య</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: లేని మారుపేర్లను తయారుచేయి</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: తొలగించి మళ్లీ తయారుచేయి</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: వాటిని తొలగించు (అడిగినప్పుడు మళ్లీ తయారవుతాయి)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: స్టేజింగ్ మూలం నుండి ఫైళ్లను తీసుకురా</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(స్టేజింగ్ ఇన్‌స్టాలేషన్‌లో మాత్రమే)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>మొత్తం సైట్</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>ఒక నోడ్</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>ఒక నోడ్ మరియు దాని ఉపవృక్షం</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>నోడ్ ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>క్లాస్‌లు</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>లక్షణాలు</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>మార్పు తేదీ నుండి</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>ఒక తేదీ (2026-11-01) లేదా గడిచిన సమయం (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>గరిష్ఠ చిత్రాలు</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>మారుపేర్లు (ఏదీ ఎంచుకోకపోతే: అన్నీ)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>డ్రై రన్: లెక్కించడం మాత్రమే (resync మూలాన్ని తనిఖీ చేస్తుంది, ఏదీ నిల్వ చేయదు)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>భిన్నంగా ఉన్న ఫైళ్లను ఓవర్‌రైట్ చేయండి (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>రన్ ప్రారంభించండి</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>తాజా రన్‌లు</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>జాబ్</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>పురోగతి</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>క్యూలో ఉంది</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>చర్యలు</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>రద్దు చేయండి</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>ఇంకా బల్క్ రన్ లేదా resync లేదు.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>ఒక చిత్రం</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>టెంప్లేట్‌కు ఇప్పుడు వచ్చే చిరునామాలు, ప్రతి మారుపేరుకు లెక్కించిన పరిమాణాలు, రకాలు, ప్రతి ఫైల్ ఉందా లేదా అనేది.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>దీనితో వెతకండి</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ఆబ్జెక్ట్ ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>చూపించు</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>ఈ ఆబ్జెక్ట్‌ను చదవడానికి మీకు అనుమతి లేదు.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>ఈ ఆబ్జెక్ట్‌లో చిత్రం లేదు.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>ఈ ID తో ఆబ్జెక్ట్ లేదు.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>ఆబ్జెక్ట్ %object, నోడ్ %node, వెర్షన్ %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>ఒరిజినల్: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>ఫైల్ ఉంది</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>ఫైల్ లేదు</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name మారుపేర్లు</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>మారుపేరు</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>పరిమాణం</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>రకం</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ఫైల్</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>ఫార్మాట్‌లు</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>టెంప్లేట్‌లో చిరునామా</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>ఉంది</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>లేదు</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ఈ రకానికి కాదు</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>తనిఖీ చేయండి</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>తయారుచేయి</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>ఈ ఫీల్డ్‌లో చిత్రం లేదు.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>సమయం</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms మి.సె</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>మూలానికి కనెక్షన్</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>స్టేజింగ్ మూలానికి HEAD అభ్యర్థన, పేరు పెట్టి ఉంటే దాని ఆధారాలతో. ఆధారాలు పంపబడతాయి, ఎప్పుడూ చూపబడవు.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>మూలం</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>ఆధారాలతో</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>నిల్వ మార్గం (ఐచ్ఛికం)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>కనెక్షన్‌ను పరీక్షించండి</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>ఏ మూలానికీ BaseURL లేదు. మూలాలు సెట్టింగ్‌లలో సెట్ చేయబడతాయి ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>చేరుకోగలదు</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>తిరస్కరించబడింది: ఆధారాలను తనిఖీ చేయండి</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>మూలంలో కనుగొనబడలేదు</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>సమాధానం లేదు</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>సమయం ముగిసింది</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>దారి మళ్లించబడింది (అనుసరించలేదు)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL లేదు</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>నిల్వ మార్గం కాదు</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>చిరునామా</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>స్థితి</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>పంపబడింది</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>రహస్యం లేదు</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>రహస్యం user:password లేదా Bearer &lt;token&gt; కాదు</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file యొక్క కొత్త పంక్తులు, కొత్తవి మొదట.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>సెటప్ &gt; లాగ్ ఫైల్‌లు</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>ఈవెంట్</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>అన్ని ఈవెంట్‌లు</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>రన్‌లు (ప్రారంభం మరియు ముగింపు)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>మార్గంలో ఉంది</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>పంక్తులు</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>ఫిల్టర్</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>అనుసరించు: కొత్త పంక్తులు రాయబడినప్పుడు చూపించు</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>మార్గం మరియు వివరాలు</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>లాగ్‌లోని ఏ పంక్తీ సరిపోలలేదు.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>సేవ్ చేస్తే ఏమి మారుతుంది</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>ఏమి మార్చబడింది</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php లో సేవ్ చేయబడుతుంది, కాబట్టి ఇక్కడి విలువ ప్రతి siteaccess కంటే ప్రబలంగా ఉంటుంది. చూపిన విలువలు ఈ siteaccess కు అమలులో ఉన్నవి. సేవ్ చేసే ముందు మీరు ఎవరో నిర్ధారించమని అడుగుతుంది.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>మారుపేర్లు ఎలా తయారవుతాయి, అందించబడతాయి.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>లేని చిత్రాలను మరొక ఇన్‌స్టాలేషన్ నుండి తీసుకురావడం (alpha, dev, beta, stage, pro, post, arc). ప్రొడక్షన్ (pro) ఎప్పుడూ తీసుకురాదు.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>సెట్టింగ్</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>విలువ</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override లో</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>ప్రతి మూలం చిరునామా, దాని ఆధారాలను కలిగిన రహస్యం పేరు (user:password లేదా Bearer &lt;token&gt;). రహస్యం విలువ సెటప్ &gt; రహస్యాలు లో సెట్ చేయబడుతుంది, ఇక్కడ ఎప్పుడూ చూపబడదు.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>మార్పులను ప్రివ్యూ చేయండి</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>సేవ్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>అనుసరిస్తోంది: %time న నవీకరించబడింది</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>పాజ్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>ఫీడ్ సమాధానం ఇవ్వలేదు; మళ్లీ ప్రయత్నిస్తోంది.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>జాబ్ ముగిసింది.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: టెంప్లేట్‌లకు చిరునామా వస్తుంది, మారుపేరు అడిగినప్పుడు తయారవుతుంది. render: టెంప్లేట్ పేజీ రెండర్ అవుతున్నప్పుడే దాన్ని తయారుచేస్తుంది (అసలు ప్రవర్తన).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>ఇంకా తయారు కాని మారుపేరు చిరునామా: token (సంతకం చేసినది, డేటాబేస్ అవసరం లేదు), ids-token, ids, node లేదా storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: వెబ్ సర్వర్ నిల్వను అందిస్తే ఫైల్‌కు దారిమళ్లింపు, లేకపోతే ఫైల్ స్ట్రీమ్ చేయబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>ఒక అభ్యర్థన మారుపేరును తయారుచేయడానికి లేదా తీసుకురావడానికి వెచ్చించగల సెకన్లు; తర్వాత అది ప్లేస్‌హోల్డర్‌ను ఇస్తుంది, ఒక జాబ్ పనిని ముగిస్తుంది.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP, AVIF రకాలకు మొదట ప్రయత్నించే కన్వర్టర్.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Formats[] జాబితా చేసే మారుపేర్లకు, అడిగే బ్రౌజర్‌లకు WebP లేదా AVIF ఇవ్వండి.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>చిత్రం లేనప్పుడు సరైన పరిమాణంలో తటస్థ చిత్రం.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>చిత్రం ఉన్నప్పుడు ప్లేస్‌హోల్డర్‌లను నిజమైన చిత్రంతో మార్చే చిన్న స్క్రిప్ట్.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>ప్రచురణ తర్వాత, ఒక జాబ్ కొత్త చిత్రాల మారుపేర్లను సంబంధిత ప్రతి siteaccess కు తయారుచేస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>ఒక సర్వర్‌లో ఒకేసారి మార్పిడులు.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>బల్క్ రన్‌ల ప్రాసెస్ ప్రాధాన్యత (nice), 0 నుండి 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>బ్రౌజర్‌లు, కాష్‌లు తయారైన మారుపేరును ఉంచగల సెకన్లు.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>డ్రాఫ్ట్ లేదా ప్రివ్యూ చిత్రం చిరునామా చెల్లుబాటయ్యే సెకన్లు.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>తిప్పిన తర్వాత మునుపటి సంతకం కీ చెల్లుబాటయ్యే సెకన్లు.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>ఈ ఇన్‌స్టాలేషన్ పర్యావరణం.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>లేని చిత్రాలు తీసుకురావడానికి పర్యావరణం; none: ఏదీ తీసుకురావడం లేదు.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>ఒక్కో పంక్తికి ఒకటి: స్థానిక నిల్వ ఉపసర్గ;మూలం ఉపసర్గ లేదా చిరునామా, భిన్నంగా ఉండే నిల్వ మార్గాలకు.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>మూలానికి ఒక అభ్యర్థన తీసుకోగల సెకన్లు.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>మూలం నుండి తీసుకునే అతిపెద్ద ఫైల్, బైట్‌లలో.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>ఎన్ని వరుస వైఫల్యాల తర్వాత మూలం పాజ్ చేయబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>విఫలమయ్యే మూలం ఎంతసేపు పాజ్ చేయబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>మూలం పాజ్ అయినప్పుడు నిర్వాహకులకు మెయిల్ పంపండి (గంటకు గరిష్ఠంగా ఒకసారి).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>ఒక్కో పంక్తికి ఒక ఇమెయిల్ చిరునామా; ఖాళీగా ఉంటే: site.ini లోని AdminEmail.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>మూల ఇన్‌స్టాలేషన్ %block చిరునామా, ఉదా. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>ఆధారాలను కలిగిన రహస్యం పేరు, లేదా env:VARIABLE. ఆధారాలు కాదు.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(ఏదీ లేదు)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>డిఫాల్ట్: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>ఇక్కడ సెట్ చేయబడింది; తొలగించడానికి టిక్ చేయండి</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>వారసత్వం</translation>
     </message>
 </context>
 </TS>

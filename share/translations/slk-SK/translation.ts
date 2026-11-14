@@ -16529,6 +16529,34 @@ Poznámka: Balíky sa neodinštalujú.</translation>
         <source>Import/Export</source>
         <translation>Import/export</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Aliasy obrázkov</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Vytvoriť pre túto položku</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Vytvoriť pre podstrom</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Vytvoriť znova pre túto položku</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Vytvoriť znova pre podstrom</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Odstrániť pre túto položku</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Odstrániť pre podstrom</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86452,6 +86480,997 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Blok server starej lokality: location = s return, if ($args) pre dopyt, rewrite ako zástupný znak a map jednotlivých stránok.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Aliasy obrázkov</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Aliasy obrázkov sú zmenšené a orezané kópie obrázka, ktoré zobrazujú šablóny. Tu vidíte, ako vznikajú, spúšťate hromadné úlohy nad webom, testujete jeden obrázok alebo zdroj staging, sledujete históriu behov a meníte nastavenia.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Časti stránky</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Nástenka</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Hromadné behy</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Testovacie nástroje</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>História behov</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Nastavenia</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Tu si môžete pozrieť všetko. Zmena nastavení, spúšťanie úloh a nástroje, ktoré vytvárajú súbory, vyžadujú politiku setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Čo vyžaduje pozornosť</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Režim render: šablóny vytvárajú chýbajúce aliasy počas vykresľovania stránky, ako doteraz. Adresy on-demand, zástupné obrázky a úlohy na pozadí sa nepoužívajú.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Vyjednávanie formátu je zapnuté, ale žiadny tunajší konvertor nevie zapisovať WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Toto je inštalácia staging, ale jej zdroj nemá BaseURL: chýbajúce obrázky sa nedajú získať.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Zdroj staging je pozastavený po viacerých zlyhaniach za sebou: chýbajúce obrázky dostanú zástupné obrázky, kým pauza neskončí alebo ju nevynulujete.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Zdroj staging nedávno zlyhal. Poslednú chybu nájdete nižšie.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Táto inštalácia nie je produkčná, ale SyncFrom neuvádza žiadny zdroj: nič sa nesťahuje.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Fronta úloh (expqueue) nie je k dispozícii: aliasy, ktoré nestihnú čas, vytvorí nasledujúca požiadavka, predgenerovanie po publikovaní sa preskočí a hromadné behy sú obmedzené na malé rozsahy.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Niektoré úlohy aliasov obrázkov zlyhali natrvalo. Dôvod ukazuje Nastavenie &gt; Fronta úloh.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Hromadné behy sú pozastavené.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Aliasy zlyhali za posledných 24 hodín. História behov ich uvádza.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Podpisový kľúč je starší ako rok. Jeho rotácia ponechá staré adresy platné počas odkladnej lehoty.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Podpisový kľúč zatiaľ neexistuje: vytvorí sa s prvou adresou on-demand.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Posledných 24 hodín</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Vytvorené aliasy</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Odoslané zástupné obrázky</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Zlyhania</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Pripravené súbory</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Spustené behy</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Úlohy čakajúce / bežiace</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Spočítané z posledných %lines riadkov súboru %file, ktoré siahajú až po %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Režim a doručovanie</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Režim</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>na požiadanie</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Tvar adresy</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Doručovanie</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Najdlhšie čakanie požiadavky</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Súčasné konverzie</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy z %max práve zaneprázdnených</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Vyjednávanie formátu</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>zapnuté</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>vypnuté</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Zástupný obrázok a skript na výmenu</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Predgenerovanie po publikovaní</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Aliasy webu</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Konvertory variantov formátu</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Konvertor</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Poradie pokusov</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>uprednostnený</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>áno</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nie</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Samotné aliasy vytvárajú konvertory z [ImageConverterSettings], ako doteraz; tieto zapisujú varianty WebP a AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Prostredie a zdroj</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Táto inštalácia</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(produkcia: nikdy nesťahuje)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Sťahuje z</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>nič</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Adresa zdroja</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>nenastavená</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Prihlasovacie údaje</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>tajný údaj %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>žiadne</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stav</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>funguje</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>pozastavený do %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>zlyháva</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Zlyhania za sebou</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>pauza po %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Posledná chyba</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Posledný úspech</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Vynulovať zlyhania a znova sa opýtať zdroja</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Fronta úloh</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Typ úlohy</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Čaká</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Spustené</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Zlyhané</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>neregistrované</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Fronta úloh nie je k dispozícii.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Hromadné behy pozastavené</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>od %time, používateľ %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Hromadné behy môžu bežať</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Podpisový kľúč</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Kľúč</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>v úložisku tajných údajov</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>zatiaľ žiadny</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Vek</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days dní (od %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Predchádzajúci kľúč</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>platný do %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Rotovať kľúč</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Adresy podpísané aktuálnym kľúčom fungujú ďalej počas odkladnej lehoty (SigningKeyGrace), potom odpovedajú zástupnými obrázkami, kým sa stránky nevytvoria znova.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Rotovať teraz</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Ako to funguje</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, režim render, staging a denník</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (predvolené): stránka odkazuje na ešte neexistujúci alias podpísanou adresou. Prvá požiadavka ho vytvorí v rámci najdlhšieho čakania, inak odpovie neutrálnym zástupným obrázkom a prácu dokončí úloha; skript na výmenu nahradí zástupný obrázok, keď je obrázok hotový.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Režim render: šablóna vytvorí alias počas vykresľovania stránky, ako doteraz. Medzi oboma sa dá prepínať kedykoľvek; nič sa nemusí migrovať.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Inštalácia staging sťahuje chýbajúce originály a aliasy zo svojho zdroja; zlyhávajúci zdroj sa po zlyhaniach za sebou pozastaví a správcovia dostanú najviac jeden e-mail za hodinu.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Hromadné behy a predgenerovanie po publikovaní sú úlohy fronty úloh s nižšou prioritou než návštevníci. Odstránenie aliasov vyčistí aj vyrovnávaciu pamäť odpovedí Velocity, aby sa odstránený súbor z nej neposkytoval.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Každý vytvorený alias, odoslaný zástupný obrázok, pripravený súbor a beh je riadok v %file. Príkazový riadok má rovnaké nástroje: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Úloha %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done z %total obrázkov</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Beh</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Rozsah</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Výsledok</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Zrušiť túto úlohu</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Úloha %job nie je úlohou aliasov obrázkov alebo bola odstránená z fronty.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Výsledok behu %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Hromadné behy sú pozastavené</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Pozastavené od %time, používateľ %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Pozastavenie zastaví každý hromadný beh po aktuálnom obrázku na všetkých serveroch; behy vo fronte čakajú. Aliasy pre návštevníkov sa vytvárajú naďalej.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Obnoviť hromadné behy</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Dôvod (nepovinné)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Pozastaviť hromadné behy</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Spustiť beh</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Behy sú úlohy fronty úloh: stránku môžete opustiť a vrátiť sa.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Bez fronty úloh sa beh vykoná v tejto požiadavke, najviac pre %count obrázkov.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Akcia</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Vytvoriť: vytvoriť chýbajúce aliasy</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Vytvoriť znova: odstrániť a vytvoriť ich znova</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Vyčistiť: odstrániť ich (vytvoria sa znova na požiadanie)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Znova synchronizovať: stiahnuť súbory zo zdroja staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(iba na inštalácii staging)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Celý web</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Jeden uzol</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Uzol a jeho podstrom</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID uzla</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Triedy</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atribúty</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Zmenené od</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Dátum (2026-11-01) alebo čas dozadu (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Najviac obrázkov</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Aliasy (nič nezaškrtnuté: všetky)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Skúšobný beh: iba spočítať (resync skontroluje zdroj a nič neuloží)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Prepísať odlišné súbory (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Spustiť beh</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Posledné behy</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Úloha</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Priebeh</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Vo fronte</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Akcie</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Zrušiť</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Zatiaľ žiadny hromadný beh ani resync.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Jeden obrázok</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Adresy, ktoré šablóna teraz dostáva, veľkosti a typy vypočítané pre každý alias a či súbor existuje.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Hľadať podľa</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID objektu</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Zobraziť</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Tento objekt nemáte oprávnenie čítať.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Tento objekt nemá obrázok.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Objekt s týmto ID neexistuje.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>objekt %object, uzol %node, verzia %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Originál: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>súbor existuje</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>súbor chýba</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Aliasy: %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Alias</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Veľkosť</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Súbor</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Formáty</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Adresa v šablóne</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>existuje</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>chýba</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>nie pre tento typ</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Skontrolovať</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Vytvoriť</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>V tomto poli nie je obrázok.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Čas</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Spojenie so zdrojom</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Požiadavka HEAD na zdroj staging s jeho prihlasovacími údajmi, ak sú uvedené. Prihlasovacie údaje sa odosielajú, nikdy nezobrazujú.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Zdroj</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>s prihlasovacími údajmi</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Cesta v úložisku (nepovinné)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Otestovať spojenie</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Žiadny zdroj nemá BaseURL. Zdroje sa nastavujú v nastaveniach ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>dostupný</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>odmietnuté: skontrolujte prihlasovacie údaje</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>na zdroji sa nenašlo</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>bez odpovede</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>vypršal čas</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>presmerované (nenasledované)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>bez BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>nie je cesta v úložisku</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresa</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Stav</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>odoslané</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>tajný údaj chýba</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>tajný údaj nie je user:password ani Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Najnovšie riadky súboru %file, najnovšie prvé.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Nastavenie &gt; Súbory denníka</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Udalosť</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Všetky udalosti</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Behy (začiatok a koniec)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Cesta obsahuje</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Riadkov</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrovať</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Sledovať: zobrazovať nové riadky, keď sa zapíšu</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Cesta a podrobnosti</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Žiadny riadok denníka nezodpovedá.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Čo by uloženie zmenilo</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Čo sa zmenilo</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Uložené do settings/override/image.ini.append.php, takže tunajšia hodnota má prednosť pred každým siteaccess. Zobrazené hodnoty sú tie, ktoré platia pre tento siteaccess. Pred uložením vás systém požiada o overenie, že ste to vy.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Ako sa aliasy vytvárajú a doručujú.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Sťahovanie chýbajúcich obrázkov z inej inštalácie (alpha, dev, beta, stage, pro, post, arc). Produkcia (pro) nikdy nesťahuje.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Nastavenie</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Hodnota</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>V settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Adresa každého zdroja a názov tajného údaja s jeho prihlasovacími údajmi (user:password alebo Bearer &lt;token&gt;). Hodnota tajného údaja sa nastavuje v Nastavenie &gt; Tajné údaje a nikdy sa tu nezobrazuje.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Zobraziť náhľad zmien</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Uložiť</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Sledovanie: aktualizované %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Pozastavené</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Kanál neodpovedal; skúša sa znova.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Úloha skončila.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: šablóny dostanú adresu a alias sa vytvorí, keď sa o neho požiada. render: šablóna ho vytvorí počas vykresľovania stránky (pôvodné správanie).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Adresa ešte nevytvoreného aliasu: token (podpísaná, nepotrebuje databázu), ids-token, ids, node alebo storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: presmerovanie na súbor, ak webový server obsluhuje úložisko, inak sa súbor streamuje.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Sekundy, ktoré môže požiadavka stráviť vytváraním alebo sťahovaním aliasu; potom odpovie zástupným obrázkom a prácu dokončí úloha.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Konvertor, ktorý sa skúša ako prvý pre varianty WebP a AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Odpovedať WebP alebo AVIF prehliadačom, ktoré o ne žiadajú, pre aliasy uvádzajúce Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Neutrálny obrázok správnej veľkosti, kým skutočný obrázok chýba.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Malý skript, ktorý nahradí zástupné obrázky skutočným obrázkom, keď je k dispozícii.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Po publikovaní úloha vytvorí aliasy nových obrázkov pre každý súvisiaci siteaccess.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Súčasné konverzie na jednom serveri.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Priorita procesu (nice) hromadných behov, 0 až 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Sekundy, počas ktorých môžu prehliadače a vyrovnávacie pamäte uchovať vytvorený alias.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Sekundy, počas ktorých ostáva platná adresa obrázka konceptu alebo náhľadu.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Sekundy, počas ktorých ostáva po rotácii platný predchádzajúci podpisový kľúč.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Prostredie tejto inštalácie.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Prostredie, z ktorého sa sťahujú chýbajúce obrázky; none: nič sa nesťahuje.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Jeden na riadok: predpona lokálneho úložiska;predpona zdroja alebo adresa, pre cesty úložiska, ktoré sa líšia.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Sekundy, ktoré môže trvať jedna požiadavka na zdroj.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Najväčší súbor prevzatý zo zdroja, v bajtoch.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Počet zlyhaní za sebou, po ktorom sa zdroj pozastaví.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Ako dlho je zlyhávajúci zdroj pozastavený.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Poslať správcom e-mail, keď sa zdroj pozastaví (najviac raz za hodinu).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Jedna e-mailová adresa na riadok; prázdne: AdminEmail zo site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Adresa zdrojovej inštalácie %block, napr. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Názov tajného údaja s prihlasovacími údajmi alebo env:VARIABLE. Nikdy nie samotné prihlasovacie údaje.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(žiadne)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Predvolené: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Nastavené tu; zaškrtnutím odstránite</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>zdedené</translation>
     </message>
 </context>
 </TS>

@@ -16590,6 +16590,34 @@ Cathetan: Paket ora bakal dicopot pasangane.</translation>
         <source>Import/Export</source>
         <translation>Impor/Ekspor</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Alias gambar</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Gawé kanggo item iki</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Gawé kanggo subwit</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Gawé manèh kanggo item iki</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Gawé manèh kanggo subwit</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Busak kanggo item iki</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Busak kanggo subwit</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86430,6 +86458,997 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Blok server situs lawas: location = nganggo return, if ($args) kanggo query, rewrite minangka karakter pengganti lan map kanggo kaca siji-siji.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Alias gambar</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Alias gambar yaiku salinan gambar sing wis diowahi ukurane lan dipotong, sing ditampilake dening templat. Ing kene panjenengan bisa ndeleng carane digawe, mbukak tugas massal ing situs, nyoba siji gambar utawa sumber staging, ngetutake riwayat eksekusi, lan ngowahi setelan.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Bagéyan kaca</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dasbor</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Eksekusi massal</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Piranti uji</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Riwayat eksekusi</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Setelan</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Panjenengan bisa ndeleng kabèh ing kene. Ngowahi setelan, mbukak tugas, lan piranti sing nggawe berkas mbutuhake kebijakan setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Sing kudu digatèkake</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Mode render: templat nggawe alias sing ilang nalika kaca ditampilake, kaya biyèn. Alamat on-demand, placeholder, lan tugas latar mburi ora dipigunakake.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Negosiasi format aktif, nanging ora ana konverter ing kene sing bisa nulis WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Iki instalasi staging, nanging sumbère ora duwé BaseURL: gambar sing ilang ora bisa dijupuk.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Sumber staging dijeda sawisé gagal bola-bali: gambar sing ilang olèh placeholder nganti jedhané rampung utawa panjenengan nyetèl ulang.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Sumber staging lagi waé gagal. Delengen kasalahan pungkasané ing ngisor.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Instalasi iki dudu produksi, nanging SyncFrom ora nyebut sumber: ora ana sing dijupuk.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Antrean tugas (expqueue) ora kasedhiya: alias sing kaliwat wektuné digawé dening panyuwunan sabanjuré, pembuatan awal sawisé nerbitake dilewati, lan eksekusi massal diwatesi ing cakupan cilik.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Sawetara tugas alias gambar gagal permanèn. Panyiapan &gt; Antrean tugas nuduhake sababé.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Eksekusi massal dijeda.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Ana alias sing gagal ing 24 jam pungkasan. Riwayat eksekusi nyathet kabèh.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Kunci panandhatanganan umuré luwih saka setaun. Muter kunci njaga alamat lawas tetep sah sajrone mangsa kelonggaran.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Durung ana kunci panandhatanganan: digawé bareng alamat on-demand sing kapisan.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>24 jam pungkasan</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Alias sing digawé</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Placeholder sing dijawab</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Kagagalan</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Berkas sing dijupuk</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Eksekusi sing diwiwiti</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Tugas ngenteni / mlaku</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Diétung saka %lines baris pungkasan %file, sing tekan %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Mode lan pangiriman</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mode</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>manut panyuwunan</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Wangun alamat</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Pangiriman</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Wektu ngenteni paling suwé saka siji panyuwunan</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Konversi bebarengan</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy saka %max lagi sibuk</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Negosiasi format</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>urip</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>mati</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Placeholder lan skrip panukar</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Pembuatan awal sawisé nerbitake</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Alias situs</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Konverter varian format</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Konverter</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Dicoba</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>diutamakake</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>iya</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ora</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Alias dhéwé digawé dening konverter saka [ImageConverterSettings], kaya biyèn; konverter iki nulis varian WebP lan AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Lingkungan lan sumber</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Instalasi iki</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(produksi: ora tau njupuk)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Njupuk saka</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>ora ana</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Alamat sumber</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>durung disetèl</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Kredensial</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>rahasia %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ora ana</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Kahanan</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>mlaku</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>dijeda nganti %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>gagal</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Gagal bola-bali</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>jeda sawisé %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Kasalahan pungkasan</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Kasil pungkasan</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Setèl ulang kagagalan lan takon sumber manèh</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Antrean tugas</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Jinis tugas</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Ngenteni</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Mlaku</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Gagal</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>ora kadhaftar</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Antrean tugas ora kasedhiya.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Eksekusi massal dijeda</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>wiwit %time déning %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Eksekusi massal oléh mlaku</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Kunci panandhatanganan</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Kunci</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>ing panyimpenan rahasia</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>durung ana</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Umur</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days dina (wiwit %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Kunci sadurungé</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>sah nganti %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Puter kunci</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Alamat sing ditandhatangani nganggo kunci saiki tetep mlaku sajrone mangsa kelonggaran (SigningKeyGrace), banjur mangsuli nganggo placeholder nganti kaca digawé manèh.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Puter saiki</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Carané makarya</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, mode render, staging, lan log</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>Manut panyuwunan (baku): kaca nyambungake alias sing durung ana menyang alamat sing wis ditandhatangani. Panyuwunan kapisan nggawé alias kuwi sajrone wektu ngenteni paling suwé, yèn ora mangsuli nganggo placeholder netral lan siji tugas nyelesèkake gawéan; skrip panukar ngganti placeholder yèn gambaré wis ana.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Mode render: templat nggawé alias nalika kaca ditampilake, kaya biyèn. Panjenengan bisa ganti-gantian antarane loro kuwi kapan waé; ora ana sing perlu dimigrasi.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Instalasi staging njupuk berkas asli lan alias sing kurang saka sumbèré; sumber sing gagal dijeda sawisé gagal bola-bali lan administrator olèh e-mail paling akèh sapisan saben jam.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Eksekusi massal lan pembuatan awal sawisé nerbitake iku tugas saka antrean tugas, kanthi prioritas luwih ngisor tinimbang pengunjung. Mbusak alias uga ngresiki cache wangsulan Velocity, supaya berkas sing wis dibusak ora disuguhake saka kono.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Saben alias sing digawé, placeholder sing dijawab, berkas sing dijupuk, lan eksekusi dadi siji baris ing %file. Baris printah duwé piranti sing padha: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Tugas %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done saka %total gambar</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Eksekusi</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Cakupan</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Asil</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Batalake tugas iki</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Tugas %job dudu tugas alias gambar, utawa wis dibusak saka antrean.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Asil eksekusi %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Eksekusi massal dijeda</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Dijeda wiwit %time déning %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Jeda mungkasi saben eksekusi massal sawisé gambar sing lagi digarap, ing saben server; eksekusi ing antrean ngenteni. Alias kanggo pengunjung isih digawé.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Terusake eksekusi massal</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Sabab (opsional)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Jeda eksekusi massal</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Wiwiti eksekusi</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Eksekusi iku tugas antrean tugas: panjenengan bisa ninggalake kaca lan bali manèh.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Tanpa antrean tugas, eksekusi ditindakake ing panyuwunan iki, kanggo paling akèh %count gambar.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Tindakan</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Gawé: nggawé alias sing ilang</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Gawé manèh: busak banjur gawé manèh</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Resiki: busak (digawé manèh manut panyuwunan)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Sinkron manèh: jupuk berkas saka sumber staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(mung ing instalasi staging)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Kabèh situs</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Siji simpul</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Siji simpul lan subwit-é</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID simpul</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Kelas</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atribut</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Diowahi wiwit</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Tanggal (2026-11-01) utawa wektu kepungkur (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Paling akèh gambar</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Alias (ora ana sing dicentang: kabèh)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>sinkron manèh</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Uji coba: mung ngétung (sinkron manèh mriksa sumber lan ora nyimpen apa-apa)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Timpa berkas sing béda (sinkron manèh)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Wiwiti eksekusi</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Eksekusi pungkasan</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Tugas</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Kemajuan</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Ana ing antrean</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Tindakan</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Batal</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Durung ana eksekusi massal utawa sinkron manèh.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Siji gambar</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Alamat sing ditampa templat saiki, ukuran lan jinis sing diétung kanggo saben alias, lan manawa saben berkas ana.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Goleki miturut</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID objek</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Tampilake</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Panjenengan ora oléh maca objek iki.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Objek iki ora duwé gambar.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Ora ana objek kanthi ID iki.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>objek %object, simpul %node, versi %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Asli: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>berkas ana</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>berkas ilang</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Alias saka %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Alias</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Ukuran</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Jinis</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Berkas</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Format</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Alamat ing templat</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>ana</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>ilang</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ora kanggo jinis iki</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Priksa</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Gawé</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Ora ana gambar ing kolom iki.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Wektu</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Sambungan menyang sumber</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Panyuwunan HEAD menyang sumber staging, karo kredensialé yèn ana sing disebutake. Kredensial dikirim, ora tau ditampilake.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Sumber</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>nganggo kredensial</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Path panyimpenan (opsional)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Uji sambungan</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Ora ana sumber sing duwé BaseURL. Sumber disetèl ing setelan ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>bisa digayuh</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>ditolak: priksa kredensial</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>ora ditemokake ing sumber</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>ora ana wangsulan</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>kentekan wektu</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>dialihake (ora diterusake)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>ora ana BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>dudu path panyimpenan</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Alamat</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>wis dikirim</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>rahasiané ilang</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>rahasiané dudu user:password utawa Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Baris paling anyar saka %file, sing paling anyar dhisik.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Panyiapan &gt; Berkas log</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Kedadéyan</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Kabèh kedadéyan</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Eksekusi (wiwitan lan pungkasan)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Path ngandhut</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Baris</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Saringan</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Tutugake: tampilake baris anyar nalika ditulis</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Path lan rincian</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Ora ana baris log sing cocog.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Sing bakal owah yèn disimpen</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Sing wis diowahi</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Disimpen ing settings/override/image.ini.append.php, dadi nilai ing kene ngungkuli saben siteaccess. Nilai sing katampilake yaiku sing lagi ditrapake kanggo siteaccess iki. Sadurungé nyimpen, panjenengan dijaluk verifikasi sapa panjenengan.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Carané alias digawé lan dikirim.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Njupuk gambar sing ilang saka instalasi liyané (alpha, dev, beta, stage, pro, post, arc). Produksi (pro) ora tau njupuk.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Setelan</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Nilai</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Ing settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Alamat saben sumber lan jeneng rahasia sing nyimpen kredensialé (user:password utawa Bearer &lt;token&gt;). Nilai rahasia disetèl ing Panyiapan &gt; Rahasia lan ora tau ditampilake ing kene.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Pratinjau owah-owahan</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Simpen</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Ngetutake: dianyari %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Dijeda</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Feed ora mangsuli; nyoba manèh.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Tugas wis rampung.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: templat olèh alamat, alias digawé yèn dijaluk. render: templat nggawé nalika kaca ditampilake (tindak-tanduk asli).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Alamat alias sing durung digawé: token (ditandhatangani, ora mbutuhake basis data), ids-token, ids, node utawa storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: pangalihan menyang berkas yèn server web nyuguhake panyimpenan, yèn ora berkas di-stream.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Detik sing oléh dienggo siji panyuwunan kanggo nggawé utawa njupuk alias; sawisé kuwi mangsuli nganggo placeholder lan siji tugas nyelesèkake gawéan.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Konverter sing dicoba dhisik kanggo varian WebP lan AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Wangsulana WebP utawa AVIF marang browser sing njaluk, kanggo alias sing nyathet Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Gambar netral kanthi ukuran sing pas nalika gambar durung ana.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Skrip cilik sing ngganti placeholder nganggo gambar asli yèn wis ana.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Sawisé nerbitake, siji tugas nggawé alias gambar anyar kanggo saben siteaccess sing gegandhèngan.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Konversi bebarengan ing siji server.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Prioritas proses (nice) eksekusi massal, 0 nganti 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Detik browser lan cache oléh nyimpen alias sing wis digawé.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Detik alamat gambar draf utawa pratinjau tetep sah.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Detik kunci panandhatanganan sadurungé tetep sah sawisé diputer.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Lingkungan instalasi iki.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Lingkungan sing dadi sumber gambar ilang; none: ora ana sing dijupuk.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Siji saben baris: prefiks panyimpenan lokal;prefiks utawa alamat sumber, kanggo path panyimpenan sing béda.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Detik paling suwé kanggo siji panyuwunan menyang sumber.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Berkas paling gedhé sing dijupuk saka sumber, ing bita.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Kagagalan bola-bali sing marakake sumber dijeda.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Pira suwéné sumber sing gagal dijeda.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Kirimi e-mail marang administrator yèn sumber dijeda (paling akèh sapisan saben jam).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Siji alamat e-mail saben baris; kosong: AdminEmail saka site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Alamat instalasi sumber %block, contoné https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Jeneng rahasia sing ngandhut kredensial, utawa env:VARIABLE. Aja nganti kredensialé dhéwé.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(ora ana)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Baku: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Disetèl ing kene; centang kanggo mbusak</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>diwarisi</translation>
     </message>
 </context>
 </TS>

@@ -16590,6 +16590,34 @@ Nòta: los paquets seràn pas desinstallats.</translation>
         <source>Import/Export</source>
         <translation>Importacion/Exportacion</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Aliases d&apos;imatge</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Generar per aqueste element</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Generar per lo sosarbre</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Regenerar per aqueste element</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Regenerar per lo sosarbre</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Suprimir per aqueste element</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Suprimir per lo sosarbre</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Lo blòc server d'un ancian site: location = amb return, if ($args) per una requèsta, rewrite coma jokèr e un map de paginas soletas.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Aliases d&apos;imatge</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Los aliases d&apos;imatge son las còpias redimensionadas e talhadas d&apos;una imatge que los modèls mostran. Aquí vesètz cossí son fabricats, podètz lançar de prètzfaches en massa sus lo sit, assajar una imatge o una font de preproduccion, seguir l&apos;istoric de las execucions e modificar los paramètres.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Parts de la pagina</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Tablèu de bòrd</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Execucions en massa</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Aisinas de tèst</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Istoric</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Paramètres</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Podètz tot gaitar aquí. Modificar los paramètres, lançar de prètzfaches e las aisinas que fabrican de fichièrs an besonh de la politica setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Çò que demanda atencion</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Mòde render : los modèls fabrican los aliases mancants pendent l&apos;afichatge de la pagina, coma abans. Las adreças on-demand, los emplaçaments e los prètzfaches en rèire-plan son pas utilizats.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>La negociacion de format es activada, mas cap de convertidor d&apos;aquí pòt escriure de WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Aquò es una installacion de preproduccion, mas sa font a pas de BaseURL : las imatges mancantas pòdon pas èstre recuperadas.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>La font de preproduccion es en pausa aprèp d&apos;errors a la seguida : las imatges mancantas recebon un emplaçament fins que la pausa s&apos;acabe o que la reïnicializetz.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>La font de preproduccion a fracassat recentament. Vejatz sa darrièra error çai-jos.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Aquesta installacion es pas la produccion, mas SyncFrom designa pas cap de font : degun fichièr es recuperat.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>La fila d&apos;espèra dels prètzfaches (expqueue) es pas disponibla : los aliases que depassan lor temps son fabricats per la demanda seguenta, la pregeneracion aprèp publicacion es sautada e las execucions en massa son limitadas a de pichons perimètres.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>D&apos;unes prètzfaches d&apos;aliases d&apos;imatge an fracassat definitivament. Configuracion &gt; Fila d&apos;espèra dels prètzfaches ne mostra la rason.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Las execucions en massa son en pausa.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>D&apos;aliases an fracassat dins las darrièras 24 oras. L&apos;istoric los lista.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>La clau de signatura a mai d&apos;un an. Cambiar-la daissa las adreças ancianas valablas pendent lo periòde de gràcia.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>I a pas encara de clau de signatura : serà creada amb la primièra adreça on-demand.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Las darrièras 24 oras</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Aliases generats</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Emplaçaments liurats</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Fracasses</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Fichièrs recuperats</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Execucions aviadas</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Prètzfaches en espèra / en execucion</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Compdat a partir de las %lines darrièras linhas de %file, que tornan fins a %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Mòde e liurason</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mòde</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>on-demand</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Forma de l&apos;adreça</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Liurason</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Espèra maximala d&apos;una demanda</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Conversions simultanèas</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy sus %max ocupats ara</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Negociacion de format</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>activat</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>desactivat</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Emplaçament e escript d&apos;escambi</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Pregeneracion aprèp publicacion</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Aliases del sit</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Convertidors de las variantas de format</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Convertidor</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Òrdre d&apos;assag</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>preferit</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>òc</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>non</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Los aliases eles-meteisses son fabricats pels convertidors de [ImageConverterSettings], coma abans ; aquestes aquí escrivon las variantas WebP e AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Environament e font</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Aquesta installacion</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(produccion : recupèra pas jamai)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Recupèra de</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>res</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Adreça de la font</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>pas definit</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Identificants</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>secret %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>cap</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Estat</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>fonciona</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>en pausa fins a %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>en error</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Fracasses a la seguida</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>pausa aprèp %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Darrièra error</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Darrièr succès</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Reïnicializar los fracasses e interrogar tornar la font</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Fila d&apos;espèra dels prètzfaches</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Tipe de prètzfach</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>En espèra</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>En execucion</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fracàs</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>pas enregistrat</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>La fila d&apos;espèra dels prètzfaches es pas disponibla.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Execucions en massa en pausa</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>dempuèi %time per %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Las execucions en massa pòdon rodar</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Clau de signatura</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Clau</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>dins l&apos;armari de secrets</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>cap pel moment</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Atge</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days jorns (dempuèi %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Clau precedenta</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>valabla fins a %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Cambiar la clau</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Las adreças signadas amb la clau actuala contunhan de foncionar pendent lo periòde de gràcia (SigningKeyGrace), puèi liuran d&apos;emplaçaments fins que las paginas sián tornadas far.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Cambiar ara</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Cossí fonciona</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, mòde render, preproduccion e jornal</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (per defaut) : una pagina ligaa un alias pas encara present a una adreça signada. La primièra demanda lo fabrica dins l&apos;espèra maximala, siquenon respond un emplaçament neutre e un prètzfach acaba lo trabalh ; l&apos;escript d&apos;escambi remplaça l&apos;emplaçament quand l&apos;imatge es aquí.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Mòde render : lo modèl fabrica l&apos;alias pendent l&apos;afichatge de la pagina, coma abans. Podètz passar de l&apos;un a l&apos;autre a cada moment ; res a de migrar.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Una installacion de preproduccion recupèra de sa font los originals e los aliases que li mancan ; una font en error es mesa en pausa aprèp d&apos;errors a la seguida e los administrators recebon un corrièl per ora al mai.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Las execucions en massa e la pregeneracion aprèp publicacion son de prètzfaches de la fila d&apos;espèra, amb una prioritat mai bassa que los visitaires. Suprimir d&apos;aliases voida tanben lo cache de responsas de Velocity, per que cap de fichièr suprimit siá pas servit d&apos;aquí.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Cada alias fabricat, emplaçament liurat, fichièr recuperat e execucion es una linha de %file. La linha de comanda a las meteissas aisinas : %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Prètzfach %job : %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done imatges sus %total</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Execucion</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Perimètre</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Anullar aqueste prètzfach</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Lo prètzfach %job es pas un prètzfach d&apos;aliases d&apos;imatge, o es estat levat de la fila.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Resultat de l&apos;execucion %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Las execucions en massa son en pausa</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>En pausa dempuèi %time per %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Una pausa arrèsta cada execucion en massa aprèp son imatge en cors, sus cada servidor ; las execucions en fila esperan. Los aliases dels visitaires son totjorn fabricats.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Represendre las execucions en massa</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Motiu (facultatiu)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Metre en pausa las execucions en massa</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Aviar una execucion</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Las execucions son de prètzfaches de la fila d&apos;espèra : podètz daissar la pagina e tornar.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Sens la fila d&apos;espèra, una execucion se fa dins aquesta demanda, per %count imatges al mai.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Accion</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generar : fabricar los aliases mancants</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerar : los suprimir e los tornar far</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purgar : los suprimir (tornats far a la demanda)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resincronizar : recuperar los fichièrs de la font de preproduccion</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(solament sus una installacion de preproduccion)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Tot lo sit</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Un nos</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Un nos e son sosarbre</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID del nos</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Classas</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atributs</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Modificat dempuèi</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Una data (2026-11-01) o una durada d&apos;abans (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Al mai d&apos;imatges</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Aliases (cap de cochat : totes)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resincronizacion</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Simulacion : sonque comptar (una resincronizacion verifica la font e enregistra pas res)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Espotir los fichièrs diferents (resincronizacion)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Aviar l&apos;execucion</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Darrièras execucions</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Prètzfach</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Progression</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Mes en fila</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Accions</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anullar</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Cap d&apos;execucion en massa ni de resincronizacion pel moment.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Una imatge</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Las adreças qu&apos;un modèl recep ara, las talhas e los tipes calculats per cada alias, e se cada fichièr es present.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Cercar per</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID de l&apos;objècte</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Mostrar</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Avètz pas lo drech de legir aqueste objècte.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Aqueste objècte a pas cap d&apos;imatge.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Cap d&apos;objècte amb aqueste ID.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>objècte %object, nos %node, version %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Original : %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>fichièr present</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>fichièr mancant</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Aliases de %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Alias</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Talha</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tipe</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fichièr</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Formats</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Adreça dins un modèl</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>present</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>mancant</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>pas per aqueste tipe</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Verificar</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Fabricar</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Cap d&apos;imatge dins aqueste camp.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ora</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Connexion a una font</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Una demanda HEAD a una font de preproduccion, amb sos identificants quand n&apos;i a un de nommat. Los identificants son enviats, jamai afichats.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Font</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>amb identificants</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Camin d&apos;emmagazinatge (facultatiu)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Ensajar la connexion</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Cap de font a de BaseURL. Las fonts se definisson dins los paramètres ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>jonhable</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>refusat : verificatz los identificants</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>pas trobat sus la font</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>cap de responsa</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>temps depassat</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>redirigit (pas seguit)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>pas de BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>pas un camin d&apos;emmagazinatge</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adreça</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Estatut</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>enviat</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>lo secret manca</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>lo secret es ni user:password ni Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Las linhas mai recentas de %file, las mai recentas d&apos;en primièr.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Configuracion &gt; Fichièrs jornal</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Eveniment</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Totes los eveniments</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Execucions (debuta e fin)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Lo camin conten</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Linhas</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrar</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Seguir : mostrar las linhas novèlas a mesura que son escrichas</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Camin e detalhs</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Cap de linha del jornal correspond.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Çò que l&apos;enregistrament modificariá</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Çò que es estat modificat</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Enregistrat dins settings/override/image.ini.append.php, doncas una valor aquí prima sus cada siteaccess. Las valors afichadas son aquelas en vigor per aqueste siteaccess. Abans d&apos;enregistrar, vos es demandat de confirmar vòstra identitat.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Cossí los aliases son fabricats e liurats.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Recuperacion de las imatges mancantas d&apos;una autra installacion (alpha, dev, beta, stage, pro, post, arc). La produccion (pro) recupèra jamai.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Paramètre</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valor</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Dins settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>L&apos;adreça de cada font e lo nom del secret que conten sos identificants (user:password o Bearer &lt;token&gt;). La valor d&apos;un secret es definida dins Configuracion &gt; Secrets e jamai afichada aquí.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Previsualizar las modificacions</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Enregistrar</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Seguiment : actualizat a %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>En pausa</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Lo flux a pas respondut ; novèl assag.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Lo prètzfach es acabat.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: los modèls recebon l&apos;adreça, l&apos;alias es fabricat quand es demandat. render: lo modèl lo fabrica pendent l&apos;afichatge de la pagina (lo compòrtament d&apos;origina).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>L&apos;adreça d&apos;un alias pas encara fabricat : token (signada, a pas besonh de basa de donadas), ids-token, ids, node o storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: una redireccion cap al fichièr quand lo servidor web sèrv l&apos;emmagazinatge, siquenon lo fichièr es transmés en flux.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Segondas qu&apos;una demanda pòt passar a fabricar o recuperar un alias ; puèi respond l&apos;emplaçament e un prètzfach acaba lo trabalh.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Lo convertidor ensajat en primièr per las variantas WebP e AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Respondre en WebP o AVIF als navegadors que lo demandan, per los aliases que listan Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Una imatge neutra de la bona talha tant qu&apos;una imatge manca.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Un pichon escript que remplaça los emplaçaments per l&apos;imatge vertadièra quand es aquí.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Aprèp la publicacion, un prètzfach fabrica los aliases de las imatges novèlas per cada siteaccess ligat.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Conversions simultanèas sus un servidor.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>La prioritat de processús (nice) de las execucions en massa, 0 a 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Segondas que los navegadors e los caches pòdon gardar un alias fabricat.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Segondas que l&apos;adreça d&apos;una imatge de borrolhon o de previsualizacion demòra valabla.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Segondas que la clau de signatura precedenta demòra valabla aprèp un cambiament.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>L&apos;environament d&apos;aquesta installacion.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>L&apos;environament d&apos;ont las imatges mancantas son recuperadas ; none: degun fichièr es recuperat.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Una per linha : prefix d&apos;emmagazinatge local;prefix o adreça de la font, per de camins d&apos;emmagazinatge diferents.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Segondas que pòt durar una demanda a la font.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Lo mai grand fichièr près de la font, en octets.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Fracasses a la seguida aprèp los quals la font es mesa en pausa.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Quant de temps una font en error es mesa en pausa.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Enviar un corrièl als administrators quand la font es mesa en pausa (una còp per ora al mai).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Una adreça electronica per linha ; void : l&apos;AdminEmail de site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>L&apos;adreça de l&apos;installacion font %block, per exemple https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Lo nom del secret amb los identificants, o env:VARIABLE. Jamai los identificants eles-meteisses.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(cap)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Per defaut : %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Definit aquí ; cochatz per lo suprimir</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>eretat</translation>
     </message>
 </context>
 </TS>

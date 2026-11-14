@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>ইম্পোর্ট/এক্সপোর্ট</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>ইমেজ এলিয়াসশিং</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>আইটেম অসিগী শেম্বা</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>সাবট্রীগী শেম্বা</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>আইটেম অসিগী মতুংদা শেম্বা</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>সাবট্রীগী মতুংদা শেম্বা</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>আইটেম অসিগী থোক্কনবা</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>সাবট্রীগী থোক্কনবা</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>অরিবা সাইট অমগী server ব্লোক: return গা লোয়নবা location =, কোয়েরিগীদমক if ($args), ৱাইল্দকার্দ ওইনা rewrite অমসুং অমত্তা ওইবা লমায়শিংগী map অমা.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>ইমেজ এলিয়াসশিং</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>ইমেজ এলিয়াসশিং হায়বসি টেম্প্লেটশিংনা ফংবা ইমেজ অমগী সাইজ ফাওবা অমসুং কট্লিবা কপিশিংনি। অসিদা নখোয়না মখোয়শিং করিগুম্বা ঙসি শেম্লিবা ঙকপা, সাইট অসি পুম্বদা বাল্ক রন শুরু তৌবা, ইমেজ অমা নত্ত্রগা স্টেজিং সোর্স অমা টেস্ট তৌবা, রনশিংগী হিস্ট্রি ফংবা অমসুং সেটিংশিং শীরোইনবা ফংই।</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>পেজকী অংশশিং</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ড্যাশবোর্দ</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>বাল্ক রনশিং</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>টেস্ট তৌবগী টুলশিং</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>রনগী হিস্ট্রি</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>সেটিংশিং</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>নখোয়না অসিদা পুম্বা ফংই। সেটিংশিং শীরোইনবা, জোবশিং শুরু তৌবা অমসুং ফাইলশিং শেম্বা টুলশিংদা setup/managealiases পলিসি লৌই।</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>মনুংদা থম্বগী মরমশিং</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>render মোড: পেজ অসি রেন্ডর তৌরিবদা টেম্প্লেটশিংনা পাংথোকপা এলিয়াসশিং মতাম মখলগী মতো শেম্লি। on-demand ঠিকানাশিং, প্লেসহোল্ডরশিং অমসুং ব্যাকগ্রাউন্ড জোবশিং ইশ্যু তৌদ্রে।</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>ফর্ম্যাট নেগোসিয়েশন অন তৌরি, অথোইবদি অসিগী কনভার্টর অমতাগীনা WebP ঀহনবা ঙম্দ্রে।</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>অসি স্টেজিং ইন্সটলেসন অমা, অথোইবদি মগী সোর্সতা BaseURL নত্তে: পাংথোকপা ইমেজশিং হাঙদোক্লদ্রে।</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>স্টেজিং সোর্স অসি ঙমদ্রবগী মতমদা মতম অচৌবা থাংনা ঙাংদ্রে: পোজ ফাওদ্রিবগা নত্ত্রগা নখোয়না রিসেট তৌরিবগা ইমেজ পাংথোকপাদা প্লেসহোল্ডর পীই।</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>স্টেজিং সোর্স অসি চন্দ্রগী ঙমদ্রে। মগী মরোল ভুল অসি মখাদা ফংবা ঙম্লি।</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>ইন্সটলেসন অসি প্রোডাক্সন নত্তে, অথোইবদি SyncFrom নি সোর্স অমতা পীদ্রে: করিমতা হাঙদোক্লদ্রে।</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>জোব কিউ (expqueue) ফংদ্রে: মতম পাংদ্রবা এলিয়াসশিং মখা থোকপা রিকুয়েস্টনা শেম্লি, পাবলিশ তৌরোইবগী মতোক ঙকপা শেম্বদা লেপ্লি অমসুং বাল্ক রনশিং কোংবা এরিয়াদা চেংনা থম্লি।</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>ইমেজ এলিয়াসশিংগী জোব কয়া অমা মখল মচাদা ঙমদ্রে। সেটআপ &gt; জোব কিউনা মরম ফংবা ঙম্লি।</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>বাল্ক রনশিং ঙাংদ্রে।</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>মতম ২৪ গী মনুংদা এলিয়াসশিং ঙমদ্রে। রনগী হিস্ট্রিদা মখোয়শিং লিস্ট তৌরি।</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>সাইনিং কী অসি চহি অমগী মতুংদা ফাওরে। মসি শীরোইনবদি অচৌবা ঠিকানাশিং গ্রেস মতমদা মান্য ওইনা লেপ্লি।</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>সাইনিং কী অমতা লৈদ্রে: মসি ফংবা on-demand ঠিকানাগা শেম্লি।</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>মতম ২৪ মফম</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>শেম্লিবা এলিয়াসশিং</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>জবাব পীরিবা প্লেসহোল্ডরশিং</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>ঙমদ্রবশিং</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>হাঙদোকপা ফাইলশিং</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>শুরু তৌরিবা রনশিং</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>ঙাক্লিবা / রন তৌরিবা জোবশিং</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file গী মমাংদগী %lines লাইনশিংদগী গনা তৌরে, মখোয়শিং %time ফাওবা মতুংদা পাউ।</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>মোড অমসুং পীবা</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>মোড</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>হায়বদগী</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>ঠিকানাগী মরুপ</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>পীবা</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>রিকুয়েস্ট অমগী ঙাক্লবগী মতম অরীবা</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>মতম অমদা কনভার্সনশিং</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%max দগী %busy ঙসি ব্যস্ত</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>ফর্ম্যাট নেগোসিয়েশন</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>অন</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>অফ</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>প্লেসহোল্ডর অমসুং স্ওয়াপ স্ক্রিপ্ট</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>পাবলিশ তৌরোইবগী মতোক ঙকপা শেমবা</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>সাইটকী এলিয়াসশিং</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>ফর্ম্যাট মরুপশিংগী কনভার্টরশিং</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>কনভার্টর</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>ফংবগী ক্রম</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>অমৈবা</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>অমুক</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>মতোক</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>এলিয়াসশিং মখোয়না মখোয়দা [ImageConverterSettings] গী কনভার্টরশিংনা মতাম মখলগী মতো শেম্লি; অসিশিংনা WebP অমসুং AVIF মরুপশিং ঀহনই।</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>ইনভাইরোমেন্ট অমসুং সোর্স</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>ইন্সটলেসন অসি</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(প্রোডাক্সন: মতমদা হাঙদোকপদে)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>হাঙদোকপা ফম</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>করিমতা নত্তে</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>সোর্সকী ঠিকানা</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>সেট তৌদ্রে</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>ক্রেডেন্সিয়েল</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>সিক্রেট %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>মতোক</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>স্থিতি</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>কাম তৌরি</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time ফাওবা ঙাংদ্রে</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>ঙমদ্রি</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>মতম অচৌবা ঙমদ্রবশিং</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count মতুংদা ঙাংবা</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>মমাংগী ভুল</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>মমাংগী ঙমলবা</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>ঙমদ্রবশিং রিসেট তৌনা সোর্সদা ঙাংখিদ্রিনা হাপ্পা</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>জোব কিউ</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>জোবকী মরীক</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>ঙাক্লিবা</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>রন তৌরিবা</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ঙমদ্রে</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>রেজিস্টর তৌদ্রে</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>জোব কিউ ফংদ্রে।</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>বাল্ক রনশিং ঙাংদ্রে</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time দগী %user না</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>বাল্ক রনশিং রন তৌবা ফংই</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>সাইনিং কী</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>কী</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>সিক্রেট স্টোরদা</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>অদুগা লৈদ্রে</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>চহি</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days নুমিৎ (%time দগী)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>মমাংগী কী</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time ফাওবা মান্য</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>কী শীরোইনবা</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>ঙসিগী কীনা সাইন তৌরিবা ঠিকানাশিং গ্রেস মতম (SigningKeyGrace) মনুংদা কাম তৌরি, মতুংদা পেজশিং অমসুং শেম্লোইদ্রিবগা প্লেসহোল্ডরশিংনা জবাব পীই।</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>ঙসি শীরোইনবা</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>করিগুম্বা কাম তৌই</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render মোড, স্টেজিং অমসুং লগ</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (ডিফল্ট): পেজ অমনা ঙসিগী মতমদা লৈদ্রবা এলিয়াস অমা সাইন তৌরিবা ঠিকানাদা লিংই। অহানবা রিকুয়েস্টনা ঙাক্লবগী মতম অরীবগী মনুংদা শেম্লি, নত্ত্রগা নিউট্রল প্লেসহোল্ডরনা জবাব পী অমসুং জোব অমনা কাম ফোংদোকই; ইমেজ লৈরবদা স্ওয়াপ স্ক্রিপ্টনা প্লেসহোল্ডর শীরোইনই।</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>render মোড: পেজ অসি রেন্ডর তৌরিবদা টেম্প্লেটনা এলিয়াস শেম্লি, মতাম মখলগী মতো। নখোয়না মতম করিদাগা অনি অসিগী মনুংদা শীরোইনবা ফংই; করিমতা মাইগ্রেট তৌনবা লৌদে।</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>স্টেজিং ইন্সটলেসন অমনা পাংথোকপা ওরিজিনল অমসুং এলিয়াসশিং মগী সোর্সদগী হাঙদোকই; ঙমদ্রিবা সোর্স অমা মতম অচৌবা ঙমদ্রবগী মতুংদা ঙাংই অমসুং এডমিনিস্ট্রেটরশিংনা ঘণ্টা অমদা ঈ-মেইল অমদগী অনুপ্পা ফংদে।</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>বাল্ক রনশিং অমসুং পাবলিশ তৌরোইবগী মতোক ঙকপা শেমবা অসি জোব কিউগী জোবশিং ওই, ভিজিটরশিংগীদগী মতম অনাবা প্রায়োরিটিগা। এলিয়াসশিং থোক্কনবদা Velocity গী রেসপন্স ক্যাশ সুসু ফাংই, মখোয়দগী থোক্কখিবা ফাইল অমা পীবা ঙম্দে।</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>শেম্লিবা এলিয়াস অমখক, জবাব পীরিবা প্লেসহোল্ডর অমখক, হাঙদোকপা ফাইল অমখক অমসুং রন অমখক %file গী লাইন অমনি। কমান্ড লাইনদসু টুল অসিনা অসিনা লৈ: %command।</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>জোব %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>ইমেজ %total দগী %done</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>রন</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>স্কোপ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>মরোল</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>জোব অসি কেন্সেল তৌবা</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>জোব %job অসি ইমেজ এলিয়াসশিংগী জোব নত্তে, নত্ত্রগা কিউদগী থোক্কনখ্রে।</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>রন %run গী মরোল</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>বাল্ক রনশিং ঙাংদ্রে</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time দগী %user না ঙাংখ্রে।</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>ঙাংবনা বাল্ক রন অমখক মগী ঙসিগী ইমেজ মতুংদা সার্ভর অমখকতা ঙাংই; কিউদা লিবা রনশিং ঙাক্লি। ভিজিটরশিংগী এলিয়াসশিং ঙসিসু শেম্লি।</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>বাল্ক রনশিং হাপচিনবা</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>মরম (ইচ্ছাধীন)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>বাল্ক রনশিং ঙাংবা</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>রন অমা শুরু তৌবা</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>রনশিং অসি জোব কিউগী জোবশিংনি: নখোয়না পেজ অসি থাজ্রি তৌনা মতুং হাপ্পা ফংই।</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>জোব কিউ লৈদ্রবদা রন অসি রিকুয়েস্ট অসিদা তৌই, মরিংগা ইমেজ %count ফাওবা।</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>কাম</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>শেম্বা: পাংথোকপা এলিয়াসশিং শেম্বা</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>মতুংদা শেম্বা: থোক্কনা মতুংদা শেম্বা</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>থোক্কনবা: মখোয়শিং থোক্কনবা (হায়বদগী মতুংদা শেম্লি)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>মতুংদা মিলনবা: স্টেজিং সোর্সদগী ফাইলশিং হাঙদোকপা</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(স্টেজিং ইন্সটলেসন অমদা ওইনা)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>সাইট পুম্বা</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>নোদ অমা</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>নোদ অমা অমসুং মগী সাবট্রী</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>নোদ ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>ক্লাসশিং</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>এট্রিবিউটশিং</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>শীরোইনবগী তারিখ</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>তারিখ অমা (2026-11-01) নত্ত্রগা ঙকপা মতম অমা (12 hours, 2 days)।</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>মরিংগা ইমেজ</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>এলিয়াসশিং (অমতা টিক তৌদ্রবদি: পুম্বা)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>মতুংদা মিলনবা</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>ড্রাই রন: গনা তৌবা মথক (মতুংদা মিলনবনা সোর্স চেক তৌই অমসুং করিমতা থম্দে)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>অমদা নত্তবা ফাইলশিং ওভররাইট তৌবা (মতুংদা মিলনবা)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>রন শুরু তৌবা</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>মমাংগী রনশিং</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>জোব</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>মতম ফাওবা</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>কিউদা থম্খ্রে</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>কামশিং</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>কেন্সেল তৌবা</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>বাল্ক রন নত্ত্রগা মতুংদা মিলনবা অদুগা লৈদ্রে।</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>ইমেজ অমা</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>টেম্প্লেট অমনা ঙসি ফংবা ঠিকানাশিং, এলিয়াস অমখকতা গনা তৌরিবা সাইজ অমসুং মরীকশিং, অমসুং ফাইল অমখক লৈবগা লৈদ্রিবগা।</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>হায়না সার্চ তৌবা</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>অবজেক্ট ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ফংবা</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>নখোয়না অবজেক্ট অসি থাজবা ফংদে।</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>অবজেক্ট অসিদা ইমেজ লৈদে।</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>ID অসিগী অবজেক্ট অমতা লৈদে।</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>অবজেক্ট %object, নোদ %node, ভার্সন %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>ওরিজিনল: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>ফাইল লৈ</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>ফাইল লৈদে</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name গী এলিয়াসশিং</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>এলিয়াস</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>সাইজ</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>মরীক</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ফাইল</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>ফর্ম্যাটশিং</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>টেম্প্লেটদগী ঠিকানা</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>লৈ</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>লৈদে</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>মরীক অসিদা নত্তে</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>চেক তৌবা</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>শেম্বা</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>ফিল্ড অসিদা ইমেজ লৈদে।</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>মতম</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>সোর্স অমগা লিংবা</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>স্টেজিং সোর্স অমদা HEAD রিকুয়েস্ট, ক্রেডেন্সিয়েল মমিং পীরবদি মগা। ক্রেডেন্সিয়েল পাউ, মতমদা ফংহনদে।</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>সোর্স</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>ক্রেডেন্সিয়েলগা</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>স্টোরেজ পাথ (ইচ্ছাধীন)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>লিংবা টেস্ট তৌবা</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>সোর্স অমতাদা BaseURL লৈদে। সোর্সশিং সেটিংশিংদা সেট তৌই ([AliasSource_&lt;environment&gt;])।</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>ফাওবা ঙম্লি</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>ঙাক্তখ্রে: ক্রেডেন্সিয়েল চেক তৌবা</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>সোর্সদা ফংদ্রে</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>জবাব লৈদে</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>মতম থোকখ্রে</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>অমদা পাংথোকখ্রে (মতুং চৌদ্রে)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL লৈদে</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>স্টোরেজ পাথ নত্তে</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ঠিকানা</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>স্থিতি</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>তাকখ্রে</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>সিক্রেট লৈদে</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>সিক্রেট অসি user:password নত্ত্রগা Bearer &lt;token&gt; নত্তে</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file গী অঙাংবা লাইনশিং, অঙাংবা হান্না।</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>সেটআপ &gt; লগ ফাইলশিং</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>ঘটনা</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>ঘটনা পুম্বা</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>রনশিং (শুরু অমসুং ফোংদোকপা)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>পাথ থম্লিবা</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>লাইনশিং</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>ফিল্টর</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>মতুং চৌবা: অঙাংবা লাইনশিং ঀহনবদা ফংহনবা</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>পাথ অমসুং মখাশিং</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>লগগী লাইন অমতা মিলদে।</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>থম্বদা করি শীরোই</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>করি শীরোইখ্রবা</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php দা থম্লি, মসিগী মনুংদা মান অসি siteaccess অমখকতগী অচৌবা ওই। ফংহনবা মানশিং অসি siteaccess অসিদা লিবা মানশিংনি। থম্বগী মমাংদা নখোয়না করিগুম্বা ওইরিবগা হায়না কনফর্ম তৌবদা হায়রক্লি।</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>এলিয়াসশিং করিগুম্বা শেম্লি অমসুং পীই।</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>পাংথোকপা ইমেজশিং ইন্সটলেসন অমদগী হাঙদোকপা (alpha, dev, beta, stage, pro, post, arc)। প্রোডাক্সন (pro) মতমদা হাঙদোকপদে।</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>সেটিং</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>মান</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override দা</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>সোর্স অমখকগী ঠিকানা অমসুং মগী ক্রেডেন্সিয়েল থম্লিবা সিক্রেটকী মমিং (user:password নত্ত্রগা Bearer &lt;token&gt;)। সিক্রেটকী মান সেটআপ &gt; সিক্রেটশিংদা সেট তৌই অমসুং অসিদা মতমদা ফংহনদে।</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>শীরোইনবশিং হান্না ফংবা</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>থম্বা</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>মতুং চৌবা: %time দা আপডেট তৌখ্রে</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>ঙাংখ্রে</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>ফীড জবাব পীদ্রে; অমুক হাপ্পা তৌরি।</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>জোব অসি ফোংদোকখ্রে।</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: টেম্প্লেটশিংদা ঠিকানা ফংই, এলিয়াস অসি হায়বা মতমদা শেম্লি। render: পেজ রেন্ডর তৌরিবদা টেম্প্লেটনা শেম্লি (মমাংগী মতো)।</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>ঙসিগী মতমদা শেম্দ্রিবা এলিয়াসকী ঠিকানা: token (সাইন তৌরিবা, ডেটাবেস লৌদে), ids-token, ids, node নত্ত্রগা storage।</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: ওয়েব সার্ভরনা স্টোরেজ পীরবদা ফাইলদা রিডাইরেক্ট, নত্তবদি ফাইল স্ট্রিম তৌই।</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>রিকুয়েস্ট অমনা এলিয়াস শেম্বদা নত্ত্রগা হাঙদোকপদা থম্ফম সেকেন্ডশিং; মতুংদা প্লেসহোল্ডরনা জবাব পী অমসুং জোব অমনা কাম ফোংদোকই।</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP অমসুং AVIF মরুপশিংগী মতিকপা হান্না চেক তৌরিবা কনভার্টর।</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>ব্রাউজরশিংনা হায়বদা WebP নত্ত্রগা AVIF পীবা, Formats[] থম্লিবা এলিয়াসশিংদা।</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>ইমেজ অমা লৈদ্রবদা সাইজ অসেংবা নিউট্রল ইমেজ অমা।</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>ইমেজ লৈরবদা প্লেসহোল্ডরশিংবু ঙাংবা ইমেজনা শীরোইনবা স্ক্রিপ্ট অচৌবা নত্তবা।</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>পাবলিশ তৌরোইবগী মতোক জোব অমনা অঙাংবা ইমেজশিংগী এলিয়াসশিং সম্বন্ধ থম্লিবা siteaccess অমখকতা শেম্লি।</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>সার্ভর অমদা মতম অমদা কনভার্সনশিং।</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>বাল্ক রনশিংগী প্রসেস প্রায়োরিটি (nice), ০ দগী ১৯ ফাওবা।</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>ব্রাউজর অমসুং ক্যাশশিংনা শেম্লিবা এলিয়াস থমনবা ঙম্লিবা সেকেন্ডশিং।</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>ড্রাফ্ট নত্ত্রগা প্রিভিউ ইমেজকী ঠিকানা মান্য ওইনা লেপ্লিবা সেকেন্ডশিং।</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>শীরোইনবগী মতুংদা মমাংগী সাইনিং কী মান্য ওইনা লেপ্লিবা সেকেন্ডশিং।</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>ইন্সটলেসন অসিগী ইনভাইরোমেন্ট।</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>পাংথোকপা ইমেজশিং হাঙদোকপা ইনভাইরোমেন্ট; none: করিমতা হাঙদোকপদে।</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>লাইন অমদা অমা: লোকেল স্টোরেজ প্রিফিক্স;সোর্স প্রিফিক্স নত্ত্রগা ঠিকানা, মফমশিং অমদা অমা নত্তবা স্টোরেজ পাথশিংগী মথক্তা।</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>সোর্সদা রিকুয়েস্ট অমনা থম্ফম সেকেন্ডশিং।</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>সোর্সদগী ফংবা ফাইল অচৌবা, বাইটশিংদা।</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>মখোয়গী মতুংদা সোর্স ঙাংবা মতম অচৌবা ঙমদ্রবশিং।</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>ঙমদ্রিবা সোর্স অসি কয়া মতম ঙাংই।</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>সোর্স ঙাংবদা এডমিনিস্ট্রেটরশিংদা মেইল তাক্পা (ঘণ্টা অমদা অমা মখা)।</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>লাইন অমদা ঈ-মেইল ঠিকানা অমা; লাইরদি: site.ini গী AdminEmail।</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>সোর্স ইন্সটলেসন %block গী ঠিকানা, মসিগী অহনবা https://www.example.org।</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>ক্রেডেন্সিয়েল থম্লিবা সিক্রেটকী মমিং, নত্ত্রগা env:VARIABLE। ক্রেডেন্সিয়েল মখোয়না মতমদা নত্তে।</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(মতোক)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>ডিফল্ট: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>অসিদা সেট তৌরে; থোক্কনবগী টিক তৌবা</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>অমুক্তা পাংথোকখ্রে</translation>
     </message>
 </context>
 </TS>

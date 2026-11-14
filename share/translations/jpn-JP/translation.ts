@@ -16529,6 +16529,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>インポート/エクスポート</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>画像エイリアス</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>この項目に対して生成</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>サブツリーに対して生成</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>この項目に対して再生成</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>サブツリーに対して再生成</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>この項目に対して削除</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>サブツリーに対して削除</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86452,6 +86480,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>古いサイトの server ブロック:return を使った location =、クエリ用の if ($args)、ワイルドカードとしての rewrite、個別ページの map。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>画像エイリアス</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>画像エイリアスは、テンプレートが表示する画像の拡大縮小・切り抜きされたコピーです。ここでは、その作成方法の確認、サイト全体に対する一括ジョブの実行、1つの画像またはステージングソースのテスト、実行履歴の確認、設定の変更ができます。</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>ページの構成</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ダッシュボード</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>一括実行</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>テストツール</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>実行履歴</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>設定</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>ここではすべてを閲覧できます。設定の変更、ジョブの実行、ファイルを作成するツールの使用にはポリシー setup/managealiases が必要です。</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>対応が必要な項目</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>render モード: テンプレートは、これまでどおりページのレンダリング中に不足しているエイリアスを作成します。on-demand アドレス、プレースホルダー、バックグラウンドジョブは使用されません。</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>フォーマットネゴシエーションは有効ですが、ここには WebP を書き出せるコンバーターがありません。</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>これはステージングのインストールですが、そのソースに BaseURL がありません。不足している画像は取得できません。</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>ステージングソースは連続した失敗により一時停止されています。一時停止が終わるかリセットするまで、不足している画像にはプレースホルダーが返されます。</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>ステージングソースで最近失敗が発生しました。最後のエラーは下を参照してください。</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>このインストールは本番ではありませんが、SyncFrom にソースが指定されていません。何も取得されません。</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>ジョブキュー (expqueue) を利用できません。時間内に作成できなかったエイリアスは次のリクエストで作成され、公開後の事前生成はスキップされ、一括実行は小さな範囲に限定されます。</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>画像エイリアスの一部のジョブが完全に失敗しました。理由は システム設定 &gt; ジョブキュー で確認できます。</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>一括実行は一時停止中です。</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>過去24時間にエイリアスの失敗がありました。実行履歴に一覧があります。</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>署名キーが1年以上前のものです。ローテーションすると、猶予期間のあいだ古いアドレスが有効なまま残ります。</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>署名キーはまだありません。最初の on-demand アドレスとともに作成されます。</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>過去24時間</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>生成されたエイリアス</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>返されたプレースホルダー</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>失敗</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>ステージされたファイル</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>開始された実行</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>待機中 / 実行中のジョブ</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file の最後の %lines 行から集計しています。対象は %time までさかのぼります。</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>モードと配信</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>モード</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>オンデマンド</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>アドレス形式</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>配信</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>リクエストの最長待機時間</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds 秒</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>同時変換数</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>現在 %max 中 %busy が使用中</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>フォーマットネゴシエーション</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>オン</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>オフ</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>プレースホルダーと置換スクリプト</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>公開後の事前生成</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>サイトのエイリアス</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>フォーマットバリアントのコンバーター</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>コンバーター</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>試行済み</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>優先</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>はい</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>いいえ</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>エイリアス自体は、これまでどおり [ImageConverterSettings] のコンバーターが作成します。ここで挙げたものは WebP と AVIF のバリアントを書き出します。</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>環境とソース</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>このインストール</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(本番: 取得しません)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>取得元</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>なし</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>ソースのアドレス</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>未設定</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>認証情報</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>シークレット %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>なし</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>状態</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>正常</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time まで一時停止中</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>失敗中</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>連続失敗回数</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count 回で一時停止</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>最後のエラー</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>最後の成功</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>失敗をリセットしてソースに再度問い合わせる</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>ジョブキュー</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>ジョブの種類</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>待機中</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>実行中</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>失敗</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>未登録</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>ジョブキューを利用できません。</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>一括実行は一時停止中</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time から %user により</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>一括実行を許可</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>署名キー</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>キー</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>シークレットストア内</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>まだありません</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>経過期間</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days 日 (%time から)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>前のキー</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time まで有効</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>キーをローテーションする</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>現在のキーで署名されたアドレスは猶予期間 (SigningKeyGrace) のあいだ引き続き使えます。その後は、ページが再作成されるまでプレースホルダーを返します。</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>今すぐローテーション</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>仕組み</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand、render モード、ステージング、ログ</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (既定): ページは、まだ存在しないエイリアスを署名付きアドレスにリンクします。最初のリクエストが最長待機時間内にそれを作成し、間に合わなければ中立的なプレースホルダーを返してジョブが処理を完了します。画像ができると、置換スクリプトがプレースホルダーを置き換えます。</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>render モード: テンプレートが、これまでどおりページのレンダリング中にエイリアスを作成します。2つはいつでも切り替えられ、移行は不要です。</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>ステージングのインストールは、不足している元画像とエイリアスをソースから取得します。失敗が続くソースは一時停止され、管理者へのメールは1時間に最大1通です。</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>一括実行と公開後の事前生成はジョブキューのジョブで、訪問者のリクエストより低い優先度で処理されます。エイリアスを削除すると Velocity のレスポンスキャッシュも消去されるため、削除したファイルがそこから配信されることはありません。</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>作成されたエイリアス、返されたプレースホルダー、ステージされたファイル、実行のそれぞれが %file の1行になります。コマンドラインにも同じツールがあります: %command。</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>ジョブ %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%total 件中 %done 件の画像</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>実行</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>範囲</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>結果</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>このジョブをキャンセル</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>ジョブ %job は画像エイリアスのジョブではないか、キューから削除されました。</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>実行 %run の結果</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>一括実行は一時停止中です</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time から %user により一時停止中。</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>一時停止すると、すべてのサーバーで各一括実行が現在の画像の処理後に停止します。キュー内の実行は待機します。訪問者のエイリアスは引き続き作成されます。</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>一括実行を再開</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>理由 (任意)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>一括実行を一時停止</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>実行を開始</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>実行はジョブキューのジョブです。ページを離れて、後で戻ることができます。</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>ジョブキューがない場合、実行はこのリクエスト内で、最大 %count 件の画像まで行われます。</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>操作</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: 不足しているエイリアスを作成</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: 削除して作り直す</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: 削除する (オンデマンドで再作成されます)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: ステージングソースからファイルを取得</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(ステージングのインストールのみ)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>サイト全体</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>1つのノード</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>ノードとそのサブツリー</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ノードID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>クラス</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>属性</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>変更日時の下限</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>日付 (2026-11-01) または経過時間 (12 hours、2 days)。</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>最大画像数</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>エイリアス (未選択の場合: すべて)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>ドライラン: 数えるだけ (resync はソースを確認するだけで何も保存しません)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>異なるファイルを上書き (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>実行を開始</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>最近の実行</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>ジョブ</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>進捗</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>キュー登録</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>操作</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>キャンセル</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>一括実行や resync はまだありません。</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>1つの画像</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>テンプレートが現在受け取るアドレス、各エイリアスについて計算されたサイズと種類、各ファイルの有無。</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>検索条件</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>オブジェクトID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>表示</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>このオブジェクトを読む権限がありません。</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>このオブジェクトには画像がありません。</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>このIDのオブジェクトはありません。</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>オブジェクト %object、ノード %node、バージョン %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>オリジナル: %width x %height、%type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>ファイルあり</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>ファイルなし</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name のエイリアス</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>エイリアス</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>サイズ</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>種類</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ファイル</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>フォーマット</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>テンプレート内のアドレス</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>あり</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>なし</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>この種類には非対応</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>確認</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>作成</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>このフィールドに画像がありません。</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>時間</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>ソースへの接続</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>ステージングソースへの HEAD リクエスト。認証情報が指定されている場合はそれを使います。認証情報は送信されますが、表示されることはありません。</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>ソース</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>認証情報あり</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>ストレージパス (任意)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>接続をテスト</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>BaseURL を持つソースがありません。ソースは設定で指定します ([AliasSource_&lt;environment&gt;])。</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>到達可能</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>拒否されました: 認証情報を確認してください</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>ソースに見つかりません</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>応答なし</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>タイムアウト</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>リダイレクトされました (追跡なし)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL なし</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>ストレージパスではありません</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>アドレス</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ステータス</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>送信済み</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>シークレットがありません</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>シークレットが user:password または Bearer &lt;token&gt; の形式ではありません</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file の最新の行 (新しい順)。</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>システム設定 &gt; ログファイル</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>イベント</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>すべてのイベント</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>実行 (開始と終了)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>パスに含まれる文字列</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>行数</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>フィルター</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>追跡: 書き込まれた新しい行を表示</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>パスと詳細</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>一致するログの行はありません。</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>保存すると変わる内容</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>変更された内容</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php に保存されるため、ここでの値がすべての siteaccess より優先されます。表示される値は、この siteaccess で有効なものです。保存する前に本人確認が求められます。</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>エイリアスの作成と配信の方法。</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>不足している画像を別のインストールから取得します (alpha, dev, beta, stage, pro, post, arc)。本番 (pro) は取得しません。</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>設定項目</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>値</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override 内</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>各ソースのアドレスと、その認証情報を保持するシークレットの名前 (user:password または Bearer &lt;token&gt;)。シークレットの値は システム設定 &gt; シークレット で設定し、ここには表示されません。</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>変更をプレビュー</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>保存</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>追跡中: %time に更新</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>一時停止中</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>フィードが応答しませんでした。再試行しています。</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>ジョブは終了しました。</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: テンプレートはアドレスを受け取り、エイリアスは要求されたときに作成されます。render: テンプレートがページのレンダリング中に作成します (従来の動作)。</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>まだ作成されていないエイリアスのアドレス: token (署名付き、データベース不要)、ids-token、ids、node、storage。</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: Web サーバーがストレージを配信する場合はファイルへのリダイレクト、そうでなければファイルをストリーミングします。</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>1つのリクエストがエイリアスの作成または取得に使える秒数。それを過ぎるとプレースホルダーを返し、ジョブが処理を完了します。</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP と AVIF のバリアントで最初に試すコンバーター。</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Formats[] を指定したエイリアスについて、要求するブラウザーに WebP または AVIF を返します。</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>画像が不足している間に表示される、適切なサイズの中立的な画像。</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>画像が用意できたときに、プレースホルダーを実際の画像に置き換える小さなスクリプト。</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>公開後、ジョブが関連するすべての siteaccess について新しい画像のエイリアスを作成します。</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>1台のサーバーでの同時変換数。</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>一括実行のプロセス優先度 (nice)、0 から 19。</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>ブラウザーとキャッシュが作成済みエイリアスを保持できる秒数。</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>下書きまたはプレビュー画像のアドレスが有効な秒数。</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>ローテーション後に前の署名キーが有効な秒数。</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>このインストールの環境。</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>不足している画像の取得元の環境。none: 何も取得しません。</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>1行に1つ: ローカルストレージのプレフィックス;ソースのプレフィックスまたはアドレス (ストレージパスが異なる場合)。</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>ソースへの1回のリクエストにかけられる秒数。</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>ソースから取得する最大ファイルサイズ (バイト)。</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>ソースを一時停止するまでの連続失敗回数。</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>失敗しているソースを一時停止しておく期間。</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>ソースが一時停止されたときに管理者へメールを送ります (最大1時間に1回)。</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>1行に1つのメールアドレス。空の場合: site.ini の AdminEmail。</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>ソースのインストール %block のアドレス。例: https://www.example.org。</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>認証情報を保持するシークレットの名前、または env:VARIABLE。認証情報そのものは指定しないでください。</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(なし)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>既定値: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>ここで設定済み。チェックすると削除</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>継承</translation>
     </message>
 </context>
 </TS>

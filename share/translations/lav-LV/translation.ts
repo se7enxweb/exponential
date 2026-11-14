@@ -16529,6 +16529,34 @@ Piezīme: pakotnes netiks atinstalētas.</translation>
         <source>Import/Export</source>
         <translation>Importēšana/eksportēšana</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Attēlu aizstājvārdi</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Ģenerēt šim vienumam</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Ģenerēt apakškokam</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Ģenerēt no jauna šim vienumam</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Ģenerēt no jauna apakškokam</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Noņemt šim vienumam</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Noņemt apakškokam</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86452,6 +86480,997 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Vecas vietnes server bloks: location = ar return, if ($args) vaicājumam, rewrite kā aizstājējzīme un atsevišķu lapu map.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Attēlu aizstājvārdi</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Attēlu aizstājvārdi ir attēla samazinātās un apgrieztās kopijas, ko rāda veidnes. Šeit redzat, kā tie tiek veidoti, palaižat masveida uzdevumus visā vietnē, pārbaudāt vienu attēlu vai staging avotu, sekojat palaišanas vēsturei un mainiet iestatījumus.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Lapas daļas</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Informācijas panelis</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Masveida palaišanas</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Pārbaudes rīki</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Palaišanas vēsture</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Iestatījumi</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Šeit varat apskatīt visu. Iestatījumu maiņai, uzdevumu palaišanai un rīkiem, kas veido failus, nepieciešama politika setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Kam nepieciešama uzmanība</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Režīms render: veidnes trūkstošos aizstājvārdus izveido lapas atveidošanas laikā, kā līdz šim. On-demand adreses, vietturi un fona uzdevumi netiek izmantoti.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Formātu saskaņošana ir ieslēgta, bet neviens šeit esošais pārveidotājs nevar rakstīt WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Šī ir staging instalācija, taču tās avotam nav BaseURL: trūkstošos attēlus nevar iegūt.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Staging avots ir apturēts pēc secīgām kļūmēm: trūkstošie attēli saņem vietturus, līdz pauze beidzas vai jūs to atiestatāt.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Staging avots nesen atteicās. Pēdējo kļūdu skatiet zemāk.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Šī instalācija nav produkcijas, taču SyncFrom nenorāda nevienu avotu: nekas netiek iegūts.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Uzdevumu rinda (expqueue) nav pieejama: aizstājvārdus, kas nepaspēj laikā, izveido nākamais pieprasījums, pirmsģenerēšana pēc publicēšanas tiek izlaista, un masveida palaišanas ir ierobežotas ar nelielu apjomu.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Daži attēlu aizstājvārdu uzdevumi neizdevās pavisam. Iemeslu rāda Iestatīšana &gt; Uzdevumu rinda.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Masveida palaišanas ir apturētas.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Pēdējo 24 stundu laikā aizstājvārdu veidošana neizdevās. Palaišanas vēsture tos uzskaita.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Parakstīšanas atslēga ir vecāka par gadu. To nomainot, vecās adreses paliek derīgas atlikšanas periodā.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Parakstīšanas atslēgas vēl nav: tā tiek izveidota ar pirmo on-demand adresi.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Pēdējās 24 stundas</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Izveidotie aizstājvārdi</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Atbildētie vietturi</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Kļūmes</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Sagatavotie faili</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Sāktās palaišanas</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Uzdevumi gaida / darbojas</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Skaitīts no pēdējām %lines %file rindām, kas sniedzas līdz %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Režīms un piegāde</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Režīms</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>pēc pieprasījuma</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Adreses veids</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Piegāde</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Pieprasījuma garākā gaidīšana</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Vienlaicīgas konvertēšanas</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy no %max šobrīd aizņemtas</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Formātu saskaņošana</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ieslēgta</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>izslēgta</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Vietturis un nomaiņas skripts</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Pirmsģenerēšana pēc publicēšanas</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Vietnes aizstājvārdi</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Formātu variantu pārveidotāji</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Pārveidotājs</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Mēģinājumu secība</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>vēlamais</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>jā</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nē</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Pašus aizstājvārdus veido [ImageConverterSettings] pārveidotāji, kā līdz šim; šie raksta WebP un AVIF variantus.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Vide un avots</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Šī instalācija</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(produkcija: nekad neiegūst)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Iegūst no</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>nekā</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Avota adrese</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>nav iestatīta</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Akreditācijas dati</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>noslēpums %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nav</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stāvoklis</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>darbojas</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>apturēts līdz %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>kļūmīgs</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Secīgas kļūmes</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>pauze pēc %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Pēdējā kļūda</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Pēdējā sekmīgā reize</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Atiestatīt kļūmes un vēlreiz vaicāt avotam</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Uzdevumu rinda</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Uzdevuma veids</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Gaida</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Notiek izpilde</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Neizdevās</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>nav reģistrēts</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Uzdevumu rinda nav pieejama.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Masveida palaišanas apturētas</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>kopš %time, lietotājs %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Masveida palaišanas drīkst darboties</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Parakstīšanas atslēga</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Atslēga</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>noslēpumu glabātuvē</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>vēl nav</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Vecums</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days dienas (kopš %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Iepriekšējā atslēga</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>derīga līdz %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Nomainīt atslēgu</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Ar pašreizējo atslēgu parakstītās adreses turpina darboties atlikšanas periodā (SigningKeyGrace), pēc tam tās atbild ar vietturiem, līdz lapas tiek izveidotas no jauna.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Nomainīt tagad</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Kā tas darbojas</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, režīms render, staging un žurnāls</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (noklusējums): lapa saista vēl neesošu aizstājvārdu ar parakstītu adresi. Pirmais pieprasījums to izveido garākās gaidīšanas ietvaros, citādi atbild ar neitrālu vietturi, bet darbu pabeidz uzdevums; nomaiņas skripts vietturi aizstāj, kad attēls ir gatavs.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Režīms render: veidne aizstājvārdu izveido lapas atveidošanas laikā, kā līdz šim. Starp abiem var pārslēgties jebkurā laikā; nekas nav jāmigrē.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Staging instalācija no sava avota iegūst trūkstošos oriģinālus un aizstājvārdus; kļūmīgs avots tiek apturēts pēc secīgām kļūmēm, un administratori saņem ne vairāk kā vienu e-pastu stundā.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Masveida palaišanas un pirmsģenerēšana pēc publicēšanas ir uzdevumu rindas uzdevumi ar zemāku prioritāti nekā apmeklētāji. Aizstājvārdu noņemšana arī iztīra Velocity atbilžu kešatmiņu, lai noņemtais fails no tās netiktu sniegts.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Katrs izveidotais aizstājvārds, atbildētais vietturis, sagatavotais fails un palaišana ir rinda failā %file. Komandrindā ir tie paši rīki: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Uzdevums %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done no %total attēliem</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Palaišana</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Apjoms</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultāts</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Atcelt šo uzdevumu</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Uzdevums %job nav attēlu aizstājvārdu uzdevums, vai arī tas ir izņemts no rindas.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Palaišanas %run rezultāts</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Masveida palaišanas ir apturētas</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Apturēts kopš %time, lietotājs %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Pauze aptur katru masveida palaišanu pēc pašreizējā attēla visos serveros; rindā esošās palaišanas gaida. Apmeklētāju aizstājvārdi joprojām tiek veidoti.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Atsākt masveida palaišanas</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Iemesls (neobligāti)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Apturēt masveida palaišanas</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Sākt palaišanu</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Palaišanas ir uzdevumu rindas uzdevumi: lapu var pamest un atgriezties vēlāk.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Bez uzdevumu rindas palaišana tiek veikta šajā pieprasījumā, ne vairāk kā %count attēliem.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Darbība</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Ģenerēt: izveidot trūkstošos aizstājvārdus</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Ģenerēt no jauna: noņemt un izveidot tos no jauna</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Tīrīt: noņemt tos (pēc pieprasījuma tiek izveidoti no jauna)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Sinhronizēt no jauna: iegūt failus no staging avota</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(tikai staging instalācijā)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Visa vietne</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Viens mezgls</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Mezgls un tā apakškoks</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Mezgla ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klases</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atribūti</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Mainīts kopš</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Datums (2026-11-01) vai laiks atpakaļ (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Ne vairāk kā attēlu</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Aizstājvārdi (nekas nav atzīmēts: visi)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Izmēģinājuma palaišana: tikai saskaitīt (resync pārbauda avotu un neko nesaglabā)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Pārrakstīt atšķirīgos failus (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Sākt palaišanu</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Jaunākās palaišanas</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Uzdevums</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Gaita</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Rindā</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Darbības</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Atcelt</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Masveida palaišanas vai resync vēl nav.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Viens attēls</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Adreses, ko veidne saņem tagad, katram aizstājvārdam aprēķinātie izmēri un tipi un vai fails ir.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Meklēt pēc</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Objekta ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rādīt</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Jums nav tiesību lasīt šo objektu.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Šim objektam nav attēla.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Objekta ar šo ID nav.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>objekts %object, mezgls %node, versija %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Oriģināls: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>fails ir</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>faila nav</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name aizstājvārdi</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Aizstājvārds</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Lielums</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tips</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fails</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Formāti</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Adrese veidnē</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>ir</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>nav</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>nav šim tipam</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Pārbaudīt</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Izveidot</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Šajā laukā nav attēla.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Laiks</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Savienojums ar avotu</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>HEAD pieprasījums staging avotam ar tā akreditācijas datiem, ja tie ir norādīti. Akreditācijas dati tiek nosūtīti, bet nekad netiek rādīti.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Avots</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>ar akreditācijas datiem</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Glabātuves ceļš (neobligāti)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Pārbaudīt savienojumu</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Nevienam avotam nav BaseURL. Avotus iestata iestatījumos ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>sasniedzams</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>noraidīts: pārbaudiet akreditācijas datus</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>avotā nav atrasts</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>nav atbildes</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>noildze</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>novirzīts (nesekots)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>nav BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>nav glabātuves ceļš</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adrese</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Statuss</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>nosūtīts</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>noslēpuma nav</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>noslēpums nav user:password vai Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Jaunākās %file rindas, jaunākās pirmās.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Iestatīšana &gt; Žurnālfaili</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Notikums</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Visi notikumi</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Palaišanas (sākums un beigas)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Ceļš satur</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Rindas</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrs</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Sekot: rādīt jaunās rindas, kad tās tiek ierakstītas</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Ceļš un informācija</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Neviena žurnāla rinda neatbilst.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Ko saglabāšana mainītu</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Kas mainīts</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Saglabāts failā settings/override/image.ini.append.php, tāpēc šeit norādīta vērtība ir svarīgāka par jebkuru siteaccess. Parādītas ir šim siteaccess spēkā esošās vērtības. Pirms saglabāšanas tiek lūgts apstiprināt, ka tas esat jūs.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Kā aizstājvārdi tiek veidoti un piegādāti.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Trūkstošo attēlu iegūšana no citas instalācijas (alpha, dev, beta, stage, pro, post, arc). Produkcija (pro) nekad neiegūst.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Iestatījums</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Vērtība</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Failā settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Katra avota adrese un tā noslēpuma nosaukums, kurā glabājas avota akreditācijas dati (user:password vai Bearer &lt;token&gt;). Noslēpuma vērtību iestata sadaļā Iestatīšana &gt; Noslēpumi, un šeit tā nekad netiek rādīta.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Priekšskatīt izmaiņas</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Saglabāt</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Sekošana: atjaunināts %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Apturēts</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Plūsma neatbildēja; mēģina vēlreiz.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Uzdevums ir beidzies.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: veidnes saņem adresi, bet aizstājvārds tiek izveidots, kad tas tiek pieprasīts. render: veidne to izveido lapas atveidošanas laikā (sākotnējā darbība).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Vēl neizveidota aizstājvārda adrese: token (parakstīta, datubāze nav vajadzīga), ids-token, ids, node vai storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: novirzīšana uz failu, kad tīmekļa serveris apkalpo glabātuvi, citādi fails tiek straumēts.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Sekundes, cik pieprasījums drīkst pavadīt, veidojot vai iegūstot aizstājvārdu; pēc tam tas atbild ar vietturi, bet darbu pabeidz uzdevums.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Pārveidotājs, ko mēģina pirmo WebP un AVIF variantiem.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Atbildēt ar WebP vai AVIF pārlūkiem, kas to pieprasa, aizstājvārdiem, kuros norādīts Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Neitrāls pareiza izmēra attēls, kamēr īstā attēla nav.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Neliels skripts, kas vietturus aizstāj ar īsto attēlu, kad tas ir pieejams.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Pēc publicēšanas uzdevums izveido jauno attēlu aizstājvārdus katram saistītajam siteaccess.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Vienlaicīgas konvertēšanas vienā serverī.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Masveida palaišanu procesa prioritāte (nice), no 0 līdz 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Sekundes, cik pārlūki un kešatmiņas drīkst glabāt izveidotu aizstājvārdu.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Sekundes, cik ilgi paliek derīga melnraksta vai priekšskatījuma attēla adrese.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Sekundes, cik ilgi pēc nomaiņas paliek derīga iepriekšējā parakstīšanas atslēga.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Šīs instalācijas vide.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Vide, no kuras tiek iegūti trūkstošie attēli; none: nekas netiek iegūts.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Viens rindā: lokālās glabātuves prefikss;avota prefikss vai adrese, glabātuves ceļiem, kas atšķiras.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Sekundes, cik var ilgt viens pieprasījums avotam.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Lielākais no avota ņemtais fails baitos.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Secīgu kļūmju skaits, pēc kura avots tiek apturēts.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Cik ilgi kļūmīgs avots tiek apturēts.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Sūtīt administratoriem e-pastu, kad avots tiek apturēts (ne biežāk kā reizi stundā).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Viena e-pasta adrese rindā; tukšs: site.ini AdminEmail.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Avota instalācijas %block adrese, piem., https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Noslēpuma ar akreditācijas datiem nosaukums vai env:VARIABLE. Nekad paši akreditācijas dati.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(nav)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Noklusējums: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Iestatīts šeit; atzīmējiet, lai noņemtu</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>mantots</translation>
     </message>
 </context>
 </TS>

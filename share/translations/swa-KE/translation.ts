@@ -16588,6 +16588,34 @@ Kumbuka: Usakinishaji wa vifurushi hautaondolewa.</translation>
         <source>Import/Export</source>
         <translation>Leta/Hamisha</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Lakabu za picha</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Tengeneza kwa kipengee hiki</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Tengeneza kwa mti mdogo</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Tengeneza upya kwa kipengee hiki</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Tengeneza upya kwa mti mdogo</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Ondoa kwa kipengee hiki</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Ondoa kwa mti mdogo</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86420,6 +86448,997 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Kizuizi cha server cha tovuti ya zamani: location = pamoja na return, if ($args) kwa hoja, rewrite kama kadi-pori na map ya kurasa moja moja.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Lakabu za picha</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Lakabu za picha ni nakala zilizopunguzwa ukubwa na kukatwa za picha ambazo violezo huonyesha. Hapa unaona jinsi zinavyotengenezwa, unaendesha kazi za wingi kwenye tovuti, unajaribu picha moja au chanzo cha staging, unafuatilia historia ya uendeshaji na kubadilisha mipangilio.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Sehemu za ukurasa</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dashibodi</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Uendeshaji wa wingi</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Zana za majaribio</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Historia ya uendeshaji</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Mipangilio</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Unaweza kuangalia kila kitu hapa. Kubadilisha mipangilio, kuendesha kazi na zana zinazotengeneza faili kunahitaji sera setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Kinachohitaji uangalizi</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Hali ya render: violezo hutengeneza lakabu zinazokosekana wakati ukurasa unaonyeshwa, kama awali. Anwani za on-demand, vishikilia nafasi na kazi za usuli hazitumiki.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Majadiliano ya umbizo yamewashwa, lakini hakuna kibadilishaji hapa kinachoweza kuandika WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Huu ni usakinishaji wa staging, lakini chanzo chake hakina BaseURL: picha zinazokosekana haziwezi kuletwa.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Chanzo cha staging kimesitishwa baada ya kushindwa mfululizo: picha zinazokosekana hupata vishikilia nafasi hadi kusitishwa kuishe au uweke upya.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Chanzo cha staging kimeshindwa hivi karibuni. Tazama hitilafu yake ya mwisho hapa chini.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Usakinishaji huu si wa uzalishaji, lakini SyncFrom haitaji chanzo chochote: hakuna kinacholetwa.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Foleni ya kazi (expqueue) haipatikani: lakabu zinazochelewa hutengenezwa na ombi linalofuata, utengenezaji wa awali baada ya kuchapisha unarukwa na uendeshaji wa wingi unapunguzwa hadi upeo mdogo.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Baadhi ya kazi za lakabu za picha zimeshindwa moja kwa moja. Usanidi &gt; Foleni ya kazi inaonyesha sababu.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Uendeshaji wa wingi umesitishwa.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Lakabu zimeshindwa katika saa 24 zilizopita. Historia ya uendeshaji inazionyesha.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Ufunguo wa kusaini una zaidi ya mwaka mmoja. Kuuzungusha kunafanya anwani za zamani ziendelee kufanya kazi katika kipindi cha neema.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Bado hakuna ufunguo wa kusaini: hutengenezwa na anwani ya kwanza ya on-demand.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Saa 24 zilizopita</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Lakabu zilizotengenezwa</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Vishikilia nafasi vilivyojibiwa</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Kushindwa</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Faili zilizowekwa staging</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Uendeshaji ulioanza</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Kazi zinazosubiri / zinazoendeshwa</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Imehesabiwa kutoka mistari %lines ya mwisho ya %file, inayorudi nyuma hadi %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Hali na uwasilishaji</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Hali</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>on demand</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Muundo wa anwani</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Uwasilishaji</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Muda mrefu zaidi wa kusubiri wa ombi</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Ubadilishaji kwa wakati mmoja</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy kati ya %max zina shughuli sasa</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Majadiliano ya umbizo</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>imewashwa</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>imezimwa</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Kishikilia nafasi na hati ya kubadilisha</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Utengenezaji wa awali baada ya kuchapisha</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Lakabu za tovuti</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Vibadilishaji vya matoleo ya umbizo</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Kibadilishaji</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Imejaribiwa</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>inayopendelewa</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ndiyo</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>hapana</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Lakabu zenyewe hutengenezwa na vibadilishaji vya [ImageConverterSettings], kama awali; hivi huandika matoleo ya WebP na AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Mazingira na chanzo</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Usakinishaji huu</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(uzalishaji: hauleti kamwe)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Huleta kutoka</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>hakuna</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Anwani ya chanzo</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>haijawekwa</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Kitambulisho cha ufikiaji</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>siri %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>hakuna</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Hali</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>inafanya kazi</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>imesitishwa hadi %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>inashindwa</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Kushindwa mfululizo</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>kusitisha baada ya %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Hitilafu ya mwisho</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Mafanikio ya mwisho</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Weka upya kushindwa na uulize chanzo tena</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Foleni ya kazi</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Aina ya kazi</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Zinasubiri</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Zinaendeshwa</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Zilizoshindwa</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>haijasajiliwa</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Foleni ya kazi haipatikani.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Uendeshaji wa wingi umesitishwa</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>tangu %time na %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Uendeshaji wa wingi unaweza kuendelea</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Ufunguo wa kusaini</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Ufunguo</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>katika hifadhi ya siri</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>bado hakuna</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Umri</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>siku %days (tangu %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Ufunguo wa awali</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>halali hadi %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Zungusha ufunguo</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Anwani zilizosainiwa kwa ufunguo wa sasa zinaendelea kufanya kazi katika kipindi cha neema (SigningKeyGrace), kisha hujibu kwa vishikilia nafasi hadi kurasa zitengenezwe tena.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Zungusha sasa</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Jinsi inavyofanya kazi</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, hali ya render, staging na kumbukumbu</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (chaguo-msingi): ukurasa huunganisha lakabu ambayo bado haipo kwenye anwani iliyosainiwa. Ombi la kwanza huitengeneza ndani ya muda mrefu zaidi wa kusubiri, vinginevyo hujibu kishikilia nafasi kisichoegemea upande wowote na kazi humaliza; hati ya kubadilisha hubadilisha kishikilia nafasi picha inapokuwepo.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Hali ya render: kiolezo hutengeneza lakabu wakati ukurasa unaonyeshwa, kama awali. Badilisha kati ya hizi mbili wakati wowote; hakuna kinachohitaji kuhamishwa.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Usakinishaji wa staging huleta asili na lakabu zinazokosekana kutoka chanzo chake; chanzo kinachoshindwa husitishwa baada ya kushindwa mfululizo na wasimamizi hupata barua pepe moja kwa saa kwa kiwango cha juu.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Uendeshaji wa wingi na utengenezaji wa awali baada ya kuchapisha ni kazi za foleni ya kazi, zenye kipaumbele cha chini kuliko wageni. Kuondoa lakabu pia husafisha akiba ya majibu ya Velocity, ili faili iliyoondolewa isitolewe kutoka humo.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Kila lakabu iliyotengenezwa, kishikilia nafasi kilichojibiwa, faili iliyowekwa staging na uendeshaji ni mstari wa %file. Mstari wa amri una zana hizo hizo: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Kazi %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>picha %done kati ya %total</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Uendeshaji</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Upeo</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Matokeo</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Ghairi kazi hii</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Kazi %job si kazi ya lakabu za picha, au iliondolewa kwenye foleni.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Matokeo ya uendeshaji %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Uendeshaji wa wingi umesitishwa</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Umesitishwa tangu %time na %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Kusitisha husimamisha kila uendeshaji wa wingi baada ya picha yake ya sasa, kwenye seva zote; uendeshaji ulio kwenye foleni unasubiri. Lakabu za wageni bado hutengenezwa.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Endelea na uendeshaji wa wingi</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Sababu (hiari)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Sitisha uendeshaji wa wingi</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Anza uendeshaji</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Uendeshaji ni kazi za foleni ya kazi: unaweza kuondoka kwenye ukurasa na kurudi.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Bila foleni ya kazi uendeshaji hufanyika katika ombi hili, kwa picha %count kwa kiwango cha juu.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Kitendo</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: tengeneza lakabu zinazokosekana</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: ondoa na uzitengeneze tena</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: ziondoe (hutengenezwa tena on-demand)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: leta faili kutoka chanzo cha staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(kwenye usakinishaji wa staging tu)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Tovuti nzima</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Nodi moja</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Nodi na mti wake mdogo</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Kitambulisho cha nodi</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Madarasa</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Sifa</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Imebadilishwa tangu</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Tarehe (2026-11-01) au muda uliopita (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Picha nyingi zaidi</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Lakabu (hakuna iliyochaguliwa: zote)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Jaribio: hesabu tu (resync hukagua chanzo na haihifadhi chochote)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Andika juu ya faili zinazotofautiana (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Anza uendeshaji</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Uendeshaji wa hivi karibuni</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Kazi</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Maendeleo</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Imewekwa kwenye foleni</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Vitendo</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ghairi</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Bado hakuna uendeshaji wa wingi wala resync.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Picha moja</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Anwani ambazo kiolezo hupata sasa, ukubwa na aina zilizokokotolewa kwa kila lakabu, na kama kila faili ipo.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Tafuta kwa</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Kitambulisho cha kitu</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Kitambulisho</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Onyesha</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Huruhusiwi kusoma kitu hiki.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Kitu hiki hakina picha.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Hakuna kitu chenye kitambulisho hiki.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>kitu %object, nodi %node, toleo %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Asili: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>faili ipo</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>faili haipo</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Lakabu za %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Lakabu</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Ukubwa</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Aina</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faili</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Miundo</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Anwani katika kiolezo</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>ipo</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>haipo</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>si kwa aina hii</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Kagua</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Tengeneza</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Hakuna picha katika sehemu hii.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Saa</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Muunganisho kwa chanzo</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Ombi la HEAD kwa chanzo cha staging, pamoja na kitambulisho chake cha ufikiaji ikiwa kimetajwa. Kitambulisho cha ufikiaji hutumwa, hakionyeshwi kamwe.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Chanzo</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>na kitambulisho cha ufikiaji</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Njia ya hifadhi (hiari)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Jaribu muunganisho</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Hakuna chanzo chenye BaseURL. Vyanzo huwekwa katika mipangilio ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>kinapatikana</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>imekataliwa: kagua kitambulisho cha ufikiaji</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>haijapatikana kwenye chanzo</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>hakuna jibu</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>muda umekwisha</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>imeelekezwa kwingine (haikufuatwa)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>hakuna BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>si njia ya hifadhi</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Anwani</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Hali</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>imetumwa</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>siri haipo</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>siri si user:password wala Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Mistari mipya zaidi ya %file, mipya kwanza.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Usanidi &gt; Faili za kumbukumbu</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Tukio</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Matukio yote</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Uendeshaji (mwanzo na mwisho)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Njia ina</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Mistari</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Kichujio</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Fuatilia: onyesha mistari mipya inapoandikwa</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Njia na maelezo</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Hakuna mstari wa kumbukumbu unaolingana.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Kile ambacho kuhifadhi kungebadilisha</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Kile kilichobadilishwa</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Imehifadhiwa kwenye settings/override/image.ini.append.php, kwa hiyo thamani hapa hushinda kila siteaccess. Thamani zinazoonyeshwa ni zile zinazotumika kwa siteaccess hii. Kuhifadhi kunakuomba kwanza uthibitishe wewe ni nani.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Jinsi lakabu zinavyotengenezwa na kuwasilishwa.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Kuleta picha zinazokosekana kutoka usakinishaji mwingine (alpha, dev, beta, stage, pro, post, arc). Uzalishaji (pro) haleti kamwe.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Mpangilio</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Thamani</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Katika settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Anwani ya kila chanzo na jina la siri inayoshikilia kitambulisho chake cha ufikiaji (user:password au Bearer &lt;token&gt;). Thamani ya siri huwekwa katika Usanidi &gt; Siri na haionyeshwi hapa kamwe.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Hakiki mabadiliko</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Hifadhi</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Inafuatilia: imesasishwa %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Imesitishwa</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Mkondo haukujibu; inajaribu tena.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Kazi imeisha.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: violezo hupata anwani, lakabu hutengenezwa inapoombwa. render: kiolezo huitengeneza wakati ukurasa unaonyeshwa (tabia ya awali).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Anwani ya lakabu ambayo haijatengenezwa bado: token (iliyosainiwa, haihitaji hifadhidata), ids-token, ids, node au storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: uelekezaji kwenye faili seva ya wavuti inapotoa hifadhi, vinginevyo faili hutiririshwa.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Sekunde ambazo ombi linaweza kutumia kutengeneza au kuleta lakabu; kisha hujibu kishikilia nafasi na kazi humaliza.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Kibadilishaji kinachojaribiwa kwanza kwa matoleo ya WebP na AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Jibu WebP au AVIF kwa vivinjari vinavyoyaomba, kwa lakabu zinazoorodhesha Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Picha isiyoegemea upande wowote ya ukubwa unaofaa wakati picha inakosekana.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Hati ndogo inayobadilisha vishikilia nafasi kwa picha halisi inapokuwepo.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Baada ya kuchapisha, kazi hutengeneza lakabu za picha mpya kwa kila siteaccess inayohusiana.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Ubadilishaji kwa wakati mmoja kwenye seva moja.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Kipaumbele cha mchakato (nice) cha uendeshaji wa wingi, 0 hadi 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Sekunde ambazo vivinjari na akiba vinaweza kuhifadhi lakabu iliyotengenezwa.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Sekunde ambazo anwani ya picha ya rasimu au hakiki inabaki halali.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Sekunde ambazo ufunguo wa awali wa kusaini unabaki halali baada ya kuzungushwa.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Mazingira ya usakinishaji huu.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Mazingira ambayo picha zinazokosekana huletwa kutoka kwake; none: hakuna kinacholetwa.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Moja kwa mstari: kiambishi cha hifadhi ya ndani;kiambishi cha chanzo au anwani, kwa njia za hifadhi zinazotofautiana.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Sekunde ambazo ombi moja kwa chanzo linaweza kuchukua.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Faili kubwa zaidi inayochukuliwa kutoka chanzo, kwa baiti.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Kushindwa mfululizo ambako baada yake chanzo husitishwa.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Kwa muda gani chanzo kinachoshindwa husitishwa.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Tuma barua pepe kwa wasimamizi chanzo kinapositishwa (mara moja kwa saa kwa kiwango cha juu).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Anwani moja ya barua pepe kwa mstari; tupu: AdminEmail ya site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Anwani ya usakinishaji wa chanzo %block, k.m. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Jina la siri yenye kitambulisho cha ufikiaji, au env:VARIABLE. Kamwe si kitambulisho chenyewe.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(hakuna)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Chaguo-msingi: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Imewekwa hapa; weka alama ili kuiondoa</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>imerithiwa</translation>
     </message>
 </context>
 </TS>

@@ -16588,6 +16588,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>匯入/匯出</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>圖片別名</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>為此項目產生</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>為子樹產生</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>為此項目重新產生</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>為子樹重新產生</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>移除此項目</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>移除子樹</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86420,6 +86448,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>舊網站的 server 區塊：搭配 return 的 location =、用於查詢的 if ($args)、作為萬用字元的 rewrite，以及單一頁面的 map。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>圖片別名</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>圖片別名是範本所顯示的圖片的縮放和裁切副本。在這裡可以查看它們的產生方式、對整個網站執行批次工作、測試單張圖片或暫存來源、查看執行歷程並變更設定。</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>頁面各部分</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>儀表板</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>批次執行</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>測試工具</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>執行歷程</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>設定</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>您可以在此檢視所有內容。變更設定、執行工作以及產生檔案的工具需要原則 setup/managealiases。</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>需要注意的事項</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>render 模式：範本在頁面轉譯時產生缺少的別名，與以往相同。不使用 on-demand 位址、預留位置圖片和背景工作。</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>格式協商已開啟，但此處沒有任何轉換器能寫入 WebP。</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>這是暫存安裝，但其來源沒有 BaseURL：無法取得缺少的圖片。</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>暫存來源在連續多次失敗後已暫停：缺少的圖片將使用預留位置圖片，直到暫停結束或您將其重設。</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>暫存來源最近失敗過。請參閱下方的最近一次錯誤。</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>此安裝不是正式環境，但 SyncFrom 未指定任何來源：不會取得任何內容。</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>工作佇列（expqueue）無法使用：逾時的別名將由下一次請求產生，發布後的預先產生將被略過，批次執行僅限於小範圍。</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>部分圖片別名工作徹底失敗。設定 &gt; 工作佇列會顯示原因。</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>批次執行已暫停。</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>過去 24 小時內有別名產生失敗。執行歷程中列出了這些別名。</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>簽署金鑰已超過一年。輪替金鑰後，舊位址在寬限期內仍然有效。</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>尚無簽署金鑰：將在第一個 on-demand 位址時產生。</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>過去 24 小時</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>已產生的別名</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>已回應的預留位置圖片</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>失敗</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>已暫存的檔案</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>已開始的執行</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>等待中 / 執行中的工作</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>統計自 %file 的最後 %lines 行，可追溯至 %time。</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>模式與傳遞</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>模式</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>隨選</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>位址形式</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>傳遞</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>請求的最長等待時間</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds 秒</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>同時轉換數</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>目前 %max 個中有 %busy 個忙碌</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>格式協商</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>開</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>關</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>預留位置圖片與替換指令碼</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>發布後預先產生</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>網站的別名</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>格式變體的轉換器</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>轉換器</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>已嘗試</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>優先</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>是</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>否</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>別名本身仍由 [ImageConverterSettings] 中的轉換器產生；這些轉換器寫入 WebP 和 AVIF 變體。</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>環境與來源</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>此安裝</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>（正式環境：從不取得）</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>取得自</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>無</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>來源位址</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>未設定</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>憑證</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>祕密 %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>無</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>狀態</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>正常</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>暫停至 %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>失敗</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>連續失敗次數</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count 次後暫停</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>最近一次錯誤</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>最近一次成功</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>重設失敗計數並重新詢問來源</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>工作佇列</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>工作類型</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>等待中</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>執行中</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>失敗</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>未註冊</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>工作佇列無法使用。</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>批次執行已暫停</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>自 %time 起，由 %user 暫停</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>批次執行可以執行</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>簽署金鑰</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>金鑰</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>在祕密儲存區中</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>尚無</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>存續時間</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days 天（自 %time 起）</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>上一個金鑰</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>有效期限至 %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>輪替金鑰</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>使用目前金鑰簽署的位址在寬限期（SigningKeyGrace）內仍可使用，之後將回應預留位置圖片，直到頁面重新產生。</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>立即輪替</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>運作方式</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>on-demand、render 模式、暫存與日誌</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>on-demand（預設）：頁面將尚不存在的別名連結到一個已簽署的位址。第一次請求會在最長等待時間內產生它，否則回應中性預留位置圖片，由工作完成後續處理；圖片就緒後，替換指令碼會取代預留位置圖片。</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>render 模式：範本在頁面轉譯時產生別名，與以往相同。可以隨時在兩者之間切換；無須移轉任何內容。</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>暫存安裝會從其來源取得自己缺少的原圖和別名；失敗的來源在連續失敗後會被暫停，管理員每小時最多收到一封電子郵件。</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>批次執行和發布後預先產生是工作佇列的工作，優先順序低於訪客。移除別名時也會清除 Velocity 的回應快取，因此已移除的檔案不會再從中提供。</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>每個產生的別名、回應的預留位置圖片、暫存的檔案和執行都是 %file 中的一行。命令列有相同的工具：%command。</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>工作 %job：%action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done / %total 張圖片</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>執行</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>範圍</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>結果</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>取消此工作</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>工作 %job 不是圖片別名工作，或已從佇列中移除。</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>執行 %run 的結果</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>批次執行已暫停</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>自 %time 起由 %user 暫停。</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>暫停會使每個批次執行在目前圖片完成後停止，對所有伺服器生效；排入佇列的執行會等待。訪客的別名仍會產生。</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>恢復批次執行</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>原因（選填）</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>暫停批次執行</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>開始執行</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>執行是工作佇列的工作：您可以離開頁面稍後再回來。</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>沒有工作佇列時，執行會在本次請求中完成，最多處理 %count 張圖片。</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>動作</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>產生：產生缺少的別名</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>重新產生：移除後重新產生</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>清除：移除（隨選重新產生）</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>重新同步：從暫存來源取得檔案</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>（僅限暫存安裝）</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>整個網站</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>一個節點</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>節點及其子樹</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>節點 ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>類別</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>屬性</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>變更自</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>日期（2026-11-01）或多久之前（12 小時、2 天）。</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>最多圖片數</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>別名（均未勾選：全部）</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>試執行：僅計數（重新同步會檢查來源，但不儲存任何內容）</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>覆寫有差異的檔案（重新同步）</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>開始執行</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>最近的執行</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>工作</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>進度</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>已排入佇列</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>動作</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>尚無批次執行或重新同步。</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>單張圖片</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>範本現在取得的位址、為每個別名計算的尺寸和類型，以及每個檔案是否存在。</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>查詢方式</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>物件 ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>顯示</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>您無權讀取此物件。</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>此物件沒有圖片。</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>沒有此 ID 的物件。</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>物件 %object，節點 %node，版本 %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>原圖：%width x %height，%type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>檔案存在</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>檔案缺少</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name 的別名</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>別名</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>尺寸</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>類型</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>檔案</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>格式</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>範本中的位址</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>存在</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>缺少</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>不適用於此類型</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>檢查</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>產生</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>此欄位中沒有圖片。</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>時間</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms 毫秒</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>與來源的連線</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>向暫存來源傳送 HEAD 請求，若指定了憑證則一併傳送。憑證會被傳送，但絕不顯示。</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>來源</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>附憑證</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>儲存路徑（選填）</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>測試連線</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>沒有任何來源設有 BaseURL。來源在設定中配置（[AliasSource_&lt;environment&gt;]）。</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>可連線</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>被拒絕：請檢查憑證</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>來源上找不到</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>無回應</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>逾時</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>已重新導向（未跟隨）</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>無 BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>不是儲存路徑</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>位址</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>狀態</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>已傳送</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>缺少祕密</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>該祕密不是 user:password 或 Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file 的最新行，最新的在前。</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>設定 &gt; 日誌檔案</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>事件</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>所有事件</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>執行（開始和結束）</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>路徑包含</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>行數</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>篩選器</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>跟隨：寫入新行時顯示</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>路徑與詳細資料</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>日誌中沒有相符的行。</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>儲存將變更的內容</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>已變更的內容</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>儲存到 settings/override/image.ini.append.php，因此此處的值優先於所有 siteaccess。顯示的值是對此 siteaccess 生效的值。儲存前會要求您先確認身分。</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>別名如何產生和傳遞。</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>從其他安裝取得缺少的圖片（alpha、dev、beta、stage、pro、post、arc）。正式環境（pro）從不取得。</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>設定項目</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>值</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>在 settings/override 中</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>每個來源的位址，以及保存其憑證的祕密的名稱（user:password 或 Bearer &lt;token&gt;）。祕密的值在 設定 &gt; 祕密 中設定，此處絕不顯示。</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>預覽變更</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>儲存</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>跟隨中：更新於 %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>已暫停</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>資料來源沒有回應；正在重試。</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>工作已結束。</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand：範本取得位址，別名在被請求時產生。render：由範本在頁面轉譯時產生（原有行為）。</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>尚未產生的別名的位址：token（已簽署，無須資料庫）、ids-token、ids、node 或 storage。</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto：當網頁伺服器直接提供儲存內容時重新導向到檔案，否則以串流方式傳送檔案。</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>一次請求用於產生或取得別名的秒數；逾時後回應預留位置圖片，由工作完成後續處理。</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP 和 AVIF 變體首先嘗試的轉換器。</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>對要求 WebP 或 AVIF 的瀏覽器回應這些格式，適用於列出 Formats[] 的別名。</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>圖片缺少時顯示的尺寸正確的中性圖片。</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>一個小指令碼，圖片就緒後用真實圖片取代預留位置圖片。</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>發布後，由工作為每個相關 siteaccess 產生新圖片的別名。</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>單一伺服器上同時進行的轉換數。</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>批次執行的處理程序優先順序（nice），0 到 19。</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>瀏覽器和快取可保留已產生別名的秒數。</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>草稿或預覽圖片位址保持有效的秒數。</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>輪替後上一個簽署金鑰保持有效的秒數。</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>此安裝的環境。</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>缺少圖片的取得來源環境；none：不取得任何內容。</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>每行一個：本機儲存前置詞;來源前置詞或位址，用於儲存路徑不同的情況。</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>對來源的一次請求可用的秒數。</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>從來源取得的最大檔案，以位元組為單位。</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>連續失敗多少次後暫停來源。</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>失敗的來源暫停多長時間。</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>來源被暫停時寄送電子郵件給管理員（每小時最多一次）。</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>每行一個電子郵件地址；留空：使用 site.ini 中的 AdminEmail。</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>來源安裝 %block 的位址，例如 https://www.example.org。</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>包含憑證的祕密的名稱，或 env:VARIABLE。絕不是憑證本身。</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>（無）</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>預設值：%value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>在此設定；勾選以移除</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>繼承</translation>
     </message>
 </context>
 </TS>

@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>Воридот/содирот</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Тахаллусҳои тасвир</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Барои ин ҷузъ сохтан</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Барои зердарахт сохтан</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Барои ин ҷузъ аз нав сохтан</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Барои зердарахт аз нав сохтан</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Барои ин ҷузъ хориҷ кардан</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Барои зердарахт хориҷ кардан</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Блоки server-и сомонаи кӯҳна: location = бо return, if ($args) барои дархост, rewrite ҳамчун ифодаи умумӣ ва map-и саҳифаҳои алоҳида.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Тахаллусҳои тасвир</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Тахаллусҳои тасвир нусхаҳои хурдкардашуда ва буридашудаи тасвиранд, ки шаблонҳо нишон медиҳанд. Дар ин ҷо мебинед, ки онҳо чӣ тавр сохта мешаванд, корҳои оммавиро барои тамоми сайт оғоз мекунед, як тасвир ё манбаи staging-ро месанҷед, таърихи иҷроҳоро пайгирӣ мекунед ва танзимотро тағйир медиҳед.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Қисмҳои саҳифа</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Лавҳаи идоракунӣ</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Иҷроҳои оммавӣ</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Абзорҳои санҷиш</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Таърихи иҷроҳо</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Танзимот</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Шумо метавонед дар ин ҷо ҳама чизро бинед. Тағйири танзимот, оғози вазифаҳо ва абзорҳое, ки файл месозанд, сиёсати setup/managealiases-ро талаб мекунанд.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Чӣ ба диққат ниёз дорад</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Ҳолати render: шаблонҳо тахаллусҳои намерасидаро ҳангоми тасвири саҳифа месозанд, чун пештара. Суроғаҳои on-demand, ҷойгиркунакҳо ва вазифаҳои пасзамина истифода намешаванд.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Гуфтушуниди формат фаъол аст, аммо дар ин ҷо ҳеҷ конвертер наметавонад WebP нависад.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Ин насби staging аст, аммо манбаи он BaseURL надорад: тасвирҳои намерасида гирифта намешаванд.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Манбаи staging пас аз якчанд хатогии пайдарпай таваққуф карда шуд: барои тасвирҳои намерасида ҷойгиркунакҳо дода мешаванд, то таваққуф ба охир расад ё шумо онро аз нав танзим кунед.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Манбаи staging ба наздикӣ хато кард. Хатогии охирини онро дар зер бинед.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Ин насб истеҳсолӣ нест, аммо SyncFrom ягон манбаро номбар намекунад: чизе гирифта намешавад.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Навбати вазифаҳо (expqueue) дастнорас аст: тахаллусҳое, ки аз вақт мегузаранд, аз ҷониби дархости навбатӣ сохта мешаванд, пешсозӣ пас аз нашр ҷаҳида мешавад ва иҷроҳои оммавӣ ба доираҳои хурд маҳдуданд.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Баъзе вазифаҳои тахаллусҳои тасвир ба таври ниҳоӣ хато карданд. Насб &gt; Навбати вазифаҳо сабабро нишон медиҳад.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Иҷроҳои оммавӣ таваққуф карда шудаанд.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Дар 24 соати охир тахаллусҳо хато карданд. Таърихи иҷроҳо онҳоро номбар мекунад.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Калиди имзо аз як сол калонтар аст. Иваз кардани он суроғаҳои кӯҳнаро дар давраи мӯҳлат эътибордор нигоҳ медорад.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Ҳанӯз калиди имзо нест: он бо аввалин суроғаи on-demand сохта мешавад.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>24 соати охир</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Тахаллусҳои сохташуда</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Ҷойгиркунакҳои посухдодашуда</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Хатогиҳо</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Файлҳои гирифташуда</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Иҷроҳои оғозшуда</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Вазифаҳои мунтазир / дар ҳоли иҷро</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Аз %lines сатри охири %file ҳисоб карда шуд, ки то %time мерасад.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Ҳолат ва расонидан</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Ҳолат</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>ҳангоми дархост</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Шакли суроға</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Расонидан</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Дарозтарин интизории дархост</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Табдилҳои ҳамзамон</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy аз %max ҳоло банд аст</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Гуфтушуниди формат</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>фаъол</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>хомӯш</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Ҷойгиркунак ва скрипти ивазкунӣ</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Пешсозӣ пас аз нашр</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Тахаллусҳои сайт</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Конвертерҳои вариантҳои формат</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Конвертер</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Тартиби кӯшиш</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>афзал</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ҳа</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>не</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Худи тахаллусҳоро конвертерҳои [ImageConverterSettings] месозанд, чун пештара; инҳо вариантҳои WebP ва AVIF-ро менависанд.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Муҳит ва манбаъ</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Ин насб</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(истеҳсолӣ: ҳеҷ гоҳ намегирад)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Мегирад аз</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>ҳеҷ чиз</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Суроғаи манбаъ</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>муқаррар нашудааст</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Маълумоти дастрасӣ</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>рамзи %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>нест</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Вазъият</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>кор мекунад</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>таваққуф то %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>хато мекунад</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Хатогиҳои пайдарпай</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>таваққуф пас аз %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Хатогии охирин</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Муваффақияти охирин</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Хатогиҳоро бозгузорӣ кунед ва аз манбаъ бори дигар пурсед</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Навбати вазифаҳо</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Навъи вазифа</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Мунтазир</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Дар ҳоли иҷро</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Хато карда шуд</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>сабт нашудааст</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Навбати вазифаҳо дастнорас аст.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Иҷроҳои оммавӣ таваққуф карда шудаанд</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>аз %time аз ҷониби %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Иҷроҳои оммавӣ метавонанд кор кунанд</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Калиди имзо</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Калид</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>дар захираи рамзҳо</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ҳанӯз нест</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Синну сол</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days рӯз (аз %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Калиди қаблӣ</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>эътибор дорад то %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Калидро иваз кунед</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Суроғаҳое, ки бо калиди ҷорӣ имзо шудаанд, дар давраи мӯҳлат (SigningKeyGrace) кор карданро давом медиҳанд, сипас то аз нав сохта шудани саҳифаҳо бо ҷойгиркунакҳо посух медиҳанд.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Ҳозир иваз кунед</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Чӣ тавр кор мекунад</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, ҳолати render, staging ва сабт</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (пешфарз): саҳифа тахаллусеро, ки ҳанӯз нест, ба суроғаи имзошуда пайваст мекунад. Дархости аввал онро дар доираи дарозтарин интизорӣ месозад, дар акси ҳол ҷойгиркунаки бетараф медиҳад ва вазифа корро ба анҷом мерасонад; скрипти ивазкунӣ ҷойгиркунакро, вақте ки тасвир омода шуд, иваз мекунад.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Ҳолати render: шаблон тахаллусро ҳангоми тасвири саҳифа месозад, чун пештара. Шумо метавонед ҳар вақт байни ин ду гузаред; чизе набояд интиқол дода шавад.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Насби staging аслҳо ва тахаллусҳои намерасидаро аз манбаи худ мегирад; манбаи хаторафта пас аз хатогиҳои пайдарпай таваққуф карда мешавад ва маъмурон дар як соат на бештар аз як мактуби электронӣ мегиранд.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Иҷроҳои оммавӣ ва пешсозӣ пас аз нашр вазифаҳои навбати вазифаҳоянд, бо афзалияти пасттар аз меҳмонон. Хориҷ кардани тахаллусҳо инчунин кеши посухҳои Velocity-ро тоза мекунад, то файли хориҷшуда аз он расонида нашавад.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Ҳар тахаллуси сохташуда, ҷойгиркунаки посухдодашуда, файли гирифташуда ва иҷро як сатри %file аст. Сатри фармон ҳамин абзорҳоро дорад: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Вазифаи %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done аз %total тасвир</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Иҷро</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Доира</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Натиҷа</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Ин вазифаро бекор кардан</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Вазифаи %job вазифаи тахаллусҳои тасвир нест ё аз навбат хориҷ карда шудааст.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Натиҷаи иҷрои %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Иҷроҳои оммавӣ таваққуф карда шудаанд</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Таваққуф аз %time аз ҷониби %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Таваққуф ҳар иҷрои оммавиро пас аз тасвири ҷории он, дар ҳар сервер, қатъ мекунад; иҷроҳои дар навбатбуда интизор мешаванд. Тахаллусҳои меҳмонон ҳамоно сохта мешаванд.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Иҷроҳои оммавиро идома диҳед</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Сабаб (ихтиёрӣ)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Иҷроҳои оммавиро таваққуф кунед</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Оғози иҷро</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Иҷроҳо вазифаҳои навбати вазифаҳоянд: шумо метавонед саҳифаро тарк карда, баргардед.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Бе навбати вазифаҳо иҷро дар ҳамин дархост анҷом дода мешавад, барои на бештар аз %count тасвир.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Амал</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Сохтан: тахаллусҳои намерасидаро созед</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Аз нав сохтан: хориҷ карда, аз нав созед</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Тоза кардан: хориҷ кунед (ҳангоми дархост аз нав сохта мешаванд)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Ҳамоҳангсозии нав: файлҳоро аз манбаи staging гиред</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(танҳо дар насби staging)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Тамоми сайт</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Як гиреҳ</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Гиреҳ ва зердарахти он</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID-и гиреҳ</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Синфҳо</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Хусусиятҳо</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Тағйирёфта аз</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Сана (2026-11-01) ё муддати пеш (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>На бештар аз тасвир</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Тахаллусҳо (ягонтоаш аломат нашудааст: ҳама)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>ҳамоҳангсозии нав</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Иҷрои озмоишӣ: танҳо ҳисоб кунед (ҳамоҳангсозии нав манбаъро месанҷад ва чизе захира намекунад)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Файлҳои фарқкунандаро бознависед (ҳамоҳангсозии нав)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Иҷроро оғоз кунед</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Иҷроҳои охирин</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Вазифа</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Пешрафт</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Ба навбат гузошта шуд</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Амалҳо</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Бекор кардан</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Ҳанӯз иҷрои оммавӣ ё ҳамоҳангсозии нав нест.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Як тасвир</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Суроғаҳое, ки шаблон ҳоло мегирад, андозаҳо ва навъҳое, ки барои ҳар тахаллус ҳисоб шудаанд, ва ин ки ҳар файл ҳаст ё не.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Ҷустуҷӯ аз рӯи</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID-и объект</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Нишон додан</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Шумо ҳуқуқи хондани ин объектро надоред.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Ин объект тасвир надорад.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Объекте бо ин ID нест.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>объект %object, гиреҳ %node, нусха %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Аслӣ: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>файл ҳаст</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>файл намерасад</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Тахаллусҳои %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Тахаллус</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Андоза</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Навъ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Форматҳо</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Суроға дар шаблон</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>ҳаст</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>намерасад</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>барои ин навъ нест</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Санҷидан</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Сохтан</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Дар ин майдон тасвир нест.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Вақт</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Пайвастшавӣ ба манбаъ</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Дархости HEAD ба манбаи staging, бо маълумоти дастрасии он, агар номбар шуда бошад. Маълумоти дастрасӣ фиристода мешавад, ҳеҷ гоҳ нишон дода намешавад.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Манбаъ</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>бо маълумоти дастрасӣ</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Роҳи захира (ихтиёрӣ)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Пайвастшавиро санҷед</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Ягон манбаъ BaseURL надорад. Манбаъҳо дар танзимот муқаррар мешаванд ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>дастрас аст</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>рад шуд: маълумоти дастрасиро санҷед</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>дар манбаъ ёфт нашуд</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>посух нест</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>вақт гузашт</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>равона карда шуд (пайравӣ нашуд)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL нест</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>роҳи захира нест</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Суроға</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Вазъ</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>фиристода шуд</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>рамз намерасад</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>рамз на user:password аст ва на Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Сатрҳои охирини %file, аввал навтаринҳо.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Насб &gt; Файлҳои сабт</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Рӯйдод</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Ҳамаи рӯйдодҳо</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Иҷроҳо (оғоз ва анҷом)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Роҳ дорои</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Сатрҳо</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Филтр</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Пайгирӣ: сатрҳои навро ҳангоми навишта шудан нишон диҳед</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Роҳ ва тафсилот</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Ягон сатри сабт мувофиқ нест.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Захира кардан чиро тағйир медиҳад</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Чӣ тағйир дода шуд</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Дар settings/override/image.ini.append.php захира шуд, аз ин рӯ қимат дар ин ҷо аз ҳар siteaccess боло меравад. Қиматҳои нишондодашуда онҳое мебошанд, ки барои ин siteaccess амал мекунанд. Пеш аз захира аз шумо хоҳиш мешавад, ки ҳувияти худро тасдиқ кунед.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Тахаллусҳо чӣ тавр сохта ва расонида мешаванд.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Гирифтани тасвирҳои намерасида аз насби дигар (alpha, dev, beta, stage, pro, post, arc). Истеҳсолӣ (pro) ҳеҷ гоҳ намегирад.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Танзим</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Қимат</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Дар settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Суроғаи ҳар манбаъ ва номи рамзе, ки маълумоти дастрасии онро нигоҳ медорад (user:password ё Bearer &lt;token&gt;). Қимати рамз дар Насб &gt; Рамзҳо муқаррар мешавад ва дар ин ҷо ҳеҷ гоҳ нишон дода намешавад.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Пешнамоиши тағйирот</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Захира кардан</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Пайгирӣ: навсозӣ %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Таваққуф</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Хат посух надод; бори дигар кӯшиш карда мешавад.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Вазифа ба анҷом расид.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: шаблонҳо суроғаро мегиранд, тахаллус ҳангоми дархост сохта мешавад. render: шаблон онро ҳангоми тасвири саҳифа месозад (рафтори аслӣ).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Суроғаи тахаллусе, ки ҳанӯз сохта нашудааст: token (имзошуда, пойгоҳи додаро талаб намекунад), ids-token, ids, node ё storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: равона кардан ба файл, вақте ки веб-сервер захираро медиҳад, дар акси ҳол файл ҷараёнӣ фиристода мешавад.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Сонияҳое, ки дархост метавонад барои сохтан ё гирифтани тахаллус сарф кунад; сипас ҷойгиркунакро посух медиҳад ва вазифа корро ба анҷом мерасонад.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Конвертере, ки барои вариантҳои WebP ва AVIF аввал кӯшиш карда мешавад.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Ба браузерҳое, ки WebP ё AVIF талаб мекунанд, барои тахаллусҳое, ки Formats[]-ро номбар мекунанд, ҳамонро диҳед.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Тасвири бетарафи андозаи дуруст ҳангоме ки тасвир намерасад.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Скрипти хурде, ки ҷойгиркунакҳоро бо тасвири воқеӣ иваз мекунад, вақте ки он ҳаст.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Пас аз нашр вазифа тахаллусҳои тасвирҳои навро барои ҳар siteaccess-и алоқаманд месозад.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Табдилҳои ҳамзамон дар як сервер.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Афзалияти раванд (nice) барои иҷроҳои оммавӣ, аз 0 то 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Сонияҳое, ки браузерҳо ва кешҳо метавонанд тахаллуси сохташударо нигоҳ доранд.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Сонияҳое, ки суроғаи тасвири нусхаи пешакӣ ё пешнамоиш эътибор дорад.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Сонияҳое, ки калиди имзои қаблӣ пас аз иваз эътибор дорад.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Муҳити ин насб.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Муҳите, ки тасвирҳои намерасида аз он гирифта мешаванд; none: чизе гирифта намешавад.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Яктоӣ дар як сатр: пешванди захираи маҳаллӣ;пешванди манбаъ ё суроға, барои роҳҳои захираи фарқкунанда.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Сонияҳое, ки як дархост ба манбаъ метавонад давом кунад.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Бузургтарин файле, ки аз манбаъ гирифта мешавад, бо байт.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Хатогиҳои пайдарпай, ки пас аз онҳо манбаъ таваққуф карда мешавад.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Манбаи хаторафта то кай таваққуф карда мешавад.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Ба маъмурон мактуб фиристед, вақте ки манбаъ таваққуф карда мешавад (дар як соат на бештар аз як маротиба).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Яктоӣ суроғаи почтаи электронӣ дар як сатр; холӣ: AdminEmail аз site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Суроғаи насби манбаъ %block, масалан https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Номи рамз бо маълумоти дастрасӣ ё env:VARIABLE. Ҳеҷ гоҳ худи маълумоти дастрасӣ.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(нест)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Пешфарз: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Дар ин ҷо муқаррар шудааст; барои хориҷ кардан аломат гузоред</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>мерос гирифта шудааст</translation>
     </message>
 </context>
 </TS>

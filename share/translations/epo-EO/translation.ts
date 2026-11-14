@@ -16590,6 +16590,34 @@ Noto: La pakoj ne estos malinstalitaj.</translation>
         <source>Import/Export</source>
         <translation>Importi/Eksporti</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Bildaj aliasoj</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Krei por ĉi tiu ero</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Krei por la subarbo</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Rekrei por ĉi tiu ero</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Rekrei por la subarbo</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Forigi por ĉi tiu ero</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Forigi por la subarbo</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>La server-bloko de malnova retejo: location = kun return, if ($args) por demando, rewrite kiel ĵokero kaj map de unuopaj paĝoj.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Bildaj aliasoj</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Bildaj aliasoj estas la skalitaj kaj stucitaj kopioj de bildo, kiujn montras la ŝablonoj. Ĉi tie vi vidas kiel ili estas kreataj, lanĉas amasajn lanĉojn tra la retejo, testas unu bildon aŭ enscenigan fonton, sekvas la historion de la lanĉoj kaj ŝanĝas la agordojn.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Partoj de la paĝo</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Panelo</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Amasaj lanĉoj</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Testiloj</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Historio de lanĉoj</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Agordoj</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Ĉi tie vi povas rigardi ĉion. Ŝanĝi agordojn, lanĉi taskojn kaj uzi la ilojn, kiuj kreas dosierojn, postulas la politikon setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Kio postulas atenton</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Reĝimo render: la ŝablonoj kreas mankantajn aliasojn dum la paĝo estas bildigata, kiel antaŭe. La adresoj on-demand, la anstataŭaj bildoj kaj la fonaj taskoj ne estas uzataj.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>La negocado de formatoj estas ŝaltita, sed neniu konvertilo ĉi tie povas skribi WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Ĉi tio estas ensceniga instalaĵo, sed ĝia fonto ne havas BaseURL: mankantaj bildoj ne povas esti prenataj.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>La ensceniga fonto estas paŭzigita post sinsekvaj malsukcesoj: mankantaj bildoj ricevas anstataŭajn bildojn, ĝis la paŭzo finiĝos aŭ vi restarigos ĝin.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>La ensceniga fonto malsukcesis lastatempe. Vidu ĝian lastan eraron sube.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Ĉi tiu instalaĵo ne estas produkta, sed SyncFrom nomas neniun fonton: nenio estas prenata.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>La tasko-vico (expqueue) ne estas disponebla: aliasoj, kiuj superas sian tempon, estas kreataj de la sekva peto, la antaŭkreado post publikigo estas preterlasata kaj amasaj lanĉoj estas limigitaj al malgrandaj amplekoj.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Kelkaj taskoj de bildaj aliasoj malsukcesis definitive. Agordado &gt; Tasko-vico montras kial.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Amasaj lanĉoj estas paŭzigitaj.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Aliasoj malsukcesis dum la lastaj 24 horoj. La historio de lanĉoj listigas ilin.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>La subskriba ŝlosilo estas pli ol unu jaron malnova. Ŝanĝi ĝin lasas malnovajn adresojn validaj dum la toleremo.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Ankoraŭ ne ekzistas subskriba ŝlosilo: ĝi estas kreata kun la unua adreso on-demand.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>La lastaj 24 horoj</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Kreitaj aliasoj</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Liveritaj anstataŭaj bildoj</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Malsukcesoj</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Prenitaj dosieroj</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Komencitaj lanĉoj</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Taskoj atendantaj / funkciantaj</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Kalkulita el la lastaj %lines linioj de %file, kiuj atingas reen ĝis %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Reĝimo kaj livero</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Reĝimo</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>laŭ postulo</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Formo de adreso</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Livero</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Plej longa atendo de peto</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Samtempaj konvertoj</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy el %max nun okupitaj</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Negocado de formatoj</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ŝaltita</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>malŝaltita</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Anstataŭa bildo kaj anstataŭiga skripto</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Antaŭkreado post publikigo</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Aliasoj de la retejo</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Konvertiloj de la formatvariantoj</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Konvertilo</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Provordo</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>preferata</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>jes</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ne</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>La aliasojn mem kreas la konvertiloj de [ImageConverterSettings], kiel antaŭe; ĉi tiuj skribas la variantojn WebP kaj AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Medio kaj fonto</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Ĉi tiu instalaĵo</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(produkto: neniam prenas)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Prenas de</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>nenio</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Adreso de la fonto</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>ne agordita</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Alirdatumoj</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>sekreto %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>neniu</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stato</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>funkcias</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>paŭzigita ĝis %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>malsukcesas</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Sinsekvaj malsukcesoj</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>paŭzo post %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Lasta eraro</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Lasta sukceso</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Restarigi la malsukcesojn kaj demandi la fonton denove</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Tasko-vico</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Tasko-tipo</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Atendanta</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Funkcianta</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Malsukcesa</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>ne registrita</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>La tasko-vico ne estas disponebla.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Amasaj lanĉoj paŭzigitaj</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>ekde %time de %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Amasaj lanĉoj rajtas funkcii</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Subskriba ŝlosilo</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Ŝlosilo</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>en la sekreta stokejo</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ankoraŭ neniu</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Aĝo</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days tagoj (ekde %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Antaŭa ŝlosilo</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>valida ĝis %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Ŝanĝi la ŝlosilon</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Adresoj subskribitaj per la nuna ŝlosilo daŭre funkcias dum la toleremo (SigningKeyGrace), poste ili liveras anstataŭajn bildojn, ĝis la paĝoj estos kreitaj denove.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Ŝanĝi nun</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Kiel ĝi funkcias</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, reĝimo render, enscenigo kaj la protokolo</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (la defaŭlto): paĝo ligas ankoraŭ nekreitan aliason al subskribita adreso. La unua peto kreas ĝin ene de la plej longa atendo, alie ĝi liveras neŭtralan anstataŭan bildon kaj tasko finas la laboron; la anstataŭiga skripto anstataŭigas la anstataŭan bildon, kiam la bildo ekzistas.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Reĝimo render: la ŝablono kreas la aliason dum la paĝo estas bildigata, kiel antaŭe. Vi povas ŝanĝi inter la du iam ajn; nenio devas esti migrata.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Ensceniga instalaĵo prenas mankantajn originalojn kaj aliasojn de sia fonto; malsukcesanta fonto estas paŭzigita post sinsekvaj malsukcesoj kaj la administrantoj ricevas maksimume unu retmesaĝon hore.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Amasaj lanĉoj kaj antaŭkreado post publikigo estas taskoj de la tasko-vico, kun pli malalta prioritato ol vizitantoj. Forigo de aliasoj ankaŭ malplenigas la respondan kaŝmemoron de Velocity, tiel ke forigita dosiero ne estas liverata el ĝi.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Ĉiu kreita aliaso, livera anstataŭa bildo, prenita dosiero kaj lanĉo estas linio de %file. La komandlinio havas la samajn ilojn: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Tasko %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done el %total bildoj</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Lanĉo</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Amplekso</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezulto</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Nuligi ĉi tiun taskon</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Tasko %job ne estas tasko de bildaj aliasoj, aŭ ĝi estis forigita el la vico.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Rezulto de lanĉo %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Amasaj lanĉoj estas paŭzigitaj</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Paŭzigita ekde %time de %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Paŭzo haltigas ĉiun amasan lanĉon post ĝia nuna bildo, sur ĉiu servilo; vicigitaj lanĉoj atendas. Aliasoj por vizitantoj ankoraŭ estas kreataj.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Reaktivigi amasajn lanĉojn</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Kialo (nedeviga)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Paŭzigi amasajn lanĉojn</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Komenci lanĉon</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Lanĉoj estas taskoj de la tasko-vico: vi povas forlasi la paĝon kaj reveni.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Sen la tasko-vico lanĉo estas farata en ĉi tiu peto, por maksimume %count bildoj.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ago</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Krei: kreu la mankantajn aliasojn</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Rekrei: forigu kaj kreu ilin denove</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Forigi: forprenu ilin (kreataj denove laŭ postulo)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resinkronigi: preni la dosierojn de la ensceniga fonto</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(nur sur ensceniga instalaĵo)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>La tuta retejo</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Unu nodo</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Nodo kaj ĝia subarbo</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID de nodo</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klasoj</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atributoj</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Ŝanĝita ekde</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Dato (2026-11-01) aŭ tempo antaŭe (12 hours, 2 days).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Maksimume da bildoj</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Aliasoj (neniu elektita: ĉiuj)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resinkronigo</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Provlanĉo: nur kalkuli (resinkronigo kontrolas la fonton kaj nenion konservas)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Surskribi malsamajn dosierojn (resinkronigo)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Komenci la lanĉon</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Lastaj lanĉoj</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Tasko</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Progreso</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Vicigita</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Agoj</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Nuligi</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Ankoraŭ neniu amasa lanĉo aŭ resinkronigo.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Unu bildo</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>La adresoj, kiujn ŝablono nun ricevas, la grandoj kaj tipoj kalkulitaj por ĉiu aliaso, kaj ĉu ĉiu dosiero ekzistas.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Serĉi laŭ</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID de objekto</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Montri</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Vi ne rajtas legi ĉi tiun objekton.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Ĉi tiu objekto ne havas bildon.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Neniu objekto kun ĉi tiu ID.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>objekto %object, nodo %node, versio %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Originalo: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>dosiero ekzistas</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>dosiero mankas</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Aliasoj de %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Aliaso</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Grando</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tipo</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Dosiero</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Formatoj</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Adreso en ŝablono</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>ekzistas</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>mankas</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ne por ĉi tiu tipo</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Kontroli</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Krei</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Neniu bildo en ĉi tiu kampo.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Horo</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Konekto al fonto</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>HEAD-peto al ensceniga fonto, kun ĝiaj alirdatumoj, se tiuj estas nomitaj. La alirdatumoj estas senditaj, neniam montrataj.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Fonto</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>kun alirdatumoj</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Stokvojo (nedeviga)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Testi la konekton</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Neniu fonto havas BaseURL. Fontoj estas agordataj en la agordoj ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>atingebla</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>rifuzita: kontrolu la alirdatumojn</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>ne trovita ĉe la fonto</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>neniu respondo</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>tempolimo superita</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>alidirektita (ne sekvita)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>neniu BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>ne stokvojo</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adreso</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Statuso</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>sendita</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>la sekreto mankas</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>la sekreto ne estas user:password aŭ Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>La plej novaj linioj de %file, la plej nova unue.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Agordado &gt; Protokoldosieroj</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Evento</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Ĉiuj eventoj</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Lanĉoj (komenco kaj fino)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Vojo enhavas</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Linioj</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrilo</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Sekvi: montri novajn liniojn tuj kiam ili estas skribitaj</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Vojo kaj detaloj</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Neniu linio de la protokolo kongruas.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Kion la konservo ŝanĝus</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Kio estis ŝanĝita</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Konservita en settings/override/image.ini.append.php, do valoro ĉi tie superas ĉiun siteaccess. La montrataj valoroj estas tiuj validaj por ĉi tiu siteaccess. Antaŭ la konservo oni petas vin konfirmi, kiu vi estas.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Kiel aliasoj estas kreataj kaj liverataj.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Preni mankantajn bildojn de alia instalaĵo (alpha, dev, beta, stage, pro, post, arc). La produkto (pro) neniam prenas.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Agordo</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valoro</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>In settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>La adreso de ĉiu fonto kaj la nomo de la sekreto, kiu tenas ĝiajn alirdatumojn (user:password aŭ Bearer &lt;token&gt;). La valoro de sekreto estas agordata en Agordado &gt; Sekretoj kaj neniam montrata ĉi tie.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Antaŭrigardi la ŝanĝojn</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Konservi</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Sekvado: ĝisdatigita %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Paŭzigita</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>La fluo ne respondis; provo denove.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>La tasko finiĝis.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: la ŝablonoj ricevas la adreson, la aliaso estas kreata kiam oni petas ĝin. render: la ŝablono kreas ĝin dum la paĝo estas bildigata (la originala konduto).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>La adreso de ankoraŭ nekreita aliaso: token (subskribita, ne bezonas datumbazon), ids-token, ids, node aŭ storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: alidirekto al la dosiero, kiam la TTT-servilo liveras la stokejon, alie la dosiero estas fluigata.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Sekundoj, kiujn peto rajtas pasigi kreante aŭ prenante aliason; poste ĝi liveras la anstataŭan bildon kaj tasko finas la laboron.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>La konvertilo provata unue por la variantoj WebP kaj AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Liveri WebP aŭ AVIF al foliumiloj, kiuj petas ilin, por aliasoj kiuj listigas Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Neŭtrala bildo de la ĝusta grando dum bildo mankas.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Malgranda skripto, kiu anstataŭigas anstataŭajn bildojn per la reala bildo, kiam ĝi ekzistas.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Post publikigo, tasko kreas la aliasojn de la novaj bildoj por ĉiu rilata siteaccess.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Samtempaj konvertoj sur unu servilo.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>La procezo-prioritato (nice) de amasaj lanĉoj, 0 ĝis 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Sekundoj, dum kiuj foliumiloj kaj kaŝmemoroj rajtas konservi kreitan aliason.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Sekundoj, dum kiuj la adreso de malneta aŭ antaŭrigarda bildo restas valida.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Sekundoj, dum kiuj la antaŭa subskriba ŝlosilo restas valida post ŝanĝo.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>La medio de ĉi tiu instalaĵo.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>La medio, de kiu mankantaj bildoj estas prenataj; neniu: nenio estas prenata.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Unu po linio: loka stokprefikso;prefikso aŭ adreso de la fonto, por malsamaj stokvojoj.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Sekundoj, kiujn unu peto al la fonto rajtas daŭri.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>La plej granda dosiero prenata de la fonto, en bajtoj.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Sinsekvaj malsukcesoj, post kiuj la fonto estas paŭzigita.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Kiom longe malsukcesanta fonto estas paŭzigita.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Sendi retmesaĝon al la administrantoj, kiam la fonto estas paŭzigita (maksimume unufoje hore).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Unu retpoŝtadreso po linio; malplena: la AdminEmail el site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>La adreso de la fonta instalaĵo %block, ekz. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>La nomo de la sekreto kun la alirdatumoj, aŭ env:VARIABLE. Neniam la alirdatumoj mem.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(neniu)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Defaŭlto: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Agordita ĉi tie; marku por forigi ĝin</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>heredita</translation>
     </message>
 </context>
 </TS>

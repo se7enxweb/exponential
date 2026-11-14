@@ -16529,6 +16529,34 @@ Megjegyzés: a csomagok telepítése nem lesz visszavonva.</translation>
         <source>Import/Export</source>
         <translation>Importálás/exportálás</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Képálnevek</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Előállítás ehhez az elemhez</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Előállítás a részfához</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Újraelőállítás ehhez az elemhez</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Újraelőállítás a részfához</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Eltávolítás ehhez az elemhez</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Eltávolítás a részfához</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86452,6 +86480,997 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Egy régi webhely server blokkja: location = return-nel, if ($args) egy lekérdezéshez, rewrite URL-helyettesítő mintaként és egyes oldalak map-je.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Képálnevek</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>A képálnevek egy kép átméretezett és körülvágott másolatai, amelyeket a sablonok megjelenítenek. Itt láthatja, hogyan készülnek, tömeges feladatokat futtathat az egész webhelyen, kipróbálhat egy képet vagy egy staging forrást, követheti a futtatások előzményeit, és módosíthatja a beállításokat.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Az oldal részei</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Irányítópult</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Tömeges futtatások</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Tesztelő eszközök</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Futtatási előzmények</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Beállítások</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Itt mindent megtekinthet. A beállítások módosításához, a feladatok futtatásához és a fájlokat előállító eszközökhöz a setup/managealiases szabályra van szükség.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Mire kell figyelni</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>render mód: a sablonok az oldal renderelése közben készítik el a hiányzó álneveket, a korábbiak szerint. Az on-demand címeket, a helyőrzőket és a háttérfeladatokat nem használja.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>A formátum-egyeztetés be van kapcsolva, de itt egyetlen átalakító sem tud WebP-t írni.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Ez egy staging telepítés, de a forrásának nincs BaseURL értéke: a hiányzó képek nem tölthetők le.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>A staging forrás egymás utáni hibák miatt szünetel: a hiányzó képek helyőrzőt kapnak, amíg a szünet le nem jár, vagy vissza nem állítja.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>A staging forrás nemrég hibázott. Az utolsó hibáját lent találja.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Ez a telepítés nem éles, de a SyncFrom nem nevez meg forrást: semmi sem töltődik le.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>A feladatsor (expqueue) nem érhető el: a lejáró idejű álneveket a következő kérés készíti el, a közzététel utáni előgenerálás kimarad, a tömeges futtatások pedig kis tartományokra korlátozódnak.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>A képálnevek néhány feladata véglegesen meghiúsult. A Rendszer &gt; Feladatsor megmutatja az okot.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>A tömeges futtatások szünetelnek.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Álnevek hibáztak az elmúlt 24 órában. A futtatási előzmények felsorolják őket.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Az aláírókulcs több mint egy éves. A cseréje a türelmi időszak végéig érvényben tartja a régi címeket.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Még nincs aláírókulcs: az első on-demand címmel jön létre.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Az elmúlt 24 óra</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Előállított álnevek</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Megválaszolt helyőrzők</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Hibák</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Előkészített fájlok</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Elindított futtatások</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Várakozó / futó feladatok</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>A(z) %file utolsó %lines sorából számolva, amely %time időpontig nyúlik vissza.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Mód és kézbesítés</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mód</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>igény szerint</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Cím alakja</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Kézbesítés</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Egy kérés leghosszabb várakozása</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds mp</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Egyidejű átalakítások</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy / %max foglalt most</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Formátum-egyeztetés</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>be</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ki</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Helyőrző és cserélő szkript</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Előgenerálás közzététel után</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>A webhely álnevei</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>A formátumváltozatok átalakítói</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Átalakító</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Kipróbálva</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>előnyben részesített</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>igen</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nem</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Magukat az álneveket a [ImageConverterSettings] átalakítói készítik, a korábbiak szerint; ezek írják a WebP és AVIF változatokat.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Környezet és forrás</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Ez a telepítés</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(éles: soha nem tölt le)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Innen tölt le</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>semmit</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>A forrás címe</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>nincs megadva</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Hitelesítő adat</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>%name titkos érték</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nincs</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Állapot</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>működik</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>szünetel eddig: %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>hibázik</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Egymás utáni hibák</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>szünet %count után</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Utolsó hiba</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Utolsó siker</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>A hibák nullázása és a forrás újbóli megkérdezése</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Feladatsor</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Feladat típusa</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Várakozik</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Fut</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Sikertelen</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>nincs regisztrálva</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>A feladatsor nem érhető el.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Tömeges futtatások szüneteltetve</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time óta, %user által</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>A tömeges futtatások futhatnak</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Aláírókulcs</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Kulcs</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>a titkos értékek tárolójában</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>még nincs</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Kor</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days nap (%time óta)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Előző kulcs</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>érvényes eddig: %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>A kulcs cseréje</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>A jelenlegi kulccsal aláírt címek a türelmi időszakban (SigningKeyGrace) tovább működnek, utána helyőrzőt adnak vissza, amíg az oldalak újra el nem készülnek.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Csere most</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Hogyan működik</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, render mód, staging és a napló</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (alapértelmezett): az oldal a még nem létező álnevet aláírt címre hivatkoztatja. Az első kérés a leghosszabb várakozási időn belül elkészíti, különben semleges helyőrzőt ad, és egy feladat befejezi a munkát; a cserélő szkript lecseréli a helyőrzőt, amint a kép elkészült.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>render mód: a sablon az oldal renderelése közben készíti el az álnevet, a korábbiak szerint. A kettő között bármikor válthat; semmit sem kell migrálni.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>A staging telepítés a forrásából tölti le a hiányzó eredeti képeket és álneveket; a hibázó forrás egymás utáni hibák után szüneteltetésre kerül, és az adminisztrátorok óránként legfeljebb egy e-mailt kapnak.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>A tömeges futtatások és a közzététel utáni előgenerálás a feladatsor feladatai, a látogatókénál alacsonyabb prioritással. Az álnevek eltávolítása a Velocity válaszgyorsítótárát is törli, így az eltávolított fájlt nem szolgálja ki onnan.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Minden elkészített álnév, megválaszolt helyőrző, előkészített fájl és futtatás egy sor a(z) %file fájlban. A parancssor ugyanezeket az eszközöket tartalmazza: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>%job feladat: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done / %total kép</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Futtatás</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Tartomány</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Eredmény</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Feladat megszakítása</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>A(z) %job feladat nem képálnév-feladat, vagy eltávolították a sorból.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>A(z) %run futtatás eredménye</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>A tömeges futtatások szünetelnek</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Szünetel %time óta, %user által.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>A szünet minden tömeges futtatást megállít az aktuális képe után, minden kiszolgálón; a sorban álló futtatások várnak. A látogatók álnevei továbbra is elkészülnek.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Tömeges futtatások folytatása</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Indok (nem kötelező)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Tömeges futtatások szüneteltetése</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Futtatás indítása</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>A futtatások a feladatsor feladatai: elhagyhatja az oldalt, és később visszatérhet.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Feladatsor nélkül a futtatás ebben a kérésben történik, legfeljebb %count képre.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Művelet</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: a hiányzó álnevek elkészítése</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: eltávolítás és újbóli elkészítés</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: eltávolításuk (igény szerint újra elkészülnek)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: a fájlok letöltése a staging forrásból</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(csak staging telepítésen)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Az egész webhely</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Egy csomópont</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Egy csomópont és részfája</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Csomópont-azonosító</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Osztályok</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Attribútumok</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Módosítva ezóta</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Egy dátum (2026-11-01) vagy egy ennyi idővel ezelőtt (12 óra, 2 nap).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Legfeljebb ennyi kép</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Álnevek (ha egyik sincs bejelölve: mind)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Próbafuttatás: csak számlál (a resync ellenőrzi a forrást, és nem tárol semmit)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>A különböző fájlok felülírása (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>A futtatás indítása</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Legutóbbi futtatások</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Feladat</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Előrehaladás</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Sorban</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Műveletek</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Mégse</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Még nincs tömeges futtatás vagy resync.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Egy kép</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Az a cím, amelyet egy sablon most kap, az egyes álnevekhez kiszámított méretek és típusok, valamint hogy megvan-e az egyes fájl.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Keresés ez alapján</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Objektumazonosító</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Azonosító</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Megjelenítés</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Nincs jogosultsága az objektum olvasására.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Ennek az objektumnak nincs képe.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Nincs ilyen azonosítójú objektum.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>%object objektum, %node csomópont, %version verzió</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Eredeti: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>a fájl megvan</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>a fájl hiányzik</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name álnevei</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Álnév</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Méret</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Típus</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fájl</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Formátumok</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Cím sablonban</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>megvan</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>hiányzik</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>nem ehhez a típushoz való</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Ellenőrzés</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Elkészítés</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Ebben a mezőben nincs kép.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Idő</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Kapcsolat egy forrással</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>HEAD kérés egy staging forrásnak, a hitelesítő adatával, ha meg van nevezve. A hitelesítő adat elküldésre kerül, de soha nem jelenik meg.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Forrás</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>hitelesítő adattal</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Tárolási útvonal (nem kötelező)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>A kapcsolat tesztelése</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Egyik forrásnak sincs BaseURL értéke. A forrásokat a beállításokban lehet megadni ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>elérhető</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>elutasítva: ellenőrizze a hitelesítő adatot</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>nem található a forrásnál</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>nincs válasz</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>időtúllépés</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>átirányítva (nem követve)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>nincs BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>nem tárolási útvonal</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Cím</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Állapot</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>elküldve</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>a titkos érték hiányzik</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>a titkos érték nem user:password vagy Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>A(z) %file legújabb sorai, a legújabbal kezdve.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Rendszer &gt; Naplófájlok</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Esemény</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Minden esemény</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Futtatások (kezdés és befejezés)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Az útvonal tartalmazza</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Sorok</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Szűrés</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Követés: az új sorok megjelenítése írásuk közben</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Útvonal és részletek</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>A napló egyetlen sora sem egyezik.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Mit változtatna a mentés</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Mi változott</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>A settings/override/image.ini.append.php fájlba menti, így az itteni érték minden siteaccess felett érvényesül. A megjelenített értékek az ehhez a siteaccesshez érvényesek. A mentés előtt meg kell erősítenie a személyazonosságát.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Hogyan készülnek és kerülnek kézbesítésre az álnevek.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>A hiányzó képek letöltése egy másik telepítésből (alpha, dev, beta, stage, pro, post, arc). Az éles (pro) soha nem tölt le.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Beállítás</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Érték</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>A settings/override fájlban</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Az egyes források címe és a hitelesítő adatukat tartalmazó titkos érték neve (user:password vagy Bearer &lt;token&gt;). A titkos érték a Rendszer &gt; Titkos értékek oldalon adható meg, és itt soha nem jelenik meg.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>A módosítások előnézete</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Mentés</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Követés: frissítve %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Szünetel</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>A hírfolyam nem válaszolt; újrapróbálkozás.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>A feladat befejeződött.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: a sablonok megkapják a címet, az álnév akkor készül el, amikor kérik. render: a sablon az oldal renderelése közben készíti el (az eredeti viselkedés).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Egy még nem elkészített álnév címe: token (aláírt, nem kell hozzá adatbázis), ids-token, ids, node vagy storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: átirányítás a fájlra, ha a webkiszolgáló kiszolgálja a tárolót, különben a fájl streamelve érkezik.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Az a másodpercszám, amelyet egy kérés egy álnév elkészítésére vagy letöltésére fordíthat; utána a helyőrzővel válaszol, és egy feladat befejezi a munkát.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>A WebP és AVIF változatokhoz először kipróbált átalakító.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>WebP vagy AVIF válasz az azt kérő böngészőknek, a Formats[] listát tartalmazó álneveknél.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Megfelelő méretű semleges kép, amíg egy kép hiányzik.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Egy kis szkript, amely a helyőrzőket a valódi képre cseréli, amint az elérhető.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Közzététel után egy feladat elkészíti az új képek álneveit minden kapcsolódó siteaccesshez.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Egyidejű átalakítások egy kiszolgálón.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>A tömeges futtatások folyamatprioritása (nice), 0-tól 19-ig.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Az a másodpercszám, ameddig a böngészők és gyorsítótárak megtarthatnak egy elkészített álnevet.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Az a másodpercszám, ameddig egy vázlat vagy előnézeti kép címe érvényes marad.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Az a másodpercszám, ameddig az előző aláírókulcs érvényes marad csere után.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>A telepítés környezete.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>A környezet, ahonnan a hiányzó képek letöltődnek; none: semmi sem töltődik le.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Soronként egy: helyi tárolási előtag;a forrás előtagja vagy címe, az eltérő tárolási útvonalakhoz.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Az a másodpercszám, ameddig egy kérés a forrás felé tarthat.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>A forrásból átvehető legnagyobb fájl, bájtban.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Az egymás utáni hibák száma, amely után a forrás szünetel.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Mennyi ideig szünetel egy hibázó forrás.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>E-mail küldése az adminisztrátoroknak, ha a forrás szünetel (óránként legfeljebb egyszer).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Soronként egy e-mail-cím; üres: a site.ini AdminEmail értéke.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>A(z) %block forrástelepítés címe, pl. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>A hitelesítő adatot tartalmazó titkos érték neve, vagy env:VARIABLE. Soha nem maga a hitelesítő adat.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(nincs)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Alapértelmezés: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Itt megadva; jelölje be az eltávolításhoz</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>örökölt</translation>
     </message>
 </context>
 </TS>

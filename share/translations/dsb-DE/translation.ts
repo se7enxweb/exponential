@@ -16529,6 +16529,34 @@ Pokazka: pakety se njewótinstalěruju.</translation>
         <source>Import/Export</source>
         <translation>Import/eksport</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Aliasy wobrazow</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Za toś ten element generěrowaś</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Za pódrjewo generěrowaś</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Za toś ten element znowa generěrowaś</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Za pódrjewo znowa generěrowaś</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Za toś ten element wótpóraś</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Za pódrjewo wótpóraś</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86452,6 +86480,997 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Blok server starego sedła: location = z return, if ($args) za napšašowanje, rewrite ako zastupne znamuško a map jadnotliwych bokow.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Aliasy wobrazow</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Aliasy wobrazow su skalowane a wobrězane kopije wobraza, kótarež šablony pokazuju. How wiźiśo, kak wuše se twóre, mógliśo masowe nadawki na sedle pušćaś, jaden wobraz abo staging-žrědło testowaś, historiju běgow slědowaś a nastajenja změniś.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Dźěle boka</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Pśeglědowa tafla</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Masowe běgi</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Testowe rědy</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Historija běgow</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Nastajenja</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>How móžośo wšykno pśeglědowaś. Změnjenje nastajenjow, pušćanje nadawkow a rědy, kótarež dataje twóre, pótrěbuju pšawidło setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Což trjeba kšace</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Mod render: šablony twóre felujuce aliasy, mjaztym až se bok renderujo, kaž pjerwjej. Adrese on-demand, zastupniki a nadawki w slězynje se njewužywaju.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Wujadnanje formata jo zašaltowane, ale žeden konwertěr how njamóžo WebP pisaś.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>To jo staging-instalacija, ale jeje žrědło njama BaseURL: felujuce wobrazy njamóžo se zasaś.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Staging-žrědło jo pó někotarych zmólkach za sobu pśestajone: felujuce wobrazy dostanu zastupniki, až pśestawka skónca abo až jo slědk stajaśo.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Staging-žrědło jo nowy raz zmólku měło. Glejśo jeje slědnu zmólku dołojce.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Toś ta instalacija njejo produkcija, ale SyncFrom žedno žrědło njenjenjo: nic se njezasajo.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Rědka nadawkow (expqueue) njejo k dispoziciji: aliasy, kótarež cas pśekšocyju, twóri pśiducy napšašowanje, pśedgenerěrowanje pó wózjawjenju se pśeskócyjo a masowe běgi su na małe wobceŕki wobgranicowane.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Někotare nadawki aliasow wobrazow su kończnje njewuspěšne byli. Zarědowanje &gt; Rědka nadawkow pokazujo pśicynu.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Masowe běgi su pśestajone.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Aliasy su w slědnych 24 góźinach njewuspěšne byli. Historija běgow je naraźujo.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Signěrowański kluc jo starjej ako lěto. Gaž jen wobnowijośo, wóstanu stare adrese w graceperiodźe płaśiwe.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Hyšći njejo signěrowański kluc: twóri se z prědnej adresu on-demand.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Slědne 24 góźin</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Generěrowane aliasy</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Wótegronjone zastupniki</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Zmólki</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Pśigótowane dataje</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Startowane běgi</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Nadawki cakaju / běže</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Licony z slědnych %lines wjerškow z %file, kótarež sežaju slědk do %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Mod a dodanje</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mod</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>on demand</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Forma adrese</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Dodanje</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Nejdlejše cakanje napšašowanja</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Konwersije kužde cajej</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy z %max něnto zaběrane</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Wujadnanje formata</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>zašaltowane</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>wušaltowane</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Zastupnik a pśewjeźeński skript</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Pśedgenerěrowanje pó wózjawjenju</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Aliasy sedła</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Konwertěry formatowych wariantow</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Konwertěr</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Wopytany</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>pśipórucony</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>jo</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ně</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Aliasy se sami wót konwertěrow z [ImageConverterSettings] twórje, kaž pjerwjej; toś te pišu warianty WebP a AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Wobceŕk a žrědło</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Toś ta instalacija</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(produkcija: nigda nic njezasajo)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Zasajo z</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>nic</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Adresa žrědła</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>njejo nastajona</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Pśizjawjeńske daty</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>pótajmstwo %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>žedne</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>funkcioněrujo</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>pśestajone až do %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>zmólkujo</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Zmólki za sobu</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>pśestawka pó %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Slědna zmólka</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Slědny wuspěch</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Zmólki slědk stajiś a žrědło hyšći raz wopšašaś</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Rědka nadawkow</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Typ nadawka</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Cakajucy</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Běžy</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Njewuspěšny</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>njejo zregistrěrowany</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Rědka nadawkow njejo k dispoziciji.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Masowe běgi su pśestajone</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>wót %time wót %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Masowe běgi smědu běžaś</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Signěrowański kluc</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Kluc</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>w pótajmstwowej składnicy</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>hyšći žeden</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Staroba</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days dnjow (wót %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Pjerwjejšny kluc</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>płaśiwy až do %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Kluc wobnowiś</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Adrese, kótarež su z aktualnym klucom signěrowane, dalej funkcioněruju w graceperiodźe (SigningKeyGrace), potom wótegronjuju zastupniki, až se boki znowa twórje.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Něnto wobnowiś</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Kak to funkcioněrujo</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, mod render, staging a protokol</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (standard): bok wótkazujo aliasa, kótaryž hyšći njejo, na signěrowanu adresu. Prědne napšašowanje jen twóri w nejdlejšem cakanju, hynac wótegronijo neutralnego zastupnika a nadawk źěło dokóńcujo; pśewjeźeński skript zastupnika wuměnijo, gaž wobraz jo.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Mod render: šablona twóri aliasa, mjaztym až se bok renderujo, kaž pjerwjej. Mógośo kuždy cas mjazy wobyma pśešaltowaś; nic njetrjeba se pśenjasć.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Staging-instalacija zasajo originale a aliasy, kótarež jej felaju, z swójogo žrědła; zmólkujuce žrědło se pó někotarych zmólkach za sobu pśestajijo a administratory dostanu maksimalnje jadnu e-mailku na góźinu.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Masowe běgi a pśedgenerěrowanje pó wózjawjenju su nadawki rědki nadawkow, z nišeju prioritu ako woglědowarje. Wótwónoźenje aliasow teke cache wótegronow Velocity wuprozni, aby se wótwónoźona dataja z njeje njedodała.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Kuždy twórjony alias, wótegronjony zastupnik, pśigótowana dataja a běg jo smužka w %file. Pśikazowa smužka ma te same rědy: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Nadawk %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done z %total wobrazow</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Běg</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Wobceŕk</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Wuslědk</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Toś ten nadawk pśetergnuś</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Nadawk %job njejo nadawk aliasow wobrazow abo jo se z rědki wótpórał.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Wuslědk běga %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Masowe běgi su pśestajone</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Pśestajone wót %time wót %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Pśestawka zastajijo kuždy masowy běg pó jogo aktualnem wobrazu, na kuždem serwerje; rědkowane běgi cakaju. Aliasy woglědowarjow se dalej twórje.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Masowe běgi pókšacowaś</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Pśicyna (opcionalna)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Masowe běgi pśestajiś</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Běg startowaś</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Běgi su nadawki rědki nadawkow: móžośo bok spušćiś a pózdźej se wrośiś.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Bźez rědki nadawkow se běg w toś tom napšašowanju gótujo, maksimalnje za %count wobrazow.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Akcija</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: felujuce aliasy twóriś</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: wótwónoźeś a znowa twóriś</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: wótwónoźeś (na póžedanje znowa twórjone)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: dataje ze staging-žrědła zasaś</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(jano na staging-instalaciji)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Cełe sedło</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Jaden suk</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Suk a jogo pódłoga</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID suka</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klase</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atributy</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Změnjony wót</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Datum (2026-11-01) abo cas slědk (12 góźin, 2 dnja).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Maksimalnje wobrazow</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Aliasy (njejano wubrane: wšykne)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Test: jano licyś (resync žrědło wopytujo a nic njeskładujo)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Dataje pśepisaś, kótarež se rozdźěluju (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Běg startowaś</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Slědne běgi</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Nadawk</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Pókšac</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Do rědki stajony</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Akcije</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Pśetergnuś</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Hyšći žeden masowy běg abo resync.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Jaden wobraz</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Adrese, kótarež šablona něnto dostawa, wjelikosći a typy za kuždy alias wuličone a lěc dataja jo.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Pytaś pó</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID objekta</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Pokazaś</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Njesmějośo toś ten objekt cytaś.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Toś ten objekt njama wobraz.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Objekt z toś tym ID njejo.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>objekt %object, suk %node, wersija %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Original: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>dataja jo</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>dataja felujo</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Aliasy wót %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Alias</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Wjelikosć</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Dataja</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Formaty</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Adresa w šablonje</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>jo</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>felujo</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>njejo za toś ten typ</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Kontrolěrowaś</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Twóriś</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Žeden wobraz w toś tom pólu.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Cas</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Zwisk ze žrědłom</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Napšašowanje HEAD na staging-žrědło, z jogo pśizjawjeńskimi datami, gaž su pódane. Pśizjawjeńske daty se pósćelaju, ale se nigda njepokazuju.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Žrědło</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>z pśizjawjeńskimi datami</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Składowański puśik (opcionalny)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Zwisk testowaś</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Žedno žrědło njama BaseURL. Žrědła se w nastajenjach stajaju ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>dojśpjejny</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>wótpokazany: pśizjawjeńske daty kontrolěrowaś</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>njejo se we žrědle namakał</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>žedna wótegrona</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>cas jo pśekšocony</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>pśesměrowany (njejo slědowany)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>žedna BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>njejo składowański puśik</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresa</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>pósłany</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>pótajmstwo felujo</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>pótajmstwo njejo user:password abo Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Nejnowše smužki %file, nejnowše nejpjerwjej.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Zarědowanje &gt; Protokolowe dataje</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Tšojenje</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Wšykne tšojenja</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Běgi (start a kóńc)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Puśik wopśimujo</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Smužki</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrowaś</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Slědowaś: nowe smužki pokazaś, gaž se pišu</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Puśik a drobnostki</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Žedna smužka protokola njewótpowědujo.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Což by składowanje změniło</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Což jo se změniło</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Składowane do settings/override/image.ini.append.php, tak až gódnota how pśewagujo nad wšykne siteaccess. Pokazane gódnoty su te, kótarež płaśe za toś ten siteaccess. Pśed składowanjom musyśo nejpjerwjej wobkšuśiś, až sćo to Wy.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Kak se aliasy twórje a dodawaju.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Zasajenje felujucych wobrazow z drugeje instalacije (alpha, dev, beta, stage, pro, post, arc). Produkcija (pro) nigda nic njezasajo.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Nastajenje</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Gódnota</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>W settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Adresa kuždego žrědła a mě pótajmstwa, kótarež jogo pśizjawjeńske daty wopśimujo (user:password abo Bearer &lt;token&gt;). Gódnota pótajmstwa se w Zarědowanje &gt; Pótajmstwa stajijo a how se nigda njepokazujo.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Změny pśeglědowaś</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Składowaś</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Slědujo: aktualizěrowane %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Pśestajone</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Pśinoski njejsu wótegronili; wopyt se wóspjetujo.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Nadawk jo skóńcony.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: šablony dostawaju adresu, alias se twóri, gaž se pominujo. render: šablona jen twóri, mjaztym až se bok renderujo (originalne zachopowanje).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Adresa aliasa, kótaryž hyšći njejo twórjony: token (signěrowany, njetrjeba datowu banku), ids-token, ids, node abo storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: pśesměrowanje na dataju, gaž webserwer składowanje dodawa, hynac se dataja pósćelo ako stream.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Sekundy, kótarež napšašowanje smějo na twórjenje abo zasajenje aliasa wužywaś; pótom wótegronijo zastupnika a nadawk źěło dokóńcujo.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Konwertěr, kótaryž se nejpjerwjej wopytujo za warianty WebP a AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>WebP abo AVIF na wobglědowaki wótegronjeś, kótarež to pominuju, za aliasy, kótarež Formats[] nalicuju.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Neutralny wobraz pšaweje wjelikosći, mjaztym až wobraz felujo.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Nejmjeńšy skript, kótaryž zastupniki z napšawdnym wobrazom wuměnijo, gaž jo.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Pó wózjawjenju nadawk twóri aliasy nowych wobrazow za kuždy pśisłušny siteaccess.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Konwersije kužde cajej na jadnom serwerje.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Procesowa priorita (nice) masowych běgow, 0 do 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Sekundy, kótarež wobglědowaki a cache twórjony alias smědu wobchowaś.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Sekundy, kótarež adresa nacerjenego abo pśeglědowego wobraza płaśi.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Sekundy, kótarež pjerwjejšny signěrowański kluc pó wobnowjenju płaśi.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Wobceŕk toś teje instalacije.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Wobceŕk, z kótaregož se felujuce wobrazy zasaju; none: nic se njezasajo.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Jaden na smužku: lokalny prefiks składowanja;prefiks žrědła abo adresa, za składowańske puśiki, kótarež se rozdźěluju.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Sekundy, kótarež jadno napšašowanje na žrědło smějo traś.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Nejwětša dataja, kótaraž se ze žrědła bjerjo, w bajtach.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Zmólki za sobu, pó kótarychž se žrědło pśestajijo.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Kak dłujko se zmólkujuce žrědło pśestajijo.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Administratory pśez e-mail informěrowaś, gaž se žrědło pśestajijo (maksimalnje raz na góźinu).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Jadna e-mailowa adresa na smužku; prozne: AdminEmail z site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Adresa žrědłoweje instalacije %block, na pś. https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Mě pótajmstwa z pśizjawjeńskimi datami abo env:VARIABLE. Nigda pśizjawjeńske daty sami.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(žedne)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Standard: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>How stajone; zakšuśniśo, aby se wótpórało</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>herbowane</translation>
     </message>
 </context>
 </TS>

@@ -163,7 +163,10 @@
         "siteaccess": "Exponential term, kept in Latin letters in the Arabic translation (glossary)",
         "vertScrollState": "OPML attribute name (code identifier)",
         "xmlUrl": "OPML attribute name (code identifier)",
-        "Siteaccess": "the word the catalogue uses for this term, spelled as in English"
+        "Siteaccess": "the word the catalogue uses for this term, spelled as in English",
+        "render": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "%seconds s": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "%ms ms": "Setup > Image aliases: code, setting value, unit or product name kept"
     },
     "cro-HR": {
         "#level1 - #level2": "product, standard or protocol name or abbreviation",
@@ -281,7 +284,10 @@
         "Font": "spelled the same in Croatian (font, the standard word for a typeface)",
         "+%added ~%changed -%removed": "Fixed counter notation, kept exactly as the brief requires",
         "Webhook": "Croatian IT usage keeps the English term Webhook",
-        "Test": "a loanword spelled the same"
+        "Test": "a loanword spelled the same",
+        "render": "Setup > Image aliases: code word or name kept as in English",
+        "resync": "Setup > Image aliases: code word or name kept as in English",
+        "Original: %width x %height, %type": "Setup > Image aliases: code word or name kept as in English"
     },
     "cze-CZ": {
         "Relevance": "Relevance is the Czech word for relevance, spelled the same",
@@ -428,7 +434,9 @@
         "WebDAV": "protocol name",
         "Webhook": "Czech uses the English term Webhook",
         "Import %id": "Czech word 'import' spelled the same",
-        "Test": "a loanword spelled the same"
+        "Test": "a loanword spelled the same",
+        "render": "Setup > Image aliases: code word or name kept as in English",
+        "resync": "Setup > Image aliases: code word or name kept as in English"
     },
     "dan-DK": {
         "Cookie": "Danish standard term for an HTTP cookie is Cookie",
@@ -680,7 +688,12 @@
         "Build": "Danish developers use the English term build",
         "Webhook": "Danish uses the English term Webhook",
         "Datatype %string": "Datatype is the Danish word too",
-        "Import %id": "Danish word 'import' spelled the same"
+        "Import %id": "Danish word 'import' spelled the same",
+        "render": "Setup > Image aliases: code word or name kept as in English",
+        "Job %job: %action": "Setup > Image aliases: code word or name kept as in English",
+        "resync": "Setup > Image aliases: code word or name kept as in English",
+        "Id": "Setup > Image aliases: code word or name kept as in English",
+        "Original: %width x %height, %type": "Setup > Image aliases: code word or name kept as in English"
     },
     "dut-NL": {
         "Handler": "Dutch IT usage keeps handler for the PHP session save handler",
@@ -1058,7 +1071,16 @@
         "Datatypes (%count)": "Datatypes is the Dutch plural too",
         "Import %id": "Dutch word 'import' spelled the same",
         "Wildcard": "Dutch loanword used in the Dutch catalogue",
-        "Wildcard (direct)": "Dutch loanword 'wildcard' and Dutch word 'direct' spelled the same"
+        "Wildcard (direct)": "Dutch loanword 'wildcard' and Dutch word 'direct' spelled the same",
+        "render": "Setup > Image aliases: code word or name kept as in English",
+        "Converter": "Setup > Image aliases: code word or name kept as in English",
+        "secret %name": "Setup > Image aliases: code word or name kept as in English",
+        "Job %job: %action": "Setup > Image aliases: code word or name kept as in English",
+        "Run": "Setup > Image aliases: code word or name kept as in English",
+        "resync": "Setup > Image aliases: code word or name kept as in English",
+        "Job": "Setup > Image aliases: code word or name kept as in English",
+        "Formats": "Setup > Image aliases: code word or name kept as in English",
+        "In settings/override": "Setup > Image aliases: code word or name kept as in English"
     },
     "esl-ES": {
         "Cookie": "Spanish uses the loanword cookie for HTTP cookies",
@@ -1242,7 +1264,9 @@
         "Webhooks": "the same word in Spanish (established loanword)",
         "no": "no is the Spanish word for no",
         "Extras": "Extras is the Spanish plural of extra",
-        "Webhook": "Spanish uses the English term Webhook"
+        "Webhook": "Spanish uses the English term Webhook",
+        "render": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "Original: %width x %height, %type": "Setup > Image aliases: code, setting value, unit or product name kept"
     },
     "esl-MX": {
         "Cookie": "Spanish uses the English loanword \"cookie\" as the standard web term",
@@ -1424,7 +1448,9 @@
         "Extras": "Spanish uses the same word 'Extras'",
         "extra": "Spanish uses the same word 'extra'",
         "Webhook": "Spanish uses the English term Webhook",
-        "Id": "Spanish uses the abbreviation Id"
+        "Id": "Spanish uses the abbreviation Id",
+        "render": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "Original: %width x %height, %type": "Setup > Image aliases: code, setting value, unit or product name kept"
     },
     "fas-IR": {
         "#level1 - #level2": "format placeholders only",
@@ -1497,7 +1523,9 @@
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
         "xmlUrl": "OPML attribute name (code identifier)",
-        "WebDAV": "protocol name"
+        "WebDAV": "protocol name",
+        "render": "Setup > Image aliases: code word or name kept as in English",
+        "resync": "Setup > Image aliases: code word or name kept as in English"
     },
     "fre-FR": {
         "Cookie": "French uses cookie as the established term (Nom du cookie)",
@@ -1807,7 +1835,10 @@
         "Public": "French adjective public is spelled the same as English",
         "public": "French adjective public is spelled the same as English",
         "Import %id": "French word import spelled the same",
-        "Test": "Common loan word, spelled the same as in the language"
+        "Test": "Common loan word, spelled the same as in the language",
+        "render": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "secret %name": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "Formats": "Setup > Image aliases: code, setting value, unit or product name kept"
     },
     "ger-DE": {
         "Session": "German IT usage writes Session (the guide and the tab say Session)",
@@ -2123,7 +2154,10 @@
         "Vector": "product name of the Exponential Intelligence workspace",
         "Windows Media Player": "product name (Microsoft media player)",
         "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
-        "Webhook": "Hebrew interfaces use the English term Webhook"
+        "Webhook": "Hebrew interfaces use the English term Webhook",
+        "render": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "%seconds s": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "%ms ms": "Setup > Image aliases: code, setting value, unit or product name kept"
     },
     "ita-IT": {
         "Cookie": "Italian standard term for an HTTP cookie is cookie",
@@ -2325,7 +2359,13 @@
         "Query": "the loan word Italian uses for a database query",
         "%count in %seconds s": "placeholders, the unit symbol and the word in, spelled the same",
         "Build": "Italian software UIs use the English term build",
-        "Webhook": "Italian uses the English term webhook"
+        "Webhook": "Italian uses the English term webhook",
+        "render": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "on demand": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "Job %job: %action": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "resync": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "Job": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "In settings/override": "Setup > Image aliases: code word, setting value, unit or product name kept"
     },
     "kur-TR": {
         "#level1 - #level2": "format placeholders only",
@@ -2424,7 +2464,10 @@
         "Tablet": "loanword used in Kurmanji for the device",
         "WebDAV": "protocol name",
         "Font": "Kurmanji writes the typeface as font, spelled the same (fonta standard, fontên lêzêdekirî)",
-        "Webhook": "Kurdish technical usage keeps the English term Webhook"
+        "Webhook": "Kurdish technical usage keeps the English term Webhook",
+        "render": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "on demand": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "resync": "Setup > Image aliases: code word, setting value, unit or product name kept"
     },
     "lat-VA": {
         "Phases": "the Latin plural of phasis, spelled like the English",
@@ -2557,7 +2600,9 @@
         "Schema": "the same word in Latin",
         "%count in %seconds s": "placeholders, the unit symbol and the word in, spelled the same",
         "%seconds s": "placeholder and the unit symbol s, the language has no other",
-        "Remove": "the word the catalogue uses for this term, spelled as in English"
+        "Remove": "the word the catalogue uses for this term, spelled as in English",
+        "render": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "In settings/override": "Setup > Image aliases: code, setting value, unit or product name kept"
     },
     "nor-NO": {
         "#level1 - #level2": "template code",
@@ -2717,7 +2762,10 @@
         "Zoom: %1 %": "zoom is the Norwegian word, spelled the same",
         "Webhook": "Norwegian uses the English term Webhook",
         "Datatype %string": "Datatype is the Norwegian word too",
-        "Import %id": "Norwegian noun 'import' spelled the same"
+        "Import %id": "Norwegian noun 'import' spelled the same",
+        "render": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "resync": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "Original: %width x %height, %type": "Setup > Image aliases: code word, setting value, unit or product name kept"
     },
     "pol-PL": {
         "#level1 - #level2": "code, setting, file name, unit or placeholder text without words to translate",
@@ -2854,7 +2902,9 @@
         "Webhook": "Polish uses the English technical term webhook",
         "Import %id": "Polish noun 'import' spelled the same",
         "Status": "Polish word spelled the same",
-        "Test": "Polish uses the same word for a test"
+        "Test": "Polish uses the same word for a test",
+        "render": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "resync": "Setup > Image aliases: code word, setting value, unit or product name kept"
     },
     "por-BR": {
         "Cookie": "Brazilian Portuguese uses the English loanword \"cookie\" as the standard web term",
@@ -3055,7 +3105,10 @@
         "%bytes bytes": "placeholders and the unit bytes, spelled the same",
         "Webhooks": "the English loanword is the standard term in Brazilian Portuguese",
         "Build": "Brazilian Portuguese developers use the English term build",
-        "Webhook": "Portuguese uses the English technical term webhook"
+        "Webhook": "Portuguese uses the English technical term webhook",
+        "render": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "resync": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "Original: %width x %height, %type": "Setup > Image aliases: code word, setting value, unit or product name kept"
     },
     "pus-AF": {
         "#level1 - #level2": "format placeholders only",
@@ -3138,7 +3191,10 @@
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
         "xmlUrl": "OPML attribute name (code identifier)",
-        "WebDAV": "protocol name"
+        "WebDAV": "protocol name",
+        "render": "Setup > Image aliases: code word or name kept as in English",
+        "on demand": "Setup > Image aliases: code word or name kept as in English",
+        "resync": "Setup > Image aliases: code word or name kept as in English"
     },
     "swa-KE": {
         "Minify": "technical term kept in English",
@@ -3229,7 +3285,12 @@
         "vertScrollState": "OPML attribute name (code identifier)",
         "xmlUrl": "OPML attribute name (code identifier)",
         "WebDAV": "protocol name",
-        "JSON: %url": "format name JSON plus placeholder"
+        "JSON: %url": "format name JSON plus placeholder",
+        "render": "Setup > Image aliases: code word or name kept as in English",
+        "on demand": "Setup > Image aliases: code word or name kept as in English",
+        "%seconds s": "Setup > Image aliases: code word or name kept as in English",
+        "resync": "Setup > Image aliases: code word or name kept as in English",
+        "%ms ms": "Setup > Image aliases: code word or name kept as in English"
     },
     "swe-SE": {
         "Cookie": "Swedish uses the word cookie for a browser cookie (Svenska datatermgruppen accepts it); the catalogue writes Cookienamn",
@@ -3431,7 +3492,11 @@
         "Schema": "the same word in Swedish",
         "Webhooks": "the same word in Swedish (English loanword, plural -s)",
         "Webhook": "Swedish uses the English term webhook",
-        "Import %id": "Swedish word 'Import' spelled the same"
+        "Import %id": "Swedish word 'Import' spelled the same",
+        "render": "Setup > Image aliases: code word or name kept as in English",
+        "resync": "Setup > Image aliases: code word or name kept as in English",
+        "Id": "Setup > Image aliases: code word or name kept as in English",
+        "Original: %width x %height, %type": "Setup > Image aliases: code word or name kept as in English"
     },
     "tlh-QO": {
         "GitHub Actions workflow": "product name kept",
@@ -3510,7 +3575,9 @@
         "YYYY-MM-DD": "date format pattern, code",
         "YYYY-MM-DD HH:MM:SS": "date format pattern, code",
         "YYYY-MM-DDTHH:MM:SS+00:00": "date format pattern, code",
-        "Z-A": "reverse alphabetical sort order shown with the Latin letters of the transcription"
+        "Z-A": "reverse alphabetical sort order shown with the Latin letters of the transcription",
+        "render": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "%seconds s": "Setup > Image aliases: code, setting value, unit or product name kept"
     },
     "tur-TR": {
         "#level1 - #level2": "product name, code, file name, setting or format without translatable words",
@@ -3586,7 +3653,10 @@
         "xmlUrl": "product name, code, file name, setting or format without translatable words",
         "Tablet": "standard Turkish word (TDK: tablet)",
         "WebDAV": "protocol name",
-        "Webhook": "Turkish uses the English term Webhook (catalogue: Webhook'lar)"
+        "Webhook": "Turkish uses the English term Webhook (catalogue: Webhook'lar)",
+        "render": "Setup > Image aliases: code word or name kept as in English",
+        "on demand": "Setup > Image aliases: code word or name kept as in English",
+        "resync": "Setup > Image aliases: code word or name kept as in English"
     },
     "ukr-UA": {
         "#level1 - #level2": "only PDF placeholder tokens and a separator; no words to translate",
@@ -3667,7 +3737,10 @@
         "title": "OPML attribute name, code identifier",
         "url": "OPML attribute name, code identifier",
         "vertScrollState": "OPML attribute name, code identifier",
-        "xmlUrl": "OPML attribute name, code identifier"
+        "xmlUrl": "OPML attribute name, code identifier",
+        "render": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "%seconds s": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "%ms ms": "Setup > Image aliases: code, setting value, unit or product name kept"
     },
     "hin-IN": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -3761,7 +3834,9 @@
         "top": "OPML attribute name, kept as code",
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
-        "xmlUrl": "OPML attribute name (code identifier)"
+        "xmlUrl": "OPML attribute name (code identifier)",
+        "render": "Setup > Image aliases: code word, setting value, unit or product name kept as is",
+        "resync": "Setup > Image aliases: code word, setting value, unit or product name kept as is"
     },
     "kor-KR": {
         "#level1 - #level2": "format placeholders only",
@@ -3847,7 +3922,9 @@
         "top": "OPML attribute name, kept as code",
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
-        "xmlUrl": "OPML attribute name (code identifier)"
+        "xmlUrl": "OPML attribute name (code identifier)",
+        "render": "Setup > Image aliases: code word, unit or product name, same in this language",
+        "resync": "Setup > Image aliases: code word, unit or product name, same in this language"
     },
     "bos-BA": {
         "#level1 - #level2": "format placeholders only",
@@ -3986,7 +4063,9 @@
         "Commit": "Bosnian uses the English git term commit (the catalogue writes commitovano)",
         "Webhook": "Bosnian uses the English loanword webhook",
         "git host": "Bosnian uses git and the loanword host, as the catalogue's allowlist does for Host",
-        "Test": "a loanword spelled the same"
+        "Test": "a loanword spelled the same",
+        "render": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "Original: %width x %height, %type": "Setup > Image aliases: code, setting value, unit or product name kept"
     },
     "dsb-DE": {
         "Cookie": "Lower Sorbian uses the loanword Cookie for a browser cookie (Mozilla dsb terminology)",
@@ -4117,7 +4196,11 @@
         "xmlUrl": "OPML attribute name (code identifier)",
         "Tablet": "same word in Lower Sorbian (a tablet computer)",
         "Webhook": "Lower Sorbian technical texts use the English term Webhook",
-        "Import %id": "Lower Sorbian word 'import' spelled the same"
+        "Import %id": "Lower Sorbian word 'import' spelled the same",
+        "render": "Setup > Image aliases: code word, setting value, unit or product name kept as is",
+        "on demand": "Setup > Image aliases: code word, setting value, unit or product name kept as is",
+        "resync": "Setup > Image aliases: code word, setting value, unit or product name kept as is",
+        "Original: %width x %height, %type": "Setup > Image aliases: code word, setting value, unit or product name kept as is"
     },
     "est-EE": {
         "#levelIndex1:#levelIndex2": "format placeholders only",
@@ -4229,7 +4312,9 @@
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
         "xmlUrl": "OPML attribute name (code identifier)",
-        "Import %id": "Estonian word 'import' spelled the same"
+        "Import %id": "Estonian word 'import' spelled the same",
+        "render": "Setup > Image aliases: code word, setting value, unit or product name kept as is",
+        "resync": "Setup > Image aliases: code word, setting value, unit or product name kept as is"
     },
     "gle-IE": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -4322,7 +4407,9 @@
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
         "xmlUrl": "OPML attribute name (code identifier)",
-        "%count in %seconds s": "placeholders, the unit symbol and the word in, spelled the same"
+        "%count in %seconds s": "placeholders, the unit symbol and the word in, spelled the same",
+        "render": "Setup > Image aliases: code word, setting value, unit or product name kept as is",
+        "resync": "Setup > Image aliases: code word, setting value, unit or product name kept as is"
     },
     "isl-IS": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -4398,7 +4485,11 @@
         "top": "OPML attribute name, kept as code",
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
-        "xmlUrl": "OPML attribute name (code identifier)"
+        "xmlUrl": "OPML attribute name (code identifier)",
+        "render": "Setup > Image aliases: code word, setting value, unit or product name kept as is",
+        "%seconds s": "Setup > Image aliases: code word, setting value, unit or product name kept as is",
+        "resync": "Setup > Image aliases: code word, setting value, unit or product name kept as is",
+        "sent": "Setup > Image aliases: code word, setting value, unit or product name kept as is"
     },
     "kal-GL": {
         "Cookie": "Greenlandic uses the loanword cookie for HTTP cookies",
@@ -4520,7 +4611,11 @@
         "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
         "Commit": "Greenlandic technical usage keeps the English git term Commit",
         "Push": "Greenlandic technical usage keeps the English git term Push",
-        "Webhook": "Greenlandic technical usage keeps the English term Webhook"
+        "Webhook": "Greenlandic technical usage keeps the English term Webhook",
+        "render": "Setup > Image aliases: code word, unit or product name, same in this language",
+        "Converter": "Setup > Image aliases: code word, unit or product name, same in this language",
+        "resync": "Setup > Image aliases: code word, unit or product name, same in this language",
+        "Alias": "Setup > Image aliases: code word, unit or product name, same in this language"
     },
     "lav-LV": {
         "#level1 - #level2": "format placeholders only",
@@ -4623,7 +4718,9 @@
         "top": "OPML attribute name, kept as code",
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
-        "xmlUrl": "OPML attribute name (code identifier)"
+        "xmlUrl": "OPML attribute name (code identifier)",
+        "render": "Setup > Image aliases: code word, unit or product name, same in this language",
+        "resync": "Setup > Image aliases: code word, unit or product name, same in this language"
     },
     "hun-HU": {
         "#levelIndex1:#levelIndex2": "format placeholders only",
@@ -4702,7 +4799,9 @@
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
         "xmlUrl": "OPML attribute name (code identifier)",
-        "Webhook": "Hungarian uses the English term Webhook"
+        "Webhook": "Hungarian uses the English term Webhook",
+        "render": "Setup > Image aliases: code word, setting value, unit or product name kept as is",
+        "resync": "Setup > Image aliases: code word, setting value, unit or product name kept as is"
     },
     "mlt-MT": {
         "Cookie": "Maltese uses the English loanword \"cookie\" as the standard web term",
@@ -4859,7 +4958,10 @@
         "Webhooks": "the same loanword in Maltese",
         "+%added ~%changed -%removed": "Symbols and placeholders only; the brief requires it unchanged",
         "Webhook": "Maltese uses the English technical term webhook",
-        "Wildcard": "Maltese catalogue uses the loanword Wildcard"
+        "Wildcard": "Maltese catalogue uses the loanword Wildcard",
+        "render": "Setup > Image aliases: code word, unit or product name, same in this language",
+        "resync": "Setup > Image aliases: code word, unit or product name, same in this language",
+        "Formats": "Setup > Image aliases: code word, unit or product name, same in this language"
     },
     "ron-RO": {
         "Cookie": "Romanian uses the loanword cookie (Numele cookie-ului)",
@@ -5043,7 +5145,11 @@
         "Build": "Romanian software usage keeps the English term build",
         "Webhook": "Romanian uses the English technical term webhook",
         "Public": "Romanian adjective is spelled Public",
-        "public": "Romanian adjective is spelled public"
+        "public": "Romanian adjective is spelled public",
+        "render": "Setup > Image aliases: code word, unit or product name, same in this language",
+        "Job %job: %action": "Setup > Image aliases: code word, unit or product name, same in this language",
+        "Job": "Setup > Image aliases: code word, unit or product name, same in this language",
+        "Original: %width x %height, %type": "Setup > Image aliases: code word, unit or product name, same in this language"
     },
     "sqi-AL": {
         "#level1 - #level2": "format placeholders only",
@@ -5140,7 +5246,8 @@
         "Tablet": "same word in Albanian (a tablet computer)",
         "Webhook": "Albanian uses the English technical term Webhook",
         "Private": "Albanian feminine adjective (depo private) is spelled the same as the English word",
-        "private": "Albanian feminine adjective (depo private) is spelled the same as the English word"
+        "private": "Albanian feminine adjective (depo private) is spelled the same as the English word",
+        "render": "Setup > Image aliases: setting value kept as code word"
     },
     "slk-SK": {
         "#levelIndex1:#levelIndex2": "format placeholders only",
@@ -5262,7 +5369,9 @@
         "xmlUrl": "OPML attribute name (code identifier)",
         "Tablet": "same word in Slovak (a tablet computer)",
         "Webhook": "Slovak uses the English term Webhook",
-        "Import %id": "Slovak word 'Import' spelled the same"
+        "Import %id": "Slovak word 'Import' spelled the same",
+        "render": "Setup > Image aliases: code word, unit or product name, same in this language",
+        "resync": "Setup > Image aliases: code word, unit or product name, same in this language"
     },
     "slv-SI": {
         "Minify": "technical term kept in English",
@@ -5362,7 +5471,9 @@
         "top": "OPML attribute name, kept as code",
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
-        "xmlUrl": "OPML attribute name (code identifier)"
+        "xmlUrl": "OPML attribute name (code identifier)",
+        "render": "Setup > Image aliases: code word, unit or product name, same in this language",
+        "resync": "Setup > Image aliases: code word, unit or product name, same in this language"
     },
     "jpn-JP": {
         "#level1 - #level2": "format placeholders only",
@@ -5442,7 +5553,10 @@
         "vertScrollState": "OPML attribute name (code identifier)",
         "xmlUrl": "OPML attribute name (code identifier)",
         "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
-        "Webhook": "Japanese interfaces, GitHub's among them, use the English term Webhook"
+        "Webhook": "Japanese interfaces, GitHub's among them, use the English term Webhook",
+        "render": "Setup > Image aliases: code word, setting value, unit or product name kept as is",
+        "resync": "Setup > Image aliases: code word, setting value, unit or product name kept as is",
+        "%ms ms": "Setup > Image aliases: code word, setting value, unit or product name kept as is"
     },
     "fin-FI": {
         "#levelIndex1:#levelIndex2": "format placeholders only",
@@ -5528,7 +5642,9 @@
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
         "xmlUrl": "OPML attribute name (code identifier)",
-        "Webhook": "Finnish uses the English term Webhook"
+        "Webhook": "Finnish uses the English term Webhook",
+        "render": "Setup > Image aliases: code word, setting value, unit or product name kept as is",
+        "resync": "Setup > Image aliases: code word, setting value, unit or product name kept as is"
     },
     "ell-GR": {
         "Cookie": "Greek UIs keep the technical term cookie in Latin script (Όνομα cookie)",
@@ -5618,7 +5734,9 @@
         "Tablet": "the tablet computer is written in Latin letters in Greek interfaces",
         "%bytes bytes": "placeholders and the unit bytes, spelled the same",
         "Webhooks": "technical term kept in Latin script in Greek UIs",
-        "Webhook": "Greek technical usage keeps the English term Webhook"
+        "Webhook": "Greek technical usage keeps the English term Webhook",
+        "render": "Setup > Image aliases: code word, setting value, unit or product name kept as is",
+        "resync": "Setup > Image aliases: code word, setting value, unit or product name kept as is"
     },
     "rus-RU": {
         "#levelIndex1:#levelIndex2": "placeholder pattern/code",
@@ -5714,7 +5832,8 @@
         "url": "code identifier",
         "vertScrollState": "code identifier",
         "viewmode": "code identifier",
-        "xmlUrl": "code identifier"
+        "xmlUrl": "code identifier",
+        "render": "Setup > Image aliases: code word, unit or product name, same in this language"
     },
     "cat-ES": {
         "Mode": "Catalan word spelled the same",
@@ -5928,7 +6047,12 @@
         "Webhooks": "the same loanword in Catalan",
         "Webhook": "Catalan uses the English term webhook",
         "Id": "Catalan uses the abbreviation Id for identifier",
-        "extra": "Same word in Catalan"
+        "extra": "Same word in Catalan",
+        "render": "Setup > Image aliases: code word, setting value, unit or product name kept as is",
+        "secret %name": "Setup > Image aliases: code word, setting value, unit or product name kept as is",
+        "resync": "Setup > Image aliases: code word, setting value, unit or product name kept as is",
+        "Original: %width x %height, %type": "Setup > Image aliases: code word, setting value, unit or product name kept as is",
+        "Formats": "Setup > Image aliases: code word, setting value, unit or product name kept as is"
     },
     "srp-RS": {
         "GitHub Actions workflow": "product name kept",
@@ -6036,7 +6160,8 @@
         "url": "technical identifier",
         "vertScrollState": "code identifier",
         "viewmode": "code identifier",
-        "xmlUrl": "code identifier"
+        "xmlUrl": "code identifier",
+        "render": "Setup > Image aliases: setting value kept as code word"
     },
     "ser-SR": {
         "GitHub Actions workflow": "product name kept",
@@ -6185,7 +6310,10 @@
         "viewmode": "code identifier",
         "xmlUrl": "code identifier",
         "Tablet": "same word in Serbian Latin (Таблет in srp-RS)",
-        "Host": "Serbian IT usage takes the loanword host for a hosting server"
+        "Host": "Serbian IT usage takes the loanword host for a hosting server",
+        "render": "Setup > Image aliases: code word, unit or product name, same in this language",
+        "resync": "Setup > Image aliases: code word, unit or product name, same in this language",
+        "Original: %width x %height, %type": "Setup > Image aliases: code word, unit or product name, same in this language"
     },
     "bul-BG": {
         "#level1 - #level2": "placeholders only",
@@ -6288,7 +6416,10 @@
         "url": "abbreviation",
         "vertScrollState": "code identifier",
         "viewmode": "code identifier",
-        "xmlUrl": "code identifier"
+        "xmlUrl": "code identifier",
+        "render": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "%seconds s": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "%ms ms": "Setup > Image aliases: code, setting value, unit or product name kept"
     },
     "lit-LT": {
         "#level1 - #level2": "placeholders only",
@@ -6396,7 +6527,9 @@
         "url": "identifier",
         "vertScrollState": "identifier",
         "viewmode": "identifier",
-        "xmlUrl": "identifier"
+        "xmlUrl": "identifier",
+        "render": "Setup > Image aliases: code word, unit or product name, same in this language",
+        "resync": "Setup > Image aliases: code word, unit or product name, same in this language"
     },
     "por-PT": {
         "Cookie": "European Portuguese uses cookie as the established term (Nome do cookie)",
@@ -6575,7 +6708,9 @@
         "Tablet": "same word in European Portuguese (a tablet computer)",
         "%bytes bytes": "placeholders and the unit bytes, spelled the same",
         "Webhooks": "the English loanword is the standard term in European Portuguese",
-        "Webhook": "Portuguese uses the English technical term webhook"
+        "Webhook": "Portuguese uses the English technical term webhook",
+        "render": "Setup > Image aliases: code word, unit or product name, same in this language",
+        "Original: %width x %height, %type": "Setup > Image aliases: code word, unit or product name, same in this language"
     },
     "afr-ZA": {
         "Filters": "Filters is the Afrikaans plural of filter, spelled the same (catalogue already uses 'Aktiewe filters')",
@@ -6751,7 +6886,9 @@
         "Tablet": "same word in Afrikaans (a tablet computer)",
         "%count in %seconds s": "placeholders, the unit symbol and the word in, spelled the same",
         "Webhooks": "English loanword used as is in Afrikaans technical writing",
-        "Webhook": "Afrikaans software uses the English term Webhook"
+        "Webhook": "Afrikaans software uses the English term Webhook",
+        "render": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "In settings/override": "Setup > Image aliases: code, setting value, unit or product name kept"
     },
     "ben-BD": {
         "#level1 - #level2": "template code",
@@ -6864,7 +7001,9 @@
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
         "xmlUrl": "OPML attribute name",
-        "WebDAV": "protocol name"
+        "WebDAV": "protocol name",
+        "render": "Setup > Image aliases: code word or name kept as in English",
+        "resync": "Setup > Image aliases: code word or name kept as in English"
     },
     "urd-PK": {
         "Minify": "technical term kept in English",
@@ -6979,7 +7118,10 @@
         "vertScrollState": "OPML attribute name",
         "xmlUrl": "OPML attribute name",
         "WebDAV": "protocol name",
-        "JSON: %url": "format name plus placeholder"
+        "JSON: %url": "format name plus placeholder",
+        "render": "Setup > Image aliases: code word or name kept as in English",
+        "on demand": "Setup > Image aliases: code word or name kept as in English",
+        "resync": "Setup > Image aliases: code word or name kept as in English"
     },
     "mar-IN": {
         "#level1 - #level2": "template code",
@@ -7084,7 +7226,11 @@
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
         "xmlUrl": "OPML attribute name",
-        "WebDAV": "protocol name"
+        "WebDAV": "protocol name",
+        "render": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "on demand": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "%seconds s": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "resync": "Setup > Image aliases: code word, setting value, unit or product name kept"
     },
     "tel-IN": {
         "Minify": "technical term kept in English",
@@ -7193,7 +7339,10 @@
         "vertScrollState": "OPML attribute name",
         "xmlUrl": "OPML attribute name",
         "WebDAV": "protocol name",
-        "JSON: %url": "format name and placeholder only"
+        "JSON: %url": "format name and placeholder only",
+        "render": "Setup > Image aliases: code word or name kept as in English",
+        "on demand": "Setup > Image aliases: code word or name kept as in English",
+        "resync": "Setup > Image aliases: code word or name kept as in English"
     },
     "tam-IN": {
         "Minify": "technical term kept in English",
@@ -7318,7 +7467,10 @@
         "viewmode": "code identifier",
         "xmlUrl": "OPML attribute name",
         "WebDAV": "protocol name",
-        "JSON: %url": "format name and placeholder only"
+        "JSON: %url": "format name and placeholder only",
+        "render": "Setup > Image aliases: code word or name kept as in English",
+        "on demand": "Setup > Image aliases: code word or name kept as in English",
+        "resync": "Setup > Image aliases: code word or name kept as in English"
     },
     "hau-NG": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -7501,7 +7653,9 @@
         "xmlUrl": "OPML attribute name",
         "WebDAV": "protocol name",
         "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
-        "Webhook": "Hausa technical usage keeps the English term Webhook"
+        "Webhook": "Hausa technical usage keeps the English term Webhook",
+        "render": "Setup > Image aliases: code word or name kept as in English",
+        "resync": "Setup > Image aliases: code word or name kept as in English"
     },
     "guj-IN": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -7624,7 +7778,9 @@
         "xmlUrl": "OPML attribute name",
         "WebDAV": "protocol name",
         "JSON: %url": "format name plus placeholder",
-        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged"
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
+        "render": "Setup > Image aliases: code word or name kept as in English",
+        "resync": "Setup > Image aliases: code word or name kept as in English"
     },
     "kan-IN": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -7742,7 +7898,11 @@
         "xmlUrl": "OPML attribute name",
         "WebDAV": "protocol name",
         "JSON: %url": "format name followed by placeholder only",
-        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged"
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
+        "render": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "on demand": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "%seconds s": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "resync": "Setup > Image aliases: code word, setting value, unit or product name kept"
     },
     "amh-ET": {
         "#level1 - #level2": "template code",
@@ -7849,7 +8009,9 @@
         "vertScrollState": "OPML attribute name",
         "xmlUrl": "OPML attribute name",
         "WebDAV": "protocol name",
-        "JSON: %url": "format name plus placeholder only"
+        "JSON: %url": "format name plus placeholder only",
+        "render": "Setup > Image aliases: code word or name kept as in English",
+        "resync": "Setup > Image aliases: code word or name kept as in English"
     },
     "yor-NG": {
         "Minify": "technical term kept in English",
@@ -8008,7 +8170,10 @@
         "vertScrollState": "OPML attribute name",
         "xmlUrl": "OPML attribute name",
         "WebDAV": "protocol name",
-        "Webhook": "Yoruba technical writing uses the English term Webhook; there is no established Yoruba word."
+        "Webhook": "Yoruba technical writing uses the English term Webhook; there is no established Yoruba word.",
+        "render": "Setup > Image aliases: code word or name kept as in English",
+        "on demand": "Setup > Image aliases: code word or name kept as in English",
+        "resync": "Setup > Image aliases: code word or name kept as in English"
     },
     "mal-IN": {
         "#level1 - #level2": "template code",
@@ -8122,7 +8287,11 @@
         "viewmode": "code identifier",
         "xmlUrl": "OPML attribute name",
         "WebDAV": "protocol name",
-        "JSON: %url": "format name followed by placeholder only"
+        "JSON: %url": "format name followed by placeholder only",
+        "render": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "on demand": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "%seconds s": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "resync": "Setup > Image aliases: code word, setting value, unit or product name kept"
     },
     "pan-IN": {
         "#level1 - #level2": "template code",
@@ -8237,7 +8406,11 @@
         "xmlUrl": "OPML attribute name",
         "WebDAV": "protocol name",
         "JSON: %url": "format name plus placeholder",
-        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged"
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
+        "render": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "on demand": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "%seconds s": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "resync": "Setup > Image aliases: code word, setting value, unit or product name kept"
     },
     "ori-IN": {
         "#level1 - #level2": "template code",
@@ -8360,7 +8533,11 @@
         "vertScrollState": "OPML attribute name",
         "xmlUrl": "OPML attribute name",
         "WebDAV": "protocol name",
-        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged"
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
+        "render": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "on demand": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "%seconds s": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "resync": "Setup > Image aliases: code word, setting value, unit or product name kept"
     },
     "ibo-NG": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -8566,7 +8743,10 @@
         "vertScrollState": "OPML attribute name",
         "xmlUrl": "OPML attribute name",
         "WebDAV": "protocol name",
-        "Webhook": "Igbo technical text uses the English term webhook"
+        "Webhook": "Igbo technical text uses the English term webhook",
+        "render": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "on demand": "Setup > Image aliases: code word, setting value, unit or product name kept",
+        "resync": "Setup > Image aliases: code word, setting value, unit or product name kept"
     },
     "zul-ZA": {
         "Minify": "technical term kept in English",
@@ -8714,7 +8894,10 @@
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
         "xmlUrl": "OPML attribute name",
-        "WebDAV": "protocol name"
+        "WebDAV": "protocol name",
+        "render": "Setup > Image aliases: code word or name kept as in English",
+        "on demand": "Setup > Image aliases: code word or name kept as in English",
+        "resync": "Setup > Image aliases: code word or name kept as in English"
     },
     "som-SO": {
         "GitHub Actions workflow": "product name kept",
@@ -8913,7 +9096,10 @@
         "xmlUrl": "OPML attribute name",
         "WebDAV": "protocol name",
         "JSON: %url": "format name plus placeholder only",
-        "Webhook": "Somali uses the English technical term Webhook"
+        "Webhook": "Somali uses the English technical term Webhook",
+        "render": "Setup > Image aliases: code word or name kept as in English",
+        "on demand": "Setup > Image aliases: code word or name kept as in English",
+        "resync": "Setup > Image aliases: code word or name kept as in English"
     },
     "xho-ZA": {
         "Minify": "technical term kept in English",
@@ -9069,7 +9255,10 @@
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
         "xmlUrl": "OPML attribute name",
-        "WebDAV": "protocol name"
+        "WebDAV": "protocol name",
+        "render": "Setup > Image aliases: code word or name kept as in English",
+        "on demand": "Setup > Image aliases: code word or name kept as in English",
+        "resync": "Setup > Image aliases: code word or name kept as in English"
     },
     "chi-CN": {
         "Cookie": "Chinese software UI uses the Latin word Cookie for browser cookies (also in Cookie 名称)",
@@ -9150,7 +9339,9 @@
         "xmlUrl": "OPML attribute name (code identifier)",
         "WebDAV": "protocol name",
         "+%added ~%changed -%removed": "Fixed counter notation, kept exactly as the brief requires",
-        "Webhook": "Chinese developer usage keeps the English term Webhook"
+        "Webhook": "Chinese developer usage keeps the English term Webhook",
+        "render": "Setup > Image aliases: code word or name kept as in English",
+        "resync": "Setup > Image aliases: code word or name kept as in English"
     },
     "chi-TW": {
         "Cookie": "Traditional Chinese UIs (Microsoft, Apple, Google zh-TW) write Cookie in Latin letters as-is",
@@ -9233,7 +9424,9 @@
         "xmlUrl": "OPML attribute name (code identifier)",
         "WebDAV": "protocol name",
         "+%added ~%changed -%removed": "Fixed counter notation, kept exactly as the brief requires",
-        "Webhook": "Chinese developer usage keeps the English term Webhook"
+        "Webhook": "Chinese developer usage keeps the English term Webhook",
+        "render": "Setup > Image aliases: code word or name kept as in English",
+        "resync": "Setup > Image aliases: code word or name kept as in English"
     },
     "yid-US": {
         "Minify": "technical term kept in English",
@@ -9319,7 +9512,10 @@
         "Https": "protocol name",
         "%Y-%m-%d": "date format code",
         "%H:%M:%S": "time format code",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: setting value kept as code word",
+        "%seconds s": "Setup > Image aliases: unit format",
+        "%ms ms": "Setup > Image aliases: unit format"
     },
     "vie-VN": {
         "Cookie": "Vietnamese UIs use the loanword cookie as-is for a browser cookie",
@@ -9422,7 +9618,9 @@
         "%Y-%m-%d": "date format code",
         "%H:%M:%S": "time format code",
         "Div": "HTML element name",
-        "Webhook": "Vietnamese uses the English term webhook"
+        "Webhook": "Vietnamese uses the English term webhook",
+        "render": "Setup > Image aliases: setting value kept as code word",
+        "%seconds s": "Setup > Image aliases: unit format"
     },
     "ind-ID": {
         "Cookie": "Indonesian uses the loanword cookie for browser cookies (Nama cookie)",
@@ -9578,7 +9776,8 @@
         "Sepia": "spelled the same in Indonesian (KBBI: sepia)",
         "Build": "Indonesian software UIs use the English term build",
         "Domain": "Indonesian uses the word domain",
-        "Webhook": "Indonesian uses the English term webhook"
+        "Webhook": "Indonesian uses the English term webhook",
+        "render": "Setup > Image aliases: setting value kept as code word"
     },
     "tha-TH": {
         "Minify": "technical term kept in English",
@@ -9677,7 +9876,9 @@
         "Https": "protocol name",
         "%Y-%m-%d": "date format code",
         "%H:%M:%S": "time format code",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: setting value kept as code word",
+        "%ms ms": "Setup > Image aliases: unit format"
     },
     "lao-LA": {
         "ID %id": "acronym and placeholder only",
@@ -9775,7 +9976,8 @@
         "Https": "protocol name",
         "%Y-%m-%d": "date format code",
         "%H:%M:%S": "time format code",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: setting value kept as code word"
     },
     "kat-GE": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -9871,7 +10073,10 @@
         "Https": "protocol name",
         "%Y-%m-%d": "date format code",
         "%H:%M:%S": "time format code",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "resync": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "Id": "Setup > Image aliases: code word, product name or unit format, same as English"
     },
     "sna-ZW": {
         "GitHub Actions workflow": "product name kept",
@@ -10009,7 +10214,15 @@
         "%Y-%m-%d": "date format code",
         "%H:%M:%S": "time format code",
         "Div": "HTML element name",
-        "Webhook": "Shona uses the English technical term Webhook"
+        "Webhook": "Shona uses the English technical term Webhook",
+        "Mode": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "render": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "on demand": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "Node id": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "resync": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "Object id": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "Id": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "Default: %value": "Setup > Image aliases: code word, product name or unit format, same as English"
     },
     "kaz-KZ": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -10113,7 +10326,10 @@
         "Http": "protocol name",
         "Https": "protocol name",
         "%H:%M:%S": "time format string",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "resync": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "Id": "Setup > Image aliases: code word, product name or unit format, same as English"
     },
     "msa-MY": {
         "Edit": "glossary: edit = edit in Malay",
@@ -10275,7 +10491,8 @@
         "Sepia": "spelled the same in Malay (DBP: sepia)",
         "Webhook": "Malay uses the English term Webhook",
         "Domain": "Domain is the standard Malay word",
-        "Import %id": "Malay noun 'import' spelled the same"
+        "Import %id": "Malay noun 'import' spelled the same",
+        "render": "Setup > Image aliases: setting value kept as code word"
     },
     "jav-ID": {
         "OK": "kept as in the guide (allowlisted)",
@@ -10417,7 +10634,9 @@
         "Sepia": "spelled the same in Javanese (sepia, the photographic tone, as in Indonesian)",
         "Build": "Javanese software text uses the English term build",
         "Domain": "Javanese uses the word domain",
-        "Webhook": "Javanese uses the English term webhook"
+        "Webhook": "Javanese uses the English term webhook",
+        "Mode": "Setup > Image aliases: same word in Javanese",
+        "render": "Setup > Image aliases: setting value kept as code word"
     },
     "sun-ID": {
         "Minify": "technical term kept in English",
@@ -10564,7 +10783,10 @@
         "Literal": "technical term spelled the same in Sundanese",
         "Plugin": "word spelled the same in Sundanese",
         "Webhook": "Sundanese uses the English technical term Webhook, as Indonesian does",
-        "File": "loanword 'file' used throughout Sundanese UI text"
+        "File": "loanword 'file' used throughout Sundanese UI text",
+        "Mode": "Setup > Image aliases: same word in Sundanese",
+        "render": "Setup > Image aliases: setting value kept as code word",
+        "%seconds s": "Setup > Image aliases: unit format"
     },
     "nep-NP": {
         "ID %id": "acronym with placeholder",
@@ -10656,7 +10878,8 @@
         "Href": "HTML attribute name",
         "eznode": "code identifier",
         "ezobject": "code identifier",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: setting value kept as code word"
     },
     "bho-IN": {
         "ID %id": "acronym and placeholder",
@@ -10749,7 +10972,10 @@
         "Href": "HTML attribute name",
         "eznode": "link type identifier (code)",
         "ezobject": "link type identifier (code)",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "resync": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "Id": "Setup > Image aliases: code word, product name or unit format, same as English"
     },
     "mai-IN": {
         "ID %id": "acronym and placeholder",
@@ -10843,7 +11069,10 @@
         "Href": "HTML attribute name",
         "eznode": "code identifier",
         "ezobject": "code identifier",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "resync": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "Id": "Setup > Image aliases: code word, product name or unit format, same as English"
     },
     "pcm-NG": {
         "module/function, role, limitation": "Nigerian Pidgin catalogue keeps these English technical terms",
@@ -15383,7 +15612,73 @@
         "Class attributes (%count)": "Nigerian Pidgin keeps the English technical term",
         "From text": "the same words in Nigerian Pidgin",
         "From file": "the same words in Nigerian Pidgin",
-        "Wildcard": "Nigerian Pidgin uses the English term"
+        "Wildcard": "Nigerian Pidgin uses the English term",
+        "Bulk runs": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Test tools": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Run history": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Mode and delivery": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Mode": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "render": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "on demand": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Address form": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Delivery": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Conversions at once": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Format negotiation": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Placeholder and swap script": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Converter": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Tried": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "preferred": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Environment and source": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "nothing": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Source address": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Credential": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "secret %name": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "none": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Last error": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Last success": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Job queue": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Job type": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Failed": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "since %time by %user": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Signing key": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "none yet": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "%days days (since %time)": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "valid until %time": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Job %job: %action": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "%done of %total images": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Scope": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Result of run %run": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Reason (optional)": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Pause bulk runs": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "One node": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Changed since": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "At most images": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "resync": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Latest runs": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Queued": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "No bulk run or resync yet.": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "One image": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Look up by": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Id": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "object %object, node %node, version %version": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Original: %width x %height, %type": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Aliases of %name": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Formats": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Make": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Storage path (optional)": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "reachable": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "no answer": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "no BaseURL": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "sent": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Setup > Log files": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "All events": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Runs (start and end)": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Path contains": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Lines": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Path and details": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "(none)": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "Default: %value": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)",
+        "inherited": "Setup > Image aliases: Nigerian Pidgin uses the English word as its catalogue does (or code word)"
     },
     "syr-IQ": {
         "ID %id": "abbreviation and placeholder only",
@@ -15468,7 +15763,10 @@
         "Https": "protocol name",
         "%Y-%m-%d": "date format code",
         "%H:%M:%S": "time format code",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "resync": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "Id": "Setup > Image aliases: code word, product name or unit format, same as English"
     },
     "arc-IQ": {
         "ID %id": "abbreviation and placeholder only",
@@ -15555,7 +15853,10 @@
         "%H:%M:%S": "time format code",
         "Div": "HTML element name",
         "%device, %width × %height px": "placeholders, the multiplication sign and the unit px only (the Syriac comma becomes a Latin comma in Hebrew script)",
-        "Webhooks": "technical term kept in Latin script, as the catalogue keeps API and GraphQL"
+        "Webhooks": "technical term kept in Latin script, as the catalogue keeps API and GraphQL",
+        "render": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "resync": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "Id": "Setup > Image aliases: code word, product name or unit format, same as English"
     },
     "huy-IL": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -15643,7 +15944,10 @@
         "%H:%M:%S": "time format code",
         "Div": "HTML element name",
         "%device, %width × %height px": "placeholders, the multiplication sign and the unit px only (the Syriac comma becomes a Latin comma in Hebrew script)",
-        "Webhook": "Technical term kept in Latin script, as the catalogue keeps other protocol names"
+        "Webhook": "Technical term kept in Latin script, as the catalogue keeps other protocol names",
+        "render": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "resync": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "Id": "Setup > Image aliases: code word, product name or unit format, same as English"
     },
     "gla-GB": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -15772,7 +16076,9 @@
         "%Y-%m-%d": "fòrmat ceann-là, còd",
         "%H:%M:%S": "fòrmat ama, còd",
         "Div": "ainm eileamaid HTML",
-        "Webhook": "Scottish Gaelic uses the English technical term Webhook"
+        "Webhook": "Scottish Gaelic uses the English technical term Webhook",
+        "render": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "resync": "Setup > Image aliases: code word, product name or unit format, same as English"
     },
     "mri-NZ": {
         "ID %id": "acronym ID plus placeholder",
@@ -15879,7 +16185,10 @@
         "Https": "protocol name",
         "%Y-%m-%d": "date format code",
         "%H:%M:%S": "time format code",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "resync": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "Id": "Setup > Image aliases: code word, product name or unit format, same as English"
     },
     "fil-PH": {
         "Cookie": "Filipino uses the English loanword cookie for HTTP cookies",
@@ -16399,7 +16708,20 @@
         "git host": "Filipino IT usage keeps the English term host; git is a product name",
         "Datatype %string": "the Filipino catalogue keeps Datatype as a technical term",
         "Wildcard": "technical loanword used as is in Filipino UI",
-        "Redirect (%status)": "term kept as in the existing Filipino catalogue"
+        "Redirect (%status)": "term kept as in the existing Filipino catalogue",
+        "Mode": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "render": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "on demand": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "Format negotiation": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "Converter": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "Credential": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "secret %name": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "Job queue": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "Signing key": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "Job %job: %action": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "resync": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "Job": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "Default: %value": "Setup > Image aliases: code, setting value, unit or product name kept"
     },
     "che-RU": {
         "ID %id": "acronym and placeholder",
@@ -16539,7 +16861,13 @@
         "%Y-%m-%d": "date format code",
         "%H:%M:%S": "time format code",
         "Div": "HTML element name",
-        "Id": "Abbreviation Id is used as is in the Chechen interface"
+        "Id": "Abbreviation Id is used as is in the Chechen interface",
+        "render": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "on demand": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "%seconds s": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "Credential": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "resync": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "%ms ms": "Setup > Image aliases: code, setting value, unit or product name kept"
     },
     "snd-PK": {
         "GitHub Actions workflow": "product name kept",
@@ -16640,7 +16968,10 @@
         "Ftp": "protocol name",
         "Http": "protocol name",
         "Https": "protocol name",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "%seconds s": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "resync": "Setup > Image aliases: code, setting value, unit or product name kept"
     },
     "pnb-PK": {
         "ID %id": "acronym and placeholder",
@@ -16751,7 +17082,11 @@
         "Http": "protocol name",
         "Https": "protocol name",
         "Div": "HTML element name",
-        "+%added ~%changed -%removed": "Stays exactly as is per the brief"
+        "+%added ~%changed -%removed": "Stays exactly as is per the brief",
+        "render": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "%seconds s": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "resync": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "%ms ms": "Setup > Image aliases: code, setting value, unit or product name kept"
     },
     "uzb-UZ": {
         "OK": "kept as OK in Uzbek software (allowlisted)",
@@ -16848,7 +17183,9 @@
         "ezobject": "code identifier",
         "Div": "HTML element name",
         "%seconds s": "placeholder and the unit symbol s, the language has no other",
-        "Import %id": "Uzbek 'Import' (noun) is spelled the same"
+        "Import %id": "Uzbek 'Import' (noun) is spelled the same",
+        "render": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "resync": "Setup > Image aliases: code, setting value, unit or product name kept"
     },
     "mya-MM": {
         "ID %id": "acronym ID with placeholder",
@@ -17013,7 +17350,10 @@
         "Https": "protocol name",
         "Div": "HTML element name",
         "Webhook": "Burmese technical UI keeps the English term Webhook",
-        "Wildcard": "loanword kept in Latin script, as the existing Burmese catalogue does (URL wildcard များ)"
+        "Wildcard": "loanword kept in Latin script, as the existing Burmese catalogue does (URL wildcard များ)",
+        "render": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "%seconds s": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "resync": "Setup > Image aliases: code, setting value, unit or product name kept"
     },
     "haw-US": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -17137,7 +17477,9 @@
         "%H:%M:%S": "time format code",
         "Div": "HTML element name",
         "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
-        "Webhook": "Hawaiian has no established term; the English technical term Webhook is used"
+        "Webhook": "Hawaiian has no established term; the English technical term Webhook is used",
+        "render": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "resync": "Setup > Image aliases: code, setting value, unit or product name kept"
     },
     "hye-AM": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -17250,7 +17592,12 @@
         "Https": "protocol name",
         "%Y-%m-%d": "date format code",
         "%H:%M:%S": "time format code",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "on demand": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "%seconds s": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "resync": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "%ms ms": "Setup > Image aliases: code, setting value, unit or product name kept"
     },
     "lin-CD": {
         "Phase": "the French loanword used in Lingala technical text",
@@ -17492,7 +17839,10 @@
         "Palette": "French word spelled the same",
         "Tel": "abbreviation spelled the same",
         "Webhook": "Lingala IT usage keeps the English term Webhook",
-        "Wildcard": "technical term kept as is, as in the Lingala catalogue (Ba-wildcard)"
+        "Wildcard": "technical term kept as is, as in the Lingala catalogue (Ba-wildcard)",
+        "Mode": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "render": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "resync": "Setup > Image aliases: code, setting value, unit or product name kept"
     },
     "ful-SN": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -17706,7 +18056,13 @@
         "Div": "HTML element name",
         "Tel": "abbreviation, same in Pulaar",
         "Domain": "Pulaar uses the French/English loanword Domain",
-        "Webhook": "Pulaar uses the English technical term Webhook"
+        "Webhook": "Pulaar uses the English technical term Webhook",
+        "Mode": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "render": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "on demand": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "Converter": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "resync": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "Alias": "Setup > Image aliases: code, setting value, unit or product name kept"
     },
     "orm-ET": {
         "ID %id": "acronym with placeholder",
@@ -17835,7 +18191,9 @@
         "Div": "HTML element name",
         "%seconds s": "placeholder and the unit symbol s, the language has no other",
         "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
-        "Webhook": "Oromo uses the English technical term Webhook"
+        "Webhook": "Oromo uses the English technical term Webhook",
+        "render": "Setup > Image aliases: code, setting value, unit or product name kept",
+        "resync": "Setup > Image aliases: code, setting value, unit or product name kept"
     },
     "aze-AZ": {
         "OK": "OK button label, same in Azerbaijani",
@@ -17946,7 +18304,9 @@
         "Https": "protocol name",
         "Literal": "same loan word in Azerbaijani",
         "+%added ~%changed -%removed": "Symbols and placeholders only, kept exactly as the brief requires",
-        "Manifest": "Azerbaijani uses the same word manifest"
+        "Manifest": "Azerbaijani uses the same word manifest",
+        "render": "Setup > Image aliases: setting value",
+        "resync": "Setup > Image aliases: setting value"
     },
     "sin-LK": {
         "GitHub Actions workflow": "product name kept",
@@ -18053,7 +18413,9 @@
         "Http": "protocol name",
         "Https": "protocol name",
         "Div": "HTML element name",
-        "Mutations": "the word the catalogue uses for this term, spelled as in English"
+        "Mutations": "the word the catalogue uses for this term, spelled as in English",
+        "render": "Setup > Image aliases: setting value",
+        "resync": "Setup > Image aliases: setting value"
     },
     "aka-GH": {
         "Handler": "Twi keeps the technical term handler untranslated; the catalogue already writes Sɛhyen handler for Session handler",
@@ -18220,7 +18582,12 @@
         "Subscriptions": "GraphQL term kept in English, as the catalogue keeps Mutations",
         "Webhook": "Twi has no native term; the English technical term Webhook is used",
         "git host": "The Twi catalogue uses the English term host; git is a product name",
-        "Wildcard": "catalogue keeps the technical term as is"
+        "Wildcard": "catalogue keeps the technical term as is",
+        "render": "Setup > Image aliases: setting value",
+        "Converter": "Setup > Image aliases: technical term kept",
+        "Credential": "Setup > Image aliases: technical term kept",
+        "resync": "Setup > Image aliases: setting value",
+        "Alias": "Setup > Image aliases: technical term kept"
     },
     "asm-IN": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -18320,7 +18687,10 @@
         "Http": "protocol name",
         "Https": "protocol name",
         "Div": "HTML element name",
-        "+%added ~%changed -%removed": "Symbols and placeholders only, kept exactly as the brief requires"
+        "+%added ~%changed -%removed": "Symbols and placeholders only, kept exactly as the brief requires",
+        "render": "Setup > Image aliases: setting value",
+        "resync": "Setup > Image aliases: setting value",
+        "Alias": "Setup > Image aliases: term kept as in the catalogue"
     },
     "kik-KE": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -18433,7 +18803,10 @@
         "Div": "HTML element name",
         "%seconds s": "placeholder and the unit symbol s, the language has no other",
         "Domain": "Kikuyu technical writing uses the English loanword domain",
-        "Webhook": "Kikuyu technical writing uses the English term Webhook"
+        "Webhook": "Kikuyu technical writing uses the English term Webhook",
+        "render": "Setup > Image aliases: setting value",
+        "resync": "Setup > Image aliases: setting value",
+        "%ms ms": "Setup > Image aliases: unit format"
     },
     "khm-KH": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -18529,7 +18902,9 @@
         "Http": "protocol name",
         "Https": "protocol name",
         "Div": "HTML element name",
-        "Webhook": "Khmer technical writing uses the English term Webhook"
+        "Webhook": "Khmer technical writing uses the English term Webhook",
+        "render": "Setup > Image aliases: setting value",
+        "resync": "Setup > Image aliases: setting value"
     },
     "uig-CN": {
         "Minify": "technical term kept in English",
@@ -18616,7 +18991,9 @@
         "Ftp": "protocol name",
         "Http": "protocol name",
         "Https": "protocol name",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: setting value",
+        "resync": "Setup > Image aliases: setting value"
     },
     "kin-RW": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -18726,7 +19103,9 @@
         "Https": "protocol name",
         "Div": "HTML element name",
         "%seconds s": "placeholder and the unit symbol s, the language has no other",
-        "Webhook": "Kinyarwanda technical writing uses the English term Webhook"
+        "Webhook": "Kinyarwanda technical writing uses the English term Webhook",
+        "render": "Setup > Image aliases: setting value",
+        "resync": "Setup > Image aliases: setting value"
     },
     "ceb-PH": {
         "Cookie": "Cebuano uses the English loanword cookie for HTTP cookies",
@@ -19003,7 +19382,17 @@
         "Deploy key": "Cebuano IT usage keeps the English term deploy key, as GitHub shows it",
         "Site": "Cebuano uses the English loanword site",
         "Entry": "Cebuano loanword in common use",
-        "Wildcard": "catalogue keeps the technical term as is"
+        "Wildcard": "catalogue keeps the technical term as is",
+        "Mode": "Setup > Image aliases: loanword",
+        "render": "Setup > Image aliases: setting value",
+        "Format negotiation": "Setup > Image aliases: technical term kept",
+        "Converter": "Setup > Image aliases: technical term kept",
+        "Job queue": "Setup > Image aliases: product term kept",
+        "Signing key": "Setup > Image aliases: technical term kept",
+        "resync": "Setup > Image aliases: setting value",
+        "Alias": "Setup > Image aliases: technical term kept",
+        "%ms ms": "Setup > Image aliases: unit format",
+        "Default: %value": "Setup > Image aliases: default is the loanword"
     },
     "ckb-IQ": {
         "ID %id": "acronym ID with placeholder",
@@ -19097,7 +19486,9 @@
         "eznode": "code identifier",
         "ezobject": "code identifier",
         "Div": "HTML element name",
-        "+%added ~%changed -%removed": "Fixed counter notation, kept exactly as the brief requires"
+        "+%added ~%changed -%removed": "Fixed counter notation, kept exactly as the brief requires",
+        "render": "Setup > Image aliases: setting value",
+        "resync": "Setup > Image aliases: setting value"
     },
     "tir-ET": {
         "Minify": "technical term kept in English",
@@ -19201,7 +19592,9 @@
         "Ftp": "protocol name",
         "Http": "protocol name",
         "Https": "protocol name",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: setting value",
+        "resync": "Setup > Image aliases: setting value"
     },
     "mlg-MG": {
         "Cookie": "Malagasy web usage keeps the loanword cookie",
@@ -19311,7 +19704,9 @@
         "Plugin": "loanword, same spelling",
         "+%added ~%changed -%removed": "Symbols and placeholders only; the brief requires it unchanged",
         "Id": "Malagasy software text uses the abbreviation Id unchanged",
-        "Webhook": "Malagasy has no own word for webhook and uses the English technical term"
+        "Webhook": "Malagasy has no own word for webhook and uses the English technical term",
+        "render": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "resync": "Setup > Image aliases: code word, product name or unit format, same as English"
     },
     "mon-MN": {
         "OK": "OK button label is the same in Mongolian software",
@@ -19403,7 +19798,9 @@
         "eznode": "link type identifier",
         "ezobject": "link type identifier",
         "Div": "HTML element name",
-        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief requires it unchanged"
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief requires it unchanged",
+        "render": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "resync": "Setup > Image aliases: code word, product name or unit format, same as English"
     },
     "kir-KG": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -19493,7 +19890,9 @@
         "Ftp": "protocol name",
         "Http": "protocol name",
         "Https": "protocol name",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "resync": "Setup > Image aliases: code word, product name or unit format, same as English"
     },
     "tat-RU": {
         "OK": "OK button label",
@@ -19570,7 +19969,9 @@
         "Href": "HTML attribute name",
         "eznode": "code identifier of the tag",
         "ezobject": "code identifier of the tag",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "resync": "Setup > Image aliases: code word, product name or unit format, same as English"
     },
     "tuk-TM": {
         "OK": "glossary: OK stays OK",
@@ -19669,7 +20070,10 @@
         "eznode": "code identifier of a tag",
         "ezobject": "code identifier of a tag",
         "Div": "HTML element name",
-        "Webhook": "Turkmen uses the English term Webhook (catalogue: Webhooklar)"
+        "Webhook": "Turkmen uses the English term Webhook (catalogue: Webhooklar)",
+        "render": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "%seconds s": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "resync": "Setup > Image aliases: code word, product name or unit format, same as English"
     },
     "lug-UG": {
         "OK": "button label OK is kept as OK",
@@ -19770,7 +20174,10 @@
         "Https": "protocol name",
         "Div": "HTML element name",
         "Commit": "Luganda uses the git term commit as a loanword (the system upgrade strings say okutekebwa mu commit)",
-        "Webhook": "Webhook has no Luganda equivalent; the technical term is used as is"
+        "Webhook": "Webhook has no Luganda equivalent; the technical term is used as is",
+        "render": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "%seconds s": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "resync": "Setup > Image aliases: code word, product name or unit format, same as English"
     },
     "wol-SN": {
         "Minify": "technical term kept in English",
@@ -19903,7 +20310,12 @@
         "Https": "protocol name",
         "Div": "HTML element name",
         "Plugin": "technical term kept as in the editor",
-        "Webhook": "Wolof uses the English term Webhook, as for other web technology terms"
+        "Webhook": "Wolof uses the English term Webhook, as for other web technology terms",
+        "Mode": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "render": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "Format negotiation": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "Converter": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "resync": "Setup > Image aliases: code word, product name or unit format, same as English"
     },
     "bel-BY": {
         "OK": "OK button label",
@@ -20012,7 +20424,9 @@
         "Http": "protocol name",
         "Https": "protocol name",
         "Div": "HTML element name",
-        "+%added ~%changed -%removed": "Symbols and placeholders only, kept exactly as the brief requires"
+        "+%added ~%changed -%removed": "Symbols and placeholders only, kept exactly as the brief requires",
+        "render": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "resync": "Setup > Image aliases: code word, product name or unit format, same as English"
     },
     "glg-ES": {
         "Cookie": "Galician uses the loanword cookie for a browser cookie (Xunta and Mozilla gl terminology)",
@@ -20160,7 +20574,9 @@
         "%bytes bytes": "placeholders and the unit bytes, spelled the same",
         "Webhooks": "the same word in Galician (established loanword)",
         "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
-        "Webhook": "Galician uses the English term webhook"
+        "Webhook": "Galician uses the English term webhook",
+        "render": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "resync": "Setup > Image aliases: code word, product name or unit format, same as English"
     },
     "eus-ES": {
         "iPhone": "product name",
@@ -20251,7 +20667,9 @@
         "eznode": "link type identifier",
         "ezobject": "link type identifier",
         "Div": "HTML element name",
-        "Sepia": "spelled the same in Basque"
+        "Sepia": "spelled the same in Basque",
+        "render": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "resync": "Setup > Image aliases: code word, product name or unit format, same as English"
     },
     "cym-GB": {
         "ID %id": "acronym and placeholder",
@@ -20364,7 +20782,10 @@
         "ezobject": "link scheme identifier",
         "Div": "HTML element name",
         "Webhooks": "the same loanword in Welsh",
-        "+%added ~%changed -%removed": "Fixed counter notation, kept exactly as the brief requires"
+        "+%added ~%changed -%removed": "Fixed counter notation, kept exactly as the brief requires",
+        "render": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "%seconds s": "Setup > Image aliases: code word, product name or unit format, same as English",
+        "resync": "Setup > Image aliases: code word, product name or unit format, same as English"
     },
     "mkd-MK": {
         "ID %id": "acronym ID with placeholder",
@@ -20467,7 +20888,9 @@
         "Http": "protocol name",
         "Https": "protocol name",
         "Div": "HTML element name",
-        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief requires it unchanged"
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief requires it unchanged",
+        "render": "Setup > Image aliases: international term or code word, the same in the language",
+        "%seconds s": "Setup > Image aliases: unit format, written the same in the language"
     },
     "ltz-LU": {
         "Handler": "PHP session save handler; Luxembourgish/German technical usage keeps Handler",
@@ -20664,7 +21087,11 @@
         "Commits": "Plural of the git term Commit, used as is in Luxembourgish",
         "Push": "Luxembourgish uses the git term Push (the migration strings say Push: %state)",
         "Webhook": "Webhook is the established technical term in Luxembourgish",
-        "Import %id": "Luxembourgish noun Import spelled the same"
+        "Import %id": "Luxembourgish noun Import spelled the same",
+        "render": "Setup > Image aliases: international term or code word, the same in the language",
+        "Job %job: %action": "Setup > Image aliases: international term or code word, the same in the language",
+        "Job": "Setup > Image aliases: international term or code word, the same in the language",
+        "Original: %width x %height, %type": "Setup > Image aliases: international term or code word, the same in the language"
     },
     "run-BI": {
         "GitHub Actions workflow": "product name kept",
@@ -20800,7 +21227,8 @@
         "Div": "HTML element name",
         "Siteaccess": "the word the catalogue uses for this term, spelled as in English",
         "%seconds s": "placeholder and the unit symbol s, the language has no other",
-        "Webhook": "technical term with no Kirundi equivalent, kept as the loanword"
+        "Webhook": "technical term with no Kirundi equivalent, kept as the loanword",
+        "render": "Setup > Image aliases: international term or code word, the same in the language"
     },
     "tgk-TJ": {
         "ID %id": "acronym ID plus placeholder only",
@@ -20890,7 +21318,10 @@
         "Ftp": "protocol name",
         "Http": "protocol name",
         "Https": "protocol name",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: international term or code word, the same in the language",
+        "%seconds s": "Setup > Image aliases: unit format, written the same in the language",
+        "%ms ms": "Setup > Image aliases: unit format, written the same in the language"
     },
     "bod-CN": {
         "ID %id": "acronym and placeholder",
@@ -20982,7 +21413,10 @@
         "Ftp": "protocol name",
         "Http": "protocol name",
         "Https": "protocol name",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: international term or code word, the same in the language",
+        "%seconds s": "Setup > Image aliases: unit format, written the same in the language",
+        "%ms ms": "Setup > Image aliases: unit format, written the same in the language"
     },
     "dzo-BT": {
         "ID %id": "acronym with placeholder",
@@ -21083,7 +21517,8 @@
         "Http": "protocol name",
         "Https": "protocol name",
         "Div": "HTML element name",
-        "%seconds s": "placeholder and the unit symbol s, the language has no other"
+        "%seconds s": "placeholder and the unit symbol s, the language has no other",
+        "render": "Setup > Image aliases: international term or code word, the same in the language"
     },
     "div-MV": {
         "ID %id": "acronym plus placeholder",
@@ -21183,7 +21618,8 @@
         "Ftp": "protocol name",
         "Http": "protocol name",
         "Https": "protocol name",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: international term or code word, the same in the language"
     },
     "kok-IN": {
         "ID %id": "acronym and placeholder",
@@ -21290,7 +21726,9 @@
         "Ftp": "protocol name",
         "Http": "protocol name",
         "Https": "protocol name",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: international term or code word, the same in the language",
+        "%seconds s": "Setup > Image aliases: unit format, written the same in the language"
     },
     "mni-IN": {
         "ID %id": "acronym and placeholder",
@@ -21397,7 +21835,9 @@
         "Https": "protocol name",
         "Div": "HTML element name",
         "+%added ~%changed -%removed": "Symbols and placeholders only; the brief requires it unchanged",
-        "Id": "Identifier abbreviation kept in Latin script, as Manipuri software text does for ids"
+        "Id": "Identifier abbreviation kept in Latin script, as Manipuri software text does for ids",
+        "render": "Setup > Image aliases: international term or code word, the same in the language",
+        "%seconds s": "Setup > Image aliases: unit format, written the same in the language"
     },
     "doi-IN": {
         "ID %id": "acronym ID and placeholder",
@@ -21507,7 +21947,9 @@
         "Ftp": "protocol name",
         "Http": "protocol name",
         "Https": "protocol name",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: international term or code word, the same in the language",
+        "%seconds s": "Setup > Image aliases: unit format, written the same in the language"
     },
     "kas-IN": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -21615,7 +22057,9 @@
         "Http": "protocol name",
         "Https": "protocol name",
         "Div": "HTML element name",
-        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged"
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
+        "render": "Setup > Image aliases: international term or code word, the same in the language",
+        "%seconds s": "Setup > Image aliases: unit format, written the same in the language"
     },
     "brx-IN": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -21715,7 +22159,8 @@
         "Ftp": "protocol name",
         "Http": "protocol name",
         "Https": "protocol name",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "%seconds s": "Setup > Image aliases: unit format, same in the language"
     },
     "sat-IN": {
         "GitHub Actions workflow": "product name kept",
@@ -21930,7 +22375,9 @@
         "Href": "HTML attribute name",
         "eznode": "code identifier",
         "ezobject": "code identifier",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: setting value, stays as is",
+        "%seconds s": "Setup > Image aliases: unit format"
     },
     "ast-ES": {
         "Cookie": "Asturian uses the loanword cookie for HTTP cookies",
@@ -22068,7 +22515,8 @@
         "Webhooks": "the same loanword in Asturian",
         "+%added ~%changed -%removed": "Symbols and placeholders only, kept exactly as the brief requires",
         "Id": "Asturian uses the abbreviation Id for identifier",
-        "Webhook": "Asturian uses the English technical term webhook"
+        "Webhook": "Asturian uses the English technical term webhook",
+        "render": "Setup > Image aliases: setting value / code word kept as is"
     },
     "bre-FR": {
         "ID %id": "acronym and placeholder",
@@ -22182,7 +22630,9 @@
         "Div": "HTML element name",
         "Plugin": "technical term, same in Breton",
         "Webhooks": "the same loanword in Breton",
-        "Webhook": "Breton uses the English technical term Webhook; there is no established Breton word"
+        "Webhook": "Breton uses the English technical term Webhook; there is no established Breton word",
+        "render": "Setup > Image aliases: setting value",
+        "resync": "Setup > Image aliases: command word"
     },
     "oci-FR": {
         "Cookie": "Occitan software UIs use cookie as the established term (Nom del cookie)",
@@ -22384,7 +22834,11 @@
         "Webhooks": "the English loanword is used unchanged in Occitan technical UI",
         "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
         "Public": "Occitan adjective for a public repository (masculine) is spelled Public",
-        "public": "Occitan adjective is spelled public"
+        "public": "Occitan adjective is spelled public",
+        "render": "Setup > Image aliases: setting value, kept",
+        "secret %name": "Setup > Image aliases: same word in Occitan",
+        "Alias": "Setup > Image aliases: same word in Occitan",
+        "Formats": "Setup > Image aliases: same word in Occitan"
     },
     "bam-ML": {
         "OK": "OK button label",
@@ -22505,7 +22959,8 @@
         "Div": "HTML element name",
         "Plugin": "software term used as is",
         "+%added ~%changed -%removed": "Symbols and placeholders only, kept exactly as the brief requires",
-        "Webhook": "Bambara has no own term; the technical loanword webhook is used"
+        "Webhook": "Bambara has no own term; the technical loanword webhook is used",
+        "render": "Setup > Image aliases: setting value, stays as is"
     },
     "ewe-GH": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -22639,7 +23094,9 @@
         "Div": "HTML element name",
         "Plugin": "software term kept as loan",
         "Webhook": "Ewe has no native term; the English technical term Webhook is used",
-        "Id": "the abbreviation Id is used as is in the Ewe catalogue"
+        "Id": "the abbreviation Id is used as is in the Ewe catalogue",
+        "render": "Setup > Image aliases: setting value, kept as code word",
+        "resync": "Setup > Image aliases: action keyword used as a value"
     },
     "kor-KP": {
         "ID %id": "units or placeholders without words to translate",
@@ -22724,7 +23181,9 @@
         "Href": "product, standard or protocol name or abbreviation",
         "eznode": "link scheme identifier (eznode://), code",
         "ezobject": "link scheme identifier (ezobject://), code",
-        "Div": "HTML element name (div), code"
+        "Div": "HTML element name (div), code",
+        "render": "Setup > Image aliases: setting value, kept",
+        "%seconds s": "Setup > Image aliases: unit format"
     },
     "fas-AF": {
         "iPhone": "product name",
@@ -22796,7 +23255,10 @@
         "Ftp": "protocol name (FTP)",
         "Http": "protocol name (HTTP)",
         "Https": "protocol name (HTTPS)",
-        "Div": "HTML element name (div), code"
+        "Div": "HTML element name (div), code",
+        "render": "Setup > Image aliases: setting value, kept as code word",
+        "%seconds s": "Setup > Image aliases: unit format with placeholder",
+        "%ms ms": "Setup > Image aliases: unit format with placeholder"
     },
     "roh-CH": {
         "Cookie": "Romansh uses the English loanword \"cookie\" as the standard web term",
@@ -23029,7 +23491,11 @@
         "Webhook": "Romansh uses the English technical term webhook",
         "Public": "Romansh adjective public (masculine, for the repository) is spelled the same as English",
         "public": "Romansh adjective public (masculine, for the repository) is spelled the same as English",
-        "Import %id": "Romansh noun 'import' spelled the same"
+        "Import %id": "Romansh noun 'import' spelled the same",
+        "render": "Setup > Image aliases: setting value, kept as code word",
+        "secret %name": "Setup > Image aliases: setting value, unit or word written the same in this language",
+        "Original: %width x %height, %type": "Setup > Image aliases: Original is the same word in Romansh",
+        "Formats": "Setup > Image aliases: same word in Romansh"
     },
     "hsb-DE": {
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
@@ -23156,7 +23622,9 @@
         "eznode": "element name",
         "ezobject": "element name",
         "Div": "HTML element name",
-        "Webhook": "Upper Sorbian uses the English term Webhook"
+        "Webhook": "Upper Sorbian uses the English term Webhook",
+        "render": "Setup > Image aliases: setting value, kept as code word",
+        "Original: %width x %height, %type": "Setup > Image aliases: Original is the same word in Upper Sorbian"
     },
     "fry-NL": {
         "Cookie": "Frisian, like Dutch, uses the loanword cookie for a browser cookie",
@@ -23325,7 +23793,12 @@
         "Items per list": "the word the catalogue uses for this term, spelled as in English",
         "%bytes bytes": "placeholders and the unit bytes, spelled the same",
         "Webhooks": "the same word in Frisian/Dutch (established loanword)",
-        "Webhook": "Frisian uses the English technical term Webhook"
+        "Webhook": "Frisian uses the English technical term Webhook",
+        "render": "Setup > Image aliases: setting value",
+        "on demand": "Setup > Image aliases: setting value",
+        "Run": "Setup > Image aliases: established loanword",
+        "resync": "Setup > Image aliases: term kept as in the action name",
+        "In settings/override": "Setup > Image aliases: path"
     },
     "fao-FO": {
         "Cookie": "Faroese uses the English loanword \"cookie\" for browser cookies; no established native term",
@@ -23431,7 +23904,11 @@
         "Https": "protocol name",
         "Div": "HTML element name",
         "Webhook": "Faroese uses the English technical term Webhook",
-        "Id": "the abbreviation Id is used as is in Faroese"
+        "Id": "the abbreviation Id is used as is in Faroese",
+        "render": "Setup > Image aliases: setting value",
+        "on demand": "Setup > Image aliases: setting value",
+        "sent": "Setup > Image aliases: same word in Faroese",
+        "In settings/override": "Setup > Image aliases: path"
     },
     "sme-NO": {
         "GitHub Actions workflow": "product name kept",
@@ -23540,7 +24017,12 @@
         "Https": "protocol name",
         "Div": "HTML element name",
         "%seconds s": "placeholder and the unit symbol s, the language has no other",
-        "Webhook": "Northern Sami uses the English technical term Webhook"
+        "Webhook": "Northern Sami uses the English technical term Webhook",
+        "render": "Setup > Image aliases: setting value",
+        "on demand": "Setup > Image aliases: setting value",
+        "resync": "Setup > Image aliases: term kept as in the action name",
+        "Alias": "Setup > Image aliases: loanword, same in Northern Sami",
+        "In settings/override": "Setup > Image aliases: path"
     },
     "epo-EO": {
         "ID %id": "acronym plus placeholder",
@@ -23644,7 +24126,9 @@
         "Ftp": "protocol name",
         "Http": "protocol name",
         "Https": "protocol name",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: setting value, stays as is",
+        "In settings/override": "Setup > Image aliases: path, code word"
     },
     "kab-DZ": {
         "ID %id": "acronym ID with placeholder",
@@ -23756,7 +24240,9 @@
         "Commit": "Kabyle technical usage keeps the English git term Commit",
         "Commits": "Kabyle technical usage keeps the English git term Commit",
         "Push": "Kabyle technical usage keeps the English git term Push",
-        "Webhook": "Kabyle technical usage keeps the English term Webhook"
+        "Webhook": "Kabyle technical usage keeps the English term Webhook",
+        "render": "Setup > Image aliases: setting value, kept as code word",
+        "resync": "Setup > Image aliases: action keyword used as a value"
     },
     "zgh-MA": {
         "Minify": "technical term kept in English",
@@ -23871,7 +24357,8 @@
         "Http": "protocol name",
         "Https": "protocol name",
         "Div": "HTML element name",
-        "%seconds s": "placeholder and the unit symbol s, the language has no other"
+        "%seconds s": "placeholder and the unit symbol s, the language has no other",
+        "render": "Setup > Image aliases: setting value, stays as in the source"
     },
     "nqo-GN": {
         "OK": "button label OK",
@@ -23989,7 +24476,8 @@
         "Https": "protocol name",
         "Div": "HTML element name",
         "Plugin": "software term, same in Bambara glossary",
-        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged"
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
+        "render": "Setup > Image aliases: setting value, stays as in the source"
     },
     "que-PE": {
         "Cookie": "Quechua has no native term; the loanword cookie is used",
@@ -24095,7 +24583,8 @@
         "ezobject": "code identifier",
         "Div": "HTML element name",
         "%bytes bytes": "placeholders and the unit bytes, spelled the same",
-        "Webhook": "technical term with no Quechua equivalent, kept as the loanword"
+        "Webhook": "technical term with no Quechua equivalent, kept as the loanword",
+        "render": "Setup > Image aliases: setting value / code word kept as is"
     },
     "ton-TO": {
         "Minify": "technical term kept in English",
@@ -24197,7 +24686,8 @@
         "Href": "HTML attribute name",
         "eznode": "element name, code",
         "ezobject": "element name, code",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: setting value / code word kept as is"
     },
     "grn-PY": {
         "OK": "button label kept as in the other complete catalogues",
@@ -24353,6 +24843,262 @@
         "Ftp": "protocol name",
         "Http": "protocol name",
         "Https": "protocol name",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "render": "Setup > Image aliases: setting value, stays as is",
+        "In settings/override": "Setup > Image aliases: path, code word"
+    },
+    "eng-AU": {
+        "Image aliases": "Setup > Image aliases: Australian English: no difference",
+        "Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.": "Setup > Image aliases: Australian English: no difference",
+        "Parts of the page": "Setup > Image aliases: Australian English: no difference",
+        "Dashboard": "Setup > Image aliases: Australian English: no difference",
+        "Bulk runs": "Setup > Image aliases: Australian English: no difference",
+        "Test tools": "Setup > Image aliases: Australian English: no difference",
+        "Run history": "Setup > Image aliases: Australian English: no difference",
+        "Settings": "Setup > Image aliases: Australian English: no difference",
+        "You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.": "Setup > Image aliases: Australian English: no difference",
+        "What needs attention": "Setup > Image aliases: Australian English: no difference",
+        "Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.": "Setup > Image aliases: Australian English: no difference",
+        "Format negotiation is on, but no converter here can write WebP.": "Setup > Image aliases: Australian English: no difference",
+        "This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.": "Setup > Image aliases: Australian English: no difference",
+        "The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.": "Setup > Image aliases: Australian English: no difference",
+        "The staging source failed recently. See its last error below.": "Setup > Image aliases: Australian English: no difference",
+        "This installation is not production, but SyncFrom names no source: nothing is fetched.": "Setup > Image aliases: Australian English: no difference",
+        "The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.": "Setup > Image aliases: Australian English: no difference",
+        "Some jobs of image aliases failed for good. Setup > Job queue shows why.": "Setup > Image aliases: Australian English: no difference",
+        "Bulk runs are paused.": "Setup > Image aliases: Australian English: no difference",
+        "Aliases failed in the last 24 hours. The run history lists them.": "Setup > Image aliases: Australian English: no difference",
+        "The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.": "Setup > Image aliases: Australian English: no difference",
+        "There is no signing key yet: it is made with the first on-demand address.": "Setup > Image aliases: Australian English: no difference",
+        "The last 24 hours": "Setup > Image aliases: Australian English: no difference",
+        "Aliases generated": "Setup > Image aliases: Australian English: no difference",
+        "Placeholders answered": "Setup > Image aliases: Australian English: no difference",
+        "Failures": "Setup > Image aliases: Australian English: no difference",
+        "Files staged": "Setup > Image aliases: Australian English: no difference",
+        "Runs started": "Setup > Image aliases: Australian English: no difference",
+        "Jobs waiting / running": "Setup > Image aliases: Australian English: no difference",
+        "Counted from the last %lines lines of %file, which reach back to %time.": "Setup > Image aliases: Australian English: no difference",
+        "Mode and delivery": "Setup > Image aliases: Australian English: no difference",
+        "Mode": "Setup > Image aliases: Australian English: no difference",
+        "render": "Setup > Image aliases: Australian English: no difference",
+        "on demand": "Setup > Image aliases: Australian English: no difference",
+        "Address form": "Setup > Image aliases: Australian English: no difference",
+        "Delivery": "Setup > Image aliases: Australian English: no difference",
+        "Longest wait of a request": "Setup > Image aliases: Australian English: no difference",
+        "%seconds s": "Setup > Image aliases: Australian English: no difference",
+        "Conversions at once": "Setup > Image aliases: Australian English: no difference",
+        "%busy of %max busy now": "Setup > Image aliases: Australian English: no difference",
+        "Format negotiation": "Setup > Image aliases: Australian English: no difference",
+        "on": "Setup > Image aliases: Australian English: no difference",
+        "off": "Setup > Image aliases: Australian English: no difference",
+        "Placeholder and swap script": "Setup > Image aliases: Australian English: no difference",
+        "Pre-generation after publishing": "Setup > Image aliases: Australian English: no difference",
+        "Aliases of the site": "Setup > Image aliases: Australian English: no difference",
+        "Converters of the format variants": "Setup > Image aliases: Australian English: no difference",
+        "Converter": "Setup > Image aliases: Australian English: no difference",
+        "Tried": "Setup > Image aliases: Australian English: no difference",
+        "preferred": "Setup > Image aliases: Australian English: no difference",
+        "yes": "Setup > Image aliases: Australian English: no difference",
+        "no": "Setup > Image aliases: Australian English: no difference",
+        "The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.": "Setup > Image aliases: Australian English: no difference",
+        "Environment and source": "Setup > Image aliases: Australian English: no difference",
+        "This installation": "Setup > Image aliases: Australian English: no difference",
+        "(production: never fetches)": "Setup > Image aliases: Australian English: no difference",
+        "Fetches from": "Setup > Image aliases: Australian English: no difference",
+        "nothing": "Setup > Image aliases: Australian English: no difference",
+        "Source address": "Setup > Image aliases: Australian English: no difference",
+        "not set": "Setup > Image aliases: Australian English: no difference",
+        "Credential": "Setup > Image aliases: Australian English: no difference",
+        "secret %name": "Setup > Image aliases: Australian English: no difference",
+        "none": "Setup > Image aliases: Australian English: no difference",
+        "State": "Setup > Image aliases: Australian English: no difference",
+        "working": "Setup > Image aliases: Australian English: no difference",
+        "paused until %time": "Setup > Image aliases: Australian English: no difference",
+        "failing": "Setup > Image aliases: Australian English: no difference",
+        "Failures in a row": "Setup > Image aliases: Australian English: no difference",
+        "pause after %count": "Setup > Image aliases: Australian English: no difference",
+        "Last error": "Setup > Image aliases: Australian English: no difference",
+        "Last success": "Setup > Image aliases: Australian English: no difference",
+        "Reset the failures and ask the source again": "Setup > Image aliases: Australian English: no difference",
+        "Job queue": "Setup > Image aliases: Australian English: no difference",
+        "Job type": "Setup > Image aliases: Australian English: no difference",
+        "Waiting": "Setup > Image aliases: Australian English: no difference",
+        "Running": "Setup > Image aliases: Australian English: no difference",
+        "Failed": "Setup > Image aliases: Australian English: no difference",
+        "not registered": "Setup > Image aliases: Australian English: no difference",
+        "The job queue is not available.": "Setup > Image aliases: Australian English: no difference",
+        "Bulk runs paused": "Setup > Image aliases: Australian English: no difference",
+        "since %time by %user": "Setup > Image aliases: Australian English: no difference",
+        "Bulk runs may run": "Setup > Image aliases: Australian English: no difference",
+        "Signing key": "Setup > Image aliases: Australian English: no difference",
+        "Key": "Setup > Image aliases: Australian English: no difference",
+        "in the secret store": "Setup > Image aliases: Australian English: no difference",
+        "none yet": "Setup > Image aliases: Australian English: no difference",
+        "Age": "Setup > Image aliases: Australian English: no difference",
+        "%days days (since %time)": "Setup > Image aliases: Australian English: no difference",
+        "Previous key": "Setup > Image aliases: Australian English: no difference",
+        "valid until %time": "Setup > Image aliases: Australian English: no difference",
+        "Rotate the key": "Setup > Image aliases: Australian English: no difference",
+        "Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.": "Setup > Image aliases: Australian English: no difference",
+        "Rotate now": "Setup > Image aliases: Australian English: no difference",
+        "How it works": "Setup > Image aliases: Australian English: no difference",
+        "On demand, render mode, staging and the log": "Setup > Image aliases: Australian English: no difference",
+        "On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.": "Setup > Image aliases: Australian English: no difference",
+        "Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.": "Setup > Image aliases: Australian English: no difference",
+        "A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.": "Setup > Image aliases: Australian English: no difference",
+        "Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.": "Setup > Image aliases: Australian English: no difference",
+        "Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.": "Setup > Image aliases: Australian English: no difference",
+        "Job %job: %action": "Setup > Image aliases: Australian English: no difference",
+        "%done of %total images": "Setup > Image aliases: Australian English: no difference",
+        "Run": "Setup > Image aliases: Australian English: no difference",
+        "Scope": "Setup > Image aliases: Australian English: no difference",
+        "Result": "Setup > Image aliases: Australian English: no difference",
+        "Cancel this job": "Setup > Image aliases: Australian English: no difference",
+        "Job %job is not a job of image aliases, or it was removed from the queue.": "Setup > Image aliases: Australian English: no difference",
+        "Result of run %run": "Setup > Image aliases: Australian English: no difference",
+        "Bulk runs are paused": "Setup > Image aliases: Australian English: no difference",
+        "Paused since %time by %user.": "Setup > Image aliases: Australian English: no difference",
+        "A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors' aliases are still made.": "Setup > Image aliases: Australian English: no difference",
+        "Resume bulk runs": "Setup > Image aliases: Australian English: no difference",
+        "Reason (optional)": "Setup > Image aliases: Australian English: no difference",
+        "Pause bulk runs": "Setup > Image aliases: Australian English: no difference",
+        "Start a run": "Setup > Image aliases: Australian English: no difference",
+        "Runs are jobs of the job queue: you can leave the page and come back.": "Setup > Image aliases: Australian English: no difference",
+        "Without the job queue a run is done in this request, for at most %count images.": "Setup > Image aliases: Australian English: no difference",
+        "Action": "Setup > Image aliases: Australian English: no difference",
+        "Generate: make the aliases that are missing": "Setup > Image aliases: Australian English: no difference",
+        "Regenerate: remove and make them again": "Setup > Image aliases: Australian English: no difference",
+        "Purge: remove them (made again on demand)": "Setup > Image aliases: Australian English: no difference",
+        "Resync: fetch the files from the staging source": "Setup > Image aliases: Australian English: no difference",
+        "(only on a staging installation)": "Setup > Image aliases: Australian English: no difference",
+        "The whole site": "Setup > Image aliases: Australian English: no difference",
+        "One node": "Setup > Image aliases: Australian English: no difference",
+        "A node and its subtree": "Setup > Image aliases: Australian English: no difference",
+        "Node id": "Setup > Image aliases: Australian English: no difference",
+        "Classes": "Setup > Image aliases: Australian English: no difference",
+        "Attributes": "Setup > Image aliases: Australian English: no difference",
+        "Changed since": "Setup > Image aliases: Australian English: no difference",
+        "A date (2026-11-01) or a time ago (12 hours, 2 days).": "Setup > Image aliases: Australian English: no difference",
+        "At most images": "Setup > Image aliases: Australian English: no difference",
+        "Aliases (none ticked: all of them)": "Setup > Image aliases: Australian English: no difference",
+        "resync": "Setup > Image aliases: Australian English: no difference",
+        "Dry run: only count (a resync checks the source and stores nothing)": "Setup > Image aliases: Australian English: no difference",
+        "Overwrite files that differ (resync)": "Setup > Image aliases: Australian English: no difference",
+        "Start the run": "Setup > Image aliases: Australian English: no difference",
+        "Latest runs": "Setup > Image aliases: Australian English: no difference",
+        "Job": "Setup > Image aliases: Australian English: no difference",
+        "Progress": "Setup > Image aliases: Australian English: no difference",
+        "Queued": "Setup > Image aliases: Australian English: no difference",
+        "Actions": "Setup > Image aliases: Australian English: no difference",
+        "Cancel": "Setup > Image aliases: Australian English: no difference",
+        "No bulk run or resync yet.": "Setup > Image aliases: Australian English: no difference",
+        "One image": "Setup > Image aliases: Australian English: no difference",
+        "The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.": "Setup > Image aliases: Australian English: no difference",
+        "Look up by": "Setup > Image aliases: Australian English: no difference",
+        "Object id": "Setup > Image aliases: Australian English: no difference",
+        "Id": "Setup > Image aliases: Australian English: no difference",
+        "Show": "Setup > Image aliases: Australian English: no difference",
+        "You may not read this object.": "Setup > Image aliases: Australian English: no difference",
+        "This object has no image.": "Setup > Image aliases: Australian English: no difference",
+        "No object with this id.": "Setup > Image aliases: Australian English: no difference",
+        "object %object, node %node, version %version": "Setup > Image aliases: Australian English: no difference",
+        "Original: %width x %height, %type": "Setup > Image aliases: Australian English: no difference",
+        "file there": "Setup > Image aliases: Australian English: no difference",
+        "file missing": "Setup > Image aliases: Australian English: no difference",
+        "Aliases of %name": "Setup > Image aliases: Australian English: no difference",
+        "Alias": "Setup > Image aliases: Australian English: no difference",
+        "Size": "Setup > Image aliases: Australian English: no difference",
+        "Type": "Setup > Image aliases: Australian English: no difference",
+        "File": "Setup > Image aliases: Australian English: no difference",
+        "Formats": "Setup > Image aliases: Australian English: no difference",
+        "Address in a template": "Setup > Image aliases: Australian English: no difference",
+        "there": "Setup > Image aliases: Australian English: no difference",
+        "missing": "Setup > Image aliases: Australian English: no difference",
+        "not for this type": "Setup > Image aliases: Australian English: no difference",
+        "Check": "Setup > Image aliases: Australian English: no difference",
+        "Make": "Setup > Image aliases: Australian English: no difference",
+        "No image in this field.": "Setup > Image aliases: Australian English: no difference",
+        "Time": "Setup > Image aliases: Australian English: no difference",
+        "%ms ms": "Setup > Image aliases: Australian English: no difference",
+        "Connection to a source": "Setup > Image aliases: Australian English: no difference",
+        "A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.": "Setup > Image aliases: Australian English: no difference",
+        "Source": "Setup > Image aliases: Australian English: no difference",
+        "with credential": "Setup > Image aliases: Australian English: no difference",
+        "Storage path (optional)": "Setup > Image aliases: Australian English: no difference",
+        "Test the connection": "Setup > Image aliases: Australian English: no difference",
+        "No source has a BaseURL. Sources are set in the settings ([AliasSource_<environment>]).": "Setup > Image aliases: Australian English: no difference",
+        "reachable": "Setup > Image aliases: Australian English: no difference",
+        "refused: check the credential": "Setup > Image aliases: Australian English: no difference",
+        "not found at the source": "Setup > Image aliases: Australian English: no difference",
+        "no answer": "Setup > Image aliases: Australian English: no difference",
+        "timed out": "Setup > Image aliases: Australian English: no difference",
+        "redirected (not followed)": "Setup > Image aliases: Australian English: no difference",
+        "no BaseURL": "Setup > Image aliases: Australian English: no difference",
+        "not a storage path": "Setup > Image aliases: Australian English: no difference",
+        "Address": "Setup > Image aliases: Australian English: no difference",
+        "Status": "Setup > Image aliases: Australian English: no difference",
+        "sent": "Setup > Image aliases: Australian English: no difference",
+        "the secret is missing": "Setup > Image aliases: Australian English: no difference",
+        "the secret is not user:password or Bearer <token>": "Setup > Image aliases: Australian English: no difference",
+        "The newest lines of %file, newest first.": "Setup > Image aliases: Australian English: no difference",
+        "Setup > Log files": "Setup > Image aliases: Australian English: no difference",
+        "Event": "Setup > Image aliases: Australian English: no difference",
+        "All events": "Setup > Image aliases: Australian English: no difference",
+        "Runs (start and end)": "Setup > Image aliases: Australian English: no difference",
+        "Path contains": "Setup > Image aliases: Australian English: no difference",
+        "Lines": "Setup > Image aliases: Australian English: no difference",
+        "Filter": "Setup > Image aliases: Australian English: no difference",
+        "Follow: show new lines as they are written": "Setup > Image aliases: Australian English: no difference",
+        "Path and details": "Setup > Image aliases: Australian English: no difference",
+        "No line of the log matches.": "Setup > Image aliases: Australian English: no difference",
+        "What saving would change": "Setup > Image aliases: Australian English: no difference",
+        "What was changed": "Setup > Image aliases: Australian English: no difference",
+        "Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.": "Setup > Image aliases: Australian English: no difference",
+        "How aliases are made and delivered.": "Setup > Image aliases: Australian English: no difference",
+        "Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.": "Setup > Image aliases: Australian English: no difference",
+        "Setting": "Setup > Image aliases: Australian English: no difference",
+        "Value": "Setup > Image aliases: Australian English: no difference",
+        "In settings/override": "Setup > Image aliases: Australian English: no difference",
+        "The address of each source and the name of the secret that holds its credential (user:password or Bearer <token>). The value of a secret is set in Setup > Secrets and never shown here.": "Setup > Image aliases: Australian English: no difference",
+        "Preview the changes": "Setup > Image aliases: Australian English: no difference",
+        "Save": "Setup > Image aliases: Australian English: no difference",
+        "Following: updated %time": "Setup > Image aliases: Australian English: no difference",
+        "Paused": "Setup > Image aliases: Australian English: no difference",
+        "The feed did not answer; trying again.": "Setup > Image aliases: Australian English: no difference",
+        "The job has ended.": "Setup > Image aliases: Australian English: no difference",
+        "The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.": "Setup > Image aliases: Australian English: no difference",
+        "auto: a redirect to the file when the web server serves the storage, else the file is streamed.": "Setup > Image aliases: Australian English: no difference",
+        "Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.": "Setup > Image aliases: Australian English: no difference",
+        "The converter tried first for the WebP and AVIF variants.": "Setup > Image aliases: Australian English: no difference",
+        "Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].": "Setup > Image aliases: Australian English: no difference",
+        "A neutral image of the right size while an image is missing.": "Setup > Image aliases: Australian English: no difference",
+        "A small script that replaces placeholders with the real image when it is there.": "Setup > Image aliases: Australian English: no difference",
+        "After publishing, a job makes the aliases of the new images for every related siteaccess.": "Setup > Image aliases: Australian English: no difference",
+        "Conversions at once on one server.": "Setup > Image aliases: Australian English: no difference",
+        "The process priority (nice) of bulk runs, 0 to 19.": "Setup > Image aliases: Australian English: no difference",
+        "Seconds browsers and caches may keep a made alias.": "Setup > Image aliases: Australian English: no difference",
+        "Seconds the address of a draft or preview image stays valid.": "Setup > Image aliases: Australian English: no difference",
+        "Seconds the previous signing key stays valid after a rotation.": "Setup > Image aliases: Australian English: no difference",
+        "The environment of this installation.": "Setup > Image aliases: Australian English: no difference",
+        "The environment missing images are fetched from; none: nothing is fetched.": "Setup > Image aliases: Australian English: no difference",
+        "One per line: local storage prefix;source prefix or address, for storage paths that differ.": "Setup > Image aliases: Australian English: no difference",
+        "Seconds one request to the source may take.": "Setup > Image aliases: Australian English: no difference",
+        "The largest file taken from the source, in bytes.": "Setup > Image aliases: Australian English: no difference",
+        "Failures in a row after which the source is paused.": "Setup > Image aliases: Australian English: no difference",
+        "How long a failing source is paused.": "Setup > Image aliases: Australian English: no difference",
+        "Mail the administrators when the source is paused (at most once an hour).": "Setup > Image aliases: Australian English: no difference",
+        "One e-mail address per line; empty: the AdminEmail of site.ini.": "Setup > Image aliases: Australian English: no difference",
+        "The address of the source installation %block, e.g. https://www.example.org.": "Setup > Image aliases: Australian English: no difference",
+        "The name of the secret with the credential, or env:VARIABLE. Never the credential itself.": "Setup > Image aliases: Australian English: no difference",
+        "(none)": "Setup > Image aliases: Australian English: no difference",
+        "Default: %value": "Setup > Image aliases: Australian English: no difference",
+        "Set here; tick to remove it": "Setup > Image aliases: Australian English: no difference",
+        "inherited": "Setup > Image aliases: Australian English: no difference",
+        "Generate for this item": "Setup > Image aliases: Australian English: no difference",
+        "Generate for the subtree": "Setup > Image aliases: Australian English: no difference",
+        "Regenerate for this item": "Setup > Image aliases: Australian English: no difference",
+        "Regenerate for the subtree": "Setup > Image aliases: Australian English: no difference",
+        "Remove for this item": "Setup > Image aliases: Australian English: no difference",
+        "Remove for the subtree": "Setup > Image aliases: Australian English: no difference"
     }
 }

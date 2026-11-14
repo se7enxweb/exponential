@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>هاوردن/هەناردن</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>ناوی جێگرەوەی وێنە</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>بۆ ئەم بابەتە دروست بکە</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>بۆ دارە لاوەکییەکە دروست بکە</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>بۆ ئەم بابەتە دووبارە دروست بکە</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>بۆ دارە لاوەکییەکە دووبارە دروست بکە</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>بۆ ئەم بابەتە بسڕەوە</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>بۆ دارە لاوەکییەکە بسڕەوە</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>بلۆکی server ی ماڵپەڕێکی کۆن: location = لەگەڵ return، if ($args) بۆ پرسیارێک، rewrite وەک وایلدکارد و map ێکی پەڕە تاکەکان.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>ناوی جێگرەوەی وێنە</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>ناوی جێگرەوەی وێنە ئەو لەبەرگیراوانەی وێنەیەکن کە قەبارەیان گۆڕدراوە و بڕدراون و قاڵبەکان پیشانیان دەدەن. لێرەدا دەتوانیت ببینیت چۆن دروست دەکرێن، کارە بەکۆمەڵەکان لەسەر سایتەکە بەڕێوەببەیت، یەک وێنە یان سەرچاوەیەکی staging تاقی بکەیتەوە، مێژووی جێبەجێکردن بەدواداچوون بکەیت و ڕێکخستنەکان بگۆڕیت.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>بەشەکانی پەڕەکە</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>داشبۆرد</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>جێبەجێکردنی بەکۆمەڵ</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>ئامرازەکانی تاقیکردنەوە</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>مێژووی جێبەجێکردن</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ڕێکخستنەکان</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>دەتوانیت لێرە سەیری هەموو شتێک بکەیت. گۆڕینی ڕێکخستنەکان، بەڕێوەبردنی کارەکان و ئامرازەکانی دروستکردنی فایل پێویستیان بە سیاسەتی setup/managealiases هەیە.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>ئەوەی پێویستی بە سەرنجە</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>دۆخی render: قاڵبەکان ناوی جێگرەوەی ونبوو دروست دەکەن کاتێک پەڕەکە پیشان دەدرێت، وەک پێشوو. ناونیشانەکانی on-demand، شوێنگرەکان و کارەکانی پشتەوە بەکارناهێنرێن.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>ڕێککەوتنی فۆرمات چالاکە، بەڵام هیچ گۆڕەرێک لێرە ناتوانێت WebP بنووسێت.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>ئەمە دامەزراندنێکی staging ـە، بەڵام سەرچاوەکەی BaseURL ی نییە: ناتوانرێت وێنە ونبووەکان بهێنرێن.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>سەرچاوەی staging دوای شکستی دووبارە ڕاگیراوە: وێنە ونبووەکان شوێنگر وەردەگرن تا ڕاگرتنەکە کۆتایی دێت یان تۆ دایدەنێیتەوە.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>سەرچاوەی staging نوێیە شکستی هێنا. دوایین هەڵەی لە خوارەوە ببینە.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>ئەم دامەزراندنە production نییە، بەڵام SyncFrom هیچ سەرچاوەیەک ناو نابات: هیچ شتێک ناهێنرێت.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>ڕیزی کارەکان (expqueue) بەردەست نییە: ناوی جێگرەوەی دواکەوتوو لە داواکاری دواتر دروست دەکرێن، پێش-دروستکردن دوای بڵاوکردنەوە پشتگوێ دەخرێت و جێبەجێکردنی بەکۆمەڵ بۆ دەستەی بچووک سنووردار دەکرێت.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>هەندێک کاری ناوی جێگرەوەی وێنە بۆ هەمیشە شکستیان هێنا. دامەزراندن &gt; ڕیزی کارەکان هۆکارەکەی پیشان دەدات.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>جێبەجێکردنی بەکۆمەڵ ڕاگیراوە.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>ناوی جێگرەوە لە ٢٤ کاتژمێری ڕابردوودا شکستیان هێنا. مێژووی جێبەجێکردن لیستیان دەکات.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>کلیلی واژۆکردن زیاتر لە ساڵێک تەمەنی هەیە. گۆڕینی ناونیشانە کۆنەکان لە ماوەی لێبوردن دەپارێزێت.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>هێشتا کلیلی واژۆکردن نییە: لەگەڵ یەکەم ناونیشانی on-demand دروست دەکرێت.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>٢٤ کاتژمێری ڕابردوو</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>ناوی جێگرەوەی دروستکراو</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>شوێنگرە وەڵامدراوەکان</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>شکستەکان</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>فایلە stage کراوەکان</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>جێبەجێکردنە دەستپێکراوەکان</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>کارە چاوەڕوان / کارکردووەکان</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>لە دوایین %lines دێڕی %file ژمێردراوە، کە دەگەڕێنەوە بۆ %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>دۆخ و گەیاندن</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>دۆخ</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>لەسەر داواکاری</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>شێوەی ناونیشان</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>گەیاندن</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>درێژترین چاوەڕوانی داواکارییەک</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds چ</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>گۆڕینەکان بە یەکجار</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy لە %max ئێستا سەرقاڵە</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>ڕێککەوتنی فۆرمات</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>چالاک</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ناچالاک</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>شوێنگر و سکریپتی گۆڕینەوە</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>پێش-دروستکردن دوای بڵاوکردنەوە</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>ناوی جێگرەوەی سایتەکە</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>گۆڕەرەکانی جۆرەکانی فۆرمات</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>گۆڕەر</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>تاقیکرایەوە</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>پەسەندکراو</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>بەڵێ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>نەخێر</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>ناوی جێگرەوەکان خۆیان بە گۆڕەرەکانی [ImageConverterSettings] دروست دەکرێن، وەک پێشوو؛ ئەمانە جۆرەکانی WebP و AVIF دەنووسن.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>ژینگە و سەرچاوە</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>ئەم دامەزراندنە</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production: هەرگیز ناهێنێت)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>دەیهێنێت لە</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>هیچ</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>ناونیشانی سەرچاوە</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>دانەنراوە</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>بەڵگەنامەی چوونەژوورەوە</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>نهێنی %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>هیچ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>حاڵەت</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>کار دەکات</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>ڕاگیراوە تا %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>شکست دەهێنێت</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>شکستە دووبارەکان</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>ڕاگرتن دوای %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>دوایین هەڵە</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>دوایین سەرکەوتن</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>شکستەکان دابنێوە و دووبارە لە سەرچاوە بپرسە</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>ڕیزی کارەکان</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>جۆری کار</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>چاوەڕوان</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>کاردەکات</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>سەرنەکەوت</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>تۆمار نەکراوە</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>ڕیزی کارەکان بەردەست نییە.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>جێبەجێکردنی بەکۆمەڵ ڕاگیراوە</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>لە %time لەلایەن %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>جێبەجێکردنی بەکۆمەڵ دەتوانێت کار بکات</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>کلیلی واژۆکردن</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>کلیل</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>لە کۆگای نهێنییەکان</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>هێشتا نییە</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>تەمەن</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days ڕۆژ (لە %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>کلیلی پێشوو</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>دروستە تا %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>کلیلەکە بگۆڕە</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>ئەو ناونیشانانەی بە کلیلی ئێستا واژۆ کراون لە ماوەی لێبوردن (SigningKeyGrace) کار دەکەن، پاشان شوێنگر وەڵام دەدەنەوە تا پەڕەکان دووبارە دروست دەکرێنەوە.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>ئێستا بیگۆڕە</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>چۆن کار دەکات</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand، دۆخی render، staging و تۆمار</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (بنەڕەتی): پەڕەیەک ناوی جێگرەوەیەک کە هێشتا نییە بە ناونیشانێکی واژۆکراو دەبەستێتەوە. یەکەم داواکاری لە درێژترین چاوەڕوانیدا دروستی دەکات، ئەگینا شوێنگرێکی بێلایەن وەڵام دەداتەوە و کارێک کارەکە تەواو دەکات؛ سکریپتی گۆڕینەوە شوێنگرەکە دەگۆڕێت کاتێک وێنەکە ئامادە دەبێت.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>دۆخی render: قاڵبەکە ناوی جێگرەوە دروست دەکات کاتێک پەڕەکە پیشان دەدرێت، وەک پێشوو. لە هەر کاتێکدا دەتوانیت لە نێوان هەردووکیان بگۆڕیت؛ پێویست بە گواستنەوەی هیچ نییە.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>دامەزراندنی staging ئەسڵەکان و ناوی جێگرەوەی کەمی لە سەرچاوەکەی دەهێنێت؛ سەرچاوەی شکستخواردوو دوای شکستی دووبارە ڕادەگیرێت و بەڕێوەبەران لە کاتژمێرێکدا زۆرترین یەک ئیمەیڵ وەردەگرن.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>جێبەجێکردنی بەکۆمەڵ و پێش-دروستکردن دوای بڵاوکردنەوە کارەکانی ڕیزی کارەکانن، بە پێشەنگییەکی نزمتر لە سەردانکەران. سڕینەوەی ناوی جێگرەوە کاشی وەڵامی Velocity ش پاک دەکاتەوە، بۆیە فایلی سڕاوە لێیەوە نادرێت.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>هەر ناوی جێگرەوەیەکی دروستکراو، شوێنگرێکی وەڵامدراو، فایلێکی stage کراو و جێبەجێکردنێک دێڕێکە لە %file. هێڵی فەرمان هەمان ئامرازی هەیە: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>کاری %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done لە %total وێنە</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>جێبەجێکردن</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>دەستە</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ئەنجام</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>ئەم کارە هەڵبوەشێنەوە</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>کاری %job کاری ناوی جێگرەوەی وێنە نییە، یان لە ڕیزەکە سڕاوەتەوە.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>ئەنجامی جێبەجێکردنی %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>جێبەجێکردنی بەکۆمەڵ ڕاگیراوە</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>ڕاگیراوە لە %time لەلایەن %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>ڕاگرتن هەر جێبەجێکردنێکی بەکۆمەڵ دوای وێنەی ئێستای لەسەر هەموو سێرڤەرەکان دەوەستێنێت؛ جێبەجێکردنە ڕیزکراوەکان چاوەڕێ دەکەن. ناوی جێگرەوەی سەردانکەران هێشتا دروست دەکرێن.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>جێبەجێکردنی بەکۆمەڵ بەردەوام بکە</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>هۆکار (ئارەزوومەندانە)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>جێبەجێکردنی بەکۆمەڵ ڕابگرە</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>جێبەجێکردنێک دەستپێبکە</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>جێبەجێکردنەکان کارەکانی ڕیزی کارەکانن: دەتوانیت پەڕەکە بەجێبهێڵیت و بگەڕێیتەوە.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>بەبێ ڕیزی کارەکان جێبەجێکردن لەم داواکارییەدا ئەنجام دەدرێت، بۆ زۆرترین %count وێنە.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>کردار</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>دروستکردن: ناوی جێگرەوەی ونبوو دروست بکە</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>دووبارە دروستکردن: بیانسڕەوە و دووبارە دروستیان بکە</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>پاککردنەوە: بیانسڕەوە (لەسەر داواکاری دووبارە دروست دەکرێنەوە)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>هاوکاتکردنەوە: فایلەکان لە سەرچاوەی staging بهێنە</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(تەنها لە دامەزراندنی staging)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>هەموو سایتەکە</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>یەک گرێ</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>گرێیەک و دارە لاوەکییەکەی</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID ی گرێ</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>پۆلەکان</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>تایبەتمەندییەکان</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>گۆڕدراوە لە</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>بەروارێک (2026-11-01) یان ماوەیەک لەمەوبەر (١٢ کاتژمێر، ٢ ڕۆژ).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>زۆرترین وێنە</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>ناوی جێگرەوە (ئەگەر هیچ نەنیشانکرا: هەموویان)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>جێبەجێکردنی تاقیکاری: تەنها بژمێرە (resync سەرچاوە دەپشکنێت و هیچ شتێک پاشەکەوت ناکات)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>فایلە جیاوازەکان بنووسەرەوە (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>جێبەجێکردنەکە دەستپێبکە</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>دوایین جێبەجێکردنەکان</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>کار</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>پێشکەوتن</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>لە ڕیزدا</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>کردارەکان</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>هەڵوەشاندنەوە</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>هێشتا هیچ جێبەجێکردنی بەکۆمەڵ یان resync نییە.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>یەک وێنە</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>ئەو ناونیشانانەی قاڵبێک ئێستا وەریدەگرێت، قەبارە و جۆرەکانی بۆ هەر ناوی جێگرەوەیەک ژمێردراون، و ئایا هەر فایلێک هەیە.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>گەڕان بەپێی</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID ی ئۆبجێکت</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>پیشاندان</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>ناتوانیت ئەم ئۆبجێکتە بخوێنیتەوە.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>ئەم ئۆبجێکتە وێنەی نییە.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>هیچ ئۆبجێکتێک بەم ID یە نییە.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>ئۆبجێکت %object، گرێ %node، وەشان %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>ئەسڵی: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>فایل هەیە</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>فایل نییە</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>ناوی جێگرەوەی %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>ناوی جێگرەوە</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>قەبارە</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>جۆر</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>فایل</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>فۆرماتەکان</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>ناونیشان لە قاڵبدا</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>هەیە</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>نییە</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>بۆ ئەم جۆرە نییە</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>پشکنین</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>دروستکردن</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>هیچ وێنەیەک لەم خانەیەدا نییە.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>کات</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>پەیوەندی بە سەرچاوەیەک</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>داواکاری HEAD بۆ سەرچاوەیەکی staging، لەگەڵ بەڵگەنامەی چوونەژوورەوەی ئەگەر ناو نرابێت. بەڵگەنامەکە دەنێردرێت، هەرگیز پیشان نادرێت.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>سەرچاوە</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>لەگەڵ بەڵگەنامەی چوونەژوورەوە</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>ڕێڕەوی کۆگا (ئارەزوومەندانە)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>پەیوەندییەکە تاقی بکەرەوە</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>هیچ سەرچاوەیەک BaseURL ی نییە. سەرچاوەکان لە ڕێکخستنەکاندا دادەنرێن ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>دەگەیتێ</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>ڕەتکرایەوە: بەڵگەنامەکە بپشکنە</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>لە سەرچاوەکە نەدۆزرایەوە</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>وەڵام نییە</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>کات تەواو بوو</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>ڕەوانەکرایەوە (شوێن نەکەوتن)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL نییە</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>ڕێڕەوی کۆگا نییە</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ناونیشان</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>بارودۆخ</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>نێردرا</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>نهێنییەکە نییە</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>نهێنییەکە user:password یان Bearer &lt;token&gt; نییە</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>نوێترین دێڕەکانی %file، نوێترین یەکەم.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>دامەزراندن &gt; فایلەکانی تۆمار</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>ڕووداو</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>هەموو ڕووداوەکان</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>جێبەجێکردنەکان (دەستپێک و کۆتایی)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>ڕێڕەو لەخۆدەگرێت</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>دێڕەکان</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>پاڵاوتن</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>بەدواداچوون: دێڕە نوێیەکان پیشان بدە هەر کە دەنووسرێن</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>ڕێڕەو و وردەکاری</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>هیچ دێڕێکی تۆمار نایەتەوە.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>ئەوەی پاشەکەوتکردن دەیگۆڕێت</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>ئەوەی گۆڕدرا</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>لە settings/override/image.ini.append.php پاشەکەوت دەکرێت، بۆیە بەهایەک لێرە بەسەر هەموو siteaccess ێکدا زاڵ دەبێت. ئەو بەهایانەی پیشان دراون ئەوانەن کە بۆ ئەم siteaccess کاریگەرن. پاشەکەوتکردن داوات لێ دەکات سەرەتا خۆت پشتڕاست بکەیتەوە.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>ناوی جێگرەوە چۆن دروست دەکرێن و دەگەیەنرێن.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>هێنانی وێنە ونبووەکان لە دامەزراندنێکی تر (alpha, dev, beta, stage, pro, post, arc). Production (pro) هەرگیز ناهێنێت.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>ڕێکخستن</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>بەها</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>لە settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>ناونیشانی هەر سەرچاوەیەک و ناوی ئەو نهێنییەی بەڵگەنامەکەی لەخۆدەگرێت (user:password یان Bearer &lt;token&gt;). بەهای نهێنی لە دامەزراندن &gt; نهێنییەکان دادەنرێت و هەرگیز لێرە پیشان نادرێت.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>پێشبینینی گۆڕانکارییەکان</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>پاشەکەوتکردن</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>بەدواداچوون: نوێکرایەوە %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>ڕاگیراوە</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>فیدەکە وەڵامی نەدایەوە؛ دووبارە هەوڵ دەدرێتەوە.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>کارەکە کۆتایی هات.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: قاڵبەکان ناونیشانەکە وەردەگرن، ناوی جێگرەوەکە کاتێک داوا دەکرێت دروست دەکرێت. render: قاڵبەکە لە کاتی پیشاندانی پەڕەکەدا دروستی دەکات (ڕەفتاری ئەسڵی).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>ناونیشانی ناوی جێگرەوەیەک کە هێشتا دروست نەکراوە: token (واژۆکراو، پێویستی بە داتابەیس نییە)، ids-token, ids, node یان storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: ڕەوانەکردن بۆ فایلەکە کاتێک سێرڤەری وێب کۆگاکە خزمەت دەکات، ئەگینا فایلەکە ستریم دەکرێت.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>چرکەکانی کە داواکارییەک دەتوانێت بۆ دروستکردن یان هێنانی ناوی جێگرەوە بەسەری ببات؛ پاشان شوێنگر وەڵام دەداتەوە و کارێک کارەکە تەواو دەکات.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>ئەو گۆڕەرەی سەرەتا بۆ جۆرەکانی WebP و AVIF تاقی دەکرێتەوە.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>WebP یان AVIF وەڵام بدەرەوە بۆ وێبگەڕەکان کە داوای دەکەن، بۆ ئەو ناوی جێگرەوانەی Formats[] لیست دەکەن.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>وێنەیەکی بێلایەن بە قەبارەی دروست کاتێک وێنەیەک نییە.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>سکریپتێکی بچووک کە شوێنگرەکان بە وێنە ڕاستەقینەکە دەگۆڕێتەوە کاتێک ئامادە دەبێت.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>دوای بڵاوکردنەوە، کارێک ناوی جێگرەوەی وێنە نوێیەکان بۆ هەر siteaccess ێکی پەیوەندیدار دروست دەکات.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>گۆڕینەکان بە یەکجار لەسەر یەک سێرڤەر.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>پێشەنگی پرۆسەی (nice) جێبەجێکردنی بەکۆمەڵ، لە 0 تا 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>چرکەکانی کە وێبگەڕ و کاشەکان دەتوانن ناوی جێگرەوەی دروستکراو بپارێزن.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>چرکەکانی کە ناونیشانی وێنەی ڕەشنووس یان پێشبینین دروست دەمێنێتەوە.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>چرکەکانی کە کلیلی واژۆکردنی پێشوو دوای گۆڕین دروست دەمێنێتەوە.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>ژینگەی ئەم دامەزراندنە.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>ئەو ژینگەیەی وێنە ونبووەکانی لێ دەهێنرێن؛ none: هیچ ناهێنرێت.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>یەک لە هەر دێڕێک: پێشگری کۆگای ناوخۆیی;پێشگری سەرچاوە یان ناونیشان، بۆ ڕێڕەوە جیاوازەکانی کۆگا.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>چرکەکانی کە یەک داواکاری بۆ سەرچاوە دەتوانێت بیخایەنێت.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>گەورەترین فایلی لە سەرچاوە وەردەگیرێت، بە بایت.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>ژمارەی شکستە دووبارەکان کە دوای ئەوە سەرچاوە ڕادەگیرێت.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>ماوەی ڕاگرتنی سەرچاوەی شکستخواردوو.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>ئیمەیڵ بۆ بەڕێوەبەران بنێرە کاتێک سەرچاوە ڕادەگیرێت (لە کاتژمێرێکدا زۆرترین یەک جار).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>یەک ناونیشانی ئیمەیڵ لە هەر دێڕێک؛ بەتاڵ: AdminEmail ی site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>ناونیشانی دامەزراندنی سەرچاوە %block، بۆ نموونە https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>ناوی ئەو نهێنییەی بەڵگەنامەکەی هەیە، یان env:VARIABLE. هەرگیز خودی بەڵگەنامەکە نا.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(هیچ)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>بنەڕەتی: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>لێرە دانراوە؛ نیشانە بکە بۆ سڕینەوەی</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>بەمیرات گیراوە</translation>
     </message>
 </context>
 </TS>

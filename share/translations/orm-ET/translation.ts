@@ -16590,6 +16590,34 @@ Yaadannoo: Paakeejiiwwan diriirsi isaanii hin haqamu.</translation>
         <source>Import/Export</source>
         <translation>Galchi/Al ergi</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Maqaawwan gabaabaa suuraa</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Wanta kanaaf hojjedhu</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Subtree&apos;tiif hojjedhu</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Wanta kanaaf deebi&apos;ii hojjedhu</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Subtree&apos;tiif deebi&apos;ii hojjedhu</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Wanta kanaaf balleessi</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Subtree&apos;tiif balleessi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Bulookii server marsariitii moofaa: location = return wajjin, gaaffiif if ($args), rewrite akka mallattoo bakka bu'aa fi map fuulota tokkoon.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Maqaa gabaabaa suuraa</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Maqaawwan gabaabaa suuraa koopiiwwan suuraa hammi isaanii jijjiirame fi muramanii kanneen templeetiin agarsiisan dha. Asitti akkamitti akka hojjetaman ni argitu, hojiiwwan guguddaa marsaa saayitii guutuu irratti ni oofta, suuraa tokko ykn madda staging ni qorta, seenaa oofamaa ni hordofta, akkasumas qindaa&apos;inoota ni jijjiirta.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Kutaalee fuula</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Gabatee to&apos;annoo</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Oofamtoota guguddaa</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Meeshaalee qorannoo</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Seenaa oofamaa</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Qindaa&apos;ina</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Asitti hunda ilaaluu dandeessa. Qindaa&apos;ina jijjiiruun, hojii oofuun fi meeshaaleen faayilii hojjetan imaammata setup/managealiases ni barbaadu.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Wanta xiyyeeffannaa barbaadu</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Haala render: templeetiin maqaawwan gabaabaa dhabaman yeroo fuulli agarsiifamu hojjetu, akkuma duraan. Teessoowwan on-demand, bakka bu&apos;oonni fi hojiiwwan duubaa hin fayyadamamu.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Mari&apos;annaan qabiyyee (format) banaadha, garuu asitti jijjiiraan WebP barreessuu danda&apos;u hin jiru.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Kun fe&apos;iinsa staging dha, garuu madda isaa BaseURL hin qabu: suuraawwan dhabaman fiduun hin danda&apos;amu.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Maddi staging kufaatiiwwan walitti aanan irraa kan ka&apos;e dhaabameera: suuraawwan dhabamaniif bakka bu&apos;oonni kennamu hamma boqonnaan dhumutti ykn ati deebiftee qindeessitutti.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Maddi staging dhiheenyatti kufeera. Dogoggora isaa isa dhumaa gaditti ilaali.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Fe&apos;iinsi kun production miti, garuu SyncFrom madda tokko illee hin maqaan waamne: homtuu hin fidamu.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Tarreen hojii (expqueue) hin argamu: maqaawwan gabaabaa yeroon isaan darbe gaaffii itti aanuun hojjetamu, hojiin duraa gara maxxansaatti hafa, oofamtoonni guguddaa immoo bal&apos;ina xiqqootti daangeffamu.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Hojiiwwan maqaawwan gabaabaa suuraa tokko tokko guutummaatti kufaniiru. Setup &gt; Tarree hojii sababa isaa agarsiisa.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Oofamtoonni guguddaa dhaabamaniiru.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Sa&apos;aatii 24 darban keessatti maqaawwan gabaabaa kufaniiru. Seenaan oofamaa tarreessa.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Furtuun mallattoo waggaa tokkoo ol ta&apos;eera. Yoo jijjiirame, teessoowwan duraanii yeroo arjoomaa keessatti ni hojjetu.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Furtuun mallattoo ammallee hin jiru: teessoo on-demand jalqabaa wajjin hojjetama.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Sa&apos;aatii 24 darban</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Maqaawwan gabaabaa hojjetaman</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Bakka bu&apos;oonni deebii argatan</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Kufaatiiwwan</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Faayiloonni staging ta&apos;an</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Oofamtoonni jalqaban</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Hojiiwwan eegaa jiran / hojjechaa jiran</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Sararoota %lines dhumaa %file irraa lakkaa&apos;ame, hamma %time ga&apos;u.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Haala fi dhaqqabiinsa</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Haala</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>gaaffii irratti</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Bifa teessoo</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Dhaqqabiinsa</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Eegumsa gaaffii isa dheeraa</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Jijjiirraawwan yeroo tokko</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>Amma %busy / %max hojii irra jira</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Mari&apos;annaa qabiyyee</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>banaadha</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>cufaadha</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Bakka buutuu fi sakkatta&apos;iinsa swap</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Hojii duraa maxxansaa booda</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Maqaawwan gabaabaa saayitii</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Jijjiiroota gosoota qabiyyee</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Jijjiiraa</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Yaalame</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>filatamaa</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>eeyyee</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>lakki</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Maqaawwan gabaabaa mataan isaanii jijjiiroota [ImageConverterSettings] irraa hojjetamu, akkuma duraan; kunniin gosoota WebP fi AVIF barreessu.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Naannoo fi madda</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Fe&apos;iinsa kana</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production: yoomiyyuu hin fidu)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Kan irraa fidu</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>homaa</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Teessoo madda</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>hin kaa&apos;amne</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Ragaa eenyummaa</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>icciitii %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>hin jiru</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Haala</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>hojjechaa jira</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>hamma %time dhaabameera</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>kufaa jira</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Kufaatiiwwan walitti aanan</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count booda dhaabuu</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Dogoggora dhumaa</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Milkaa&apos;ina dhumaa</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Kufaatiiwwan deebisii madda deebi&apos;ii gaafadhu</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Tarree hojii</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Gosa hojii</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Eegaa jira</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Hojjechaa jira</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Hin milkoofne</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>hin galmaa&apos;in</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Tarreen hojii hin argamu.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Oofamtoonni guguddaa dhaabameera</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time irraa %user&apos;n</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Oofamtoonni guguddaa ooluu danda&apos;u</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Furtuu mallattoo</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Furtuu</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>kuusaa icciitiiwwanii keessa</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ammallee hin jiru</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Umurii</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>guyyaa %days (%time irraa)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Furtuu duraanii</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>hamma %time tajaajila</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Furtuu geeddaruu</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Teessoowwan furtuu ammaatiin mallatteeffaman yeroo arjoomaa (SigningKeyGrace) keessatti hojjechuu itti fufu, booda fuulonni deebi&apos;anii hamma hojjetamanitti bakka bu&apos;oonni deebii kennu.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Amma geeddari</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Akkamitti akka hojjetu</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, haala render, staging fi galmee</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (durtii): fuulli maqaa gabaabaa ammallee hin hojjetamne teessoo mallattoo qabuun wajjin hidha. Gaaffiin jalqabaa eegumsa dheeraa keessatti hojjeta, yoo ta&apos;uu baate bakka buutuu giddu galeessa deebisa, hojiin tokko hojicha xumura; sakkatta&apos;iinsi swap suuraan yeroo jiru bakka buutuu bakka buusa.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Haala render: templeetiin maqaa gabaabaa yeroo fuulli agarsiifamu hojjeta, akkuma duraan. Yeroo kamiyyuu lamaan gidduutti jijjiiruu dandeessa; homtuu godaansa hin barbaadu.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Fe&apos;iinsi staging kan duraa fi maqaawwan gabaabaa isa dhabaman madda isaa irraa fida; maddi kufaa jiru kufaatiiwwan walitti aananiin booda dhaabama, bulchitoonni immoo sa&apos;aatiitti ergaa imeelii tokko qofa argatu.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Oofamtoonni guguddaa fi hojiin duraa maxxansaa booda hojiiwwan tarree hojii ti, dursa gadi aanaa daawwattootaa ol qabu. Maqaawwan gabaabaa balleessuun response cache Velocity illee qulqulleessa, kanaaf faayiliin balleeffame isa keessaa hin kennamu.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Maqaan gabaabaan hojjetame, bakka buutuun deebii argate, faayiliin staging ta&apos;e fi oofamni hunduu sarara %file tokko dha. Sararri ajaja meeshaalee wal fakkaataa qaba: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Hojii %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>suuraa %total keessaa %done</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Oofama</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Bal&apos;ina</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Bu&apos;aa</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Hojii kana dhiisi</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Hojiin %job hojii maqaawwan gabaabaa suuraa miti, ykn tarree irraa balleeffameera.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Bu&apos;aa oofama %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Oofamtoonni guguddaa dhaabameera</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time irraa %user&apos;n dhaabame.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Dhaabbanni oofama guddaa hunda suuraa isaa ammaa booda, sarvara hunda irratti dhaaba; oofamtoonni tarreeffaman eegu. Maqaawwan gabaabaa daawwattootaa ammallee hojjetamu.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Oofamtoota guguddaa itti fufsiisi</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Sababa (filannoo)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Oofamtoota guguddaa dhaabi</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Oofama jalqabi</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Oofamtoonni hojiiwwan tarree hojii ti: fuula gadhiisuu fi deebi&apos;uu dandeessa.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Tarree hojii malee oofamni gaaffii kana keessatti hojjetama, suuraa %count irratti hanga qofa.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Gocha</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Generate: maqaawwan gabaabaa dhabaman hojjedhu</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Regenerate: balleessii deebi&apos;ii hojjedhu</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Purge: balleessi (gaaffiin deebi&apos;ee hojjetama)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: faayiloota madda staging irraa fidi</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(fe&apos;iinsa staging irratti qofa)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Saayitii guutuu</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Noodii tokko</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Noodii fi subtree isaa</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID noodii</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Gitoota</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Amaloota</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Jijjiirame irraa kaasee</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Guyyaa (2026-11-01) ykn yeroo darbe (sa&apos;aatii 12, guyyaa 2).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Suuraawwan baay&apos;ee</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Maqaawwan gabaabaa (tokko illee yoo hin filatamne: hunda)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Dry run: lakkaa&apos;i qofa (resync madda sakatta&apos;a, homaa hin kuusu)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Faayiloota adda ta&apos;an irratti barreessi (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Oofama jalqabi</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Oofamtoota dhiyoo</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Hojii</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Adeemsa</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Tarreerratti kaa&apos;ame</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Gocawwan</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Dhiisi</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Oofamni guddaan ykn resync ammallee hin jiru.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Suuraa tokko</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Teessoowwan templeetiin amma argatu, hammi fi gosti maqaa gabaabaa hundaaf shallagame, akkasumas faayiliin hundi jiraachuu isaa.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Kanaan barbaadi</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID wanta</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Agarsiisi</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Wanta kana dubbisuu hin dandeessu.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Wanti kun suuraa hin qabu.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Wanti ID kana qabu hin jiru.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>wanta %object, noodii %node, gosa %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Kan duraa: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>faayiliin jira</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>faayiliin dhabame</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Maqaawwan gabaabaa %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Maqaa gabaabaa</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Hamma</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Gosa</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faayilii</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Qabiyyeewwan</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Teessoo templeetii keessatti</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>jira</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>dhabame</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>gosa kanaaf miti</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Gulaali</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Hojjedhu</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Dirreen kun suuraa hin qabu.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Yeroo</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Madda wajjin walitti hidhamuu</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Gaaffii HEAD madda staging tti, ragaa eenyummaa isaa wajjin yoo maqaan kennameef. Ragaan eenyummaa ni ergama, yoomiyyuu hin agarsiifamu.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Madda</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>ragaa eenyummaa wajjin</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Karaa kuusaa (filannoo)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Walitti hidhamuu qori</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Maddi tokko illee BaseURL hin qabu. Maddoonni qindaa&apos;inoota keessatti ni kaa&apos;amu ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>ga&apos;uun ni danda&apos;ama</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>didame: ragaa eenyummaa gulaali</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>madda irratti hin argamne</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>deebii hin jiru</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>yeroon dhumeera</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>karaan jijjiirame (hin hordofamne)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL hin jiru</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>karaa kuusaa miti</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Teessoo</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Sadarkaa</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>ergameera</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>icciitiin dhabameera</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>icciitiin user:password ykn Bearer &lt;token&gt; miti</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Sararoota %file isaan haaraa, kan haaraan duraa.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Setup &gt; Faayiloota galmee</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Taatee</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Taatee hunda</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Oofamtoota (jalqabaa fi xumura)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Karaan of keessaa qaba</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Sararoota</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Calaqqisi</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Hordofi: sararoota haaraa yeroo barreeffaman agarsiisi</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Karaa fi bal&apos;ina</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Sararri galmee tokko illee hin wal simu.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Olkaa&apos;uun maal jijjiira</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Wanti jijjiirame</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php keessatti olkaa&apos;ama, kanaaf gatiin asii siteaccess hunda irratti mo&apos;a. Gatiiwwan agarsiifaman kanneen siteaccess kanaaf hojii irra jiran dha. Olkaa&apos;uun dura eenyummaa kee mirkaneessuu si gaafata.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Maqaawwan gabaabaa akkamitti akka hojjetaman fi dhaqqabsiifaman.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Suuraawwan dhabaman fe&apos;iinsa biraa irraa fiduu (alpha, dev, beta, stage, pro, post, arc). Production (pro) yoomiyyuu hin fidu.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Qindaa&apos;ina</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Gatii</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override keessatti</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Teessoo madda hundaa fi maqaa icciitii ragaa eenyummaa isaa qabu (user:password ykn Bearer &lt;token&gt;). Gatiin icciitii Setup &gt; Icciitiiwwan keessatti kaa&apos;ama, asitti yoomiyyuu hin agarsiifamu.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Jijjiirama dursee ilaali</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Olkaa&apos;i</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Hordofaa jira: %time haaromfame</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Dhaabameera</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Feed&apos;iin deebii hin kennine; deebi&apos;ee yaalaa jira.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Hojichi xumurameera.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: templeetiin teessoo argata, maqaan gabaabaan yeroo gaafatamu hojjetama. render: templeetiin yeroo fuulli agarsiifamu hojjeta (amala jalqabaa).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Teessoo maqaa gabaabaa ammallee hin hojjetamnee: token (mallattoo qabu, database hin barbaadu), ids-token, ids, node ykn storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: sarvarri weebii kuusaa yoo tajaajile gara faayilii deebisuu, yoo ta&apos;uu baate faayiliin stream godhama.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Sekondii gaaffiin tokko maqaa gabaabaa hojjechuu ykn fiduuf fayyadamu danda&apos;u; booda bakka buutuu deebisa, hojiin tokko hojicha xumura.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Jijjiiraan duraan yaalamu gosoota WebP fi AVIF dhaaf.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Browsaroota gaafatanif WebP ykn AVIF deebisi, maqaawwan gabaabaa Formats[] tarreessaniif.</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Suuraa giddu galeessa hamma sirrii yeroo suuraan dhabamu.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Sakkatta&apos;iinsa xiqqaa bakka buutuu suuraa dhugaa wajjin yeroo jiru bakka buusu.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Maxxansaa booda, hojiin tokko maqaawwan gabaabaa suuraawwan haaraa siteaccess walqabatu hundaaf hojjeta.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Jijjiirraawwan yeroo tokko sarvara tokko irratti.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Dursa adeemsa (nice) oofamtoota guguddaa, 0 hanga 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Sekondii browsaroonni fi cache&apos;iin maqaa gabaabaa hojjetame kuusuu danda&apos;an.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Sekondii teessoon suuraa qophaa&apos;aa ykn dursee ilaalaa tajaajila itti fufu.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Sekondii furtuun mallattoo duraanii geeddaruu booda tajaajila itti fufu.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Naannoo fe&apos;iinsa kanaa.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Naannoo suuraawwan dhabaman irraa fidaman; none: homtuu hin fidamu.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Sarara tokkoon tokko: prefix kuusaa naannoo;prefix madda ykn teessoo, karaawwan kuusaa adda ta&apos;aniif.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Sekondii gaaffiin tokko gara maddaatti fudhachuu danda&apos;u.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Faayilii guddaa madda irraa fudhatamu, bayitiin.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Kufaatiiwwan walitti aananii booda madda dhaabuu.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Maddi kufaa jiru hammam dhaabama.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Yeroo maddi dhaabamu bulchitootaaf ergaa ergi (sa&apos;aatiitti altokko qofa).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Teessoo imeelii tokko sarara tokkoon; duwwaa: AdminEmail site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Teessoo fe&apos;iinsa madda %block, fknf https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Maqaa icciitii ragaa eenyummaa qabu, ykn env:VARIABLE. Ragaa eenyummaa mataa isaa hin ta&apos;u.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(homaa)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Durtii: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Asitti kaa&apos;ame; haquuf mallattoo godhi</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>dhaalame</translation>
     </message>
 </context>
 </TS>

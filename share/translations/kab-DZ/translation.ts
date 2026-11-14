@@ -16590,6 +16590,34 @@ Azen: ikemmusen ur ttwakksen ara asebded-nsen.</translation>
         <source>Import/Export</source>
         <translation>Kter/Sifeḍ</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Isulayen n tugniwin</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Sirew i uferdis-agi</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Sirew i tsuffut</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Ales asirew i uferdis-agi</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Ales asirew i tsuffut</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Kkes i uferdis-agi</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Kkes i tsuffut</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Iḥder server n usmel aqdim: location = s return, if ($args) i tuttra, rewrite am ujukar d map n yisebtar yiwen yiwen.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Isulayen n tugniwin</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Isulayen n tugniwin d tikkelt n tugna i d-yettwaɣer neɣ i d-yettwaḥerrez i d-sskanen tiwṣiwin. Dagi ad twaliḍ amek ttwakksen, ad tesduḍ timahilin tigejdanin ɣef usmel, ad tesnarmeḍ yiwet n tugna neɣ aɣbalu n staging, ad ḍefreḍ amazray n yiseddayen u ad tbeddleḍ iɣewwaren.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Iḥricen n usebter</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Tafelwit n tadbelt</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Isedyan imeqqranen</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Ifecka n usenqed</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Amazray n yisedyan</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Iɣewwaren</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Tzemreḍ ad twaliḍ kullec dagi. Abeddel n yiɣewwaren, asenduy n yimahilen d yifecka i d-yesxulfen ifuyla, ttxuṣṣun tasertit setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Ayen yeḥwaǧ aɛqal</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Askar render: tiwṣiwin xellsent isulayen i yeɣba deg wakud n uskan n usebter, am zik. Tansiwin on-demand, imkanen n usenfel d yimahilen n ugezdu ur ttwasqedcen ara.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>Asdukkel n wannaw yermed, maca ula d yiwen n umserreḥ dagi ur izmir ad yaru WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Wagi d asbadu staging, maca aɣbalu-ines ur yesɛi ara BaseURL: tugniwin i yeɣban ur zmirent ara ad d-ttwawin.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>Aɣbalu staging yettwaseḥbes deffir ukkes n tuccḍiwin yettaduyen: tugniwin i yeɣban ad d-ṭṭfent imkanen n usenfel arma yekfa uḥbas neɣ arma t-tuɣaleḍ s ubeddel.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Aɣbalu staging yecceḍ melmi kan. Wali tuccḍa-ines taneggarut ddaw.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Asbadu-agi mačči production, maca SyncFrom ur isemma ara aɣbalu: ulac ayen ara d-yettwaɣer.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Tafilit n yimahilen (expqueue) ulac-it: isulayen i yeften akud ad ten-yexdem usuter i d-yeḍfaren, ulmu uzwir deffir usuffeɣ ad yettwasebdu u isedyan imeqqranen ttwasteɛmalen ɣef tegnatin timecṭuḥin kan.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Kra n yimahilen n yisulayen n tugniwin ur xedmen ara i lebda. Asbadu &gt; Tafilit n yimahilen d-yesken ayɣer.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>Isedyan imeqqranen ttwaseḥbasen.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Kra n yisulayen ur xedmen ara deg 24 n yisragen ineggura. Amazray n yisedyan yesnirem-iten.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Tasarut n usewqe tettɛeddi aseggas. Abeddel-is ad yeǧǧ tansiwin tiqdimin ad ddunt deg tallit n uɛebbi.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Ulac tasarut n usewqe akka tura: ad tettwaxdem s tansa tamezwarut on-demand.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>24 n yisragen ineggura</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Isulayen yettwaxedmen</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Imkanen n usenfel i d-yettwaǧǧan</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Tuccḍiwin</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Ifuyla yettwaseqqen ɣer staging</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Isedyan i yebdan</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Imahilen i yettraǧun / yetteddun</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>Yettwaḥseb si %lines n yizirigen ineggura n %file, i yettuɣalen ɣer %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Askar d usali</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Askar</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>ɣef usuter</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Tamsalt n tansa</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Asali</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Aṛaǧu aṭaṭṭal n usuter</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Tuɣalin deg yiwen n wakud</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy seg %max yetteddun tura</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Asdukkel n wannaw</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>yermed</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>yensa</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Amkan n usenfel d uskript n usnifel</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Azwir deffir usuffeɣ</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Isulayen n usmel</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Imserrehen n yinawen-nniḍen</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Amserreḥ</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>Yettwarmed</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>yettwafren</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ih</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ala</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Isulayen ttwaxedmen s yimserrehen n [ImageConverterSettings], am zik; wigi ttarun inawen-nniḍen WebP d AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Tilawt d uɣbalu</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Asbadu-agi</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(production: ur d-yettawi acemma)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Yettawi seg</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>ulac</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Tansa n uɣbalu</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>ur yettwasbadu ara</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Inagan n unekcum</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>asaru %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ulac</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Addad</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>yeddu</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>yettwaseḥbes alamma %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>yettcaḍu</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Tuccḍiwin yettaduyen</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>aḥbas deffir %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Tuccḍa taneggarut</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Tuqqna taneggarut yeddan</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Err tuccḍiwin ɣer 0 u suter aɣbalu i tikkelt-nniḍen</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Tafilit n yimahilen</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Anaw n umahil</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Yettraǧu</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Yetteddu</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ur yeddukkel ara</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>ur yettwaseklas ara</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Tafilit n yimahilen ulac-it.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>Isedyan imeqqranen ttwaseḥbasen</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>seg %time sɣur %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Isedyan imeqqranen zemren ad ddun</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Tasarut n usewqe</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Tasarut</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>deg uḥraz n yiẓẓayen</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ulac akka tura</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Tiseggasin</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days n wussan (seg %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Tasarut iezwiren</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>tṣeḥḥa alamma %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Beddel tasarut</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Tansiwin yettwaqeyden s tsarut tamirant ad ddunt deg tallit n uɛebbi (SigningKeyGrace), syin ad d-ǧǧent imkanen n usenfel arma ttwaxedmen yisebtar i tikkelt-nniḍen.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Beddel tura</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Amek i iteddu</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, askar render, staging d uɣmis</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (amezwer): asebter yeqqen asulay ur nelli ara ɣer tansa yettwaqeyden. Asuter amezwaru yexdem-it deg uṛaǧu aṭaṭṭal, ma ulac ad d-yefk amkan n usenfel amagnu u yiwen n umahil ad yekfu axeddim; askript n usnifel ad yesbedd tugna deg umkan n usenfel ticki tella.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Askar render: tawṣit txeddem asulay deg wakud n uskan n usebter, am zik. Beddel gar sin-nni melmi i tebɣiḍ; ulac ayen ilaqen ad yettwasenkez.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Asbadu staging yettawi iɣbula d yisulayen i yeɣban seg uɣbalu-ines; aɣbalu i yettcaḍun yettwaseḥbas deffir tuccḍiwin yettaduyen u inedbalen ad d-ṭṭfen yiwen n yimayl deg usrag ugar.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Isedyan imeqqranen d uzwir deffir usuffeɣ d imahilen n tfilit n yimahilen, s tezwart ddaw n yimsaɣen. Tukksa n yisulayen tsfeḍ daɣen aḥraz n tririt n Velocity, akken ma yella afaylu yettwakksen ur d-yettwasali ara seg-s.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Yal asulay yettwaxedmen, amkan n usenfel i d-yettwaǧǧan, afaylu yettwaseqqen ɣer staging d usedday d izirig n %file. Izirig n taladna sɛa kifkif n yifecka: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Amahil %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%done seg %total n tugniwin</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Asedday</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Tagnit</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Agmuḍ</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Sefsex amahil-agi</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Amahil %job mačči d amahil n yisulayen n tugniwin, neɣ yettwakkes seg tfilit.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Agmuḍ n usedday %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>Isedyan imeqqranen ttwaseḥbasen</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>Yettwaseḥbes seg %time sɣur %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Aḥbas yeḥbes yal asedday ameqqran deffir tugna-ines tamirant, ɣef yal aqeddac; isedyan i yellan deg tfilit ttraǧun. Isulayen n yimsaɣen mazal ttwaxedmen.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Kemmel isedyan imeqqranen</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Tamentilt (d afrayan)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Ḥbes isedyan imeqqranen</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Bdu asedday</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Isedyan d imahilen n tfilit n yimahilen: tzemreḍ ad teǧǧeḍ asebter u ad d-tuɣaleḍ.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>War tafilit n yimahilen, asedday ad yettwaxdem deg usuter-agi, i %count n tugniwin ar daɣen.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Tigawt</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Sirew: xdem isulayen i yeɣban</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Ales asirew: kkes-iten u xdem-iten i tikkelt-nniḍen</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Sfeḍ: kkes-iten (ttwaxedmen i tikkelt-nniḍen ɣef usuter)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: awi ifuyla seg uɣbalu staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(ɣef usbadu staging kan)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Asmel meṛṛa</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Yiwet n tkerrist</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Takerrist d tsuffut-is</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID n tkerrist</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Ismilen</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Iyla</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>Yettubeddel seg</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Azemz (2026-11-01) neɣ akud yezrin (12 n yisragen, 2 n wussan).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Ugar n tugniwin</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Isulayen (ula yiwen ur yettwafren: akk)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Asenqed s ucrik: ḥseb kan (resync yettwali aɣbalu u ur yeskles acemma)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Fren ifuyla yemgaraden (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Bdu asedday</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Isedyan imaynuten</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Amahil</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Anecta</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Deg tfilit</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Tigawin</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Sefsex</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Ulac asedday ameqqran neɣ resync akka tura.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Yiwet n tugna</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Tansiwin i yettawi tawṣit tura, tiddi d yinawen yettwaḥsben i yal asulay, akked ma yella yal afaylu yella.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Nadi s</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID n tɣawsa</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Sken</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Ur tezmireḍ ara ad teɣreḍ tɣawsa-agi.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Tɣawsa-agi ur tesɛi ara tugna.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Ulac tɣawsa s ID-agi.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>tɣawsa %object, takerrist %node, lqem %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Aɣbalu: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>afaylu yella</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>afaylu yeɣba</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Isulayen n %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Asulay</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Tiddi</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Anaw</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Afaylu</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Inawen</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Tansa deg tewṣit</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>yella</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>yeɣba</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>mačči i unaw-agi</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Asenqed</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Xdem</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Ulac tugna deg urti-agi.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Akud</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Tuqqna ɣer uɣbalu</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Asuter HEAD ɣer uɣbalu staging, s yinagan n unekcum ma yella yisem. Inagan n unekcum ttwaznen, ur d-ttwaskanen ara.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Aɣbalu</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>s yinagan n unekcum</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Abrid n uḥraz (d afrayan)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Sers tuqqna</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Ula d yiwen n uɣbalu ur yesɛi BaseURL. Iɣbula ttwasbadun deg yiɣewwaren ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>yettwaweḥ</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>yettwagi: senqed inagan n unekcum</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>ulac-it deg uɣbalu</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>ulac tiririt</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>akud yekfa</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>yettwasuddem (ur yettwaḍfer ara)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>ulac BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>mačči d abrid n uḥraz</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Tansa</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Liḥala</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>yettwazen</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>asaru yeɣba</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>asaru mačči d user:password neɣ Bearer &lt;token&gt;</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Izirigen imaynuten n %file, imaynuten d imezwura.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Asbadu &gt; Ifuyla n uɣmis</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Tadyant</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Akk tidyanin</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Isedyan (tazwara d taggara)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Abrid yesɛa</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Izirigen</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Imsizdeg</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Ḍfer: sken izirigen imaynuten ticki ttwaruḍ</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Abrid d yisalen</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Ulac izirig n uɣmis i yemṣadan.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Ayen ara ibeddel uklas</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Ayen yettubeddlen</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>Yettwaskles deg settings/override/image.ini.append.php, ihi azal dagi yella ɣef yal siteaccess. Azal i d-yettwaskanen d wid yellan i siteaccess-agi. Uklas yettuqqen ad tsentmeḍ anwa-k tazwara.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Amek ttwaxedmen u ttwasalin yisulayen.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Awway n tugniwin i yeɣban seg usbadu-nniḍen (alpha, dev, beta, stage, pro, post, arc). Production (pro) ur d-yettawi acemma.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Aɣewwar</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Azal</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>Deg settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Tansa n yal aɣbalu d yisem n usaru i yesɛan inagan-is n unekcum (user:password neɣ Bearer &lt;token&gt;). Azal n usaru yettwasbadu deg Asbadu &gt; Iẓẓayen u ur d-yettwaskan ara dagi.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Sken-d ibeddilen uqbel</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Sekles</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Aḍfar: yettwaleqqem %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Yettwaseḥbes</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Aferdis ur d-yerri ara; nuɣal ad nɛerḍeḍ.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Amahil yekfa.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: tiwṣiwin ad d-ṭṭfent tansa, asulay ittwaxdam ticki yettwasuter. render: tawṣit txeddem-it deg wakud n uskan n usebter (tikli taɣbalut).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Tansa n usulay ur yettwaxdim ara akka tura: token (yettwaqeyden, ur yeḥwaǧ ara taffa n isefka), ids-token, ids, node neɣ storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: asuddem ɣer ufaylu ticki aqeddac web isali aḥraz, ma ulac afaylu yettwazzel.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Tisinin i izemren usuter ad yexdem akken ad yexdem neɣ ad d-yawi asulay; syin ad d-yefk amkan n usenfel u yiwen n umahil ad yekfu axeddim.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Amserreḥ i yettwarmed d amezwaru i inawen-nniḍen WebP d AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Err WebP neɣ AVIF i yinaviguen i t-yesutren, i yisulayen i yesnirmen Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Tugna tamagnut n tiddi tameɛqult ticki tugna teɣba.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Askript amecṭuḥ i yesbeddun imkanen n usenfel s tugna tideṭ ticki tella.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Deffir usuffeɣ, amahil yexdem isulayen n tugniwin timaynutin i yal siteaccess yeqqnen.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Tuɣalin deg yiwen n wakud ɣef yiwen n uqeddac.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Tazwart n usesfer (nice) n yisedyan imeqqranen, seg 0 ɣer 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Tisinin i izemren inavigen d yiḥraz ad ḥerzen asulay yettwaxedmen.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Tisinin i teqqim tansa n tugna n usekkil neɣ n taskant d tameɣtut.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Tisinin i teqqim tsarut n usewqe iezwiren d tameɣtut deffir ubeddel.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Tilawt n usbadu-agi.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Tilawt i d-ttwawint tugniwin i yeɣban; none: ulac ayen ara d-yettwaɣer.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Yiwen i yal izirig: azwir n uḥraz adigan;azwir n uɣbalu neɣ tansa, i yibriden n uḥraz yemgaraden.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Tisinin i izemren yiwen n usuter ɣer uɣbalu ad yeṭṭef.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Afaylu ameqqran i d-yettwaḥeqqen seg uɣbalu, s yibayten.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Tuccḍiwin yettaduyen i deffir-nsent ara yettwaseḥbes uɣbalu.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Acḥal n wakud ara yettwaseḥbes uɣbalu i yettcaḍun.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>Azen imayl i yinedbalen ticki yettwaseḥbes uɣbalu (yiwen n tikkelt deg usrag ugar).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Yiwet n tansa n yimayl i yal izirig; ilem: AdminEmail n site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Tansa n usbadu aɣbalu %block, amedya https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Isem n usaru i yesɛan inagan n unekcum, neɣ env:VARIABLE. Ur yettili ara d inagan n unekcum ɣef tmanaɣt-nsen.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(ulac)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Amezwer: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>Yettwasbadu dagi; fren akken ad t-tekkseḍ</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>yettwawriɣ</translation>
     </message>
 </context>
 </TS>

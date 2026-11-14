@@ -16588,6 +16588,34 @@ Lura: Ba za a cire shigarwar fakitin ba.</translation>
         <source>Import/Export</source>
         <translation>Shigo da/Fitar da</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Laƙabin hoto</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>Samar don wannan abu</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>Samar don rassan</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>Sake samarwa don wannan abu</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>Sake samarwa don rassan</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>Cire don wannan abu</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>Cire don rassan</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86420,6 +86448,997 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>Toshen server na tsohon shafi: location = tare da return, if ($args) don tambaya, rewrite a matsayin alamar kati da map na shafuka guda ɗaya.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>Laƙabin hoto</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>Laƙabin hoto kwafin hoto ne da aka rage ko yanke wanda samfuran shafi ke nunawa. A nan za ka ga yadda ake yin su, ka gudanar da ayyuka na gama-gari a kan shafin, ka gwada hoto guda ko tushen staging, ka bi tarihin gudanarwa, ka kuma canza saituna.</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>Sassan shafi</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Allon sarrafawa</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>Gudanarwa ta gama-gari</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>Kayan gwaji</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>Tarihin gudanarwa</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Saituna</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>Za ka iya duba kome a nan. Canza saituna, gudanar da ayyuka da kayan da ke yin fayiloli na bukatar manufar setup/managealiases.</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>Abin da ke bukatar kulawa</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>Yanayin render: samfuran shafi na yin laƙabin da ba su nan yayin da ake gina shafin, kamar da. Ba a amfani da adiresoshin on-demand, masu riƙon wuri da ayyukan bango.</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>An kunna sasantawar tsari, amma babu mai canzawa a nan da zai iya rubuta WebP.</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>Wannan shigarwar staging ce, amma tushenta ba shi da BaseURL: ba za a iya ɗauko hotunan da ba su nan ba.</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>An dakatar da tushen staging bayan gazawa a jere: hotunan da ba su nan na samun masu riƙon wuri har sai dakatarwar ta ƙare ko ka sake saita ta.</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>Tushen staging ya gaza kwanan nan. Duba kuskurensa na ƙarshe a ƙasa.</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>Wannan shigarwar ba ta samarwa ba ce, amma SyncFrom bai ambaci wani tushe ba: ba a ɗauko komai.</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>Layin ayyuka (expqueue) ba ya nan: laƙabin da suka makara za a yi su a buƙata ta gaba, ana tsallake yin su tun kafin lokaci bayan buga, kuma gudanarwa ta gama-gari an iyakance ta zuwa ƙananan fannoni.</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>Wasu ayyukan laƙabin hoto sun gaza gaba ɗaya. Saitin farko &gt; Layin ayyuka ya nuna dalili.</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>An dakatar da gudanarwa ta gama-gari.</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>Laƙabi sun gaza cikin sa&apos;o&apos;i 24 da suka gabata. Tarihin gudanarwa ya lissafa su.</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>Maɓallin sa hannu ya haura shekara ɗaya. Juya shi na sa tsofaffin adiresoshi su ci gaba da aiki a lokacin jinkiri.</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>Ba a riga an yi maɓallin sa hannu ba: ana yin shi tare da adireshin on-demand na farko.</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>Sa&apos;o&apos;i 24 da suka gabata</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>Laƙabin da aka samar</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>Masu riƙon wuri da aka amsa</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>Gazawa</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>Fayilolin da aka tara</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>Gudanarwar da aka fara</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>Ayyuka masu jira / masu gudana</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>An ƙirga daga layuka %lines na ƙarshe na %file, wanda ya kai har %time.</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>Yanayi da isarwa</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Yanayi</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>render</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>a buƙata</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>Siffar adireshi</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>Isarwa</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>Mafi tsawon jiran buƙata</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>Sauye-sauye a lokaci ɗaya</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%busy daga %max na aiki yanzu</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>Sasantawar tsari</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>a kunne</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>a kashe</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>Mai riƙon wuri da rubutun musayar</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>Yin laƙabi tun kafin lokaci bayan buga</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>Laƙabin shafin</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>Masu canza bambance-bambancen tsari</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Mai canzawa</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>An gwada</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>fifiko</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>eh</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>a&apos;a</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>Laƙabin kansu masu canzawa na [ImageConverterSettings] ne ke yin su, kamar da; waɗannan suna rubuta bambance-bambancen WebP da AVIF.</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>Muhalli da tushe</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>Wannan shigarwar</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(samarwa: ba ta taɓa ɗauko wa)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>Yana ɗauko daga</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>babu komai</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>Adireshin tushe</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>ba a saita ba</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Shaidar shiga</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>sirri %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>babu</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Yanayi</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>yana aiki</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>an dakatar har %time</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>yana gazawa</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>Gazawa a jere</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>dakatarwa bayan %count</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>Kuskure na ƙarshe</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>Nasara ta ƙarshe</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>Sake saita gazawar ka sake tambayar tushe</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>Layin ayyuka</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>Nau&apos;in aiki</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Yana jira</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Yana gudana</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ya gaza</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>ba a yi rajista ba</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>Layin ayyuka ba ya nan.</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>An dakatar da gudanarwa ta gama-gari</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>tun %time daga %user</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>Gudanarwa ta gama-gari na iya gudana</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>Maɓallin sa hannu</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Maɓalli</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>a ma&apos;ajiyar sirri</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>babu tukuna</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Shekaru</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>kwanaki %days (tun %time)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Maɓalli na baya</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>yana aiki har %time</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Juya maɓallin</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>Adiresoshin da aka sa wa hannu da maɓallin yanzu na ci gaba da aiki a lokacin jinkiri (SigningKeyGrace), sannan su amsa da masu riƙon wuri har sai an sake yin shafukan.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Juya yanzu</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>Yadda yake aiki</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>On-demand, yanayin render, staging da log</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>On-demand (na asali): shafi na haɗa laƙabin da ba ya nan tukuna zuwa adireshi mai sa hannu. Buƙata ta farko na yin shi cikin mafi tsawon jiran, in ba haka ba ta amsa da mai riƙon wuri maras launi, aiki kuma ya kammala; rubutun musayar na maye gurbin mai riƙon wuri idan hoton ya zo.</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>Yanayin render: samfurin shafi na yin laƙabin yayin da ake gina shafin, kamar da. Za ka iya sauya tsakanin biyun a kowane lokaci; babu abin da ake buƙatar mayarwa.</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>Shigarwar staging na ɗauko asalin hotuna da laƙabin da ba ta da su daga tushenta; tushen da ke gazawa ana dakatar da shi bayan gazawa a jere, masu gudanarwa kuma na samun imel ɗaya a sa&apos;a a mafi yawa.</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>Gudanarwa ta gama-gari da yin laƙabi tun kafin lokaci bayan buga ayyuka ne na layin ayyuka, masu ƙarancin fifiko fiye da baƙi. Cire laƙabi na kuma share ma&apos;ajiyar amsoshi ta Velocity, don kada a bayar da fayil ɗin da aka cire daga cikinta.</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>Kowane laƙabin da aka yi, mai riƙon wuri da aka amsa, fayil da aka tara da gudanarwa layi ɗaya ne na %file. Layin umarni na da kayan aiki iri ɗaya: %command.</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>Aiki %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>Hotuna %done daga %total</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Gudanarwa</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>Fanni</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Sakamako</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>Soke wannan aikin</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>Aiki %job ba aikin laƙabin hoto ba ne, ko kuma an cire shi daga layi.</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>Sakamakon gudanarwa %run</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>An dakatar da gudanarwa ta gama-gari</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>An dakatar tun %time daga %user.</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>Dakatarwa na dakatar da kowace gudanarwa ta gama-gari bayan hotonta na yanzu, a kowane sabar; gudanarwar da ke layi na jira. Ana ci gaba da yin laƙabin baƙi.</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>Ci gaba da gudanarwa ta gama-gari</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>Dalili (zaɓi)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>Dakatar da gudanarwa ta gama-gari</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>Fara gudanarwa</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>Gudanarwa ayyuka ne na layin ayyuka: za ka iya barin shafin ka dawo.</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>Ba tare da layin ayyuka ba, ana yin gudanarwa a cikin wannan buƙata, don hotuna %count a mafi yawa.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aiki</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>Samar: yi laƙabin da ba su nan</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>Sake samarwa: cire su a sake yin su</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>Share: cire su (a sake yin su a buƙata)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>Resync: ɗauko fayilolin daga tushen staging</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(a shigarwar staging kawai)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>Dukan shafin</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>Kumburi ɗaya</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>Kumburi da rassansa</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>ID na kumburi</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Rukunai</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Sifofi</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>An canza tun</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>Kwanan wata (2026-11-01) ko lokacin da ya wuce (sa&apos;o&apos;i 12, kwanaki 2).</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>Mafi yawan hotuna</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>Laƙabi (babu wanda aka yi wa alama: duka)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>resync</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>Gwajin gudanarwa: ƙirgawa kawai (resync na duba tushe ba ya ajiye komai)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>Rubuta kan fayilolin da suka bambanta (resync)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>Fara gudanarwar</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>Gudanarwar baya-bayan nan</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Aiki</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ci gaba</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>A layi</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ayyuka</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Soke</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>Babu gudanarwa ta gama-gari ko resync tukuna.</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>Hoto ɗaya</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>Adiresoshin da samfurin shafi ke samu yanzu, girma da nau&apos;in da aka ƙirga wa kowane laƙabi, da ko fayil ɗin na nan.</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>Nemo ta</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>ID na abu</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Nuna</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>Ba ka da izinin karanta wannan abu.</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>Wannan abu ba shi da hoto.</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>Babu abu mai wannan ID.</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>abu %object, kumburi %node, sigar %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>Na asali: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>fayil yana nan</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>fayil ba ya nan</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>Laƙabin %name</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Laƙabi</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Girma</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Nau&apos;i</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fayil</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>Tsare-tsare</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>Adireshi a samfurin shafi</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>yana nan</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>ba ya nan</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>ba na wannan nau&apos;in ba</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Duba</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>Yi</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>Babu hoto a wannan fili.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Lokaci</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>Haɗi da tushe</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>Buƙatar HEAD zuwa tushen staging, tare da shaidar shigarsa idan an ambata. Ana aika shaidar shiga, ba a taɓa nuna ta.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Tushe</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>da shaidar shiga</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>Hanyar ajiya (zaɓi)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>Gwada haɗin</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>Babu tushen da ke da BaseURL. Ana saita tushe a cikin saituna ([AliasSource_&lt;environment&gt;]).</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>ana iya isa gare shi</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>an ƙi: duba shaidar shiga</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>ba a samu a tushe ba</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>babu amsa</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>lokaci ya ƙare</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>an tura wani wuri (ba a bi ba)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>babu BaseURL</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>ba hanyar ajiya ba ce</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adireshi</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Matsayi</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>an aika</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>sirrin ba ya nan</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>sirrin ba user:password ko Bearer &lt;token&gt; ba ne</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>Sababbin layukan %file, sababbi a farko.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>Saitin farko &gt; Fayilolin log</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Abin da ya faru</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>Duk abubuwan da suka faru</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>Gudanarwa (farawa da ƙarewa)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>Hanya ta ƙunshi</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Layuka</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Tace</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>Bi: nuna sababbin layuka yayin da ake rubuta su</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>Hanya da bayanai</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>Babu layin log da ya dace.</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>Abin da ajiyewa zai canza</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>Abin da aka canza</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>An ajiye cikin settings/override/image.ini.append.php, don haka ƙima a nan ta fi ta kowane siteaccess ƙarfi. Ƙimar da aka nuna su ne masu aiki a wannan siteaccess. Ajiyewa na tambayarka ka tabbatar da ko wane ne kai tukuna.</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>Yadda ake yin laƙabi da isar da su.</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>Ɗauko hotunan da ba su nan daga wata shigarwa (alpha, dev, beta, stage, pro, post, arc). Samarwa (pro) ba ta taɓa ɗauko wa.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Saiti</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Ƙima</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>A settings/override</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>Adireshin kowane tushe da sunan sirrin da ke riƙe da shaidar shigarsa (user:password ko Bearer &lt;token&gt;). Ana saita ƙimar sirri a Saitin farko &gt; Sirrika, ba a taɓa nuna ta a nan.</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>Duba canje-canje tukuna</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Ajiye</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>Ana bi: an sabunta %time</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>An dakatar</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>Majiyar bayanai ba ta amsa ba; ana sake gwadawa.</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>Aikin ya ƙare.</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: samfuran shafi na samun adireshin, ana yin laƙabin lokacin da aka nema. render: samfurin shafi na yin shi yayin da ake gina shafin (halin asali).</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>Adireshin laƙabin da ba a yi ba tukuna: token (mai sa hannu, ba ya buƙatar bayanan bayanai), ids-token, ids, node ko storage.</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: tura zuwa fayil idan sabar yanar gizo na bayar da ma&apos;ajiyar, in ba haka ba a watsa fayil ɗin.</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>Daƙiƙu da buƙata za ta iya kashewa wajen yin ko ɗauko laƙabi; sannan ta amsa da mai riƙon wuri, aiki kuma ya kammala.</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>Mai canzawa da ake fara gwadawa don bambance-bambancen WebP da AVIF.</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>A amsa da WebP ko AVIF ga masu bincike da ke nema, don laƙabin da ke lissafa Formats[].</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>Hoto maras launi mai girman da ya dace yayin da hoto ba ya nan.</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>Ƙaramin rubutu da ke maye gurbin masu riƙon wuri da ainihin hoto idan ya zo.</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>Bayan buga, aiki na yin laƙabin sababbin hotuna ga kowane siteaccess da ya shafa.</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>Sauye-sauye a lokaci ɗaya a sabar guda.</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>Fifikon tsari (nice) na gudanarwa ta gama-gari, 0 zuwa 19.</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>Daƙiƙu da masu bincike da ma&apos;ajiyoyi za su iya riƙe laƙabin da aka yi.</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>Daƙiƙu da adireshin hoton daftarin aiki ko samfoti ke ci gaba da aiki.</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>Daƙiƙu da maɓallin sa hannu na baya ke ci gaba da aiki bayan juyawa.</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>Muhallin wannan shigarwar.</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>Muhallin da ake ɗauko hotunan da ba su nan daga gare shi; none: ba a ɗauko komai.</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>Ɗaya a kowane layi: farkon ma&apos;ajiya na gida;farkon tushe ko adireshi, don hanyoyin ajiya da suka bambanta.</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>Daƙiƙu da buƙata ɗaya zuwa tushe za ta iya ɗauka.</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>Mafi girman fayil da ake ɗauka daga tushe, cikin bytes.</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>Gazawa a jere da bayansu ake dakatar da tushe.</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>Tsawon lokacin da ake dakatar da tushen da ke gazawa.</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>A aika wa masu gudanarwa imel idan an dakatar da tushe (sau ɗaya a sa&apos;a a mafi yawa).</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>Adireshin imel ɗaya a kowane layi; fanko: AdminEmail na site.ini.</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>Adireshin shigarwar tushe %block, misali https://www.example.org.</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>Sunan sirrin da ke da shaidar shiga, ko env:VARIABLE. Ba shaidar shiga kanta ba.</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(babu)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Na asali: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>An saita a nan; yi alama don cirewa</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>an gada</translation>
     </message>
 </context>
 </TS>

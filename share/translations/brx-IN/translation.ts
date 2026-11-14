@@ -16590,6 +16590,34 @@ Note: The packages will not be uninstalled.</source>
         <source>Import/Export</source>
         <translation>इम्पोर्ट/एक्सपोर्ट</translation>
     </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>मुहुर उपनाम</translation>
+    </message>
+    <message>
+        <source>Generate for this item</source>
+        <translation>बे आइटेमनि थाय खालाम</translation>
+    </message>
+    <message>
+        <source>Generate for the subtree</source>
+        <translation>सबट्रीनि थाय खालाम</translation>
+    </message>
+    <message>
+        <source>Regenerate for this item</source>
+        <translation>बे आइटेमनि थाय फिन खालाम</translation>
+    </message>
+    <message>
+        <source>Regenerate for the subtree</source>
+        <translation>सबट्रीनि थाय फिन खालाम</translation>
+    </message>
+    <message>
+        <source>Remove for this item</source>
+        <translation>बे आइटेमनि थाय मेटा</translation>
+    </message>
+    <message>
+        <source>Remove for the subtree</source>
+        <translation>सबट्रीनि थाय मेटा</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -86422,6 +86450,997 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The server block of an old site: location = with return, if ($args) for a query, rewrite as a wildcard and a map of single pages.</source>
         <translation>गोजाम साइट मोनसेनि server ब्लक: return जों location =, कुवारिनि थाखाय if ($args), वाइल्डकार्ड महरै rewrite आरो मोनसे मोनसे बिलाइनि map मोनसे।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/aliases</name>
+    <message>
+        <source>Image aliases</source>
+        <translation>मुहुर उपनाम</translation>
+    </message>
+    <message>
+        <source>Image aliases are the scaled and cropped copies of an image that the templates show. Here you see how they are made, run bulk jobs over the site, test one image or a staging source, follow the run history and change the settings.</source>
+        <translation>मुहुर उपनामफोरा मुहुरनि बाहाय सोलायनाय आरो खुन्थानाय कपिफोर, जेफोरखौ टेम्पलेटफोरा देखाया। बेयाव नों बेफोरखौ मबोरै खालामनाय नुनो हाया, साइटनि गासैखौ बुहु जबफोर चलाबोनो हाया, मुहुर मोनसे नङा स्टेजिं मुलखौ सुजुनो हाया, चलावनि इतिहासखौ नायनो हाया आरो सेटिंफोर सुलायनो हाया।</translation>
+    </message>
+    <message>
+        <source>Parts of the page</source>
+        <translation>फेजनि थाखाफोर</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>डेसबोर्ड</translation>
+    </message>
+    <message>
+        <source>Bulk runs</source>
+        <translation>बुहु चलावफोर</translation>
+    </message>
+    <message>
+        <source>Test tools</source>
+        <translation>सुजुनाय हाजोफोर</translation>
+    </message>
+    <message>
+        <source>Run history</source>
+        <translation>चलावनि इतिहास</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>सेटिं</translation>
+    </message>
+    <message>
+        <source>You can look at everything here. Changing settings, running jobs and the tools that make files need the policy setup/managealiases.</source>
+        <translation>नों बेयाव बाहागैयाव नायनो हाया। सेटिं सुलायनाय, जबफोर चलाबनाय आरो फाइल खालामनाय हाजोफोरनो setup/managealiases पलिसि नांगौ।</translation>
+    </message>
+    <message>
+        <source>What needs attention</source>
+        <translation>मा मा बिजिरनो नांगौ</translation>
+    </message>
+    <message>
+        <source>Render mode: templates make missing aliases while the page renders, as before. The on-demand addresses, placeholders and background jobs are not used.</source>
+        <translation>रेन्डार मड: फेज रेन्डार जायब्लाबो टेम्पलेटफोरा गोबांफोर उपनामखौ खालामो, आगोनिफ्रायनि फैसेंमोन। on-demand ठिकानाफोर, प्लेसहोल्डारफोर आरो बेकग्राउन्ड जबफोरखौ बाहायनाय जायाखै।</translation>
+    </message>
+    <message>
+        <source>Format negotiation is on, but no converter here can write WebP.</source>
+        <translation>फर्मेट रोजाफोरनाय चालू दं, आबो बेयाव मा कन्भार्टारा WebP रैखानो हायाखै।</translation>
+    </message>
+    <message>
+        <source>This is a staging installation, but its source has no BaseURL: missing images cannot be fetched.</source>
+        <translation>बे स्टेजिं इन्स्टलेसन, आबो बिनि मुलाव BaseURL मोनखै: गोबांफोर मुहुरखौ खानो हायाखै।</translation>
+    </message>
+    <message>
+        <source>The staging source is paused after failures in a row: missing images get placeholders until the pause ends or you reset it.</source>
+        <translation>स्टेजिं मुलखौ लगातार गोलाव जायनायनि उनाव बिराम होनाय दं: बिरामा सिम नङा नों रिसेट खालामनाय सिमा गोबांफोर मुहुरनि थाय प्लेसहोल्डार मोनो।</translation>
+    </message>
+    <message>
+        <source>The staging source failed recently. See its last error below.</source>
+        <translation>स्टेजिं मुलखौ हाबाया फेल जादों। बिनि जोबथा गोलावखौ गेजेरनि नाय।</translation>
+    </message>
+    <message>
+        <source>This installation is not production, but SyncFrom names no source: nothing is fetched.</source>
+        <translation>बे इन्स्टलेसन प्रडाक्सन नङा, आबो SyncFromआ मुल मुं होयाखै: मा खौबो खायाखै।</translation>
+    </message>
+    <message>
+        <source>The job queue (expqueue) is not available: aliases that miss their time are made by the next request, pre-generation after publishing is skipped and bulk runs are limited to small scopes.</source>
+        <translation>जब लाइन (expqueue) दंखै: सोमोय फारायैबाय उपनामफोरखौ उननि रिक्वेस्टा खालामो, प्रकास खालामनायनि उनाव आगोनिफ्रायनि खालामनाय गोख्रै आरो बुहु चलावफोर खुरा सीमानिफ्राय खोमजों।</translation>
+    </message>
+    <message>
+        <source>Some jobs of image aliases failed for good. Setup &gt; Job queue shows why.</source>
+        <translation>मुहुर उपनामनि जब गुबुन फेल जादों। सेटआप &gt; जब लाइनआ मानो जादोंखौ नुनो हो।</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused.</source>
+        <translation>बुहु चलावफोर बिराम जादों।</translation>
+    </message>
+    <message>
+        <source>Aliases failed in the last 24 hours. The run history lists them.</source>
+        <translation>जोबथा 24 घन्टाव उपनामफोर फेल जादों। चलावनि इतिहासाव बेफोरखौ सुजुनो हो।</translation>
+    </message>
+    <message>
+        <source>The signing key is more than a year old. Rotating it keeps old addresses valid for the grace period.</source>
+        <translation>साइन चाबिआ बोसोर सिनायनिफ्राय गोजोन। रोटेट खालामबोलाबो गोदान ठिकानाफोरा सोमोय सिमा थानाय दं।</translation>
+    </message>
+    <message>
+        <source>There is no signing key yet: it is made with the first on-demand address.</source>
+        <translation>साइन चाबि बेसेबो गैया: जोबथा on-demand ठिकानाजों खालामनाय जाबाय।</translation>
+    </message>
+    <message>
+        <source>The last 24 hours</source>
+        <translation>जोबथा 24 घन्टा</translation>
+    </message>
+    <message>
+        <source>Aliases generated</source>
+        <translation>खालामनाय उपनामफोर</translation>
+    </message>
+    <message>
+        <source>Placeholders answered</source>
+        <translation>फिन्नाय प्लेसहोल्डारफोर</translation>
+    </message>
+    <message>
+        <source>Failures</source>
+        <translation>गोलावफोर</translation>
+    </message>
+    <message>
+        <source>Files staged</source>
+        <translation>खानाय फाइलफोर</translation>
+    </message>
+    <message>
+        <source>Runs started</source>
+        <translation>सुरु जानाय चलावफोर</translation>
+    </message>
+    <message>
+        <source>Jobs waiting / running</source>
+        <translation>जबफोर थाङैनाय / चलाव</translation>
+    </message>
+    <message>
+        <source>Counted from the last %lines lines of %file, which reach back to %time.</source>
+        <translation>%file नि जोबथा %lines लाइनफ्राय हिसाब खालामनाय, जेफोरा %time सिमा थाखाय।</translation>
+    </message>
+    <message>
+        <source>Mode and delivery</source>
+        <translation>मड आरो होनाय</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>मड</translation>
+    </message>
+    <message>
+        <source>render</source>
+        <translation>रेन्डार</translation>
+    </message>
+    <message>
+        <source>on demand</source>
+        <translation>नांनाय सोमोयाव</translation>
+    </message>
+    <message>
+        <source>Address form</source>
+        <translation>ठिकानानि फर्म</translation>
+    </message>
+    <message>
+        <source>Delivery</source>
+        <translation>होनाय</translation>
+    </message>
+    <message>
+        <source>Longest wait of a request</source>
+        <translation>रिक्वेस्टनि जोबथा थाङैनाय</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Conversions at once</source>
+        <translation>सिगांनो जानाय कनभार्सनफोर</translation>
+    </message>
+    <message>
+        <source>%busy of %max busy now</source>
+        <translation>%max फोरनि %busy दिनै बिजिर</translation>
+    </message>
+    <message>
+        <source>Format negotiation</source>
+        <translation>फर्मेट रोजाफोरनाय</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>चालू</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>बन्द</translation>
+    </message>
+    <message>
+        <source>Placeholder and swap script</source>
+        <translation>प्लेसहोल्डार आरो सोलायनाय स्क्रिप्ट</translation>
+    </message>
+    <message>
+        <source>Pre-generation after publishing</source>
+        <translation>प्रकासनि उनाव आगोनिफ्राय खालामनाय</translation>
+    </message>
+    <message>
+        <source>Aliases of the site</source>
+        <translation>साइटनि उपनामफोर</translation>
+    </message>
+    <message>
+        <source>Converters of the format variants</source>
+        <translation>फर्मेट रोखोमफोरनि कन्भार्टारफोर</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>कन्भार्टार</translation>
+    </message>
+    <message>
+        <source>Tried</source>
+        <translation>फोरमायनाय</translation>
+    </message>
+    <message>
+        <source>preferred</source>
+        <translation>सानायनो</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>होय</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>नङा</translation>
+    </message>
+    <message>
+        <source>The aliases themselves are made by the converters of [ImageConverterSettings], as before; these write the WebP and AVIF variants.</source>
+        <translation>उपनामफोरखौ आगोनिफ्रायनि फैसेंमोन [ImageConverterSettings] नि कन्भार्टारफोरै खालामो; बेफोरा WebP आरो AVIF रोखोमफोरखौ रैखाइ।</translation>
+    </message>
+    <message>
+        <source>Environment and source</source>
+        <translation>पारिपार्स्विक आरो मुल</translation>
+    </message>
+    <message>
+        <source>This installation</source>
+        <translation>बे इन्स्टलेसन</translation>
+    </message>
+    <message>
+        <source>(production: never fetches)</source>
+        <translation>(प्रडाक्सन: खाबाबो खायाखै)</translation>
+    </message>
+    <message>
+        <source>Fetches from</source>
+        <translation>बेफ्रायनि खाया</translation>
+    </message>
+    <message>
+        <source>nothing</source>
+        <translation>मा खौबो गैया</translation>
+    </message>
+    <message>
+        <source>Source address</source>
+        <translation>मुलनि ठिकाना</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>सेट खालामनाय गैया</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>क्रेडेन्सियल</translation>
+    </message>
+    <message>
+        <source>secret %name</source>
+        <translation>गुबुन मान %name</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>गैया</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>स्थिति</translation>
+    </message>
+    <message>
+        <source>working</source>
+        <translation>खामानि दं</translation>
+    </message>
+    <message>
+        <source>paused until %time</source>
+        <translation>%time सिमा बिराम</translation>
+    </message>
+    <message>
+        <source>failing</source>
+        <translation>गोलाव जादों</translation>
+    </message>
+    <message>
+        <source>Failures in a row</source>
+        <translation>लगातार गोलावफोर</translation>
+    </message>
+    <message>
+        <source>pause after %count</source>
+        <translation>%count नि उनाव बिराम</translation>
+    </message>
+    <message>
+        <source>Last error</source>
+        <translation>जोबथा गोलाव</translation>
+    </message>
+    <message>
+        <source>Last success</source>
+        <translation>जोबथा सोलोंथाइ</translation>
+    </message>
+    <message>
+        <source>Reset the failures and ask the source again</source>
+        <translation>गोलावफोरखौ रिसेट खालामना मुलखौ फिन सोलाय</translation>
+    </message>
+    <message>
+        <source>Job queue</source>
+        <translation>जब लाइन</translation>
+    </message>
+    <message>
+        <source>Job type</source>
+        <translation>जबनि रोखोम</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>थाङैनाय</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>चलावनाय</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>फेल जादों</translation>
+    </message>
+    <message>
+        <source>not registered</source>
+        <translation>रजिस्टार खालामनाय गैया</translation>
+    </message>
+    <message>
+        <source>The job queue is not available.</source>
+        <translation>जब लाइन गैया।</translation>
+    </message>
+    <message>
+        <source>Bulk runs paused</source>
+        <translation>बुहु चलावफोर बिराम</translation>
+    </message>
+    <message>
+        <source>since %time by %user</source>
+        <translation>%time निफ्राय %user जों</translation>
+    </message>
+    <message>
+        <source>Bulk runs may run</source>
+        <translation>बुहु चलावफोर चलायनो हायो</translation>
+    </message>
+    <message>
+        <source>Signing key</source>
+        <translation>साइन चाबि</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>चाबि</translation>
+    </message>
+    <message>
+        <source>in the secret store</source>
+        <translation>गुबुन मान दोहोनाव</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>बेसेबो गैया</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>बयस</translation>
+    </message>
+    <message>
+        <source>%days days (since %time)</source>
+        <translation>%days सान (%time निफ्राय)</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>आगोनि चाबि</translation>
+    </message>
+    <message>
+        <source>valid until %time</source>
+        <translation>%time सिमा बाहायनो हायो</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>चाबि रोटेट खालाम</translation>
+    </message>
+    <message>
+        <source>Addresses signed with the current key keep working for the grace period (SigningKeyGrace), then they answer placeholders until the pages are made again.</source>
+        <translation>दिनैयाव चाबिजों साइन खालामनाय ठिकानाफोरा सोमोय सिमा (SigningKeyGrace) खामानि थाइ, उनाव फेजफोर फिन खालामनाय सिमा प्लेसहोल्डार होनाय।</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>दिनै रोटेट खालाम</translation>
+    </message>
+    <message>
+        <source>How it works</source>
+        <translation>माबोरै खामानि</translation>
+    </message>
+    <message>
+        <source>On demand, render mode, staging and the log</source>
+        <translation>नांनाय सोमोयाव, रेन्डार मड, स्टेजिं आरो लग</translation>
+    </message>
+    <message>
+        <source>On demand (the default): a page links an alias that is not there yet to a signed address. The first request makes it within the longest wait, else it answers a neutral placeholder and a job finishes the work; the swap script replaces the placeholder when the image is there.</source>
+        <translation>नांनाय सोमोयाव (डिफल्ट): फेजआ बेसेबो गैयाबाय उपनामखौ साइन खालामनाय ठिकानाजों लिंक खालामो। जोबथा रिक्वेस्टा जोबथा थाङैनायनि गेजेराव बेखौ खालामो, नङा गुबुन प्लेसहोल्डार होना जबआ खामानि जोबोद खालामो; मुहुर दंबोलाया सोलायनाय स्क्रिप्टा प्लेसहोल्डारखौ सोलायो।</translation>
+    </message>
+    <message>
+        <source>Render mode: the template makes the alias while the page renders, as before. Switch between the two at any time; nothing needs to be migrated.</source>
+        <translation>रेन्डार मड: फेज रेन्डार जायब्लाबो टेम्पलेटा उपनामखौ खालामो, आगोनिफ्रायनि फैसेंमोन। मोनहोनिनो सोमोयाव बेनि गेजेराव सोलाय; मा खौबो सोलायनो नांगैयाखै।</translation>
+    </message>
+    <message>
+        <source>A staging installation fetches the originals and aliases it is missing from its source; a failing source is paused after failures in a row and the administrators get one e-mail an hour at most.</source>
+        <translation>स्टेजिं इन्स्टलेसनआ गोबांफोर मुल मुहुर आरो उपनामफोरखौ बिनि मुलफ्राय खाया; गोलाव जानाय मुलखौ लगातार गोलावनि उनाव बिराम होनाय आरो बेरेनफोरा घन्टानि सोनायखौ गोबां जाबायनिसिम इ-मेल मोनो।</translation>
+    </message>
+    <message>
+        <source>Bulk runs and pre-generation after publishing are jobs of the job queue, at a lower priority than visitors. Removing aliases also clears the response cache of Velocity, so a removed file is not served from it.</source>
+        <translation>बुहु चलावफोर आरो प्रकासनि उनाव आगोनिफ्रायनि खालामनायआ जब लाइननि जबफोर, नायनायफोरनिफ्राय खम प्राथमिकताजों। उपनामफोर मेटायनायआ Velocity नि फिन्नाय कासेखौबो खालि खालामो, बेसेनिनो मेटानाय फाइलखौ बेफ्राय होनाय जायाखै।</translation>
+    </message>
+    <message>
+        <source>Every alias made, placeholder answered, file staged and run is a line of %file. The command line has the same tools: %command.</source>
+        <translation>खालामनाय उपनाम, फिन्नाय प्लेसहोल्डार, खानाय फाइल आरो चलावआ %file नि लाइन मोनसे। कमान्ड लाइनाव बे हाजोफोरनो दं: %command।</translation>
+    </message>
+    <message>
+        <source>Job %job: %action</source>
+        <translation>जब %job: %action</translation>
+    </message>
+    <message>
+        <source>%done of %total images</source>
+        <translation>%total मुहुरनि %done</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>चलाव</translation>
+    </message>
+    <message>
+        <source>Scope</source>
+        <translation>सीमा</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>फलाफल</translation>
+    </message>
+    <message>
+        <source>Cancel this job</source>
+        <translation>बे जबखौ बन्द खालाम</translation>
+    </message>
+    <message>
+        <source>Job %job is not a job of image aliases, or it was removed from the queue.</source>
+        <translation>जब %job मुहुर उपनामनि जब नङा, नङा लाइनफ्राय मेटानाय जादों।</translation>
+    </message>
+    <message>
+        <source>Result of run %run</source>
+        <translation>चलाव %run नि फलाफल</translation>
+    </message>
+    <message>
+        <source>Bulk runs are paused</source>
+        <translation>बुहु चलावफोर बिराम जादों</translation>
+    </message>
+    <message>
+        <source>Paused since %time by %user.</source>
+        <translation>%time निफ्राय %user जों बिराम जादों।</translation>
+    </message>
+    <message>
+        <source>A pause stops every bulk run after its current image, on every server; queued runs wait. Visitors&apos; aliases are still made.</source>
+        <translation>बिरामा बाहागैयाव बुहु चलावखौ बिनि दिनैनि मुहुरनि उनाव, बाहागैयाव सार्भारनिफ्राय थामो; लाइनावनाय चलावफोर थाङो। नायनायफोरनि उपनामफोरा फिन खालामो।</translation>
+    </message>
+    <message>
+        <source>Resume bulk runs</source>
+        <translation>बुहु चलावफोर फिन सुरु</translation>
+    </message>
+    <message>
+        <source>Reason (optional)</source>
+        <translation>मानो (नांनानो)</translation>
+    </message>
+    <message>
+        <source>Pause bulk runs</source>
+        <translation>बुहु चलाव बिराम</translation>
+    </message>
+    <message>
+        <source>Start a run</source>
+        <translation>चलाव सुरु खालाम</translation>
+    </message>
+    <message>
+        <source>Runs are jobs of the job queue: you can leave the page and come back.</source>
+        <translation>चलावफोरा जब लाइननि जब: नों फेजखौ सोरबाना फिन फैनो हायो।</translation>
+    </message>
+    <message>
+        <source>Without the job queue a run is done in this request, for at most %count images.</source>
+        <translation>जब लाइन गैयाबोलाया चलावआ बे रिक्वेस्टाव, बेसेनिबो %count मुहुर सिमा जाइ।</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>खामानि</translation>
+    </message>
+    <message>
+        <source>Generate: make the aliases that are missing</source>
+        <translation>खालाम: गोबांफोर उपनामखौ खालाम</translation>
+    </message>
+    <message>
+        <source>Regenerate: remove and make them again</source>
+        <translation>फिन खालाम: मेटाना फिन खालाम</translation>
+    </message>
+    <message>
+        <source>Purge: remove them (made again on demand)</source>
+        <translation>मेटा: बेफोरखौ मेटा (नांनाय सोमोयाव फिन खालामनाय)</translation>
+    </message>
+    <message>
+        <source>Resync: fetch the files from the staging source</source>
+        <translation>फिन मिलाव: स्टेजिं मुलफ्राय फाइलफोरखौ खा</translation>
+    </message>
+    <message>
+        <source>(only on a staging installation)</source>
+        <translation>(स्टेजिं इन्स्टलेसनावनो)</translation>
+    </message>
+    <message>
+        <source>The whole site</source>
+        <translation>साइट गासै</translation>
+    </message>
+    <message>
+        <source>One node</source>
+        <translation>नोड मोनसे</translation>
+    </message>
+    <message>
+        <source>A node and its subtree</source>
+        <translation>नोड मोनसे आरो बिनि सबट्री</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>नोड ID</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>क्लासफोर</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>गुनफोर</translation>
+    </message>
+    <message>
+        <source>Changed since</source>
+        <translation>निफ्राय सुलायनाय</translation>
+    </message>
+    <message>
+        <source>A date (2026-11-01) or a time ago (12 hours, 2 days).</source>
+        <translation>तारिख मोनसे (2026-11-01) नङा आगोनि सोमोय (12 hours, 2 days)।</translation>
+    </message>
+    <message>
+        <source>At most images</source>
+        <translation>गोबांनिसिम मुहुर</translation>
+    </message>
+    <message>
+        <source>Aliases (none ticked: all of them)</source>
+        <translation>उपनामफोर (मा खौबो चिनिखै: गासैफोर)</translation>
+    </message>
+    <message>
+        <source>resync</source>
+        <translation>फिन मिलाव</translation>
+    </message>
+    <message>
+        <source>Dry run: only count (a resync checks the source and stores nothing)</source>
+        <translation>सुजुनाय चलाव: हिसाबनो (फिन मिलावआ मुलखौ नायथि आरो मा खौबो रैखाया)</translation>
+    </message>
+    <message>
+        <source>Overwrite files that differ (resync)</source>
+        <translation>फिन्जा फाइलफोरखौ गोख्रै रैखा (फिन मिलाव)</translation>
+    </message>
+    <message>
+        <source>Start the run</source>
+        <translation>चलाव सुरु खालाम</translation>
+    </message>
+    <message>
+        <source>Latest runs</source>
+        <translation>जोबथा चलावफोर</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>जब</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>गोख्रोनाय</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>लाइनाव</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>खामानिफोर</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>बन्द</translation>
+    </message>
+    <message>
+        <source>No bulk run or resync yet.</source>
+        <translation>बेसेबो बुहु चलाव नङा फिन मिलाव गैया।</translation>
+    </message>
+    <message>
+        <source>One image</source>
+        <translation>मुहुर मोनसे</translation>
+    </message>
+    <message>
+        <source>The addresses a template gets now, the sizes and types computed for every alias, and whether each file is there.</source>
+        <translation>टेम्पलेटा दिनै मोनसोनाय ठिकानाफोर, उपनाम बाहागैयानि बाहाय आरो रोखोम हिसाब, आरो फाइल बाहागैया दं नङा गैया।</translation>
+    </message>
+    <message>
+        <source>Look up by</source>
+        <translation>बेजों नायनाय</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>बस्तु ID</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>नायनो हो</translation>
+    </message>
+    <message>
+        <source>You may not read this object.</source>
+        <translation>नों बे बस्तुखौ फरायनो हायाखै।</translation>
+    </message>
+    <message>
+        <source>This object has no image.</source>
+        <translation>बे बस्तुनि मुहुर गैया।</translation>
+    </message>
+    <message>
+        <source>No object with this id.</source>
+        <translation>बे ID जों बस्तु गैया।</translation>
+    </message>
+    <message>
+        <source>object %object, node %node, version %version</source>
+        <translation>बस्तु %object, नोड %node, भार्सन %version</translation>
+    </message>
+    <message>
+        <source>Original: %width x %height, %type</source>
+        <translation>मुल: %width x %height, %type</translation>
+    </message>
+    <message>
+        <source>file there</source>
+        <translation>फाइल दं</translation>
+    </message>
+    <message>
+        <source>file missing</source>
+        <translation>फाइल गोबां</translation>
+    </message>
+    <message>
+        <source>Aliases of %name</source>
+        <translation>%name नि उपनामफोर</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>उपनाम</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>बाहाय</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>रोखोम</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>फाइल</translation>
+    </message>
+    <message>
+        <source>Formats</source>
+        <translation>फर्मेटफोर</translation>
+    </message>
+    <message>
+        <source>Address in a template</source>
+        <translation>टेम्पलेटनि ठिकाना</translation>
+    </message>
+    <message>
+        <source>there</source>
+        <translation>दं</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>गोबां</translation>
+    </message>
+    <message>
+        <source>not for this type</source>
+        <translation>बे रोखोमनि थाय नङा</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>नायथि</translation>
+    </message>
+    <message>
+        <source>Make</source>
+        <translation>खालाम</translation>
+    </message>
+    <message>
+        <source>No image in this field.</source>
+        <translation>बे फिल्डाव मुहुर गैया।</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>सोमोय</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>Connection to a source</source>
+        <translation>मुलजों जोथोनाय</translation>
+    </message>
+    <message>
+        <source>A HEAD request to a staging source, with its credential when one is named. The credential is sent, never shown.</source>
+        <translation>स्टेजिं मुलखौ HEAD रिक्वेस्ट, मुं दंबोलाया बिनि क्रेडेन्सियलजों। क्रेडेन्सियलखौ सोलायो, नुनो होयाखै।</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>मुल</translation>
+    </message>
+    <message>
+        <source>with credential</source>
+        <translation>क्रेडेन्सियलजों</translation>
+    </message>
+    <message>
+        <source>Storage path (optional)</source>
+        <translation>दोहोनि फथ (नांनानो)</translation>
+    </message>
+    <message>
+        <source>Test the connection</source>
+        <translation>जोथोनायखौ सुजुन</translation>
+    </message>
+    <message>
+        <source>No source has a BaseURL. Sources are set in the settings ([AliasSource_&lt;environment&gt;]).</source>
+        <translation>मुल बाहागैयानि BaseURL गैया। मुलफोरखौ सेटिंफोरावनो सेट खालाम ([AliasSource_&lt;environment&gt;])।</translation>
+    </message>
+    <message>
+        <source>reachable</source>
+        <translation>थाखाय हायो</translation>
+    </message>
+    <message>
+        <source>refused: check the credential</source>
+        <translation>नाजारनाय: क्रेडेन्सियलखौ नायथि</translation>
+    </message>
+    <message>
+        <source>not found at the source</source>
+        <translation>मुलाव मोनाखै</translation>
+    </message>
+    <message>
+        <source>no answer</source>
+        <translation>फिन्नाय गैया</translation>
+    </message>
+    <message>
+        <source>timed out</source>
+        <translation>सोमोय सिमा</translation>
+    </message>
+    <message>
+        <source>redirected (not followed)</source>
+        <translation>रिडाइरेक्ट (फिन लागिखै)</translation>
+    </message>
+    <message>
+        <source>no BaseURL</source>
+        <translation>BaseURL गैया</translation>
+    </message>
+    <message>
+        <source>not a storage path</source>
+        <translation>दोहोनि फथ नङा</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ठिकाना</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>स्थिति</translation>
+    </message>
+    <message>
+        <source>sent</source>
+        <translation>सोलायनाय</translation>
+    </message>
+    <message>
+        <source>the secret is missing</source>
+        <translation>गुबुन मान गोबां</translation>
+    </message>
+    <message>
+        <source>the secret is not user:password or Bearer &lt;token&gt;</source>
+        <translation>गुबुन मान user:password नङा Bearer &lt;token&gt; नङा</translation>
+    </message>
+    <message>
+        <source>The newest lines of %file, newest first.</source>
+        <translation>%file नि जोबथा लाइनफोर, जोबथाखौ सिगां।</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Log files</source>
+        <translation>सेटआप &gt; लग फाइलफोर</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>घटना</translation>
+    </message>
+    <message>
+        <source>All events</source>
+        <translation>गासै घटनाफोर</translation>
+    </message>
+    <message>
+        <source>Runs (start and end)</source>
+        <translation>चलावफोर (सुरु आरो जोबथा)</translation>
+    </message>
+    <message>
+        <source>Path contains</source>
+        <translation>फथआ जाथाय</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>लाइनफोर</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>फिल्टार</translation>
+    </message>
+    <message>
+        <source>Follow: show new lines as they are written</source>
+        <translation>लागि: रैखानाय सोमोयावनो गोदानि लाइनफोर नुनो हो</translation>
+    </message>
+    <message>
+        <source>Path and details</source>
+        <translation>फथ आरो बेखेवफोर</translation>
+    </message>
+    <message>
+        <source>No line of the log matches.</source>
+        <translation>लगनि मा लाइनबो मिलायाखै।</translation>
+    </message>
+    <message>
+        <source>What saving would change</source>
+        <translation>रैखानायनि सुलायनाय</translation>
+    </message>
+    <message>
+        <source>What was changed</source>
+        <translation>मा सुलायनाय जादों</translation>
+    </message>
+    <message>
+        <source>Saved into settings/override/image.ini.append.php, so a value here wins over every siteaccess. The values shown are those in force for this siteaccess. Saving asks you to confirm who you are first.</source>
+        <translation>settings/override/image.ini.append.php आव रैखानाय जादों, बेनिमित्ता बेयावनि मानआ बाहागैया siteaccess निफ्राय गोख्रै। नुनो होनाय मानफोरा बे siteaccess नि थाय चलाव थानाय। रैखानाय सिगां नों जानाय निश्चित खालामनो सोलाइ।</translation>
+    </message>
+    <message>
+        <source>How aliases are made and delivered.</source>
+        <translation>उपनामफोर मबोरै खालामनाय आरो होनाय जाइ।</translation>
+    </message>
+    <message>
+        <source>Fetching missing images from another installation (alpha, dev, beta, stage, pro, post, arc). Production (pro) never fetches.</source>
+        <translation>गोबां मुहुरफोरखौ फिन्जा इन्स्टलेसनफ्राय खानाय (alpha, dev, beta, stage, pro, post, arc)। प्रडाक्सन (pro) खाबाबो खायाखै।</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>सेटिं</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>मान</translation>
+    </message>
+    <message>
+        <source>In settings/override</source>
+        <translation>settings/override आव</translation>
+    </message>
+    <message>
+        <source>The address of each source and the name of the secret that holds its credential (user:password or Bearer &lt;token&gt;). The value of a secret is set in Setup &gt; Secrets and never shown here.</source>
+        <translation>मुल बाहागैयानि ठिकाना आरो बिनि क्रेडेन्सियल दोहोनाय गुबुन मानिनि मुं (user:password नङा Bearer &lt;token&gt;)। गुबुन मानिनि मानखौ सेटआप &gt; गुबुन मानफोराव सेट खालाम, बेयाव नुनो होयाखै।</translation>
+    </message>
+    <message>
+        <source>Preview the changes</source>
+        <translation>सुलायनायखौ सोलोंथाइ नाय</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>रैखा</translation>
+    </message>
+    <message>
+        <source>Following: updated %time</source>
+        <translation>लागिनाय: %time आबुं सुलायनाय</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>बिराम जादों</translation>
+    </message>
+    <message>
+        <source>The feed did not answer; trying again.</source>
+        <translation>फिड फिन्नायाखै; फिन फोरमायो।</translation>
+    </message>
+    <message>
+        <source>The job has ended.</source>
+        <translation>जब जोबोद जादों।</translation>
+    </message>
+    <message>
+        <source>on-demand: templates get the address, the alias is made when it is asked for. render: the template makes it while the page renders (the original behavior).</source>
+        <translation>on-demand: टेम्पलेटफोरा ठिकाना मोनो, उपनामखौ नांनाय सोमोयाव खालामो। render: फेज रेन्डार जायब्लाबो टेम्पलेटा बेखौ खालामो (आगोनि फैसेंमोन)।</translation>
+    </message>
+    <message>
+        <source>The address of an alias that is not made yet: token (signed, needs no database), ids-token, ids, node or storage.</source>
+        <translation>बेसेबो खालामनाय गैयाबाय उपनामनि ठिकाना: token (साइन खालामनाय, डेटाबेस नांगैया), ids-token, ids, node नङा storage।</translation>
+    </message>
+    <message>
+        <source>auto: a redirect to the file when the web server serves the storage, else the file is streamed.</source>
+        <translation>auto: वेब सार्भारा दोहोखौ होबाय सोमोयाव फाइलावनो रिडाइरेक्ट, नङा फाइल स्ट्रिम खालामनाय।</translation>
+    </message>
+    <message>
+        <source>Seconds a request may spend making or fetching an alias; then it answers the placeholder and a job finishes the work.</source>
+        <translation>रिक्वेस्टा उपनाम खालामनाय नङा खानायाव बाहायनो हायो सेकेन्ड; उनाव प्लेसहोल्डार होना जबआ खामानि जोबोद खालामो।</translation>
+    </message>
+    <message>
+        <source>The converter tried first for the WebP and AVIF variants.</source>
+        <translation>WebP आरो AVIF रोखोमफोरनि थाय सिगां फोरमायनाय कन्भार्टार।</translation>
+    </message>
+    <message>
+        <source>Answer WebP or AVIF to browsers that ask for it, for aliases that list Formats[].</source>
+        <translation>Formats[] दोन्नाय उपनामफोरनि थाय, बे सोलायनाय ब्राउजारफोरखौ WebP नङा AVIF फिन्ना।</translation>
+    </message>
+    <message>
+        <source>A neutral image of the right size while an image is missing.</source>
+        <translation>मुहुर गोबांनाय सोमोयाव मोनहोनाय बाहायनि गुबुन मुहुर।</translation>
+    </message>
+    <message>
+        <source>A small script that replaces placeholders with the real image when it is there.</source>
+        <translation>मुहुर दंबोलाया प्लेसहोल्डारखौ गोनां मुहुरजों सोलायनाय खुरा स्क्रिप्ट।</translation>
+    </message>
+    <message>
+        <source>After publishing, a job makes the aliases of the new images for every related siteaccess.</source>
+        <translation>प्रकासनि उनाव, जबआ गोदान मुहुरफोरनि उपनामखौ बाहागैया जोथोनाय siteaccess नि थाय खालामो।</translation>
+    </message>
+    <message>
+        <source>Conversions at once on one server.</source>
+        <translation>सार्भार मोनसेआव सिगांनो जानाय कनभार्सनफोर।</translation>
+    </message>
+    <message>
+        <source>The process priority (nice) of bulk runs, 0 to 19.</source>
+        <translation>बुहु चलावफोरनि प्रोसेस प्राथमिकता (nice), 0 निफ्राय 19 सिमा।</translation>
+    </message>
+    <message>
+        <source>Seconds browsers and caches may keep a made alias.</source>
+        <translation>ब्राउजार आरो कासेफोरा खालामनाय उपनामखौ थानो हायो सेकेन्ड।</translation>
+    </message>
+    <message>
+        <source>Seconds the address of a draft or preview image stays valid.</source>
+        <translation>ड्राफ्ट नङा सोलोंथाइ मुहुरनि ठिकानाआ बाहायनो हायो सेकेन्ड।</translation>
+    </message>
+    <message>
+        <source>Seconds the previous signing key stays valid after a rotation.</source>
+        <translation>रोटेटनि उनाव आगोनि साइन चाबिआ बाहायनो हायो सेकेन्ड।</translation>
+    </message>
+    <message>
+        <source>The environment of this installation.</source>
+        <translation>बे इन्स्टलेसननि पारिपार्स्विक।</translation>
+    </message>
+    <message>
+        <source>The environment missing images are fetched from; none: nothing is fetched.</source>
+        <translation>गोबां मुहुरफोर खानाय पारिपार्स्विक; none: मा खौबो खायाखै।</translation>
+    </message>
+    <message>
+        <source>One per line: local storage prefix;source prefix or address, for storage paths that differ.</source>
+        <translation>लाइन बाहागैयाव मोनसे: लोकाल दोहोनि प्रिफिक्स;मुलनि प्रिफिक्स नङा ठिकाना, फिन्जा दोहोनि फथफोरनि थाय।</translation>
+    </message>
+    <message>
+        <source>Seconds one request to the source may take.</source>
+        <translation>मुलाव रिक्वेस्ट मोनसेआ थानो हायो सेकेन्ड।</translation>
+    </message>
+    <message>
+        <source>The largest file taken from the source, in bytes.</source>
+        <translation>मुलफ्राय खानाय जोबथा गेदेर फाइल, बाइटजों।</translation>
+    </message>
+    <message>
+        <source>Failures in a row after which the source is paused.</source>
+        <translation>मुल बिराम होनायनि सिगां लगातार गोलावफोर।</translation>
+    </message>
+    <message>
+        <source>How long a failing source is paused.</source>
+        <translation>गोलाव जानाय मुलखौ माब्लाबो थाङै बिराम होनाय।</translation>
+    </message>
+    <message>
+        <source>Mail the administrators when the source is paused (at most once an hour).</source>
+        <translation>मुल बिराम जायब्लाबो बेरेनफोरखौ मेल होमो (घन्टानि सोनायखौ गोबां सेबा)।</translation>
+    </message>
+    <message>
+        <source>One e-mail address per line; empty: the AdminEmail of site.ini.</source>
+        <translation>लाइन बाहागैयाव इ-मेल ठिकाना मोनसे; खालि: site.ini नि AdminEmail।</translation>
+    </message>
+    <message>
+        <source>The address of the source installation %block, e.g. https://www.example.org.</source>
+        <translation>मुल इन्स्टलेसन %block नि ठिकाना, बेखेवनि: https://www.example.org।</translation>
+    </message>
+    <message>
+        <source>The name of the secret with the credential, or env:VARIABLE. Never the credential itself.</source>
+        <translation>क्रेडेन्सियल दोन्नाय गुबुन मानिनि मुं, नङा env:VARIABLE। क्रेडेन्सियलखौ गोदैबो होयाखै।</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(गैया)</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>डिफल्ट: %value</translation>
+    </message>
+    <message>
+        <source>Set here; tick to remove it</source>
+        <translation>बेयाव सेट खालामनाय; मेटानो चिनि खालाम</translation>
+    </message>
+    <message>
+        <source>inherited</source>
+        <translation>मोनहोनाय</translation>
     </message>
 </context>
 </TS>
