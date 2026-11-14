@@ -447,6 +447,7 @@ documented in the file and in the generated reference
 | `MaxParallel` | `2` | conversions at once per server, over every process |
 | `BulkNice` | `10` | nice value of a bulk run's worker (0 leaves it) |
 | `CacheMaxAge` | `31536000` | `Cache-Control` max-age of a real alias (placeholders: `no-store`) |
+| `LogFileMaxSize` | `20971520` | Bytes `var/log/imagealias.log` may reach before it is rotated: its own size, not site.ini `LogFileMaxSize` for all logs, so a bulk run keeps its history (1 MB to 1 GB) |
 | `[<alias>] Formats[]` | none | `webp`, `avif`: variants for negotiation |
 | `[ImageConverterSettings] LockTimeout` | `60` | seconds a process waits for another process's lock on one alias file (0: no wait) |
 | `[AliasStaging] Environment` | `pro` | `alpha`, `dev`, `beta`, `stage`, `pro`, `post`, `arc`; `pro` never fetches |

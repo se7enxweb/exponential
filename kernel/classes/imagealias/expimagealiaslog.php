@@ -51,7 +51,21 @@ class expImageAliasLog
                 eZDir::mkdir( self::$directory, false, true );
             return @file_put_contents( self::path(), '[ ' . date( 'M d Y H:i:s' ) . ' ][ - ][ - ] ' . $line . "\n", FILE_APPEND | LOCK_EX ) !== false;
         }
-        eZLog::write( $line, self::FILE );
+        // A bulk run writes a line per alias: the log gets its own size (image.ini [AliasSettings] LogFileMaxSize),
+        // so a run's history is not rotated away within minutes under the kernel's size for all logs
+        $before = $GLOBALS['eZMaxLogSize'] ?? null;
+        $GLOBALS['eZMaxLogSize'] = expImageAliasSettings::logFileMaxSize();
+        try
+        {
+            eZLog::write( $line, self::FILE );
+        }
+        finally
+        {
+            if ( $before === null )
+                unset( $GLOBALS['eZMaxLogSize'] );
+            else
+                $GLOBALS['eZMaxLogSize'] = $before;
+        }
         return true;
     }
 

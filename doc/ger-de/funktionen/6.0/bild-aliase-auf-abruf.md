@@ -483,6 +483,7 @@ ist in der Datei und in der erzeugten Referenz dokumentiert
 | `MaxParallel` | `2` | gleichzeitige Umwandlungen je Server, über alle Prozesse |
 | `BulkNice` | `10` | nice-Wert des Workers eines Massenlaufs (0 lässt ihn unverändert) |
 | `CacheMaxAge` | `31536000` | max-age in `Cache-Control` eines echten Alias (Platzhalter: `no-store`) |
+| `LogFileMaxSize` | `20971520` | Bytes, die `var/log/imagealias.log` erreichen darf, bevor es rotiert wird: eine eigene Größe, nicht site.ini `LogFileMaxSize` für alle Logs, damit ein Massenlauf seinen Verlauf behält (1 MB bis 1 GB) |
 | `[<alias>] Formats[]` | keine | `webp`, `avif`: Varianten für die Formatauswahl |
 | `[ImageConverterSettings] LockTimeout` | `60` | Sekunden, die ein Prozess auf die Sperre eines anderen Prozesses für eine Alias-Datei wartet (0: kein Warten) |
 | `[AliasStaging] Environment` | `pro` | `alpha`, `dev`, `beta`, `stage`, `pro`, `post`, `arc`; `pro` holt nie |

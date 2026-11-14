@@ -185,6 +185,15 @@ class expImageAliasSettings
     }
 
     /**
+     * @return int the size (bytes) var/log/imagealias.log may reach before it is rotated: its own, not the kernel's
+     *             LogFileMaxSize for all logs, since a bulk run writes a line per alias (1 MB to 1 GB, default 20 MB)
+     */
+    public static function logFileMaxSize()
+    {
+        return (int)self::number( 'AliasSettings', 'LogFileMaxSize', 20971520, 1048576, 1073741824 );
+    }
+
+    /**
      * @return int the nice value bulk runs lower their worker to (0 = unchanged)
      */
     public static function bulkNice()
