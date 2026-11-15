@@ -230,6 +230,8 @@ class expImageAliasBacklog
         $given = 0;
         foreach ( (array)glob( self::directory() . '/*.json.*.work', GLOB_NOSORT ) as $work )
         {
+            // the time another process (or touch() before PHP 8.3) set, not the one PHP's stat cache kept
+            clearstatcache( true, $work );
             $mtime = @filemtime( $work );
             if ( $mtime === false || time() - $mtime < self::STALE_WORK )
                 continue;
