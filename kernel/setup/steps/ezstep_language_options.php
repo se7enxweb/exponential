@@ -166,6 +166,24 @@ class eZStepLanguageOptions extends eZStepInstaller
             // transliteration turned "Uber uns" into a-ber-uns.
             $regionalInfo = eZStepLanguageOptions::regionalInfoFromChoice( $choice );
 
+            // [language_options] TimeZone: the site's time zone, written to site.ini [TimeZoneSettings] TimeZone
+            // by CreateSites (expInstallTimeZone); without it CreateSites derives one from the primary language.
+            // A name PHP does not know stops the unattended install here, as an unknown locale does.
+            $timeZone = isset( $data['TimeZone'] ) ? trim( (string)$data['TimeZone'] ) : '';
+            if ( $timeZone !== '' )
+            {
+                if ( !expInstallTimeZone::isValid( $timeZone ) )
+                {
+                    $error = "TimeZone=$timeZone is not a time zone this PHP knows (e.g. Europe/Berlin, America/New_York, UTC)";
+                    eZDebug::writeError( 'kickstart.ini [language_options]: ' . $error, __METHOD__ );
+                    $this->LanguageErrors = array( $error );
+                    $this->PostedChoice = array( 'primary_language' => $primary, 'extra_languages' => $extras );
+                    $this->setAllowKickstart( false );
+                    return false;
+                }
+                $regionalInfo['timezone'] = $timeZone;
+            }
+
             $this->PersistenceList['regional_info'] = $regionalInfo;
             $this->storePersistenceData();
 

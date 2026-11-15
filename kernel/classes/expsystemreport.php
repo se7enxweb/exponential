@@ -1285,6 +1285,14 @@ class expSystemReport
             $add( 'timezone', self::WARN, $this->t( 'No time zone is set' ),
                   $this->t( 'PHP falls back to UTC, so dates and timed publishing can be hours off.' ),
                   $this->t( 'Set date.timezone in php.ini or [TimeZoneSettings] TimeZone in site.ini.' ) );
+        // The site follows the server's zone: right only as long as the site stays on that server (a container
+        // image's zone, another host after a move). Installations before 6.0.15 left the setting empty
+        else if ( (string)$this->fact( 'locale', 'timezone_setting', '' ) === '' )
+            $add( 'timezone', self::INFO, $this->t( 'The site has no time zone of its own' ),
+                  $this->t( "PHP's date.timezone (%zone) applies: dates, timed publishing and cache_until( 'tomorrow' ) follow the server.",
+                            array( '%zone' => (string)$this->fact( 'locale', 'php_timezone', '' ) ) ),
+                  $this->t( 'Set [TimeZoneSettings] TimeZone in settings/override/site.ini.append.php, e.g. TimeZone=%zone.',
+                            array( '%zone' => (string)$this->fact( 'locale', 'php_timezone', '' ) ) ) );
 
         $order = array( self::FAIL => 0, self::WARN => 1, self::INFO => 2, self::OK => 3 );
         $position = array_flip( array_column( $checks, 'id' ) );

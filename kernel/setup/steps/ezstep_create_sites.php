@@ -390,6 +390,16 @@ class eZStepCreateSites extends eZStepInstaller
         // Enable design location cache
         $ini->setVariable( 'DesignSettings', 'DesignLocationCache', 'enabled' );
 
+        // The site's time zone: kickstart.ini [language_options] TimeZone (exp:install --timezone), else the zone of
+        // the primary language's country, else PHP's date.timezone, else UTC (expInstallTimeZone::choose()). Left
+        // empty, dates, timed publishing and {cache_until( 'tomorrow' )} followed whatever zone the server's PHP
+        // happened to have (a container image's America/Los_Angeles: "today" began at 09:00 in Germany). A site
+        // package may still write its own value afterwards.
+        $timeZone = expInstallTimeZone::choose( isset( $this->PersistenceList['regional_info']['timezone'] ) ? $this->PersistenceList['regional_info']['timezone'] : '',
+                                                isset( $this->PersistenceList['regional_info']['primary_language'] ) ? $this->PersistenceList['regional_info']['primary_language'] : '',
+                                                (string)ini_get( 'date.timezone' ) );
+        $ini->setVariable( 'TimeZoneSettings', 'TimeZone', $timeZone['zone'] );
+
         if ( $saveData )
         {
             foreach ( $siteINISettings as $siteINISetting )

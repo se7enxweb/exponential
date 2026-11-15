@@ -16,6 +16,7 @@
  *  SR-11 - Cards name the server that answered and its worker model; Apache and Velocity differ
  *  SR-12 - The report, its JSON and its text carry no secret and no installation path
  *  SR-13 - One walk of a directory also adds up each directory of a directory inside it (var/ and its caches)
+ *  SR-14 - A site without a time zone of its own is a note when PHP has one, a warning when neither has one
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -61,7 +62,7 @@ class expSystemReportTest extends PHPUnit\Framework\TestCase
                                'query' => 'shared', 'response' => null, 'dirs' => array( 'content' => null, 'template' => null ) ),
             'cronjobs' => array( 'last' => self::NOW - 3600, 'source' => 'log', 'part' => 'frequent' ),
             'mail' => array( 'transport' => 'smtp', 'server' => 'mail.example.org', 'port' => '587', 'encryption' => 'tls', 'login' => true, 'sender_set' => true ),
-            'locale' => array( 'locale' => 'ger-DE', 'content_locale' => 'ger-DE', 'languages' => array( 'ger-DE', 'eng-GB' ), 'timezone_setting' => '',
+            'locale' => array( 'locale' => 'ger-DE', 'content_locale' => 'ger-DE', 'languages' => array( 'ger-DE', 'eng-GB' ), 'timezone_setting' => 'Europe/Berlin',
                                'timezone' => 'Europe/Berlin', 'php_timezone' => 'Europe/Berlin', 'now' => '2026-10-06 10:00:00 CEST' ),
             'debug' => array( 'output' => false, 'by_ip' => false, 'by_user' => false, 'template' => false, 'used_templates' => false, 'sql' => false, 'display_errors' => false ),
             'extensions' => array( array( 'extension' => 'ezjscore', 'name' => 'ezjscore', 'version' => '1.5.4' ), array( 'extension' => 'local_thing', 'name' => 'local_thing', 'version' => '' ) ),
@@ -290,6 +291,17 @@ class expSystemReportTest extends PHPUnit\Framework\TestCase
         $this->assertStringStartsWith( "Exponential system information\n", $text );
         $this->assertStringContainsString( 'Answered by: Apache + PHP-FPM', $text );
         $this->assertStringContainsString( 'local_thing', $text );
+    }
+
+    /** SR-14 */
+    public function testTimeZoneOfTheSite()
+    {
+        $this->assertNull( $this->check( $this->report(), 'timezone' ), 'a site with its own zone has nothing to report' );
+        $server = $this->check( $this->report( array( 'locale' => array( 'timezone_setting' => '' ) ) ), 'timezone' );
+        $this->assertSame( 'info', $server['state'], 'the site follows the zone of the server' );
+        $this->assertStringContainsString( 'Europe/Berlin', $server['detail'] . $server['fix'] );
+        $none = $this->check( $this->report( array( 'locale' => array( 'timezone_setting' => '', 'php_timezone' => '' ) ) ), 'timezone' );
+        $this->assertSame( 'warn', $none['state'] );
     }
 
     /** SR-13 */

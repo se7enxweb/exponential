@@ -144,6 +144,13 @@
 ## Languages[]=<locale>
 ## Additional languages
 #Languages[]
+## TimeZone=[zone]
+## The site's time zone, written to site.ini [TimeZoneSettings] TimeZone
+## (e.g. Europe/Berlin, America/New_York, UTC). Empty: the zone of the
+## primary language's country (ger-DE: Europe/Berlin), else php.ini's
+## date.timezone, else UTC. Dates, timed publishing and
+## cache_until( 'tomorrow' ) follow it.
+#TimeZone=
 
 #[site_types]
 ## Continue=<true|false>

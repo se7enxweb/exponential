@@ -89,6 +89,7 @@ class expKickstarterIni
         'language_options' => array(
             'Primary'    => 'eng-US', // the language the bundled data is in, as in the web wizard
             'Languages'  => array(),
+            'TimeZone'   => '', // empty: derived from Primary (expInstallTimeZone)
         ),
         'site_types' => array(
             // a package that is in var/storage/packages (7x/sevenx_multisite), as exp:install installs

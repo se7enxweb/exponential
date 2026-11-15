@@ -38,6 +38,7 @@ $options = array(
     'package'        => 'sevenx_multisite',
     'language'       => 'eng-US',
     'languages'      => '',
+    'timezone'       => '',
     'title'          => 'Exponential',
     'organisation-name'    => '',
     'organisation-address' => '',
@@ -203,6 +204,17 @@ if ( !filter_var( $options['email'], FILTER_VALIDATE_EMAIL ) )
     fwrite( STDERR, "--email is not an e-mail address: {$options['email']}\n" );
     exit( 1 );
 }
+// The site's time zone (site.ini [TimeZoneSettings] TimeZone): as given, else the zone of the primary language's
+// country, else php.ini's date.timezone, else UTC (expInstallTimeZone::choose(), which the installation applies)
+if ( $options['timezone'] !== '' && !expInstallTimeZone::isValid( $options['timezone'] ) )
+{
+    fwrite( STDERR, "--timezone is not a time zone this PHP knows: {$options['timezone']} (e.g. Europe/Berlin, America/New_York, UTC)\n" );
+    exit( 1 );
+}
+$timeZone = expInstallTimeZone::choose( $options['timezone'], $options['language'], (string)ini_get( 'date.timezone' ) );
+$timeZoneReasons = array( 'requested' => 'as given', 'language' => 'from ' . $options['language'],
+                          'php' => "php.ini's date.timezone; " . $options['language'] . ' spans several zones, set --timezone',
+                          'default' => 'no zone known for ' . $options['language'] . ' and none in php.ini; set --timezone' );
 // The administrator password. Without --password, or with --random-password,
 // the installer generates one (24 characters of the bcrypt alphabet, from the
 // operating system's secure random source, about 143 bits). A given one is kept
@@ -269,7 +281,7 @@ $sections = array(
     'database_choice'  => array( 'Type' => $dbDefaults['type'] ),
     'database_init'    => array( 'Server' => $options['db-host'], 'Port' => $dbPort, 'Database' => $dbName,
                                  'User' => $dbUser, 'Password' => $options['db-password'], 'Socket' => $options['db-socket'] ),
-    'language_options' => array( 'Primary' => $options['language'], 'Languages' => $languages ),
+    'language_options' => array( 'Primary' => $options['language'], 'Languages' => $languages, 'TimeZone' => $timeZone['zone'] ),
     'site_types'       => array( 'Site_package' => $options['package'] ),
     'site_access'      => array( 'Access' => $accessType ),
     'site_details'     => array( 'Title' => $options['title'], 'URL' => $url,
@@ -352,6 +364,7 @@ $summary = array(
     'Database'       => $db . ' ' . $dbName . ( $db === 'sqlite' ? '' : ' at ' . ( $options['db-socket'] !== '' ? $options['db-socket'] : $options['db-host'] . ( $dbPort !== '' ? ':' . $dbPort : '' ) ) )
                         . ( $dbUser !== '' ? ', user ' . $dbUser : '' ),
     'Package'        => $options['package'] . ', ' . $options['language'] . ( $languages ? ' + ' . implode( ',', $languages ) : '' ),
+    'Time zone'      => $timeZone['zone'] . ' (' . $timeZoneReasons[$timeZone['reason']] . ')',
     'Siteaccesses'   => $options['site-access'] . ', ' . $options['admin-access'] . ', editor (by ' . ( $accessType === 'hostname' ? 'host' : $accessType ) . ')'
                         // the Admin UI siteaccess, made when exp_adminui is in the installation, always by URI
                         . ( class_exists( 'eZStepCreateSites' ) && method_exists( 'eZStepCreateSites', 'adminUIAvailable' )
@@ -407,6 +420,7 @@ register_shutdown_function( function () use ( $kickstart, $aside, $sections, $lo
 echo "exp:install" . ( $flags['dry-run'] ? ' (dry run, --apply installs)' : '' ) . ": {$options['package']} on $db"
     . ( $db === 'sqlite' ? " ($dbName)" : " ({$dbName} at {$options['db-host']}" . ( $dbPort !== '' ? ":$dbPort" : '' ) . ')' )
     . ", $url, access by " . ( $accessType === 'hostname' ? 'host' : $accessType )
+    . ", time zone {$timeZone['zone']} (" . $timeZoneReasons[$timeZone['reason']] . ')'
     . ", administrator admin / " . ( $passwordGiven ? '(as given)' : '(generated, shown at the end)' ) . "\n";
 
 function installUsage()
@@ -444,6 +458,11 @@ Site
   --package=<name>       site package, default sevenx_multisite
   --language=<locale>    primary language, default eng-US
   --languages=<a,b>      more languages, e.g. ger-DE,fre-FR
+  --timezone=<zone>      the site's time zone (site.ini [TimeZoneSettings]),
+                         e.g. Europe/Berlin; default: the zone of --language's
+                         country (ger-DE: Europe/Berlin), else php.ini's
+                         date.timezone, else UTC. Dates, timed publishing and
+                         cache_until( 'tomorrow' ) follow it
   --title=<text>         site name, default Exponential
   --organisation-name=<text>     who sends the optional e-mail (footer of every
                          newsletter and notification); default: the site name
