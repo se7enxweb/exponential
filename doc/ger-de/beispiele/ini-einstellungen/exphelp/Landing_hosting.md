@@ -31,7 +31,7 @@ StartPage=help/hosting/hosting-companies-start-here.md
 
 ## InfoPages
 
-Standard: eine Liste mit 11: `help/hosting/operations/migrations-on-hosted-sites.md`, `help/migrations/README.md`, `help/migrations/migrations-versus-migrating-a-site.md`, `help/migrations/recipes/deploying-with-migrations.md`, `help/migrations/add-a-remote-step-by-step.md`, `help/migrations/recipes/engine-notes.md`, `help/migrations/recipes/captions-and-rollback-in-practice.md`, `help/hosting/static-publishing-and-your-hosting.md`, `guides/host-static-sites-on-github-pages.md`, `help/static-publishing/github-pages-limits-and-terms.md`, `help/static-publishing/keep-private-content-private.md`.
+Standard: eine Liste mit 13: `help/hosting/operations/migrations-on-hosted-sites.md`, `help/migrations/README.md`, `help/migrations/migrations-versus-migrating-a-site.md`, `help/migrations/recipes/deploying-with-migrations.md`, `help/migrations/add-a-remote-step-by-step.md`, `help/migrations/recipes/engine-notes.md`, `help/migrations/recipes/captions-and-rollback-in-practice.md`, `help/hosting/static-publishing-and-your-hosting.md`, `guides/host-static-sites-on-github-pages.md`, `help/static-publishing/github-pages-limits-and-terms.md`, `help/static-publishing/keep-private-content-private.md`, `help/request-shield/cookbook.md` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -50,6 +50,8 @@ InfoPages[]=help/hosting/static-publishing-and-your-hosting.md
 InfoPages[]=guides/host-static-sites-on-github-pages.md
 InfoPages[]=help/static-publishing/github-pages-limits-and-terms.md
 InfoPages[]=help/static-publishing/keep-private-content-private.md
+InfoPages[]=help/request-shield/cookbook.md
+InfoPages[]=help/request-shield/configuration-reference.md
 */ ?>
 ```
 

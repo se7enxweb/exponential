@@ -31,7 +31,7 @@ StartPage=help/admin-tour.md
 
 ## InfoPages
 
-Default: a list of 11: `help/migrations/migrations-for-administrators.md`, `help/migrations/README.md`, `help/migrations/in-the-administration.md`, `help/migrations/a-tour-of-setup-migrations.md`, `help/migrations/deploy-step-by-step.md`, `help/migrations/when-a-migration-fails.md`, `help/migrations/recipes/captions-and-rollback-in-practice.md`, `help/migrations/faq.md`, `guides/host-static-sites-on-github-pages.md`, `help/static-publishing/keep-private-content-private.md`, `help/static-publishing/github-pages-limits-and-terms.md`.
+Default: a list of 13: `help/migrations/migrations-for-administrators.md`, `help/migrations/README.md`, `help/migrations/in-the-administration.md`, `help/migrations/a-tour-of-setup-migrations.md`, `help/migrations/deploy-step-by-step.md`, `help/migrations/when-a-migration-fails.md`, `help/migrations/recipes/captions-and-rollback-in-practice.md`, `help/migrations/faq.md`, `guides/host-static-sites-on-github-pages.md`, `help/static-publishing/keep-private-content-private.md`, `help/static-publishing/github-pages-limits-and-terms.md`, `help/request-shield/README.md` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -50,6 +50,8 @@ InfoPages[]=help/migrations/faq.md
 InfoPages[]=guides/host-static-sites-on-github-pages.md
 InfoPages[]=help/static-publishing/keep-private-content-private.md
 InfoPages[]=help/static-publishing/github-pages-limits-and-terms.md
+InfoPages[]=help/request-shield/README.md
+InfoPages[]=help/request-shield/cookbook.md
 */ ?>
 ```
 

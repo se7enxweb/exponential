@@ -4980,7 +4980,7 @@ cb5fde8bfc13465bde9cdcf99274ba2c  doc/eng-us/examples/ini-settings/exphelp/Audie
 f2347d930856dd94b5c94d2b8518f438  doc/eng-us/examples/ini-settings/exphelp/IndexSettings.md
 4649d57082196b1358ff8b9c309073c3  doc/eng-us/examples/ini-settings/exphelp/IssueTrackers.md
 fd91452dff4020b63c332c79c3dc3cb0  doc/eng-us/examples/ini-settings/exphelp/LandingSettings.md
-16307b13f771491d977eba4195021269  doc/eng-us/examples/ini-settings/exphelp/Landing_admin.md
+73d87c71879b44c455b2d56b072d397a  doc/eng-us/examples/ini-settings/exphelp/Landing_admin.md
 ac19e231915d20c87a17575811bc7d46  doc/eng-us/examples/ini-settings/exphelp/Landing_adopter.md
 b56a51bd9866fab3294271b4a6cd7fbf  doc/eng-us/examples/ini-settings/exphelp/Landing_advocate.md
 2be9b238029a62832d8ab622d3b676fc  doc/eng-us/examples/ini-settings/exphelp/Landing_ai-agents.md
@@ -4998,7 +4998,7 @@ ef4d252755dac5f7f70417aa6f928d09  doc/eng-us/examples/ini-settings/exphelp/Landi
 10a5433e8011c86e34f297970b7ce825  doc/eng-us/examples/ini-settings/exphelp/Landing_ecosystem.md
 a57ef243754c0853bec20bb59e3592eb  doc/eng-us/examples/ini-settings/exphelp/Landing_editor.md
 6209184d436bb1cfad6c237780b6f58d  doc/eng-us/examples/ini-settings/exphelp/Landing_government.md
-b19303c137e609d226cae6b053703a14  doc/eng-us/examples/ini-settings/exphelp/Landing_hosting.md
+5e58429a6b9282137705864fbdb23dd0  doc/eng-us/examples/ini-settings/exphelp/Landing_hosting.md
 2b65575c97487e1d9f0c8dfa4f775458  doc/eng-us/examples/ini-settings/exphelp/Landing_individual.md
 ade1c32b43c1f2236a80f97259ddc4c9  doc/eng-us/examples/ini-settings/exphelp/Landing_integrator.md
 02f54fa754166c7aa29803e1fdb8d77a  doc/eng-us/examples/ini-settings/exphelp/Landing_local-business.md
@@ -15096,7 +15096,7 @@ ecfb6edc04c5006ccb9f7c2a6d492c1c  doc/ger-de/beispiele/ini-einstellungen/exphelp
 4c9977330d34d60a70edd0fb9603cdec  doc/ger-de/beispiele/ini-einstellungen/exphelp/IndexSettings.md
 fbe3d63534ca82344da97c7ff03a4f03  doc/ger-de/beispiele/ini-einstellungen/exphelp/IssueTrackers.md
 daa80f917ebfab400c225f8509383239  doc/ger-de/beispiele/ini-einstellungen/exphelp/LandingSettings.md
-12d24d9b6ad31102e445894ee34b8e6b  doc/ger-de/beispiele/ini-einstellungen/exphelp/Landing_admin.md
+9afb22b3b9f532de3198d33e7185d753  doc/ger-de/beispiele/ini-einstellungen/exphelp/Landing_admin.md
 742bcfa04c05599863baf34b654ddbbd  doc/ger-de/beispiele/ini-einstellungen/exphelp/Landing_adopter.md
 4cb6d7f1ade563767a0706a9d9732e62  doc/ger-de/beispiele/ini-einstellungen/exphelp/Landing_advocate.md
 516fedb7c9704e9919ad3a6aa701c443  doc/ger-de/beispiele/ini-einstellungen/exphelp/Landing_ai-agents.md
@@ -15114,7 +15114,7 @@ f2292aa8dc405ac28fed8ed3ce18aae1  doc/ger-de/beispiele/ini-einstellungen/exphelp
 fd8f023cb80e1b46151711c4ba67cccf  doc/ger-de/beispiele/ini-einstellungen/exphelp/Landing_ecosystem.md
 aa4fd753cf39bb956b5499042bd7f051  doc/ger-de/beispiele/ini-einstellungen/exphelp/Landing_editor.md
 126a430bba9ce0f4ee5c1d6e2943f78d  doc/ger-de/beispiele/ini-einstellungen/exphelp/Landing_government.md
-b595525991742110fcd5a95bee044e29  doc/ger-de/beispiele/ini-einstellungen/exphelp/Landing_hosting.md
+0c24c643c45e5ad42645a471553cf829  doc/ger-de/beispiele/ini-einstellungen/exphelp/Landing_hosting.md
 d7105ff1b3081b01b4bfe939c6901faf  doc/ger-de/beispiele/ini-einstellungen/exphelp/Landing_individual.md
 bf47d4379f3f2dc1a1370a4f31dea8ca  doc/ger-de/beispiele/ini-einstellungen/exphelp/Landing_integrator.md
 994e429e322bf28e962454fceccda2ab  doc/ger-de/beispiele/ini-einstellungen/exphelp/Landing_local-business.md
