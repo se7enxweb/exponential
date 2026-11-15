@@ -173,4 +173,18 @@ class ezpKernelWebAppendRequestQueryTest extends PHPUnit\Framework\TestCase
     {
         $this->assertSame( '/user/login', ezpKernelWeb::appendRequestQuery( '/user/login', null, null ) );
     }
+
+    /**
+     * A target that already carries the request query (switchlanguage/to appends it itself) keeps it once.
+     */
+    public function testQueryAlreadyInTargetIsNotRepeated()
+    {
+        $this->assertSame( '/eng/events?detail=abc',
+                           ezpKernelWeb::appendRequestQuery( '/eng/events?detail=abc', 'detail=abc', 'www.example.com' ) );
+        $this->assertSame( '/eng/visit?a=1&x=1#top',
+                           ezpKernelWeb::appendRequestQuery( '/eng/visit?a=1&x=1#top', '?x=1', 'www.example.com' ) );
+        // a different query still joins
+        $this->assertSame( '/eng/visit?x=10&x=1',
+                           ezpKernelWeb::appendRequestQuery( '/eng/visit?x=10', 'x=1', 'www.example.com' ) );
+    }
 }

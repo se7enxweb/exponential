@@ -1488,7 +1488,8 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
      * URL is sealed over its exact query, so tracking parameters of the shop
      * request (_gl, gclid, ...) appended to it invalidate the seal. On the
      * own host the query joins with "&" when the target already has one and
-     * goes before a fragment.
+     * goes before a fragment; a target that already contains the request
+     * query unchanged (switchlanguage/to) is left as it is.
      *
      * @param string $redirectURI completed redirect target, relative or absolute
      * @param string $queryString query of the current request, with or without the leading "?"
@@ -1536,6 +1537,14 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         {
             $fragment = substr( $redirectURI, $hashPos );
             $redirectURI = substr( $redirectURI, 0, $hashPos );
+        }
+
+        // A target that already carries the request query keeps it once: switchlanguage/to appends the query itself,
+        // and appending it again doubled the parameters on every language switch (?x=1&x=1&x=1&x=1 ...)
+        $targetQuery = (string)parse_url( $redirectURI, PHP_URL_QUERY );
+        if ( $targetQuery !== '' && strpos( '&' . $targetQuery . '&', '&' . $query . '&' ) !== false )
+        {
+            return $redirectURI . $fragment;
         }
 
         $separator = strpos( $redirectURI, '?' ) !== false ? '&' : '?';
