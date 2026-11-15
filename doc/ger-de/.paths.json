@@ -510,6 +510,7 @@
     "beispiele/cronjobs/graphqlwebhooks.md": "examples/cronjobs/graphqlwebhooks.md",
     "beispiele/cronjobs/hide.md": "examples/cronjobs/hide.md",
     "beispiele/cronjobs/httpcache_cleanup.md": "examples/cronjobs/httpcache_cleanup.md",
+    "beispiele/cronjobs/imagealiasbacklog.md": "examples/cronjobs/imagealiasbacklog.md",
     "beispiele/cronjobs/indexcontent.md": "examples/cronjobs/indexcontent.md",
     "beispiele/cronjobs/internal_drafts_cleanup.md": "examples/cronjobs/internal_drafts_cleanup.md",
     "beispiele/cronjobs/linkcheck.md": "examples/cronjobs/linkcheck.md",

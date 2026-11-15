@@ -37,10 +37,11 @@ notes), [Image aliases](../../help/image-aliases.md) (help for Setup > Image ali
   so it needs no copy of `var/storage`. A circuit breaker and an alert mail protect it from a failing source.
 - **Setup > Image aliases** (`setup/aliases`) shows the state and controls everything; `./console exp:image:alias`
   does the same on the command line. Every event is written to `imagealias.log`.
-- **Performance, honestly**: the first target, a page of 500 new images complete in under 3 seconds, is **not
-  met**. Measured on a loaded 12-core server: 20.7 s cold, 4.4 to 6.7 s warm (Apache/PHP-FPM). A page of 110 images
-  loads in 1.8 s warm. Pre-generation after publishing is what makes long image lists fast; see
-  [Performance and tuning](#performance-and-tuning).
+- **Performance, honestly**: a page of 500 images whose aliases exist loads in **1.7 s** (Apache/PHP-FPM) and
+  **1.9 s** (Velocity). A page of 500 **new** images is not complete in 3 seconds: 8.2 s on Apache/PHP-FPM (was
+  20.7 s), 24.4 s on Velocity, and its real images follow within about half a minute; converting 500 full-size
+  originals alone takes more CPU time than 3 seconds of a 12-core server. Pre-generation after publishing is what
+  makes long image lists fast; see [Performance and tuning](#performance-and-tuning).
 
 ## Contents
 
@@ -104,8 +105,11 @@ AliasGeneration=on-demand
      cannot serve the storage (a database cluster without a gateway, drafts), the file itself (`Delivery`);
    - the file is missing: the alias is made, with the same converter chain, focal point and crop as render mode, the
      same writes to the attribute's alias list and to `ezimagefile`, then answered as above;
-   - making it takes longer than `MaxWait` (default 2 seconds): the **placeholder** (200), and the alias is queued
-     for the job queue so it is ready when the browser asks again.
+   - every conversion slot is taken (a page full of new images): the **placeholder** (200) at once, and the alias
+     goes to the **backlog**, made right after the answer (`Backlog`, see
+     [The backlog](#the-backlog-made-right-after-the-answer));
+   - making it takes longer than `MaxWait` (default 2 seconds; where there is no backlog): the **placeholder**
+     (200), and the alias is queued for the job queue so it is ready when the browser asks again.
 3. Locks are **per alias file**, not per original: the aliases of one image are made in parallel, and two requests
    for the same alias produce one conversion. `[ImageConverterSettings] LockTimeout` (default 60 seconds) bounds the
    wait for another process; on a single server the lock is a file lock in `var/<site>/cache/imagealias-locks`, on a
@@ -155,8 +159,11 @@ carry the header `X-Image-Placeholder: 1` and `Server-Timing: exp-image-placehol
 
 `SwapScript=enabled` (default) adds `design/standard/javascript/exp_image_swap.js` to `design.ini
 [JavaScriptSettings] FrontendJavaScriptList[]`. It finds the images that came back as placeholders (by the
-`Server-Timing` marker), asks again with a growing pause (0.7 s, 1.4 s, 2.8 s ..., six tries, about 26 seconds in
-all) and swaps `src`/`srcset` when the real image is there.
+`Server-Timing` marker) and swaps `src`/`srcset` when the real image is there. It asks in rounds: the waiting images
+in page order, four at a time, stopping at the first one that is still a placeholder (the server makes them in the
+order they were asked for, so the ones after it are not ready either). The pause between rounds starts at 0.5 s and
+grows to 3 s while nothing comes; after a minute without any image made it gives up. A page of 500 new images costs
+about one request per image made plus one per round.
 
 **A theme with a pagelayout of its own must load the script itself**, or the placeholders stay until the next page
 view. The kernel's designs load `FrontendJavaScriptList[]`; a theme that writes its own `<script>` tags does not. The
@@ -236,8 +243,29 @@ published, one job makes the aliases of the new images.
 
 **Conversion slots** (`MaxParallel`, default 2): at most this many conversions (aliases and variants) run at once per
 server, counted over every process: PHP-FPM, Velocity and the command line. A slot is a lock file in
-`<cache dir>/imagealias-slots/<server name>/`. A request that finds every slot taken waits within `MaxWait`, then
-answers the placeholder and queues the alias at the visitors' priority. Slots apply in on-demand mode only.
+`<cache dir>/imagealias-slots/<server name>/`. A request that finds every slot taken answers the placeholder at once
+and leaves the alias to the backlog (below); without the backlog it waits within `MaxWait`, then answers the
+placeholder and queues the alias at the visitors' priority. Slots apply in on-demand mode only.
+
+### The backlog: made right after the answer
+
+`Backlog=enabled` (default). A page with hundreds of new images asks for all of them at once. A request never waits
+for a slot: with one free it makes its alias at once; otherwise it answers the placeholder in a few milliseconds,
+without a database query, and writes the alias to the backlog of the server, one small file per alias in
+`<cache dir>/imagealias-backlog/<server name>/`. Once its answer has gone out (PHP-FPM, LiteSpeed and FrankenPHP
+finish the request first; Velocity runs it after sending the answer) a request that gets a free slot makes the
+backlog, oldest first, for at most `BacklogTime` seconds (default 30), then gives the slot back. So at most
+`MaxParallel` processes work on the backlog at once, all others are free for the next request at once, and no job is
+written to the database for each image.
+
+- Each alias is made as a job of the queue makes it: the published image, the `image.ini` of the siteaccess the page
+  was shown in, the same lock and slots, so the files and the database writes are those of render mode.
+- The cronjob part `imagealiasbacklog.php` (group `frequent`) makes what no request has taken (a server that gets no
+  more requests) and gives back an entry whose process died (after 5 minutes).
+- The Apache module (`mod_php`) and the command line cannot answer first: there the request waits within `MaxWait`
+  and queues a job, as with `Backlog=disabled`.
+- With staging (`[AliasStaging] SyncFrom`) a request still fetches within `MaxWait`; only a request that finds every
+  slot taken after that uses the backlog.
 
 **Bulk runs** lower their worker's priority to the nice value `BulkNice` (default 10), so they give way to the web
 server, and can be **paused and resumed** for every server at once (Setup > Image aliases, or
@@ -445,6 +473,8 @@ documented in the file and in the generated reference
 | `PreGenerateAliasList[]` | empty (all) | limit pre-generation to these aliases |
 | `PreGenerateFormats` | `enabled` | pre-generation also makes the WebP/AVIF variants |
 | `MaxParallel` | `2` | conversions at once per server, over every process |
+| `Backlog` | `enabled` | a request that finds every slot taken answers at once; the alias is made right after the answer |
+| `BacklogTime` | `30` | seconds a request goes on making the backlog after its answer (1 to 600) |
 | `BulkNice` | `10` | nice value of a bulk run's worker (0 leaves it) |
 | `CacheMaxAge` | `31536000` | `Cache-Control` max-age of a real alias (placeholders: `no-store`) |
 | `LogFileMaxSize` | `20971520` | Bytes `var/log/imagealias.log` may reach before it is rotated: its own size, not site.ini `LogFileMaxSize` for all logs, so a bulk run keeps its history (1 MB to 1 GB) |
@@ -466,6 +496,34 @@ documented in the file and in the generated reference
 missing images to `index_image.php` (default: it does).
 
 ## Performance and tuning
+
+**Measured again on 15 November 2026**, after three changes: the backlog (a request never waits for a slot), the
+signing keys kept between PHP-FPM requests (no database for an image request) and the extension directory read once
+per request (`index_image.php` answered about 30 requests a second on PHP-FPM before, about 150 after). Same server,
+same page of 500 `i160` images, `MaxParallel=6`, load 10 to 38 from other work, medians of three runs (before: two):
+
+| Page | Server | State | Load before | Load now | Complete now | Real now |
+|---|---|---|---|---|---|---|
+| 500 x i160 | Apache/PHP-FPM | cold | 25.2 s | 8.2 s | 7.4 s | 32.7 s |
+| 500 x i160 | Velocity | cold | 30.8 s | 24.4 s | 24.4 s | 48.7 s |
+| 500 x i160 | Apache/PHP-FPM | warm (HTML from the cold visit) | 2.8 s | 1.7 s | 1.7 s | 1.7 s |
+| 500 x i160 | Velocity | warm (HTML from the cold visit) | 10.4 s | 1.9 s | 1.9 s | 1.9 s |
+| 500 x i160 | Apache/PHP-FPM | warm, fresh HTML | | 2.1 s | 2.1 s | 2.1 s |
+| 500 x i160 | Velocity | warm, fresh HTML | | 2.5 s | 2.5 s | 2.5 s |
+
+So the 3-second target is met for a page whose aliases exist, on both servers, and not for a page of 500 new images:
+
+- **The conversions themselves**: 500 `i160` from originals of 800 to 1920 pixels take about 40 seconds of CPU time
+  (GD decodes the whole original); 6 slots made 13 to 21 per second here. "Real" cannot come in 3 seconds on 12
+  cores, whatever the server does; it is what pre-generation is for.
+- **500 requests to PHP**: every placeholder is still a PHP request. Apache/PHP-FPM behind nginx answered about 75
+  to 180 a second over one HTTP/2 connection here, depending on the load; the page is complete when the last one is
+  answered.
+- **Velocity over HTTP/2**: one HTTP/2 connection to Velocity answered 37 to 84 image requests a second here (Apache
+  behind nginx 76 to 177 at the same moments), while 32 separate connections get over 200. That is in the engine's
+  HTTP/2 path, not in the kernel, and is most of the difference between the two servers.
+
+The measurements of 13 November, before these changes (`MaxParallel=2` at first):
 
 Measured on 13 November 2026 on the test server alpha.se7enx.com: 12 CPU cores, load 7 to 30 from other work during
 every run (the numbers are pessimistic for an idle server), SQLite database, a page of 500 image objects (copies of
@@ -518,8 +576,8 @@ What limits it, in order of effect, and what helps:
 - **Only the aliases defined in `image.ini`** are made. There are no free sizes (`/content/image/.../300x200`): a
   name that is not configured is refused.
 - Converting cannot be interrupted: one slow conversion can make a request take `MaxWait` plus that conversion.
-- The swap script gives up after six tries (about 26 seconds); an image still not made then stays a placeholder
-  until the next page view.
+- The swap script gives up after a minute without any image made; an image still not made then stays a
+  placeholder until the next page view.
 - Aliases made by a converter without size arithmetic (for example the Imagine handler of `cjw_themes_jumper`) have
   no computed width and height.
 - Velocity's response cache ignores `Vary`; a negotiated answer that is streamed is therefore sent `private`, and

@@ -18,7 +18,7 @@ Jedes Cronjob-Skript des Kernels und der mitgelieferten Erweiterungen und die Te
 |---|---|---|
 | (Standard) | [unpublish.php](unpublish.md), [rssimport.php](rssimport.md), [indexcontent.php](indexcontent.md), [hide.php](hide.md), [internal_drafts_cleanup.php](internal_drafts_cleanup.md) | `php runcronjobs.php` |
 | `infrequent` | [basket_cleanup.php](basket_cleanup.md), [linkcheck.php](linkcheck.md), [mailpreferences.php](mailpreferences.md), [usersessions.php](usersessions.md), [useraudit.php](useraudit.md), [exphelp.php](exphelp.md) | `php runcronjobs.php infrequent` |
-| `frequent` | [notification.php](notification.md), [workflow.php](workflow.md), [contentjobs.php](contentjobs.md), [datatablesync.php](datatablesync.md), [audit.php](audit.md), [mailbounces.php](mailbounces.md), [graphqlwebhooks.php](graphqlwebhooks.md) | `php runcronjobs.php frequent` |
+| `frequent` | [notification.php](notification.md), [workflow.php](workflow.md), [contentjobs.php](contentjobs.md), [datatablesync.php](datatablesync.md), [audit.php](audit.md), [mailbounces.php](mailbounces.md), [graphqlwebhooks.php](graphqlwebhooks.md), [imagealiasbacklog.php](imagealiasbacklog.md) | `php runcronjobs.php frequent` |
 | `contentcheck` | [contentcheck.php](contentcheck.md) | `php runcronjobs.php contentcheck` |
 | `contentjobs` | [contentjobs.php](contentjobs.md) | `php runcronjobs.php contentjobs` |
 | `datatable` | [datatablesync.php](datatablesync.md) | `php runcronjobs.php datatable` |
@@ -55,6 +55,7 @@ Jedes Cronjob-Skript des Kernels und der mitgelieferten Erweiterungen und die Te
 | [graphqlwebhooks.php](graphqlwebhooks.md) | GraphQL-Webhooks: die Ereignisse des Journals an die Endpunkte senden, die sie haben wollen, mit Wiederholungen | frequent, graphqlwebhooks |
 | [hide.php](hide.md) | Führt geplante Aktionen zum Verbergen und Anzeigen von Inhaltsobjekten aus | (Standard) |
 | [httpcache_cleanup.php](httpcache_cleanup.md) | Entfernt abgelaufene, gelöschte und verwaiste Einträge aus dem rollenbewussten HTTP-Cache | cache_cleanup |
+| [imagealiasbacklog.php](imagealiasbacklog.md) | Die Bild-Aliase im Rückstau erzeugen, die keine Anfrage erzeugt hat (settings/image.ini [AliasSettings] Backlog) | frequent |
 | [indexcontent.php](indexcontent.md) | Indiziert anstehende Inhaltsänderungen in der Suchmaschine | (Standard) |
 | [internal_drafts_cleanup.php](internal_drafts_cleanup.md) | Entfernt interne Entwürfe, die die konfigurierte Altersgrenze überschreiten | (Standard) |
 | [linkcheck.php](linkcheck.md) | Prüft alle internen und externen Links in veröffentlichten Inhalten auf defekte URLs | infrequent |

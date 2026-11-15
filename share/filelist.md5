@@ -3579,7 +3579,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-7c7ad3a611e3ae32082f751d4a6a88b2  doc/changelogs/6.0/6.0.15.md
+a291ac1ea2448549cfc1302bf5b734d7  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -4066,7 +4066,7 @@ b6f46c97a3b259ea218db84e0ef82bb4  doc/eng-us/examples/cookbook/migrations-record
 882106989884d5a5814aea987db89825  doc/eng-us/examples/cookbook/translations.md
 f66b9e74007c1d4210a19f7589c77f2a  doc/eng-us/examples/cookbook/velocity-deploy.md
 887cdef07ed4d69158538a1f8912c363  doc/eng-us/examples/cookbook/workflow-event.md
-6741693a61c21dc2d26f9120021e676b  doc/eng-us/examples/cronjobs/README.md
+ea5c6518128ae6e82b802b646ddc89f9  doc/eng-us/examples/cronjobs/README.md
 210485740c82ce0e37a4207e656bd5af  doc/eng-us/examples/cronjobs/audit.md
 0a159913bc026f0b924084b49403d07c  doc/eng-us/examples/cronjobs/basket_cleanup.md
 b6ab06485c1c62781c9105ea9a4a8c4e  doc/eng-us/examples/cronjobs/cachecleanup.md
@@ -4080,6 +4080,7 @@ e950c95dd23fc44e8fcb560a1ce6455a  doc/eng-us/examples/cronjobs/contentjobs.md
 537b697a13ae0510273b2f6704367dab  doc/eng-us/examples/cronjobs/graphqlwebhooks.md
 6d3537592c6bb667ce05d8c0b2a68cc4  doc/eng-us/examples/cronjobs/hide.md
 d5087057f3c2a1e168b238cdc2df7b55  doc/eng-us/examples/cronjobs/httpcache_cleanup.md
+cf012cb3a78e8aaef550a676f152034a  doc/eng-us/examples/cronjobs/imagealiasbacklog.md
 8387bf055d91f0c1edb1b2ff05d32a29  doc/eng-us/examples/cronjobs/indexcontent.md
 f296b0c6c3b1b02d8f2dfdcb7f442fdd  doc/eng-us/examples/cronjobs/internal_drafts_cleanup.md
 e5984d25cc32f0f979184675d5d3ee95  doc/eng-us/examples/cronjobs/linkcheck.md
@@ -4853,7 +4854,7 @@ bce1ea3e344b68d554f11e8a776930a4  doc/eng-us/examples/ini-settings/cronjob/Cache
 a10fa7dedb3afe44e6e49eaf2964acba  doc/eng-us/examples/ini-settings/cronjob/CronjobPart-contentjobs.md
 b733510c989e545a1b4b2da5dad94b71  doc/eng-us/examples/ini-settings/cronjob/CronjobPart-datatable.md
 73e49c945f93404096bde66287848b81  doc/eng-us/examples/ini-settings/cronjob/CronjobPart-exphelp.md
-eb94e8592c4edb98acc8c9ce18b356fe  doc/eng-us/examples/ini-settings/cronjob/CronjobPart-frequent.md
+14fbcc774ea97e7fe3f966d0324fa207  doc/eng-us/examples/ini-settings/cronjob/CronjobPart-frequent.md
 3c3f2b904364a3e6214263b5cb66622c  doc/eng-us/examples/ini-settings/cronjob/CronjobPart-graphqlwebhooks.md
 fece08137ed99e838f5c8bfb887a9a68  doc/eng-us/examples/ini-settings/cronjob/CronjobPart-infrequent.md
 fb30e6586580abb0e5a8db3742f017d7  doc/eng-us/examples/ini-settings/cronjob/CronjobPart-logs.md
@@ -5104,7 +5105,7 @@ eed63982fe34e9b64c9c374ecb284e5f  doc/eng-us/examples/ini-settings/i18n/Characte
 c02534996936a3ba602251ab2b8901ac  doc/eng-us/examples/ini-settings/icon/FlagIcons.md
 b2387d8109c7068982688ba185649c55  doc/eng-us/examples/ini-settings/icon/IconSettings.md
 9770932d9d2553de032137a849d3cf48  doc/eng-us/examples/ini-settings/icon/README.md
-01ae7e19c9a1fd30314ef7ef620f22de  doc/eng-us/examples/ini-settings/image/AliasSettings.md
+072890240d322f361b638dfdeb53bd9e  doc/eng-us/examples/ini-settings/image/AliasSettings.md
 49063cb0c469ca9bb0d797d0789c9e03  doc/eng-us/examples/ini-settings/image/AliasSource_pro.md
 ece942af4a6ac88eab76508ef704e928  doc/eng-us/examples/ini-settings/image/AliasStaging.md
 384e5fa12abfd0d7b15ff95473f1acb6  doc/eng-us/examples/ini-settings/image/AnalyzerSettings.md
@@ -5120,7 +5121,7 @@ b0a1ceb5076ecf0064ffcc23b49fef3a  doc/eng-us/examples/ini-settings/image/ImageUp
 443146fc69d9cf9bc026ecf5c921a911  doc/eng-us/examples/ini-settings/image/LayeredPhotoshop.md
 42850b486bfeded6028c2414bd82c354  doc/eng-us/examples/ini-settings/image/MIMETypeSettings.md
 fa76da37ef4a950660f8e12c837011bb  doc/eng-us/examples/ini-settings/image/OutputSettings.md
-3a8014173520732047c71e9d7029e8e3  doc/eng-us/examples/ini-settings/image/README.md
+cd772904f493600f40e729d5cf0c7c3f  doc/eng-us/examples/ini-settings/image/README.md
 1a67a17e1ae6154bac8c4a7ddb58d19c  doc/eng-us/examples/ini-settings/image/ShellSettings.md
 0d267956caca0cf3e409d5e80ace4c8f  doc/eng-us/examples/ini-settings/image/large.md
 397b15bc4081304ba3e3e7f220a57c3a  doc/eng-us/examples/ini-settings/image/medium.md
@@ -7069,7 +7070,7 @@ d764ef1d7e05fc5071e8521fe1dbe843  doc/eng-us/features/6.0/help-content.md
 3f3dbc6029b05961b3dd1fd969bf1b69  doc/eng-us/features/6.0/help-system.md
 1497f038f1fb68bf320b385032fe2e31  doc/eng-us/features/6.0/hidden-admin-tabs.md
 67e2133c059b3294dd3d9275b167b820  doc/eng-us/features/6.0/icon-themes-in-extensions.md
-a36270828104fa37cf3bda0353135917  doc/eng-us/features/6.0/image-aliases-on-demand.md
+22bd033cb5f05cb996b1f707ff971e11  doc/eng-us/features/6.0/image-aliases-on-demand.md
 ce13a51757dfdf09e65f74df8fc27fee  doc/eng-us/features/6.0/install-in-one-command.md
 1a6c0d26fd13dea1a6e2b109c412530d  doc/eng-us/features/6.0/installation-name-in-pages.md
 ef86408eb52d65639150b32f89ecf5eb  doc/eng-us/features/6.0/jquery4-and-yui-removal.md
@@ -13594,7 +13595,7 @@ d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
 0e81113b726d51b19af7e2cfe986c37e  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
 d271c1803f2ed1027360a47ef621a244  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
 8d4edb28f11abb9d3e8b38917ba13fbf  doc/ger-de/.examples/descriptions/04-ini-settings-admininterface-ini-additionalmenusettings-.json
-8d60e76eba3f3a6a7a9ebb90023ecc11  doc/ger-de/.examples/descriptions/05-ini-settings-content-ini.json
+c8240113aa1e9edfbc0171b01c10a209  doc/ger-de/.examples/descriptions/05-ini-settings-content-ini.json
 2bef675481e5d8c4c46dfc3acf1e89fb  doc/ger-de/.examples/descriptions/06-ini-settings-debugbar-ini.json
 bc00ce54ab84fdc5b2f608db46f05c96  doc/ger-de/.examples/descriptions/07-ini-settings-image-ini.json
 28d7e287ea3e8a4b9f93dd5a335126ec  doc/ger-de/.examples/descriptions/08-ini-settings-package-ini.json
@@ -13648,10 +13649,11 @@ b77698c6eee8d107b3fef578dca0ea27  doc/ger-de/.examples/descriptions/39-url-map-i
 74241955ebdd7e35369eaee561298f4a  doc/ger-de/.examples/descriptions/40-url-map-helpers-2026-11-06.json
 6d17ce10aad16af20731c4703b7d2409  doc/ger-de/.examples/descriptions/41-image-aliases-on-demand-2026-11-14.json
 27cfff59ae453e47c249c18a69040455  doc/ger-de/.examples/descriptions/42-exphelp-pdf-cache-2026-11-14.json
+05a920c0aec069f9d6c8ef23df079f82  doc/ger-de/.examples/descriptions/43-image-alias-backlog-2026-11-15.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-82bfd7b3cd21e28c095ad72eccaeda86  doc/ger-de/.paths.json
+2bcd4542afa24615796aab9df9d4e5f0  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
 04ae4aab99cdae2a54397c67f4f735fb  doc/ger-de/CONFIGURING.md
 25d910b62226fc69ff96814718b5979d  doc/ger-de/DISTRIBUTIONS.md
@@ -14189,7 +14191,7 @@ f17e8b95fd937b9576032b647d66e3fc  doc/ger-de/beispiele/befehle/velocity.md
 c6cf303261c67d6acabbdeef50381dae  doc/ger-de/beispiele/befehle/verify_aliases.md
 b14622add6b22e81ce9224e095dbacfb  doc/ger-de/beispiele/befehle/warm.md
 cf0e283c1c4260fcab5330e16469b085  doc/ger-de/beispiele/befehle/webserver.md
-44d3d56b7e01df0febe1038177d5063e  doc/ger-de/beispiele/cronjobs/README.md
+9afa3da2e8b7d91fc83202176eba804f  doc/ger-de/beispiele/cronjobs/README.md
 6d4dcc721e61f9974abff80e9379abcd  doc/ger-de/beispiele/cronjobs/audit.md
 028b510de4cc66d02d472216a46476fe  doc/ger-de/beispiele/cronjobs/basket_cleanup.md
 512296be00d3a134f3edb42906993f16  doc/ger-de/beispiele/cronjobs/cachecleanup.md
@@ -14203,6 +14205,7 @@ eec545b93a0d5a448048f354cad25685  doc/ger-de/beispiele/cronjobs/explogrotate.md
 81a6bf5061b85d1aeb1e392862f9ae96  doc/ger-de/beispiele/cronjobs/graphqlwebhooks.md
 4aa6ab8eb13392d5851ac306f594452d  doc/ger-de/beispiele/cronjobs/hide.md
 b725af07153c70f88c306c15abb0f9c0  doc/ger-de/beispiele/cronjobs/httpcache_cleanup.md
+344ede1450860e068d70f77c71679bba  doc/ger-de/beispiele/cronjobs/imagealiasbacklog.md
 6b5e720d30422db2910e1db0002fc7f7  doc/ger-de/beispiele/cronjobs/indexcontent.md
 00b7f6fad7bb0e73bbeb761e60143fad  doc/ger-de/beispiele/cronjobs/internal_drafts_cleanup.md
 41b7737a9a9dfc823dc411e6850e030c  doc/ger-de/beispiele/cronjobs/linkcheck.md
@@ -14966,7 +14969,7 @@ aa387e81c925ec93c6d0523dccb1d890  doc/ger-de/beispiele/ini-einstellungen/cronjob
 191cab67d9d3b4fd98ea440ae1985fc9  doc/ger-de/beispiele/ini-einstellungen/cronjob/CronjobPart-contentjobs.md
 b3eb26ec115ee0b05cb39ce870c98c4b  doc/ger-de/beispiele/ini-einstellungen/cronjob/CronjobPart-datatable.md
 206c88fd94659dc4d0ecec83d713b47e  doc/ger-de/beispiele/ini-einstellungen/cronjob/CronjobPart-exphelp.md
-f2598be22db239ceabde41408f1b106b  doc/ger-de/beispiele/ini-einstellungen/cronjob/CronjobPart-frequent.md
+4ff3ef5ad65e20c0c33b5a7bca71db57  doc/ger-de/beispiele/ini-einstellungen/cronjob/CronjobPart-frequent.md
 353abfca0970e85040c0be826a7c8845  doc/ger-de/beispiele/ini-einstellungen/cronjob/CronjobPart-graphqlwebhooks.md
 9e6519ace1e57c4cddd39457b81109e7  doc/ger-de/beispiele/ini-einstellungen/cronjob/CronjobPart-infrequent.md
 b167bfb19531da93c4e0cd68bdd90316  doc/ger-de/beispiele/ini-einstellungen/cronjob/CronjobPart-logs.md
@@ -15217,7 +15220,7 @@ ff82abef5ad2370a30d933c5d02c11fa  doc/ger-de/beispiele/ini-einstellungen/icon/Ex
 525332d3e37f70b1bc5c6b6a3ebbc44f  doc/ger-de/beispiele/ini-einstellungen/icon/FlagIcons.md
 5398082912d34155e307b7384d7cf162  doc/ger-de/beispiele/ini-einstellungen/icon/IconSettings.md
 8a7452ef88681799f0ff0ccc8bf418ec  doc/ger-de/beispiele/ini-einstellungen/icon/README.md
-59d52a5ee796bd07e8fcba0f78381f4e  doc/ger-de/beispiele/ini-einstellungen/image/AliasSettings.md
+e714bef7f08974aebab21dab2bd1b131  doc/ger-de/beispiele/ini-einstellungen/image/AliasSettings.md
 f2c5351e8b24ce60746e2c9bfe7a3989  doc/ger-de/beispiele/ini-einstellungen/image/AliasSource_pro.md
 6da3dffd573bca65a7d16ecbbee6aa1d  doc/ger-de/beispiele/ini-einstellungen/image/AliasStaging.md
 f8558cb122f5be32a80a310d2fd97846  doc/ger-de/beispiele/ini-einstellungen/image/AnalyzerSettings.md
@@ -15233,7 +15236,7 @@ f7af43935cbb1d741b8aa73d7952af8d  doc/ger-de/beispiele/ini-einstellungen/image/I
 58fe3623efbef9753afe05f28140f2c7  doc/ger-de/beispiele/ini-einstellungen/image/LayeredPhotoshop.md
 fcc644f3800f5886f00b6521c96a2640  doc/ger-de/beispiele/ini-einstellungen/image/MIMETypeSettings.md
 9d09230b5a4b5bf02692e8a04ba65491  doc/ger-de/beispiele/ini-einstellungen/image/OutputSettings.md
-e4fdc3118196b6c11e293922d7e2bda0  doc/ger-de/beispiele/ini-einstellungen/image/README.md
+03cac4718dbe40252d37abfe2d878543  doc/ger-de/beispiele/ini-einstellungen/image/README.md
 ea0a8892ee751055189b58e6bf3da037  doc/ger-de/beispiele/ini-einstellungen/image/ShellSettings.md
 daf3db7b6844332175ff477f23bcfffd  doc/ger-de/beispiele/ini-einstellungen/image/large.md
 1a13eca2f5af4aa68e6d44377daa966f  doc/ger-de/beispiele/ini-einstellungen/image/medium.md
@@ -17105,7 +17108,7 @@ b84f7c8bcee906734aff197e984eb450  doc/ger-de/funktionen/6.0/benutzer-auditprotok
 01bdf1a7b634a65d50398bd9afe37d36  doc/ger-de/funktionen/6.0/berechtigungspruefung-bei-vielen-zuweisungen.md
 1bba785c9852e2e139030b7f31d9182a  doc/ger-de/funktionen/6.0/bestellbelege.md
 dcb3a9249b7895ce43a2fc239356fe22  doc/ger-de/funktionen/6.0/bestellungen-nach-siteaccess.md
-100fb434f45891d8699b08d20417d137  doc/ger-de/funktionen/6.0/bild-aliase-auf-abruf.md
+1f0b3d26e09cf09d9328a67246e6fa40  doc/ger-de/funktionen/6.0/bild-aliase-auf-abruf.md
 e5e4bca0d8e45f940df7c289f45b3bb6  doc/ger-de/funktionen/6.0/cache-leeren-durch-umbenennen.md
 2b6169e143bdad0c915ad3878f5f34ae  doc/ger-de/funktionen/6.0/cache-until.md
 c60cd2b24e9d7d010b86a57124ae2ab2  doc/ger-de/funktionen/6.0/content-security-policy.md

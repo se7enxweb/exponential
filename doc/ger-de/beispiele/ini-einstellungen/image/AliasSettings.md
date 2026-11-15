@@ -3,13 +3,13 @@ title: image.ini [AliasSettings]
 audience: developer, admin
 category: examples
 summary: "Die Einstellungen von [AliasSettings] in image.ini: AliasList, AliasGeneration, OnDemandURL, Delivery, MaxWait, DraftTokenLifetime, SigningKeyGrace, PreferredConverter ..."
-keywords: Einstellung, image.ini, AliasSettings, INI, setting, AliasList, AliasGeneration, OnDemandURL, Delivery, MaxWait, DraftTokenLifetime, SigningKeyGrace, PreferredConverter, Negotiate, Placeholder, SwapScript, PreGenerate, PreGenerateAliasList, PreGenerateFormats, MaxParallel, BulkNice, CacheMaxAge, LogFileMaxSize
+keywords: Einstellung, image.ini, AliasSettings, INI, setting, AliasList, AliasGeneration, OnDemandURL, Delivery, MaxWait, DraftTokenLifetime, SigningKeyGrace, PreferredConverter, Negotiate, Placeholder, SwapScript, PreGenerate, PreGenerateAliasList, PreGenerateFormats, MaxParallel, Backlog, BacklogTime, BulkNice, CacheMaxAge, LogFileMaxSize
 type: generated
 generated: exp:help:examples
 ---
 # image.ini [AliasSettings]
 
-Der Block `[AliasSettings]` von `settings/image.ini`, mit 18 Einstellung(en).
+Der Block `[AliasSettings]` von `settings/image.ini`, mit 20 Einstellung(en).
 
 > -------- Einstellungen der Bild-Aliase --------  
 
@@ -292,6 +292,44 @@ Standard: `2`.
 # settings/override/image.ini.append.php
 [AliasSettings]
 MaxParallel=2
+*/ ?>
+```
+
+## Backlog
+
+> Wie eine Anfrage antwortet, wenn alle Umwandlungsplätze belegt sind (eine Seite mit vielen neuen Bildern):  
+>   enabled   sie antwortet sofort und ohne zu warten mit dem Platzhalter, und der Alias kommt in den Rückstau  
+>             des Servers (<cache dir>/imagealias-backlog/<server name>/). Gleich nach ihrer Antwort erzeugt eine  
+>             Anfrage, die einen freien Platz findet, den Rückstau, die ältesten zuerst, höchstens BacklogTime  
+>             Sekunden lang; das Austauschskript zeigt dann die echten Bilder. Eine Anfrage, die einen Platz frei  
+>             findet, erzeugt ihren Alias sofort, wie bisher. Braucht einen Server, der zuerst antworten kann:  
+>             PHP-FPM, LiteSpeed, FrankenPHP oder Velocity (das Apache-Modul und die Kommandozeile warten  
+>             innerhalb von MaxWait wie mit disabled). Was keine Anfrage erzeugt, erzeugt der Cronjob  
+>             imagealiasbacklog.php (Teil frequent).  
+>   disabled  sie wartet innerhalb von MaxWait auf einen Platz, antwortet dann mit dem Platzhalter und reiht einen Job ein  
+> Nur im Modus auf Abruf. So oder so sind die Aliase dieselben Dateien, die der Modus render erzeugt.  
+
+Standard: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/image.ini.append.php
+[AliasSettings]
+Backlog=enabled
+*/ ?>
+```
+
+## BacklogTime
+
+> Sekunden, die eine Anfrage nach ihrer Antwort weiter am Rückstau arbeitet (1 bis 600), dann gibt sie ihren Platz frei.  
+
+Standard: `30`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/image.ini.append.php
+[AliasSettings]
+BacklogTime=30
 */ ?>
 ```
 

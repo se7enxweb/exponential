@@ -27,8 +27,10 @@ Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. 
 > Das Bounce-Postfach (mailpreferences.ini \[BounceSettings\]; tut nichts, bis es eingerichtet ist)  
 > Die GraphQL-Webhooks: die Ereignisse des Journals an ihre Endpunkte, mit Wiederholungen (graphql.ini \[GraphQLWebhooks\];  
 > tut nichts, bis einer eingerichtet ist)  
+> Die Bild-Aliase im Rückstau, die keine Anfrage erzeugt hat (image.ini \[AliasSettings\] Backlog;  
+> tut nichts im Modus render oder bei leerem Rückstau)  
 
-Standard: eine Liste mit 7: `notification.php`, `workflow.php`, `contentjobs.php`, `datatablesync.php`, `audit.php`, `mailbounces.php`, `graphqlwebhooks.php`.
+Standard: eine Liste mit 8: `notification.php`, `workflow.php`, `contentjobs.php`, `datatablesync.php`, `audit.php`, `mailbounces.php`, `graphqlwebhooks.php`, `imagealiasbacklog.php`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -43,6 +45,7 @@ Scripts[]=datatablesync.php
 Scripts[]=audit.php
 Scripts[]=mailbounces.php
 Scripts[]=graphqlwebhooks.php
+Scripts[]=imagealiasbacklog.php
 */ ?>
 ```
 

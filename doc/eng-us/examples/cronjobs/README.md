@@ -18,7 +18,7 @@ Every cronjob script of the kernel and the bundled extensions and the parts of t
 |---|---|---|
 | (default) | [unpublish.php](unpublish.md), [rssimport.php](rssimport.md), [indexcontent.php](indexcontent.md), [hide.php](hide.md), [internal_drafts_cleanup.php](internal_drafts_cleanup.md) | `php runcronjobs.php` |
 | `infrequent` | [basket_cleanup.php](basket_cleanup.md), [linkcheck.php](linkcheck.md), [mailpreferences.php](mailpreferences.md), [usersessions.php](usersessions.md), [useraudit.php](useraudit.md), [exphelp.php](exphelp.md) | `php runcronjobs.php infrequent` |
-| `frequent` | [notification.php](notification.md), [workflow.php](workflow.md), [contentjobs.php](contentjobs.md), [datatablesync.php](datatablesync.md), [audit.php](audit.md), [mailbounces.php](mailbounces.md), [graphqlwebhooks.php](graphqlwebhooks.md) | `php runcronjobs.php frequent` |
+| `frequent` | [notification.php](notification.md), [workflow.php](workflow.md), [contentjobs.php](contentjobs.md), [datatablesync.php](datatablesync.md), [audit.php](audit.md), [mailbounces.php](mailbounces.md), [graphqlwebhooks.php](graphqlwebhooks.md), [imagealiasbacklog.php](imagealiasbacklog.md) | `php runcronjobs.php frequent` |
 | `contentcheck` | [contentcheck.php](contentcheck.md) | `php runcronjobs.php contentcheck` |
 | `contentjobs` | [contentjobs.php](contentjobs.md) | `php runcronjobs.php contentjobs` |
 | `datatable` | [datatablesync.php](datatablesync.md) | `php runcronjobs.php datatable` |
@@ -55,6 +55,7 @@ Every cronjob script of the kernel and the bundled extensions and the parts of t
 | [graphqlwebhooks.php](graphqlwebhooks.md) | GraphQL webhooks: send the events of the journal to the end points that want them, with retries | frequent, graphqlwebhooks |
 | [hide.php](hide.md) | Process scheduled hide and unhide actions on content objects | (default) |
 | [httpcache_cleanup.php](httpcache_cleanup.md) | Remove expired, purged and orphaned entries from the role-aware HTTP cache | cache_cleanup |
+| [imagealiasbacklog.php](imagealiasbacklog.md) | Make the image aliases left in the backlog that no request has made (settings/image.ini [AliasSettings] Backlog) | frequent |
 | [indexcontent.php](indexcontent.md) | Index pending content modifications in the search engine | (default) |
 | [internal_drafts_cleanup.php](internal_drafts_cleanup.md) | Remove internal drafts that exceed the configured age limit | (default) |
 | [linkcheck.php](linkcheck.md) | Check all internal and external links in published content for broken URLs | infrequent |

@@ -3,13 +3,13 @@ title: image.ini [AliasSettings]
 audience: developer, admin
 category: examples
 summary: "The settings of [AliasSettings] in image.ini: AliasList, AliasGeneration, OnDemandURL, Delivery, MaxWait, DraftTokenLifetime, SigningKeyGrace, PreferredConverter ..."
-keywords: image.ini, AliasSettings, INI, setting, AliasList, AliasGeneration, OnDemandURL, Delivery, MaxWait, DraftTokenLifetime, SigningKeyGrace, PreferredConverter, Negotiate, Placeholder, SwapScript, PreGenerate, PreGenerateAliasList, PreGenerateFormats, MaxParallel, BulkNice, CacheMaxAge, LogFileMaxSize
+keywords: image.ini, AliasSettings, INI, setting, AliasList, AliasGeneration, OnDemandURL, Delivery, MaxWait, DraftTokenLifetime, SigningKeyGrace, PreferredConverter, Negotiate, Placeholder, SwapScript, PreGenerate, PreGenerateAliasList, PreGenerateFormats, MaxParallel, Backlog, BacklogTime, BulkNice, CacheMaxAge, LogFileMaxSize
 type: generated
 generated: exp:help:examples
 ---
 # image.ini [AliasSettings]
 
-The block `[AliasSettings]` of `settings/image.ini`, with 18 setting(s).
+The block `[AliasSettings]` of `settings/image.ini`, with 20 setting(s).
 
 > -------- Image alias settings --------  
 
@@ -292,6 +292,43 @@ Default: `2`.
 # settings/override/image.ini.append.php
 [AliasSettings]
 MaxParallel=2
+*/ ?>
+```
+
+## Backlog
+
+> How a request answers when every conversion slot is taken (a page with many new images):  
+>   enabled   it answers the placeholder at once, without waiting, and the alias goes to the backlog of  
+>             the server (<cache dir>/imagealias-backlog/<server name>/). Right after its answer, a request  
+>             that finds a free slot makes the backlog, oldest first, for at most BacklogTime seconds;  
+>             the swap script then shows the real images. A request that finds a slot free makes its alias  
+>             at once, as before. Needs a server that can answer first: PHP-FPM, LiteSpeed, FrankenPHP or  
+>             Velocity (the Apache module and the command line wait within MaxWait as with disabled).  
+>             What no request makes is made by the cronjob imagealiasbacklog.php (part frequent).  
+>   disabled  it waits for a slot within MaxWait, then answers the placeholder and queues a job  
+> On-demand mode only. Either way the aliases are the same files as render mode makes.  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/image.ini.append.php
+[AliasSettings]
+Backlog=enabled
+*/ ?>
+```
+
+## BacklogTime
+
+> Seconds a request goes on making the backlog after its answer (1 to 600), then frees its slot.  
+
+Default: `30`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/image.ini.append.php
+[AliasSettings]
+BacklogTime=30
 */ ?>
 ```
 

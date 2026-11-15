@@ -43,10 +43,12 @@ Verwandt: [Webserver-Rezepte für auf Abruf erzeugte Bild-Aliase](../../beispiel
   vor einer fehlerhaften Quelle.
 - **Setup > Bild-Aliase** (`setup/aliases`) zeigt den Zustand und steuert alles; `./console exp:image:alias` tut
   dasselbe auf der Kommandozeile. Jedes Ereignis wird in `imagealias.log` geschrieben.
-- **Leistung, ehrlich gesagt**: Das erste Ziel, eine Seite mit 500 neuen Bildern in unter 3 Sekunden vollständig, ist
-  **nicht erreicht**. Gemessen auf einem ausgelasteten Server mit 12 Kernen: 20,7 s kalt, 4,4 bis 6,7 s warm
-  (Apache/PHP-FPM). Eine Seite mit 110 Bildern lädt warm in 1,8 s. Was lange Bildlisten schnell macht, ist die
-  Vorab-Erzeugung nach dem Veröffentlichen; siehe [Leistung und Abstimmung](#leistung-und-abstimmung).
+- **Leistung, ehrlich gesagt**: Eine Seite mit 500 Bildern, deren Aliase es gibt, lädt in **1,7 s**
+  (Apache/PHP-FPM) und **1,9 s** (Velocity). Eine Seite mit 500 **neuen** Bildern ist nicht in 3 Sekunden
+  vollständig: 8,2 s mit Apache/PHP-FPM (vorher 20,7 s), 24,4 s mit Velocity, und ihre echten Bilder folgen innerhalb
+  etwa einer halben Minute; allein das Umwandeln von 500 Originalen in voller Größe braucht mehr Rechenzeit als 3
+  Sekunden eines Servers mit 12 Kernen. Was lange Bildlisten schnell macht, ist die Vorab-Erzeugung nach dem
+  Veröffentlichen; siehe [Leistung und Abstimmung](#leistung-und-abstimmung).
 
 ## Inhalt
 
@@ -115,8 +117,12 @@ AliasGeneration=on-demand
    - die Datei fehlt: Der Alias wird erzeugt, mit derselben Kette von Konvertern, demselben Fokuspunkt und Zuschnitt
      wie im Modus render und denselben Schreibvorgängen in die Alias-Liste des Attributs und in `ezimagefile`, dann
      wie oben beantwortet;
-   - das Erzeugen dauert länger als `MaxWait` (standardmäßig 2 Sekunden): der **Platzhalter** (200), und der Alias
-     wird für die Job-Warteschlange eingereiht, sodass er fertig ist, wenn der Browser erneut fragt.
+   - alle Umwandlungsplätze sind belegt (eine Seite voller neuer Bilder): sofort der **Platzhalter** (200), und der
+     Alias kommt in den **Rückstau**, der gleich nach der Antwort erzeugt wird (`Backlog`, siehe
+     [Der Rückstau](#der-rückstau-gleich-nach-der-antwort-erzeugt));
+   - das Erzeugen dauert länger als `MaxWait` (standardmäßig 2 Sekunden; wo es keinen Rückstau gibt): der
+     **Platzhalter** (200), und der Alias wird für die Job-Warteschlange eingereiht, sodass er fertig ist, wenn der
+     Browser erneut fragt.
 3. Sperren gelten **je Alias-Datei**, nicht je Original: Die Aliase eines Bildes werden parallel erzeugt, und zwei
    Anfragen nach demselben Alias ergeben eine Umwandlung. `[ImageConverterSettings] LockTimeout` (standardmäßig 60
    Sekunden) begrenzt das Warten auf einen anderen Prozess; auf einem einzelnen Server ist die Sperre eine
@@ -171,8 +177,12 @@ für **jedes** fehlende Bild, nicht nur für Aliase. Ein ausstehendes Bild (sign
 
 `SwapScript=enabled` (Standard) fügt `design/standard/javascript/exp_image_swap.js` zu `design.ini
 [JavaScriptSettings] FrontendJavaScriptList[]` hinzu. Es findet die Bilder, die als Platzhalter zurückkamen (an der
-Markierung in `Server-Timing`), fragt mit wachsender Pause erneut (0,7 s, 1,4 s, 2,8 s ..., sechs Versuche, insgesamt
-etwa 26 Sekunden) und tauscht `src`/`srcset` aus, sobald das echte Bild da ist.
+Markierung in `Server-Timing`) und tauscht `src`/`srcset` aus, sobald das echte Bild da ist. Es fragt in Runden: die
+wartenden Bilder in der Reihenfolge der Seite, vier auf einmal, bis zum ersten, das noch ein Platzhalter ist (der
+Server erzeugt sie in der Reihenfolge, in der sie angefragt wurden, die folgenden sind also auch noch nicht fertig).
+Die Pause zwischen den Runden beginnt bei 0,5 s und wächst auf 3 s, solange nichts kommt; nach einer Minute ohne ein
+fertiges Bild gibt es auf. Eine Seite mit 500 neuen Bildern kostet etwa eine Anfrage je fertigem Bild und eine je
+Runde.
 
 **Ein Theme mit eigenem Pagelayout muss das Skript selbst laden**, sonst bleiben die Platzhalter bis zum nächsten
 Seitenaufruf. Die Designs des Kernels laden `FrontendJavaScriptList[]`; ein Theme, das seine eigenen `<script>`-Tags
@@ -255,9 +265,31 @@ Bildern veröffentlicht wird, erzeugt ein Job die Aliase der neuen Bilder.
 
 **Umwandlungsplätze** (`MaxParallel`, standardmäßig 2): Höchstens so viele Umwandlungen (Aliase und Varianten) laufen
 gleichzeitig je Server, gezählt über alle Prozesse: PHP-FPM, Velocity und die Kommandozeile. Ein Platz ist eine
-Sperrdatei in `<cache dir>/imagealias-slots/<server name>/`. Eine Anfrage, die alle Plätze belegt findet, wartet
-innerhalb von `MaxWait`, antwortet dann mit dem Platzhalter und reiht den Alias mit der Priorität der Besucher ein.
-Plätze gelten nur im Modus auf Abruf.
+Sperrdatei in `<cache dir>/imagealias-slots/<server name>/`. Eine Anfrage, die alle Plätze belegt findet, antwortet
+sofort mit dem Platzhalter und überlässt den Alias dem Rückstau (unten); ohne Rückstau wartet sie innerhalb von
+`MaxWait`, antwortet dann mit dem Platzhalter und reiht den Alias mit der Priorität der Besucher ein. Plätze gelten nur
+im Modus auf Abruf.
+
+### Der Rückstau: gleich nach der Antwort erzeugt
+
+`Backlog=enabled` (Standard). Eine Seite mit Hunderten neuer Bilder fragt alle auf einmal an. Eine Anfrage wartet nie
+auf einen Platz: Ist einer frei, erzeugt sie ihren Alias sofort; sonst antwortet sie in wenigen Millisekunden und ohne
+Datenbankabfrage mit dem Platzhalter und schreibt den Alias in den Rückstau des Servers, eine kleine Datei je Alias in
+`<cache dir>/imagealias-backlog/<server name>/`. Sobald ihre Antwort hinaus ist (PHP-FPM, LiteSpeed und FrankenPHP
+beenden die Anfrage vorher; Velocity führt es nach dem Senden der Antwort aus), erzeugt eine Anfrage, die einen freien
+Platz bekommt, den Rückstau, die ältesten zuerst, höchstens `BacklogTime` Sekunden lang (standardmäßig 30), und gibt
+den Platz dann zurück. So arbeiten höchstens `MaxParallel` Prozesse gleichzeitig am Rückstau, alle anderen sind sofort
+für die nächste Anfrage frei, und es wird nicht für jedes Bild ein Job in die Datenbank geschrieben.
+
+- Jeder Alias wird so erzeugt, wie ein Job der Warteschlange ihn erzeugt: das veröffentlichte Bild, die `image.ini`
+  des Siteaccess, in dem die Seite gezeigt wurde, dieselbe Sperre und dieselben Plätze; Dateien und
+  Datenbankschreibvorgänge sind also die des Modus render.
+- Der Cronjob-Teil `imagealiasbacklog.php` (Gruppe `frequent`) erzeugt, was keine Anfrage übernommen hat (ein Server,
+  der keine Anfragen mehr bekommt), und gibt einen Eintrag zurück, dessen Prozess gestorben ist (nach 5 Minuten).
+- Das Apache-Modul (`mod_php`) und die Kommandozeile können nicht zuerst antworten: Dort wartet die Anfrage innerhalb
+  von `MaxWait` und reiht einen Job ein, wie mit `Backlog=disabled`.
+- Mit Staging (`[AliasStaging] SyncFrom`) holt eine Anfrage weiterhin innerhalb von `MaxWait`; erst eine Anfrage, die
+  danach alle Plätze belegt findet, nutzt den Rückstau.
 
 **Massenläufe** senken die Priorität ihres Workers auf den nice-Wert `BulkNice` (standardmäßig 10), sodass sie dem
 Webserver den Vortritt lassen, und lassen sich für alle Server auf einmal **pausieren und fortsetzen** (Setup >
@@ -481,6 +513,8 @@ ist in der Datei und in der erzeugten Referenz dokumentiert
 | `PreGenerateAliasList[]` | leer (alle) | die Vorab-Erzeugung auf diese Aliase beschränken |
 | `PreGenerateFormats` | `enabled` | die Vorab-Erzeugung erzeugt auch die WebP-/AVIF-Varianten |
 | `MaxParallel` | `2` | gleichzeitige Umwandlungen je Server, über alle Prozesse |
+| `Backlog` | `enabled` | eine Anfrage, die alle Plätze belegt findet, antwortet sofort; der Alias wird gleich nach der Antwort erzeugt |
+| `BacklogTime` | `30` | Sekunden, die eine Anfrage nach ihrer Antwort weiter am Rückstau arbeitet (1 bis 600) |
 | `BulkNice` | `10` | nice-Wert des Workers eines Massenlaufs (0 lässt ihn unverändert) |
 | `CacheMaxAge` | `31536000` | max-age in `Cache-Control` eines echten Alias (Platzhalter: `no-store`) |
 | `LogFileMaxSize` | `20971520` | Bytes, die `var/log/imagealias.log` erreichen darf, bevor es rotiert wird: eine eigene Größe, nicht site.ini `LogFileMaxSize` für alle Logs, damit ein Massenlauf seinen Verlauf behält (1 MB bis 1 GB) |
@@ -502,6 +536,36 @@ ist in der Datei und in der erzeugten Referenz dokumentiert
 Bilder an `index_image.php` weiterzugeben (Standard: es tut es).
 
 ## Leistung und Abstimmung
+
+**Erneut gemessen am 15. November 2026**, nach drei Änderungen: der Rückstau (eine Anfrage wartet nie auf einen Platz),
+die Signaturschlüssel zwischen den Anfragen von PHP-FPM aufbewahrt (keine Datenbank für eine Bildanfrage) und das
+Erweiterungsverzeichnis einmal je Anfrage gelesen (`index_image.php` beantwortete mit PHP-FPM vorher etwa 30 Anfragen
+pro Sekunde, danach etwa 150). Derselbe Server, dieselbe Seite mit 500 `i160`-Bildern, `MaxParallel=6`, Last 10 bis
+38 durch andere Arbeit, Mediane aus drei Läufen (vorher: zwei):
+
+| Seite | Server | Zustand | Laden vorher | Laden jetzt | Vollständig jetzt | Echt jetzt |
+|---|---|---|---|---|---|---|
+| 500 x i160 | Apache/PHP-FPM | kalt | 25,2 s | 8,2 s | 7,4 s | 32,7 s |
+| 500 x i160 | Velocity | kalt | 30,8 s | 24,4 s | 24,4 s | 48,7 s |
+| 500 x i160 | Apache/PHP-FPM | warm (HTML vom kalten Besuch) | 2,8 s | 1,7 s | 1,7 s | 1,7 s |
+| 500 x i160 | Velocity | warm (HTML vom kalten Besuch) | 10,4 s | 1,9 s | 1,9 s | 1,9 s |
+| 500 x i160 | Apache/PHP-FPM | warm, frisches HTML | | 2,1 s | 2,1 s | 2,1 s |
+| 500 x i160 | Velocity | warm, frisches HTML | | 2,5 s | 2,5 s | 2,5 s |
+
+Das Ziel von 3 Sekunden ist also für eine Seite erreicht, deren Aliase es gibt, auf beiden Servern, und nicht für eine
+Seite mit 500 neuen Bildern:
+
+- **Die Umwandlungen selbst**: 500 `i160` aus Originalen mit 800 bis 1920 Pixeln Breite brauchen etwa 40 Sekunden
+  Rechenzeit (GD dekodiert das ganze Original); 6 Plätze schafften hier 13 bis 21 pro Sekunde. „Echt“ kann auf 12
+  Kernen nicht in 3 Sekunden kommen, was immer der Server tut; dafür ist die Vorab-Erzeugung da.
+- **500 Anfragen an PHP**: Jeder Platzhalter ist weiterhin eine PHP-Anfrage. Apache/PHP-FPM hinter nginx beantwortete
+  hier je nach Last etwa 75 bis 180 pro Sekunde über eine HTTP/2-Verbindung; die Seite ist vollständig, wenn die
+  letzte beantwortet ist.
+- **Velocity über HTTP/2**: Eine HTTP/2-Verbindung zu Velocity beantwortete hier 37 bis 84 Bildanfragen pro Sekunde
+  (Apache hinter nginx im selben Moment 76 bis 177), 32 einzelne Verbindungen bekommen über 200. Das liegt im
+  HTTP/2-Pfad der Engine, nicht im Kernel, und ist der größte Teil des Unterschieds zwischen den beiden Servern.
+
+Die Messungen vom 13. November, vor diesen Änderungen (zuerst mit `MaxParallel=2`):
 
 Gemessen am 13. November 2026 auf dem Testserver alpha.se7enx.com: 12 CPU-Kerne, Last 7 bis 30 durch andere Arbeit
 während jedes Laufs (die Zahlen sind für einen untätigen Server pessimistisch), SQLite-Datenbank, eine Seite mit 500
@@ -559,7 +623,7 @@ Was begrenzt, geordnet nach Wirkung, und was hilft:
   (`/content/image/.../300x200`): Ein Name, der nicht konfiguriert ist, wird abgewiesen.
 - Umwandeln lässt sich nicht unterbrechen: Eine langsame Umwandlung kann eine Anfrage `MaxWait` plus diese Umwandlung
   dauern lassen.
-- Das Austauschskript gibt nach sechs Versuchen auf (etwa 26 Sekunden); ein Bild, das dann noch nicht erzeugt ist,
+- Das Austauschskript gibt nach einer Minute ohne ein fertiges Bild auf; ein Bild, das dann noch nicht erzeugt ist,
   bleibt bis zum nächsten Seitenaufruf ein Platzhalter.
 - Aliase, die ein Konverter ohne Größenarithmetik erzeugt (zum Beispiel der Imagine-Handler von `cjw_themes_jumper`),
   haben keine berechnete Breite und Höhe.
