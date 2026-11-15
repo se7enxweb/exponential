@@ -41,7 +41,7 @@ class expSmartyParameterOperatorTest extends PHPUnit\Framework\TestCase
         'action_icon' => 'input', 'class_icon' => 'input', 'classgroup_icon' => 'input', 'flag_icon' => 'input',
         'icon' => 'input', 'mimetype_icon' => 'input', 'wordtoimage' => 'input', 'audit_label' => 'input',
         'autolink' => 'input', 'ezpackage' => 'input', 'month_overview' => 'input', 'simpletags' => 'input',
-        'view_parameter' => 'input', 'x18n' => 'input',
+        'view_parameter' => 'input', 'x18n' => 'input', 'cache_until' => 'input', 'seconds_until' => 'input',
     );
 
     /** @var string directory of this class's template files */
