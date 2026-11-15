@@ -26,6 +26,13 @@
 DirectoryIndex index.php
 
 RewriteEngine On
+# LiteSpeed (Enterprise and OpenLiteSpeed) stops a PHP request when the client closes the connection, and
+# a client closes it as soon as it has the whole answer: a feed or a download sent with its length was
+# stopped while Exponential still wrote its request log and audit, and was logged as "Fatal error". noabort
+# lets the request finish. Other web servers skip this block.
+<IfModule LiteSpeed>
+RewriteRule .* - [E=noabort:1]
+</IfModule>
 # No dot file or dot directory (.git, .env, .htaccess ...) is served or
 # run, whatever folder it lies in; .well-known stays reachable.
 RewriteRule (^|/)\.(?!well-known(/|$)) - [R=404,L]

@@ -628,6 +628,24 @@ verloren (LiteSpeed lässt `Set-Cookie` aus gespeicherten Seiten weg), oder es g
 heraus, wer es setzt (`curl -sI <Adresse> | grep -i set-cookie`), und schließen Sie diese Adresse aus, oder setzen Sie
 das Cookie für anonyme Besucher nicht mehr.
 
+### „Fatal error“-Zeilen ohne Meldung nach Feeds und Downloads
+
+LiteSpeed beendet eine PHP-Anfrage, wenn der Client die Verbindung schließt. Ein Client schließt sie, sobald er die
+ganze Antwort hat, und ein RSS-Feed oder ein Download wird mit seiner Länge gesendet: Der Client hat alles, bevor
+Exponential fertig ist, und während das Anfrage-Log und das Audit noch geschrieben werden, schickt LiteSpeed dem
+PHP-Prozess das Signal 15. Sein Fehlerlog meldet `Abort request processing by PID:..., kill: 1` und
+`Send signal: 15 to process`, und `var/log/error.log` erhielt `Fatal error ERR-...` ohne Meldung (seit 6.0.15 ein
+Hinweis). Die mitgelieferten `.htaccess_root` und `.htaccess_root_static` setzen LiteSpeeds Variable `noabort`, damit
+die Anfrage zu Ende läuft:
+
+```apache
+<IfModule LiteSpeed>
+RewriteRule .* - [E=noabort:1]
+</IfModule>
+```
+
+Eine `.htaccess` aus einer älteren Kopie braucht diese drei Zeilen direkt nach `RewriteEngine On`.
+
 ## Hinweise zur Sicherheit
 
 - **Was private Seiten privat hält, sind allein die Bedingungen.** Behalten Sie die Cookie- und Adressbedingungen;

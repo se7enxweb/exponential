@@ -597,6 +597,23 @@ A response that sets a cookie must not be stored: either the cookie would be los
 (`curl -sI <address> | grep -i set-cookie`) and exclude that address, or stop setting the cookie for anonymous
 visitors.
 
+### "Fatal error" lines without a message after feeds and downloads
+
+LiteSpeed stops a PHP request when the client closes the connection. A client closes it as soon as it has the
+whole answer, and an RSS feed or a download is sent with its length, so the client has everything before
+Exponential has finished: the request log and the audit are still being written when LiteSpeed sends the PHP process
+signal 15. Its error log says `Abort request processing by PID:..., kill: 1` and `Send signal: 15 to process`, and
+`var/log/error.log` got `Fatal error ERR-...` with no message (since 6.0.15, a notice instead). The shipped
+`.htaccess_root` and `.htaccess_root_static` set LiteSpeed's `noabort` variable so the request finishes:
+
+```apache
+<IfModule LiteSpeed>
+RewriteRule .* - [E=noabort:1]
+</IfModule>
+```
+
+An `.htaccess` made from an older copy needs these three lines added right after `RewriteEngine On`.
+
 ## Security notes
 
 - **The only thing that keeps private pages private is the set of conditions.** Keep the cookie and address

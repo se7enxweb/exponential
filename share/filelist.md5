@@ -16,8 +16,8 @@ ae7e2ed631182f7180278f4953795ccb  .github/workflows/performance.yml
 3d1a8a27909923838d941600b44ddd29  .github/workflows/phpunit.yml
 3a78993c3989bbdf75b2fd1e608397f7  .github/workflows/quality.yml
 1378291033e16daa1ef6e265447a2201  .gitignore
-842abf83c544d67ef4944b3bb819941d  .htaccess_root
-396fa17fddd65cc228ed76b43915e01a  .htaccess_root_static
+50ab99a79bbdc3ec5675766a6abe5a77  .htaccess_root
+681e847dc6196e7b106d4df37a9c92b3  .htaccess_root_static
 6f1b96d8c290abdef88145a2d5c34a83  .travis.yml
 0885554911d27ce3062e28ef667da050  CODE_OF_CONDUCT.md
 5bd9b2866fc162be39e6047ade803979  CONTRIBUTING.md
@@ -7251,7 +7251,7 @@ a101a3bb9c015da9204c6718c2598563  doc/eng-us/guides/images/maintenance/installat
 8d19a39038e4b5fd8c9aa3bb1d006424  doc/eng-us/guides/images/workflows/controls.png
 2d0dfaacccd86266df5bfc75450bbcff  doc/eng-us/guides/images/workflows/process-card.png
 261f6c6b6a30183007fd97d521ca819d  doc/eng-us/guides/images/workflows/status-and-overview.png
-8c8d4cbd9267e9ace3265c3fa15af786  doc/eng-us/guides/litespeed-page-cache.md
+f0a473f08f27cdd9764532d6f1e6245b  doc/eng-us/guides/litespeed-page-cache.md
 5aabf1ae3d90cc32431398e0289c5d12  doc/eng-us/guides/mail-preferences-administrator.md
 d11111815c1efec3a438ecccd836072e  doc/eng-us/guides/mail-preferences-developer.md
 9090ac1bfc0b083e83885f6eb1f344b0  doc/eng-us/guides/maintenance-mode.md
@@ -13756,7 +13756,7 @@ e6b2e42e0fbcb6f71c0d627295536c75  doc/ger-de/anleitungen/pdf-exporte.md
 5881950e58cb7a300ad83735d0c15c82  doc/ger-de/anleitungen/rest-api-v1-und-v2.md
 296d6912eab7b7915cf59b235283ed90  doc/ger-de/anleitungen/rollen-und-richtlinien.md
 e198e604191172c7dfb6193e2b6ba90b  doc/ger-de/anleitungen/rss-feeds.md
-2512e6146acb757c89781c1580f25ba0  doc/ger-de/anleitungen/seiten-cache-mit-litespeed.md
+945362d6c020034e39ef908f52ced23c  doc/ger-de/anleitungen/seiten-cache-mit-litespeed.md
 77a1266b9917afd29599811737f1b3ea  doc/ger-de/anleitungen/seitenaufrufe-zaehlen.md
 6c14b68ff14fb3ae5a59c84bb5609cc8  doc/ger-de/anleitungen/sektionen.md
 65397ae907e9925c848b87c52e153223  doc/ger-de/anleitungen/setup-dateien-von-der-konsole.md
@@ -29445,6 +29445,7 @@ f7ab9764d885bf443173d550c0716700  tests/tests/kernel/classes/expDataTypeInventor
 522e920b46fc66f8561e8a82205fb730  tests/tests/kernel/classes/expDependencyOrderTest.php
 d3160db2f56eddb9e6e594789e952315  tests/tests/kernel/classes/expEditorPoliciesTest.php
 70891af7174fec16971483810e051238  tests/tests/kernel/classes/expEntryScriptRenameRulesTest.php
+c62b088528e7417a9609dba5de48b7f9  tests/tests/kernel/classes/expHtaccessLiteSpeedNoAbortTest.php
 75d4909bce770c7bfceac5e3e99db3f5  tests/tests/kernel/classes/expImageUploadValidatorTest.php
 4b2f5a942b0d8969ff13e6554264e300  tests/tests/kernel/classes/expInstallDefaultExtensionsTest.php
 678c65717156beebc86b7da3a2ae8151  tests/tests/kernel/classes/expKernelCallFixesTest.php
