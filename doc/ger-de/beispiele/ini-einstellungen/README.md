@@ -65,7 +65,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [membermanagement.ini](membermanagement/README.md) | Kernel | 4 |
 | [menu.ini](menu/README.md) | Kernel | 29 |
 | [migration.ini](migration/README.md) | Kernel | 12 |
-| [mime.ini](mime/README.md) | Kernel | 192 |
+| [mime.ini](mime/README.md) | Kernel | 193 |
 | [module.ini](module/README.md) | Kernel | 2 |
 | [notification.ini](notification/README.md) | Kernel | 6 |
 | [override.ini](override/README.md) | Kernel | 0 |

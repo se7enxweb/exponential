@@ -4419,7 +4419,7 @@ d8ecf8a36f51610f9879784a8776ab80  doc/eng-us/examples/fetch-functions/user/membe
 e2a0d933b995c654fb8d0b0d61460b08  doc/eng-us/examples/fetch-functions/workflow/workflow_type_statuses.md
 afabb952a48810ef8ebb35f166d11f22  doc/eng-us/examples/hooks/template-check-pre-commit.sh
 944aeae01d2bf82c970b585a00033775  doc/eng-us/examples/htaccess
-44bbc72c90c855d8a06bcc70ab134675  doc/eng-us/examples/ini-settings/README.md
+5c55de50dad2b8303962c4d85ff0d2c8  doc/eng-us/examples/ini-settings/README.md
 6522da4a85b1b6fbd3b3c71c41603590  doc/eng-us/examples/ini-settings/admininterface/AdditionalMenuSettings.md
 00dd82562f4f4fcb17497b31e0f32f2f  doc/eng-us/examples/ini-settings/admininterface/AdditionalTab_audit.md
 1982ccc2ae500e3049741b22912053c6  doc/eng-us/examples/ini-settings/admininterface/AdditionalTab_datatable.md
@@ -5236,7 +5236,7 @@ df5ba32a59a905d18b707164940472cc  doc/eng-us/examples/ini-settings/migration/Rem
 522c372caf993a87b878341eda313831  doc/eng-us/examples/ini-settings/migration/TriggerSettings.md
 7cf8352bfd4737f1a944cee7eaef3bce  doc/eng-us/examples/ini-settings/migration/YamlSettings.md
 24a4935a5de1d9d2fb967602213c5c5b  doc/eng-us/examples/ini-settings/mime/3gp.md
-3fef90ee97702e67cf845c520aec316e  doc/eng-us/examples/ini-settings/mime/README.md
+653c49e0bb529ca099a4ad95cab2cb01  doc/eng-us/examples/ini-settings/mime/README.md
 f5d05725765915f73b148f0783a2c92a  doc/eng-us/examples/ini-settings/mime/af.md
 ace0202bf31814e4c2f24580dcd3d164  doc/eng-us/examples/ini-settings/mime/ai.md
 511707ff6aed8d145ae89c64a2ff88d4  doc/eng-us/examples/ini-settings/mime/aiff.md
@@ -5244,6 +5244,7 @@ ace0202bf31814e4c2f24580dcd3d164  doc/eng-us/examples/ini-settings/mime/ai.md
 e6eb2579680fc68ac4d805623c276b59  doc/eng-us/examples/ini-settings/mime/asf.md
 6043d9c413ca62bf576ffa315a2047ad  doc/eng-us/examples/ini-settings/mime/au.md
 360bbdea44f53f1424ecbb967dd60492  doc/eng-us/examples/ini-settings/mime/avi.md
+6934fb8c6e132b74bab2de4406fe4613  doc/eng-us/examples/ini-settings/mime/avif.md
 ccc1695d774844495a851132b107dcfd  doc/eng-us/examples/ini-settings/mime/bcpio.md
 321d71a7753c457e388bc678819ea034  doc/eng-us/examples/ini-settings/mime/bin.md
 79a02939ef4fa18acd8d8df91025848b  doc/eng-us/examples/ini-settings/mime/bmp.md
@@ -13653,7 +13654,7 @@ b77698c6eee8d107b3fef578dca0ea27  doc/ger-de/.examples/descriptions/39-url-map-i
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-2bcd4542afa24615796aab9df9d4e5f0  doc/ger-de/.paths.json
+289c40e7eacbd7e11dd5d79bae73a183  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
 04ae4aab99cdae2a54397c67f4f735fb  doc/ger-de/CONFIGURING.md
 25d910b62226fc69ff96814718b5979d  doc/ger-de/DISTRIBUTIONS.md
@@ -14534,7 +14535,7 @@ f6cef0867c4076eae774a91ce3f812cb  doc/ger-de/beispiele/fetch-funktionen/user/use
 c747569ce52d239c1f42255fd4fd9d7a  doc/ger-de/beispiele/fetch-funktionen/workflow/workflow_statuses.md
 410651a2685ea7f1a673cc9a58b14277  doc/ger-de/beispiele/fetch-funktionen/workflow/workflow_type_statuses.md
 5d2f87561bff92eb954c8fd7f31efb90  doc/ger-de/beispiele/htaccess
-444f92c679d8f03c62f558d6bcf179b3  doc/ger-de/beispiele/ini-einstellungen/README.md
+fc9faee7f497ec785c1e717e39d50d6f  doc/ger-de/beispiele/ini-einstellungen/README.md
 88a9e6f3da744f06b838a30f640c9750  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalMenuSettings.md
 61b7500c6da46b1684d61841b2c0b331  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalTab_audit.md
 da8522f9eb603cff06146203b11e3431  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalTab_datatable.md
@@ -15351,7 +15352,7 @@ bd5410dff48941e30a763ff26ecfa018  doc/ger-de/beispiele/ini-einstellungen/migrati
 b68d6fe496c9cb39bec1f6184b0144fe  doc/ger-de/beispiele/ini-einstellungen/migration/TriggerSettings.md
 1de800b79215dfcb7d46b17df5b95a06  doc/ger-de/beispiele/ini-einstellungen/migration/YamlSettings.md
 30fe2f095376055cda0fe90980eebd75  doc/ger-de/beispiele/ini-einstellungen/mime/3gp.md
-2c95b1c25bf0721b16dc9af0d086a7f9  doc/ger-de/beispiele/ini-einstellungen/mime/README.md
+e02ad5db121a45f1f18a89cded903b14  doc/ger-de/beispiele/ini-einstellungen/mime/README.md
 41842fbefdbe6af1c697bcc4e10539e8  doc/ger-de/beispiele/ini-einstellungen/mime/af.md
 c2d304be1e00439be0093ae53841a25f  doc/ger-de/beispiele/ini-einstellungen/mime/ai.md
 a2e82f3b05ed69a32bbd3dc724ead590  doc/ger-de/beispiele/ini-einstellungen/mime/aiff.md
@@ -15359,6 +15360,7 @@ a2e82f3b05ed69a32bbd3dc724ead590  doc/ger-de/beispiele/ini-einstellungen/mime/ai
 384f999ac265e6f50d7f6fe8f666ec4e  doc/ger-de/beispiele/ini-einstellungen/mime/asf.md
 d4a86c935904f0045032da5dcb4206f8  doc/ger-de/beispiele/ini-einstellungen/mime/au.md
 99ccd0213d449ade5b22797b854b208d  doc/ger-de/beispiele/ini-einstellungen/mime/avi.md
+1765f479f1d50bf3251f0d089af029f8  doc/ger-de/beispiele/ini-einstellungen/mime/avif.md
 5b3effcd658e61a9a47701277475ed40  doc/ger-de/beispiele/ini-einstellungen/mime/bcpio.md
 0250ad5de65828b3428172bccf664843  doc/ger-de/beispiele/ini-einstellungen/mime/bin.md
 b61e2002695af4fb2f9d1ebc25ae8e18  doc/ger-de/beispiele/ini-einstellungen/mime/bmp.md
